@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Check } from 'lucide-react';
+import { Check, Users } from 'lucide-react';
 
 const reasons = [
   {
