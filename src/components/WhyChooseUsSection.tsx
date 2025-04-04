@@ -44,7 +44,7 @@ const WhyChooseUsSection = () => {
             <div className="space-y-4">
               {reasons.map((reason) => (
                 <div key={reason.id} className="flex items-start">
-                  <div className="mt-1 mr-4 h-6 w-6 rounded-full bg-turquesa flex items-center justify-center flex-shrink-0">
+                  <div className="mt-1 mr-4 h-6 w-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
                     <Check className="h-4 w-4 text-white" />
                   </div>
                   <div>
@@ -57,11 +57,11 @@ const WhyChooseUsSection = () => {
           </div>
           
           <div className="lg:w-1/2 relative">
-            <div className="absolute inset-0 bg-hayas-100 rounded-xl blur-xl opacity-30"></div>
+            <div className="absolute inset-0 bg-soft-purple rounded-xl blur-xl opacity-30"></div>
             <div className="relative bg-white p-8 rounded-xl shadow-xl border border-gray-100">
               <div className="text-center mb-8">
-                <div className="inline-block p-3 bg-hayas-50 rounded-full mb-4">
-                  <div className="gradient-primary h-16 w-16 rounded-full flex items-center justify-center">
+                <div className="inline-block p-3 bg-soft-purple/20 rounded-full mb-4">
+                  <div className="bg-gradient-to-r from-secondary to-primary h-16 w-16 rounded-full flex items-center justify-center">
                     <Users className="h-8 w-8 text-white" />
                   </div>
                 </div>
@@ -70,20 +70,20 @@ const WhyChooseUsSection = () => {
               </div>
               
               <div className="grid grid-cols-2 gap-6">
-                <div className="text-center p-4 rounded-lg bg-gradient-to-br from-hayas-50 to-white">
-                  <h4 className="text-hayas-800 font-bold text-4xl">+40%</h4>
+                <div className="text-center p-4 rounded-lg bg-gradient-to-br from-soft-purple/20 to-white">
+                  <h4 className="text-secondary font-bold text-4xl">+40%</h4>
                   <p className="text-gray-600">Eficiencia en procesos</p>
                 </div>
-                <div className="text-center p-4 rounded-lg bg-gradient-to-br from-turquesa-light/30 to-white">
-                  <h4 className="text-hayas-800 font-bold text-4xl">+30%</h4>
+                <div className="text-center p-4 rounded-lg bg-gradient-to-br from-primary/20 to-white">
+                  <h4 className="text-secondary font-bold text-4xl">+30%</h4>
                   <p className="text-gray-600">Tasa de conversión</p>
                 </div>
-                <div className="text-center p-4 rounded-lg bg-gradient-to-br from-turquesa-light/30 to-white">
-                  <h4 className="text-hayas-800 font-bold text-4xl">-25%</h4>
+                <div className="text-center p-4 rounded-lg bg-gradient-to-br from-primary/20 to-white">
+                  <h4 className="text-secondary font-bold text-4xl">-25%</h4>
                   <p className="text-gray-600">Tiempo de respuesta</p>
                 </div>
-                <div className="text-center p-4 rounded-lg bg-gradient-to-br from-hayas-50 to-white">
-                  <h4 className="text-hayas-800 font-bold text-4xl">+60%</h4>
+                <div className="text-center p-4 rounded-lg bg-gradient-to-br from-soft-purple/20 to-white">
+                  <h4 className="text-secondary font-bold text-4xl">+60%</h4>
                   <p className="text-gray-600">Satisfacción cliente</p>
                 </div>
               </div>
