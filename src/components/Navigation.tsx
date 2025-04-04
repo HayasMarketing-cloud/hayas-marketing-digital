@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 
@@ -30,8 +29,12 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <a href="/" className="text-2xl font-bold text-hayas-800">
-              Hayas<span className="text-turquesa">Marketing</span>
+            <a href="/" className="flex items-center">
+              <img 
+                src="/logo.svg"  // Reemplaza con la ruta de tu logo
+                alt="Hayas Marketing Logo" 
+                className="h-10 w-auto"  // Ajusta el tamaño según tu logo
+              />
             </a>
           </div>
 
