@@ -50,35 +50,35 @@ const solutions = [
 
 const SolutionsSection = () => {
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-br from-background to-muted/30">
+    <section className="py-16 md:py-24 bg-gradient-to-br from-white to-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Nuestras <span className="text-gradient-primary">Soluciones</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Descubre cómo nuestras soluciones estratégicas pueden transformar tu negocio desde la creación de marca hasta la implementación de IA.
           </p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {solutions.map((solution) => (
-            <Card key={solution.id} className="group border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-card/60 backdrop-blur-sm">
+            <Card key={solution.id} className="group border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white/80 backdrop-blur-sm">
               <CardHeader className="pb-4">
-                <div className="mb-4 p-3 rounded-lg bg-primary/10 w-fit group-hover:bg-primary/20 transition-colors">
+                <div className="mb-4 p-3 rounded-lg bg-hayas-100 w-fit group-hover:bg-hayas-200 transition-colors">
                   {solution.icon}
                 </div>
-                <CardTitle className="text-xl font-bold group-hover:text-primary transition-colors">
+                <CardTitle className="text-xl font-bold group-hover:text-hayas-600 transition-colors">
                   {solution.title}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <p className="text-muted-foreground text-sm leading-relaxed">
+                <p className="text-gray-600 text-sm leading-relaxed">
                   {solution.description}
                 </p>
                 <Button 
                   variant="outline" 
-                  className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all"
+                  className="w-full group-hover:bg-hayas-600 group-hover:text-white transition-all"
                   asChild
                 >
                   <a href={solution.href}>
@@ -91,7 +91,7 @@ const SolutionsSection = () => {
         </div>
         
         <div className="text-center">
-          <p className="text-muted-foreground mb-6">
+          <p className="text-gray-600 mb-6">
             ¿No encuentras la solución que buscas? Hablemos de tu proyecto específico.
           </p>
           <Button className="gradient-primary text-white px-8 py-6 text-lg">
