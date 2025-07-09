@@ -33,7 +33,7 @@ const Navigation = () => {
               <img 
                 src="/lovable-uploads/7ec653d8-b796-48ee-9657-8f0301af6e55.png"  
                 alt="Hayas Marketing Logo" 
-                className="h-12 w-auto"  // Slightly increased height for better visibility
+                className="h-72 w-auto"  // 6 times larger than original h-12
               />
             </a>
           </div>
