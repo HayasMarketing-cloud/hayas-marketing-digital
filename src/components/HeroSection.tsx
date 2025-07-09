@@ -10,6 +10,15 @@ const HeroSection = () => {
       <div className="absolute top-24 -right-24 w-96 h-96 rounded-full bg-turquesa-light opacity-10"></div>
       
       <div className="container mx-auto px-4">
+        {/* Logo grande separado */}
+        <div className="flex items-start mb-8">
+          <img 
+            src="/lovable-uploads/7ec653d8-b796-48ee-9657-8f0301af6e55.png"  
+            alt="Hayas Marketing Logo" 
+            className="h-32 w-auto"  // 6 veces más grande que el original del nav (h-8 * 4 = h-32)
+          />
+        </div>
+        
         <div className="flex flex-col lg:flex-row items-center">
           <div className="lg:w-1/2 lg:pr-12 mb-10 lg:mb-0">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
