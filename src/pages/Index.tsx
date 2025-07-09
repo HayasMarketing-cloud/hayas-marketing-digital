@@ -14,7 +14,7 @@ const Index = () => {
     <div className="min-h-screen flex flex-col">
       <Navigation />
       
-      <main className="flex-grow pt-16">
+      <main className="flex-grow pt-32">  {/* Increased from pt-16 to pt-32 to accommodate larger header */}
         <HeroSection />
         <SolutionsSection />
         <ServicesSection />
