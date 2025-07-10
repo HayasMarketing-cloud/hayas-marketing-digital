@@ -55,7 +55,9 @@ const SofiaSection = () => {
                 alt="SofÍA - Asistente de IA de Hayas Marketing" 
                 className="relative z-10 w-64 h-64 object-cover rounded-full shadow-2xl border-4 border-white"
               />
-              <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-white"></div>
+              <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-white animate-pulse">
+                <div className="absolute inset-0 bg-green-400 rounded-full animate-ping"></div>
+              </div>
             </div>
           </div>
 
