@@ -2,6 +2,7 @@
 import React from 'react';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
+import SofiaSection from '@/components/SofiaSection';
 import SolutionsSection from '@/components/SolutionsSection';
 import ServicesSection from '@/components/ServicesSection';
 import AllServicesSection from '@/components/AllServicesSection';
@@ -16,6 +17,7 @@ const Index = () => {
       
       <main className="flex-grow pt-32">  {/* Increased from pt-16 to pt-32 to accommodate larger header */}
         <HeroSection />
+        <SofiaSection />
         <SolutionsSection />
         <ServicesSection />
         <WhyChooseUsSection />
