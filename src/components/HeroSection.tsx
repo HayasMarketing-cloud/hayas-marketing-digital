@@ -31,8 +31,8 @@ const HeroSection = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-hayas-200 rounded-full blur-3xl opacity-20"></div>
               <img 
-                src="https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=2069&auto=format&fit=crop" 
-                alt="Humano en el proceso de automatización" 
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop" 
+                alt="Dashboard de marketing digital y análisis de datos" 
                 className="relative z-10 w-full h-auto rounded-xl shadow-xl"
               />
             </div>
