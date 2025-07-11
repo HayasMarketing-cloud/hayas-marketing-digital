@@ -76,7 +76,7 @@ const CasoExitoAsendia = () => {
     <div id="top" className="min-h-screen flex flex-col">
       <Navigation />
       
-      <main className="flex-grow pt-20">
+      <main className="flex-grow pt-32">
         {/* Header Navigation */}
         <section className="py-6 bg-gray-50">
           <div className="container mx-auto px-4">

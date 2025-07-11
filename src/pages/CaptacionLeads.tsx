@@ -3,6 +3,7 @@ import { ArrowLeft, Users, Target, Zap, TrendingUp, Star, Heart, Magnet, Filter,
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import SofiaSection from '@/components/SofiaSection';
@@ -12,7 +13,16 @@ const CaptacionLeads = () => {
     <div id="top" className="min-h-screen bg-white">
       <Navigation />
       
-      <main className="pt-20">
+      <main className="pt-32">
+        {/* Header Navigation */}
+        <section className="py-6 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <Link to="/#top" className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors">
+              <ArrowLeft className="h-4 w-4 mr-2" />
+              Volver al Inicio
+            </Link>
+          </div>
+        </section>
         {/* Hero Section */}
         <section className="relative py-8 md:py-12 bg-gradient-to-br from-hayas-50 to-turquesa-50 overflow-hidden">
           <div className="container mx-auto px-4">

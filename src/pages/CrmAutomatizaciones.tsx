@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
-import { CheckCircle, Users, Zap, Target, Clock, BarChart3, MessageSquare, Mail } from 'lucide-react';
+import { CheckCircle, Users, Zap, Target, Clock, BarChart3, MessageSquare, Mail, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const crmPlatforms = [
@@ -117,7 +117,16 @@ const CrmAutomatizaciones = () => {
     <div id="top" className="min-h-screen flex flex-col">
       <Navigation />
       
-      <main className="flex-grow pt-20">
+      <main className="flex-grow pt-32">
+        {/* Header Navigation */}
+        <section className="py-6 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <Link to="/#top" className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors">
+              <ArrowLeft className="h-4 w-4 mr-2" />
+              Volver al Inicio
+            </Link>
+          </div>
+        </section>
         {/* Hero Section */}
         <section className="py-4 md:py-6 bg-gradient-to-br from-blue-50 to-cyan-50 min-h-[600px] flex items-center">
           <div className="container mx-auto px-4">
