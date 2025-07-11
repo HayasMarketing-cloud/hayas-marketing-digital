@@ -96,6 +96,79 @@ const CrmAutomatizaciones = () => {
           </div>
         </section>
 
+        {/* Value Proposition Section */}
+        <section className="py-16 md:py-24 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="order-2 lg:order-1">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-hayas-100 to-turquesa-100 rounded-2xl transform rotate-3"></div>
+                  <img 
+                    src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop" 
+                    alt="Estrategia integrada de marketing y ventas" 
+                    className="relative z-10 w-full h-auto rounded-2xl shadow-xl"
+                  />
+                </div>
+              </div>
+              
+              <div className="order-1 lg:order-2">
+                <Badge variant="outline" className="mb-4 text-hayas-600 border-hayas-200">
+                  Estrategia Integrada
+                </Badge>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
+                  Una <span className="text-gradient-primary">visión holística</span> que alinea marketing y ventas
+                </h2>
+                <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                  El verdadero poder de un CRM radica en la integración completa de tu estrategia. 
+                  No se trata solo de gestionar contactos, sino de crear un ecosistema donde cada 
+                  acción de marketing alimenta directamente tu pipeline de ventas.
+                </p>
+                
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 bg-hayas-100 rounded-lg flex items-center justify-center">
+                      <Target className="h-6 w-6 text-hayas-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold mb-2">Estrategia Unificada</h3>
+                      <p className="text-gray-600">
+                        Alineamos tus objetivos de marketing con tus metas de ventas, creando 
+                        una sinergia que multiplica los resultados.
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 bg-turquesa-100 rounded-lg flex items-center justify-center">
+                      <Zap className="h-6 w-6 text-turquesa-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold mb-2">Automatización Inteligente</h3>
+                      <p className="text-gray-600">
+                        Cada lead generado se nutre automáticamente hasta convertirse en cliente, 
+                        sin perder oportunidades por el camino.
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 bg-hayas-100 rounded-lg flex items-center justify-center">
+                      <BarChart3 className="h-6 w-6 text-hayas-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold mb-2">Métricas que Importan</h3>
+                      <p className="text-gray-600">
+                        Medimos el ROI real desde el primer touchpoint hasta la venta final, 
+                        optimizando cada etapa del funnel.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* CRM Platforms Section */}
         <section className="py-16 md:py-24">
           <div className="container mx-auto px-4">
