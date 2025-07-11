@@ -9,64 +9,66 @@ import { Link } from 'react-router-dom';
 
 const metrics = [
   {
-    number: "45%",
-    label: "Reducción en tiempo de gestión",
-    description: "Automatización de procesos logísticos"
+    number: "250%",
+    label: "Incremento en ventas internacionales",
+    description: "Expansión a nuevos mercados"
   },
   {
-    number: "89%",
-    label: "Mejora en seguimiento",
-    description: "Trazabilidad en tiempo real"
+    number: "78%",
+    label: "Reducción en tiempo de entrega",
+    description: "Optimización de rutas globales"
   },
   {
-    number: "60%",
-    label: "Incremento en eficiencia",
-    description: "Optimización de workflows"
+    number: "95%",
+    label: "Satisfacción del cliente",
+    description: "Experiencia de compra mejorada"
   },
   {
-    number: "35%",
-    label: "Reducción de errores",
-    description: "Automatización de datos"
+    number: "40%",
+    label: "Reducción de costos logísticos",
+    description: "Eficiencia en envíos internacionales"
   }
 ];
 
 const challenges = [
-  "Gestión manual de múltiples clientes y envíos",
-  "Falta de trazabilidad en tiempo real",
-  "Procesos desconectados entre departamentos",
-  "Reportes manuales y propensos a errores"
+  "Complejidad en envíos internacionales de e-commerce",
+  "Falta de visibilidad en aduanas y procesos fronterizos",
+  "Gestión manual de múltiples marketplace internacionales",
+  "Costos elevados y tiempos de entrega impredecibles",
+  "Experiencia de compra inconsistente entre países"
 ];
 
 const solutions = [
   {
     icon: <Target className="h-6 w-6" />,
-    title: "Centralización de Datos",
-    description: "Implementación de HubSpot para unificar toda la información de clientes, envíos y operaciones logísticas."
+    title: "Plataforma CRM Unificada",
+    description: "Implementación de HubSpot para centralizar la gestión de clientes e-commerce, marketplace internacionales y tracking global."
   },
   {
     icon: <Zap className="h-6 w-6" />,
-    title: "Automatización de Procesos",
-    description: "Workflows automáticos para seguimiento de envíos, notificaciones a clientes y actualización de estados."
+    title: "Automatización E-commerce",
+    description: "Workflows automáticos para gestión de pedidos internacionales, notificaciones de aduanas y actualizaciones de entrega."
   },
   {
     icon: <BarChart3 className="h-6 w-6" />,
-    title: "Dashboards en Tiempo Real",
-    description: "Paneles de control personalizados para monitoreo de KPIs logísticos y rendimiento operacional."
+    title: "Analytics Transfronterizo",
+    description: "Dashboards específicos para monitoreo de conversiones por país, costos de envío y satisfacción del comprador global."
   },
   {
     icon: <Users className="h-6 w-6" />,
-    title: "Integración de Equipos",
-    description: "Unificación de departamentos comercial, operativo y atención al cliente en una sola plataforma."
+    title: "Integración Marketplace",
+    description: "Conexión automatizada con Amazon, eBay, Alibaba y marketplaces locales para gestión centralizada de inventario."
   }
 ];
 
 const resultsData = [
-  "Automatización completa del proceso de seguimiento de envíos",
-  "Notificaciones automáticas a clientes en cada etapa del proceso",
-  "Reportes automáticos de rendimiento y KPIs logísticos",
-  "Integración con sistemas de transporte y proveedores",
-  "Mejora significativa en la satisfacción del cliente",
-  "Reducción de consultas repetitivas al servicio al cliente"
+  "Integración completa con principales marketplaces internacionales",
+  "Automatización del proceso de despacho aduanero",
+  "Sistema de tracking unificado para compradores globales",
+  "Optimización de rutas de entrega por país y región",
+  "Reducción significativa en devoluciones y reclamos",
+  "Incremento en la retención de clientes e-commerce",
+  "Mejora en los tiempos de resolución de incidencias internacionales"
 ];
 
 const CasoExitoAsendia = () => {
@@ -97,13 +99,13 @@ const CasoExitoAsendia = () => {
                   <span className="text-gradient-primary">Asendia</span>
                 </h1>
                 <p className="text-xl text-gray-700 mb-6">
-                  Transformación digital completa para optimización de procesos logísticos
+                  Soluciones de comercio electrónico transfronterizo que enamoran a compradores de todo el mundo
                 </p>
                 
                 <div className="space-y-3 mb-8">
                   <div className="flex items-center gap-3">
                     <Badge variant="secondary">Industria</Badge>
-                    <span className="text-gray-700">Servicio Logístico</span>
+                    <span className="text-gray-700">E-commerce Transfronterizo</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <Badge variant="secondary">Solución</Badge>
@@ -180,9 +182,10 @@ const CasoExitoAsendia = () => {
                   El <span className="text-gradient-primary">Desafío</span>
                 </h2>
                 <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                  Asendia enfrentaba múltiples desafíos en la gestión de sus operaciones logísticas. 
-                  La falta de centralización y automatización estaba impactando negativamente en 
-                  la eficiencia operativa y la satisfacción del cliente.
+                  Como proveedor de soluciones de e-commerce transfronterizo, Asendia enfrentaba 
+                  desafíos complejos para ayudar a sus clientes a expandirse internacionalmente. 
+                  La gestión manual y falta de automatización limitaba su capacidad de ofrecer 
+                  una experiencia de compra excepcional a nivel global.
                 </p>
                 
                 <div className="space-y-4">
@@ -217,7 +220,7 @@ const CasoExitoAsendia = () => {
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
                 Implementamos una estrategia integral de CRM y automatización diseñada 
-                específicamente para las necesidades del sector logístico
+                específicamente para optimizar el comercio electrónico transfronterizo
               </p>
             </div>
 
@@ -260,9 +263,9 @@ const CasoExitoAsendia = () => {
                   <span className="text-gradient-primary">Resultados</span> Alcanzados
                 </h2>
                 <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                  La implementación de nuestro sistema CRM y automatización ha transformado 
-                  completamente las operaciones de Asendia, generando beneficios tangibles 
-                  en todas las áreas de la empresa.
+                  La implementación de nuestro sistema CRM y automatización ha revolucionado 
+                  las capacidades de e-commerce transfronterizo de Asendia, permitiendo a sus 
+                  clientes expandirse globalmente con una experiencia de compra excepcional.
                 </p>
                 
                 <div className="space-y-4">
@@ -284,9 +287,9 @@ const CasoExitoAsendia = () => {
             <div className="max-w-4xl mx-auto text-center">
               <Quote className="h-12 w-12 text-hayas-400 mx-auto mb-6" />
               <blockquote className="text-2xl md:text-3xl font-medium text-gray-900 mb-8 leading-relaxed">
-                "La implementación del sistema CRM ha sido un antes y un después para Asendia. 
-                Ahora podemos ofrecer un servicio mucho más eficiente y nuestros clientes 
-                están notablemente más satisfechos con la trazabilidad y comunicación."
+                "Gracias a la implementación del CRM, ahora podemos ofrecer a nuestros clientes 
+                de e-commerce una expansión internacional sin complicaciones. Los compradores 
+                de todo el mundo disfrutan de una experiencia de compra excepcional y trazable."
               </blockquote>
               <div className="flex items-center justify-center gap-4">
                 <img 
@@ -307,11 +310,12 @@ const CasoExitoAsendia = () => {
         <section className="py-16 bg-gradient-to-br from-hayas-600 to-turquesa text-white">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              ¿Listo para transformar tu operación logística?
+              ¿Listo para expandir tu e-commerce a nivel mundial?
             </h2>
             <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">
               Obtén los mismos resultados que Asendia. Agenda una consulta gratuita 
-              y descubre cómo podemos optimizar tus procesos con CRM y automatización.
+              y descubre cómo podemos ayudarte a ofrecer soluciones de e-commerce 
+              transfronterizo que enamoren a compradores de todo el mundo.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="secondary" className="py-6 px-8 text-lg font-medium">
