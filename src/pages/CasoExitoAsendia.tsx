@@ -293,7 +293,7 @@ const CasoExitoAsendia = () => {
               </blockquote>
               <div className="flex items-center justify-center gap-4">
                 <img 
-                  src="/lovable-uploads/eb03ebcf-1212-4adb-9f73-1020279eb265.png" 
+                  src="/lovable-uploads/aac546a3-0e75-42e9-b930-60376a6e2f98.png" 
                   alt="Maya Mathura - Asendia"
                   className="w-16 h-16 rounded-full object-cover"
                 />
