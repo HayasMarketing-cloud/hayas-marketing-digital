@@ -111,7 +111,7 @@ const CrmAutomatizaciones = () => {
                   <img 
                     src={platform.logo} 
                     alt={platform.name}
-                    className="w-full h-16 object-contain"
+                    className="w-full h-24 object-contain"
                   />
                 </div>
               ))}
