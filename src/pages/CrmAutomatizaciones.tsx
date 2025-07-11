@@ -101,10 +101,10 @@ const CrmAutomatizaciones = () => {
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Trabajamos con los mejores <span className="text-gradient-primary">CRM</span>
+                Trabajamos con las últimas <span className="text-gradient-primary">tecnologías</span> y las mejores herramientas
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Integramos tu estrategia con las plataformas más potentes del mercado para maximizar tus resultados
+                Adaptamos la implementación al stack de aplicaciones de tu empresa para maximizar la integración y los resultados
               </p>
             </div>
 
