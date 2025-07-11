@@ -28,9 +28,9 @@ const solutions = [
   {
     id: 4,
     icon: <ShoppingCart className="h-8 w-8 text-primary" />,
-    title: "Ecommerce",
-    description: "Tiendas online optimizadas con integración CRM y estrategias de conversión avanzadas.",
-    href: "/ecommerce"
+    title: "CRM y automatizaciones de Marketing",
+    description: "Sistemas inteligentes de gestión de clientes con automatizaciones personalizadas para maximizar conversiones.",
+    href: "/crm-automatizaciones"
   },
   {
     id: 5,
