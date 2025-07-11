@@ -298,7 +298,7 @@ const CrmAutomatizaciones = () => {
       
       <SofiaSection 
         solutionName="CRM y Automatizaciones de Marketing"
-        initialMessage="¡Hola! Soy SofÍA, tu asistente especializada en CRM y automatizaciones de marketing. Puedo ayudarte a entender cómo implementar sistemas de gestión de clientes, automatizar tu funnel de ventas, configurar lead scoring, y optimizar tus procesos comerciales. ¿Qué te gustaría saber sobre esta solución?"
+        initialMessage="¡Hola! He visto que estás explorando nuestra página de CRM y automatizaciones. Puedo ayudarte a entender mejor cómo HubSpot, Salesforce o Go High Level pueden transformar tu negocio, explicarte nuestro proceso de implementación en 90 días, o resolver dudas sobre lead scoring, email marketing automatizado y integración con IA. ¿Qué aspecto específico te interesa más?"
       />
       <Footer />
     </div>

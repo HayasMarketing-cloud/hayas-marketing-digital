@@ -205,7 +205,7 @@ const MarketingVisibilidad = () => {
       
       <SofiaSection 
         solutionName="Marketing y Visibilidad"
-        initialMessage="¡Hola! Soy SofÍA, experta en marketing digital y visibilidad online. Te puedo orientar sobre SEO, marketing de contenidos, redes sociales, Google Ads, email marketing y todas las estrategias para aumentar tu presencia digital. ¿Qué estrategia te interesa conocer más?"
+        initialMessage="¡Hola! Has llegado a nuestra sección de marketing y visibilidad digital. Puedo explicarte cómo posicionamos tu web en Google con SEO avanzado, contarte sobre nuestras estrategias de marketing de contenidos, ayudarte con campañas de Google Ads y Meta Ads, o resolver dudas sobre email marketing y analytics. ¿Qué estrategia de visibilidad te interesa implementar?"
       />
       <Footer />
     </div>

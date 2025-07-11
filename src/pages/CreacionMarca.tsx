@@ -205,7 +205,7 @@ const CreacionMarca = () => {
       
       <SofiaSection 
         solutionName="Creación de Marca"
-        initialMessage="¡Hola! Soy SofÍA, especialista en branding y creación de marca. Puedo ayudarte con naming, identidad visual, posicionamiento estratégico, manuales de marca, y todo lo necesario para construir una marca memorable. ¿En qué aspecto de tu marca te gustaría que te asesore?"
+        initialMessage="¡Hola! Veo que estás interesado en crear una marca memorable. Puedo explicarte nuestro proceso de desarrollo de identidad visual, ayudarte a entender la importancia del naming estratégico, hablarte sobre el manual de marca, o resolver dudas sobre posicionamiento y conexión emocional con tu audiencia. ¿Qué parte del branding te gustaría conocer mejor?"
       />
       <Footer />
     </div>
