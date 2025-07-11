@@ -1,6 +1,13 @@
 import React, { useEffect } from 'react';
 
-const SofiaSection = () => {
+interface SofiaSectionProps {
+  initialMessage?: string;
+  solutionName?: string;
+}
+
+const SofiaSection = ({ initialMessage, solutionName }: SofiaSectionProps) => {
+  const defaultMessage = initialMessage || `¡Hola! Soy SofÍA, tu asistente especializada en ${solutionName || 'marketing digital'}. Estoy aquí para resolver todas tus dudas sobre esta solución. ¿En qué puedo ayudarte?`;
+
   useEffect(() => {
     // Load Voiceflow widget
     const script = document.createElement('script');
@@ -17,6 +24,14 @@ const SofiaSection = () => {
         render: {
           mode: 'embedded',
           target: document.getElementById('sofia-chat-container')
+        },
+        launch: {
+          event: {
+            type: 'launch',
+            payload: {
+              message: defaultMessage
+            }
+          }
         }
       });
     };
@@ -30,7 +45,7 @@ const SofiaSection = () => {
         document.head.removeChild(existingScript);
       }
     };
-  }, []);
+  }, [defaultMessage]);
 
   return (
     <section className="py-16 md:py-24 bg-gradient-to-br from-hayas-50 to-turquesa-50">

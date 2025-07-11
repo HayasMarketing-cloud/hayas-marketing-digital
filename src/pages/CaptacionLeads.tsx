@@ -203,7 +203,10 @@ const CaptacionLeads = () => {
         </section>
       </main>
       
-      <SofiaSection />
+      <SofiaSection 
+        solutionName="Captación de Leads"
+        initialMessage="¡Hola! Soy SofÍA, especialista en generación y conversión de leads. Puedo ayudarte con lead magnets, landing pages optimizadas, lead scoring, nurturing automatizado, chatbots de calificación y analytics de conversión. ¿Qué parte del funnel de leads quieres optimizar?"
+      />
       <Footer />
     </div>
   );

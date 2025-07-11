@@ -268,7 +268,10 @@ const SolucionesIA = () => {
         </section>
       </main>
       
-      <SofiaSection />
+      <SofiaSection 
+        solutionName="Soluciones IA aplicada a Marketing"
+        initialMessage="¡Hola! Soy SofÍA, y como ejemplo de IA aplicada al marketing, puedo ayudarte a entender chatbots inteligentes, personalización dinámica, análisis predictivo, automatización avanzada y optimización con IA. ¿Qué aplicación de inteligencia artificial te gustaría explorar para tu negocio?"
+      />
       <Footer />
     </div>
   );

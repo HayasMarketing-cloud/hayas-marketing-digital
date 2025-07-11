@@ -250,7 +250,10 @@ const GestionMarketing = () => {
         </section>
       </main>
       
-      <SofiaSection />
+      <SofiaSection 
+        solutionName="Gestión del Plan de Marketing"
+        initialMessage="¡Hola! Soy SofÍA, experta en planificación y gestión estratégica de marketing. Te puedo ayudar con desarrollo de estrategias, calendarios de contenido, implementación técnica, KPIs, reporting y optimización continua. ¿Qué aspecto de tu plan de marketing necesitas desarrollar?"
+      />
       <Footer />
     </div>
   );
