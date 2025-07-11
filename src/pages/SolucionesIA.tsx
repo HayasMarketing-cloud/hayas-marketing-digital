@@ -9,7 +9,7 @@ import SofiaSection from '@/components/SofiaSection';
 
 const SolucionesIA = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div id="top" className="min-h-screen bg-white">
       <Navigation />
       
       <main className="pt-20">

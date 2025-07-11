@@ -46,7 +46,7 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold text-white mb-4">Enlaces rápidos</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="hover:text-turquesa transition-colors">Inicio</a></li>
+              <li><a href="/#top" className="hover:text-turquesa transition-colors">Inicio</a></li>
               <li><a href="#servicios" className="hover:text-turquesa transition-colors">Servicios</a></li>
               <li><a href="#nosotros" className="hover:text-turquesa transition-colors">¿Por qué elegirnos?</a></li>
               <li><a href="#contacto" className="hover:text-turquesa transition-colors">Contacto</a></li>

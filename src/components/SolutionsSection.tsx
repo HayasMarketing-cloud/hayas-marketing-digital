@@ -82,7 +82,7 @@ const SolutionsSection = () => {
                   className="w-full group-hover:bg-hayas-600 group-hover:text-white transition-all"
                   asChild
                 >
-                  <Link to={solution.href}>
+                  <Link to={`${solution.href}#top`}>
                     Conocer más
                   </Link>
                 </Button>
