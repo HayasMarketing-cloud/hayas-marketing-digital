@@ -29,7 +29,7 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <a href="/#top" className="flex items-center">
+            <a href="/" className="flex items-center" onClick={() => window.scrollTo(0, 0)}>
               <img 
                 src="/lovable-uploads/7ec653d8-b796-48ee-9657-8f0301af6e55.png"  
                 alt="Hayas Marketing Logo" 
