@@ -9,24 +9,24 @@ import { Link } from 'react-router-dom';
 
 const metrics = [
   {
-    number: "180%",
-    label: "Incremento en clientes B2B",
-    description: "Nuevos managers de e-commerce captados"
+    number: "+129%",
+    label: "Incremento en generación de leads B2B",
+    description: "Más prospectos cualificados gracias a campañas y formularios automatizados"
   },
   {
-    number: "65%",
-    label: "Reducción en tiempo de onboarding",
-    description: "Proceso automatizado para nuevos clientes"
+    number: "-60%",
+    label: "Reducción en el ciclo de ventas",
+    description: "Cierre de oportunidades más rápido mediante procesos automatizados y CRM centralizado"
   },
   {
-    number: "92%",
-    label: "Retención de clientes B2B",
-    description: "Managers satisfechos con el servicio"
+    number: "+35%",
+    label: "Aumento en ingresos por cliente",
+    description: "Más ventas cruzadas y recurrentes con seguimiento personalizado desde el CRM"
   },
   {
-    number: "45%",
-    label: "Incremento en revenue por cliente",
-    description: "Mayor valor por manager de e-commerce"
+    number: "-76%",
+    label: "Reducción en coste de stack tecnológico",
+    description: "Unificación de marketing, ventas y soporte en una sola plataforma"
   }
 ];
 
@@ -169,6 +169,12 @@ const CasoExitoAsendia = () => {
                   </CardContent>
                 </Card>
               ))}
+            </div>
+            
+            <div className="mt-8 text-center">
+              <p className="text-sm text-gray-500 italic">
+                Métricas reales de HubSpot en base a estudios internos de resultados conseguidos para sus clientes B2B.
+              </p>
             </div>
           </div>
         </section>
