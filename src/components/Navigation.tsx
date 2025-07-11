@@ -34,7 +34,7 @@ const Navigation = () => {
               <img 
                 src="/lovable-uploads/7ec653d8-b796-48ee-9657-8f0301af6e55.png"  
                 alt="Hayas Marketing Logo" 
-                className="h-48 w-auto"  // Mismo tamaño grande que tenía en el hero
+                className="h-24 w-auto"  // Reducido el tamaño del logo
               />
             </Link>
           </div>
