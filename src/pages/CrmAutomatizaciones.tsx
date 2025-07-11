@@ -78,7 +78,7 @@ const successCases = [
     title: "Vania Intima",
     industry: "Tienda de ropa",
     service: "CRM y Automatización",
-    image: "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?q=80&w=2070&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=2070&auto=format&fit=crop",
     description: "Automatización de marketing para comercio electrónico y gestión de inventario"
   },
   {
