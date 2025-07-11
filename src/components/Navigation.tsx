@@ -22,8 +22,8 @@ const Navigation = () => {
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-md py-6' : 'bg-transparent py-10'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white ${
+        isScrolled ? 'shadow-md py-6' : 'py-10'
       }`}
     >
       <div className="container mx-auto px-4">
