@@ -78,7 +78,7 @@ const CrmAutomatizaciones = () => {
               <Badge variant="outline" className="mb-4 text-hayas-600 border-hayas-200">
                 CRM y Automatización
               </Badge>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-normal">
                 CRM y <span className="text-gradient-primary">Automatización</span> de Marketing
               </h1>
               <p className="text-xl text-gray-700 mb-8 leading-relaxed">
