@@ -72,16 +72,16 @@ const CrmAutomatizaciones = () => {
       
       <main className="flex-grow pt-20">
         {/* Hero Section */}
-        <section className="py-8 md:py-12 bg-gradient-to-br from-hayas-50 to-turquesa-50">
+        <section className="py-12 md:py-16 bg-gradient-to-br from-blue-50 to-cyan-50 min-h-[600px] flex items-center">
           <div className="container mx-auto px-4">
             <div className="text-center max-w-4xl mx-auto">
-              <Badge variant="outline" className="mb-4 text-hayas-600 border-hayas-200">
+              <Badge variant="outline" className="mb-6 text-blue-600 border-blue-200">
                 CRM y Automatización
               </Badge>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-normal">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-8 leading-tight text-gray-900">
                 CRM y <span className="text-gradient-primary">Automatización</span> de Marketing
               </h1>
-              <p className="text-xl text-gray-700 mb-8 leading-relaxed">
+              <p className="text-xl text-gray-700 mb-10 leading-relaxed">
                 Gestiona las relaciones e interacciones de tu empresa con los clientes desde una única plataforma. 
                 Automatiza procesos, optimiza la productividad y personaliza el seguimiento de cada cliente.
               </p>

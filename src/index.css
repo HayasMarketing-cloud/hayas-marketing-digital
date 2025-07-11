@@ -42,6 +42,10 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Hayas and Turquesa colors in HSL format */
+    --hayas-600: 217 91% 33%;
+    --turquesa: 189 94% 43%;
   }
 }
 
@@ -57,10 +61,13 @@
 
 @layer utilities {
   .gradient-primary {
-    @apply bg-gradient-to-r from-hayas-600 to-turquesa;
+    background: linear-gradient(to right, hsl(var(--hayas-600)), hsl(var(--turquesa)));
   }
   .text-gradient-primary {
-    @apply bg-gradient-to-r from-hayas-600 to-turquesa bg-clip-text text-transparent;
+    background: linear-gradient(to right, hsl(var(--hayas-600)), hsl(var(--turquesa)));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
   }
   .bg-soft-purple {
     background-color: #D6BCFA;
