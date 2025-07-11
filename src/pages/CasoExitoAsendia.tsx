@@ -287,19 +287,24 @@ const CasoExitoAsendia = () => {
             <div className="max-w-4xl mx-auto text-center">
               <Quote className="h-12 w-12 text-hayas-400 mx-auto mb-6" />
               <blockquote className="text-2xl md:text-3xl font-medium text-gray-900 mb-8 leading-relaxed">
-                "El CRM implementado ha transformado completamente nuestra estrategia comercial B2B. 
-                Ahora podemos identificar, nutrir y convertir managers de e-commerce de manera 
-                sistemática, demostrando valor desde el primer contacto."
+                "Hayas is a very positive partner. The team is very proactive, has great 
+                attention to detail, and they are often proposing new actions and 
+                challenging our status quo."
               </blockquote>
               <div className="flex items-center justify-center gap-4">
                 <img 
-                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=150&h=150&auto=format&fit=crop" 
-                  alt="Director de Operaciones"
+                  src="/lovable-uploads/eb03ebcf-1212-4adb-9f73-1020279eb265.png" 
+                  alt="Maya Mathura - Asendia"
                   className="w-16 h-16 rounded-full object-cover"
                 />
                 <div className="text-left">
-                  <div className="font-semibold text-gray-900">Carlos Mendoza</div>
-                  <div className="text-gray-600">Director de Operaciones, Asendia</div>
+                  <div className="font-semibold text-gray-900">Maya Mathura</div>
+                  <div className="text-gray-600">Asendia</div>
+                  <div className="flex gap-1 mt-1">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} className="text-yellow-400">★</span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
