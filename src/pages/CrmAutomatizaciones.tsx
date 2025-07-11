@@ -5,6 +5,7 @@ import SofiaSection from '../components/SofiaSection';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { CheckCircle, Users, Zap, Target, Clock, BarChart3, MessageSquare, Mail } from 'lucide-react';
 
 const crmPlatforms = [
@@ -63,6 +64,51 @@ const features = [
   "Dashboards personalizados",
   "Seguimiento de conversiones",
   "Gestión de pipeline de ventas"
+];
+
+const successCases = [
+  {
+    title: "Berenguela",
+    industry: "Despacho legal",
+    service: "CRM y Automatización",
+    image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=2070&auto=format&fit=crop",
+    description: "Implementación completa de sistema CRM para optimización de gestión de casos legales"
+  },
+  {
+    title: "Vania Intima",
+    industry: "Tienda de ropa",
+    service: "CRM y Automatización",
+    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070&auto=format&fit=crop",
+    description: "Automatización de marketing para comercio electrónico y gestión de inventario"
+  },
+  {
+    title: "Asendia",
+    industry: "Servicio logístico",
+    service: "CRM y Automatización",
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop",
+    description: "Sistema CRM integrado para optimización de procesos logísticos y seguimiento"
+  },
+  {
+    title: "Owo Games",
+    industry: "Tienda de productos Gamer",
+    service: "CRM y Automatización",
+    image: "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?q=80&w=2070&auto=format&fit=crop",
+    description: "Plataforma CRM especializada para gaming con automatización de marketing digital"
+  },
+  {
+    title: "Asepsia",
+    industry: "Generadores de ozono",
+    service: "CRM y Automatización",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop",
+    description: "Automatización de procesos industriales y gestión de clientes B2B"
+  },
+  {
+    title: "Formato Educativo",
+    industry: "Educación",
+    service: "CRM y Automatización",
+    image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2070&auto=format&fit=crop",
+    description: "Sistema CRM educativo para gestión de estudiantes y automatización de matrículas"
+  }
 ];
 
 const CrmAutomatizaciones = () => {
@@ -269,6 +315,62 @@ const CrmAutomatizaciones = () => {
                   className="relative z-10 w-full h-auto rounded-xl shadow-xl"
                 />
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Success Cases Section */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                CASOS DE ÉXITO
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Últimos proyectos de CRM y Automatización implementados con éxito
+              </p>
+            </div>
+            
+            <div className="relative">
+              <Carousel
+                opts={{
+                  align: "start",
+                  loop: true,
+                }}
+                className="w-full"
+              >
+                <CarouselContent className="-ml-2 md:-ml-4">
+                  {successCases.map((caseItem, index) => (
+                    <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                      <div className="bg-gray-50 rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                        <div className="aspect-video relative overflow-hidden">
+                          <img 
+                            src={caseItem.image} 
+                            alt={caseItem.title}
+                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                          />
+                        </div>
+                        <div className="p-6">
+                          <h3 className="text-xl font-bold text-gray-900 mb-2">
+                            {caseItem.title}
+                          </h3>
+                          <p className="text-sm text-blue-600 font-medium mb-2">
+                            {caseItem.industry}
+                          </p>
+                          <p className="text-sm text-gray-500 mb-4">
+                            {caseItem.service}
+                          </p>
+                          <Button variant="outline" size="sm" className="w-full">
+                            Ver caso de éxito
+                          </Button>
+                        </div>
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="hidden md:flex -left-4" />
+                <CarouselNext className="hidden md:flex -right-4" />
+              </Carousel>
             </div>
           </div>
         </section>
