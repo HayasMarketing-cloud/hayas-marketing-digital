@@ -72,7 +72,7 @@ const CrmAutomatizaciones = () => {
       
       <main className="flex-grow pt-20">
         {/* Hero Section */}
-        <section className="py-8 md:py-12 bg-gradient-to-br from-blue-50 to-cyan-50 min-h-[600px] flex items-center">
+        <section className="py-4 md:py-6 bg-gradient-to-br from-blue-50 to-cyan-50 min-h-[600px] flex items-center">
           <div className="container mx-auto px-4">
             <div className="text-center max-w-4xl mx-auto">
               <Badge variant="outline" className="mb-6 text-blue-600 border-blue-200">
