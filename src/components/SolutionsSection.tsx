@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Palette, Target, Users, ShoppingCart, Calendar, Brain } from 'lucide-react';
@@ -81,9 +82,9 @@ const SolutionsSection = () => {
                   className="w-full group-hover:bg-hayas-600 group-hover:text-white transition-all"
                   asChild
                 >
-                  <a href={solution.href}>
+                  <Link to={solution.href}>
                     Conocer más
-                  </a>
+                  </Link>
                 </Button>
               </CardContent>
             </Card>
