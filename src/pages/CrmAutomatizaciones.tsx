@@ -70,9 +70,9 @@ const CrmAutomatizaciones = () => {
     <div className="min-h-screen flex flex-col">
       <Navigation />
       
-      <main className="flex-grow pt-32">
+      <main className="flex-grow pt-20">
         {/* Hero Section */}
-        <section className="py-16 md:py-24 bg-gradient-to-br from-hayas-50 to-turquesa-50">
+        <section className="py-8 md:py-12 bg-gradient-to-br from-hayas-50 to-turquesa-50">
           <div className="container mx-auto px-4">
             <div className="text-center max-w-4xl mx-auto">
               <Badge variant="outline" className="mb-4 text-hayas-600 border-hayas-200">
@@ -98,7 +98,7 @@ const CrmAutomatizaciones = () => {
         </section>
 
         {/* Value Proposition Section */}
-        <section className="py-16 md:py-24 bg-white">
+        <section className="py-8 md:py-12 bg-white">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1">
@@ -171,7 +171,7 @@ const CrmAutomatizaciones = () => {
         </section>
 
         {/* CRM Platforms Section */}
-        <section className="py-16 md:py-24">
+        <section className="py-8 md:py-12">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -205,7 +205,7 @@ const CrmAutomatizaciones = () => {
         </section>
 
         {/* Benefits Section */}
-        <section className="py-16 md:py-24 bg-gradient-to-br from-white to-gray-50">
+        <section className="py-8 md:py-12 bg-gradient-to-br from-white to-gray-50">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -239,7 +239,7 @@ const CrmAutomatizaciones = () => {
         </section>
 
         {/* Features Section */}
-        <section className="py-16 md:py-24">
+        <section className="py-8 md:py-12">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
@@ -274,7 +274,7 @@ const CrmAutomatizaciones = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 md:py-24 bg-gradient-to-br from-hayas-600 to-turquesa text-white">
+        <section className="py-8 md:py-12 bg-gradient-to-br from-hayas-600 to-turquesa text-white">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               ¿Listo para transformar tu gestión de clientes?

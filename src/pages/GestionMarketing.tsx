@@ -14,7 +14,7 @@ const GestionMarketing = () => {
       
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="relative py-16 md:py-24 bg-gradient-to-br from-hayas-50 to-turquesa-50 overflow-hidden">
+        <section className="relative py-8 md:py-12 bg-gradient-to-br from-hayas-50 to-turquesa-50 overflow-hidden">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
@@ -50,7 +50,7 @@ const GestionMarketing = () => {
         </section>
 
         {/* Value Proposition Section */}
-        <section className="py-16 md:py-24 bg-white">
+        <section className="py-8 md:py-12 bg-white">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1">
@@ -122,7 +122,7 @@ const GestionMarketing = () => {
         </section>
 
         {/* Services Section */}
-        <section className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-white">
+        <section className="py-8 md:py-12 bg-gradient-to-br from-gray-50 to-white">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -188,7 +188,7 @@ const GestionMarketing = () => {
         </section>
 
         {/* Process Section */}
-        <section className="py-16 md:py-24 bg-white">
+        <section className="py-8 md:py-12 bg-white">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -235,7 +235,7 @@ const GestionMarketing = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 md:py-24 bg-gradient-to-r from-hayas-600 to-turquesa text-white">
+        <section className="py-8 md:py-12 bg-gradient-to-r from-hayas-600 to-turquesa text-white">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               ¿Listo para una estrategia que genere resultados reales?

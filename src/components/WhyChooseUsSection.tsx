@@ -32,7 +32,7 @@ const reasons = [
 
 const WhyChooseUsSection = () => {
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-8 md:py-12 bg-white">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center lg:items-start gap-12">
           <div className="lg:w-1/2">

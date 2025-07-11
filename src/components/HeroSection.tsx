@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 
 const HeroSection = () => {
   return (
-    <section className="relative py-16 md:py-24 overflow-hidden">
+    <section className="relative py-8 md:py-12 overflow-hidden">
       {/* Círculos decorativos de fondo */}
       <div className="absolute -bottom-24 -left-24 w-64 h-64 rounded-full bg-hayas-100 opacity-20"></div>
       <div className="absolute top-24 -right-24 w-96 h-96 rounded-full bg-turquesa-light opacity-10"></div>

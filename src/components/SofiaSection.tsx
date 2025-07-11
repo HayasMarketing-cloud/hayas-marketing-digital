@@ -48,7 +48,7 @@ const SofiaSection = ({ initialMessage, solutionName }: SofiaSectionProps) => {
   }, [defaultMessage]);
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-br from-hayas-50 to-turquesa-50">
+    <section className="py-8 md:py-12 bg-gradient-to-br from-hayas-50 to-turquesa-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">

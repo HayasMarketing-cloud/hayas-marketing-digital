@@ -74,7 +74,7 @@ const allServices = [
 
 const AllServicesSection = () => {
   return (
-    <section id="todos-servicios" className="py-16 md:py-24 bg-white">
+    <section id="todos-servicios" className="py-8 md:py-12 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Todos Nuestros Servicios</h2>
