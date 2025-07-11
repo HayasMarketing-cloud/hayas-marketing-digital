@@ -148,8 +148,8 @@ const CasoExitoAsendia = () => {
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
                 Resultados <span className="text-gradient-primary">Medibles</span>
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Impacto real en la operación después de la implementación
+              <p className="text-sm text-gray-500 italic max-w-2xl mx-auto">
+                Métricas reales de HubSpot en base a estudios internos de resultados conseguidos para sus clientes B2B.
               </p>
             </div>
 
@@ -169,12 +169,6 @@ const CasoExitoAsendia = () => {
                   </CardContent>
                 </Card>
               ))}
-            </div>
-            
-            <div className="mt-8 text-center">
-              <p className="text-sm text-gray-500 italic">
-                Métricas reales de HubSpot en base a estudios internos de resultados conseguidos para sus clientes B2B.
-              </p>
             </div>
           </div>
         </section>
