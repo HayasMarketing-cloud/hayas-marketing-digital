@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { CheckCircle, Users, Zap, Target, Clock, BarChart3, MessageSquare, Mail } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const crmPlatforms = [
   { name: "HubSpot", logo: "/lovable-uploads/4e3422d2-6a85-4615-8631-c0ed5ccf1b00.png" },
@@ -360,9 +361,17 @@ const CrmAutomatizaciones = () => {
                           <p className="text-sm text-gray-500 mb-4">
                             {caseItem.service}
                           </p>
-                          <Button variant="outline" size="sm" className="w-full">
-                            Ver caso de éxito
-                          </Button>
+                          {caseItem.title === "Asendia" ? (
+                            <Link to="/caso-exito-asendia">
+                              <Button variant="outline" size="sm" className="w-full">
+                                Ver caso de éxito
+                              </Button>
+                            </Link>
+                          ) : (
+                            <Button variant="outline" size="sm" className="w-full" disabled>
+                              Próximamente
+                            </Button>
+                          )}
                         </div>
                       </div>
                     </CarouselItem>

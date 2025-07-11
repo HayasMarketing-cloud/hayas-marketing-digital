@@ -10,6 +10,7 @@ import MarketingVisibilidad from "./pages/MarketingVisibilidad";
 import CaptacionLeads from "./pages/CaptacionLeads";
 import GestionMarketing from "./pages/GestionMarketing";
 import SolucionesIA from "./pages/SolucionesIA";
+import CasoExitoAsendia from "./pages/CasoExitoAsendia";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/captacion-leads" element={<CaptacionLeads />} />
           <Route path="/gestion-marketing" element={<GestionMarketing />} />
           <Route path="/soluciones-ia" element={<SolucionesIA />} />
+          <Route path="/caso-exito-asendia" element={<CasoExitoAsendia />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
