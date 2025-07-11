@@ -7,8 +7,8 @@ import { Badge } from '@/components/ui/badge';
 import { CheckCircle, Users, Zap, Target, Clock, BarChart3, MessageSquare, Mail } from 'lucide-react';
 
 const crmPlatforms = [
-  { name: "HubSpot", logo: "https://hayasmarketing.com/wp-content/uploads/2024/04/hubspot-1.png" },
-  { name: "Salesforce", logo: "https://hayasmarketing.com/wp-content/uploads/2024/04/salesforce.png" },
+  { name: "HubSpot", logo: "/lovable-uploads/4e3422d2-6a85-4615-8631-c0ed5ccf1b00.png" },
+  { name: "Salesforce", logo: "/lovable-uploads/b07a61c5-c2de-4de9-b7c0-ef3bb40498ed.png" },
   { name: "Go High Level", logo: "/lovable-uploads/e54905f0-0e84-46b4-bc48-4acf987fcb9a.png" },
   { name: "n8n", logo: "/lovable-uploads/d597d918-bb87-477e-8fb1-7d8a7ba41138.png" },
   { name: "Microsoft 365", logo: "https://hayasmarketing.com/wp-content/uploads/2024/04/Microsoft-365.png" },
