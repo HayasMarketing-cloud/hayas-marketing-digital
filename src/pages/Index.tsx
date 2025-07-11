@@ -12,10 +12,10 @@ import Footer from '@/components/Footer';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div id="top" className="min-h-screen flex flex-col">
       <Navigation />
       
-      <main className="flex-grow pt-20">  {/* Reduced padding for tighter layout */}
+      <main className="flex-grow pt-24">  {/* Increased padding to account for large header */}
         <HeroSection />
         <SofiaSection />
         <SolutionsSection />
