@@ -73,14 +73,14 @@ const resultsData = [
 
 const CasoExitoAsendia = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div id="top" className="min-h-screen flex flex-col">
       <Navigation />
       
       <main className="flex-grow pt-20">
         {/* Header Navigation */}
         <section className="py-6 bg-gray-50">
           <div className="container mx-auto px-4">
-            <Link to="/crm-automatizaciones" className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors">
+            <Link to="/crm-automatizaciones#top" className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors">
               <ArrowLeft className="h-4 w-4 mr-2" />
               Volver a CRM y Automatizaciones
             </Link>

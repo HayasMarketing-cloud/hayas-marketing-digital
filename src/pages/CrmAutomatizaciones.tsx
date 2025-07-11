@@ -114,7 +114,7 @@ const successCases = [
 
 const CrmAutomatizaciones = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div id="top" className="min-h-screen flex flex-col">
       <Navigation />
       
       <main className="flex-grow pt-20">
@@ -362,7 +362,7 @@ const CrmAutomatizaciones = () => {
                             {caseItem.service}
                           </p>
                           {caseItem.title === "Asendia" ? (
-                            <Link to="/caso-exito-asendia">
+                            <Link to="/caso-exito-asendia#top">
                               <Button variant="outline" size="sm" className="w-full">
                                 Ver caso de éxito
                               </Button>
