@@ -9,66 +9,66 @@ import { Link } from 'react-router-dom';
 
 const metrics = [
   {
-    number: "250%",
-    label: "Incremento en ventas internacionales",
-    description: "Expansión a nuevos mercados"
+    number: "180%",
+    label: "Incremento en clientes B2B",
+    description: "Nuevos managers de e-commerce captados"
   },
   {
-    number: "78%",
-    label: "Reducción en tiempo de entrega",
-    description: "Optimización de rutas globales"
+    number: "65%",
+    label: "Reducción en tiempo de onboarding",
+    description: "Proceso automatizado para nuevos clientes"
   },
   {
-    number: "95%",
-    label: "Satisfacción del cliente",
-    description: "Experiencia de compra mejorada"
+    number: "92%",
+    label: "Retención de clientes B2B",
+    description: "Managers satisfechos con el servicio"
   },
   {
-    number: "40%",
-    label: "Reducción de costos logísticos",
-    description: "Eficiencia en envíos internacionales"
+    number: "45%",
+    label: "Incremento en revenue por cliente",
+    description: "Mayor valor por manager de e-commerce"
   }
 ];
 
 const challenges = [
-  "Complejidad en envíos internacionales de e-commerce",
-  "Falta de visibilidad en aduanas y procesos fronterizos",
-  "Gestión manual de múltiples marketplace internacionales",
-  "Costos elevados y tiempos de entrega impredecibles",
-  "Experiencia de compra inconsistente entre países"
+  "Dificultad para atraer y retener managers de e-commerce",
+  "Proceso manual de onboarding de nuevos clientes B2B",
+  "Falta de seguimiento automatizado de oportunidades comerciales",
+  "Comunicación fragmentada con equipos de e-commerce",
+  "Reportes manuales para demostrar ROI a clientes B2B"
 ];
 
 const solutions = [
   {
     icon: <Target className="h-6 w-6" />,
-    title: "Plataforma CRM Unificada",
-    description: "Implementación de HubSpot para centralizar la gestión de clientes e-commerce, marketplace internacionales y tracking global."
+    title: "CRM B2B Especializado",
+    description: "Implementación de HubSpot configurado específicamente para gestionar leads y clientes managers de e-commerce."
   },
   {
     icon: <Zap className="h-6 w-6" />,
-    title: "Automatización E-commerce",
-    description: "Workflows automáticos para gestión de pedidos internacionales, notificaciones de aduanas y actualizaciones de entrega."
+    title: "Automatización de Sales",
+    description: "Workflows automáticos para nurturing de managers de e-commerce, desde lead hasta cliente recurrente."
   },
   {
     icon: <BarChart3 className="h-6 w-6" />,
-    title: "Analytics Transfronterizo",
-    description: "Dashboards específicos para monitoreo de conversiones por país, costos de envío y satisfacción del comprador global."
+    title: "Reporting Automatizado",
+    description: "Dashboards para demostrar ROI a clientes B2B y métricas de rendimiento para el equipo comercial."
   },
   {
     icon: <Users className="h-6 w-6" />,
-    title: "Integración Marketplace",
-    description: "Conexión automatizada con Amazon, eBay, Alibaba y marketplaces locales para gestión centralizada de inventario."
+    title: "Onboarding Automatizado",
+    description: "Proceso sistemático para integrar nuevos managers de e-commerce de manera eficiente y escalable."
   }
 ];
 
 const resultsData = [
-  "Integración completa con principales marketplaces internacionales",
-  "Automatización del proceso de despacho aduanero",
-  "Sistema de tracking unificado para compradores globales",
-  "Optimización de rutas de entrega por país y región",
-  "Reducción significativa en devoluciones y reclamos",
-  "Incremento en la retención de clientes e-commerce",
-  "Mejora en los tiempos de resolución de incidencias internacionales"
+  "Automatización completa del pipeline comercial B2B",
+  "Sistema de lead scoring para managers de e-commerce",
+  "Onboarding automatizado para nuevos clientes",
+  "Reportes automáticos de ROI para demostrar valor",
+  "Seguimiento personalizado por vertical de e-commerce",
+  "Incremento en la conversión de leads a clientes",
+  "Reducción significativa en el ciclo de ventas B2B"
 ];
 
 const CasoExitoAsendia = () => {
@@ -99,7 +99,7 @@ const CasoExitoAsendia = () => {
                   <span className="text-gradient-primary">Asendia</span>
                 </h1>
                 <p className="text-xl text-gray-700 mb-6">
-                  Soluciones de comercio electrónico transfronterizo que enamoran a compradores de todo el mundo
+                  Soluciones logísticas que empoderan a managers de e-commerce para expandirse globalmente
                 </p>
                 
                 <div className="space-y-3 mb-8">
@@ -182,10 +182,10 @@ const CasoExitoAsendia = () => {
                   El <span className="text-gradient-primary">Desafío</span>
                 </h2>
                 <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                  Como proveedor de soluciones de e-commerce transfronterizo, Asendia enfrentaba 
-                  desafíos complejos para ayudar a sus clientes a expandirse internacionalmente. 
-                  La gestión manual y falta de automatización limitaba su capacidad de ofrecer 
-                  una experiencia de compra excepcional a nivel global.
+                  Como proveedor de soluciones logísticas para e-commerce, Asendia necesitaba 
+                  optimizar su estrategia comercial B2B para atraer y retener managers de e-commerce. 
+                  La gestión manual de leads y la falta de automatización limitaba su crecimiento 
+                  y la capacidad de demostrar valor a sus clientes potenciales.
                 </p>
                 
                 <div className="space-y-4">
@@ -263,9 +263,9 @@ const CasoExitoAsendia = () => {
                   <span className="text-gradient-primary">Resultados</span> Alcanzados
                 </h2>
                 <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                  La implementación de nuestro sistema CRM y automatización ha revolucionado 
-                  las capacidades de e-commerce transfronterizo de Asendia, permitiendo a sus 
-                  clientes expandirse globalmente con una experiencia de compra excepcional.
+                  La implementación de nuestro sistema CRM y automatización ha transformado 
+                  completamente la estrategia comercial B2B de Asendia, permitiendo atraer, 
+                  nutrir y retener managers de e-commerce de manera sistemática y escalable.
                 </p>
                 
                 <div className="space-y-4">
@@ -287,9 +287,9 @@ const CasoExitoAsendia = () => {
             <div className="max-w-4xl mx-auto text-center">
               <Quote className="h-12 w-12 text-hayas-400 mx-auto mb-6" />
               <blockquote className="text-2xl md:text-3xl font-medium text-gray-900 mb-8 leading-relaxed">
-                "Gracias a la implementación del CRM, ahora podemos ofrecer a nuestros clientes 
-                de e-commerce una expansión internacional sin complicaciones. Los compradores 
-                de todo el mundo disfrutan de una experiencia de compra excepcional y trazable."
+                "El CRM implementado ha transformado completamente nuestra estrategia comercial B2B. 
+                Ahora podemos identificar, nutrir y convertir managers de e-commerce de manera 
+                sistemática, demostrando valor desde el primer contacto."
               </blockquote>
               <div className="flex items-center justify-center gap-4">
                 <img 
@@ -310,12 +310,12 @@ const CasoExitoAsendia = () => {
         <section className="py-16 bg-gradient-to-br from-hayas-600 to-turquesa text-white">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              ¿Listo para expandir tu e-commerce a nivel mundial?
+              ¿Listo para optimizar tu estrategia comercial B2B?
             </h2>
             <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">
               Obtén los mismos resultados que Asendia. Agenda una consulta gratuita 
-              y descubre cómo podemos ayudarte a ofrecer soluciones de e-commerce 
-              transfronterizo que enamoren a compradores de todo el mundo.
+              y descubre cómo podemos ayudarte a atraer y retener managers de e-commerce 
+              con un CRM y automatización diseñados para tu sector.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="secondary" className="py-6 px-8 text-lg font-medium">
