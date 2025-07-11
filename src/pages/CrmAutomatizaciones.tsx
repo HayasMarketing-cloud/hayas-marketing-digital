@@ -11,8 +11,11 @@ const crmPlatforms = [
   { name: "Salesforce", logo: "/lovable-uploads/f1127ebc-9bab-490e-8355-de81e13c2f93.png" },
   { name: "Go High Level", logo: "/lovable-uploads/e54905f0-0e84-46b4-bc48-4acf987fcb9a.png" },
   { name: "n8n", logo: "/lovable-uploads/d597d918-bb87-477e-8fb1-7d8a7ba41138.png" },
-  { name: "Microsoft 365", logo: "https://hayasmarketing.com/wp-content/uploads/2024/04/Microsoft-365.png" },
-  { name: "Make", logo: "/lovable-uploads/0880428f-0389-4460-a25a-c8ded29bc6de.png" }
+  { name: "Botpress", logo: "/lovable-uploads/01333c02-039e-4e5c-a08f-d3db20e1e7a8.png" },
+  { name: "Make", logo: "/lovable-uploads/0880428f-0389-4460-a25a-c8ded29bc6de.png" },
+  { name: "OpenAI", logo: "/lovable-uploads/e38029c3-0b86-40ab-9262-21d4d0516c2e.png" },
+  { name: "Gemini", logo: "/lovable-uploads/37a206e4-890d-4d31-a1c4-7dc674fe47a4.png" },
+  { name: "Claude", logo: "/lovable-uploads/523cad5a-116d-41e6-b169-599c84a7f8cf.png" }
 ];
 
 const benefits = [
@@ -105,7 +108,7 @@ const CrmAutomatizaciones = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-3 gap-8 mb-12">
+            <div className="grid grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto">
               {crmPlatforms.map((platform, index) => (
                 <div key={index} className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                   <img 
