@@ -10,10 +10,10 @@ const crmPlatforms = [
   { name: "HubSpot", logo: "https://hayasmarketing.com/wp-content/uploads/2024/04/hubspot-1.png" },
   { name: "Salesforce", logo: "https://hayasmarketing.com/wp-content/uploads/2024/04/salesforce.png" },
   { name: "Zoho", logo: "https://hayasmarketing.com/wp-content/uploads/2024/04/zoho.png" },
-  { name: "Brevo", logo: "https://hayasmarketing.com/wp-content/uploads/2024/04/brevo.png" },
-  { name: "Clientify", logo: "https://hayasmarketing.com/wp-content/uploads/2024/04/clientify.png" },
+  { name: "Go High Level", logo: "/lovable-uploads/e54905f0-0e84-46b4-bc48-4acf987fcb9a.png" },
+  { name: "n8n", logo: "/lovable-uploads/d597d918-bb87-477e-8fb1-7d8a7ba41138.png" },
   { name: "Microsoft 365", logo: "https://hayasmarketing.com/wp-content/uploads/2024/04/Microsoft-365.png" },
-  { name: "Zapier", logo: "https://hayasmarketing.com/wp-content/uploads/2024/04/zapier-2.png" },
+  { name: "Make", logo: "/lovable-uploads/0880428f-0389-4460-a25a-c8ded29bc6de.png" },
   { name: "WhatsApp", logo: "https://hayasmarketing.com/wp-content/uploads/2024/04/whatsapp.png" }
 ];
 
