@@ -1,7 +1,6 @@
 import React from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import SofiaSection from '../components/SofiaSection';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -327,10 +326,6 @@ const CasoExitoAsendia = () => {
         </section>
       </main>
       
-      <SofiaSection 
-        solutionName="Caso de Éxito - Asendia"
-        initialMessage="¡Hola! Has visto el caso de éxito de Asendia. Como empresa logística, implementamos HubSpot para centralizar operaciones, automatizar seguimiento de envíos y crear dashboards en tiempo real. ¿Te interesa conocer más detalles sobre cómo logramos reducir 45% el tiempo de gestión? ¿O prefieres que te explique cómo podríamos adaptar esta solución a tu empresa?"
-      />
       <Footer />
     </div>
   );
