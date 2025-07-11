@@ -9,12 +9,10 @@ import { CheckCircle, Users, Zap, Target, Clock, BarChart3, MessageSquare, Mail 
 const crmPlatforms = [
   { name: "HubSpot", logo: "https://hayasmarketing.com/wp-content/uploads/2024/04/hubspot-1.png" },
   { name: "Salesforce", logo: "https://hayasmarketing.com/wp-content/uploads/2024/04/salesforce.png" },
-  { name: "Zoho", logo: "https://hayasmarketing.com/wp-content/uploads/2024/04/zoho.png" },
   { name: "Go High Level", logo: "/lovable-uploads/e54905f0-0e84-46b4-bc48-4acf987fcb9a.png" },
   { name: "n8n", logo: "/lovable-uploads/d597d918-bb87-477e-8fb1-7d8a7ba41138.png" },
   { name: "Microsoft 365", logo: "https://hayasmarketing.com/wp-content/uploads/2024/04/Microsoft-365.png" },
-  { name: "Make", logo: "/lovable-uploads/0880428f-0389-4460-a25a-c8ded29bc6de.png" },
-  { name: "WhatsApp", logo: "https://hayasmarketing.com/wp-content/uploads/2024/04/whatsapp.png" }
+  { name: "Make", logo: "/lovable-uploads/0880428f-0389-4460-a25a-c8ded29bc6de.png" }
 ];
 
 const benefits = [
@@ -107,7 +105,7 @@ const CrmAutomatizaciones = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-8 mb-12">
+            <div className="grid grid-cols-3 gap-8 mb-12">
               {crmPlatforms.map((platform, index) => (
                 <div key={index} className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                   <img 
