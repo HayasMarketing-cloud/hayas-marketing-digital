@@ -8,7 +8,7 @@ import { CheckCircle, Users, Zap, Target, Clock, BarChart3, MessageSquare, Mail 
 
 const crmPlatforms = [
   { name: "HubSpot", logo: "/lovable-uploads/4e3422d2-6a85-4615-8631-c0ed5ccf1b00.png" },
-  { name: "Salesforce", logo: "/lovable-uploads/f1127ebc-9bab-490e-8355-de81e13c2f93.png" },
+  { name: "Salesforce", logo: "/lovable-uploads/564421eb-e67c-4075-95c0-1405855106cc.png" },
   { name: "Go High Level", logo: "/lovable-uploads/e54905f0-0e84-46b4-bc48-4acf987fcb9a.png" },
   { name: "n8n", logo: "/lovable-uploads/d597d918-bb87-477e-8fb1-7d8a7ba41138.png" },
   { name: "Botpress", logo: "/lovable-uploads/01333c02-039e-4e5c-a08f-d3db20e1e7a8.png" },
