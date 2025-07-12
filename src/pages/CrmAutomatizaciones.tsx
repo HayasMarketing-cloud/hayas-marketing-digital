@@ -329,6 +329,146 @@ const CrmAutomatizaciones = () => {
           </div>
         </section>
 
+        {/* Services Section */}
+        <section className="py-16 bg-gradient-to-br from-hayas-50 to-turquesa-50">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Nuestros <span className="text-gradient-primary">Servicios</span> de CRM y Automatización
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Soluciones integrales que abarcan desde la implementación hasta la optimización continua de tu estrategia
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Service 1 */}
+              <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <CardHeader className="pb-4">
+                  <div className="mb-4 p-3 rounded-lg bg-hayas-100 w-fit text-hayas-600">
+                    <Users className="h-6 w-6" />
+                  </div>
+                  <CardTitle className="text-xl font-bold">
+                    Implantación de CRM
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600 leading-relaxed mb-4">
+                    Análisis de necesidades y personalización completa de plataforma y sistema de marketing y ventas adaptado a tu negocio.
+                  </p>
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-500" />
+                      <span className="text-sm text-gray-600">Análisis de necesidades específicas</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-500" />
+                      <span className="text-sm text-gray-600">Personalización de plataforma</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-500" />
+                      <span className="text-sm text-gray-600">Integración marketing y ventas</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Service 2 */}
+              <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <CardHeader className="pb-4">
+                  <div className="mb-4 p-3 rounded-lg bg-turquesa-100 w-fit text-turquesa-600">
+                    <Mail className="h-6 w-6" />
+                  </div>
+                  <CardTitle className="text-xl font-bold">
+                    Campañas Inbound Marketing
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600 leading-relaxed mb-4">
+                    Creación de contenidos como ebooks, guías y activos digitales, conectados con landing pages, formularios, blog posts y dashboards de campaña.
+                  </p>
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-500" />
+                      <span className="text-sm text-gray-600">Ebooks y guías especializadas</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-500" />
+                      <span className="text-sm text-gray-600">Landing pages optimizadas</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-500" />
+                      <span className="text-sm text-gray-600">Dashboards de seguimiento</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Service 3 */}
+              <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <CardHeader className="pb-4">
+                  <div className="mb-4 p-3 rounded-lg bg-hayas-100 w-fit text-hayas-600">
+                    <Target className="h-6 w-6" />
+                  </div>
+                  <CardTitle className="text-xl font-bold">
+                    Captación de Leads y Clientes
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600 leading-relaxed mb-4">
+                    Estrategia y diseño de funnel, lead nurturing y email marketing con asistentes conversacionales de IA.
+                  </p>
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-500" />
+                      <span className="text-sm text-gray-600">Diseño de funnels estratégicos</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-500" />
+                      <span className="text-sm text-gray-600">Lead nurturing automatizado</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-500" />
+                      <span className="text-sm text-gray-600">Asistentes IA conversacionales</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Service 4 */}
+              <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <CardHeader className="pb-4">
+                  <div className="mb-4 p-3 rounded-lg bg-turquesa-100 w-fit text-turquesa-600">
+                    <Zap className="h-6 w-6" />
+                  </div>
+                  <CardTitle className="text-xl font-bold">
+                    Automatización de Procesos de Ventas
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600 leading-relaxed mb-4">
+                    Diseño de funnels, pipeline de ventas, integración activos marketing con ventas y dashboard de atribución de clientes y estrategia de ventas.
+                  </p>
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-500" />
+                      <span className="text-sm text-gray-600">Pipeline de ventas optimizado</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-500" />
+                      <span className="text-sm text-gray-600">Integración marketing-ventas</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-500" />
+                      <span className="text-sm text-gray-600">Dashboard de atribución</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
         {/* Success Cases Section */}
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
