@@ -370,6 +370,13 @@ const CrmAutomatizaciones = () => {
                       <span className="text-sm text-gray-600">Integración marketing y ventas</span>
                     </div>
                   </div>
+                  <div className="mt-6">
+                    <Link to="/implantacion-crm#top">
+                      <Button variant="outline" className="w-full">
+                        Conocer Servicio en Detalle
+                      </Button>
+                    </Link>
+                  </div>
                 </CardContent>
               </Card>
 
@@ -400,6 +407,13 @@ const CrmAutomatizaciones = () => {
                       <CheckCircle className="h-4 w-4 text-green-500" />
                       <span className="text-sm text-gray-600">Dashboards de seguimiento</span>
                     </div>
+                  </div>
+                  <div className="mt-6">
+                    <Link to="/campanas-inbound-marketing#top">
+                      <Button variant="outline" className="w-full">
+                        Conocer Servicio en Detalle
+                      </Button>
+                    </Link>
                   </div>
                 </CardContent>
               </Card>
@@ -432,6 +446,13 @@ const CrmAutomatizaciones = () => {
                       <span className="text-sm text-gray-600">Asistentes IA conversacionales</span>
                     </div>
                   </div>
+                  <div className="mt-6">
+                    <Link to="/captacion-leads-clientes#top">
+                      <Button variant="outline" className="w-full">
+                        Conocer Servicio en Detalle
+                      </Button>
+                    </Link>
+                  </div>
                 </CardContent>
               </Card>
 
@@ -462,6 +483,13 @@ const CrmAutomatizaciones = () => {
                       <CheckCircle className="h-4 w-4 text-green-500" />
                       <span className="text-sm text-gray-600">Dashboard de atribución</span>
                     </div>
+                  </div>
+                  <div className="mt-6">
+                    <Link to="/automatizacion-procesos-ventas#top">
+                      <Button variant="outline" className="w-full">
+                        Conocer Servicio en Detalle
+                      </Button>
+                    </Link>
                   </div>
                 </CardContent>
               </Card>
