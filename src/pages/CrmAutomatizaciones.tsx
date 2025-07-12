@@ -265,7 +265,7 @@ const CrmAutomatizaciones = () => {
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                ¿Por qué elegir nuestras <span className="text-gradient-primary">soluciones CRM</span>?
+                Elegir una plataforma <span className="text-gradient-primary">CRM adaptada</span> a tus necesidades y evolutiva
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
                 Transformamos la gestión de tus clientes con tecnología avanzada y estrategias probadas
