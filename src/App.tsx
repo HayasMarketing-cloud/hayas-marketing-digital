@@ -11,6 +11,7 @@ import CaptacionLeads from "./pages/CaptacionLeads";
 import GestionMarketing from "./pages/GestionMarketing";
 import SolucionesIA from "./pages/SolucionesIA";
 import CasoExitoAsendia from "./pages/CasoExitoAsendia";
+import ImplantacionCrm from "./pages/ImplantacionCrm";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,7 +30,7 @@ const App = () => (
           <Route path="/captacion-leads" element={<CaptacionLeads />} />
           <Route path="/gestion-marketing" element={<GestionMarketing />} />
           <Route path="/soluciones-ia" element={<SolucionesIA />} />
-          <Route path="/implantacion-crm" element={<NotFound />} />
+          <Route path="/implantacion-crm" element={<ImplantacionCrm />} />
           <Route path="/campanas-inbound-marketing" element={<NotFound />} />
           <Route path="/captacion-leads-clientes" element={<NotFound />} />
           <Route path="/automatizacion-procesos-ventas" element={<NotFound />} />
