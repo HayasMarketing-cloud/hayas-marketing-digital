@@ -23,7 +23,7 @@ const SofiaSection = ({ initialMessage, solutionName }: SofiaSectionProps) => {
         },
         render: {
           mode: 'embedded',
-          target: document.getElementById('sofia-chat-container')
+          target: document.getElementById('voiceflow-chat-widget')
         },
         launch: {
           event: {
@@ -93,7 +93,7 @@ const SofiaSection = ({ initialMessage, solutionName }: SofiaSectionProps) => {
               
               {/* Voiceflow Chat Container */}
               <div 
-                id="sofia-chat-container" 
+                id="voiceflow-chat-widget" 
                 className="min-h-[400px] w-full"
                 style={{ height: '500px' }}
               ></div>
