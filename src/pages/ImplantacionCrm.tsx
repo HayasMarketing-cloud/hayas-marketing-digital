@@ -187,7 +187,7 @@ const ImplantacionCrm = () => {
                       </li>
                     </ul>
                   </div>
-                  <Link to="/#contacto">
+                  <Link to="/?scrollTo=contacto">
                     <Button className="w-full" size="lg">
                       Solicitar Implantación B2B
                       <ArrowRight className="w-4 h-4 ml-2" />
@@ -253,7 +253,7 @@ const ImplantacionCrm = () => {
                       </li>
                     </ul>
                   </div>
-                  <Link to="/#contacto">
+                  <Link to="/?scrollTo=contacto">
                     <Button variant="secondary" className="w-full" size="lg">
                       Solicitar Implantación B2C
                       <ArrowRight className="w-4 h-4 ml-2" />
