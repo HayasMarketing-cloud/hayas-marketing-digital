@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -186,10 +187,12 @@ const ImplantacionCrm = () => {
                       </li>
                     </ul>
                   </div>
-                  <Button className="w-full" size="lg">
-                    Solicitar Implantación B2B
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </Button>
+                  <Link to="/#contacto">
+                    <Button className="w-full" size="lg">
+                      Solicitar Implantación B2B
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
 
@@ -250,10 +253,12 @@ const ImplantacionCrm = () => {
                       </li>
                     </ul>
                   </div>
-                  <Button variant="secondary" className="w-full" size="lg">
-                    Solicitar Implantación B2C
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </Button>
+                  <Link to="/#contacto">
+                    <Button variant="secondary" className="w-full" size="lg">
+                      Solicitar Implantación B2C
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             </div>
