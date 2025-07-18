@@ -6,7 +6,15 @@ import FAQSection from '@/components/FAQSection';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Building2, Users, CheckCircle, ArrowRight, Settings, Target, Mail, Zap } from 'lucide-react';
+import { Building2, Users, CheckCircle, ArrowRight, Settings, Target, Mail, Zap, ArrowLeft } from 'lucide-react';
+import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbSeparator,
+  BreadcrumbPage,
+} from '@/components/ui/breadcrumb';
 
 const ImplantacionCrm = () => {
   const beneficios = [
@@ -48,7 +56,35 @@ const ImplantacionCrm = () => {
     <div className="min-h-screen flex flex-col">
       <Navigation />
       
-      <main className="flex-grow pt-24">
+      <main className="flex-grow pt-56">
+        {/* Breadcrumbs */}
+        <section className="py-4 bg-gray-50 border-b">
+          <div className="container mx-auto px-4">
+            <Breadcrumb>
+              <BreadcrumbList>
+                <BreadcrumbItem>
+                  <BreadcrumbLink asChild>
+                    <Link to="/">Inicio</Link>
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbPage>Implantación de CRM</BreadcrumbPage>
+                </BreadcrumbItem>
+              </BreadcrumbList>
+            </Breadcrumb>
+          </div>
+        </section>
+
+        {/* Header Navigation */}
+        <section className="py-6 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <Link to="/#top" className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors">
+              <ArrowLeft className="h-4 w-4 mr-2" />
+              Volver al Inicio
+            </Link>
+          </div>
+        </section>
         {/* Hero Section */}
         <section className="py-20 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
