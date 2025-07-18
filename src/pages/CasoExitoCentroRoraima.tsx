@@ -20,7 +20,7 @@ const CasoExitoCentroRoraima = () => {
     <div id="top" className="min-h-screen bg-white">
       <Navigation />
       
-      <main className="pt-24">
+      <main className="pt-56">
         {/* Breadcrumbs */}
         <section className="py-4 bg-gray-50 border-b">
           <div className="container mx-auto px-4">
