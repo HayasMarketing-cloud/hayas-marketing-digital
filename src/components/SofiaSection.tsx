@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { MessageCircle, X, Minimize2 } from 'lucide-react';
+import { X, Minimize2 } from 'lucide-react';
 
 const getPageMessage = (pathname: string) => {
   const messages: { [key: string]: string } = {
@@ -17,9 +17,26 @@ const getPageMessage = (pathname: string) => {
   return messages[pathname] || '¡Hola! Soy SofÍA, tu asistente de IA de Hayas Marketing. ¿En qué puedo ayudarte?';
 };
 
+const getPageHelpMessage = (pathname: string) => {
+  const helpMessages: { [key: string]: string } = {
+    '/': '¿Te ayudo a encontrar la solución perfecta para tu negocio?',
+    '/creacion-marca': '¿Necesitas ayuda para crear una marca que conecte con tu audiencia?',
+    '/marketing-visibilidad': '¿Quieres descubrir cómo aumentar tu visibilidad online?',
+    '/crm-automatizaciones': '¿Te gustaría automatizar tu proceso de ventas?',
+    '/captacion-leads': '¿Buscas generar más leads cualificados para tu negocio?',
+    '/gestion-marketing': '¿Necesitas una estrategia de marketing integral?',
+    '/soluciones-ia': '¿Quieres implementar IA en tu estrategia de marketing?',
+    '/implantacion-crm': '¿Te ayudo con la configuración de tu CRM?'
+  };
+  
+  return helpMessages[pathname] || '¿Te ayudo con alguna información sobre nuestros servicios?';
+};
+
 const SofiaWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
+  const [showHelpMessage, setShowHelpMessage] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -66,9 +83,32 @@ const SofiaWidget = () => {
     }
   }, [isOpen, isMinimized, location.pathname]);
 
+  // Scroll detection
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrolled = window.scrollY > 300;
+      setHasScrolled(scrolled);
+      
+      // Show help message after scrolling and delay
+      if (scrolled && !isOpen && !hasScrolled) {
+        setTimeout(() => {
+          setShowHelpMessage(true);
+          // Auto hide help message after 5 seconds
+          setTimeout(() => {
+            setShowHelpMessage(false);
+          }, 5000);
+        }, 2000);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [isOpen, hasScrolled]);
+
   const handleToggleChat = () => {
     setIsOpen(!isOpen);
     setIsMinimized(false);
+    setShowHelpMessage(false);
   };
 
   const handleMinimize = () => {
@@ -78,19 +118,54 @@ const SofiaWidget = () => {
   const handleClose = () => {
     setIsOpen(false);
     setIsMinimized(false);
+    setShowHelpMessage(false);
   };
 
   return (
     <>
+      {/* Help Message Tooltip */}
+      {showHelpMessage && !isOpen && (
+        <div className="fixed bottom-24 right-6 z-40 bg-white rounded-2xl shadow-xl border border-gray-200 p-4 max-w-xs animate-fade-in">
+          <div className="flex items-start gap-3">
+            <img 
+              src="/lovable-uploads/2a2adcf5-d531-4d8c-91bd-bb12aac27976.png" 
+              alt="SofÍA" 
+              className="w-10 h-10 rounded-full object-cover flex-shrink-0"
+            />
+            <div className="flex-1">
+              <p className="text-sm font-medium text-gray-900 mb-1">SofÍA</p>
+              <p className="text-sm text-gray-700">{getPageHelpMessage(location.pathname)}</p>
+              <button
+                onClick={handleToggleChat}
+                className="mt-2 text-xs bg-gradient-to-r from-hayas-600 to-turquesa text-white px-3 py-1 rounded-full hover:opacity-90 transition-opacity"
+              >
+                Hablemos
+              </button>
+            </div>
+            <button
+              onClick={() => setShowHelpMessage(false)}
+              className="text-gray-400 hover:text-gray-600 p-1"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          </div>
+          <div className="absolute bottom-0 right-8 transform translate-y-1/2 rotate-45 w-3 h-3 bg-white border-r border-b border-gray-200"></div>
+        </div>
+      )}
+
       {/* Floating Button */}
       {!isOpen && (
         <button
           onClick={handleToggleChat}
-          className="fixed bottom-6 right-6 z-50 w-16 h-16 bg-gradient-to-r from-hayas-600 to-turquesa rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group"
+          className="fixed bottom-6 right-6 z-50 w-16 h-16 bg-gradient-to-r from-hayas-600 to-turquesa rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group overflow-hidden"
           aria-label="Abrir chat con SofÍA"
         >
           <div className="relative w-full h-full flex items-center justify-center">
-            <MessageCircle className="w-7 h-7 text-white" />
+            <img 
+              src="/lovable-uploads/2a2adcf5-d531-4d8c-91bd-bb12aac27976.png" 
+              alt="SofÍA" 
+              className="w-12 h-12 rounded-full object-cover border-2 border-white/20"
+            />
             <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white">
               <div className="absolute inset-0 bg-green-400 rounded-full animate-ping"></div>
             </div>
