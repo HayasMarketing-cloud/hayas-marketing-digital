@@ -53,9 +53,11 @@ const CreacionMarca = () => {
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </Button>
                   </Link>
-                  <Button variant="outline" className="px-8 py-6 text-lg">
-                    Ver casos de éxito
-                  </Button>
+                  <a href="#casos-exito">
+                    <Button variant="outline" className="px-8 py-6 text-lg">
+                      Ver casos de éxito
+                    </Button>
+                  </a>
                 </div>
               </div>
               <div className="relative">
