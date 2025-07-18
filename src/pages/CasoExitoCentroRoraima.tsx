@@ -168,37 +168,23 @@ const CasoExitoCentroRoraima = () => {
                 Resultados y <span className="text-gradient-primary">Beneficios</span>
               </h2>
               
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                <Card className="text-center border-none shadow-lg">
-                  <CardContent className="p-6">
-                    <div className="text-3xl font-bold text-hayas-600 mb-2">+150%</div>
-                    <p className="text-gray-600">Aumento en consultas médicas</p>
-                  </CardContent>
-                </Card>
-                <Card className="text-center border-none shadow-lg">
-                  <CardContent className="p-6">
-                    <div className="text-3xl font-bold text-turquesa-600 mb-2">+90%</div>
-                    <p className="text-gray-600">Incremento en nuevos pacientes</p>
-                  </CardContent>
-                </Card>
-                <Card className="text-center border-none shadow-lg">
-                  <CardContent className="p-6">
-                    <div className="text-3xl font-bold text-hayas-600 mb-2">TOP 3</div>
-                    <p className="text-gray-600">Posicionamiento en salud mental local</p>
-                  </CardContent>
-                </Card>
-              </div>
-
               <Card className="border-none shadow-lg bg-gradient-to-br from-hayas-50 to-turquesa-50">
                 <CardContent className="p-8">
-                  <blockquote className="text-lg italic text-gray-700 mb-4 text-center">
-                    "La nueva identidad de marca nos ha posicionado como el centro de salud mental de referencia 
-                    en la zona. Los pacientes nos encuentran fácilmente y confían en nuestro enfoque médico desde 
-                    el primer contacto. Hemos logrado transmitir nuestra especialización sin perder la calidez humana."
-                  </blockquote>
-                  <div className="text-center">
-                    <p className="font-semibold text-hayas-600">- Dirección del Centro Roraima</p>
-                  </div>
+                  <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                    El trabajo con <strong>Centro Roraima</strong> ha permitido transformar su presencia profesional desde cero. 
+                    Partiendo de una situación sin activos digitales previos, hemos diseñado una identidad clara y una web 
+                    estratégica que comunican con coherencia su propuesta de valor especializada en salud mental.
+                  </p>
+                  <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                    Además de los entregables visuales, el cliente ha recibido recursos, formación y herramientas prácticas 
+                    para avanzar con autonomía en la gestión de sus contenidos y su comunicación online especializada en 
+                    el sector sanitario.
+                  </p>
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    Este proyecto sienta una base sólida para futuras acciones de posicionamiento, captación o crecimiento, 
+                    y alinea imagen, mensaje y experiencia de marca con sus valores profesionales y objetivos como centro 
+                    de atención integral en salud mental.
+                  </p>
                 </CardContent>
               </Card>
             </div>
