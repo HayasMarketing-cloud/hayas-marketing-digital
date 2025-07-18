@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowLeft, Heart, TrendingUp, Award, ExternalLink, CheckCircle, BookOpen } from 'lucide-react';
+import { ArrowLeft, Heart, TrendingUp, Award, ExternalLink, CheckCircle, BookOpen, Target, Users, Lightbulb } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -168,23 +168,68 @@ const CasoExitoCentroRoraima = () => {
                 Resultados y <span className="text-gradient-primary">Beneficios</span>
               </h2>
               
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <Card className="border-none shadow-lg text-center hover:shadow-xl transition-all duration-300">
+                  <CardContent className="p-6">
+                    <div className="mb-4 mx-auto p-4 rounded-full bg-hayas-100 w-fit">
+                      <Target className="h-8 w-8 text-hayas-600" />
+                    </div>
+                    <h3 className="text-lg font-semibold mb-2 text-hayas-600">Presencia Digital</h3>
+                    <p className="text-gray-600">Identidad profesional coherente desde cero</p>
+                  </CardContent>
+                </Card>
+                <Card className="border-none shadow-lg text-center hover:shadow-xl transition-all duration-300">
+                  <CardContent className="p-6">
+                    <div className="mb-4 mx-auto p-4 rounded-full bg-turquesa-100 w-fit">
+                      <Users className="h-8 w-8 text-turquesa-600" />
+                    </div>
+                    <h3 className="text-lg font-semibold mb-2 text-turquesa-600">Autonomía Digital</h3>
+                    <p className="text-gray-600">Formación y recursos para gestión independiente</p>
+                  </CardContent>
+                </Card>
+                <Card className="border-none shadow-lg text-center hover:shadow-xl transition-all duration-300">
+                  <CardContent className="p-6">
+                    <div className="mb-4 mx-auto p-4 rounded-full bg-hayas-100 w-fit">
+                      <Lightbulb className="h-8 w-8 text-hayas-600" />
+                    </div>
+                    <h3 className="text-lg font-semibold mb-2 text-hayas-600">Base Estratégica</h3>
+                    <p className="text-gray-600">Fundamentos para crecimiento futuro</p>
+                  </CardContent>
+                </Card>
+              </div>
+
               <Card className="border-none shadow-lg bg-gradient-to-br from-hayas-50 to-turquesa-50">
                 <CardContent className="p-8">
-                  <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                    El trabajo con <strong>Centro Roraima</strong> ha permitido transformar su presencia profesional desde cero. 
-                    Partiendo de una situación sin activos digitales previos, hemos diseñado una identidad clara y una web 
-                    estratégica que comunican con coherencia su propuesta de valor especializada en salud mental.
-                  </p>
-                  <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                    Además de los entregables visuales, el cliente ha recibido recursos, formación y herramientas prácticas 
-                    para avanzar con autonomía en la gestión de sus contenidos y su comunicación online especializada en 
-                    el sector sanitario.
-                  </p>
-                  <p className="text-lg text-gray-700 leading-relaxed">
-                    Este proyecto sienta una base sólida para futuras acciones de posicionamiento, captación o crecimiento, 
-                    y alinea imagen, mensaje y experiencia de marca con sus valores profesionales y objetivos como centro 
-                    de atención integral en salud mental.
-                  </p>
+                  <div className="flex items-start gap-4 mb-6">
+                    <div className="p-3 rounded-lg bg-white shadow-sm">
+                      <CheckCircle className="h-6 w-6 text-hayas-600" />
+                    </div>
+                    <p className="text-lg text-gray-700 leading-relaxed">
+                      El trabajo con <strong>Centro Roraima</strong> ha permitido transformar su presencia profesional desde cero. 
+                      Partiendo de una situación sin activos digitales previos, hemos diseñado una identidad clara y una web 
+                      estratégica que comunican con coherencia su propuesta de valor especializada en salud mental.
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-4 mb-6">
+                    <div className="p-3 rounded-lg bg-white shadow-sm">
+                      <BookOpen className="h-6 w-6 text-turquesa-600" />
+                    </div>
+                    <p className="text-lg text-gray-700 leading-relaxed">
+                      Además de los entregables visuales, el cliente ha recibido recursos, formación y herramientas prácticas 
+                      para avanzar con autonomía en la gestión de sus contenidos y su comunicación online especializada en 
+                      el sector sanitario.
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 rounded-lg bg-white shadow-sm">
+                      <Award className="h-6 w-6 text-hayas-600" />
+                    </div>
+                    <p className="text-lg text-gray-700 leading-relaxed">
+                      Este proyecto sienta una base sólida para futuras acciones de posicionamiento, captación o crecimiento, 
+                      y alinea imagen, mensaje y experiencia de marca con sus valores profesionales y objetivos como centro 
+                      de atención integral en salud mental.
+                    </p>
+                  </div>
                 </CardContent>
               </Card>
             </div>
