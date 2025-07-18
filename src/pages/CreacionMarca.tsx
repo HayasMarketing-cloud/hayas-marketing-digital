@@ -326,47 +326,74 @@ const CreacionMarca = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
               {[
                 {
-                  name: "Crystal Clear Pools",
-                  industry: "Empresa de piscinas",
-                  service: "Branding e Identidad de marca",
-                  image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=2070&auto=format&fit=crop"
+                  name: "Nexo Vital",
+                  industry: "Enfermera especializada en salud integrativa",
+                  service: "Branding, web, estrategia de contenidos",
+                  link: "/caso-exito-nexo-vital",
+                  image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=2071&auto=format&fit=crop"
                 },
                 {
-                  name: "BLU Hotel",
-                  industry: "Hotel Boutique",
-                  service: "Branding e Identidad de marca",
-                  image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop"
+                  name: "I Virgen Extra",
+                  industry: "Consultor ingeniero en AOVE",
+                  service: "Branding, desarrollo web, identidad",
+                  link: "/caso-exito-i-virgen-extra",
+                  image: "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?q=80&w=2069&auto=format&fit=crop"
                 },
                 {
-                  name: "Softlandero",
-                  industry: "Servicios de asesoría legal",
-                  service: "Branding e Identidad de marca",
-                  image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2070&auto=format&fit=crop"
+                  name: "Inbound Students",
+                  industry: "Servicios para estudiantes extranjeros",
+                  service: "Estrategia digital, diseño web",
+                  link: "/caso-exito-inbound-students",
+                  image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop"
                 },
                 {
-                  name: "Tribu Café",
-                  industry: "Empresa de café premium",
-                  service: "Branding y diseño de etiquetas",
-                  image: "https://images.unsplash.com/photo-1442512595331-e89e73853f31?q=80&w=2070&auto=format&fit=crop"
+                  name: "Calisthenia Online",
+                  industry: "Entrenador personal online",
+                  service: "Branding, posicionamiento, automatización",
+                  link: "/caso-exito-calisthenia-online",
+                  image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070&auto=format&fit=crop"
+                },
+                {
+                  name: "Centro Roraima",
+                  industry: "Centro de desarrollo personal",
+                  service: "Branding, diseño web, contenidos",
+                  link: "/caso-exito-centro-roraima",
+                  image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop"
+                },
+                {
+                  name: "Joints'Up",
+                  industry: "Cirujanos traumatólogos",
+                  service: "Naming, branding, diseño web",
+                  link: "/caso-exito-joints-up",
+                  image: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?q=80&w=2069&auto=format&fit=crop"
+                },
+                {
+                  name: "Translate with Style",
+                  industry: "Traductora profesional",
+                  service: "Branding, estrategia, identidad visual",
+                  link: "/caso-exito-translate-with-style",
+                  image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=2070&auto=format&fit=crop"
                 }
               ].map((project, index) => (
-                <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
-                  <div className="aspect-square overflow-hidden">
-                    <img 
-                      src={project.image} 
-                      alt={project.name}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                  <CardContent className="p-6">
-                    <h3 className="text-xl font-bold mb-2">{project.name}</h3>
-                    <p className="text-sm text-gray-500 mb-3">{project.industry}</p>
-                    <p className="text-sm text-gray-600">{project.service}</p>
-                  </CardContent>
-                </Card>
+                <Link key={index} to={project.link}>
+                  <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden cursor-pointer h-full">
+                    <div className="aspect-square overflow-hidden">
+                      <img 
+                        src={project.image} 
+                        alt={project.name}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                    <CardContent className="p-4">
+                      <h3 className="text-lg font-bold mb-2">{project.name}</h3>
+                      <p className="text-sm text-gray-500 mb-3">{project.industry}</p>
+                      <p className="text-sm text-gray-600">{project.service}</p>
+                    </CardContent>
+                  </Card>
+                </Link>
               ))}
             </div>
           </div>
