@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowLeft, Palette, Eye, Target, TrendingUp, Users, Star, Heart, Lightbulb, FileText, Sparkles, CheckCircle, Shield, Globe } from 'lucide-react';
+import { ArrowLeft, Palette, Eye, Target, TrendingUp, Users, Star, Heart, Lightbulb, FileText, Sparkles, CheckCircle, Shield, Globe, MessageSquare, Search, Presentation, Type, ArrowRight } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -32,16 +32,26 @@ const CreacionMarca = () => {
                   Creación de Marca
                 </Badge>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                  Construye una <span className="text-gradient-primary">marca memorable</span> que conecte
+                  Branding e <span className="text-gradient-primary">Identidad de Marca</span>
                 </h1>
-                <p className="text-xl text-gray-700 mb-8 leading-relaxed">
-                  Desarrollamos la identidad visual, naming y posicionamiento estratégico que necesitas 
-                  para destacar en tu mercado y conectar emocionalmente con tu audiencia.
+                <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-gray-700">
+                  Logotipo, Manual de marca y diseño gráfico online e impreso
+                </h2>
+                <p className="text-xl text-gray-700 mb-8 leading-relaxed font-medium">
+                  "Transformamos la presencia de tu marca con una imagen única y profesional que refleje el ADN de tu marca"
+                </p>
+                <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                  Llevamos a cabo el proceso de diseño y creación de tu marca de principio a fin, desde el nombre, 
+                  la creación del logotipo y la entrega de un completo manual de identidad corporativa con los 
+                  parámetros de la comunicación y presentación en diversos formatos de tu marca.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button className="gradient-primary text-white px-8 py-6 text-lg">
-                    Crear mi marca
-                  </Button>
+                  <Link to="/?scrollTo=contacto">
+                    <Button className="gradient-primary text-white px-8 py-6 text-lg w-full sm:w-auto">
+                      Crear mi marca
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </Link>
                   <Button variant="outline" className="px-8 py-6 text-lg">
                     Ver casos de éxito
                   </Button>
@@ -197,6 +207,168 @@ const CreacionMarca = () => {
           </div>
         </section>
 
+        {/* How We Work Section */}
+        <section className="py-12 md:py-16 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                ¿Cómo <span className="text-gradient-primary">trabajamos</span>?
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Nuestro enfoque personalizado garantiza que tu marca refleje auténticamente tu visión y valores empresariales.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {[
+                {
+                  icon: <MessageSquare className="h-12 w-12 text-hayas-600" />,
+                  title: "Briefing",
+                  description: "Comprendemos tus valores, público objetivo, competidores y metas a corto y largo plazo, estableciendo una base sólida."
+                },
+                {
+                  icon: <Lightbulb className="h-12 w-12 text-turquesa-600" />,
+                  title: "Conceptos",
+                  description: "Nuestro equipo creativo trabaja en la generación de ideas, explorando narrativas de marca y elementos visuales para crear una identidad única."
+                },
+                {
+                  icon: <Search className="h-12 w-12 text-hayas-600" />,
+                  title: "Referencias",
+                  description: "Buscamos inspiración en diversas fuentes y compartimos referencias contigo para validar la dirección creativa de nuestro trabajo."
+                },
+                {
+                  icon: <Presentation className="h-12 w-12 text-turquesa-600" />,
+                  title: "Presentación",
+                  description: "Incluye la narrativa de tu marca y elementos visuales, marcando el comienzo de la transformación de tu visión en una identidad de marca tangible."
+                }
+              ].map((step, index) => (
+                <div key={index} className="text-center">
+                  <div className="mb-6 flex justify-center">
+                    <div className="p-4 bg-gray-50 rounded-full">
+                      {step.icon}
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-bold mb-4">{step.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {step.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Detailed Services Section */}
+        <section className="py-12 md:py-16 bg-gradient-to-br from-gray-50 to-white">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                ¿Qué incluye el <span className="text-gradient-primary">servicio</span>?
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Branding e Identidad de Marca completa para posicionar tu negocio como líder en tu sector.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                {
+                  icon: <Type className="h-10 w-10 text-hayas-600" />,
+                  title: "Naming",
+                  description: "Elegimos el nombre perfecto para tu marca, asegurándonos de que sea único, memorable y refleje la esencia de tu negocio. Te asesoramos en la disponibilidad del dominio y en las redes sociales para garantizar una presencia digital sólida desde el inicio.",
+                  color: "hayas"
+                },
+                {
+                  icon: <Palette className="h-10 w-10 text-turquesa-600" />,
+                  title: "Imagen de Marca",
+                  description: "No nos limitamos al diseño del logo. Con nuestra experiencia en teoría gráfica, creamos una imagen completa que refleje los valores de tu marca. Diseñamos una imagen que conecte emocionalmente con tu audiencia y se destaque.",
+                  color: "turquesa"
+                },
+                {
+                  icon: <FileText className="h-10 w-10 text-hayas-600" />,
+                  title: "Manual de Marca",
+                  description: "Garantizamos una identidad visual coherente para tu marca mediante nuestro servicio integral de creación de manual de marca. Desde la historia de tu marca hasta las especificaciones del logotipo, colores y tipografías.",
+                  color: "hayas"
+                }
+              ].map((service, index) => (
+                <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 h-full">
+                  <CardHeader className="text-center pb-4">
+                    <div className={`mb-4 mx-auto p-4 rounded-full w-fit ${service.color === 'hayas' ? 'bg-hayas-100' : 'bg-turquesa-100'}`}>
+                      {service.icon}
+                    </div>
+                    <CardTitle className="text-2xl font-bold">
+                      {service.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="pt-0">
+                    <p className="text-gray-600 leading-relaxed text-center">
+                      {service.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Success Cases Section */}
+        <section className="py-12 md:py-16 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                Casos de <span className="text-gradient-primary">éxito</span>
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Últimos proyectos de branding e identidad de marca que han transformado negocios.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+              {[
+                {
+                  name: "Crystal Clear Pools",
+                  industry: "Empresa de piscinas",
+                  service: "Branding e Identidad de marca",
+                  image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=2070&auto=format&fit=crop"
+                },
+                {
+                  name: "BLU Hotel",
+                  industry: "Hotel Boutique",
+                  service: "Branding e Identidad de marca",
+                  image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop"
+                },
+                {
+                  name: "Softlandero",
+                  industry: "Servicios de asesoría legal",
+                  service: "Branding e Identidad de marca",
+                  image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2070&auto=format&fit=crop"
+                },
+                {
+                  name: "Tribu Café",
+                  industry: "Empresa de café premium",
+                  service: "Branding y diseño de etiquetas",
+                  image: "https://images.unsplash.com/photo-1442512595331-e89e73853f31?q=80&w=2070&auto=format&fit=crop"
+                }
+              ].map((project, index) => (
+                <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+                  <div className="aspect-square overflow-hidden">
+                    <img 
+                      src={project.image} 
+                      alt={project.name}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-bold mb-2">{project.name}</h3>
+                    <p className="text-sm text-gray-500 mb-3">{project.industry}</p>
+                    <p className="text-sm text-gray-600">{project.service}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* CTA Section */}
         <section className="py-8 md:py-12 bg-gradient-to-r from-hayas-600 to-turquesa text-white">
           <div className="container mx-auto px-4 text-center">
@@ -206,9 +378,12 @@ const CreacionMarca = () => {
             <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
               Comencemos a construir la identidad que llevará tu negocio al siguiente nivel.
             </p>
-            <Button className="bg-white text-hayas-600 hover:bg-gray-100 px-8 py-6 text-lg font-semibold">
-              Iniciar mi proyecto de marca
-            </Button>
+            <Link to="/?scrollTo=contacto">
+              <Button className="bg-white text-hayas-600 hover:bg-gray-100 px-8 py-6 text-lg font-semibold">
+                Iniciar mi proyecto de marca
+                <ArrowRight className="w-4 h-4 ml-2 text-hayas-600" />
+              </Button>
+            </Link>
           </div>
         </section>
       </main>
