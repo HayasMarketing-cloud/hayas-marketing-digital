@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
-import SofiaSection from '@/components/SofiaSection';
+
 import SolutionsSection from '@/components/SolutionsSection';
 import ServicesSection from '@/components/ServicesSection';
 import AllServicesSection from '@/components/AllServicesSection';
@@ -30,7 +30,6 @@ const Index = () => {
       
       <main className="flex-grow pt-24">  {/* Increased padding to account for large header */}
         <HeroSection />
-        <SofiaSection />
         <SolutionsSection />
         <ServicesSection />
         <WhyChooseUsSection />

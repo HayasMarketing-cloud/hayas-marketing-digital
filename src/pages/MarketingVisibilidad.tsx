@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import SofiaSection from '@/components/SofiaSection';
+
 import FAQSection from '@/components/FAQSection';
 import {
   Breadcrumb,
@@ -273,10 +273,6 @@ const MarketingVisibilidad = () => {
         />
       </main>
       
-      <SofiaSection 
-        solutionName="Marketing y Visibilidad"
-        initialMessage="¡Hola! Has llegado a nuestra sección de marketing y visibilidad digital. Puedo explicarte cómo posicionamos tu web en Google con SEO avanzado, contarte sobre nuestras estrategias de marketing de contenidos, ayudarte con campañas de Google Ads y Meta Ads, o resolver dudas sobre email marketing y analytics. ¿Qué estrategia de visibilidad te interesa implementar?"
-      />
       <Footer />
     </div>
   );

@@ -1,7 +1,7 @@
 import React from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import SofiaSection from '../components/SofiaSection';
+
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -728,10 +728,6 @@ const CrmAutomatizaciones = () => {
         </section>
       </main>
       
-      <SofiaSection 
-        solutionName="CRM y Automatizaciones de Marketing"
-        initialMessage="¡Hola! He visto que estás explorando nuestra página de CRM y automatizaciones. Puedo ayudarte a entender mejor cómo HubSpot, Salesforce o Go High Level pueden transformar tu negocio, explicarte nuestro proceso de implementación en 90 días, o resolver dudas sobre lead scoring, email marketing automatizado y integración con IA. ¿Qué aspecto específico te interesa más?"
-      />
       <Footer />
     </div>
   );

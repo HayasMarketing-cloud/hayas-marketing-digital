@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import SofiaSection from '@/components/SofiaSection';
+
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -240,10 +240,6 @@ const CaptacionLeads = () => {
         </section>
       </main>
       
-      <SofiaSection 
-        solutionName="Captación de Leads"
-        initialMessage="¡Hola! Estás viendo nuestra solución de captación de leads. Puedo contarte cómo creamos lead magnets irresistibles, explicarte el funcionamiento de nuestras landing pages optimizadas, ayudarte a entender el lead scoring automático, o resolver dudas sobre el nurturing por email y chatbots de calificación. ¿Qué parte del proceso de conversión quieres optimizar primero?"
-      />
       <Footer />
     </div>
   );

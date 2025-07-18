@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import SofiaSection from '@/components/SofiaSection';
+
 import FAQSection from '@/components/FAQSection';
 import {
   Breadcrumb,
@@ -320,10 +320,6 @@ const GestionMarketing = () => {
         />
       </main>
       
-      <SofiaSection 
-        solutionName="Gestión del Plan de Marketing"
-        initialMessage="¡Hola! Veo que estás explorando nuestra gestión integral de marketing. Puedo explicarte nuestro proceso de 4 fases (análisis, estrategia, implementación y optimización), contarte sobre la planificación de calendarios de contenido, ayudarte con reportes y KPIs, o resolver dudas sobre coordinación de equipos y medición de resultados. ¿Qué aspecto de la gestión estratégica te interesa más?"
-      />
       <Footer />
     </div>
   );

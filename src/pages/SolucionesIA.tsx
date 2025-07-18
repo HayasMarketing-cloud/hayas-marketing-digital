@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import SofiaSection from '@/components/SofiaSection';
+
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -305,10 +305,6 @@ const SolucionesIA = () => {
         </section>
       </main>
       
-      <SofiaSection 
-        solutionName="Soluciones IA aplicada a Marketing"
-        initialMessage="¡Hola! Estás en nuestra página de IA aplicada al marketing, y soy un ejemplo vivo de esta tecnología. Puedo contarte sobre chatbots estratégicos como yo, explicarte el análisis predictivo, ayudarte con personalización dinámica, generación de contenido con IA, o resolver dudas sobre automatización inteligente y optimización de campañas. ¿Qué aplicación de IA te gustaría implementar en tu negocio?"
-      />
       <Footer />
     </div>
   );

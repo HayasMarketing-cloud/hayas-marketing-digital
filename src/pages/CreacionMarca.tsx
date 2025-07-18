@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import SofiaSection from '@/components/SofiaSection';
+
 import FAQSection from '@/components/FAQSection';
 import {
   Breadcrumb,
@@ -477,10 +477,6 @@ const CreacionMarca = () => {
         />
       </main>
       
-      <SofiaSection 
-        solutionName="Creación de Marca"
-        initialMessage="¡Hola! Veo que estás interesado en crear una marca memorable. Puedo explicarte nuestro proceso de desarrollo de identidad visual, ayudarte a entender la importancia del naming estratégico, hablarte sobre el manual de marca, o resolver dudas sobre posicionamiento y conexión emocional con tu audiencia. ¿Qué parte del branding te gustaría conocer mejor?"
-      />
       <Footer />
     </div>
   );
