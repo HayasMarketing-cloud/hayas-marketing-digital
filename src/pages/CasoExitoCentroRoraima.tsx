@@ -32,16 +32,16 @@ const CasoExitoCentroRoraima = () => {
                   Caso de Éxito
                 </Badge>
                 <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                  Centro Roraima: <span className="text-gradient-primary">Transformación</span> Personal
+                  Centro Roraima: <span className="text-gradient-primary">Salud Mental</span> Integral
                 </h1>
                 <p className="text-xl text-gray-700 mb-8 leading-relaxed font-medium">
-                  Posicionando un centro de desarrollo personal como referente en formación terapéutica
+                  Posicionando un centro de salud mental como referente en atención psiquiátrica y psicológica
                 </p>
                 <div className="flex items-center gap-4 mb-8">
-                  <Badge className="bg-hayas-100 text-hayas-700">Desarrollo Personal</Badge>
-                  <Badge className="bg-turquesa-100 text-turquesa-700">Formación Terapéutica</Badge>
+                  <Badge className="bg-hayas-100 text-hayas-700">Psiquiatría</Badge>
+                  <Badge className="bg-turquesa-100 text-turquesa-700">Psicología Clínica</Badge>
                 </div>
-                <Link to="https://centrororaima.com" target="_blank">
+                <Link to="https://centrororaima.es" target="_blank">
                   <Button className="gradient-primary text-white px-6 py-3">
                     Visitar Web
                     <ExternalLink className="w-4 h-4 ml-2" />
@@ -73,32 +73,32 @@ const CasoExitoCentroRoraima = () => {
                     <div>
                       <h3 className="text-xl font-semibold mb-4 text-hayas-600">Perfil del Cliente</h3>
                       <p className="text-gray-600 mb-6 leading-relaxed">
-                        Centro especializado en desarrollo personal y formación terapéutica que ofrece un enfoque 
-                        integral del crecimiento humano. Combina técnicas tradicionales con metodologías modernas 
-                        para facilitar procesos de transformación personal profunda.
+                        Centro Roraima está dedicado a la atención integral de los trastornos de salud mental, 
+                        que ofrece un enfoque multidisciplinario de alta especialización. Combina ciencia y 
+                        empatía para brindar la mejor atención posible a cada paciente.
                       </p>
                       <div className="space-y-3">
                         <div className="flex items-center gap-3">
                           <CheckCircle className="h-5 w-5 text-hayas-600" />
-                          <span className="text-gray-700">Desarrollo personal integral</span>
+                          <span className="text-gray-700">Atención psiquiátrica especializada</span>
                         </div>
                         <div className="flex items-center gap-3">
                           <CheckCircle className="h-5 w-5 text-hayas-600" />
-                          <span className="text-gray-700">Formación terapéutica certificada</span>
+                          <span className="text-gray-700">Psicología clínica integral</span>
                         </div>
                         <div className="flex items-center gap-3">
                           <CheckCircle className="h-5 w-5 text-hayas-600" />
-                          <span className="text-gray-700">Metodologías innovadoras</span>
+                          <span className="text-gray-700">Enfoque multidisciplinario</span>
                         </div>
                       </div>
                     </div>
                     <div>
                       <h3 className="text-xl font-semibold mb-4 text-turquesa-600">El Reto</h3>
                       <p className="text-gray-600 leading-relaxed">
-                        Necesitaban posicionarse como centro de referencia en un mercado donde la credibilidad 
-                        y la confianza son fundamentales. El reto era comunicar la profundidad de su enfoque 
-                        terapéutico mientras transmitían accesibilidad y calidez humana para atraer tanto a 
-                        particulares como a profesionales en formación.
+                        Necesitaban posicionarse como centro de referencia en salud mental en un mercado donde 
+                        la credibilidad médica y la confianza del paciente son fundamentales. El reto era 
+                        comunicar su alta especialización médica mientras transmitían cercanía y empatía 
+                        para generar confianza en pacientes que buscan atención en salud mental.
                       </p>
                     </div>
                   </div>
@@ -120,23 +120,23 @@ const CasoExitoCentroRoraima = () => {
                 {[
                   {
                     icon: <Heart className="h-8 w-8 text-hayas-600" />,
-                    title: "Branding Humanizado",
-                    description: "Identidad visual que transmite calidez, profesionalidad y transformación personal."
+                    title: "Branding Médico",
+                    description: "Identidad visual que transmite confianza médica, profesionalidad y calidez humana."
                   },
                   {
                     icon: <BookOpen className="h-8 w-8 text-turquesa-600" />,
                     title: "Diseño Web",
-                    description: "Plataforma digital que refleja la esencia del centro y facilita la conexión con usuarios."
+                    description: "Plataforma digital especializada que facilita el acceso a información sobre servicios de salud mental."
                   },
                   {
                     icon: <Award className="h-8 w-8 text-hayas-600" />,
                     title: "Estrategia de Contenidos",
-                    description: "Consultoría en contenidos que posiciona como autoridad en desarrollo personal."
+                    description: "Consultoría en contenidos que posiciona como autoridad en psiquiatría y psicología clínica."
                   },
                   {
                     icon: <TrendingUp className="h-8 w-8 text-turquesa-600" />,
-                    title: "SEO Orgánico",
-                    description: "Posicionamiento natural para búsquedas relacionadas con terapia y crecimiento personal."
+                    title: "SEO Especializado",
+                    description: "Posicionamiento natural para búsquedas relacionadas con salud mental y servicios psiquiátricos."
                   }
                 ].map((service, index) => (
                   <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-all duration-300">
@@ -171,20 +171,20 @@ const CasoExitoCentroRoraima = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
                 <Card className="text-center border-none shadow-lg">
                   <CardContent className="p-6">
-                    <div className="text-3xl font-bold text-hayas-600 mb-2">+180%</div>
-                    <p className="text-gray-600">Aumento en consultas terapéuticas</p>
+                    <div className="text-3xl font-bold text-hayas-600 mb-2">+150%</div>
+                    <p className="text-gray-600">Aumento en consultas médicas</p>
                   </CardContent>
                 </Card>
                 <Card className="text-center border-none shadow-lg">
                   <CardContent className="p-6">
-                    <div className="text-3xl font-bold text-turquesa-600 mb-2">+220%</div>
-                    <p className="text-gray-600">Incremento en inscripciones formativas</p>
+                    <div className="text-3xl font-bold text-turquesa-600 mb-2">+90%</div>
+                    <p className="text-gray-600">Incremento en nuevos pacientes</p>
                   </CardContent>
                 </Card>
                 <Card className="text-center border-none shadow-lg">
                   <CardContent className="p-6">
-                    <div className="text-3xl font-bold text-hayas-600 mb-2">TOP 5</div>
-                    <p className="text-gray-600">Posicionamiento en búsquedas locales</p>
+                    <div className="text-3xl font-bold text-hayas-600 mb-2">TOP 3</div>
+                    <p className="text-gray-600">Posicionamiento en salud mental local</p>
                   </CardContent>
                 </Card>
               </div>
@@ -192,12 +192,12 @@ const CasoExitoCentroRoraima = () => {
               <Card className="border-none shadow-lg bg-gradient-to-br from-hayas-50 to-turquesa-50">
                 <CardContent className="p-8">
                   <blockquote className="text-lg italic text-gray-700 mb-4 text-center">
-                    "La nueva identidad de marca ha transformado completamente nuestra presencia. Ahora las personas 
-                    nos encuentran fácilmente y confían en nosotros desde el primer contacto. Hemos pasado de ser 
-                    un centro local a convertirnos en referencia regional en desarrollo personal."
+                    "La nueva identidad de marca nos ha posicionado como el centro de salud mental de referencia 
+                    en la zona. Los pacientes nos encuentran fácilmente y confían en nuestro enfoque médico desde 
+                    el primer contacto. Hemos logrado transmitir nuestra especialización sin perder la calidez humana."
                   </blockquote>
                   <div className="text-center">
-                    <p className="font-semibold text-hayas-600">- Directora del Centro Roraima</p>
+                    <p className="font-semibold text-hayas-600">- Dirección del Centro Roraima</p>
                   </div>
                 </CardContent>
               </Card>
@@ -213,10 +213,10 @@ const CasoExitoCentroRoraima = () => {
                 Lo que <span className="text-gradient-primary">Aprendimos</span>
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Este proyecto nos enseñó la importancia de equilibrar la profundidad terapéutica con la 
-                accesibilidad comunicativa. Descubrimos que en el sector del desarrollo personal, la 
-                autenticidad de la marca debe reflejar tanto la competencia profesional como la calidez 
-                humana, creando un puente de confianza que facilite procesos de transformación personal.
+                Este proyecto nos enseñó la importancia de equilibrar la credibilidad médica con la 
+                accesibilidad comunicativa. Descubrimos que en el sector de la salud mental, la marca 
+                debe reflejar tanto la alta especialización profesional como la empatía humana, 
+                creando un entorno de confianza que facilite el acceso a la atención psiquiátrica y psicológica.
               </p>
             </div>
           </div>
@@ -226,15 +226,15 @@ const CasoExitoCentroRoraima = () => {
         <section className="py-12 md:py-16 bg-hayas-600 text-white">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              ¿Tu centro de formación necesita mayor visibilidad?
+              ¿Tu centro de salud necesita mayor visibilidad?
             </h2>
             <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-              Ayudamos a centros de desarrollo personal y formación a posicionarse como referentes 
-              en su sector a través de estrategias de marca auténticas y efectivas.
+              Ayudamos a centros de salud mental y clínicas especializadas a posicionarse como referentes 
+              en su sector a través de estrategias de marca médicas auténticas y efectivas.
             </p>
             <Link to="/?scrollTo=contacto">
               <Button className="bg-white text-hayas-600 hover:bg-gray-100 px-8 py-3 text-lg">
-                Posicionar mi Centro
+                Posicionar mi Centro de Salud
               </Button>
             </Link>
           </div>
