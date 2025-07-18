@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import FAQSection from '@/components/FAQSection';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -285,6 +286,38 @@ const ImplantacionCrm = () => {
             </div>
           </div>
         </section>
+
+        {/* FAQ Section */}
+        <FAQSection 
+          title="Preguntas Frecuentes sobre Implantación de CRM"
+          subtitle="Resolvemos las dudas más comunes sobre la implementación de sistemas CRM"
+          faqs={[
+            {
+              question: "¿Cuál es la diferencia entre HubSpot y Go High Level?",
+              answer: "HubSpot es ideal para empresas B2B con procesos de venta complejos, ofertas de alto valor y ciclos largos. Go High Level está optimizado para B2C, conversiones rápidas, gestión masiva de leads y comunicación multicanal (SMS, WhatsApp, email)."
+            },
+            {
+              question: "¿Cuánto tiempo toma la implementación completa?",
+              answer: "La implementación básica toma 2-4 semanas, incluyendo configuración, migración de datos, integración con herramientas existentes y formación del equipo. Las personalizaciones avanzadas pueden extender el plazo a 6-8 semanas."
+            },
+            {
+              question: "¿Pueden migrar nuestros datos actuales?",
+              answer: "Sí, gestionamos la migración completa de datos desde tu sistema actual: contactos, historial de interacciones, oportunidades de venta, y configuraciones personalizadas. Garantizamos que no pierdas información crítica durante el proceso."
+            },
+            {
+              question: "¿Incluyen formación para nuestro equipo?",
+              answer: "Incluimos formación completa: sesiones grupales para todo el equipo, entrenamiento específico por roles, documentación personalizada, videos tutoriales y soporte posterior para resolver dudas durante las primeras semanas de uso."
+            },
+            {
+              question: "¿Se integra con nuestras herramientas actuales?",
+              answer: "Configuramos integraciones con tus herramientas existentes: email marketing, contabilidad, calendarios, redes sociales, sistemas de facturación y cualquier software específico de tu sector. Creamos un ecosistema conectado y eficiente."
+            },
+            {
+              question: "¿Qué soporte ofrecen después de la implementación?",
+              answer: "Proporcionamos soporte técnico prioritario, actualizaciones regulares, optimizaciones basadas en uso real, reuniones de seguimiento mensuales y acceso a nuevas funcionalidades. Tu éxito es nuestro compromiso a largo plazo."
+            }
+          ]}
+        />
       </main>
       
       <Footer />

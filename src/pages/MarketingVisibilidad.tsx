@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import SofiaSection from '@/components/SofiaSection';
+import FAQSection from '@/components/FAQSection';
 
 const MarketingVisibilidad = () => {
   return (
@@ -211,6 +212,38 @@ const MarketingVisibilidad = () => {
             </Button>
           </div>
         </section>
+
+        {/* FAQ Section */}
+        <FAQSection 
+          title="Preguntas Frecuentes sobre Marketing y Visibilidad"
+          subtitle="Resolvemos las dudas más comunes sobre estrategias de visibilidad digital"
+          faqs={[
+            {
+              question: "¿Cuánto tiempo toma ver resultados en SEO?",
+              answer: "Los primeros resultados en SEO suelen aparecer entre 3-6 meses, dependiendo de la competencia y el estado actual de tu web. Sin embargo, comenzamos a ver mejoras en indexación y posicionamiento de palabras clave de cola larga desde el segundo mes."
+            },
+            {
+              question: "¿Qué incluye exactamente el servicio de marketing de contenidos?",
+              answer: "Incluye estrategia de contenidos, calendario editorial, creación de artículos de blog, posts para redes sociales, infografías, videos (si aplica), optimización SEO de cada contenido y distribución multicanal para maximizar el alcance."
+            },
+            {
+              question: "¿Gestionan las campañas publicitarias o solo las configuran?",
+              answer: "Gestionamos completamente tus campañas: configuración inicial, creación de anuncios, segmentación de audiencias, optimización diaria, ajustes de presupuesto, análisis de rendimiento y reportes mensuales con recomendaciones de mejora."
+            },
+            {
+              question: "¿Pueden trabajar con mi presupuesto publicitario actual?",
+              answer: "Sí, optimizamos cualquier presupuesto. Para campañas efectivas recomendamos mínimos de €300-500/mes en Google Ads y €200-300/mes en Meta Ads, pero podemos adaptar estrategias para presupuestos menores o crear planes escalables."
+            },
+            {
+              question: "¿Qué métricas utilizan para medir el éxito?",
+              answer: "Medimos KPIs específicos según tus objetivos: tráfico orgánico, posicionamiento de palabras clave, leads generados, costo por adquisición (CPA), retorno de inversión publicitaria (ROAS), engagement en redes sociales y conversiones web."
+            },
+            {
+              question: "¿Incluyen la gestión de redes sociales en el servicio?",
+              answer: "Ofrecemos gestión completa de redes sociales como servicio adicional: estrategia de contenidos, diseño gráfico, programación de posts, community management, interacción con audiencia y reportes de crecimiento y engagement."
+            }
+          ]}
+        />
       </main>
       
       <SofiaSection 

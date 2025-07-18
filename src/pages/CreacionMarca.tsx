@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import SofiaSection from '@/components/SofiaSection';
+import FAQSection from '@/components/FAQSection';
 
 const CreacionMarca = () => {
   return (
@@ -386,6 +387,38 @@ const CreacionMarca = () => {
             </Link>
           </div>
         </section>
+
+        {/* FAQ Section */}
+        <FAQSection 
+          title="Preguntas Frecuentes sobre Creación de Marca"
+          subtitle="Resolvemos las dudas más comunes sobre nuestro proceso de branding"
+          faqs={[
+            {
+              question: "¿Cuánto tiempo toma el proceso completo de creación de marca?",
+              answer: "El proceso completo de branding suele tomar entre 4-8 semanas, dependiendo de la complejidad del proyecto. Incluye briefing inicial, desarrollo de conceptos, presentación de propuestas, refinamiento y entrega del manual de marca completo con todas las aplicaciones."
+            },
+            {
+              question: "¿Qué incluye exactamente el manual de marca?",
+              answer: "Nuestro manual de marca incluye: historia y valores de la marca, especificaciones del logotipo y variaciones, paleta de colores con códigos exactos, tipografías corporativas, aplicaciones en papelería, normas de uso en digital, ejemplos de aplicación incorrecta y directrices de comunicación."
+            },
+            {
+              question: "¿Hacen el registro de marca y dominio?",
+              answer: "Te asesoramos en todo el proceso de registro. Verificamos disponibilidad de dominio y redes sociales, te orientamos sobre el registro de marca y podemos gestionar la compra de dominios. El registro legal de marca se realiza a través de abogados especializados que podemos recomendar."
+            },
+            {
+              question: "¿Pueden rediseñar una marca existente?",
+              answer: "Sí, nos especializamos también en rebranding. Evaluamos tu marca actual, identificamos oportunidades de mejora y desarrollamos una nueva identidad que mantenga los elementos positivos existentes mientras moderniza y fortalece la percepción de marca."
+            },
+            {
+              question: "¿Incluyen aplicaciones para redes sociales y web?",
+              answer: "Absolutamente. Todas nuestras identidades de marca incluyen adaptaciones para digital: perfiles de redes sociales, banners web, avatars, plantillas para posts, y especificaciones técnicas para implementación web con desarrolladores."
+            },
+            {
+              question: "¿Qué pasa si no me gusta la propuesta inicial?",
+              answer: "Nuestro proceso incluye hasta 3 rondas de revisiones sin costo adicional. Comenzamos con un briefing detallado para entender exactamente tu visión, y refinamos la propuesta hasta que estés completamente satisfecho con el resultado final."
+            }
+          ]}
+        />
       </main>
       
       <SofiaSection 

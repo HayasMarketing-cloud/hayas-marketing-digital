@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import SofiaSection from '@/components/SofiaSection';
+import FAQSection from '@/components/FAQSection';
 
 const GestionMarketing = () => {
   return (
@@ -258,6 +259,38 @@ const GestionMarketing = () => {
             </Button>
           </div>
         </section>
+
+        {/* FAQ Section */}
+        <FAQSection 
+          title="Preguntas Frecuentes sobre Gestión de Marketing"
+          subtitle="Resolvemos las dudas más comunes sobre la gestión integral de estrategias de marketing"
+          faqs={[
+            {
+              question: "¿Qué diferencia hay entre gestión de marketing y servicios individuales?",
+              answer: "La gestión integral incluye planificación estratégica, coordinación entre canales, optimización continua y reportes unificados. Es como tener un departamento de marketing completo que asegura coherencia y maximiza sinergias entre todas las acciones."
+            },
+            {
+              question: "¿Con qué frecuencia proporcionan reportes y reuniones?",
+              answer: "Realizamos reuniones semanales de seguimiento, reportes mensuales detallados con análisis de KPIs, y reuniones trimestrales de estrategia para evaluar resultados y ajustar objetivos. También proporcionamos acceso 24/7 a dashboards en tiempo real."
+            },
+            {
+              question: "¿Pueden coordinar con nuestro equipo interno de marketing?",
+              answer: "Sí, nos integramos perfectamente con equipos internos. Podemos actuar como director de marketing externo, colaborar con tu equipo existente, o proporcionar especialización en áreas específicas mientras mantenemos la coordinación general."
+            },
+            {
+              question: "¿Qué herramientas utilizan para la gestión y seguimiento?",
+              answer: "Utilizamos plataformas profesionales como HubSpot o Go High Level para centralizar datos, herramientas de analytics avanzado, dashboards personalizados, calendarios de contenido colaborativos y sistemas de gestión de proyectos para máxima transparencia."
+            },
+            {
+              question: "¿Incluyen la gestión de presupuesto publicitario?",
+              answer: "Sí, optimizamos y gestionamos tu presupuesto publicitario completo: distribución entre canales, ajustes según rendimiento, negociación con plataformas, control de costos y maximización del ROI en todas las inversiones de marketing."
+            },
+            {
+              question: "¿Qué pasa si necesitamos cambiar la estrategia durante el proyecto?",
+              answer: "Nuestra gestión es ágil y adaptable. Realizamos revisiones regulares de estrategia, podemos pivotar según resultados o cambios del mercado, y ajustamos objetivos y tácticas manteniendo siempre el enfoque en tus metas de negocio."
+            }
+          ]}
+        />
       </main>
       
       <SofiaSection 
