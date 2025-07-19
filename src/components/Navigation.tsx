@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, ArrowRight } from 'lucide-react';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [solucionesDropdownOpen, setSolucionesDropdownOpen] = useState(false);
+  const [activeMegaMenu, setActiveMegaMenu] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,20 +23,52 @@ const Navigation = () => {
     };
   }, []);
 
-  const solucionesItems = [
-    { title: 'IA aplicada al Marketing', href: '/soluciones/ia-marketing' },
-    { title: 'CRM y Automatización', href: '/soluciones/crm-automatizacion' },
-    { title: 'Implantación CRM', href: '/soluciones/implantacion-crm' },
-    { title: 'Branding y Marca', href: '/soluciones/branding-marca' },
-    { title: 'Marketing Digital', href: '/soluciones/marketing-digital' },
-    { title: 'Gestión Marketing', href: '/soluciones/gestion-marketing' },
-    { title: 'Captación de Leads', href: '/soluciones/captacion-leads' }
-  ];
+  const megaMenuData = {
+    soluciones: {
+      title: 'Soluciones',
+      categories: [
+        {
+          title: 'Marketing & Visibilidad',
+          items: [
+            { title: 'IA aplicada al Marketing', href: '/soluciones/ia-marketing', description: 'Automatización inteligente' },
+            { title: 'Branding y Marca', href: '/soluciones/branding-marca', description: 'Identidad corporativa' },
+            { title: 'Marketing Digital', href: '/soluciones/marketing-digital', description: 'Estrategias digitales' }
+          ]
+        },
+        {
+          title: 'Gestión & Conversión',
+          items: [
+            { title: 'CRM y Automatización', href: '/soluciones/crm-automatizacion', description: 'Workflows inteligentes' },
+            { title: 'Implantación CRM', href: '/soluciones/implantacion-crm', description: 'Setup completo' },
+            { title: 'Captación de Leads', href: '/soluciones/captacion-leads', description: 'Generación de oportunidades' }
+          ]
+        },
+        {
+          title: 'Consultoría',
+          items: [
+            { title: 'Gestión Marketing', href: '/soluciones/gestion-marketing', description: 'Estrategia integral' }
+          ]
+        }
+      ]
+    },
+    casosExito: [
+      { title: 'Centro Roraima', href: '/caso-exito-centro-roraima', image: '/lovable-uploads/2a2adcf5-d531-4d8c-91bd-bb12aac27976.png' },
+      { title: 'Asendia', href: '/caso-exito-asendia', image: '/lovable-uploads/37a206e4-890d-4d31-a1c4-7dc674fe47a4.png' },
+      { title: 'JointsUp', href: '/caso-exito-jointsup', image: '/lovable-uploads/564421eb-e67c-4075-95c0-1405855106cc.png' },
+      { title: 'IV Extra', href: '/caso-exito-iv-extra', image: '/lovable-uploads/eb03ebcf-1212-4adb-9f73-1020279eb265.png' }
+    ],
+    servicios: [
+      { title: 'Creación de Marca', href: '/creacion-marca', description: 'Desde cero hasta el lanzamiento' },
+      { title: 'Marketing Visibilidad', href: '/marketing-visibilidad', description: 'Posicionamiento estratégico' },
+      { title: 'Gestión Marketing', href: '/gestion-marketing', description: 'Outsourcing especializado' },
+      { title: 'Captación Leads', href: '/captacion-leads', description: 'Sistemas de conversión' }
+    ]
+  };
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white ${
-        isScrolled ? 'shadow-md py-2' : 'py-3'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-md border-b border-border/50 ${
+        isScrolled ? 'shadow-elegant py-2' : 'py-3'
       }`}
     >
       <div className="container mx-auto px-4">
@@ -52,63 +84,171 @@ const Navigation = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            {/* Soluciones Dropdown */}
-            <div className="relative group">
-              <button 
-                className="text-gray-700 hover:text-hayas-600 font-medium transition-colors flex items-center gap-1"
-                onMouseEnter={() => setSolucionesDropdownOpen(true)}
-                onMouseLeave={() => setSolucionesDropdownOpen(false)}
-              >
+          <nav className="hidden lg:flex items-center space-x-8">
+            {/* Soluciones Mega Menu */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setActiveMegaMenu('soluciones')}
+              onMouseLeave={() => setActiveMegaMenu(null)}
+            >
+              <button className="text-foreground hover:text-primary font-medium transition-colors flex items-center gap-1 py-2">
                 Soluciones
-                <ChevronDown className="h-4 w-4" />
+                <ChevronDown className="h-4 w-4 transition-transform duration-200" 
+                  style={{ transform: activeMegaMenu === 'soluciones' ? 'rotate(180deg)' : 'rotate(0deg)' }} />
               </button>
               
-              {solucionesDropdownOpen && (
-                <div 
-                  className="absolute top-full left-0 mt-2 w-64 bg-white border border-gray-200 rounded-lg shadow-lg z-50"
-                  onMouseEnter={() => setSolucionesDropdownOpen(true)}
-                  onMouseLeave={() => setSolucionesDropdownOpen(false)}
-                >
-                  <div className="py-2">
-                    {solucionesItems.map((item) => (
-                      <Link
-                        key={item.href}
-                        to={item.href}
-                        className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-hayas-600 transition-colors"
-                        onClick={() => setSolucionesDropdownOpen(false)}
-                      >
-                        {item.title}
-                      </Link>
+              {activeMegaMenu === 'soluciones' && (
+                <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[800px] bg-background border border-border rounded-lg shadow-elegant z-50 overflow-hidden">
+                  <div className="grid grid-cols-3 gap-6 p-8">
+                    {megaMenuData.soluciones.categories.map((category, idx) => (
+                      <div key={idx} className="space-y-4">
+                        <h4 className="font-semibold text-foreground border-b border-border pb-2">
+                          {category.title}
+                        </h4>
+                        <div className="space-y-3">
+                          {category.items.map((item) => (
+                            <Link
+                              key={item.href}
+                              to={item.href}
+                              className="block group hover:bg-muted/50 p-3 rounded-lg transition-all duration-200"
+                              onClick={() => setActiveMegaMenu(null)}
+                            >
+                              <div className="flex items-start justify-between">
+                                <div>
+                                  <h5 className="font-medium text-foreground group-hover:text-primary transition-colors">
+                                    {item.title}
+                                  </h5>
+                                  <p className="text-sm text-muted-foreground mt-1">
+                                    {item.description}
+                                  </p>
+                                </div>
+                                <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-all duration-200 transform group-hover:translate-x-1" />
+                              </div>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
                     ))}
                   </div>
                 </div>
               )}
             </div>
-            
-            <a href="#servicios" className="text-gray-700 hover:text-hayas-600 font-medium transition-colors">
-              Servicios
-            </a>
-            <a href="#nosotros" className="text-gray-700 hover:text-hayas-600 font-medium transition-colors">
+
+            {/* Casos de Éxito Mega Menu */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setActiveMegaMenu('casos')}
+              onMouseLeave={() => setActiveMegaMenu(null)}
+            >
+              <button className="text-foreground hover:text-primary font-medium transition-colors flex items-center gap-1 py-2">
+                Casos de Éxito
+                <ChevronDown className="h-4 w-4 transition-transform duration-200" 
+                  style={{ transform: activeMegaMenu === 'casos' ? 'rotate(180deg)' : 'rotate(0deg)' }} />
+              </button>
+              
+              {activeMegaMenu === 'casos' && (
+                <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[600px] bg-background border border-border rounded-lg shadow-elegant z-50 overflow-hidden">
+                  <div className="p-6">
+                    <h4 className="font-semibold text-foreground mb-4 border-b border-border pb-2">
+                      Proyectos Destacados
+                    </h4>
+                    <div className="grid grid-cols-2 gap-4">
+                      {megaMenuData.casosExito.map((caso) => (
+                        <Link
+                          key={caso.href}
+                          to={caso.href}
+                          className="group hover:bg-muted/50 p-4 rounded-lg transition-all duration-200"
+                          onClick={() => setActiveMegaMenu(null)}
+                        >
+                          <div className="flex items-center space-x-3">
+                            <div className="w-12 h-12 rounded-lg overflow-hidden bg-muted flex-shrink-0">
+                              <img 
+                                src={caso.image} 
+                                alt={caso.title}
+                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
+                              />
+                            </div>
+                            <div className="flex-1">
+                              <h5 className="font-medium text-foreground group-hover:text-primary transition-colors">
+                                {caso.title}
+                              </h5>
+                              <p className="text-sm text-muted-foreground">Ver caso completo</p>
+                            </div>
+                            <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-all duration-200 transform group-hover:translate-x-1" />
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Servicios Mega Menu */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setActiveMegaMenu('servicios')}
+              onMouseLeave={() => setActiveMegaMenu(null)}
+            >
+              <button className="text-foreground hover:text-primary font-medium transition-colors flex items-center gap-1 py-2">
+                Servicios
+                <ChevronDown className="h-4 w-4 transition-transform duration-200" 
+                  style={{ transform: activeMegaMenu === 'servicios' ? 'rotate(180deg)' : 'rotate(0deg)' }} />
+              </button>
+              
+              {activeMegaMenu === 'servicios' && (
+                <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[500px] bg-background border border-border rounded-lg shadow-elegant z-50 overflow-hidden">
+                  <div className="p-6">
+                    <h4 className="font-semibold text-foreground mb-4 border-b border-border pb-2">
+                      Nuestros Servicios
+                    </h4>
+                    <div className="space-y-3">
+                      {megaMenuData.servicios.map((servicio) => (
+                        <Link
+                          key={servicio.href}
+                          to={servicio.href}
+                          className="block group hover:bg-muted/50 p-4 rounded-lg transition-all duration-200"
+                          onClick={() => setActiveMegaMenu(null)}
+                        >
+                          <div className="flex items-start justify-between">
+                            <div>
+                              <h5 className="font-medium text-foreground group-hover:text-primary transition-colors">
+                                {servicio.title}
+                              </h5>
+                              <p className="text-sm text-muted-foreground mt-1">
+                                {servicio.description}
+                              </p>
+                            </div>
+                            <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-all duration-200 transform group-hover:translate-x-1" />
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <a href="#nosotros" className="text-foreground hover:text-primary font-medium transition-colors">
               La Agencia
             </a>
-            <Link to="/blog" className="text-gray-700 hover:text-hayas-600 font-medium transition-colors">
+            <Link to="/blog" className="text-foreground hover:text-primary font-medium transition-colors">
               Blog
             </Link>
-            <a href="#contacto" className="text-gray-700 hover:text-hayas-600 font-medium transition-colors">
+            <a href="#contacto" className="text-foreground hover:text-primary font-medium transition-colors">
               Contacto
             </a>
           </nav>
 
-          <div className="hidden md:block">
-            <Button className="gradient-primary text-white">
+          <div className="hidden lg:block">
+            <Button className="gradient-primary text-white hover-scale">
               Solicitar Consulta
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden p-2 focus:outline-none"
+            className="lg:hidden p-2 focus:outline-none"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             <svg 
@@ -138,54 +278,90 @@ const Navigation = () => {
 
         {/* Mobile Navigation Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-white mt-4 py-4 px-2 rounded-lg shadow-lg">
+          <div className="lg:hidden bg-background border border-border mt-4 py-4 px-2 rounded-lg shadow-elegant animate-slideUp">
             <nav className="flex flex-col space-y-4">
-              {/* Soluciones en Mobile */}
+              {/* Soluciones Accordion Mobile */}
               <div className="px-4 py-2">
-                <div className="text-gray-700 font-medium mb-2">Soluciones</div>
-                <div className="pl-4 space-y-2">
-                  {solucionesItems.map((item) => (
+                <div className="text-foreground font-medium mb-4 border-b border-border pb-2">Soluciones</div>
+                <div className="space-y-4">
+                  {megaMenuData.soluciones.categories.map((category, idx) => (
+                    <div key={idx}>
+                      <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2">
+                        {category.title}
+                      </h4>
+                      <div className="pl-4 space-y-2">
+                        {category.items.map((item) => (
+                          <Link
+                            key={item.href}
+                            to={item.href}
+                            className="block text-sm text-foreground hover:text-primary transition-colors py-1 hover:bg-muted/50 px-2 rounded"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            {item.title}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Casos de Éxito Mobile */}
+              <div className="px-4 py-2">
+                <div className="text-foreground font-medium mb-3 border-b border-border pb-2">Casos de Éxito</div>
+                <div className="space-y-2">
+                  {megaMenuData.casosExito.map((caso) => (
                     <Link
-                      key={item.href}
-                      to={item.href}
-                      className="block text-sm text-gray-600 hover:text-hayas-600 transition-colors py-1"
+                      key={caso.href}
+                      to={caso.href}
+                      className="block text-sm text-foreground hover:text-primary transition-colors py-2 hover:bg-muted/50 px-2 rounded"
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      {item.title}
+                      {caso.title}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              {/* Servicios Mobile */}
+              <div className="px-4 py-2">
+                <div className="text-foreground font-medium mb-3 border-b border-border pb-2">Servicios</div>
+                <div className="space-y-2">
+                  {megaMenuData.servicios.map((servicio) => (
+                    <Link
+                      key={servicio.href}
+                      to={servicio.href}
+                      className="block text-sm text-foreground hover:text-primary transition-colors py-2 hover:bg-muted/50 px-2 rounded"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {servicio.title}
                     </Link>
                   ))}
                 </div>
               </div>
               
               <a 
-                href="#servicios" 
-                className="text-gray-700 hover:text-hayas-600 font-medium transition-colors px-4 py-2 hover:bg-gray-50 rounded"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Servicios
-              </a>
-              <a 
                 href="#nosotros" 
-                className="text-gray-700 hover:text-hayas-600 font-medium transition-colors px-4 py-2 hover:bg-gray-50 rounded"
+                className="text-foreground hover:text-primary font-medium transition-colors px-4 py-2 hover:bg-muted/50 rounded"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 La Agencia
               </a>
               <Link 
                 to="/blog" 
-                className="text-gray-700 hover:text-hayas-600 font-medium transition-colors px-4 py-2 hover:bg-gray-50 rounded"
+                className="text-foreground hover:text-primary font-medium transition-colors px-4 py-2 hover:bg-muted/50 rounded"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Blog
               </Link>
               <a 
                 href="#contacto" 
-                className="text-gray-700 hover:text-hayas-600 font-medium transition-colors px-4 py-2 hover:bg-gray-50 rounded"
+                className="text-foreground hover:text-primary font-medium transition-colors px-4 py-2 hover:bg-muted/50 rounded"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Contacto
               </a>
-              <Button className="gradient-primary text-white mx-4">
+              <Button className="gradient-primary text-white mx-4 hover-scale">
                 Solicitar Consulta
               </Button>
             </nav>
