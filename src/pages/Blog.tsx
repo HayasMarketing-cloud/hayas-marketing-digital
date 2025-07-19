@@ -13,7 +13,7 @@ const Blog = () => {
     date: '2024-12-15',
     readTime: '15 min',
     author: 'Equipo Hayas Marketing',
-    image: '/lovable-uploads/523cad5a-116d-41e6-b169-599c84a7f8cf.png',
+    image: '/src/assets/ia-marketing-hero.jpg',
     category: 'Inteligencia Artificial',
     tags: ['IA', 'Marketing Digital', 'Automatización', 'Estrategia']
   };
