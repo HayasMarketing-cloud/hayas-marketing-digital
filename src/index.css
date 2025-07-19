@@ -60,16 +60,93 @@
 }
 
 @layer utilities {
+  /* Gradientes optimizados */
   .gradient-primary {
-    background: linear-gradient(to right, hsl(var(--hayas-600)), hsl(var(--turquesa)));
+    background: linear-gradient(135deg, hsl(var(--hayas-600)), hsl(var(--turquesa)));
   }
+  
   .text-gradient-primary {
-    background: linear-gradient(to right, hsl(var(--hayas-600)), hsl(var(--turquesa)));
+    background: linear-gradient(135deg, hsl(var(--hayas-600)), hsl(var(--turquesa)));
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
   }
-  .bg-soft-purple {
-    background-color: #D6BCFA;
+
+  /* Sombras elegantes */
+  .shadow-elegant {
+    box-shadow: 0 10px 30px -10px hsl(var(--hayas-600) / 0.2);
+  }
+  
+  .shadow-glow {
+    box-shadow: 0 0 40px hsl(var(--turquesa) / 0.15);
+  }
+
+  /* Animaciones de rendimiento optimizadas */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out;
+  }
+
+  /* Hover effects eficientes */
+  .hover-scale {
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+
+  /* Focus accesible */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-hayas-600 focus:ring-offset-2;
+  }
+}
+
+/* Keyframes optimizados */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Crítico: Above the fold */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Optimización de fuentes */
+  body {
+    font-display: swap;
+    text-rendering: optimizeLegibility;
+  }
+  
+  /* Lazy loading placeholder */
+  img[loading="lazy"] {
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  img[loading="lazy"].loaded {
+    opacity: 1;
   }
 }
