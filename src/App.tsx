@@ -34,7 +34,33 @@ const App = () => (
       <BrowserRouter>
         <SofiaWidget />
         <Routes>
+          {/* PÁGINA PRINCIPAL */}
           <Route path="/" element={<Index />} />
+          
+          {/* SOLUCIONES - Pillar Pages */}
+          <Route path="/soluciones/ia-marketing" element={<SolucionesIA />} />
+          <Route path="/soluciones/crm-automatizacion" element={<CrmAutomatizaciones />} />
+          <Route path="/soluciones/implantacion-crm" element={<ImplantacionCrm />} />
+          <Route path="/soluciones/branding-marca" element={<CreacionMarca />} />
+          <Route path="/soluciones/marketing-digital" element={<MarketingVisibilidad />} />
+          <Route path="/soluciones/gestion-marketing" element={<GestionMarketing />} />
+          <Route path="/soluciones/captacion-leads" element={<CaptacionLeads />} />
+          
+          {/* CASOS DE ÉXITO - Apoyan las soluciones */}
+          <Route path="/casos-exito/asendia" element={<CasoExitoAsendia />} />
+          <Route path="/casos-exito/nexo-vital" element={<CasoExitoNexoVital />} />
+          <Route path="/casos-exito/i-virgen-extra" element={<CasoExitoIVirgenExtra />} />
+          <Route path="/casos-exito/inbound-students" element={<CasoExitoInboundStudents />} />
+          <Route path="/casos-exito/calistenia-online" element={<CasoExitoCalistheniaOnline />} />
+          <Route path="/casos-exito/centro-roraima" element={<CasoExitoCentroRoraima />} />
+          <Route path="/casos-exito/joints-up" element={<CasoExitoJointsUp />} />
+          <Route path="/casos-exito/translate-with-style" element={<CasoExitoTranslateWithStyle />} />
+          
+          {/* BLOG / RECURSOS */}
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:id" element={<BlogPost />} />
+          
+          {/* RUTAS LEGACY - Redirigen a las nuevas */}
           <Route path="/crm-automatizaciones" element={<CrmAutomatizaciones />} />
           <Route path="/creacion-marca" element={<CreacionMarca />} />
           <Route path="/marketing-visibilidad" element={<MarketingVisibilidad />} />
@@ -42,15 +68,6 @@ const App = () => (
           <Route path="/gestion-marketing" element={<GestionMarketing />} />
           <Route path="/soluciones-ia" element={<SolucionesIA />} />
           <Route path="/implantacion-crm" element={<ImplantacionCrm />} />
-          
-          {/* Blog */}
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:id" element={<BlogPost />} />
-          
-          <Route path="/campanas-inbound-marketing" element={<NotFound />} />
-          <Route path="/captacion-leads-clientes" element={<NotFound />} />
-          <Route path="/automatizacion-procesos-ventas" element={<NotFound />} />
-          <Route path="/administracion-crm-marketing" element={<NotFound />} />
           <Route path="/caso-exito-asendia" element={<CasoExitoAsendia />} />
           <Route path="/caso-exito-nexo-vital" element={<CasoExitoNexoVital />} />
           <Route path="/caso-exito-i-virgen-extra" element={<CasoExitoIVirgenExtra />} />
@@ -59,7 +76,13 @@ const App = () => (
           <Route path="/caso-exito-centro-roraima" element={<CasoExitoCentroRoraima />} />
           <Route path="/caso-exito-joints-up" element={<CasoExitoJointsUp />} />
           <Route path="/caso-exito-translate-with-style" element={<CasoExitoTranslateWithStyle />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          
+          {/* PÁGINAS PENDIENTES - Temporalmente llevan a NotFound */}
+          <Route path="/servicios" element={<NotFound />} />
+          <Route path="/nosotros" element={<NotFound />} />
+          <Route path="/contacto" element={<NotFound />} />
+          
+          {/* 404 - DEBE IR SIEMPRE AL FINAL */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
