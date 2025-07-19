@@ -44,6 +44,9 @@ const Navigation = () => {
             <a href="#servicios" className="text-gray-700 hover:text-hayas-600 font-medium transition-colors">
               Servicios
             </a>
+            <Link to="/blog" className="text-gray-700 hover:text-hayas-600 font-medium transition-colors">
+              Blog
+            </Link>
             <a href="#nosotros" className="text-gray-700 hover:text-hayas-600 font-medium transition-colors">
               ¿Por qué elegirnos?
             </a>
@@ -99,6 +102,13 @@ const Navigation = () => {
               >
                 Servicios
               </a>
+              <Link 
+                to="/blog" 
+                className="text-gray-700 hover:text-hayas-600 font-medium transition-colors px-4 py-2 hover:bg-gray-50 rounded"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Blog
+              </Link>
               <a 
                 href="#nosotros" 
                 className="text-gray-700 hover:text-hayas-600 font-medium transition-colors px-4 py-2 hover:bg-gray-50 rounded"

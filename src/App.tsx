@@ -20,6 +20,8 @@ import CasoExitoCentroRoraima from "./pages/CasoExitoCentroRoraima";
 import CasoExitoJointsUp from "./pages/CasoExitoJointsUp";
 import CasoExitoTranslateWithStyle from "./pages/CasoExitoTranslateWithStyle";
 import ImplantacionCrm from "./pages/ImplantacionCrm";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -40,6 +42,11 @@ const App = () => (
           <Route path="/gestion-marketing" element={<GestionMarketing />} />
           <Route path="/soluciones-ia" element={<SolucionesIA />} />
           <Route path="/implantacion-crm" element={<ImplantacionCrm />} />
+          
+          {/* Blog */}
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:id" element={<BlogPost />} />
+          
           <Route path="/campanas-inbound-marketing" element={<NotFound />} />
           <Route path="/captacion-leads-clientes" element={<NotFound />} />
           <Route path="/automatizacion-procesos-ventas" element={<NotFound />} />
