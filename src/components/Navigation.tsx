@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { ChevronDown } from 'lucide-react';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [solucionesDropdownOpen, setSolucionesDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,6 +22,16 @@ const Navigation = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  const solucionesItems = [
+    { title: 'IA aplicada al Marketing', href: '/soluciones/ia-marketing' },
+    { title: 'CRM y Automatización', href: '/soluciones/crm-automatizacion' },
+    { title: 'Implantación CRM', href: '/soluciones/implantacion-crm' },
+    { title: 'Branding y Marca', href: '/soluciones/branding-marca' },
+    { title: 'Marketing Digital', href: '/soluciones/marketing-digital' },
+    { title: 'Gestión Marketing', href: '/soluciones/gestion-marketing' },
+    { title: 'Captación de Leads', href: '/soluciones/captacion-leads' }
+  ];
 
   return (
     <header 
@@ -41,9 +53,39 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#soluciones" className="text-gray-700 hover:text-hayas-600 font-medium transition-colors">
-              Soluciones
-            </a>
+            {/* Soluciones Dropdown */}
+            <div className="relative group">
+              <button 
+                className="text-gray-700 hover:text-hayas-600 font-medium transition-colors flex items-center gap-1"
+                onMouseEnter={() => setSolucionesDropdownOpen(true)}
+                onMouseLeave={() => setSolucionesDropdownOpen(false)}
+              >
+                Soluciones
+                <ChevronDown className="h-4 w-4" />
+              </button>
+              
+              {solucionesDropdownOpen && (
+                <div 
+                  className="absolute top-full left-0 mt-2 w-64 bg-white border border-gray-200 rounded-lg shadow-lg z-50"
+                  onMouseEnter={() => setSolucionesDropdownOpen(true)}
+                  onMouseLeave={() => setSolucionesDropdownOpen(false)}
+                >
+                  <div className="py-2">
+                    {solucionesItems.map((item) => (
+                      <Link
+                        key={item.href}
+                        to={item.href}
+                        className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-hayas-600 transition-colors"
+                        onClick={() => setSolucionesDropdownOpen(false)}
+                      >
+                        {item.title}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+            
             <a href="#servicios" className="text-gray-700 hover:text-hayas-600 font-medium transition-colors">
               Servicios
             </a>
@@ -98,13 +140,23 @@ const Navigation = () => {
         {mobileMenuOpen && (
           <div className="md:hidden bg-white mt-4 py-4 px-2 rounded-lg shadow-lg">
             <nav className="flex flex-col space-y-4">
-              <a 
-                href="#soluciones" 
-                className="text-gray-700 hover:text-hayas-600 font-medium transition-colors px-4 py-2 hover:bg-gray-50 rounded"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Soluciones
-              </a>
+              {/* Soluciones en Mobile */}
+              <div className="px-4 py-2">
+                <div className="text-gray-700 font-medium mb-2">Soluciones</div>
+                <div className="pl-4 space-y-2">
+                  {solucionesItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      to={item.href}
+                      className="block text-sm text-gray-600 hover:text-hayas-600 transition-colors py-1"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {item.title}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+              
               <a 
                 href="#servicios" 
                 className="text-gray-700 hover:text-hayas-600 font-medium transition-colors px-4 py-2 hover:bg-gray-50 rounded"
