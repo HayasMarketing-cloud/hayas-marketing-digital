@@ -41,15 +41,18 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
+            <a href="#soluciones" className="text-gray-700 hover:text-hayas-600 font-medium transition-colors">
+              Soluciones
+            </a>
             <a href="#servicios" className="text-gray-700 hover:text-hayas-600 font-medium transition-colors">
               Servicios
+            </a>
+            <a href="#nosotros" className="text-gray-700 hover:text-hayas-600 font-medium transition-colors">
+              La Agencia
             </a>
             <Link to="/blog" className="text-gray-700 hover:text-hayas-600 font-medium transition-colors">
               Blog
             </Link>
-            <a href="#nosotros" className="text-gray-700 hover:text-hayas-600 font-medium transition-colors">
-              ¿Por qué elegirnos?
-            </a>
             <a href="#contacto" className="text-gray-700 hover:text-hayas-600 font-medium transition-colors">
               Contacto
             </a>
@@ -96,11 +99,25 @@ const Navigation = () => {
           <div className="md:hidden bg-white mt-4 py-4 px-2 rounded-lg shadow-lg">
             <nav className="flex flex-col space-y-4">
               <a 
+                href="#soluciones" 
+                className="text-gray-700 hover:text-hayas-600 font-medium transition-colors px-4 py-2 hover:bg-gray-50 rounded"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Soluciones
+              </a>
+              <a 
                 href="#servicios" 
                 className="text-gray-700 hover:text-hayas-600 font-medium transition-colors px-4 py-2 hover:bg-gray-50 rounded"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Servicios
+              </a>
+              <a 
+                href="#nosotros" 
+                className="text-gray-700 hover:text-hayas-600 font-medium transition-colors px-4 py-2 hover:bg-gray-50 rounded"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                La Agencia
               </a>
               <Link 
                 to="/blog" 
@@ -109,13 +126,6 @@ const Navigation = () => {
               >
                 Blog
               </Link>
-              <a 
-                href="#nosotros" 
-                className="text-gray-700 hover:text-hayas-600 font-medium transition-colors px-4 py-2 hover:bg-gray-50 rounded"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                ¿Por qué elegirnos?
-              </a>
               <a 
                 href="#contacto" 
                 className="text-gray-700 hover:text-hayas-600 font-medium transition-colors px-4 py-2 hover:bg-gray-50 rounded"
