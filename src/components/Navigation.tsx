@@ -67,9 +67,10 @@ const Navigation = () => {
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-md border-b border-border/50 ${
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 bg-background/95 backdrop-blur-md border-b border-border/50 ${
         isScrolled ? 'shadow-elegant py-2' : 'py-3'
       }`}
+      style={{ height: activeMegaMenu ? 'auto' : 'auto' }}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
@@ -98,8 +99,7 @@ const Navigation = () => {
               </button>
               
               {activeMegaMenu === 'soluciones' && (
-                <div className="absolute top-full left-0 right-0 mt-2 bg-background border border-border rounded-lg shadow-elegant z-50 overflow-hidden" 
-                     style={{ left: '-50vw', right: '-50vw', width: '100vw' }}>
+                <div className="fixed top-full left-0 right-0 mt-2 bg-background border border-border rounded-lg shadow-elegant z-50 overflow-hidden">
                   <div className="container mx-auto px-4">
                     <div className="grid grid-cols-3 gap-8 p-8">
                       {megaMenuData.soluciones.categories.map((category, idx) => (
@@ -150,8 +150,7 @@ const Navigation = () => {
               </button>
               
               {activeMegaMenu === 'casos' && (
-                <div className="absolute top-full left-0 right-0 mt-2 bg-background border border-border rounded-lg shadow-elegant z-50 overflow-hidden"
-                     style={{ left: '-30vw', right: '-30vw', width: '80vw' }}>
+                <div className="fixed top-full left-0 right-0 mt-2 bg-background border border-border rounded-lg shadow-elegant z-50 overflow-hidden">
                   <div className="container mx-auto px-4">
                     <div className="p-6">
                       <h4 className="font-semibold text-foreground mb-4 border-b border-border pb-2">
@@ -206,8 +205,7 @@ const Navigation = () => {
               </button>
               
               {activeMegaMenu === 'servicios' && (
-                <div className="absolute top-full left-0 right-0 mt-2 bg-background border border-border rounded-lg shadow-elegant z-50 overflow-hidden"
-                     style={{ left: '-20vw', right: '-20vw', width: '60vw' }}>
+                <div className="fixed top-full left-0 right-0 mt-2 bg-background border border-border rounded-lg shadow-elegant z-50 overflow-hidden">
                   <div className="container mx-auto px-4">
                     <div className="p-6">
                       <h4 className="font-semibold text-foreground mb-4 border-b border-border pb-2">
