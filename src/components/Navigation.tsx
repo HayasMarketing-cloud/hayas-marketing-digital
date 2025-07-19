@@ -52,10 +52,10 @@ const Navigation = () => {
       ]
     },
     casosExito: [
-      { title: 'Centro Roraima', href: '/caso-exito-centro-roraima', image: '/lovable-uploads/2a2adcf5-d531-4d8c-91bd-bb12aac27976.png' },
-      { title: 'Asendia', href: '/caso-exito-asendia', image: '/lovable-uploads/37a206e4-890d-4d31-a1c4-7dc674fe47a4.png' },
-      { title: 'JointsUp', href: '/caso-exito-jointsup', image: '/lovable-uploads/564421eb-e67c-4075-95c0-1405855106cc.png' },
-      { title: 'IV Extra', href: '/caso-exito-iv-extra', image: '/lovable-uploads/eb03ebcf-1212-4adb-9f73-1020279eb265.png' }
+      { title: 'Centro Roraima', href: '/caso-exito-centro-roraima', image: '/lovable-uploads/2a2adcf5-d531-4d8c-91bd-bb12aac27976.png', solution: 'Branding + Web' },
+      { title: 'Asendia', href: '/caso-exito-asendia', image: '/lovable-uploads/37a206e4-890d-4d31-a1c4-7dc674fe47a4.png', solution: 'CRM + Automatización' },
+      { title: 'JointsUp', href: '/caso-exito-jointsup', image: '/lovable-uploads/564421eb-e67c-4075-95c0-1405855106cc.png', solution: 'Marca + Posicionamiento' },
+      { title: 'IV Extra', href: '/caso-exito-iv-extra', image: '/lovable-uploads/eb03ebcf-1212-4adb-9f73-1020279eb265.png', solution: 'Branding + Web' }
     ],
     servicios: [
       { title: 'Creación de Marca', href: '/creacion-marca', description: 'Desde cero hasta el lanzamiento' },
@@ -172,7 +172,11 @@ const Navigation = () => {
                               <h5 className="font-medium text-foreground group-hover:text-primary transition-colors">
                                 {caso.title}
                               </h5>
-                              <p className="text-sm text-muted-foreground">Ver caso completo</p>
+                              <div className="flex items-center gap-2 mt-1">
+                                <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">
+                                  {caso.solution}
+                                </span>
+                              </div>
                             </div>
                             <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-all duration-200 transform group-hover:translate-x-1" />
                           </div>
