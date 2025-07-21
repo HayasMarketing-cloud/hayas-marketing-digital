@@ -95,7 +95,7 @@ const Navigation = () => {
                 <img 
                   src="/lovable-uploads/7ec653d8-b796-48ee-9657-8f0301af6e55.png"  
                   alt="Hayas Marketing Logo" 
-                  className="h-48 w-auto"
+                  className="h-12 w-auto"
                 />
               </Link>
             </div>
