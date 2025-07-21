@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,11 +16,15 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 217 91% 33%;
-    --primary-foreground: 210 40% 98%;
+    /* Colores corporativos Hayas en HSL */
+    --primary: 89 100% 30%; /* #4D9A00 */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 189 94% 43%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 170 95% 23%; /* #04725A */
+    --secondary-foreground: 0 0% 100%;
+
+    --tertiary: 207 100% 25%; /* #00467E */
+    --tertiary-foreground: 0 0% 100%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
@@ -30,7 +37,7 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 217 91% 33%;
+    --ring: 89 100% 30%;
 
     --radius: 0.5rem;
 
@@ -41,11 +48,12 @@
     --sidebar-accent: 240 4.8% 95.9%;
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 89 100% 30%;
 
-    /* Hayas and Turquesa colors in HSL format */
-    --hayas-600: 217 91% 33%;
-    --turquesa: 189 94% 43%;
+    /* Variables para gradiente corporativo */
+    --hayas-primary: 89 100% 30%;
+    --hayas-secondary: 170 95% 23%;
+    --hayas-tertiary: 207 100% 25%;
   }
 }
 
@@ -55,33 +63,47 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-helvetica;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
 
 @layer utilities {
-  /* Gradientes optimizados */
+  /* Gradiente corporativo Hayas */
   .gradient-primary {
-    background: linear-gradient(135deg, hsl(var(--hayas-600)), hsl(var(--turquesa)));
+    background: linear-gradient(135deg, hsl(var(--hayas-primary)), hsl(var(--hayas-tertiary)));
   }
   
   .text-gradient-primary {
-    background: linear-gradient(135deg, hsl(var(--hayas-600)), hsl(var(--turquesa)));
+    background: linear-gradient(135deg, hsl(var(--hayas-primary)), hsl(var(--hayas-tertiary)));
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
   }
 
-  /* Sombras elegantes */
+  /* Variantes adicionales del gradiente */
+  .gradient-secondary {
+    background: linear-gradient(135deg, hsl(var(--hayas-secondary)), hsl(var(--hayas-tertiary)));
+  }
+
+  .gradient-soft {
+    background: linear-gradient(135deg, hsl(var(--hayas-primary) / 0.1), hsl(var(--hayas-tertiary) / 0.1));
+  }
+
+  /* Sombras corporativas */
   .shadow-elegant {
-    box-shadow: 0 10px 30px -10px hsl(var(--hayas-600) / 0.2);
+    box-shadow: 0 10px 30px -10px hsl(var(--hayas-primary) / 0.2);
   }
   
   .shadow-glow {
-    box-shadow: 0 0 40px hsl(var(--turquesa) / 0.15);
+    box-shadow: 0 0 40px hsl(var(--hayas-secondary) / 0.15);
   }
 
-  /* Animaciones de rendimiento optimizadas */
+  .shadow-corporate {
+    box-shadow: 0 4px 20px hsl(var(--hayas-tertiary) / 0.15);
+  }
+
+  /* Animaciones optimizadas */
   .animate-fade-in {
     animation: fadeIn 0.6s ease-out;
   }
@@ -90,7 +112,7 @@
     animation: slideUp 0.8s ease-out;
   }
 
-  /* Hover effects eficientes */
+  /* Hover effects */
   .hover-scale {
     transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
@@ -99,9 +121,34 @@
     transform: scale(1.05);
   }
 
-  /* Focus accesible */
+  /* Focus accesible con colores corporativos */
   .focus-ring {
-    @apply focus:outline-none focus:ring-2 focus:ring-hayas-600 focus:ring-offset-2;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+
+  /* Colores corporativos como utilidades */
+  .bg-hayas-primary {
+    background-color: hsl(var(--hayas-primary));
+  }
+
+  .bg-hayas-secondary {
+    background-color: hsl(var(--hayas-secondary));
+  }
+
+  .bg-hayas-tertiary {
+    background-color: hsl(var(--hayas-tertiary));
+  }
+
+  .text-hayas-primary {
+    color: hsl(var(--hayas-primary));
+  }
+
+  .text-hayas-secondary {
+    color: hsl(var(--hayas-secondary));
+  }
+
+  .text-hayas-tertiary {
+    color: hsl(var(--hayas-tertiary));
   }
 }
 

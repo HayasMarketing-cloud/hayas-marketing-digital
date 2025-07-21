@@ -35,7 +35,7 @@ const Navigation = () => {
   const handleMouseLeave = () => {
     const timeout = setTimeout(() => {
       setActiveMegaMenu(null);
-    }, 150); // 150ms delay para permitir navegación fluida
+    }, 150);
     setHoverTimeout(timeout);
   };
 
@@ -85,7 +85,7 @@ const Navigation = () => {
     <>
       <header 
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 bg-background/95 backdrop-blur-md border-b border-border/50 ${
-          isScrolled ? 'shadow-elegant py-2' : 'py-3'
+          isScrolled ? 'shadow-corporate py-2' : 'py-3'
         }`}
       >
         <div className="container mx-auto px-4">
@@ -108,7 +108,7 @@ const Navigation = () => {
                 onMouseEnter={() => handleMouseEnter('soluciones')}
                 onMouseLeave={handleMouseLeave}
               >
-                <button className="text-foreground hover:text-primary font-medium transition-colors flex items-center gap-1 py-2">
+                <button className="text-foreground hover:text-hayas-primary font-medium transition-colors flex items-center gap-1 py-2">
                   Soluciones
                   <ChevronDown className="h-4 w-4 transition-transform duration-200" 
                     style={{ transform: activeMegaMenu === 'soluciones' ? 'rotate(180deg)' : 'rotate(0deg)' }} />
@@ -121,7 +121,7 @@ const Navigation = () => {
                 onMouseEnter={() => handleMouseEnter('casos')}
                 onMouseLeave={handleMouseLeave}
               >
-                <button className="text-foreground hover:text-primary font-medium transition-colors flex items-center gap-1 py-2">
+                <button className="text-foreground hover:text-hayas-primary font-medium transition-colors flex items-center gap-1 py-2">
                   Casos de Éxito
                   <ChevronDown className="h-4 w-4 transition-transform duration-200" 
                     style={{ transform: activeMegaMenu === 'casos' ? 'rotate(180deg)' : 'rotate(0deg)' }} />
@@ -134,20 +134,20 @@ const Navigation = () => {
                 onMouseEnter={() => handleMouseEnter('servicios')}
                 onMouseLeave={handleMouseLeave}
               >
-                <button className="text-foreground hover:text-primary font-medium transition-colors flex items-center gap-1 py-2">
+                <button className="text-foreground hover:text-hayas-primary font-medium transition-colors flex items-center gap-1 py-2">
                   Servicios
                   <ChevronDown className="h-4 w-4 transition-transform duration-200" 
                     style={{ transform: activeMegaMenu === 'servicios' ? 'rotate(180deg)' : 'rotate(0deg)' }} />
                 </button>
               </div>
 
-              <a href="#nosotros" className="text-foreground hover:text-primary font-medium transition-colors">
+              <a href="#nosotros" className="text-foreground hover:text-hayas-primary font-medium transition-colors">
                 La Agencia
               </a>
-              <Link to="/blog" className="text-foreground hover:text-primary font-medium transition-colors">
+              <Link to="/blog" className="text-foreground hover:text-hayas-primary font-medium transition-colors">
                 Blog
               </Link>
-              <a href="#contacto" className="text-foreground hover:text-primary font-medium transition-colors">
+              <a href="#contacto" className="text-foreground hover:text-hayas-primary font-medium transition-colors">
                 Contacto
               </a>
             </nav>
@@ -190,7 +190,7 @@ const Navigation = () => {
 
           {/* Mobile Navigation Menu */}
           {mobileMenuOpen && (
-            <div className="lg:hidden bg-background border border-border mt-4 py-4 px-2 rounded-lg shadow-elegant animate-slideUp">
+            <div className="lg:hidden bg-background border border-border mt-4 py-4 px-2 rounded-lg shadow-corporate animate-slideUp">
               <nav className="flex flex-col space-y-4">
                 {/* Soluciones Accordion Mobile */}
                 <div className="px-4 py-2">
@@ -285,7 +285,7 @@ const Navigation = () => {
       {/* Mega Menus - Positioned outside header to create continuous hover area */}
       {activeMegaMenu === 'soluciones' && (
         <div 
-          className="fixed left-0 right-0 bg-background border border-border rounded-lg shadow-elegant z-30 overflow-hidden"
+          className="fixed left-0 right-0 bg-background border border-border rounded-lg shadow-corporate z-30 overflow-hidden"
           style={{ top: isScrolled ? '70px' : '84px' }}
           onMouseEnter={() => handleMouseEnter('soluciones')}
           onMouseLeave={handleMouseLeave}
@@ -307,14 +307,14 @@ const Navigation = () => {
                       >
                         <div className="flex items-start justify-between">
                           <div>
-                            <h5 className="font-medium text-foreground group-hover:text-primary transition-colors">
+                            <h5 className="font-medium text-foreground group-hover:text-hayas-primary transition-colors">
                               {item.title}
                             </h5>
                             <p className="text-sm text-muted-foreground mt-1">
                               {item.description}
                             </p>
                           </div>
-                          <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-all duration-200 transform group-hover:translate-x-1" />
+                          <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-hayas-primary transition-all duration-200 transform group-hover:translate-x-1" />
                         </div>
                       </Link>
                     ))}
@@ -328,7 +328,7 @@ const Navigation = () => {
 
       {activeMegaMenu === 'casos' && (
         <div 
-          className="fixed left-0 right-0 bg-background border border-border rounded-lg shadow-elegant z-30 overflow-hidden"
+          className="fixed left-0 right-0 bg-background border border-border rounded-lg shadow-corporate z-30 overflow-hidden"
           style={{ top: isScrolled ? '70px' : '84px' }}
           onMouseEnter={() => handleMouseEnter('casos')}
           onMouseLeave={handleMouseLeave}
@@ -375,7 +375,7 @@ const Navigation = () => {
 
       {activeMegaMenu === 'servicios' && (
         <div 
-          className="fixed left-0 right-0 bg-background border border-border rounded-lg shadow-elegant z-30 overflow-hidden"
+          className="fixed left-0 right-0 bg-background border border-border rounded-lg shadow-corporate z-30 overflow-hidden"
           style={{ top: isScrolled ? '70px' : '84px' }}
           onMouseEnter={() => handleMouseEnter('servicios')}
           onMouseLeave={handleMouseLeave}

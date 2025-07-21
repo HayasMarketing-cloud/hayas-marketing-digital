@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -52,22 +53,28 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// Colores corporativos Hayas
 				hayas: {
-					50: '#f0f9ff',
-					100: '#e0f2fe',
-					200: '#bae6fd',
-					300: '#7dd3fc',
-					400: '#38bdf8',
-					500: '#0ea5e9',
-					600: '#0284c7',
-					700: '#0369a1',
-					800: '#1E3A8A',
-					900: '#0c4a6e',
+					50: '#f0f7e6',
+					100: '#daecc0',
+					200: '#c1e096',
+					300: '#a7d369',
+					400: '#93c947',
+					500: '#4D9A00', // Verde principal corporativo
+					600: '#458a00',
+					700: '#3a7300',
+					800: '#2f5c00',
+					900: '#1f3d00',
 				},
-				turquesa: {
-					DEFAULT: '#06B6D4',
-					light: '#67E8F9',
-					dark: '#0891B2',
+				'hayas-secondary': {
+					DEFAULT: '#04725A',
+					light: '#069668',
+					dark: '#035548',
+				},
+				'hayas-tertiary': {
+					DEFAULT: '#00467E',
+					light: '#0056a0',
+					dark: '#003862',
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
@@ -79,9 +86,10 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				'soft-purple': '#D6BCFA',
-				'primary-purple': '#9b87f5',
-				'secondary-purple': '#7E69AB',
+			},
+			fontFamily: {
+				sans: ['Helvetica', 'Arial', 'sans-serif'],
+				helvetica: ['Helvetica', 'Arial', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

@@ -6,9 +6,9 @@ import OptimizedImage from './OptimizedImage';
 const HeroSection = () => {
   return (
     <main className="relative py-16 md:py-20 overflow-hidden">
-      {/* Círculos decorativos de fondo */}
-      <div className="absolute -bottom-24 -left-24 w-64 h-64 rounded-full bg-hayas-100 opacity-20" aria-hidden="true"></div>
-      <div className="absolute top-24 -right-24 w-96 h-96 rounded-full bg-turquesa-light opacity-10" aria-hidden="true"></div>
+      {/* Círculos decorativos de fondo con colores corporativos */}
+      <div className="absolute -bottom-24 -left-24 w-64 h-64 rounded-full bg-hayas-primary/10 opacity-20" aria-hidden="true"></div>
+      <div className="absolute top-24 -right-24 w-96 h-96 rounded-full bg-hayas-secondary/10 opacity-10" aria-hidden="true"></div>
       
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center">
@@ -28,7 +28,7 @@ const HeroSection = () => {
               </Button>
               <Button 
                 variant="outline" 
-                className="py-6 px-8 text-lg font-medium hover-scale focus-ring"
+                className="py-6 px-8 text-lg font-medium hover-scale focus-ring border-primary text-primary hover:bg-primary hover:text-white"
                 aria-label="Contactar con Hayas Marketing"
               >
                 Contactar
@@ -37,11 +37,11 @@ const HeroSection = () => {
           </div>
           <div className="lg:w-1/2">
             <div className="relative animate-fade-in">
-              <div className="absolute inset-0 bg-hayas-200 rounded-full blur-3xl opacity-20 shadow-glow" aria-hidden="true"></div>
+              <div className="absolute inset-0 bg-hayas-secondary/20 rounded-full blur-3xl opacity-20 shadow-glow" aria-hidden="true"></div>
               <OptimizedImage
                 src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop"
                 alt="Dashboard de marketing digital mostrando análisis de datos, métricas de conversión y automatización de procesos"
-                className="relative z-10 w-full h-auto rounded-xl shadow-elegant"
+                className="relative z-10 w-full h-auto rounded-xl shadow-corporate"
                 width={800}
                 height={600}
                 priority={true}
