@@ -190,6 +190,16 @@ const Footer = () => {
               </div>
             </div>
           </div>
+          
+          {/* Nota informativa con asterisco */}
+          <div className="mt-8 text-center">
+            <p className="text-white font-semibold mb-2">
+              *Subvención disponible. Hasta 3.000€ por autónomo o empresa
+            </p>
+            <p className="text-gray-400 text-sm max-w-4xl mx-auto leading-relaxed">
+              *Hayas Marketing te ayuda a gestionar tu bono digital por 3.000€ pero únicamente proporciona las soluciones de marketing digital, branding y visibilidad por 2.000€. La solución de Puesto Seguro en Internet de 1.000€ tiene que solicitarse a empresas fabricantes y/o distribidoras de PC o Portátiles, que estén certificadas por el programa Kit Digital.
+            </p>
+          </div>
         </div>
         
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between">
