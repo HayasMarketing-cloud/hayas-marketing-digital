@@ -1,5 +1,9 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { ArrowRight, Building2, Users } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -80,7 +84,87 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between">
+        {/* Priority CTAs Section */}
+        <div className="border-t border-gray-800 mt-12 pt-8">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-white mb-4">Servicios Prioritarios</h3>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Aprovecha las subvenciones disponibles para digitalizar tu empresa con nuestros servicios especializados
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            {/* Kit Consulting CTA */}
+            <div className="bg-gradient-to-br from-hayas-600 to-hayas-700 rounded-xl p-6 text-white relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full transform translate-x-16 -translate-y-16"></div>
+              <div className="relative z-10">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
+                    <Building2 className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-lg">Kit Consulting</h4>
+                    <p className="text-white/80 text-sm">PYMEs 10-249 empleados</p>
+                  </div>
+                </div>
+                <p className="text-white/90 mb-4 text-sm">
+                  Asesoramiento especializado en IA, ventas digitales y transformación digital.
+                </p>
+                <div className="flex items-center justify-between">
+                  <Badge className="bg-white/20 text-white border-white/30">
+                    Hasta 24.000€
+                  </Badge>
+                  <Button 
+                    asChild
+                    variant="secondary" 
+                    size="sm"
+                    className="bg-white text-hayas-700 hover:bg-gray-100"
+                  >
+                    <Link to="/kit-consulting">
+                      Ver más <ArrowRight className="ml-1 h-4 w-4" />
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* Kit Digital CTA */}
+            <div className="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-xl p-6 text-white relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full transform translate-x-16 -translate-y-16"></div>
+              <div className="relative z-10">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
+                    <Users className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-lg">Kit Digital</h4>
+                    <p className="text-white/80 text-sm">Autónomos hasta 2 empleados</p>
+                  </div>
+                </div>
+                <p className="text-white/90 mb-4 text-sm">
+                  Web profesional, SEO, redes sociales y presencia digital completa.
+                </p>
+                <div className="flex items-center justify-between">
+                  <Badge className="bg-white/20 text-white border-white/30">
+                    Hasta 3.000€
+                  </Badge>
+                  <Button 
+                    asChild
+                    variant="secondary" 
+                    size="sm"
+                    className="bg-white text-blue-700 hover:bg-gray-100"
+                  >
+                    <Link to="/kit-digital">
+                      Ver más <ArrowRight className="ml-1 h-4 w-4" />
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between">
           <div className="mb-4 md:mb-0">
             <p>&copy; {currentYear} Hayas Marketing. Todos los derechos reservados.</p>
           </div>
