@@ -3,11 +3,11 @@ import React, { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
-
 import SolutionsSection from '@/components/SolutionsSection';
 import ServicesSection from '@/components/ServicesSection';
 import AllServicesSection from '@/components/AllServicesSection';
 import WhyChooseUsSection from '@/components/WhyChooseUsSection';
+import ReviewsSection from '@/components/ReviewsSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import FAQSection from '@/components/FAQSection';
@@ -34,7 +34,8 @@ const Index = () => {
         <ServicesSection />
         <WhyChooseUsSection />
         <AllServicesSection />
-        <FAQSection 
+        <ReviewsSection />
+        <FAQSection
           faqs={[
             {
               question: "¿Qué diferencia a Hayas Marketing de otras agencias?",
