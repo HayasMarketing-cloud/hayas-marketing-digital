@@ -85,7 +85,7 @@ const Navigation = () => {
     <>
       <header 
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 bg-background/95 backdrop-blur-md border-b border-border/50 ${
-          isScrolled ? 'shadow-corporate py-2' : 'py-3'
+          isScrolled ? 'shadow-corporate py-2' : 'py-4'
         }`}
       >
         <div className="container mx-auto px-4">
@@ -95,7 +95,7 @@ const Navigation = () => {
                 <img 
                   src="/lovable-uploads/7ec653d8-b796-48ee-9657-8f0301af6e55.png"  
                   alt="Hayas Marketing Logo" 
-                  className="h-20 w-auto"
+                  className="h-40 w-auto"
                 />
               </Link>
             </div>
@@ -286,7 +286,7 @@ const Navigation = () => {
       {activeMegaMenu === 'soluciones' && (
         <div 
           className="fixed left-0 right-0 bg-background border border-border rounded-lg shadow-corporate z-30 overflow-hidden"
-          style={{ top: isScrolled ? '70px' : '84px' }}
+          style={{ top: isScrolled ? '120px' : '180px' }}
           onMouseEnter={() => handleMouseEnter('soluciones')}
           onMouseLeave={handleMouseLeave}
         >
@@ -329,7 +329,7 @@ const Navigation = () => {
       {activeMegaMenu === 'casos' && (
         <div 
           className="fixed left-0 right-0 bg-background border border-border rounded-lg shadow-corporate z-30 overflow-hidden"
-          style={{ top: isScrolled ? '70px' : '84px' }}
+          style={{ top: isScrolled ? '120px' : '180px' }}
           onMouseEnter={() => handleMouseEnter('casos')}
           onMouseLeave={handleMouseLeave}
         >
@@ -376,7 +376,7 @@ const Navigation = () => {
       {activeMegaMenu === 'servicios' && (
         <div 
           className="fixed left-0 right-0 bg-background border border-border rounded-lg shadow-corporate z-30 overflow-hidden"
-          style={{ top: isScrolled ? '70px' : '84px' }}
+          style={{ top: isScrolled ? '120px' : '180px' }}
           onMouseEnter={() => handleMouseEnter('servicios')}
           onMouseLeave={handleMouseLeave}
         >
