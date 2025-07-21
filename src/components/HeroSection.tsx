@@ -14,24 +14,24 @@ const HeroSection = () => {
         <div className="flex flex-col lg:flex-row items-center">
           <div className="lg:w-1/2 lg:pr-12 mb-10 lg:mb-0">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight animate-fade-in">
-              Soluciones de <span className="text-gradient-primary">Automatización</span> e <span className="text-gradient-primary">IA</span> para Marketing y Ventas
+              Haz crecer tu negocio con <span className="text-gradient-primary">inteligencia</span> y <span className="text-gradient-primary">propósito</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-700 mb-8 animate-slide-up">
-              En Hayas diseñamos soluciones que mejoran la eficiencia, potencian el marketing y ventas, y fortalecen la conexión entre marcas y personas.
+              En Hayas diseñamos soluciones que integran inteligencia artificial, automatización y estrategia personalizada para que tu marketing conecte de verdad y tus ventas no se queden atrás.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 animate-slide-up">
               <Button 
                 className="gradient-primary text-white py-6 px-8 text-lg font-medium shadow-elegant hover-scale focus-ring"
-                aria-label="Conocer nuestros servicios de marketing e IA"
+                aria-label="Solicitar soluciones inteligentes de marketing e IA"
               >
-                Conocer servicios
+                Quiero soluciones inteligentes
               </Button>
               <Button 
                 variant="outline" 
                 className="py-6 px-8 text-lg font-medium hover-scale focus-ring border-primary text-primary hover:bg-primary hover:text-white"
-                aria-label="Contactar con Hayas Marketing"
+                aria-label="Descubrir cómo trabajamos en Hayas Marketing"
               >
-                Contactar
+                Descubre cómo lo hacemos
               </Button>
             </div>
           </div>
