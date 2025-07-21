@@ -7,6 +7,7 @@ const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeMegaMenu, setActiveMegaMenu] = useState<string | null>(null);
+  const [hoverTimeout, setHoverTimeout] = useState<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,6 +23,21 @@ const Navigation = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  const handleMouseEnter = (menuName: string) => {
+    if (hoverTimeout) {
+      clearTimeout(hoverTimeout);
+      setHoverTimeout(null);
+    }
+    setActiveMegaMenu(menuName);
+  };
+
+  const handleMouseLeave = () => {
+    const timeout = setTimeout(() => {
+      setActiveMegaMenu(null);
+    }, 150); // 150ms delay para permitir navegación fluida
+    setHoverTimeout(timeout);
+  };
 
   const megaMenuData = {
     soluciones: {
@@ -66,328 +82,336 @@ const Navigation = () => {
   };
 
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 bg-background/95 backdrop-blur-md border-b border-border/50 ${
-        isScrolled ? 'shadow-elegant py-2' : 'py-3'
-      }`}
-      style={{ height: activeMegaMenu ? 'auto' : 'auto' }}
-    >
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center">
-            <Link to="/" className="flex items-center" onClick={() => window.scrollTo(0, 0)}>
-              <img 
-                src="/lovable-uploads/7ec653d8-b796-48ee-9657-8f0301af6e55.png"  
-                alt="Hayas Marketing Logo" 
-                className="h-48 w-auto"  // Doble del tamaño anterior
-              />
-            </Link>
-          </div>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
-            {/* Soluciones Mega Menu */}
-            <div 
-              className="relative"
-              onMouseEnter={() => setActiveMegaMenu('soluciones')}
-              onMouseLeave={() => setActiveMegaMenu(null)}
-            >
-              <button className="text-foreground hover:text-primary font-medium transition-colors flex items-center gap-1 py-2">
-                Soluciones
-                <ChevronDown className="h-4 w-4 transition-transform duration-200" 
-                  style={{ transform: activeMegaMenu === 'soluciones' ? 'rotate(180deg)' : 'rotate(0deg)' }} />
-              </button>
-              
-              {activeMegaMenu === 'soluciones' && (
-                <div 
-                  className="fixed left-0 right-0 bg-background border border-border rounded-lg shadow-elegant z-50 overflow-hidden" 
-                  style={{ top: '100%' }}
-                >
-                  <div className="container mx-auto px-4">
-                    <div className="grid grid-cols-3 gap-8 p-8">
-                      {megaMenuData.soluciones.categories.map((category, idx) => (
-                        <div key={idx} className="space-y-4">
-                          <h4 className="font-semibold text-foreground border-b border-border pb-2">
-                            {category.title}
-                          </h4>
-                          <div className="space-y-3">
-                            {category.items.map((item) => (
-                              <Link
-                                key={item.href}
-                                to={item.href}
-                                className="block group hover:bg-muted/50 p-3 rounded-lg transition-all duration-200"
-                                onClick={() => setActiveMegaMenu(null)}
-                              >
-                                <div className="flex items-start justify-between">
-                                  <div>
-                                    <h5 className="font-medium text-foreground group-hover:text-primary transition-colors">
-                                      {item.title}
-                                    </h5>
-                                    <p className="text-sm text-muted-foreground mt-1">
-                                      {item.description}
-                                    </p>
-                                  </div>
-                                  <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-all duration-200 transform group-hover:translate-x-1" />
-                                </div>
-                              </Link>
-                            ))}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Casos de Éxito Mega Menu */}
-            <div 
-              className="relative"
-              onMouseEnter={() => setActiveMegaMenu('casos')}
-              onMouseLeave={() => setActiveMegaMenu(null)}
-            >
-              <button className="text-foreground hover:text-primary font-medium transition-colors flex items-center gap-1 py-2">
-                Casos de Éxito
-                <ChevronDown className="h-4 w-4 transition-transform duration-200" 
-                  style={{ transform: activeMegaMenu === 'casos' ? 'rotate(180deg)' : 'rotate(0deg)' }} />
-              </button>
-              
-              {activeMegaMenu === 'casos' && (
-                <div 
-                  className="fixed left-0 right-0 bg-background border border-border rounded-lg shadow-elegant z-50 overflow-hidden" 
-                  style={{ top: '100%' }}
-                >
-                  <div className="container mx-auto px-4">
-                    <div className="p-6">
-                      <h4 className="font-semibold text-foreground mb-4 border-b border-border pb-2">
-                        Proyectos Destacados
-                      </h4>
-                      <div className="grid grid-cols-4 gap-4 max-w-4xl">
-                        {megaMenuData.casosExito.map((caso) => (
-                          <Link
-                            key={caso.href}
-                            to={caso.href}
-                            className="group hover:bg-muted/50 p-4 rounded-lg transition-all duration-200"
-                            onClick={() => setActiveMegaMenu(null)}
-                          >
-                            <div className="flex flex-col items-center space-y-3">
-                              <div className="w-16 h-16 rounded-lg overflow-hidden bg-muted flex-shrink-0">
-                                <img 
-                                  src={caso.image} 
-                                  alt={caso.title}
-                                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
-                                />
-                              </div>
-                              <div className="text-center">
-                                <h5 className="font-medium text-foreground group-hover:text-primary transition-colors">
-                                  {caso.title}
-                                </h5>
-                                <div className="flex items-center justify-center mt-1">
-                                  <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">
-                                    {caso.solution}
-                                  </span>
-                                </div>
-                              </div>
-                            </div>
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Servicios Mega Menu */}
-            <div 
-              className="relative"
-              onMouseEnter={() => setActiveMegaMenu('servicios')}
-              onMouseLeave={() => setActiveMegaMenu(null)}
-            >
-              <button className="text-foreground hover:text-primary font-medium transition-colors flex items-center gap-1 py-2">
-                Servicios
-                <ChevronDown className="h-4 w-4 transition-transform duration-200" 
-                  style={{ transform: activeMegaMenu === 'servicios' ? 'rotate(180deg)' : 'rotate(0deg)' }} />
-              </button>
-              
-              {activeMegaMenu === 'servicios' && (
-                <div 
-                  className="fixed left-0 right-0 bg-background border border-border rounded-lg shadow-elegant z-50 overflow-hidden" 
-                  style={{ top: '100%' }}
-                >
-                  <div className="container mx-auto px-4">
-                    <div className="p-6">
-                      <h4 className="font-semibold text-foreground mb-4 border-b border-border pb-2">
-                        Nuestros Servicios
-                      </h4>
-                      <div className="grid grid-cols-2 gap-4 max-w-2xl">
-                        {megaMenuData.servicios.map((servicio) => (
-                          <Link
-                            key={servicio.href}
-                            to={servicio.href}
-                            className="block group hover:bg-muted/50 p-4 rounded-lg transition-all duration-200"
-                            onClick={() => setActiveMegaMenu(null)}
-                          >
-                            <div className="flex items-start justify-between">
-                              <div>
-                                <h5 className="font-medium text-foreground group-hover:text-primary transition-colors">
-                                  {servicio.title}
-                                </h5>
-                                <p className="text-sm text-muted-foreground mt-1">
-                                  {servicio.description}
-                                </p>
-                              </div>
-                              <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-all duration-200 transform group-hover:translate-x-1" />
-                            </div>
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            <a href="#nosotros" className="text-foreground hover:text-primary font-medium transition-colors">
-              La Agencia
-            </a>
-            <Link to="/blog" className="text-foreground hover:text-primary font-medium transition-colors">
-              Blog
-            </Link>
-            <a href="#contacto" className="text-foreground hover:text-primary font-medium transition-colors">
-              Contacto
-            </a>
-          </nav>
-
-          <div className="hidden lg:block">
-            <Button className="gradient-primary text-white hover-scale">
-              Solicitar Consulta
-            </Button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button 
-            className="lg:hidden p-2 focus:outline-none"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            <svg 
-              className="h-6 w-6 text-gray-700" 
-              fill="none" 
-              viewBox="0 0 24 24" 
-              stroke="currentColor"
-            >
-              {mobileMenuOpen ? (
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2} 
-                  d="M6 18L18 6M6 6l12 12" 
+    <>
+      <header 
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 bg-background/95 backdrop-blur-md border-b border-border/50 ${
+          isScrolled ? 'shadow-elegant py-2' : 'py-3'
+        }`}
+      >
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center">
+              <Link to="/" className="flex items-center" onClick={() => window.scrollTo(0, 0)}>
+                <img 
+                  src="/lovable-uploads/7ec653d8-b796-48ee-9657-8f0301af6e55.png"  
+                  alt="Hayas Marketing Logo" 
+                  className="h-48 w-auto"
                 />
-              ) : (
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2} 
-                  d="M4 6h16M4 12h16M4 18h16" 
-                />
-              )}
-            </svg>
-          </button>
-        </div>
+              </Link>
+            </div>
 
-        {/* Mobile Navigation Menu */}
-        {mobileMenuOpen && (
-          <div className="lg:hidden bg-background border border-border mt-4 py-4 px-2 rounded-lg shadow-elegant animate-slideUp">
-            <nav className="flex flex-col space-y-4">
-              {/* Soluciones Accordion Mobile */}
-              <div className="px-4 py-2">
-                <div className="text-foreground font-medium mb-4 border-b border-border pb-2">Soluciones</div>
-                <div className="space-y-4">
-                  {megaMenuData.soluciones.categories.map((category, idx) => (
-                    <div key={idx}>
-                      <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2">
-                        {category.title}
-                      </h4>
-                      <div className="pl-4 space-y-2">
-                        {category.items.map((item) => (
-                          <Link
-                            key={item.href}
-                            to={item.href}
-                            className="block text-sm text-foreground hover:text-primary transition-colors py-1 hover:bg-muted/50 px-2 rounded"
-                            onClick={() => setMobileMenuOpen(false)}
-                          >
-                            {item.title}
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Casos de Éxito Mobile */}
-              <div className="px-4 py-2">
-                <div className="text-foreground font-medium mb-3 border-b border-border pb-2">Casos de Éxito</div>
-                <div className="space-y-2">
-                  {megaMenuData.casosExito.map((caso) => (
-                    <Link
-                      key={caso.href}
-                      to={caso.href}
-                      className="block text-sm text-foreground hover:text-primary transition-colors py-2 hover:bg-muted/50 px-2 rounded"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      {caso.title}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-
-              {/* Servicios Mobile */}
-              <div className="px-4 py-2">
-                <div className="text-foreground font-medium mb-3 border-b border-border pb-2">Servicios</div>
-                <div className="space-y-2">
-                  {megaMenuData.servicios.map((servicio) => (
-                    <Link
-                      key={servicio.href}
-                      to={servicio.href}
-                      className="block text-sm text-foreground hover:text-primary transition-colors py-2 hover:bg-muted/50 px-2 rounded"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      {servicio.title}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-              
-              <a 
-                href="#nosotros" 
-                className="text-foreground hover:text-primary font-medium transition-colors px-4 py-2 hover:bg-muted/50 rounded"
-                onClick={() => setMobileMenuOpen(false)}
+            {/* Desktop Navigation */}
+            <nav className="hidden lg:flex items-center space-x-8">
+              {/* Soluciones Mega Menu */}
+              <div 
+                className="relative"
+                onMouseEnter={() => handleMouseEnter('soluciones')}
+                onMouseLeave={handleMouseLeave}
               >
+                <button className="text-foreground hover:text-primary font-medium transition-colors flex items-center gap-1 py-2">
+                  Soluciones
+                  <ChevronDown className="h-4 w-4 transition-transform duration-200" 
+                    style={{ transform: activeMegaMenu === 'soluciones' ? 'rotate(180deg)' : 'rotate(0deg)' }} />
+                </button>
+              </div>
+
+              {/* Casos de Éxito Mega Menu */}
+              <div 
+                className="relative"
+                onMouseEnter={() => handleMouseEnter('casos')}
+                onMouseLeave={handleMouseLeave}
+              >
+                <button className="text-foreground hover:text-primary font-medium transition-colors flex items-center gap-1 py-2">
+                  Casos de Éxito
+                  <ChevronDown className="h-4 w-4 transition-transform duration-200" 
+                    style={{ transform: activeMegaMenu === 'casos' ? 'rotate(180deg)' : 'rotate(0deg)' }} />
+                </button>
+              </div>
+
+              {/* Servicios Mega Menu */}
+              <div 
+                className="relative"
+                onMouseEnter={() => handleMouseEnter('servicios')}
+                onMouseLeave={handleMouseLeave}
+              >
+                <button className="text-foreground hover:text-primary font-medium transition-colors flex items-center gap-1 py-2">
+                  Servicios
+                  <ChevronDown className="h-4 w-4 transition-transform duration-200" 
+                    style={{ transform: activeMegaMenu === 'servicios' ? 'rotate(180deg)' : 'rotate(0deg)' }} />
+                </button>
+              </div>
+
+              <a href="#nosotros" className="text-foreground hover:text-primary font-medium transition-colors">
                 La Agencia
               </a>
-              <Link 
-                to="/blog" 
-                className="text-foreground hover:text-primary font-medium transition-colors px-4 py-2 hover:bg-muted/50 rounded"
-                onClick={() => setMobileMenuOpen(false)}
-              >
+              <Link to="/blog" className="text-foreground hover:text-primary font-medium transition-colors">
                 Blog
               </Link>
-              <a 
-                href="#contacto" 
-                className="text-foreground hover:text-primary font-medium transition-colors px-4 py-2 hover:bg-muted/50 rounded"
-                onClick={() => setMobileMenuOpen(false)}
-              >
+              <a href="#contacto" className="text-foreground hover:text-primary font-medium transition-colors">
                 Contacto
               </a>
-              <Button className="gradient-primary text-white mx-4 hover-scale">
+            </nav>
+
+            <div className="hidden lg:block">
+              <Button className="gradient-primary text-white hover-scale">
                 Solicitar Consulta
               </Button>
-            </nav>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button 
+              className="lg:hidden p-2 focus:outline-none"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              <svg 
+                className="h-6 w-6 text-gray-700" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke="currentColor"
+              >
+                {mobileMenuOpen ? (
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth={2} 
+                    d="M6 18L18 6M6 6l12 12" 
+                  />
+                ) : (
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth={2} 
+                    d="M4 6h16M4 12h16M4 18h16" 
+                  />
+                )}
+              </svg>
+            </button>
           </div>
-        )}
-      </div>
-    </header>
+
+          {/* Mobile Navigation Menu */}
+          {mobileMenuOpen && (
+            <div className="lg:hidden bg-background border border-border mt-4 py-4 px-2 rounded-lg shadow-elegant animate-slideUp">
+              <nav className="flex flex-col space-y-4">
+                {/* Soluciones Accordion Mobile */}
+                <div className="px-4 py-2">
+                  <div className="text-foreground font-medium mb-4 border-b border-border pb-2">Soluciones</div>
+                  <div className="space-y-4">
+                    {megaMenuData.soluciones.categories.map((category, idx) => (
+                      <div key={idx}>
+                        <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2">
+                          {category.title}
+                        </h4>
+                        <div className="pl-4 space-y-2">
+                          {category.items.map((item) => (
+                            <Link
+                              key={item.href}
+                              to={item.href}
+                              className="block text-sm text-foreground hover:text-primary transition-colors py-1 hover:bg-muted/50 px-2 rounded"
+                              onClick={() => setMobileMenuOpen(false)}
+                            >
+                              {item.title}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Casos de Éxito Mobile */}
+                <div className="px-4 py-2">
+                  <div className="text-foreground font-medium mb-3 border-b border-border pb-2">Casos de Éxito</div>
+                  <div className="space-y-2">
+                    {megaMenuData.casosExito.map((caso) => (
+                      <Link
+                        key={caso.href}
+                        to={caso.href}
+                        className="block text-sm text-foreground hover:text-primary transition-colors py-2 hover:bg-muted/50 px-2 rounded"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {caso.title}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Servicios Mobile */}
+                <div className="px-4 py-2">
+                  <div className="text-foreground font-medium mb-3 border-b border-border pb-2">Servicios</div>
+                  <div className="space-y-2">
+                    {megaMenuData.servicios.map((servicio) => (
+                      <Link
+                        key={servicio.href}
+                        to={servicio.href}
+                        className="block text-sm text-foreground hover:text-primary transition-colors py-2 hover:bg-muted/50 px-2 rounded"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {servicio.title}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+                
+                <a 
+                  href="#nosotros" 
+                  className="text-foreground hover:text-primary font-medium transition-colors px-4 py-2 hover:bg-muted/50 rounded"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  La Agencia
+                </a>
+                <Link 
+                  to="/blog" 
+                  className="text-foreground hover:text-primary font-medium transition-colors px-4 py-2 hover:bg-muted/50 rounded"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Blog
+                </Link>
+                <a 
+                  href="#contacto" 
+                  className="text-foreground hover:text-primary font-medium transition-colors px-4 py-2 hover:bg-muted/50 rounded"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Contacto
+                </a>
+                <Button className="gradient-primary text-white mx-4 hover-scale">
+                  Solicitar Consulta
+                </Button>
+              </nav>
+            </div>
+          )}
+        </div>
+      </header>
+
+      {/* Mega Menus - Positioned outside header to create continuous hover area */}
+      {activeMegaMenu === 'soluciones' && (
+        <div 
+          className="fixed left-0 right-0 bg-background border border-border rounded-lg shadow-elegant z-30 overflow-hidden"
+          style={{ top: isScrolled ? '70px' : '84px' }}
+          onMouseEnter={() => handleMouseEnter('soluciones')}
+          onMouseLeave={handleMouseLeave}
+        >
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-3 gap-8 p-8">
+              {megaMenuData.soluciones.categories.map((category, idx) => (
+                <div key={idx} className="space-y-4">
+                  <h4 className="font-semibold text-foreground border-b border-border pb-2">
+                    {category.title}
+                  </h4>
+                  <div className="space-y-3">
+                    {category.items.map((item) => (
+                      <Link
+                        key={item.href}
+                        to={item.href}
+                        className="block group hover:bg-muted/50 p-3 rounded-lg transition-all duration-200"
+                        onClick={() => setActiveMegaMenu(null)}
+                      >
+                        <div className="flex items-start justify-between">
+                          <div>
+                            <h5 className="font-medium text-foreground group-hover:text-primary transition-colors">
+                              {item.title}
+                            </h5>
+                            <p className="text-sm text-muted-foreground mt-1">
+                              {item.description}
+                            </p>
+                          </div>
+                          <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-all duration-200 transform group-hover:translate-x-1" />
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {activeMegaMenu === 'casos' && (
+        <div 
+          className="fixed left-0 right-0 bg-background border border-border rounded-lg shadow-elegant z-30 overflow-hidden"
+          style={{ top: isScrolled ? '70px' : '84px' }}
+          onMouseEnter={() => handleMouseEnter('casos')}
+          onMouseLeave={handleMouseLeave}
+        >
+          <div className="container mx-auto px-4">
+            <div className="p-6">
+              <h4 className="font-semibold text-foreground mb-4 border-b border-border pb-2">
+                Proyectos Destacados
+              </h4>
+              <div className="grid grid-cols-4 gap-4 max-w-4xl">
+                {megaMenuData.casosExito.map((caso) => (
+                  <Link
+                    key={caso.href}
+                    to={caso.href}
+                    className="group hover:bg-muted/50 p-4 rounded-lg transition-all duration-200"
+                    onClick={() => setActiveMegaMenu(null)}
+                  >
+                    <div className="flex flex-col items-center space-y-3">
+                      <div className="w-16 h-16 rounded-lg overflow-hidden bg-muted flex-shrink-0">
+                        <img 
+                          src={caso.image} 
+                          alt={caso.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
+                        />
+                      </div>
+                      <div className="text-center">
+                        <h5 className="font-medium text-foreground group-hover:text-primary transition-colors">
+                          {caso.title}
+                        </h5>
+                        <div className="flex items-center justify-center mt-1">
+                          <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">
+                            {caso.solution}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {activeMegaMenu === 'servicios' && (
+        <div 
+          className="fixed left-0 right-0 bg-background border border-border rounded-lg shadow-elegant z-30 overflow-hidden"
+          style={{ top: isScrolled ? '70px' : '84px' }}
+          onMouseEnter={() => handleMouseEnter('servicios')}
+          onMouseLeave={handleMouseLeave}
+        >
+          <div className="container mx-auto px-4">
+            <div className="p-6">
+              <h4 className="font-semibold text-foreground mb-4 border-b border-border pb-2">
+                Nuestros Servicios
+              </h4>
+              <div className="grid grid-cols-2 gap-4 max-w-2xl">
+                {megaMenuData.servicios.map((servicio) => (
+                  <Link
+                    key={servicio.href}
+                    to={servicio.href}
+                    className="block group hover:bg-muted/50 p-4 rounded-lg transition-all duration-200"
+                    onClick={() => setActiveMegaMenu(null)}
+                  >
+                    <div className="flex items-start justify-between">
+                      <div>
+                        <h5 className="font-medium text-foreground group-hover:text-primary transition-colors">
+                          {servicio.title}
+                        </h5>
+                        <p className="text-sm text-muted-foreground mt-1">
+                          {servicio.description}
+                        </p>
+                      </div>
+                      <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-all duration-200 transform group-hover:translate-x-1" />
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 
