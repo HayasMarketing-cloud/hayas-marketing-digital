@@ -205,7 +205,7 @@ const KitDigital = () => {
                 {
                   icon: <Euro className="h-8 w-8 text-turquesa-600" />,
                   title: "Subvención disponible",
-                  description: "Hasta 3.000€ por empresa"
+                  description: "Hasta 3.000€ por empresa*"
                 }
               ].map((requirement, index) => (
                 <Card key={index} className="text-center border-none shadow-md hover:shadow-lg transition-all duration-300">
@@ -224,6 +224,13 @@ const KitDigital = () => {
                   </CardContent>
                 </Card>
               ))}
+            </div>
+            
+            {/* Nota informativa con asterisco */}
+            <div className="mt-12 text-center">
+              <p className="text-gray-600 text-sm max-w-4xl mx-auto leading-relaxed">
+                *Hayas Marketing te ayuda a gestionar tu bono digital por 3.000€ pero únicamente proporciona las soluciones de marketing digital, branding y visibilidad por 2.000€. La solución de Puesto Seguro en Internet de 1.000€ tiene que solicitarse a empresas fabricantes y/o distribidoras de PC o Portátiles, que estén certificadas por el programa Kit Digital.
+              </p>
             </div>
           </div>
         </section>
