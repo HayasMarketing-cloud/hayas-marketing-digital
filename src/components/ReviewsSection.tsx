@@ -33,21 +33,18 @@ const ReviewsSection = () => {
                 Reseñas verificadas de Google Maps
               </h3>
               
-              {/* Placeholder for Google Maps widget */}
-              <div className="bg-muted/50 rounded-lg p-12 border-2 border-dashed border-muted-foreground/20">
-                <div className="flex flex-col items-center gap-4">
-                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
-                    <Star className="w-8 h-8 text-primary" />
-                  </div>
-                  <div className="text-center">
-                    <p className="text-muted-foreground mb-2">
-                      Widget de Google Maps se insertará aquí
-                    </p>
-                    <p className="text-sm text-muted-foreground/70">
-                      Aquí aparecerán las reseñas reales de Google Maps de forma automática
-                    </p>
-                  </div>
-                </div>
+              {/* Google Maps Widget */}
+              <div className="w-full flex justify-center">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.8112518155117!2d-3.7207809233882307!3d40.413031971440155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd42292583f70915%3A0xe81f97d299b30595!2sHayas%20Marketing!5e0!3m2!1ses!2ses!4v1753116498157!5m2!1ses!2ses" 
+                  width="100%" 
+                  height="400" 
+                  className="max-w-4xl rounded-lg shadow-md"
+                  style={{border:0}} 
+                  allowFullScreen={true} 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
               </div>
             </div>
 
