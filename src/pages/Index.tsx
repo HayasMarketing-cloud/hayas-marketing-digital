@@ -33,9 +33,9 @@ const Index = () => {
       <main className="flex-grow pt-24">  {/* Increased padding to account for large header */}
         <HeroSection />
         <SolutionsSection />
-        <KitConsultingBanner />
         <KitDigitalBanner />
         <ServicesSection />
+        <KitConsultingBanner />
         <WhyChooseUsSection />
         <AllServicesSection />
         <ReviewsSection />
