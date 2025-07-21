@@ -7,8 +7,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SofiaWidget from "./components/SofiaSection";
 import Index from "./pages/Index";
 import Nosotros from "./pages/Nosotros";
-import CrmAutomatizaciones from "./pages/CrmAutomatizaciones";
-import CreacionMarca from "./pages/CreacionMarca";
+import ConectaConTusClientes from "./pages/ConectaConTusClientes";
+import ImpulsaTuMarca from "./pages/ImpulsaTuMarca";
+import ActivaTuEstrategiaDigital from "./pages/ActivaTuEstrategiaDigital";
 import MarketingVisibilidad from "./pages/MarketingVisibilidad";
 import CaptacionLeads from "./pages/CaptacionLeads";
 import GestionMarketing from "./pages/GestionMarketing";
@@ -44,11 +45,14 @@ const App = () => (
           {/* NOSOTROS */}
           <Route path="/nosotros" element={<Nosotros />} />
           
-          {/* SOLUCIONES - Pillar Pages */}
+          {/* SOLUCIONES - 3 Nuevas Categorías Estratégicas */}
+          <Route path="/soluciones/impulsa-tu-marca" element={<ImpulsaTuMarca />} />
+          <Route path="/soluciones/conecta-con-tus-clientes" element={<ConectaConTusClientes />} />
+          <Route path="/soluciones/activa-tu-estrategia-digital" element={<ActivaTuEstrategiaDigital />} />
+          
+          {/* SOLUCIONES - Páginas individuales (legacy y específicas) */}
           <Route path="/soluciones/ia-marketing" element={<SolucionesIA />} />
-          <Route path="/soluciones/crm-automatizacion" element={<CrmAutomatizaciones />} />
           <Route path="/soluciones/implantacion-crm" element={<ImplantacionCrm />} />
-          <Route path="/soluciones/branding-marca" element={<CreacionMarca />} />
           <Route path="/soluciones/marketing-digital" element={<MarketingVisibilidad />} />
           <Route path="/soluciones/gestion-marketing" element={<GestionMarketing />} />
           <Route path="/soluciones/captacion-leads" element={<CaptacionLeads />} />
@@ -69,9 +73,11 @@ const App = () => (
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<BlogPost />} />
           
-          {/* RUTAS LEGACY - Redirigen a las nuevas */}
-          <Route path="/crm-automatizaciones" element={<CrmAutomatizaciones />} />
-          <Route path="/creacion-marca" element={<CreacionMarca />} />
+          {/* RUTAS LEGACY - Redirigen a las nuevas categorías */}
+          <Route path="/crm-automatizaciones" element={<ConectaConTusClientes />} />
+          <Route path="/creacion-marca" element={<ImpulsaTuMarca />} />
+          <Route path="/soluciones/crm-automatizacion" element={<ConectaConTusClientes />} />
+          <Route path="/soluciones/branding-marca" element={<ImpulsaTuMarca />} />
           <Route path="/marketing-visibilidad" element={<MarketingVisibilidad />} />
           <Route path="/captacion-leads" element={<CaptacionLeads />} />
           <Route path="/gestion-marketing" element={<GestionMarketing />} />
