@@ -459,27 +459,27 @@ const KitConsulting = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-8 md:py-12 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden">
+        <section className="py-8 md:py-12 bg-gradient-to-br from-hayas-600 via-hayas-700 to-turquesa-600 text-white relative overflow-hidden">
           {/* Background Pattern for visual interest */}
           <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-10 left-10 w-32 h-32 border border-white/20 rounded-lg transform rotate-12"></div>
-            <div className="absolute bottom-10 right-20 w-24 h-24 border border-white/20 rounded-lg transform -rotate-12"></div>
-            <div className="absolute top-1/2 right-1/4 w-16 h-16 border border-white/20 rounded-lg transform rotate-45"></div>
+            <div className="absolute top-10 left-10 w-32 h-32 border border-white/30 rounded-lg transform rotate-12"></div>
+            <div className="absolute bottom-10 right-20 w-24 h-24 border border-white/30 rounded-lg transform -rotate-12"></div>
+            <div className="absolute top-1/2 right-1/4 w-16 h-16 border border-white/30 rounded-lg transform rotate-45"></div>
           </div>
 
           <div className="container mx-auto px-4 text-center relative z-10">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white drop-shadow-lg">
               Descubre cómo transformar tu negocio con Kit Consulting
             </h2>
-            <p className="text-xl mb-8 max-w-2xl mx-auto text-gray-200">
+            <p className="text-xl mb-8 max-w-2xl mx-auto text-white/90 drop-shadow-md">
               Solicita tu asesoramiento ahora y accede a ayudas de hasta 24.000 € 
               para digitalizar tu empresa.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-gradient-to-r from-hayas-600 to-hayas-700 hover:from-hayas-700 hover:to-hayas-800 text-white px-8 py-6 text-lg font-semibold shadow-lg">
+              <Button className="bg-white text-hayas-700 hover:bg-gray-100 hover:text-hayas-800 px-8 py-6 text-lg font-bold shadow-xl">
                 Solicitar Asesoramiento
               </Button>
-              <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm px-8 py-6 text-lg">
+              <Button variant="outline" className="border-2 border-white text-white bg-white/10 hover:bg-white hover:text-hayas-700 backdrop-blur-sm px-8 py-6 text-lg font-semibold">
                 Descargar Información
               </Button>
             </div>
