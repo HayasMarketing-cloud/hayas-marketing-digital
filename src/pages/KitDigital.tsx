@@ -372,7 +372,7 @@ const KitDigital = () => {
 
           <div className="container mx-auto px-4 text-center relative z-10">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white drop-shadow-lg">
-              ¡Convocatoria abierta desde el 12 de septiembre!
+              ¡Convocatoria abierta hasta el 31 de octubre!
             </h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto text-white/90 drop-shadow-md">
               Plazas limitadas hasta agotar fondos. No dejes pasar esta oportunidad 
