@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -105,12 +104,12 @@ const Footer = () => {
             <div className="bg-gradient-to-br from-hayas-600 to-hayas-700 rounded-xl p-6 text-white relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full transform translate-x-16 -translate-y-16"></div>
               <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-14 h-14 flex items-center justify-center">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-24 h-24 bg-white/90 rounded-lg p-3 flex items-center justify-center">
                     <img 
                       src="/lovable-uploads/33d68296-8cdf-4012-934b-214b42e6902d.png" 
                       alt="Kit Consulting Logo" 
-                      className="w-full h-auto max-w-12"
+                      className="w-full h-auto"
                     />
                   </div>
                   <div>
@@ -143,12 +142,12 @@ const Footer = () => {
             <div className="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-xl p-6 text-white relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full transform translate-x-16 -translate-y-16"></div>
               <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-14 h-14 flex items-center justify-center">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-24 h-24 bg-white/90 rounded-lg p-3 flex items-center justify-center">
                     <img 
                       src="/lovable-uploads/f9d2b651-7c92-42b3-86ce-64e3add924c6.png" 
                       alt="Kit Digital Logo" 
-                      className="w-full h-auto max-w-12"
+                      className="w-full h-auto"
                     />
                   </div>
                   <div>
