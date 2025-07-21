@@ -102,8 +102,6 @@ const Navigation = () => {
                 <div 
                   className="fixed left-0 right-0 bg-background border border-border rounded-lg shadow-elegant z-50 overflow-hidden" 
                   style={{ top: '100%' }}
-                  onMouseEnter={() => setActiveMegaMenu('soluciones')}
-                  onMouseLeave={() => setActiveMegaMenu(null)}
                 >
                   <div className="container mx-auto px-4">
                     <div className="grid grid-cols-3 gap-8 p-8">
@@ -158,8 +156,6 @@ const Navigation = () => {
                 <div 
                   className="fixed left-0 right-0 bg-background border border-border rounded-lg shadow-elegant z-50 overflow-hidden" 
                   style={{ top: '100%' }}
-                  onMouseEnter={() => setActiveMegaMenu('casos')}
-                  onMouseLeave={() => setActiveMegaMenu(null)}
                 >
                   <div className="container mx-auto px-4">
                     <div className="p-6">
@@ -218,8 +214,6 @@ const Navigation = () => {
                 <div 
                   className="fixed left-0 right-0 bg-background border border-border rounded-lg shadow-elegant z-50 overflow-hidden" 
                   style={{ top: '100%' }}
-                  onMouseEnter={() => setActiveMegaMenu('servicios')}
-                  onMouseLeave={() => setActiveMegaMenu(null)}
                 >
                   <div className="container mx-auto px-4">
                     <div className="p-6">
