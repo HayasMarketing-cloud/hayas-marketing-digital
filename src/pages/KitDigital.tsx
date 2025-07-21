@@ -23,21 +23,21 @@ const KitDigital = () => {
       title: "Diseño Web o Tienda Online",
       description: "Web profesional o e-commerce completo para que tu negocio tenga presencia digital de calidad.",
       activities: ["Diseño responsive", "Optimización de velocidad", "Integración de pagos", "Panel de administración"],
-      funding: "Hasta 3.000 €"
+      funding: "Hasta 2.000 €"
     },
     {
       icon: <TrendingUp className="h-8 w-8 text-turquesa-600" />,
       title: "Optimización SEO",
       description: "Posicionamiento en Google para que tus clientes potenciales te encuentren fácilmente.",
       activities: ["Análisis de palabras clave", "Optimización técnica", "Contenido SEO", "Seguimiento de rankings"],
-      funding: "Hasta 3.000 €"
+      funding: "Hasta 2.000 €"
     },
     {
       icon: <Smartphone className="h-8 w-8 text-hayas-600" />,
       title: "Gestión de Redes Sociales",
       description: "Estrategia y gestión profesional de tus redes sociales para conectar con tu audiencia.",
       activities: ["Estrategia de contenidos", "Diseño gráfico", "Programación de posts", "Análisis de métricas"],
-      funding: "Hasta 3.000 €"
+      funding: "Hasta 2.000 €"
     }
   ];
 
