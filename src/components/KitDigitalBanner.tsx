@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Users, Globe, TrendingUp, Calendar } from 'lucide-react';
+import { ArrowRight, Users, Globe, TrendingUp, Calendar, Settings, ShoppingCart } from 'lucide-react';
 
 const KitDigitalBanner = () => {
   return (
@@ -114,16 +114,34 @@ const KitDigitalBanner = () => {
                 
                 <div className="space-y-3 text-left">
                   <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-cyan-500 rounded-full"></div>
+                    <div className="w-6 h-6 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center">
+                      <Globe className="h-3 w-3 text-white" />
+                    </div>
                     <span className="text-sm text-gray-700">Web profesional</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                    <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center">
+                      <TrendingUp className="h-3 w-3 text-white" />
+                    </div>
                     <span className="text-sm text-gray-700">Posicionamiento SEO</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-cyan-500 rounded-full"></div>
+                    <div className="w-6 h-6 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center">
+                      <Users className="h-3 w-3 text-white" />
+                    </div>
                     <span className="text-sm text-gray-700">Redes sociales</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-6 h-6 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
+                      <Settings className="h-3 w-3 text-white" />
+                    </div>
+                    <span className="text-sm text-gray-700">CRM gestión clientes</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-lg flex items-center justify-center">
+                      <ShoppingCart className="h-3 w-3 text-white" />
+                    </div>
+                    <span className="text-sm text-gray-700">Tienda online</span>
                   </div>
                 </div>
               </div>
