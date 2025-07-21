@@ -106,11 +106,11 @@ const Footer = () => {
               <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full transform translate-x-16 -translate-y-16"></div>
               <div className="relative z-10">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 bg-white/95 rounded-lg flex items-center justify-center p-1">
+                  <div className="w-14 h-14 flex items-center justify-center">
                     <img 
                       src="/lovable-uploads/33d68296-8cdf-4012-934b-214b42e6902d.png" 
                       alt="Kit Consulting Logo" 
-                      className="w-full h-auto"
+                      className="w-full h-auto max-w-12"
                     />
                   </div>
                   <div>
@@ -144,11 +144,11 @@ const Footer = () => {
               <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full transform translate-x-16 -translate-y-16"></div>
               <div className="relative z-10">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 bg-white/95 rounded-lg flex items-center justify-center p-1">
+                  <div className="w-14 h-14 flex items-center justify-center">
                     <img 
                       src="/lovable-uploads/f9d2b651-7c92-42b3-86ce-64e3add924c6.png" 
                       alt="Kit Digital Logo" 
-                      className="w-full h-auto"
+                      className="w-full h-auto max-w-12"
                     />
                   </div>
                   <div>
