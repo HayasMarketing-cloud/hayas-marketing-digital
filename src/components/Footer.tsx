@@ -117,23 +117,29 @@ const Footer = () => {
                   <div>
                     <h4 className="font-bold text-lg">Kit Consulting</h4>
                     <p className="text-white/80 text-sm">PYMEs 10-249 empleados</p>
+                    <p className="text-white/60 text-xs mt-1">Con Hayas, tú solo eliges. Nosotros nos ocupamos de todo.</p>
                   </div>
                 </div>
                 <p className="text-white/90 mb-4 text-sm">
                   Asesoramiento especializado en IA, ventas digitales y transformación digital.
                 </p>
                 <div className="flex items-center justify-between">
-                  <Badge className="bg-white/20 text-white border-white/30">
-                    Hasta 24.000€
-                  </Badge>
+                  <div className="flex items-center gap-2">
+                    <div className="w-5 h-5 bg-white/20 rounded-full flex items-center justify-center">
+                      <span className="text-xs">✓</span>
+                    </div>
+                    <Badge className="bg-white/20 text-white border-white/30 font-bold">
+                      Hasta 24.000€
+                    </Badge>
+                  </div>
                   <Button 
                     asChild
                     variant="secondary" 
                     size="sm"
-                    className="bg-white text-hayas-700 hover:bg-gray-100"
+                    className="bg-white text-hayas-700 hover:bg-gray-100 font-semibold"
                   >
                     <Link to="/kit-consulting">
-                      Ver más <ArrowRight className="ml-1 h-4 w-4" />
+                      Solicítalo ahora <ArrowRight className="ml-1 h-4 w-4" />
                     </Link>
                   </Button>
                 </div>
@@ -155,23 +161,29 @@ const Footer = () => {
                   <div>
                     <h4 className="font-bold text-lg">Kit Digital</h4>
                     <p className="text-white/80 text-sm">Autónomos hasta 2 empleados</p>
+                    <p className="text-white/60 text-xs mt-1">Con Hayas, tú solo eliges. Nosotros nos ocupamos de todo.</p>
                   </div>
                 </div>
                 <p className="text-white/90 mb-4 text-sm">
-                  Web profesional, SEO, redes sociales y presencia digital completa.
+                  Haz que tu negocio crezca online sin coste. El Kit Digital cubre hasta 3.000 €
                 </p>
                 <div className="flex items-center justify-between">
-                  <Badge className="bg-white/20 text-white border-white/30">
-                    Hasta 3.000€
-                  </Badge>
+                  <div className="flex items-center gap-2">
+                    <div className="w-5 h-5 bg-white/20 rounded-full flex items-center justify-center">
+                      <span className="text-xs">✓</span>
+                    </div>
+                    <Badge className="bg-white/20 text-white border-white/30 font-bold">
+                      Hasta 3.000€
+                    </Badge>
+                  </div>
                   <Button 
                     asChild
                     variant="secondary" 
                     size="sm"
-                    className="bg-white text-blue-700 hover:bg-gray-100"
+                    className="bg-white text-blue-700 hover:bg-gray-100 font-semibold"
                   >
                     <Link to="/kit-digital">
-                      Ver más <ArrowRight className="ml-1 h-4 w-4" />
+                      Solicítalo ahora <ArrowRight className="ml-1 h-4 w-4" />
                     </Link>
                   </Button>
                 </div>
