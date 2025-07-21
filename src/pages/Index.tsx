@@ -4,6 +4,7 @@ import { useSearchParams } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import KitConsultingBanner from '@/components/KitConsultingBanner';
+import KitDigitalBanner from '@/components/KitDigitalBanner';
 import SolutionsSection from '@/components/SolutionsSection';
 import ServicesSection from '@/components/ServicesSection';
 import AllServicesSection from '@/components/AllServicesSection';
@@ -33,6 +34,7 @@ const Index = () => {
         <HeroSection />
         <SolutionsSection />
         <KitConsultingBanner />
+        <KitDigitalBanner />
         <ServicesSection />
         <WhyChooseUsSection />
         <AllServicesSection />

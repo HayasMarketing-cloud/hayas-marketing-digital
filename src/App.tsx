@@ -12,6 +12,7 @@ import CaptacionLeads from "./pages/CaptacionLeads";
 import GestionMarketing from "./pages/GestionMarketing";
 import SolucionesIA from "./pages/SolucionesIA";
 import KitConsulting from "./pages/KitConsulting";
+import KitDigital from "./pages/KitDigital";
 import CasoExitoAsendia from "./pages/CasoExitoAsendia";
 import CasoExitoNexoVital from "./pages/CasoExitoNexoVital";
 import CasoExitoIVirgenExtra from "./pages/CasoExitoIVirgenExtra";
@@ -47,6 +48,7 @@ const App = () => (
           <Route path="/soluciones/gestion-marketing" element={<GestionMarketing />} />
           <Route path="/soluciones/captacion-leads" element={<CaptacionLeads />} />
           <Route path="/kit-consulting" element={<KitConsulting />} />
+          <Route path="/kit-digital" element={<KitDigital />} />
           
           {/* CASOS DE ÉXITO - Apoyan las soluciones */}
           <Route path="/casos-exito/asendia" element={<CasoExitoAsendia />} />
