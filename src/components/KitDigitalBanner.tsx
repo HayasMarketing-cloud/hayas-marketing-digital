@@ -106,10 +106,13 @@ const KitDigitalBanner = () => {
             {/* Content Container */}
             <div className="relative z-10 bg-white/95 backdrop-blur-sm rounded-2xl p-8 shadow-2xl max-w-md">
               <div className="text-center">
-                <div className="w-20 h-20 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Globe className="h-10 w-10 text-white" />
+                <div className="mb-6">
+                  <img 
+                    src="/lovable-uploads/f9d2b651-7c92-42b3-86ce-64e3add924c6.png" 
+                    alt="Kit Digital - Logo oficial" 
+                    className="h-16 w-auto mx-auto"
+                  />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-800 mb-4">Kit Digital</h3>
                 <p className="text-gray-600 mb-6">Digitalización para autónomos y micropymes</p>
                 
                 <div className="space-y-3 text-left">

@@ -134,11 +134,13 @@ const KitDigital = () => {
               </div>
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-hayas-200 to-turquesa-200 rounded-3xl transform rotate-6 scale-105 opacity-20"></div>
-                <img 
-                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop" 
-                  alt="Kit Digital - Digitalización para autónomos y micropymes" 
-                  className="relative z-10 w-full h-auto rounded-3xl shadow-2xl"
-                />
+                <div className="relative z-10 bg-white/95 backdrop-blur-sm rounded-3xl p-8 shadow-2xl">
+                  <img 
+                    src="/lovable-uploads/f9d2b651-7c92-42b3-86ce-64e3add924c6.png" 
+                    alt="Kit Digital - Programa oficial de digitalización" 
+                    className="w-full max-w-md h-auto mx-auto"
+                  />
+                </div>
               </div>
             </div>
           </div>
