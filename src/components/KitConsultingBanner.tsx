@@ -80,10 +80,13 @@ const KitConsultingBanner = () => {
               </Button>
               
               <Button 
+                asChild
                 variant="outline" 
-                className="border-white/30 text-white hover:bg-white/10 px-8 py-6 text-lg"
+                className="border-white/30 text-hayas-600 bg-white hover:bg-gray-100 px-8 py-6 text-lg"
               >
-                Más Información
+                <Link to="/kit-consulting">
+                  Más Información
+                </Link>
               </Button>
             </div>
           </div>
