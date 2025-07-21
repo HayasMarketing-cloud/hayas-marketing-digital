@@ -99,7 +99,7 @@ const Navigation = () => {
               </button>
               
               {activeMegaMenu === 'soluciones' && (
-                <div className="fixed top-full left-0 right-0 mt-2 bg-background border border-border rounded-lg shadow-elegant z-50 overflow-hidden">
+                <div className="fixed left-0 right-0 bg-background border border-border rounded-lg shadow-elegant z-50 overflow-hidden" style={{ top: '100%' }}>
                   <div className="container mx-auto px-4">
                     <div className="grid grid-cols-3 gap-8 p-8">
                       {megaMenuData.soluciones.categories.map((category, idx) => (
@@ -150,7 +150,7 @@ const Navigation = () => {
               </button>
               
               {activeMegaMenu === 'casos' && (
-                <div className="fixed top-full left-0 right-0 mt-2 bg-background border border-border rounded-lg shadow-elegant z-50 overflow-hidden">
+                <div className="fixed left-0 right-0 bg-background border border-border rounded-lg shadow-elegant z-50 overflow-hidden" style={{ top: '100%' }}>
                   <div className="container mx-auto px-4">
                     <div className="p-6">
                       <h4 className="font-semibold text-foreground mb-4 border-b border-border pb-2">
@@ -205,7 +205,7 @@ const Navigation = () => {
               </button>
               
               {activeMegaMenu === 'servicios' && (
-                <div className="fixed top-full left-0 right-0 mt-2 bg-background border border-border rounded-lg shadow-elegant z-50 overflow-hidden">
+                <div className="fixed left-0 right-0 bg-background border border-border rounded-lg shadow-elegant z-50 overflow-hidden" style={{ top: '100%' }}>
                   <div className="container mx-auto px-4">
                     <div className="p-6">
                       <h4 className="font-semibold text-foreground mb-4 border-b border-border pb-2">
