@@ -88,14 +88,16 @@ const Footer = () => {
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold text-white mb-6">Somos agentes de cambio y transformación digital</h3>
             <div className="flex justify-center mb-6">
-              <img 
-                src="/lovable-uploads/e3910419-c73c-4448-a631-ed5f0eff61fe.png" 
-                alt="Agentes oficiales - Gobierno de España, Red.es, Kit Digital, Financiado por la Unión Europea" 
-                className="h-12 w-auto max-w-full"
-              />
+              <div className="bg-white rounded-lg p-4 shadow-lg">
+                <img 
+                  src="/lovable-uploads/e3910419-c73c-4448-a631-ed5f0eff61fe.png" 
+                  alt="Agentes oficiales - Gobierno de España, Red.es, Kit Digital, Financiado por la Unión Europea" 
+                  className="h-12 w-auto max-w-full"
+                />
+              </div>
             </div>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Aprovecha las subvenciones disponibles para digitalizar tu empresa con nuestros servicios especializados
+              Programa de subvenciones para autónomos y empresas españolas. <span className="text-white font-bold">Hasta el próximo 31 de octubre de 2025</span>
             </p>
           </div>
           
