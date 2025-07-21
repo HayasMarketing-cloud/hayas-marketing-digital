@@ -102,22 +102,25 @@ const Nosotros = () => {
       <Navigation />
       
       <main className="flex-grow pt-24">
-        {/* Hero Section */}
-        <section className="py-16 md:py-24 bg-gradient-to-br from-background to-muted/20">
+        {/* Hero Section - Fondo blanco */}
+        <section className="relative py-16 md:py-20 overflow-hidden bg-white">
+          {/* Círculos decorativos de fondo */}
+          <div className="absolute -bottom-24 -left-24 w-64 h-64 rounded-full bg-hayas-primary/10 opacity-20" aria-hidden="true"></div>
+          <div className="absolute top-24 -right-24 w-96 h-96 rounded-full bg-hayas-secondary/10 opacity-10" aria-hidden="true"></div>
+          
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gradient">
-                Somos Hayas Marketing
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight animate-fade-in">
+                Somos <span className="text-gradient-primary">Hayas Marketing</span>
               </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
-                Agencia especializada en transformación digital con enfoque integral: 
-                <span className="text-hayas-primary font-semibold"> estrategia, eficiencia, adaptación y crecimiento sostenible</span>
+              <p className="text-lg md:text-xl text-gray-700 mb-8 animate-slide-up max-w-3xl mx-auto">
+                Agencia especializada en transformación digital con enfoque integral: estrategia, eficiencia, adaptación y crecimiento sostenible
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="gradient-primary text-white py-6 px-8 text-lg">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up">
+                <Button className="gradient-primary text-white py-6 px-8 text-lg font-medium shadow-elegant hover-scale focus-ring">
                   Conocer nuestros servicios
                 </Button>
-                <Button variant="outline" className="py-6 px-8 text-lg">
+                <Button variant="outline" className="py-6 px-8 text-lg font-medium hover-scale focus-ring border-primary text-primary hover:bg-primary hover:text-white">
                   Solicitar consulta gratuita
                 </Button>
               </div>
@@ -125,162 +128,127 @@ const Nosotros = () => {
           </div>
         </section>
 
-        {/* Nuestra Historia */}
-        <section className="py-16 md:py-20">
+        {/* Nuestra Historia - Fondo tenue */}
+        <section className="py-16 md:py-20 bg-gradient-to-br from-hayas-primary/5 to-hayas-secondary/5">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gradient">
-                  Nuestra Historia
-                </h2>
-                <p className="text-lg text-muted-foreground">
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient-primary">Nuestra Historia</h2>
+                <p className="text-lg text-gray-700 max-w-2xl mx-auto">
                   Construyendo el futuro digital de las empresas, una solución a la vez
                 </p>
               </div>
               
               <div className="grid md:grid-cols-3 gap-8">
-                <Card className="p-6 text-center hover:shadow-lg transition-shadow">
+                <div className="bg-white rounded-xl p-6 text-center shadow-corporate hover-scale">
                   <Target className="h-12 w-12 text-hayas-primary mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-2">Nuestra Misión</h3>
-                  <p className="text-muted-foreground">
+                  <h3 className="text-xl font-semibold mb-3 text-hayas-primary">Nuestra Misión</h3>
+                  <p className="text-gray-700">
                     Impulsar el crecimiento de emprendedores, startups y empresas con soluciones 
                     de marketing digital personalizadas que generen resultados reales y medibles.
                   </p>
-                </Card>
+                </div>
                 
-                <Card className="p-6 text-center hover:shadow-lg transition-shadow">
+                <div className="bg-white rounded-xl p-6 text-center shadow-corporate hover-scale">
                   <Lightbulb className="h-12 w-12 text-hayas-primary mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-2">Nuestra Visión</h3>
-                  <p className="text-muted-foreground">
+                  <h3 className="text-xl font-semibold mb-3 text-hayas-primary">Nuestra Visión</h3>
+                  <p className="text-gray-700">
                     Ser referentes en la implementación de tecnología aplicada al marketing y ventas, 
                     ayudando a las empresas a automatizar y escalar sus procesos comerciales.
                   </p>
-                </Card>
+                </div>
                 
-                <Card className="p-6 text-center hover:shadow-lg transition-shadow">
+                <div className="bg-white rounded-xl p-6 text-center shadow-corporate hover-scale">
                   <Award className="h-12 w-12 text-hayas-primary mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-2">Nuestro Compromiso</h3>
-                  <p className="text-muted-foreground">
+                  <h3 className="text-xl font-semibold mb-3 text-hayas-primary">Nuestro Compromiso</h3>
+                  <p className="text-gray-700">
                     Ofrecer soluciones integrales que combinen estrategia, tecnología e inteligencia 
                     artificial para maximizar la eficiencia y el retorno de inversión.
                   </p>
-                </Card>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Nuestros Valores */}
-        <section className="py-16 md:py-20 bg-muted/20">
+        {/* Nuestros Valores - Fondo blanco */}
+        <section className="py-16 md:py-20 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gradient">
-                  Nuestros Valores
-                </h2>
-                <p className="text-lg text-muted-foreground">
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient-primary">Nuestros Valores</h2>
+                <p className="text-lg text-gray-700 max-w-2xl mx-auto">
                   Los principios que guían cada proyecto y relación con nuestros clientes
                 </p>
               </div>
               
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {values.map((value, index) => (
-                  <Card key={index} className="p-6 text-center hover:shadow-lg transition-shadow">
-                    <div className="mb-4">
+                  <div key={index} className="text-center group">
+                    <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                       {value.icon}
                     </div>
-                    <h3 className="text-xl font-semibold mb-3">{value.title}</h3>
-                    <p className="text-muted-foreground text-sm">{value.description}</p>
-                  </Card>
+                    <h3 className="text-xl font-semibold mb-3 text-hayas-primary">{value.title}</h3>
+                    <p className="text-gray-700">{value.description}</p>
+                  </div>
                 ))}
               </div>
             </div>
           </div>
         </section>
 
-        {/* Nuestro Equipo */}
-        <section className="py-16 md:py-20">
+        {/* Nuestro Equipo - Fondo tenue */}
+        <section className="py-16 md:py-20 bg-gradient-to-br from-hayas-secondary/5 to-hayas-primary/5">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gradient">
-                  Nuestro Equipo
-                </h2>
-                <p className="text-lg text-muted-foreground">
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient-primary">Nuestro Equipo</h2>
+                <p className="text-lg text-gray-700 max-w-2xl mx-auto">
                   Profesionales especializados en marketing digital, CRM y automatización
                 </p>
               </div>
               
               <div className="grid md:grid-cols-3 gap-8">
                 {teamMembers.map((member, index) => (
-                  <Card key={index} className="p-6 text-center hover:shadow-lg transition-shadow">
-                    <div className="w-24 h-24 bg-gradient-to-br from-hayas-primary to-hayas-secondary rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <div key={index} className="bg-white rounded-xl p-6 text-center shadow-corporate hover-scale">
+                    <div className="w-24 h-24 bg-gradient-primary rounded-full mx-auto mb-4 flex items-center justify-center">
                       <Users className="h-10 w-10 text-white" />
                     </div>
-                    <h3 className="text-xl font-semibold mb-2">{member.name}</h3>
+                    <h3 className="text-xl font-semibold mb-2 text-hayas-primary">{member.name}</h3>
                     <p className="text-hayas-primary font-medium mb-3">{member.role}</p>
-                    <p className="text-muted-foreground text-sm">{member.description}</p>
-                  </Card>
+                    <p className="text-gray-700 text-sm">{member.description}</p>
+                  </div>
                 ))}
               </div>
             </div>
           </div>
         </section>
 
-        {/* Nuestra Metodología */}
-        <section className="py-16 md:py-20 bg-muted/20">
+        {/* Nuestra Metodología - Fondo blanco */}
+        <section className="py-16 md:py-20 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gradient">
-                  Nuestra Metodología
-                </h2>
-                <p className="text-lg text-muted-foreground">
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient-primary">Nuestra Metodología</h2>
+                <p className="text-lg text-gray-700 max-w-2xl mx-auto">
                   Un proceso probado que garantiza resultados exitosos en cada proyecto
                 </p>
               </div>
               
               <div className="space-y-6">
                 {methodology.map((step, index) => (
-                  <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
+                  <div key={index} className="bg-white rounded-xl p-6 shadow-corporate hover-scale border border-gray-100">
                     <div className="flex flex-col md:flex-row items-start gap-4">
                       <div className="flex-shrink-0">
-                        <div className="w-12 h-12 bg-hayas-primary text-white rounded-full flex items-center justify-center font-bold text-lg">
+                        <div className="w-12 h-12 bg-gradient-primary text-white rounded-full flex items-center justify-center font-bold text-lg">
                           {step.step}
                         </div>
                       </div>
                       <div className="flex-grow">
-                        <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
-                        <p className="text-muted-foreground">{step.description}</p>
+                        <h3 className="text-xl font-semibold mb-2 text-hayas-primary">{step.title}</h3>
+                        <p className="text-gray-700">{step.description}</p>
                       </div>
-                      <ArrowRight className="hidden md:block h-6 w-6 text-muted-foreground" />
-                    </div>
-                  </Card>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Certificaciones y Partners */}
-        <section className="py-16 md:py-20">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gradient">
-                Certificaciones y Partners
-              </h2>
-              <p className="text-lg text-muted-foreground mb-12">
-                Trabajamos con las mejores tecnologías y mantenemos certificaciones oficiales
-              </p>
-              
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
-                {certifications.map((cert, index) => (
-                  <div key={index} className="p-4 hover:scale-105 transition-transform">
-                    <div className="bg-white rounded-lg p-6 shadow-sm border">
-                      <div className="h-16 flex items-center justify-center">
-                        <CheckCircle className="h-12 w-12 text-hayas-primary" />
-                      </div>
-                      <p className="text-sm font-medium mt-2">{cert.name}</p>
+                      <ArrowRight className="hidden md:block h-6 w-6 text-gray-400" />
                     </div>
                   </div>
                 ))}
@@ -289,10 +257,37 @@ const Nosotros = () => {
           </div>
         </section>
 
-        {/* Lo que dicen nuestros clientes - Movido desde la home */}
-        <ReviewsSection />
+        {/* Certificaciones y Partners - Fondo tenue */}
+        <section className="py-16 md:py-20 bg-gradient-to-br from-hayas-primary/5 to-hayas-secondary/5">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient-primary">Certificaciones y Partners</h2>
+              <p className="text-lg text-gray-700 mb-12 max-w-2xl mx-auto">
+                Trabajamos con las mejores tecnologías y mantenemos certificaciones oficiales
+              </p>
+              
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+                {certifications.map((cert, index) => (
+                  <div key={index} className="p-4 hover-scale">
+                    <div className="bg-white rounded-lg p-6 shadow-corporate border">
+                      <div className="h-16 flex items-center justify-center">
+                        <CheckCircle className="h-12 w-12 text-hayas-primary" />
+                      </div>
+                      <p className="text-sm font-medium mt-2 text-hayas-primary">{cert.name}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
 
-        {/* CTA Final */}
+        {/* Lo que dicen nuestros clientes - Fondo blanco */}
+        <section className="py-16 md:py-20 bg-white">
+          <ReviewsSection />
+        </section>
+
+        {/* CTA Final - Fondo gradiente */}
         <section className="py-16 md:py-20 bg-gradient-to-br from-hayas-primary to-hayas-secondary">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center text-white">
@@ -303,10 +298,10 @@ const Nosotros = () => {
                 Únete a las empresas que ya han potenciado su crecimiento con nuestras soluciones integrales
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="bg-white text-hayas-primary hover:bg-gray-100 py-6 px-8 text-lg font-medium">
+                <Button className="bg-white text-hayas-primary hover:bg-gray-100 py-6 px-8 text-lg font-medium hover-scale">
                   Solicitar consulta gratuita
                 </Button>
-                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-hayas-primary py-6 px-8 text-lg">
+                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-hayas-primary py-6 px-8 text-lg hover-scale">
                   Ver casos de éxito
                 </Button>
               </div>
