@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -5,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SofiaWidget from "./components/SofiaSection";
 import Index from "./pages/Index";
+import Nosotros from "./pages/Nosotros";
 import CrmAutomatizaciones from "./pages/CrmAutomatizaciones";
 import CreacionMarca from "./pages/CreacionMarca";
 import MarketingVisibilidad from "./pages/MarketingVisibilidad";
@@ -38,6 +40,9 @@ const App = () => (
         <Routes>
           {/* PÁGINA PRINCIPAL */}
           <Route path="/" element={<Index />} />
+          
+          {/* NOSOTROS */}
+          <Route path="/nosotros" element={<Nosotros />} />
           
           {/* SOLUCIONES - Pillar Pages */}
           <Route path="/soluciones/ia-marketing" element={<SolucionesIA />} />
@@ -83,7 +88,6 @@ const App = () => (
           
           {/* PÁGINAS PENDIENTES - Temporalmente llevan a NotFound */}
           <Route path="/servicios" element={<NotFound />} />
-          <Route path="/nosotros" element={<NotFound />} />
           <Route path="/contacto" element={<NotFound />} />
           
           {/* 404 - DEBE IR SIEMPRE AL FINAL */}

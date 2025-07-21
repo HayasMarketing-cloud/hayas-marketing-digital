@@ -9,7 +9,6 @@ import SolutionsSection from '@/components/SolutionsSection';
 import ServicesSection from '@/components/ServicesSection';
 import AllServicesSection from '@/components/AllServicesSection';
 import WhyChooseUsSection from '@/components/WhyChooseUsSection';
-import ReviewsSection from '@/components/ReviewsSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import FAQSection from '@/components/FAQSection';
@@ -26,11 +25,12 @@ const Index = () => {
       }
     }
   }, [searchParams]);
+  
   return (
     <div id="top" className="min-h-screen flex flex-col">
       <Navigation />
       
-      <main className="flex-grow pt-24">  {/* Increased padding to account for large header */}
+      <main className="flex-grow pt-24">
         <HeroSection />
         <SolutionsSection />
         <KitDigitalBanner />
@@ -38,7 +38,6 @@ const Index = () => {
         <KitConsultingBanner />
         <WhyChooseUsSection />
         <AllServicesSection />
-        <ReviewsSection />
         <FAQSection
           faqs={[
             {

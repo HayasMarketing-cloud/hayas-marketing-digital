@@ -141,9 +141,9 @@ const Navigation = () => {
                 </button>
               </div>
 
-              <a href="#nosotros" className="text-foreground hover:text-hayas-primary font-medium transition-colors">
+              <Link to="/nosotros" className="text-foreground hover:text-hayas-primary font-medium transition-colors">
                 La Agencia
-              </a>
+              </Link>
               <Link to="/blog" className="text-foreground hover:text-hayas-primary font-medium transition-colors">
                 Blog
               </Link>
@@ -252,13 +252,13 @@ const Navigation = () => {
                   </div>
                 </div>
                 
-                <a 
-                  href="#nosotros" 
+                <Link 
+                  to="/nosotros" 
                   className="text-foreground hover:text-primary font-medium transition-colors px-4 py-2 hover:bg-muted/50 rounded"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   La Agencia
-                </a>
+                </Link>
                 <Link 
                   to="/blog" 
                   className="text-foreground hover:text-primary font-medium transition-colors px-4 py-2 hover:bg-muted/50 rounded"
