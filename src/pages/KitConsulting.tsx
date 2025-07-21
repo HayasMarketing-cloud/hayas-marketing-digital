@@ -26,39 +26,11 @@ const KitConsulting = () => {
       funding: "Hasta 6.000 €"
     },
     {
-      icon: <BarChart3 className="h-8 w-8 text-turquesa-600" />,
-      title: "Análisis de Datos",
-      description: "Establecer procesos para la extracción y análisis de datos, con niveles básico y avanzado disponibles.",
-      activities: ["Identificación de fuentes de datos", "Visualización", "Definición de KPIs", "Bases de datos centralizadas"],
-      funding: "Hasta 6.000 € por nivel"
-    },
-    {
-      icon: <ShoppingCart className="h-8 w-8 text-hayas-600" />,
+      icon: <ShoppingCart className="h-8 w-8 text-turquesa-600" />,
       title: "Ventas Digitales",
       description: "Mejorar el rendimiento de ventas online mediante estrategias de marketing digital y modelos predictivos basados en IA.",
       activities: ["Análisis de canales digitales", "Definición de estrategias de ventas", "Capacitación en herramientas", "Google Analytics"],
       funding: "Hasta 6.000 €"
-    },
-    {
-      icon: <Cog className="h-8 w-8 text-turquesa-600" />,
-      title: "Procesos de Negocio",
-      description: "Optimizar procesos empresariales o productivos mediante digitalización y automatización.",
-      activities: ["Análisis de procesos", "Asesoramiento en herramientas de gestión", "Desarrollo de casos de uso", "Automatización"],
-      funding: "Hasta 6.000 €"
-    },
-    {
-      icon: <TrendingUp className="h-8 w-8 text-hayas-600" />,
-      title: "Estrategia y Rendimiento",
-      description: "Implementar estrategias para mejorar el posicionamiento competitivo y rendimiento empresarial.",
-      activities: ["Análisis de la competencia", "Diseño de estrategias basadas en IA", "Optimización del rendimiento", "KPIs estratégicos"],
-      funding: "Hasta 6.000 €"
-    },
-    {
-      icon: <Shield className="h-8 w-8 text-turquesa-600" />,
-      title: "Ciberseguridad",
-      description: "Implantar protección básica y avanzada, incluyendo preparación para certificaciones como ISO 27001 y ENS.",
-      activities: ["Análisis de vulnerabilidades", "Planes de protección y continuidad", "Formación en ciberseguridad", "Documentación para certificaciones"],
-      funding: "Hasta 6.000 € por nivel"
     },
     {
       icon: <Zap className="h-8 w-8 text-hayas-600" />,
@@ -201,11 +173,11 @@ const KitConsulting = () => {
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                7 Soluciones <span className="text-gradient-primary">Especializadas</span>
+                3 Soluciones <span className="text-gradient-primary">Especializadas</span>
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Cada solución está diseñada para abordar aspectos específicos de la transformación 
-                digital, con financiación de hasta 6.000€ por cada área.
+                Nos especializamos en las áreas más demandadas de la transformación digital, 
+                con financiación de hasta 6.000€ por cada solución implementada.
               </p>
             </div>
 
