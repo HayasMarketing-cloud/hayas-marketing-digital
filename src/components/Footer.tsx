@@ -121,7 +121,7 @@ const Footer = () => {
                   </div>
                 </div>
                 <p className="text-white/90 mb-4 text-sm">
-                  Asesoramiento especializado en IA, ventas digitales y transformación digital.
+                  <span className="font-semibold">Implementación de IA</span> en tu Estrategia de Marketing y Ventas para automatizar procesos y aumentar conversiones.
                 </p>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
@@ -160,12 +160,12 @@ const Footer = () => {
                   </div>
                   <div>
                     <h4 className="font-bold text-lg">Kit Digital</h4>
-                    <p className="text-white/80 text-sm">Autónomos hasta 2 empleados</p>
+                    <p className="text-white/80 text-sm">Autónomos y pymes hasta 2 empleados</p>
                     <p className="text-white/60 text-xs mt-1">Con Hayas, tú solo eliges. Nosotros nos ocupamos de todo.</p>
                   </div>
                 </div>
                 <p className="text-white/90 mb-4 text-sm">
-                  Haz que tu negocio crezca online sin coste. El Kit Digital cubre hasta 3.000 €
+                  Soluciones de <span className="font-semibold">branding y marketing digital</span> (no incluye publicidad en buscadores)
                 </p>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
