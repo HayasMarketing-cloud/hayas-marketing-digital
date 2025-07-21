@@ -222,6 +222,200 @@ const KitConsulting = () => {
           </div>
         </section>
 
+        {/* Funding Segments Section */}
+        <section className="py-8 md:py-12 bg-gradient-to-br from-hayas-50 to-turquesa-50">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                Financiación según <span className="text-gradient-primary">Tamaño de Empresa</span>
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                El importe máximo de las ayudas depende del número de empleados de tu empresa, 
+                permitiendo un asesoramiento personalizado y escalable.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                {
+                  segment: "Segmento A",
+                  employees: "10 - 49 empleados",
+                  funding: "12.000€",
+                  bgColor: "bg-green-50",
+                  borderColor: "border-green-200",
+                  badgeColor: "bg-green-100 text-green-800"
+                },
+                {
+                  segment: "Segmento B", 
+                  employees: "50 - 99 empleados",
+                  funding: "18.000€",
+                  bgColor: "bg-blue-50",
+                  borderColor: "border-blue-200",
+                  badgeColor: "bg-blue-100 text-blue-800"
+                },
+                {
+                  segment: "Segmento C",
+                  employees: "100 - 249 empleados", 
+                  funding: "24.000€",
+                  bgColor: "bg-purple-50",
+                  borderColor: "border-purple-200",
+                  badgeColor: "bg-purple-100 text-purple-800"
+                }
+              ].map((tier, index) => (
+                <Card key={index} className={`${tier.bgColor} ${tier.borderColor} border-2 text-center hover:shadow-xl transition-all duration-300`}>
+                  <CardHeader className="pb-4">
+                    <Badge className={`${tier.badgeColor} mx-auto mb-2 w-fit`}>
+                      {tier.segment}
+                    </Badge>
+                    <CardTitle className="text-2xl font-bold text-gray-800">
+                      {tier.employees}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="text-4xl font-bold text-gradient-primary mb-4">
+                      {tier.funding}
+                    </div>
+                    <p className="text-gray-600 mb-6">
+                      Importe máximo disponible para asesoramiento digital
+                    </p>
+                    <div className="space-y-2 text-sm text-gray-600">
+                      <div className="flex items-center justify-center gap-2">
+                        <CheckCircle className="h-4 w-4 text-green-500" />
+                        <span>Múltiples servicios disponibles</span>
+                      </div>
+                      <div className="flex items-center justify-center gap-2">
+                        <CheckCircle className="h-4 w-4 text-green-500" />
+                        <span>Bono de Asesoramiento Digital</span>
+                      </div>
+                      <div className="flex items-center justify-center gap-2">
+                        <CheckCircle className="h-4 w-4 text-green-500" />
+                        <span>Financiado por la UE</span>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Program Details Section */}
+        <section className="py-8 md:py-12 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                  ¿Qué incluye el <span className="text-gradient-primary">Programa Kit Consulting</span>?
+                </h2>
+                <p className="text-lg text-gray-600 mb-8">
+                  Un programa integral de asesoramiento digital diseñado específicamente para 
+                  acelerar la transformación digital de las PYMEs españolas.
+                </p>
+                
+                <div className="space-y-6">
+                  {[
+                    {
+                      title: "Bono de Asesoramiento Digital",
+                      description: "Acceso a servicios de consultoría especializada con financiación europea.",
+                      icon: <Euro className="h-6 w-6 text-hayas-600" />
+                    },
+                    {
+                      title: "Servicios Modulares",
+                      description: "Elige uno o varios servicios según las necesidades específicas de tu negocio.",
+                      icon: <Building2 className="h-6 w-6 text-turquesa-600" />
+                    },
+                    {
+                      title: "Expertos Certificados", 
+                      description: "Consultores especializados con experiencia comprobada en transformación digital.",
+                      icon: <Award className="h-6 w-6 text-hayas-600" />
+                    },
+                    {
+                      title: "Seguimiento Personalizado",
+                      description: "Acompañamiento durante todo el proceso de implementación y mejora continua.",
+                      icon: <Users className="h-6 w-6 text-turquesa-600" />
+                    }
+                  ].map((feature, index) => (
+                    <div key={index} className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center">
+                        {feature.icon}
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+                        <p className="text-gray-600">{feature.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-hayas-200 to-turquesa-200 rounded-3xl transform rotate-6 scale-105 opacity-20"></div>
+                <img 
+                  src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop" 
+                  alt="Programa Kit Consulting - Asesoramiento digital especializado" 
+                  className="relative z-10 w-full h-auto rounded-3xl shadow-2xl"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Requirements Section */}
+        <section className="py-8 md:py-12 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                Requisitos para <span className="text-gradient-primary">Participar</span>
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Verifica que tu empresa cumple con los criterios establecidos para acceder 
+                al programa Kit Consulting.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                {
+                  icon: <Building2 className="h-8 w-8 text-hayas-600" />,
+                  title: "PYME",
+                  description: "Empresa con entre 10 y 249 empleados"
+                },
+                {
+                  icon: <Target className="h-8 w-8 text-turquesa-600" />,
+                  title: "Ubicación",
+                  description: "Empresa establecida en territorio español"
+                },
+                {
+                  icon: <CheckCircle className="h-8 w-8 text-hayas-600" />,
+                  title: "Cumplimiento",
+                  description: "Al día con las obligaciones fiscales y laborales"
+                },
+                {
+                  icon: <Zap className="h-8 w-8 text-turquesa-600" />,
+                  title: "Compromiso",
+                  description: "Disposición para implementar mejoras digitales"
+                }
+              ].map((requirement, index) => (
+                <Card key={index} className="text-center border-none shadow-md hover:shadow-lg transition-all duration-300">
+                  <CardHeader>
+                    <div className="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                      {requirement.icon}
+                    </div>
+                    <CardTitle className="text-lg font-bold">
+                      {requirement.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-600 text-sm">
+                      {requirement.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Process Section */}
         <section className="py-8 md:py-12 bg-white">
           <div className="container mx-auto px-4">
