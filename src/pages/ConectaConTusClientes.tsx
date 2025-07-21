@@ -120,7 +120,7 @@ const successCases = [
   }
 ];
 
-const CrmAutomatizaciones = () => {
+const ConectaConTusClientes = () => {
   return (
     <div id="top" className="min-h-screen flex flex-col">
       <Navigation />
@@ -733,4 +733,4 @@ const CrmAutomatizaciones = () => {
   );
 };
 
-export default CrmAutomatizaciones;
+export default ConectaConTusClientes;

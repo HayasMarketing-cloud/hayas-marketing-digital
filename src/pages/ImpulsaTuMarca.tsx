@@ -17,7 +17,7 @@ import {
   BreadcrumbPage,
 } from '@/components/ui/breadcrumb';
 
-const CreacionMarca = () => {
+const ImpulsaTuMarca = () => {
   return (
     <div id="top" className="min-h-screen bg-white">
       <Navigation />
@@ -482,4 +482,4 @@ const CreacionMarca = () => {
   );
 };
 
-export default CreacionMarca;
+export default ImpulsaTuMarca;
