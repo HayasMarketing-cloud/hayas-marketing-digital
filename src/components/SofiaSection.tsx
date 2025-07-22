@@ -83,6 +83,18 @@ const SofiaWidget = () => {
     }
   }, [isOpen, isMinimized, location.pathname]);
 
+  // Listen for custom event to open Sofia chat
+  useEffect(() => {
+    const handleOpenSofiaChat = () => {
+      setIsOpen(true);
+      setIsMinimized(false);
+      setShowHelpMessage(false);
+    };
+
+    window.addEventListener('openSofiaChat', handleOpenSofiaChat);
+    return () => window.removeEventListener('openSofiaChat', handleOpenSofiaChat);
+  }, []);
+
   // Scroll detection
   useEffect(() => {
     const handleScroll = () => {
