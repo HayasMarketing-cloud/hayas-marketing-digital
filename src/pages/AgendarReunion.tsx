@@ -26,13 +26,13 @@ export default function AgendarReunion() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background/95 to-primary/5">
+    <div className="min-h-screen bg-gradient-to-br from-background via-background/95 to-primary/5 pt-24">
       <Navigation />
       
-      <main className="container mx-auto px-6 py-20">
+      <main className="container mx-auto px-6 py-12">
         <div className="max-w-6xl mx-auto">
           {/* Header Section */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
               Agenda tu Reunión con Nuestro Equipo
             </h1>
@@ -72,37 +72,63 @@ export default function AgendarReunion() {
                   <div className="w-16 h-16 bg-gradient-to-r from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-6">
                     <Phone className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-3">¿Prefieres Llamar?</h3>
+                  <h3 className="text-xl font-semibold mb-3">Contacto Directo</h3>
                   <p className="text-muted-foreground mb-6">
                     Habla directamente con nuestro equipo
                   </p>
-                  <a 
-                    href="tel:672288182" 
-                    className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 hover:shadow-lg hover:scale-105"
-                  >
-                    <Phone className="w-5 h-5" />
-                    672 288 182
-                  </a>
+                  <div className="space-y-3">
+                    <a 
+                      href="tel:672288182" 
+                      className="flex items-center justify-center gap-3 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 hover:shadow-lg hover:scale-105 w-full"
+                    >
+                      <Phone className="w-5 h-5" />
+                      Llamar
+                    </a>
+                    <a 
+                      href="https://wa.me/34672288182" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-3 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 hover:shadow-lg hover:scale-105 w-full"
+                    >
+                      <MessageCircle className="w-5 h-5" />
+                      WhatsApp
+                    </a>
+                    <p className="text-sm text-muted-foreground mt-2">
+                      672 288 182
+                    </p>
+                  </div>
                 </div>
               </div>
 
               {/* Sofia Chat */}
-              <div className="bg-card rounded-2xl p-8 shadow-xl border border-border/50">
+              <div className="bg-gradient-to-br from-accent/10 to-primary/10 rounded-2xl p-8 shadow-xl border border-accent/20">
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-r from-accent to-accent/80 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <MessageCircle className="w-8 h-8 text-white" />
+                  <div className="relative w-20 h-20 mx-auto mb-6">
+                    <div className="w-20 h-20 bg-gradient-to-r from-accent to-accent/80 rounded-full flex items-center justify-center relative overflow-hidden">
+                      <img 
+                        src="/lovable-uploads/2a2adcf5-d531-4d8c-91bd-bb12aac27976.png" 
+                        alt="SofÍA" 
+                        className="w-16 h-16 rounded-full object-cover"
+                      />
+                      <div className="absolute -top-1 -right-1 w-5 h-5 bg-green-500 rounded-full border-2 border-white">
+                        <div className="absolute inset-0 bg-green-400 rounded-full animate-ping"></div>
+                      </div>
+                    </div>
                   </div>
-                  <h3 className="text-xl font-semibold mb-3">Chatea con SofÍA</h3>
+                  <h3 className="text-xl font-semibold mb-3 text-accent">Chatea con SofÍA</h3>
                   <p className="text-muted-foreground mb-6">
-                    Nuestra asistente IA está aquí para ayudarte
+                    Nuestra asistente de IA está disponible 24/7 para resolver tus dudas sobre nuestros servicios
                   </p>
                   <button 
                     onClick={handleSofiaChat}
-                    className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-accent to-accent/80 hover:from-accent/90 hover:to-accent text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 hover:shadow-lg hover:scale-105"
+                    className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-accent to-accent/80 hover:from-accent/90 hover:to-accent text-white px-8 py-4 rounded-xl font-medium transition-all duration-300 hover:shadow-lg hover:scale-105 w-full"
                   >
                     <MessageCircle className="w-5 h-5" />
-                    Iniciar Chat
+                    Iniciar Conversación
                   </button>
+                  <p className="text-xs text-muted-foreground mt-3">
+                    Respuesta inmediata • Disponible siempre
+                  </p>
                 </div>
               </div>
 
