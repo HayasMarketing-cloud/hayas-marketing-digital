@@ -101,7 +101,7 @@ export default function AgendarReunion() {
               </div>
 
               {/* Sofia Chat */}
-              <div className="bg-gradient-to-br from-accent/10 to-primary/10 rounded-2xl p-8 shadow-xl border border-accent/20">
+              <div className="bg-card rounded-2xl p-8 shadow-xl border border-border/50">
                 <div className="text-center">
                   <div className="relative w-20 h-20 mx-auto mb-6">
                     <div className="w-20 h-20 bg-gradient-to-r from-accent to-accent/80 rounded-full flex items-center justify-center relative overflow-hidden">
@@ -115,7 +115,7 @@ export default function AgendarReunion() {
                       </div>
                     </div>
                   </div>
-                  <h3 className="text-xl font-semibold mb-3 text-accent">Chatea con SofÍA</h3>
+                  <h3 className="text-xl font-semibold mb-3">Chatea con SofÍA</h3>
                   <p className="text-muted-foreground mb-6">
                     Nuestra asistente de IA está disponible 24/7 para resolver tus dudas sobre nuestros servicios
                   </p>
