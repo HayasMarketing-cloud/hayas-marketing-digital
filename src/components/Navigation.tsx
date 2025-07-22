@@ -153,8 +153,8 @@ const Navigation = () => {
             </nav>
 
             <div className="hidden lg:block">
-              <Button className="gradient-primary text-white hover-scale">
-                Solicitar Consulta
+              <Button asChild className="gradient-primary text-white hover-scale">
+                <Link to="/agendar-reunion">Solicitar Consulta</Link>
               </Button>
             </div>
 
@@ -273,8 +273,8 @@ const Navigation = () => {
                 >
                   Contacto
                 </a>
-                <Button className="gradient-primary text-white mx-4 hover-scale">
-                  Solicitar Consulta
+                <Button asChild className="gradient-primary text-white mx-4 hover-scale">
+                  <Link to="/agendar-reunion">Solicitar Consulta</Link>
                 </Button>
               </nav>
             </div>
