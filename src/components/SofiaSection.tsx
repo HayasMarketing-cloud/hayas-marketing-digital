@@ -33,16 +33,17 @@ const getPageHelpMessage = (pathname: string) => {
 };
 
 const SofiaWidget = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isMinimized, setIsMinimized] = useState(false);
-  const [showHelpMessage, setShowHelpMessage] = useState(false);
-  const [hasScrolled, setHasScrolled] = useState(false);
   const location = useLocation();
 
   // Don't show the widget on the agendar-reunion page
   if (location.pathname === '/agendar-reunion') {
     return null;
   }
+
+  const [isOpen, setIsOpen] = useState(false);
+  const [isMinimized, setIsMinimized] = useState(false);
+  const [showHelpMessage, setShowHelpMessage] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false);
 
   useEffect(() => {
     if (isOpen && !isMinimized) {
