@@ -21,10 +21,11 @@ const HeroSection = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 animate-slide-up">
               <Button 
+                asChild
                 className="gradient-primary text-white py-6 px-8 text-lg font-medium shadow-elegant hover-scale focus-ring"
                 aria-label="Solicitar soluciones inteligentes de marketing e IA"
               >
-                Quiero soluciones inteligentes
+                <a href="/agendar-reunion">Solicitar consulta</a>
               </Button>
               <Button 
                 variant="outline" 

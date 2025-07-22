@@ -27,6 +27,7 @@ import CasoExitoTranslateWithStyle from "./pages/CasoExitoTranslateWithStyle";
 import ImplantacionCrm from "./pages/ImplantacionCrm";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import AgendarReunion from "./pages/AgendarReunion";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -72,6 +73,9 @@ const App = () => (
           {/* BLOG / RECURSOS */}
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<BlogPost />} />
+          
+          {/* AGENDAR REUNIÓN */}
+          <Route path="/agendar-reunion" element={<AgendarReunion />} />
           
           {/* RUTAS LEGACY - Redirigen a las nuevas categorías */}
           <Route path="/crm-automatizaciones" element={<ConectaConTusClientes />} />
