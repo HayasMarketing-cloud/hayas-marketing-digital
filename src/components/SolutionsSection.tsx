@@ -80,11 +80,11 @@ const SolutionsSection = () => {
           ))}
         </div>
         
-        <div className="text-center">
-          <p className="text-gray-600 mb-6">
+        <div className="text-center mt-16">
+          <p className="text-gray-600 mb-6 text-lg">
             ¿No encuentras la solución que buscas? Hablemos de tu proyecto específico.
           </p>
-          <Button className="gradient-primary text-white px-8 py-6 text-lg">
+          <Button className="gradient-primary text-white px-8 py-3 text-lg">
             Consulta personalizada
           </Button>
         </div>
