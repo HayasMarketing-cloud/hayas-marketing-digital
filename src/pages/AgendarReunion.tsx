@@ -115,13 +115,13 @@ export default function AgendarReunion() {
                       </div>
                     </div>
                   </div>
-                  <h3 className="text-xl font-semibold mb-3">Chatea con SofÍA</h3>
+                  <h3 className="text-xl font-semibold mb-3 text-foreground">Chatea con SofÍA</h3>
                   <p className="text-muted-foreground mb-6">
                     Nuestra asistente de IA está disponible 24/7 para resolver tus dudas sobre nuestros servicios
                   </p>
                   <button 
                     onClick={handleSofiaChat}
-                    className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-accent to-accent/80 hover:from-accent/90 hover:to-accent text-white px-8 py-4 rounded-xl font-medium transition-all duration-300 hover:shadow-lg hover:scale-105 w-full"
+                    className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-lime-500 to-lime-600 hover:from-lime-600 hover:to-lime-700 text-white px-8 py-4 rounded-xl font-medium transition-all duration-300 hover:shadow-lg hover:scale-105 w-full shadow-md"
                   >
                     <MessageCircle className="w-5 h-5" />
                     Iniciar Conversación
