@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import KitDigitalBanner from '@/components/KitDigitalBanner';
 import FAQSection from '@/components/FAQSection';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -322,6 +323,8 @@ const ImplantacionCrm = () => {
             </div>
           </div>
         </section>
+
+        <KitDigitalBanner />
 
         {/* FAQ Section */}
         <FAQSection 

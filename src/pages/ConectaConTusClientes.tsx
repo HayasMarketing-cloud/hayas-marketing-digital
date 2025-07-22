@@ -1,6 +1,7 @@
 import React from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import KitConsultingBanner from '@/components/KitConsultingBanner';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -726,6 +727,8 @@ const ConectaConTusClientes = () => {
             </div>
           </div>
         </section>
+
+        <KitConsultingBanner />
       </main>
       
       <Footer />
