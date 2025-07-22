@@ -3,12 +3,9 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight, Building2, Users } from 'lucide-react';
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  
-  return (
-    <footer className="bg-gray-900 text-gray-300">
+  return <footer className="bg-gray-900 text-gray-300">
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
@@ -86,18 +83,14 @@ const Footer = () => {
         {/* Priority CTAs Section */}
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-white mb-6">Somos agentes de cambio y transformación digital</h3>
+            <h3 className="text-2xl font-bold text-white mb-6">Agentes de cambio y transformación digital de los Fondos Next Generation de la Unión Europea</h3>
             <div className="flex justify-center mb-6">
               <div className="bg-white rounded-lg p-4 shadow-lg">
-                <img 
-                  src="/lovable-uploads/e3910419-c73c-4448-a631-ed5f0eff61fe.png" 
-                  alt="Agentes oficiales - Gobierno de España, Red.es, Kit Digital, Financiado por la Unión Europea" 
-                  className="h-12 w-auto max-w-full"
-                />
+                <img src="/lovable-uploads/e3910419-c73c-4448-a631-ed5f0eff61fe.png" alt="Agentes oficiales - Gobierno de España, Red.es, Kit Digital, Financiado por la Unión Europea" className="h-12 w-auto max-w-full" />
               </div>
             </div>
-            <p className="text-gray-400 max-w-2xl mx-auto">
-              Programa de subvenciones para autónomos y empresas españolas. <span className="text-white font-bold">Hasta el próximo 31 de octubre de 2025</span>
+            <p className="text-gray-400 max-w-2xl mx-auto text-xl">
+              Programa de subvenciones para autónomos y empresas españolas. <span className="text-white font-bold text-xl">Disponible hasta el próximo 31 de octubre de 2025</span>
             </p>
           </div>
           
@@ -108,11 +101,7 @@ const Footer = () => {
               <div className="relative z-10">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-24 h-24 bg-white/90 rounded-lg p-3 flex items-center justify-center">
-                    <img 
-                      src="/lovable-uploads/33d68296-8cdf-4012-934b-214b42e6902d.png" 
-                      alt="Kit Consulting Logo" 
-                      className="w-full h-auto"
-                    />
+                    <img src="/lovable-uploads/33d68296-8cdf-4012-934b-214b42e6902d.png" alt="Kit Consulting Logo" className="w-full h-auto" />
                   </div>
                   <div>
                     <h4 className="font-bold text-lg">Kit Consulting</h4>
@@ -132,12 +121,7 @@ const Footer = () => {
                       Hasta 24.000€
                     </Badge>
                   </div>
-                  <Button 
-                    asChild
-                    variant="secondary" 
-                    size="sm"
-                    className="bg-white text-hayas-700 hover:bg-gray-100 font-semibold"
-                  >
+                  <Button asChild variant="secondary" size="sm" className="bg-white text-hayas-700 hover:bg-gray-100 font-semibold">
                     <Link to="/kit-consulting">
                       Solicítalo ahora <ArrowRight className="ml-1 h-4 w-4" />
                     </Link>
@@ -152,11 +136,7 @@ const Footer = () => {
               <div className="relative z-10">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-24 h-24 bg-white/90 rounded-lg p-3 flex items-center justify-center">
-                    <img 
-                      src="/lovable-uploads/f9d2b651-7c92-42b3-86ce-64e3add924c6.png" 
-                      alt="Kit Digital Logo" 
-                      className="w-full h-auto"
-                    />
+                    <img src="/lovable-uploads/f9d2b651-7c92-42b3-86ce-64e3add924c6.png" alt="Kit Digital Logo" className="w-full h-auto" />
                   </div>
                   <div>
                     <h4 className="font-bold text-lg">Kit Digital</h4>
@@ -176,12 +156,7 @@ const Footer = () => {
                       Hasta 3.000€
                     </Badge>
                   </div>
-                  <Button 
-                    asChild
-                    variant="secondary" 
-                    size="sm"
-                    className="bg-white text-blue-700 hover:bg-gray-100 font-semibold"
-                  >
+                  <Button asChild variant="secondary" size="sm" className="bg-white text-blue-700 hover:bg-gray-100 font-semibold">
                     <Link to="/kit-digital">
                       Solicítalo ahora <ArrowRight className="ml-1 h-4 w-4" />
                     </Link>
@@ -203,8 +178,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
