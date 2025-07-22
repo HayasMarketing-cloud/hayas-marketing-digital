@@ -45,7 +45,7 @@ const SolutionsSection = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {solutions.map((solution) => (
             <Card key={solution.id} className="group border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white/80 backdrop-blur-sm h-full">
               <CardHeader className="pb-4">
