@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import OptimizedImage from './OptimizedImage';
 
@@ -25,7 +26,7 @@ const HeroSection = () => {
                 className="gradient-primary text-white py-6 px-8 text-lg font-medium shadow-elegant hover-scale focus-ring"
                 aria-label="Solicitar soluciones inteligentes de marketing e IA"
               >
-                <a href="/agendar-reunion">Solicitar consulta</a>
+                <Link to="/agendar-reunion">Solicitar consulta</Link>
               </Button>
               <Button 
                 variant="outline" 
