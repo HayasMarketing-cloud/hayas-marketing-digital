@@ -1,8 +1,7 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { ChevronDown, ArrowRight, Euro, Award, Building2 } from 'lucide-react';
+import { ChevronDown, ArrowRight } from 'lucide-react';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -68,24 +67,6 @@ const Navigation = () => {
         }
       ]
     },
-    subvenciones: [
-      { 
-        title: 'Kit Digital', 
-        href: '/kit-digital', 
-        description: 'Digitalización para autónomos y micropymes',
-        icon: <Building2 className="h-6 w-6" />,
-        funding: 'Hasta 3.000€',
-        target: 'Autónomos y micropymes (hasta 2 empleados)'
-      },
-      { 
-        title: 'Kit Consulting', 
-        href: '/kit-consulting', 
-        description: 'Transformación digital para PYMEs',
-        icon: <Award className="h-6 w-6" />,
-        funding: 'Hasta 24.000€',
-        target: 'PYMEs (de 10 a 249 empleados)'
-      }
-    ],
     casosExito: [
       { title: 'Centro Roraima', href: '/caso-exito-centro-roraima', image: '/lovable-uploads/2a2adcf5-d531-4d8c-91bd-bb12aac27976.png', solution: 'Branding + Web' },
       { title: 'Asendia', href: '/caso-exito-asendia', image: '/lovable-uploads/37a206e4-890d-4d31-a1c4-7dc674fe47a4.png', solution: 'CRM + Automatización' },
@@ -131,19 +112,6 @@ const Navigation = () => {
                   Soluciones
                   <ChevronDown className="h-4 w-4 transition-transform duration-200" 
                     style={{ transform: activeMegaMenu === 'soluciones' ? 'rotate(180deg)' : 'rotate(0deg)' }} />
-                </button>
-              </div>
-
-              {/* Subvenciones Mega Menu */}
-              <div 
-                className="relative"
-                onMouseEnter={() => handleMouseEnter('subvenciones')}
-                onMouseLeave={handleMouseLeave}
-              >
-                <button className="text-foreground hover:text-hayas-primary font-medium transition-colors flex items-center gap-1 py-2">
-                  Subvenciones
-                  <ChevronDown className="h-4 w-4 transition-transform duration-200" 
-                    style={{ transform: activeMegaMenu === 'subvenciones' ? 'rotate(180deg)' : 'rotate(0deg)' }} />
                 </button>
               </div>
 
@@ -246,24 +214,6 @@ const Navigation = () => {
                           ))}
                         </div>
                       </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Subvenciones Mobile */}
-                <div className="px-4 py-2">
-                  <div className="text-foreground font-medium mb-3 border-b border-border pb-2">Subvenciones</div>
-                  <div className="space-y-2">
-                    {megaMenuData.subvenciones.map((subvencion) => (
-                      <Link
-                        key={subvencion.href}
-                        to={subvencion.href}
-                        className="block text-sm text-foreground hover:text-primary transition-colors py-2 hover:bg-muted/50 px-2 rounded"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        <div className="font-medium">{subvencion.title}</div>
-                        <div className="text-xs text-muted-foreground">{subvencion.funding}</div>
-                      </Link>
                     ))}
                   </div>
                 </div>
@@ -371,55 +321,6 @@ const Navigation = () => {
                   </div>
                 </div>
               ))}
-            </div>
-          </div>
-        </div>
-      )}
-
-      {activeMegaMenu === 'subvenciones' && (
-        <div 
-          className="fixed left-0 right-0 bg-background border border-border rounded-lg shadow-corporate z-30 overflow-hidden"
-          style={{ top: isScrolled ? '120px' : '180px' }}
-          onMouseEnter={() => handleMouseEnter('subvenciones')}
-          onMouseLeave={handleMouseLeave}
-        >
-          <div className="container mx-auto px-4">
-            <div className="p-6">
-              <h4 className="font-semibold text-foreground mb-4 border-b border-border pb-2">
-                Subvenciones para la Digitalización
-              </h4>
-              <div className="grid grid-cols-2 gap-6 max-w-4xl">
-                {megaMenuData.subvenciones.map((subvencion) => (
-                  <Link
-                    key={subvencion.href}
-                    to={subvencion.href}
-                    className="group hover:bg-muted/50 p-6 rounded-lg transition-all duration-200 border border-border/50"
-                    onClick={() => setActiveMegaMenu(null)}
-                  >
-                    <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-12 h-12 bg-hayas-100 rounded-lg flex items-center justify-center text-hayas-600">
-                        {subvencion.icon}
-                      </div>
-                      <div className="flex-1">
-                        <div className="flex items-center justify-between mb-2">
-                          <h5 className="font-semibold text-foreground group-hover:text-hayas-primary transition-colors">
-                            {subvencion.title}
-                          </h5>
-                          <span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full font-medium">
-                            {subvencion.funding}
-                          </span>
-                        </div>
-                        <p className="text-sm text-muted-foreground mb-2">
-                          {subvencion.description}
-                        </p>
-                        <p className="text-xs text-muted-foreground">
-                          {subvencion.target}
-                        </p>
-                      </div>
-                    </div>
-                  </Link>
-                ))}
-              </div>
             </div>
           </div>
         </div>
