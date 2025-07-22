@@ -39,6 +39,11 @@ const SofiaWidget = () => {
   const [hasScrolled, setHasScrolled] = useState(false);
   const location = useLocation();
 
+  // Don't show the widget on the agendar-reunion page
+  if (location.pathname === '/agendar-reunion') {
+    return null;
+  }
+
   useEffect(() => {
     if (isOpen && !isMinimized) {
       // Load Voiceflow widget when chat is opened
@@ -165,27 +170,27 @@ const SofiaWidget = () => {
         </div>
       )}
 
-      {/* Floating Button */}
+      {/* Floating Button - New horizontal design */}
       {!isOpen && (
         <button
           onClick={handleToggleChat}
-          className="fixed bottom-6 right-6 z-50 w-16 h-16 bg-gradient-to-r from-hayas-600 to-turquesa rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group overflow-hidden"
+          className="fixed bottom-6 right-6 z-50 bg-gradient-to-r from-lime-500 to-lime-600 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group overflow-hidden px-4 py-3 flex items-center gap-3 min-w-[200px]"
           aria-label="Abrir chat con SofÍA"
         >
-          <div className="relative w-full h-full flex items-center justify-center">
+          <div className="relative">
             <img 
               src="/lovable-uploads/2a2adcf5-d531-4d8c-91bd-bb12aac27976.png" 
               alt="SofÍA" 
               className="w-12 h-12 rounded-full object-cover border-2 border-white/20"
             />
-            <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white">
-              <div className="absolute inset-0 bg-green-400 rounded-full animate-ping"></div>
+            <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-400 rounded-full border-2 border-white">
+              <div className="absolute inset-0 bg-green-300 rounded-full animate-ping"></div>
             </div>
           </div>
           
-          {/* Tooltip */}
-          <div className="absolute bottom-full right-0 mb-2 px-3 py-1 bg-gray-900 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-            Habla con SofÍA
+          <div className="text-left text-white">
+            <div className="font-semibold text-sm">SofÍA</div>
+            <div className="text-xs opacity-90">Asistente de IA • En línea</div>
           </div>
         </button>
       )}
@@ -196,7 +201,7 @@ const SofiaWidget = () => {
           isMinimized ? 'w-80 h-16' : 'w-96 h-[600px]'
         }`}>
           {/* Header */}
-          <div className="bg-gradient-to-r from-hayas-600 to-turquesa text-white p-4 rounded-t-2xl">
+          <div className="bg-gradient-to-r from-lime-500 to-lime-600 text-white p-4 rounded-t-2xl">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <img 
