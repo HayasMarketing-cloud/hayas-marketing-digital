@@ -67,8 +67,7 @@ const SolutionsSection = () => {
                   </div>
                 </div>
                 <Button 
-                  variant="outline" 
-                  className="w-full group-hover:bg-hayas-600 group-hover:text-white transition-all mt-4"
+                  className="w-full gradient-primary text-white mt-4"
                   asChild
                 >
                   <Link to={`${solution.href}#top`}>
@@ -78,15 +77,6 @@ const SolutionsSection = () => {
               </CardContent>
             </Card>
           ))}
-        </div>
-        
-        <div className="text-center mt-16">
-          <p className="text-gray-600 mb-6 text-lg">
-            ¿No encuentras la solución que buscas? Hablemos de tu proyecto específico.
-          </p>
-          <Button className="gradient-primary text-white px-8 py-3 text-lg">
-            Consulta personalizada
-          </Button>
         </div>
       </div>
     </section>
