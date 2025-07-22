@@ -93,9 +93,6 @@ export default function AgendarReunion() {
                       <MessageCircle className="w-5 h-5" />
                       WhatsApp
                     </a>
-                    <p className="text-sm text-muted-foreground mt-2">
-                      672 288 182
-                    </p>
                   </div>
                 </div>
               </div>
