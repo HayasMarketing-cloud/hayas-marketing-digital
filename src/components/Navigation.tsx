@@ -46,7 +46,6 @@ const Navigation = () => {
         {
           title: 'Marketing & Visibilidad',
           items: [
-            { title: 'IA aplicada al Marketing', href: '/soluciones/ia-marketing', description: 'Automatización inteligente' },
             { title: 'Branding y Marca', href: '/soluciones/branding-marca', description: 'Identidad corporativa' },
             { title: 'Marketing Digital', href: '/soluciones/marketing-digital', description: 'Estrategias digitales' }
           ]
@@ -62,7 +61,8 @@ const Navigation = () => {
         {
           title: 'Consultoría',
           items: [
-            { title: 'Gestión Marketing', href: '/soluciones/gestion-marketing', description: 'Estrategia integral' }
+            { title: 'Gestión Marketing', href: '/soluciones/gestion-marketing', description: 'Estrategia integral' },
+            { title: 'IA aplicada al Marketing', href: '/soluciones/ia-marketing', description: 'Automatización inteligente' }
           ]
         }
       ]
