@@ -1,51 +1,34 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Palette, Target, Users, ShoppingCart, Calendar, Brain } from 'lucide-react';
+import { Rocket, Heart, TrendingUp } from 'lucide-react';
 
 const solutions = [
   {
     id: 1,
-    icon: <Palette className="h-8 w-8 text-primary" />,
-    title: "Creación de Marca",
-    description: "Desarrollo integral de identidad visual, naming y posicionamiento estratégico para destacar en tu mercado.",
-    href: "/creacion-marca"
+    icon: <Rocket className="h-8 w-8 text-primary" />,
+    title: "Impulsa tu marca",
+    description: "Posiciona tu negocio con una identidad clara, una voz auténtica y una presencia estratégica.",
+    includes: "Creación de Marca • Marketing y Visibilidad • Gestión del Plan de Marketing",
+    href: "/soluciones/impulsa-tu-marca"
   },
   {
     id: 2,
-    icon: <Target className="h-8 w-8 text-primary" />,
-    title: "Marketing y Visibilidad",
-    description: "Estrategias completas de SEO, contenidos y campañas para aumentar tu presencia digital.",
-    href: "/marketing-visibilidad"
+    icon: <Heart className="h-8 w-8 text-primary" />,
+    title: "Conecta con tus clientes",
+    description: "Atrae, convierte y fideliza con estrategias centradas en las personas, no en el ruido.",
+    includes: "Captación de Leads • CRM y Automatizaciones • Soluciones IA aplicada a Marketing",
+    href: "/soluciones/conecta-con-tus-clientes"
   },
   {
     id: 3,
-    icon: <Users className="h-8 w-8 text-primary" />,
-    title: "Captación de Leads y Clientes",
-    description: "Sistemas automatizados de generación y conversión de prospectos en clientes reales.",
-    href: "/captacion-leads"
-  },
-  {
-    id: 4,
-    icon: <ShoppingCart className="h-8 w-8 text-primary" />,
-    title: "CRM y automatizaciones de Marketing",
-    description: "Sistemas inteligentes de gestión de clientes con automatizaciones personalizadas para maximizar conversiones.",
-    href: "/crm-automatizaciones"
-  },
-  {
-    id: 5,
-    icon: <Calendar className="h-8 w-8 text-primary" />,
-    title: "Gestión del Plan de Marketing",
-    description: "Planificación estratégica, ejecución y medición de resultados de tu estrategia integral.",
-    href: "/gestion-marketing"
-  },
-  {
-    id: 6,
-    icon: <Brain className="h-8 w-8 text-primary" />,
-    title: "Soluciones IA aplicada a Marketing",
-    description: "Implementación de inteligencia artificial para automatizar y optimizar procesos comerciales.",
-    href: "/soluciones-ia"
+    icon: <TrendingUp className="h-8 w-8 text-primary" />,
+    title: "Activa tu estrategia digital",
+    description: "Llevamos tu negocio al siguiente nivel con planificación, tecnología y mejora continua.",
+    includes: "Diseño web/tienda online • Consultoría estratégica • Automatización + IA + Analítica",
+    href: "/soluciones/activa-tu-estrategia-digital"
   }
 ];
 
@@ -58,13 +41,13 @@ const SolutionsSection = () => {
             Nuestras <span className="text-gradient-primary">Soluciones</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Descubre cómo nuestras soluciones estratégicas pueden transformar tu negocio desde la creación de marca hasta la implementación de IA.
+            Tres enfoques estratégicos para transformar tu negocio desde la base hasta el crecimiento sostenible.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {solutions.map((solution) => (
-            <Card key={solution.id} className="group border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white/80 backdrop-blur-sm">
+            <Card key={solution.id} className="group border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white/80 backdrop-blur-sm h-full">
               <CardHeader className="pb-4">
                 <div className="mb-4 p-3 rounded-lg bg-hayas-100 w-fit group-hover:bg-hayas-200 transition-colors">
                   {solution.icon}
@@ -73,13 +56,19 @@ const SolutionsSection = () => {
                   {solution.title}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {solution.description}
-                </p>
+              <CardContent className="space-y-4 flex flex-col justify-between h-full">
+                <div>
+                  <p className="text-gray-700 text-base leading-relaxed mb-4 font-medium">
+                    {solution.description}
+                  </p>
+                  <div className="text-sm text-gray-500 border-t pt-3">
+                    <span className="font-medium">Incluye:</span>
+                    <p className="mt-1">{solution.includes}</p>
+                  </div>
+                </div>
                 <Button 
                   variant="outline" 
-                  className="w-full group-hover:bg-hayas-600 group-hover:text-white transition-all"
+                  className="w-full group-hover:bg-hayas-600 group-hover:text-white transition-all mt-4"
                   asChild
                 >
                   <Link to={`${solution.href}#top`}>
