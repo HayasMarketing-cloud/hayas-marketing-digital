@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { Calendar, User, Clock, ArrowLeft, Share2, BookOpen, Brain, Target, TrendingUp } from 'lucide-react';
 import iaMarketingHero from '@/assets/ia-marketing-hero.jpg';
+import avisosLegalesHero from '@/assets/avisos-legales-hero.jpg';
 
 const BlogPost = () => {
   const { id } = useParams();
@@ -54,7 +55,7 @@ const BlogPost = () => {
             </div>
 
             <img 
-              src="/src/assets/avisos-legales-hero.jpg" 
+              src={avisosLegalesHero} 
               alt="Avisos Legales para Páginas Web - Cumplimiento legal"
               className="w-full h-64 md:h-80 object-cover rounded-lg mt-8 shadow-lg"
             />

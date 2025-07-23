@@ -5,6 +5,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Calendar, User, ArrowRight, Clock } from 'lucide-react';
 import Footer from '@/components/Footer';
+import iaMarketingHero from '@/assets/ia-marketing-hero.jpg';
+import avisosLegalesHero from '@/assets/avisos-legales-hero.jpg';
 
 const Blog = () => {
   const featuredPost = {
@@ -14,7 +16,7 @@ const Blog = () => {
     date: '2024-12-15',
     readTime: '15 min',
     author: 'Equipo Hayas Marketing',
-    image: '/src/assets/ia-marketing-hero.jpg',
+    image: iaMarketingHero,
     category: 'Inteligencia Artificial',
     tags: ['IA', 'Marketing Digital', 'Automatización', 'Estrategia']
   };
@@ -27,7 +29,7 @@ const Blog = () => {
       date: '2024-12-20',
       readTime: '12 min',
       category: 'Legal',
-      image: '/src/assets/avisos-legales-hero.jpg'
+      image: avisosLegalesHero
     },
     {
       id: 'crm-automatizacion',
