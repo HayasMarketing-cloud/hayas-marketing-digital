@@ -21,6 +21,15 @@ const Blog = () => {
 
   const recentPosts = [
     {
+      id: 'avisos-legales-paginas-web',
+      title: 'Avisos Legales para Páginas Web [Incluye Plantillas]',
+      description: 'Descubre los requisitos legales clave para páginas web dirigidas a usuarios en España y la UE. Incluye plantillas gratuitas.',
+      date: '2024-12-20',
+      readTime: '12 min',
+      category: 'Legal',
+      image: '/lovable-uploads/e38029c3-0b86-40ab-9262-21d4d0516c2e.png'
+    },
+    {
       id: 'crm-automatizacion',
       title: 'CRM y Automatización: Claves para el Éxito Empresarial',
       description: 'Descubre cómo un CRM bien implementado puede transformar tu negocio.',
@@ -37,20 +46,12 @@ const Blog = () => {
       readTime: '10 min',
       category: 'SEO',
       image: '/lovable-uploads/37a206e4-890d-4d31-a1c4-7dc674fe47a4.png'
-    },
-    {
-      id: 'marketing-contenidos',
-      title: 'Marketing de Contenidos: Estrategias que Funcionan',
-      description: 'Cómo crear contenido que realmente conecte con tu audiencia.',
-      date: '2024-11-28',
-      readTime: '12 min',
-      category: 'Marketing de Contenidos',
-      image: '/lovable-uploads/564421eb-e67c-4075-95c0-1405855106cc.png'
     }
   ];
 
   const categories = [
     'Inteligencia Artificial',
+    'Legal',
     'CRM',
     'SEO',
     'Marketing Digital',

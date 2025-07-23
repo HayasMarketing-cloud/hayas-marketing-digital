@@ -9,6 +9,246 @@ import iaMarketingHero from '@/assets/ia-marketing-hero.jpg';
 const BlogPost = () => {
   const { id } = useParams();
 
+  // Post específico de Avisos Legales
+  if (id === 'avisos-legales-paginas-web') {
+    return (
+      <div className="min-h-screen bg-background">
+        <div className="container mx-auto px-4 py-24 max-w-4xl">
+          {/* Breadcrumb */}
+          <div className="mb-8">
+            <Link to="/blog" className="flex items-center text-muted-foreground hover:text-primary transition-colors">
+              <ArrowLeft className="h-4 w-4 mr-2" />
+              Volver al Blog
+            </Link>
+          </div>
+
+          {/* Header */}
+          <header className="mb-12">
+            <div className="flex items-center gap-2 mb-4">
+              <Badge className="bg-primary text-primary-foreground">Legal</Badge>
+              <span className="text-sm text-muted-foreground">•</span>
+              <span className="text-sm text-muted-foreground flex items-center gap-1">
+                <Calendar className="h-4 w-4" />
+                20 de diciembre, 2024
+              </span>
+              <span className="text-sm text-muted-foreground">•</span>
+              <span className="text-sm text-muted-foreground flex items-center gap-1">
+                <Clock className="h-4 w-4" />
+                12 min de lectura
+              </span>
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              Avisos Legales para Páginas Web [Incluye Plantillas]
+            </h1>
+            
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2 text-muted-foreground">
+                <User className="h-4 w-4" />
+                <span>Equipo Hayas Marketing</span>
+              </div>
+              <Button variant="outline" size="sm">
+                <Share2 className="h-4 w-4 mr-2" />
+                Compartir
+              </Button>
+            </div>
+
+            <img 
+              src="/lovable-uploads/e38029c3-0b86-40ab-9262-21d4d0516c2e.png" 
+              alt="Avisos Legales para Páginas Web - Cumplimiento legal"
+              className="w-full h-64 md:h-80 object-cover rounded-lg mt-8 shadow-lg"
+            />
+          </header>
+
+          {/* Content */}
+          <article className="prose prose-lg max-w-none">
+            <div className="text-lg text-muted-foreground mb-8 p-6 bg-muted/50 rounded-lg border-l-4 border-primary">
+              ¿Sabías que tu página web debe cumplir con una serie de <strong>requisitos legales</strong> para garantizar la protección de datos y la transparencia en la UE? Si te diriges a usuarios en España o la Unión Europea, descubre en este artículo las claves que debes cumplir como titular de una página web para evitar sanciones y mejorar la confianza de tus usuarios.
+            </div>
+
+            <p className="text-lg leading-relaxed mb-6">
+              En este artículo, no solo te explicamos los <strong>requisitos legales clave</strong> para las páginas web dirigidas a usuarios en España y la Unión Europea, sino que también te proporcionamos <strong>plantillas</strong> para ayudarte a crear fácilmente tu Aviso Legal, Política de Privacidad, Política de Cookies y Términos y Condiciones.
+            </p>
+
+            <p className="text-lg leading-relaxed mb-8">
+              Entender y cumplir con estos requisitos es fundamental para garantizar que tu sitio web cumpla con las leyes, proteja los datos de tus usuarios y genere confianza. En concreto, existen <strong>cuatro páginas legales</strong> que debes tener en cuenta en tu sitio web, plataforma o tienda online:
+            </p>
+
+            <div className="grid md:grid-cols-2 gap-6 mb-12">
+              <div className="bg-gradient-to-br from-primary/10 to-primary/5 p-6 rounded-lg">
+                <h3 className="text-xl font-bold mb-4 text-primary">📋 Aviso Legal</h3>
+                <p className="text-sm">Para identificar al titular del sitio y establecer las condiciones de uso.</p>
+              </div>
+              <div className="bg-gradient-to-br from-accent/10 to-accent/5 p-6 rounded-lg">
+                <h3 className="text-xl font-bold mb-4 text-accent">🔒 Política de Privacidad</h3>
+                <p className="text-sm">Para informar sobre el tratamiento de datos personales.</p>
+              </div>
+              <div className="bg-gradient-to-br from-primary/10 to-accent/5 p-6 rounded-lg">
+                <h3 className="text-xl font-bold mb-4">🍪 Política de Cookies</h3>
+                <p className="text-sm">Para cumplir con la normativa sobre cookies y seguimiento.</p>
+              </div>
+              <div className="bg-gradient-to-br from-accent/10 to-primary/5 p-6 rounded-lg">
+                <h3 className="text-xl font-bold mb-4">📝 Términos y Condiciones</h3>
+                <p className="text-sm">Para regular el uso de servicios y productos online.</p>
+              </div>
+            </div>
+
+            <h2 className="text-3xl font-bold mt-12 mb-6 text-primary">¿Por qué son importantes los avisos legales?</h2>
+            
+            <p className="text-lg leading-relaxed mb-6">
+              Los avisos legales en tu página web no son solo una formalidad; son una <strong>obligación legal</strong> que protege tanto a tu empresa como a tus usuarios. Su importancia radica en varios aspectos fundamentales:
+            </p>
+
+            <div className="space-y-6 mb-8">
+              <div className="bg-muted/30 p-6 rounded-lg">
+                <h3 className="text-xl font-bold mb-3">⚖️ Cumplimiento Legal</h3>
+                <p className="mb-4">El incumplimiento puede resultar en multas significativas. El RGPD puede imponer sanciones de hasta <strong>20 millones de euros</strong> o el <strong>4% del volumen de negocio anual</strong>.</p>
+              </div>
+
+              <div className="bg-muted/30 p-6 rounded-lg">
+                <h3 className="text-xl font-bold mb-3">🛡️ Protección de Datos</h3>
+                <p className="mb-4">Garantiza que los datos de tus usuarios se tratan de manera <strong>transparente y segura</strong>, cumpliendo con las expectativas de privacidad.</p>
+              </div>
+
+              <div className="bg-muted/30 p-6 rounded-lg">
+                <h3 className="text-xl font-bold mb-3">🤝 Confianza del Usuario</h3>
+                <p className="mb-4">Los usuarios confían más en sitios web que muestran <strong>transparencia</strong> sobre sus prácticas de datos y políticas.</p>
+              </div>
+            </div>
+
+            <h2 className="text-3xl font-bold mt-12 mb-6 text-primary">Requisitos Específicos por Tipo de Página</h2>
+
+            <div className="space-y-8 mb-12">
+              <div className="bg-gradient-to-r from-primary/5 to-accent/5 p-6 rounded-lg border-l-4 border-primary">
+                <h3 className="text-xl font-bold mb-4 text-primary">📄 Aviso Legal - Obligatorio para TODOS</h3>
+                <p className="mb-4">Según la <strong>Ley 34/2002 de Servicios de la Sociedad de la Información</strong>, todo sitio web debe incluir:</p>
+                <ul className="list-disc list-inside space-y-2 text-sm">
+                  <li>Nombre o razón social</li>
+                  <li>NIF o CIF</li>
+                  <li>Domicilio</li>
+                  <li>Teléfono y email de contacto</li>
+                  <li>Datos de inscripción mercantil (si aplica)</li>
+                  <li>Número de colegiado (profesionales)</li>
+                </ul>
+              </div>
+
+              <div className="bg-gradient-to-r from-accent/5 to-primary/5 p-6 rounded-lg border-l-4 border-accent">
+                <h3 className="text-xl font-bold mb-4 text-accent">🔐 Política de Privacidad - Si recoges datos</h3>
+                <p className="mb-4">Obligatoria si tu web recoge cualquier tipo de dato personal (formularios, newsletter, comentarios, etc.):</p>
+                <ul className="list-disc list-inside space-y-2 text-sm">
+                  <li>Qué datos recoges y por qué</li>
+                  <li>Base legal del tratamiento</li>
+                  <li>Tiempo de conservación</li>
+                  <li>Derechos del usuario (ARCO + portabilidad + olvido)</li>
+                  <li>Datos de contacto del responsable</li>
+                  <li>Información sobre transferencias internacionales</li>
+                </ul>
+              </div>
+
+              <div className="bg-gradient-to-r from-primary/5 to-accent/5 p-6 rounded-lg border-l-4 border-primary">
+                <h3 className="text-xl font-bold mb-4 text-primary">🍪 Política de Cookies</h3>
+                <p className="mb-4">Obligatoria si tu web utiliza cookies (incluye Google Analytics, Facebook Pixel, etc.):</p>
+                <ul className="list-disc list-inside space-y-2 text-sm">
+                  <li>Qué son las cookies</li>
+                  <li>Tipos de cookies que usas</li>
+                  <li>Finalidad de cada tipo</li>
+                  <li>Cómo desactivarlas</li>
+                  <li>Banner de consentimiento</li>
+                </ul>
+              </div>
+
+              <div className="bg-gradient-to-r from-accent/5 to-primary/5 p-6 rounded-lg border-l-4 border-accent">
+                <h3 className="text-xl font-bold mb-4 text-accent">📋 Términos y Condiciones</h3>
+                <p className="mb-4">Especialmente importante para tiendas online y plataformas de servicios:</p>
+                <ul className="list-disc list-inside space-y-2 text-sm">
+                  <li>Condiciones de uso del servicio</li>
+                  <li>Proceso de compra y pago</li>
+                  <li>Política de devoluciones</li>
+                  <li>Garantías y responsabilidades</li>
+                  <li>Resolución de conflictos</li>
+                </ul>
+              </div>
+            </div>
+
+            <h2 className="text-3xl font-bold mt-12 mb-6 text-primary">Plantillas Gratuitas</h2>
+
+            <div className="bg-gradient-to-r from-primary/10 to-accent/10 p-8 rounded-lg mb-8">
+              <h3 className="text-2xl font-bold mb-4 text-center">📥 Descarga Nuestras Plantillas</h3>
+              <p className="text-center mb-6">Hemos preparado plantillas personalizables para cada tipo de aviso legal que necesites.</p>
+              <div className="grid md:grid-cols-2 gap-4">
+                <Button className="w-full">📋 Plantilla Aviso Legal</Button>
+                <Button className="w-full" variant="outline">🔒 Plantilla Política Privacidad</Button>
+                <Button className="w-full" variant="outline">🍪 Plantilla Política Cookies</Button>
+                <Button className="w-full" variant="outline">📝 Plantilla Términos y Condiciones</Button>
+              </div>
+            </div>
+
+            <h2 className="text-3xl font-bold mt-12 mb-6 text-primary">Consejos Prácticos de Implementación</h2>
+
+            <div className="space-y-6 mb-8">
+              <div className="bg-muted/30 p-6 rounded-lg">
+                <h3 className="text-xl font-bold mb-3">✅ Ubicación y Accesibilidad</h3>
+                <ul className="list-disc list-inside space-y-2 text-sm">
+                  <li>Incluye enlaces en el footer de tu web</li>
+                  <li>Usa términos claros como "Aviso Legal", "Política de Privacidad"</li>
+                  <li>Máximo 2 clics desde cualquier página</li>
+                  <li>Enlaces visibles y accesibles</li>
+                </ul>
+              </div>
+
+              <div className="bg-muted/30 p-6 rounded-lg">
+                <h3 className="text-xl font-bold mb-3">🔄 Mantenimiento y Actualizaciones</h3>
+                <ul className="list-disc list-inside space-y-2 text-sm">
+                  <li>Revisa y actualiza al menos una vez al año</li>
+                  <li>Actualiza cuando cambies proveedores o servicios</li>
+                  <li>Incluye fecha de última modificación</li>
+                  <li>Informa a usuarios de cambios significativos</li>
+                </ul>
+              </div>
+
+              <div className="bg-muted/30 p-6 rounded-lg">
+                <h3 className="text-xl font-bold mb-3">⚡ Banner de Cookies</h3>
+                <ul className="list-disc list-inside space-y-2 text-sm">
+                  <li>Debe aparecer antes de cargar cookies no esenciales</li>
+                  <li>Opciones de "Aceptar", "Rechazar" y "Configurar"</li>
+                  <li>Información clara sobre tipos de cookies</li>
+                  <li>Enlace directo a la política de cookies</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-r from-primary/5 to-accent/5 p-6 rounded-lg mt-12">
+              <h3 className="text-xl font-bold mb-4 text-center">💡 ¿Necesitas ayuda personalizada?</h3>
+              <p className="text-center mb-4">
+                En <strong>Hayas Marketing</strong> te ayudamos a implementar todos los avisos legales necesarios 
+                para que tu web cumpla con la normativa vigente.
+              </p>
+              <div className="text-center">
+                <Button size="lg" className="gradient-primary">
+                  Solicitar Consulta Legal
+                </Button>
+              </div>
+            </div>
+          </article>
+
+          {/* Navigation */}
+          <div className="flex justify-between items-center mt-12 pt-8 border-t">
+            <Link to="/blog" className="flex items-center text-muted-foreground hover:text-primary transition-colors">
+              <ArrowLeft className="h-4 w-4 mr-2" />
+              Volver al Blog
+            </Link>
+            <div className="flex gap-2">
+              <Button variant="outline" size="sm">
+                <Share2 className="h-4 w-4 mr-2" />
+                Compartir
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   // Post específico de IA en Marketing
   if (id === 'ia-aplicacion-marketing') {
     return (
