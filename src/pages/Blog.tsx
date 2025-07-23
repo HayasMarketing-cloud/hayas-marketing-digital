@@ -27,7 +27,7 @@ const Blog = () => {
       date: '2024-12-20',
       readTime: '12 min',
       category: 'Legal',
-      image: '/lovable-uploads/e38029c3-0b86-40ab-9262-21d4d0516c2e.png'
+      image: '/src/assets/avisos-legales-hero.jpg'
     },
     {
       id: 'crm-automatizacion',

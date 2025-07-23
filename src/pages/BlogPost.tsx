@@ -54,7 +54,7 @@ const BlogPost = () => {
             </div>
 
             <img 
-              src="/lovable-uploads/e38029c3-0b86-40ab-9262-21d4d0516c2e.png" 
+              src="/src/assets/avisos-legales-hero.jpg" 
               alt="Avisos Legales para Páginas Web - Cumplimiento legal"
               className="w-full h-64 md:h-80 object-cover rounded-lg mt-8 shadow-lg"
             />
