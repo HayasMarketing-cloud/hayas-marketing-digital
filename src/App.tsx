@@ -29,6 +29,7 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import AgendarReunion from "./pages/AgendarReunion";
 import NotFound from "./pages/NotFound";
+import TiendaOnline from "./pages/TiendaOnline";
 
 const queryClient = new QueryClient();
 
@@ -54,6 +55,7 @@ const App = () => (
           {/* SOLUCIONES - Páginas individuales (legacy y específicas) */}
           <Route path="/soluciones/ia-marketing" element={<SolucionesIA />} />
           <Route path="/soluciones/implantacion-crm" element={<ImplantacionCrm />} />
+          <Route path="/servicios/tienda-online" element={<TiendaOnline />} />
           <Route path="/soluciones/marketing-digital" element={<MarketingVisibilidad />} />
           <Route path="/soluciones/gestion-marketing" element={<GestionMarketing />} />
           <Route path="/soluciones/captacion-leads" element={<CaptacionLeads />} />
