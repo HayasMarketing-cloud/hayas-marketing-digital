@@ -31,6 +31,7 @@ import AgendarReunion from "./pages/AgendarReunion";
 import NotFound from "./pages/NotFound";
 import TiendaOnline from "./pages/TiendaOnline";
 import DisenoWeb from "./pages/DisenoWeb";
+import SeoPositioning from "./pages/SeoPositioning";
 
 const queryClient = new QueryClient();
 
@@ -58,6 +59,7 @@ const App = () => (
           <Route path="/soluciones/implantacion-crm" element={<ImplantacionCrm />} />
           <Route path="/servicios/tienda-online" element={<TiendaOnline />} />
           <Route path="/servicios/diseno-web" element={<DisenoWeb />} />
+          <Route path="/servicios/seo-posicionamiento" element={<SeoPositioning />} />
           <Route path="/soluciones/marketing-digital" element={<MarketingVisibilidad />} />
           <Route path="/soluciones/gestion-marketing" element={<GestionMarketing />} />
           <Route path="/soluciones/captacion-leads" element={<CaptacionLeads />} />
