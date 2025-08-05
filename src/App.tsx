@@ -28,6 +28,8 @@ import ImplantacionCrm from "./pages/ImplantacionCrm";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import AgendarReunion from "./pages/AgendarReunion";
+import SolicitarConsulta from "./pages/SolicitarConsulta";
+import Contacto from "./pages/Contacto";
 import NotFound from "./pages/NotFound";
 import TiendaOnline from "./pages/TiendaOnline";
 import DisenoWeb from "./pages/DisenoWeb";
@@ -80,8 +82,11 @@ const App = () => (
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<BlogPost />} />
           
-          {/* AGENDAR REUNIÓN */}
+          
+          {/* CONTACTO Y CONSULTAS */}
           <Route path="/agendar-reunion" element={<AgendarReunion />} />
+          <Route path="/solicitar-consulta" element={<SolicitarConsulta />} />
+          <Route path="/contacto" element={<Contacto />} />
           
           {/* RUTAS LEGACY - Redirigen a las nuevas categorías */}
           <Route path="/crm-automatizaciones" element={<ConectaConTusClientes />} />
@@ -102,9 +107,7 @@ const App = () => (
           <Route path="/caso-exito-joints-up" element={<CasoExitoJointsUp />} />
           <Route path="/caso-exito-translate-with-style" element={<CasoExitoTranslateWithStyle />} />
           
-          {/* PÁGINAS PENDIENTES - Temporalmente llevan a NotFound */}
           <Route path="/servicios" element={<NotFound />} />
-          <Route path="/contacto" element={<NotFound />} />
           
           {/* 404 - DEBE IR SIEMPRE AL FINAL */}
           <Route path="*" element={<NotFound />} />
