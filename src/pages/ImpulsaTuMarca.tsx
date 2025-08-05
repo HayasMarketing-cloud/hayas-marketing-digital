@@ -172,79 +172,6 @@ const ImpulsaTuMarca = () => {
           </div>
         </section>
 
-        {/* Services Section */}
-        <section className="py-8 md:py-12 bg-gradient-to-br from-gray-50 to-white">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Servicios de <span className="text-gradient-primary">Creación de Marca</span>
-              </h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Desde el concepto inicial hasta la implementación completa, te acompañamos en cada paso 
-                del proceso de construcción de tu marca.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-              {[
-                {
-                  icon: <Lightbulb className="h-12 w-12 text-lime-600" />,
-                  title: "Naming & Concepto",
-                  description: "Desarrollo del nombre de marca y concepto estratégico que refleje tu esencia empresarial."
-                },
-                {
-                  icon: <Palette className="h-12 w-12 text-hayas-600" />,
-                  title: "Identidad Visual",
-                  description: "Diseño de logo, paleta de colores, tipografías y elementos gráficos distintivos."
-                },
-                {
-                  icon: <FileText className="h-12 w-12 text-lime-600" />,
-                  title: "Manual de Marca",
-                  description: "Guía completa de aplicación y uso correcto de todos los elementos de marca."
-                }
-              ].map((service, index) => (
-                <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white/80 backdrop-blur-sm">
-                  <CardHeader className="text-center">
-                    <div className="mb-6 mx-auto p-4 rounded-lg bg-gray-50 w-fit">
-                      {service.icon}
-                    </div>
-                    <CardTitle className="text-xl font-bold mb-4">
-                      {service.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="text-center">
-                    <p className="text-gray-600 leading-relaxed">
-                      {service.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-
-            {/* CTA Section */}
-            <div className="text-center bg-gradient-to-br from-hayas-50 to-turquesa-50 rounded-2xl p-8 md:p-12">
-              <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                ¿Listo para crear o rediseñar tu <span className="text-gradient-primary">marca</span>?
-              </h3>
-              <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-                Transforma tu visión en una identidad de marca que conecte con tu audiencia y genere resultados reales.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link to="/?scrollTo=contacto">
-                  <Button className="gradient-primary text-white px-8 py-6 text-lg">
-                    Solicitar creación de marca
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </Button>
-                </Link>
-                <a href="#casos-exito">
-                  <Button variant="outline" className="px-8 py-6 text-lg">
-                    Ver casos de éxito
-                  </Button>
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* How We Work Section */}
         <section className="py-12 md:py-16 bg-white">
@@ -302,7 +229,7 @@ const ImpulsaTuMarca = () => {
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                ¿Qué incluye el <span className="text-gradient-primary">servicio</span>?
+                ¿Qué incluye el servicio de <span className="text-gradient-primary">Creación de Marca</span>?
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
                 Branding e Identidad de Marca completa para posicionar tu negocio como líder en tu sector.
@@ -346,6 +273,29 @@ const ImpulsaTuMarca = () => {
                   </CardContent>
                 </Card>
               ))}
+            </div>
+            
+            {/* CTA Section */}
+            <div className="text-center bg-gradient-to-br from-hayas-50 to-turquesa-50 rounded-2xl p-8 md:p-12 mt-12">
+              <h3 className="text-2xl md:text-3xl font-bold mb-4">
+                ¿Listo para crear o rediseñar tu <span className="text-gradient-primary">marca</span>?
+              </h3>
+              <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+                Transforma tu visión en una identidad de marca que conecte con tu audiencia y genere resultados reales.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link to="/?scrollTo=contacto">
+                  <Button className="gradient-primary text-white px-8 py-6 text-lg">
+                    Solicitar creación de marca
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </Link>
+                <a href="#casos-exito">
+                  <Button variant="outline" className="px-8 py-6 text-lg">
+                    Ver casos de éxito
+                  </Button>
+                </a>
+              </div>
             </div>
           </div>
         </section>
