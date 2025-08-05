@@ -185,55 +185,63 @@ const ImpulsaTuMarca = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
               {[
                 {
-                  icon: <Lightbulb className="h-8 w-8 text-hayas-600" />,
+                  icon: <Lightbulb className="h-12 w-12 text-lime-600" />,
                   title: "Naming & Concepto",
                   description: "Desarrollo del nombre de marca y concepto estratégico que refleje tu esencia empresarial."
                 },
                 {
-                  icon: <Palette className="h-8 w-8 text-turquesa-600" />,
+                  icon: <Palette className="h-12 w-12 text-hayas-600" />,
                   title: "Identidad Visual",
                   description: "Diseño de logo, paleta de colores, tipografías y elementos gráficos distintivos."
                 },
                 {
-                  icon: <FileText className="h-8 w-8 text-hayas-600" />,
+                  icon: <FileText className="h-12 w-12 text-lime-600" />,
                   title: "Manual de Marca",
                   description: "Guía completa de aplicación y uso correcto de todos los elementos de marca."
-                },
-                {
-                  icon: <Globe className="h-8 w-8 text-turquesa-600" />,
-                  title: "Aplicaciones Digitales",
-                  description: "Adaptación de la marca para web, redes sociales y plataformas digitales."
-                },
-                {
-                  icon: <Users className="h-8 w-8 text-hayas-600" />,
-                  title: "Estrategia de Comunicación",
-                  description: "Definición del tono, voz y mensajes clave para conectar con tu audiencia."
-                },
-                {
-                  icon: <TrendingUp className="h-8 w-8 text-turquesa-600" />,
-                  title: "Posicionamiento de Mercado",
-                  description: "Análisis competitivo y estrategia de diferenciación en tu sector."
                 }
               ].map((service, index) => (
-                <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                  <CardHeader>
-                    <div className="mb-4 p-3 rounded-lg bg-gray-100 w-fit">
+                <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white/80 backdrop-blur-sm">
+                  <CardHeader className="text-center">
+                    <div className="mb-6 mx-auto p-4 rounded-lg bg-gray-50 w-fit">
                       {service.icon}
                     </div>
-                    <CardTitle className="text-xl font-bold">
+                    <CardTitle className="text-xl font-bold mb-4">
                       {service.title}
                     </CardTitle>
                   </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-600">
+                  <CardContent className="text-center">
+                    <p className="text-gray-600 leading-relaxed">
                       {service.description}
                     </p>
                   </CardContent>
                 </Card>
               ))}
+            </div>
+
+            {/* CTA Section */}
+            <div className="text-center bg-gradient-to-br from-hayas-50 to-turquesa-50 rounded-2xl p-8 md:p-12">
+              <h3 className="text-2xl md:text-3xl font-bold mb-4">
+                ¿Listo para crear o rediseñar tu <span className="text-gradient-primary">marca</span>?
+              </h3>
+              <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+                Transforma tu visión en una identidad de marca que conecte con tu audiencia y genere resultados reales.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link to="/?scrollTo=contacto">
+                  <Button className="gradient-primary text-white px-8 py-6 text-lg">
+                    Solicitar creación de marca
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </Link>
+                <a href="#casos-exito">
+                  <Button variant="outline" className="px-8 py-6 text-lg">
+                    Ver casos de éxito
+                  </Button>
+                </a>
+              </div>
             </div>
           </div>
         </section>
