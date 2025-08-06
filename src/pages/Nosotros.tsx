@@ -14,7 +14,10 @@ import {
   Lightbulb,
   Zap,
   Heart,
-  ArrowRight
+  ArrowRight,
+  Trees,
+  GitBranch,
+  Anchor
 } from 'lucide-react';
 
 // Import logos
@@ -231,7 +234,7 @@ const Nosotros = () => {
                 <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient-primary">
                   🌳 Nuestra historia: ¿Por qué Hayas?
                 </h2>
-                <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+                <p className="text-lg text-gray-900 font-medium max-w-2xl mx-auto">
                   Elegimos el nombre Hayas no por azar, sino por todo lo que representa
                 </p>
               </div>
@@ -239,33 +242,33 @@ const Nosotros = () => {
               <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
                 {/* Columna de texto */}
                 <div className="space-y-6">
-                  <div className="bg-gradient-to-br from-hayas-primary/5 to-hayas-secondary/5 rounded-xl p-6 border-l-4 border-hayas-primary">
-                    <p className="text-gray-700 leading-relaxed">
-                      Los bosques de hayas son uno de los <span className="font-semibold text-hayas-primary">ecosistemas más bellos y resilientes</span> de Europa:
+                  <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 border-l-4 border-hayas-primary shadow-sm">
+                    <p className="text-gray-900 font-medium leading-relaxed">
+                      Los bosques de hayas son uno de los <span className="font-bold text-hayas-primary">ecosistemas más bellos y resilientes</span> de Europa:
                     </p>
                     <ul className="mt-4 space-y-2">
-                      <li className="flex items-center text-gray-700">
+                      <li className="flex items-center text-gray-900">
                         <CheckCircle className="h-4 w-4 text-hayas-primary mr-2 flex-shrink-0" />
                         prosperan en comunidad
                       </li>
-                      <li className="flex items-center text-gray-700">
+                      <li className="flex items-center text-gray-900">
                         <CheckCircle className="h-4 w-4 text-hayas-primary mr-2 flex-shrink-0" />
                         filtran la luz de forma armoniosa
                       </li>
-                      <li className="flex items-center text-gray-700">
+                      <li className="flex items-center text-gray-900">
                         <CheckCircle className="h-4 w-4 text-hayas-primary mr-2 flex-shrink-0" />
                         permiten que cada árbol crezca con fuerza, sin perder su conexión
                       </li>
                     </ul>
                   </div>
                   
-                  <div className="bg-white rounded-xl p-6 shadow-corporate border border-gray-100">
-                    <p className="text-gray-700 leading-relaxed mb-4">
-                      Nos inspira su capacidad para crear un <span className="font-semibold text-hayas-primary">microclima fértil</span>, 
+                  <div className="bg-white/95 backdrop-blur-sm rounded-xl p-6 shadow-sm border border-gray-200">
+                    <p className="text-gray-900 font-medium leading-relaxed mb-4">
+                      Nos inspira su capacidad para crear un <span className="font-bold text-hayas-primary">microclima fértil</span>, 
                       donde todo se equilibra con inteligencia natural: el suelo nutre, las raíces conectan, el aire fluye.
                     </p>
-                    <p className="text-gray-700 leading-relaxed">
-                      Como los hayedos, <span className="font-semibold text-hayas-primary">evolucionamos de forma orgánica</span>, 
+                    <p className="text-gray-900 font-medium leading-relaxed">
+                      Como los hayedos, <span className="font-bold text-hayas-primary">evolucionamos de forma orgánica</span>, 
                       buscando sostenibilidad, conexión y propósito en todo lo que hacemos.
                     </p>
                   </div>
@@ -273,25 +276,25 @@ const Nosotros = () => {
                 
                 {/* Columna visual - Árbol/Ecosistema */}
                 <div className="relative">
-                  <div className="bg-gradient-to-br from-hayas-primary/10 to-hayas-secondary/10 rounded-2xl p-8 text-center">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 text-center shadow-sm border border-gray-200">
                     <div className="relative max-w-sm mx-auto">
                       {/* Copa del árbol - Estrategia */}
                       <div className="mb-8">
                         <div className="w-32 h-32 bg-gradient-primary rounded-full mx-auto flex items-center justify-center mb-4 shadow-elegant">
-                          <Target className="h-12 w-12 text-white" />
+                          <Trees className="h-12 w-12 text-white" />
                         </div>
-                        <h3 className="font-semibold text-hayas-primary mb-2">Copa = Estrategia</h3>
-                        <p className="text-sm text-gray-600">Visión amplia que proyecta sombra y dirección</p>
+                        <h3 className="font-bold text-hayas-primary mb-2">Copa = Estrategia</h3>
+                        <p className="text-sm text-gray-800 font-medium">Visión amplia que proyecta sombra y dirección</p>
                       </div>
                       
                       {/* Tronco - Conexión */}
                       <div className="w-4 h-16 bg-gradient-to-b from-hayas-primary to-hayas-secondary mx-auto mb-8 rounded-full shadow-md"></div>
                       <div className="mb-8">
                         <div className="w-24 h-24 bg-gradient-to-br from-hayas-secondary to-hayas-primary rounded-full mx-auto flex items-center justify-center mb-4 shadow-elegant">
-                          <Users className="h-8 w-8 text-white" />
+                          <GitBranch className="h-8 w-8 text-white" />
                         </div>
-                        <h3 className="font-semibold text-hayas-primary mb-2">Tronco = Conexión</h3>
-                        <p className="text-sm text-gray-600">Hojas que se adaptan con flexibilidad</p>
+                        <h3 className="font-bold text-hayas-primary mb-2">Tronco = Conexión</h3>
+                        <p className="text-sm text-gray-800 font-medium">Hojas que se adaptan con flexibilidad</p>
                       </div>
                       
                       {/* Raíces - Confianza */}
@@ -302,10 +305,10 @@ const Nosotros = () => {
                       </div>
                       <div>
                         <div className="w-20 h-20 bg-gradient-to-br from-hayas-primary/80 to-hayas-secondary/80 rounded-full mx-auto flex items-center justify-center mb-4 shadow-elegant">
-                          <Heart className="h-6 w-6 text-white" />
+                          <Anchor className="h-6 w-6 text-white" />
                         </div>
-                        <h3 className="font-semibold text-hayas-primary mb-2">Raíces = Confianza</h3>
-                        <p className="text-sm text-gray-600">Cimientos profundos y duraderos</p>
+                        <h3 className="font-bold text-hayas-primary mb-2">Raíces = Confianza</h3>
+                        <p className="text-sm text-gray-800 font-medium">Cimientos profundos y duraderos</p>
                       </div>
                     </div>
                   </div>
@@ -321,21 +324,21 @@ const Nosotros = () => {
                   <div className="grid md:grid-cols-3 gap-6 text-center">
                     <div>
                       <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <Heart className="h-6 w-6 text-white" />
+                        <Anchor className="h-6 w-6 text-white" />
                       </div>
                       <p className="font-medium">Raíces profundas</p>
                       <p className="text-sm opacity-90">confianza</p>
                     </div>
                     <div>
                       <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <Zap className="h-6 w-6 text-white" />
+                        <GitBranch className="h-6 w-6 text-white" />
                       </div>
                       <p className="font-medium">Hojas adaptables</p>
                       <p className="text-sm opacity-90">flexibilidad</p>
                     </div>
                     <div>
                       <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <Target className="h-6 w-6 text-white" />
+                        <Trees className="h-6 w-6 text-white" />
                       </div>
                       <p className="font-medium">Copa amplia</p>
                       <p className="text-sm opacity-90">estrategia</p>
