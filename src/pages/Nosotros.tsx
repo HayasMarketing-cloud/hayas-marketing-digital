@@ -285,21 +285,42 @@ const Nosotros = () => {
                 Somos partners oficiales y mantenemos certificaciones en las principales plataformas tecnológicas del mercado
               </p>
               
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-6 items-center">
-                {certifications.map((cert, index) => (
-                  <div key={index} className="p-4 hover-scale">
-                    <div className="bg-white rounded-lg p-6 shadow-corporate border">
-                      <div className="h-16 flex items-center justify-center">
-                        <img 
-                          src={cert.logo} 
-                          alt={`${cert.name} logo`}
-                          className="h-12 w-auto object-contain"
-                        />
+              <div className="space-y-8">
+                {/* Primera línea - Partners principales */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                  {certifications.slice(0, 4).map((cert, index) => (
+                    <div key={index} className="group hover-scale">
+                      <div className="bg-white rounded-xl p-8 shadow-corporate border border-gray-100 group-hover:shadow-elegant transition-all duration-300">
+                        <div className="h-20 flex items-center justify-center mb-4">
+                          <img 
+                            src={cert.logo} 
+                            alt={`${cert.name} logo`}
+                            className="h-16 w-auto object-contain filter transition-all duration-300 group-hover:scale-110"
+                          />
+                        </div>
+                        <p className="text-sm font-semibold text-hayas-primary text-center">{cert.name}</p>
                       </div>
-                      <p className="text-sm font-medium mt-2 text-hayas-primary text-center">{cert.name}</p>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
+                
+                {/* Segunda línea - Partners adicionales */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                  {certifications.slice(4).map((cert, index) => (
+                    <div key={index} className="group hover-scale">
+                      <div className="bg-white rounded-xl p-8 shadow-corporate border border-gray-100 group-hover:shadow-elegant transition-all duration-300">
+                        <div className="h-20 flex items-center justify-center mb-4">
+                          <img 
+                            src={cert.logo} 
+                            alt={`${cert.name} logo`}
+                            className="h-16 w-auto object-contain filter transition-all duration-300 group-hover:scale-110"
+                          />
+                        </div>
+                        <p className="text-sm font-semibold text-hayas-primary text-center">{cert.name}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
