@@ -205,8 +205,20 @@ const Nosotros = () => {
         </section>
 
         {/* ¿Por qué Hayas? - Sección de origen del nombre */}
-        <section className="py-16 md:py-20 bg-white relative overflow-hidden">
-          {/* Decoraciones de fondo */}
+        <section className="py-16 md:py-20 relative overflow-hidden">
+          {/* Fondo del bosque de hayas */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: `url('/lovable-uploads/1399f918-aa74-41b7-b838-f1dc283e5b87.png')`,
+              filter: 'brightness(0.3) contrast(0.8)',
+            }}
+          ></div>
+          
+          {/* Overlay para mejorar legibilidad */}
+          <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-white/90 to-white/85"></div>
+          
+          {/* Decoraciones sutiles */}
           <div className="absolute top-0 left-0 w-full h-full opacity-5">
             <div className="absolute top-12 left-12 w-32 h-32 rounded-full bg-hayas-primary/20"></div>
             <div className="absolute bottom-12 right-12 w-48 h-48 rounded-full bg-hayas-secondary/15"></div>
