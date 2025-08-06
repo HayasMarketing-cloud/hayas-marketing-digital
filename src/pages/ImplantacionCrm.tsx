@@ -70,6 +70,10 @@ const ImplantacionCrm = () => {
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
+                  <BreadcrumbLink>Servicios</BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
                   <BreadcrumbPage>Implantación de CRM</BreadcrumbPage>
                 </BreadcrumbItem>
               </BreadcrumbList>
