@@ -35,10 +35,10 @@ const Nosotros = () => {
       image: "/lovable-uploads/4aedecdb-9c20-490d-ba11-072181bdf3d6.png"
     },
     {
-      name: "Sandra",
-      role: "Directora de Arte",
-      description: "Creativa experta en branding, diseño visual y experiencia de usuario. Transforma ideas en identidades visuales impactantes.",
-      image: "/lovable-uploads/ce1fa101-303c-4d7c-8fcf-c33db3e18dba.png"
+      name: "Fátima",
+      role: "Social Media Manager",
+      description: "Experta en gestión de redes sociales, creación de contenido y community management para potenciar la presencia digital.",
+      image: "/lovable-uploads/b6816c4b-e843-4d7b-b2b9-7f935a389f54.png"
     },
     {
       name: "Ebelyn",
@@ -47,10 +47,10 @@ const Nosotros = () => {
       image: "/lovable-uploads/869ded51-92ac-41e0-815c-65c18ee5a35d.png"
     },
     {
-      name: "Fátima",
-      role: "Social Media Manager",
-      description: "Experta en gestión de redes sociales, creación de contenido y community management para potenciar la presencia digital.",
-      image: "/lovable-uploads/b6816c4b-e843-4d7b-b2b9-7f935a389f54.png"
+      name: "Sandra",
+      role: "Directora de Arte",
+      description: "Creativa experta en branding, diseño visual y experiencia de usuario. Transforma ideas en identidades visuales impactantes.",
+      image: "/lovable-uploads/ce1fa101-303c-4d7c-8fcf-c33db3e18dba.png"
     },
     {
       name: "Iolanda",
