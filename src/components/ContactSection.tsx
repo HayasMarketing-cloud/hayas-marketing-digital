@@ -75,8 +75,8 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="text-lg font-medium">Email</h4>
-                    <a href="mailto:contacto@hayas.marketing" className="text-hayas-600 hover:text-hayas-800">
-                      contacto@hayas.marketing
+                    <a href="mailto:hola@hayas.es" className="text-hayas-600 hover:text-hayas-800">
+                      hola@hayas.es
                     </a>
                   </div>
                 </div>
@@ -87,8 +87,8 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="text-lg font-medium">Teléfono</h4>
-                    <a href="tel:+34912345678" className="text-hayas-600 hover:text-hayas-800">
-                      +34 912 345 678
+                    <a href="tel:+34672288182" className="text-hayas-600 hover:text-hayas-800">
+                      +34 672 288 182
                     </a>
                   </div>
                 </div>
@@ -99,7 +99,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="text-lg font-medium">WhatsApp</h4>
-                    <a href="https://wa.me/34912345678" className="text-hayas-600 hover:text-hayas-800" target="_blank" rel="noopener noreferrer">
+                    <a href="https://wa.me/34672288182" className="text-hayas-600 hover:text-hayas-800" target="_blank" rel="noopener noreferrer">
                       Iniciar chat
                     </a>
                   </div>
