@@ -79,7 +79,7 @@ const Navigation = () => {
       { title: 'Publicidad en Redes Sociales', href: '/servicios/publicidad-redes-sociales', description: 'Campañas publicitarias rentables' },
       { title: 'Diseño Web', href: '/servicios/diseno-web', description: 'Webs que convierten visitantes en clientes' },
       { title: 'SEO y Posicionamiento', href: '/servicios/seo-posicionamiento', description: 'Aparece primero en Google' },
-      { title: 'Tienda Online', href: '/servicios/tienda-online', description: 'E-commerce que vende 24/7' }
+      { title: 'Creación Tienda Online', href: '/servicios/tienda-online', description: 'E-commerce que vende 24/7' }
     ]
   };
 
