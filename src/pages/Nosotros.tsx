@@ -204,6 +204,137 @@ const Nosotros = () => {
           </div>
         </section>
 
+        {/* ¿Por qué Hayas? - Sección de origen del nombre */}
+        <section className="py-16 md:py-20 bg-white relative overflow-hidden">
+          {/* Decoraciones de fondo */}
+          <div className="absolute top-0 left-0 w-full h-full opacity-5">
+            <div className="absolute top-12 left-12 w-32 h-32 rounded-full bg-hayas-primary/20"></div>
+            <div className="absolute bottom-12 right-12 w-48 h-48 rounded-full bg-hayas-secondary/15"></div>
+            <div className="absolute top-1/2 left-1/4 w-24 h-24 rounded-full bg-hayas-primary/10"></div>
+          </div>
+          
+          <div className="container mx-auto px-4 relative">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient-primary">
+                  🌳 Nuestra historia: ¿Por qué Hayas?
+                </h2>
+                <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+                  Elegimos el nombre Hayas no por azar, sino por todo lo que representa
+                </p>
+              </div>
+              
+              <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                {/* Columna de texto */}
+                <div className="space-y-6">
+                  <div className="bg-gradient-to-br from-hayas-primary/5 to-hayas-secondary/5 rounded-xl p-6 border-l-4 border-hayas-primary">
+                    <p className="text-gray-700 leading-relaxed">
+                      Los bosques de hayas son uno de los <span className="font-semibold text-hayas-primary">ecosistemas más bellos y resilientes</span> de Europa:
+                    </p>
+                    <ul className="mt-4 space-y-2">
+                      <li className="flex items-center text-gray-700">
+                        <CheckCircle className="h-4 w-4 text-hayas-primary mr-2 flex-shrink-0" />
+                        prosperan en comunidad
+                      </li>
+                      <li className="flex items-center text-gray-700">
+                        <CheckCircle className="h-4 w-4 text-hayas-primary mr-2 flex-shrink-0" />
+                        filtran la luz de forma armoniosa
+                      </li>
+                      <li className="flex items-center text-gray-700">
+                        <CheckCircle className="h-4 w-4 text-hayas-primary mr-2 flex-shrink-0" />
+                        permiten que cada árbol crezca con fuerza, sin perder su conexión
+                      </li>
+                    </ul>
+                  </div>
+                  
+                  <div className="bg-white rounded-xl p-6 shadow-corporate border border-gray-100">
+                    <p className="text-gray-700 leading-relaxed mb-4">
+                      Nos inspira su capacidad para crear un <span className="font-semibold text-hayas-primary">microclima fértil</span>, 
+                      donde todo se equilibra con inteligencia natural: el suelo nutre, las raíces conectan, el aire fluye.
+                    </p>
+                    <p className="text-gray-700 leading-relaxed">
+                      Como los hayedos, <span className="font-semibold text-hayas-primary">evolucionamos de forma orgánica</span>, 
+                      buscando sostenibilidad, conexión y propósito en todo lo que hacemos.
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Columna visual - Árbol/Ecosistema */}
+                <div className="relative">
+                  <div className="bg-gradient-to-br from-hayas-primary/10 to-hayas-secondary/10 rounded-2xl p-8 text-center">
+                    <div className="relative max-w-sm mx-auto">
+                      {/* Copa del árbol - Estrategia */}
+                      <div className="mb-8">
+                        <div className="w-32 h-32 bg-gradient-primary rounded-full mx-auto flex items-center justify-center mb-4 shadow-elegant">
+                          <Target className="h-12 w-12 text-white" />
+                        </div>
+                        <h3 className="font-semibold text-hayas-primary mb-2">Copa = Estrategia</h3>
+                        <p className="text-sm text-gray-600">Visión amplia que proyecta sombra y dirección</p>
+                      </div>
+                      
+                      {/* Tronco - Conexión */}
+                      <div className="w-4 h-16 bg-gradient-to-b from-hayas-primary to-hayas-secondary mx-auto mb-8 rounded-full shadow-md"></div>
+                      <div className="mb-8">
+                        <div className="w-24 h-24 bg-gradient-to-br from-hayas-secondary to-hayas-primary rounded-full mx-auto flex items-center justify-center mb-4 shadow-elegant">
+                          <Users className="h-8 w-8 text-white" />
+                        </div>
+                        <h3 className="font-semibold text-hayas-primary mb-2">Tronco = Conexión</h3>
+                        <p className="text-sm text-gray-600">Hojas que se adaptan con flexibilidad</p>
+                      </div>
+                      
+                      {/* Raíces - Confianza */}
+                      <div className="flex justify-center space-x-4 mb-4">
+                        <div className="w-2 h-8 bg-gradient-to-t from-hayas-primary/60 to-transparent rounded-full transform -rotate-12"></div>
+                        <div className="w-2 h-10 bg-gradient-to-t from-hayas-primary/60 to-transparent rounded-full"></div>
+                        <div className="w-2 h-8 bg-gradient-to-t from-hayas-primary/60 to-transparent rounded-full transform rotate-12"></div>
+                      </div>
+                      <div>
+                        <div className="w-20 h-20 bg-gradient-to-br from-hayas-primary/80 to-hayas-secondary/80 rounded-full mx-auto flex items-center justify-center mb-4 shadow-elegant">
+                          <Heart className="h-6 w-6 text-white" />
+                        </div>
+                        <h3 className="font-semibold text-hayas-primary mb-2">Raíces = Confianza</h3>
+                        <p className="text-sm text-gray-600">Cimientos profundos y duraderos</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Frase destacada final */}
+              <div className="text-center">
+                <div className="bg-gradient-to-r from-hayas-primary to-hayas-secondary rounded-2xl p-8 text-white shadow-elegant max-w-4xl mx-auto">
+                  <h3 className="text-2xl md:text-3xl font-bold mb-4">
+                    En Hayas, creemos en construir relaciones como un bosque
+                  </h3>
+                  <div className="grid md:grid-cols-3 gap-6 text-center">
+                    <div>
+                      <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <Heart className="h-6 w-6 text-white" />
+                      </div>
+                      <p className="font-medium">Raíces profundas</p>
+                      <p className="text-sm opacity-90">confianza</p>
+                    </div>
+                    <div>
+                      <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <Zap className="h-6 w-6 text-white" />
+                      </div>
+                      <p className="font-medium">Hojas adaptables</p>
+                      <p className="text-sm opacity-90">flexibilidad</p>
+                    </div>
+                    <div>
+                      <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <Target className="h-6 w-6 text-white" />
+                      </div>
+                      <p className="font-medium">Copa amplia</p>
+                      <p className="text-sm opacity-90">estrategia</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Nuestros Valores - Fondo blanco */}
         <section className="py-16 md:py-20 bg-white">
           <div className="container mx-auto px-4">
