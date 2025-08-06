@@ -278,30 +278,38 @@ const Nosotros = () => {
               {/* Frase destacada final */}
               <div className="text-center mt-16">
                 <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-elegant max-w-4xl mx-auto border border-gray-200">
-                  <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900">
-                    En Hayas, creemos en la fuerza y energía que nos ofrecen los bosques
+                  <h3 className="text-2xl md:text-3xl font-bold mb-6 text-gray-900">
+                    En Hayas, creemos en la inteligencia natural que nos enseñan los bosques
                   </h3>
-                  <div className="grid md:grid-cols-3 gap-6 text-center">
-                    <div>
-                      <div className="w-12 h-12 bg-hayas-primary/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <Anchor className="h-6 w-6 text-hayas-primary" />
+                  <p className="text-lg text-gray-900 font-medium mb-8 max-w-3xl mx-auto">
+                    Como en un bosque de hayas, cada proyecto crece con equilibrio, propósito y conexión.
+                    <br />
+                    <span className="font-bold">Estas son nuestras raíces:</span>
+                  </p>
+                  
+                  <div className="space-y-6 text-left max-w-3xl mx-auto">
+                    <div className="flex items-start gap-4 bg-white/60 backdrop-blur-sm rounded-lg p-6">
+                      <span className="text-2xl">🌱</span>
+                      <div>
+                        <h4 className="font-bold text-gray-900 text-lg mb-2">Raíces profundas</h4>
+                        <p className="text-gray-800">Construimos relaciones de confianza que sostienen tu crecimiento a largo plazo.</p>
                       </div>
-                      <p className="font-medium text-gray-900">Raíces profundas</p>
-                      <p className="text-sm text-gray-700">confianza</p>
                     </div>
-                    <div>
-                      <div className="w-12 h-12 bg-hayas-primary/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <GitBranch className="h-6 w-6 text-hayas-primary" />
+                    
+                    <div className="flex items-start gap-4 bg-white/60 backdrop-blur-sm rounded-lg p-6">
+                      <span className="text-2xl">🍃</span>
+                      <div>
+                        <h4 className="font-bold text-gray-900 text-lg mb-2">Ramas y hojas adaptables</h4>
+                        <p className="text-gray-800">Creamos soluciones con flexibilidad para adaptarse a tu momento, tus recursos y tu mercado.</p>
                       </div>
-                      <p className="font-medium text-gray-900">Hojas adaptables</p>
-                      <p className="text-sm text-gray-700">flexibilidad</p>
                     </div>
-                    <div>
-                      <div className="w-12 h-12 bg-hayas-primary/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <Trees className="h-6 w-6 text-hayas-primary" />
+                    
+                    <div className="flex items-start gap-4 bg-white/60 backdrop-blur-sm rounded-lg p-6">
+                      <span className="text-2xl">🌳</span>
+                      <div>
+                        <h4 className="font-bold text-gray-900 text-lg mb-2">Copa amplia</h4>
+                        <p className="text-gray-800">Diseñamos estrategias con visión para escalar, posicionarte y evolucionar de forma sostenible.</p>
                       </div>
-                      <p className="font-medium text-gray-900">Copa amplia</p>
-                      <p className="text-sm text-gray-700">estrategia</p>
                     </div>
                   </div>
                 </div>
