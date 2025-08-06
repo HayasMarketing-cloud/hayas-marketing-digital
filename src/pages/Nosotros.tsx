@@ -38,7 +38,7 @@ const Nosotros = () => {
       name: "Sandra",
       role: "Directora de Arte",
       description: "Creativa experta en branding, diseño visual y experiencia de usuario. Transforma ideas en identidades visuales impactantes.",
-      image: "/lovable-uploads/26de1124-c82f-4741-800d-030e305eb147.png"
+      image: "/lovable-uploads/ce1fa101-303c-4d7c-8fcf-c33db3e18dba.png"
     },
     {
       name: "Ebelyn",
@@ -50,19 +50,19 @@ const Nosotros = () => {
       name: "Fátima",
       role: "Social Media Manager",
       description: "Experta en gestión de redes sociales, creación de contenido y community management para potenciar la presencia digital.",
-      image: "/lovable-uploads/55bec5bb-9e3b-4208-9101-ea3fa923568f.png"
+      image: "/lovable-uploads/b6816c4b-e843-4d7b-b2b9-7f935a389f54.png"
     },
     {
       name: "Iolanda",
       role: "Key Account Manager",
       description: "Gestora de cuentas clave especializada en relaciones comerciales estratégicas y crecimiento de clientes corporativos.",
-      image: "/lovable-uploads/b6816c4b-e843-4d7b-b2b9-7f935a389f54.png"
+      image: "/lovable-uploads/55bec5bb-9e3b-4208-9101-ea3fa923568f.png"
     },
     {
       name: "Daniela",
       role: "Key Account Manager", 
       description: "Responsable de desarrollo comercial y atención personalizada a clientes estratégicos, garantizando resultados excepcionales.",
-      image: "/lovable-uploads/ce1fa101-303c-4d7c-8fcf-c33db3e18dba.png"
+      image: "/lovable-uploads/26de1124-c82f-4741-800d-030e305eb147.png"
     }
   ];
 
