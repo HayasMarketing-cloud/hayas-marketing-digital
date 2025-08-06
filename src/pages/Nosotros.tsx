@@ -502,6 +502,53 @@ const Nosotros = () => {
             </div>
           </div>
         </section>
+
+        {/* CTA Final - Solicitar Asesoría */}
+        <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center">
+              <div className="bg-white rounded-2xl p-8 md:p-12 shadow-elegant border border-gray-100">
+                <div className="mb-6">
+                  <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Users className="h-8 w-8 text-white" />
+                  </div>
+                  <h2 className="text-3xl md:text-4xl font-bold text-gradient-primary mb-4">
+                    ¿Listo para impulsar tu negocio?
+                  </h2>
+                  <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+                    Agenda una consulta gratuita de 30 minutos y descubre cómo podemos ayudarte a 
+                    conseguir más clientes y optimizar tu estrategia digital.
+                  </p>
+                </div>
+                
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button className="gradient-primary text-white py-6 px-8 text-lg font-medium shadow-elegant hover-scale focus-ring">
+                    <ArrowRight className="mr-2 h-5 w-5" />
+                    Solicitar Asesoría Gratuita
+                  </Button>
+                  <Button variant="outline" className="py-6 px-8 text-lg font-medium hover-scale focus-ring border-primary text-primary hover:bg-primary hover:text-white">
+                    Conocer nuestros servicios
+                  </Button>
+                </div>
+                
+                <div className="mt-8 flex items-center justify-center gap-6 text-sm text-gray-600">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-hayas-primary" />
+                    <span>Sin compromiso</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-hayas-primary" />
+                    <span>Consulta personalizada</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-hayas-primary" />
+                    <span>Estrategia inicial gratuita</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
       
       <Footer />
