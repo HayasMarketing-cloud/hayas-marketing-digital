@@ -211,12 +211,12 @@ const Nosotros = () => {
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{
               backgroundImage: `url('/lovable-uploads/1399f918-aa74-41b7-b838-f1dc283e5b87.png')`,
-              filter: 'brightness(0.3) contrast(0.8)',
+              filter: 'brightness(0.6) contrast(1.1)',
             }}
           ></div>
           
           {/* Overlay para mejorar legibilidad */}
-          <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-white/90 to-white/85"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-white/80 via-white/75 to-white/70"></div>
           
           {/* Decoraciones sutiles */}
           <div className="absolute top-0 left-0 w-full h-full opacity-5">
