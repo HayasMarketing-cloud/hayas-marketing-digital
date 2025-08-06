@@ -1,0 +1,153 @@
+# ========================================
+# REDIRECCIONES 301 PARA HOSTINGER
+# ========================================
+# Copia este contenido en tu archivo .htaccess en la raíz de tu dominio
+
+RewriteEngine On
+
+# ========================================
+# PÁGINAS PRINCIPALES
+# ========================================
+Redirect 301 /es/ /
+Redirect 301 /en/ /
+Redirect 301 /zh/ /
+Redirect 301 /es/nosotros/ /nosotros
+Redirect 301 /es/contacto/ /contacto
+Redirect 301 /es/blog/ /blog
+Redirect 301 /es/agenda-una-reunion/ /agendar-reunion
+Redirect 301 /es/agenda-asesoria-en-marketing-digital/ /agendar-reunion
+
+# ========================================
+# SOLUCIONES - PÁGINAS ESPECÍFICAS
+# ========================================
+# IA y Marketing
+Redirect 301 /es/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing/ /soluciones/ia-marketing
+Redirect 301 /es/inteligencia-artificial-aplicada-a-marketing-y-ventas/ /soluciones/ia-marketing
+Redirect 301 /es/ia-en-redes-sociales/ /soluciones/ia-marketing
+Redirect 301 /es/gestion-de-clientes-con-ia-asociada/ /soluciones/ia-marketing
+Redirect 301 /es/chatbot-de-atencion-al-cliente/ /soluciones/ia-marketing
+
+# CRM y Automatización
+Redirect 301 /es/que-es-un-crm-o-customer-relationship-management/ /soluciones/implantacion-crm
+Redirect 301 /es/como-configurar-tu-crm-de-hubspot/ /soluciones/implantacion-crm
+Redirect 301 /es/como-elegir-el-mejor-crm-para-tu-empresa-u-organizacion/ /soluciones/implantacion-crm
+Redirect 301 /es/crm-y-automatizacion-de-marketing/ /soluciones/implantacion-crm
+Redirect 301 /es/como-crear-un-sistema-de-lead-scoring-y-calificacion-de-leads/ /soluciones/implantacion-crm
+Redirect 301 /es/automatizacion-de-marketing-digital/ /soluciones/implantacion-crm
+Redirect 301 /es/optimiza-la-gestion-de-contratos-de-clientes-con-hubspot/ /soluciones/implantacion-crm
+
+# SEO y Posicionamiento
+Redirect 301 /es/seo-y-posicionamiento-en-buscadores/ /servicios/seo-posicionamiento
+Redirect 301 /es/seo-e-inteligencia-artificial/ /servicios/seo-posicionamiento
+Redirect 301 /es/guia-basica-que-es-seo-on-page-y-como-optimizar-tu-web/ /servicios/seo-posicionamiento
+Redirect 301 /es/seo-off-page-estrategias-practicas-para-mejorar-tu-posicionamiento/ /servicios/seo-posicionamiento
+Redirect 301 /es/seo-en-tiktok-como-entenderlo-y-sacarle-partido/ /servicios/seo-posicionamiento
+Redirect 301 /es/seo-linkedin-optimizar-perfil-visibilidad/ /servicios/seo-posicionamiento
+Redirect 301 /es/como-anadir-tu-web-a-google-search-console-paso-a-paso/ /servicios/seo-posicionamiento
+Redirect 301 /es/como-desindexar-pagina-google/ /servicios/seo-posicionamiento
+Redirect 301 /es/contenidos-y-seo/ /servicios/seo-posicionamiento
+Redirect 301 /es/disena-para-posicionar-como-unir-seo-y-diseno-web-desde-el-inicio/ /servicios/seo-posicionamiento
+
+# Diseño Web y Desarrollo
+Redirect 301 /es/diseno-y-desarrollo-paginas-web/ /servicios/diseno-web
+Redirect 301 /es/como-crear-una-pagina-web-inbound/ /servicios/diseno-web
+Redirect 301 /es/guia-completa-de-mantenimiento-wordpress-webmaster/ /servicios/diseno-web
+Redirect 301 /es/mantenimiento-wordpress-emprendedores/ /servicios/diseno-web
+Redirect 301 /es/ciberseguridad-esencial-en-wordpress-protege-tu-sitio-con-estos-pasos-esenciales/ /servicios/diseno-web
+Redirect 301 /es/avisos-legales-para-paginas-web-incluye-plantillas/ /servicios/diseno-web
+
+# Tiendas Online y E-commerce
+Redirect 301 /es/ecommerce-tienda-online/ /servicios/tienda-online
+Redirect 301 /es/re-commerce-la-economia-circular-del-e-commerce/ /servicios/tienda-online
+
+# ========================================
+# ESTRATEGIAS DE MARKETING DIGITAL
+# ========================================
+# Marketing Digital General
+Redirect 301 /es/estrategia-de-marketing-digital-360/ /soluciones/marketing-digital
+Redirect 301 /es/servicios-de-marketing-digital-integrados-en-tu-estrategia/ /soluciones/marketing-digital
+Redirect 301 /es/claves-para-invertir-en-tu-estrategia-de-marketing-digital/ /soluciones/marketing-digital
+Redirect 301 /es/marketing-global-internacionalizacion-i18n-y-localizacion-l10n/ /soluciones/marketing-digital
+Redirect 301 /es/asesoria-en-marketing-digital/ /soluciones/marketing-digital
+Redirect 301 /es/agencia-marketingdigital-madrid/ /soluciones/marketing-digital
+
+# Publicidad y Redes Sociales
+Redirect 301 /es/publicidad-en-google-ads/ /soluciones/marketing-digital
+Redirect 301 /es/servicios-publicidad-en-redes-sociales/ /soluciones/marketing-digital
+Redirect 301 /es/gestion-de-redes-sociales/ /soluciones/marketing-digital
+Redirect 301 /es/tiktok-en-tu-estrategia-de-marketing-digital/ /soluciones/marketing-digital
+Redirect 301 /es/tiktok-y-la-generacion-zeta-por-que-deberias-incluirla-en-tu-estrategia-de-marketing-digital/ /soluciones/marketing-digital
+Redirect 301 /es/marketing-de-influencers-vs-microinfluencers/ /soluciones/marketing-digital
+
+# Email Marketing
+Redirect 301 /es/las-mejores-practicas-para-tu-estrategia-de-email-marketing/ /soluciones/gestion-marketing
+Redirect 301 /es/guia-tecnica-email-marketing-configuracion-cumplimento-en-hubspot/ /soluciones/gestion-marketing
+
+# ========================================
+# BRANDING E IDENTIDAD
+# ========================================
+Redirect 301 /es/branding-e-identidad-de-marca/ /soluciones/impulsa-tu-marca
+Redirect 301 /es/branding-proceso-y-tecnicas-de-naming/ /soluciones/impulsa-tu-marca
+Redirect 301 /es/como-se-crea-una-estrategia-de-branding/ /soluciones/impulsa-tu-marca
+Redirect 301 /es/identidad-corporativa-para-restaurantes/ /soluciones/impulsa-tu-marca
+Redirect 301 /es/diferencias-logotipo-isotipo-isologo-imagotipo/ /soluciones/impulsa-tu-marca
+
+# ========================================
+# CAPTACIÓN DE LEADS Y CONVERSIÓN
+# ========================================
+Redirect 301 /es/como-crear-un-funnel-de-conversion-para-empresas-b2b/ /soluciones/captacion-leads
+Redirect 301 /es/estrategia-de-captacion-de-leads-para-la-escuela-de-negocios-formato-educativo/ /soluciones/captacion-leads
+Redirect 301 /es/estrategia-account-based-marketing-abm-para-captar-grandes-cuentas/ /soluciones/captacion-leads
+
+# ========================================
+# BUYER PERSONAS Y ESTRATEGIA
+# ========================================
+Redirect 301 /es/que-es-y-para-que-sirven-los-buyer-personas/ /soluciones/gestion-marketing
+Redirect 301 /es/como-crear-tu-buyer-persona-para-b2b-infografia/ /soluciones/gestion-marketing
+Redirect 301 /es/que-es-y-para-que-sirve-el-perfil-de-cliente-ideal/ /soluciones/gestion-marketing
+Redirect 301 /es/tu-estrategia-con-marketing-model-canvas/ /soluciones/gestion-marketing
+Redirect 301 /es/como-crear-una-estrategia-de-marketing-de-contenidos-eficaz/ /soluciones/gestion-marketing
+
+# ========================================
+# KIT DIGITAL Y KIT CONSULTING
+# ========================================
+Redirect 301 /es/como-solicitar-el-kit-digital-paso-a-paso-en-2024/ /kit-digital
+Redirect 301 /es/guia-completa-kit-digital-2024-para-autonomos-y-pymes/ /kit-digital
+Redirect 301 /es/ampliacion-de-las-ayudas-del-kit-digital-en-2024/ /kit-digital
+Redirect 301 /es/nuevos-plazos-y-ampliaciones-del-kit-digital-nuevas-ayudas-para-medianas-empresas/ /kit-digital
+Redirect 301 /es/kit-digital-gestion-redes-sociales/ /kit-digital
+Redirect 301 /es/kit-digital-gestion-de-procesos/ /kit-digital
+Redirect 301 /es/kit-digital-gestion-de-clientes-crm/ /kit-digital
+Redirect 301 /es/kit-digital-seo-avanzado/ /kit-digital
+Redirect 301 /es/kit-digital-tienda-online/ /kit-digital
+Redirect 301 /es/kit-digital-marketplaces/ /kit-digital
+Redirect 301 /es/kit-digital-paginas-web/ /kit-digital
+Redirect 301 /es/kit-consulting-nuevos-servicios-de-asesoramiento-digital/ /kit-consulting
+Redirect 301 /es/kitconsulting/asesoramiento-en-inteligencia-artificial-aplicada-a-marketing-digital-con-kit-consulting/ /kit-consulting
+
+# ========================================
+# ARTÍCULOS DE BLOG VARIOS
+# ========================================
+Redirect 301 /es/que-es-smarketing/ /blog
+Redirect 301 /es/herramientas-ventas-aumentar-ingresos/ /blog
+Redirect 301 /es/como-las-herramientas-de-google-te-ayudan-a-impulsar-tu-negocio-guia-esencial-para-pymes-y-emprendedores/ /blog
+Redirect 301 /es/marketing-natural-atrae-a-tus-clientes-de-forma-organica/ /blog
+Redirect 301 /es/proyectos-de-empresas-con-tecnologia-blockchain/ /blog
+Redirect 301 /es/llega-la-web-3-0/ /blog
+Redirect 301 /es/filtros_ar_vr_instagram_tiktok/ /blog
+Redirect 301 /es/breeze-ai-y-los-breeze-agents-la-revolucion-de-la-inteligencia-artificial-en-hubspot/ /blog
+Redirect 301 /es/como-instalar-consent-mode-en-google-tag-manager-con-cookieyes/ /blog
+Redirect 301 /es/food-design-festival-2024-innovacion-y-tecnologia-en-el-sector-alimentario/ /blog
+Redirect 301 /es/descubre-los-verdaderos-ladrones-del-tiempo-y-recupera-tu-productividad/ /blog
+
+# ========================================
+# PÁGINAS DE EJEMPLO Y LEGACY
+# ========================================
+Redirect 301 /es/pagina-ejemplo/ /
+Redirect 301 /es/blog/page/2/ /blog
+
+# ========================================
+# REDIRECCIONES DE FALLBACK
+# ========================================
+# Cualquier otra página /es/ que no esté mapeada específicamente
+RedirectMatch 301 ^/es/(.*)$ /$1
