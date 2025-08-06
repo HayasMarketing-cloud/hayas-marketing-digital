@@ -39,6 +39,7 @@ import GestionRedesSociales from './pages/GestionRedesSociales';
 import PublicidadRedesSociales from './pages/PublicidadRedesSociales';
 import PublicidadGoogleAds from './pages/PublicidadGoogleAds';
 import AsistenteIA from './pages/AsistenteIA';
+import AlojamientoMantenimiento from './pages/AlojamientoMantenimiento';
 
 const queryClient = new QueryClient();
 
@@ -117,6 +118,7 @@ const App = () => (
           <Route path="/servicios/publicidad-redes-sociales" element={<PublicidadRedesSociales />} />
           <Route path="/servicios/publicidad-google-ads" element={<PublicidadGoogleAds />} />
           <Route path="/servicios/asistente-ia-atencion-cliente" element={<AsistenteIA />} />
+          <Route path="/servicios/alojamiento-mantenimiento-web" element={<AlojamientoMantenimiento />} />
           <Route path="/servicios" element={<NotFound />} />
           
           {/* 404 - DEBE IR SIEMPRE AL FINAL */}
