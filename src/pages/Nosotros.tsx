@@ -106,12 +106,15 @@ const Nosotros = () => {
   ];
 
   const certifications = [
-    { name: "HubSpot Partner", logo: hubspotLogo },
+    { name: "HubSpot Partner", logo: "/lovable-uploads/5b8c9d90-e355-4b27-b2a3-018f2c5a6734.png" },
     { name: "Go High Level", logo: ghlLogo },
     { name: "Google Partner", logo: googleLogo },
     { name: "Meta Business", logo: metaLogo },
-    { name: "WordPress", logo: wordpressLogo },
-    { name: "Lovable Partner", logo: lovableLogo }
+    { name: "WordPress", logo: "/lovable-uploads/ed1d9897-ed2d-49a3-9ce2-1cea880aee32.png" },
+    { name: "Lovable Partner", logo: lovableLogo },
+    { name: "WhatsApp Business", logo: "/lovable-uploads/d5141b27-1db2-4f9b-8ff4-486fb23e0ae8.png" },
+    { name: "Shopify Partner", logo: "/lovable-uploads/481fb23a-8710-41bb-93e6-b3c991fa58c8.png" },
+    { name: "Aircall Partner", logo: "/lovable-uploads/b18fc977-3bb3-4613-8232-8fac4fb4d9ee.png" }
   ];
 
   return (
@@ -305,7 +308,25 @@ const Nosotros = () => {
                 
                 {/* Segunda línea - 3 logos */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  {certifications.slice(3).map((cert, index) => (
+                  {certifications.slice(3, 6).map((cert, index) => (
+                    <div key={index} className="group hover-scale">
+                      <div className="bg-white rounded-xl p-8 shadow-corporate border border-gray-100 group-hover:shadow-elegant transition-all duration-300">
+                        <div className="h-20 flex items-center justify-center mb-4">
+                          <img 
+                            src={cert.logo} 
+                            alt={`${cert.name} logo`}
+                            className="h-16 w-auto object-contain filter transition-all duration-300 group-hover:scale-110"
+                          />
+                        </div>
+                        <p className="text-sm font-semibold text-hayas-primary text-center">{cert.name}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                
+                {/* Tercera línea - 3 logos */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  {certifications.slice(6).map((cert, index) => (
                     <div key={index} className="group hover-scale">
                       <div className="bg-white rounded-xl p-8 shadow-corporate border border-gray-100 group-hover:shadow-elegant transition-all duration-300">
                         <div className="h-20 flex items-center justify-center mb-4">
