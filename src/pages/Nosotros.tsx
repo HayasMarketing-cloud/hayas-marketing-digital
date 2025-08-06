@@ -22,43 +22,49 @@ const Nosotros = () => {
     {
       name: "David Hayas",
       role: "CEO & Fundador",
-      description: "Especialista en estrategia digital y transformación empresarial con más de 8 años de experiencia.",
+      description: "Especialista en marketing digital y transformación empresarial. Más de 8 años ayudando a empresas a crecer mediante estrategias digitales integrales.",
       image: "/lovable-uploads/team-david.jpg"
     },
     {
-      name: "Equipo Técnico",
-      role: "Desarrollo & Automatización", 
-      description: "Especialistas certificados en HubSpot, Go High Level y tecnologías de IA.",
+      name: "Equipo de Desarrollo",
+      role: "Desarrollo Web & CRM", 
+      description: "Especialistas certificados en desarrollo web, HubSpot, Go High Level y automatización de procesos comerciales.",
       image: "/lovable-uploads/team-tech.jpg"
     },
     {
-      name: "Equipo Creativo",
-      role: "Diseño & Contenidos",
-      description: "Expertos en branding, diseño web y estrategias de contenido digital.",
+      name: "Equipo de Marketing",
+      role: "Estrategia & Contenidos",
+      description: "Expertos en branding, estrategia digital, SEO, publicidad online y gestión de redes sociales.",
       image: "/lovable-uploads/team-creative.jpg"
+    },
+    {
+      name: "Equipo de Consultoría",
+      role: "Consultoría & IA",
+      description: "Consultores especializados en implementación de IA, optimización de procesos y transformación digital.",
+      image: "/lovable-uploads/team-consulting.jpg"
     }
   ];
 
   const values = [
     {
-      icon: <Target className="h-8 w-8 text-hayas-primary" />,
+      icon: <Target className="h-8 w-8 text-white" />,
       title: "Estrategia",
-      description: "Cada proyecto comienza con un análisis profundo y una estrategia personalizada para alcanzar tus objetivos específicos."
+      description: "Desarrollamos estrategias personalizadas basadas en un análisis profundo de tu negocio, mercado y objetivos específicos."
     },
     {
-      icon: <Zap className="h-8 w-8 text-hayas-primary" />,
+      icon: <Zap className="h-8 w-8 text-white" />,
       title: "Eficiencia",
-      description: "Implementamos soluciones que automatizan procesos y optimizan recursos para maximizar tu retorno de inversión."
+      description: "Implementamos tecnologías y procesos que automatizan tareas repetitivas, optimizando recursos y maximizando el ROI."
     },
     {
-      icon: <TrendingUp className="h-8 w-8 text-hayas-primary" />,
+      icon: <TrendingUp className="h-8 w-8 text-white" />,
       title: "Adaptación",
-      description: "Nos mantenemos a la vanguardia tecnológica para ofrecer siempre las mejores soluciones del mercado."
+      description: "Nos mantenemos a la vanguardia tecnológica, integrando las últimas innovaciones como IA y automatización avanzada."
     },
     {
-      icon: <Heart className="h-8 w-8 text-hayas-primary" />,
+      icon: <Heart className="h-8 w-8 text-white" />,
       title: "Crecimiento Sostenible",
-      description: "Construimos relaciones a largo plazo, acompañando el crecimiento de nuestros clientes paso a paso."
+      description: "Construimos soluciones escalables que crecen contigo, estableciendo relaciones comerciales duraderas y exitosas."
     }
   ];
 
@@ -91,10 +97,12 @@ const Nosotros = () => {
   ];
 
   const certifications = [
-    { name: "HubSpot", logo: "/lovable-uploads/hubspot-logo.png" },
+    { name: "HubSpot Partner", logo: "/lovable-uploads/hubspot-logo.png" },
     { name: "Go High Level", logo: "/lovable-uploads/ghl-logo.png" },
-    { name: "Google Analytics", logo: "/lovable-uploads/ga-logo.png" },
-    { name: "Meta Business", logo: "/lovable-uploads/meta-logo.png" }
+    { name: "Google Partner", logo: "/lovable-uploads/google-logo.png" },
+    { name: "Meta Business", logo: "/lovable-uploads/meta-logo.png" },
+    { name: "WordPress", logo: "/lovable-uploads/wordpress-logo.png" },
+    { name: "Certificación IA", logo: "/lovable-uploads/ai-logo.png" }
   ];
 
   return (
@@ -114,7 +122,8 @@ const Nosotros = () => {
                 Somos <span className="text-gradient-primary">Hayas Marketing</span>
               </h1>
               <p className="text-lg md:text-xl text-gray-700 mb-8 animate-slide-up max-w-3xl mx-auto">
-                Agencia especializada en transformación digital con enfoque integral: estrategia, eficiencia, adaptación y crecimiento sostenible
+                Agencia de marketing digital y consultoría especializada en gestión de clientes (CRM) y estrategia digital. 
+                Trabajamos con un enfoque integral centrado en la estrategia, eficiencia, adaptación y crecimiento sostenible.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up">
                 <Button className="gradient-primary text-white py-6 px-8 text-lg font-medium shadow-elegant hover-scale focus-ring">
@@ -135,7 +144,7 @@ const Nosotros = () => {
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient-primary">Nuestra Historia</h2>
                 <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-                  Construyendo el futuro digital de las empresas, una solución a la vez
+                  Desde 2016, transformamos la forma en que las empresas se conectan con sus clientes a través del marketing digital
                 </p>
               </div>
               
@@ -144,8 +153,8 @@ const Nosotros = () => {
                   <Target className="h-12 w-12 text-hayas-primary mx-auto mb-4" />
                   <h3 className="text-xl font-semibold mb-3 text-hayas-primary">Nuestra Misión</h3>
                   <p className="text-gray-700">
-                    Impulsar el crecimiento de emprendedores, startups y empresas con soluciones 
-                    de marketing digital personalizadas que generen resultados reales y medibles.
+                    Lanzar e impulsar el crecimiento de emprendedores, startups y empresas mediante soluciones 
+                    integrales de marketing digital y automatización que generen resultados reales y medibles.
                   </p>
                 </div>
                 
@@ -153,8 +162,8 @@ const Nosotros = () => {
                   <Lightbulb className="h-12 w-12 text-hayas-primary mx-auto mb-4" />
                   <h3 className="text-xl font-semibold mb-3 text-hayas-primary">Nuestra Visión</h3>
                   <p className="text-gray-700">
-                    Ser referentes en la implementación de tecnología aplicada al marketing y ventas, 
-                    ayudando a las empresas a automatizar y escalar sus procesos comerciales.
+                    Ser la agencia de referencia en España para la implementación de tecnología aplicada al marketing y ventas, 
+                    especializándonos en CRM, automatización e inteligencia artificial.
                   </p>
                 </div>
                 
@@ -162,8 +171,8 @@ const Nosotros = () => {
                   <Award className="h-12 w-12 text-hayas-primary mx-auto mb-4" />
                   <h3 className="text-xl font-semibold mb-3 text-hayas-primary">Nuestro Compromiso</h3>
                   <p className="text-gray-700">
-                    Ofrecer soluciones integrales que combinen estrategia, tecnología e inteligencia 
-                    artificial para maximizar la eficiencia y el retorno de inversión.
+                    Desarrollar soluciones personalizadas que combinen estrategia digital, tecnología avanzada 
+                    e inteligencia artificial para maximizar la eficiencia y el retorno de inversión de nuestros clientes.
                   </p>
                 </div>
               </div>
@@ -204,11 +213,11 @@ const Nosotros = () => {
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient-primary">Nuestro Equipo</h2>
                 <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-                  Profesionales especializados en marketing digital, CRM y automatización
+                  Un equipo multidisciplinar de 8 profesionales especializados en marketing digital, desarrollo, CRM y consultoría estratégica
                 </p>
               </div>
               
-              <div className="grid md:grid-cols-3 gap-8">
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {teamMembers.map((member, index) => (
                   <div key={index} className="bg-white rounded-xl p-6 text-center shadow-corporate hover-scale">
                     <div className="w-24 h-24 bg-gradient-primary rounded-full mx-auto mb-4 flex items-center justify-center">
@@ -261,12 +270,12 @@ const Nosotros = () => {
         <section className="py-16 md:py-20 bg-gradient-to-br from-hayas-primary/5 to-hayas-secondary/5">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient-primary">Certificaciones y Partners</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient-primary">Certificaciones y Partners Tecnológicos</h2>
               <p className="text-lg text-gray-700 mb-12 max-w-2xl mx-auto">
-                Trabajamos con las mejores tecnologías y mantenemos certificaciones oficiales
+                Somos partners oficiales y mantenemos certificaciones en las principales plataformas tecnológicas del mercado
               </p>
               
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 items-center">
                 {certifications.map((cert, index) => (
                   <div key={index} className="p-4 hover-scale">
                     <div className="bg-white rounded-lg p-6 shadow-corporate border">
