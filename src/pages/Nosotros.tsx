@@ -109,7 +109,7 @@ const Nosotros = () => {
     { name: "HubSpot Partner", logo: "/lovable-uploads/5b8c9d90-e355-4b27-b2a3-018f2c5a6734.png" },
     { name: "Go High Level", logo: "/lovable-uploads/5d28af4c-58ec-4895-8624-3261f0debd4a.png" },
     { name: "Google Partner", logo: googleLogo },
-    { name: "Meta Business", logo: metaLogo },
+    { name: "Meta Business Partner", logo: "/lovable-uploads/e9556961-6aaa-41da-8ccb-fc0cdbd24142.png" },
     { name: "WordPress", logo: "/lovable-uploads/ed1d9897-ed2d-49a3-9ce2-1cea880aee32.png" },
     { name: "Lovable Partner", logo: "/lovable-uploads/fb2f07e0-ba96-4372-91b6-842a64e4c41e.png" },
     { name: "WhatsApp Business", logo: "/lovable-uploads/d5141b27-1db2-4f9b-8ff4-486fb23e0ae8.png" },
