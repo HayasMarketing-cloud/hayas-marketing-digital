@@ -34,6 +34,7 @@ import NotFound from "./pages/NotFound";
 import TiendaOnline from "./pages/TiendaOnline";
 import DisenoWeb from "./pages/DisenoWeb";
 import SeoPositioning from "./pages/SeoPositioning";
+import CreacionMarca from './pages/CreacionMarca';
 
 const queryClient = new QueryClient();
 
@@ -107,6 +108,7 @@ const App = () => (
           <Route path="/caso-exito-joints-up" element={<CasoExitoJointsUp />} />
           <Route path="/caso-exito-translate-with-style" element={<CasoExitoTranslateWithStyle />} />
           
+          <Route path="/servicios/creacion-marca" element={<CreacionMarca />} />
           <Route path="/servicios" element={<NotFound />} />
           
           {/* 404 - DEBE IR SIEMPRE AL FINAL */}

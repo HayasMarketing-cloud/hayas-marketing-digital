@@ -74,6 +74,7 @@ const Navigation = () => {
       { title: 'IV Extra', href: '/caso-exito-iv-extra', image: '/lovable-uploads/eb03ebcf-1212-4adb-9f73-1020279eb265.png', solution: 'Branding + Web' }
     ],
     servicios: [
+      { title: 'Creación de Marca', href: '/servicios/creacion-marca', description: 'Identidad visual y branding completo' },
       { title: 'Diseño Web', href: '/servicios/diseno-web', description: 'Webs que convierten visitantes en clientes' },
       { title: 'SEO y Posicionamiento', href: '/servicios/seo-posicionamiento', description: 'Aparece primero en Google' },
       { title: 'Tienda Online', href: '/servicios/tienda-online', description: 'E-commerce que vende 24/7' }
