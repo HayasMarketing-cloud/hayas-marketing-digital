@@ -111,8 +111,7 @@ const Nosotros = () => {
     { name: "Google Partner", logo: googleLogo },
     { name: "Meta Business", logo: metaLogo },
     { name: "WordPress", logo: wordpressLogo },
-    { name: "Lovable Partner", logo: lovableLogo },
-    { name: "Certificación IA", logo: aiLogo }
+    { name: "Lovable Partner", logo: lovableLogo }
   ];
 
   return (
@@ -286,9 +285,9 @@ const Nosotros = () => {
               </p>
               
               <div className="space-y-8">
-                {/* Primera línea - Partners principales */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                  {certifications.slice(0, 4).map((cert, index) => (
+                {/* Primera línea - 3 logos */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  {certifications.slice(0, 3).map((cert, index) => (
                     <div key={index} className="group hover-scale">
                       <div className="bg-white rounded-xl p-8 shadow-corporate border border-gray-100 group-hover:shadow-elegant transition-all duration-300">
                         <div className="h-20 flex items-center justify-center mb-4">
@@ -304,9 +303,9 @@ const Nosotros = () => {
                   ))}
                 </div>
                 
-                {/* Segunda línea - Partners adicionales */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-                  {certifications.slice(4).map((cert, index) => (
+                {/* Segunda línea - 3 logos */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  {certifications.slice(3).map((cert, index) => (
                     <div key={index} className="group hover-scale">
                       <div className="bg-white rounded-xl p-8 shadow-corporate border border-gray-100 group-hover:shadow-elegant transition-all duration-300">
                         <div className="h-20 flex items-center justify-center mb-4">
