@@ -277,40 +277,52 @@ const Nosotros = () => {
                 {/* Columna visual - Árbol/Ecosistema */}
                 <div className="relative">
                   <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 text-center shadow-sm border border-gray-200">
-                    <div className="relative max-w-sm mx-auto">
-                      {/* Copa del árbol - Estrategia */}
-                      <div className="mb-8">
-                        <div className="w-32 h-32 bg-gradient-primary rounded-full mx-auto flex items-center justify-center mb-4 shadow-elegant">
-                          <Trees className="h-12 w-12 text-white" />
+                  <div className="relative max-w-sm mx-auto">
+                    {/* Copa del árbol - 3 Hojas inspiradas en el isotipo */}
+                    <div className="mb-8">
+                      <div className="relative w-32 h-32 mx-auto mb-4">
+                        {/* Hoja izquierda */}
+                        <div className="absolute top-2 left-8 w-8 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-full transform -rotate-12 shadow-lg"></div>
+                        {/* Hoja superior */}
+                        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-6 h-10 bg-gradient-to-br from-green-500 to-green-700 rounded-full shadow-lg"></div>
+                        {/* Hoja derecha */}
+                        <div className="absolute top-2 right-8 w-8 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-full transform rotate-12 shadow-lg"></div>
+                        {/* Círculo central para representar la conexión */}
+                        <div className="absolute top-8 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center shadow-elegant">
+                          <span className="text-white text-2xl font-bold">H</span>
                         </div>
-                        <h3 className="font-bold text-hayas-primary mb-2">Copa = Estrategia</h3>
-                        <p className="text-sm text-gray-800 font-medium">Visión amplia que proyecta sombra y dirección</p>
                       </div>
-                      
-                      {/* Tronco - Conexión */}
-                      <div className="w-4 h-16 bg-gradient-to-b from-hayas-primary to-hayas-secondary mx-auto mb-8 rounded-full shadow-md"></div>
-                      <div className="mb-8">
-                        <div className="w-24 h-24 bg-gradient-to-br from-hayas-secondary to-hayas-primary rounded-full mx-auto flex items-center justify-center mb-4 shadow-elegant">
-                          <GitBranch className="h-8 w-8 text-white" />
-                        </div>
-                        <h3 className="font-bold text-hayas-primary mb-2">Tronco = Conexión</h3>
-                        <p className="text-sm text-gray-800 font-medium">Hojas que se adaptan con flexibilidad</p>
-                      </div>
-                      
-                      {/* Raíces - Confianza */}
-                      <div className="flex justify-center space-x-4 mb-4">
-                        <div className="w-2 h-8 bg-gradient-to-t from-hayas-primary/60 to-transparent rounded-full transform -rotate-12"></div>
-                        <div className="w-2 h-10 bg-gradient-to-t from-hayas-primary/60 to-transparent rounded-full"></div>
-                        <div className="w-2 h-8 bg-gradient-to-t from-hayas-primary/60 to-transparent rounded-full transform rotate-12"></div>
-                      </div>
-                      <div>
-                        <div className="w-20 h-20 bg-gradient-to-br from-hayas-primary/80 to-hayas-secondary/80 rounded-full mx-auto flex items-center justify-center mb-4 shadow-elegant">
-                          <Anchor className="h-6 w-6 text-white" />
-                        </div>
-                        <h3 className="font-bold text-hayas-primary mb-2">Raíces = Confianza</h3>
-                        <p className="text-sm text-gray-800 font-medium">Cimientos profundos y duraderos</p>
-                      </div>
+                      <h3 className="font-bold text-hayas-primary mb-2">Copa = Estrategia</h3>
+                      <p className="text-sm text-gray-800 font-medium">Visión amplia que proyecta sombra y dirección</p>
                     </div>
+                    
+                    {/* Tronco - Conexión - La "H" como tronco */}
+                    <div className="w-6 h-20 bg-gradient-to-b from-hayas-primary via-hayas-primary to-hayas-secondary mx-auto mb-8 rounded-lg shadow-md relative">
+                      {/* Línea horizontal de la "H" */}
+                      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-2 bg-hayas-primary rounded-full shadow-sm"></div>
+                    </div>
+                    <div className="mb-8">
+                      <div className="w-24 h-24 bg-gradient-to-br from-hayas-secondary to-hayas-primary rounded-full mx-auto flex items-center justify-center mb-4 shadow-elegant">
+                        <span className="text-white text-xl font-bold">H</span>
+                      </div>
+                      <h3 className="font-bold text-hayas-primary mb-2">Tronco = Conexión</h3>
+                      <p className="text-sm text-gray-800 font-medium">La "H" como estructura que conecta y sostiene</p>
+                    </div>
+                    
+                    {/* Raíces - Confianza */}
+                    <div className="flex justify-center space-x-4 mb-4">
+                      <div className="w-3 h-12 bg-gradient-to-t from-hayas-primary/70 to-transparent rounded-full transform -rotate-15"></div>
+                      <div className="w-3 h-16 bg-gradient-to-t from-hayas-primary/70 to-transparent rounded-full"></div>
+                      <div className="w-3 h-12 bg-gradient-to-t from-hayas-primary/70 to-transparent rounded-full transform rotate-15"></div>
+                    </div>
+                    <div>
+                      <div className="w-20 h-20 bg-gradient-to-br from-hayas-primary/80 to-hayas-secondary/80 rounded-full mx-auto flex items-center justify-center mb-4 shadow-elegant">
+                        <Anchor className="h-6 w-6 text-white" />
+                      </div>
+                      <h3 className="font-bold text-hayas-primary mb-2">Raíces = Confianza</h3>
+                      <p className="text-sm text-gray-800 font-medium">Cimientos profundos y duraderos</p>
+                    </div>
+                  </div>
                   </div>
                 </div>
               </div>
