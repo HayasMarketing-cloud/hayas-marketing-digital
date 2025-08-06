@@ -40,6 +40,7 @@ import PublicidadRedesSociales from './pages/PublicidadRedesSociales';
 import PublicidadGoogleAds from './pages/PublicidadGoogleAds';
 import AsistenteIA from './pages/AsistenteIA';
 import AlojamientoMantenimiento from './pages/AlojamientoMantenimiento';
+import ScrollToTop from './components/ScrollToTop';
 
 const queryClient = new QueryClient();
 
@@ -48,7 +49,8 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+    <BrowserRouter>
+      <ScrollToTop />
         <SofiaWidget />
         <Routes>
           {/* PÁGINA PRINCIPAL */}
