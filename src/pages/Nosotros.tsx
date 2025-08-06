@@ -17,6 +17,15 @@ import {
   ArrowRight
 } from 'lucide-react';
 
+// Import logos
+import hubspotLogo from '@/assets/logos/hubspot-logo.png';
+import ghlLogo from '@/assets/logos/ghl-logo.png';
+import googleLogo from '@/assets/logos/google-logo.png';
+import metaLogo from '@/assets/logos/meta-logo.png';
+import wordpressLogo from '@/assets/logos/wordpress-logo.png';
+import lovableLogo from '@/assets/logos/lovable-logo.png';
+import aiLogo from '@/assets/logos/ai-logo.png';
+
 const Nosotros = () => {
   const teamMembers = [
     {
@@ -97,12 +106,13 @@ const Nosotros = () => {
   ];
 
   const certifications = [
-    { name: "HubSpot Partner", logo: "/lovable-uploads/hubspot-logo.png" },
-    { name: "Go High Level", logo: "/lovable-uploads/ghl-logo.png" },
-    { name: "Google Partner", logo: "/lovable-uploads/google-logo.png" },
-    { name: "Meta Business", logo: "/lovable-uploads/meta-logo.png" },
-    { name: "WordPress", logo: "/lovable-uploads/wordpress-logo.png" },
-    { name: "Certificación IA", logo: "/lovable-uploads/ai-logo.png" }
+    { name: "HubSpot Partner", logo: hubspotLogo },
+    { name: "Go High Level", logo: ghlLogo },
+    { name: "Google Partner", logo: googleLogo },
+    { name: "Meta Business", logo: metaLogo },
+    { name: "WordPress", logo: wordpressLogo },
+    { name: "Lovable Partner", logo: lovableLogo },
+    { name: "Certificación IA", logo: aiLogo }
   ];
 
   return (
@@ -275,14 +285,18 @@ const Nosotros = () => {
                 Somos partners oficiales y mantenemos certificaciones en las principales plataformas tecnológicas del mercado
               </p>
               
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 items-center">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-6 items-center">
                 {certifications.map((cert, index) => (
                   <div key={index} className="p-4 hover-scale">
                     <div className="bg-white rounded-lg p-6 shadow-corporate border">
                       <div className="h-16 flex items-center justify-center">
-                        <CheckCircle className="h-12 w-12 text-hayas-primary" />
+                        <img 
+                          src={cert.logo} 
+                          alt={`${cert.name} logo`}
+                          className="h-12 w-auto object-contain"
+                        />
                       </div>
-                      <p className="text-sm font-medium mt-2 text-hayas-primary">{cert.name}</p>
+                      <p className="text-sm font-medium mt-2 text-hayas-primary text-center">{cert.name}</p>
                     </div>
                   </div>
                 ))}
