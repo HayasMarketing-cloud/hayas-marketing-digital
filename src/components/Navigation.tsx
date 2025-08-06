@@ -152,9 +152,9 @@ const Navigation = () => {
               <Link to="/blog" className="text-foreground hover:text-hayas-primary font-medium transition-colors">
                 Blog
               </Link>
-              <a href="#contacto" className="text-foreground hover:text-hayas-primary font-medium transition-colors">
+              <Link to="/contacto" className="text-foreground hover:text-hayas-primary font-medium transition-colors">
                 Contacto
-              </a>
+              </Link>
             </nav>
 
             <div className="hidden lg:block">
@@ -271,13 +271,13 @@ const Navigation = () => {
                 >
                   Blog
                 </Link>
-                <a 
-                  href="#contacto" 
+                <Link 
+                  to="/contacto" 
                   className="text-foreground hover:text-primary font-medium transition-colors px-4 py-2 hover:bg-muted/50 rounded"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Contacto
-                </a>
+                </Link>
                 <Button asChild className="gradient-primary text-white mx-4 hover-scale">
                   <Link to="/agendar-reunion">Solicitar Consulta</Link>
                 </Button>
