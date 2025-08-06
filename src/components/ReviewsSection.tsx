@@ -92,18 +92,7 @@ const ReviewsSection = () => {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 items-center justify-center pt-6 border-t">
-              <Button asChild variant="outline" className="gap-2">
-                <a 
-                  href="https://g.page/r/CZUFs5nSlx_oEAE/review" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                >
-                  <Star className="w-4 h-4" />
-                  Deja tu reseña
-                </a>
-              </Button>
-              
+            <div className="flex justify-center pt-6 border-t">
               <Button asChild variant="ghost" className="gap-2">
                 <a 
                   href="https://maps.google.com/maps?q=hayas+marketing" 
@@ -114,58 +103,6 @@ const ReviewsSection = () => {
                   Ver todas las reseñas
                 </a>
               </Button>
-            </div>
-
-            {/* Últimas reseñas */}
-            <div className="mt-8 pt-8 border-t">
-              <h4 className="text-lg font-semibold mb-6 text-center">
-                Últimas reseñas de nuestros clientes
-              </h4>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {sampleReviews.slice(0, 5).map((review) => (
-                  <Card key={review.id} className="p-4 hover:shadow-md transition-shadow">
-                    <div className="flex items-start gap-3">
-                      <Avatar className="w-10 h-10">
-                        <AvatarFallback className="bg-primary/10 text-primary font-medium">
-                          {review.initials}
-                        </AvatarFallback>
-                      </Avatar>
-                      
-                      <div className="flex-1">
-                        <div className="flex items-center justify-between mb-2">
-                          <h5 className="font-medium text-sm">{review.name}</h5>
-                          <div className="flex">
-                            {[...Array(review.rating)].map((_, i) => (
-                              <Star key={i} className="w-3 h-3 fill-yellow-400 text-yellow-400" />
-                            ))}
-                          </div>
-                        </div>
-                        
-                        <p className="text-sm text-muted-foreground mb-2 line-clamp-3">
-                          {review.text}
-                        </p>
-                        
-                        <p className="text-xs text-muted-foreground">
-                          {review.date}
-                        </p>
-                      </div>
-                    </div>
-                  </Card>
-                ))}
-              </div>
-              
-              <div className="text-center mt-6">
-                <Button asChild variant="outline" size="sm">
-                  <a 
-                    href="https://maps.google.com/maps?q=hayas+marketing" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                  >
-                    Ver todas las reseñas en Google
-                  </a>
-                </Button>
-              </div>
             </div>
           </Card>
         </div>
