@@ -37,6 +37,7 @@ import SeoPositioning from "./pages/SeoPositioning";
 import CreacionMarca from './pages/CreacionMarca';
 import GestionRedesSociales from './pages/GestionRedesSociales';
 import PublicidadRedesSociales from './pages/PublicidadRedesSociales';
+import PublicidadGoogleAds from './pages/PublicidadGoogleAds';
 
 const queryClient = new QueryClient();
 
@@ -113,6 +114,7 @@ const App = () => (
           <Route path="/servicios/creacion-marca" element={<CreacionMarca />} />
           <Route path="/servicios/gestion-redes-sociales" element={<GestionRedesSociales />} />
           <Route path="/servicios/publicidad-redes-sociales" element={<PublicidadRedesSociales />} />
+          <Route path="/servicios/publicidad-google-ads" element={<PublicidadGoogleAds />} />
           <Route path="/servicios" element={<NotFound />} />
           
           {/* 404 - DEBE IR SIEMPRE AL FINAL */}
