@@ -481,27 +481,6 @@ const Nosotros = () => {
           <ReviewsSection />
         </section>
 
-        {/* CTA Final - Fondo gradiente */}
-        <section className="py-16 md:py-20 bg-gradient-to-br from-hayas-primary to-hayas-secondary">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center text-white">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                ¿Listo para transformar tu negocio?
-              </h2>
-              <p className="text-xl mb-8 opacity-90">
-                Únete a las empresas que ya han potenciado su crecimiento con nuestras soluciones integrales
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="bg-white text-hayas-primary hover:bg-gray-100 py-6 px-8 text-lg font-medium hover-scale">
-                  Solicitar consulta gratuita
-                </Button>
-                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-hayas-primary py-6 px-8 text-lg hover-scale">
-                  Ver casos de éxito
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* CTA Final - Solicitar Asesoría */}
         <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
