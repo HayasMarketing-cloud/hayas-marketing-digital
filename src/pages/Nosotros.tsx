@@ -244,7 +244,7 @@ const Nosotros = () => {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {teamMembers.map((member, index) => (
                   <div key={index} className="bg-white rounded-xl p-6 text-center shadow-corporate hover-scale group">
-                    <div className="relative w-24 h-24 mx-auto mb-4 overflow-hidden rounded-full border-4 border-gradient-primary">
+                    <div className="relative w-48 h-48 mx-auto mb-4 overflow-hidden rounded-full border-4 border-gradient-primary">
                       <img 
                         src={member.image} 
                         alt={`${member.name} - ${member.role}`}
