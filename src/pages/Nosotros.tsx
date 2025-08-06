@@ -239,121 +239,69 @@ const Nosotros = () => {
                 </p>
               </div>
               
-              <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-                {/* Columna de texto */}
-                <div className="space-y-6">
-                  <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 border-l-4 border-hayas-primary shadow-sm">
-                    <p className="text-gray-900 font-medium leading-relaxed">
+              <div className="max-w-4xl mx-auto">
+                {/* Contenido principal de texto */}
+                <div className="space-y-8">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-xl p-8 border-l-4 border-hayas-primary shadow-sm">
+                    <p className="text-gray-900 font-medium leading-relaxed text-lg">
                       Los bosques de hayas son uno de los <span className="font-bold text-hayas-primary">ecosistemas más bellos y resilientes</span> de Europa:
                     </p>
-                    <ul className="mt-4 space-y-2">
+                    <ul className="mt-6 space-y-3">
                       <li className="flex items-center text-gray-900">
-                        <CheckCircle className="h-4 w-4 text-hayas-primary mr-2 flex-shrink-0" />
-                        prosperan en comunidad
+                        <CheckCircle className="h-5 w-5 text-hayas-primary mr-3 flex-shrink-0" />
+                        <span className="text-lg">prosperan en comunidad</span>
                       </li>
                       <li className="flex items-center text-gray-900">
-                        <CheckCircle className="h-4 w-4 text-hayas-primary mr-2 flex-shrink-0" />
-                        filtran la luz de forma armoniosa
+                        <CheckCircle className="h-5 w-5 text-hayas-primary mr-3 flex-shrink-0" />
+                        <span className="text-lg">filtran la luz de forma armoniosa</span>
                       </li>
                       <li className="flex items-center text-gray-900">
-                        <CheckCircle className="h-4 w-4 text-hayas-primary mr-2 flex-shrink-0" />
-                        permiten que cada árbol crezca con fuerza, sin perder su conexión
+                        <CheckCircle className="h-5 w-5 text-hayas-primary mr-3 flex-shrink-0" />
+                        <span className="text-lg">permiten que cada árbol crezca con fuerza, sin perder su conexión</span>
                       </li>
                     </ul>
                   </div>
                   
-                  <div className="bg-white/95 backdrop-blur-sm rounded-xl p-6 shadow-sm border border-gray-200">
-                    <p className="text-gray-900 font-medium leading-relaxed mb-4">
+                  <div className="bg-white/95 backdrop-blur-sm rounded-xl p-8 shadow-sm border border-gray-200">
+                    <p className="text-gray-900 font-medium leading-relaxed mb-6 text-lg">
                       Nos inspira su capacidad para crear un <span className="font-bold text-hayas-primary">microclima fértil</span>, 
                       donde todo se equilibra con inteligencia natural: el suelo nutre, las raíces conectan, el aire fluye.
                     </p>
-                    <p className="text-gray-900 font-medium leading-relaxed">
+                    <p className="text-gray-900 font-medium leading-relaxed text-lg">
                       Como los hayedos, <span className="font-bold text-hayas-primary">evolucionamos de forma orgánica</span>, 
                       buscando sostenibilidad, conexión y propósito en todo lo que hacemos.
                     </p>
                   </div>
                 </div>
-                
-                {/* Columna visual - Árbol/Ecosistema */}
-                <div className="relative">
-                  <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 text-center shadow-sm border border-gray-200">
-                  <div className="relative max-w-sm mx-auto">
-                    {/* Copa del árbol - 3 Hojas inspiradas en el isotipo */}
-                    <div className="mb-8">
-                      <div className="relative w-32 h-32 mx-auto mb-4">
-                        {/* Hoja izquierda */}
-                        <div className="absolute top-2 left-8 w-8 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-full transform -rotate-12 shadow-lg"></div>
-                        {/* Hoja superior */}
-                        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-6 h-10 bg-gradient-to-br from-green-500 to-green-700 rounded-full shadow-lg"></div>
-                        {/* Hoja derecha */}
-                        <div className="absolute top-2 right-8 w-8 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-full transform rotate-12 shadow-lg"></div>
-                        {/* Círculo central para representar la conexión */}
-                        <div className="absolute top-8 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center shadow-elegant">
-                          <span className="text-white text-2xl font-bold">H</span>
-                        </div>
-                      </div>
-                      <h3 className="font-bold text-hayas-primary mb-2">Copa = Estrategia</h3>
-                      <p className="text-sm text-gray-800 font-medium">Visión amplia que proyecta sombra y dirección</p>
-                    </div>
-                    
-                    {/* Tronco - Conexión - La "H" como tronco */}
-                    <div className="w-6 h-20 bg-gradient-to-b from-hayas-primary via-hayas-primary to-hayas-secondary mx-auto mb-8 rounded-lg shadow-md relative">
-                      {/* Línea horizontal de la "H" */}
-                      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-2 bg-hayas-primary rounded-full shadow-sm"></div>
-                    </div>
-                    <div className="mb-8">
-                      <div className="w-24 h-24 bg-gradient-to-br from-hayas-secondary to-hayas-primary rounded-full mx-auto flex items-center justify-center mb-4 shadow-elegant">
-                        <span className="text-white text-xl font-bold">H</span>
-                      </div>
-                      <h3 className="font-bold text-hayas-primary mb-2">Tronco = Conexión</h3>
-                      <p className="text-sm text-gray-800 font-medium">La "H" como estructura que conecta y sostiene</p>
-                    </div>
-                    
-                    {/* Raíces - Confianza */}
-                    <div className="flex justify-center space-x-4 mb-4">
-                      <div className="w-3 h-12 bg-gradient-to-t from-hayas-primary/70 to-transparent rounded-full transform -rotate-15"></div>
-                      <div className="w-3 h-16 bg-gradient-to-t from-hayas-primary/70 to-transparent rounded-full"></div>
-                      <div className="w-3 h-12 bg-gradient-to-t from-hayas-primary/70 to-transparent rounded-full transform rotate-15"></div>
-                    </div>
-                    <div>
-                      <div className="w-20 h-20 bg-gradient-to-br from-hayas-primary/80 to-hayas-secondary/80 rounded-full mx-auto flex items-center justify-center mb-4 shadow-elegant">
-                        <Anchor className="h-6 w-6 text-white" />
-                      </div>
-                      <h3 className="font-bold text-hayas-primary mb-2">Raíces = Confianza</h3>
-                      <p className="text-sm text-gray-800 font-medium">Cimientos profundos y duraderos</p>
-                    </div>
-                  </div>
-                  </div>
-                </div>
               </div>
               
               {/* Frase destacada final */}
-              <div className="text-center">
-                <div className="bg-gradient-to-r from-hayas-primary to-hayas-secondary rounded-2xl p-8 text-white shadow-elegant max-w-4xl mx-auto">
-                  <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                    En Hayas, creemos en construir relaciones como un bosque
+              <div className="text-center mt-16">
+                <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-elegant max-w-4xl mx-auto border border-gray-200">
+                  <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900">
+                    En Hayas, creemos en la fuerza y energía que nos ofrecen los bosques
                   </h3>
                   <div className="grid md:grid-cols-3 gap-6 text-center">
                     <div>
-                      <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <Anchor className="h-6 w-6 text-white" />
+                      <div className="w-12 h-12 bg-hayas-primary/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <Anchor className="h-6 w-6 text-hayas-primary" />
                       </div>
-                      <p className="font-medium">Raíces profundas</p>
-                      <p className="text-sm opacity-90">confianza</p>
+                      <p className="font-medium text-gray-900">Raíces profundas</p>
+                      <p className="text-sm text-gray-700">confianza</p>
                     </div>
                     <div>
-                      <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <GitBranch className="h-6 w-6 text-white" />
+                      <div className="w-12 h-12 bg-hayas-primary/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <GitBranch className="h-6 w-6 text-hayas-primary" />
                       </div>
-                      <p className="font-medium">Hojas adaptables</p>
-                      <p className="text-sm opacity-90">flexibilidad</p>
+                      <p className="font-medium text-gray-900">Hojas adaptables</p>
+                      <p className="text-sm text-gray-700">flexibilidad</p>
                     </div>
                     <div>
-                      <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <Trees className="h-6 w-6 text-white" />
+                      <div className="w-12 h-12 bg-hayas-primary/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <Trees className="h-6 w-6 text-hayas-primary" />
                       </div>
-                      <p className="font-medium">Copa amplia</p>
-                      <p className="text-sm opacity-90">estrategia</p>
+                      <p className="font-medium text-gray-900">Copa amplia</p>
+                      <p className="text-sm text-gray-700">estrategia</p>
                     </div>
                   </div>
                 </div>
