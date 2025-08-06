@@ -29,28 +29,40 @@ import aiLogo from '@/assets/logos/ai-logo.png';
 const Nosotros = () => {
   const teamMembers = [
     {
-      name: "David Hayas",
-      role: "CEO & Fundador",
-      description: "Especialista en marketing digital y transformación empresarial. Más de 8 años ayudando a empresas a crecer mediante estrategias digitales integrales.",
-      image: "/lovable-uploads/team-david.jpg"
+      name: "Rubén",
+      role: "CEO & Founder",
+      description: "Visionario y líder estratégico, especializado en transformación digital y crecimiento empresarial sostenible.",
+      image: "/lovable-uploads/4aedecdb-9c20-490d-ba11-072181bdf3d6.png"
     },
     {
-      name: "Equipo de Desarrollo",
-      role: "Desarrollo Web & CRM", 
-      description: "Especialistas certificados en desarrollo web, HubSpot, Go High Level y automatización de procesos comerciales.",
-      image: "/lovable-uploads/team-tech.jpg"
+      name: "Sandra",
+      role: "Directora de Arte",
+      description: "Creativa experta en branding, diseño visual y experiencia de usuario. Transforma ideas en identidades visuales impactantes.",
+      image: "/lovable-uploads/26de1124-c82f-4741-800d-030e305eb147.png"
     },
     {
-      name: "Equipo de Marketing",
-      role: "Estrategia & Contenidos",
-      description: "Expertos en branding, estrategia digital, SEO, publicidad online y gestión de redes sociales.",
-      image: "/lovable-uploads/team-creative.jpg"
+      name: "Ebelyn",
+      role: "Digital Marketing Manager",
+      description: "Especialista en estrategias digitales integrales, SEO, SEM y automatización de campañas para maximizar el ROI.",
+      image: "/lovable-uploads/869ded51-92ac-41e0-815c-65c18ee5a35d.png"
     },
     {
-      name: "Equipo de Consultoría",
-      role: "Consultoría & IA",
-      description: "Consultores especializados en implementación de IA, optimización de procesos y transformación digital.",
-      image: "/lovable-uploads/team-consulting.jpg"
+      name: "Fátima",
+      role: "Social Media Manager",
+      description: "Experta en gestión de redes sociales, creación de contenido y community management para potenciar la presencia digital.",
+      image: "/lovable-uploads/55bec5bb-9e3b-4208-9101-ea3fa923568f.png"
+    },
+    {
+      name: "Iolanda",
+      role: "Key Account Manager",
+      description: "Gestora de cuentas clave especializada en relaciones comerciales estratégicas y crecimiento de clientes corporativos.",
+      image: "/lovable-uploads/b6816c4b-e843-4d7b-b2b9-7f935a389f54.png"
+    },
+    {
+      name: "Daniela",
+      role: "Key Account Manager", 
+      description: "Responsable de desarrollo comercial y atención personalizada a clientes estratégicos, garantizando resultados excepcionales.",
+      image: "/lovable-uploads/ce1fa101-303c-4d7c-8fcf-c33db3e18dba.png"
     }
   ];
 
@@ -229,15 +241,19 @@ const Nosotros = () => {
                 </p>
               </div>
               
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {teamMembers.map((member, index) => (
-                  <div key={index} className="bg-white rounded-xl p-6 text-center shadow-corporate hover-scale">
-                    <div className="w-24 h-24 bg-gradient-primary rounded-full mx-auto mb-4 flex items-center justify-center">
-                      <Users className="h-10 w-10 text-white" />
+                  <div key={index} className="bg-white rounded-xl p-6 text-center shadow-corporate hover-scale group">
+                    <div className="relative w-24 h-24 mx-auto mb-4 overflow-hidden rounded-full border-4 border-gradient-primary">
+                      <img 
+                        src={member.image} 
+                        alt={`${member.name} - ${member.role}`}
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                      />
                     </div>
                     <h3 className="text-xl font-semibold mb-2 text-hayas-primary">{member.name}</h3>
-                    <p className="text-hayas-primary font-medium mb-3">{member.role}</p>
-                    <p className="text-gray-700 text-sm">{member.description}</p>
+                    <p className="text-hayas-primary font-medium mb-3 text-sm">{member.role}</p>
+                    <p className="text-gray-700 text-sm leading-relaxed">{member.description}</p>
                   </div>
                 ))}
               </div>
