@@ -32,7 +32,7 @@ const CasosExito = () => {
 
   // Categorizar etiquetas para mejor organización
   const tagCategories = {
-    'Soluciones': ['branding', 'creacion-marca', 'diseño-web', 'estrategia-digital', 'marketing-digital'],
+    'Soluciones': ['branding', 'creacion-marca', 'diseno-web', 'estrategia-digital', 'marketing-digital'],
     'Servicios': ['naming', 'identidad-visual', 'posicionamiento', 'automatizacion', 'contenidos'],
     'Sectores': ['medicina', 'salud', 'alimentacion', 'educacion', 'deporte', 'desarrollo-personal', 'traduccion']
   };

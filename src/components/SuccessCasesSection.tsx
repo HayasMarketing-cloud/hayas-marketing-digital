@@ -30,7 +30,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     service: "Branding, web, estrategia de contenidos",
     link: "/caso-exito-nexo-vital",
     image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=2071&auto=format&fit=crop",
-    tags: ["branding", "creacion-marca", "diseño-web", "contenidos", "salud"]
+    tags: ["branding", "creacion-marca", "diseno-web", "contenidos", "salud"]
   },
   {
     name: "I Virgen Extra",
@@ -38,7 +38,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     service: "Branding, desarrollo web, identidad",
     link: "/caso-exito-i-virgen-extra",
     image: "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?q=80&w=2069&auto=format&fit=crop",
-    tags: ["branding", "creacion-marca", "diseño-web", "identidad-visual", "alimentacion"]
+    tags: ["branding", "creacion-marca", "diseno-web", "identidad-visual", "alimentacion"]
   },
   {
     name: "Inbound Students",
@@ -46,7 +46,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     service: "Estrategia digital, diseño web",
     link: "/caso-exito-inbound-students",
     image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop",
-    tags: ["estrategia-digital", "diseño-web", "marketing-digital", "educacion"]
+    tags: ["estrategia-digital", "diseno-web", "marketing-digital", "educacion"]
   },
   {
     name: "Calisthenia Online",
@@ -62,7 +62,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     service: "Branding, diseño web, contenidos",
     link: "/caso-exito-centro-roraima",
     image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop",
-    tags: ["branding", "creacion-marca", "diseño-web", "contenidos", "desarrollo-personal"]
+    tags: ["branding", "creacion-marca", "diseno-web", "contenidos", "desarrollo-personal"]
   },
   {
     name: "Joints'Up",
@@ -70,7 +70,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     service: "Naming, branding, diseño web",
     link: "/caso-exito-joints-up",
     image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?q=80&w=2087&auto=format&fit=crop",
-    tags: ["branding", "creacion-marca", "naming", "diseño-web", "medicina"]
+    tags: ["branding", "creacion-marca", "naming", "diseno-web", "medicina"]
   },
   {
     name: "Dr. Parrón",
@@ -78,7 +78,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     service: "Identidad corporativa, diseño web",
     link: "/caso-exito-dr-parron",
     image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=2071&auto=format&fit=crop",
-    tags: ["branding", "creacion-marca", "identidad-corporativa", "diseño-web", "medicina"]
+    tags: ["branding", "creacion-marca", "identidad-corporativa", "diseno-web", "medicina"]
   },
   {
     name: "Translate with Style",
