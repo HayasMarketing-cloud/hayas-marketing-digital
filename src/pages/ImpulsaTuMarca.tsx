@@ -354,7 +354,7 @@ const ImpulsaTuMarca = () => {
                   industry: "Cirujanos traumatólogos",
                   service: "Naming, branding, diseño web",
                   link: "/caso-exito-joints-up",
-                  image: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?q=80&w=2069&auto=format&fit=crop"
+                  image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?q=80&w=2087&auto=format&fit=crop"
                 },
                 {
                   name: "Dr. Parrón",
