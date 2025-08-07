@@ -95,62 +95,109 @@ const CasoExitoJointsUp = () => {
         </section>
 
         {/* Client Profile */}
-        <section className="py-12 md:py-16 bg-white">
+        <section className="py-16 md:py-20 bg-gradient-to-br from-gray-50 via-white to-hayas-50/30">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-                Sobre <span className="text-gradient-primary">Joints'Up</span>
-              </h2>
-              <Card className="border-none shadow-lg">
-                <CardContent className="p-8">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div>
-                      <h3 className="text-xl font-semibold mb-4 text-hayas-600">Perfil del Cliente</h3>
-                      <p className="text-gray-600 mb-6 leading-relaxed">
-                        Grupo de cirujanos traumatólogos altamente especializados en cirugía de hombro, rodilla, 
-                        codo, manos y dedos, espalda y cadera. Su práctica médica se centra en técnicas avanzadas 
-                        y tratamientos innovadores para problemas articulares y óseos complejos, atendiendo tanto 
-                        a pacientes deportistas como población general.
-                      </p>
-                      <div className="space-y-3">
-                        <div className="flex items-center gap-3">
-                          <CheckCircle className="h-5 w-5 text-hayas-600" />
-                          <span className="text-gray-700">Cirugía de hombro especializada</span>
-                        </div>
-                        <div className="flex items-center gap-3">
-                          <CheckCircle className="h-5 w-5 text-hayas-600" />
-                          <span className="text-gray-700">Cirugía de rodilla avanzada</span>
-                        </div>
-                        <div className="flex items-center gap-3">
-                          <CheckCircle className="h-5 w-5 text-hayas-600" />
-                          <span className="text-gray-700">Cirugía de codo especializada</span>
-                        </div>
-                        <div className="flex items-center gap-3">
-                          <CheckCircle className="h-5 w-5 text-hayas-600" />
-                          <span className="text-gray-700">Cirugía de manos y dedos</span>
-                        </div>
-                        <div className="flex items-center gap-3">
-                          <CheckCircle className="h-5 w-5 text-hayas-600" />
-                          <span className="text-gray-700">Cirugía de espalda y columna</span>
-                        </div>
-                        <div className="flex items-center gap-3">
-                          <CheckCircle className="h-5 w-5 text-hayas-600" />
-                          <span className="text-gray-700">Cirugía de cadera avanzada</span>
-                        </div>
+            <div className="max-w-7xl mx-auto">
+              <div className="text-center mb-16">
+                <Badge variant="outline" className="mb-4 text-hayas-600 border-hayas-200 bg-hayas-50">
+                  Análisis del Proyecto
+                </Badge>
+                <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                  Sobre <span className="text-gradient-primary">Joints'Up</span>
+                </h2>
+                <div className="w-24 h-1 bg-gradient-to-r from-hayas-600 to-turquesa-600 mx-auto rounded-full"></div>
+              </div>
+              
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                {/* Perfil del Cliente */}
+                <Card className="border-none shadow-xl bg-white/80 backdrop-blur-sm hover:shadow-2xl transition-all duration-300">
+                  <CardHeader className="pb-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-3 h-3 bg-gradient-to-r from-hayas-600 to-hayas-500 rounded-full"></div>
+                      <CardTitle className="text-2xl font-bold text-hayas-600">
+                        Perfil del Cliente
+                      </CardTitle>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="space-y-8">
+                    <p className="text-gray-700 leading-relaxed text-lg">
+                      Grupo de cirujanos traumatólogos altamente especializados en cirugía de hombro, rodilla, 
+                      codo, manos y dedos, espalda y cadera. Su práctica médica se centra en técnicas avanzadas 
+                      y tratamientos innovadores para problemas articulares y óseos complejos, atendiendo tanto 
+                      a pacientes deportistas como población general.
+                    </p>
+                    
+                    <div className="space-y-4">
+                      <h4 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
+                        <Stethoscope className="h-5 w-5 text-hayas-600" />
+                        Especialidades Médicas
+                      </h4>
+                      <div className="grid grid-cols-1 gap-3">
+                        {[
+                          "Cirugía de hombro especializada",
+                          "Cirugía de rodilla avanzada", 
+                          "Cirugía de codo especializada",
+                          "Cirugía de manos y dedos",
+                          "Cirugía de espalda y columna",
+                          "Cirugía de cadera avanzada"
+                        ].map((especialidad, index) => (
+                          <div key={index} className="flex items-center gap-3 p-3 rounded-lg bg-gradient-to-r from-hayas-50 to-transparent hover:from-hayas-100 transition-all duration-200">
+                            <div className="flex-shrink-0">
+                              <CheckCircle className="h-5 w-5 text-hayas-600" />
+                            </div>
+                            <span className="text-gray-700 font-medium">{especialidad}</span>
+                          </div>
+                        ))}
                       </div>
                     </div>
-                    <div>
-                      <h3 className="text-xl font-semibold mb-4 text-turquesa-600">El Reto</h3>
-                      <p className="text-gray-600 leading-relaxed">
-                        Necesitaban crear una marca médica que transmitiera autoridad científica y generara 
-                        confianza inmediata en pacientes que requieren cirugías complejas. El desafío era 
-                        comunicar su alta especialización técnica de manera accesible, diferenciándose en 
-                        un sector donde la credibilidad y la reputación son fundamentales.
-                      </p>
+                  </CardContent>
+                </Card>
+
+                {/* El Reto */}
+                <Card className="border-none shadow-xl bg-white/80 backdrop-blur-sm hover:shadow-2xl transition-all duration-300">
+                  <CardHeader className="pb-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-3 h-3 bg-gradient-to-r from-turquesa-600 to-turquesa-500 rounded-full"></div>
+                      <CardTitle className="text-2xl font-bold text-turquesa-600">
+                        El Reto
+                      </CardTitle>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardHeader>
+                  <CardContent className="space-y-6">
+                    <p className="text-gray-700 leading-relaxed text-lg">
+                      Necesitaban crear una marca médica que transmitiera autoridad científica y generara 
+                      confianza inmediata en pacientes que requieren cirugías complejas. El desafío era 
+                      comunicar su alta especialización técnica de manera accesible, diferenciándose en 
+                      un sector donde la credibilidad y la reputación son fundamentales.
+                    </p>
+                    
+                    <div className="bg-gradient-to-r from-turquesa-50 to-hayas-50 p-6 rounded-xl border-l-4 border-turquesa-500">
+                      <h4 className="font-semibold text-gray-800 mb-3 flex items-center gap-2">
+                        <TrendingUp className="h-5 w-5 text-turquesa-600" />
+                        Objetivos Clave
+                      </h4>
+                      <ul className="space-y-2 text-gray-700">
+                        <li className="flex items-start gap-2">
+                          <div className="w-2 h-2 bg-turquesa-500 rounded-full mt-2 flex-shrink-0"></div>
+                          <span>Generar confianza inmediata en pacientes</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <div className="w-2 h-2 bg-turquesa-500 rounded-full mt-2 flex-shrink-0"></div>
+                          <span>Comunicar especialización técnica de forma accesible</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <div className="w-2 h-2 bg-turquesa-500 rounded-full mt-2 flex-shrink-0"></div>
+                          <span>Diferenciarse en el sector médico</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <div className="w-2 h-2 bg-turquesa-500 rounded-full mt-2 flex-shrink-0"></div>
+                          <span>Equilibrar autoridad científica y calidez humana</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
           </div>
         </section>
