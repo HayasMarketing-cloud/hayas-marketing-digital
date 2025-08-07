@@ -219,7 +219,7 @@ const BlogPost = () => {
             </div>
 
             <div className="bg-gradient-to-r from-primary/5 to-accent/5 p-6 rounded-lg mt-12">
-              <h3 className="text-xl font-bold mb-4 text-center">💡 ¿Necesitas ayuda personalizada?</h3>
+              <h3 className="text-xl font-bold mb-4 text-center">¿Necesitas ayuda personalizada?</h3>
               <p className="text-center mb-4">
                 En <strong>Hayas Marketing</strong> te ayudamos a implementar todos los avisos legales necesarios 
                 para que tu web cumpla con la normativa vigente.
@@ -336,7 +336,7 @@ const BlogPost = () => {
                 <p className="text-sm">Google Maps y Apple Maps emplean IA para calcular rutas eficientes en tiempo real, optimizando la movilidad.</p>
               </div>
               <div className="bg-muted/30 p-6 rounded-lg">
-                <h4 className="font-semibold mb-3 text-primary">🎤 Asistentes virtuales</h4>
+                <h4 className="font-semibold mb-3 text-primary">Asistentes virtuales</h4>
                 <p className="text-sm">Siri, Alexa, Google Assistant y Cortana usan IA para entender comandos de voz y realizar tareas.</p>
               </div>
               <div className="bg-muted/30 p-6 rounded-lg">
@@ -344,7 +344,7 @@ const BlogPost = () => {
                 <p className="text-sm">TikTok, Instagram, X y Facebook personalizan contenido basado en comportamiento digital.</p>
               </div>
               <div className="bg-muted/30 p-6 rounded-lg">
-                <h4 className="font-semibold mb-3 text-primary">🎬 Recomendaciones</h4>
+                <h4 className="font-semibold mb-3 text-primary">Recomendaciones</h4>
                 <p className="text-sm">Netflix, Spotify y Amazon analizan hábitos para sugerir contenido personalizado.</p>
               </div>
             </div>
@@ -367,7 +367,7 @@ const BlogPost = () => {
               </div>
 
               <div className="bg-gradient-to-r from-accent/5 to-primary/5 p-6 rounded-lg border-l-4 border-accent">
-                <h3 className="text-xl font-bold mb-4 text-accent">🧠 Aprendizaje y Memoria</h3>
+                <h3 className="text-xl font-bold mb-4 text-accent">Aprendizaje y Memoria</h3>
                 <p className="mb-4">
                   Los humanos aprendemos de experiencias y almacenamos recuerdos, pero nuestra <strong>capacidad de memoria es finita</strong>. La IA no tiene estas limitaciones y puede recordar y aplicar información sin desgaste cognitivo.
                 </p>
@@ -426,7 +426,7 @@ const BlogPost = () => {
               </div>
 
               <div className="bg-gradient-to-br from-primary/10 to-accent/10 p-6 rounded-lg">
-                <h3 className="text-xl font-bold mb-4">🎧 Atención al Cliente</h3>
+                <h3 className="text-xl font-bold mb-4">Atención al Cliente</h3>
                 <h4 className="font-semibold mb-2">Chatbots Inteligentes</h4>
                 <p className="text-sm mb-4">Asistencia automatizada 24/7 con respuestas precisas.</p>
                 
@@ -468,7 +468,7 @@ const BlogPost = () => {
               </div>
 
               <div className="bg-muted/30 p-6 rounded-lg">
-                <h3 className="text-xl font-bold mb-3">🎤 Búsqueda por Voz</h3>
+                <h3 className="text-xl font-bold mb-3">Búsqueda por Voz</h3>
                 <p className="mb-4">Adaptación del contenido para consultas conversacionales.</p>
                 <div className="flex flex-wrap gap-2">
                   <Badge variant="outline">ChatGPT</Badge>
@@ -496,7 +496,7 @@ const BlogPost = () => {
               </div>
 
               <div className="bg-gradient-to-br from-accent/5 to-primary/5 p-6 rounded-lg">
-                <h3 className="text-xl font-bold mb-4">🎯 Segmentación Avanzada</h3>
+                <h3 className="text-xl font-bold mb-4">Segmentación Avanzada</h3>
                 <ul className="space-y-2 text-sm">
                   <li>• Google Ads Audience Targeting</li>
                   <li>• SaveMyLeads para Meta Ads</li>
@@ -506,7 +506,7 @@ const BlogPost = () => {
               </div>
 
               <div className="bg-gradient-to-br from-primary/5 to-accent/5 p-6 rounded-lg">
-                <h3 className="text-xl font-bold mb-4">🎨 Creación de Contenido</h3>
+                <h3 className="text-xl font-bold mb-4">Creación de Contenido</h3>
                 <ul className="space-y-2 text-sm">
                   <li>• AdCreative.ai para creativos</li>
                   <li>• Google Responsive Search Ads</li>
@@ -530,17 +530,17 @@ const BlogPost = () => {
             
             <div className="space-y-6 mb-8">
               <div className="bg-gradient-to-r from-primary/10 to-accent/10 p-6 rounded-lg">
-                <h3 className="text-xl font-bold mb-3">🚀 Automatización Avanzada</h3>
+                <h3 className="text-xl font-bold mb-3">Automatización Avanzada</h3>
                 <p>La IA evoluciona hacia la automatización no solo de tareas repetitivas, sino también creativas, generando contenido personalizado en tiempo real.</p>
               </div>
 
               <div className="bg-gradient-to-r from-accent/10 to-primary/10 p-6 rounded-lg">
-                <h3 className="text-xl font-bold mb-3">🎨 IA Generativa Multimodal</h3>
+                <h3 className="text-xl font-bold mb-3">IA Generativa Multimodal</h3>
                 <p>Modelos como GPT-4 y DALL-E lideran la creación automática de texto, imágenes y próximamente vídeo interactivo.</p>
               </div>
 
               <div className="bg-gradient-to-r from-primary/10 to-accent/10 p-6 rounded-lg">
-                <h3 className="text-xl font-bold mb-3">🎯 Personalización Extrema</h3>
+                <h3 className="text-xl font-bold mb-3">Personalización Extrema</h3>
                 <p>La IA permitirá personalización aún más precisa utilizando grandes volúmenes de datos para recomendaciones específicas.</p>
               </div>
             </div>

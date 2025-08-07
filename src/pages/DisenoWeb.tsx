@@ -232,7 +232,7 @@ const DisenoWeb = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
-                🎨 Diseño Web Profesional
+                Diseño Web Profesional
               </Badge>
               <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
                 Diseño y Desarrollo Web que <span className="text-gradient-primary">Convierte</span>
@@ -350,7 +350,7 @@ const DisenoWeb = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-accent/10 text-accent border-accent/20">
-              🎯 Tipos de Web
+              Tipos de Web
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Webs Especializadas para cada <span className="text-gradient-primary">Necesidad</span>

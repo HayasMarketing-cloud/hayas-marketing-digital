@@ -313,7 +313,7 @@ const TiendaOnline = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-accent/10 text-accent border-accent/20">
-              🚀 Funcionalidades Avanzadas
+              Funcionalidades Avanzadas
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Potencia tu Tienda con <span className="text-gradient-primary">IA y Automatización</span>

@@ -260,21 +260,21 @@ const CasoExitoJointsUp = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
                 <Card className="text-center border-none shadow-lg hover:shadow-xl transition-all duration-300">
                   <CardContent className="p-6">
-                    <div className="text-4xl mb-4">🧭</div>
+                    <div className="text-4xl mb-4"></div>
                     <h3 className="text-xl font-bold text-hayas-600 mb-3">Mensaje de marca claro y diferenciador</h3>
                     <p className="text-gray-600 leading-relaxed">La nueva identidad verbal y visual refleja con precisión su especialización en cirugía articular y atención avanzada.</p>
                   </CardContent>
                 </Card>
                 <Card className="text-center border-none shadow-lg hover:shadow-xl transition-all duration-300">
                   <CardContent className="p-6">
-                    <div className="text-4xl mb-4">📡</div>
+                    <div className="text-4xl mb-4"></div>
                     <h3 className="text-xl font-bold text-turquesa-600 mb-3">Nuevo canal de comunicación con pacientes</h3>
                     <p className="text-gray-600 leading-relaxed">Lanzamos un sistema de comunicación más holístico y profesional, alineado con la filosofía de la clínica y su trato cercano.</p>
                   </CardContent>
                 </Card>
                 <Card className="text-center border-none shadow-lg hover:shadow-xl transition-all duration-300">
                   <CardContent className="p-6">
-                    <div className="text-4xl mb-4">🏥</div>
+                    <div className="text-4xl mb-4"></div>
                     <h3 className="text-xl font-bold text-hayas-600 mb-3">Posicionamiento como referentes médicos</h3>
                     <p className="text-gray-600 leading-relaxed">La marca transmite confianza a colegas y pacientes, fortaleciendo su rol como clínica especializada de referencia.</p>
                   </CardContent>
