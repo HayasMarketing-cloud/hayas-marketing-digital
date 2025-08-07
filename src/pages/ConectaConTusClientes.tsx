@@ -173,9 +173,6 @@ const ConectaConTusClientes = () => {
                 <Button className="gradient-primary text-white py-6 px-8 text-lg font-medium">
                   Agenda una Consulta
                 </Button>
-                <Button variant="outline" className="py-6 px-8 text-lg font-medium">
-                  Ver Demo
-                </Button>
               </div>
             </div>
           </div>
