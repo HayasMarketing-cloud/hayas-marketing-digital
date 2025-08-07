@@ -1,4 +1,5 @@
 import React from 'react';
+import assistantHeroImage from '@/assets/asistente-ia-hero.jpg';
 import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -233,7 +234,7 @@ const AsistenteIA: React.FC = () => {
             <div className="relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <img 
-                  src="/lovable-uploads/33d68296-8cdf-4012-934b-214b42e6902d.png"
+                  src={assistantHeroImage}
                   alt="Asistente IA para atención al cliente"
                   className="w-full h-auto"
                 />
