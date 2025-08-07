@@ -45,6 +45,7 @@ const CasosExito = () => {
   };
 
   const formatTagName = (tag: string) => {
+    if (tag === 'diseño-web') return 'Diseño Web';
     return tag.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase());
   };
 
