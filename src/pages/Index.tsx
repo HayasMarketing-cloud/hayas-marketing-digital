@@ -65,7 +65,7 @@ const Index = () => {
         <ContactSection />
       </main>
       
-      <Footer />
+      <Footer showKitSection={true} />
     </div>
   );
 };

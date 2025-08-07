@@ -3,9 +3,16 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight, Building2, Users } from 'lucide-react';
-const Footer = () => {
+
+interface FooterProps {
+  showKitSection?: boolean;
+}
+
+const Footer: React.FC<FooterProps> = ({ showKitSection = false }) => {
   const currentYear = new Date().getFullYear();
-  return <footer className="bg-gray-900 text-gray-300">
+  
+  return (
+    <footer className="bg-gray-900 text-gray-300">
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
@@ -35,22 +42,22 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold text-white mb-4">Servicios</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="hover:text-turquesa transition-colors">Chatbots Estratégicos</a></li>
-              <li><a href="#" className="hover:text-turquesa transition-colors">Formación en IA Aplicada</a></li>
-              <li><a href="#" className="hover:text-turquesa transition-colors">Influencer Digital</a></li>
-              <li><a href="#" className="hover:text-turquesa transition-colors">Automatización Comercial</a></li>
-              <li><a href="#" className="hover:text-turquesa transition-colors">Lead Scoring Predictivo</a></li>
+              <li><a href="#" className="hover:text-secondary transition-colors">Chatbots Estratégicos</a></li>
+              <li><a href="#" className="hover:text-secondary transition-colors">Formación en IA Aplicada</a></li>
+              <li><a href="#" className="hover:text-secondary transition-colors">Influencer Digital</a></li>
+              <li><a href="#" className="hover:text-secondary transition-colors">Automatización Comercial</a></li>
+              <li><a href="#" className="hover:text-secondary transition-colors">Lead Scoring Predictivo</a></li>
             </ul>
           </div>
           
           <div>
             <h3 className="text-xl font-bold text-white mb-4">Enlaces rápidos</h3>
             <ul className="space-y-3">
-              <li><a href="/#top" className="hover:text-turquesa transition-colors">Inicio</a></li>
-              <li><a href="#servicios" className="hover:text-turquesa transition-colors">Servicios</a></li>
-              <li><a href="#nosotros" className="hover:text-turquesa transition-colors">¿Por qué elegirnos?</a></li>
-              <li><a href="#contacto" className="hover:text-turquesa transition-colors">Contacto</a></li>
-              <li><a href="#" className="hover:text-turquesa transition-colors">Blog</a></li>
+              <li><a href="/#top" className="hover:text-secondary transition-colors">Inicio</a></li>
+              <li><a href="#servicios" className="hover:text-secondary transition-colors">Servicios</a></li>
+              <li><a href="#nosotros" className="hover:text-secondary transition-colors">¿Por qué elegirnos?</a></li>
+              <li><a href="#contacto" className="hover:text-secondary transition-colors">Contacto</a></li>
+              <li><a href="#" className="hover:text-secondary transition-colors">Blog</a></li>
             </ul>
           </div>
           
@@ -58,19 +65,19 @@ const Footer = () => {
             <h3 className="text-xl font-bold text-white mb-4">Contacto</h3>
             <ul className="space-y-3">
               <li className="flex items-start">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 mt-0.5 text-turquesa" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 mt-0.5 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <a href="mailto:contacto@hayas.marketing" className="hover:text-turquesa transition-colors">contacto@hayas.marketing</a>
+                <a href="mailto:contacto@hayas.marketing" className="hover:text-secondary transition-colors">contacto@hayas.marketing</a>
               </li>
               <li className="flex items-start">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 mt-0.5 text-turquesa" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 mt-0.5 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                <a href="tel:+34912345678" className="hover:text-turquesa transition-colors">+34 912 345 678</a>
+                <a href="tel:+34912345678" className="hover:text-secondary transition-colors">+34 912 345 678</a>
               </li>
               <li className="flex items-start">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 mt-0.5 text-turquesa" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 mt-0.5 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
@@ -80,104 +87,108 @@ const Footer = () => {
           </div>
         </div>
         
-        {/* Priority CTAs Section */}
-        <div className="border-t border-gray-800 mt-12 pt-8">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-white mb-6">Agentes de transformación digital a través de los Fondos Next Generation de la Unión Europea</h3>
-            <div className="flex justify-center mb-6">
-              <div className="bg-white rounded-lg p-4 shadow-lg">
-                <img src="/lovable-uploads/e3910419-c73c-4448-a631-ed5f0eff61fe.png" alt="Agentes oficiales - Gobierno de España, Red.es, Kit Digital, Financiado por la Unión Europea" className="h-12 w-auto max-w-full" />
-              </div>
-            </div>
-            <p className="text-gray-400 max-w-2xl mx-auto text-xl">
-              Programa de subvenciones para autónomos y empresas españolas. <span className="text-white font-bold text-xl">Disponible hasta el próximo 31 de octubre de 2025</span>
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-            {/* Kit Consulting CTA */}
-            <div className="bg-gradient-to-br from-hayas-600 to-hayas-700 rounded-xl p-6 text-white relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full transform translate-x-16 -translate-y-16"></div>
-              <div className="relative z-10">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-24 h-24 bg-white/90 rounded-lg p-3 flex items-center justify-center">
-                    <img src="/lovable-uploads/33d68296-8cdf-4012-934b-214b42e6902d.png" alt="Kit Consulting Logo" className="w-full h-auto" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-lg">Kit Consulting</h4>
-                    <p className="text-white/80 text-sm">PYMEs 10-249 empleados</p>
-                    <p className="text-white/60 text-xs mt-1">Con Hayas, tú solo eliges. Nosotros nos ocupamos de todo.</p>
-                  </div>
+        {/* Priority CTAs Section - Solo en Home */}
+        {showKitSection && (
+          <div className="border-t border-gray-800 mt-12 pt-8">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-bold text-white mb-6">Agentes de transformación digital a través de los Fondos Next Generation de la Unión Europea</h3>
+              <div className="flex justify-center mb-6">
+                <div className="bg-white rounded-lg p-4 shadow-lg">
+                  <img src="/lovable-uploads/e3910419-c73c-4448-a631-ed5f0eff61fe.png" alt="Agentes oficiales - Gobierno de España, Red.es, Kit Digital, Financiado por la Unión Europea" className="h-12 w-auto max-w-full" />
                 </div>
-                <p className="text-white/90 mb-4 text-sm">
-                  <span className="font-semibold">Implementación de IA</span> en tu Estrategia de Marketing y Ventas para automatizar procesos y aumentar conversiones.
-                </p>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <div className="w-5 h-5 bg-white/20 rounded-full flex items-center justify-center">
-                      <span className="text-xs">✓</span>
+              </div>
+              <p className="text-gray-400 max-w-2xl mx-auto text-xl">
+                Programa de subvenciones para autónomos y empresas españolas. <span className="text-white font-bold text-xl">Disponible hasta el próximo 31 de octubre de 2025</span>
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+              {/* Kit Consulting CTA */}
+              <div className="bg-gradient-to-br from-hayas-600 to-hayas-700 rounded-xl p-6 text-white relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full transform translate-x-16 -translate-y-16"></div>
+                <div className="relative z-10">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-24 h-24 bg-white/90 rounded-lg p-3 flex items-center justify-center">
+                      <img src="/lovable-uploads/33d68296-8cdf-4012-934b-214b42e6902d.png" alt="Kit Consulting Logo" className="w-full h-auto" />
                     </div>
-                    <Badge className="bg-white/20 text-white border-white/30 font-bold">
-                      Hasta 24.000€
-                    </Badge>
+                    <div>
+                      <h4 className="font-bold text-lg">Kit Consulting</h4>
+                      <p className="text-white/80 text-sm">PYMEs 10-249 empleados</p>
+                      <p className="text-white/60 text-xs mt-1">Con Hayas, tú solo eliges. Nosotros nos ocupamos de todo.</p>
+                    </div>
                   </div>
-                  <Button asChild variant="secondary" size="sm" className="bg-white text-hayas-700 hover:bg-gray-100 font-semibold">
-                    <Link to="/kit-consulting">
-                      Solicítalo ahora <ArrowRight className="ml-1 h-4 w-4" />
-                    </Link>
-                  </Button>
+                  <p className="text-white/90 mb-4 text-sm">
+                    <span className="font-semibold">Implementación de IA</span> en tu Estrategia de Marketing y Ventas para automatizar procesos y aumentar conversiones.
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <div className="w-5 h-5 bg-white/20 rounded-full flex items-center justify-center">
+                        <span className="text-xs">✓</span>
+                      </div>
+                      <Badge className="bg-white/20 text-white border-white/30 font-bold">
+                        Hasta 24.000€
+                      </Badge>
+                    </div>
+                    <Button asChild variant="secondary" size="sm" className="bg-white text-hayas-700 hover:bg-gray-100 font-semibold">
+                      <Link to="/kit-consulting">
+                        Solicítalo ahora <ArrowRight className="ml-1 h-4 w-4" />
+                      </Link>
+                    </Button>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Kit Digital CTA */}
-            <div className="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-xl p-6 text-white relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full transform translate-x-16 -translate-y-16"></div>
-              <div className="relative z-10">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-24 h-24 bg-white/90 rounded-lg p-3 flex items-center justify-center">
-                    <img src="/lovable-uploads/f9d2b651-7c92-42b3-86ce-64e3add924c6.png" alt="Kit Digital Logo" className="w-full h-auto" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-lg">Kit Digital</h4>
-                    <p className="text-white/80 text-sm">Autónomos y pymes hasta 2 empleados</p>
-                    <p className="text-white/60 text-xs mt-1">Con Hayas, tú solo eliges. Nosotros nos ocupamos de todo.</p>
-                  </div>
-                </div>
-                <p className="text-white/90 mb-4 text-sm">
-                  Soluciones de <span className="font-semibold">branding y marketing digital</span> (no incluye publicidad en buscadores)
-                </p>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <div className="w-5 h-5 bg-white/20 rounded-full flex items-center justify-center">
-                      <span className="text-xs">✓</span>
+              {/* Kit Digital CTA */}
+              <div className="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-xl p-6 text-white relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full transform translate-x-16 -translate-y-16"></div>
+                <div className="relative z-10">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-24 h-24 bg-white/90 rounded-lg p-3 flex items-center justify-center">
+                      <img src="/lovable-uploads/f9d2b651-7c92-42b3-86ce-64e3add924c6.png" alt="Kit Digital Logo" className="w-full h-auto" />
                     </div>
-                    <Badge className="bg-white/20 text-white border-white/30 font-bold">
-                      Hasta 3.000€
-                    </Badge>
+                    <div>
+                      <h4 className="font-bold text-lg">Kit Digital</h4>
+                      <p className="text-white/80 text-sm">Autónomos y pymes hasta 2 empleados</p>
+                      <p className="text-white/60 text-xs mt-1">Con Hayas, tú solo eliges. Nosotros nos ocupamos de todo.</p>
+                    </div>
                   </div>
-                  <Button asChild variant="secondary" size="sm" className="bg-white text-blue-700 hover:bg-gray-100 font-semibold">
-                    <Link to="/kit-digital">
-                      Solicítalo ahora <ArrowRight className="ml-1 h-4 w-4" />
-                    </Link>
-                  </Button>
+                  <p className="text-white/90 mb-4 text-sm">
+                    Soluciones de <span className="font-semibold">branding y marketing digital</span> (no incluye publicidad en buscadores)
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <div className="w-5 h-5 bg-white/20 rounded-full flex items-center justify-center">
+                        <span className="text-xs">✓</span>
+                      </div>
+                      <Badge className="bg-white/20 text-white border-white/30 font-bold">
+                        Hasta 3.000€
+                      </Badge>
+                    </div>
+                    <Button asChild variant="secondary" size="sm" className="bg-white text-blue-700 hover:bg-gray-100 font-semibold">
+                      <Link to="/kit-digital">
+                        Solicítalo ahora <ArrowRight className="ml-1 h-4 w-4" />
+                      </Link>
+                    </Button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        )}
         
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between">
           <div className="mb-4 md:mb-0">
             <p>&copy; {currentYear} Hayas Marketing. Todos los derechos reservados.</p>
           </div>
           <div className="flex space-x-6">
-            <a href="#" className="hover:text-turquesa transition-colors">Política de Privacidad</a>
-            <a href="#" className="hover:text-turquesa transition-colors">Términos de Servicio</a>
-            <a href="#" className="hover:text-turquesa transition-colors">Cookies</a>
+            <a href="#" className="hover:text-secondary transition-colors">Política de Privacidad</a>
+            <a href="#" className="hover:text-secondary transition-colors">Términos de Servicio</a>
+            <a href="#" className="hover:text-secondary transition-colors">Cookies</a>
           </div>
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 };
+
 export default Footer;
