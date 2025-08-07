@@ -1,74 +1,79 @@
 
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { MessageSquare, Users, Globe, Star, Calendar, Zap, Check } from 'lucide-react';
+import { MessageSquare, Users, Globe, Star, Calendar, Zap, Check, Paintbrush, ShoppingCart, Search, Bot, Server } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const allServices = [
   {
     id: 1,
-    icon: <MessageSquare className="h-10 w-10 text-turquesa" />,
-    title: "Chatbots Estratégicos",
-    description: "Desarrollo de chatbots personalizados para atención al cliente, captación de leads o automatización de consultas frecuentes, con un enfoque humano y conversacional."
+    icon: <Paintbrush className="h-10 w-10 text-hayas-primary" />,
+    title: "Creación de Marca",
+    description: "Identidad visual y branding completo para diferenciarte de la competencia.",
+    href: "/servicios/creacion-marca"
   },
   {
     id: 2,
-    icon: <Users className="h-10 w-10 text-turquesa" />,
-    title: "Formación en IA Aplicada",
-    description: "Capacitación práctica para que equipos de marketing, ventas y atención al cliente aprendan a usar herramientas de IA de forma estratégica, creativa y eficiente."
+    icon: <Users className="h-10 w-10 text-hayas-primary" />,
+    title: "Gestión de Redes Sociales",
+    description: "Community management profesional que construye comunidad y engagement.",
+    href: "/servicios/gestion-redes-sociales"
   },
   {
     id: 3,
-    icon: <Globe className="h-10 w-10 text-turquesa" />,
-    title: "Influencer Digital",
-    description: "Servicio orientado a profesionales que desean posicionarse como referentes en su sector, usando IA para potenciar su marca personal, generar contenido y aumentar visibilidad."
+    icon: <Star className="h-10 w-10 text-hayas-primary" />,
+    title: "Publicidad en Redes Sociales",
+    description: "Campañas publicitarias rentables en Facebook, Instagram y LinkedIn.",
+    href: "/servicios/publicidad-redes-sociales"
   },
   {
     id: 4,
-    icon: <MessageSquare className="h-10 w-10 text-turquesa" />,
-    title: "Chatbot de Atención al Cliente",
-    description: "Automatización de canales de atención con chatbots que resuelven dudas 24/7, mejoran la experiencia del usuario y reducen la carga operativa del equipo."
+    icon: <Search className="h-10 w-10 text-hayas-primary" />,
+    title: "Publicidad en Google Ads",
+    description: "SEM y campañas en Google para generar leads cualificados.",
+    href: "/servicios/publicidad-google-ads"
   },
   {
     id: 5,
-    icon: <Star className="h-10 w-10 text-turquesa" />,
-    title: "Automatización de Procesos Comerciales",
-    description: "Diseño de workflows inteligentes para optimizar procesos de venta, seguimiento de leads, envío de presupuestos y coordinación entre equipos comerciales."
+    icon: <Calendar className="h-10 w-10 text-hayas-primary" />,
+    title: "Implantación CRM",
+    description: "Setup completo de CRM personalizado para automatizar tu proceso comercial.",
+    href: "/servicios/implantacion-crm"
   },
   {
     id: 6,
-    icon: <Calendar className="h-10 w-10 text-turquesa" />,
-    title: "Lead Scoring Predictivo",
-    description: "Implementación de modelos de inteligencia artificial que detectan y priorizan los leads con mayor probabilidad de conversión según comportamiento y datos históricos."
+    icon: <Bot className="h-10 w-10 text-hayas-primary" />,
+    title: "Asistente IA para Atención al Cliente",
+    description: "Chatbots inteligentes 24/7 que mejoran la experiencia del cliente.",
+    href: "/servicios/asistente-ia-atencion-cliente"
   },
   {
     id: 7,
-    icon: <Zap className="h-10 w-10 text-turquesa" />,
-    title: "Análisis de Sentimiento y Voz del Cliente",
-    description: "Uso de IA para analizar reseñas, encuestas o chats y detectar emociones, problemas o oportunidades de mejora en la experiencia del cliente."
+    icon: <Server className="h-10 w-10 text-hayas-primary" />,
+    title: "Alojamiento y Mantenimiento Web",
+    description: "Hosting premium con mantenimiento técnico especializado.",
+    href: "/servicios/alojamiento-mantenimiento-web"
   },
   {
     id: 8,
-    icon: <Zap className="h-10 w-10 text-turquesa" />,
-    title: "Generación Automática de Contenidos",
-    description: "Creación de textos, emails y mensajes adaptados a cada perfil de cliente utilizando IA generativa, mejorando la relevancia y eficiencia del contenido."
+    icon: <Globe className="h-10 w-10 text-hayas-primary" />,
+    title: "Diseño Web",
+    description: "Webs que convierten visitantes en clientes con diseño profesional.",
+    href: "/servicios/diseno-web"
   },
   {
     id: 9,
-    icon: <Globe className="h-10 w-10 text-turquesa" />,
-    title: "Optimización de Precios y Promociones",
-    description: "Automatización inteligente de precios y campañas promocionales basadas en demanda, comportamiento de usuario, estacionalidad y objetivos comerciales."
+    icon: <Search className="h-10 w-10 text-hayas-primary" />,
+    title: "SEO y Posicionamiento",
+    description: "Aparece primero en Google con nuestras estrategias de SEO.",
+    href: "/servicios/seo-posicionamiento"
   },
   {
     id: 10,
-    icon: <Star className="h-10 w-10 text-turquesa" />,
-    title: "Dashboards Predictivos",
-    description: "Desarrollo de cuadros de mando en tiempo real con métricas clave, análisis predictivo y recomendaciones para la toma de decisiones estratégicas."
-  },
-  {
-    id: 11,
-    icon: <MessageSquare className="h-10 w-10 text-turquesa" />,
-    title: "Asistentes Digitales Especializados",
-    description: "Creación de asistentes virtuales personalizados para distintas áreas (marketing, SEO, RRHH, analítica, contenidos), diseñados para acompañar tareas específicas."
+    icon: <ShoppingCart className="h-10 w-10 text-hayas-primary" />,
+    title: "Creación Tienda Online",
+    description: "E-commerce que vende 24/7 con integración completa de sistemas.",
+    href: "/servicios/tienda-online"
   },
 ];
 
@@ -79,23 +84,25 @@ const AllServicesSection = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Todos Nuestros Servicios</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Descubre el catálogo completo de soluciones de automatización e inteligencia artificial para potenciar tu estrategia de marketing y ventas.
+            Descubre el catálogo completo de servicios profesionales que ofrecemos para hacer crecer tu negocio de forma estratégica y sostenible.
           </p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {allServices.map((service) => (
-            <Card key={service.id} className="border border-gray-100 hover:shadow-xl transition-shadow duration-300">
-              <CardHeader className="pb-2">
-                <div className="mb-4">{service.icon}</div>
-                <CardTitle className="text-xl font-bold">{service.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-gray-600 text-base">
-                  {service.description}
-                </CardDescription>
-              </CardContent>
-            </Card>
+            <Link key={service.id} to={service.href}>
+              <Card className="border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full">
+                <CardHeader className="pb-2">
+                  <div className="mb-4">{service.icon}</div>
+                  <CardTitle className="text-xl font-bold">{service.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-gray-600 text-base">
+                    {service.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            </Link>
           ))}
         </div>
       </div>
