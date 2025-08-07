@@ -113,6 +113,13 @@ const successCases = [
     testimonial: "El nuevo branding nos posicionó como líderes en nuestro sector. Resultados increíbles."
   },
   {
+    client: "Dr. Parrón",
+    service: "Identidad Corporativa + Web",
+    results: "Posicionamiento como referente médico",
+    timeframe: "3 meses",
+    testimonial: "La nueva identidad transmite confianza y profesionalidad. Mis pacientes valoran mucho la imagen renovada."
+  },
+  {
     client: "IV Extra",
     service: "Identidad Visual + Manual",
     results: "400% incremento en engagement",
