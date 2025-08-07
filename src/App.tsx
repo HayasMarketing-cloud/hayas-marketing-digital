@@ -40,6 +40,7 @@ import PublicidadRedesSociales from './pages/PublicidadRedesSociales';
 import PublicidadGoogleAds from './pages/PublicidadGoogleAds';
 import AsistenteIA from './pages/AsistenteIA';
 import AlojamientoMantenimiento from './pages/AlojamientoMantenimiento';
+import CasosExito from './pages/CasosExito';
 import ScrollToTop from './components/ScrollToTop';
 
 const queryClient = new QueryClient();
@@ -75,6 +76,9 @@ const App = () => (
           <Route path="/soluciones/captacion-leads" element={<CaptacionLeads />} />
           <Route path="/kit-consulting" element={<KitConsulting />} />
           <Route path="/kit-digital" element={<KitDigital />} />
+          
+          {/* CASOS DE ÉXITO - Página principal */}
+          <Route path="/casos-exito" element={<CasosExito />} />
           
           {/* CASOS DE ÉXITO - Apoyan las soluciones */}
           <Route path="/casos-exito/asendia" element={<CasoExitoAsendia />} />
