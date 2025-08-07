@@ -70,7 +70,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     service: "Naming, branding, diseño web",
     link: "/caso-exito-joints-up",
     image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?q=80&w=2087&auto=format&fit=crop",
-    tags: ["branding", "creacion-marca", "naming", "diseño-web", "medicina"]
+    tags: ["branding", "creacion-marca", "naming", "diseño-web", "medicina", "salud"]
   },
   {
     name: "Dr. Parrón",
@@ -78,7 +78,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     service: "Identidad corporativa, diseño web",
     link: "/caso-exito-dr-parron",
     image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=2071&auto=format&fit=crop",
-    tags: ["branding", "creacion-marca", "identidad-corporativa", "diseño-web", "medicina"]
+    tags: ["branding", "creacion-marca", "identidad-corporativa", "diseño-web", "medicina", "salud"]
   },
   {
     name: "Translate with Style",
