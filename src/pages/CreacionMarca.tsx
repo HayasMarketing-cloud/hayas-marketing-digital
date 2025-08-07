@@ -380,49 +380,6 @@ const CreacionMarca: React.FC = () => {
         </div>
       </section>
 
-      {/* Casos de Éxito */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-              Casos de Éxito en Branding
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Marcas que hemos creado y transformado, generando resultados 
-              reales y crecimiento sostenible para nuestros clientes.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {successCases.map((caso, index) => (
-              <Card key={index} className="group hover:shadow-lg transition-all duration-300">
-                <CardHeader>
-                  <div className="flex items-center justify-between mb-2">
-                    <CardTitle className="text-lg">{caso.client}</CardTitle>
-                    <Badge variant="secondary">{caso.timeframe}</Badge>
-                  </div>
-                  <p className="text-sm text-primary font-medium">{caso.service}</p>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="bg-green-50 dark:bg-green-950 p-4 rounded-lg">
-                    <p className="text-sm font-medium text-green-700 dark:text-green-300">
-                      {caso.results}
-                    </p>
-                  </div>
-                  <blockquote className="text-sm text-muted-foreground italic border-l-4 border-primary pl-4">
-                    "{caso.testimonial}"
-                  </blockquote>
-                  <div className="flex items-center">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Kit Digital */}
       <KitDigitalBanner />
