@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import jointsupHeroImage from '@/assets/jointsup-traumatology-hero.jpg';
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -84,8 +85,8 @@ const CasoExitoJointsUp = () => {
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-hayas-200 to-turquesa-200 rounded-3xl transform rotate-6 scale-105 opacity-20"></div>
                 <img 
-                  src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?q=80&w=2069&auto=format&fit=crop" 
-                  alt="Joints'Up - Cirugía Especializada" 
+                  src={jointsupHeroImage} 
+                  alt="Joints'Up - Cirugía Traumatológica Especializada" 
                   className="relative z-10 w-full h-auto rounded-3xl shadow-2xl"
                 />
               </div>
@@ -106,9 +107,10 @@ const CasoExitoJointsUp = () => {
                     <div>
                       <h3 className="text-xl font-semibold mb-4 text-hayas-600">Perfil del Cliente</h3>
                       <p className="text-gray-600 mb-6 leading-relaxed">
-                        Grupo de cirujanos traumatólogos altamente especializados en cirugía de hombro y rodilla. 
-                        Su práctica médica se centra en técnicas avanzadas y tratamientos innovadores para 
-                        problemas articulares complejos, atendiendo tanto a pacientes deportistas como población general.
+                        Grupo de cirujanos traumatólogos altamente especializados en cirugía de hombro, rodilla, 
+                        codo, manos y dedos, espalda y cadera. Su práctica médica se centra en técnicas avanzadas 
+                        y tratamientos innovadores para problemas articulares y óseos complejos, atendiendo tanto 
+                        a pacientes deportistas como población general.
                       </p>
                       <div className="space-y-3">
                         <div className="flex items-center gap-3">
@@ -121,7 +123,19 @@ const CasoExitoJointsUp = () => {
                         </div>
                         <div className="flex items-center gap-3">
                           <CheckCircle className="h-5 w-5 text-hayas-600" />
-                          <span className="text-gray-700">Técnicas quirúrgicas innovadoras</span>
+                          <span className="text-gray-700">Cirugía de codo especializada</span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <CheckCircle className="h-5 w-5 text-hayas-600" />
+                          <span className="text-gray-700">Cirugía de manos y dedos</span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <CheckCircle className="h-5 w-5 text-hayas-600" />
+                          <span className="text-gray-700">Cirugía de espalda y columna</span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <CheckCircle className="h-5 w-5 text-hayas-600" />
+                          <span className="text-gray-700">Cirugía de cadera avanzada</span>
                         </div>
                       </div>
                     </div>
