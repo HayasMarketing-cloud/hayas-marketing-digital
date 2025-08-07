@@ -254,26 +254,29 @@ const CasoExitoJointsUp = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-                Resultados y <span className="text-gradient-primary">Beneficios</span>
+                🧠 Transformación de Marca y <span className="text-gradient-primary">Posicionamiento Estratégico</span>
               </h2>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                <Card className="text-center border-none shadow-lg">
+                <Card className="text-center border-none shadow-lg hover:shadow-xl transition-all duration-300">
                   <CardContent className="p-6">
-                    <div className="text-3xl font-bold text-hayas-600 mb-2">+350%</div>
-                    <p className="text-gray-600">Aumento en consultas especializadas</p>
+                    <div className="text-4xl mb-4">🧭</div>
+                    <h3 className="text-xl font-bold text-hayas-600 mb-3">Mensaje de marca claro y diferenciador</h3>
+                    <p className="text-gray-600 leading-relaxed">La nueva identidad verbal y visual refleja con precisión su especialización en cirugía articular y atención avanzada.</p>
                   </CardContent>
                 </Card>
-                <Card className="text-center border-none shadow-lg">
+                <Card className="text-center border-none shadow-lg hover:shadow-xl transition-all duration-300">
                   <CardContent className="p-6">
-                    <div className="text-3xl font-bold text-turquesa-600 mb-2">90%</div>
-                    <p className="text-gray-600">Mejora en confianza del paciente</p>
+                    <div className="text-4xl mb-4">📡</div>
+                    <h3 className="text-xl font-bold text-turquesa-600 mb-3">Nuevo canal de comunicación con pacientes</h3>
+                    <p className="text-gray-600 leading-relaxed">Lanzamos un sistema de comunicación más holístico y profesional, alineado con la filosofía de la clínica y su trato cercano.</p>
                   </CardContent>
                 </Card>
-                <Card className="text-center border-none shadow-lg">
+                <Card className="text-center border-none shadow-lg hover:shadow-xl transition-all duration-300">
                   <CardContent className="p-6">
-                    <div className="text-3xl font-bold text-hayas-600 mb-2">+200%</div>
-                    <p className="text-gray-600">Incremento en derivaciones médicas</p>
+                    <div className="text-4xl mb-4">🏥</div>
+                    <h3 className="text-xl font-bold text-hayas-600 mb-3">Posicionamiento como referentes médicos</h3>
+                    <p className="text-gray-600 leading-relaxed">La marca transmite confianza a colegas y pacientes, fortaleciendo su rol como clínica especializada de referencia.</p>
                   </CardContent>
                 </Card>
               </div>
@@ -281,12 +284,10 @@ const CasoExitoJointsUp = () => {
               <Card className="border-none shadow-lg bg-gradient-to-br from-hayas-50 to-turquesa-50">
                 <CardContent className="p-8">
                   <blockquote className="text-lg italic text-gray-700 mb-4 text-center">
-                    "La identidad de Joints'Up ha transformado nuestra práctica médica. Los pacientes llegan 
-                    con mayor confianza y comprensión de nuestros servicios. La marca transmite exactamente 
-                    lo que somos: especialistas comprometidos con la excelencia en cirugía articular."
+                    "Con Hayas hemos logrado que nuestra identidad hable por nosotros. Ahora los pacientes y colegas entienden claramente nuestro enfoque, lo que ha elevado nuestra práctica médica."
                   </blockquote>
                   <div className="text-center">
-                    <p className="font-semibold text-hayas-600">- Director Médico de Joints'Up</p>
+                    <p className="font-semibold text-hayas-600">– Antonio M. Foruria, cirujano especializado en codo de Joints'Up</p>
                   </div>
                 </CardContent>
               </Card>
