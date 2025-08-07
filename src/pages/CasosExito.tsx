@@ -100,7 +100,7 @@ const CasosExito = () => {
       {/* Filters and Controls */}
       <section className="py-8 bg-muted/20">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
+          <div className="flex flex-col lg:flex-row gap-6 items-center justify-center">
             {/* Filtros */}
             <div className="flex flex-wrap gap-3">
               <Button
