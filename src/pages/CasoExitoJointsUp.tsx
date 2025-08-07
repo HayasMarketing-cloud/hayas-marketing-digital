@@ -74,7 +74,7 @@ const CasoExitoJointsUp = () => {
                   <Badge className="bg-hayas-100 text-hayas-700">Cirugía Traumatológica</Badge>
                   <Badge className="bg-turquesa-100 text-turquesa-700">Especialistas Médicos</Badge>
                 </div>
-                <Link to="https://jointsup.com" target="_blank">
+                <Link to="https://jointsup.es" target="_blank">
                   <Button className="gradient-primary text-white px-6 py-3">
                     Visitar Web
                     <ExternalLink className="w-4 h-4 ml-2" />
