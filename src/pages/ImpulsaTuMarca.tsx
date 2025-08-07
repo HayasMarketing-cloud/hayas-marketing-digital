@@ -357,6 +357,13 @@ const ImpulsaTuMarca = () => {
                   image: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?q=80&w=2069&auto=format&fit=crop"
                 },
                 {
+                  name: "Dr. Parrón",
+                  industry: "Traumatólogo especialista en cadera",
+                  service: "Identidad corporativa, diseño web",
+                  link: "/caso-exito-dr-parron",
+                  image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=2071&auto=format&fit=crop"
+                },
+                {
                   name: "Translate with Style",
                   industry: "Traductora profesional",
                   service: "Branding, estrategia, identidad visual",
