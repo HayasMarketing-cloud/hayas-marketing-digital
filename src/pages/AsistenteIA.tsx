@@ -138,7 +138,7 @@ const AsistenteIA: React.FC = () => {
       <Navigation />
       
       {/* Breadcrumb */}
-      <div className="bg-muted/30 py-4">
+      <div className="bg-muted/30 py-6 mt-4">
         <div className="container mx-auto px-4">
           <nav className="text-sm text-muted-foreground">
             <Link to="/" className="hover:text-primary">Inicio</Link>
