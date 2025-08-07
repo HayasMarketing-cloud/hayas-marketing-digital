@@ -151,7 +151,7 @@ const AsistenteIA: React.FC = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-primary/10 via-primary/5 to-background">
+      <section className="py-16 lg:py-24 bg-gradient-to-r from-primary/10 via-primary/5 to-background min-h-[80vh] flex items-center">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -180,7 +180,7 @@ const AsistenteIA: React.FC = () => {
             </div>
             <div className="relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img src={assistantHeroImage} alt="Asistente IA para atención al cliente" className="w-full h-auto" />
+                <img src={assistantHeroImage} alt="Asistente IA para atención al cliente" className="w-full h-auto object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
               </div>
             </div>
