@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import KitDigitalBanner from '@/components/KitDigitalBanner';
+import SuccessCasesSection from '@/components/SuccessCasesSection';
 
 import FAQSection from '@/components/FAQSection';
 import {
@@ -301,96 +302,13 @@ const ImpulsaTuMarca = () => {
         </section>
 
         {/* Success Cases Section */}
-        <section className="py-12 md:py-16 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Casos de <span className="text-gradient-primary">éxito</span>
-              </h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Últimos proyectos de branding e identidad de marca que han transformado negocios.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
-              {[
-                {
-                  name: "Nexo Vital",
-                  industry: "Enfermera especializada en salud integrativa",
-                  service: "Branding, web, estrategia de contenidos",
-                  link: "/caso-exito-nexo-vital",
-                  image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=2071&auto=format&fit=crop"
-                },
-                {
-                  name: "I Virgen Extra",
-                  industry: "Consultor ingeniero en AOVE",
-                  service: "Branding, desarrollo web, identidad",
-                  link: "/caso-exito-i-virgen-extra",
-                  image: "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?q=80&w=2069&auto=format&fit=crop"
-                },
-                {
-                  name: "Inbound Students",
-                  industry: "Servicios para estudiantes extranjeros",
-                  service: "Estrategia digital, diseño web",
-                  link: "/caso-exito-inbound-students",
-                  image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop"
-                },
-                {
-                  name: "Calisthenia Online",
-                  industry: "Entrenador personal online",
-                  service: "Branding, posicionamiento, automatización",
-                  link: "/caso-exito-calisthenia-online",
-                  image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070&auto=format&fit=crop"
-                },
-                {
-                  name: "Centro Roraima",
-                  industry: "Centro de desarrollo personal",
-                  service: "Branding, diseño web, contenidos",
-                  link: "/caso-exito-centro-roraima",
-                  image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop"
-                },
-                {
-                  name: "Joints'Up",
-                  industry: "Cirujanos traumatólogos",
-                  service: "Naming, branding, diseño web",
-                  link: "/caso-exito-joints-up",
-                  image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?q=80&w=2087&auto=format&fit=crop"
-                },
-                {
-                  name: "Dr. Parrón",
-                  industry: "Traumatólogo especialista en cadera",
-                  service: "Identidad corporativa, diseño web",
-                  link: "/caso-exito-dr-parron",
-                  image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=2071&auto=format&fit=crop"
-                },
-                {
-                  name: "Translate with Style",
-                  industry: "Traductora profesional",
-                  service: "Branding, estrategia, identidad visual",
-                  link: "/caso-exito-translate-with-style",
-                  image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=2070&auto=format&fit=crop"
-                }
-              ].map((project, index) => (
-                <Link key={index} to={project.link}>
-                  <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden cursor-pointer h-full">
-                    <div className="aspect-square overflow-hidden">
-                      <img 
-                        src={project.image} 
-                        alt={project.name}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                    <CardContent className="p-4">
-                      <h3 className="text-lg font-bold mb-2">{project.name}</h3>
-                      <p className="text-sm text-gray-500 mb-3">{project.industry}</p>
-                      <p className="text-sm text-gray-600">{project.service}</p>
-                    </CardContent>
-                  </Card>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
+        <SuccessCasesSection
+          id="casos-exito"
+          title="Casos de <span className='text-gradient-primary'>éxito</span>"
+          subtitle="Últimos proyectos de branding e identidad de marca que han transformado negocios."
+          filterTags={["branding", "creacion-marca"]}
+          showAllLink={true}
+        />
 
         {/* CTA Section */}
         <section className="py-8 md:py-12 bg-gradient-to-r from-hayas-600 to-turquesa text-white">

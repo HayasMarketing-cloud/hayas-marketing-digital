@@ -8,6 +8,7 @@ import { Badge } from '@/components/ui/badge';
 import KitDigitalBanner from '@/components/KitDigitalBanner';
 import ContactSection from '@/components/ContactSection';
 import FAQSection from '@/components/FAQSection';
+import SuccessCasesSection from '@/components/SuccessCasesSection';
 import { 
   Globe, Palette, Code, Smartphone, Search, BarChart3, 
   ArrowRight, CheckCircle, Star, Zap, Users, TrendingUp,
@@ -477,52 +478,13 @@ const DisenoWeb = () => {
       </section>
 
       {/* Success Cases */}
-      <section id="casos-exito" className="py-16 md:py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Casos de <span className="text-gradient-primary">Éxito</span>
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Webs que hemos desarrollado y que están generando resultados excepcionales para nuestros clientes.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {successCases.map((case_, index) => (
-              <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <CardHeader>
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-2xl">{case_.image}</span>
-                    <div className="flex">
-                      {[1,2,3,4,5].map((star) => (
-                        <Star key={star} className="h-4 w-4 text-yellow-500 fill-current" />
-                      ))}
-                    </div>
-                  </div>
-                  <CardTitle className="text-lg">{case_.name}</CardTitle>
-                  <p className="text-sm text-gray-500">{case_.category}</p>
-                </CardHeader>
-                <CardContent className="space-y-3">
-                  <Badge variant="outline" className="text-primary border-primary/30">
-                    {case_.service}
-                  </Badge>
-                  <p className="text-sm text-gray-600 font-medium">{case_.results}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-          
-          <div className="text-center mt-12">
-            <Button variant="outline" size="lg" asChild>
-              <Link to="/casos-de-exito">
-                Ver Todos los Casos de Éxito
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <SuccessCasesSection
+        id="casos-exito"
+        title="Casos de <span className='text-gradient-primary'>Éxito</span>"
+        subtitle="Webs que hemos desarrollado y que están generando resultados excepcionales para nuestros clientes."
+        filterTags={["diseño-web"]}
+        showAllLink={true}
+      />
 
       {/* Kit Digital Banner */}
       <KitDigitalBanner />
