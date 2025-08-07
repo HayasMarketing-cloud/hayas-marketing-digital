@@ -3,6 +3,12 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { ChevronDown, ArrowRight } from 'lucide-react';
 
+// Import company logos
+import centroRoraimaLogo from '@/assets/logos/centro-roraima-logo.png';
+import asendiaLogo from '@/assets/logos/asendia-logo.png';
+import jointsupLogo from '@/assets/logos/jointsup-logo.png';
+import ivExtraLogo from '@/assets/logos/iv-extra-logo.png';
+
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -67,10 +73,10 @@ const Navigation = () => {
       ]
     },
     casosExito: [
-      { title: 'Centro Roraima', href: '/caso-exito-centro-roraima', image: '/lovable-uploads/2a2adcf5-d531-4d8c-91bd-bb12aac27976.png', solution: 'Branding + Web' },
-      { title: 'Asendia', href: '/caso-exito-asendia', image: '/lovable-uploads/37a206e4-890d-4d31-a1c4-7dc674fe47a4.png', solution: 'CRM + Automatización' },
-      { title: 'JointsUp', href: '/caso-exito-jointsup', image: '/lovable-uploads/564421eb-e67c-4075-95c0-1405855106cc.png', solution: 'Marca + Posicionamiento' },
-      { title: 'IV Extra', href: '/caso-exito-iv-extra', image: '/lovable-uploads/eb03ebcf-1212-4adb-9f73-1020279eb265.png', solution: 'Branding + Web' }
+      { title: 'Centro Roraima', href: '/caso-exito-centro-roraima', image: '/lovable-uploads/2a2adcf5-d531-4d8c-91bd-bb12aac27976.png', logo: centroRoraimaLogo, solution: 'Branding + Web' },
+      { title: 'Asendia', href: '/caso-exito-asendia', image: '/lovable-uploads/37a206e4-890d-4d31-a1c4-7dc674fe47a4.png', logo: asendiaLogo, solution: 'CRM + Automatización' },
+      { title: 'JointsUp', href: '/caso-exito-jointsup', image: '/lovable-uploads/564421eb-e67c-4075-95c0-1405855106cc.png', logo: jointsupLogo, solution: 'Marca + Posicionamiento' },
+      { title: 'IV Extra', href: '/caso-exito-iv-extra', image: '/lovable-uploads/eb03ebcf-1212-4adb-9f73-1020279eb265.png', logo: ivExtraLogo, solution: 'Branding + Web' }
     ],
     servicios: [
       { title: 'Creación de Marca', href: '/servicios/creacion-marca', description: 'Identidad visual y branding completo' },
@@ -352,12 +358,20 @@ const Navigation = () => {
                     onClick={() => setActiveMegaMenu(null)}
                   >
                     <div className="flex flex-col items-center space-y-3">
-                      <div className="w-16 h-16 rounded-lg overflow-hidden bg-muted flex-shrink-0">
+                      <div className="relative w-16 h-16 rounded-lg overflow-hidden bg-muted flex-shrink-0">
                         <img 
                           src={caso.image} 
                           alt={caso.title}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
                         />
+                        {/* Company Logo Overlay */}
+                        <div className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-white p-1 border border-border">
+                          <img 
+                            src={caso.logo} 
+                            alt={`${caso.title} logo`}
+                            className="w-full h-full object-contain"
+                          />
+                        </div>
                       </div>
                       <div className="text-center">
                         <h5 className="font-medium text-foreground group-hover:text-primary transition-colors">
