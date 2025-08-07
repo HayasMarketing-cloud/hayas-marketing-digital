@@ -54,7 +54,7 @@ const ImpulsaTuMarca = () => {
           </div>
         </section>
         {/* Hero Section */}
-        <section className="relative py-8 md:py-12 bg-gradient-to-br from-hayas-50 to-turquesa-50 overflow-hidden">
+        <section className="relative py-8 md:py-12 bg-gradient-to-br from-hayas-50 to-hayas-100 overflow-hidden">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
@@ -90,7 +90,7 @@ const ImpulsaTuMarca = () => {
                 </div>
               </div>
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-hayas-200 to-turquesa-200 rounded-3xl transform rotate-6 scale-105 opacity-20"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-hayas-200 to-hayas-300 rounded-3xl transform rotate-6 scale-105 opacity-20"></div>
                 <img 
                   src="https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=2064&auto=format&fit=crop" 
                   alt="Creación de marca profesional" 
@@ -107,7 +107,7 @@ const ImpulsaTuMarca = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1">
                 <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-br from-hayas-100 to-turquesa-100 rounded-2xl transform rotate-3"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-hayas-100 to-hayas-200 rounded-2xl transform rotate-3"></div>
                   <img 
                     src="https://images.unsplash.com/photo-1542744094-3a31f272c490?q=80&w=2070&auto=format&fit=crop" 
                     alt="Identidad de marca estratégica" 
@@ -143,8 +143,8 @@ const ImpulsaTuMarca = () => {
                   </div>
                   
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-turquesa-100 rounded-lg flex items-center justify-center">
-                      <Target className="h-6 w-6 text-turquesa-600" />
+                    <div className="flex-shrink-0 w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center">
+                      <Target className="h-6 w-6 text-secondary" />
                     </div>
                     <div>
                       <h3 className="text-xl font-semibold mb-2">Posicionamiento Estratégico</h3>
@@ -194,7 +194,7 @@ const ImpulsaTuMarca = () => {
                   description: "Comprendemos tus valores, público objetivo, competidores y metas a corto y largo plazo, estableciendo una base sólida."
                 },
                 {
-                  icon: <Lightbulb className="h-12 w-12 text-turquesa-600" />,
+                  icon: <Lightbulb className="h-12 w-12 text-secondary" />,
                   title: "Conceptos",
                   description: "Nuestro equipo creativo trabaja en la generación de ideas, explorando narrativas de marca y elementos visuales para crear una identidad única."
                 },
@@ -204,7 +204,7 @@ const ImpulsaTuMarca = () => {
                   description: "Buscamos inspiración en diversas fuentes y compartimos referencias contigo para validar la dirección creativa de nuestro trabajo."
                 },
                 {
-                  icon: <Presentation className="h-12 w-12 text-turquesa-600" />,
+                  icon: <Presentation className="h-12 w-12 text-secondary" />,
                   title: "Presentación",
                   description: "Incluye la narrativa de tu marca y elementos visuales, marcando el comienzo de la transformación de tu visión en una identidad de marca tangible."
                 }
@@ -246,10 +246,10 @@ const ImpulsaTuMarca = () => {
                   color: "hayas"
                 },
                 {
-                  icon: <Palette className="h-10 w-10 text-turquesa-600" />,
+                  icon: <Palette className="h-10 w-10 text-secondary" />,
                   title: "Imagen de Marca",
                   description: "No nos limitamos al diseño del logo. Con nuestra experiencia en teoría gráfica, creamos una imagen completa que refleje los valores de tu marca. Diseñamos una imagen que conecte emocionalmente con tu audiencia y se destaque.",
-                  color: "turquesa"
+                  color: "secondary"
                 },
                 {
                   icon: <FileText className="h-10 w-10 text-hayas-600" />,
@@ -260,7 +260,7 @@ const ImpulsaTuMarca = () => {
               ].map((service, index) => (
                 <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 h-full">
                   <CardHeader className="text-center pb-4">
-                    <div className={`mb-4 mx-auto p-4 rounded-full w-fit ${service.color === 'hayas' ? 'bg-hayas-100' : 'bg-turquesa-100'}`}>
+                    <div className={`mb-4 mx-auto p-4 rounded-full w-fit ${service.color === 'hayas' ? 'bg-hayas-100' : 'bg-secondary/10'}`}>
                       {service.icon}
                     </div>
                     <CardTitle className="text-2xl font-bold">
@@ -277,7 +277,7 @@ const ImpulsaTuMarca = () => {
             </div>
             
             {/* CTA Section */}
-            <div className="text-center bg-gradient-to-br from-hayas-50 to-turquesa-50 rounded-2xl p-8 md:p-12 mt-12">
+            <div className="text-center bg-gradient-to-br from-hayas-50 to-hayas-100 rounded-2xl p-8 md:p-12 mt-12">
               <h3 className="text-2xl md:text-3xl font-bold mb-4">
                 ¿Listo para crear o rediseñar tu <span className="text-gradient-primary">marca</span>?
               </h3>
@@ -304,14 +304,14 @@ const ImpulsaTuMarca = () => {
         {/* Success Cases Section */}
         <SuccessCasesSection
           id="casos-exito"
-          title="Casos de <span className='text-gradient-primary'>éxito</span>"
+          title="Casos de éxito"
           subtitle="Últimos proyectos de branding e identidad de marca que han transformado negocios."
           filterTags={["branding", "creacion-marca"]}
           showAllLink={true}
         />
 
         {/* CTA Section */}
-        <section className="py-8 md:py-12 bg-gradient-to-r from-hayas-600 to-turquesa text-white">
+        <section className="py-8 md:py-12 bg-gradient-to-r from-hayas-600 to-hayas-secondary text-white">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               ¿Listo para crear una marca que destaque?
