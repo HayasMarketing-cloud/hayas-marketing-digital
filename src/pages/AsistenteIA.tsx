@@ -151,7 +151,7 @@ const AsistenteIA: React.FC = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="py-16 lg:py-24 bg-gradient-to-r from-primary/10 via-primary/5 to-background min-h-[80vh] flex items-center">
+      <section className="py-12 lg:py-16 bg-gradient-to-r from-primary/10 via-primary/5 to-background">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
