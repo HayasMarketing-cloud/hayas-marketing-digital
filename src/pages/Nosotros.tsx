@@ -171,7 +171,7 @@ const Nosotros = () => {
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient-primary">Nuestra Historia</h2>
                 <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-                  Desde 2016, transformamos la forma en que las empresas se conectan con sus clientes a través del marketing digital
+                  Desde 2014, ayudamos a emprendedores y empresas a conectar de forma más efectiva y auténtica con sus clientes, impulsando su crecimiento a través de estrategias de marketing digital esenciales.
                 </p>
               </div>
               
