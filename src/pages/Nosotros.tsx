@@ -180,8 +180,7 @@ const Nosotros = () => {
                   <Target className="h-12 w-12 text-hayas-primary mx-auto mb-4" />
                   <h3 className="text-xl font-semibold mb-3 text-hayas-primary">Nuestra Misión</h3>
                   <p className="text-gray-700">
-                    Lanzar e impulsar el crecimiento de emprendedores, startups y empresas mediante soluciones 
-                    integrales de marketing digital y automatización que generen resultados reales y medibles.
+                    Impulsar el crecimiento de emprendedores, pymes y empresas mediante soluciones estratégicas y personalizadas que integren lo esencial en marketing digital, CRM y automatización, generando resultados medibles, sostenibles y con impacto real.
                   </p>
                 </div>
                 
@@ -189,8 +188,7 @@ const Nosotros = () => {
                   <Lightbulb className="h-12 w-12 text-hayas-primary mx-auto mb-4" />
                   <h3 className="text-xl font-semibold mb-3 text-hayas-primary">Nuestra Visión</h3>
                   <p className="text-gray-700">
-                    Ser la agencia de referencia en España para la implementación de tecnología aplicada al marketing y ventas, 
-                    especializándonos en CRM, automatización e inteligencia artificial.
+                    Ser una agencia de marketing internacional de referencia en España, reconocida por su enfoque estratégico 360 y su capacidad para integrar estrategia digital, gestión de clientes y tecnología avanzada, liderando la aplicación inteligente de la IA y la automatización para transformar la manera en que las empresas captan, convierten y fidelizan clientes.
                   </p>
                 </div>
                 
@@ -198,8 +196,7 @@ const Nosotros = () => {
                   <Award className="h-12 w-12 text-hayas-primary mx-auto mb-4" />
                   <h3 className="text-xl font-semibold mb-3 text-hayas-primary">Nuestro Compromiso</h3>
                   <p className="text-gray-700">
-                    Desarrollar soluciones personalizadas que combinen estrategia digital, tecnología avanzada 
-                    e inteligencia artificial para maximizar la eficiencia y el retorno de inversión de nuestros clientes.
+                    Diseñar e implementar soluciones personalizadas que combinen estrategia, creatividad y tecnología para maximizar la eficiencia, la conexión con las audiencias y el retorno de inversión de nuestros clientes, manteniendo siempre un enfoque humano y ético.
                   </p>
                 </div>
               </div>
