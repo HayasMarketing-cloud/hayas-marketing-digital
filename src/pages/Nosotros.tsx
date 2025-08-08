@@ -1,24 +1,10 @@
-
 import React from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import ReviewsSection from '@/components/ReviewsSection';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { 
-  Target, 
-  Users, 
-  TrendingUp, 
-  Award, 
-  CheckCircle, 
-  Lightbulb,
-  Zap,
-  Heart,
-  ArrowRight,
-  Trees,
-  GitBranch,
-  Anchor
-} from 'lucide-react';
+import { Target, Users, TrendingUp, Award, CheckCircle, Lightbulb, Zap, Heart, ArrowRight, Trees, GitBranch, Anchor } from 'lucide-react';
 
 // Import logos
 import hubspotLogo from '@/assets/logos/hubspot-logo.png';
@@ -28,112 +14,105 @@ import metaLogo from '@/assets/logos/meta-logo.png';
 import wordpressLogo from '@/assets/logos/wordpress-logo.png';
 import lovableLogo from '@/assets/logos/lovable-logo.png';
 import aiLogo from '@/assets/logos/ai-logo.png';
-
 const Nosotros = () => {
-  const teamMembers = [
-    {
-      name: "Rubén",
-      role: "CEO & Founder",
-      description: "Visionario y líder estratégico, especializado en transformación digital y crecimiento empresarial sostenible.",
-      image: "/lovable-uploads/4aedecdb-9c20-490d-ba11-072181bdf3d6.png"
-    },
-    {
-      name: "Fátima",
-      role: "Social Media Manager",
-      description: "Experta en gestión de redes sociales, creación de contenido y community management para potenciar la presencia digital.",
-      image: "/lovable-uploads/b6816c4b-e843-4d7b-b2b9-7f935a389f54.png"
-    },
-    {
-      name: "Ebelyn",
-      role: "Digital Marketing Manager",
-      description: "Especialista en estrategias digitales integrales, SEO, SEM y automatización de campañas para maximizar el ROI.",
-      image: "/lovable-uploads/869ded51-92ac-41e0-815c-65c18ee5a35d.png"
-    },
-    {
-      name: "Sandra",
-      role: "Directora de Arte",
-      description: "Creativa experta en branding, diseño visual y experiencia de usuario. Transforma ideas en identidades visuales impactantes.",
-      image: "/lovable-uploads/ce1fa101-303c-4d7c-8fcf-c33db3e18dba.png"
-    },
-    {
-      name: "Iolanda",
-      role: "Key Account Manager",
-      description: "Gestora de cuentas clave especializada en relaciones comerciales estratégicas y crecimiento de clientes corporativos.",
-      image: "/lovable-uploads/55bec5bb-9e3b-4208-9101-ea3fa923568f.png"
-    },
-    {
-      name: "Daniela",
-      role: "Key Account Manager", 
-      description: "Responsable de desarrollo comercial y atención personalizada a clientes estratégicos, garantizando resultados excepcionales.",
-      image: "/lovable-uploads/26de1124-c82f-4741-800d-030e305eb147.png"
-    }
-  ];
-
-  const values = [
-    {
-      icon: <Target className="h-8 w-8 text-white" />,
-      title: "Estrategia",
-      description: "Desarrollamos estrategias personalizadas basadas en un análisis profundo de tu negocio, mercado y objetivos específicos."
-    },
-    {
-      icon: <Zap className="h-8 w-8 text-white" />,
-      title: "Eficiencia",
-      description: "Implementamos tecnologías y procesos que automatizan tareas repetitivas, optimizando recursos y maximizando el ROI."
-    },
-    {
-      icon: <TrendingUp className="h-8 w-8 text-white" />,
-      title: "Adaptación",
-      description: "Nos mantenemos a la vanguardia tecnológica, integrando las últimas innovaciones como IA y automatización avanzada."
-    },
-    {
-      icon: <Heart className="h-8 w-8 text-white" />,
-      title: "Crecimiento Sostenible",
-      description: "Construimos soluciones escalables que crecen contigo, estableciendo relaciones comerciales duraderas y exitosas."
-    }
-  ];
-
-  const methodology = [
-    {
-      step: "01",
-      title: "Análisis y Diagnóstico",
-      description: "Evaluamos tu situación actual, identificamos oportunidades y definimos objetivos claros."
-    },
-    {
-      step: "02", 
-      title: "Estrategia Personalizada",
-      description: "Diseñamos un plan de acción específico adaptado a tu sector, presupuesto y metas."
-    },
-    {
-      step: "03",
-      title: "Implementación Tecnológica", 
-      description: "Ejecutamos la estrategia utilizando las mejores herramientas y tecnologías disponibles."
-    },
-    {
-      step: "04",
-      title: "Formación del Equipo",
-      description: "Capacitamos a tu equipo para que pueda gestionar y optimizar las herramientas implementadas."
-    },
-    {
-      step: "05",
-      title: "Seguimiento Continuo",
-      description: "Monitoreamos resultados y realizamos optimizaciones constantes para mejorar el rendimiento."
-    }
-  ];
-
-  const certifications = [
-    { name: "HubSpot Partner", logo: "/lovable-uploads/5b8c9d90-e355-4b27-b2a3-018f2c5a6734.png" },
-    { name: "Go High Level", logo: "/lovable-uploads/5d28af4c-58ec-4895-8624-3261f0debd4a.png" },
-    { name: "Google Partner", logo: googleLogo },
-    { name: "Meta Business Partner", logo: "/lovable-uploads/e9556961-6aaa-41da-8ccb-fc0cdbd24142.png" },
-    { name: "WordPress", logo: "/lovable-uploads/ed1d9897-ed2d-49a3-9ce2-1cea880aee32.png" },
-    { name: "Lovable Partner", logo: "/lovable-uploads/fb2f07e0-ba96-4372-91b6-842a64e4c41e.png" },
-    { name: "WhatsApp Business", logo: "/lovable-uploads/d5141b27-1db2-4f9b-8ff4-486fb23e0ae8.png" },
-    { name: "Shopify Partner", logo: "/lovable-uploads/481fb23a-8710-41bb-93e6-b3c991fa58c8.png" },
-    { name: "Aircall Partner", logo: "/lovable-uploads/b18fc977-3bb3-4613-8232-8fac4fb4d9ee.png" }
-  ];
-
-  return (
-    <div className="min-h-screen flex flex-col">
+  const teamMembers = [{
+    name: "Rubén",
+    role: "CEO & Founder",
+    description: "Visionario y líder estratégico, especializado en transformación digital y crecimiento empresarial sostenible.",
+    image: "/lovable-uploads/4aedecdb-9c20-490d-ba11-072181bdf3d6.png"
+  }, {
+    name: "Fátima",
+    role: "Social Media Manager",
+    description: "Experta en gestión de redes sociales, creación de contenido y community management para potenciar la presencia digital.",
+    image: "/lovable-uploads/b6816c4b-e843-4d7b-b2b9-7f935a389f54.png"
+  }, {
+    name: "Ebelyn",
+    role: "Digital Marketing Manager",
+    description: "Especialista en estrategias digitales integrales, SEO, SEM y automatización de campañas para maximizar el ROI.",
+    image: "/lovable-uploads/869ded51-92ac-41e0-815c-65c18ee5a35d.png"
+  }, {
+    name: "Sandra",
+    role: "Directora de Arte",
+    description: "Creativa experta en branding, diseño visual y experiencia de usuario. Transforma ideas en identidades visuales impactantes.",
+    image: "/lovable-uploads/ce1fa101-303c-4d7c-8fcf-c33db3e18dba.png"
+  }, {
+    name: "Iolanda",
+    role: "Key Account Manager",
+    description: "Gestora de cuentas clave especializada en relaciones comerciales estratégicas y crecimiento de clientes corporativos.",
+    image: "/lovable-uploads/55bec5bb-9e3b-4208-9101-ea3fa923568f.png"
+  }, {
+    name: "Daniela",
+    role: "Key Account Manager",
+    description: "Responsable de desarrollo comercial y atención personalizada a clientes estratégicos, garantizando resultados excepcionales.",
+    image: "/lovable-uploads/26de1124-c82f-4741-800d-030e305eb147.png"
+  }];
+  const values = [{
+    icon: <Target className="h-8 w-8 text-white" />,
+    title: "Estrategia",
+    description: "Desarrollamos estrategias personalizadas basadas en un análisis profundo de tu negocio, mercado y objetivos específicos."
+  }, {
+    icon: <Zap className="h-8 w-8 text-white" />,
+    title: "Eficiencia",
+    description: "Implementamos tecnologías y procesos que automatizan tareas repetitivas, optimizando recursos y maximizando el ROI."
+  }, {
+    icon: <TrendingUp className="h-8 w-8 text-white" />,
+    title: "Adaptación",
+    description: "Nos mantenemos a la vanguardia tecnológica, integrando las últimas innovaciones como IA y automatización avanzada."
+  }, {
+    icon: <Heart className="h-8 w-8 text-white" />,
+    title: "Crecimiento Sostenible",
+    description: "Construimos soluciones escalables que crecen contigo, estableciendo relaciones comerciales duraderas y exitosas."
+  }];
+  const methodology = [{
+    step: "01",
+    title: "Análisis y Diagnóstico",
+    description: "Evaluamos tu situación actual, identificamos oportunidades y definimos objetivos claros."
+  }, {
+    step: "02",
+    title: "Estrategia Personalizada",
+    description: "Diseñamos un plan de acción específico adaptado a tu sector, presupuesto y metas."
+  }, {
+    step: "03",
+    title: "Implementación Tecnológica",
+    description: "Ejecutamos la estrategia utilizando las mejores herramientas y tecnologías disponibles."
+  }, {
+    step: "04",
+    title: "Formación del Equipo",
+    description: "Capacitamos a tu equipo para que pueda gestionar y optimizar las herramientas implementadas."
+  }, {
+    step: "05",
+    title: "Seguimiento Continuo",
+    description: "Monitoreamos resultados y realizamos optimizaciones constantes para mejorar el rendimiento."
+  }];
+  const certifications = [{
+    name: "HubSpot Partner",
+    logo: "/lovable-uploads/5b8c9d90-e355-4b27-b2a3-018f2c5a6734.png"
+  }, {
+    name: "Go High Level",
+    logo: "/lovable-uploads/5d28af4c-58ec-4895-8624-3261f0debd4a.png"
+  }, {
+    name: "Google Partner",
+    logo: googleLogo
+  }, {
+    name: "Meta Business Partner",
+    logo: "/lovable-uploads/e9556961-6aaa-41da-8ccb-fc0cdbd24142.png"
+  }, {
+    name: "WordPress",
+    logo: "/lovable-uploads/ed1d9897-ed2d-49a3-9ce2-1cea880aee32.png"
+  }, {
+    name: "Lovable Partner",
+    logo: "/lovable-uploads/fb2f07e0-ba96-4372-91b6-842a64e4c41e.png"
+  }, {
+    name: "WhatsApp Business",
+    logo: "/lovable-uploads/d5141b27-1db2-4f9b-8ff4-486fb23e0ae8.png"
+  }, {
+    name: "Shopify Partner",
+    logo: "/lovable-uploads/481fb23a-8710-41bb-93e6-b3c991fa58c8.png"
+  }, {
+    name: "Aircall Partner",
+    logo: "/lovable-uploads/b18fc977-3bb3-4613-8232-8fac4fb4d9ee.png"
+  }];
+  return <div className="min-h-screen flex flex-col">
       <Navigation />
       
       <main className="flex-grow pt-24">
@@ -187,9 +166,7 @@ const Nosotros = () => {
                 <div className="bg-white rounded-xl p-6 text-center shadow-corporate hover-scale">
                   <Lightbulb className="h-12 w-12 text-hayas-primary mx-auto mb-4" />
                   <h3 className="text-xl font-semibold mb-3 text-hayas-primary">Nuestra Visión</h3>
-                  <p className="text-gray-700">
-                    Ser una agencia de marketing internacional de referencia en España, reconocida por su enfoque estratégico 360 y su capacidad para integrar estrategia digital, gestión de clientes y tecnología avanzada, liderando la aplicación inteligente de la IA y la automatización para transformar la manera en que las empresas captan, convierten y fidelizan clientes.
-                  </p>
+                  <p className="text-gray-700">Ser una agencia de marketing internacional de referencia en España, con un enfoque estratégico 360 que combine estrategia digital, gestión de clientes y tecnología avanzada para impulsar el crecimiento y la competitividad de las empresas.</p>
                 </div>
                 
                 <div className="bg-white rounded-xl p-6 text-center shadow-corporate hover-scale">
@@ -207,13 +184,10 @@ const Nosotros = () => {
         {/* ¿Por qué Hayas? - Sección de origen del nombre */}
         <section className="py-16 md:py-20 relative overflow-hidden">
           {/* Fondo del bosque de hayas */}
-          <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage: `url('/lovable-uploads/1399f918-aa74-41b7-b838-f1dc283e5b87.png')`,
-              filter: 'brightness(0.6) contrast(1.1)',
-            }}
-          ></div>
+          <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
+          backgroundImage: `url('/lovable-uploads/1399f918-aa74-41b7-b838-f1dc283e5b87.png')`,
+          filter: 'brightness(0.6) contrast(1.1)'
+        }}></div>
           
           {/* Overlay para mejorar legibilidad */}
           <div className="absolute inset-0 bg-gradient-to-br from-white/80 via-white/75 to-white/70"></div>
@@ -327,15 +301,13 @@ const Nosotros = () => {
               </div>
               
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {values.map((value, index) => (
-                  <div key={index} className="text-center group">
+                {values.map((value, index) => <div key={index} className="text-center group">
                     <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                       {value.icon}
                     </div>
                     <h3 className="text-xl font-semibold mb-3 text-hayas-primary">{value.title}</h3>
                     <p className="text-gray-700">{value.description}</p>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
           </div>
@@ -353,20 +325,14 @@ const Nosotros = () => {
               </div>
               
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {teamMembers.map((member, index) => (
-                  <div key={index} className="bg-white rounded-xl p-6 text-center shadow-corporate hover-scale group">
+                {teamMembers.map((member, index) => <div key={index} className="bg-white rounded-xl p-6 text-center shadow-corporate hover-scale group">
                     <div className="relative w-48 h-48 mx-auto mb-4 overflow-hidden rounded-full border-4 border-gradient-primary">
-                      <img 
-                        src={member.image} 
-                        alt={`${member.name} - ${member.role}`}
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                      />
+                      <img src={member.image} alt={`${member.name} - ${member.role}`} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
                     </div>
                     <h3 className="text-xl font-semibold mb-2 text-hayas-primary">{member.name}</h3>
                     <p className="text-hayas-primary font-medium mb-3 text-sm">{member.role}</p>
                     <p className="text-gray-700 text-sm leading-relaxed">{member.description}</p>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
           </div>
@@ -384,8 +350,7 @@ const Nosotros = () => {
               </div>
               
               <div className="space-y-6">
-                {methodology.map((step, index) => (
-                  <div key={index} className="bg-white rounded-xl p-6 shadow-corporate hover-scale border border-gray-100">
+                {methodology.map((step, index) => <div key={index} className="bg-white rounded-xl p-6 shadow-corporate hover-scale border border-gray-100">
                     <div className="flex flex-col md:flex-row items-start gap-4">
                       <div className="flex-shrink-0">
                         <div className="w-12 h-12 bg-gradient-primary text-white rounded-full flex items-center justify-center font-bold text-lg">
@@ -398,8 +363,7 @@ const Nosotros = () => {
                       </div>
                       <ArrowRight className="hidden md:block h-6 w-6 text-gray-400" />
                     </div>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
           </div>
@@ -417,56 +381,38 @@ const Nosotros = () => {
               <div className="space-y-8">
                 {/* Primera línea - 3 logos */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  {certifications.slice(0, 3).map((cert, index) => (
-                    <div key={index} className="group hover-scale">
+                  {certifications.slice(0, 3).map((cert, index) => <div key={index} className="group hover-scale">
                       <div className="bg-white rounded-xl p-8 shadow-corporate border border-gray-100 group-hover:shadow-elegant transition-all duration-300">
                         <div className="h-20 flex items-center justify-center mb-4">
-                          <img 
-                            src={cert.logo} 
-                            alt={`${cert.name} logo`}
-                            className="h-16 w-auto object-contain filter transition-all duration-300 group-hover:scale-110"
-                          />
+                          <img src={cert.logo} alt={`${cert.name} logo`} className="h-16 w-auto object-contain filter transition-all duration-300 group-hover:scale-110" />
                         </div>
                         <p className="text-sm font-semibold text-hayas-primary text-center">{cert.name}</p>
                       </div>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
                 
                 {/* Segunda línea - 3 logos */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  {certifications.slice(3, 6).map((cert, index) => (
-                    <div key={index} className="group hover-scale">
+                  {certifications.slice(3, 6).map((cert, index) => <div key={index} className="group hover-scale">
                       <div className="bg-white rounded-xl p-8 shadow-corporate border border-gray-100 group-hover:shadow-elegant transition-all duration-300">
                         <div className="h-20 flex items-center justify-center mb-4">
-                          <img 
-                            src={cert.logo} 
-                            alt={`${cert.name} logo`}
-                            className="h-16 w-auto object-contain filter transition-all duration-300 group-hover:scale-110"
-                          />
+                          <img src={cert.logo} alt={`${cert.name} logo`} className="h-16 w-auto object-contain filter transition-all duration-300 group-hover:scale-110" />
                         </div>
                         <p className="text-sm font-semibold text-hayas-primary text-center">{cert.name}</p>
                       </div>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
                 
                 {/* Tercera línea - 3 logos */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  {certifications.slice(6).map((cert, index) => (
-                    <div key={index} className="group hover-scale">
+                  {certifications.slice(6).map((cert, index) => <div key={index} className="group hover-scale">
                       <div className="bg-white rounded-xl p-8 shadow-corporate border border-gray-100 group-hover:shadow-elegant transition-all duration-300">
                         <div className="h-20 flex items-center justify-center mb-4">
-                          <img 
-                            src={cert.logo} 
-                            alt={`${cert.name} logo`}
-                            className="h-16 w-auto object-contain filter transition-all duration-300 group-hover:scale-110"
-                          />
+                          <img src={cert.logo} alt={`${cert.name} logo`} className="h-16 w-auto object-contain filter transition-all duration-300 group-hover:scale-110" />
                         </div>
                         <p className="text-sm font-semibold text-hayas-primary text-center">{cert.name}</p>
                       </div>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </div>
             </div>
@@ -528,8 +474,6 @@ const Nosotros = () => {
       </main>
       
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Nosotros;
