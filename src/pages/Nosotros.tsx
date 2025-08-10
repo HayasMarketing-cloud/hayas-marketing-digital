@@ -14,6 +14,7 @@ import metaLogo from '@/assets/logos/meta-logo.png';
 import wordpressLogo from '@/assets/logos/wordpress-logo.png';
 import lovableLogo from '@/assets/logos/lovable-logo.png';
 import aiLogo from '@/assets/logos/ai-logo.png';
+import JoinFreelancersSection from '@/components/JoinFreelancersSection';
 const Nosotros = () => {
   const teamMembers = [{
     name: "Rubén",
@@ -337,6 +338,8 @@ const Nosotros = () => {
             </div>
           </div>
         </section>
+
+        <JoinFreelancersSection />
 
         {/* Nuestra Metodología - Fondo blanco */}
         <section className="py-16 md:py-20 bg-white">
