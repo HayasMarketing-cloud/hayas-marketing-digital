@@ -75,6 +75,13 @@ const allServices = [
     description: "E-commerce que vende 24/7 con integración completa de sistemas.",
     href: "/servicios/tienda-online"
   },
+  {
+    id: 11,
+    icon: <MessageSquare className="h-10 w-10 text-hayas-primary" />,
+    title: "Marketing Directo",
+    description: "Campañas físicas (catálogos, invitaciones, merchandising) + email marketing.",
+    href: "/servicios/marketing-directo"
+  },
 ];
 
 const AllServicesSection = () => {

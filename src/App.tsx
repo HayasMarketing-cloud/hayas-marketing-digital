@@ -40,6 +40,7 @@ import PublicidadRedesSociales from './pages/PublicidadRedesSociales';
 import PublicidadGoogleAds from './pages/PublicidadGoogleAds';
 import AsistenteIA from './pages/AsistenteIA';
 import AlojamientoMantenimiento from './pages/AlojamientoMantenimiento';
+import MarketingDirecto from './pages/MarketingDirecto';
 import CasosExito from './pages/CasosExito';
 import ScrollToTop from './components/ScrollToTop';
 
@@ -125,6 +126,7 @@ const App = () => (
           <Route path="/servicios/publicidad-google-ads" element={<PublicidadGoogleAds />} />
           <Route path="/servicios/asistente-ia-atencion-cliente" element={<AsistenteIA />} />
           <Route path="/servicios/alojamiento-mantenimiento-web" element={<AlojamientoMantenimiento />} />
+          <Route path="/servicios/marketing-directo" element={<MarketingDirecto />} />
           <Route path="/servicios" element={<NotFound />} />
           
           {/* 404 - DEBE IR SIEMPRE AL FINAL */}

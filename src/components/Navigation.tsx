@@ -84,6 +84,7 @@ const Navigation = () => {
       { title: 'Gestión de Redes Sociales', href: '/servicios/gestion-redes-sociales', description: 'Community management profesional' },
       { title: 'Publicidad en Redes Sociales', href: '/servicios/publicidad-redes-sociales', description: 'Campañas publicitarias rentables' },
       { title: 'Publicidad en Google Ads', href: '/servicios/publicidad-google-ads', description: 'SEM y campañas en Google' },
+      { title: 'Marketing Directo', href: '/servicios/marketing-directo', description: 'Catálogos e invitaciones con envío y email' },
       { title: 'Implantación CRM', href: '/servicios/implantacion-crm', description: 'Setup completo de CRM personalizado' },
       { title: 'Asistente IA para Atención al Cliente', href: '/servicios/asistente-ia-atencion-cliente', description: 'Chatbots inteligentes 24/7' },
       { title: 'Alojamiento y Mantenimiento Web', href: '/servicios/alojamiento-mantenimiento-web', description: 'Hosting premium con mantenimiento' },
