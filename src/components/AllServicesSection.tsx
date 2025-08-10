@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { MessageSquare, Users, Globe, Star, Calendar, Zap, Check, Paintbrush, ShoppingCart, Search, Bot, Server } from 'lucide-react';
+import { MessageSquare, Users, Globe, Star, Calendar, Zap, Check, Paintbrush, ShoppingCart, Search, Bot, Server, Filter } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const allServices = [
@@ -81,6 +81,13 @@ const allServices = [
     title: "Marketing Directo",
     description: "Campañas físicas (catálogos, invitaciones, merchandising) + email marketing.",
     href: "/servicios/marketing-directo"
+  },
+  {
+    id: 12,
+    icon: <Filter className="h-10 w-10 text-hayas-primary" />,
+    title: "Implementación de Funnel",
+    description: "Diseño, automatización y optimización de embudos de conversión.",
+    href: "/servicios/implementacion-funnel"
   },
 ];
 

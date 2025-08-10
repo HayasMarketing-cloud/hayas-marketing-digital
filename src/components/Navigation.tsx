@@ -61,7 +61,8 @@ const Navigation = () => {
           title: 'Gestión y Conversión de Clientes',
           items: [
             { title: 'CRM y Automatización', href: '/soluciones/crm-automatizacion', description: 'Workflows inteligentes' },
-            { title: 'Captación de Leads', href: '/soluciones/captacion-leads', description: 'Generación de oportunidades' }
+            { title: 'Captación de Leads', href: '/soluciones/captacion-leads', description: 'Generación de oportunidades' },
+            { title: 'Implementación de Funnel', href: '/servicios/implementacion-funnel', description: 'Diseño y optimización de embudos' }
           ]
         },
         {
@@ -85,6 +86,7 @@ const Navigation = () => {
       { title: 'Publicidad en Redes Sociales', href: '/servicios/publicidad-redes-sociales', description: 'Campañas publicitarias rentables' },
       { title: 'Publicidad en Google Ads', href: '/servicios/publicidad-google-ads', description: 'SEM y campañas en Google' },
       { title: 'Marketing Directo', href: '/servicios/marketing-directo', description: 'Catálogos e invitaciones con envío y email' },
+      { title: 'Implementación de Funnel', href: '/servicios/implementacion-funnel', description: 'Embudo de conversión con automatización' },
       { title: 'Implantación CRM', href: '/servicios/implantacion-crm', description: 'Setup completo de CRM personalizado' },
       { title: 'Asistente IA para Atención al Cliente', href: '/servicios/asistente-ia-atencion-cliente', description: 'Chatbots inteligentes 24/7' },
       { title: 'Alojamiento y Mantenimiento Web', href: '/servicios/alojamiento-mantenimiento-web', description: 'Hosting premium con mantenimiento' },
