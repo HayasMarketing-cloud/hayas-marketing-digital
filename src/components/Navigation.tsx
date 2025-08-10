@@ -50,14 +50,15 @@ const Navigation = () => {
       title: 'Soluciones',
       categories: [
         {
-          title: 'Marketing & Visibilidad',
+          title: 'Marketing y Visibilidad',
           items: [
             { title: 'Branding y Marca', href: '/soluciones/branding-marca', description: 'Identidad corporativa' },
-            { title: 'Marketing Digital', href: '/soluciones/marketing-digital', description: 'Estrategias digitales' }
+            { title: 'Marketing Digital', href: '/soluciones/marketing-digital', description: 'Estrategias digitales' },
+            { title: 'Alojamiento y Mantenimiento', href: '/servicios/alojamiento-mantenimiento-web', description: 'Hosting y mantenimiento web' }
           ]
         },
         {
-          title: 'Gestión & Conversión',
+          title: 'Gestión y Conversión de Clientes',
           items: [
             { title: 'CRM y Automatización', href: '/soluciones/crm-automatizacion', description: 'Workflows inteligentes' },
             { title: 'Captación de Leads', href: '/soluciones/captacion-leads', description: 'Generación de oportunidades' }
