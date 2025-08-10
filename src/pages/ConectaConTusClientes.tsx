@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
-import { CheckCircle, Users, Zap, Target, Clock, BarChart3, MessageSquare, Mail, ArrowLeft } from 'lucide-react';
+import { CheckCircle, Users, Zap, Target, Clock, BarChart3, MessageSquare, Mail, ArrowLeft, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import {
   Breadcrumb,
@@ -162,23 +162,40 @@ const ConectaConTusClientes = () => {
           </div>
         </section>
         {/* Hero Section */}
-        <section className="py-4 md:py-6 bg-gradient-to-br from-blue-50 to-cyan-50 min-h-[600px] flex items-center">
+        <section className="relative py-8 md:py-12 bg-gradient-to-br from-hayas-50 to-hayas-100 overflow-hidden">
           <div className="container mx-auto px-4">
-            <div className="text-center max-w-4xl mx-auto">
-              <Badge variant="outline" className="mb-6 text-blue-600 border-blue-200">
-                CRM y Automatización
-              </Badge>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-8 leading-tight text-gray-900">
-                CRM y <span className="text-gradient-primary">Automatización</span> de Marketing
-              </h1>
-              <p className="text-xl text-gray-700 mb-10 leading-relaxed">
-                Gestiona las relaciones e interacciones de tu empresa con los clientes desde una única plataforma. 
-                Automatiza procesos, optimiza la productividad y personaliza el seguimiento de cada cliente.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="gradient-primary text-white py-6 px-8 text-lg font-medium">
-                  Agenda una Consulta
-                </Button>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <Badge variant="outline" className="mb-4 text-hayas-600 border-hayas-200">
+                  CRM y Automatización
+                </Badge>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                  CRM y <span className="text-gradient-primary">Automatización</span> de Marketing
+                </h1>
+                <p className="text-xl text-gray-700 mb-8 leading-relaxed font-medium">
+                  Gestiona relaciones con tus clientes desde una única plataforma. Automatiza procesos, optimiza la productividad y personaliza cada interacción.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Link to="/?scrollTo=contacto">
+                    <Button className="gradient-primary text-white px-8 py-6 text-lg w-full sm:w-auto">
+                      Agenda una Consulta
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </Link>
+                  <a href="#beneficios">
+                    <Button variant="outline" className="px-8 py-6 text-lg">
+                      Ver beneficios
+                    </Button>
+                  </a>
+                </div>
+              </div>
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-hayas-200 to-hayas-300 rounded-3xl transform rotate-6 scale-105 opacity-20"></div>
+                <img 
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" 
+                  alt="Dashboard CRM y automatización" 
+                  className="relative z-10 w-full h-auto rounded-3xl shadow-2xl"
+                />
               </div>
             </div>
           </div>

@@ -2,6 +2,15 @@ import { ArrowLeft, Settings, TrendingUp, Zap, BarChart3, Target, Users, CheckCi
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbSeparator,
+  BreadcrumbPage,
+} from "@/components/ui/breadcrumb";
 import Seo from '@/components/Seo';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -64,55 +73,82 @@ const ActivaTuEstrategiaDigital = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background to-secondary/20">
+    <div id="top" className="min-h-screen bg-white">
       <Seo
         title="Activa tu estrategia digital | Consultoría, IA y Automatización"
         description="Integramos tecnología, automatización y analítica para escalar tu marketing con una estrategia digital clara."
         canonical="/soluciones/activa-tu-estrategia-digital"
       />
-      {/* Breadcrumb */}
-      <div className="container mx-auto px-4 pt-8">
-        <div className="flex items-center gap-2 text-sm text-muted-foreground mb-8">
-          <Link to="/" className="hover:text-primary transition-colors">Inicio</Link>
-          <span>/</span>
-          <span className="text-foreground">Activa tu Estrategia Digital</span>
-        </div>
+      <Navigation />
 
-        <Button variant="ghost" asChild className="mb-8">
-          <Link to="/" className="flex items-center gap-2">
-            <ArrowLeft className="h-4 w-4" />
-            Volver al inicio
-          </Link>
-        </Button>
-      </div>
-
-      {/* Hero Section */}
-      <section className="container mx-auto px-4 py-12">
-        <div className="max-w-4xl mx-auto text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
-            <TrendingUp className="h-4 w-4" />
-            Estrategia Digital Avanzada
+      <main className="pt-56">
+        {/* Breadcrumbs */}
+        <section className="py-4 bg-gray-50 border-b">
+          <div className="container mx-auto px-4">
+            <Breadcrumb>
+              <BreadcrumbList>
+                <BreadcrumbItem>
+                  <BreadcrumbLink asChild>
+                    <Link to="/">Inicio</Link>
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbPage>Activa tu Estrategia Digital</BreadcrumbPage>
+                </BreadcrumbItem>
+              </BreadcrumbList>
+            </Breadcrumb>
           </div>
-          
-          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent mb-6">
-            Activa tu Estrategia Digital
-          </h1>
-          
-          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Llevamos tu negocio al siguiente nivel con planificación estratégica, tecnología avanzada y mejora continua. 
-            Transformamos tu visión en resultados medibles.
-          </p>
+        </section>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
-              Solicitar Consultoría Gratuita
-            </Button>
-            <Button variant="outline" size="lg">
-              Ver Casos de Éxito
-            </Button>
+        {/* Header Navigation */}
+        <section className="py-6 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <Link to="/#top" className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors">
+              <ArrowLeft className="h-4 w-4 mr-2" />
+              Volver al Inicio
+            </Link>
           </div>
-        </div>
-      </section>
+        </section>
+
+        {/* Hero Section */}
+        <section className="relative py-8 md:py-12 bg-gradient-to-br from-hayas-50 to-hayas-100 overflow-hidden">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <Badge variant="outline" className="mb-4 text-hayas-600 border-hayas-200">
+                  Estrategia Digital Avanzada
+                </Badge>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                  Activa tu <span className="text-gradient-primary">Estrategia Digital</span>
+                </h1>
+                <p className="text-xl text-gray-700 mb-8 leading-relaxed font-medium">
+                  Llevamos tu negocio al siguiente nivel con planificación estratégica, tecnología avanzada y mejora continua. Transformamos tu visión en resultados medibles.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Link to="/?scrollTo=contacto">
+                    <Button className="gradient-primary text-white px-8 py-6 text-lg w-full sm:w-auto">
+                      Solicitar Consultoría Gratuita
+                    </Button>
+                  </Link>
+                  <a href="#casos-exito">
+                    <Button variant="outline" className="px-8 py-6 text-lg">
+                      Ver Casos de Éxito
+                    </Button>
+                  </a>
+                </div>
+              </div>
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-hayas-200 to-hayas-300 rounded-3xl transform rotate-6 scale-105 opacity-20"></div>
+                <img 
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop" 
+                  alt="Estrategia digital con tecnología y analítica" 
+                  className="relative z-10 w-full h-auto rounded-3xl shadow-2xl"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
 
       {/* Services Grid */}
       <section className="container mx-auto px-4 py-16">
@@ -219,10 +255,10 @@ const ActivaTuEstrategiaDigital = () => {
         </div>
       </section>
 
-      <KitConsultingBanner />
+        </main>
 
-      <Navigation />
-      <Footer />
+        <KitConsultingBanner />
+        <Footer />
     </div>
   );
 };
