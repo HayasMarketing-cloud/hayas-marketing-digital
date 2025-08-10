@@ -2,6 +2,7 @@ import { ArrowLeft, Settings, TrendingUp, Zap, BarChart3, Target, Users, CheckCi
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import Seo from '@/components/Seo';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import KitConsultingBanner from '@/components/KitConsultingBanner';
@@ -64,6 +65,11 @@ const ActivaTuEstrategiaDigital = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background to-secondary/20">
+      <Seo
+        title="Activa tu estrategia digital | Consultoría, IA y Automatización"
+        description="Integramos tecnología, automatización y analítica para escalar tu marketing con una estrategia digital clara."
+        canonical="/soluciones/activa-tu-estrategia-digital"
+      />
       {/* Breadcrumb */}
       <div className="container mx-auto px-4 pt-8">
         <div className="flex items-center gap-2 text-sm text-muted-foreground mb-8">

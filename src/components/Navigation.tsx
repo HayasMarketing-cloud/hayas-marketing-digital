@@ -96,6 +96,12 @@ const Navigation = () => {
     ]
   };
 
+  const pillars = [
+    { title: 'Impulsa tu marca', href: '/soluciones/impulsa-tu-marca' },
+    { title: 'Conecta con tus clientes', href: '/soluciones/conecta-con-tus-clientes' },
+    { title: 'Activa tu estrategia digital', href: '/soluciones/activa-tu-estrategia-digital' },
+  ];
+
   return (
     <>
       <header 
@@ -211,6 +217,24 @@ const Navigation = () => {
                 <div className="px-4 py-2">
                   <div className="text-foreground font-medium mb-4 border-b border-border pb-2">Soluciones</div>
                   <div className="space-y-4">
+                    {/* Pillar quick links */}
+                    <div className="pl-2 mb-2">
+                      <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2">Enfoques estratégicos</h4>
+                      <div className="pl-2 space-y-2">
+                        {pillars.map((p) => (
+                          <Link
+                            key={p.href}
+                            to={p.href}
+                            className="block text-sm text-foreground hover:text-primary transition-colors py-2 hover:bg-muted/50 px-2 rounded"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            {p.title}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Categories */}
                     {megaMenuData.soluciones.categories.map((category, idx) => (
                       <div key={idx}>
                         <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2">
@@ -306,36 +330,54 @@ const Navigation = () => {
           onMouseLeave={handleMouseLeave}
         >
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-3 gap-8 p-8">
-              {megaMenuData.soluciones.categories.map((category, idx) => (
-                <div key={idx} className="space-y-4">
-                  <h4 className="font-semibold text-foreground border-b border-border pb-2">
-                    {category.title}
-                  </h4>
-                  <div className="space-y-3">
-                    {category.items.map((item) => (
-                      <Link
-                        key={item.href}
-                        to={item.href}
-                        className="block group hover:bg-muted/50 p-3 rounded-lg transition-all duration-200"
-                        onClick={() => setActiveMegaMenu(null)}
-                      >
-                        <div className="flex items-start justify-between">
-                          <div>
-                            <h5 className="font-medium text-foreground group-hover:text-hayas-primary transition-colors">
-                              {item.title}
-                            </h5>
-                            <p className="text-sm text-muted-foreground mt-1">
-                              {item.description}
-                            </p>
+            <div className="p-8 space-y-6">
+              {/* Pillar Pages quick access */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {pillars.map((p) => (
+                  <Link
+                    key={p.href}
+                    to={p.href}
+                    className="flex items-center justify-between px-4 py-3 rounded-lg border hover:bg-muted/50 transition-colors group"
+                    onClick={() => setActiveMegaMenu(null)}
+                  >
+                    <span className="font-medium text-foreground group-hover:text-hayas-primary">{p.title}</span>
+                    <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-hayas-primary transition-transform group-hover:translate-x-1" />
+                  </Link>
+                ))}
+              </div>
+
+              {/* Solution categories */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {megaMenuData.soluciones.categories.map((category, idx) => (
+                  <div key={idx} className="space-y-4">
+                    <h4 className="font-semibold text-foreground border-b border-border pb-2">
+                      {category.title}
+                    </h4>
+                    <div className="space-y-3">
+                      {category.items.map((item) => (
+                        <Link
+                          key={item.href}
+                          to={item.href}
+                          className="block group hover:bg-muted/50 p-3 rounded-lg transition-all duration-200"
+                          onClick={() => setActiveMegaMenu(null)}
+                        >
+                          <div className="flex items-start justify-between">
+                            <div>
+                              <h5 className="font-medium text-foreground group-hover:text-hayas-primary transition-colors">
+                                {item.title}
+                              </h5>
+                              <p className="text-sm text-muted-foreground mt-1">
+                                {item.description}
+                              </p>
+                            </div>
+                            <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-hayas-primary transition-all duration-200 transform group-hover:translate-x-1" />
                           </div>
-                          <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-hayas-primary transition-all duration-200 transform group-hover:translate-x-1" />
-                        </div>
-                      </Link>
-                    ))}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>

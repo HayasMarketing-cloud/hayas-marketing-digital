@@ -1,4 +1,5 @@
 import React from 'react';
+import Seo from '@/components/Seo';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 
@@ -124,6 +125,11 @@ const successCases = [
 const ConectaConTusClientes = () => {
   return (
     <div id="top" className="min-h-screen flex flex-col">
+      <Seo
+        title="Conecta con tus clientes | CRM, Automatización y Leads"
+        description="Optimiza la captación, gestión y fidelización con CRM, automatizaciones y embudos que convierten."
+        canonical="/soluciones/conecta-con-tus-clientes"
+      />
       <Navigation />
       
       <main className="flex-grow pt-56">

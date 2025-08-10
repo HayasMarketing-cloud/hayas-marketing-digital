@@ -9,6 +9,7 @@ import AllServicesSection from '@/components/AllServicesSection';
 import WhyChooseUsSection from '@/components/WhyChooseUsSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
+import Seo from '@/components/Seo';
 import FAQSection from '@/components/FAQSection';
 
 const Index = () => {
@@ -26,9 +27,14 @@ const Index = () => {
   
   return (
     <div id="top" className="min-h-screen flex flex-col">
+      <Seo
+        title="Hayas Marketing | Estrategia, CRM, IA y Marketing"
+        description="Soluciones de marketing y ventas: branding, captación de leads, CRM, automatización e IA para hacer crecer tu negocio."
+        canonical="/"
+      />
       <Navigation />
       
-      <main className="flex-grow pt-24">
+      <main className="flex-grow pt-24" role="main">
         <HeroSection />
         <SolutionsSection />
         <ServicesSection />

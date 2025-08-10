@@ -8,6 +8,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import KitDigitalBanner from '@/components/KitDigitalBanner';
 import SuccessCasesSection from '@/components/SuccessCasesSection';
+import Seo from '@/components/Seo';
 
 import FAQSection from '@/components/FAQSection';
 import {
@@ -22,6 +23,11 @@ import {
 const ImpulsaTuMarca = () => {
   return (
     <div id="top" className="min-h-screen bg-white">
+      <Seo
+        title="Impulsa tu marca | Branding, identidad y visibilidad"
+        description="Fortalece tu marca con identidad clara, diseño y posicionamiento: branding, manual de marca y presencia estratégica."
+        canonical="/soluciones/impulsa-tu-marca"
+      />
       <Navigation />
       
       <main className="pt-56">
