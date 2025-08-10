@@ -48,31 +48,8 @@ const Navigation = () => {
   const megaMenuData = {
     soluciones: {
       title: 'Soluciones',
-      categories: [
-        {
-          title: 'Marketing y Visibilidad',
-          items: [
-            { title: 'Branding y Marca', href: '/soluciones/branding-marca', description: 'Identidad corporativa' },
-            { title: 'Marketing Digital', href: '/soluciones/marketing-digital', description: 'Estrategias digitales' },
-            { title: 'Alojamiento y Mantenimiento', href: '/servicios/alojamiento-mantenimiento-web', description: 'Hosting y mantenimiento web' }
-          ]
-        },
-        {
-          title: 'Gestión y Conversión de Clientes',
-          items: [
-            { title: 'CRM y Automatización', href: '/soluciones/crm-automatizacion', description: 'Workflows inteligentes' },
-            { title: 'Captación de Leads', href: '/soluciones/captacion-leads', description: 'Generación de oportunidades' },
-            { title: 'Implementación de Funnel', href: '/servicios/implementacion-funnel', description: 'Diseño y optimización de embudos' }
-          ]
-        },
-        {
-          title: 'Consultoría',
-          items: [
-            { title: 'Gestión Marketing', href: '/soluciones/gestion-marketing', description: 'Estrategia integral' },
-            { title: 'IA aplicada al Marketing', href: '/soluciones/ia-marketing', description: 'Automatización inteligente' }
-          ]
-        }
-      ]
+      // Clasificación antigua eliminada; usamos solo los 3 enfoques estratégicos
+      categories: []
     },
     casosExito: [
       { title: 'Centro Roraima', href: '/caso-exito-centro-roraima', image: '/lovable-uploads/2a2adcf5-d531-4d8c-91bd-bb12aac27976.png', logo: centroRoraimaLogo, solution: 'Branding + Web' },
