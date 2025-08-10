@@ -106,7 +106,7 @@ const Navigation = () => {
                 onMouseEnter={() => handleMouseEnter('soluciones')}
                 onMouseLeave={handleMouseLeave}
               >
-                <button className="text-foreground hover:text-hayas-primary font-medium transition-colors flex items-center gap-1 py-2">
+                <button className="text-foreground hover:text-primary font-medium transition-colors flex items-center gap-1 py-2">
                   Soluciones
                   <ChevronDown className="h-4 w-4 transition-transform duration-200" 
                     style={{ transform: activeMegaMenu === 'soluciones' ? 'rotate(180deg)' : 'rotate(0deg)' }} />
@@ -119,7 +119,7 @@ const Navigation = () => {
                 onMouseEnter={() => handleMouseEnter('casos')}
                 onMouseLeave={handleMouseLeave}
               >
-                <button className="text-foreground hover:text-hayas-primary font-medium transition-colors flex items-center gap-1 py-2">
+                <button className="text-foreground hover:text-primary font-medium transition-colors flex items-center gap-1 py-2">
                   Casos de Éxito
                   <ChevronDown className="h-4 w-4 transition-transform duration-200" 
                     style={{ transform: activeMegaMenu === 'casos' ? 'rotate(180deg)' : 'rotate(0deg)' }} />
@@ -132,20 +132,20 @@ const Navigation = () => {
                 onMouseEnter={() => handleMouseEnter('servicios')}
                 onMouseLeave={handleMouseLeave}
               >
-                <button className="text-foreground hover:text-hayas-primary font-medium transition-colors flex items-center gap-1 py-2">
+                <button className="text-foreground hover:text-primary font-medium transition-colors flex items-center gap-1 py-2">
                   Servicios
                   <ChevronDown className="h-4 w-4 transition-transform duration-200" 
                     style={{ transform: activeMegaMenu === 'servicios' ? 'rotate(180deg)' : 'rotate(0deg)' }} />
                 </button>
               </div>
 
-              <Link to="/nosotros" className="text-foreground hover:text-hayas-primary font-medium transition-colors">
+              <Link to="/nosotros" className="text-foreground hover:text-primary font-medium transition-colors">
                 La Agencia
               </Link>
-              <Link to="/blog" className="text-foreground hover:text-hayas-primary font-medium transition-colors">
+              <Link to="/blog" className="text-foreground hover:text-primary font-medium transition-colors">
                 Blog
               </Link>
-              <Link to="/contacto" className="text-foreground hover:text-hayas-primary font-medium transition-colors">
+              <Link to="/contacto" className="text-foreground hover:text-primary font-medium transition-colors">
                 Contacto
               </Link>
             </nav>
@@ -317,8 +317,8 @@ const Navigation = () => {
                     className="flex items-center justify-between px-4 py-3 rounded-lg border hover:bg-muted/50 transition-colors group"
                     onClick={() => setActiveMegaMenu(null)}
                   >
-                    <span className="font-medium text-foreground group-hover:text-hayas-primary">{p.title}</span>
-                    <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-hayas-primary transition-transform group-hover:translate-x-1" />
+                    <span className="font-medium text-foreground group-hover:text-primary">{p.title}</span>
+                    <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-transform group-hover:translate-x-1" />
                   </Link>
                 ))}
               </div>
@@ -340,14 +340,14 @@ const Navigation = () => {
                         >
                           <div className="flex items-start justify-between">
                             <div>
-                              <h5 className="font-medium text-foreground group-hover:text-hayas-primary transition-colors">
+                              <h5 className="font-medium text-foreground group-hover:text-primary transition-colors">
                                 {item.title}
                               </h5>
                               <p className="text-sm text-muted-foreground mt-1">
                                 {item.description}
                               </p>
                             </div>
-                            <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-hayas-primary transition-all duration-200 transform group-hover:translate-x-1" />
+                            <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-all duration-200 transform group-hover:translate-x-1" />
                           </div>
                         </Link>
                       ))}

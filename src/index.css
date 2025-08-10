@@ -17,7 +17,7 @@
     --popover-foreground: 222.2 84% 4.9%;
 
     /* Colores corporativos Hayas en HSL */
-    --primary: 89 100% 30%; /* #4D9A00 */
+    --primary: 207 100% 25%; /* #00467E */
     --primary-foreground: 0 0% 100%;
 
     --secondary: 170 95% 23%; /* #04725A */
@@ -29,15 +29,15 @@
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 89 100% 30%; /* #4D9A00 */
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 89 100% 30%;
+    --ring: 207 100% 25%;
 
     --radius: 0.5rem;
 
@@ -48,7 +48,7 @@
     --sidebar-accent: 240 4.8% 95.9%;
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 89 100% 30%;
+    --sidebar-ring: 207 100% 25%;
 
     /* Variables para gradiente corporativo */
     --hayas-primary: 89 100% 30%;
