@@ -3,7 +3,7 @@ import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { Palette, Layout, ShoppingCart, Search, Database, Megaphone } from 'lucide-react';
+import { Palette, Layout, ShoppingCart, Search, Database, Megaphone, BookOpenText } from 'lucide-react';
 
 const serviceItems = [
   {
@@ -47,6 +47,13 @@ const serviceItems = [
     title: "Publicidad en Google Ads",
     description: "Campañas de búsqueda y performance max orientadas a resultados y ROI medible.",
     href: "/servicios/publicidad-google-ads",
+  },
+  {
+    id: 7,
+    icon: <BookOpenText className="h-10 w-10 text-turquesa" />,
+    title: "Estrategia de contenidos",
+    description: "Plan editorial SEO y distribución multicanal para impulsar tu marca.",
+    href: "/servicios/estrategia-contenidos",
   },
 ];
 
