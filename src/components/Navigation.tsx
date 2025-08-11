@@ -431,27 +431,29 @@ const Navigation = () => {
               <h4 className="font-semibold text-foreground mb-4 border-b border-border pb-2">
                 Nuestros Servicios
               </h4>
-              <div className="grid grid-cols-2 gap-4 max-w-2xl">
-                {megaMenuData.servicios.map((servicio) => (
-                  <Link
-                    key={servicio.href}
-                    to={servicio.href}
-                    className="block group hover:bg-muted/50 p-4 rounded-lg transition-all duration-200"
-                    onClick={() => setActiveMegaMenu(null)}
-                  >
-                    <div className="flex items-start justify-between">
-                      <div>
-                        <h5 className="font-medium text-foreground group-hover:text-primary transition-colors">
-                          {servicio.title}
-                        </h5>
-                        <p className="text-sm text-muted-foreground mt-1">
-                          {servicio.description}
-                        </p>
+              <div className="max-h-[60vh] overflow-auto pr-2">
+                <div className="grid grid-cols-2 gap-4 max-w-2xl">
+                  {megaMenuData.servicios.map((servicio) => (
+                    <Link
+                      key={servicio.href}
+                      to={servicio.href}
+                      className="block group hover:bg-muted/50 p-4 rounded-lg transition-all duration-200"
+                      onClick={() => setActiveMegaMenu(null)}
+                    >
+                      <div className="flex items-start justify-between">
+                        <div>
+                          <h5 className="font-medium text-foreground group-hover:text-primary transition-colors">
+                            {servicio.title}
+                          </h5>
+                          <p className="text-sm text-muted-foreground mt-1">
+                            {servicio.description}
+                          </p>
+                        </div>
+                        <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-all duration-200 transform group-hover:translate-x-1" />
                       </div>
-                      <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-all duration-200 transform group-hover:translate-x-1" />
-                    </div>
-                  </Link>
-                ))}
+                    </Link>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
