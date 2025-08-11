@@ -1,44 +1,44 @@
 
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { MessageSquare, Users, Globe, Star, Calendar, Zap, Check } from 'lucide-react';
+import { Palette, Layout, ShoppingCart, Search, Database, Megaphone } from 'lucide-react';
 
 const serviceItems = [
   {
     id: 1,
-    icon: <MessageSquare className="h-10 w-10 text-turquesa" />,
-    title: "Chatbots Estratégicos",
-    description: "Desarrollo de chatbots personalizados para atención al cliente, captación de leads o automatización de consultas frecuentes."
+    icon: <Palette className="h-10 w-10 text-turquesa" />,
+    title: "Creación de Marca",
+    description: "Branding e identidad visual para lanzar o redefinir tu marca con coherencia y diferenciación."
   },
   {
     id: 2,
-    icon: <Users className="h-10 w-10 text-turquesa" />,
-    title: "Formación en IA Aplicada",
-    description: "Capacitación práctica para que equipos de marketing, ventas y atención al cliente aprendan a usar herramientas de IA."
+    icon: <Layout className="h-10 w-10 text-turquesa" />,
+    title: "Diseño Web",
+    description: "Webs rápidas, accesibles y orientadas a conversión con integración de analítica y SEO técnico."
   },
   {
     id: 3,
-    icon: <Globe className="h-10 w-10 text-turquesa" />,
-    title: "Influencer Digital",
-    description: "Servicio orientado a profesionales que desean posicionarse como referentes usando IA para potenciar su marca personal."
+    icon: <ShoppingCart className="h-10 w-10 text-turquesa" />,
+    title: "Tienda Online",
+    description: "Ecommerce optimizado para vender más, con pasarelas seguras e integraciones con CRM."
   },
   {
     id: 4,
-    icon: <Star className="h-10 w-10 text-turquesa" />,
-    title: "Automatización Comercial",
-    description: "Diseño de workflows inteligentes para optimizar procesos de venta, seguimiento de leads y coordinación comercial."
+    icon: <Search className="h-10 w-10 text-turquesa" />,
+    title: "Posicionamiento SEO",
+    description: "Estrategia SEO on-page, técnico y de contenidos para aumentar visibilidad y tráfico cualificado."
   },
   {
     id: 5,
-    icon: <Calendar className="h-10 w-10 text-turquesa" />,
-    title: "Lead Scoring Predictivo",
-    description: "Implementación de modelos de IA que detectan y priorizan los leads con mayor probabilidad de conversión."
+    icon: <Database className="h-10 w-10 text-turquesa" />,
+    title: "Implantación de CRM",
+    description: "Configuración de HubSpot o GHL, pipelines, automatizaciones y reporting para tu equipo."
   },
   {
     id: 6,
-    icon: <Zap className="h-10 w-10 text-turquesa" />,
-    title: "Generación de Contenidos",
-    description: "Creación de textos, emails y mensajes adaptados a cada perfil de cliente utilizando IA generativa."
+    icon: <Megaphone className="h-10 w-10 text-turquesa" />,
+    title: "Publicidad en Google Ads",
+    description: "Campañas de búsqueda y performance max orientadas a resultados y ROI medible."
   },
 ];
 
