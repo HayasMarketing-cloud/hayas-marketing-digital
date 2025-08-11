@@ -13,6 +13,8 @@ import {
   Filter,
   Zap,
   Check,
+  Megaphone,
+  FileText,
 } from 'lucide-react';
 
 import AdsBadgeIcon from '@/components/icons/AdsBadgeIcon';
@@ -129,7 +131,7 @@ export const allServices: ServiceItem[] = [
   },
   {
     id: 11,
-    icon: <MessageSquare className="h-10 w-10 text-hayas-primary" />,
+    icon: <Megaphone className="h-10 w-10 text-hayas-primary" />,
     title: 'Marketing Directo',
     description: 'Campañas físicas (catálogos, invitaciones, merchandising) + email marketing.',
     href: '/servicios/marketing-directo',
@@ -145,7 +147,7 @@ export const allServices: ServiceItem[] = [
   },
   {
     id: 13,
-    icon: <MessageSquare className="h-10 w-10 text-hayas-primary" />,
+    icon: <FileText className="h-10 w-10 text-hayas-primary" />,
     title: 'Estrategia de contenidos',
     description: 'Plan editorial y distribución multicanal para impulsar tu marca.',
     href: '/servicios/estrategia-contenidos',
