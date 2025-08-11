@@ -95,6 +95,14 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     link: "/casos-exito/formato-educativo",
     image: "https://images.unsplash.com/photo-1513258496099-48168024aec0?q=80&w=2070&auto=format&fit=crop",
     tags: ["automatizacion", "educacion", "marketing-digital"]
+  },
+  {
+    name: "OMR (Transportes Especiales)",
+    industry: "Agencia de transportes especiales",
+    service: "Diseño web y alojamiento/mantenimiento",
+    link: "/casos-exito/omr",
+    image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1920&auto=format&fit=crop",
+    tags: ["diseño-web", "alojamiento-mantenimiento", "transporte"]
   }
 ];
 
