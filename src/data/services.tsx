@@ -17,7 +17,7 @@ import {
   FileText,
 } from 'lucide-react';
 
-import AdsBadgeIcon from '@/components/icons/AdsBadgeIcon';
+import GoogleGIcon from '@/components/icons/GoogleGIcon';
 
 export type PillarKey = 'impulsa' | 'conecta' | 'activa';
 
@@ -75,7 +75,7 @@ export const allServices: ServiceItem[] = [
   },
   {
     id: 4,
-    icon: <AdsBadgeIcon className="h-10 w-10 text-hayas-primary" />,
+    icon: <GoogleGIcon className="h-10 w-10 text-hayas-primary" />,
     title: 'Publicidad en Google Ads',
     description: 'SEM y campañas en Google para generar leads cualificados.',
     href: '/servicios/publicidad-google-ads',
