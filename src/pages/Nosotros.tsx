@@ -4,7 +4,7 @@ import Footer from '@/components/Footer';
 import ReviewsSection from '@/components/ReviewsSection';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { Target, Users, TrendingUp, Award, CheckCircle, Lightbulb, Zap, Heart, ArrowRight, Trees, GitBranch, Anchor } from 'lucide-react';
+import { Target, Users, TrendingUp, Award, CheckCircle, Lightbulb, Zap, Heart, ArrowRight } from 'lucide-react';
 
 // Import logos
 import hubspotLogo from '@/assets/logos/hubspot-logo.png';
@@ -63,27 +63,6 @@ const Nosotros = () => {
     icon: <Heart className="h-8 w-8 text-white" />,
     title: "Crecimiento Sostenible",
     description: "Construimos soluciones escalables que crecen contigo, estableciendo relaciones comerciales duraderas y exitosas."
-  }];
-  const methodology = [{
-    step: "01",
-    title: "Análisis y Diagnóstico",
-    description: "Evaluamos tu situación actual, identificamos oportunidades y definimos objetivos claros."
-  }, {
-    step: "02",
-    title: "Estrategia Personalizada",
-    description: "Diseñamos un plan de acción específico adaptado a tu sector, presupuesto y metas."
-  }, {
-    step: "03",
-    title: "Implementación Tecnológica",
-    description: "Ejecutamos la estrategia utilizando las mejores herramientas y tecnologías disponibles."
-  }, {
-    step: "04",
-    title: "Formación del Equipo",
-    description: "Capacitamos a tu equipo para que pueda gestionar y optimizar las herramientas implementadas."
-  }, {
-    step: "05",
-    title: "Seguimiento Continuo",
-    description: "Monitoreamos resultados y realizamos optimizaciones constantes para mejorar el rendimiento."
   }];
   const certifications = [{
     name: "HubSpot Partner",
@@ -341,36 +320,6 @@ const Nosotros = () => {
 
         <JoinFreelancersSection />
 
-        {/* Nuestra Metodología - Fondo blanco */}
-        <section className="py-16 md:py-20 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient-primary">Nuestra Metodología</h2>
-                <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-                  Un proceso probado que garantiza resultados exitosos en cada proyecto
-                </p>
-              </div>
-              
-              <div className="space-y-6">
-                {methodology.map((step, index) => <div key={index} className="bg-white rounded-xl p-6 shadow-corporate hover-scale border border-gray-100">
-                    <div className="flex flex-col md:flex-row items-start gap-4">
-                      <div className="flex-shrink-0">
-                        <div className="w-12 h-12 bg-gradient-primary text-white rounded-full flex items-center justify-center font-bold text-lg">
-                          {step.step}
-                        </div>
-                      </div>
-                      <div className="flex-grow">
-                        <h3 className="text-xl font-semibold mb-2 text-hayas-primary">{step.title}</h3>
-                        <p className="text-gray-700">{step.description}</p>
-                      </div>
-                      <ArrowRight className="hidden md:block h-6 w-6 text-gray-400" />
-                    </div>
-                  </div>)}
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* Certificaciones y Partners - Fondo tenue */}
         <section className="py-16 md:py-20 bg-gradient-to-br from-hayas-primary/5 to-hayas-secondary/5">
