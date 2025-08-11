@@ -2,7 +2,7 @@ import React from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import FAQSection from '@/components/FAQSection';
-import ContactSection from '@/components/ContactSection';
+
 import KitDigitalBanner from '@/components/KitDigitalBanner';
 import Seo from '@/components/Seo';
 import { Button } from '@/components/ui/button';
@@ -160,7 +160,7 @@ const EmailMarketingAutomatizaciones: React.FC = () => {
 
           <FAQSection faqs={faqs} />
           <KitDigitalBanner />
-          <ContactSection />
+          
         </div>
       </main>
 

@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import KitDigitalBanner from '@/components/KitDigitalBanner';
-import ContactSection from '@/components/ContactSection';
+
 import FAQSection from '@/components/FAQSection';
 import { 
   Search, BarChart3, FileText, Link as LinkIcon, Target, 
@@ -581,7 +581,7 @@ const SeoPositioning = () => {
       </section>
 
       {/* Contact Section */}
-      <ContactSection />
+      
       
       <Footer />
     </div>

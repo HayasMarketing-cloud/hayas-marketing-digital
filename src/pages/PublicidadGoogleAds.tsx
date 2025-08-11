@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import KitDigitalBanner from '@/components/KitDigitalBanner';
-import ContactSection from '@/components/ContactSection';
+
 import FAQSection from '@/components/FAQSection';
 import { 
   Search, Target, TrendingUp, BarChart3, Zap, DollarSign, MousePointer,
@@ -444,7 +444,7 @@ const PublicidadGoogleAds: React.FC = () => {
       <FAQSection faqs={faqItems} />
 
       {/* Contact Section */}
-      <ContactSection />
+      
 
       <Footer />
     </div>

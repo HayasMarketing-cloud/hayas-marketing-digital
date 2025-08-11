@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import KitDigitalBanner from '@/components/KitDigitalBanner';
-import ContactSection from '@/components/ContactSection';
+
 import FAQSection from '@/components/FAQSection';
 import { Package, Send, Mail, Palette, CalendarCheck2, Truck, BarChart3, Users, Sparkles, Target, Settings, CheckCircle } from 'lucide-react';
 import Seo from '@/components/Seo';
@@ -231,7 +231,7 @@ const MarketingDirecto: React.FC = () => {
 
       {/* FAQ + Contacto */}
       <FAQSection faqs={faqItems} />
-      <ContactSection />
+      
       <KitDigitalBanner />
       <Footer />
     </div>

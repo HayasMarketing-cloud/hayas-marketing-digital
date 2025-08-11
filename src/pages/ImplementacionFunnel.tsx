@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import KitDigitalBanner from '@/components/KitDigitalBanner';
-import ContactSection from '@/components/ContactSection';
+
 import FAQSection from '@/components/FAQSection';
 import { Target, FileText, Layout, Workflow, SplitSquareVertical, BarChart3, PlugZap, CalendarCheck2, CheckCircle2 } from 'lucide-react';
 import Seo from '@/components/Seo';
@@ -178,7 +178,7 @@ const ImplementacionFunnel: React.FC = () => {
 
       {/* FAQ + Contacto */}
       <FAQSection faqs={faqs} />
-      <ContactSection />
+      
       <KitDigitalBanner />
       <Footer />
     </div>
