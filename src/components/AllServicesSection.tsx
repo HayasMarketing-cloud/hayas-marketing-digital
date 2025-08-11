@@ -96,6 +96,27 @@ const allServices = [
     description: "Plan editorial y distribución multicanal para impulsar tu marca.",
     href: "/servicios/estrategia-contenidos"
   },
+  {
+    id: 14,
+    icon: <Zap className="h-10 w-10 text-hayas-primary" />,
+    title: "Email marketing y automatizaciones",
+    description: "Workflows y personalización conectados a tu CRM.",
+    href: "/servicios/email-marketing-automatizaciones"
+  },
+  {
+    id: 15,
+    icon: <Check className="h-10 w-10 text-hayas-primary" />,
+    title: "Consultoría estratégica y analítica",
+    description: "Decisiones con datos y reporting fiable.",
+    href: "/servicios/consultoria-estrategica-analitica"
+  },
+  {
+    id: 16,
+    icon: <Globe className="h-10 w-10 text-hayas-primary" />,
+    title: "Integraciones y optimización con IA",
+    description: "Conecta sistemas y automatiza procesos.",
+    href: "/servicios/integraciones-ia-procesos"
+  },
 ];
 
 const AllServicesSection = () => {
