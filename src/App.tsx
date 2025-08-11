@@ -47,6 +47,7 @@ import ScrollToTop from './components/ScrollToTop';
 import EmailMarketingAutomatizaciones from './pages/EmailMarketingAutomatizaciones';
 import ConsultoriaEstrategicaAnalitica from './pages/ConsultoriaEstrategicaAnalitica';
 import IntegracionesIAProcesos from './pages/IntegracionesIAProcesos';
+import EstrategiaContenidos from './pages/EstrategiaContenidos';
 
 const queryClient = new QueryClient();
 
@@ -131,6 +132,7 @@ const App = () => (
           <Route path="/servicios/email-marketing-automatizaciones" element={<EmailMarketingAutomatizaciones />} />
           <Route path="/servicios/consultoria-estrategica-analitica" element={<ConsultoriaEstrategicaAnalitica />} />
           <Route path="/servicios/integraciones-ia-procesos" element={<IntegracionesIAProcesos />} />
+          <Route path="/servicios/estrategia-contenidos" element={<EstrategiaContenidos />} />
           <Route path="/servicios/asistente-ia-atencion-cliente" element={<AsistenteIA />} />
           <Route path="/servicios/alojamiento-mantenimiento-web" element={<AlojamientoMantenimiento />} />
           <Route path="/servicios/marketing-directo" element={<MarketingDirecto />} />

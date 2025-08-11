@@ -62,6 +62,7 @@ const Navigation = () => {
       { title: 'Gestión de Redes Sociales', href: '/servicios/gestion-redes-sociales', description: 'Community management profesional' },
       { title: 'Publicidad en Redes Sociales', href: '/servicios/publicidad-redes-sociales', description: 'Campañas publicitarias rentables' },
       { title: 'Publicidad en Google Ads', href: '/servicios/publicidad-google-ads', description: 'SEM y campañas en Google' },
+      { title: 'Estrategia de contenidos', href: '/servicios/estrategia-contenidos', description: 'Plan editorial SEO y distribución multicanal' },
       { title: 'Email marketing y automatizaciones', href: '/servicios/email-marketing-automatizaciones', description: 'Workflows y personalización conectados a tu CRM' },
       { title: 'Consultoría estratégica y analítica', href: '/servicios/consultoria-estrategica-analitica', description: 'Decisiones con datos y reporting fiable' },
       { title: 'Integraciones y optimización con IA', href: '/servicios/integraciones-ia-procesos', description: 'Conecta sistemas y automatiza procesos' },
