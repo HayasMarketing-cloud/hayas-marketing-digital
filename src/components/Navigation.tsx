@@ -121,18 +121,14 @@ const Navigation = () => {
                 </button>
               </div>
 
-              {/* Casos de Éxito Mega Menu */}
-              <div 
-                className="relative"
-                onMouseEnter={() => handleMouseEnter('casos')}
-                onMouseLeave={handleMouseLeave}
+              {/* Casos de Éxito: solo enlace, sin megamenú */}
+              <Link 
+                to="/casos-exito" 
+                className="text-foreground hover:text-primary font-medium transition-colors py-2"
+                onClick={() => window.scrollTo(0, 0)}
               >
-                <Link to="/casos-exito" className="text-foreground hover:text-primary font-medium transition-colors flex items-center gap-1 py-2" onClick={() => window.scrollTo(0, 0)}>
-                  Casos de Éxito
-                  <ChevronDown className="h-4 w-4 transition-transform duration-200" 
-                    style={{ transform: activeMegaMenu === 'casos' ? 'rotate(180deg)' : 'rotate(0deg)' }} />
-                </Link>
-              </div>
+                Casos de Éxito
+              </Link>
 
               {/* Servicios Mega Menu */}
               <div 
@@ -242,21 +238,15 @@ const Navigation = () => {
                   </div>
                 </div>
 
-                {/* Casos de Éxito Mobile */}
+                {/* Casos de Éxito Mobile: solo enlace */}
                 <div className="px-4 py-2">
-                  <div className="text-foreground font-medium mb-3 border-b border-border pb-2">Casos de Éxito</div>
-                  <div className="space-y-2">
-                    {megaMenuData.casosExito.map((caso) => (
-                      <Link
-                        key={caso.href}
-                        to={caso.href}
-                        className="block text-sm text-foreground hover:text-primary transition-colors py-2 hover:bg-muted/50 px-2 rounded"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        {caso.title}
-                      </Link>
-                    ))}
-                  </div>
+                  <Link
+                    to="/casos-exito"
+                    className="block text-foreground hover:text-primary transition-colors py-2 hover:bg-muted/50 px-2 rounded"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Casos de Éxito
+                  </Link>
                 </div>
 
                 {/* Servicios Mobile */}
@@ -358,9 +348,6 @@ const Navigation = () => {
         </div>
       )}
 
-      {activeMegaMenu === 'casos' && (
-        <div 
-          className="fixed left-0 right-0 bg-background border border-border rounded-lg shadow-corporate z-30 overflow-hidden"
           style={{ top: isScrolled ? '120px' : '180px' }}
           onMouseEnter={() => handleMouseEnter('casos')}
           onMouseLeave={handleMouseLeave}

@@ -98,62 +98,62 @@ const CasosExito = () => {
         </div>
       </section>
 
-      {/* Filters and Controls */}
       <section className="py-8 bg-muted/20">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row gap-6 items-center justify-center">
-            {/* Filtros */}
-            <div className="flex flex-wrap gap-3">
-              <Button
-                variant={selectedFilter === 'todos' ? 'default' : 'outline'}
-                size="sm"
-                onClick={() => setSelectedFilter('todos')}
-              >
-                <Filter className="h-4 w-4 mr-2" />
-                Todos ({ALL_SUCCESS_CASES.length})
-              </Button>
-              
-              {Object.entries(tagCategories).map(([category, tags]) => (
-                <div key={category} className="flex flex-wrap gap-2">
-                  {tags.filter(tag => allTags.includes(tag)).map(tag => (
-                    <Button
-                      key={tag}
-                      variant={selectedFilter === tag ? 'default' : 'outline'}
-                      size="sm"
-                      onClick={() => setSelectedFilter(tag)}
-                    >
-                      {formatTagName(tag)} ({ALL_SUCCESS_CASES.filter(case_ => case_.tags.includes(tag)).length})
-                    </Button>
-                  ))}
-                </div>
-              ))}
+          <div className="max-w-5xl mx-auto">
+            <div className="flex flex-col lg:flex-row gap-6 items-start justify-center">
+              {/* Filtros */}
+              <div className="flex flex-wrap gap-3">
+                <Button
+                  variant={selectedFilter === 'todos' ? 'default' : 'outline'}
+                  size="sm"
+                  onClick={() => setSelectedFilter('todos')}
+                >
+                  <Filter className="h-4 w-4 mr-2" />
+                  Todos ({ALL_SUCCESS_CASES.length})
+                </Button>
+                {Object.entries(tagCategories).map(([category, tags]) => (
+                  <div key={category} className="flex flex-wrap gap-2">
+                    {tags.filter(tag => allTags.includes(tag)).map(tag => (
+                      <Button
+                        key={tag}
+                        variant={selectedFilter === tag ? 'default' : 'outline'}
+                        size="sm"
+                        onClick={() => setSelectedFilter(tag)}
+                      >
+                        {formatTagName(tag)} ({ALL_SUCCESS_CASES.filter(case_ => case_.tags.includes(tag)).length})
+                      </Button>
+                    ))}
+                  </div>
+                ))}
+              </div>
+
+              {/* Controles de vista */}
+              <div className="flex items-center gap-2">
+                <Button
+                  variant={viewMode === 'grid' ? 'default' : 'outline'}
+                  size="sm"
+                  onClick={() => setViewMode('grid')}
+                >
+                  <Grid className="h-4 w-4" />
+                </Button>
+                <Button
+                  variant={viewMode === 'list' ? 'default' : 'outline'}
+                  size="sm"
+                  onClick={() => setViewMode('list')}
+                >
+                  <List className="h-4 w-4" />
+                </Button>
+              </div>
             </div>
 
-            {/* Controles de vista */}
-            <div className="flex items-center gap-2">
-              <Button
-                variant={viewMode === 'grid' ? 'default' : 'outline'}
-                size="sm"
-                onClick={() => setViewMode('grid')}
-              >
-                <Grid className="h-4 w-4" />
-              </Button>
-              <Button
-                variant={viewMode === 'list' ? 'default' : 'outline'}
-                size="sm"
-                onClick={() => setViewMode('list')}
-              >
-                <List className="h-4 w-4" />
-              </Button>
+            {/* Resultados del filtro */}
+            <div className="mt-4 text-sm text-muted-foreground">
+              {selectedFilter === 'todos' 
+                ? `Mostrando todos los ${filteredCases.length} casos de éxito`
+                : `Mostrando ${filteredCases.length} casos de éxito para "${formatTagName(selectedFilter)}"`
+              }
             </div>
-          </div>
-
-          {/* Resultados del filtro */}
-          <div className="mt-4 text-sm text-muted-foreground">
-            {selectedFilter === 'todos' 
-              ? `Mostrando todos los ${filteredCases.length} casos de éxito`
-              : `Mostrando ${filteredCases.length} casos de éxito para "${formatTagName(selectedFilter)}"`
-            }
           </div>
         </div>
       </section>
