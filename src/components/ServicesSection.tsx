@@ -3,7 +3,7 @@ import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { Palette, Layout, ShoppingCart, Search, Database, Megaphone, BookOpenText } from 'lucide-react';
+import { Palette, Layout, ShoppingCart, Search, Database, Megaphone, BookOpenText, Users, Mail, BarChart3, Bot, Server, Filter, Cpu, MessageSquare } from 'lucide-react';
 
 const serviceItems = [
   {
@@ -54,6 +54,69 @@ const serviceItems = [
     title: "Estrategia de contenidos",
     description: "Plan editorial SEO y distribución multicanal para impulsar tu marca.",
     href: "/servicios/estrategia-contenidos",
+  },
+  {
+    id: 8,
+    icon: <Users className="h-10 w-10 text-turquesa" />,
+    title: "Gestión de Redes Sociales",
+    description: "Community management profesional y contenidos que construyen marca.",
+    href: "/servicios/gestion-redes-sociales",
+  },
+  {
+    id: 9,
+    icon: <BarChart3 className="h-10 w-10 text-turquesa" />,
+    title: "Publicidad en Redes Sociales",
+    description: "Campañas en Meta y LinkedIn orientadas a rendimiento.",
+    href: "/servicios/publicidad-redes-sociales",
+  },
+  {
+    id: 10,
+    icon: <Mail className="h-10 w-10 text-turquesa" />,
+    title: "Email marketing y automatizaciones",
+    description: "Secuencias, workflows y personalización conectados a tu CRM.",
+    href: "/servicios/email-marketing-automatizaciones",
+  },
+  {
+    id: 11,
+    icon: <BarChart3 className="h-10 w-10 text-turquesa" />,
+    title: "Consultoría estratégica y analítica",
+    description: "Decisiones con datos, cuadros de mando y roadmap de crecimiento.",
+    href: "/servicios/consultoria-estrategica-analitica",
+  },
+  {
+    id: 12,
+    icon: <Cpu className="h-10 w-10 text-turquesa" />,
+    title: "Integraciones y optimización con IA",
+    description: "Automatiza procesos y mejora la eficiencia en marketing y ventas.",
+    href: "/servicios/integraciones-ia-procesos",
+  },
+  {
+    id: 13,
+    icon: <MessageSquare className="h-10 w-10 text-turquesa" />,
+    title: "Marketing Directo",
+    description: "Catálogos, invitaciones y campañas coordinadas con email.",
+    href: "/servicios/marketing-directo",
+  },
+  {
+    id: 14,
+    icon: <Filter className="h-10 w-10 text-turquesa" />,
+    title: "Implementación de Funnel",
+    description: "Embudo de conversión con automatización y seguimiento.",
+    href: "/servicios/implementacion-funnel",
+  },
+  {
+    id: 15,
+    icon: <Bot className="h-10 w-10 text-turquesa" />,
+    title: "Asistente IA para Atención al Cliente",
+    description: "Chatbots inteligentes 24/7 conectados a tu base de conocimiento.",
+    href: "/servicios/asistente-ia-atencion-cliente",
+  },
+  {
+    id: 16,
+    icon: <Server className="h-10 w-10 text-turquesa" />,
+    title: "Alojamiento y Mantenimiento Web",
+    description: "Hosting premium y mantenimiento proactivo de tu web.",
+    href: "/servicios/alojamiento-mantenimiento-web",
   },
 ];
 
