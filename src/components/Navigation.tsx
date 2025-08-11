@@ -389,6 +389,8 @@ const Navigation = () => {
                         <img 
                           src={caso.image} 
                           alt={caso.title}
+                          loading="lazy"
+                          decoding="async"
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
                         />
                         {/* Company Logo Overlay */}
@@ -396,6 +398,8 @@ const Navigation = () => {
                           <img 
                             src={caso.logo} 
                             alt={`${caso.title} logo`}
+                            loading="lazy"
+                            decoding="async"
                             className="w-full h-full object-contain"
                           />
                         </div>
