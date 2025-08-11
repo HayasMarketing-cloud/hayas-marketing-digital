@@ -39,7 +39,7 @@ const Contacto = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 gap-10 max-w-3xl mx-auto">
             <Card className="border border-border shadow-corporate bg-card">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold mb-6">Envíanos un mensaje</h3>
@@ -51,7 +51,7 @@ const Contacto = () => {
               </CardContent>
             </Card>
             
-            <div className="flex flex-col justify-center">
+            <div className="mt-8">
               <div className="space-y-8">
                 <div>
                   <h3 className="text-2xl font-bold mb-6">Información de contacto</h3>
