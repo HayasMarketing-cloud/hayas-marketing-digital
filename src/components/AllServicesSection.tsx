@@ -89,6 +89,13 @@ const allServices = [
     description: "Diseño, automatización y optimización de embudos de conversión.",
     href: "/servicios/implementacion-funnel"
   },
+  {
+    id: 13,
+    icon: <MessageSquare className="h-10 w-10 text-hayas-primary" />,
+    title: "Estrategia de contenidos",
+    description: "Plan editorial y distribución multicanal para impulsar tu marca.",
+    href: "/servicios/estrategia-contenidos"
+  },
 ];
 
 const AllServicesSection = () => {
