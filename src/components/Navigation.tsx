@@ -8,6 +8,8 @@ import centroRoraimaLogo from '@/assets/logos/centro-roraima-logo.png';
 import asendiaLogo from '@/assets/logos/asendia-logo.png';
 import jointsupLogo from '@/assets/logos/jointsup-logo.png';
 import ivExtraLogo from '@/assets/logos/iv-extra-logo.png';
+import { servicesByPillar, pillarMeta } from '@/data/services';
+import type { PillarKey } from '@/data/services';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -82,6 +84,8 @@ const Navigation = () => {
     { title: 'Conecta con tus clientes', href: '/soluciones/conecta-con-tus-clientes' },
     { title: 'Activa tu estrategia digital', href: '/soluciones/activa-tu-estrategia-digital' },
   ];
+
+  const pillarKeys: PillarKey[] = ['impulsa', 'conecta', 'activa'];
 
   return (
     <>
@@ -327,35 +331,35 @@ const Navigation = () => {
                 ))}
               </div>
 
-              {/* Solution categories */}
+              {/* Servicios asociados por solución */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {megaMenuData.soluciones.categories.map((category, idx) => (
-                  <div key={idx} className="space-y-4">
-                    <h4 className="font-semibold text-foreground border-b border-border pb-2">
-                      {category.title}
-                    </h4>
-                    <div className="space-y-3">
-                      {category.items.map((item) => (
-                        <Link
-                          key={item.href}
-                          to={item.href}
-                          className="block group hover:bg-muted/50 p-3 rounded-lg transition-all duration-200"
-                          onClick={() => setActiveMegaMenu(null)}
-                        >
-                          <div className="flex items-start justify-between">
-                            <div>
-                              <h5 className="font-medium text-foreground group-hover:text-primary transition-colors">
-                                {item.title}
-                              </h5>
-                              <p className="text-sm text-muted-foreground mt-1">
-                                {item.description}
-                              </p>
-                            </div>
-                            <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-all duration-200 transform group-hover:translate-x-1" />
-                          </div>
-                        </Link>
-                      ))}
+                {pillarKeys.map((key) => (
+                  <div key={key} className="space-y-3">
+                    <div className="flex items-center justify-between border-b border-border pb-2">
+                      <Link
+                        to={pillarMeta[key].href}
+                        className="font-semibold text-foreground hover:text-primary transition-colors"
+                        onClick={() => setActiveMegaMenu(null)}
+                      >
+                        {pillarMeta[key].title}
+                      </Link>
+                      <ArrowRight className="h-4 w-4 text-muted-foreground" />
                     </div>
+                    <ul className="space-y-1">
+                      {servicesByPillar[key].map((svc) => (
+                        <li key={svc.href}>
+                          <Link
+                            to={svc.href}
+                            className="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 py-1"
+                            onClick={() => setActiveMegaMenu(null)}
+                            aria-label={`${svc.title} — ${pillarMeta[key].title}`}
+                          >
+                            <span className="w-1.5 h-1.5 rounded-full bg-primary/60" />
+                            {svc.title}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 ))}
               </div>
