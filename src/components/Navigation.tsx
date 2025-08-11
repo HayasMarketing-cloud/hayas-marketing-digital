@@ -348,21 +348,6 @@ const Navigation = () => {
         </div>
       )}
 
-          style={{ top: isScrolled ? '120px' : '180px' }}
-          onMouseEnter={() => handleMouseEnter('casos')}
-          onMouseLeave={handleMouseLeave}
-        >
-          <div className="container mx-auto px-4">
-            <div className="p-6">
-              <div className="flex items-center justify-between mb-4 border-b border-border pb-2">
-                <h4 className="font-semibold text-foreground">Proyectos Destacados</h4>
-                <Button variant="outline" size="sm" asChild>
-                  <Link to="/casos-exito" onClick={() => setActiveMegaMenu(null)} aria-label="Ver todos los casos de éxito">
-                    Ver todos
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </div>
               <div className="grid grid-cols-4 gap-4 max-w-4xl">
                 {megaMenuData.casosExito.map((caso) => (
                   <Link
