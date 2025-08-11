@@ -12,7 +12,7 @@ const HeroSection = () => {
         <div className="flex flex-col lg:flex-row items-center">
           <div className="lg:w-1/2 lg:pr-12 mb-10 lg:mb-0">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight animate-fade-in">
-              Haz crecer tu negocio con <span className="text-gradient-primary">inteligencia</span> y <span className="text-gradient-primary">propósito</span>
+              Haz crecer tu negocio con <span className="text-gradient-primary">marketing estratégico</span> y <span className="text-gradient-primary">propósito</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-700 mb-8 animate-slide-up">En Hayas diseñamos soluciones que integran branding, inteligencia artificial, automatización y estrategia personalizada, priorizando acciones de marketing orgánico, para que tu marketing conecte de verdad y tus ventas no se queden atrás.</p>
             <div className="flex flex-col sm:flex-row gap-4 animate-slide-up">
