@@ -1,6 +1,8 @@
 
 import React from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 import { Palette, Layout, ShoppingCart, Search, Database, Megaphone } from 'lucide-react';
 
 const serviceItems = [
@@ -8,37 +10,43 @@ const serviceItems = [
     id: 1,
     icon: <Palette className="h-10 w-10 text-turquesa" />,
     title: "Creación de Marca",
-    description: "Branding e identidad visual para lanzar o redefinir tu marca con coherencia y diferenciación."
+    description: "Branding e identidad visual para lanzar o redefinir tu marca con coherencia y diferenciación.",
+    href: "/servicios/creacion-marca",
   },
   {
     id: 2,
     icon: <Layout className="h-10 w-10 text-turquesa" />,
     title: "Diseño Web",
-    description: "Webs rápidas, accesibles y orientadas a conversión con integración de analítica y SEO técnico."
+    description: "Webs rápidas, accesibles y orientadas a conversión con integración de analítica y SEO técnico.",
+    href: "/servicios/diseno-web",
   },
   {
     id: 3,
     icon: <ShoppingCart className="h-10 w-10 text-turquesa" />,
     title: "Tienda Online",
-    description: "Ecommerce optimizado para vender más, con pasarelas seguras e integraciones con CRM."
+    description: "Ecommerce optimizado para vender más, con pasarelas seguras e integraciones con CRM.",
+    href: "/servicios/tienda-online",
   },
   {
     id: 4,
     icon: <Search className="h-10 w-10 text-turquesa" />,
     title: "Posicionamiento SEO",
-    description: "Estrategia SEO on-page, técnico y de contenidos para aumentar visibilidad y tráfico cualificado."
+    description: "Estrategia SEO on-page, técnico y de contenidos para aumentar visibilidad y tráfico cualificado.",
+    href: "/servicios/seo-posicionamiento",
   },
   {
     id: 5,
     icon: <Database className="h-10 w-10 text-turquesa" />,
     title: "Implantación de CRM",
-    description: "Configuración de HubSpot o GHL, pipelines, automatizaciones y reporting para tu equipo."
+    description: "Configuración de HubSpot o GHL, pipelines, automatizaciones y reporting para tu equipo.",
+    href: "/soluciones/implantacion-crm",
   },
   {
     id: 6,
     icon: <Megaphone className="h-10 w-10 text-turquesa" />,
     title: "Publicidad en Google Ads",
-    description: "Campañas de búsqueda y performance max orientadas a resultados y ROI medible."
+    description: "Campañas de búsqueda y performance max orientadas a resultados y ROI medible.",
+    href: "/servicios/publicidad-google-ads",
   },
 ];
 
@@ -65,6 +73,11 @@ const ServicesSection = () => {
                   {service.description}
                 </CardDescription>
               </CardContent>
+              <CardFooter className="pt-0">
+                <Link to={service.href} aria-label={`Ver ${service.title}`}>
+                  <Button size="sm">Ver {service.title}</Button>
+                </Link>
+              </CardFooter>
             </Card>
           ))}
         </div>
