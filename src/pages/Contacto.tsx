@@ -2,11 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import { Button } from '@/components/ui/button';
+
 import { Card, CardContent } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
 import { MessageSquare, Mail, Phone } from 'lucide-react';
+import GHLFormEmbed from '@/components/GHLFormEmbed';
 
 const Contacto = () => {
   return (
@@ -37,41 +36,11 @@ const Contacto = () => {
             <Card className="border-none shadow-xl bg-white">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold mb-6">Envíanos un mensaje</h3>
-                <form className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <label htmlFor="name" className="block text-sm font-medium">
-                        Nombre
-                      </label>
-                      <Input id="name" placeholder="Tu nombre" />
-                    </div>
-                    <div className="space-y-2">
-                      <label htmlFor="email" className="block text-sm font-medium">
-                        Email
-                      </label>
-                      <Input id="email" type="email" placeholder="tu@email.com" />
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="company" className="block text-sm font-medium">
-                      Empresa
-                    </label>
-                    <Input id="company" placeholder="Nombre de tu empresa" />
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="message" className="block text-sm font-medium">
-                      Mensaje
-                    </label>
-                    <Textarea 
-                      id="message" 
-                      placeholder="¿En qué podemos ayudarte?" 
-                      rows={4}
-                    />
-                  </div>
-                  <Button type="submit" className="w-full gradient-primary text-white py-6">
-                    Enviar mensaje
-                  </Button>
-                </form>
+                <GHLFormEmbed
+                  formId="7hfylnczt0dXbyUFFSEt"
+                  title="Marketing Form - Claim Offer"
+                  minHeight={820}
+                />
               </CardContent>
             </Card>
             

@@ -2,13 +2,11 @@ import React from 'react';
 import { ArrowLeft, Calendar, MessageSquare, Phone, Mail, Clock, CheckCircle } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
 import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import GHLFormEmbed from '@/components/GHLFormEmbed';
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -108,55 +106,11 @@ const SolicitarConsulta = () => {
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div>
-                        <Label htmlFor="nombre">Nombre *</Label>
-                        <Input id="nombre" placeholder="Tu nombre" className="mt-1" />
-                      </div>
-                      <div>
-                        <Label htmlFor="empresa">Empresa</Label>
-                        <Input id="empresa" placeholder="Nombre de tu empresa" className="mt-1" />
-                      </div>
-                    </div>
-                    
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div>
-                        <Label htmlFor="email">Email *</Label>
-                        <Input id="email" type="email" placeholder="tu@email.com" className="mt-1" />
-                      </div>
-                      <div>
-                        <Label htmlFor="telefono">Teléfono</Label>
-                        <Input id="telefono" placeholder="Tu teléfono" className="mt-1" />
-                      </div>
-                    </div>
-
-                    <div>
-                      <Label htmlFor="servicio">¿En qué podemos ayudarte?</Label>
-                      <select id="servicio" className="w-full mt-1 p-3 border border-gray-300 rounded-md">
-                        <option value="">Selecciona un servicio</option>
-                        <option value="branding">Creación de Marca</option>
-                        <option value="web">Diseño Web</option>
-                        <option value="tienda">Tienda Online</option>
-                        <option value="seo">SEO y Posicionamiento</option>
-                        <option value="crm">CRM y Automatización</option>
-                        <option value="marketing">Marketing Digital</option>
-                        <option value="ia">Soluciones IA</option>
-                        <option value="otro">Otro</option>
-                      </select>
-                    </div>
-
-                    <div>
-                      <Label htmlFor="mensaje">Mensaje</Label>
-                      <Textarea 
-                        id="mensaje" 
-                        placeholder="Cuéntanos más sobre tu proyecto o necesidades..."
-                        className="mt-1 min-h-[120px]"
-                      />
-                    </div>
-
-                    <Button className="w-full gradient-primary text-white py-6 text-lg">
-                      Enviar solicitud
-                    </Button>
+                    <GHLFormEmbed
+                      formId="7hfylnczt0dXbyUFFSEt"
+                      title="Marketing Form - Claim Offer"
+                      minHeight={820}
+                    />
                   </CardContent>
                 </Card>
 

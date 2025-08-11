@@ -7,7 +7,7 @@ import SolutionsSection from '@/components/SolutionsSection';
 import ServicesSection from '@/components/ServicesSection';
 import AllServicesSection from '@/components/AllServicesSection';
 import WhyChooseUsSection from '@/components/WhyChooseUsSection';
-import ContactSection from '@/components/ContactSection';
+
 import Footer from '@/components/Footer';
 import Seo from '@/components/Seo';
 import FAQSection from '@/components/FAQSection';
@@ -132,7 +132,7 @@ const Index = () => {
             }
           ]}
         />
-        <ContactSection />
+        
       </main>
       
       <Footer showKitSection={true} />
