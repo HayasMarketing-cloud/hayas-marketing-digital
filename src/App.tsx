@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import SofiaWidget from "./components/SofiaSection";
 import Index from "./pages/Index";
 import Nosotros from "./pages/Nosotros";
@@ -76,6 +76,7 @@ const App = () => (
           <Route path="/soluciones/implantacion-crm" element={<ImplantacionCrm />} />
           <Route path="/servicios/tienda-online" element={<TiendaOnline />} />
           <Route path="/servicios/diseno-web" element={<DisenoWeb />} />
+          <Route path="/servicios/diseno-web/alojamiento-mantenimiento" element={<AlojamientoMantenimiento />} />
           <Route path="/servicios/seo-posicionamiento" element={<SeoPositioning />} />
           <Route path="/soluciones/marketing-digital" element={<MarketingVisibilidad />} />
           <Route path="/soluciones/gestion-marketing" element={<GestionMarketing />} />
@@ -134,7 +135,7 @@ const App = () => (
           <Route path="/servicios/integraciones-ia-procesos" element={<IntegracionesIAProcesos />} />
           <Route path="/servicios/estrategia-contenidos" element={<EstrategiaContenidos />} />
           <Route path="/servicios/asistente-ia-atencion-cliente" element={<AsistenteIA />} />
-          <Route path="/servicios/alojamiento-mantenimiento-web" element={<AlojamientoMantenimiento />} />
+          <Route path="/servicios/alojamiento-mantenimiento-web" element={<Navigate to="/servicios/diseno-web/alojamiento-mantenimiento" replace />} />
           <Route path="/servicios/marketing-directo" element={<MarketingDirecto />} />
           <Route path="/servicios/implementacion-funnel" element={<ImplementacionFunnel />} />
           <Route path="/servicios" element={<NotFound />} />

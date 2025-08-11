@@ -71,7 +71,7 @@ export const allServices: ServiceItem[] = [
     title: 'Publicidad en Redes Sociales',
     description: 'Campañas publicitarias rentables en Facebook, Instagram y LinkedIn.',
     href: '/servicios/publicidad-redes-sociales',
-    pillar: 'impulsa',
+    pillar: 'activa',
   },
   {
     id: 4,
@@ -79,7 +79,7 @@ export const allServices: ServiceItem[] = [
     title: 'Publicidad en Google Ads',
     description: 'SEM y campañas en Google para generar leads cualificados.',
     href: '/servicios/publicidad-google-ads',
-    pillar: 'conecta',
+    pillar: 'activa',
   },
   {
     id: 5,
@@ -96,14 +96,6 @@ export const allServices: ServiceItem[] = [
     description: 'Chatbots inteligentes 24/7 que mejoran la experiencia del cliente.',
     href: '/servicios/asistente-ia-atencion-cliente',
     pillar: 'conecta',
-  },
-  {
-    id: 7,
-    icon: <Server className="h-10 w-10 text-hayas-primary" />,
-    title: 'Alojamiento y Mantenimiento Web',
-    description: 'Hosting premium con mantenimiento técnico especializado.',
-    href: '/servicios/alojamiento-mantenimiento-web',
-    pillar: 'activa',
   },
   {
     id: 8,

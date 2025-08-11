@@ -13,6 +13,7 @@ import {
   ArrowRight, CheckCircle, Star, Wrench, Database, Monitor,
   Sparkles, Timer, Lock, CloudRain, TrendingUp, AlertTriangle
 } from 'lucide-react';
+import Seo from '@/components/Seo';
 
 const hostingMaintenanceServices = [
   {
@@ -188,6 +189,11 @@ const faqItems = [
 const AlojamientoMantenimiento: React.FC = () => {
   return (
     <div className="min-h-screen bg-background">
+      <Seo 
+        title="Alojamiento y Mantenimiento Web | Diseño Web"
+        description="Hosting premium y mantenimiento técnico para tu web WordPress. Seguridad, velocidad y soporte 24/7."
+        canonical="https://lovable.hayasmarketing.com/servicios/diseno-web/alojamiento-mantenimiento"
+      />
       <Navigation />
       
       {/* Breadcrumb */}
@@ -196,7 +202,7 @@ const AlojamientoMantenimiento: React.FC = () => {
           <nav className="text-sm text-muted-foreground">
             <Link to="/" className="hover:text-primary">Inicio</Link>
             <span className="mx-2">/</span>
-            <Link to="/servicios" className="hover:text-primary">Servicios</Link>
+            <Link to="/servicios/diseno-web" className="hover:text-primary">Diseño Web</Link>
             <span className="mx-2">/</span>
             <span className="text-foreground">Alojamiento y Mantenimiento Web</span>
           </nav>
