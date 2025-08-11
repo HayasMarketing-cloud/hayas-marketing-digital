@@ -267,6 +267,9 @@ const Navigation = () => {
         </div>
       </header>
 
+      {/* Spacer to offset fixed header so breadcrumbs and hero aren't hidden */}
+      <div aria-hidden className="h-[180px]"></div>
+
       {/* Mega Menus - Positioned outside header to create continuous hover area */}
       {activeMegaMenu === 'soluciones' && (
         <div
