@@ -9,7 +9,7 @@ import KitDigitalBanner from '@/components/KitDigitalBanner';
 import ContactSection from '@/components/ContactSection';
 import FAQSection from '@/components/FAQSection';
 import { Target, FileText, Layout, Workflow, SplitSquareVertical, BarChart3, PlugZap, CalendarCheck2, CheckCircle2 } from 'lucide-react';
-
+import Seo from '@/components/Seo';
 const features = [
   { icon: <Target className="h-8 w-8 text-primary" />, title: 'Estrategia y objetivos', desc: 'Definimos objetivos claros, audiencias y KPIs del embudo.' },
   { icon: <FileText className="h-8 w-8 text-primary" />, title: 'Contenido por etapas', desc: 'Mensajes y recursos para TOFU, MOFU y BOFU.' },
@@ -37,49 +37,24 @@ const faqs = [
 ];
 
 const ImplementacionFunnel: React.FC = () => {
-  useEffect(() => {
-    const title = 'Implementación de Funnel | Diseño y Automatización';
-    const description = 'Diseño, implementación y optimización de embudos de conversión con automatización en CRM, pruebas A/B y analítica.';
-    document.title = title;
-
-    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
-    if (!meta) {
-      meta = document.createElement('meta');
-      meta.name = 'description';
-      document.head.appendChild(meta);
-    }
-    meta.content = description;
-
-    const canonicalHref = window.location.origin + '/servicios/implementacion-funnel';
-    let linkCanonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (!linkCanonical) {
-      linkCanonical = document.createElement('link');
-      linkCanonical.rel = 'canonical';
-      document.head.appendChild(linkCanonical);
-    }
-    linkCanonical.href = canonicalHref;
-
-    const ldJson = {
-      '@context': 'https://schema.org',
-      '@type': 'Service',
-      name: 'Implementación de Funnel',
-      serviceType: 'Embudo de Conversión',
-      areaServed: 'ES',
-      provider: { '@type': 'Organization', name: 'Hayas Marketing' },
-      description,
-      offers: { '@type': 'Offer', availability: 'https://schema.org/InStock' }
-    };
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.text = JSON.stringify(ldJson);
-    document.head.appendChild(script);
-    return () => {
-      document.head.removeChild(script);
-    };
-  }, []);
 
   return (
     <div className="min-h-screen bg-background">
+      <Seo 
+        title="Implementación de Funnel | Diseño y Automatización"
+        description="Diseño, implementación y optimización de embudos de conversión con automatización en CRM, pruebas A/B y analítica."
+        canonical="/servicios/implementacion-funnel"
+        structuredData={{
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          name: 'Implementación de Funnel',
+          serviceType: 'Embudo de Conversión',
+          areaServed: 'ES',
+          provider: { '@type': 'Organization', name: 'Hayas Marketing' },
+          description: 'Diseño, implementación y optimización de embudos de conversión con automatización en CRM, pruebas A/B y analítica.',
+          offers: { '@type': 'Offer', availability: 'https://schema.org/InStock' }
+        }}
+      />
       <Navigation />
 
       {/* Breadcrumb */}

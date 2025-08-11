@@ -5,9 +5,10 @@ interface SeoProps {
   description?: string;
   canonical?: string; // path or absolute URL
   structuredData?: Record<string, any>;
+  ogImage?: string; // absolute or path from root
 }
 
-const Seo = ({ title, description, canonical, structuredData }: SeoProps) => {
+const Seo = ({ title, description, canonical, structuredData, ogImage }: SeoProps) => {
   useEffect(() => {
     // Title
     document.title = title;
@@ -35,6 +36,34 @@ const Seo = ({ title, description, canonical, structuredData }: SeoProps) => {
       linkCanonical.href = href;
     }
 
+    // Open Graph & Twitter
+    const pageUrl = canonical
+      ? (canonical.startsWith('http') ? canonical : `${window.location.origin}${canonical}`)
+      : window.location.href;
+
+    const setMeta = (attr: 'name' | 'property', key: string, value: string) => {
+      let el = document.querySelector(`meta[${attr}="${key}"]`) as HTMLMetaElement | null;
+      if (!el) {
+        el = document.createElement('meta');
+        el.setAttribute(attr, key);
+        document.head.appendChild(el);
+      }
+      el.setAttribute('content', value);
+    };
+
+    setMeta('property', 'og:type', 'website');
+    setMeta('property', 'og:site_name', 'Hayas Marketing');
+    setMeta('property', 'og:url', pageUrl);
+    setMeta('property', 'og:title', title);
+    if (description) setMeta('property', 'og:description', description);
+    if (ogImage) setMeta('property', 'og:image', ogImage);
+
+    setMeta('name', 'twitter:card', 'summary_large_image');
+    setMeta('name', 'twitter:url', pageUrl);
+    setMeta('name', 'twitter:title', title);
+    if (description) setMeta('name', 'twitter:description', description);
+    if (ogImage) setMeta('name', 'twitter:image', ogImage);
+
     // Structured data
     let scriptEl: HTMLScriptElement | null = null;
     if (structuredData) {
@@ -49,7 +78,7 @@ const Seo = ({ title, description, canonical, structuredData }: SeoProps) => {
         document.head.removeChild(scriptEl);
       }
     };
-  }, [title, description, canonical, structuredData]);
+  }, [title, description, canonical, structuredData, ogImage]);
 
   return null;
 };

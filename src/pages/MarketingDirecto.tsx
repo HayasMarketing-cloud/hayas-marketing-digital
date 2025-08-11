@@ -9,7 +9,7 @@ import KitDigitalBanner from '@/components/KitDigitalBanner';
 import ContactSection from '@/components/ContactSection';
 import FAQSection from '@/components/FAQSection';
 import { Package, Send, Mail, Palette, CalendarCheck2, Truck, BarChart3, Users, Sparkles, Target, Settings, CheckCircle } from 'lucide-react';
-
+import Seo from '@/components/Seo';
 const mdServices = [
   {
     icon: <Target className="h-8 w-8 text-primary" />,
@@ -83,58 +83,24 @@ const faqItems = [
 ];
 
 const MarketingDirecto: React.FC = () => {
-  useEffect(() => {
-    // SEO basics
-    const title = 'Marketing Directo | Campañas y Envíos Personalizados';
-    const description =
-      'Campañas de marketing directo para grandes empresas: concepto, diseño, producción y envío + email marketing personalizado.';
-    document.title = title;
-
-    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
-    if (!meta) {
-      meta = document.createElement('meta');
-      meta.name = 'description';
-      document.head.appendChild(meta);
-    }
-    meta.content = description;
-
-    const canonicalHref = window.location.origin + '/servicios/marketing-directo';
-    let linkCanonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (!linkCanonical) {
-      linkCanonical = document.createElement('link');
-      linkCanonical.rel = 'canonical';
-      document.head.appendChild(linkCanonical);
-    }
-    linkCanonical.href = canonicalHref;
-
-    // JSON-LD Service schema
-    const ldJson = {
-      '@context': 'https://schema.org',
-      '@type': 'Service',
-      name: 'Marketing Directo',
-      serviceType: 'Campañas de Marketing Directo',
-      areaServed: 'ES',
-      provider: {
-        '@type': 'Organization',
-        name: 'Hayas Marketing'
-      },
-      description,
-      offers: {
-        '@type': 'Offer',
-        availability: 'https://schema.org/InStock'
-      }
-    };
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.text = JSON.stringify(ldJson);
-    document.head.appendChild(script);
-    return () => {
-      document.head.removeChild(script);
-    };
-  }, []);
 
   return (
     <div className="min-h-screen bg-background">
+      <Seo 
+        title="Marketing Directo | Campañas y Envíos Personalizados"
+        description="Campañas de marketing directo para grandes empresas: concepto, diseño, producción y envío + email marketing personalizado."
+        canonical="/servicios/marketing-directo"
+        structuredData={{
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          name: 'Marketing Directo',
+          serviceType: 'Campañas de Marketing Directo',
+          areaServed: 'ES',
+          provider: { '@type': 'Organization', name: 'Hayas Marketing' },
+          description: 'Campañas de marketing directo para grandes empresas: concepto, diseño, producción y envío + email marketing personalizado.',
+          offers: { '@type': 'Offer', availability: 'https://schema.org/InStock' }
+        }}
+      />
       <Navigation />
 
       {/* Breadcrumb */}

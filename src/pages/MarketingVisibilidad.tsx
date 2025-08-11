@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import KitDigitalBanner from '@/components/KitDigitalBanner';
+import Seo from '@/components/Seo';
 
 import FAQSection from '@/components/FAQSection';
 import {
@@ -21,6 +22,20 @@ import {
 const MarketingVisibilidad = () => {
   return (
     <div id="top" className="min-h-screen bg-white">
+      <Seo 
+        title="Marketing y Visibilidad | SEO, Contenidos y Campañas"
+        description="Estrategias completas de SEO, contenidos y campañas digitales para posicionar tu marca y generar clientes potenciales."
+        canonical="/soluciones/marketing-digital"
+        structuredData={{
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          name: 'Marketing y Visibilidad',
+          serviceType: 'Servicios de Marketing Digital',
+          areaServed: 'ES',
+          provider: { '@type': 'Organization', name: 'Hayas Marketing' },
+          description: 'Estrategias completas de SEO, contenidos y campañas digitales para posicionar tu marca y generar clientes potenciales.'
+        }}
+      />
       <Navigation />
       
       <main className="pt-56">
@@ -82,6 +97,7 @@ const MarketingVisibilidad = () => {
                   src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop" 
                   alt="Marketing digital y visibilidad online" 
                   className="relative z-10 w-full h-auto rounded-3xl shadow-2xl"
+                  loading="lazy" decoding="async" sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
             </div>
@@ -99,6 +115,7 @@ const MarketingVisibilidad = () => {
                     src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" 
                     alt="Estrategia de marketing digital" 
                     className="relative z-10 w-full h-auto rounded-2xl shadow-xl"
+                    loading="lazy" decoding="async" sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
               </div>
