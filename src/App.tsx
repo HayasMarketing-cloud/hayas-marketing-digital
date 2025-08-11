@@ -44,6 +44,9 @@ import MarketingDirecto from './pages/MarketingDirecto';
 import ImplementacionFunnel from './pages/ImplementacionFunnel';
 import CasosExito from './pages/CasosExito';
 import ScrollToTop from './components/ScrollToTop';
+import EmailMarketingAutomatizaciones from './pages/EmailMarketingAutomatizaciones';
+import ConsultoriaEstrategicaAnalitica from './pages/ConsultoriaEstrategicaAnalitica';
+import IntegracionesIAProcesos from './pages/IntegracionesIAProcesos';
 
 const queryClient = new QueryClient();
 
@@ -125,6 +128,9 @@ const App = () => (
           <Route path="/servicios/gestion-redes-sociales" element={<GestionRedesSociales />} />
           <Route path="/servicios/publicidad-redes-sociales" element={<PublicidadRedesSociales />} />
           <Route path="/servicios/publicidad-google-ads" element={<PublicidadGoogleAds />} />
+          <Route path="/servicios/email-marketing-automatizaciones" element={<EmailMarketingAutomatizaciones />} />
+          <Route path="/servicios/consultoria-estrategica-analitica" element={<ConsultoriaEstrategicaAnalitica />} />
+          <Route path="/servicios/integraciones-ia-procesos" element={<IntegracionesIAProcesos />} />
           <Route path="/servicios/asistente-ia-atencion-cliente" element={<AsistenteIA />} />
           <Route path="/servicios/alojamiento-mantenimiento-web" element={<AlojamientoMantenimiento />} />
           <Route path="/servicios/marketing-directo" element={<MarketingDirecto />} />
