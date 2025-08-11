@@ -127,7 +127,7 @@ export const allServices: ServiceItem[] = [
     title: 'Marketing Directo',
     description: 'Campañas físicas (catálogos, invitaciones, merchandising) + email marketing.',
     href: '/servicios/marketing-directo',
-    pillar: 'impulsa',
+    pillar: 'conecta',
   },
   {
     id: 12,
