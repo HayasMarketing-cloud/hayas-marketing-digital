@@ -24,6 +24,7 @@ import CasoExitoCalistheniaOnline from "./pages/CasoExitoCalistheniaOnline";
 import CasoExitoCentroRoraima from "./pages/CasoExitoCentroRoraima";
 import CasoExitoJointsUp from "./pages/CasoExitoJointsUp";
 import CasoExitoTranslateWithStyle from "./pages/CasoExitoTranslateWithStyle";
+import CasoExitoFormatoEducativo from "./pages/CasoExitoFormatoEducativo";
 import ImplantacionCrm from "./pages/ImplantacionCrm";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
@@ -96,6 +97,7 @@ const App = () => (
           <Route path="/casos-exito/centro-roraima" element={<CasoExitoCentroRoraima />} />
           <Route path="/casos-exito/joints-up" element={<CasoExitoJointsUp />} />
           <Route path="/casos-exito/translate-with-style" element={<CasoExitoTranslateWithStyle />} />
+          <Route path="/casos-exito/formato-educativo" element={<CasoExitoFormatoEducativo />} />
           
           {/* BLOG / RECURSOS */}
           <Route path="/blog" element={<Blog />} />
@@ -125,6 +127,7 @@ const App = () => (
           <Route path="/caso-exito-centro-roraima" element={<CasoExitoCentroRoraima />} />
           <Route path="/caso-exito-joints-up" element={<CasoExitoJointsUp />} />
           <Route path="/caso-exito-translate-with-style" element={<CasoExitoTranslateWithStyle />} />
+          <Route path="/caso-exito-formato-educativo" element={<CasoExitoFormatoEducativo />} />
           
           <Route path="/servicios/creacion-marca" element={<CreacionMarca />} />
           <Route path="/servicios/gestion-redes-sociales" element={<GestionRedesSociales />} />

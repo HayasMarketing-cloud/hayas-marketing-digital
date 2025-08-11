@@ -87,6 +87,14 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     link: "/caso-exito-translate-with-style",
     image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=2070&auto=format&fit=crop",
     tags: ["branding", "creacion-marca", "identidad-visual", "estrategia", "traduccion"]
+  },
+  {
+    name: "Formato Educativo",
+    industry: "Plataforma educativa",
+    service: "Implantación y administración de CRM",
+    link: "/casos-exito/formato-educativo",
+    image: "https://images.unsplash.com/photo-1513258496099-48168024aec0?q=80&w=2070&auto=format&fit=crop",
+    tags: ["automatizacion", "educacion", "marketing-digital"]
   }
 ];
 
