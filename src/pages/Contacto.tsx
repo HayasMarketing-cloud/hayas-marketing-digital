@@ -31,7 +31,7 @@ const Contacto = () => {
         <section className="py-12 md:py-16">
           <div className="container mx-auto px-6">
             <div className="text-center mb-12">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">Contacto</h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">Contacto</h1>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
                 Contáctanos hoy mismo para una consulta personalizada sobre cómo nuestras soluciones pueden adaptarse a tus necesidades específicas.
               </p>
