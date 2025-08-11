@@ -42,9 +42,9 @@ const steps = [
 ];
 
 const faqs = [
-  { q: '¿Qué plataformas trabajáis?', a: 'HubSpot y Go High Level como base; también integramos con otras (Mailchimp, Klaviyo) si la estrategia lo requiere.' },
-  { q: '¿Qué resultados puedo esperar?', a: 'Incremento de aperturas y clics, reducción de tiempo de respuesta y mejor conversión de MQL a SQL.' },
-  { q: '¿Cómo gestionáis RGPD?', a: 'Consentimiento explícito, doble opt-in y políticas de almacenamiento seguras según normativa vigente.' },
+  { question: '¿Qué plataformas trabajáis?', answer: 'HubSpot y Go High Level como base; también integramos con otras (Mailchimp, Klaviyo) si la estrategia lo requiere.' },
+  { question: '¿Qué resultados puedo esperar?', answer: 'Incremento de aperturas y clics, reducción de tiempo de respuesta y mejor conversión de MQL a SQL.' },
+  { question: '¿Cómo gestionáis RGPD?', answer: 'Consentimiento explícito, doble opt-in y políticas de almacenamiento seguras según normativa vigente.' },
 ];
 
 const EmailMarketingAutomatizaciones: React.FC = () => {

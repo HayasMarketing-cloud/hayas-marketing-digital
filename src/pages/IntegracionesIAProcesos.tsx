@@ -26,9 +26,9 @@ const steps = [
 ];
 
 const faqs = [
-  { q: '¿Qué CRMs integráis?', a: 'HubSpot y Go High Level como estándar. También conectamos con ERPs, plataformas de ads y herramientas BI.' },
-  { q: '¿Qué casos de IA implementáis?', a: 'Desde asistentes (SofÍA) y generación de contenidos a clasificación de leads y priorización con scoring predictivo.' },
-  { q: '¿Cómo gestionáis la seguridad?', a: 'Principio de mínimo privilegio, registros de actividad y cumplimiento RGPD en formularios y bases de datos.' },
+  { question: '¿Qué CRMs integráis?', answer: 'HubSpot y Go High Level como estándar. También conectamos con ERPs, plataformas de ads y herramientas BI.' },
+  { question: '¿Qué casos de IA implementáis?', answer: 'Desde asistentes (SofÍA) y generación de contenidos a clasificación de leads y priorización con scoring predictivo.' },
+  { question: '¿Cómo gestionáis la seguridad?', answer: 'Principio de mínimo privilegio, registros de actividad y cumplimiento RGPD en formularios y bases de datos.' },
 ];
 
 const IntegracionesIAProcesos: React.FC = () => {

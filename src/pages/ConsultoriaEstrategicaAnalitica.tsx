@@ -26,9 +26,9 @@ const steps = [
 ];
 
 const faqs = [
-  { q: '¿Qué herramientas usáis?', a: 'HubSpot/GHL para CRM; GA4 y Tag Manager para analítica web; Data Studio o dashboards nativos para reporting.' },
-  { q: '¿Podéis trabajar por proyecto o retainer?', a: 'Sí, ofrecemos paquetes por proyecto (auditoría + setup) y retainer de seguimiento estratégico.' },
-  { q: '¿Cómo se garantiza la calidad del dato?', a: 'Definimos convenciones, documentamos el modelo de datos y validamos con pruebas unitarias de eventos críticos.' },
+  { question: '¿Qué herramientas usáis?', answer: 'HubSpot/GHL para CRM; GA4 y Tag Manager para analítica web; Data Studio o dashboards nativos para reporting.' },
+  { question: '¿Podéis trabajar por proyecto o retainer?', answer: 'Sí, ofrecemos paquetes por proyecto (auditoría + setup) y retainer de seguimiento estratégico.' },
+  { question: '¿Cómo se garantiza la calidad del dato?', answer: 'Definimos convenciones, documentamos el modelo de datos y validamos con pruebas unitarias de eventos críticos.' },
 ];
 
 const ConsultoriaEstrategicaAnalitica: React.FC = () => {
