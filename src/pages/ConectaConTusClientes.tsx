@@ -129,6 +129,25 @@ const ConectaConTusClientes = () => {
         title="Conecta con tus clientes | CRM, Automatización y Leads"
         description="Optimiza la captación, gestión y fidelización con CRM, automatizaciones y embudos que convierten."
         canonical="/soluciones/conecta-con-tus-clientes"
+        structuredData={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "Hayas Marketing",
+            url: window.location.origin,
+            logo: `${window.location.origin}/favicon.ico`,
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "CRM y Automatización de Marketing",
+            serviceType: "CRM implementation and marketing automation",
+            provider: { "@type": "Organization", name: "Hayas Marketing", url: window.location.origin, logo: `${window.location.origin}/favicon.ico` },
+            url: `${window.location.origin}/soluciones/conecta-con-tus-clientes`,
+            areaServed: "España",
+            description: "Implantación de CRM, automatización de procesos y captación de leads para aumentar conversiones.",
+          },
+        ]}
       />
       <Navigation />
       

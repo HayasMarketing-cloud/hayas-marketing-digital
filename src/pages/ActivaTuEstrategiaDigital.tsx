@@ -78,6 +78,31 @@ const ActivaTuEstrategiaDigital = () => {
         title="Activa tu estrategia digital | Consultoría, IA y Automatización"
         description="Integramos tecnología, automatización y analítica para escalar tu marketing con una estrategia digital clara."
         canonical="/soluciones/activa-tu-estrategia-digital"
+        structuredData={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "Hayas Marketing",
+            url: window.location.origin,
+            logo: `${window.location.origin}/favicon.ico`,
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "Consultoría de Estrategia Digital",
+            serviceType: "Digital Strategy Consulting",
+            provider: { "@type": "Organization", name: "Hayas Marketing", url: window.location.origin, logo: `${window.location.origin}/favicon.ico` },
+            url: `${window.location.origin}/soluciones/activa-tu-estrategia-digital`,
+            areaServed: "España",
+            description: "Estrategia, automatización e IA para escalar tu marketing con objetivos y métricas claras.",
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            name: "Cómo activar tu estrategia digital",
+            step: processSteps.map((s) => ({ "@type": "HowToStep", name: s.title, text: s.description })),
+          },
+        ]}
       />
       <Navigation />
 

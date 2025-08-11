@@ -4,7 +4,7 @@ interface SeoProps {
   title: string;
   description?: string;
   canonical?: string; // path or absolute URL
-  structuredData?: Record<string, any>;
+  structuredData?: Record<string, any> | Array<Record<string, any>>;
   ogImage?: string; // absolute or path from root
 }
 
@@ -65,18 +65,22 @@ const Seo = ({ title, description, canonical, structuredData, ogImage }: SeoProp
     if (ogImage) setMeta('name', 'twitter:image', ogImage);
 
     // Structured data
-    let scriptEl: HTMLScriptElement | null = null;
+    const created: HTMLScriptElement[] = [];
     if (structuredData) {
-      scriptEl = document.createElement('script');
-      scriptEl.type = 'application/ld+json';
-      scriptEl.text = JSON.stringify(structuredData);
-      document.head.appendChild(scriptEl);
+      const dataArray = Array.isArray(structuredData) ? structuredData : [structuredData];
+      dataArray.forEach((data) => {
+        const s = document.createElement('script');
+        s.type = 'application/ld+json';
+        s.text = JSON.stringify(data);
+        document.head.appendChild(s);
+        created.push(s);
+      });
     }
 
     return () => {
-      if (scriptEl && document.head.contains(scriptEl)) {
-        document.head.removeChild(scriptEl);
-      }
+      created.forEach((s) => {
+        if (document.head.contains(s)) document.head.removeChild(s);
+      });
     };
   }, [title, description, canonical, structuredData, ogImage]);
 

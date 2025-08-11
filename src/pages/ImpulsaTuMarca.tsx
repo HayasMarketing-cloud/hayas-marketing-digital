@@ -27,6 +27,25 @@ const ImpulsaTuMarca = () => {
         title="Impulsa tu marca | Branding, identidad y visibilidad"
         description="Fortalece tu marca con identidad clara, diseño y posicionamiento: branding, manual de marca y presencia estratégica."
         canonical="/soluciones/impulsa-tu-marca"
+        structuredData={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "Hayas Marketing",
+            url: window.location.origin,
+            logo: `${window.location.origin}/favicon.ico`,
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "Branding e Identidad de Marca",
+            serviceType: "Branding",
+            provider: { "@type": "Organization", name: "Hayas Marketing", url: window.location.origin, logo: `${window.location.origin}/favicon.ico` },
+            url: `${window.location.origin}/soluciones/impulsa-tu-marca`,
+            areaServed: "España",
+            description: "Branding estratégico, diseño de identidad y manual de marca para diferenciar tu negocio.",
+          },
+        ]}
       />
       <Navigation />
       
