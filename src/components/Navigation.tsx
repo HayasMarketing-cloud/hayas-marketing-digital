@@ -334,17 +334,7 @@ const Navigation = () => {
               {/* Servicios asociados por solución */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {pillarKeys.map((key) => (
-                  <div key={key} className="space-y-3">
-                    <div className="flex items-center justify-between border-b border-border pb-2">
-                      <Link
-                        to={pillarMeta[key].href}
-                        className="font-semibold text-foreground hover:text-primary transition-colors"
-                        onClick={() => setActiveMegaMenu(null)}
-                      >
-                        {pillarMeta[key].title}
-                      </Link>
-                      <ArrowRight className="h-4 w-4 text-muted-foreground" />
-                    </div>
+                  <div key={key} className="space-y-2">
                     <ul className="space-y-1">
                       {servicesByPillar[key].map((svc) => (
                         <li key={svc.href}>
