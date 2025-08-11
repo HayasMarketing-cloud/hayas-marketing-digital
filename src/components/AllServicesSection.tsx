@@ -7,7 +7,8 @@ import { Button } from '@/components/ui/button';
 
 const AllServicesSection = () => {
   const [active, setActive] = useState<'all' | PillarKey>('all');
-  const all = useMemo(() => Object.values(servicesByPillar).flat(), []);
+  // Recalcular siempre para reflejar cambios en la arquitectura sin depender de memoization del bundler
+  const all = Object.values(servicesByPillar).flat();
   const filtered = active === 'all' ? all : servicesByPillar[active] ?? [];
 
   return (
