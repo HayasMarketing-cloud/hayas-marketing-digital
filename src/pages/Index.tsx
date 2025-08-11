@@ -11,6 +11,7 @@ import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import Seo from '@/components/Seo';
 import FAQSection from '@/components/FAQSection';
+import MethodologySection from '@/components/MethodologySection';
 
 const Index = () => {
   const [searchParams] = useSearchParams();
@@ -101,6 +102,7 @@ const Index = () => {
         <SolutionsSection />
         <ServicesSection />
         <WhyChooseUsSection />
+        <MethodologySection />
         <AllServicesSection />
         <FAQSection
           faqs={[
