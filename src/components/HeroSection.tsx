@@ -12,7 +12,7 @@ const HeroSection = () => {
         <div className="flex flex-col lg:flex-row items-center">
           <div className="lg:w-1/2 lg:pr-12 mb-10 lg:mb-0">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight animate-fade-in">
-              Marketing estratégico para conectar, impactar y crecer
+              <span className="text-gradient-primary">Marketing estratégico</span> para conectar, impactar y crecer
             </h1>
             <p className="text-lg md:text-xl text-gray-700 mb-8 animate-slide-up">Creamos planes que combinan branding, IA, automatización y marketing digital para dar visibilidad a tu negocio, generar confianza y convertir visitas en clientes.</p>
             <div className="flex flex-col sm:flex-row gap-4 animate-slide-up">
