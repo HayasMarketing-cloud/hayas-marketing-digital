@@ -311,6 +311,14 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     link: "/casos-exito/carniceria-picos-de-europa",
     image: "https://images.unsplash.com/photo-1604908177520-1f23f582012f?q=80&w=2069&auto=format&fit=crop",
     tags: ["redes-sociales", "instagram", "contenidos", "alimentacion", "b2c", "retail"]
+  },
+  {
+    name: "Pastelería La Oriental Sin Gluten",
+    industry: "Pastelería artesanal sin gluten",
+    service: "Rediseño de ecommerce, CRM y redes sociales",
+    link: "/casos-exito/pasteleria-la-oriental-sin-gluten",
+    image: "https://images.unsplash.com/photo-1541781286675-09b4d3a45f5e?q=80&w=2069&auto=format&fit=crop",
+    tags: ["ecommerce", "crm", "hubspot", "redes-sociales", "ux", "conversion", "alimentacion", "b2c"]
   }
 ];
 
