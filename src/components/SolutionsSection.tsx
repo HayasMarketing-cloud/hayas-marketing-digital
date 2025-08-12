@@ -62,8 +62,12 @@ const SolutionsSection = () => {
                     {solution.description}
                   </p>
                   <div className="text-sm text-gray-500 border-t pt-3">
-                    <span className="font-medium">Incluye:</span>
-                    <p className="mt-1">{solution.includes}</p>
+                    <span className="font-medium">Servicios relacionados:</span>
+                    <ul className="mt-2 list-disc pl-5 space-y-1 text-gray-600">
+                      {solution.includes.split('•').map((item, idx) => (
+                        <li key={idx} className="text-sm">{item.trim()}</li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
                 <Button 
