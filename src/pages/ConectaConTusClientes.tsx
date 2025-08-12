@@ -665,14 +665,16 @@ const ConectaConTusClientes = () => {
                   
                   <div className="border-t pt-6">
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                      <Link to="/administracion-crm-marketing#top">
+                      <Link to="/servicios/administracion-crm#top">
                         <Button className="gradient-primary text-white px-8 py-3 text-lg font-medium">
                           Conocer Solución Integral
                         </Button>
                       </Link>
-                      <Button variant="outline" className="px-8 py-3 text-lg font-medium">
-                        Solicitar Consultoría Estratégica
-                      </Button>
+                      <Link to="/solicitar-consulta#top">
+                        <Button variant="outline" className="px-8 py-3 text-lg font-medium">
+                          Solicitar Consultoría Estratégica
+                        </Button>
+                      </Link>
                     </div>
                   </div>
                 </CardContent>
