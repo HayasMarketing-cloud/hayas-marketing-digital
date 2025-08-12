@@ -34,7 +34,7 @@ const CasosExito = () => {
   const tagCategories = {
     'Soluciones': ['branding', 'creacion-marca', 'diseño-web', 'estrategia-digital', 'marketing-digital'],
     'Servicios': ['naming', 'identidad-visual', 'posicionamiento', 'automatizacion', 'contenidos', 'crm', 'alojamiento-mantenimiento', 'hubspot'],
-    'Sectores': ['medicina', 'salud', 'alimentacion', 'educacion', 'deporte', 'desarrollo-personal', 'traduccion', 'transporte', 'logistica', 'ecommerce']
+    'Sectores': ['medicina', 'salud', 'alimentacion', 'educacion', 'deporte', 'desarrollo-personal', 'traduccion', 'transporte', 'logistica', 'ecommerce', 'higiene', 'b2b']
   };
 
   const getTagCategory = (tag: string) => {

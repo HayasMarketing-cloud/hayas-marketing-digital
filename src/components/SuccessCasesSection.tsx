@@ -111,6 +111,14 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     link: "/casos-exito/asendia",
     image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop",
     tags: ["crm", "automatizacion", "hubspot", "ecommerce", "logistica", "b2b"]
+  },
+  {
+    name: "ASP ASEPSIA",
+    industry: "Higiene y desinfección profesional",
+    service: "Implantación CRM HubSpot, automatización de ventas y consultoría continua",
+    link: "/casos-exito/asp-asepsia",
+    image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=2070&auto=format&fit=crop",
+    tags: ["crm", "automatizacion", "hubspot", "higiene"]
   }
 ];
 

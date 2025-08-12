@@ -26,6 +26,7 @@ import CasoExitoJointsUp from "./pages/CasoExitoJointsUp";
 import CasoExitoTranslateWithStyle from "./pages/CasoExitoTranslateWithStyle";
 import CasoExitoFormatoEducativo from "./pages/CasoExitoFormatoEducativo";
 import CasoExitoOMR from "./pages/CasoExitoOMR";
+import CasoExitoAspAsepsia from "./pages/CasoExitoAspAsepsia";
 import ImplantacionCrm from "./pages/ImplantacionCrm";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
@@ -101,6 +102,7 @@ const App = () => (
           <Route path="/casos-exito/translate-with-style" element={<CasoExitoTranslateWithStyle />} />
           <Route path="/casos-exito/formato-educativo" element={<CasoExitoFormatoEducativo />} />
           <Route path="/casos-exito/omr" element={<CasoExitoOMR />} />
+          <Route path="/casos-exito/asp-asepsia" element={<CasoExitoAspAsepsia />} />
           
           {/* BLOG / RECURSOS */}
           <Route path="/blog" element={<Blog />} />
