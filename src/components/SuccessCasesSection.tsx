@@ -135,6 +135,14 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     link: "/casos-exito/moda-intima-vania",
     image: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=2070&auto=format&fit=crop",
     tags: ["crm", "hubspot", "redes-sociales", "retail", "moda", "b2c"]
+  },
+  {
+    name: "ALFIX Consultores",
+    industry: "Asesoría fiscal y despacho de abogados",
+    service: "Implantación CRM HubSpot con enfoque en eficiencia y venta cruzada",
+    link: "/casos-exito/alfix-consultores",
+    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2070&auto=format&fit=crop",
+    tags: ["crm", "hubspot", "consultoria", "legal", "fiscal", "b2b"]
   }
 ];
 
