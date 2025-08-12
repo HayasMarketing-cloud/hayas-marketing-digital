@@ -5,27 +5,17 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
-import {
-  Breadcrumb,
-  BreadcrumbList,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbSeparator,
-  BreadcrumbPage,
-} from '@/components/ui/breadcrumb';
+import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage } from '@/components/ui/breadcrumb';
 import Seo from '@/components/Seo';
 import { CheckCircle, TrendingUp, Settings, ExternalLink } from 'lucide-react';
 const omrHero = '/lovable-uploads/764018c5-696f-40bb-ae95-58178a289c68.png';
-
 const CasoExitoOMR = (): React.JSX.Element => {
   const canonical = typeof window !== 'undefined' ? window.location.href : undefined;
-
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'CaseStudy',
     name: 'Caso de Éxito — OMR: Diseño web para un transporte a medida',
-    description:
-      'Diseño web y alojamiento/mantenimiento para OMR, modernizando su presencia digital y asegurando rendimiento y disponibilidad.',
+    description: 'Diseño web y alojamiento/mantenimiento para OMR, modernizando su presencia digital y asegurando rendimiento y disponibilidad.',
     url: '/casos-exito/omr',
     inLanguage: 'es',
     about: {
@@ -34,23 +24,15 @@ const CasoExitoOMR = (): React.JSX.Element => {
       url: 'https://transportesespecialesomr.es',
       sameAs: ['https://transportesespecialesomr.es'],
       areaServed: 'ES',
-      industry: 'Transporte especializado',
+      industry: 'Transporte especializado'
     },
     provider: {
       '@type': 'Organization',
-      name: 'Hayas Marketing',
-    },
+      name: 'Hayas Marketing'
+    }
   } as const;
-
-  return (
-    <div className="min-h-screen bg-background">
-      <Seo
-        title="Caso de Éxito: OMR | Diseño web y mantenimiento"
-        description="Rediseñamos la web de OMR y gestionamos su alojamiento/mantenimiento para mejorar captación y rendimiento."
-        canonical={canonical}
-        structuredData={structuredData as unknown as Record<string, any>}
-        ogImage={omrHero}
-      />
+  return <div className="min-h-screen bg-background">
+      <Seo title="Caso de Éxito: OMR | Diseño web y mantenimiento" description="Rediseñamos la web de OMR y gestionamos su alojamiento/mantenimiento para mejorar captación y rendimiento." canonical={canonical} structuredData={structuredData as unknown as Record<string, any>} ogImage={omrHero} />
 
       <Navigation />
 
@@ -109,12 +91,7 @@ const CasoExitoOMR = (): React.JSX.Element => {
             </div>
             <div className="relative">
               <div className="aspect-[16/10] rounded-xl overflow-hidden shadow-corporate border">
-                <img
-                  src={omrHero}
-                  alt="Transporte especializado — camión en carretera (OMR)"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
+                <img src={omrHero} alt="Transporte especializado — camión en carretera (OMR)" className="w-full h-full object-cover" loading="lazy" />
               </div>
             </div>
           </div>
@@ -224,7 +201,7 @@ const CasoExitoOMR = (): React.JSX.Element => {
               <CardContent className="p-6">
                 <blockquote className="text-lg italic text-foreground/90">
                   “Nuestra nueva web refleja perfectamente lo que hacemos y nos ha ayudado a captar más clientes.” —
-                  <span className="not-italic"> [Cargo], OMR</span>
+                  <span className="not-italic"> Oscar Meras, Director General de Transportes Especiales OMR</span>
                 </blockquote>
               </CardContent>
             </Card>
@@ -270,8 +247,6 @@ const CasoExitoOMR = (): React.JSX.Element => {
       </main>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default CasoExitoOMR;
