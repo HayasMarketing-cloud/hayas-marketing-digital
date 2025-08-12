@@ -54,7 +54,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     service: "Branding, posicionamiento, automatización",
     link: "/caso-exito-calisthenia-online",
     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070&auto=format&fit=crop",
-    tags: ["branding", "creacion-marca", "naming", "posicionamiento", "automatizacion", "deporte", "identidad-visual"]
+    tags: ["branding", "creacion-marca", "naming", "posicionamiento", "deporte", "identidad-visual"]
   },
   {
     name: "Centro Roraima",
