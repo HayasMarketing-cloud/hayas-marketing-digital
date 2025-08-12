@@ -10,7 +10,7 @@ const solutions = [
     id: 1,
     icon: <Rocket className="h-8 w-8 text-primary" />,
     title: "Impulsa tu marca",
-    description: "Identidad sólida y reconocible: naming, imagen, web y SEO para impulsar confianza y tráfico directo.",
+    description: "Construye una marca atractiva, adaptada a tu audiencia, reconocible y consistente. Una identidad sólida no solo genera confianza, sino que convierte al tráfico directo en uno de los principales activos estratégicos de tu empresa.",
     includes: "Creación de Marca • Marketing y Visibilidad • Gestión del Plan de Marketing",
     href: "/soluciones/impulsa-tu-marca"
   },
