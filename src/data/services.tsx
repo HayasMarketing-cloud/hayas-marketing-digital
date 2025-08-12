@@ -177,6 +177,14 @@ export const allServices: ServiceItem[] = [
     href: '/servicios/administracion-crm',
     pillar: 'conecta',
   },
+  {
+    id: 18,
+    icon: <Globe className="h-10 w-10 text-hayas-primary" />,
+    title: 'Localización de contenidos',
+    description: 'Adapta tu comunicación a cada mercado: idioma, cultura y SEO.',
+    href: '/servicios/localizacion-contenidos',
+    pillar: 'impulsa',
+  },
 ];
 
 export const servicesByPillar: Record<PillarKey, ServiceItem[]> = allServices.reduce((acc, s) => {

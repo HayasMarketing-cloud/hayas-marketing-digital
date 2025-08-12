@@ -52,6 +52,7 @@ import ConsultoriaEstrategicaAnalitica from './pages/ConsultoriaEstrategicaAnali
 import IntegracionesIAProcesos from './pages/IntegracionesIAProcesos';
 import EstrategiaContenidos from './pages/EstrategiaContenidos';
 import AdministracionCrm from './pages/AdministracionCrm';
+import LocalizacionContenidos from './pages/LocalizacionContenidos';
 
 const queryClient = new QueryClient();
 
@@ -143,6 +144,7 @@ const App = () => (
           <Route path="/servicios/consultoria-estrategica-analitica" element={<ConsultoriaEstrategicaAnalitica />} />
           <Route path="/servicios/integraciones-ia-procesos" element={<IntegracionesIAProcesos />} />
           <Route path="/servicios/estrategia-contenidos" element={<EstrategiaContenidos />} />
+          <Route path="/servicios/localizacion-contenidos" element={<LocalizacionContenidos />} />
           <Route path="/servicios/asistente-ia-atencion-cliente" element={<AsistenteIA />} />
           <Route path="/servicios/alojamiento-mantenimiento-web" element={<Navigate to="/servicios/diseno-web/alojamiento-mantenimiento" replace />} />
           <Route path="/servicios/marketing-directo" element={<MarketingDirecto />} />
