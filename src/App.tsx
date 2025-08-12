@@ -43,6 +43,7 @@ import CasoExitoGiveAndGo from "./pages/CasoExitoGiveAndGo";
 import CasoExitoHikvision from "./pages/CasoExitoHikvision";
 import CasoExitoOWOGame from "./pages/CasoExitoOWOGame";
 import CasoExitoNovaPraxis from "./pages/CasoExitoNovaPraxis";
+import CasoExitoAistercel from "./pages/CasoExitoAistercel";
 import ImplantacionCrm from "./pages/ImplantacionCrm";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
@@ -139,6 +140,7 @@ const App = () => (
           <Route path="/casos-exito/hikvision" element={<CasoExitoHikvision />} />
           <Route path="/casos-exito/owo-game" element={<CasoExitoOWOGame />} />
           <Route path="/casos-exito/nova-praxis" element={<CasoExitoNovaPraxis />} />
+          <Route path="/casos-exito/aistercel" element={<CasoExitoAistercel />} />
           
           {/* BLOG / RECURSOS */}
           <Route path="/blog" element={<Blog />} />
@@ -175,7 +177,8 @@ const App = () => (
           <Route path="/caso-exito-give-and-go" element={<CasoExitoGiveAndGo />} />
           <Route path="/caso-exito-hikvision" element={<CasoExitoHikvision />} />
           <Route path="/caso-exito-owo-game" element={<CasoExitoOWOGame />} />
-          <Route path="/caso-exito-nova-praxis" element={<CasoExitoNovaPraxis />} />
+           <Route path="/caso-exito-nova-praxis" element={<CasoExitoNovaPraxis />} />
+           <Route path="/caso-exito-aistercel" element={<CasoExitoAistercel />} />
           
           <Route path="/servicios/creacion-marca" element={<CreacionMarca />} />
           <Route path="/servicios/gestion-redes-sociales" element={<GestionRedesSociales />} />

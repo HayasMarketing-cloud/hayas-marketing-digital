@@ -216,15 +216,23 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2069&auto=format&fit=crop",
     tags: ["crm", "seo", "redes-sociales", "gaming", "startup"]
   },
-  {
-    name: "Nova Praxis",
-    industry: "Consultora estratégica B2B",
-    service: "CRM, automatizaciones, LinkedIn, SEO y Google Ads",
-    link: "/casos-exito/nova-praxis",
-    image: "https://images.unsplash.com/photo-1551836022-4c4c79ecde51?q=80&w=2069&auto=format&fit=crop",
-    tags: ["crm", "automatizacion", "linkedin", "seo", "google-ads", "consultoria", "b2b"]
-  }
-];
+      {
+        name: "Nova Praxis",
+        industry: "Consultora estratégica B2B",
+        service: "CRM, automatizaciones, LinkedIn, SEO y Google Ads",
+        link: "/casos-exito/nova-praxis",
+        image: "https://images.unsplash.com/photo-1551836022-4c4c79ecde51?q=80&w=2069&auto=format&fit=crop",
+        tags: ["crm", "automatizacion", "linkedin", "seo", "google-ads", "consultoria", "b2b"]
+      },
+      {
+        name: "Aistercel",
+        industry: "Aislamiento industrial y mantenimiento",
+        service: "CRM HubSpot y rediseño web",
+        link: "/casos-exito/aistercel",
+        image: "https://images.unsplash.com/photo-1581092580496-6c76b21d2b36?q=80&w=2069&auto=format&fit=crop",
+        tags: ["crm", "hubspot", "diseño-web", "ux", "industrial", "b2b"]
+      }
+    ];
 
 const SuccessCasesSection: React.FC<SuccessCasesSectionProps> = ({
   title = "Casos de éxito",
