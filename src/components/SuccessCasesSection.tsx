@@ -175,6 +175,14 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     link: "/casos-exito/eva-champion",
     image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=2069&auto=format&fit=crop",
     tags: ["marca-personal", "linkedin", "estrategia", "traduccion", "b2b"]
+  },
+  {
+    name: "Beluga Linguistics",
+    industry: "Agencia de traducción e interpretación",
+    service: "CRM HubSpot, SEO internacional y LinkedIn",
+    link: "/casos-exito/beluga-linguistics",
+    image: "https://images.unsplash.com/photo-1518081461904-9ac4b8653aab?q=80&w=2069&auto=format&fit=crop",
+    tags: ["crm", "hubspot", "seo", "linkedin", "traduccion", "b2b"]
   }
 ];
 
