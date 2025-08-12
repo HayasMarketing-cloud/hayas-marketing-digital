@@ -126,8 +126,8 @@ const ConectaConTusClientes = () => {
   return (
     <div id="top" className="min-h-screen flex flex-col">
       <Seo
-        title="Conecta con tus clientes | CRM, Automatización y Leads"
-        description="Optimiza la captación, gestión y fidelización con CRM, automatizaciones y embudos que convierten."
+        title="Conecta con tus clientes | Conocimiento y experiencia"
+        description="Conecta con tus clientes transformando datos y feedback en estrategias que anticipan necesidades, mejoran la experiencia y fortalecen la relación."
         canonical="/soluciones/conecta-con-tus-clientes"
         structuredData={[
           {
@@ -186,13 +186,13 @@ const ConectaConTusClientes = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <Badge variant="outline" className="mb-4 text-hayas-600 border-hayas-200">
-                  CRM y Automatización
+                  Conecta con tus clientes
                 </Badge>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                  CRM y <span className="text-gradient-primary">Automatización</span> de Marketing
+                  Conecta con tus <span className="text-gradient-primary">clientes</span>
                 </h1>
                 <p className="text-xl text-gray-700 mb-8 leading-relaxed font-medium">
-                  Gestiona relaciones con tus clientes desde una única plataforma. Automatiza procesos, optimiza la productividad y personaliza cada interacción.
+                  La conexión real con tus clientes empieza con el conocimiento profundo de quiénes son y qué necesitan. En Hayas Marketing transformamos datos y feedback en estrategias que anticipan necesidades, mejoran la experiencia y fortalecen la relación con tu audiencia.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link to="/?scrollTo=contacto">

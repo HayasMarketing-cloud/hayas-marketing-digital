@@ -18,7 +18,7 @@ const solutions = [
     id: 2,
     icon: <Heart className="h-8 w-8 text-primary" />,
     title: "Conecta con tus clientes",
-    description: "Atrae, convierte y fideliza con estrategias centradas en las personas, no en el ruido.",
+      description: "Conoce y anticipa a tu audiencia: convierte datos y feedback en estrategias que mejoran la experiencia y fortalecen la relación.",
     includes: "Captación de Leads • CRM y Automatizaciones • Soluciones IA aplicada a Marketing",
     href: "/soluciones/conecta-con-tus-clientes"
   },
