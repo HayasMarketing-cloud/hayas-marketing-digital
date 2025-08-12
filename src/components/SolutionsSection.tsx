@@ -18,7 +18,7 @@ const solutions = [
     id: 2,
     icon: <Heart className="h-8 w-8 text-primary" />,
     title: "Conecta con tus clientes",
-      description: "Conoce y anticipa a tu audiencia: convierte datos y feedback en estrategias que mejoran la experiencia y fortalecen la relación.",
+      description: "La clave para crecer está en conocer a fondo a tus clientes actuales y potenciales. Comprender sus necesidades, comportamientos y expectativas nos permite ayudarte a mejorar tu desempeño, optimizar la experiencia de usuario y, si es necesario, adaptar tus productos o servicios a nuevas demandas del mercado.",
     includes: "Captación de Leads • CRM y Automatizaciones • Soluciones IA aplicada a Marketing",
     href: "/soluciones/conecta-con-tus-clientes"
   },
