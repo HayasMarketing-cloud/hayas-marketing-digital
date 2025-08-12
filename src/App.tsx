@@ -39,6 +39,7 @@ import CasoExitoEvaChampion from "./pages/CasoExitoEvaChampion";
 import CasoExitoBelugaLinguistics from "./pages/CasoExitoBelugaLinguistics";
 import CasoExitoWooptix from "./pages/CasoExitoWooptix";
 import CasoExitoPamdamedia from "./pages/CasoExitoPamdamedia";
+import CasoExitoGiveAndGo from "./pages/CasoExitoGiveAndGo";
 import ImplantacionCrm from "./pages/ImplantacionCrm";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
@@ -131,6 +132,7 @@ const App = () => (
           <Route path="/casos-exito/beluga-linguistics" element={<CasoExitoBelugaLinguistics />} />
           <Route path="/casos-exito/wooptix" element={<CasoExitoWooptix />} />
           <Route path="/casos-exito/pamdamedia" element={<CasoExitoPamdamedia />} />
+          <Route path="/casos-exito/give-and-go" element={<CasoExitoGiveAndGo />} />
           
           {/* BLOG / RECURSOS */}
           <Route path="/blog" element={<Blog />} />
@@ -164,6 +166,7 @@ const App = () => (
           <Route path="/caso-exito-omr" element={<CasoExitoOMR />} />
           <Route path="/caso-exito-wooptix" element={<CasoExitoWooptix />} />
           <Route path="/caso-exito-pamdamedia" element={<CasoExitoPamdamedia />} />
+          <Route path="/caso-exito-give-and-go" element={<CasoExitoGiveAndGo />} />
           
           <Route path="/servicios/creacion-marca" element={<CreacionMarca />} />
           <Route path="/servicios/gestion-redes-sociales" element={<GestionRedesSociales />} />
