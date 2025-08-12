@@ -303,6 +303,14 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     link: "/casos-exito/peris-electricidad",
     image: "https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=2069&auto=format&fit=crop",
     tags: ["diseño-web", "crm", "hubspot", "seo", "industrial", "servicios-tecnicos", "b2b"]
+  },
+  {
+    name: "Carnicería Picos de Europa",
+    industry: "Carnicería tradicional y productos cárnicos de alta calidad",
+    service: "Estrategia y gestión de Instagram",
+    link: "/casos-exito/carniceria-picos-de-europa",
+    image: "https://images.unsplash.com/photo-1604908177520-1f23f582012f?q=80&w=2069&auto=format&fit=crop",
+    tags: ["redes-sociales", "instagram", "contenidos", "alimentacion", "b2c", "retail"]
   }
 ];
 

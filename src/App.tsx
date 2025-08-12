@@ -53,6 +53,7 @@ import CasoExitoRivasCentro from "./pages/CasoExitoRivasCentro";
 import CasoExitoHubSpotForStartups from "./pages/CasoExitoHubSpotForStartups";
 import CasoExitoBekaFinance from "./pages/CasoExitoBekaFinance";
 import CasoExitoPerisElectricidad from "./pages/CasoExitoPerisElectricidad";
+import CasoExitoCarniceriaPicosDeEuropa from "./pages/CasoExitoCarniceriaPicosDeEuropa";
 import ImplantacionCrm from "./pages/ImplantacionCrm";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
@@ -159,6 +160,7 @@ const App = () => (
           <Route path="/casos-exito/hubspot-for-startups" element={<CasoExitoHubSpotForStartups />} />
           <Route path="/casos-exito/beka-finance" element={<CasoExitoBekaFinance />} />
           <Route path="/casos-exito/peris-electricidad" element={<CasoExitoPerisElectricidad />} />
+          <Route path="/casos-exito/carniceria-picos-de-europa" element={<CasoExitoCarniceriaPicosDeEuropa />} />
           
           {/* BLOG / RECURSOS */}
           <Route path="/blog" element={<Blog />} />
@@ -206,6 +208,7 @@ const App = () => (
                  <Route path="/caso-exito-hubspot-for-startups" element={<CasoExitoHubSpotForStartups />} />
                  <Route path="/caso-exito-beka-finance" element={<CasoExitoBekaFinance />} />
                  <Route path="/caso-exito-peris-electricidad" element={<CasoExitoPerisElectricidad />} />
+                 <Route path="/caso-exito-carniceria-picos-de-europa" element={<CasoExitoCarniceriaPicosDeEuropa />} />
           
           <Route path="/servicios/creacion-marca" element={<CreacionMarca />} />
           <Route path="/servicios/gestion-redes-sociales" element={<GestionRedesSociales />} />
