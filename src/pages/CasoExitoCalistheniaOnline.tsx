@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowLeft, Dumbbell, TrendingUp, Award, ExternalLink, CheckCircle, Users } from 'lucide-react';
+import { ArrowLeft, ExternalLink, CheckCircle } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -14,10 +14,24 @@ import {
   BreadcrumbSeparator,
   BreadcrumbPage,
 } from '@/components/ui/breadcrumb';
+import Seo from '@/components/Seo';
 
 const CasoExitoCalistheniaOnline = () => {
   return (
     <div id="top" className="min-h-screen bg-white">
+      <Seo
+        title="Caso de Éxito — Calisthenia Online: Entrenamiento personalizado que conquista el entorno digital"
+        description="Posicionamos a un entrenador de calistenia como referente online con marca, web, SEO y automatización que impulsan su captación."
+        canonical="/casos-exito/calistenia-online"
+        ogImage="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070&auto=format&fit=crop"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "Caso de Éxito — Calisthenia Online",
+          "description": "Entrenamiento personalizado que conquista el entorno digital",
+          "inLanguage": "es"
+        }}
+      />
       <Navigation />
       
       <main>
@@ -65,20 +79,20 @@ const CasoExitoCalistheniaOnline = () => {
                   Caso de Éxito
                 </Badge>
                 <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                  Calistenia Online: <span className="text-gradient-primary">Fuerza</span> Digital
+                  Caso de Éxito — Calisthenia Online: Entrenamiento personalizado que conquista el entorno digital
                 </h1>
-                <p className="text-xl text-gray-700 mb-8 leading-relaxed font-medium">
-                  De entrenador personal a referente digital en calistenia con sistemas automatizados
-                </p>
+                <h2 className="text-2xl text-gray-700 mb-8 leading-relaxed font-semibold">
+                  Posicionando a un entrenador de calistenia como referente online
+                </h2>
                 <div className="flex items-center gap-4 mb-8">
                   <Badge className="bg-hayas-100 text-hayas-700">Entrenamiento Online</Badge>
                   <Badge className="bg-turquesa-100 text-turquesa-700">Calistenia</Badge>
                 </div>
                 <Link to="https://calistheniaonline.com" target="_blank">
-                  <Button className="gradient-primary text-white px-6 py-3">
-                    Visitar Web
-                    <ExternalLink className="w-4 h-4 ml-2" />
-                  </Button>
+                    <Button className="gradient-primary text-white px-6 py-3">
+                      Visita Calisthenia Online
+                      <ExternalLink className="w-4 h-4 ml-2" />
+                    </Button>
                 </Link>
               </div>
               <div className="relative">
@@ -104,11 +118,9 @@ const CasoExitoCalistheniaOnline = () => {
                 <CardContent className="p-8">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
-                      <h3 className="text-xl font-semibold mb-4 text-hayas-600">Perfil del Cliente</h3>
+                      <h3 className="text-xl font-semibold mb-4 text-hayas-600">Sobre Calistenia Online</h3>
                       <p className="text-gray-600 mb-6 leading-relaxed">
-                        Entrenador personal especializado en calistenia con una visión clara: democratizar el acceso 
-                        al entrenamiento con peso corporal a través de programas online estructurados y sistemas 
-                        de seguimiento personalizado.
+                        “Calisthenia Online es un servicio de entrenamiento personal especializado en calistenia, dirigido por un profesional certificado que entrena a clientes de todo el mundo a través de programas online personalizados. Su propuesta combina técnica, motivación y seguimiento continuo.”
                       </p>
                       <div className="space-y-3">
                         <div className="flex items-center gap-3">
@@ -128,9 +140,7 @@ const CasoExitoCalistheniaOnline = () => {
                     <div>
                       <h3 className="text-xl font-semibold mb-4 text-turquesa-600">El Reto</h3>
                       <p className="text-gray-600 leading-relaxed">
-                        Transformar un negocio de entrenamiento presencial en una plataforma digital escalable. 
-                        Necesitaba crear un sistema que permitiera atender a cientos de clientes manteniendo 
-                        la personalización y calidad del servicio, diferenciándose en un mercado saturado de fitness online.
+                        “Necesitaban construir una identidad de marca sólida, una presencia digital optimizada y un diseño web que transmitiera profesionalidad y motivación. El objetivo era diferenciarse en un mercado competitivo y atraer clientes de forma orgánica y sostenida.”
                       </p>
                     </div>
                   </div>
@@ -148,45 +158,24 @@ const CasoExitoCalistheniaOnline = () => {
                 Solución <span className="text-gradient-primary">Aplicada</span>
               </h2>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {[
-                  {
-                    icon: <Award className="h-8 w-8 text-hayas-600" />,
-                    title: "Branding Deportivo",
-                    description: "Identidad visual que transmite fuerza, disciplina y profesionalidad en el mundo de la calistenia."
-                  },
-                  {
-                    icon: <Users className="h-8 w-8 text-turquesa-600" />,
-                    title: "Posicionamiento Digital",
-                    description: "Estrategia de redes sociales que establece autoridad en calistenia y atrae audiencia comprometida."
-                  },
-                  {
-                    icon: <Dumbbell className="h-8 w-8 text-hayas-600" />,
-                    title: "Sistema de Entrenamiento",
-                    description: "Automatización completa del proceso de entrega de rutinas y seguimiento de progreso."
-                  },
-                  {
-                    icon: <TrendingUp className="h-8 w-8 text-turquesa-600" />,
-                    title: "Embudo de Captación",
-                    description: "Sistema automatizado de captación que convierte seguidores en clientes de alto valor."
-                  }
-                ].map((service, index) => (
-                  <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-all duration-300">
-                    <CardHeader className="text-center">
-                      <div className="mb-4 mx-auto p-3 rounded-lg bg-gray-100 w-fit">
-                        {service.icon}
-                      </div>
-                      <CardTitle className="text-lg font-bold">
-                        {service.title}
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-gray-600 text-center">
-                        {service.description}
-                      </p>
-                    </CardContent>
-                  </Card>
-                ))}
+              <div className="max-w-3xl mx-auto">
+                <ul className="space-y-6 text-gray-700">
+                  <li>
+                    <span className="font-semibold">Creación de Marca:</span> Definición de identidad visual, tono de comunicación y elementos gráficos que transmiten confianza, energía y profesionalidad.
+                  </li>
+                  <li>
+                    <span className="font-semibold">Diseño Web:</span> Desarrollo de un sitio web responsive y visualmente atractivo, con una estructura optimizada para la conversión y una navegación intuitiva.
+                  </li>
+                  <li>
+                    <span className="font-semibold">Estrategia y Posicionamiento SEO:</span> Investigación de palabras clave estratégicas, optimización de contenidos y estructura web, lo que permitió aumentar el tráfico orgánico y atraer clientes de distintas regiones.
+                  </li>
+                  <li>
+                    <span className="font-semibold">Optimización de la Experiencia de Usuario:</span> Diseño de un flujo de navegación claro y accesible, facilitando el acceso a programas y solicitudes de entrenamiento.
+                  </li>
+                  <li>
+                    <span className="font-semibold">Automatización:</span> Implementación de procesos automáticos para la captación y seguimiento de leads, reduciendo carga administrativa y mejorando la conversión.
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -201,10 +190,7 @@ const CasoExitoCalistheniaOnline = () => {
                 Lo que <span className="text-gradient-primary">Aprendimos</span>
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Este caso nos enseñó el poder de la automatización inteligente en servicios personalizados. 
-                Descubrimos que es posible mantener la calidad del entrenamiento personal mientras se escala 
-                digitalmente, siempre que se combinen sistemas robustos con una marca auténtica que transmita 
-                los valores del entrenador y genere comunidad en torno a la disciplina.
+                “En negocios de entrenamiento personal online, una marca sólida unida a un diseño web eficaz, una estrategia SEO bien dirigida y automatización inteligente es la clave para escalar manteniendo la cercanía con el cliente.”
               </p>
             </div>
           </div>
