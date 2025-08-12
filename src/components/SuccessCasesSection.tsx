@@ -231,6 +231,14 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
         link: "/casos-exito/aistercel",
         image: "https://images.unsplash.com/photo-1581092580496-6c76b21d2b36?q=80&w=2069&auto=format&fit=crop",
         tags: ["crm", "hubspot", "diseño-web", "ux", "industrial", "b2b"]
+      },
+      {
+        name: "QuanticBI",
+        industry: "Consultora de inteligencia de negocio",
+        service: "Implantación CRM HubSpot y automatizaciones",
+        link: "/casos-exito/quanticbi",
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2069&auto=format&fit=crop",
+        tags: ["crm", "automatizacion", "hubspot", "bi", "datos", "consultoria", "b2b"]
       }
     ];
 
