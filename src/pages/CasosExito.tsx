@@ -33,8 +33,8 @@ const CasosExito = () => {
   // Categorizar etiquetas para mejor organización
   const tagCategories = {
     'Soluciones': ['branding', 'creacion-marca', 'diseño-web', 'estrategia-digital', 'marketing-digital'],
-    'Servicios': ['naming', 'identidad-visual', 'posicionamiento', 'automatizacion', 'contenidos'],
-    'Sectores': ['medicina', 'salud', 'alimentacion', 'educacion', 'deporte', 'desarrollo-personal', 'traduccion']
+    'Servicios': ['naming', 'identidad-visual', 'posicionamiento', 'automatizacion', 'contenidos', 'crm', 'alojamiento-mantenimiento', 'hubspot'],
+    'Sectores': ['medicina', 'salud', 'alimentacion', 'educacion', 'deporte', 'desarrollo-personal', 'traduccion', 'transporte', 'logistica', 'ecommerce']
   };
 
   const getTagCategory = (tag: string) => {

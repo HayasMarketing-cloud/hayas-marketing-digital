@@ -103,6 +103,14 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     link: "/casos-exito/omr",
     image: "/lovable-uploads/db7fa3bb-b3cd-437c-bdab-9aaa050b134e.png",
     tags: ["diseño-web", "alojamiento-mantenimiento", "transporte"]
+  },
+  {
+    name: "Asendia",
+    industry: "E-commerce transfronterizo y logística",
+    service: "CRM B2B con HubSpot y automatización de ventas",
+    link: "/casos-exito/asendia",
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop",
+    tags: ["crm", "automatizacion", "hubspot", "ecommerce", "logistica", "b2b"]
   }
 ];
 
