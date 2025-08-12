@@ -127,6 +127,14 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     link: "/casos-exito/bufete-maseras",
     image: "https://images.unsplash.com/photo-1528747045269-390fe33c19d8?q=80&w=2070&auto=format&fit=crop",
     tags: ["crm", "hubspot", "linkedin", "legal", "b2b"]
+  },
+  {
+    name: "Moda Íntima Vania",
+    industry: "Retail moda íntima",
+    service: "Consultoría en redes sociales e implantación de CRM HubSpot",
+    link: "/casos-exito/moda-intima-vania",
+    image: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=2070&auto=format&fit=crop",
+    tags: ["crm", "hubspot", "redes-sociales", "retail", "moda", "b2c"]
   }
 ];
 
