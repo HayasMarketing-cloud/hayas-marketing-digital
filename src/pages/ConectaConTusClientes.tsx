@@ -151,7 +151,7 @@ const ConectaConTusClientes = () => {
       />
       <Navigation />
       
-      <main className="flex-grow pt-56">
+      <main className="flex-grow">
         {/* Breadcrumbs */}
         <section className="py-4 bg-gray-50 border-b">
           <div className="container mx-auto px-4">
