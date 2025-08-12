@@ -20,15 +20,15 @@ const CasoExitoCalistheniaOnline = () => {
   return (
     <div id="top" className="min-h-screen bg-white">
       <Seo
-        title="Caso de Éxito — Calisthenia Online: Entrenamiento personalizado que conquista el entorno digital"
-        description="Posicionamos a un entrenador de calistenia como referente online con marca, web, SEO y automatización que impulsan su captación."
+        title="Caso de Éxito — Calisthenia Online: Una marca sólida para entrenar sin límites"
+        description="Branding, identidad visual, diseño web y SEO para un entrenador online especializado en calistenia"
         canonical="/casos-exito/calistenia-online"
         ogImage="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070&auto=format&fit=crop"
         structuredData={{
           "@context": "https://schema.org",
           "@type": "Article",
-          "headline": "Caso de Éxito — Calisthenia Online",
-          "description": "Entrenamiento personalizado que conquista el entorno digital",
+          "headline": "Caso de Éxito — Calisthenia Online: Una marca sólida para entrenar sin límites",
+          "description": "Branding, identidad visual, diseño web y SEO para un entrenador online especializado en calistenia",
           "inLanguage": "es"
         }}
       />
@@ -36,7 +36,7 @@ const CasoExitoCalistheniaOnline = () => {
       
       <main>
         {/* Breadcrumbs */}
-        <section className="py-4 bg-gray-50 border-b">
+        <section className="py-4 bg-muted/30 border-b">
           <div className="container mx-auto px-4">
             <Breadcrumb>
               <BreadcrumbList>
@@ -48,7 +48,7 @@ const CasoExitoCalistheniaOnline = () => {
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
                   <BreadcrumbLink asChild>
-                    <Link to="/creacion-marca">Creación de Marca</Link>
+                    <Link to="/casos-exito">Casos de Éxito</Link>
                   </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
@@ -61,11 +61,11 @@ const CasoExitoCalistheniaOnline = () => {
         </section>
 
         {/* Header Navigation */}
-        <section className="py-6 bg-gray-50">
+        <section className="py-6 bg-muted/30">
           <div className="container mx-auto px-4">
-            <Link to="/creacion-marca" className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors">
+            <Link to="/casos-exito" className="inline-flex items-center text-primary hover:underline">
               <ArrowLeft className="h-4 w-4 mr-2" />
-              Volver a Creación de Marca
+              Volver a Casos de Éxito
             </Link>
           </div>
         </section>
@@ -79,21 +79,21 @@ const CasoExitoCalistheniaOnline = () => {
                   Caso de Éxito
                 </Badge>
                 <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                  Caso de Éxito — Calisthenia Online: Entrenamiento personalizado que conquista el entorno digital
+                  Caso de Éxito — Calisthenia Online: Una marca sólida para entrenar sin límites
                 </h1>
-                <h2 className="text-2xl text-gray-700 mb-8 leading-relaxed font-semibold">
-                  Posicionando a un entrenador de calistenia como referente online
+                <h2 className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
+                  Branding, identidad visual, diseño web y SEO para un entrenador online especializado en calistenia
                 </h2>
                 <div className="flex items-center gap-4 mb-8">
                   <Badge className="bg-hayas-100 text-hayas-700">Entrenamiento Online</Badge>
                   <Badge className="bg-turquesa-100 text-turquesa-700">Calistenia</Badge>
                 </div>
-                <Link to="https://calistheniaonline.com" target="_blank">
-                    <Button className="gradient-primary text-white px-6 py-3">
-                      Visita Calisthenia Online
-                      <ExternalLink className="w-4 h-4 ml-2" />
-                    </Button>
-                </Link>
+                <Button asChild>
+                  <a href="https://calistheniaonline.com" target="_blank" rel="noopener noreferrer">
+                    Visita Calisthenia Online
+                    <ExternalLink className="w-4 h-4 ml-2" />
+                  </a>
+                </Button>
               </div>
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-hayas-200 to-turquesa-200 rounded-3xl transform rotate-6 scale-105 opacity-20"></div>
@@ -120,7 +120,7 @@ const CasoExitoCalistheniaOnline = () => {
                     <div>
                       <h3 className="text-xl font-semibold mb-4 text-hayas-600">Sobre Calistenia Online</h3>
                       <p className="text-gray-600 mb-6 leading-relaxed">
-                        “Calisthenia Online es un servicio de entrenamiento personal especializado en calistenia, dirigido por un profesional certificado que entrena a clientes de todo el mundo a través de programas online personalizados. Su propuesta combina técnica, motivación y seguimiento continuo.”
+                        “Calisthenia Online es una plataforma de entrenamiento creada por un entrenador personal especializado en calistenia, que ofrece programas y asesoramiento online para todo tipo de niveles, desde principiantes hasta atletas avanzados.”
                       </p>
                       <div className="space-y-3">
                         <div className="flex items-center gap-3">
@@ -140,7 +140,7 @@ const CasoExitoCalistheniaOnline = () => {
                     <div>
                       <h3 className="text-xl font-semibold mb-4 text-turquesa-600">El Reto</h3>
                       <p className="text-gray-600 leading-relaxed">
-                        “Necesitaban construir una identidad de marca sólida, una presencia digital optimizada y un diseño web que transmitiera profesionalidad y motivación. El objetivo era diferenciarse en un mercado competitivo y atraer clientes de forma orgánica y sostenida.”
+                        “Partíamos de cero: era necesario crear la marca, definir su identidad visual y construir una página web que transmitiera confianza, profesionalidad y energía, además de posicionarla en buscadores para captar clientes en un nicho muy específico.”
                       </p>
                     </div>
                   </div>
@@ -161,19 +161,19 @@ const CasoExitoCalistheniaOnline = () => {
               <div className="max-w-3xl mx-auto">
                 <ul className="space-y-6 text-gray-700">
                   <li>
-                    <span className="font-semibold">Creación de Marca:</span> Definición de identidad visual, tono de comunicación y elementos gráficos que transmiten confianza, energía y profesionalidad.
+                    <span className="font-semibold">Branding y Naming:</span> Creación del nombre ‘Calisthenia Online’, que comunica claramente el servicio y el nicho, con un enfoque directo y memorable.
                   </li>
                   <li>
-                    <span className="font-semibold">Diseño Web:</span> Desarrollo de un sitio web responsive y visualmente atractivo, con una estructura optimizada para la conversión y una navegación intuitiva.
+                    <span className="font-semibold">Identidad Visual:</span> Diseño de un logotipo y un sistema visual que transmiten dinamismo, fuerza y modernidad, incorporando una paleta de colores y tipografías alineadas con el espíritu del deporte.
                   </li>
                   <li>
-                    <span className="font-semibold">Estrategia y Posicionamiento SEO:</span> Investigación de palabras clave estratégicas, optimización de contenidos y estructura web, lo que permitió aumentar el tráfico orgánico y atraer clientes de distintas regiones.
+                    <span className="font-semibold">Diseño Web Personalizado:</span> Desarrollo de un sitio responsive, optimizado para conversión, que presenta de forma clara los servicios, programas y testimonios.
                   </li>
                   <li>
-                    <span className="font-semibold">Optimización de la Experiencia de Usuario:</span> Diseño de un flujo de navegación claro y accesible, facilitando el acceso a programas y solicitudes de entrenamiento.
+                    <span className="font-semibold">Estrategia y Posicionamiento SEO:</span> Implementación de una estrategia SEO técnica y de contenidos, orientada a palabras clave del sector fitness y calistenia, para aumentar la visibilidad y atraer tráfico cualificado.
                   </li>
                   <li>
-                    <span className="font-semibold">Automatización:</span> Implementación de procesos automáticos para la captación y seguimiento de leads, reduciendo carga administrativa y mejorando la conversión.
+                    <span className="font-semibold">Optimización de Experiencia de Usuario:</span> Navegación sencilla y llamadas a la acción bien ubicadas para facilitar el registro y la contratación de servicios.
                   </li>
                 </ul>
               </div>
@@ -190,7 +190,7 @@ const CasoExitoCalistheniaOnline = () => {
                 Lo que <span className="text-gradient-primary">Aprendimos</span>
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                “En negocios de entrenamiento personal online, una marca sólida unida a un diseño web eficaz, una estrategia SEO bien dirigida y automatización inteligente es la clave para escalar manteniendo la cercanía con el cliente.”
+                “En proyectos de entrenamiento online, una marca clara y coherente, un diseño web atractivo y una estrategia SEO bien definida son esenciales para destacar en un mercado altamente competitivo.”
               </p>
             </div>
           </div>
