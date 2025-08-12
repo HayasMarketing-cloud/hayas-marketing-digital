@@ -95,7 +95,7 @@ export const allServices: ServiceItem[] = [
     title: 'Asistente IA para Atención al Cliente',
     description: 'Chatbots inteligentes 24/7 que mejoran la experiencia del cliente.',
     href: '/servicios/asistente-ia-atencion-cliente',
-    pillar: 'conecta',
+    pillar: 'activa',
   },
   {
     id: 8,
