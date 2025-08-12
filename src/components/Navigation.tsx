@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { ChevronDown, ArrowRight } from 'lucide-react';
@@ -11,6 +11,8 @@ const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeMegaMenu, setActiveMegaMenu] = useState<string | null>(null);
   const [hoverTimeout, setHoverTimeout] = useState<NodeJS.Timeout | null>(null);
+  const headerRef = useRef<HTMLElement | null>(null);
+  const [headerHeight, setHeaderHeight] = useState<number>(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,6 +28,17 @@ const Navigation = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  useEffect(() => {
+    const updateHeight = () => {
+      if (headerRef.current) {
+        setHeaderHeight(headerRef.current.offsetHeight);
+      }
+    };
+    updateHeight();
+    window.addEventListener('resize', updateHeight);
+    return () => window.removeEventListener('resize', updateHeight);
+  }, [isScrolled]);
 
   const handleMouseEnter = (menuName: string) => {
     if (hoverTimeout) {
@@ -77,6 +90,7 @@ const Navigation = () => {
   return (
     <>
       <header
+        ref={headerRef}
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 bg-background/95 backdrop-blur-md border-b border-border/50 ${
           isScrolled ? 'shadow-corporate py-2' : 'py-4'
         }`}
@@ -268,13 +282,13 @@ const Navigation = () => {
       </header>
 
       {/* Spacer to offset fixed header so breadcrumbs and hero aren't hidden */}
-      <div aria-hidden className="h-[180px]"></div>
+      <div aria-hidden style={{ height: headerHeight }}></div>
 
       {/* Mega Menus - Positioned outside header to create continuous hover area */}
       {activeMegaMenu === 'soluciones' && (
         <div
           className="fixed left-0 right-0 bg-background border border-border rounded-lg shadow-corporate z-30 overflow-hidden"
-          style={{ top: isScrolled ? '120px' : '180px' }}
+          style={{ top: headerHeight }}
           onMouseEnter={() => handleMouseEnter('soluciones')}
           onMouseLeave={handleMouseLeave}
         >
@@ -325,7 +339,7 @@ const Navigation = () => {
       {activeMegaMenu === 'servicios' && (
         <div
           className="fixed left-0 right-0 bg-background border border-border rounded-lg shadow-corporate z-30 overflow-hidden"
-          style={{ top: isScrolled ? '120px' : '180px' }}
+          style={{ top: headerHeight }}
           onMouseEnter={() => handleMouseEnter('servicios')}
           onMouseLeave={handleMouseLeave}
         >

@@ -20,7 +20,7 @@ const CasoExitoInboundStudents = () => {
     <div id="top" className="min-h-screen bg-white">
       <Navigation />
       
-      <main className="pt-56">
+      <main>
         {/* Breadcrumbs */}
         <section className="py-4 bg-gray-50 border-b">
           <div className="container mx-auto px-4">
