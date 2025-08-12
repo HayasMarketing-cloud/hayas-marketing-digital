@@ -24,8 +24,8 @@ const ImpulsaTuMarca = () => {
   return (
     <div id="top" className="min-h-screen bg-white">
       <Seo
-        title="Impulsa tu marca | Branding, identidad y visibilidad"
-        description="Fortalece tu marca con identidad clara, diseño y posicionamiento: branding, manual de marca y presencia estratégica."
+        title="Impulsa tu marca: identidad sólida y reconocible"
+        description="Tu marca es más que un logotipo. Naming, identidad visual, web y e-commerce, SEO y mantenimiento seguro para impulsar confianza y visibilidad."
         canonical="/soluciones/impulsa-tu-marca"
         structuredData={[
           {
@@ -87,18 +87,16 @@ const ImpulsaTuMarca = () => {
                   Creación de Marca
                 </Badge>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                  Branding e <span className="text-gradient-primary">Identidad de Marca</span>
+                  <span className="text-gradient-primary">Impulsa tu marca</span> con una identidad sólida y coherente
                 </h1>
                 <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-gray-700">
-                  Logotipo, Manual de marca y diseño gráfico online e impreso
+                  Construye una identidad reconocible que destaque en tu sector
                 </h2>
                 <p className="text-xl text-gray-700 mb-8 leading-relaxed font-medium">
-                  "Transformamos la presencia de tu marca con una imagen única y profesional que refleje el ADN de tu marca"
+                  Tu marca es mucho más que un logotipo: es la huella que dejas en cada interacción con tu público.
                 </p>
                 <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                  Llevamos a cabo el proceso de diseño y creación de tu marca de principio a fin, desde el nombre, 
-                  la creación del logotipo y la entrega de un completo manual de identidad corporativa con los 
-                  parámetros de la comunicación y presentación en diversos formatos de tu marca.
+                  Unimos diseño, narrativa y presencia digital para crear una marca relevante, memorable y competitiva. Desde el naming e identidad visual hasta una web optimizada y preparada para crecer. Sumamos SEO y contenidos para visibilidad, y alojamiento y mantenimiento seguros y escalables.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link to="/?scrollTo=contacto">

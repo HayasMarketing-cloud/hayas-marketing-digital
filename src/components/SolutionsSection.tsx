@@ -10,7 +10,7 @@ const solutions = [
     id: 1,
     icon: <Rocket className="h-8 w-8 text-primary" />,
     title: "Impulsa tu marca",
-    description: "Posiciona tu negocio con una identidad clara, una voz auténtica y una presencia estratégica.",
+    description: "Identidad sólida y reconocible: naming, imagen, web y SEO para impulsar confianza y tráfico directo.",
     includes: "Creación de Marca • Marketing y Visibilidad • Gestión del Plan de Marketing",
     href: "/soluciones/impulsa-tu-marca"
   },
