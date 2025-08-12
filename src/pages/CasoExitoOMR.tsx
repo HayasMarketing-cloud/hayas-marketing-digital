@@ -31,8 +31,8 @@ const CasoExitoOMR = (): React.JSX.Element => {
     about: {
       '@type': 'Organization',
       name: 'Agencia de Transportes Especiales OMR',
-      url: 'https://transportesespecialesomr.com',
-      sameAs: ['https://transportesespecialesomr.com'],
+      url: 'https://transportesespecialesomr.es',
+      sameAs: ['https://transportesespecialesomr.es'],
       areaServed: 'ES',
       industry: 'Transporte especializado',
     },
@@ -97,7 +97,7 @@ const CasoExitoOMR = (): React.JSX.Element => {
               </div>
               <div className="flex flex-wrap gap-3">
                 <Button asChild size="lg">
-                  <a href="https://transportesespecialesomr.com" target="_blank" rel="noopener noreferrer">
+                  <a href="https://transportesespecialesomr.es" target="_blank" rel="noopener noreferrer">
                     Visita OMR
                     <ExternalLink className="ml-2 h-4 w-4" />
                   </a>
@@ -254,7 +254,7 @@ const CasoExitoOMR = (): React.JSX.Element => {
                 <Link to="/solicitar-consulta">Solicitar Consulta</Link>
               </Button>
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary" asChild>
-                <a href="https://transportesespecialesomr.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://transportesespecialesomr.es" target="_blank" rel="noopener noreferrer">
                   Visita OMR
                 </a>
               </Button>
