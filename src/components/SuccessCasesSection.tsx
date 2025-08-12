@@ -295,6 +295,14 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     link: "/casos-exito/beka-finance",
     image: "https://images.unsplash.com/photo-1559526324-593bc073d938?q=80&w=2069&auto=format&fit=crop",
     tags: ["branding", "naming", "identidad-visual", "finanzas", "b2b"]
+  },
+  {
+    name: "Peris Electricidad",
+    industry: "Empresa de instalaciones eléctricas",
+    service: "Diseño web, CRM HubSpot y estrategia SEO",
+    link: "/casos-exito/peris-electricidad",
+    image: "https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=2069&auto=format&fit=crop",
+    tags: ["diseño-web", "crm", "hubspot", "seo", "industrial", "servicios-tecnicos", "b2b"]
   }
 ];
 
