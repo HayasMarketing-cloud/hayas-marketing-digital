@@ -48,6 +48,7 @@ import CasoExitoQuanticBI from "./pages/CasoExitoQuanticBI";
 import CasoExitoPeixosEmilio from "./pages/CasoExitoPeixosEmilio";
 import CasoExitoCorteAFilms from "./pages/CasoExitoCorteAFilms";
 import CasoExitoLualca from "./pages/CasoExitoLualca";
+import CasoExitoPlazaEstacion from "./pages/CasoExitoPlazaEstacion";
 import ImplantacionCrm from "./pages/ImplantacionCrm";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
@@ -149,6 +150,7 @@ const App = () => (
           <Route path="/casos-exito/peixos-emilio" element={<CasoExitoPeixosEmilio />} />
           <Route path="/casos-exito/corte-a-films" element={<CasoExitoCorteAFilms />} />
           <Route path="/casos-exito/lualca" element={<CasoExitoLualca />} />
+          <Route path="/casos-exito/plaza-de-la-estacion" element={<CasoExitoPlazaEstacion />} />
           
           {/* BLOG / RECURSOS */}
           <Route path="/blog" element={<Blog />} />
@@ -190,7 +192,8 @@ const App = () => (
            <Route path="/caso-exito-quanticbi" element={<CasoExitoQuanticBI />} />
             <Route path="/caso-exito-peixos-emilio" element={<CasoExitoPeixosEmilio />} />
              <Route path="/caso-exito-corte-a-films" element={<CasoExitoCorteAFilms />} />
-             <Route path="/caso-exito-lualca" element={<CasoExitoLualca />} />
+              <Route path="/caso-exito-lualca" element={<CasoExitoLualca />} />
+              <Route path="/caso-exito-plaza-de-la-estacion" element={<CasoExitoPlazaEstacion />} />
           
           <Route path="/servicios/creacion-marca" element={<CreacionMarca />} />
           <Route path="/servicios/gestion-redes-sociales" element={<GestionRedesSociales />} />

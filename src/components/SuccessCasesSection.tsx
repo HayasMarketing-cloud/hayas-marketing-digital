@@ -30,7 +30,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     service: "Branding, web, estrategia de contenidos",
     link: "/caso-exito-nexo-vital",
     image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=2071&auto=format&fit=crop",
-    tags: ["branding", "creacion-marca", "naming", "diseño-web", "contenidos", "salud"]
+    tags: ["branding", "creacion-marca", "naming", "diseño-web", "contenidos", "salud", "identidad-visual"]
   },
   {
     name: "I Virgen Extra",
@@ -54,7 +54,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     service: "Branding, posicionamiento, automatización",
     link: "/caso-exito-calisthenia-online",
     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070&auto=format&fit=crop",
-    tags: ["branding", "creacion-marca", "naming", "posicionamiento", "automatizacion", "deporte"]
+    tags: ["branding", "creacion-marca", "naming", "posicionamiento", "automatizacion", "deporte", "identidad-visual"]
   },
   {
     name: "Centro Roraima",
@@ -62,7 +62,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     service: "Branding, diseño web, contenidos",
     link: "/caso-exito-centro-roraima",
     image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop",
-    tags: ["branding", "creacion-marca", "diseño-web", "contenidos", "desarrollo-personal"]
+    tags: ["branding", "creacion-marca", "diseño-web", "contenidos", "desarrollo-personal", "identidad-visual"]
   },
   {
     name: "Joints'Up",
@@ -70,7 +70,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     service: "Naming, branding, diseño web",
     link: "/caso-exito-joints-up",
     image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?q=80&w=2087&auto=format&fit=crop",
-    tags: ["branding", "creacion-marca", "naming", "diseño-web", "medicina", "salud"]
+    tags: ["branding", "creacion-marca", "naming", "diseño-web", "medicina", "salud", "identidad-visual"]
   },
   {
     name: "Dr. Parrón",
@@ -78,7 +78,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     service: "Identidad corporativa, diseño web",
     link: "/caso-exito-dr-parron",
     image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=2071&auto=format&fit=crop",
-    tags: ["branding", "creacion-marca", "identidad-corporativa", "diseño-web", "medicina", "salud"]
+    tags: ["branding", "creacion-marca", "identidad-corporativa", "diseño-web", "medicina", "salud", "identidad-visual"]
   },
   {
     name: "Translate with Style",
@@ -216,55 +216,63 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2069&auto=format&fit=crop",
     tags: ["crm", "seo", "redes-sociales", "gaming", "startup"]
   },
-      {
-        name: "Nova Praxis",
-        industry: "Consultora estratégica B2B",
-        service: "CRM, automatizaciones, LinkedIn, SEO y Google Ads",
-        link: "/casos-exito/nova-praxis",
-        image: "https://images.unsplash.com/photo-1551836022-4c4c79ecde51?q=80&w=2069&auto=format&fit=crop",
-        tags: ["crm", "automatizacion", "linkedin", "seo", "google-ads", "consultoria", "b2b"]
-      },
-      {
-        name: "Aistercel",
-        industry: "Aislamiento industrial y mantenimiento",
-        service: "CRM HubSpot y rediseño web",
-        link: "/casos-exito/aistercel",
-        image: "https://images.unsplash.com/photo-1581092580496-6c76b21d2b36?q=80&w=2069&auto=format&fit=crop",
-        tags: ["crm", "hubspot", "diseño-web", "ux", "industrial", "b2b"]
-      },
-      {
-        name: "QuanticBI",
-        industry: "Consultora de inteligencia de negocio",
-        service: "Implantación CRM HubSpot y automatizaciones",
-        link: "/casos-exito/quanticbi",
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2069&auto=format&fit=crop",
-        tags: ["crm", "automatizacion", "hubspot", "bi", "datos", "consultoria", "b2b"]
-      },
-      {
-        name: "Peixos Emilio",
-        industry: "Distribución mayorista de pescado fresco",
-        service: "Ecommerce B2B y gestión de pedidos",
-        link: "/casos-exito/peixos-emilio",
-        image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?q=80&w=2069&auto=format&fit=crop",
-        tags: ["diseño-web", "ecommerce", "b2b", "alimentacion", "menorca"]
-      },
-      {
-        name: "Corte A Films",
-        industry: "Productora audiovisual",
-        service: "Diseño web visual e inspirador",
-        link: "/casos-exito/corte-a-films",
-        image: "https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?q=80&w=2069&auto=format&fit=crop",
-        tags: ["diseño-web", "portfolio", "audiovisual", "b2b"]
-      },
-      {
-        name: "Lualca",
-        industry: "Construcción y mantenimiento industrial",
-        service: "Rediseño, alojamiento y mantenimiento web",
-        link: "/casos-exito/lualca",
-        image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2069&auto=format&fit=crop",
-        tags: ["diseño-web", "alojamiento-mantenimiento", "ux", "industrial", "b2b"]
-      }
-    ];
+  {
+    name: "Nova Praxis",
+    industry: "Consultora estratégica B2B",
+    service: "CRM, automatizaciones, LinkedIn, SEO y Google Ads",
+    link: "/casos-exito/nova-praxis",
+    image: "https://images.unsplash.com/photo-1551836022-4c4c79ecde51?q=80&w=2069&auto=format&fit=crop",
+    tags: ["crm", "automatizacion", "linkedin", "seo", "google-ads", "consultoria", "b2b"]
+  },
+  {
+    name: "Aistercel",
+    industry: "Aislamiento industrial y mantenimiento",
+    service: "CRM HubSpot y rediseño web",
+    link: "/casos-exito/aistercel",
+    image: "https://images.unsplash.com/photo-1581092580496-6c76b21d2b36?q=80&w=2069&auto=format&fit=crop",
+    tags: ["crm", "hubspot", "diseño-web", "ux", "industrial", "b2b"]
+  },
+  {
+    name: "QuanticBI",
+    industry: "Consultora de inteligencia de negocio",
+    service: "Implantación CRM HubSpot y automatizaciones",
+    link: "/casos-exito/quanticbi",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2069&auto=format&fit=crop",
+    tags: ["crm", "automatizacion", "hubspot", "bi", "datos", "consultoria", "b2b"]
+  },
+  {
+    name: "Peixos Emilio",
+    industry: "Distribución mayorista de pescado fresco",
+    service: "Ecommerce B2B y gestión de pedidos",
+    link: "/casos-exito/peixos-emilio",
+    image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?q=80&w=2069&auto=format&fit=crop",
+    tags: ["diseño-web", "ecommerce", "b2b", "alimentacion", "menorca"]
+  },
+  {
+    name: "Corte A Films",
+    industry: "Productora audiovisual",
+    service: "Diseño web visual e inspirador",
+    link: "/casos-exito/corte-a-films",
+    image: "https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?q=80&w=2069&auto=format&fit=crop",
+    tags: ["diseño-web", "portfolio", "audiovisual", "b2b"]
+  },
+  {
+    name: "Lualca",
+    industry: "Construcción y mantenimiento industrial",
+    service: "Rediseño, alojamiento y mantenimiento web",
+    link: "/casos-exito/lualca",
+    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2069&auto=format&fit=crop",
+    tags: ["diseño-web", "alojamiento-mantenimiento", "ux", "industrial", "b2b"]
+  },
+  {
+    name: "Centro Comercial Plaza de la Estación",
+    industry: "Retail y ocio",
+    service: "Estrategia de redes sociales, campañas y mantenimiento web",
+    link: "/casos-exito/plaza-de-la-estacion",
+    image: "https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=2069&auto=format&fit=crop",
+    tags: ["redes-sociales", "contenidos", "campañas", "alojamiento-mantenimiento", "retail", "b2c", "fuenlabrada"]
+  }
+];
 
 const SuccessCasesSection: React.FC<SuccessCasesSectionProps> = ({
   title = "Casos de éxito",
