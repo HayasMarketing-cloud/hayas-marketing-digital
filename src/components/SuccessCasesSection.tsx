@@ -191,6 +191,22 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     link: "/casos-exito/pamdamedia",
     image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=2069&auto=format&fit=crop",
     tags: ["diseño-web", "ux", "conversion", "publicidad-exterior", "b2b"]
+  },
+  {
+    name: "Give and Go",
+    industry: "Agencia de eventos deportivos (baloncesto)",
+    service: "Diseño web con ecommerce e inscripciones",
+    link: "/casos-exito/give-and-go",
+    image: "https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=2069&auto=format&fit=crop",
+    tags: ["diseño-web", "ecommerce", "eventos", "deporte", "baloncesto"]
+  },
+  {
+    name: "Hikvision",
+    industry: "Tecnología de seguridad e IA",
+    service: "Landing B2B optimizada para registros de evento",
+    link: "/casos-exito/hikvision",
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2069&auto=format&fit=crop",
+    tags: ["landing", "b2b", "eventos", "smart-cities", "tecnologia"]
   }
 ];
 
