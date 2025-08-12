@@ -75,8 +75,8 @@ const ActivaTuEstrategiaDigital = () => {
   return (
     <div id="top" className="min-h-screen bg-white">
       <Seo
-        title="Activa tu estrategia digital | Consultoría, IA y Automatización"
-        description="Integramos tecnología, automatización y analítica para escalar tu marketing con una estrategia digital clara."
+        title="Activa tu estrategia digital | Plan claro y medible"
+        description="Convierte ideas en resultados con una estrategia a medida que integra Ads, contenidos, SEO y analítica para crecimiento constante y medible."
         canonical="/soluciones/activa-tu-estrategia-digital"
         structuredData={[
           {
@@ -94,7 +94,7 @@ const ActivaTuEstrategiaDigital = () => {
             provider: { "@type": "Organization", name: "Hayas Marketing", url: window.location.origin, logo: `${window.location.origin}/favicon.ico` },
             url: `${window.location.origin}/soluciones/activa-tu-estrategia-digital`,
             areaServed: "España",
-            description: "Estrategia, automatización e IA para escalar tu marketing con objetivos y métricas claras.",
+            description: "Estrategias a medida que integran Ads, contenidos, SEO y analítica para crecimiento constante y medible.",
           },
           {
             "@context": "https://schema.org",
@@ -142,13 +142,13 @@ const ActivaTuEstrategiaDigital = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <Badge variant="outline" className="mb-4 text-hayas-600 border-hayas-200">
-                  Estrategia Digital Avanzada
+                  Estrategia Digital a Medida
                 </Badge>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                   Activa tu <span className="text-gradient-primary">Estrategia Digital</span>
                 </h1>
                 <p className="text-xl text-gray-700 mb-8 leading-relaxed font-medium">
-                  Llevamos tu negocio al siguiente nivel con planificación estratégica, tecnología avanzada y mejora continua. Transformamos tu visión en resultados medibles.
+                  Convierte tus ideas en resultados con un plan claro, medible y adaptable. Integramos creatividad, datos y ejecución ágil en todos los canales: Google Ads y Meta Ads, contenidos, SEO estratégico y analítica avanzada, para un crecimiento constante y medible.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link to="/?scrollTo=contacto">

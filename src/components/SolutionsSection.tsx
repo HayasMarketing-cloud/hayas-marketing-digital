@@ -26,7 +26,7 @@ const solutions = [
     id: 3,
     icon: <TrendingUp className="h-8 w-8 text-primary" />,
     title: "Activa tu estrategia digital",
-    description: "Llevamos tu negocio al siguiente nivel con planificación, tecnología y mejora continua.",
+      description: "Convierte ideas en resultados con una estrategia a medida: integra Ads, contenidos, SEO y analítica para un crecimiento constante y medible.",
     includes: "Diseño web/tienda online • Consultoría estratégica • Automatización + IA + Analítica",
     href: "/soluciones/activa-tu-estrategia-digital"
   }
