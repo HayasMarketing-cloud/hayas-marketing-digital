@@ -319,6 +319,14 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     link: "/casos-exito/pasteleria-la-oriental-sin-gluten",
     image: "https://images.unsplash.com/photo-1541781286675-09b4d3a45f5e?q=80&w=2069&auto=format&fit=crop",
     tags: ["ecommerce", "crm", "hubspot", "redes-sociales", "ux", "conversion", "alimentacion", "b2c"]
+  },
+  {
+    name: "FLAP Artículos de Peluquería",
+    industry: "Belleza y cuidado capilar",
+    service: "Estrategia de contenidos y Reels en Instagram",
+    link: "/casos-exito/flap-articulos-peluqueria",
+    image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=2069&auto=format&fit=crop",
+    tags: ["redes-sociales", "instagram", "reels", "contenidos", "belleza", "cosmetica", "retail", "b2c"]
   }
 ];
 

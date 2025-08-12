@@ -55,6 +55,7 @@ import CasoExitoBekaFinance from "./pages/CasoExitoBekaFinance";
 import CasoExitoPerisElectricidad from "./pages/CasoExitoPerisElectricidad";
 import CasoExitoCarniceriaPicosDeEuropa from "./pages/CasoExitoCarniceriaPicosDeEuropa";
 import CasoExitoLaOrientalSinGluten from "./pages/CasoExitoLaOrientalSinGluten";
+import CasoExitoFLAP from "./pages/CasoExitoFLAP";
 import ImplantacionCrm from "./pages/ImplantacionCrm";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
@@ -163,6 +164,7 @@ const App = () => (
           <Route path="/casos-exito/peris-electricidad" element={<CasoExitoPerisElectricidad />} />
           <Route path="/casos-exito/carniceria-picos-de-europa" element={<CasoExitoCarniceriaPicosDeEuropa />} />
           <Route path="/casos-exito/pasteleria-la-oriental-sin-gluten" element={<CasoExitoLaOrientalSinGluten />} />
+          <Route path="/casos-exito/flap-articulos-peluqueria" element={<CasoExitoFLAP />} />
           
           {/* BLOG / RECURSOS */}
           <Route path="/blog" element={<Blog />} />
@@ -212,6 +214,7 @@ const App = () => (
                  <Route path="/caso-exito-peris-electricidad" element={<CasoExitoPerisElectricidad />} />
                  <Route path="/caso-exito-carniceria-picos-de-europa" element={<CasoExitoCarniceriaPicosDeEuropa />} />
                  <Route path="/caso-exito-pasteleria-la-oriental-sin-gluten" element={<CasoExitoLaOrientalSinGluten />} />
+                 <Route path="/caso-exito-flap-articulos-peluqueria" element={<CasoExitoFLAP />} />
           
           <Route path="/servicios/creacion-marca" element={<CreacionMarca />} />
           <Route path="/servicios/gestion-redes-sociales" element={<GestionRedesSociales />} />
