@@ -62,7 +62,7 @@ const CasoExitoOMR = (): React.JSX.Element => {
       </section>
 
       {/* Hero */}
-      <header className="relative overflow-hidden">
+      <header className="relative overflow-hidden bg-gradient-to-br from-hayas-50 to-turquesa-50">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center py-12 md:py-16">
             <div>

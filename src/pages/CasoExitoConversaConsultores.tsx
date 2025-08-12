@@ -50,7 +50,7 @@ const CasoExitoConversaConsultores: React.FC = () => {
         </section>
 
         {/* Hero */}
-        <header className="py-14 md:py-20 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
+        <header className="py-14 md:py-20 bg-gradient-to-br from-hayas-50 to-turquesa-50">
           <div className="container mx-auto px-4 max-w-5xl">
             <Badge variant="secondary" className="mb-3">Caso de Éxito</Badge>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
