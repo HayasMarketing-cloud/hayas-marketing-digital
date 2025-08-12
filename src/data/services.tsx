@@ -185,6 +185,14 @@ export const allServices: ServiceItem[] = [
     href: '/servicios/localizacion-contenidos',
     pillar: 'impulsa',
   },
+  {
+    id: 19,
+    icon: <Megaphone className="h-10 w-10 text-hayas-primary" />,
+    title: 'Campañas Inbound Marketing',
+    description: 'Contenido premium + automatización para atraer y convertir.',
+    href: '/servicios/campanas-inbound-marketing',
+    pillar: 'conecta',
+  },
 ];
 
 export const servicesByPillar: Record<PillarKey, ServiceItem[]> = allServices.reduce((acc, s) => {

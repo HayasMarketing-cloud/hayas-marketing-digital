@@ -53,6 +53,7 @@ import IntegracionesIAProcesos from './pages/IntegracionesIAProcesos';
 import EstrategiaContenidos from './pages/EstrategiaContenidos';
 import AdministracionCrm from './pages/AdministracionCrm';
 import LocalizacionContenidos from './pages/LocalizacionContenidos';
+import CampanasInboundMarketing from './pages/CampanasInboundMarketing';
 
 const queryClient = new QueryClient();
 
@@ -145,6 +146,7 @@ const App = () => (
           <Route path="/servicios/integraciones-ia-procesos" element={<IntegracionesIAProcesos />} />
           <Route path="/servicios/estrategia-contenidos" element={<EstrategiaContenidos />} />
           <Route path="/servicios/localizacion-contenidos" element={<LocalizacionContenidos />} />
+          <Route path="/servicios/campanas-inbound-marketing" element={<CampanasInboundMarketing />} />
           <Route path="/servicios/asistente-ia-atencion-cliente" element={<AsistenteIA />} />
           <Route path="/servicios/alojamiento-mantenimiento-web" element={<Navigate to="/servicios/diseno-web/alojamiento-mantenimiento" replace />} />
           <Route path="/servicios/marketing-directo" element={<MarketingDirecto />} />
