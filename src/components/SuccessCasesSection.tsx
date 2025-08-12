@@ -279,6 +279,14 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     link: "/casos-exito/rivas-centro",
     image: "https://images.unsplash.com/photo-1481437642641-2f0ae875f836?q=80&w=2069&auto=format&fit=crop",
     tags: ["redes-sociales", "contenidos", "campañas", "alojamiento-mantenimiento", "retail", "b2c", "rivas-vaciamadrid"]
+  },
+  {
+    name: "HubSpot for Startups",
+    industry: "Programa de crecimiento para startups",
+    service: "Campaña inbound con storytelling, entrevistas y publicación web",
+    link: "/casos-exito/hubspot-for-startups",
+    image: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=2069&auto=format&fit=crop",
+    tags: ["inbound-marketing", "contenidos", "seo", "hubspot", "startups", "b2b"]
   }
 ];
 
