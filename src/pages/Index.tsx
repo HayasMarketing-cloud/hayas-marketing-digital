@@ -100,7 +100,7 @@ const Index = () => {
       <main className="flex-grow pt-24" role="main">
         <HeroSection />
         <SolutionsSection />
-        <ServicesSection />
+        
         <WhyChooseUsSection />
         <MethodologySection />
         <AllServicesSection />

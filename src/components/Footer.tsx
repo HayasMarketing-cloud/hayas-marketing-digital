@@ -54,7 +54,7 @@ const Footer: React.FC<FooterProps> = ({ showKitSection = false }) => {
             <h3 className="text-xl font-bold text-white mb-4">Enlaces rápidos</h3>
             <ul className="space-y-3">
               <li><a href="/#top" className="hover:text-secondary transition-colors">Inicio</a></li>
-              <li><a href="#servicios" className="hover:text-secondary transition-colors">Servicios</a></li>
+              <li><a href="#todos-servicios" className="hover:text-secondary transition-colors">Servicios</a></li>
               <li><a href="#nosotros" className="hover:text-secondary transition-colors">¿Por qué elegirnos?</a></li>
               <li><a href="#contacto" className="hover:text-secondary transition-colors">Contacto</a></li>
               <li><a href="#" className="hover:text-secondary transition-colors">Blog</a></li>
