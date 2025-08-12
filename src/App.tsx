@@ -50,6 +50,7 @@ import EmailMarketingAutomatizaciones from './pages/EmailMarketingAutomatizacion
 import ConsultoriaEstrategicaAnalitica from './pages/ConsultoriaEstrategicaAnalitica';
 import IntegracionesIAProcesos from './pages/IntegracionesIAProcesos';
 import EstrategiaContenidos from './pages/EstrategiaContenidos';
+import AdministracionCrm from './pages/AdministracionCrm';
 
 const queryClient = new QueryClient();
 
@@ -144,6 +145,7 @@ const App = () => (
           <Route path="/servicios/alojamiento-mantenimiento-web" element={<Navigate to="/servicios/diseno-web/alojamiento-mantenimiento" replace />} />
           <Route path="/servicios/marketing-directo" element={<MarketingDirecto />} />
           <Route path="/servicios/implementacion-funnel" element={<ImplementacionFunnel />} />
+          <Route path="/servicios/administracion-crm" element={<AdministracionCrm />} />
           <Route path="/servicios" element={<NotFound />} />
           
           {/* 404 - DEBE IR SIEMPRE AL FINAL */}

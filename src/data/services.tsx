@@ -169,6 +169,14 @@ export const allServices: ServiceItem[] = [
     href: '/servicios/integraciones-ia-procesos',
     pillar: 'activa',
   },
+  {
+    id: 17,
+    icon: <Server className="h-10 w-10 text-hayas-primary" />,
+    title: 'Administración de CRM',
+    description: 'Externaliza tu CRM y activos digitales: gestión experta bajo demanda.',
+    href: '/servicios/administracion-crm',
+    pillar: 'conecta',
+  },
 ];
 
 export const servicesByPillar: Record<PillarKey, ServiceItem[]> = allServices.reduce((acc, s) => {
