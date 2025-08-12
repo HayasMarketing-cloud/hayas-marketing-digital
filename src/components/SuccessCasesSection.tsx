@@ -30,7 +30,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     service: "Branding, web, estrategia de contenidos",
     link: "/caso-exito-nexo-vital",
     image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=2071&auto=format&fit=crop",
-    tags: ["branding", "creacion-marca", "diseño-web", "contenidos", "salud"]
+    tags: ["branding", "creacion-marca", "naming", "diseño-web", "contenidos", "salud"]
   },
   {
     name: "I Virgen Extra",
@@ -54,7 +54,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     service: "Branding, posicionamiento, automatización",
     link: "/caso-exito-calisthenia-online",
     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070&auto=format&fit=crop",
-    tags: ["branding", "creacion-marca", "posicionamiento", "automatizacion", "deporte"]
+    tags: ["branding", "creacion-marca", "naming", "posicionamiento", "automatizacion", "deporte"]
   },
   {
     name: "Centro Roraima",
