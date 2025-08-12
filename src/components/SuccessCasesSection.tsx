@@ -143,6 +143,14 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     link: "/casos-exito/alfix-consultores",
     image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2070&auto=format&fit=crop",
     tags: ["crm", "hubspot", "consultoria", "legal", "fiscal", "b2b"]
+  },
+  {
+    name: "Alma Cruceros",
+    industry: "Turismo y cruceros",
+    service: "Campañas en Google Ads y optimización continua",
+    link: "/casos-exito/alma-cruceros",
+    image: "https://images.unsplash.com/photo-1476610182048-b716b8518aae?q=80&w=2070&auto=format&fit=crop",
+    tags: ["google-ads", "publicidad", "turismo", "b2c"]
   }
 ];
 

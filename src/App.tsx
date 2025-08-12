@@ -30,6 +30,7 @@ import CasoExitoAspAsepsia from "./pages/CasoExitoAspAsepsia";
 import CasoExitoBufeteMaseras from "./pages/CasoExitoBufeteMaseras";
 import CasoExitoModaIntimaVania from "./pages/CasoExitoModaIntimaVania";
 import CasoExitoAlfixConsultores from "./pages/CasoExitoAlfixConsultores";
+import CasoExitoAlmaCruceros from "./pages/CasoExitoAlmaCruceros";
 import ImplantacionCrm from "./pages/ImplantacionCrm";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
@@ -113,6 +114,7 @@ const App = () => (
           <Route path="/casos-exito/bufete-maseras" element={<CasoExitoBufeteMaseras />} />
           <Route path="/casos-exito/moda-intima-vania" element={<CasoExitoModaIntimaVania />} />
           <Route path="/casos-exito/alfix-consultores" element={<CasoExitoAlfixConsultores />} />
+          <Route path="/casos-exito/alma-cruceros" element={<CasoExitoAlmaCruceros />} />
           
           {/* BLOG / RECURSOS */}
           <Route path="/blog" element={<Blog />} />
