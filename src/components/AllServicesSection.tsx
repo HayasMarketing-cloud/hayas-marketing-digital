@@ -1,10 +1,10 @@
 
-import React, { useMemo, useState } from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { servicesByPillar, pillarMeta, PillarKey } from '@/data/services';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-
+import { Grid, List } from 'lucide-react';
 const AllServicesSection = () => {
   const [active, setActive] = useState<'all' | PillarKey>('all');
   const [expanded, setExpanded] = useState(false);
@@ -77,22 +77,26 @@ const AllServicesSection = () => {
         </div>
 
         {/* Selector de vista */}
-        <div className="mb-8 flex items-center justify-center gap-3" role="group" aria-label="Selector de vista">
+        <div className="mb-8 flex items-center justify-center gap-2" role="group" aria-label="Selector de vista">
           <Button
             size="sm"
             variant={view === 'grid' ? 'default' : 'outline'}
             aria-pressed={view === 'grid'}
             onClick={() => setView('grid')}
+            aria-label="Vista de cuadrícula"
           >
-            Cuadrícula
+            <Grid className="h-4 w-4" />
+            <span className="sr-only">Cuadrícula</span>
           </Button>
           <Button
             size="sm"
             variant={view === 'list' ? 'default' : 'outline'}
             aria-pressed={view === 'list'}
             onClick={() => setView('list')}
+            aria-label="Vista de lista"
           >
-            Lista
+            <List className="h-4 w-4" />
+            <span className="sr-only">Lista</span>
           </Button>
         </div>
 
