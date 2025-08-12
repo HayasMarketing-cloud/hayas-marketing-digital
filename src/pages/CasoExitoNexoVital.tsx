@@ -191,50 +191,6 @@ const CasoExitoNexoVital = () => {
           </div>
         </section>
 
-        {/* Results */}
-        <section className="py-12 md:py-16 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-                Resultados y <span className="text-gradient-primary">Beneficios</span>
-              </h2>
-              
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                <Card className="text-center border-none shadow-lg">
-                  <CardContent className="p-6">
-                    <div className="text-3xl font-bold text-hayas-600 mb-2">+150%</div>
-                    <p className="text-gray-600">Aumento en consultas online</p>
-                  </CardContent>
-                </Card>
-                <Card className="text-center border-none shadow-lg">
-                  <CardContent className="p-6">
-                    <div className="text-3xl font-bold text-turquesa-600 mb-2">+200%</div>
-                    <p className="text-gray-600">Crecimiento en redes sociales</p>
-                  </CardContent>
-                </Card>
-                <Card className="text-center border-none shadow-lg">
-                  <CardContent className="p-6">
-                    <div className="text-3xl font-bold text-hayas-600 mb-2">+80%</div>
-                    <p className="text-gray-600">Mejora en reconocimiento de marca</p>
-                  </CardContent>
-                </Card>
-              </div>
-
-              <Card className="border-none shadow-lg bg-gradient-to-br from-hayas-50 to-turquesa-50">
-                <CardContent className="p-8">
-                  <blockquote className="text-lg italic text-gray-700 mb-4 text-center">
-                    "Hayas Marketing no solo creó nuestra identidad visual, sino que nos ayudó a posicionarnos como 
-                    referentes en salud integrativa. La estrategia de contenidos y la formación en redes sociales 
-                    fueron clave para conectar con nuestro público objetivo."
-                  </blockquote>
-                  <div className="text-center">
-                    <p className="font-semibold text-hayas-600">- Fundadora de Nexo Vital</p>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
 
         {/* Learning */}
         <section className="py-12 md:py-16 bg-gradient-to-br from-gray-50 to-white">

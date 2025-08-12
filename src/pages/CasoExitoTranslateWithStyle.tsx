@@ -188,50 +188,6 @@ const CasoExitoTranslateWithStyle = () => {
           </div>
         </section>
 
-        {/* Results */}
-        <section className="py-12 md:py-16 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-                Resultados y <span className="text-gradient-primary">Beneficios</span>
-              </h2>
-              
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                <Card className="text-center border-none shadow-lg">
-                  <CardContent className="p-6">
-                    <div className="text-3xl font-bold text-hayas-600 mb-2">+280%</div>
-                    <p className="text-gray-600">Incremento en clientes premium</p>
-                  </CardContent>
-                </Card>
-                <Card className="text-center border-none shadow-lg">
-                  <CardContent className="p-6">
-                    <div className="text-3xl font-bold text-turquesa-600 mb-2">+150%</div>
-                    <p className="text-gray-600">Aumento en tarifas especializadas</p>
-                  </CardContent>
-                </Card>
-                <Card className="text-center border-none shadow-lg">
-                  <CardContent className="p-6">
-                    <div className="text-3xl font-bold text-hayas-600 mb-2">85%</div>
-                    <p className="text-gray-600">Clientes internacionales de moda</p>
-                  </CardContent>
-                </Card>
-              </div>
-
-              <Card className="border-none shadow-lg bg-gradient-to-br from-hayas-50 to-turquesa-50">
-                <CardContent className="p-8">
-                  <blockquote className="text-lg italic text-gray-700 mb-4 text-center">
-                    "La nueva marca me ha posicionado exactamente donde quería estar: trabajando con marcas 
-                    internacionales de moda y lifestyle que valoran la traducción como parte integral de 
-                    su estrategia. Ahora soy percibida como consultora cultural, no solo traductora."
-                  </blockquote>
-                  <div className="text-center">
-                    <p className="font-semibold text-hayas-600">- Fundadora de Translate With Style</p>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
 
         {/* Learning */}
         <section className="py-12 md:py-16 bg-gradient-to-br from-gray-50 to-white">

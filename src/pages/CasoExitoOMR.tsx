@@ -173,40 +173,6 @@ const CasoExitoOMR = (): React.JSX.Element => {
           </div>
         </section>
 
-        {/* Resultados y Beneficios */}
-        <section className="py-10 md:py-14 bg-muted/20">
-          <div className="container mx-auto px-4 max-w-5xl">
-            <h3 className="text-2xl font-bold mb-6">Resultados y Beneficios</h3>
-            <div className="grid md:grid-cols-2 gap-6">
-              <Card>
-                <CardContent className="p-6 flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-primary mt-1" />
-                  <div>
-                    <p className="text-foreground">Incremento del X% en solicitudes de presupuesto</p>
-                    <p className="text-muted-foreground text-sm mt-1">Dato editable cuando se confirme.</p>
-                  </div>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="p-6 flex items-start gap-3">
-                  <TrendingUp className="h-5 w-5 text-primary mt-1" />
-                  <div>
-                    <p className="text-foreground">Mejora de la velocidad de carga y experiencia de usuario</p>
-                    <p className="text-muted-foreground text-sm mt-1">Indicador preparado para futuras métricas.</p>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-            <Card className="mt-6">
-              <CardContent className="p-6">
-                <blockquote className="text-lg italic text-foreground/90">
-                  “Nuestra nueva web refleja perfectamente lo que hacemos y nos ha ayudado a captar más clientes.” —
-                  <span className="not-italic"> Oscar Meras, Director General de Transportes Especiales OMR</span>
-                </blockquote>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
 
         {/* Lo que aprendimos */}
         <section className="py-10 md:py-14 bg-background">

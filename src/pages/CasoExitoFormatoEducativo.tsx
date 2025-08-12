@@ -187,40 +187,6 @@ const CasoExitoFormatoEducativo = (): React.JSX.Element => {
           </div>
         </section>
 
-        {/* Resultados y Beneficios */}
-        <section className="py-10 md:py-14 bg-muted/20">
-          <div className="container mx-auto px-4 max-w-5xl">
-            <h3 className="text-2xl font-bold mb-6">Resultados y Beneficios</h3>
-            <div className="grid md:grid-cols-2 gap-6">
-              <Card>
-                <CardContent className="p-6 flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-primary mt-1" />
-                  <div>
-                    <p className="text-foreground">Reducción de X% en tiempos de gestión de leads</p>
-                    <p className="text-muted-foreground text-sm mt-1">Dato editable cuando se confirme.</p>
-                  </div>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="p-6 flex items-start gap-3">
-                  <TrendingUp className="h-5 w-5 text-primary mt-1" />
-                  <div>
-                    <p className="text-foreground">Mejora en seguimiento y conversión de matriculaciones</p>
-                    <p className="text-muted-foreground text-sm mt-1">Indicador preparado para futuras métricas.</p>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-            <Card className="mt-6">
-              <CardContent className="p-6">
-                <blockquote className="text-lg italic text-foreground/90">
-                  “Desde que implementamos el CRM, nuestra administración es mucho más ordenada y eficiente.” —
-                  <span className="not-italic"> [Cargo], Formato Educativo</span>
-                </blockquote>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
 
         {/* Lo que aprendimos */}
         <section className="py-10 md:py-14 bg-background">

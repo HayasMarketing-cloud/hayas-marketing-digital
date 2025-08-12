@@ -133,23 +133,6 @@ const CasoExitoModaIntimaVania: React.FC = () => {
           </div>
         </section>
 
-        {/* Resultados y beneficios */}
-        <section className="py-16 bg-muted/30">
-          <div className="container mx-auto px-4 max-w-5xl">
-            <h3 className="text-2xl font-bold mb-6">Resultados y beneficios</h3>
-            <div className="grid md:grid-cols-2 gap-4">
-              {resultados.map((r) => (
-                <div key={r} className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-primary mt-0.5" />
-                  <span className="text-foreground">{r}</span>
-                </div>
-              ))}
-            </div>
-            <blockquote className="mt-8 border-l-2 pl-4 text-muted-foreground italic">
-              “Ahora podemos gestionar las consultas y oportunidades de redes sociales con más rapidez y organización, mejorando la atención y las ventas.” — Dirección, Moda Íntima Vania.
-            </blockquote>
-          </div>
-        </section>
 
         {/* Lo que aprendimos */}
         <section className="py-16">
