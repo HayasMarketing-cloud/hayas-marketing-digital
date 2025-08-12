@@ -255,6 +255,14 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
         link: "/casos-exito/corte-a-films",
         image: "https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?q=80&w=2069&auto=format&fit=crop",
         tags: ["diseño-web", "portfolio", "audiovisual", "b2b"]
+      },
+      {
+        name: "Lualca",
+        industry: "Construcción y mantenimiento industrial",
+        service: "Rediseño, alojamiento y mantenimiento web",
+        link: "/casos-exito/lualca",
+        image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2069&auto=format&fit=crop",
+        tags: ["diseño-web", "alojamiento-mantenimiento", "ux", "industrial", "b2b"]
       }
     ];
 
