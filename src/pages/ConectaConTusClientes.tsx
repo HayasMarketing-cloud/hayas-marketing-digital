@@ -7,7 +7,7 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import SuccessCasesSection, { ALL_SUCCESS_CASES } from '@/components/SuccessCasesSection';
 import { CheckCircle, Users, Zap, Target, Clock, BarChart3, MessageSquare, Mail, ArrowLeft, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import {
@@ -124,6 +124,21 @@ const successCases = [
 ];
 
 const ConectaConTusClientes = () => {
+  const CONNECTA_TAGS = ['crm', 'automatizacion', 'hubspot', 'inbound-marketing'];
+  const filteredCasesForConecta = ALL_SUCCESS_CASES.filter(c => CONNECTA_TAGS.some(t => c.tags.includes(t)));
+  const TAG_SERVICE_MAP: Record<string, number[]> = {
+    crm: [5, 17],
+    hubspot: [5, 17],
+    automatizacion: [12, 14, 21],
+    'inbound-marketing': [19],
+  };
+  const serviceIdSet = new Set<number>();
+  filteredCasesForConecta.forEach(c => {
+    c.tags.forEach(tag => {
+      TAG_SERVICE_MAP[tag]?.forEach(id => serviceIdSet.add(id));
+    });
+  });
+  const relatedServices = servicesByPillar.conecta.filter(s => serviceIdSet.has(s.id));
   return (
     <div id="top" className="min-h-screen flex flex-col">
       <Seo
@@ -552,67 +567,29 @@ const ConectaConTusClientes = () => {
         </section>
 
         {/* Success Cases Section */}
-        <section className="py-16 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                CASOS DE ÉXITO
-              </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Últimos proyectos de CRM y Automatización implementados con éxito
-              </p>
-            </div>
-            
-            <div className="relative">
-              <Carousel
-                opts={{
-                  align: "start",
-                  loop: true,
-                }}
-                className="w-full"
-              >
-                <CarouselContent className="-ml-2 md:-ml-4">
-                  {successCases.map((caseItem, index) => (
-                    <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                      <div className="bg-gray-50 rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                        <div className="aspect-video relative overflow-hidden">
-                          <img 
-                            src={caseItem.image} 
-                            alt={caseItem.title}
-                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                          />
-                        </div>
-                        <div className="p-6">
-                          <h3 className="text-xl font-bold text-gray-900 mb-2">
-                            {caseItem.title}
-                          </h3>
-                          <p className="text-sm text-blue-600 font-medium mb-2">
-                            {caseItem.industry}
-                          </p>
-                          <p className="text-sm text-gray-500 mb-4">
-                            {caseItem.service}
-                          </p>
-                          {caseItem.title === "Asendia" ? (
-                            <Link to="/caso-exito-asendia#top">
-                              <Button variant="outline" size="sm" className="w-full">
-                                Ver caso de éxito
-                              </Button>
-                            </Link>
-                          ) : (
-                            <Button variant="outline" size="sm" className="w-full" disabled>
-                              Próximamente
-                            </Button>
-                          )}
-                        </div>
-                      </div>
-                    </CarouselItem>
+        <section className="py-16 bg-white" id="casos-exito">
+          <SuccessCasesSection
+            id="casos-exito"
+            title="Casos de Éxito"
+            subtitle="Proyectos de CRM, automatización e inbound marketing."
+            filterTags={CONNECTA_TAGS}
+            showAllLink
+          />
+
+          {relatedServices.length > 0 && (
+            <div className="container mx-auto px-4 -mt-8 pb-4">
+              <div className="border-t pt-8">
+                <h3 className="text-xl font-semibold mb-4">Servicios relacionados</h3>
+                <div className="flex flex-wrap gap-3">
+                  {relatedServices.map((s) => (
+                    <Link key={s.id} to={`${s.href}#top`}>
+                      <Badge variant="secondary" className="px-3 py-1">{s.title}</Badge>
+                    </Link>
                   ))}
-                </CarouselContent>
-                <CarouselPrevious className="hidden md:flex -left-4" />
-                <CarouselNext className="hidden md:flex -right-4" />
-              </Carousel>
+                </div>
+              </div>
             </div>
-          </div>
+          )}
         </section>
 
         {/* CTA Section */}
