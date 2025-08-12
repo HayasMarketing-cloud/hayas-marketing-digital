@@ -167,6 +167,14 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     link: "/casos-exito/buhobike",
     image: "https://images.unsplash.com/photo-1511735111819-9a3f7709049c?q=80&w=2070&auto=format&fit=crop",
     tags: ["estrategia-digital", "analitica", "data", "ecommerce", "retail"]
+  },
+  {
+    name: "Eva Champion",
+    industry: "Traductora profesional (FR-ES, EN, DE)",
+    service: "Marca personal y visibilidad en LinkedIn",
+    link: "/casos-exito/eva-champion",
+    image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=2069&auto=format&fit=crop",
+    tags: ["marca-personal", "linkedin", "estrategia", "traduccion", "b2b"]
   }
 ];
 
