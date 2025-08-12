@@ -101,7 +101,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     industry: "Agencia de transportes especiales",
     service: "Diseño web y alojamiento/mantenimiento",
     link: "/casos-exito/omr",
-    image: "/lovable-uploads/764018c5-696f-40bb-ae95-58178a289c68.png",
+    image: "/lovable-uploads/db7fa3bb-b3cd-437c-bdab-9aaa050b134e.png",
     tags: ["diseño-web", "alojamiento-mantenimiento", "transporte"]
   }
 ];

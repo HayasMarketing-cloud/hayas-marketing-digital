@@ -8,7 +8,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage } from '@/components/ui/breadcrumb';
 import Seo from '@/components/Seo';
 import { CheckCircle, TrendingUp, Settings, ExternalLink } from 'lucide-react';
-const omrHero = '/lovable-uploads/764018c5-696f-40bb-ae95-58178a289c68.png';
+const omrHero = '/lovable-uploads/db7fa3bb-b3cd-437c-bdab-9aaa050b134e.png';
 const CasoExitoOMR = (): React.JSX.Element => {
   const canonical = typeof window !== 'undefined' ? window.location.href : undefined;
   const structuredData = {
