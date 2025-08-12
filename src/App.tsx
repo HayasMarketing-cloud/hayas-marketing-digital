@@ -27,6 +27,7 @@ import CasoExitoTranslateWithStyle from "./pages/CasoExitoTranslateWithStyle";
 import CasoExitoFormatoEducativo from "./pages/CasoExitoFormatoEducativo";
 import CasoExitoOMR from "./pages/CasoExitoOMR";
 import CasoExitoAspAsepsia from "./pages/CasoExitoAspAsepsia";
+import CasoExitoBufeteMaseras from "./pages/CasoExitoBufeteMaseras";
 import ImplantacionCrm from "./pages/ImplantacionCrm";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
@@ -107,6 +108,7 @@ const App = () => (
           <Route path="/casos-exito/formato-educativo" element={<CasoExitoFormatoEducativo />} />
           <Route path="/casos-exito/omr" element={<CasoExitoOMR />} />
           <Route path="/casos-exito/asp-asepsia" element={<CasoExitoAspAsepsia />} />
+          <Route path="/casos-exito/bufete-maseras" element={<CasoExitoBufeteMaseras />} />
           
           {/* BLOG / RECURSOS */}
           <Route path="/blog" element={<Blog />} />
