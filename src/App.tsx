@@ -46,6 +46,7 @@ import CasoExitoNovaPraxis from "./pages/CasoExitoNovaPraxis";
 import CasoExitoAistercel from "./pages/CasoExitoAistercel";
 import CasoExitoQuanticBI from "./pages/CasoExitoQuanticBI";
 import CasoExitoPeixosEmilio from "./pages/CasoExitoPeixosEmilio";
+import CasoExitoCorteAFilms from "./pages/CasoExitoCorteAFilms";
 import ImplantacionCrm from "./pages/ImplantacionCrm";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
@@ -145,6 +146,7 @@ const App = () => (
           <Route path="/casos-exito/aistercel" element={<CasoExitoAistercel />} />
           <Route path="/casos-exito/quanticbi" element={<CasoExitoQuanticBI />} />
           <Route path="/casos-exito/peixos-emilio" element={<CasoExitoPeixosEmilio />} />
+          <Route path="/casos-exito/corte-a-films" element={<CasoExitoCorteAFilms />} />
           
           {/* BLOG / RECURSOS */}
           <Route path="/blog" element={<Blog />} />
@@ -184,7 +186,8 @@ const App = () => (
            <Route path="/caso-exito-nova-praxis" element={<CasoExitoNovaPraxis />} />
            <Route path="/caso-exito-aistercel" element={<CasoExitoAistercel />} />
            <Route path="/caso-exito-quanticbi" element={<CasoExitoQuanticBI />} />
-           <Route path="/caso-exito-peixos-emilio" element={<CasoExitoPeixosEmilio />} />
+            <Route path="/caso-exito-peixos-emilio" element={<CasoExitoPeixosEmilio />} />
+            <Route path="/caso-exito-corte-a-films" element={<CasoExitoCorteAFilms />} />
           
           <Route path="/servicios/creacion-marca" element={<CreacionMarca />} />
           <Route path="/servicios/gestion-redes-sociales" element={<GestionRedesSociales />} />

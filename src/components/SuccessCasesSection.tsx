@@ -247,6 +247,14 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
         link: "/casos-exito/peixos-emilio",
         image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?q=80&w=2069&auto=format&fit=crop",
         tags: ["diseño-web", "ecommerce", "b2b", "alimentacion", "menorca"]
+      },
+      {
+        name: "Corte A Films",
+        industry: "Productora audiovisual",
+        service: "Diseño web visual e inspirador",
+        link: "/casos-exito/corte-a-films",
+        image: "https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?q=80&w=2069&auto=format&fit=crop",
+        tags: ["diseño-web", "portfolio", "audiovisual", "b2b"]
       }
     ];
 
