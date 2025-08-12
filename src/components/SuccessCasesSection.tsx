@@ -287,6 +287,14 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     link: "/casos-exito/hubspot-for-startups",
     image: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=2069&auto=format&fit=crop",
     tags: ["inbound-marketing", "contenidos", "seo", "hubspot", "startups", "b2b"]
+  },
+  {
+    name: "Beka Finance",
+    industry: "Firma independiente de banca de inversión y gestión de activos",
+    service: "Naming e identidad visual corporativa",
+    link: "/casos-exito/beka-finance",
+    image: "https://images.unsplash.com/photo-1559526324-593bc073d938?q=80&w=2069&auto=format&fit=crop",
+    tags: ["branding", "naming", "identidad-visual", "finanzas", "b2b"]
   }
 ];
 

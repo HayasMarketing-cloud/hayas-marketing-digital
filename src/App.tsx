@@ -51,6 +51,7 @@ import CasoExitoLualca from "./pages/CasoExitoLualca";
 import CasoExitoPlazaEstacion from "./pages/CasoExitoPlazaEstacion";
 import CasoExitoRivasCentro from "./pages/CasoExitoRivasCentro";
 import CasoExitoHubSpotForStartups from "./pages/CasoExitoHubSpotForStartups";
+import CasoExitoBekaFinance from "./pages/CasoExitoBekaFinance";
 import ImplantacionCrm from "./pages/ImplantacionCrm";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
@@ -155,6 +156,7 @@ const App = () => (
           <Route path="/casos-exito/plaza-de-la-estacion" element={<CasoExitoPlazaEstacion />} />
           <Route path="/casos-exito/rivas-centro" element={<CasoExitoRivasCentro />} />
           <Route path="/casos-exito/hubspot-for-startups" element={<CasoExitoHubSpotForStartups />} />
+          <Route path="/casos-exito/beka-finance" element={<CasoExitoBekaFinance />} />
           
           {/* BLOG / RECURSOS */}
           <Route path="/blog" element={<Blog />} />
@@ -196,10 +198,11 @@ const App = () => (
            <Route path="/caso-exito-quanticbi" element={<CasoExitoQuanticBI />} />
             <Route path="/caso-exito-peixos-emilio" element={<CasoExitoPeixosEmilio />} />
                <Route path="/caso-exito-corte-a-films" element={<CasoExitoCorteAFilms />} />
-                <Route path="/caso-exito-lualca" element={<CasoExitoLualca />} />
-                <Route path="/caso-exito-plaza-de-la-estacion" element={<CasoExitoPlazaEstacion />} />
-                <Route path="/caso-exito-rivas-centro" element={<CasoExitoRivasCentro />} />
-                <Route path="/caso-exito-hubspot-for-startups" element={<CasoExitoHubSpotForStartups />} />
+                 <Route path="/caso-exito-lualca" element={<CasoExitoLualca />} />
+                 <Route path="/caso-exito-plaza-de-la-estacion" element={<CasoExitoPlazaEstacion />} />
+                 <Route path="/caso-exito-rivas-centro" element={<CasoExitoRivasCentro />} />
+                 <Route path="/caso-exito-hubspot-for-startups" element={<CasoExitoHubSpotForStartups />} />
+                 <Route path="/caso-exito-beka-finance" element={<CasoExitoBekaFinance />} />
           
           <Route path="/servicios/creacion-marca" element={<CreacionMarca />} />
           <Route path="/servicios/gestion-redes-sociales" element={<GestionRedesSociales />} />
