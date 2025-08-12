@@ -9,6 +9,7 @@ import Footer from '@/components/Footer';
 import KitDigitalBanner from '@/components/KitDigitalBanner';
 import SuccessCasesSection from '@/components/SuccessCasesSection';
 import Seo from '@/components/Seo';
+import brandingHero from '@/assets/branding-hero-online-offline.jpg';
 
 import FAQSection from '@/components/FAQSection';
 import {
@@ -115,8 +116,8 @@ const ImpulsaTuMarca = () => {
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-hayas-200 to-hayas-300 rounded-3xl transform rotate-6 scale-105 opacity-20"></div>
                 <img 
-                  src="https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=2064&auto=format&fit=crop" 
-                  alt="Creación de marca profesional" 
+                  src={brandingHero}
+                  alt="Impulsa tu marca: identidad sólida, coherente y reconocible"
                   className="relative z-10 w-full h-auto rounded-3xl shadow-2xl"
                 />
               </div>
