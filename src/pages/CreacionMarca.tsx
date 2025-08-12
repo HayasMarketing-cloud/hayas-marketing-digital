@@ -13,7 +13,7 @@ import {
   ArrowRight, CheckCircle, Star, Zap, TrendingUp,
   Sparkles, Shield, Timer, Settings, BarChart3, Globe
 } from 'lucide-react';
-import heroBranding from '@/assets/branding-hero-online-offline.jpg';
+import OptimizedImage from '@/components/OptimizedImage';
 
 const brandingServices = [
   {
@@ -214,10 +214,12 @@ const CreacionMarca: React.FC = () => {
             </div>
             <div className="relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img 
-                  src={heroBranding}
-                  alt="Aplicaciones de marca online y offline: papelería, packaging y soportes digitales"
+                <OptimizedImage
+                  src="/lovable-uploads/bf24688d-75b9-4512-979e-8e9ace8f1643.png"
+                  alt="Creación de marca: paletas de color, pruebas de identidad visual y aplicaciones digitales"
                   className="w-full h-auto"
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 600px"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
               </div>
