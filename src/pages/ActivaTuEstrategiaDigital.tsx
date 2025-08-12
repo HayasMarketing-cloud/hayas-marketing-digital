@@ -151,7 +151,7 @@ const ActivaTuEstrategiaDigital = () => {
                   Convierte tus ideas en resultados con un plan claro, medible y adaptable. Integramos creatividad, datos y ejecución ágil en todos los canales: Google Ads y Meta Ads, contenidos, SEO estratégico y analítica avanzada, para un crecimiento constante y medible.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Link to="/?scrollTo=contacto">
+                  <Link to="/agendar-reunion">
                     <Button className="gradient-primary text-white px-8 py-6 text-lg w-full sm:w-auto">
                       Solicitar Consultoría Gratuita
                     </Button>
