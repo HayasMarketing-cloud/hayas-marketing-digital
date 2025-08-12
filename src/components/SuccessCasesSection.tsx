@@ -265,12 +265,20 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     tags: ["diseño-web", "alojamiento-mantenimiento", "ux", "industrial", "b2b"]
   },
   {
-    name: "Centro Comercial Plaza de la Estación",
-    industry: "Retail y ocio",
-    service: "Estrategia de redes sociales, campañas y mantenimiento web",
-    link: "/casos-exito/plaza-de-la-estacion",
-    image: "https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=2069&auto=format&fit=crop",
-    tags: ["redes-sociales", "contenidos", "campañas", "alojamiento-mantenimiento", "retail", "b2c", "fuenlabrada"]
+  name: "Centro Comercial Plaza de la Estación",
+  industry: "Retail y ocio",
+  service: "Estrategia de redes sociales, campañas y mantenimiento web",
+  link: "/casos-exito/plaza-de-la-estacion",
+  image: "https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=2069&auto=format&fit=crop",
+  tags: ["redes-sociales", "contenidos", "campañas", "alojamiento-mantenimiento", "retail", "b2c", "fuenlabrada"]
+  },
+  {
+    name: "Rivas Centro",
+    industry: "Centro comercial urbano en Rivas-Vaciamadrid",
+    service: "Estrategia de contenidos, campañas creativas y mantenimiento web",
+    link: "/casos-exito/rivas-centro",
+    image: "https://images.unsplash.com/photo-1481437642641-2f0ae875f836?q=80&w=2069&auto=format&fit=crop",
+    tags: ["redes-sociales", "contenidos", "campañas", "alojamiento-mantenimiento", "retail", "b2c", "rivas-vaciamadrid"]
   }
 ];
 
