@@ -41,6 +41,7 @@ import CasoExitoWooptix from "./pages/CasoExitoWooptix";
 import CasoExitoPamdamedia from "./pages/CasoExitoPamdamedia";
 import CasoExitoGiveAndGo from "./pages/CasoExitoGiveAndGo";
 import CasoExitoHikvision from "./pages/CasoExitoHikvision";
+import CasoExitoOWOGame from "./pages/CasoExitoOWOGame";
 import ImplantacionCrm from "./pages/ImplantacionCrm";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
@@ -135,6 +136,7 @@ const App = () => (
           <Route path="/casos-exito/pamdamedia" element={<CasoExitoPamdamedia />} />
           <Route path="/casos-exito/give-and-go" element={<CasoExitoGiveAndGo />} />
           <Route path="/casos-exito/hikvision" element={<CasoExitoHikvision />} />
+          <Route path="/casos-exito/owo-game" element={<CasoExitoOWOGame />} />
           
           {/* BLOG / RECURSOS */}
           <Route path="/blog" element={<Blog />} />

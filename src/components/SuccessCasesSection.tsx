@@ -207,6 +207,14 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     link: "/casos-exito/hikvision",
     image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2069&auto=format&fit=crop",
     tags: ["landing", "b2b", "eventos", "smart-cities", "tecnologia"]
+  },
+  {
+    name: "OWO Game",
+    industry: "Startup de gaming inmersivo (háptica)",
+    service: "CRM, SEO y redes sociales para crecimiento internacional",
+    link: "/casos-exito/owo-game",
+    image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2069&auto=format&fit=crop",
+    tags: ["crm", "seo", "redes-sociales", "gaming", "startup"]
   }
 ];
 
