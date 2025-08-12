@@ -239,6 +239,14 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
         link: "/casos-exito/quanticbi",
         image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2069&auto=format&fit=crop",
         tags: ["crm", "automatizacion", "hubspot", "bi", "datos", "consultoria", "b2b"]
+      },
+      {
+        name: "Peixos Emilio",
+        industry: "Distribución mayorista de pescado fresco",
+        service: "Ecommerce B2B y gestión de pedidos",
+        link: "/casos-exito/peixos-emilio",
+        image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?q=80&w=2069&auto=format&fit=crop",
+        tags: ["diseño-web", "ecommerce", "b2b", "alimentacion", "menorca"]
       }
     ];
 
