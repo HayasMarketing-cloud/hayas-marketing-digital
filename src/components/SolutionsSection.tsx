@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Rocket, Heart, TrendingUp } from 'lucide-react';
 
@@ -47,7 +47,7 @@ const SolutionsSection = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {solutions.map((solution) => (
-            <Card key={solution.id} className="group border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white/80 backdrop-blur-sm h-full">
+            <Card key={solution.id} className="group border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white/80 backdrop-blur-sm h-full flex flex-col">
               <CardHeader className="pb-4">
                 <div className="mb-4 p-3 rounded-lg bg-hayas-100 w-fit group-hover:bg-hayas-200 transition-colors">
                   {solution.icon}
@@ -56,7 +56,7 @@ const SolutionsSection = () => {
                   {solution.title}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4 flex flex-col justify-between h-full">
+              <CardContent className="space-y-4 flex-1">
                 <div>
                   <p className="text-gray-700 text-base leading-relaxed mb-4 font-medium">
                     {solution.description}
@@ -70,15 +70,17 @@ const SolutionsSection = () => {
                     </ul>
                   </div>
                 </div>
+              </CardContent>
+              <CardFooter>
                 <Button 
-                  className="w-full gradient-primary text-white mt-4"
+                  className="w-full gradient-primary text-white"
                   asChild
                 >
                   <Link to={`${solution.href}#top`}>
                     Conocer más
                   </Link>
                 </Button>
-              </CardContent>
+              </CardFooter>
             </Card>
           ))}
         </div>
