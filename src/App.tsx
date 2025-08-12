@@ -34,6 +34,7 @@ import CasoExitoAlmaCruceros from "./pages/CasoExitoAlmaCruceros";
 import CasoExitoLaBaneraKD from "./pages/CasoExitoLaBaneraKD";
 import CasoExitoSuministrosXSKD from "./pages/CasoExitoSuministrosXSKD";
 import CasoExitoConversaConsultores from "./pages/CasoExitoConversaConsultores";
+import CasoExitoBuhobike from "./pages/CasoExitoBuhobike";
 import ImplantacionCrm from "./pages/ImplantacionCrm";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
@@ -121,6 +122,7 @@ const App = () => (
           <Route path="/casos-exito/la-banera-kd" element={<CasoExitoLaBaneraKD />} />
           <Route path="/casos-exito/suministros-xs-kd" element={<CasoExitoSuministrosXSKD />} />
           <Route path="/casos-exito/conversa-consultores" element={<CasoExitoConversaConsultores />} />
+          <Route path="/casos-exito/buhobike" element={<CasoExitoBuhobike />} />
           
           {/* BLOG / RECURSOS */}
           <Route path="/blog" element={<Blog />} />
