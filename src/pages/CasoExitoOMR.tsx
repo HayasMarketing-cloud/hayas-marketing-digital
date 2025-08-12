@@ -15,7 +15,7 @@ import {
 } from '@/components/ui/breadcrumb';
 import Seo from '@/components/Seo';
 import { CheckCircle, TrendingUp, Settings, ExternalLink } from 'lucide-react';
-import omrHero from '@/assets/omr-hero.jpg';
+const omrHero = '/lovable-uploads/764018c5-696f-40bb-ae95-58178a289c68.png';
 
 const CasoExitoOMR = (): React.JSX.Element => {
   const canonical = typeof window !== 'undefined' ? window.location.href : undefined;
@@ -154,9 +154,15 @@ const CasoExitoOMR = (): React.JSX.Element => {
                 </CardContent>
               </Card>
               <Card>
-                <CardContent className="p-6 flex items-center gap-3">
-                  <Settings className="h-5 w-5 text-primary" />
-                  <span className="text-foreground">Enfoque en fiabilidad, velocidad y captación</span>
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-2">
+                    <Settings className="h-5 w-5 text-primary" />
+                    <span className="text-foreground">Enfoque en fiabilidad, velocidad y captación</span>
+                  </div>
+                  <ul className="space-y-1 text-sm text-muted-foreground pl-8 list-disc">
+                    <li>Imagen profesional</li>
+                    <li>Proceso de captación de clientes y presupuestos</li>
+                  </ul>
                 </CardContent>
               </Card>
             </div>
