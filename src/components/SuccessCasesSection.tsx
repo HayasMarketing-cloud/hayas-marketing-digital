@@ -151,6 +151,14 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     link: "/casos-exito/alma-cruceros",
     image: "https://images.unsplash.com/photo-1476610182048-b716b8518aae?q=80&w=2070&auto=format&fit=crop",
     tags: ["google-ads", "publicidad", "turismo", "b2c"]
+  },
+  {
+    name: "Conversa Consultores",
+    industry: "Firma de consultoría empresarial",
+    service: "Diseño web profesional y estrategia SEO",
+    link: "/casos-exito/conversa-consultores",
+    image: "https://images.unsplash.com/photo-1551836022-4c4c79ecde51?q=80&w=2070&auto=format&fit=crop",
+    tags: ["diseño-web", "posicionamiento", "consultoria", "b2b"]
   }
 ];
 
