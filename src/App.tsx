@@ -55,6 +55,7 @@ import AdministracionCrm from './pages/AdministracionCrm';
 import LocalizacionContenidos from './pages/LocalizacionContenidos';
 import CampanasInboundMarketing from './pages/CampanasInboundMarketing';
 import CaptacionLeadsClientes from './pages/CaptacionLeadsClientes';
+import AutomatizacionProcesosVentas from './pages/AutomatizacionProcesosVentas';
 
 const queryClient = new QueryClient();
 
@@ -153,6 +154,7 @@ const App = () => (
           <Route path="/servicios/marketing-directo" element={<MarketingDirecto />} />
           <Route path="/servicios/implementacion-funnel" element={<ImplementacionFunnel />} />
           <Route path="/servicios/administracion-crm" element={<AdministracionCrm />} />
+          <Route path="/servicios/automatizacion-procesos-ventas" element={<AutomatizacionProcesosVentas />} />
           <Route path="/servicios/captacion-leads-clientes" element={<CaptacionLeadsClientes />} />
           <Route path="/servicios" element={<NotFound />} />
           
