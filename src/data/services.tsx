@@ -86,7 +86,7 @@ export const allServices: ServiceItem[] = [
     icon: <Calendar className="h-10 w-10 text-hayas-primary" />,
     title: 'Implantación CRM',
     description: 'Setup completo de CRM personalizado para automatizar tu proceso comercial.',
-    href: '/servicios/implantacion-crm',
+    href: '/soluciones/implantacion-crm',
     pillar: 'conecta',
   },
   {
@@ -199,6 +199,14 @@ export const allServices: ServiceItem[] = [
     title: 'Captación de Leads y Clientes',
     description: 'Estrategias multicanal para atraer leads cualificados y convertirlos en clientes.',
     href: '/servicios/captacion-leads-clientes',
+    pillar: 'conecta',
+  },
+  {
+    id: 21,
+    icon: <Zap className="h-10 w-10 text-hayas-primary" />,
+    title: 'Automatización de procesos de ventas',
+    description: 'Automatiza tu pipeline, lead scoring y atribución para acelerar el crecimiento.',
+    href: '/servicios/automatizacion-procesos-ventas',
     pillar: 'conecta',
   },
 ];
