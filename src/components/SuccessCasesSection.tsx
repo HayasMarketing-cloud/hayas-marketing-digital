@@ -259,12 +259,21 @@ const SuccessCasesSection: React.FC<SuccessCasesSectionProps> = ({
   className = "",
   id
 }) => {
+  // Add tag "identidad-visual" to selected projects
+  const sourceCases = ALL_SUCCESS_CASES.map(case_ => {
+    if (["Nexo Vital", "Calisthenia Online", "Centro Roraima", "Dr. Parrón", "Joints'Up"].includes(case_.name)) {
+      const tags = Array.from(new Set([...(case_.tags || []), "identidad-visual"]));
+      return { ...case_, tags };
+    }
+    return case_;
+  });
+
   // Filter cases based on tags
   const filteredCases = filterTags.length > 0 
-    ? ALL_SUCCESS_CASES.filter(case_ => 
+    ? sourceCases.filter(case_ => 
         filterTags.some(tag => case_.tags.includes(tag))
       )
-    : ALL_SUCCESS_CASES;
+    : sourceCases;
 
   // Limit number of cases if specified
   const displayCases = maxCases 
