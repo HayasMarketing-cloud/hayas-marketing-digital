@@ -193,6 +193,14 @@ export const allServices: ServiceItem[] = [
     href: '/servicios/campanas-inbound-marketing',
     pillar: 'conecta',
   },
+  {
+    id: 20,
+    icon: <Users className="h-10 w-10 text-hayas-primary" />,
+    title: 'Captación de Leads y Clientes',
+    description: 'Estrategias multicanal para atraer leads cualificados y convertirlos en clientes.',
+    href: '/servicios/captacion-leads-clientes',
+    pillar: 'conecta',
+  },
 ];
 
 export const servicesByPillar: Record<PillarKey, ServiceItem[]> = allServices.reduce((acc, s) => {
