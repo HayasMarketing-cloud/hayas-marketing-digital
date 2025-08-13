@@ -405,14 +405,14 @@ const BlogPost = () => {
             <div className="bg-gradient-to-r from-primary/5 to-accent/5 p-6 rounded-lg mt-12">
               <h3 className="text-2xl font-bold mb-4 text-center">¿Necesitas ayuda para desarrollar tu estrategia de contenidos?</h3>
               <p className="text-center mb-6">
-                En <strong>Hayas Marketing</strong> creamos <Link to="/estrategia-contenidos" className="text-primary hover:underline">estrategias de contenido personalizadas</Link> que conectan con tu audiencia y generan resultados medibles. Desde la conceptualización hasta la medición, te acompañamos en cada paso.
+                En <strong>Hayas Marketing</strong> creamos <Link to="/servicios/estrategia-contenidos" className="text-primary hover:underline">estrategias de contenido personalizadas</Link> que conectan con tu audiencia y generan resultados medibles. Desde la conceptualización hasta la medición, te acompañamos en cada paso.
               </p>
               <div className="text-center space-y-4">
                 <Button asChild size="lg" className="mr-4">
-                  <Link to="/estrategia-contenidos">Ver Servicios de Contenido</Link>
+                  <Link to="/servicios/estrategia-contenidos">Ver Servicios de Contenido</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <Link to="/solicitar-consulta">Solicitar Asesoría Gratuita</Link>
+                  <Link to="/agendar-reunion">Solicitar Asesoría Gratuita</Link>
                 </Button>
               </div>
             </div>
