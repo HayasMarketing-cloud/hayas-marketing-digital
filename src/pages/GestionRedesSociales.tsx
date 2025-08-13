@@ -14,6 +14,7 @@ import {
   Sparkles, Shield, Timer, Settings, Eye, Globe,
   Instagram, Facebook, Linkedin, Twitter, Youtube
 } from 'lucide-react';
+import gestionRedesSocialesHero from '@/assets/gestion-redes-sociales-hero.jpg';
 
 const socialMediaServices = [
   {
@@ -211,8 +212,8 @@ const GestionRedesSociales: React.FC = () => {
             <div className="relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <img 
-                  src="/lovable-uploads/b4b8749f-0600-4376-8d4f-b15521fae5df.png"
-                  alt="Gestión profesional de redes sociales"
+                  src={gestionRedesSocialesHero}
+                  alt="Gestión profesional de redes sociales con Instagram, TikTok, Facebook y LinkedIn"
                   className="w-full h-auto"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
