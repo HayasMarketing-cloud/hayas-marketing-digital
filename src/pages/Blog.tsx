@@ -34,7 +34,8 @@ const Blog = () => {
       date: '2025-01-12',
       readTime: '14 min',
       category: 'Redes Sociales',
-      image: tiktokMarketingHero
+      image: tiktokMarketingHero,
+      tags: ['TikTok', 'Redes Sociales', 'Estrategia', 'Marketing Digital']
     },
     {
       id: 'ia-redes-sociales-herramientas-riesgos',
@@ -43,7 +44,8 @@ const Blog = () => {
       date: '2025-01-11',
       readTime: '16 min',
       category: 'Inteligencia Artificial',
-      image: iaRedesSocialesHero
+      image: iaRedesSocialesHero,
+      tags: ['IA', 'Redes Sociales', 'Automatización', 'Social Media']
     },
     {
       id: 'estrategia-marketing-contenidos-eficaz-2025',
@@ -52,7 +54,8 @@ const Blog = () => {
       date: '2025-01-10',
       readTime: '18 min',
       category: 'Marketing de Contenidos',
-      image: estrategiaMarketingContenidosHero
+      image: estrategiaMarketingContenidosHero,
+      tags: ['Marketing de Contenidos', 'Estrategia', 'Storytelling', 'IA']
     },
     {
       id: 'mantenimiento-wordpress-emprendedores-2025',
@@ -61,7 +64,8 @@ const Blog = () => {
       date: '2025-01-08',
       readTime: '15 min',
       category: 'WordPress',
-      image: mantenimientoWordpressHero
+      image: mantenimientoWordpressHero,
+      tags: ['WordPress', 'Diseño Web', 'Mantenimiento', 'Seguridad']
     },
     {
       id: 'avisos-legales-paginas-web',
@@ -70,7 +74,8 @@ const Blog = () => {
       date: '2024-12-20',
       readTime: '12 min',
       category: 'Legal',
-      image: avisosLegalesHero
+      image: avisosLegalesHero,
+      tags: ['Legal', 'Diseño Web', 'RGPD', 'Plantillas']
     }
   ];
 
@@ -85,7 +90,9 @@ const Blog = () => {
     'Marketing Digital',
     'Automatización',
     'Branding',
-    'Analítica Web'
+    'Analítica Web',
+    'Estrategia',
+    'Diseño Web'
   ];
 
   return (
@@ -197,6 +204,15 @@ const Blog = () => {
                   <CardDescription>{post.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
+                  {post.tags && (
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {post.tags.map((tag) => (
+                        <Badge key={tag} variant="outline" className="text-xs">
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                  )}
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-muted-foreground flex items-center gap-1">
                       <Calendar className="h-4 w-4" />
