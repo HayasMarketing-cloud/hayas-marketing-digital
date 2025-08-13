@@ -41,24 +41,6 @@ const Blog = () => {
       readTime: '12 min',
       category: 'Legal',
       image: avisosLegalesHero
-    },
-    {
-      id: 'crm-automatizacion',
-      title: 'CRM y Automatización: Claves para el Éxito Empresarial',
-      description: 'Descubre cómo un CRM bien implementado puede transformar tu negocio.',
-      date: '2024-12-10',
-      readTime: '8 min',
-      category: 'CRM',
-      image: '/lovable-uploads/b4b8749f-0600-4376-8d4f-b15521fae5df.png'
-    },
-    {
-      id: 'seo-2024',
-      title: 'Tendencias SEO 2024: Lo que Necesitas Saber',
-      description: 'Las últimas tendencias en SEO que marcarán la diferencia este año.',
-      date: '2024-12-05',
-      readTime: '10 min',
-      category: 'SEO',
-      image: '/lovable-uploads/37a206e4-890d-4d31-a1c4-7dc674fe47a4.png'
     }
   ];
 
