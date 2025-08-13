@@ -28,7 +28,7 @@ const CasoExitoPamdamedia: React.FC = () => {
         description={pageDescription} 
         canonical={canonical} 
         structuredData={structuredData}
-        ogImage="/lovable-uploads/6ec2c000-f9b3-4dd0-ba54-11a328bd9c99.png"
+        ogImage="/lovable-uploads/pamdamedia-laptop-mockup.png"
       />
       <Navigation />
 
@@ -80,8 +80,8 @@ const CasoExitoPamdamedia: React.FC = () => {
               </div>
               <div className="rounded-xl overflow-hidden shadow">
                 <img
-                  src="/lovable-uploads/6ec2c000-f9b3-4dd0-ba54-11a328bd9c99.png"
-                  alt="Homepage del sitio web de Pamdamedia mostrando lonas gran formato para edificios XXL - Rediseño web realizado por Hayas Marketing"
+                  src="/lovable-uploads/pamdamedia-laptop-mockup.png"
+                  alt="Mockup de laptop mostrando el sitio web de Pamdamedia con lonas gran formato para edificios XXL - Caso de éxito de rediseño web por Hayas Marketing"
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
