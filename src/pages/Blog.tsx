@@ -9,6 +9,7 @@ import Navigation from '@/components/Navigation';
 import iaMarketingHero from '@/assets/ia-marketing-hero.jpg';
 import avisosLegalesHero from '@/assets/avisos-legales-hero.jpg';
 import mantenimientoWordpressHero from '@/assets/mantenimiento-wordpress-hero.jpg';
+import estrategiaMarketingContenidosHero from '@/assets/estrategia-marketing-contenidos-hero.jpg';
 
 const Blog = () => {
   const featuredPost = {
@@ -24,6 +25,15 @@ const Blog = () => {
   };
 
   const recentPosts = [
+    {
+      id: 'estrategia-marketing-contenidos-eficaz-2025',
+      title: 'Estrategia de Marketing de Contenidos Eficaz: Guía 2025',
+      description: 'Guía completa para crear una estrategia de marketing de contenidos efectiva. Incluye storytelling, framework de creación y herramientas IA.',
+      date: '2025-01-10',
+      readTime: '18 min',
+      category: 'Marketing de Contenidos',
+      image: estrategiaMarketingContenidosHero
+    },
     {
       id: 'mantenimiento-wordpress-emprendedores-2025',
       title: 'Mantenimiento WordPress para Emprendedores: Guía Completa 2025',
@@ -46,6 +56,7 @@ const Blog = () => {
 
   const categories = [
     'Inteligencia Artificial',
+    'Marketing de Contenidos',
     'WordPress',
     'Legal',
     'CRM',
