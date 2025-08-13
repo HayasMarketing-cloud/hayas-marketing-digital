@@ -412,7 +412,7 @@ const BlogPost = () => {
                   <Link to="/estrategia-contenidos">Ver Servicios de Contenido</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <Link to="/contacto">Solicitar Asesoría Gratuita</Link>
+                  <Link to="/solicitar-consulta">Solicitar Asesoría Gratuita</Link>
                 </Button>
               </div>
             </div>
