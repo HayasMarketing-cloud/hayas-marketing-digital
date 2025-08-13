@@ -28,6 +28,10 @@ const MethodologySection: React.FC = () => {
                 <CardTitle className="text-xl">Servicio gestionado</CardTitle>
               </CardHeader>
               <CardContent className="pt-2">
+                <div className="bg-primary/5 p-4 rounded-lg mb-4">
+                  <p className="font-semibold text-primary text-sm uppercase tracking-wide mb-2">NOSOTROS NOS ENCARGAMOS DE TODO</p>
+                  <p className="text-sm text-muted-foreground">Tú te centras en tu negocio mientras nuestro equipo gestiona tu marketing completo</p>
+                </div>
                 <ul className="list-disc pl-5 space-y-2 text-muted-foreground">
                   <li>Equipo especialista operando tu marketing día a día.</li>
                   <li>Plan, ejecución y optimización continua orientada a resultados.</li>
@@ -47,6 +51,10 @@ const MethodologySection: React.FC = () => {
                 <CardTitle className="text-xl">Consultoría y formación</CardTitle>
               </CardHeader>
               <CardContent className="pt-2">
+                <div className="bg-accent/10 p-4 rounded-lg mb-4">
+                  <p className="font-semibold text-accent text-sm uppercase tracking-wide mb-2">TE ENSEÑAMOS A HACERLO MEJOR</p>
+                  <p className="text-sm text-muted-foreground">Capacitamos a tu equipo de marketing para optimizar planes y estrategias</p>
+                </div>
                 <ul className="list-disc pl-5 space-y-2 text-muted-foreground">
                   <li>Acompañamiento estratégico y transferencia de conocimiento.</li>
                   <li>Talleres, playbooks y sesiones 1:1 para tu equipo.</li>
