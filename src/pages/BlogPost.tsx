@@ -1151,11 +1151,39 @@ const BlogPost = () => {
             <div className="bg-gradient-to-r from-primary/10 to-accent/10 p-8 rounded-lg mb-8">
               <h3 className="text-2xl font-bold mb-4 text-center">📥 Descarga Nuestras Plantillas</h3>
               <p className="text-center mb-6">Hemos preparado plantillas personalizables para cada tipo de aviso legal que necesites.</p>
-              <div className="grid md:grid-cols-2 gap-4">
-                <Button className="w-full">📋 Plantilla Aviso Legal</Button>
-                <Button className="w-full" variant="outline">🔒 Plantilla Política Privacidad</Button>
-                <Button className="w-full" variant="outline">🍪 Plantilla Política Cookies</Button>
-                <Button className="w-full" variant="outline">📝 Plantilla Términos y Condiciones</Button>
+              <div className="grid md:grid-cols-2 gap-6">
+                <a href="https://docs.google.com/document/d/1vks5eoFSM2lriSR28LJHwEGno1zWideCQbGWtiKPd2w/edit?usp=sharing" target="_blank" rel="noopener noreferrer" className="block">
+                  <Button className="w-full h-16 text-base font-semibold">
+                    <div className="flex flex-col items-center gap-1">
+                      <span className="text-xl">📋</span>
+                      <span>Plantilla Aviso Legal</span>
+                    </div>
+                  </Button>
+                </a>
+                <a href="https://docs.google.com/document/d/1sKs-yDeA6-grnZSF8k6jAUz6-GCsdkPnFBBVHvVhIBc/edit?usp=sharing" target="_blank" rel="noopener noreferrer" className="block">
+                  <Button className="w-full h-16 text-base font-semibold">
+                    <div className="flex flex-col items-center gap-1">
+                      <span className="text-xl">🔒</span>
+                      <span>Plantilla Política Privacidad</span>
+                    </div>
+                  </Button>
+                </a>
+                <a href="https://docs.google.com/document/d/1OWqp79dHvXcjyzcUB7fJ_Nn7b4bJ6w7TbeIOyjfmmlw/edit?usp=sharing" target="_blank" rel="noopener noreferrer" className="block">
+                  <Button className="w-full h-16 text-base font-semibold">
+                    <div className="flex flex-col items-center gap-1">
+                      <span className="text-xl">🍪</span>
+                      <span>Plantilla Política Cookies</span>
+                    </div>
+                  </Button>
+                </a>
+                <a href="https://docs.google.com/document/d/1e5d9Quc_MsnfWh9aSGFdhGnieQwOFxegT7B6qugIIkg/edit?usp=sharing" target="_blank" rel="noopener noreferrer" className="block">
+                  <Button className="w-full h-16 text-base font-semibold">
+                    <div className="flex flex-col items-center gap-1">
+                      <span className="text-xl">📝</span>
+                      <span>Plantilla Términos y Condiciones</span>
+                    </div>
+                  </Button>
+                </a>
               </div>
             </div>
 
