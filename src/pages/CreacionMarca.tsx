@@ -171,9 +171,9 @@ const CreacionMarca: React.FC = () => {
       <Navigation />
       
       {/* Breadcrumb */}
-      <div className="bg-muted/30 py-4">
+      <div className="bg-muted/30 py-3 md:py-4 mb-4 md:mb-6">
         <div className="container mx-auto px-4">
-          <nav className="text-sm text-muted-foreground">
+          <nav className="text-sm text-muted-foreground" role="navigation" aria-label="Breadcrumb">
             <Link to="/" className="hover:text-primary">Inicio</Link>
             <span className="mx-2">/</span>
             <Link to="/servicios" className="hover:text-primary">Servicios</Link>
@@ -184,17 +184,19 @@ const CreacionMarca: React.FC = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-primary/10 via-primary/5 to-background">
+      <section className="section-tight bg-gradient-to-r from-primary/10 via-primary/5 to-background">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <Badge variant="secondary" className="mb-4">
-                <Sparkles className="h-4 w-4 mr-2" />
-                Branding & Identidad Visual
-              </Badge>
-              <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-                Creamos Marcas que <span className="text-primary">Conectan y Convierten</span>
-              </h1>
+              <div className="stack-sm">
+                <Badge variant="secondary" className="mb-4">
+                  <Sparkles className="h-4 w-4 mr-2" />
+                  Branding & Identidad Visual
+                </Badge>
+                <h1 className="text-4xl lg:text-5xl font-bold mb-6">
+                  Creamos Marcas que <span className="text-primary">Conectan y Convierten</span>
+                </h1>
+              </div>
               <p className="text-lg text-muted-foreground mb-8">
                 Transformamos tu idea en una marca memorable que destaque en el mercado. 
                 Desde la estrategia hasta la implementación, creamos identidades visuales 
@@ -388,7 +390,7 @@ const CreacionMarca: React.FC = () => {
       <KitDigitalBanner />
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground">
+      <section className="section-normal bg-gradient-to-r from-primary to-primary/80 text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold mb-4">
             ¿Listo para crear una marca memorable?

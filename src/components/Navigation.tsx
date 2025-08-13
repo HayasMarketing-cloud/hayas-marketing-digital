@@ -92,7 +92,7 @@ const Navigation = () => {
       <header
         ref={headerRef}
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 bg-background/95 backdrop-blur-md border-b border-border/50 ${
-          isScrolled ? 'shadow-corporate py-2' : 'py-4'
+          isScrolled ? 'shadow-corporate py-2' : 'py-3 md:py-4'
         }`}
       >
         <div className="container mx-auto px-4">
@@ -102,7 +102,7 @@ const Navigation = () => {
                 <img
                   src="/lovable-uploads/7ec653d8-b796-48ee-9657-8f0301af6e55.png"
                   alt="Hayas Marketing Logo"
-                  className="h-40 w-auto"
+                  className="h-12 md:h-14 w-auto"
                 />
               </Link>
             </div>
@@ -180,7 +180,7 @@ const Navigation = () => {
           {/* Mobile Navigation Menu */}
           {mobileMenuOpen && (
             <div className="lg:hidden bg-background border border-border mt-4 py-4 px-2 rounded-lg shadow-corporate animate-slideUp">
-              <nav className="flex flex-col space-y-4">
+              <nav className="flex flex-col stack-sm">
                 {/* Soluciones Accordion Mobile */}
                 <div className="px-4 py-2">
                   <div className="text-foreground font-medium mb-4 border-b border-border pb-2">Soluciones</div>

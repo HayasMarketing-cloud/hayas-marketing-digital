@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import OptimizedImage from './OptimizedImage';
 const HeroSection = () => {
-  return <main className="relative py-16 md:py-20 overflow-hidden">
+  return <main className="relative section-tight overflow-hidden">
       {/* Círculos decorativos de fondo con colores corporativos */}
       <div className="absolute -bottom-24 -left-24 w-64 h-64 rounded-full bg-hayas-primary/10 opacity-20" aria-hidden="true"></div>
       <div className="absolute top-24 -right-24 w-96 h-96 rounded-full bg-hayas-secondary/10 opacity-10" aria-hidden="true"></div>
@@ -15,7 +15,7 @@ const HeroSection = () => {
               <span className="text-gradient-primary">Soluciones</span> que impulsan tu <span className="text-gradient-primary">marca</span>, conectan con tus <span className="text-gradient-primary">clientes</span> y activan tu <span className="text-gradient-primary">estrategia</span> digital
             </h1>
             <p className="text-lg md:text-xl text-gray-700 mb-8 animate-slide-up">En Hayas Marketing transformamos ideas en resultados reales con estrategias 360 que combinan creatividad, datos y tecnología. Creamos marcas sólidas, construimos relaciones duraderas con tus clientes y ponemos en marcha planes digitales medibles que generan crecimiento sostenible.</p>
-            <div className="flex flex-col sm:flex-row gap-4 animate-slide-up">
+            <div className="flex flex-col sm:flex-row gap-4 animate-slide-up stack-sm">
               <Button asChild className="gradient-primary text-white py-6 px-8 text-lg font-medium shadow-elegant hover-scale focus-ring" aria-label="Explorar soluciones de Hayas Marketing">
                 <Link to="/?scrollTo=soluciones">Explora nuestras soluciones</Link>
               </Button>

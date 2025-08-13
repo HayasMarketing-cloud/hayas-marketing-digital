@@ -5,7 +5,7 @@ import { Briefcase, GraduationCap } from 'lucide-react';
 const MethodologySection: React.FC = () => {
   return (
     <section id="metodologia" aria-label="Metodología de trabajo" className="w-full bg-muted/50">
-      <div className="container mx-auto max-w-7xl px-6 py-20">
+      <div className="container mx-auto max-w-7xl px-6 section-normal">
         <header className="mb-10 text-center">
           <p className="mb-2 text-xs font-medium tracking-widest text-muted-foreground uppercase">
             Metodología de trabajo
