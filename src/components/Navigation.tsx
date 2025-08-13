@@ -92,7 +92,7 @@ const Navigation = () => {
       <header
         ref={headerRef}
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 bg-background/95 backdrop-blur-md border-b border-border/50 ${
-          isScrolled ? 'shadow-corporate py-2' : 'py-3 md:py-4'
+          isScrolled ? 'shadow-corporate py-1' : 'py-2'
         }`}
       >
         <div className="container mx-auto px-4">
