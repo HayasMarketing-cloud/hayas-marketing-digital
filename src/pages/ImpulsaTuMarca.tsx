@@ -116,8 +116,8 @@ const ImpulsaTuMarca = () => {
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-hayas-200 to-hayas-300 rounded-3xl transform rotate-6 scale-105 opacity-20"></div>
                 <img 
-                  src={brandingHero}
-                  alt="Impulsa tu marca: identidad sólida, coherente y reconocible"
+                  src="/src/assets/impulsa-marca-creative-hero.jpg"
+                  alt="Emprendedor creativo trabajando en identidad de marca con elementos visuales dinámicos"
                   className="relative z-10 w-full h-auto rounded-3xl shadow-2xl"
                 />
               </div>
