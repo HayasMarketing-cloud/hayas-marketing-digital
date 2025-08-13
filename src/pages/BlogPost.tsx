@@ -1591,6 +1591,82 @@ const BlogPost = () => {
     );
   }
 
+  if (id === 'ia-redes-sociales-herramientas-riesgos') {
+    return (
+      <div className="min-h-screen bg-background">
+        <Navigation />
+        <main className="container mx-auto px-4 py-8">
+          <article className="prose prose-lg max-w-4xl mx-auto">
+            <Seo 
+              title="Cómo aprovechar la inteligencia artificial en redes sociales | Guía 2025"
+              description="Descubre las mejores herramientas de IA para redes sociales, sus beneficios y riesgos. Guía completa para profesionales del social media marketing en 2025."
+              keywords="IA redes sociales, inteligencia artificial social media, herramientas IA marketing, automatización redes sociales"
+              ogImage="/src/assets/ia-redes-sociales-hero.jpg"
+            />
+            
+            <div className="text-center mb-8">
+              <Link to="/blog" className="text-sm text-muted-foreground hover:text-primary">
+                ← Volver al Blog
+              </Link>
+            </div>
+
+            <header className="mb-12">
+              <OptimizedImage
+                src="/src/assets/ia-redes-sociales-hero.jpg"
+                alt="Inteligencia artificial aplicada a redes sociales - herramientas y automatización"
+                className="w-full h-64 md:h-96 object-cover rounded-lg mb-6"
+                width={1920}
+                height={1080}
+                loading="eager"
+              />
+              
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                Cómo aprovechar la inteligencia artificial en redes sociales
+              </h1>
+              
+              <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-6">
+                <time dateTime="2025-01-13">13 de enero de 2025</time>
+                <span>•</span>
+                <span>12 min de lectura</span>
+                <span>•</span>
+                <span>Por Equipo Hayas Marketing</span>
+              </div>
+
+              <div className="bg-gradient-to-r from-primary/10 to-accent/10 p-6 rounded-lg border-l-4 border-primary">
+                <p className="text-lg font-medium">
+                  La inteligencia artificial está revolucionando las redes sociales. Desde la automatización del contenido hasta el análisis predictivo, descubre las herramientas esenciales y los riesgos que debes conocer para mantenerte competitivo en 2025.
+                </p>
+              </div>
+            </header>
+
+            <div className="space-y-8">
+              <p className="text-lg">
+                La <strong>inteligencia artificial en redes sociales</strong> ha transformado completamente el panorama digital. En esta guía completa, exploraremos las herramientas de IA más populares para redes sociales y analizaremos tanto sus beneficios como los riesgos que debes tener en cuenta.
+              </p>
+
+              <div className="bg-gradient-to-r from-primary/5 to-accent/5 p-6 rounded-lg mt-12">
+                <h3 className="text-2xl font-bold mb-4 text-center">¿Necesitas implementar IA en tu estrategia de redes sociales?</h3>
+                <p className="text-center mb-6">
+                  En <strong>Hayas Marketing</strong> te ayudamos a integrar <Link to="/solucioes-ia" className="text-primary hover:underline">soluciones de inteligencia artificial</Link> en tu estrategia de redes sociales de forma ética y eficaz.
+                </p>
+                <div className="text-center space-y-4">
+                  <Button asChild size="lg" className="mr-4">
+                    <Link to="/solucioes-ia">Ver Soluciones de IA</Link>
+                  </Button>
+                  <Button asChild variant="outline" size="lg">
+                    <Link to="/agendar-reunion">Consulta Gratuita</Link>
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </article>
+        </main>
+        <Footer />
+        <ScrollToTop />
+      </div>
+    );
+  }
+
   // Post no encontrado
   return (
     <div className="min-h-screen bg-background flex items-center justify-center">
