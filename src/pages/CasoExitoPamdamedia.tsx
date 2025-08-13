@@ -28,7 +28,7 @@ const CasoExitoPamdamedia: React.FC = () => {
         description={pageDescription} 
         canonical={canonical} 
         structuredData={structuredData}
-        ogImage="/lovable-uploads/319ad77e-4e6e-436c-bae2-c8520c34f73b.png"
+        ogImage="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2069&auto=format&fit=crop"
       />
       <Navigation />
 
@@ -80,7 +80,7 @@ const CasoExitoPamdamedia: React.FC = () => {
               </div>
               <div className="rounded-xl overflow-hidden shadow">
                 <img
-                  src="/lovable-uploads/319ad77e-4e6e-436c-bae2-c8520c34f73b.png"
+                  src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2069&auto=format&fit=crop"
                   alt="Sitio web de Pamdamedia - Agencia de publicidad exterior"
                   className="w-full h-full object-cover"
                   loading="lazy"
