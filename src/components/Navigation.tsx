@@ -92,7 +92,7 @@ const Navigation = () => {
       <header
         ref={headerRef}
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 bg-background/95 backdrop-blur-md border-b border-border/50 ${
-          isScrolled ? 'shadow-corporate py-1' : 'py-2'
+          isScrolled ? 'shadow-corporate py-0.5' : 'py-1'
         }`}
       >
         <div className="container mx-auto px-4">
@@ -102,7 +102,7 @@ const Navigation = () => {
                 <img
                   src="/lovable-uploads/7ec653d8-b796-48ee-9657-8f0301af6e55.png"
                   alt="Hayas Marketing Logo"
-                  className="h-20 md:h-24 w-auto"
+                  className="h-28 md:h-32 w-auto"
                 />
               </Link>
             </div>
