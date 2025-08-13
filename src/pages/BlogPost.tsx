@@ -4,10 +4,16 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { Calendar, User, Clock, ArrowLeft, Share2, BookOpen, Brain, Target, TrendingUp } from 'lucide-react';
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
+import ScrollToTop from '@/components/ScrollToTop';
+import Seo from '@/components/Seo';
+import OptimizedImage from '@/components/OptimizedImage';
 import iaMarketingHero from '@/assets/ia-marketing-hero.jpg';
 import avisosLegalesHero from '@/assets/avisos-legales-hero.jpg';
 import mantenimientoWordpressHero from '@/assets/mantenimiento-wordpress-hero.jpg';
 import estrategiaMarketingContenidosHero from '@/assets/estrategia-marketing-contenidos-hero.jpg';
+import iaRedesSocialesHero from '@/assets/ia-redes-sociales-hero.jpg';
 
 const BlogPost = () => {
   const { id } = useParams();
@@ -1600,7 +1606,6 @@ const BlogPost = () => {
             <Seo 
               title="Cómo aprovechar la inteligencia artificial en redes sociales | Guía 2025"
               description="Descubre las mejores herramientas de IA para redes sociales, sus beneficios y riesgos. Guía completa para profesionales del social media marketing en 2025."
-              keywords="IA redes sociales, inteligencia artificial social media, herramientas IA marketing, automatización redes sociales"
               ogImage="/src/assets/ia-redes-sociales-hero.jpg"
             />
             
@@ -1612,12 +1617,12 @@ const BlogPost = () => {
 
             <header className="mb-12">
               <OptimizedImage
-                src="/src/assets/ia-redes-sociales-hero.jpg"
+                src={iaRedesSocialesHero}
                 alt="Inteligencia artificial aplicada a redes sociales - herramientas y automatización"
                 className="w-full h-64 md:h-96 object-cover rounded-lg mb-6"
                 width={1920}
                 height={1080}
-                loading="eager"
+                priority={true}
               />
               
               <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
