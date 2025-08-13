@@ -10,6 +10,8 @@ import iaMarketingHero from '@/assets/ia-marketing-hero.jpg';
 import avisosLegalesHero from '@/assets/avisos-legales-hero.jpg';
 import mantenimientoWordpressHero from '@/assets/mantenimiento-wordpress-hero.jpg';
 import estrategiaMarketingContenidosHero from '@/assets/estrategia-marketing-contenidos-hero.jpg';
+import iaRedesSocialesHero from '@/assets/ia-redes-sociales-hero.jpg';
+import tiktokMarketingHero from '@/assets/tiktok-marketing-hero.jpg';
 
 const Blog = () => {
   const featuredPost = {
@@ -25,6 +27,24 @@ const Blog = () => {
   };
 
   const recentPosts = [
+    {
+      id: 'tiktok-marketing-estrategia-digital',
+      title: 'TikTok marketing: cómo integrar TikTok en tu estrategia digital',
+      description: 'Descubre cómo aprovechar TikTok para llegar a audiencias más jóvenes y crear contenido viral que impulse tu marca en 2025.',
+      date: '2025-01-12',
+      readTime: '14 min',
+      category: 'Redes Sociales',
+      image: tiktokMarketingHero
+    },
+    {
+      id: 'ia-redes-sociales-herramientas-riesgos',
+      title: 'IA en redes sociales: herramientas, beneficios y riesgos',
+      description: 'Análisis completo sobre cómo la inteligencia artificial está transformando la gestión de redes sociales en 2025.',
+      date: '2025-01-11',
+      readTime: '16 min',
+      category: 'Inteligencia Artificial',
+      image: iaRedesSocialesHero
+    },
     {
       id: 'estrategia-marketing-contenidos-eficaz-2025',
       title: 'Estrategia de Marketing de Contenidos Eficaz: Guía 2025',
@@ -57,6 +77,7 @@ const Blog = () => {
   const categories = [
     'Inteligencia Artificial',
     'Marketing de Contenidos',
+    'Redes Sociales',
     'WordPress',
     'Legal',
     'CRM',
