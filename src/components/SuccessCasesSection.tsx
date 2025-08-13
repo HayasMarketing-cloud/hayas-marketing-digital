@@ -189,7 +189,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     industry: "Agencia de publicidad exterior",
     service: "Rediseño web, UX y orientación a la conversión",
     link: "/casos-exito/pamdamedia",
-    image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=2069&auto=format&fit=crop",
+    image: "/lovable-uploads/319ad77e-4e6e-436c-bae2-c8520c34f73b.png",
     tags: ["diseño-web", "ux", "conversion", "publicidad-exterior", "b2b"]
   },
   {

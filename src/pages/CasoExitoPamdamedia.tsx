@@ -23,7 +23,13 @@ const CasoExitoPamdamedia: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
-      <Seo title={pageTitle} description={pageDescription} canonical={canonical} structuredData={structuredData} />
+      <Seo 
+        title={pageTitle} 
+        description={pageDescription} 
+        canonical={canonical} 
+        structuredData={structuredData}
+        ogImage="/lovable-uploads/319ad77e-4e6e-436c-bae2-c8520c34f73b.png"
+      />
       <Navigation />
 
       <main className="flex-grow">
@@ -74,8 +80,8 @@ const CasoExitoPamdamedia: React.FC = () => {
               </div>
               <div className="rounded-xl overflow-hidden shadow">
                 <img
-                  src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=2069&auto=format&fit=crop"
-                  alt="Pamdamedia — publicidad exterior y gran formato"
+                  src="/lovable-uploads/319ad77e-4e6e-436c-bae2-c8520c34f73b.png"
+                  alt="Sitio web de Pamdamedia - Agencia de publicidad exterior"
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
