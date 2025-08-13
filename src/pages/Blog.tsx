@@ -8,6 +8,7 @@ import Footer from '@/components/Footer';
 import Navigation from '@/components/Navigation';
 import iaMarketingHero from '@/assets/ia-marketing-hero.jpg';
 import avisosLegalesHero from '@/assets/avisos-legales-hero.jpg';
+import mantenimientoWordpressHero from '@/assets/mantenimiento-wordpress-hero.jpg';
 
 const Blog = () => {
   const featuredPost = {
@@ -23,6 +24,15 @@ const Blog = () => {
   };
 
   const recentPosts = [
+    {
+      id: 'mantenimiento-wordpress-emprendedores-2025',
+      title: 'Mantenimiento WordPress para Emprendedores: Guía Completa 2025',
+      description: 'Descubre cómo mantener tu WordPress seguro y rápido sin conocimientos técnicos. Incluye checklist y herramientas actualizadas.',
+      date: '2025-01-08',
+      readTime: '15 min',
+      category: 'WordPress',
+      image: mantenimientoWordpressHero
+    },
     {
       id: 'avisos-legales-paginas-web',
       title: 'Avisos Legales para Páginas Web [Incluye Plantillas]',
@@ -54,6 +64,7 @@ const Blog = () => {
 
   const categories = [
     'Inteligencia Artificial',
+    'WordPress',
     'Legal',
     'CRM',
     'SEO',
