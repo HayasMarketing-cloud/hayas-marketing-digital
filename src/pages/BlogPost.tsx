@@ -1222,15 +1222,17 @@ const BlogPost = () => {
             </div>
 
             <div className="bg-gradient-to-r from-primary/5 to-accent/5 p-6 rounded-lg mt-12">
-              <h3 className="text-xl font-bold mb-4 text-center">¿Necesitas ayuda personalizada?</h3>
+              <h3 className="text-xl font-bold mb-4 text-center">¿Necesitas asesoramiento para el diseño y desarrollo de tu sitio web?</h3>
               <p className="text-center mb-4">
-                En <strong>Hayas Marketing</strong> te ayudamos a implementar todos los avisos legales necesarios 
-                para que tu web cumpla con la normativa vigente.
+                En <strong>Hayas Marketing</strong> te ofrecemos nuestro servicio de <strong>diseño web</strong> y también una 
+                consultoría para ayudarte con la estrategia, contenidos y diseño de tu sitio web.
               </p>
               <div className="text-center">
-                <Button size="lg" className="gradient-primary">
-                  Solicitar Consulta Legal
-                </Button>
+                <Link to="/agendar-reunion">
+                  <Button size="lg" className="gradient-primary">
+                    Solicitar consulta gratuita
+                  </Button>
+                </Link>
               </div>
             </div>
           </article>
