@@ -130,6 +130,7 @@ const App = () => (
           <Route path="/casos-exito/i-virgen-extra" element={<CasoExitoIVirgenExtra />} />
           <Route path="/casos-exito/inbound-students" element={<CasoExitoInboundStudents />} />
           <Route path="/casos-exito/calistenia-online" element={<CasoExitoCalistheniaOnline />} />
+          <Route path="/casos-exito-calisthenia-online" element={<Navigate to="/casos-exito/calistenia-online" replace />} />
           <Route path="/casos-exito/centro-roraima" element={<CasoExitoCentroRoraima />} />
           <Route path="/casos-exito/joints-up" element={<CasoExitoJointsUp />} />
           <Route path="/casos-exito/translate-with-style" element={<CasoExitoTranslateWithStyle />} />
