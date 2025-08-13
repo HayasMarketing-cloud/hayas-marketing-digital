@@ -183,10 +183,10 @@ const Nosotros = () => {
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
                 <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient-primary">
-                  🌳 Nuestra historia: ¿Por qué Hayas?
+                  🌳 Creciendo juntos: nuestra comunidad de impulso empresarial
                 </h2>
                 <p className="text-lg text-gray-900 font-medium max-w-2xl mx-auto">
-                  Elegimos el nombre Hayas no por azar, sino por todo lo que representa
+                  Como un bosque de hayas, crecemos juntos: sólidos en nuestros valores, flexibles para adaptarnos a los distintos contextos y con una visión amplia para impulsar nuestras empresas.
                 </p>
               </div>
               
