@@ -14,6 +14,7 @@ import avisosLegalesHero from '@/assets/avisos-legales-hero.jpg';
 import mantenimientoWordpressHero from '@/assets/mantenimiento-wordpress-hero.jpg';
 import estrategiaMarketingContenidosHero from '@/assets/estrategia-marketing-contenidos-hero.jpg';
 import iaRedesSocialesHero from '@/assets/ia-redes-sociales-hero.jpg';
+import tiktokMarketingHero from '@/assets/tiktok-marketing-hero.jpg';
 
 const BlogPost = () => {
   const { id } = useParams();
@@ -1664,6 +1665,360 @@ const BlogPost = () => {
                 </div>
               </div>
             </div>
+          </article>
+        </main>
+        <Footer />
+        <ScrollToTop />
+      </div>
+    );
+  }
+
+  if (id === 'tiktok-marketing-estrategia-digital') {
+    return (
+      <div className="min-h-screen bg-background">
+        <Navigation />
+        <main className="container mx-auto px-4 py-8">
+          <article className="prose prose-lg max-w-4xl mx-auto">
+            <Seo 
+              title="TikTok marketing: cómo integrar TikTok en tu estrategia digital 2025"
+              description="Descubre cómo usar TikTok marketing para conectar con tu audiencia. Estrategias, tipos de campañas y consejos para promocionar tu marca en TikTok efectivamente."
+              ogImage="/src/assets/tiktok-marketing-hero.jpg"
+            />
+            
+            <div className="text-center mb-8">
+              <Link to="/blog" className="text-sm text-muted-foreground hover:text-primary">
+                ← Volver al Blog
+              </Link>
+            </div>
+
+            <header className="mb-12">
+              <OptimizedImage
+                src={tiktokMarketingHero}
+                alt="TikTok marketing - estrategia de marketing digital en TikTok para empresas"
+                className="w-full h-64 md:h-96 object-cover rounded-lg mb-6"
+                width={1920}
+                height={1080}
+                priority={true}
+              />
+              
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                TikTok marketing: cómo integrar TikTok en tu estrategia digital
+              </h1>
+              
+              <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-6">
+                <time dateTime="2025-01-13">13 de enero de 2025</time>
+                <span>•</span>
+                <span>10 min de lectura</span>
+                <span>•</span>
+                <span>Por Equipo Hayas Marketing</span>
+              </div>
+
+              <div className="bg-gradient-to-r from-primary/10 to-accent/10 p-6 rounded-lg border-l-4 border-primary">
+                <p className="text-lg font-medium">
+                  Con más de 1.5 mil millones de usuarios activos, TikTok se ha consolidado como una plataforma esencial para el marketing digital. Descubre cómo integrar TikTok marketing en tu estrategia para conectar auténticamente con la Generación Z y millennials.
+                </p>
+              </div>
+            </header>
+
+            <div className="space-y-8">
+              <p className="text-lg leading-relaxed">
+                <strong>TikTok marketing</strong> ha evolucionado de una simple tendencia a una estrategia fundamental en el marketing digital moderno. Con 15 segundos que se repiten en bucle, una comunidad de más de 1.5 mil millones de usuarios y la posibilidad de conectar con personas de todo el mundo, esta plataforma ha transformado la manera en que las marcas interactúan con su audiencia.
+              </p>
+
+              <p>
+                Esta red social ha cautivado especialmente a la juventud a nivel global, transformándose de un simple canal de entretenimiento a una plataforma altamente efectiva para negocios e interacción con los usuarios.
+              </p>
+
+              <div className="bg-blue-50 dark:bg-blue-950/30 p-6 rounded-lg border border-blue-200 dark:border-blue-800">
+                <h3 className="text-xl font-semibold mb-4">Datos clave de TikTok en 2025:</h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <div>
+                      <strong>1.582 millones de usuarios activos mensuales</strong> a nivel global (marzo 2024)
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <div>
+                      <strong>96% de los usuarios</strong> creen que TikTok puede ayudar a las PYMEs a establecer vínculos más fuertes con sus usuarios
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <div>
+                      <strong>Quinta red social</strong> por volumen de usuarios, justo detrás de Instagram
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <blockquote className="border-l-4 border-primary pl-6 py-4 my-8 bg-gradient-to-r from-primary/5 to-transparent">
+                <p className="text-lg italic">
+                  "De acuerdo a los últimos insights de TikTok para el mercado español, el 96% de los usuarios de TikTok creen que TikTok puede ayudar a las pymes a establecer vínculos más fuertes con sus usuarios."
+                </p>
+                <footer className="text-sm text-muted-foreground mt-2">— TikTok Business Insights España</footer>
+              </blockquote>
+
+              <h2 className="text-3xl font-bold mt-12 mb-6">Estrategias de TikTok marketing efectivas</h2>
+              
+              <p>
+                <strong>El objetivo del TikTok marketing</strong> es como en cualquier otro canal digital, tanto maximizar el alcance para que descubran la marca o empresa como hacer contenido educativo o de entretenimiento, y por supuesto, para vender.
+              </p>
+
+              <p>
+                En la era digital actual, TikTok se ha consolidado como una herramienta de marketing poderosa, dinámica y excepcionalmente resonante, especialmente entre los jóvenes. Con el creciente rechazo hacia la publicidad tradicional por parte de la generación Z, es crucial adoptar estrategias que resuenen auténticamente con este grupo demográfico.
+              </p>
+
+              <div className="grid md:grid-cols-2 gap-6 mt-8">
+                <div className="bg-green-50 dark:bg-green-950/30 p-6 rounded-lg border border-green-200 dark:border-green-800">
+                  <h3 className="text-xl font-semibold mb-3 text-green-800 dark:text-green-200">Demografía de TikTok</h3>
+                  <p className="text-sm mb-3">Si tu público objetivo es predominantemente joven, entre 16 y 24 años, TikTok es probablemente el canal más efectivo para tus esfuerzos de marketing.</p>
+                  <p className="text-sm">Incluso si tu audiencia es mayor, TikTok ofrece valor, ya que muchos usuarios de más de 24 años también están activos en la plataforma.</p>
+                </div>
+                
+                <div className="bg-purple-50 dark:bg-purple-950/30 p-6 rounded-lg border border-purple-200 dark:border-purple-800">
+                  <h3 className="text-xl font-semibold mb-3 text-purple-800 dark:text-purple-200">Rol de los influencers</h3>
+                  <p className="text-sm mb-3">La colaboración con influencers en TikTok puede ser una estrategia particularmente efectiva.</p>
+                  <p className="text-sm">Los influencers tienen la habilidad de forjar conexiones profundas con su audiencia, lo que puede ser invaluable para marcas que buscan autenticidad.</p>
+                </div>
+              </div>
+
+              <h2 className="text-3xl font-bold mt-12 mb-6">Tipos de campañas publicitarias en TikTok</h2>
+              
+              <p>
+                Desde la introducción de TikTok Ads, las opciones para las campañas publicitarias se han expandido, permitiendo a las marcas experimentar con diferentes formatos:
+              </p>
+
+              <div className="space-y-6 mt-8">
+                <div className="border rounded-lg p-6 bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-950/30 dark:to-cyan-950/30">
+                  <h3 className="text-xl font-semibold mb-4 flex items-center">
+                    <span className="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">1</span>
+                    Anuncios nativos en el feed
+                  </h3>
+                  <p>Se integran sin problemas en el flujo de contenido del usuario, ofreciendo una experiencia de usuario fluida y natural.</p>
+                </div>
+
+                <div className="border rounded-lg p-6 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950/30 dark:to-emerald-950/30">
+                  <h3 className="text-xl font-semibold mb-4 flex items-center">
+                    <span className="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">2</span>
+                    Retos de hashtags
+                  </h3>
+                  <p>Fomentan la participación del usuario y la generación de contenido por parte de los mismos, aumentando el alcance viral de la campaña.</p>
+                </div>
+
+                <div className="border rounded-lg p-6 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-950/30 dark:to-pink-950/30">
+                  <h3 className="text-xl font-semibold mb-4 flex items-center">
+                    <span className="bg-purple-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">3</span>
+                    Anuncios de Brand Takeover
+                  </h3>
+                  <p>Capturan la atención de forma inmediata al abrir la app, ofreciendo una visibilidad prominente.</p>
+                </div>
+
+                <div className="border rounded-lg p-6 bg-gradient-to-r from-orange-50 to-red-50 dark:from-orange-950/30 dark:to-red-950/30">
+                  <h3 className="text-xl font-semibold mb-4 flex items-center">
+                    <span className="bg-orange-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">4</span>
+                    Efectos personalizados de marca
+                  </h3>
+                  <p>Permiten a los usuarios interactuar con elementos de marca personalizados, lo que puede aumentar el engagement y la recordación de marca.</p>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-r from-accent/10 to-primary/10 p-6 rounded-lg border border-accent/20 mt-8">
+                <p className="text-base font-medium">
+                  <strong>Cada tipo de campaña</strong> ofrece oportunidades únicas para conectar con audiencias de manera creativa y efectiva, aprovechando el dinamismo y la naturaleza visual de TikTok.
+                </p>
+              </div>
+
+              <h2 className="text-3xl font-bold mt-12 mb-6">Cómo crear una campaña publicitaria en TikTok Ads</h2>
+              
+              <p>
+                Para crear una cuenta Ads en TikTok, es fundamental completar un formulario con tus datos y seguir los pasos indicados para establecer claramente el objetivo de tu campaña. Una vez hayas hecho esto, podrás dar inicio a la creación de tu campaña publicitaria en la plataforma.
+              </p>
+
+              <div className="bg-gray-50 dark:bg-gray-900 p-6 rounded-lg border mt-6">
+                <h3 className="text-xl font-semibold mb-4">Pasos para configurar tu campaña:</h3>
+                <ol className="space-y-3">
+                  <li className="flex items-start">
+                    <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-1 flex-shrink-0">1</span>
+                    <span>Seleccionar un nombre impactante para tu campaña publicitaria en TikTok</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-1 flex-shrink-0">2</span>
+                    <span>Establecer un presupuesto diario y total acorde a tus objetivos</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-1 flex-shrink-0">3</span>
+                    <span>Crear una segmentación detallada para llegar a la audiencia adecuada</span>
+                  </li>
+                </ol>
+              </div>
+
+              <h3 className="text-2xl font-bold mt-10 mb-6">Segmentación en TikTok Ads</h3>
+              
+              <p>
+                TikTok se encuentra vinculado con otras aplicaciones como Vigo Video y Buzz Video, por lo que en primera instancia se te solicitará seleccionar tus «ubicaciones». Posteriormente, tendrás que completar todos los detalles necesarios para lanzar tu anuncio.
+              </p>
+
+              <div className="border rounded-lg p-6 bg-blue-50 dark:bg-blue-950/30 mt-6">
+                <h4 className="text-xl font-semibold mb-4">Elementos clave de segmentación:</h4>
+                <ul className="space-y-3">
+                  <li><strong>Palabras clave:</strong> Hasta 20 términos para describir tu marca</li>
+                  <li><strong>Targeting:</strong> Ubicación, edad, género, idiomas, dispositivos</li>
+                  <li><strong>Ubicaciones:</strong> Selección de apps vinculadas donde mostrar tu anuncio</li>
+                  <li><strong>Categorías:</strong> Clasificación de tu producto o servicio</li>
+                </ul>
+              </div>
+
+              <h2 className="text-3xl font-bold mt-12 mb-6">Consejos para promocionar tu marca en TikTok</h2>
+              
+              <p>
+                Adentrarse en TikTok requiere una combinación de constancia, contenido de calidad y una representación auténtica de tu marca. Aquí te dejamos consejos detallados para integrar TikTok efectivamente en tu estrategia de marketing digital:
+              </p>
+
+              <div className="grid md:grid-cols-2 gap-6 mt-8">
+                <div className="space-y-6">
+                  <div className="border rounded-lg p-4 hover:shadow-lg transition-shadow">
+                    <h4 className="font-semibold mb-2 text-primary">1. Define tu identidad en TikTok</h4>
+                    <p className="text-sm">Antes de comenzar, es crucial que definas cómo quieres que tu marca sea percibida. Adapta tu mensaje para resonar con el público objetivo.</p>
+                  </div>
+                  
+                  <div className="border rounded-lg p-4 hover:shadow-lg transition-shadow">
+                    <h4 className="font-semibold mb-2 text-primary">2. Crea contenido original y atractivo</h4>
+                    <p className="text-sm">TikTok es una plataforma donde el contenido original y creativo tiene un mejor desempeño. Experimenta con formatos únicos.</p>
+                  </div>
+                  
+                  <div className="border rounded-lg p-4 hover:shadow-lg transition-shadow">
+                    <h4 className="font-semibold mb-2 text-primary">3. Utiliza influencers para amplificar tu mensaje</h4>
+                    <p className="text-sm">Colaborar con influencers populares puede ayudar a promover tu marca a un público más amplio manteniendo la autenticidad.</p>
+                  </div>
+                  
+                  <div className="border rounded-lg p-4 hover:shadow-lg transition-shadow">
+                    <h4 className="font-semibold mb-2 text-primary">4. Participa en retos de hashtags</h4>
+                    <p className="text-sm">Los retos son increíblemente populares y pueden ofrecer una exposición masiva de manera divertida y participativa.</p>
+                  </div>
+                  
+                  <div className="border rounded-lg p-4 hover:shadow-lg transition-shadow">
+                    <h4 className="font-semibold mb-2 text-primary">5. Optimiza el momento de publicación</h4>
+                    <p className="text-sm">Publica en los horarios de mayor actividad para asegurar la máxima visibilidad de tu contenido.</p>
+                  </div>
+                </div>
+                
+                <div className="space-y-6">
+                  <div className="border rounded-lg p-4 hover:shadow-lg transition-shadow">
+                    <h4 className="font-semibold mb-2 text-accent">6. Engancha con tu comunidad</h4>
+                    <p className="text-sm">Responde a comentarios, participa en tendencias y dialoga con otros usuarios para construir una comunidad activa.</p>
+                  </div>
+                  
+                  <div className="border rounded-lg p-4 hover:shadow-lg transition-shadow">
+                    <h4 className="font-semibold mb-2 text-accent">7. Analiza y ajusta tu estrategia</h4>
+                    <p className="text-sm">Utiliza las herramientas de análisis de TikTok para medir el rendimiento y ajustar tu estrategia basándote en insights.</p>
+                  </div>
+                  
+                  <div className="border rounded-lg p-4 hover:shadow-lg transition-shadow">
+                    <h4 className="font-semibold mb-2 text-accent">8. Considera la publicidad en TikTok</h4>
+                    <p className="text-sm">Invierte en anuncios de TikTok para alcanzar un público más amplio con opciones de segmentación efectiva.</p>
+                  </div>
+                  
+                  <div className="border rounded-lg p-4 hover:shadow-lg transition-shadow">
+                    <h4 className="font-semibold mb-2 text-accent">9. Muestra los bastidores de tu marca</h4>
+                    <p className="text-sm">Ofrece una mirada detrás de las escenas de tu negocio para humanizar tu marca y fomentar conexiones más profundas.</p>
+                  </div>
+                  
+                  <div className="border rounded-lg p-4 hover:shadow-lg transition-shadow">
+                    <h4 className="font-semibold mb-2 text-accent">10. Capacitación y actualización constante</h4>
+                    <p className="text-sm">El ecosistema de TikTok evoluciona rápidamente. Mantente al tanto de nuevas herramientas y mejores prácticas.</p>
+                  </div>
+                </div>
+              </div>
+
+              <h2 className="text-3xl font-bold mt-12 mb-6">Conclusión</h2>
+              
+              <p>
+                Incorporar <strong>TikTok marketing</strong> en tu estrategia digital puede transformar la forma en que interactúas con tu audiencia y aprovechas esta plataforma dinámica y visualmente atractiva. La clave está en mantener la autenticidad, crear contenido relevante y adaptarse constantemente a las tendencias y cambios del algoritmo.
+              </p>
+
+              <p>
+                El éxito en TikTok no se mide solo por las visualizaciones, sino por la capacidad de generar engagement auténtico y construir una comunidad sólida alrededor de tu marca. ¡Prepárate para explorar un mundo de creatividad y oportunidades que TikTok tiene para ofrecer!
+              </p>
+
+              <div className="bg-gradient-to-r from-primary/5 to-accent/5 p-6 rounded-lg mt-12">
+                <h3 className="text-2xl font-bold mb-4 text-center">¿Necesitas ayuda con tu estrategia de TikTok marketing?</h3>
+                <p className="text-center mb-6">
+                  En <strong>Hayas Marketing</strong> te ayudamos a desarrollar e implementar estrategias de <Link to="/servicios/gestion-redes-sociales" className="text-primary hover:underline">gestión de redes sociales</Link> efectivas. Desde la creación de contenido hasta la gestión de campañas publicitarias, optimizamos tu presencia en TikTok para conectar auténticamente con tu audiencia.
+                </p>
+                <div className="text-center space-y-4">
+                  <Button asChild size="lg" className="mr-4">
+                    <Link to="/servicios/gestion-redes-sociales">Ver Servicios de Redes Sociales</Link>
+                  </Button>
+                  <Button asChild variant="outline" size="lg">
+                    <Link to="/agendar-reunion">Consulta Gratuita</Link>
+                  </Button>
+                </div>
+              </div>
+
+              <div className="mt-12 pt-8 border-t">
+                <h3 className="text-xl font-bold mb-6">Artículos relacionados</h3>
+                <div className="grid md:grid-cols-3 gap-6">
+                  <div className="border rounded-lg p-4 hover:shadow-lg transition-shadow">
+                    <h4 className="font-semibold mb-2">
+                      <Link to="/blog/ia-redes-sociales-herramientas-riesgos" className="text-primary hover:underline">
+                        Cómo aprovechar la inteligencia artificial en redes sociales
+                      </Link>
+                    </h4>
+                    <p className="text-sm text-muted-foreground">Descubre las mejores herramientas de IA para potenciar tu estrategia de redes sociales.</p>
+                  </div>
+                  
+                  <div className="border rounded-lg p-4 hover:shadow-lg transition-shadow">
+                    <h4 className="font-semibold mb-2">
+                      <Link to="/blog/estrategia-marketing-contenidos-eficaz-2025" className="text-primary hover:underline">
+                        Estrategia de marketing de contenidos eficaz: Guía 2025
+                      </Link>
+                    </h4>
+                    <p className="text-sm text-muted-foreground">Aprende a crear contenido que genere resultados reales en todas las plataformas.</p>
+                  </div>
+                  
+                  <div className="border rounded-lg p-4 hover:shadow-lg transition-shadow">
+                    <h4 className="font-semibold mb-2">
+                      <Link to="/servicios/publicidad-redes-sociales" className="text-primary hover:underline">
+                        Publicidad en redes sociales
+                      </Link>
+                    </h4>
+                    <p className="text-sm text-muted-foreground">Campañas publicitarias efectivas en todas las redes sociales principales.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Schema.org structured data */}
+            <script type="application/ld+json">
+              {JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Article",
+                "headline": "TikTok marketing: cómo integrar TikTok en tu estrategia digital",
+                "description": "Descubre cómo usar TikTok marketing para conectar con tu audiencia. Estrategias, tipos de campañas y consejos para promocionar tu marca en TikTok efectivamente.",
+                "image": "https://preview--hayas-marketing-digital.lovable.app/src/assets/tiktok-marketing-hero.jpg",
+                "author": {
+                  "@type": "Organization",
+                  "name": "Hayas Marketing"
+                },
+                "publisher": {
+                  "@type": "Organization",
+                  "name": "Hayas Marketing",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://preview--hayas-marketing-digital.lovable.app/favicon.ico"
+                  }
+                },
+                "datePublished": "2025-01-13",
+                "dateModified": "2025-01-13",
+                "mainEntityOfPage": {
+                  "@type": "WebPage",
+                  "@id": "https://preview--hayas-marketing-digital.lovable.app/blog/tiktok-marketing-estrategia-digital"
+                },
+                "keywords": ["TikTok marketing", "marketing digital", "redes sociales", "TikTok Ads", "estrategia digital", "generación Z"]
+              })}
+            </script>
           </article>
         </main>
         <Footer />
