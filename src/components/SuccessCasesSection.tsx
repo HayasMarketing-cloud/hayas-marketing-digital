@@ -165,7 +165,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     industry: "Ecommerce de ciclismo",
     service: "Estrategia digital, analítica avanzada e inteligencia de mercado",
     link: "/casos-exito/buhobike",
-    image: "https://images.unsplash.com/photo-1511735111819-9a3f7709049c?q=80&w=2070&auto=format&fit=crop",
+    image: "/lovable-uploads/84378bb0-78d9-4139-9418-e7d01292062a.png",
     tags: ["estrategia-digital", "analitica", "data", "ecommerce", "retail"]
   },
   {

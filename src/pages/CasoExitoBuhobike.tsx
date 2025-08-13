@@ -74,8 +74,8 @@ const CasoExitoBuhobike: React.FC = () => {
               </div>
               <div className="rounded-xl overflow-hidden shadow">
                 <img
-                  src="https://images.unsplash.com/photo-1511735111819-9a3f7709049c?q=80&w=2070&auto=format&fit=crop"
-                  alt="Buhobike — ecommerce de ciclismo"
+                  src="/lovable-uploads/84378bb0-78d9-4139-9418-e7d01292062a.png"
+                  alt="Buhobike — Mockup de la tienda online y aplicación móvil especializada en bicicletas y ciclismo"
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
