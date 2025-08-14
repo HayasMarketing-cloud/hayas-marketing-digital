@@ -267,6 +267,53 @@ const BlogCalculoInversionMarketing = () => {
                 />
               </div>
 
+              <h3 className="text-2xl font-semibold mb-6">Tácticas para optimizar el rendimiento por canal</h3>
+              
+              <div className="overflow-x-auto mb-8">
+                <table className="w-full border-collapse rounded-lg overflow-hidden shadow-sm">
+                  <thead>
+                    <tr className="bg-gradient-to-r from-primary to-primary/80">
+                      <th className="px-6 py-4 text-left text-white font-semibold">Táctica</th>
+                      <th className="px-6 py-4 text-left text-white font-semibold">Indicador que Mejora</th>
+                    </tr>
+                  </thead>
+                  <tbody className="bg-white">
+                    <tr className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+                      <td className="px-6 py-4 text-gray-800">Realizar acciones de cross-selling y up-selling para aumentar las ventas.</td>
+                      <td className="px-6 py-4 text-gray-600">Ventas, Valor Medio de Orden (AOV)</td>
+                    </tr>
+                    <tr className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+                      <td className="px-6 py-4 text-gray-800">Mejorar la tasa de conversión de MQL a SQL mediante campañas de Inbound Marketing...</td>
+                      <td className="px-6 py-4 text-gray-600">Tasa de Conversión MQL a SQL</td>
+                    </tr>
+                    <tr className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+                      <td className="px-6 py-4 text-gray-800">Automatizar los procesos de marketing en tu CRM para optimizar la eficiencia.</td>
+                      <td className="px-6 py-4 text-gray-600">Eficiencia Operativa, Tasa de Conversión</td>
+                    </tr>
+                    <tr className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+                      <td className="px-6 py-4 text-gray-800">Optimizar el proceso de calificación de leads para identificar a los clientes potenciales.</td>
+                      <td className="px-6 py-4 text-gray-600">Calidad del Lead, Tasa de Conversión</td>
+                    </tr>
+                    <tr className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+                      <td className="px-6 py-4 text-gray-800">Incrementar la calidad de los lead magnets para atraer a leads más cualificados.</td>
+                      <td className="px-6 py-4 text-gray-600">Calidad del Lead, Tasa de Captación de Leads</td>
+                    </tr>
+                    <tr className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+                      <td className="px-6 py-4 text-gray-800">Crear contenido de valor real que resuene con tu Buyer Persona.</td>
+                      <td className="px-6 py-4 text-gray-600">Engagement, Tráfico Web</td>
+                    </tr>
+                    <tr className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+                      <td className="px-6 py-4 text-gray-800">Optimizar el proceso de ventas en tu CRM mediante la creación de un Playbook.</td>
+                      <td className="px-6 py-4 text-gray-600">Tasa de Conversión, Eficiencia en Ventas</td>
+                    </tr>
+                    <tr className="hover:bg-gray-50 transition-colors">
+                      <td className="px-6 py-4 text-gray-800">Localizar el contenido por país para aumentar la conexión local y el compromiso de la audiencia.</td>
+                      <td className="px-6 py-4 text-gray-600">Engagement, Tasa de Retención</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
               <p className="mb-6">
                 La tabla anterior muestra las diferencias clave entre canales. Observa cómo el email marketing, aunque genera menos tráfico, tiene la mayor tasa de conversión y el CAC más bajo, lo que lo convierte en uno de los canales más rentables.
               </p>
