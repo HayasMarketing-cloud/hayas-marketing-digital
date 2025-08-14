@@ -5,6 +5,9 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Seo from "@/components/Seo";
 import OptimizedImage from "@/components/OptimizedImage";
+import calculoInversionHero from '@/assets/calculo-inversion-marketing-hero.jpg';
+import marketingKpisDashboard from '@/assets/marketing-kpis-dashboard.jpg';
+import sistemaPrevisionVentas from '@/assets/sistema-prevision-ventas.jpg';
 
 const BlogCalculoInversionMarketing = () => {
   const structuredData = {
@@ -74,11 +77,11 @@ const BlogCalculoInversionMarketing = () => {
               {/* Featured Image */}
               <div className="mb-8">
                 <OptimizedImage
-                  src="/public/lovable-uploads/estrategia-marketing-contenidos-hero.jpg"
+                  src={calculoInversionHero}
                   alt="Cálculo de inversión en plan de marketing digital - estrategia y presupuesto"
                   className="w-full rounded-lg shadow-lg"
-                  width={800}
-                  height={400}
+                  width={1024}
+                  height={576}
                   priority={true}
                 />
               </div>
@@ -186,11 +189,11 @@ const BlogCalculoInversionMarketing = () => {
 
               <div className="mb-8">
                 <OptimizedImage
-                  src="https://hayasmarketing.com/wp-content/uploads/2024/05/image.png"
+                  src={sistemaPrevisionVentas}
                   alt="Sistema de previsión de ventas y cálculo de inversión en marketing digital"
                   className="w-full rounded-lg shadow-lg border"
-                  width={800}
-                  height={450}
+                  width={1024}
+                  height={576}
                 />
               </div>
 
@@ -245,11 +248,11 @@ const BlogCalculoInversionMarketing = () => {
 
               <div className="mb-8">
                 <OptimizedImage
-                  src="https://hayasmarketing.com/wp-content/uploads/2024/05/image-1.png"
+                  src={marketingKpisDashboard}
                   alt="Métricas principales por canales de marketing digital para cálculo de inversión"
                   className="w-full rounded-lg shadow-lg border"
-                  width={800}
-                  height={450}
+                  width={1024}
+                  height={576}
                 />
               </div>
 
