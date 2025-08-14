@@ -15,7 +15,7 @@ const ChatbotPromoSection = () => {
           {/* Contenido principal */}
           <div className="lg:w-1/2 text-center lg:text-left">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-              Chatbots con IA que atienden, responden... <span className="text-hayas-primary">y convierten</span>
+              Asistentes con IA que atienden, responden... <span className="text-hayas-primary">y convierten</span>
             </h2>
             
             <p className="text-lg md:text-xl text-gray-300 mb-8">
@@ -23,7 +23,7 @@ const ChatbotPromoSection = () => {
             </p>
             
             <p className="text-base md:text-lg text-gray-400 mb-8 max-w-lg">
-              En Hayas te ayudamos a crear chatbots personalizados con inteligencia artificial para automatizar tu atención al cliente, captar leads y mejorar la experiencia digital de tu marca.
+              En Hayas te ayudamos a crear asistentes personalizados con inteligencia artificial para automatizar tu atención al cliente, captar leads y mejorar la experiencia digital de tu marca.
             </p>
             
             <Button 
@@ -31,7 +31,7 @@ const ChatbotPromoSection = () => {
               className="bg-hayas-primary hover:bg-hayas-primary/90 text-white py-6 px-8 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
             >
               <Link to="/asistente-ia">
-                Descubre cómo tener tu propio chatbot inteligente
+                Descubre cómo tener tu propio asistente inteligente
               </Link>
             </Button>
           </div>
