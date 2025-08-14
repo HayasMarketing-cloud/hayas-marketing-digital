@@ -412,15 +412,15 @@ const BlogPerfilClienteIdeal = () => {
           <section className="mb-12">
             <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl p-8 border border-gray-200">
               <h3 className="text-2xl font-bold mb-4 text-center text-gray-900">
-                ¿Quieres aplicar la IA a tu estrategia de forma real y personalizada?
+                ¿Quieres conectar mejor con tu perfil de cliente ideal?
               </h3>
               <p className="text-lg text-gray-700 mb-6 text-center max-w-4xl mx-auto">
-                En Hayas diseñamos soluciones con IA que no solo suenan bien, <strong>funcionan de verdad</strong>. Desde automatización comercial hasta dashboards predictivos, ya estamos ayudando a marcas a trabajar mejor, vender más y conectar de forma más humana.
+                En Hayas te ayudamos a <strong>conectar y mejorar la relación</strong> con tus clientes actuales y potenciales. Implementamos CRM, automatizaciones inteligentes y estrategias personalizadas que te permiten identificar, atraer y fidelizar a tu cliente ideal de forma efectiva.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Button asChild className="gradient-primary text-white px-8 py-3">
                   <Link to="/conecta-con-tus-clientes">
-                    📘 Ver Servicios de IA
+                    📘 Conecta con tus clientes
                   </Link>
                 </Button>
                 <Button asChild variant="outline" className="px-8 py-3 border-gray-300 text-gray-700 hover:bg-gray-50">
