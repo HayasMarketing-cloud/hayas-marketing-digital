@@ -15,14 +15,14 @@ import mantenimientoWordpressHero from '@/assets/mantenimiento-wordpress-hero.jp
 import estrategiaMarketingContenidosHero from '@/assets/estrategia-marketing-contenidos-hero.jpg';
 import iaRedesSocialesHero from '@/assets/ia-redes-sociales-hero.jpg';
 import tiktokMarketingHero from '@/assets/tiktok-marketing-hero.jpg';
-
 const BlogPost = () => {
-  const { id } = useParams();
+  const {
+    id
+  } = useParams();
 
   // Post específico de Estrategia de Marketing de Contenidos
   if (id === 'estrategia-marketing-contenidos-eficaz-2025') {
-    return (
-      <div className="min-h-screen bg-background">
+    return <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 py-24 max-w-4xl">
           {/* Breadcrumb */}
           <div className="mb-8">
@@ -63,14 +63,7 @@ const BlogPost = () => {
               </Button>
             </div>
 
-            <img 
-              src={estrategiaMarketingContenidosHero} 
-              alt="Estrategia de marketing de contenidos eficaz - Guía completa 2025"
-              className="w-full h-64 md:h-80 object-cover rounded-lg mt-8 shadow-lg"
-              loading="eager"
-              width={1920}
-              height={1080}
-            />
+            <img src={estrategiaMarketingContenidosHero} alt="Estrategia de marketing de contenidos eficaz - Guía completa 2025" className="w-full h-64 md:h-80 object-cover rounded-lg mt-8 shadow-lg" loading="eager" width={1920} height={1080} />
           </header>
 
           {/* Content */}
@@ -461,41 +454,39 @@ const BlogPost = () => {
         {/* Schema.org structured data */}
         <script type="application/ld+json">
           {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Article",
-            "headline": "Estrategia de Marketing de Contenidos Eficaz: Guía 2025",
-            "description": "Guía completa para crear una estrategia de marketing de contenidos efectiva en 2025. Incluye storytelling, framework de creación, herramientas IA y casos de éxito actualizados.",
-            "image": estrategiaMarketingContenidosHero,
-            "author": {
-              "@type": "Organization",
-              "name": "Hayas Marketing",
-              "url": "https://hayasmarketing.com"
-            },
-            "publisher": {
-              "@type": "Organization",
-              "name": "Hayas Marketing",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://hayasmarketing.com/logo.png"
-              }
-            },
-            "datePublished": "2025-01-10",
-            "dateModified": "2025-01-10",
-            "mainEntityOfPage": {
-              "@type": "WebPage",
-              "@id": "https://hayasmarketing.com/blog/estrategia-marketing-contenidos-eficaz-2025"
-            },
-            "keywords": "marketing de contenidos, estrategia de contenidos, storytelling, content marketing, SEO, marketing digital, contenido viral, UGC, IA marketing"
-          })}
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "Estrategia de Marketing de Contenidos Eficaz: Guía 2025",
+          "description": "Guía completa para crear una estrategia de marketing de contenidos efectiva en 2025. Incluye storytelling, framework de creación, herramientas IA y casos de éxito actualizados.",
+          "image": estrategiaMarketingContenidosHero,
+          "author": {
+            "@type": "Organization",
+            "name": "Hayas Marketing",
+            "url": "https://hayasmarketing.com"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Hayas Marketing",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://hayasmarketing.com/logo.png"
+            }
+          },
+          "datePublished": "2025-01-10",
+          "dateModified": "2025-01-10",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://hayasmarketing.com/blog/estrategia-marketing-contenidos-eficaz-2025"
+          },
+          "keywords": "marketing de contenidos, estrategia de contenidos, storytelling, content marketing, SEO, marketing digital, contenido viral, UGC, IA marketing"
+        })}
         </script>
-      </div>
-    );
+      </div>;
   }
 
   // Post específico de Mantenimiento WordPress
   if (id === 'mantenimiento-wordpress-emprendedores-2025') {
-    return (
-      <div className="min-h-screen bg-background">
+    return <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 py-24 max-w-4xl">
           {/* Breadcrumb */}
           <div className="mb-8">
@@ -536,14 +527,7 @@ const BlogPost = () => {
               </Button>
             </div>
 
-            <img 
-              src={mantenimientoWordpressHero} 
-              alt="Mantenimiento WordPress para emprendedores - Guía completa 2025"
-              className="w-full h-64 md:h-80 object-cover rounded-lg mt-8 shadow-lg"
-              loading="eager"
-              width={1920}
-              height={1080}
-            />
+            <img src={mantenimientoWordpressHero} alt="Mantenimiento WordPress para emprendedores - Guía completa 2025" className="w-full h-64 md:h-80 object-cover rounded-lg mt-8 shadow-lg" loading="eager" width={1920} height={1080} />
           </header>
 
           {/* Content */}
@@ -774,7 +758,7 @@ const BlogPost = () => {
               </ul>
             </div>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6 text-primary">Seguridad y Protección contra Ataques</h2>
+            <h2 className="text-3xl font-bold mt-12 mb-6 text-primary">Seguridad y protección contra ataques</h2>
 
             <p className="text-lg leading-relaxed mb-6">
               En 2025, los ataques a WordPress han evolucionado. Los hackers utilizan <strong>inteligencia artificial</strong> para automatizar ataques y encontrar vulnerabilidades más rápido que nunca.
@@ -827,7 +811,7 @@ const BlogPost = () => {
               </div>
             </div>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6 text-primary">Herramientas Recomendadas 2025</h2>
+            <h2 className="text-3xl font-bold mt-12 mb-6 text-primary">Herramientas recomendadas 2025</h2>
 
             <div className="overflow-x-auto mb-8">
               <table className="w-full border-collapse border border-muted">
@@ -874,7 +858,7 @@ const BlogPost = () => {
               </table>
             </div>
 
-            <h2 className="text-3xl font-bold mt-12 mb-6 text-primary">¿Cuándo DIY vs. Contratar Profesionales?</h2>
+            <h2 className="text-3xl font-bold mt-12 mb-6 text-primary">¿Cuándo hacerlo tú mismo vs. contratar profesionales?</h2>
 
             <div className="grid md:grid-cols-2 gap-6 mb-8">
               <div className="bg-primary/10 p-6 rounded-lg border border-primary/20">
@@ -909,7 +893,7 @@ const BlogPost = () => {
               </p>
               <div className="text-center space-y-4">
                 <Button asChild size="lg" className="mr-4">
-                  <Link to="/alojamiento-mantenimiento">Ver Planes de Mantenimiento</Link>
+                  <Link to="/alojamiento-mantenimiento">Ver Servicio de Mantenimiento</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
                   <Link to="/contacto">Consulta Gratuita</Link>
@@ -954,41 +938,39 @@ const BlogPost = () => {
         {/* Schema.org structured data */}
         <script type="application/ld+json">
           {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Article",
-            "headline": "Mantenimiento WordPress para Emprendedores: Guía Completa 2025",
-            "description": "Descubre cómo mantener tu WordPress seguro y rápido sin conocimientos técnicos. Guía práctica para emprendedores con checklist y herramientas 2025.",
-            "image": mantenimientoWordpressHero,
-            "author": {
-              "@type": "Organization",
-              "name": "Hayas Marketing",
-              "url": "https://hayasmarketing.com"
-            },
-            "publisher": {
-              "@type": "Organization",
-              "name": "Hayas Marketing",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://hayasmarketing.com/logo.png"
-              }
-            },
-            "datePublished": "2025-01-08",
-            "dateModified": "2025-01-08",
-            "mainEntityOfPage": {
-              "@type": "WebPage",
-              "@id": "https://hayasmarketing.com/blog/mantenimiento-wordpress-emprendedores-2025"
-            },
-            "keywords": "mantenimiento wordpress, wordpress emprendedores, seguridad wordpress, backup wordpress, actualizar wordpress, optimización wordpress"
-          })}
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "Mantenimiento WordPress para Emprendedores: Guía Completa 2025",
+          "description": "Descubre cómo mantener tu WordPress seguro y rápido sin conocimientos técnicos. Guía práctica para emprendedores con checklist y herramientas 2025.",
+          "image": mantenimientoWordpressHero,
+          "author": {
+            "@type": "Organization",
+            "name": "Hayas Marketing",
+            "url": "https://hayasmarketing.com"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Hayas Marketing",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://hayasmarketing.com/logo.png"
+            }
+          },
+          "datePublished": "2025-01-08",
+          "dateModified": "2025-01-08",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://hayasmarketing.com/blog/mantenimiento-wordpress-emprendedores-2025"
+          },
+          "keywords": "mantenimiento wordpress, wordpress emprendedores, seguridad wordpress, backup wordpress, actualizar wordpress, optimización wordpress"
+        })}
         </script>
-      </div>
-    );
+      </div>;
   }
 
   // Post específico de Avisos Legales
   if (id === 'avisos-legales-paginas-web') {
-    return (
-      <div className="min-h-screen bg-background">
+    return <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 py-24 max-w-4xl">
           {/* Breadcrumb */}
           <div className="mb-8">
@@ -1029,11 +1011,7 @@ const BlogPost = () => {
               </Button>
             </div>
 
-            <img 
-              src={avisosLegalesHero} 
-              alt="Avisos Legales para Páginas Web - Cumplimiento legal"
-              className="w-full h-64 md:h-80 object-cover rounded-lg mt-8 shadow-lg"
-            />
+            <img src={avisosLegalesHero} alt="Avisos Legales para Páginas Web - Cumplimiento legal" className="w-full h-64 md:h-80 object-cover rounded-lg mt-8 shadow-lg" />
           </header>
 
           {/* Content */}
@@ -1251,14 +1229,12 @@ const BlogPost = () => {
             </div>
           </div>
         </div>
-      </div>
-    );
+      </div>;
   }
 
   // Post específico de IA en Marketing
   if (id === 'ia-aplicacion-marketing') {
-    return (
-      <div className="min-h-screen bg-background">
+    return <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 py-24 max-w-4xl">
           {/* Breadcrumb */}
           <div className="mb-8">
@@ -1299,11 +1275,7 @@ const BlogPost = () => {
               </Button>
             </div>
 
-            <img 
-              src={iaMarketingHero} 
-              alt="Inteligencia Artificial en Marketing - Transformación digital"
-              className="w-full h-64 md:h-80 object-cover rounded-lg mt-8 shadow-lg"
-            />
+            <img src={iaMarketingHero} alt="Inteligencia Artificial en Marketing - Transformación digital" className="w-full h-64 md:h-80 object-cover rounded-lg mt-8 shadow-lg" />
           </header>
 
           {/* Content */}
@@ -1624,21 +1596,14 @@ const BlogPost = () => {
             </div>
           </article>
         </div>
-      </div>
-    );
+      </div>;
   }
-
   if (id === 'ia-redes-sociales-herramientas-riesgos') {
-    return (
-      <div className="min-h-screen bg-background">
+    return <div className="min-h-screen bg-background">
         <Navigation />
         <main className="container mx-auto px-4 py-8">
           <article className="prose prose-lg max-w-4xl mx-auto">
-            <Seo 
-              title="Cómo aprovechar la inteligencia artificial en redes sociales | Guía 2025"
-              description="Descubre las mejores herramientas de IA para redes sociales, sus beneficios y riesgos. Guía completa para profesionales del social media marketing en 2025."
-              ogImage="/src/assets/ia-redes-sociales-hero.jpg"
-            />
+            <Seo title="Cómo aprovechar la inteligencia artificial en redes sociales | Guía 2025" description="Descubre las mejores herramientas de IA para redes sociales, sus beneficios y riesgos. Guía completa para profesionales del social media marketing en 2025." ogImage="/src/assets/ia-redes-sociales-hero.jpg" />
             
             <div className="text-center mb-8">
               <Link to="/blog" className="text-sm text-muted-foreground hover:text-primary">
@@ -1647,14 +1612,7 @@ const BlogPost = () => {
             </div>
 
             <header className="mb-12">
-              <OptimizedImage
-                src={iaRedesSocialesHero}
-                alt="Inteligencia artificial aplicada a redes sociales - herramientas y automatización"
-                className="w-full h-64 md:h-96 object-cover rounded-lg mb-6"
-                width={1920}
-                height={1080}
-                priority={true}
-              />
+              <OptimizedImage src={iaRedesSocialesHero} alt="Inteligencia artificial aplicada a redes sociales - herramientas y automatización" className="w-full h-64 md:h-96 object-cover rounded-lg mb-6" width={1920} height={1080} priority={true} />
               
               <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
                 Cómo aprovechar la inteligencia artificial en redes sociales
@@ -1699,21 +1657,14 @@ const BlogPost = () => {
         </main>
         <Footer />
         <ScrollToTop />
-      </div>
-    );
+      </div>;
   }
-
   if (id === 'tiktok-marketing-estrategia-digital') {
-    return (
-      <div className="min-h-screen bg-background">
+    return <div className="min-h-screen bg-background">
         <Navigation />
         <main className="container mx-auto px-4 py-8">
           <article className="prose prose-lg max-w-4xl mx-auto">
-            <Seo 
-              title="TikTok marketing: cómo integrar TikTok en tu estrategia digital 2025"
-              description="Descubre cómo usar TikTok marketing para conectar con tu audiencia. Estrategias, tipos de campañas y consejos para promocionar tu marca en TikTok efectivamente."
-              ogImage="/src/assets/tiktok-marketing-hero.jpg"
-            />
+            <Seo title="TikTok marketing: cómo integrar TikTok en tu estrategia digital 2025" description="Descubre cómo usar TikTok marketing para conectar con tu audiencia. Estrategias, tipos de campañas y consejos para promocionar tu marca en TikTok efectivamente." ogImage="/src/assets/tiktok-marketing-hero.jpg" />
             
             <div className="text-center mb-8">
               <Link to="/blog" className="text-sm text-muted-foreground hover:text-primary">
@@ -1722,14 +1673,7 @@ const BlogPost = () => {
             </div>
 
             <header className="mb-12">
-              <OptimizedImage
-                src={tiktokMarketingHero}
-                alt="TikTok marketing - estrategia de marketing digital en TikTok para empresas"
-                className="w-full h-64 md:h-96 object-cover rounded-lg mb-6"
-                width={1920}
-                height={1080}
-                priority={true}
-              />
+              <OptimizedImage src={tiktokMarketingHero} alt="TikTok marketing - estrategia de marketing digital en TikTok para empresas" className="w-full h-64 md:h-96 object-cover rounded-lg mb-6" width={1920} height={1080} priority={true} />
               
               <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
                 TikTok marketing: cómo integrar TikTok en tu estrategia digital
@@ -2023,43 +1967,41 @@ const BlogPost = () => {
             {/* Schema.org structured data */}
             <script type="application/ld+json">
               {JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "Article",
-                "headline": "TikTok marketing: cómo integrar TikTok en tu estrategia digital",
-                "description": "Descubre cómo usar TikTok marketing para conectar con tu audiencia. Estrategias, tipos de campañas y consejos para promocionar tu marca en TikTok efectivamente.",
-                "image": "https://preview--hayas-marketing-digital.lovable.app/src/assets/tiktok-marketing-hero.jpg",
-                "author": {
-                  "@type": "Organization",
-                  "name": "Hayas Marketing"
-                },
-                "publisher": {
-                  "@type": "Organization",
-                  "name": "Hayas Marketing",
-                  "logo": {
-                    "@type": "ImageObject",
-                    "url": "https://preview--hayas-marketing-digital.lovable.app/favicon.ico"
-                  }
-                },
-                "datePublished": "2025-01-13",
-                "dateModified": "2025-01-13",
-                "mainEntityOfPage": {
-                  "@type": "WebPage",
-                  "@id": "https://preview--hayas-marketing-digital.lovable.app/blog/tiktok-marketing-estrategia-digital"
-                },
-                "keywords": ["TikTok marketing", "marketing digital", "redes sociales", "TikTok Ads", "estrategia digital", "generación Z"]
-              })}
+              "@context": "https://schema.org",
+              "@type": "Article",
+              "headline": "TikTok marketing: cómo integrar TikTok en tu estrategia digital",
+              "description": "Descubre cómo usar TikTok marketing para conectar con tu audiencia. Estrategias, tipos de campañas y consejos para promocionar tu marca en TikTok efectivamente.",
+              "image": "https://preview--hayas-marketing-digital.lovable.app/src/assets/tiktok-marketing-hero.jpg",
+              "author": {
+                "@type": "Organization",
+                "name": "Hayas Marketing"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "Hayas Marketing",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://preview--hayas-marketing-digital.lovable.app/favicon.ico"
+                }
+              },
+              "datePublished": "2025-01-13",
+              "dateModified": "2025-01-13",
+              "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://preview--hayas-marketing-digital.lovable.app/blog/tiktok-marketing-estrategia-digital"
+              },
+              "keywords": ["TikTok marketing", "marketing digital", "redes sociales", "TikTok Ads", "estrategia digital", "generación Z"]
+            })}
             </script>
           </article>
         </main>
         <Footer />
         <ScrollToTop />
-      </div>
-    );
+      </div>;
   }
 
   // Post no encontrado
-  return (
-    <div className="min-h-screen bg-background flex items-center justify-center">
+  return <div className="min-h-screen bg-background flex items-center justify-center">
       <div className="text-center">
         <h1 className="text-4xl font-bold mb-4">Artículo no encontrado</h1>
         <p className="text-muted-foreground mb-8">Lo sentimos, el artículo que buscas no existe.</p>
@@ -2070,8 +2012,6 @@ const BlogPost = () => {
           </Button>
         </Link>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default BlogPost;
