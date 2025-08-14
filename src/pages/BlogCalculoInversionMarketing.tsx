@@ -7,7 +7,8 @@ import Seo from "@/components/Seo";
 import OptimizedImage from "@/components/OptimizedImage";
 import calculoInversionHero from '@/assets/calculo-inversion-marketing-hero.jpg';
 import marketingKpisDashboard from '@/assets/marketing-kpis-dashboard.jpg';
-import sistemaPrevisionVentas from '@/assets/sistema-prevision-ventas.jpg';
+import sistemaPrevisionVentas from '@/assets/plantilla-prevision-ventas.jpg';
+import rendimientoCanalesMarketing from '@/assets/rendimiento-canales-marketing.jpg';
 
 const BlogCalculoInversionMarketing = () => {
   const structuredData = {
@@ -188,13 +189,23 @@ const BlogCalculoInversionMarketing = () => {
               </div>
 
               <div className="mb-8">
-                <OptimizedImage
-                  src={sistemaPrevisionVentas}
-                  alt="Sistema de previsión de ventas y cálculo de inversión en marketing digital"
-                  className="w-full rounded-lg shadow-lg border"
-                  width={1024}
-                  height={576}
-                />
+                <a 
+                  href="https://docs.google.com/spreadsheets/d/1T7qAPwM4iLVlLBBlFi0SAE0dO723nMKwjhthI3bnZYg/edit?usp=sharing" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="block hover:opacity-90 transition-opacity"
+                >
+                  <OptimizedImage
+                    src={sistemaPrevisionVentas}
+                    alt="Plantilla gratuita: Sistema de previsión de ventas y cálculo de inversión en marketing digital"
+                    className="w-full rounded-lg shadow-lg border hover:shadow-xl transition-shadow cursor-pointer"
+                    width={1024}
+                    height={576}
+                  />
+                  <p className="text-center text-sm text-muted-foreground mt-2">
+                    ↗️ Haz clic para acceder a la plantilla gratuita
+                  </p>
+                </a>
               </div>
 
               <p className="mb-8">
@@ -248,8 +259,8 @@ const BlogCalculoInversionMarketing = () => {
 
               <div className="mb-8">
                 <OptimizedImage
-                  src={marketingKpisDashboard}
-                  alt="Métricas principales por canales de marketing digital para cálculo de inversión"
+                  src={rendimientoCanalesMarketing}
+                  alt="Dashboard de rendimiento por canales de marketing digital - Análisis comparativo ROI"
                   className="w-full rounded-lg shadow-lg border"
                   width={1024}
                   height={576}
