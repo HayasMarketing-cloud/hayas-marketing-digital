@@ -13,7 +13,7 @@ import estrategiaMarketingContenidosHero from '@/assets/estrategia-marketing-con
 import iaRedesSocialesHero from '@/assets/ia-redes-sociales-hero.jpg';
 import tiktokMarketingHero from '@/assets/tiktok-marketing-hero.jpg';
 import perfilClienteIdealHero from '@/assets/perfil-cliente-ideal-hero.jpg';
-import estrategiaMarketingContenidosHero2 from '@/assets/estrategia-marketing-contenidos-hero.jpg';
+import calculoInversionHero from '@/assets/calculo-inversion-marketing-hero.jpg';
 
 const Blog = () => {
   const featuredPost = {
@@ -36,7 +36,7 @@ const Blog = () => {
       date: '2025-01-15',
       readTime: '16 min',
       category: 'Marketing Digital',
-      image: estrategiaMarketingContenidosHero2,
+      image: calculoInversionHero,
       tags: ['Marketing Digital', 'ROI', 'Inversión', 'Estrategia', 'Presupuesto']
     },
     {
@@ -105,7 +105,8 @@ const Blog = () => {
   const sortedPosts = allPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   const recentPosts = sortedPosts.slice(0, 6);
 
-  const allArticles = sortedPosts;
+  // Remove recent posts from all articles to avoid duplicates
+  const allArticles = sortedPosts.slice(6);
 
   const categories = [
     'Inteligencia Artificial',
