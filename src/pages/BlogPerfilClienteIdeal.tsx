@@ -394,7 +394,7 @@ const BlogPerfilClienteIdeal = () => {
             </p>
             
             <p className="text-lg text-gray-700 leading-relaxed mb-8">
-              Las empresas ya están utilizando sistemas de <Link to="/automatizacion-procesos-ventas" className="text-hayas-primary hover:text-hayas-secondary font-medium underline">digitalización y automatización de procesos de Marketing Digital</Link> en su CRM para identificar y clasificar sus mejores Leads u Oportunidades, priorizando todas aquellas personas o empresas que cumplan con todos los requisitos del perfil de cliente ideal.
+              Las empresas ya están utilizando sistemas de digitalización y automatización de procesos de Marketing Digital en su CRM para identificar y clasificar sus mejores Leads u Oportunidades, priorizando todas aquellas personas o empresas que cumplan con todos los requisitos del perfil de cliente ideal.
             </p>
           </section>
 
