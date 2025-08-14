@@ -149,8 +149,8 @@ const BlogBrandingProcesoTecnicasNaming = () => {
                 </div>
 
                 <div className="bg-green-50 border border-green-200 rounded-lg p-6">
-                  <h3 className="text-lg font-semibold mb-3 text-green-800">📈 Incrementa el éxito</h3>
-                  <p className="text-green-700 text-sm">
+                  <h3 className="text-lg font-semibold mb-3 text-black">📈 Incrementa el éxito</h3>
+                  <p className="text-black text-sm">
                     Si bien el éxito no depende únicamente del nombre, te ayudará a incrementar ese porcentaje de éxito significativamente.
                   </p>
                 </div>
@@ -211,8 +211,8 @@ const BlogBrandingProcesoTecnicasNaming = () => {
 
               <div className="grid md:grid-cols-2 gap-6 mb-8">
                 <div className="bg-green-50 border border-green-200 rounded-lg p-6">
-                  <h4 className="text-lg font-semibold mb-3 text-green-800">🏢 B2B - Enfoque racional</h4>
-                  <p className="text-green-700 text-sm">
+                  <h4 className="text-lg font-semibold mb-3 text-black">🏢 B2B - Enfoque racional</h4>
+                  <p className="text-black text-sm">
                     En actividades B2B, el foco está en los atributos racionales ya que la motivación de compra está más relacionada con el producto/servicio y la profesionalidad del proveedor.
                   </p>
                 </div>
