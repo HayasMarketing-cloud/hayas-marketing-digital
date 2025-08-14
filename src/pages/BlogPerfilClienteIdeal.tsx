@@ -50,6 +50,16 @@ const BlogPerfilClienteIdeal = () => {
       <Navigation />
       
       <main className="flex-grow pt-24" role="main">
+        {/* Breadcrumbs */}
+        <nav className="container mx-auto px-4 py-4">
+          <Link 
+            to="/blog" 
+            className="inline-flex items-center text-hayas-primary hover:text-hayas-secondary font-medium transition-colors"
+          >
+            ← Volver al blog
+          </Link>
+        </nav>
+        
         <article className="container mx-auto px-4 py-8 max-w-4xl">
           
           {/* Hero Section */}
@@ -398,18 +408,27 @@ const BlogPerfilClienteIdeal = () => {
             </p>
           </section>
 
-          {/* Conclusión y CTA */}
+          {/* CTA especializado */}
           <section className="mb-12">
-            <div className="bg-gradient-to-br from-hayas-primary to-hayas-secondary text-white rounded-xl p-8 text-center">
-              <h3 className="text-2xl font-bold mb-4">
-                ¿Quieres definir el perfil de cliente ideal para tu negocio?
+            <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl p-8 border border-gray-200">
+              <h3 className="text-2xl font-bold mb-4 text-center text-gray-900">
+                ¿Quieres aplicar la IA a tu estrategia de forma real y personalizada?
               </h3>
-              <p className="text-lg mb-6 opacity-90">
-                Nuestro equipo de expertos te ayuda a identificar y atraer a tus clientes más valiosos con estrategias personalizadas.
+              <p className="text-lg text-gray-700 mb-6 text-center max-w-4xl mx-auto">
+                En Hayas diseñamos soluciones con IA que no solo suenan bien, <strong>funcionan de verdad</strong>. Desde automatización comercial hasta dashboards predictivos, ya estamos ayudando a marcas a trabajar mejor, vender más y conectar de forma más humana.
               </p>
-              <Button asChild className="bg-white text-hayas-primary hover:bg-gray-100 font-semibold px-8 py-3">
-                <Link to="/contacto">Consulta gratuita</Link>
-              </Button>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Button asChild className="gradient-primary text-white px-8 py-3">
+                  <Link to="/conecta-con-tus-clientes">
+                    📘 Ver Servicios de IA
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" className="px-8 py-3 border-gray-300 text-gray-700 hover:bg-gray-50">
+                  <Link to="/contacto">
+                    Solicitar Consulta
+                  </Link>
+                </Button>
+              </div>
             </div>
           </section>
 
