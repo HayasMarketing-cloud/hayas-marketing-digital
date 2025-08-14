@@ -28,7 +28,17 @@ const Blog = () => {
     tags: ['IA', 'Marketing Digital', 'Automatización', 'Estrategia']
   };
 
-  const recentPosts = [
+  const allPosts = [
+    {
+      id: 'calculo-inversion-plan-marketing-digital',
+      title: 'Cómo hacer el cálculo de inversión en un plan de marketing digital',
+      description: 'Aprende a calcular la inversión adecuada para tu plan de marketing digital. Guía completa con metodologías, herramientas y casos prácticos para optimizar tu ROI.',
+      date: '2025-01-15',
+      readTime: '16 min',
+      category: 'Marketing Digital',
+      image: estrategiaMarketingContenidosHero2,
+      tags: ['Marketing Digital', 'ROI', 'Inversión', 'Estrategia', 'Presupuesto']
+    },
     {
       id: 'perfil-cliente-ideal',
       title: 'Perfil de cliente ideal: qué es y cómo definirlo para tu negocio',
@@ -91,19 +101,11 @@ const Blog = () => {
     }
   ];
 
-  const allArticles = [
-    {
-      id: 'calculo-inversion-plan-marketing-digital',
-      title: 'Cómo hacer el cálculo de inversión en un plan de marketing digital',
-      description: 'Aprende a calcular la inversión adecuada para tu plan de marketing digital. Guía completa con metodologías, herramientas y casos prácticos para optimizar tu ROI.',
-      date: '2025-01-15',
-      readTime: '16 min',
-      category: 'Marketing Digital',
-      image: estrategiaMarketingContenidosHero2,
-      tags: ['Marketing Digital', 'ROI', 'Inversión', 'Estrategia', 'Presupuesto']
-    },
-    ...recentPosts
-  ];
+  // Sort all posts by date (most recent first) and get the 6 most recent for recent posts
+  const sortedPosts = allPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  const recentPosts = sortedPosts.slice(0, 6);
+
+  const allArticles = sortedPosts;
 
   const categories = [
     'Inteligencia Artificial',
