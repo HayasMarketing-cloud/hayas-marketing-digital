@@ -85,6 +85,7 @@ import LocalizacionContenidos from './pages/LocalizacionContenidos';
 import CampanasInboundMarketing from './pages/CampanasInboundMarketing';
 import CaptacionLeadsClientes from './pages/CaptacionLeadsClientes';
 import AutomatizacionProcesosVentas from './pages/AutomatizacionProcesosVentas';
+import BlogPerfilClienteIdeal from './pages/BlogPerfilClienteIdeal';
 
 const queryClient = new QueryClient();
 
@@ -167,9 +168,10 @@ const App = () => (
           <Route path="/casos-exito/pasteleria-la-oriental-sin-gluten" element={<CasoExitoLaOrientalSinGluten />} />
           <Route path="/casos-exito/flap-articulos-peluqueria" element={<CasoExitoFLAP />} />
           
-          {/* BLOG / RECURSOS */}
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:id" element={<BlogPost />} />
+           {/* BLOG / RECURSOS */}
+           <Route path="/blog" element={<Blog />} />
+           <Route path="/blog/:id" element={<BlogPost />} />
+           <Route path="/blog/perfil-cliente-ideal" element={<BlogPerfilClienteIdeal />} />
           
           
           {/* CONTACTO Y CONSULTAS */}

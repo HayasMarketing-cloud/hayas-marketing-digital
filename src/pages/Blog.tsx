@@ -12,6 +12,7 @@ import mantenimientoWordpressHero from '@/assets/mantenimiento-wordpress-hero.jp
 import estrategiaMarketingContenidosHero from '@/assets/estrategia-marketing-contenidos-hero.jpg';
 import iaRedesSocialesHero from '@/assets/ia-redes-sociales-hero.jpg';
 import tiktokMarketingHero from '@/assets/tiktok-marketing-hero.jpg';
+import perfilClienteIdealHero from '@/assets/perfil-cliente-ideal-hero.jpg';
 
 const Blog = () => {
   const featuredPost = {
@@ -27,6 +28,16 @@ const Blog = () => {
   };
 
   const recentPosts = [
+    {
+      id: 'perfil-cliente-ideal',
+      title: 'Perfil de cliente ideal: qué es y cómo definirlo para tu negocio',
+      description: 'Descubre cómo crear el perfil de cliente ideal (ICP) perfecto para optimizar tu estrategia de marketing, mejorar las ventas y maximizar la rentabilidad de tu negocio.',
+      date: '2025-01-14',
+      readTime: '12 min',
+      category: 'Marketing Digital',
+      image: perfilClienteIdealHero,
+      tags: ['ICP', 'Cliente Ideal', 'Marketing Digital', 'Estrategia']
+    },
     {
       id: 'tiktok-marketing-estrategia-digital',
       title: 'TikTok marketing: cómo integrar TikTok en tu estrategia digital',
