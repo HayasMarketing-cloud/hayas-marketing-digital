@@ -13,6 +13,7 @@ import estrategiaMarketingContenidosHero from '@/assets/estrategia-marketing-con
 import iaRedesSocialesHero from '@/assets/ia-redes-sociales-hero.jpg';
 import tiktokMarketingHero from '@/assets/tiktok-marketing-hero.jpg';
 import perfilClienteIdealHero from '@/assets/perfil-cliente-ideal-hero.jpg';
+import estrategiaMarketingContenidosHero2 from '@/assets/estrategia-marketing-contenidos-hero.jpg';
 
 const Blog = () => {
   const featuredPost = {
@@ -88,6 +89,20 @@ const Blog = () => {
       image: avisosLegalesHero,
       tags: ['Legal', 'Diseño Web', 'RGPD', 'Plantillas']
     }
+  ];
+
+  const allArticles = [
+    {
+      id: 'calculo-inversion-plan-marketing-digital',
+      title: 'Cómo hacer el cálculo de inversión en un plan de marketing digital',
+      description: 'Aprende a calcular la inversión adecuada para tu plan de marketing digital. Guía completa con metodologías, herramientas y casos prácticos para optimizar tu ROI.',
+      date: '2025-01-15',
+      readTime: '16 min',
+      category: 'Marketing Digital',
+      image: estrategiaMarketingContenidosHero2,
+      tags: ['Marketing Digital', 'ROI', 'Inversión', 'Estrategia', 'Presupuesto']
+    },
+    ...recentPosts
   ];
 
   const categories = [
@@ -243,8 +258,62 @@ const Blog = () => {
         </div>
       </section>
 
-      {/* Newsletter CTA */}
+      {/* All Articles */}
       <section className="py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-8 text-center">Todos los artículos</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {allArticles.map((post) => (
+              <Card key={post.id} className="overflow-hidden hover:shadow-lg transition-shadow group">
+                <img 
+                  src={post.image} 
+                  alt={post.title}
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <CardHeader>
+                  <div className="flex items-center justify-between mb-2">
+                    <Badge variant="secondary">{post.category}</Badge>
+                    <span className="text-sm text-muted-foreground flex items-center gap-1">
+                      <Clock className="h-4 w-4" />
+                      {post.readTime}
+                    </span>
+                  </div>
+                  <CardTitle className="text-xl group-hover:text-primary transition-colors">
+                    {post.title}
+                  </CardTitle>
+                  <CardDescription>{post.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  {post.tags && (
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {post.tags.map((tag) => (
+                        <Badge key={tag} variant="outline" className="text-xs">
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                  )}
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-muted-foreground flex items-center gap-1">
+                      <Calendar className="h-4 w-4" />
+                      {new Date(post.date).toLocaleDateString('es-ES')}
+                    </span>
+                    <Link to={`/blog/${post.id}`}>
+                      <Button variant="ghost" size="sm" className="group/btn">
+                        Leer más
+                        <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+                      </Button>
+                    </Link>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter CTA */}
+      <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center bg-gradient-to-r from-primary/10 to-accent/10 rounded-lg p-8">
             <h3 className="text-2xl font-bold mb-4">¿Quieres estar al día?</h3>

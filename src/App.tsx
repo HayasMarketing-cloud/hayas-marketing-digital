@@ -86,6 +86,7 @@ import CampanasInboundMarketing from './pages/CampanasInboundMarketing';
 import CaptacionLeadsClientes from './pages/CaptacionLeadsClientes';
 import AutomatizacionProcesosVentas from './pages/AutomatizacionProcesosVentas';
 import BlogPerfilClienteIdeal from './pages/BlogPerfilClienteIdeal';
+import BlogCalculoInversionMarketing from './pages/BlogCalculoInversionMarketing';
 
 const queryClient = new QueryClient();
 
@@ -172,6 +173,7 @@ const App = () => (
            <Route path="/blog" element={<Blog />} />
            <Route path="/blog/:id" element={<BlogPost />} />
            <Route path="/blog/perfil-cliente-ideal" element={<BlogPerfilClienteIdeal />} />
+           <Route path="/blog/calculo-inversion-plan-marketing-digital" element={<BlogCalculoInversionMarketing />} />
           
           
           {/* CONTACTO Y CONSULTAS */}
