@@ -5,11 +5,6 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Seo from "@/components/Seo";
 import OptimizedImage from "@/components/OptimizedImage";
-import calculoInversionHero from '@/assets/calculo-inversion-marketing-hero.jpg';
-import marketingKpisDashboard from '@/assets/marketing-kpis-dashboard.jpg';
-import sistemaPrevisionVentas from '@/assets/plantilla-prevision-ventas.jpg';
-import rendimientoCanalesMarketing from '@/assets/rendimiento-canales-marketing.jpg';
-
 const BlogCalculoInversionMarketing = () => {
   const structuredData = {
     "@context": "https://schema.org",
@@ -36,16 +31,8 @@ const BlogCalculoInversionMarketing = () => {
       "@id": "https://hayasmarketing.com/es/calculo-inversion-plan-marketing-digital/"
     }
   };
-
-  return (
-    <>
-      <Seo 
-        title="Cómo hacer el cálculo de inversión en un plan de marketing digital"
-        description="Descubre el método definitivo para calcular la inversión necesaria en tu plan de marketing digital. Guía con KPIs, herramientas de previsión y casos prácticos reales."
-        canonical="/blog/calculo-inversion-plan-marketing-digital"
-        structuredData={structuredData}
-        ogImage="https://hayasmarketing.com/wp-content/uploads/2024/05/calculo-inversion-marketing-digital.jpg"
-      />
+  return <>
+      <Seo title="Cómo hacer el cálculo de inversión en un plan de marketing digital" description="Descubre el método definitivo para calcular la inversión necesaria en tu plan de marketing digital. Guía con KPIs, herramientas de previsión y casos prácticos reales." canonical="/blog/calculo-inversion-plan-marketing-digital" structuredData={structuredData} ogImage="https://hayasmarketing.com/wp-content/uploads/2024/05/calculo-inversion-marketing-digital.jpg" />
       
       <Navigation />
       
@@ -77,14 +64,7 @@ const BlogCalculoInversionMarketing = () => {
 
               {/* Featured Image */}
               <div className="mb-8">
-                <OptimizedImage
-                  src={calculoInversionHero}
-                  alt="Cálculo de inversión en plan de marketing digital - estrategia y presupuesto"
-                  className="w-full rounded-lg shadow-lg"
-                  width={1024}
-                  height={576}
-                  priority={true}
-                />
+                <OptimizedImage src="/public/lovable-uploads/estrategia-marketing-contenidos-hero.jpg" alt="Cálculo de inversión en plan de marketing digital - estrategia y presupuesto" className="w-full rounded-lg shadow-lg" width={800} height={400} priority={true} />
               </div>
 
               {/* Intro Box */}
@@ -189,23 +169,7 @@ const BlogCalculoInversionMarketing = () => {
               </div>
 
               <div className="mb-8">
-                <a 
-                  href="https://docs.google.com/spreadsheets/d/1T7qAPwM4iLVlLBBlFi0SAE0dO723nMKwjhthI3bnZYg/edit?usp=sharing" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="block hover:opacity-90 transition-opacity"
-                >
-                  <OptimizedImage
-                    src={sistemaPrevisionVentas}
-                    alt="Plantilla gratuita: Sistema de previsión de ventas y cálculo de inversión en marketing digital"
-                    className="w-full rounded-lg shadow-lg border hover:shadow-xl transition-shadow cursor-pointer"
-                    width={1024}
-                    height={576}
-                  />
-                  <p className="text-center text-sm text-muted-foreground mt-2">
-                    ↗️ Haz clic para acceder a la plantilla gratuita
-                  </p>
-                </a>
+                <OptimizedImage src="https://hayasmarketing.com/wp-content/uploads/2024/05/image.png" alt="Sistema de previsión de ventas y cálculo de inversión en marketing digital" className="w-full rounded-lg shadow-lg border" width={800} height={450} />
               </div>
 
               <p className="mb-8">
@@ -258,95 +222,7 @@ const BlogCalculoInversionMarketing = () => {
               </div>
 
               <div className="mb-8">
-                <OptimizedImage
-                  src={rendimientoCanalesMarketing}
-                  alt="Dashboard de rendimiento por canales de marketing digital - Análisis comparativo ROI"
-                  className="w-full rounded-lg shadow-lg border"
-                  width={1024}
-                  height={576}
-                />
-              </div>
-
-              <h3 className="text-2xl font-semibold mb-6">Tácticas para optimizar el rendimiento por canal</h3>
-              
-              <div className="overflow-x-auto mb-8">
-                <table className="w-full border-collapse rounded-lg overflow-hidden shadow-sm">
-                  <thead>
-                    <tr className="bg-gradient-to-r from-primary to-primary/80">
-                      <th className="px-6 py-4 text-left text-white font-semibold">Táctica</th>
-                      <th className="px-6 py-4 text-left text-white font-semibold">Indicador que Mejora</th>
-                    </tr>
-                  </thead>
-                  <tbody className="bg-white">
-                    <tr className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
-                      <td className="px-6 py-4 text-gray-800">Realizar acciones de cross-selling y up-selling para aumentar las ventas.</td>
-                      <td className="px-6 py-4 text-gray-600">Ventas, Valor Medio de Orden (AOV)</td>
-                    </tr>
-                    <tr className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
-                      <td className="px-6 py-4 text-gray-800">Mejorar la tasa de conversión de MQL a SQL mediante campañas de Inbound Marketing...</td>
-                      <td className="px-6 py-4 text-gray-600">Tasa de Conversión MQL a SQL</td>
-                    </tr>
-                    <tr className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
-                      <td className="px-6 py-4 text-gray-800">Automatizar los procesos de marketing en tu CRM para optimizar la eficiencia.</td>
-                      <td className="px-6 py-4 text-gray-600">Eficiencia Operativa, Tasa de Conversión</td>
-                    </tr>
-                    <tr className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
-                      <td className="px-6 py-4 text-gray-800">Optimizar el proceso de calificación de leads para identificar a los clientes potenciales.</td>
-                      <td className="px-6 py-4 text-gray-600">Calidad del Lead, Tasa de Conversión</td>
-                    </tr>
-                    <tr className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
-                      <td className="px-6 py-4 text-gray-800">Incrementar la calidad de los lead magnets para atraer a leads más cualificados.</td>
-                      <td className="px-6 py-4 text-gray-600">Calidad del Lead, Tasa de Captación de Leads</td>
-                    </tr>
-                    <tr className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
-                      <td className="px-6 py-4 text-gray-800">Crear contenido de valor real que resuene con tu Buyer Persona.</td>
-                      <td className="px-6 py-4 text-gray-600">Engagement, Tráfico Web</td>
-                    </tr>
-                    <tr className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
-                      <td className="px-6 py-4 text-gray-800">Optimizar el proceso de ventas en tu CRM mediante la creación de un Playbook.</td>
-                      <td className="px-6 py-4 text-gray-600">Tasa de Conversión, Eficiencia en Ventas</td>
-                    </tr>
-                    <tr className="hover:bg-gray-50 transition-colors">
-                      <td className="px-6 py-4 text-gray-800">Localizar el contenido por país para aumentar la conexión local y el compromiso de la audiencia.</td>
-                      <td className="px-6 py-4 text-gray-600">Engagement, Tasa de Retención</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-
-              <p className="mb-6">
-                La tabla anterior muestra las diferencias clave entre canales. Observa cómo el email marketing, aunque genera menos tráfico, tiene la mayor tasa de conversión y el CAC más bajo, lo que lo convierte en uno de los canales más rentables.
-              </p>
-
-              <div className="bg-accent/10 border border-accent/20 rounded-lg p-6 mb-8">
-                <h3 className="text-lg font-semibold mb-4 text-accent-foreground">💡 Insight clave</h3>
-                <p className="text-accent-foreground">
-                  No te centres únicamente en el volumen de tráfico. Un canal que genera menos visitantes pero con mayor intención de compra puede ser más rentable que uno con mucho tráfico pero baja conversión.
-                </p>
-              </div>
-
-              <h3 className="text-2xl font-semibold mb-4">Cómo interpretar las métricas por canal</h3>
-              
-              <div className="space-y-4 mb-8">
-                <div className="border-l-4 border-green-500 pl-4">
-                  <h4 className="font-semibold text-green-700">SEO (Posicionamiento orgánico)</h4>
-                  <p className="text-sm text-gray-600">Inversión a largo plazo con ROI sostenido. Ideal para generar tráfico cualificado de forma continua.</p>
-                </div>
-                
-                <div className="border-l-4 border-blue-500 pl-4">
-                  <h4 className="font-semibold text-blue-700">SEM (Publicidad en buscadores)</h4>
-                  <p className="text-sm text-gray-600">Resultados inmediatos pero costosos. Perfecto para promociones puntuales y escalado rápido.</p>
-                </div>
-                
-                <div className="border-l-4 border-purple-500 pl-4">
-                  <h4 className="font-semibold text-purple-700">Redes Sociales</h4>
-                  <p className="text-sm text-gray-600">Excelente para branding y engagement. Conversión variable según el público objetivo.</p>
-                </div>
-                
-                <div className="border-l-4 border-orange-500 pl-4">
-                  <h4 className="font-semibold text-orange-700">Email Marketing</h4>
-                  <p className="text-sm text-gray-600">El canal más rentable para clientes existentes. Automatización clave para el éxito.</p>
-                </div>
+                <OptimizedImage src="https://hayasmarketing.com/wp-content/uploads/2024/05/image-1.png" alt="Métricas principales por canales de marketing digital para cálculo de inversión" className="w-full rounded-lg shadow-lg border" width={800} height={450} />
               </div>
 
               <h2 className="text-3xl font-bold mb-6 mt-12 text-foreground">
@@ -432,33 +308,19 @@ const BlogCalculoInversionMarketing = () => {
               <h3 className="text-2xl font-bold mb-8 text-center">Artículos relacionados</h3>
               <div className="grid md:grid-cols-3 gap-8">
                 <article className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow">
-                  <OptimizedImage
-                    src="/public/lovable-uploads/estrategia-marketing-contenidos-hero.jpg"
-                    alt="Estrategia de marketing de contenidos"
-                    className="w-full h-48 object-cover"
-                    width={400}
-                    height={200}
-                  />
+                  <OptimizedImage src="/public/lovable-uploads/estrategia-marketing-contenidos-hero.jpg" alt="Estrategia de marketing de contenidos" className="w-full h-48 object-cover" width={400} height={200} />
                   <div className="p-6">
                     <h4 className="text-lg font-semibold mb-2">
                       <Link to="/estrategia-contenidos" className="text-gray-900 hover:text-primary transition-colors">
                         Estrategia de contenidos para marketing digital
                       </Link>
                     </h4>
-                    <p className="text-gray-600 text-sm">
-                      Descubre cómo crear una estrategia de contenidos efectiva que genere leads y mejore tu ROI.
-                    </p>
+                    <p className="text-gray-600 text-sm">4 tácticas para optimizar tu cálculo de inversión</p>
                   </div>
                 </article>
 
                 <article className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow">
-                  <OptimizedImage
-                    src="/public/lovable-uploads/perfil-cliente-ideal-hero.jpg"
-                    alt="Perfil de cliente ideal"
-                    className="w-full h-48 object-cover"
-                    width={400}
-                    height={200}
-                  />
+                  <OptimizedImage src="/public/lovable-uploads/perfil-cliente-ideal-hero.jpg" alt="Perfil de cliente ideal" className="w-full h-48 object-cover" width={400} height={200} />
                   <div className="p-6">
                     <h4 className="text-lg font-semibold mb-2">
                       <Link to="/blog/perfil-cliente-ideal" className="text-gray-900 hover:text-primary transition-colors">
@@ -472,13 +334,7 @@ const BlogCalculoInversionMarketing = () => {
                 </article>
 
                 <article className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow">
-                  <OptimizedImage
-                    src="/public/lovable-uploads/ia-marketing-hero.jpg"
-                    alt="Inteligencia artificial en marketing"
-                    className="w-full h-48 object-cover"
-                    width={400}
-                    height={200}
-                  />
+                  <OptimizedImage src="/public/lovable-uploads/ia-marketing-hero.jpg" alt="Inteligencia artificial en marketing" className="w-full h-48 object-cover" width={400} height={200} />
                   <div className="p-6">
                     <h4 className="text-lg font-semibold mb-2">
                       <Link to="/soluciones-ia" className="text-gray-900 hover:text-primary transition-colors">
@@ -497,8 +353,6 @@ const BlogCalculoInversionMarketing = () => {
       </main>
 
       <Footer />
-    </>
-  );
+    </>;
 };
-
 export default BlogCalculoInversionMarketing;
