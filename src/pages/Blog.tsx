@@ -14,6 +14,7 @@ import iaRedesSocialesHero from '@/assets/ia-redes-sociales-hero.jpg';
 import tiktokMarketingHero from '@/assets/tiktok-marketing-hero.jpg';
 import perfilClienteIdealHero from '@/assets/perfil-cliente-ideal-hero.jpg';
 import calculoInversionHero from '@/assets/calculo-inversion-marketing-hero.jpg';
+import brandingProcesoNamingHero from '@/assets/branding-proceso-tecnicas-naming-hero.jpg';
 
 const Blog = () => {
   const featuredPost = {
@@ -29,6 +30,16 @@ const Blog = () => {
   };
 
   const allPosts = [
+    {
+      id: 'branding-proceso-tecnicas-naming',
+      title: 'Branding: proceso y técnicas de naming',
+      description: 'Descubre las mejores técnicas de naming y el proceso completo de branding. Guía práctica para crear nombres de marca memorables y efectivos.',
+      date: '2025-01-16',
+      readTime: '18 min',
+      category: 'Branding',
+      image: brandingProcesoNamingHero,
+      tags: ['Branding', 'Naming', 'Identidad de Marca', 'Estrategia', 'Creatividad']
+    },
     {
       id: 'calculo-inversion-plan-marketing-digital',
       title: 'Cómo hacer el cálculo de inversión en un plan de marketing digital',
