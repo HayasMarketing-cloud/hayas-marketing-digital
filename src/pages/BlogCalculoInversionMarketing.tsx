@@ -169,7 +169,7 @@ const BlogCalculoInversionMarketing = () => {
               </div>
 
               <div className="mb-8">
-                <OptimizedImage src="https://hayasmarketing.com/wp-content/uploads/2024/05/image.png" alt="Sistema de previsión de ventas y cálculo de inversión en marketing digital" className="w-full rounded-lg shadow-lg border" width={800} height={450} />
+                <OptimizedImage src="/lovable-uploads/70d2f1d3-cdc7-432e-9adc-e66caadef73a.png" alt="Sistema de previsión de ventas según objetivos de crecimiento mensuales - Plantilla de cálculo de inversión en marketing" className="w-full rounded-lg shadow-lg border" width={1000} height={600} />
               </div>
 
               <p className="mb-8">
