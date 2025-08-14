@@ -11,16 +11,13 @@ const HeroSection = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center">
           <div className="lg:w-1/2 lg:pr-12 mb-10 lg:mb-0">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight animate-fade-in">
-              <span className="text-gradient-primary">Agencia de Marketing Digital</span>
-            </h1>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-6 leading-tight animate-fade-in">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight animate-fade-in">
               <span className="text-gradient-primary">Soluciones</span> que impulsan tu <span className="text-gradient-primary">marca</span>, conectan con tus <span className="text-gradient-primary">clientes</span> y activan tu <span className="text-gradient-primary">estrategia</span> digital
-            </h2>
+            </h1>
             <p className="text-lg md:text-xl text-gray-700 mb-8 animate-slide-up">En Hayas Marketing transformamos ideas en resultados reales con estrategias 360 que combinan creatividad, datos y tecnología. Creamos marcas sólidas, construimos relaciones duraderas con tus clientes y ponemos en marcha planes digitales medibles que generan crecimiento sostenible.</p>
             <div className="flex flex-col sm:flex-row items-center gap-4 animate-slide-up stack-sm">
               <Button asChild className="gradient-primary text-white py-6 px-8 text-lg font-medium shadow-elegant hover-scale focus-ring" aria-label="Explorar soluciones de Hayas Marketing">
-                <Link to="/?scrollTo=soluciones">Explora nuestras soluciones</Link>
+                
               </Button>
               <Button asChild variant="outline" className="py-6 px-8 text-lg font-medium hover-scale focus-ring border-primary text-primary hover:bg-primary hover:text-white" aria-label="Descubrir cómo trabajamos en Hayas Marketing">
                 <Link to="/?scrollTo=metodologia">Descubre cómo lo hacemos</Link>
