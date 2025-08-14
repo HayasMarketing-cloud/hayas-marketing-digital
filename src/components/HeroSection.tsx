@@ -15,7 +15,7 @@ const HeroSection = () => {
               <span className="text-gradient-primary">Soluciones</span> que impulsan tu <span className="text-gradient-primary">marca</span>, conectan con tus <span className="text-gradient-primary">clientes</span> y activan tu <span className="text-gradient-primary">estrategia</span> digital
             </h1>
             <p className="text-lg md:text-xl text-gray-700 mb-8 animate-slide-up">En Hayas Marketing transformamos ideas en resultados reales con estrategias 360 que combinan creatividad, datos y tecnología. Creamos marcas sólidas, construimos relaciones duraderas con tus clientes y ponemos en marcha planes digitales medibles que generan crecimiento sostenible.</p>
-            <div className="flex flex-col sm:flex-row gap-4 animate-slide-up stack-sm">
+            <div className="flex flex-col sm:flex-row items-center gap-4 animate-slide-up stack-sm">
               <Button asChild className="gradient-primary text-white py-6 px-8 text-lg font-medium shadow-elegant hover-scale focus-ring" aria-label="Explorar soluciones de Hayas Marketing">
                 <Link to="/?scrollTo=soluciones">Explora nuestras soluciones</Link>
               </Button>
