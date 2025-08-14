@@ -267,6 +267,41 @@ const BlogCalculoInversionMarketing = () => {
                 />
               </div>
 
+              <p className="mb-6">
+                La tabla anterior muestra las diferencias clave entre canales. Observa cómo el email marketing, aunque genera menos tráfico, tiene la mayor tasa de conversión y el CAC más bajo, lo que lo convierte en uno de los canales más rentables.
+              </p>
+
+              <div className="bg-accent/10 border border-accent/20 rounded-lg p-6 mb-8">
+                <h3 className="text-lg font-semibold mb-4 text-accent-foreground">💡 Insight clave</h3>
+                <p className="text-accent-foreground">
+                  No te centres únicamente en el volumen de tráfico. Un canal que genera menos visitantes pero con mayor intención de compra puede ser más rentable que uno con mucho tráfico pero baja conversión.
+                </p>
+              </div>
+
+              <h3 className="text-2xl font-semibold mb-4">Cómo interpretar las métricas por canal</h3>
+              
+              <div className="space-y-4 mb-8">
+                <div className="border-l-4 border-green-500 pl-4">
+                  <h4 className="font-semibold text-green-700">SEO (Posicionamiento orgánico)</h4>
+                  <p className="text-sm text-gray-600">Inversión a largo plazo con ROI sostenido. Ideal para generar tráfico cualificado de forma continua.</p>
+                </div>
+                
+                <div className="border-l-4 border-blue-500 pl-4">
+                  <h4 className="font-semibold text-blue-700">SEM (Publicidad en buscadores)</h4>
+                  <p className="text-sm text-gray-600">Resultados inmediatos pero costosos. Perfecto para promociones puntuales y escalado rápido.</p>
+                </div>
+                
+                <div className="border-l-4 border-purple-500 pl-4">
+                  <h4 className="font-semibold text-purple-700">Redes Sociales</h4>
+                  <p className="text-sm text-gray-600">Excelente para branding y engagement. Conversión variable según el público objetivo.</p>
+                </div>
+                
+                <div className="border-l-4 border-orange-500 pl-4">
+                  <h4 className="font-semibold text-orange-700">Email Marketing</h4>
+                  <p className="text-sm text-gray-600">El canal más rentable para clientes existentes. Automatización clave para el éxito.</p>
+                </div>
+              </div>
+
               <h2 className="text-3xl font-bold mb-6 mt-12 text-foreground">
                 8 tácticas para optimizar tu cálculo de inversión
               </h2>
