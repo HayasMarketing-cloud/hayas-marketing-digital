@@ -6,6 +6,7 @@ import HeroSection from '@/components/HeroSection';
 import SolutionsSection from '@/components/SolutionsSection';
 import ServicesSection from '@/components/ServicesSection';
 import AllServicesSection from '@/components/AllServicesSection';
+import ChatbotPromoSection from '@/components/ChatbotPromoSection';
 
 
 import Footer from '@/components/Footer';
@@ -104,6 +105,7 @@ const Index = () => {
         
         <MethodologySection />
         <AllServicesSection />
+        <ChatbotPromoSection />
         <FAQSection
           faqs={[
             {
