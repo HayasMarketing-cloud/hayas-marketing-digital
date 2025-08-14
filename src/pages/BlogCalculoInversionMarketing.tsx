@@ -221,10 +221,6 @@ const BlogCalculoInversionMarketing = () => {
                 </table>
               </div>
 
-              <div className="mb-8">
-                <OptimizedImage src="https://hayasmarketing.com/wp-content/uploads/2024/05/image-1.png" alt="Métricas principales por canales de marketing digital para cálculo de inversión" className="w-full rounded-lg shadow-lg border" width={800} height={450} />
-              </div>
-
               <h2 className="text-3xl font-bold mb-6 mt-12 text-foreground">
                 8 tácticas para optimizar tu cálculo de inversión
               </h2>
