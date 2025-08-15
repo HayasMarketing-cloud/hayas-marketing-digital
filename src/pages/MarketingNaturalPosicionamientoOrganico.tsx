@@ -341,6 +341,25 @@ const MarketingNaturalPosicionamientoOrganico: React.FC = () => {
         </div>
       </section>
 
+      {/* Bloque destacado Sofía */}
+      <section className="mb-12">
+        <div className="bg-gradient-to-br from-primary/10 to-secondary/10 border-2 border-primary/30 rounded-xl p-8 text-center">
+          <div className="flex items-center justify-center space-x-2 mb-4">
+            <Lightbulb className="h-6 w-6 text-primary" />
+            <h3 className="text-xl font-bold text-foreground">Crea tu estrategia ahora mismo</h3>
+          </div>
+          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+            Sofía puede generar un plan de Marketing Natural adaptado a tu negocio.
+            <br />
+            Dile: <span className="text-primary font-medium">"Quiero mi estrategia de Marketing Natural"</span> en el chat y recíbelo al instante.
+          </p>
+          <Button className="gradient-primary">
+            <Zap className="h-4 w-4 mr-2" />
+            Hablar con Sofía
+          </Button>
+        </div>
+      </section>
+
       {/* Sección de IA */}
       <AIApplicationsSection 
         applications={aiApplications}
@@ -372,6 +391,17 @@ const MarketingNaturalPosicionamientoOrganico: React.FC = () => {
             En un mundo lleno de «ruido», no necesitas gritar más fuerte. Necesitas conectar y hacerlo con tu propósito.
           </p>
         </blockquote>
+
+        <div className="bg-primary/5 border border-primary/20 rounded-lg p-6 mt-8 text-center">
+          <p className="text-muted-foreground mb-4">
+            Y si quieres ver cómo se aplicaría esto a tu caso, háblalo con Sofía ahora mismo. 
+            <strong className="text-primary"> En menos de 5 minutos tendrás tu estrategia personalizada para empezar hoy.</strong>
+          </p>
+          <Button className="gradient-primary" size="sm">
+            <Zap className="h-4 w-4 mr-2" />
+            Hablar con Sofía
+          </Button>
+        </div>
       </section>
 
       {/* FAQ Section */}
