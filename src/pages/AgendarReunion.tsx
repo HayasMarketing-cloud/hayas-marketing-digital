@@ -131,7 +131,7 @@ export default function AgendarReunion() {
 
               {/* Benefits */}
               <div className="bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl p-8 border border-primary/10">
-                <h3 className="text-lg font-semibold mb-4">¿Qué Incluye la Reunión?</h3>
+                <h3 className="text-lg font-semibold mb-4">¿Qué incluye la reunión?</h3>
                 <ul className="space-y-3 text-sm text-muted-foreground">
                   <li className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>

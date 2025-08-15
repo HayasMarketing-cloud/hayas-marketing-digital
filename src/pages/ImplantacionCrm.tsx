@@ -114,7 +114,7 @@ const ImplantacionCrm = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                ¿Qué Incluye Nuestra Implantación?
+                ¿Qué incluye nuestra implantación?
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                 Una implementación completa que abarca todos los aspectos de tu estrategia comercial
