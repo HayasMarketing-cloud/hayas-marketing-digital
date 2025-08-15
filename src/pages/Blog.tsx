@@ -33,6 +33,16 @@ const Blog = () => {
 
   const allPosts = [
     {
+      id: 'crm-que-es-beneficios',
+      title: 'CRM: Qué es, Beneficios y Cómo Elegir el Mejor para tu Empresa',
+      description: 'Descubre qué es un CRM, sus beneficios para marketing y ventas, y cómo elegir el más adecuado para tu negocio. Guía práctica con ejemplos reales y pasos de implantación.',
+      date: '2025-01-18',
+      readTime: '20 min',
+      category: 'CRM',
+      image: '/src/assets/business-model-canvas-estrategia-marketing-hero.jpg', // Temporal - se puede cambiar por una imagen específica de CRM
+      tags: ['CRM', 'Marketing Digital', 'Ventas', 'Automatización', 'Gestión Clientes']
+    },
+    {
       id: 'google-consent-mode-cookieyes',
       title: 'Cómo instalar Consent Mode en Google Tag Manager con CookieYes',
       description: 'Guía completa para configurar Google Consent Mode con CookieYes en Google Tag Manager. Cumple con GDPR y mejora la privacidad de tus usuarios.',
