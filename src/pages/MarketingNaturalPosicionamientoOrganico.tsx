@@ -328,14 +328,15 @@ const MarketingNaturalPosicionamientoOrganico: React.FC = () => {
         </div>
 
         <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6 mt-8">
-          <h4 className="font-semibold text-yellow-800 mb-3">Siguiente nivel: Escalar o Consolidar</h4>
+          <h4 className="font-semibold text-yellow-800 mb-3">Siguiente nivel: Escalar, Consolidar o Pivotar</h4>
           <p className="text-yellow-700 text-sm leading-relaxed mb-4">
             Una vez valides que tu estrategia inicial funciona y genera los resultados esperados, es momento 
-            de reflexionar entre dos caminos estratégicos:
+            de reflexionar entre tres caminos estratégicos:
           </p>
           <ul className="space-y-2 text-yellow-700 text-sm">
             <li><strong>Escalar:</strong> Expandirte y crecer, llegando a nuevos mercados, aumentando el alcance o diversificando tácticas.</li>
             <li><strong>Consolidar:</strong> Fortalecer lo logrado, asegurando bases sólidas antes de intentar un crecimiento adicional.</li>
+            <li><strong>Pivotar:</strong> Cambiar de enfoque o estrategia cuando los resultados no son los esperados o cuando surgen nuevas oportunidades de mercado.</li>
           </ul>
         </div>
       </section>
