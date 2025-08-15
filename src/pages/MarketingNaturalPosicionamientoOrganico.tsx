@@ -353,7 +353,21 @@ const MarketingNaturalPosicionamientoOrganico: React.FC = () => {
             <br />
             Dile: <span className="text-primary font-medium">"Quiero mi estrategia de Marketing Natural"</span> en el chat y recíbelo al instante.
           </p>
-          <Button className="gradient-primary">
+          <Button 
+            className="gradient-primary"
+            onClick={() => {
+              window.dispatchEvent(new CustomEvent('openSofiaChat'));
+              // Simular mensaje inicial (esto dependerá de la implementación específica de Voiceflow)
+              setTimeout(() => {
+                const widget = document.getElementById('sofia-voiceflow-widget');
+                if (widget) {
+                  // Intentar enviar el mensaje predefinido
+                  const message = "Quiero mi estrategia de Marketing Natural personalizada para empezar hoy";
+                  console.log("Mensaje para Sofía:", message);
+                }
+              }, 1000);
+            }}
+          >
             <Zap className="h-4 w-4 mr-2" />
             Hablar con Sofía
           </Button>
@@ -397,7 +411,20 @@ const MarketingNaturalPosicionamientoOrganico: React.FC = () => {
             Y si quieres ver cómo se aplicaría esto a tu caso, háblalo con Sofía ahora mismo. 
             <strong className="text-primary"> En menos de 5 minutos tendrás tu estrategia personalizada para empezar hoy.</strong>
           </p>
-          <Button className="gradient-primary" size="sm">
+          <Button 
+            className="gradient-primary" 
+            size="sm"
+            onClick={() => {
+              window.dispatchEvent(new CustomEvent('openSofiaChat'));
+              setTimeout(() => {
+                const widget = document.getElementById('sofia-voiceflow-widget');
+                if (widget) {
+                  const message = "Quiero mi estrategia de Marketing Natural personalizada para empezar hoy";
+                  console.log("Mensaje para Sofía:", message);
+                }
+              }, 1000);
+            }}
+          >
             <Zap className="h-4 w-4 mr-2" />
             Hablar con Sofía
           </Button>
