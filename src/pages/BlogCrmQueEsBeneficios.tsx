@@ -129,38 +129,38 @@ const BlogCrmQueEsBeneficios = () => {
   const casosUso = [
     {
       icon: <Store className="h-6 w-6" />,
-      perfil: "Emprendedores en crecimiento",
-      nombre: "Daniel",
-      descripcion: "Quieren diferenciarse en un mercado saturado con pocos recursos.",
-      ejemplo: "Daniel lanza su marca de ropa sostenible y usa el CRM para segmentar contactos y automatizar campañas personalizadas."
+      perfil: "Para un emprendedor que comienza o en crecimiento",
+      nombre: "",
+      descripcion: "Necesita diferenciarse en un mercado saturado con recursos limitados y quiere crear una base sólida para escalar su negocio.",
+      ejemplo: "Un emprendedor que lanza su marca de ropa sostenible usa el CRM para segmentar contactos y automatizar campañas personalizadas, logrando mayor engagement con menos esfuerzo manual."
     },
     {
       icon: <Building2 className="h-6 w-6" />,
-      perfil: "CEOs de empresas consolidadas",
-      nombre: "Adriana",
-      descripcion: "Necesitan coherencia y confianza en todos los puntos de contacto.",
-      ejemplo: "Adriana registra cada interacción en el CRM, logrando mensajes consistentes y un 25% más de retención."
+      perfil: "Para CEOs de empresas consolidadas",
+      nombre: "",
+      descripcion: "Buscan coherencia y confianza en todos los puntos de contacto para mantener su posición competitiva y seguir creciendo.",
+      ejemplo: "Una CEO de empresa mediana registra cada interacción en el CRM, logrando mensajes consistentes entre marketing y ventas, y consigue un 25% más de retención de clientes."
     },
     {
       icon: <Target className="h-6 w-6" />,
-      perfil: "Gerentes de Marketing",
-      nombre: "Laura",
-      descripcion: "Buscan resultados medibles con recursos limitados.",
-      ejemplo: "Laura automatiza campañas según el progreso de clientes y aumenta un 40% las conversiones."
+      perfil: "Para Gerentes de Marketing con recursos limitados",
+      nombre: "",
+      descripcion: "Necesitan demostrar resultados medibles y optimizar cada euro invertido en marketing para justificar presupuestos futuros.",
+      ejemplo: "Un gerente de marketing automatiza campañas según el progreso del cliente en el funnel y aumenta un 40% las conversiones sin incrementar el equipo."
     },
     {
       icon: <Briefcase className="h-6 w-6" />,
-      perfil: "Directores de Ventas",
-      nombre: "Carlos",
-      descripcion: "Quieren digitalizar el equipo comercial sin perder cercanía.",
-      ejemplo: "Carlos recibe alertas cuando un lead está listo para comprar, reduciendo un 20% el tiempo de cierre."
+      perfil: "Para Directores de Ventas de equipos comerciales",
+      nombre: "",
+      descripcion: "Quieren digitalizar y optimizar el equipo comercial sin perder el toque humano y la cercanía con los clientes.",
+      ejemplo: "Un director comercial recibe alertas automáticas cuando un lead está listo para comprar, reduciendo un 20% el tiempo de cierre y aumentando la productividad del equipo."
     },
     {
       icon: <Heart className="h-6 w-6" />,
-      perfil: "Negocios familiares",
-      nombre: "María y José",
-      descripcion: "Desean modernizarse sin perder esencia.",
-      ejemplo: "Usan el CRM para enviar ofertas personalizadas en fechas clave, aumentando un 35% las ventas repetidas."
+      perfil: "Para negocios familiares que buscan modernizarse",
+      nombre: "",
+      descripcion: "Desean incorporar tecnología para crecer sin perder la esencia personal y el trato cercano que los caracteriza.",
+      ejemplo: "Un negocio familiar usa el CRM para enviar ofertas personalizadas en fechas importantes de cada cliente, aumentando un 35% las ventas repetidas sin perder la cercanía personal."
     }
   ];
 
@@ -273,7 +273,7 @@ const BlogCrmQueEsBeneficios = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">
-                      {index + 1}. {caso.perfil} ({caso.nombre})
+                      {index + 1}. {caso.perfil}
                     </h3>
                     <p className="text-muted-foreground mb-3">{caso.descripcion}</p>
                     <div className="bg-muted/30 rounded-lg p-4">
