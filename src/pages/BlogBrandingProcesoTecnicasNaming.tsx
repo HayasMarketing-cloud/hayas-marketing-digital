@@ -1,488 +1,360 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
-import Seo from "@/components/Seo";
-import OptimizedImage from "@/components/OptimizedImage";
+import BlogPostTemplate from '@/components/BlogPost/BlogPostTemplate';
 import brandingHeroImage from "@/assets/branding-proceso-tecnicas-naming-hero.jpg";
 
 const BlogBrandingProcesoTecnicasNaming = () => {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Branding: proceso y técnicas de naming para crear marcas exitosas",
-    "description": "Descubre las mejores técnicas de naming y procesos de branding para crear nombres únicos que posicionen tu marca. Guía completa con metodologías probadas y casos prácticos.",
-    "author": {
-      "@type": "Organization",
-      "name": "Hayas Marketing"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Hayas Marketing",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://hayasmarketing.com/logo.png"
+  const metadata = {
+    title: "Branding: proceso y técnicas de naming para crear marcas exitosas",
+    metaTitle: "Técnicas de Naming y Branding - Guía Profesional Hayas",
+    description: "Descubre las mejores técnicas de naming y procesos de branding para crear nombres únicos que posicionen tu marca. Guía completa con metodologías probadas y casos prácticos.",
+    metaDescription: "✅ Domina las técnicas de naming profesionales. Proceso completo de branding con metodologías probadas. Crea nombres memorables para tu marca.",
+    date: "2025-01-14",
+    readTime: "12 min",
+    category: "Branding",
+    author: "Equipo Hayas Marketing",
+    tags: ["Branding", "Naming", "Identidad de Marca", "Estrategia", "Creatividad"],
+    canonical: "/blog/branding-proceso-tecnicas-naming",
+    ogImage: brandingHeroImage,
+    mainKeyword: "técnicas de naming",
+    secondaryKeywords: ["branding proceso", "naming empresas", "identidad corporativa", "arquetipos Jung"],
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Branding: proceso y técnicas de naming para crear marcas exitosas",
+      "description": "Descubre las mejores técnicas de naming y procesos de branding para crear nombres únicos que posicionen tu marca. Guía completa con metodologías probadas y casos prácticos.",
+      "author": {
+        "@type": "Organization",
+        "name": "Hayas Marketing"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Hayas Marketing",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://hayasmarketing.com/logo.png"
+        }
+      },
+      "datePublished": "2025-01-14",
+      "image": brandingHeroImage,
+      "keywords": "técnicas de naming, branding proceso, naming empresas, identidad corporativa, arquetipos Jung, ADN marca",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://hayasmarketing.com/blog/branding-proceso-tecnicas-naming"
       }
-    },
-    "datePublished": "2025-01-14",
-    "image": brandingHeroImage,
-    "keywords": "técnicas de naming, branding proceso, naming empresas, identidad corporativa, arquetipos Jung, ADN marca",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://hayasmarketing.com/blog/branding-proceso-tecnicas-naming"
     }
   };
 
+  const faqs = [
+    {
+      question: "¿Cuánto tiempo lleva completar un proceso de naming profesional?",
+      answer: "Un proceso de naming completo puede tomar entre 2-8 semanas, dependiendo de la complejidad del proyecto. Incluye investigación, generación de ideas, validación legal y pruebas de mercado. La fase creativa suele durar 1-2 semanas, mientras que la validación puede extenderse hasta 4-6 semanas."
+    },
+    {
+      question: "¿Cuál es la diferencia entre marca comercial y marca registrada?",
+      answer: "Una marca comercial es cualquier nombre que uses para identificar tu negocio, mientras que una marca registrada está legalmente protegida. El registro te otorga derechos exclusivos de uso y protección legal contra imitaciones. Es recomendable registrar tu marca si planeas proteger tu inversión a largo plazo."
+    },
+    {
+      question: "¿Qué son los arquetipos de Jung en branding?",
+      answer: "Los arquetipos de Jung son patrones universales de comportamiento humano aplicados al branding. Los 12 arquetipos (Inocente, Explorador, Sabio, Héroe, etc.) ayudan a definir la personalidad de marca y conectar emocionalmente con el público objetivo, creando mensajes más resonantes y coherentes."
+    },
+    {
+      question: "¿Cuándo debería contratar una agencia de branding vs hacerlo internamente?",
+      answer: "Contrata una agencia cuando: hay mucho en juego económicamente, compites contra grandes marcas, necesitas experiencia especializada, o no tienes tiempo/recursos internos. Hazlo internamente cuando: tienes presupuesto limitado, conoces muy bien tu mercado, o es un proyecto de menor envergadura."
+    },
+    {
+      question: "¿Cómo valido si un nombre de marca es bueno?",
+      answer: "Un buen nombre debe ser: memorable, fácil de pronunciar, escalable internacionalmente, disponible legalmente, y alineado con tu estrategia de marca. Pruébalo con tu audiencia objetivo, verifica disponibilidad de dominios, y consulta con un abogado de marcas para validación legal."
+    }
+  ];
+
+  const relatedServices = [
+    {
+      title: "Creación de Marca",
+      description: "Desarrollamos tu identidad de marca completa con naming y diseño profesional",
+      link: "/creacion-marca"
+    },
+    {
+      title: "Estrategia de Contenidos",
+      description: "Creamos contenidos alineados con tu nueva identidad de marca",
+      link: "/estrategia-contenidos"
+    }
+  ];
+
   return (
-    <>
-      <Seo 
-        title="Branding: proceso y técnicas de naming para crear marcas exitosas" 
-        description="Descubre las mejores técnicas de naming y procesos de branding para crear nombres únicos que posicionen tu marca. Guía completa con metodologías probadas." 
-        canonical="/blog/branding-proceso-tecnicas-naming" 
-        structuredData={structuredData} 
-        ogImage={brandingHeroImage} 
-      />
-      
-      <Navigation />
-      
-      <main className="min-h-screen bg-background">
-        {/* Breadcrumb */}
-        <div className="container mx-auto px-4 pt-24 pb-8">
-          <nav className="flex items-center space-x-2 text-sm text-muted-foreground">
-            <Link to="/blog" className="hover:text-primary transition-colors">
-              ← Volver al blog
-            </Link>
-          </nav>
+    <BlogPostTemplate 
+      metadata={metadata}
+      heroImage={{
+        src: brandingHeroImage,
+        alt: "Proceso de branding y técnicas de naming para crear marcas exitosas - metodologías profesionales",
+        width: 1200,
+        height: 675
+      }}
+      faqs={faqs}
+      relatedServices={relatedServices}
+    >
+      {/* Caja destacada inicial */}
+      <div className="bg-gradient-to-r from-blue-50 to-blue-100 border border-blue-200 rounded-lg p-6 mb-8">
+        <p className="text-lg text-gray-800 font-medium">
+          🎯 <strong>Dato clave:</strong> El 77% de las marcas exitosas utilizan técnicas de naming profesionales. Un buen nombre puede aumentar el reconocimiento de marca hasta un 35% según estudios de brand awareness.
+        </p>
+      </div>
+
+      <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+        En este artículo explicamos cómo iniciar un proceso de naming para <strong>ayudarte a crear una marca de éxito comenzando por descubrir el mejor nombre posible</strong> mediante <strong>técnicas de naming</strong> profesionales y metodologías probadas.
+      </p>
+
+      <h2 className="text-3xl font-bold mb-6 mt-12 text-foreground">
+        ¿Qué es el branding y por qué es importante?
+      </h2>
+
+      <p className="mb-6">
+        Hablamos de branding en su sentido más amplio y primario: como aquella estrategia que engloba todas las acciones y elementos que afectan a la construcción de la imagen de marca en la mente de las personas.
+      </p>
+
+      <p className="mb-6">
+        Es decir, cuando hablamos de elementos gráficos (logotipo, colores corporativos, tipografías), también estamos hablando de branding. Cuando hablamos de copy, tono y forma de comunicar de la empresa, también estamos hablando de branding. Cuando hablamos de la experiencia del usuario al recibir un producto en casa, también estamos hablando de branding.
+      </p>
+
+      <blockquote className="border-l-4 border-accent bg-accent/10 p-6 my-8 italic text-lg">
+        El branding es todo impacto visual, experiencial y emocional que una persona recibe en su relación con la empresa o marca.
+      </blockquote>
+
+      <p className="mb-12">
+        Una vez repasado el ámbito del branding en su conjunto, que es muy amplio, vamos a profundizar en los detalles del primer elemento de branding: el nombre. Y en concreto en las <strong>técnicas de naming</strong> y procesos que nos ayudarán a tener el mejor.
+      </p>
+
+      <h2 className="text-3xl font-bold mb-6 mt-12 text-foreground">
+        Proceso de naming: pasos fundamentales
+      </h2>
+
+      <p className="mb-6">
+        El proceso de naming profesional sigue una metodología estructurada que garantiza resultados óptimos. Te explicamos los pasos esenciales:
+      </p>
+
+      <div className="space-y-6 mb-8">
+        <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+          <h3 className="text-xl font-semibold mb-3 text-blue-800">1. Investigación y análisis</h3>
+          <ul className="text-blue-700 space-y-2">
+            <li>• Análisis de competencia directa e indirecta</li>
+            <li>• Estudio del público objetivo y sus preferencias</li>
+            <li>• Investigación de tendencias del sector</li>
+            <li>• Definición de objetivos y posicionamiento deseado</li>
+          </ul>
         </div>
 
-        <article className="container mx-auto px-4 pb-16">
-          <div className="max-w-4xl mx-auto">
-            {/* Header */}
-            <header className="mb-12">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground leading-tight">
-                Branding: proceso y técnicas de naming para crear marcas exitosas
-              </h1>
-              
-              <div className="flex items-center gap-4 text-sm text-muted-foreground mb-8">
-                <time dateTime="2025-01-14">14 de enero, 2025</time>
-                <span>•</span>
-                <span>Lectura: 12 min</span>
-                <span>•</span>
-                <span>Branding</span>
-              </div>
+        <div className="bg-green-50 border border-green-200 rounded-lg p-6">
+          <h3 className="text-xl font-semibold mb-3 text-green-800">2. Estrategia y briefing</h3>
+          <ul className="text-green-700 space-y-2">
+            <li>• Definición de la personalidad de marca</li>
+            <li>• Establecimiento de criterios de evaluación</li>
+            <li>• Identificación de restricciones legales y técnicas</li>
+            <li>• Validación de disponibilidad de dominios</li>
+          </ul>
+        </div>
 
-              {/* Featured Image */}
-              <div className="mb-8">
-                <OptimizedImage 
-                  src={brandingHeroImage} 
-                  alt="Proceso de branding y técnicas de naming para crear marcas exitosas - metodologías profesionales" 
-                  className="w-full rounded-lg shadow-lg" 
-                  width={1200} 
-                  height={675} 
-                  priority={true} 
-                />
-              </div>
+        <div className="bg-purple-50 border border-purple-200 rounded-lg p-6">
+          <h3 className="text-xl font-semibold mb-3 text-purple-800">3. Generación creativa</h3>
+          <ul className="text-purple-700 space-y-2">
+            <li>• Aplicación de técnicas de naming específicas</li>
+            <li>• Brainstorming estructurado y sesiones creativas</li>
+            <li>• Exploración de diferentes enfoques lingüísticos</li>
+            <li>• Generación de al menos 100-200 opciones iniciales</li>
+          </ul>
+        </div>
 
-              {/* Intro Box */}
-              <div className="bg-gradient-to-r from-blue-50 to-blue-100 border border-blue-200 rounded-lg p-6 mb-8">
-                <p className="text-lg text-gray-800 font-medium">
-                  🎯 <strong>Dato clave:</strong> El 77% de las marcas exitosas utilizan técnicas de naming profesionales. Un buen nombre puede aumentar el reconocimiento de marca hasta un 35% según estudios de brand awareness.
-                </p>
-              </div>
-            </header>
+        <div className="bg-orange-50 border border-orange-200 rounded-lg p-6">
+          <h3 className="text-xl font-semibold mb-3 text-orange-800">4. Evaluación y selección</h3>
+          <ul className="text-orange-700 space-y-2">
+            <li>• Filtrado por criterios establecidos</li>
+            <li>• Pruebas de pronunciación y memorabilidad</li>
+            <li>• Validación legal preliminar</li>
+            <li>• Selección de 3-5 finalistas</li>
+          </ul>
+        </div>
 
-            {/* Content */}
-            <div className="prose prose-lg max-w-none">
-              <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                En este artículo explicamos cómo iniciar un proceso de naming para <strong>ayudarte a crear una marca de éxito comenzando por descubrir el mejor nombre posible</strong> mediante <strong>técnicas de naming</strong> profesionales y metodologías probadas.
-              </p>
+        <div className="bg-red-50 border border-red-200 rounded-lg p-6">
+          <h3 className="text-xl font-semibold mb-3 text-red-800">5. Validación final</h3>
+          <ul className="text-red-700 space-y-2">
+            <li>• Registro de marca y protección legal</li>
+            <li>• Testing con audiencia objetivo</li>
+            <li>• Verificación internacional si procede</li>
+            <li>• Decisión final y documentación</li>
+          </ul>
+        </div>
+      </div>
 
-              <p className="mb-8">
-                Hablamos de branding en su sentido más amplio y primario: como aquella estrategia que engloba todas las acciones y elementos que afectan a la construcción de la imagen de marca en la mente de las personas.
-              </p>
+      <h2 className="text-3xl font-bold mb-6 mt-12 text-foreground">
+        7 técnicas de naming profesionales
+      </h2>
 
-              <p className="mb-12">
-                Como principales elementos tenemos todos los relacionados con la identidad corporativa: nombre, logotipo, claim, colores corporativos, presentaciones, página web, tarjetas de visita, imagen de las personas que integran la empresa, la forma de relacionarse con el cliente, imagen de la tienda física o del ecommerce, storytelling, comunicación en Redes Sociales, atención al cliente, imagen de la oficina, etc.
-              </p>
+      <p className="mb-8">
+        Existen múltiples enfoques para generar nombres de marca efectivos. Te presentamos las técnicas más utilizadas por profesionales del naming:
+      </p>
 
-              <div className="bg-accent/10 border-l-4 border-accent p-6 my-8">
-                <p className="text-lg font-medium text-accent-foreground">
-                  El branding es todo impacto visual, experiencial y emocional que una persona recibe en su relación con la empresa o marca.
-                </p>
-              </div>
+      <div className="grid md:grid-cols-2 gap-6 mb-8">
+        <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+          <h3 className="text-lg font-semibold mb-3 text-gray-800">📝 Naming descriptivo</h3>
+          <p className="text-gray-600 mb-3">Describe directamente lo que hace la empresa o producto.</p>
+          <p className="text-sm text-gray-500"><strong>Ejemplos:</strong> General Motors, American Airlines, Banco Santander</p>
+        </div>
 
-              <p className="mb-8">
-                Una vez repasado el ámbito del branding en su conjunto, que es muy amplio, vamos a profundizar en los detalles del primer elemento de branding: el nombre. Y en concreto en las <strong>técnicas de naming</strong> y procesos que nos ayudarán a tener el mejor.
-              </p>
+        <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+          <h3 className="text-lg font-semibold mb-3 text-gray-800">✨ Naming evocativo</h3>
+          <p className="text-gray-600 mb-3">Evoca emociones o sensaciones relacionadas con la marca.</p>
+          <p className="text-sm text-gray-500"><strong>Ejemplos:</strong> Red Bull, Virgin, Amazon</p>
+        </div>
 
-              <h2 className="text-3xl font-bold mb-6 mt-12 text-foreground">
-                ¿Por qué es tan importante buscar un buen nombre?
-              </h2>
+        <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+          <h3 className="text-lg font-semibold mb-3 text-gray-800">🔗 Naming combinatorio</h3>
+          <p className="text-gray-600 mb-3">Combina dos o más palabras para crear un concepto nuevo.</p>
+          <p className="text-sm text-gray-500"><strong>Ejemplos:</strong> Microsoft, Facebook, YouTube</p>
+        </div>
 
-              <p className="mb-6">
-                El nombre sirve para nombrar una creación, un concepto imaginario, que queremos se posicione en determinado lugar y pensamiento en las personas a las que queremos impactar. Y además de ser clave para enamorar a tu audiencia, será tu creación y va a jugar un papel fundamental en tu vida por lo que no querrás llamarle de cualquier forma.
-              </p>
+        <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+          <h3 className="text-lg font-semibold mb-3 text-gray-800">🎨 Naming inventado</h3>
+          <p className="text-gray-600 mb-3">Crea palabras completamente nuevas sin significado previo.</p>
+          <p className="text-sm text-gray-500"><strong>Ejemplos:</strong> Google, Kodak, Xerox</p>
+        </div>
 
-              <p className="mb-8">
-                Además, para los profesionales de marketing y más aún para <Link to="/nosotros" className="text-primary hover:underline">agencias de marketing 360 y gestión de clientes</Link> que creamos estrategias de contenidos, <strong>el mejor nombre es sin duda aquél que inicia una buena historia, un buen relato y está relacionado con nuestro propósito o propuesta de valor.</strong>
-              </p>
+        <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+          <h3 className="text-lg font-semibold mb-3 text-gray-800">👤 Naming epónimo</h3>
+          <p className="text-gray-600 mb-3">Utiliza el nombre del fundador o una persona relevante.</p>
+          <p className="text-sm text-gray-500"><strong>Ejemplos:</strong> McDonald's, Dell, Ford</p>
+        </div>
 
-              <blockquote className="border-l-4 border-accent bg-accent/10 p-6 my-8 italic text-lg">
-                "Todo objeto tiene un nombre natural" - Platón. Nosotros queremos ayudarte a descubrirlo.
-              </blockquote>
+        <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+          <h3 className="text-lg font-semibold mb-3 text-gray-800">🔤 Naming por acrónimos</h3>
+          <p className="text-gray-600 mb-3">Usa las iniciales de una frase o concepto más largo.</p>
+          <p className="text-sm text-gray-500"><strong>Ejemplos:</strong> IBM, BMW, H&M</p>
+        </div>
 
-              <h2 className="text-3xl font-bold mb-6 mt-12 text-foreground">
-                ¿Por qué iniciar un proceso de naming profesional?
-              </h2>
+        <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+          <h3 className="text-lg font-semibold mb-3 text-gray-800">🌍 Naming geográfico</h3>
+          <p className="text-gray-600 mb-3">Incorpora referencias a lugares o ubicaciones.</p>
+          <p className="text-sm text-gray-500"><strong>Ejemplos:</strong> Banco de España, American Express, Swiss International</p>
+        </div>
+      </div>
 
-              <p className="mb-6">
-                Cuando iniciamos un proyecto, una startup, una nueva empresa, una película, un libro o lanzamos un nuevo producto o servicio, necesitamos un NOMBRE. Y para conseguir el mejor, necesitamos iniciar un proceso de naming, algo de vital importancia por tres motivos:
-              </p>
+      <h2 className="text-3xl font-bold mb-6 mt-12 text-foreground">
+        Metodología del Mood Board para naming
+      </h2>
 
-              <div className="grid md:grid-cols-3 gap-6 mb-8">
-                <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
-                  <h3 className="text-lg font-semibold mb-3 text-blue-800">🌌 Universo infinito</h3>
-                  <p className="text-blue-700 text-sm">
-                    El universo de los nombres y sus diferentes combinaciones es casi infinito. Solo en el Diccionario de la RAE tenemos 90.000 palabras.
-                  </p>
-                </div>
+      <p className="mb-6">
+        Sin duda una de las <strong>técnicas de naming</strong> preferidas por parte de marketers y publicistas porque se trata de un juego creativo que tiene como objetivo crear la personalidad de la marca mediante un mural con múltiples imágenes en forma de collage, también conocido como Mood Board en el mundo del branding.
+      </p>
 
-                <div className="bg-green-50 border border-green-200 rounded-lg p-6">
-                  <h3 className="text-lg font-semibold mb-3 text-black">📈 Incrementa el éxito</h3>
-                  <p className="text-black text-sm">
-                    Si bien el éxito no depende únicamente del nombre, te ayudará a incrementar ese porcentaje de éxito significativamente.
-                  </p>
-                </div>
+      <div className="bg-gradient-to-r from-pink-50 to-pink-100 border border-pink-200 rounded-lg p-6 mb-8">
+        <h3 className="text-xl font-semibold mb-4 text-pink-800">🎨 Pasos para crear tu Mood Board de naming</h3>
+        <ol className="list-decimal list-inside space-y-3 text-pink-700">
+          <li>Recopila imágenes que representen la esencia de tu marca</li>
+          <li>Incluye texturas, colores y elementos visuales relevantes</li>
+          <li>Añade palabras clave y conceptos inspiradores</li>
+          <li>Analiza las emociones que transmite el conjunto</li>
+          <li>Extrae conceptos e ideas para nombres potenciales</li>
+        </ol>
+      </div>
 
-                <div className="bg-purple-50 border border-purple-200 rounded-lg p-6">
-                  <h3 className="text-lg font-semibold mb-3 text-purple-800">🎯 Técnicas probadas</h3>
-                  <p className="text-purple-700 text-sm">
-                    Existen técnicas que nos ayudan a seleccionar el nombre ideal reduciendo ese universo de palabras de forma profesional.
-                  </p>
-                </div>
-              </div>
+      <h2 className="text-3xl font-bold mb-6 mt-12 text-foreground">
+        Arquetipos de Jung aplicados al naming
+      </h2>
 
-              <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-8">
-                <h3 className="text-xl font-semibold mb-4 text-gray-800">💡 Dos opciones para elegir el mejor nombre</h3>
-                <ol className="list-decimal list-inside space-y-3 text-gray-700">
-                  <li><strong>Hacerlo internamente</strong> con tus recursos de forma gratuita con las técnicas y herramientas que te ofrecemos en este artículo.</li>
-                  <li><strong>Confiar en una agencia de marketing o branding</strong> para que te acompañe y oriente en todo el proceso de naming. Si más adelante vas a necesitar tu identidad corporativa, puedes solicitar ambos servicios y negociar un mejor precio.</li>
-                </ol>
-              </div>
+      <p className="mb-6">
+        Los 12 arquetipos de Carl Jung son una herramienta poderosa para el desarrollo de naming, ya que nos ayudan a conectar con patrones universales de comportamiento humano.
+      </p>
 
-              <h2 className="text-3xl font-bold mb-6 mt-12 text-foreground">
-                Top 6 técnicas de naming más efectivas
-              </h2>
+      <div className="grid md:grid-cols-3 gap-4 mb-8">
+        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <h4 className="font-semibold text-blue-800 mb-2">🌟 El Inocente</h4>
+          <p className="text-sm text-blue-700">Pureza, simplicidad, optimismo</p>
+          <p className="text-xs text-blue-600 mt-1"><strong>Ej:</strong> Dove, Innocent</p>
+        </div>
 
-              <p className="mb-8">
-                Si decides hacerlo internamente, monta tu equipo de trabajo y selecciona alguna de las siguientes <strong>técnicas de naming</strong> y herramientas en el proceso del naming para nombrar tu producto, servicio o empresa. Estas son las que nosotros elegimos:
-              </p>
+        <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+          <h4 className="font-semibold text-green-800 mb-2">🏔️ El Explorador</h4>
+          <p className="text-sm text-green-700">Aventura, libertad, autenticidad</p>
+          <p className="text-xs text-green-600 mt-1"><strong>Ej:</strong> North Face, Jeep</p>
+        </div>
 
-              <h3 className="text-2xl font-semibold mb-4 mt-8 text-foreground">
-                1. Los arquetipos de Jung para naming
-              </h3>
+        <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
+          <h4 className="font-semibold text-purple-800 mb-2">🎓 El Sabio</h4>
+          <p className="text-sm text-purple-700">Conocimiento, sabiduría, verdad</p>
+          <p className="text-xs text-purple-600 mt-1"><strong>Ej:</strong> Google, Harvard</p>
+        </div>
 
-              <p className="mb-6">
-                Carl Gustav Jung fue un médico psiquiatra, psicólogo y ensayista suizo que definió diferentes arquetipos de personalidad. Jung defendía que hay diferentes tipos de comportamiento que se dan en todas las personas independientemente de su cultura, sexo o religión. Es decir, que son universales e instintivos.
-              </p>
+        <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+          <h4 className="font-semibold text-red-800 mb-2">⚔️ El Héroe</h4>
+          <p className="text-sm text-red-700">Coraje, determinación, honor</p>
+          <p className="text-xs text-red-600 mt-1"><strong>Ej:</strong> Nike, BMW</p>
+        </div>
 
-              <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8">
-                <h4 className="text-lg font-semibold mb-4 text-blue-800">🧠 Los 4 grupos de arquetipos según Jung:</h4>
-                <ul className="space-y-2 text-blue-700">
-                  <li><strong>Estabilidad, Control, Seguridad</strong> (Order)</li>
-                  <li><strong>Pertenencia, Confort</strong> (Social)</li>
-                  <li><strong>Independencia, Exploración</strong> (Freedom)</li>
-                  <li><strong>Riesgo, Dominio</strong> (Ego)</li>
-                </ul>
-              </div>
+        <div className="bg-orange-50 border border-orange-200 rounded-lg p-4">
+          <h4 className="font-semibold text-orange-800 mb-2">🃏 El Bufón</h4>
+          <p className="text-sm text-orange-700">Diversión, espontaneidad, irreverencia</p>
+          <p className="text-xs text-orange-600 mt-1"><strong>Ej:</strong> Ben & Jerry's, Old Spice</p>
+        </div>
 
-              <p className="mb-8">
-                Este interesante estudio de Jung nos puede ayudar a dotar de una personalidad a nuestra marca, que no es otra que la personalidad de tu <Link to="/blog/perfil-cliente-ideal" className="text-primary hover:underline">buyer persona</Link>.
-              </p>
+        <div className="bg-pink-50 border border-pink-200 rounded-lg p-4">
+          <h4 className="font-semibold text-pink-800 mb-2">❤️ El Amante</h4>
+          <p className="text-sm text-pink-700">Pasión, intimidad, compromiso</p>
+          <p className="text-xs text-pink-600 mt-1"><strong>Ej:</strong> Victoria's Secret, Hallmark</p>
+        </div>
+      </div>
 
-              <h3 className="text-2xl font-semibold mb-4 mt-8 text-foreground">
-                2. El ADN de marca como técnica de naming
-              </h3>
+      <h2 className="text-3xl font-bold mb-6 mt-12 text-foreground">
+        Cuándo confiar el proceso a una agencia de branding
+      </h2>
 
-              <p className="mb-6">
-                Se trata de una herramienta que, como su propio nombre indica, nos ayuda a definir el ADN, los valores de nuestra nueva marca. Se compone de una matriz de doble entrada donde tendremos en cuenta tanto los atributos racionales como los sentimientos y emociones que queremos que se asocien a la marca.
-              </p>
+      <p className="mb-6">
+        Si hay mucho en juego o no consigues un resultado que te satisface de forma interna y/o vas a competir contra grandes nombres, te aconsejamos confíes el proceso en una agencia de branding o en una agencia de marketing con conocimientos en naming.
+      </p>
 
-              <div className="grid md:grid-cols-2 gap-6 mb-8">
-                <div className="bg-green-50 border border-green-200 rounded-lg p-6">
-                  <h4 className="text-lg font-semibold mb-3 text-black">🏢 B2B - Enfoque racional</h4>
-                  <p className="text-black text-sm">
-                    En actividades B2B, el foco está en los atributos racionales ya que la motivación de compra está más relacionada con el producto/servicio y la profesionalidad del proveedor.
-                  </p>
-                </div>
+      <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6 mb-8">
+        <h3 className="text-xl font-semibold mb-4 text-yellow-800">⚠️ Cuándo necesitas ayuda profesional</h3>
+        <ul className="space-y-2 text-yellow-700">
+          <li>• Inversión alta en el proyecto (&gt;50.000€)</li>
+          <li>• Competencia con marcas establecidas</li>
+          <li>• Necesidad de protección legal compleja</li>
+          <li>• Expansión internacional planificada</li>
+          <li>• Contactar con agencias especializadas en branding con experiencia internacional</li>
+        </ul>
+      </div>
 
-                <div className="bg-orange-50 border border-orange-200 rounded-lg p-6">
-                  <h4 className="text-lg font-semibold mb-3 text-orange-800">👥 B2C - Enfoque emocional</h4>
-                  <p className="text-orange-700 text-sm">
-                    En actividades B2C se suele poner mayor foco en las emociones dado que existe mayor deseo de pertenencia y asociación a los valores de la marca.
-                  </p>
-                </div>
-              </div>
+      <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-8">
+        <h3 className="text-xl font-semibold mb-4 text-gray-800">💡 Beneficios de trabajar con profesionales</h3>
+        <div className="grid md:grid-cols-2 gap-4">
+          <ul className="space-y-2 text-gray-700">
+            <li>✅ Experiencia en validación legal</li>
+            <li>✅ Metodologías probadas</li>
+            <li>✅ Perspectiva externa objetiva</li>
+            <li>✅ Acceso a herramientas especializadas</li>
+          </ul>
+          <ul className="space-y-2 text-gray-700">
+            <li>✅ Conocimiento de tendencias</li>
+            <li>✅ Network de colaboradores</li>
+            <li>✅ Garantías y seguimiento</li>
+            <li>✅ Estrategia integral de marca</li>
+          </ul>
+        </div>
+      </div>
 
-              <h3 className="text-2xl font-semibold mb-4 mt-8 text-foreground">
-                3. Territorio de marca y mood board
-              </h3>
+      <div className="bg-gradient-to-r from-indigo-50 to-indigo-100 border border-indigo-200 rounded-lg p-6 mb-8">
+        <h3 className="text-xl font-semibold mb-4 text-indigo-800">🚀 ¿Listo para crear tu marca?</h3>
+        <p className="text-indigo-700 mb-4">
+          El naming es solo el primer paso en la construcción de una marca sólida. Una vez definido el nombre, necesitarás desarrollar la identidad visual, el tono de comunicación y la estrategia de posicionamiento.
+        </p>
+        <p className="text-indigo-700">
+          Un proceso de branding completo incluye el naming, pero va mucho más allá: logotipo, paleta de colores, tipografías, aplicaciones, guidelines, y estrategia de comunicación.
+        </p>
+      </div>
 
-              <p className="mb-6">
-                Sin duda una de las <strong>técnicas de naming</strong> preferidas por parte de marketers y publicistas porque se trata de un juego creativo que tiene como objetivo crear la personalidad de la marca mediante un mural con múltiples imágenes en forma de collage, también conocido como Mood Board en el mundo del branding.
-              </p>
-
-              <div className="bg-purple-50 border border-purple-200 rounded-lg p-6 mb-8">
-                <h4 className="text-lg font-semibold mb-3 text-purple-800">🎨 Elementos del mood board:</h4>
-                <p className="text-purple-700 text-sm mb-3">
-                  La idea es crear una representación visual con:
-                </p>
-                <ul className="text-purple-700 text-sm space-y-1">
-                  <li>• Situaciones y objetos representativos</li>
-                  <li>• Carteles y palabras clave</li>
-                  <li>• Personajes y lugares</li>
-                  <li>• Alimentos y elementos sensoriales</li>
-                  <li>• Cualquier cosa que nos haga reconocer la marca por asociación</li>
-                </ul>
-              </div>
-
-              <h3 className="text-2xl font-semibold mb-4 mt-8 text-foreground">
-                4. Seis sombreros para pensar en naming
-              </h3>
-
-              <p className="mb-6">
-                Esta es una metodología creativa conocida también como los seis sombreros de Bono. Es una técnica idónea para la resolución de problemas de manera imaginativa y está indicada en proyectos o marcas que quieren ser realmente muy disruptivas y que requieren de un gran proceso creativo.
-              </p>
-
-              <p className="mb-8">
-                Bono plantea que el pensamiento lateral puede ser desarrollado a través del entrenamiento de técnicas que permitan la apertura a un mayor número de soluciones posibles, y a mirar un mismo objeto desde distintos puntos de vista.
-              </p>
-
-              <h3 className="text-2xl font-semibold mb-4 mt-8 text-foreground">
-                5. Panel de discusión con público objetivo
-              </h3>
-
-              <p className="mb-6">
-                Se trata de un método de investigación cualitativa que sirve para conocer la opinión de un grupo de personas integrantes del público objetivo sobre los nombres que se están barajando. Normalmente se crea cuando ya disponemos de una selección de nombres inicial e incluso diferentes identidades gráficas.
-              </p>
-
-              <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6 mb-8">
-                <h4 className="text-lg font-semibold mb-3 text-yellow-800">📊 Beneficios del panel de discusión:</h4>
-                <ul className="text-yellow-700 text-sm space-y-2">
-                  <li>• Ayuda en el proceso de naming</li>
-                  <li>• Detecta desventajas y oportunidades no vistas</li>
-                  <li>• Evalúa aspectos racionales y emocionales</li>
-                  <li>• Proporciona feedback directo del target</li>
-                </ul>
-              </div>
-
-              <h3 className="text-2xl font-semibold mb-4 mt-8 text-foreground">
-                6. Brainstorming: la técnica de naming más popular
-              </h3>
-
-              <p className="mb-6">
-                La más sencilla de las <strong>técnicas de naming</strong> que aquí te proponemos y sin duda la más utilizada. Te proponemos el siguiente proceso estructurado:
-              </p>
-
-              <div className="space-y-6 mb-8">
-                <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
-                  <h4 className="text-lg font-semibold mb-3 text-gray-800">🚀 Fase 1: Generación inicial</h4>
-                  <p className="text-gray-600 text-sm">
-                    Reunir al equipo en un momento distendido. El objetivo es conseguir una lista lo más extensa posible de nombres. Aunque parezca extraño, en muchas ocasiones ya en esta fase suena uno de los mejores nombres.
-                  </p>
-                </div>
-
-                <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
-                  <h4 className="text-lg font-semibold mb-3 text-gray-800">📂 Fase 2: Categorización</h4>
-                  <p className="text-gray-600 text-sm">
-                    Dividir la lista en diferentes categorías según los tipos de nombres: racionales, emocionales, asociados a ventajas, imaginativos, con prefijos, etc.
-                  </p>
-                </div>
-
-                <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
-                  <h4 className="text-lg font-semibold mb-3 text-gray-800">💡 Fase 3: Expansión creativa</h4>
-                  <p className="text-gray-600 text-sm">
-                    Segunda sesión de brainstorming para ofrecer más nombres de cada categoría jugando con prefijos, sufijos, pronunciaciones, idiomas y todo lo que se ocurra.
-                  </p>
-                </div>
-
-                <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
-                  <h4 className="text-lg font-semibold mb-3 text-gray-800">🔍 Fase 4: Filtrado</h4>
-                  <p className="text-gray-600 text-sm">
-                    Ir descartando y seleccionando aquellos que más nos gustan hasta tener una pequeña lista de 3 a 5 nombres, no más.
-                  </p>
-                </div>
-
-                <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
-                  <h4 className="text-lg font-semibold mb-3 text-gray-800">🏆 Fase 5: Selección final</h4>
-                  <p className="text-gray-600 text-sm mb-3">
-                    Métodos para el desempate:
-                  </p>
-                  <ul className="text-gray-600 text-sm space-y-1">
-                    <li>• Votación entre las personas involucradas</li>
-                    <li>• Lista de pros y contras de cada nombre</li>
-                    <li>• Encuesta al círculo más cercano</li>
-                    <li>• Encuesta en internet o redes sociales</li>
-                  </ul>
-                </div>
-              </div>
-
-              <h2 className="text-3xl font-bold mb-6 mt-12 text-foreground">
-                Cuándo confiar el proceso a una agencia de branding
-              </h2>
-
-              <p className="mb-6">
-                Si hay mucho en juego o no consigues un resultado que te satisface de forma interna y/o vas a competir contra grandes nombres, te aconsejamos confíes el proceso en una agencia de branding o en una agencia de marketing con conocimientos en naming.
-              </p>
-
-              <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-8">
-                <h3 className="text-xl font-semibold mb-4 text-gray-800">🎯 Opciones para localizar tu agencia ideal:</h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li>• Contactar con agencias especializadas en branding con experiencia internacional</li>
-                  <li>• Buscar en Google Maps agencias locales si la cercanía es importante</li>
-                  <li>• Solicitar presupuestos en plataformas de agencias que presentan varias propuestas</li>
-                  <li>• <Link to="/contacto" className="text-primary hover:underline">Contactar con nosotros</Link>, que como puedes ver tenemos los conocimientos necesarios y hemos creado marcas para pymes con gran éxito</li>
-                </ul>
-              </div>
-
-              <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8">
-                <h3 className="text-xl font-semibold mb-4 text-blue-800">📋 Briefing para proceso de naming profesional</h3>
-                <p className="text-blue-700 mb-4">
-                  Un buen briefing para un proceso de naming debe incluir:
-                </p>
-                <ul className="text-blue-700 space-y-2 text-sm">
-                  <li>• Presentación personal del emprendedor o emprendedores</li>
-                  <li>• Motivaciones para la creación de la empresa</li>
-                  <li>• Amplia descripción de la empresa, producto o servicio</li>
-                  <li>• Misión, propósito y/o propuesta de valor</li>
-                  <li>• Principales características y ventajas</li>
-                  <li>• <Link to="/blog/perfil-cliente-ideal" className="text-blue-600 underline hover:text-blue-800">Buyer persona</Link> al que te diriges</li>
-                  <li>• Ámbito: local, nacional o internacional</li>
-                  <li>• Principales competidores</li>
-                </ul>
-              </div>
-
-              <div className="bg-accent/10 border-l-4 border-accent p-6 my-8">
-                <p className="text-lg font-medium text-accent-foreground">
-                  Es muy importante destacar que el proceso de naming es un trabajo en equipo. Tanto la empresa como la agencia deben trabajar codo con codo para conseguir el mejor resultado.
-                </p>
-              </div>
-
-              <h2 className="text-3xl font-bold mb-6 mt-12 text-foreground">
-                Herramienta gratuita para técnicas de naming
-              </h2>
-
-              <p className="mb-6">
-                El paso siguiente es lograr consistencia de marca a partir del brandbook o manual de identidad corporativa incorporando la esencia de la marca hacia la <Link to="/estrategia-contenidos" className="text-primary hover:underline">estrategia de marketing y contenidos</Link>.
-              </p>
-
-              <div className="bg-gradient-to-r from-green-50 to-green-100 border border-green-200 rounded-lg p-6 mb-8">
-                <h3 className="text-xl font-semibold mb-4 text-green-800">🎁 Regalo especial</h3>
-                <p className="text-green-700 mb-4">
-                  Si has llegado hasta aquí realmente quieres el mejor nombre y queremos darte un regalo. Existe una herramienta que puede ayudarte a generar propuestas de nombres que están alineadas con tu estrategia y el análisis propuesto anteriormente.
-                </p>
-                <p className="text-green-700">
-                  Tan solo tienes que entrar en <a href="https://namify.tech/" className="text-green-600 underline hover:text-green-800" target="_blank" rel="noopener noreferrer">Namify</a> e introducir tu producto, servicio o nombres finalistas para que logres ver en pantalla EL NOMBRE DE TU MARCA.
-                </p>
-              </div>
-            </div>
-
-            {/* CTA Section */}
-            <section className="mb-12">
-              <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl p-8 border border-gray-200">
-                <h3 className="text-2xl font-bold mb-4 text-center text-gray-900">
-                  ¿Necesitas ayuda profesional con tu proceso de branding y naming?
-                </h3>
-                <p className="text-lg text-gray-700 mb-6 text-center max-w-4xl mx-auto">
-                  En Hayas te ayudamos a <strong>crear tu identidad de marca completa</strong> con un enfoque estratégico. Aplicamos las mejores técnicas de naming, desarrollamos tu ADN de marca y creamos una identidad corporativa que conecte con tu audiencia.
-                </p>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                  <Button asChild className="gradient-primary text-white px-8 py-3">
-                    <Link to="/creacion-marca">
-                      🎨 Crear mi marca
-                    </Link>
-                  </Button>
-                  <Button asChild variant="outline" className="px-8 py-3 border-gray-300 text-gray-700 hover:bg-gray-50">
-                    <Link to="/contacto">
-                      💬 Consulta gratuita
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-            </section>
-
-            {/* Related Articles */}
-            <section>
-              <h3 className="text-2xl font-bold mb-8 text-center">Artículos relacionados</h3>
-              <div className="grid md:grid-cols-3 gap-8">
-                <article className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow">
-                  <OptimizedImage 
-                    src="/src/assets/branding-hero-online-offline.jpg" 
-                    alt="Identidad corporativa para restaurantes" 
-                    className="w-full h-48 object-cover" 
-                    width={400} 
-                    height={200} 
-                  />
-                  <div className="p-6">
-                    <h4 className="text-lg font-semibold mb-2">
-                      <Link to="/creacion-marca" className="text-gray-900 hover:text-primary transition-colors">
-                        Identidad corporativa para restaurantes
-                      </Link>
-                    </h4>
-                    <p className="text-gray-600 text-sm">
-                      Descubre cómo crear una identidad visual única para tu restaurante que atraiga más clientes.
-                    </p>
-                  </div>
-                </article>
-
-                <article className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow">
-                  <OptimizedImage 
-                    src="/src/assets/perfil-cliente-ideal-hero.jpg" 
-                    alt="Perfil de cliente ideal" 
-                    className="w-full h-48 object-cover" 
-                    width={400} 
-                    height={200} 
-                  />
-                  <div className="p-6">
-                    <h4 className="text-lg font-semibold mb-2">
-                      <Link to="/blog/perfil-cliente-ideal" className="text-gray-900 hover:text-primary transition-colors">
-                        Cómo definir tu perfil de cliente ideal
-                      </Link>
-                    </h4>
-                    <p className="text-gray-600 text-sm">
-                      Aprende a identificar y definir tu buyer persona para optimizar tu estrategia de marca.
-                    </p>
-                  </div>
-                </article>
-
-                <article className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow">
-                  <OptimizedImage 
-                    src="/src/assets/estrategia-marketing-contenidos-hero.jpg" 
-                    alt="Estrategia de contenidos" 
-                    className="w-full h-48 object-cover" 
-                    width={400} 
-                    height={200} 
-                  />
-                  <div className="p-6">
-                    <h4 className="text-lg font-semibold mb-2">
-                      <Link to="/estrategia-contenidos" className="text-gray-900 hover:text-primary transition-colors">
-                        Estrategia de contenidos para marcas
-                      </Link>
-                    </h4>
-                    <p className="text-gray-600 text-sm">
-                      Desarrolla una estrategia de contenidos que fortalezca tu posicionamiento de marca.
-                    </p>
-                  </div>
-                </article>
-              </div>
-            </section>
-          </div>
-        </article>
-      </main>
-
-      <Footer />
-    </>
+      <div className="text-center mt-16">
+        <p className="text-lg text-muted-foreground mb-6">
+          ¿Necesitas ayuda profesional con tu proceso de branding y naming? <Link to="/creacion-marca" className="text-primary hover:underline font-medium">Descubre nuestro servicio completo</Link> y lleva tu marca al siguiente nivel.
+        </p>
+      </div>
+    </BlogPostTemplate>
   );
 };
 

@@ -1,10 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import Seo from '@/components/Seo';
 import OptimizedImage from '@/components/OptimizedImage';
 import ArticleBreadcrumbs from './ArticleBreadcrumbs';
 import ArticleUtilitySection from './ArticleUtilitySection';
+import ArticleFAQSection from './ArticleFAQSection';
 import NewsletterSubscription from './NewsletterSubscription';
 import { Badge } from '@/components/ui/badge';
 import { Calendar, Clock, User } from 'lucide-react';
@@ -20,6 +22,10 @@ interface BlogPostMetadata {
   canonical: string;
   ogImage: string;
   structuredData: Record<string, any>;
+  metaTitle?: string;
+  metaDescription?: string;
+  mainKeyword?: string;
+  secondaryKeywords?: string[];
 }
 
 interface BlogPostTemplateProps {
@@ -31,22 +37,52 @@ interface BlogPostTemplateProps {
     height?: number;
   };
   children: React.ReactNode;
+  faqs?: Array<{
+    question: string;
+    answer: string;
+  }>;
+  relatedServices?: Array<{
+    title: string;
+    description: string;
+    link: string;
+  }>;
 }
 
 const BlogPostTemplate: React.FC<BlogPostTemplateProps> = ({
   metadata,
   heroImage,
-  children
+  children,
+  faqs,
+  relatedServices
 }) => {
   const currentUrl = `https://hayasmarketing.com${metadata.canonical}`;
+
+  // Generar schema de FAQ si hay FAQs
+  const faqSchema = faqs && faqs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  } : null;
+
+  // Combinar structured data con FAQ schema
+  const combinedStructuredData = faqSchema 
+    ? [metadata.structuredData, faqSchema]
+    : metadata.structuredData;
 
   return (
     <>
       <Seo 
-        title={metadata.title}
-        description={metadata.description}
+        title={metadata.metaTitle || metadata.title}
+        description={metadata.metaDescription || metadata.description}
         canonical={metadata.canonical}
-        structuredData={metadata.structuredData}
+        structuredData={combinedStructuredData}
         ogImage={metadata.ogImage}
       />
       
@@ -110,9 +146,41 @@ const BlogPostTemplate: React.FC<BlogPostTemplateProps> = ({
             </header>
 
             {/* Contenido del artículo */}
-            <article className="prose prose-lg max-w-none prose-headings:text-foreground prose-p:text-muted-foreground prose-a:text-primary prose-strong:text-foreground">
+            <article className="prose prose-lg max-w-none prose-headings:text-foreground prose-p:text-muted-foreground prose-a:text-primary prose-strong:text-foreground prose-ul:text-muted-foreground prose-ol:text-muted-foreground prose-li:text-muted-foreground">
               {children}
             </article>
+
+            {/* FAQ Section */}
+            {faqs && faqs.length > 0 && (
+              <div className="mt-16">
+                <ArticleFAQSection faqs={faqs} />
+              </div>
+            )}
+
+            {/* CTA Section */}
+            {relatedServices && relatedServices.length > 0 && (
+              <section className="mt-16 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-xl p-8 border border-primary/10">
+                <div className="text-center mb-8">
+                  <h3 className="text-2xl font-bold mb-4 text-foreground">
+                    ¿Necesitas ayuda implementando estas estrategias?
+                  </h3>
+                  <p className="text-muted-foreground max-w-2xl mx-auto">
+                    Nuestro equipo puede ayudarte a aplicar todo lo que has aprendido en este artículo
+                  </p>
+                </div>
+                <div className="grid md:grid-cols-2 gap-6">
+                  {relatedServices.map((service, index) => (
+                    <div key={index} className="bg-background/80 backdrop-blur-sm rounded-lg p-6 border border-border/50">
+                      <h4 className="font-semibold mb-2 text-foreground">{service.title}</h4>
+                      <p className="text-sm text-muted-foreground mb-4">{service.description}</p>
+                      <Link to={service.link} className="inline-flex items-center text-primary hover:text-primary/80 font-medium text-sm">
+                        Saber más →
+                      </Link>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
           </div>
         </main>
 

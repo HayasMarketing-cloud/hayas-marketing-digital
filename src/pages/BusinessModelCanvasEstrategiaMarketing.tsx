@@ -9,7 +9,9 @@ import heroImage from '@/assets/business-model-canvas-estrategia-marketing-hero.
 const BusinessModelCanvasEstrategiaMarketing = () => {
   const metadata = {
     title: "Business Model Canvas para crear tu estrategia de marketing",
+    metaTitle: "Business Model Canvas Marketing - Estrategia Hayas Marketing",
     description: "Aprende a usar el Business Model Canvas para crear una estrategia de marketing efectiva. Guía práctica con ejemplos, herramientas y casos de uso reales para optimizar tu propuesta de valor.",
+    metaDescription: "✅ Domina el Business Model Canvas para marketing. Guía práctica con ejemplos reales, herramientas y casos de uso. Optimiza tu propuesta de valor hoy.",
     date: "2025-01-17",
     readTime: "16 min",
     category: "Marketing Digital",
@@ -17,6 +19,8 @@ const BusinessModelCanvasEstrategiaMarketing = () => {
     tags: ["Business Model Canvas", "Marketing Digital", "Estrategia", "Modelo de Negocio", "Canvas"],
     canonical: "/blog/business-model-canvas-para-crear-tu-estrategia-de-marketing",
     ogImage: heroImage,
+    mainKeyword: "business model canvas marketing",
+    secondaryKeywords: ["estrategia marketing", "modelo de negocio", "canvas marketing", "propuesta de valor"],
     structuredData: {
       "@context": "https://schema.org",
       "@type": "Article",
@@ -91,14 +95,43 @@ const BusinessModelCanvasEstrategiaMarketing = () => {
       answer: "El Business Model Canvas abarca todo el modelo de negocio (desde la propuesta de valor hasta la estructura de costos), mientras que el Marketing Model Canvas se enfoca específicamente en los aspectos de marketing. El Business Model Canvas es más amplio y estratégico, mientras que el Marketing Canvas es más táctico y específico para actividades de marketing."
     },
     {
+      question: "¿Cuánto tiempo lleva completar un Business Model Canvas?",
+      answer: "Un primer borrador se puede completar en 2-4 horas con tu equipo. Sin embargo, refinarlo y validarlo puede tomar varias semanas. La clave es empezar con una versión inicial y luego iterar basándose en feedback del mercado y datos reales."
+    },
+    {
       question: "¿Puedo usar IA para crear mi Business Model Canvas?",
       answer: "Sí, existen herramientas de IA que pueden ayudarte a generar ideas para cada bloque del canvas, analizar la competencia, identificar segmentos de clientes potenciales y sugerir canales de distribución. Sin embargo, la IA debe complementar tu conocimiento del mercado y visión estratégica, no reemplazarla completamente."
+    },
+    {
+      question: "¿El Business Model Canvas funciona para empresas de servicios?",
+      answer: "Absolutamente. El Business Model Canvas es especialmente útil para empresas de servicios porque ayuda a definir claramente la propuesta de valor intangible, identificar los recursos clave (como conocimiento y relaciones) y diseñar la experiencia del cliente de manera sistemática."
+    }
+  ];
+
+  const relatedServices = [
+    {
+      title: "Consultoría Estratégica y Analítica",
+      description: "Te ayudamos a diseñar y validar tu modelo de negocio con metodologías probadas",
+      link: "/consultoria-estrategica-analitica"
+    },
+    {
+      title: "Estrategia de Marketing Digital",
+      description: "Desarrollamos estrategias de marketing alineadas con tu modelo de negocio",
+      link: "/estrategia-contenidos"
     }
   ];
 
   return (
     <BlogPostTemplate 
       metadata={metadata}
+      heroImage={{
+        src: heroImage,
+        alt: "Business Model Canvas para estrategia de marketing - metodología visual y práctica",
+        width: 1200,
+        height: 675
+      }}
+      faqs={faqs}
+      relatedServices={relatedServices}
     >
       {/* Caja destacada inicial */}
       <div className="bg-gradient-to-r from-blue-50 to-blue-100 border border-blue-200 rounded-lg p-6 mb-8">

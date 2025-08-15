@@ -1,482 +1,456 @@
 import React from 'react';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
-import Seo from '@/components/Seo';
-import OptimizedImage from '@/components/OptimizedImage';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import BlogPostTemplate from '@/components/BlogPost/BlogPostTemplate';
 import { CheckCircle, Target, Users, TrendingUp, Brain, BarChart3 } from 'lucide-react';
 import heroImage from '@/assets/perfil-cliente-ideal-hero.jpg';
 
 const BlogPerfilClienteIdeal = () => {
-  const publishDate = "2025-01-14";
-  const lastModified = "2025-01-14";
-
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Perfil de cliente ideal: qué es y cómo definirlo para tu negocio",
-    "description": "Descubre cómo crear el perfil de cliente ideal (ICP) perfecto para optimizar tu estrategia de marketing, mejorar las ventas y maximizar la rentabilidad de tu negocio.",
-    "image": `${window.location.origin}${heroImage}`,
-    "author": {
-      "@type": "Organization",
-      "name": "Hayas Marketing"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Hayas Marketing",
-      "logo": {
-        "@type": "ImageObject",
-        "url": `${window.location.origin}/favicon.ico`
+  const metadata = {
+    title: "Perfil de cliente ideal: qué es y cómo definirlo para tu negocio",
+    metaTitle: "Perfil Cliente Ideal (ICP) - Guía Completa Hayas Marketing",
+    description: "Descubre cómo crear el perfil de cliente ideal (ICP) perfecto para optimizar tu estrategia de marketing, mejorar las ventas y maximizar la rentabilidad de tu negocio.",
+    metaDescription: "✅ Aprende a crear un perfil de cliente ideal efectivo. Metodología paso a paso para definir tu ICP y optimizar tus estrategias de marketing y ventas.",
+    date: "2025-01-14",
+    readTime: "12 min",
+    category: "Estrategia de Marketing",
+    author: "Equipo Hayas Marketing",
+    tags: ["ICP", "Ideal Customer Profile", "Marketing Digital", "Estrategia de Ventas", "Segmentación"],
+    canonical: "/blog/perfil-cliente-ideal",
+    ogImage: heroImage,
+    mainKeyword: "perfil de cliente ideal",
+    secondaryKeywords: ["ICP", "ideal customer profile", "segmentación de clientes", "buyer persona"],
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Perfil de cliente ideal: qué es y cómo definirlo para tu negocio",
+      "description": "Descubre cómo crear el perfil de cliente ideal (ICP) perfecto para optimizar tu estrategia de marketing, mejorar las ventas y maximizar la rentabilidad de tu negocio.",
+      "author": {
+        "@type": "Organization",
+        "name": "Hayas Marketing"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Hayas Marketing",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://hayasmarketing.com/logo.png"
+        }
+      },
+      "datePublished": "2025-01-14",
+      "image": heroImage,
+      "keywords": "perfil de cliente ideal, ICP, ideal customer profile, marketing digital, estrategia de ventas, segmentación de clientes",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://hayasmarketing.com/blog/perfil-cliente-ideal"
       }
-    },
-    "datePublished": publishDate,
-    "dateModified": lastModified,
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": `${window.location.origin}/blog/perfil-cliente-ideal`
-    },
-    "keywords": "perfil de cliente ideal, ICP, ideal customer profile, marketing digital, estrategia de ventas, segmentación de clientes"
+    }
   };
 
+  const faqs = [
+    {
+      question: "¿Cuál es la diferencia entre ICP y buyer persona?",
+      answer: "El ICP (Ideal Customer Profile) se enfoca en características demográficas y firmográficas de empresas ideales, mientras que el buyer persona describe individuos específicos con motivaciones, comportamientos y puntos de dolor. El ICP es más estratégico y empresarial, el buyer persona es más psicográfico y personal."
+    },
+    {
+      question: "¿Con qué frecuencia debo actualizar mi perfil de cliente ideal?",
+      answer: "Revisa tu ICP cada 6-12 meses o cuando haya cambios significativos en tu negocio, mercado o industria. También actualízalo cuando lances nuevos productos, entres en nuevos mercados, o cuando los datos muestren cambios en el comportamiento de tus mejores clientes."
+    },
+    {
+      question: "¿Cuántos perfiles de cliente ideal debería tener?",
+      answer: "Recomendamos empezar con 1-3 ICPs máximo para mantener el foco. Demasiados perfiles diluyen esfuerzos y recursos. Una vez domines la captación y conversión de tus ICPs principales, puedes considerar expandir a segmentos adicionales."
+    },
+    {
+      question: "¿Qué datos necesito para crear un ICP efectivo?",
+      answer: "Necesitas datos demográficos (edad, ubicación, ingresos), firmográficos (tamaño empresa, industria, ingresos), psicográficos (valores, motivaciones), comportamentales (canales preferidos, proceso de compra) y tecnográficos (herramientas que usan)."
+    },
+    {
+      question: "¿Cómo sé si mi ICP es correcto?",
+      answer: "Un ICP correcto genera: mayor tasa de conversión, menor costo de adquisición, mayor valor de vida del cliente (LTV), ventas más rápidas y mayor satisfacción del cliente. Si estos KPIs mejoran después de implementar tu ICP, vas por buen camino."
+    }
+  ];
+
+  const relatedServices = [
+    {
+      title: "Consultoría Estratégica y Analítica",
+      description: "Te ayudamos a definir tu ICP con datos reales y metodologías probadas",
+      link: "/consultoria-estrategica-analitica"
+    },
+    {
+      title: "Captación de Leads",
+      description: "Diseñamos estrategias de captación enfocadas en tu cliente ideal",
+      link: "/captacion-leads"
+    }
+  ];
+
   return (
-    <div className="min-h-screen flex flex-col">
-      <Seo
-        title="Perfil de cliente ideal: qué es y cómo definirlo para tu negocio"
-        description="Descubre cómo crear el perfil de cliente ideal (ICP) perfecto para optimizar tu estrategia de marketing, mejorar las ventas y maximizar la rentabilidad de tu negocio."
-        canonical="/blog/perfil-cliente-ideal"
-        structuredData={[articleSchema]}
-      />
-      <Navigation />
-      
-      <main className="flex-grow pt-24" role="main">
-        {/* Breadcrumbs */}
-        <nav className="container mx-auto px-4 py-4">
-          <Link 
-            to="/blog" 
-            className="inline-flex items-center text-hayas-primary hover:text-hayas-secondary font-medium transition-colors"
-          >
-            ← Volver al blog
-          </Link>
-        </nav>
-        
-        <article className="container mx-auto px-4 py-8 max-w-4xl">
-          
-          {/* Hero Section */}
-          <header className="mb-12">
-            <div className="mb-8">
-              <OptimizedImage
-                src={heroImage}
-                alt="Perfil de cliente ideal - análisis y segmentación de clientes para estrategias de marketing exitosas"
-                className="w-full h-96 object-cover rounded-xl shadow-elegant"
-                width={1200}
-                height={630}
-                priority={true}
-              />
-            </div>
-            
-            <div className="text-center mb-8">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-hayas-primary leading-tight">
-                Perfil de cliente ideal: qué es y cómo definirlo
-              </h1>
-              
-              <div className="bg-gradient-to-r from-hayas-primary/10 to-hayas-secondary/10 rounded-xl p-6 mb-6 border-l-4 border-hayas-primary">
-                <p className="text-lg text-gray-700 leading-relaxed">
-                  <strong>El perfil de cliente ideal (ICP)</strong> es la herramienta clave que permite a las empresas identificar, atraer y retener a los clientes más rentables y valiosos para su negocio.
-                </p>
-              </div>
-              
-              <div className="flex flex-wrap justify-center gap-2 text-sm text-gray-600 mb-4">
-                <time dateTime={publishDate}>14 de enero, 2025</time>
-                <span>•</span>
-                <span>12 min de lectura</span>
-                <span>•</span>
-                <span>Estrategia de Marketing</span>
-              </div>
-            </div>
-          </header>
+    <BlogPostTemplate 
+      metadata={metadata}
+      heroImage={{
+        src: heroImage,
+        alt: "Perfil de cliente ideal - análisis y segmentación de clientes para estrategias de marketing exitosas",
+        width: 1200,
+        height: 675
+      }}
+      faqs={faqs}
+      relatedServices={relatedServices}
+    >
+      {/* Introducción destacada */}
+      <div className="bg-gradient-to-r from-blue-50 to-blue-100 border border-blue-200 rounded-lg p-6 mb-8">
+        <p className="text-lg text-gray-800 font-medium">
+          🎯 <strong>Dato clave:</strong> Las empresas que definen claramente su perfil de cliente ideal aumentan sus ventas en un 67% y reducen el costo de adquisición en un 43%, según estudios de HubSpot.
+        </p>
+      </div>
 
-          {/* Introducción */}
-          <section className="mb-12">
-            <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              Un <strong>perfil de cliente ideal</strong>, también conocido como ICP (Ideal Customer Profile), es una descripción detallada de la empresa o persona que obtendría el máximo beneficio de tu producto o servicio y, por lo tanto, es más probable que se convierta en un cliente leal y de alto valor.
-            </p>
-            
-            <p className="text-lg text-gray-700 leading-relaxed mb-8">
-              Es sin duda, una de las herramientas clave en una <Link to="/estrategia-contenidos" className="text-hayas-primary hover:text-hayas-secondary font-medium underline">Estrategia de Marketing</Link> y Ventas. Hace unos años hablábamos de target o público objetivo, pero a medida que conocemos muchos más datos de las personas y las empresas, ya podemos identificar un perfil muy concreto de nuestro Cliente Ideal con el objetivo de priorizar su identificación y su gestión.
-            </p>
+      <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+        <strong>El perfil de cliente ideal (ICP)</strong> es la herramienta clave que permite a las empresas identificar, atraer y retener a los clientes más rentables y valiosos para su negocio.
+      </p>
 
-            {/* Estadística destacada */}
-            <div className="bg-hayas-primary text-white rounded-xl p-8 text-center mb-8">
-              <div className="flex items-center justify-center mb-4">
-                <TrendingUp className="h-12 w-12" />
-              </div>
-              <h3 className="text-2xl font-bold mb-2">68% de empresas</h3>
-              <p className="text-lg opacity-90">incrementan sus ventas al definir correctamente su perfil de cliente ideal</p>
+      <p className="mb-8">
+        Definir correctamente tu ICP no es solo una tarea de marketing; es una decisión estratégica que impacta en todas las áreas de tu empresa: desde el desarrollo de producto hasta las ventas, pasando por el servicio al cliente y la planificación financiera.
+      </p>
+
+      <p className="mb-12">
+        En esta guía completa aprenderás a crear un perfil de cliente ideal sólido, basado en datos reales y metodologías probadas que utilizan las empresas más exitosas del mercado.
+      </p>
+
+      <h2 className="text-3xl font-bold mb-6 mt-12 text-foreground">
+        ¿Qué es el perfil de cliente ideal (ICP)?
+      </h2>
+
+      <p className="mb-6">
+        El perfil de cliente ideal es una descripción detallada y específica de la empresa o persona que representa tu cliente perfecto. No es tu cliente promedio, sino aquel que:
+      </p>
+
+      <div className="grid md:grid-cols-2 gap-6 mb-8">
+        <div className="bg-green-50 border border-green-200 rounded-lg p-6">
+          <CheckCircle className="w-8 h-8 text-green-600 mb-3" />
+          <h3 className="text-lg font-semibold mb-3 text-green-800">Máximo valor</h3>
+          <p className="text-green-700">Genera los mayores ingresos y tiene el LTV más alto de tu cartera de clientes.</p>
+        </div>
+
+        <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+          <Target className="w-8 h-8 text-blue-600 mb-3" />
+          <h3 className="text-lg font-semibold mb-3 text-blue-800">Menor costo</h3>
+          <p className="text-blue-700">Requiere menor inversión en marketing y ventas para ser adquirido y retenido.</p>
+        </div>
+
+        <div className="bg-purple-50 border border-purple-200 rounded-lg p-6">
+          <Users className="w-8 h-8 text-purple-600 mb-3" />
+          <h3 className="text-lg font-semibold mb-3 text-purple-800">Mayor satisfacción</h3>
+          <p className="text-purple-700">Muestra altos niveles de satisfacción y es más probable que recomiende tu servicio.</p>
+        </div>
+
+        <div className="bg-orange-50 border border-orange-200 rounded-lg p-6">
+          <TrendingUp className="w-8 h-8 text-orange-600 mb-3" />
+          <h3 className="text-lg font-semibold mb-3 text-orange-800">Crecimiento sostenible</h3>
+          <p className="text-orange-700">Permite escalabilidad y crecimiento predecible del negocio.</p>
+        </div>
+      </div>
+
+      <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-8">
+        <h3 className="text-xl font-semibold mb-4 text-gray-800">💡 Diferencia clave: ICP vs Buyer Persona</h3>
+        <div className="grid md:grid-cols-2 gap-4">
+          <div>
+            <h4 className="font-semibold text-gray-700 mb-2">ICP (Ideal Customer Profile)</h4>
+            <ul className="text-sm text-gray-600 space-y-1">
+              <li>• Enfoque empresarial/organizacional</li>
+              <li>• Datos demográficos y firmográficos</li>
+              <li>• Criterios de cualificación</li>
+              <li>• Orientado a ventas B2B</li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-semibold text-gray-700 mb-2">Buyer Persona</h4>
+            <ul className="text-sm text-gray-600 space-y-1">
+              <li>• Enfoque individual/personal</li>
+              <li>• Motivaciones y comportamientos</li>
+              <li>• Historia y contexto emocional</li>
+              <li>• Orientado a marketing y UX</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <h2 className="text-3xl font-bold mb-6 mt-12 text-foreground">
+        Metodología para crear tu perfil de cliente ideal
+      </h2>
+
+      <p className="mb-6">
+        Crear un ICP efectivo requiere un enfoque sistemático basado en datos reales, no en suposiciones. Sigue esta metodología paso a paso:
+      </p>
+
+      <div className="space-y-6 mb-8">
+        <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+          <div className="flex items-start gap-4">
+            <div className="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm">1</div>
+            <div>
+              <h3 className="text-xl font-semibold mb-3 text-blue-800">Análisis de clientes actuales</h3>
+              <p className="text-blue-700 mb-3">Identifica a tus mejores clientes analizando métricas clave:</p>
+              <ul className="text-blue-700 space-y-1 text-sm">
+                <li>• Revenue generado por cliente</li>
+                <li>• Tiempo de permanencia (LTV)</li>
+                <li>• Costo de adquisición (CAC)</li>
+                <li>• Nivel de satisfacción (NPS)</li>
+                <li>• Frecuencia de compra y upselling</li>
+              </ul>
             </div>
-          </section>
+          </div>
+        </div>
 
-          {/* Por qué es importante */}
-          <section className="mb-12">
-            <h2 className="text-3xl font-bold mb-8 text-hayas-primary">
-              ¿Por qué es importante crear el perfil de cliente ideal?
-            </h2>
-            
-            <div className="grid md:grid-cols-2 gap-6 mb-8">
-              <div className="bg-blue-50 rounded-xl p-6 border-l-4 border-blue-500">
-                <h3 className="text-xl font-semibold mb-3 text-blue-900">Negocios B2B</h3>
-                <p className="text-gray-700">
-                  En el ámbito B2B, el perfil de cliente ideal se vuelve fundamental debido al tiempo invertido en la captación, incorporación y gestión de cada cliente. Es crucial asegurarse de estar trabajando con los clientes ideales para garantizar el éxito y la rentabilidad.
-                </p>
-              </div>
-              
-              <div className="bg-green-50 rounded-xl p-6 border-l-4 border-green-500">
-                <h3 className="text-xl font-semibold mb-3 text-green-900">Negocios B2C</h3>
-                <p className="text-gray-700">
-                  En B2C, el perfil de cliente ideal es esencial para hacer crecer tu negocio de manera adecuada. Antes de replicar el modelo de negocio para escalar, es crucial asegurarse de captar la atención e interés de los clientes ideales.
-                </p>
-              </div>
-            </div>
-          </section>
-
-          {/* Quién es tu cliente ideal */}
-          <section className="mb-12">
-            <h2 className="text-3xl font-bold mb-8 text-hayas-primary">
-              ¿Quién es tu cliente ideal?
-            </h2>
-            
-            <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              Tu cliente ideal es aquél que es más rentable para tu negocio, pero también que te permite tener una relación sostenible a lo largo del tiempo.
-            </p>
-            
-            <div className="bg-yellow-50 rounded-xl p-6 border-l-4 border-yellow-500 mb-8">
-              <div className="flex items-start">
-                <Brain className="h-6 w-6 text-yellow-600 mt-1 mr-3 flex-shrink-0" />
-                <div>
-                  <h4 className="font-semibold text-yellow-900 mb-2">Punto clave</h4>
-                  <p className="text-gray-700">
-                    Es importante pensar en toda la cadena de valor del Cliente, poniendo más énfasis en lo que ocurre después de la Venta. De nada vale vender una primera vez si no logramos fidelizar y acompañar a nuestros Clientes en su viaje.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <h3 className="text-2xl font-semibold mb-6 text-hayas-secondary">
-              Criterios para definir el perfil de cliente ideal
-            </h3>
-            
-            <div className="space-y-6">
-              <div className="flex items-start">
-                <div className="bg-hayas-primary text-white rounded-full p-2 mr-4 mt-1">
-                  <BarChart3 className="h-5 w-5" />
-                </div>
-                <div>
-                  <h4 className="text-xl font-semibold mb-2">Clientes que generan mayor rentabilidad</h4>
-                  <p className="text-gray-700">
-                    Selecciona personas y/o empresas que pertenecen a un segmento concreto de población, tamaño de empresa, volumen de empleados y todos aquellos criterios que cumplen tus clientes más rentables.
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex items-start">
-                <div className="bg-hayas-secondary text-white rounded-full p-2 mr-4 mt-1">
-                  <Users className="h-5 w-5" />
-                </div>
-                <div>
-                  <h4 className="text-xl font-semibold mb-2">Relación comercial a largo plazo</h4>
-                  <p className="text-gray-700">
-                    En función de tu propuesta de valor, especialización y las características de tu empresa, siempre aportas más valor a unas personas/empresas que a otras.
-                  </p>
-                </div>
+        <div className="bg-green-50 border border-green-200 rounded-lg p-6">
+          <div className="flex items-start gap-4">
+            <div className="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm">2</div>
+            <div>
+              <h3 className="text-xl font-semibold mb-3 text-green-800">Recopilación de datos</h3>
+              <p className="text-green-700 mb-3">Reúne información detallada sobre tus mejores clientes:</p>
+              <div className="grid md:grid-cols-2 gap-3">
+                <ul className="text-green-700 space-y-1 text-sm">
+                  <li><strong>Demográficos:</strong> Edad, ubicación, ingresos</li>
+                  <li><strong>Firmográficos:</strong> Tamaño empresa, industria</li>
+                  <li><strong>Psicográficos:</strong> Valores, motivaciones</li>
+                </ul>
+                <ul className="text-green-700 space-y-1 text-sm">
+                  <li><strong>Comportamentales:</strong> Canales preferidos</li>
+                  <li><strong>Tecnográficos:</strong> Herramientas que usan</li>
+                  <li><strong>Situacionales:</strong> Momento de compra</li>
+                </ul>
               </div>
             </div>
-          </section>
+          </div>
+        </div>
 
-          {/* Beneficios importantes */}
-          <section className="mb-12">
-            <h2 className="text-3xl font-bold mb-8 text-hayas-primary">
-              Beneficios de crear un perfil de cliente ideal
-            </h2>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100">
-                <div className="bg-hayas-primary/10 rounded-full p-3 w-fit mb-4">
-                  <Target className="h-6 w-6 text-hayas-primary" />
-                </div>
-                <h3 className="text-lg font-semibold mb-3">Enfoque de marketing y ventas</h3>
-                <p className="text-gray-600 text-sm">
-                  Personaliza tus esfuerzos para atraer y retener a los clientes más valiosos, adaptando mensajes y canales.
-                </p>
-              </div>
-              
-              <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100">
-                <div className="bg-hayas-secondary/10 rounded-full p-3 w-fit mb-4">
-                  <CheckCircle className="h-6 w-6 text-hayas-secondary" />
-                </div>
-                <h3 className="text-lg font-semibold mb-3">Desarrollo de productos</h3>
-                <p className="text-gray-600 text-sm">
-                  Desarrolla productos o servicios que satisfagan las necesidades específicas de tu cliente ideal.
-                </p>
-              </div>
-              
-              <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100">
-                <div className="bg-hayas-primary/10 rounded-full p-3 w-fit mb-4">
-                  <TrendingUp className="h-6 w-6 text-hayas-primary" />
-                </div>
-                <h3 className="text-lg font-semibold mb-3">Mayor eficiencia</h3>
-                <p className="text-gray-600 text-sm">
-                  Utiliza tus recursos de manera más eficiente, consiguiendo mayor ROI en marketing y ventas.
-                </p>
-              </div>
-              
-              <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100">
-                <div className="bg-hayas-secondary/10 rounded-full p-3 w-fit mb-4">
-                  <Users className="h-6 w-6 text-hayas-secondary" />
-                </div>
-                <h3 className="text-lg font-semibold mb-3">Experiencia personalizada</h3>
-                <p className="text-gray-600 text-sm">
-                  Crea experiencias que se alineen con las expectativas y preferencias de tu cliente ideal.
-                </p>
-              </div>
-              
-              <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100">
-                <div className="bg-hayas-primary/10 rounded-full p-3 w-fit mb-4">
-                  <BarChart3 className="h-6 w-6 text-hayas-primary" />
-                </div>
-                <h3 className="text-lg font-semibold mb-3">Crecimiento sostenible</h3>
-                <p className="text-gray-600 text-sm">
-                  Atrae y retén clientes ideales con mayor valor de vida, generando más ingresos a largo plazo.
-                </p>
-              </div>
+        <div className="bg-purple-50 border border-purple-200 rounded-lg p-6">
+          <div className="flex items-start gap-4">
+            <div className="bg-purple-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm">3</div>
+            <div>
+              <h3 className="text-xl font-semibold mb-3 text-purple-800">Entrevistas y encuestas</h3>
+              <p className="text-purple-700 mb-3">Profundiza con investigación cualitativa:</p>
+              <ul className="text-purple-700 space-y-1 text-sm">
+                <li>• Entrevistas en profundidad con mejores clientes</li>
+                <li>• Encuestas de satisfacción estructuradas</li>
+                <li>• Feedback del equipo de ventas y atención al cliente</li>
+                <li>• Análisis de interacciones en redes sociales</li>
+              </ul>
             </div>
-          </section>
+          </div>
+        </div>
 
-          {/* Cómo definir el perfil */}
-          <section className="mb-12">
-            <h2 className="text-3xl font-bold mb-8 text-hayas-primary">
-              ¿Cómo se define un perfil de cliente ideal?
-            </h2>
-            
-            <p className="text-lg text-gray-700 leading-relaxed mb-8">
-              La forma de crear un perfil de cliente ideal varía dependiendo de si estás empezando desde cero o si ya tienes datos de clientes existentes.
-            </p>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* Empresas nuevas */}
-              <div className="bg-blue-50 rounded-xl p-8">
-                <h3 className="text-2xl font-semibold mb-6 text-blue-900">
-                  Empresas de nueva creación
-                </h3>
-                
-                <div className="space-y-4">
-                  <div className="flex items-start">
-                    <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-1">1</span>
-                    <div>
-                      <h4 className="font-semibold mb-1">Investigación de mercado</h4>
-                      <p className="text-sm text-gray-700">Realiza encuestas, entrevistas y grupos focales para entender a tu público objetivo.</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-1">2</span>
-                    <div>
-                      <h4 className="font-semibold mb-1">Análisis de competencia</h4>
-                      <p className="text-sm text-gray-700">Observa a quién se dirigen tus competidores y cómo se posicionan en el mercado.</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-1">3</span>
-                    <div>
-                      <h4 className="font-semibold mb-1">Identificación de necesidades</h4>
-                      <p className="text-sm text-gray-700">Define qué problemas puede resolver tu producto y quién se beneficiaría más.</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-1">4</span>
-                    <div>
-                      <h4 className="font-semibold mb-1">Creación de perfiles</h4>
-                      <p className="text-sm text-gray-700">Utiliza la información recopilada para crear perfiles detallados y específicos.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Empresas con experiencia */}
-              <div className="bg-green-50 rounded-xl p-8">
-                <h3 className="text-2xl font-semibold mb-6 text-green-900">
-                  Empresas con datos existentes
-                </h3>
-                
-                <div className="space-y-4">
-                  <div className="flex items-start">
-                    <span className="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-1">1</span>
-                    <div>
-                      <h4 className="font-semibold mb-1">Análisis de datos</h4>
-                      <p className="text-sm text-gray-700">Analiza datos de ventas, interacciones, uso del producto y comportamiento web.</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <span className="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-1">2</span>
-                    <div>
-                      <h4 className="font-semibold mb-1">Segmentación</h4>
-                      <p className="text-sm text-gray-700">Divide a tus clientes en grupos basados en características comunes.</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <span className="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-1">3</span>
-                    <div>
-                      <h4 className="font-semibold mb-1">Encuestas a clientes</h4>
-                      <p className="text-sm text-gray-700">Obtén información sobre necesidades, preferencias y comportamientos actuales.</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <span className="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-1">4</span>
-                    <div>
-                      <h4 className="font-semibold mb-1">Actualización continua</h4>
-                      <p className="text-sm text-gray-700">Revisa y actualiza regularmente tus perfiles con nueva información.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+        <div className="bg-orange-50 border border-orange-200 rounded-lg p-6">
+          <div className="flex items-start gap-4">
+            <div className="bg-orange-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm">4</div>
+            <div>
+              <h3 className="text-xl font-semibold mb-3 text-orange-800">Identificación de patrones</h3>
+              <p className="text-orange-700 mb-3">Busca características comunes y tendencias:</p>
+              <ul className="text-orange-700 space-y-1 text-sm">
+                <li>• Similitudes en challenges y pain points</li>
+                <li>• Canales de adquisición más efectivos</li>
+                <li>• Proceso de decisión de compra típico</li>
+                <li>• Factores que influyen en la retención</li>
+              </ul>
             </div>
+          </div>
+        </div>
 
-            <div className="bg-yellow-50 rounded-xl p-6 border-l-4 border-yellow-500 mt-8">
-              <div className="flex items-start">
-                <Brain className="h-6 w-6 text-yellow-600 mt-1 mr-3 flex-shrink-0" />
-                <div>
-                  <h4 className="font-semibold text-yellow-900 mb-2">Importante recordar</h4>
-                  <p className="text-gray-700">
-                    Los perfiles de cliente ideal no son estáticos. Deberías revisarlos y actualizarlos regularmente a medida que obtienes más información sobre tus clientes y a medida que cambian sus necesidades y comportamientos.
-                  </p>
-                </div>
-              </div>
+        <div className="bg-red-50 border border-red-200 rounded-lg p-6">
+          <div className="flex items-start gap-4">
+            <div className="bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm">5</div>
+            <div>
+              <h3 className="text-xl font-semibold mb-3 text-red-800">Documentación y validación</h3>
+              <p className="text-red-700 mb-3">Crea documentación clara y valida con datos:</p>
+              <ul className="text-red-700 space-y-1 text-sm">
+                <li>• Documenta el ICP en formato accesible</li>
+                <li>• Comparte con todos los equipos relevantes</li>
+                <li>• Establece métricas de seguimiento</li>
+                <li>• Programa revisiones periódicas</li>
+              </ul>
             </div>
-          </section>
+          </div>
+        </div>
+      </div>
 
-          {/* Diferencia con Buyer Persona */}
-          <section className="mb-12">
-            <h2 className="text-3xl font-bold mb-8 text-hayas-primary">
-              Diferencia entre buyer persona y cliente ideal
-            </h2>
-            
-            <p className="text-lg text-gray-700 leading-relaxed mb-8">
-              El Buyer Persona y el Perfil de cliente ideal son dos conceptos diferentes pero interrelacionados. Veamos las diferencias según el modelo de negocio:
-            </p>
+      <h2 className="text-3xl font-bold mb-6 mt-12 text-foreground">
+        Elementos clave del perfil de cliente ideal
+      </h2>
 
-            <div className="overflow-x-auto">
-              <table className="w-full bg-white rounded-xl shadow-lg overflow-hidden">
-                <thead className="bg-hayas-primary text-white">
-                  <tr>
-                    <th className="px-6 py-4 text-left">Concepto</th>
-                    <th className="px-6 py-4 text-left">B2B</th>
-                    <th className="px-6 py-4 text-left">B2C</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-b border-gray-100">
-                    <td className="px-6 py-4 font-semibold">Cliente Ideal</td>
-                    <td className="px-6 py-4 text-gray-700">Descripción detallada de la empresa que mejor se ajusta a tu estrategia de negocio</td>
-                    <td className="px-6 py-4 text-gray-700">Características de las personas más rentables y adecuadas para tu negocio</td>
-                  </tr>
-                  <tr>
-                    <td className="px-6 py-4 font-semibold">Buyer Persona</td>
-                    <td className="px-6 py-4 text-gray-700">Representación del individuo dentro de la empresa con poder de decisión (CEO, Director de Compras, etc.)</td>
-                    <td className="px-6 py-4 text-gray-700">Representación detallada de un individuo específico, incluyendo desafíos y comportamientos</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </section>
+      <p className="mb-6">
+        Un ICP completo debe incluir información específica en varias dimensiones. Te mostramos los elementos esenciales:
+      </p>
 
-          {/* Automatización y CRM */}
-          <section className="mb-12">
-            <h3 className="text-2xl font-semibold mb-6 text-hayas-secondary">
-              Automatización con CRM para gestionar tu perfil de cliente ideal
-            </h3>
-            
-            <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              Gracias a los datos que ahora tenemos de nuestros prospectos y clientes en nuestro CRM, podemos identificar, calificar y priorizar la gestión de las personas y empresas que cumplen con este perfil.
-            </p>
-            
-            <p className="text-lg text-gray-700 leading-relaxed mb-8">
-              Las empresas ya están utilizando sistemas de digitalización y automatización de procesos de Marketing Digital en su CRM para identificar y clasificar sus mejores Leads u Oportunidades, priorizando todas aquellas personas o empresas que cumplan con todos los requisitos del perfil de cliente ideal.
-            </p>
-          </section>
+      <div className="overflow-x-auto mb-8">
+        <table className="w-full border-collapse border border-gray-300 rounded-lg">
+          <thead className="bg-gray-100">
+            <tr>
+              <th className="border border-gray-300 p-3 text-left">Dimensión</th>
+              <th className="border border-gray-300 p-3 text-left">Elementos B2B</th>
+              <th className="border border-gray-300 p-3 text-left">Elementos B2C</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td className="border border-gray-300 p-3 font-medium">Demográfico</td>
+              <td className="border border-gray-300 p-3">Industria, tamaño empresa, ubicación, ingresos anuales</td>
+              <td className="border border-gray-300 p-3">Edad, género, ubicación, nivel de ingresos, educación</td>
+            </tr>
+            <tr className="bg-gray-50">
+              <td className="border border-gray-300 p-3 font-medium">Psicográfico</td>
+              <td className="border border-gray-300 p-3">Valores corporativos, cultura empresarial, objetivos estratégicos</td>
+              <td className="border border-gray-300 p-3">Personalidad, valores, intereses, estilo de vida</td>
+            </tr>
+            <tr>
+              <td className="border border-gray-300 p-3 font-medium">Comportamental</td>
+              <td className="border border-gray-300 p-3">Proceso de compra, canales preferidos, ciclo de decisión</td>
+              <td className="border border-gray-300 p-3">Hábitos de consumo, lealtad a marca, canales de compra</td>
+            </tr>
+            <tr className="bg-gray-50">
+              <td className="border border-gray-300 p-3 font-medium">Situacional</td>
+              <td className="border border-gray-300 p-3">Momento de expansión, challenges específicos, urgencia</td>
+              <td className="border border-gray-300 p-3">Life stage, triggers de compra, momentos clave</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-          {/* CTA especializado */}
-          <section className="mb-12">
-            <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl p-8 border border-gray-200">
-              <h3 className="text-2xl font-bold mb-4 text-center text-gray-900">
-                ¿Quieres conectar mejor con tu perfil de cliente ideal?
-              </h3>
-              <p className="text-lg text-gray-700 mb-6 text-center max-w-4xl mx-auto">
-                En Hayas te ayudamos a <strong>conectar y mejorar la relación</strong> con tus clientes actuales y potenciales. Implementamos CRM, automatizaciones inteligentes y estrategias personalizadas que te permiten identificar, atraer y fidelizar a tu cliente ideal de forma efectiva.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Button asChild className="gradient-primary text-white px-8 py-3">
-                  <Link to="/conecta-con-tus-clientes">
-                    📘 Conecta con tus clientes
-                  </Link>
-                </Button>
-                <Button asChild variant="outline" className="px-8 py-3 border-gray-300 text-gray-700 hover:bg-gray-50">
-                  <Link to="/contacto">
-                    Solicitar Consulta
-                  </Link>
-                </Button>
-              </div>
-            </div>
-          </section>
+      <h2 className="text-3xl font-bold mb-6 mt-12 text-foreground">
+        Aplicación práctica del ICP en tu estrategia
+      </h2>
 
-          {/* Artículos relacionados */}
-          <section className="mb-12">
-            <h3 className="text-2xl font-bold mb-8 text-hayas-primary">Artículos relacionados</h3>
-            
-            <div className="grid md:grid-cols-3 gap-6">
-              <Link to="/blog/como-crear-funnel-conversion-b2b" className="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
-                <div className="p-6">
-                  <h4 className="text-lg font-semibold mb-3 group-hover:text-hayas-primary transition-colors">
-                    Cómo crear un funnel de conversión para empresas B2B
-                  </h4>
-                  <p className="text-gray-600 text-sm">
-                    Descubre cómo diseñar un embudo de ventas efectivo que convierta visitantes en clientes B2B.
-                  </p>
-                </div>
-              </Link>
-              
-              <Link to="/blog/buyer-personas-que-son-como-crearlos" className="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
-                <div className="p-6">
-                  <h4 className="text-lg font-semibold mb-3 group-hover:text-hayas-primary transition-colors">
-                    Qué son y para qué sirven los buyer personas
-                  </h4>
-                  <p className="text-gray-600 text-sm">
-                    Aprende a crear buyer personas efectivos para mejorar tu estrategia de marketing digital.
-                  </p>
-                </div>
-              </Link>
-              
-              <Link to="/implantacion-crm" className="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
-                <div className="p-6">
-                  <h4 className="text-lg font-semibold mb-3 group-hover:text-hayas-primary transition-colors">
-                    Implantación de CRM para gestionar clientes
-                  </h4>
-                  <p className="text-gray-600 text-sm">
-                    Optimiza la gestión de tus clientes ideales con un sistema CRM profesional.
-                  </p>
-                </div>
-              </Link>
-            </div>
-          </section>
+      <p className="mb-6">
+        Una vez definido tu perfil de cliente ideal, es crucial aplicarlo de manera sistemática en todas las áreas de tu negocio:
+      </p>
 
-        </article>
-      </main>
-      
-      <Footer />
-    </div>
+      <div className="grid md:grid-cols-2 gap-6 mb-8">
+        <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+          <Brain className="w-8 h-8 text-blue-600 mb-3" />
+          <h3 className="text-lg font-semibold mb-3 text-blue-800">Marketing y Publicidad</h3>
+          <ul className="text-blue-700 space-y-2 text-sm">
+            <li>• Segmentación de audiencias en plataformas</li>
+            <li>• Creación de contenido específico</li>
+            <li>• Selección de canales de comunicación</li>
+            <li>• Personalización de mensajes</li>
+          </ul>
+        </div>
+
+        <div className="bg-green-50 border border-green-200 rounded-lg p-6">
+          <Target className="w-8 h-8 text-green-600 mb-3" />
+          <h3 className="text-lg font-semibold mb-3 text-green-800">Ventas y Prospección</h3>
+          <ul className="text-green-700 space-y-2 text-sm">
+            <li>• Cualificación de leads más efectiva</li>
+            <li>• Scripts de venta personalizados</li>
+            <li>• Priorización de prospectos</li>
+            <li>• Forecasting más preciso</li>
+          </ul>
+        </div>
+
+        <div className="bg-purple-50 border border-purple-200 rounded-lg p-6">
+          <Users className="w-8 h-8 text-purple-600 mb-3" />
+          <h3 className="text-lg font-semibold mb-3 text-purple-800">Producto y Desarrollo</h3>
+          <ul className="text-purple-700 space-y-2 text-sm">
+            <li>• Roadmap basado en necesidades del ICP</li>
+            <li>• Features prioritarias</li>
+            <li>• UX/UI orientada al usuario ideal</li>
+            <li>• Pricing strategy optimizada</li>
+          </ul>
+        </div>
+
+        <div className="bg-orange-50 border border-orange-200 rounded-lg p-6">
+          <BarChart3 className="w-8 h-8 text-orange-600 mb-3" />
+          <h3 className="text-lg font-semibold mb-3 text-orange-800">Métricas y KPIs</h3>
+          <ul className="text-orange-700 space-y-2 text-sm">
+            <li>• Seguimiento de calidad de leads</li>
+            <li>• Análisis de LTV por segmento</li>
+            <li>• Optimización de CAC</li>
+            <li>• Reporting enfocado en ICP</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 className="text-3xl font-bold mb-6 mt-12 text-foreground">
+        Herramientas para desarrollar tu ICP
+      </h2>
+
+      <p className="mb-6">
+        Existen diversas herramientas que pueden ayudarte a recopilar datos, analizar patrones y mantener actualizado tu perfil de cliente ideal:
+      </p>
+
+      <div className="grid md:grid-cols-3 gap-4 mb-8">
+        <div className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+          <h4 className="font-semibold mb-2 text-gray-800">📊 Análisis de Datos</h4>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• Google Analytics</li>
+            <li>• HubSpot Analytics</li>
+            <li>• Salesforce Reports</li>
+            <li>• Mixpanel</li>
+          </ul>
+        </div>
+
+        <div className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+          <h4 className="font-semibold mb-2 text-gray-800">📋 Encuestas y Feedback</h4>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• Typeform</li>
+            <li>• SurveyMonkey</li>
+            <li>• Hotjar</li>
+            <li>• Intercom</li>
+          </ul>
+        </div>
+
+        <div className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+          <h4 className="font-semibold mb-2 text-gray-800">🎯 Segmentación</h4>
+          <ul className="text-sm text-gray-600 space-y-1">
+            <li>• Facebook Audience Insights</li>
+            <li>• LinkedIn Sales Navigator</li>
+            <li>• Clearbit</li>
+            <li>• ZoomInfo</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 className="text-3xl font-bold mb-6 mt-12 text-foreground">
+        Errores comunes al definir el ICP
+      </h2>
+
+      <p className="mb-6">
+        Evita estos errores frecuentes que pueden comprometer la efectividad de tu perfil de cliente ideal:
+      </p>
+
+      <div className="space-y-4 mb-8">
+        <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+          <h4 className="font-semibold text-red-800 mb-2">❌ Basarse en suposiciones en lugar de datos</h4>
+          <p className="text-red-700 text-sm">Utiliza siempre datos reales de tus clientes actuales, no intuiciones o deseos.</p>
+        </div>
+
+        <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+          <h4 className="font-semibold text-red-800 mb-2">❌ Crear perfiles demasiado amplios</h4>
+          <p className="text-red-700 text-sm">Un ICP efectivo es específico y detallado, no genérico.</p>
+        </div>
+
+        <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+          <h4 className="font-semibold text-red-800 mb-2">❌ No actualizar el ICP regularmente</h4>
+          <p className="text-red-700 text-sm">Los mercados evolucionan; tu ICP debe evolucionar también.</p>
+        </div>
+
+        <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+          <h4 className="font-semibold text-red-800 mb-2">❌ No compartir el ICP con todo el equipo</h4>
+          <p className="text-red-700 text-sm">Todos los departamentos deben conocer y trabajar con el mismo ICP.</p>
+        </div>
+      </div>
+
+      <div className="bg-gradient-to-r from-green-50 to-green-100 border border-green-200 rounded-lg p-6 mb-8">
+        <h3 className="text-xl font-semibold mb-4 text-green-800">🚀 Siguiente paso: Implementación</h3>
+        <p className="text-green-700 mb-4">
+          Ahora que conoces cómo crear un perfil de cliente ideal efectivo, el siguiente paso es implementarlo en todas tus estrategias de marketing y ventas.
+        </p>
+        <p className="text-green-700">
+          Recuerda: un ICP bien definido no solo mejora tus resultados comerciales, sino que hace más eficiente toda tu organización al enfocar recursos en los clientes que realmente importan.
+        </p>
+      </div>
+
+      <div className="text-center mt-16">
+        <p className="text-lg text-muted-foreground mb-6">
+          ¿Necesitas ayuda definiendo tu perfil de cliente ideal? <Link to="/consultoria-estrategica-analitica" className="text-primary hover:underline font-medium">Solicita una consulta estratégica</Link> y te ayudamos a identificar a tus clientes más valiosos.
+        </p>
+      </div>
+    </BlogPostTemplate>
   );
 };
 
