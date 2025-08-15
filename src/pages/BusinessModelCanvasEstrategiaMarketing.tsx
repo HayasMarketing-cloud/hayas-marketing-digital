@@ -99,12 +99,6 @@ const BusinessModelCanvasEstrategiaMarketing = () => {
   return (
     <BlogPostTemplate 
       metadata={metadata}
-      heroImage={{
-        src: heroImage,
-        alt: "Business Model Canvas para crear tu estrategia de marketing - metodología visual para optimizar modelos de negocio",
-        width: 1200,
-        height: 675
-      }}
     >
       {/* Caja destacada inicial */}
       <div className="bg-gradient-to-r from-blue-50 to-blue-100 border border-blue-200 rounded-lg p-6 mb-8">
@@ -151,11 +145,11 @@ const BusinessModelCanvasEstrategiaMarketing = () => {
         </div>
 
         <div className="bg-green-50 border border-green-200 rounded-lg p-6">
-          <h3 className="text-lg font-semibold mb-3 text-black">💎 Propuesta de valor</h3>
-          <p className="text-black text-sm mb-3">
+          <h3 className="text-lg font-semibold mb-3 text-green-800">💎 Propuesta de valor</h3>
+          <p className="text-green-700 text-sm mb-3">
             El corazón de tu estrategia. Qué problema resuelves y por qué eres diferente.
           </p>
-          <p className="text-xs text-green-700">
+          <p className="text-xs text-green-600">
             <strong>Impacto en marketing:</strong> Mensajes clave, diferenciación, contenido de valor, storytelling.
           </p>
         </div>
@@ -234,8 +228,8 @@ const BusinessModelCanvasEstrategiaMarketing = () => {
             Contrasta cada bloque del canvas con datos reales: analytics, encuestas, entrevistas a clientes, análisis de competencia.
           </p>
           <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-            <h4 className="font-semibold text-black mb-2">📊 Fuentes de validación:</h4>
-            <ul className="text-black text-sm space-y-1">
+            <h4 className="font-semibold text-green-800 mb-2">📊 Fuentes de validación:</h4>
+            <ul className="text-green-700 text-sm space-y-1">
               <li>• Google Analytics y datos de comportamiento</li>
               <li>• Encuestas de satisfacción y NPS</li>
               <li>• Entrevistas en profundidad con clientes</li>
