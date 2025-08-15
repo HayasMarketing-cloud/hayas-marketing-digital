@@ -93,6 +93,7 @@ import GoogleConsentModeCookieyes from './pages/GoogleConsentModeCookieyes';
 import MarketingNaturalPosicionamientoOrganico from './pages/MarketingNaturalPosicionamientoOrganico';
 import BlogCrmQueEsBeneficios from './pages/BlogCrmQueEsBeneficios';
 import BlogABMAccountBasedMarketing from './pages/BlogABMAccountBasedMarketing';
+import BlogSeoInteligenciaArtificial from './pages/BlogSeoInteligenciaArtificial';
 
 const queryClient = new QueryClient();
 
@@ -184,8 +185,9 @@ const App = () => (
              <Route path="/blog/business-model-canvas-para-crear-tu-estrategia-de-marketing" element={<BusinessModelCanvasEstrategiaMarketing />} />
               <Route path="/blog/google-consent-mode-cookieyes" element={<GoogleConsentModeCookieyes />} />
               <Route path="/blog/marketing-natural-posicionamiento-organico" element={<MarketingNaturalPosicionamientoOrganico />} />
-              <Route path="/blog/crm-que-es-beneficios" element={<BlogCrmQueEsBeneficios />} />
-              <Route path="/blog/abm-account-based-marketing" element={<BlogABMAccountBasedMarketing />} />
+               <Route path="/blog/crm-que-es-beneficios" element={<BlogCrmQueEsBeneficios />} />
+               <Route path="/blog/abm-account-based-marketing" element={<BlogABMAccountBasedMarketing />} />
+               <Route path="/blog/seo-inteligencia-artificial" element={<BlogSeoInteligenciaArtificial />} />
           
           
           {/* CONTACTO Y CONSULTAS */}
