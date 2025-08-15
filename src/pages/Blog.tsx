@@ -33,13 +33,23 @@ const Blog = () => {
 
   const allPosts = [
     {
+      id: 'abm-account-based-marketing',
+      title: 'ABM: Estrategia Account-Based Marketing para Captar Grandes Cuentas',
+      description: 'Descubre cómo implementar una estrategia ABM exitosa. Guía completa de Account-Based Marketing para captar y fidelizar grandes cuentas B2B con herramientas y métricas clave.',
+      date: '2025-01-19',
+      readTime: '18 min',
+      category: 'Marketing Digital',
+      image: '/src/assets/business-model-canvas-estrategia-marketing-hero.jpg',
+      tags: ['ABM', 'Marketing ABM', 'Account-Based Marketing', 'B2B', 'Grandes Cuentas']
+    },
+    {
       id: 'crm-que-es-beneficios',
       title: 'CRM: Qué es, Beneficios y Cómo Elegir el Mejor para tu Empresa',
       description: 'Descubre qué es un CRM, sus beneficios para marketing y ventas, y cómo elegir el más adecuado para tu negocio. Guía práctica con ejemplos reales y pasos de implantación.',
       date: '2025-01-18',
       readTime: '20 min',
       category: 'CRM',
-      image: '/src/assets/business-model-canvas-estrategia-marketing-hero.jpg', // Temporal - se puede cambiar por una imagen específica de CRM
+      image: '/src/assets/business-model-canvas-estrategia-marketing-hero.jpg',
       tags: ['CRM', 'Marketing Digital', 'Ventas', 'Automatización', 'Gestión Clientes']
     },
     {
