@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
 import BlogPostTemplate from '@/components/BlogPost/BlogPostTemplate';
 import ArticleFAQSection from '@/components/BlogPost/ArticleFAQSection';
 import AIApplicationsSection from '@/components/BlogPost/AIApplicationsSection';
@@ -401,9 +403,14 @@ const GoogleConsentModeCookieyes: React.FC = () => {
           En Hayas Marketing somos especialistas en analítica digital y cumplimiento de normativas. Si necesitas ayuda 
           para implementar Google Consent Mode o cualquier otra herramienta de seguimiento, contáctanos.
         </p>
-        <p className="text-purple-600 text-sm">
+        <p className="text-purple-600 text-sm mb-6">
           Ofrecemos servicios de consultoría, implementación y formación en Google Tag Manager, Google Analytics y herramientas de privacy compliance.
         </p>
+        <Link to="/solicitar-consulta">
+          <Button className="gradient-primary">
+            Solicitar Consulta Gratuita
+          </Button>
+        </Link>
       </div>
     </BlogPostTemplate>
   );
