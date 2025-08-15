@@ -48,21 +48,29 @@ const Nosotros = () => {
     image: "/lovable-uploads/26de1124-c82f-4741-800d-030e305eb147.png"
   }];
   const values = [{
-    icon: <Target className="h-8 w-8 text-white" />,
-    title: "Estrategia",
-    description: "Desarrollamos estrategias personalizadas basadas en un análisis profundo de tu negocio, mercado y objetivos específicos."
+    icon: <Lightbulb className="h-8 w-8 text-white" />,
+    title: "Educación y Empoderamiento",
+    description: "Proveemos herramientas y conocimientos para fomentar la autogestión y decisiones informadas alineadas con tu propósito."
   }, {
-    icon: <Zap className="h-8 w-8 text-white" />,
-    title: "Eficiencia",
-    description: "Implementamos tecnologías y procesos que automatizan tareas repetitivas, optimizando recursos y maximizando el ROI."
-  }, {
-    icon: <TrendingUp className="h-8 w-8 text-white" />,
-    title: "Adaptación",
-    description: "Nos mantenemos a la vanguardia tecnológica, integrando las últimas innovaciones como IA y automatización avanzada."
+    icon: <Users className="h-8 w-8 text-white" />,
+    title: "Inclusión y Diversidad",
+    description: "Adaptamos nuestras propuestas a las necesidades únicas de cada cliente, respetando y reflejando su autenticidad."
   }, {
     icon: <Heart className="h-8 w-8 text-white" />,
-    title: "Crecimiento Sostenible",
-    description: "Construimos soluciones escalables que crecen contigo, estableciendo relaciones comerciales duraderas y exitosas."
+    title: "Trabajo en Equipo y Conciliación",
+    description: "Fomentamos la colaboración auténtica priorizando un equilibrio genuino entre vida laboral y personal."
+  }, {
+    icon: <Zap className="h-8 w-8 text-white" />,
+    title: "Eficiencia y Simplicidad Estratégica",
+    description: "Diseñamos estrategias ágiles que priorizan la esencia, eliminando lo superfluo y enfocándonos en el impacto real."
+  }, {
+    icon: <TrendingUp className="h-8 w-8 text-white" />,
+    title: "Crecimiento Sostenible y Adaptativo",
+    description: "Estrategias que evolucionan continuamente para generar impacto positivo duradero mediante mejora continua."
+  }, {
+    icon: <CheckCircle className="h-8 w-8 text-white" />,
+    title: "Respeto a la Privacidad",
+    description: "Garantizamos la confidencialidad y uso responsable de la información, priorizando el respeto a cada individuo."
   }];
   const certifications = [{
     name: "HubSpot Partner",
@@ -280,7 +288,7 @@ const Nosotros = () => {
                 </p>
               </div>
               
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {values.map((value, index) => <div key={index} className="text-center group">
                     <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                       {value.icon}
