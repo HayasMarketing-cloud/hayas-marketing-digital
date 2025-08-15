@@ -15,6 +15,7 @@ import tiktokMarketingHero from '@/assets/tiktok-marketing-hero.jpg';
 import perfilClienteIdealHero from '@/assets/perfil-cliente-ideal-hero.jpg';
 import calculoInversionHero from '@/assets/calculo-inversion-marketing-hero.jpg';
 import brandingProcesoNamingHero from '@/assets/branding-proceso-tecnicas-naming-hero.jpg';
+import businessModelCanvasHero from '@/assets/business-model-canvas-estrategia-marketing-hero.jpg';
 
 const Blog = () => {
   const featuredPost = {
@@ -30,6 +31,16 @@ const Blog = () => {
   };
 
   const allPosts = [
+    {
+      id: 'business-model-canvas-para-crear-tu-estrategia-de-marketing',
+      title: 'Business Model Canvas para crear tu estrategia de marketing',
+      description: 'Aprende a usar el Business Model Canvas para crear una estrategia de marketing efectiva. Guía práctica con ejemplos, herramientas y casos de uso reales.',
+      date: '2025-01-17',
+      readTime: '16 min',
+      category: 'Marketing Digital',
+      image: businessModelCanvasHero,
+      tags: ['Business Model Canvas', 'Marketing Digital', 'Estrategia', 'Modelo de Negocio', 'Canvas']
+    },
     {
       id: 'branding-proceso-tecnicas-naming',
       title: 'Branding: proceso y técnicas de naming',
