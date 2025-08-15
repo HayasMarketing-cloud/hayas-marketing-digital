@@ -16,6 +16,7 @@ import perfilClienteIdealHero from '@/assets/perfil-cliente-ideal-hero.jpg';
 import calculoInversionHero from '@/assets/calculo-inversion-marketing-hero.jpg';
 import brandingProcesoNamingHero from '@/assets/branding-proceso-tecnicas-naming-hero.jpg';
 import businessModelCanvasHero from '@/assets/business-model-canvas-estrategia-marketing-hero.jpg';
+import googleConsentModeHero from '@/assets/google-consent-mode-cookieyes-hero.jpg';
 
 const Blog = () => {
   const featuredPost = {
@@ -31,6 +32,16 @@ const Blog = () => {
   };
 
   const allPosts = [
+    {
+      id: 'google-consent-mode-cookieyes',
+      title: 'Cómo instalar Consent Mode en Google Tag Manager con CookieYes',
+      description: 'Guía completa para configurar Google Consent Mode con CookieYes en Google Tag Manager. Cumple con GDPR y mejora la privacidad de tus usuarios.',
+      date: '2025-01-17',
+      readTime: '15 min',
+      category: 'Analítica Digital',
+      image: googleConsentModeHero,
+      tags: ['Google Tag Manager', 'Consent Mode', 'CookieYes', 'GDPR', 'Privacidad', 'Analítica']
+    },
     {
       id: 'business-model-canvas-para-crear-tu-estrategia-de-marketing',
       title: 'Business Model Canvas para crear tu estrategia de marketing',
@@ -141,6 +152,7 @@ const Blog = () => {
     'Marketing Digital',
     'Automatización',
     'Branding',
+    'Analítica Digital',
     'Analítica Web',
     'Estrategia',
     'Diseño Web'
