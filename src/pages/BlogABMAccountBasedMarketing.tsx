@@ -37,7 +37,7 @@ const BlogABMAccountBasedMarketing = () => {
   };
 
   const heroImage = {
-    src: "/src/assets/business-model-canvas-estrategia-marketing-hero.jpg",
+    src: "/src/assets/abm-strategy-hero.jpg",
     alt: "Estrategia Account-Based Marketing ABM para empresas B2B",
     width: 1200,
     height: 630

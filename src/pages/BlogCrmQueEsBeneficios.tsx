@@ -185,10 +185,10 @@ const BlogCrmQueEsBeneficios = () => {
     <BlogPostTemplate
       metadata={metadata}
       heroImage={{
-        src: "/lovable-uploads/marketing-kpis-dashboard.jpg",
+        src: "/src/assets/crm-dashboard-hero.jpg",
         alt: "Dashboard de CRM mostrando métricas de marketing y ventas",
         width: 1200,
-        height: 675
+        height: 630
       }}
       faqs={faqs}
       relatedServices={relatedServices}
