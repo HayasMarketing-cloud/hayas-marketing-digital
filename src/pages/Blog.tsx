@@ -54,7 +54,7 @@ const Blog = () => {
     },
     {
       id: 'marketing-natural-posicionamiento-organico',
-      title: 'Marketing Natural: Atrae a tus Clientes de Forma Orgánica con Posicionamiento Natural',
+      title: 'Marketing natural: atrae a tus clientes de forma orgánica con posicionamiento natural',
       description: 'Descubre cómo el marketing natural y el posicionamiento orgánico pueden transformar tu estrategia digital. Conecta auténticamente con tu audiencia usando IA y técnicas sostenibles.',
       date: '2025-01-15',
       readTime: '12 min',

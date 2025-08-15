@@ -10,7 +10,7 @@ import { Search, Users, Target, TrendingUp, Heart, CheckCircle, Lightbulb, BarCh
 
 const MarketingNaturalPosicionamientoOrganico: React.FC = () => {
   const metadata = {
-    title: "Marketing Natural: Atrae a tus Clientes de Forma Orgánica con Posicionamiento Natural",
+    title: "Marketing natural: atrae a tus clientes de forma orgánica con posicionamiento natural",
     description: "Descubre cómo el marketing natural y el posicionamiento orgánico pueden transformar tu estrategia digital. Conecta auténticamente con tu audiencia usando IA y técnicas sostenibles.",
     date: "2025-01-15",
     readTime: "12 min",
@@ -22,7 +22,7 @@ const MarketingNaturalPosicionamientoOrganico: React.FC = () => {
     structuredData: {
       "@context": "https://schema.org",
       "@type": "Article",
-      "headline": "Marketing Natural: Atrae a tus Clientes de Forma Orgánica con Posicionamiento Natural",
+      "headline": "Marketing natural: atrae a tus clientes de forma orgánica con posicionamiento natural",
       "description": "Descubre cómo el marketing natural y el posicionamiento orgánico pueden transformar tu estrategia digital. Conecta auténticamente con tu audiencia usando IA y técnicas sostenibles.",
       "author": {
         "@type": "Organization",
