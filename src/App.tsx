@@ -90,6 +90,7 @@ import BlogCalculoInversionMarketing from './pages/BlogCalculoInversionMarketing
 import BlogBrandingProcesoTecnicasNaming from './pages/BlogBrandingProcesoTecnicasNaming';
 import BusinessModelCanvasEstrategiaMarketing from './pages/BusinessModelCanvasEstrategiaMarketing';
 import GoogleConsentModeCookieyes from './pages/GoogleConsentModeCookieyes';
+import MarketingNaturalPosicionamientoOrganico from './pages/MarketingNaturalPosicionamientoOrganico';
 
 const queryClient = new QueryClient();
 
@@ -178,8 +179,9 @@ const App = () => (
            <Route path="/blog/perfil-cliente-ideal" element={<BlogPerfilClienteIdeal />} />
            <Route path="/blog/calculo-inversion-plan-marketing-digital" element={<BlogCalculoInversionMarketing />} />
            <Route path="/blog/branding-proceso-tecnicas-naming" element={<BlogBrandingProcesoTecnicasNaming />} />
-            <Route path="/blog/business-model-canvas-para-crear-tu-estrategia-de-marketing" element={<BusinessModelCanvasEstrategiaMarketing />} />
-            <Route path="/blog/google-consent-mode-cookieyes" element={<GoogleConsentModeCookieyes />} />
+             <Route path="/blog/business-model-canvas-para-crear-tu-estrategia-de-marketing" element={<BusinessModelCanvasEstrategiaMarketing />} />
+             <Route path="/blog/google-consent-mode-cookieyes" element={<GoogleConsentModeCookieyes />} />
+             <Route path="/blog/marketing-natural-posicionamiento-organico" element={<MarketingNaturalPosicionamientoOrganico />} />
           
           
           {/* CONTACTO Y CONSULTAS */}
