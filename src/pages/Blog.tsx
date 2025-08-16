@@ -49,7 +49,7 @@ const Blog = () => {
       date: '2025-01-18',
       readTime: '20 min',
       category: 'CRM',
-      image: '/src/assets/business-model-canvas-estrategia-marketing-hero.jpg',
+      image: '/crm-dashboard-hero.jpg',
       tags: ['CRM', 'Marketing Digital', 'Ventas', 'Automatización', 'Gestión Clientes']
     },
     {
