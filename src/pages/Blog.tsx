@@ -39,7 +39,7 @@ const Blog = () => {
       date: '2025-01-19',
       readTime: '18 min',
       category: 'Marketing Digital',
-      image: '/src/assets/business-model-canvas-estrategia-marketing-hero.jpg',
+      image: '/abm-account-based-marketing-hero.jpg',
       tags: ['ABM', 'Marketing ABM', 'Account-Based Marketing', 'B2B', 'Grandes Cuentas']
     },
     {
