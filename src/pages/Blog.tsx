@@ -33,6 +33,17 @@ const Blog = () => {
 
   const allPosts = [
     {
+      id: 5,
+      title: "Cómo crear tu buyer persona para B2B y B2C [GUÍA COMPLETA + TEMPLATE]",
+      excerpt: "Aprende a crear buyer personas efectivos paso a paso con nuestra guía completa. Incluye template descargable y cuestionario para definir el perfil de cliente ideal.",
+      category: "Estrategia de Marketing",
+      readTime: "12 min",
+      date: "15 Ene 2025",
+      image: "/perfil-cliente-ideal-hero.jpg",
+      link: "/blog/como-crear-buyer-persona-b2b-b2c-guia-completa",
+      tags: ["buyer persona", "perfil cliente ideal", "estrategia marketing", "B2B", "B2C"]
+    },
+    {
       id: 're-commerce-economia-circular-ecommerce-partnership-sharpei',
       title: 'RE-commerce: La Economía Circular del E-commerce - Partnership con Sharpei',
       description: 'Descubre cómo la economía circular está transformando el e-commerce. Conoce nuestro partnership con Sharpei para impulsar la sostenibilidad en el comercio electrónico.',
