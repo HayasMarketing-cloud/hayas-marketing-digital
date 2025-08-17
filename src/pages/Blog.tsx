@@ -35,12 +35,13 @@ const Blog = () => {
     {
       id: 5,
       title: "Cómo crear tu buyer persona para B2B y B2C [GUÍA COMPLETA + TEMPLATE]",
+      description: "Aprende a crear buyer personas efectivos para B2B y B2C con nuestra guía completa. Incluye template descargable y cuestionario para definir el perfil de cliente ideal.",
       excerpt: "Aprende a crear buyer personas efectivos paso a paso con nuestra guía completa. Incluye template descargable y cuestionario para definir el perfil de cliente ideal.",
       category: "Estrategia de Marketing",
       readTime: "12 min",
       date: "15 Ene 2025",
       image: "/perfil-cliente-ideal-hero.jpg",
-      link: "/blog/como-crear-buyer-persona-b2b-b2c-guia-completa",
+      slug: "/blog/como-crear-buyer-persona-b2b-b2c-guia-completa",
       tags: ["buyer persona", "perfil cliente ideal", "estrategia marketing", "B2B", "B2C"]
     },
     {
@@ -412,12 +413,12 @@ const Blog = () => {
                       <Calendar className="h-4 w-4" />
                       {new Date(post.date).toLocaleDateString('es-ES')}
                     </span>
-                    <Link to={`/blog/${post.id}`}>
-                      <Button variant="ghost" size="sm" className="group/btn">
-                        Leer más
-                        <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
-                      </Button>
-                    </Link>
+                     <Link to={post.slug || `/blog/${post.id}`}>
+                       <Button variant="ghost" size="sm" className="group/btn">
+                         Leer más
+                         <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+                       </Button>
+                     </Link>
                   </div>
                 </CardContent>
               </Card>
@@ -466,12 +467,12 @@ const Blog = () => {
                       <Calendar className="h-4 w-4" />
                       {new Date(post.date).toLocaleDateString('es-ES')}
                     </span>
-                    <Link to={`/blog/${post.id}`}>
-                      <Button variant="ghost" size="sm" className="group/btn">
-                        Leer más
-                        <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
-                      </Button>
-                    </Link>
+                     <Link to={post.slug || `/blog/${post.id}`}>
+                       <Button variant="ghost" size="sm" className="group/btn">
+                         Leer más
+                         <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+                       </Button>
+                     </Link>
                   </div>
                 </CardContent>
               </Card>
