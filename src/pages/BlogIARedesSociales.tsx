@@ -4,7 +4,7 @@ import BlogPostTemplate from '@/components/BlogPost/BlogPostTemplate';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Brain, TrendingUp, Shield, Wand2, Zap, Users, BarChart3, AlertTriangle, CheckCircle2, Target, Palette, MessageSquare, Calendar, Settings, Eye, Lock } from 'lucide-react';
-import iaRedesSocialesHero from '@/assets/ia-redes-sociales-hero.jpg';
+import iaRedesSocialesHero from '@/assets/ia-redes-sociales-hero-updated.jpg';
 const BlogIARedesSociales = () => {
   const metadata = {
     title: "IA en Redes Sociales: Herramientas, Beneficios y Riesgos | Guía 2025",
