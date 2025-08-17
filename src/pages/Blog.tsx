@@ -35,12 +35,15 @@ const Blog = () => {
     {
       id: 'seo-on-page-guia-completa',
       title: 'Guía Completa de SEO On-Page: Optimiza tu Web para Google',
+      description: 'Aprende paso a paso cómo optimizar tu web con SEO on-page. Técnicas actualizadas, ejemplos prácticos y herramientas para posicionar en Google.',
       excerpt: 'Aprende paso a paso cómo optimizar tu web con SEO on-page. Técnicas actualizadas, ejemplos prácticos y herramientas para posicionar en Google.',
       date: '2025-01-17',
       readTime: '12 min',
       category: 'SEO',
+      author: 'Equipo Hayas Marketing',
       image: '/seo-on-page-hero.jpg',
       slug: '/blog/seo-on-page-guia-completa',
+      tags: ['SEO', 'SEO On-Page', 'Optimización Web', 'Marketing Digital', 'Google'],
       featured: true
     },
     {
