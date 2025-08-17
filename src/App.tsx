@@ -97,6 +97,7 @@ import BlogLeadScoringCalificacionLeads from './pages/BlogLeadScoringCalificacio
 import BlogSeoInteligenciaArtificial from './pages/BlogSeoInteligenciaArtificial';
 import BlogWeb30 from './pages/BlogWeb30';
 import BlogSeoOnPage from './pages/BlogSeoOnPage';
+import HayasCRM from './pages/HayasCRM';
 import BlogIARedesSociales from './pages/BlogIARedesSociales';
 
 const queryClient = new QueryClient();
@@ -202,6 +203,7 @@ const App = () => (
           <Route path="/agendar-reunion" element={<AgendarReunion />} />
           <Route path="/solicitar-consulta" element={<SolicitarConsulta />} />
           <Route path="/contacto" element={<Contacto />} />
+          <Route path="/hayas-crm" element={<HayasCRM />} />
           
           {/* RUTAS LEGACY - Redirigen a las nuevas categorías */}
           <Route path="/crm-automatizaciones" element={<ConectaConTusClientes />} />
