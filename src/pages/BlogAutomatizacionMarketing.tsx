@@ -478,7 +478,7 @@ const BlogAutomatizacionMarketing = () => {
       {/* Conclusión */}
       <section className="mb-12">
         <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-xl p-8 border border-primary/20">
-          <h2 className="text-2xl font-bold mb-6 text-foreground">El Futuro es automatizado e inteligente</h2>
+          <h2 className="text-2xl font-bold mb-6 text-foreground">El futuro es automatizado e inteligente</h2>
           <p className="text-lg mb-6">
             La automatización de marketing ya no es opcional para las empresas que quieren mantenerse 
             competitivas. Es una necesidad estratégica que permite escalar operaciones, mejorar la 
