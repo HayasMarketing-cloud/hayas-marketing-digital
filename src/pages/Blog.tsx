@@ -33,6 +33,17 @@ const Blog = () => {
 
   const allPosts = [
     {
+      id: 'seo-on-page-guia-completa',
+      title: 'Guía Completa de SEO On-Page: Optimiza tu Web para Google',
+      excerpt: 'Aprende paso a paso cómo optimizar tu web con SEO on-page. Técnicas actualizadas, ejemplos prácticos y herramientas para posicionar en Google.',
+      date: '2025-01-17',
+      readTime: '12 min',
+      category: 'SEO',
+      image: '/seo-on-page-hero.jpg',
+      slug: '/blog/seo-on-page-guia-completa',
+      featured: true
+    },
+    {
       id: 'lead-scoring-calificacion-leads',
       title: 'Cómo crear un sistema de Lead Scoring y calificación de leads',
       description: 'Descubre cómo implementar un sistema eficaz de lead scoring para optimizar tu proceso comercial y priorizar oportunidades.',
