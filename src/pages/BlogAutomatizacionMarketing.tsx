@@ -4,7 +4,6 @@ import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { CheckCircle, Mail, Users, Zap, Clock, TrendingUp, ArrowRight, Target, BarChart3, MessageSquare, Calendar, Bot } from 'lucide-react';
-
 const BlogAutomatizacionMarketing = () => {
   const metadata = {
     title: "Automatización de Marketing Digital: Guía Completa 2025",
@@ -42,197 +41,147 @@ const BlogAutomatizacionMarketing = () => {
       "dateModified": "2025-01-17"
     }
   };
-
   const heroImage = {
     src: "/automatizacion-marketing-hero.jpg",
     alt: "Dashboard de automatización de marketing mostrando workflows y campañas automatizadas",
     width: 1200,
     height: 675
   };
-
-  const faqs = [
-    {
-      question: "¿Qué es exactamente la automatización de marketing?",
-      answer: "La automatización de marketing es el uso de software y tecnología para automatizar tareas repetitivas de marketing, como envío de emails, segmentación de audiencias, lead scoring y gestión de campañas, permitiendo comunicaciones más personalizadas y eficientes."
-    },
-    {
-      question: "¿Cuándo debo empezar a automatizar mi marketing?",
-      answer: "Puedes empezar a automatizar desde el inicio, pero es especialmente beneficioso cuando tienes más de 100 contactos, múltiples canales de captación, o cuando pasas más de 10 horas semanales en tareas repetitivas de marketing."
-    },
-    {
-      question: "¿La automatización hace que pierda el toque personal?",
-      answer: "Al contrario, la automatización bien implementada permite mayor personalización. Puedes segmentar audiencias, enviar mensajes relevantes según comportamientos y crear experiencias más personalizadas a escala."
-    },
-    {
-      question: "¿Qué herramientas necesito para automatizar mi marketing?",
-      answer: "Depende de tu negocio, pero las básicas incluyen: plataforma de email marketing, CRM, herramientas de análisis web y, opcionalmente, chatbots y automatización de redes sociales. Muchas plataformas integran múltiples funciones."
-    },
-    {
-      question: "¿Cuánto cuesta implementar automatización de marketing?",
-      answer: "Los costes varían desde herramientas gratuitas hasta €500+/mes para empresas grandes. Lo importante es empezar con lo básico y escalar según tus necesidades y resultados obtenidos."
-    }
-  ];
-
-  const relatedServices = [
-    {
-      title: "Implementación de CRM y Automatización",
-      description: "Configuramos y automatizamos tu sistema CRM para optimizar el proceso de ventas y marketing.",
-      link: "/implantacion-crm"
-    },
-    {
-      title: "Email Marketing y Automatizaciones",
-      description: "Creamos campañas de email marketing automatizadas que nutren leads y aumentan conversiones.",
-      link: "/email-marketing-automatizaciones"
-    }
-  ];
-
-  const automationBenefits = [
-    {
-      icon: <Clock className="h-6 w-6 text-primary" />,
-      title: "Ahorro de Tiempo",
-      description: "Automatiza tareas repetitivas y libera tiempo para estrategia y creatividad",
-      metric: "Hasta 6h/día ahorradas"
-    },
-    {
-      icon: <TrendingUp className="h-6 w-6 text-primary" />,
-      title: "Mayor ROI",
-      description: "Mejora la eficiencia de las campañas y aumenta el retorno de inversión",
-      metric: "+35% ROI promedio"
-    },
-    {
-      icon: <Users className="h-6 w-6 text-primary" />,
-      title: "Lead Nurturing",
-      description: "Cultiva automáticamente relaciones con prospectos hasta convertirlos",
-      metric: "+50% conversión de leads"
-    },
-    {
-      icon: <Target className="h-6 w-6 text-primary" />,
-      title: "Personalización",
-      description: "Envía mensajes relevantes según comportamiento y características",
-      metric: "+25% engagement"
-    },
-    {
-      icon: <BarChart3 className="h-6 w-6 text-primary" />,
-      title: "Medición Precisa",
-      description: "Obtén datos exactos sobre el rendimiento de cada campaña",
-      metric: "100% trazabilidad"
-    },
-    {
-      icon: <Zap className="h-6 w-6 text-primary" />,
-      title: "Respuesta Inmediata",
-      description: "Reacciona instantáneamente a acciones de usuarios",
-      metric: "Respuesta en <1 minuto"
-    }
-  ];
-
-  const automationTypes = [
-    {
-      type: "Email Marketing",
-      description: "Secuencias automatizadas de bienvenida, nurturing y re-engagement",
-      examples: ["Bienvenida a nuevos suscriptores", "Carrito abandonado", "Reactivación de inactivos"],
-      difficulty: "Fácil"
-    },
-    {
-      type: "Lead Scoring",
-      description: "Puntuación automática de leads según comportamiento e interacciones",
-      examples: ["Visitas a páginas clave", "Descargas de contenido", "Apertura de emails"],
-      difficulty: "Intermedio"
-    },
-    {
-      type: "Segmentación Dinámica",
-      description: "Agrupación automática de contactos según criterios específicos",
-      examples: ["Segmentación por industria", "Por ciclo de compra", "Por engagement"],
-      difficulty: "Intermedio"
-    },
-    {
-      type: "Chatbots",
-      description: "Atención automática 24/7 y calificación inicial de prospectos",
-      examples: ["FAQ automatizadas", "Captura de leads", "Agendado de citas"],
-      difficulty: "Intermedio"
-    },
-    {
-      type: "Redes Sociales",
-      description: "Publicación automática y respuestas programadas",
-      examples: ["Publicación programada", "Respuestas automáticas", "Monitoreo de menciones"],
-      difficulty: "Fácil"
-    },
-    {
-      type: "CRM Workflows",
-      description: "Automatización completa del proceso de ventas y seguimiento",
-      examples: ["Asignación de leads", "Tareas automáticas", "Notificaciones de seguimiento"],
-      difficulty: "Avanzado"
-    }
-  ];
-
-  const implementationSteps = [
-    {
-      step: "1",
-      title: "Auditoría y Mapeo de Procesos",
-      description: "Identifica qué tareas son repetitivas y pueden automatizarse",
-      time: "1-2 semanas"
-    },
-    {
-      step: "2",
-      title: "Definición de Objetivos",
-      description: "Establece KPIs claros y metas específicas para la automatización",
-      time: "1 semana"
-    },
-    {
-      step: "3",
-      title: "Selección de Herramientas",
-      description: "Elige las plataformas que mejor se adapten a tus necesidades",
-      time: "1-2 semanas"
-    },
-    {
-      step: "4",
-      title: "Configuración Inicial",
-      description: "Implementa las automatizaciones básicas y más importantes",
-      time: "2-4 semanas"
-    },
-    {
-      step: "5",
-      title: "Testing y Optimización",
-      description: "Prueba, mide y mejora continuamente los workflows",
-      time: "Continuo"
-    },
-    {
-      step: "6",
-      title: "Escalado Avanzado",
-      description: "Expande la automatización a procesos más complejos",
-      time: "3-6 meses"
-    }
-  ];
-
-  const commonMistakes = [
-    {
-      mistake: "Automatizar Sin Estrategia",
-      solution: "Define objetivos claros antes de implementar cualquier automatización"
-    },
-    {
-      mistake: "Sobre-Automatizar",
-      solution: "Mantén elementos humanos en puntos clave del customer journey"
-    },
-    {
-      mistake: "No Segmentar Audiencias",
-      solution: "Crea grupos específicos para mensajes más relevantes"
-    },
-    {
-      mistake: "Ignorar las Métricas",
-      solution: "Monitorea constantemente y optimiza basándote en datos"
-    },
-    {
-      mistake: "Contenido Genérico",
-      solution: "Personaliza mensajes según comportamiento y preferencias"
-    }
-  ];
-
-  return (
-    <BlogPostTemplate
-      metadata={metadata}
-      heroImage={heroImage}
-      faqs={faqs}
-      relatedServices={relatedServices}
-    >
+  const faqs = [{
+    question: "¿Qué es exactamente la automatización de marketing?",
+    answer: "La automatización de marketing es el uso de software y tecnología para automatizar tareas repetitivas de marketing, como envío de emails, segmentación de audiencias, lead scoring y gestión de campañas, permitiendo comunicaciones más personalizadas y eficientes."
+  }, {
+    question: "¿Cuándo debo empezar a automatizar mi marketing?",
+    answer: "Puedes empezar a automatizar desde el inicio, pero es especialmente beneficioso cuando tienes más de 100 contactos, múltiples canales de captación, o cuando pasas más de 10 horas semanales en tareas repetitivas de marketing."
+  }, {
+    question: "¿La automatización hace que pierda el toque personal?",
+    answer: "Al contrario, la automatización bien implementada permite mayor personalización. Puedes segmentar audiencias, enviar mensajes relevantes según comportamientos y crear experiencias más personalizadas a escala."
+  }, {
+    question: "¿Qué herramientas necesito para automatizar mi marketing?",
+    answer: "Depende de tu negocio, pero las básicas incluyen: plataforma de email marketing, CRM, herramientas de análisis web y, opcionalmente, chatbots y automatización de redes sociales. Muchas plataformas integran múltiples funciones."
+  }, {
+    question: "¿Cuánto cuesta implementar automatización de marketing?",
+    answer: "Los costes varían desde herramientas gratuitas hasta €500+/mes para empresas grandes. Lo importante es empezar con lo básico y escalar según tus necesidades y resultados obtenidos."
+  }];
+  const relatedServices = [{
+    title: "Implementación de CRM y Automatización",
+    description: "Configuramos y automatizamos tu sistema CRM para optimizar el proceso de ventas y marketing.",
+    link: "/implantacion-crm"
+  }, {
+    title: "Email Marketing y Automatizaciones",
+    description: "Creamos campañas de email marketing automatizadas que nutren leads y aumentan conversiones.",
+    link: "/email-marketing-automatizaciones"
+  }];
+  const automationBenefits = [{
+    icon: <Clock className="h-6 w-6 text-primary" />,
+    title: "Ahorro de Tiempo",
+    description: "Automatiza tareas repetitivas y libera tiempo para estrategia y creatividad",
+    metric: "Hasta 6h/día ahorradas"
+  }, {
+    icon: <TrendingUp className="h-6 w-6 text-primary" />,
+    title: "Mayor ROI",
+    description: "Mejora la eficiencia de las campañas y aumenta el retorno de inversión",
+    metric: "+35% ROI promedio"
+  }, {
+    icon: <Users className="h-6 w-6 text-primary" />,
+    title: "Lead Nurturing",
+    description: "Cultiva automáticamente relaciones con prospectos hasta convertirlos",
+    metric: "+50% conversión de leads"
+  }, {
+    icon: <Target className="h-6 w-6 text-primary" />,
+    title: "Personalización",
+    description: "Envía mensajes relevantes según comportamiento y características",
+    metric: "+25% engagement"
+  }, {
+    icon: <BarChart3 className="h-6 w-6 text-primary" />,
+    title: "Medición Precisa",
+    description: "Obtén datos exactos sobre el rendimiento de cada campaña",
+    metric: "100% trazabilidad"
+  }, {
+    icon: <Zap className="h-6 w-6 text-primary" />,
+    title: "Respuesta Inmediata",
+    description: "Reacciona instantáneamente a acciones de usuarios",
+    metric: "Respuesta en <1 minuto"
+  }];
+  const automationTypes = [{
+    type: "Email Marketing",
+    description: "Secuencias automatizadas de bienvenida, nurturing y re-engagement",
+    examples: ["Bienvenida a nuevos suscriptores", "Carrito abandonado", "Reactivación de inactivos"],
+    difficulty: "Fácil"
+  }, {
+    type: "Lead Scoring",
+    description: "Puntuación automática de leads según comportamiento e interacciones",
+    examples: ["Visitas a páginas clave", "Descargas de contenido", "Apertura de emails"],
+    difficulty: "Intermedio"
+  }, {
+    type: "Segmentación Dinámica",
+    description: "Agrupación automática de contactos según criterios específicos",
+    examples: ["Segmentación por industria", "Por ciclo de compra", "Por engagement"],
+    difficulty: "Intermedio"
+  }, {
+    type: "Chatbots",
+    description: "Atención automática 24/7 y calificación inicial de prospectos",
+    examples: ["FAQ automatizadas", "Captura de leads", "Agendado de citas"],
+    difficulty: "Intermedio"
+  }, {
+    type: "Redes Sociales",
+    description: "Publicación automática y respuestas programadas",
+    examples: ["Publicación programada", "Respuestas automáticas", "Monitoreo de menciones"],
+    difficulty: "Fácil"
+  }, {
+    type: "CRM Workflows",
+    description: "Automatización completa del proceso de ventas y seguimiento",
+    examples: ["Asignación de leads", "Tareas automáticas", "Notificaciones de seguimiento"],
+    difficulty: "Avanzado"
+  }];
+  const implementationSteps = [{
+    step: "1",
+    title: "Auditoría y Mapeo de Procesos",
+    description: "Identifica qué tareas son repetitivas y pueden automatizarse",
+    time: "1-2 semanas"
+  }, {
+    step: "2",
+    title: "Definición de Objetivos",
+    description: "Establece KPIs claros y metas específicas para la automatización",
+    time: "1 semana"
+  }, {
+    step: "3",
+    title: "Selección de Herramientas",
+    description: "Elige las plataformas que mejor se adapten a tus necesidades",
+    time: "1-2 semanas"
+  }, {
+    step: "4",
+    title: "Configuración Inicial",
+    description: "Implementa las automatizaciones básicas y más importantes",
+    time: "2-4 semanas"
+  }, {
+    step: "5",
+    title: "Testing y Optimización",
+    description: "Prueba, mide y mejora continuamente los workflows",
+    time: "Continuo"
+  }, {
+    step: "6",
+    title: "Escalado Avanzado",
+    description: "Expande la automatización a procesos más complejos",
+    time: "3-6 meses"
+  }];
+  const commonMistakes = [{
+    mistake: "Automatizar Sin Estrategia",
+    solution: "Define objetivos claros antes de implementar cualquier automatización"
+  }, {
+    mistake: "Sobre-Automatizar",
+    solution: "Mantén elementos humanos en puntos clave del customer journey"
+  }, {
+    mistake: "No Segmentar Audiencias",
+    solution: "Crea grupos específicos para mensajes más relevantes"
+  }, {
+    mistake: "Ignorar las Métricas",
+    solution: "Monitorea constantemente y optimiza basándote en datos"
+  }, {
+    mistake: "Contenido Genérico",
+    solution: "Personaliza mensajes según comportamiento y preferencias"
+  }];
+  return <BlogPostTemplate metadata={metadata} heroImage={heroImage} faqs={faqs} relatedServices={relatedServices}>
       {/* Introducción */}
       <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-xl p-8 mb-12 border border-primary/10">
         <p className="text-lg leading-relaxed mb-6">
@@ -287,8 +236,7 @@ const BlogAutomatizacionMarketing = () => {
         <h2 className="text-3xl font-bold mb-8 text-foreground">Beneficios de la Automatización de Marketing</h2>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-          {automationBenefits.map((benefit, index) => (
-            <Card key={index} className="p-6 bg-gradient-to-br from-background to-secondary/5 border border-border/50 hover:shadow-lg transition-all duration-300">
+          {automationBenefits.map((benefit, index) => <Card key={index} className="p-6 bg-gradient-to-br from-background to-secondary/5 border border-border/50 hover:shadow-lg transition-all duration-300">
               <div className="flex items-start gap-4 mb-4">
                 <div className="bg-primary/10 p-3 rounded-lg flex-shrink-0">
                   {benefit.icon}
@@ -301,8 +249,7 @@ const BlogAutomatizacionMarketing = () => {
                   </Badge>
                 </div>
               </div>
-            </Card>
-          ))}
+            </Card>)}
         </div>
 
         <div className="bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-800 rounded-lg p-6">
@@ -331,17 +278,12 @@ const BlogAutomatizacionMarketing = () => {
         <h2 className="text-3xl font-bold mb-8 text-foreground">Tipos de Automatización de Marketing</h2>
         
         <div className="grid gap-6">
-          {automationTypes.map((type, index) => (
-            <Card key={index} className="p-6 bg-gradient-to-r from-background to-secondary/5 border border-border/50">
+          {automationTypes.map((type, index) => <Card key={index} className="p-6 bg-gradient-to-r from-background to-secondary/5 border border-border/50">
               <div className="flex items-start justify-between mb-4">
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-3">
                     <h3 className="text-xl font-semibold text-foreground">{type.type}</h3>
-                    <Badge variant={
-                      type.difficulty === 'Fácil' ? 'default' : 
-                      type.difficulty === 'Intermedio' ? 'secondary' : 
-                      'destructive'
-                    }>
+                    <Badge variant={type.difficulty === 'Fácil' ? 'default' : type.difficulty === 'Intermedio' ? 'secondary' : 'destructive'}>
                       {type.difficulty}
                     </Badge>
                   </div>
@@ -351,15 +293,12 @@ const BlogAutomatizacionMarketing = () => {
               <div>
                 <h4 className="font-medium mb-2 text-foreground">Ejemplos de uso:</h4>
                 <div className="grid md:grid-cols-3 gap-2">
-                  {type.examples.map((example, i) => (
-                    <div key={i} className="bg-primary/5 rounded-lg p-3 text-sm border border-primary/10">
+                  {type.examples.map((example, i) => <div key={i} className="bg-primary/5 rounded-lg p-3 text-sm border border-primary/10">
                       {example}
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </div>
-            </Card>
-          ))}
+            </Card>)}
         </div>
       </section>
 
@@ -370,8 +309,7 @@ const BlogAutomatizacionMarketing = () => {
         <h2 className="text-3xl font-bold mb-8 text-foreground">Cómo Implementar Automatización de Marketing: Paso a Paso</h2>
         
         <div className="space-y-8">
-          {implementationSteps.map((step, index) => (
-            <div key={index} className="flex gap-6">
+          {implementationSteps.map((step, index) => <div key={index} className="flex gap-6">
               <div className="bg-primary text-primary-foreground w-12 h-12 rounded-full flex items-center justify-center font-bold flex-shrink-0 mt-1">
                 {step.step}
               </div>
@@ -383,8 +321,7 @@ const BlogAutomatizacionMarketing = () => {
                 <p className="text-muted-foreground mb-4">{step.description}</p>
                 
                 {/* Detalles específicos para algunos pasos */}
-                {index === 0 && (
-                  <div className="bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 rounded-lg p-4">
+                {index === 0 && <div className="bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 rounded-lg p-4">
                     <h4 className="font-medium mb-2 text-amber-800 dark:text-amber-200">Preguntas clave para la auditoría:</h4>
                     <ul className="text-sm space-y-1 text-amber-700 dark:text-amber-300">
                       <li>• ¿Qué tareas repetitivas consumen más tiempo?</li>
@@ -392,11 +329,9 @@ const BlogAutomatizacionMarketing = () => {
                       <li>• ¿Qué comunicaciones envías manualmente de forma regular?</li>
                       <li>• ¿Cómo segmentas actualmente a tu audiencia?</li>
                     </ul>
-                  </div>
-                )}
+                  </div>}
                 
-                {index === 3 && (
-                  <div className="bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
+                {index === 3 && <div className="bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
                     <h4 className="font-medium mb-2 text-blue-800 dark:text-blue-200">Automatizaciones prioritarias para empezar:</h4>
                     <div className="grid md:grid-cols-2 gap-3 text-sm">
                       <div className="flex items-start gap-2">
@@ -416,11 +351,9 @@ const BlogAutomatizacionMarketing = () => {
                         <span className="text-blue-700 dark:text-blue-300">Segmentación por comportamiento</span>
                       </div>
                     </div>
-                  </div>
-                )}
+                  </div>}
               </div>
-            </div>
-          ))}
+            </div>)}
         </div>
       </section>
 
@@ -431,8 +364,7 @@ const BlogAutomatizacionMarketing = () => {
         <h2 className="text-3xl font-bold mb-8 text-foreground">Errores Comunes en Automatización de Marketing</h2>
         
         <div className="space-y-6">
-          {commonMistakes.map((item, index) => (
-            <div key={index} className="grid md:grid-cols-2 gap-6 p-6 bg-gradient-to-r from-red-50 to-green-50 dark:from-red-950/30 dark:to-green-950/30 rounded-lg border border-border/50">
+          {commonMistakes.map((item, index) => <div key={index} className="grid md:grid-cols-2 gap-6 p-6 bg-gradient-to-r from-red-50 to-green-50 dark:from-red-950/30 dark:to-green-950/30 rounded-lg border border-border/50">
               <div className="space-y-3">
                 <h3 className="font-semibold text-red-700 dark:text-red-300 flex items-center gap-2">
                   ❌ Error Común
@@ -445,8 +377,7 @@ const BlogAutomatizacionMarketing = () => {
                 </h3>
                 <p className="text-green-600 dark:text-green-400">{item.solution}</p>
               </div>
-            </div>
-          ))}
+            </div>)}
         </div>
       </section>
 
@@ -547,7 +478,7 @@ const BlogAutomatizacionMarketing = () => {
       {/* Conclusión */}
       <section className="mb-12">
         <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-xl p-8 border border-primary/20">
-          <h2 className="text-2xl font-bold mb-6 text-foreground">El Futuro es Automatizado e Inteligente</h2>
+          <h2 className="text-2xl font-bold mb-6 text-foreground">El Futuro es automatizado e inteligente</h2>
           <p className="text-lg mb-6">
             La automatización de marketing ya no es opcional para las empresas que quieren mantenerse 
             competitivas. Es una necesidad estratégica que permite escalar operaciones, mejorar la 
@@ -566,8 +497,6 @@ const BlogAutomatizacionMarketing = () => {
           </div>
         </div>
       </section>
-    </BlogPostTemplate>
-  );
+    </BlogPostTemplate>;
 };
-
 export default BlogAutomatizacionMarketing;
