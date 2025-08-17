@@ -33,6 +33,20 @@ const Blog = () => {
 
   const allPosts = [
     {
+      id: 'web-3-0-futuro-internet-descentralizado',
+      title: '¿Llega la Web 3.0? El Futuro de Internet Descentralizado',
+      description: 'Descubre qué es la Web 3.0, sus características principales, tecnologías como blockchain y cómo transformará la experiencia digital.',
+      excerpt: 'Explora la próxima evolución de internet con Web 3.0: descentralización, blockchain, NFTs y el metaverso. El futuro digital está aquí.',
+      date: '2025-01-17',
+      readTime: '10 min',
+      category: 'Tecnología',
+      author: 'Equipo Hayas Marketing',
+      image: '/web-3-0-hero.jpg',
+      slug: '/blog/web-3-0-futuro-internet-descentralizado',
+      tags: ['Web 3.0', 'Blockchain', 'Descentralización', 'Tecnología', 'Internet', 'Metaverso'],
+      featured: true
+    },
+    {
       id: 'seo-on-page-guia-completa',
       title: 'Guía Completa de SEO On-Page: Optimiza tu Web para Google',
       description: 'Aprende paso a paso cómo optimizar tu web con SEO on-page. Técnicas actualizadas, ejemplos prácticos y herramientas para posicionar en Google.',
