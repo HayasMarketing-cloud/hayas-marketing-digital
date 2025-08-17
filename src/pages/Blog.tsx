@@ -33,6 +33,16 @@ const Blog = () => {
 
   const allPosts = [
     {
+      id: 'lead-scoring-calificacion-leads',
+      title: 'Cómo crear un sistema de Lead Scoring y calificación de leads',
+      description: 'Descubre cómo implementar un sistema eficaz de lead scoring para optimizar tu proceso comercial y priorizar oportunidades.',
+      date: '2024-12-17',
+      readTime: '8 min',
+      category: 'CRM y Automatización',
+      image: '/assets/sistema-prevision-ventas.jpg',
+      tags: ['Lead Scoring', 'CRM', 'Automatización', 'Ventas', 'Marketing Digital']
+    },
+    {
       id: 'seo-inteligencia-artificial',
       title: 'SEO e inteligencia artificial: cómo la IA está revolucionando el posicionamiento web',
       description: 'Descubre cómo la inteligencia artificial está transformando el SEO y conoce las mejores herramientas de IA para optimizar tu posicionamiento web en 2025.',

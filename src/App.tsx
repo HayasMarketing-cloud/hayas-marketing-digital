@@ -93,6 +93,7 @@ import GoogleConsentModeCookieyes from './pages/GoogleConsentModeCookieyes';
 import MarketingNaturalPosicionamientoOrganico from './pages/MarketingNaturalPosicionamientoOrganico';
 import BlogCrmQueEsBeneficios from './pages/BlogCrmQueEsBeneficios';
 import BlogABMAccountBasedMarketing from './pages/BlogABMAccountBasedMarketing';
+import BlogLeadScoringCalificacionLeads from './pages/BlogLeadScoringCalificacionLeads';
 import BlogSeoInteligenciaArtificial from './pages/BlogSeoInteligenciaArtificial';
 import BlogIARedesSociales from './pages/BlogIARedesSociales';
 
@@ -188,7 +189,8 @@ const App = () => (
               <Route path="/blog/marketing-natural-posicionamiento-organico" element={<MarketingNaturalPosicionamientoOrganico />} />
                <Route path="/blog/crm-que-es-beneficios" element={<BlogCrmQueEsBeneficios />} />
                <Route path="/blog/abm-account-based-marketing" element={<BlogABMAccountBasedMarketing />} />
-                <Route path="/blog/seo-inteligencia-artificial" element={<BlogSeoInteligenciaArtificial />} />
+                <Route path="/blog/lead-scoring-calificacion-leads" element={<BlogLeadScoringCalificacionLeads />} />
+                 <Route path="/blog/seo-inteligencia-artificial" element={<BlogSeoInteligenciaArtificial />} />
                 <Route path="/blog/ia-redes-sociales-herramientas-riesgos" element={<BlogIARedesSociales />} />
           
           
