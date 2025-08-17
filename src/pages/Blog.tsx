@@ -33,6 +33,20 @@ const Blog = () => {
 
   const allPosts = [
     {
+      id: 'seo-off-page-estrategias-practicas-posicionamiento',
+      title: 'SEO Off Page: Estrategias prácticas para mejorar tu posicionamiento',
+      description: 'Descubre las mejores estrategias de SEO Off Page para mejorar tu posicionamiento web. Link building, redes sociales, marketing de contenidos y más técnicas efectivas.',
+      excerpt: 'Aprende SEO Off Page con estrategias prácticas: link building, redes sociales, marketing de contenidos. Mejora tu posicionamiento web con técnicas efectivas.',
+      date: '2025-01-17',
+      readTime: '12 min',
+      category: 'SEO',
+      author: 'Equipo Hayas Marketing',
+      image: '/seo-off-page-hero.jpg',
+      slug: '/blog/seo-off-page-estrategias-practicas-posicionamiento',
+      tags: ['SEO', 'Link Building', 'Posicionamiento Web', 'Marketing Digital', 'Backlinks'],
+      featured: true
+    },
+    {
       id: 'automatizacion-marketing-digital-guia-completa',
       title: 'Automatización de Marketing Digital: Guía Completa 2025',
       description: 'Descubre cómo la automatización de marketing puede transformar tu negocio. Estrategias, herramientas y casos prácticos para automatizar tus campañas digitales.',
