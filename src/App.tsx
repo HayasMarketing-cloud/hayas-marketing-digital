@@ -99,6 +99,7 @@ import BlogAutomatizacionMarketing from './pages/BlogAutomatizacionMarketing';
 import BlogWeb30 from './pages/BlogWeb30';
 import BlogSeoOnPage from './pages/BlogSeoOnPage';
 import BlogSeoOffPage from './pages/BlogSeoOffPage';
+import BlogReCommerceEconomiaCircular from './pages/BlogReCommerceEconomiaCircular';
 import HayasCRM from './pages/HayasCRM';
 import BlogIARedesSociales from './pages/BlogIARedesSociales';
 
@@ -194,6 +195,7 @@ const App = () => (
               <Route path="/blog/marketing-natural-posicionamiento-organico" element={<MarketingNaturalPosicionamientoOrganico />} />
                <Route path="/blog/crm-que-es-beneficios" element={<BlogCrmQueEsBeneficios />} />
                <Route path="/blog/abm-account-based-marketing" element={<BlogABMAccountBasedMarketing />} />
+        <Route path="/blog/re-commerce-economia-circular-ecommerce-partnership-sharpei" element={<BlogReCommerceEconomiaCircular />} />
         <Route path="/blog/seo-off-page-estrategias-practicas-posicionamiento" element={<BlogSeoOffPage />} />
         <Route path="/blog/automatizacion-marketing-digital-guia-completa" element={<BlogAutomatizacionMarketing />} />
           <Route path="/blog/web-3-0-futuro-internet-descentralizado" element={<BlogWeb30 />} />

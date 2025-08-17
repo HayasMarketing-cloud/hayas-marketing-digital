@@ -33,6 +33,20 @@ const Blog = () => {
 
   const allPosts = [
     {
+      id: 're-commerce-economia-circular-ecommerce-partnership-sharpei',
+      title: 'RE-commerce: La Economía Circular del E-commerce - Partnership con Sharpei',
+      description: 'Descubre cómo la economía circular está transformando el e-commerce. Conoce nuestro partnership con Sharpei para impulsar la sostenibilidad en el comercio electrónico.',
+      excerpt: 'Explora el futuro del e-commerce sostenible con nuestro partnership con Sharpei. Implementa economía circular y re-commerce en tu negocio digital.',
+      date: '2025-01-17',
+      readTime: '8 min',
+      category: 'E-commerce',
+      author: 'Equipo Hayas Marketing',
+      image: '/re-commerce-economia-circular-hero.jpg',
+      slug: '/blog/re-commerce-economia-circular-ecommerce-partnership-sharpei',
+      tags: ['Economía Circular', 'E-commerce', 'Partnership', 'Sostenibilidad', 'Re-commerce', 'Sharpei'],
+      featured: true
+    },
+    {
       id: 'seo-off-page-estrategias-practicas-posicionamiento',
       title: 'SEO Off Page: Estrategias prácticas para mejorar tu posicionamiento',
       description: 'Descubre las mejores estrategias de SEO Off Page para mejorar tu posicionamiento web. Link building, redes sociales, marketing de contenidos y más técnicas efectivas.',
