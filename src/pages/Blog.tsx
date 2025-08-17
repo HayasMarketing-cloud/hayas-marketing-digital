@@ -33,6 +33,20 @@ const Blog = () => {
 
   const allPosts = [
     {
+      id: 'automatizacion-marketing-digital-guia-completa',
+      title: 'Automatización de Marketing Digital: Guía Completa 2025',
+      description: 'Descubre cómo la automatización de marketing puede transformar tu negocio. Estrategias, herramientas y casos prácticos para automatizar tus campañas digitales.',
+      excerpt: 'Aprende a automatizar tu marketing digital para ahorrar tiempo y aumentar conversiones. Guía completa con estrategias y herramientas.',
+      date: '2025-01-17',
+      readTime: '12 min',
+      category: 'Marketing Automation',
+      author: 'Equipo Hayas Marketing',
+      image: '/automatizacion-marketing-hero.jpg',
+      slug: '/blog/automatizacion-marketing-digital-guia-completa',
+      tags: ['Automatización de Marketing', 'Marketing Digital', 'Email Marketing', 'Lead Nurturing', 'CRM', 'Workflows'],
+      featured: true
+    },
+    {
       id: 'web-3-0-futuro-internet-descentralizado',
       title: '¿Llega la Web 3.0? El Futuro de Internet Descentralizado',
       description: 'Descubre qué es la Web 3.0, sus características principales, tecnologías como blockchain y cómo transformará la experiencia digital.',

@@ -95,6 +95,7 @@ import BlogCrmQueEsBeneficios from './pages/BlogCrmQueEsBeneficios';
 import BlogABMAccountBasedMarketing from './pages/BlogABMAccountBasedMarketing';
 import BlogLeadScoringCalificacionLeads from './pages/BlogLeadScoringCalificacionLeads';
 import BlogSeoInteligenciaArtificial from './pages/BlogSeoInteligenciaArtificial';
+import BlogAutomatizacionMarketing from './pages/BlogAutomatizacionMarketing';
 import BlogWeb30 from './pages/BlogWeb30';
 import BlogSeoOnPage from './pages/BlogSeoOnPage';
 import HayasCRM from './pages/HayasCRM';
@@ -192,6 +193,7 @@ const App = () => (
               <Route path="/blog/marketing-natural-posicionamiento-organico" element={<MarketingNaturalPosicionamientoOrganico />} />
                <Route path="/blog/crm-que-es-beneficios" element={<BlogCrmQueEsBeneficios />} />
                <Route path="/blog/abm-account-based-marketing" element={<BlogABMAccountBasedMarketing />} />
+          <Route path="/blog/automatizacion-marketing-digital-guia-completa" element={<BlogAutomatizacionMarketing />} />
           <Route path="/blog/web-3-0-futuro-internet-descentralizado" element={<BlogWeb30 />} />
           <Route path="/blog/seo-on-page-guia-completa" element={<BlogSeoOnPage />} />
           <Route path="/blog/lead-scoring-calificacion-leads" element={<BlogLeadScoringCalificacionLeads />} />
