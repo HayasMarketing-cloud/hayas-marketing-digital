@@ -93,9 +93,9 @@ import GoogleConsentModeCookieyes from './pages/GoogleConsentModeCookieyes';
 import MarketingNaturalPosicionamientoOrganico from './pages/MarketingNaturalPosicionamientoOrganico';
 import BlogCrmQueEsBeneficios from './pages/BlogCrmQueEsBeneficios';
 import BlogABMAccountBasedMarketing from './pages/BlogABMAccountBasedMarketing';
-import BlogSeoOnPage from './pages/BlogSeoOnPage';
 import BlogLeadScoringCalificacionLeads from './pages/BlogLeadScoringCalificacionLeads';
 import BlogSeoInteligenciaArtificial from './pages/BlogSeoInteligenciaArtificial';
+import BlogSeoOnPage from './pages/BlogSeoOnPage';
 import BlogIARedesSociales from './pages/BlogIARedesSociales';
 
 const queryClient = new QueryClient();
