@@ -33,6 +33,16 @@ const Blog = () => {
 
   const allPosts = [
     {
+      id: 'seo-inteligencia-artificial',
+      title: 'SEO e inteligencia artificial: cómo la IA está revolucionando el posicionamiento web',
+      description: 'Descubre cómo la inteligencia artificial está transformando el SEO y conoce las mejores herramientas de IA para optimizar tu posicionamiento web en 2025.',
+      date: '2025-01-20',
+      readTime: '8 min',
+      category: 'SEO',
+      image: '/seo-inteligencia-artificial-hero.jpg',
+      tags: ['SEO', 'Inteligencia Artificial', 'Herramientas IA', 'Posicionamiento Web', 'Marketing Digital']
+    },
+    {
       id: 'abm-account-based-marketing',
       title: 'ABM: Estrategia Account-Based Marketing para Captar Grandes Cuentas',
       description: 'Descubre cómo implementar una estrategia ABM exitosa. Guía completa de Account-Based Marketing para captar y fidelizar grandes cuentas B2B con herramientas y métricas clave.',
