@@ -37,11 +37,11 @@ export const tagsLevel1: TagLevel1[] = [
     description: "Estrategias y técnicas de marketing digital"
   },
   {
-    name: "CRM",
-    slug: "crm",
-    subtags: ["automatizacion-ventas", "lead-scoring", "gestion-clientes", "hubspot"],
+    name: "Gestión de Clientes",
+    slug: "gestion-clientes",
+    subtags: ["crm", "automatizacion-ventas", "lead-scoring", "hubspot"],
     color: "bg-orange-500",
-    description: "Gestión de relaciones con clientes y automatización"
+    description: "Gestión de relaciones con clientes y herramientas CRM"
   },
   {
     name: "Estrategia",
@@ -69,11 +69,11 @@ export const tagsLevel2: TagLevel2[] = [
   { name: "Marketing Global", slug: "marketing-global", parent: "marketing-digital" },
   { name: "Publicidad Digital", slug: "publicidad-digital", parent: "marketing-digital" },
   
-  // CRM
-  { name: "Automatización Ventas", slug: "automatizacion-ventas", parent: "crm" },
-  { name: "Lead Scoring", slug: "lead-scoring", parent: "crm" },
-  { name: "Gestión Clientes", slug: "gestion-clientes", parent: "crm" },
-  { name: "HubSpot", slug: "hubspot", parent: "crm" },
+  // Gestión de Clientes
+  { name: "CRM", slug: "crm", parent: "gestion-clientes" },
+  { name: "Automatización Ventas", slug: "automatizacion-ventas", parent: "gestion-clientes" },
+  { name: "Lead Scoring", slug: "lead-scoring", parent: "gestion-clientes" },
+  { name: "HubSpot", slug: "hubspot", parent: "gestion-clientes" },
   
   // Estrategia
   { name: "Estrategia Marketing", slug: "estrategia-marketing", parent: "estrategia" },

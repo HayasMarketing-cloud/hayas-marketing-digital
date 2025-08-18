@@ -20,9 +20,11 @@ const BlogSidebar: React.FC<BlogSidebarProps> = ({ currentTag, allPosts = [] }) 
   
   // Función para contar artículos por tag
   const getArticleCountByTag = (tagSlug: string): number => {
-    return allPosts.filter(post => 
-      post.tags.some(tag => tag === tagSlug || tag.replace(/\s+/g, '-').toLowerCase() === tagSlug)
-    ).length;
+    return allPosts.filter(post => {
+      const postTags = post.tags.map(tag => tag.toLowerCase().replace(/\s+/g, '-'));
+      return postTags.includes(tagSlug) || 
+             postTags.includes(tagSlug.toLowerCase());
+    }).length;
   };
   
   return (

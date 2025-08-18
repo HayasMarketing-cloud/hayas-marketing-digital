@@ -86,17 +86,21 @@ const BlogTagPage: React.FC = () => {
     return <div>Tag no encontrado</div>;
   }
 
-  // Filtrar posts por tag
-  const filteredPosts = allPosts.filter(post => 
-    post.tags.includes(tag) || 
-    (parentTag && post.tags.includes(parentTag.slug))
-  );
+  // Filtrar posts por tag - mejorar el matching
+  const filteredPosts = allPosts.filter(post => {
+    const postTags = post.tags.map(tag => tag.toLowerCase().replace(/\s+/g, '-'));
+    return postTags.includes(tag) || 
+           postTags.includes(tag.toLowerCase()) ||
+           (parentTag && postTags.includes(parentTag.slug));
+  });
 
   // Posts relacionados para la sidebar
   const relatedPosts = allPosts
-    .filter(post => post.tags.some(postTag => 
-      tagData && 'subtags' in tagData ? tagData.subtags.includes(postTag) : false
-    ))
+    .filter(post => {
+      const postTags = post.tags.map(tag => tag.toLowerCase().replace(/\s+/g, '-'));
+      return tagData && 'subtags' in tagData ? 
+        tagData.subtags.some(subtag => postTags.includes(subtag)) : false;
+    })
     .slice(0, 3)
     .map(post => ({
       title: post.title,
