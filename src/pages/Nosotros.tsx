@@ -191,7 +191,7 @@ const Nosotros = () => {
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
                 <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient-primary">
-                  🌳 Creciendo juntos: nuestra comunidad de impulso empresarial
+                  Creciendo juntos: nuestra comunidad de impulso empresarial
                 </h2>
                 <p className="text-lg text-gray-900 font-medium max-w-2xl mx-auto">
                   Como un bosque de hayas, crecemos juntos: sólidos en nuestros valores, flexibles para adaptarnos a los distintos contextos y con una visión amplia para impulsar nuestras empresas.
@@ -234,45 +234,6 @@ const Nosotros = () => {
                 </div>
               </div>
               
-              {/* Frase destacada final */}
-              <div className="text-center mt-16">
-                <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-elegant max-w-4xl mx-auto border border-gray-200">
-                  <h3 className="text-2xl md:text-3xl font-bold mb-6 text-gray-900">
-                    En Hayas, creemos en la inteligencia natural que nos enseñan los bosques
-                  </h3>
-                  <p className="text-lg text-gray-900 font-medium mb-8 max-w-3xl mx-auto">
-                    Como en un bosque de hayas, cada proyecto crece con equilibrio, propósito y conexión.
-                    <br />
-                    <span className="font-bold">Estas son nuestras raíces:</span>
-                  </p>
-                  
-                  <div className="space-y-6 text-left max-w-3xl mx-auto">
-                    <div className="flex items-start gap-4 bg-white/60 backdrop-blur-sm rounded-lg p-6">
-                      <span className="text-2xl">🌱</span>
-                      <div>
-                        <h4 className="font-bold text-gray-900 text-lg mb-2">Raíces profundas</h4>
-                        <p className="text-gray-800">Construimos relaciones de confianza que sostienen tu crecimiento a largo plazo.</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start gap-4 bg-white/60 backdrop-blur-sm rounded-lg p-6">
-                      <span className="text-2xl">🍃</span>
-                      <div>
-                        <h4 className="font-bold text-gray-900 text-lg mb-2">Ramas y hojas adaptables</h4>
-                        <p className="text-gray-800">Creamos soluciones con flexibilidad para adaptarse a tu momento, tus recursos y tu mercado.</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start gap-4 bg-white/60 backdrop-blur-sm rounded-lg p-6">
-                      <span className="text-2xl">🌳</span>
-                      <div>
-                        <h4 className="font-bold text-gray-900 text-lg mb-2">Copa amplia</h4>
-                        <p className="text-gray-800">Diseñamos estrategias con visión para escalar, posicionarte y evolucionar de forma sostenible.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </section>
