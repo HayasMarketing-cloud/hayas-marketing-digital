@@ -32,7 +32,7 @@ export const tagsLevel1: TagLevel1[] = [
   {
     name: "Marketing Digital",
     slug: "marketing-digital",
-    subtags: ["estrategia-marketing", "marketing-contenidos", "marketing-global", "publicidad-digital"],
+    subtags: ["marketing-contenidos", "marketing-global", "publicidad-digital"],
     color: "bg-green-500",
     description: "Estrategias y técnicas de marketing digital"
   },
@@ -46,9 +46,9 @@ export const tagsLevel1: TagLevel1[] = [
   {
     name: "Estrategia",
     slug: "estrategia",
-    subtags: ["buyer-persona", "funnel-conversion", "branding", "business-model"],
+    subtags: ["estrategia-marketing", "buyer-persona", "funnel-conversion", "branding", "business-model"],
     color: "bg-pink-500",
-    description: "Planificación estratégica y metodologías de negocio"
+    description: "Planificación estratégica, metodologías de negocio y estrategias de marketing"
   }
 ];
 
@@ -65,7 +65,6 @@ export const tagsLevel2: TagLevel2[] = [
   { name: "Chatbots", slug: "chatbots", parent: "inteligencia-artificial" },
   
   // Marketing Digital
-  { name: "Estrategia Marketing", slug: "estrategia-marketing", parent: "marketing-digital" },
   { name: "Marketing Contenidos", slug: "marketing-contenidos", parent: "marketing-digital" },
   { name: "Marketing Global", slug: "marketing-global", parent: "marketing-digital" },
   { name: "Publicidad Digital", slug: "publicidad-digital", parent: "marketing-digital" },
@@ -77,6 +76,7 @@ export const tagsLevel2: TagLevel2[] = [
   { name: "HubSpot", slug: "hubspot", parent: "crm" },
   
   // Estrategia
+  { name: "Estrategia Marketing", slug: "estrategia-marketing", parent: "estrategia" },
   { name: "Buyer Persona", slug: "buyer-persona", parent: "estrategia" },
   { name: "Funnel Conversión", slug: "funnel-conversion", parent: "estrategia" },
   { name: "Branding", slug: "branding", parent: "estrategia" },
