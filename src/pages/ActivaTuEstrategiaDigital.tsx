@@ -233,6 +233,9 @@ const ActivaTuEstrategiaDigital = () => {
         </div>
       </section>
 
+      {/* Kit Consulting Banner */}
+      <KitConsultingBanner />
+
       {/* Benefits Section */}
       <section className="container mx-auto px-4 py-16">
         <div className="bg-card rounded-2xl p-8 md:p-12 border border-primary/20">
@@ -282,7 +285,6 @@ const ActivaTuEstrategiaDigital = () => {
 
         </main>
 
-        <KitConsultingBanner />
         <Footer />
     </div>
   );
