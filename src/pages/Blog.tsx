@@ -6,6 +6,8 @@ import { Badge } from '@/components/ui/badge';
 import { Calendar, User, ArrowRight, Clock } from 'lucide-react';
 import Footer from '@/components/Footer';
 import Navigation from '@/components/Navigation';
+import BlogTagFilter from '@/components/BlogTagFilter';
+import Seo from '@/components/Seo';
 import iaMarketingHero from '@/assets/ia-marketing-hero.jpg';
 import avisosLegalesHero from '@/assets/avisos-legales-hero.jpg';
 import mantenimientoWordpressHero from '@/assets/mantenimiento-wordpress-hero.jpg';
@@ -303,30 +305,33 @@ const Blog = () => {
     'Diseño Web'
   ];
 
-  return (
-    <div className="min-h-screen bg-background">
-      <Navigation />
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-primary/10 via-background to-accent/10">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Blog Hayas Marketing
-            </h1>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Descubre insights, estrategias y tendencias en marketing digital, IA y automatización 
-              que están transformando los negocios.
-            </p>
-            <div className="flex flex-wrap justify-center gap-2 mb-8">
-              {categories.map((category) => (
-                <Badge key={category} variant="outline" className="hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer">
-                  {category}
-                </Badge>
-              ))}
+      return (
+    <>
+      <Seo 
+        title="Blog de Marketing Digital | Hayas Marketing"
+        description="Descubre las últimas estrategias, herramientas y tendencias en marketing digital, CRM, automatización y más en nuestro blog especializado."
+        canonical="/blog"
+      />
+      
+      <div className="min-h-screen bg-background">
+        <Navigation />
+        {/* Hero Section */}
+        <section className="pt-32 pb-16 bg-gradient-to-br from-primary/10 via-background to-accent/10">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center">
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                Blog Hayas Marketing
+              </h1>
+              <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+                Descubre insights, estrategias y tendencias en marketing digital, IA y automatización 
+                que están transformando los negocios.
+              </p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        {/* Filter Section */}
+        <BlogTagFilter />
 
       {/* Featured Post */}
       <section className="py-16">
@@ -365,13 +370,15 @@ const Blog = () => {
                         {featuredPost.readTime}
                       </div>
                     </div>
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {featuredPost.tags.map((tag) => (
-                        <Badge key={tag} variant="outline" className="text-xs">
-                          {tag}
-                        </Badge>
-                      ))}
-                    </div>
+                     <div className="flex flex-wrap gap-2 mb-4">
+                       {featuredPost.tags.map((tag) => (
+                         <Link key={tag} to={`/blog/tag/${tag.replace(/\s+/g, '-').toLowerCase()}`}>
+                           <Badge variant="outline" className="text-xs hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer">
+                             {tag}
+                           </Badge>
+                         </Link>
+                       ))}
+                     </div>
                     <Link to={`/blog/${featuredPost.id}`}>
                       <Button className="w-full group">
                         Leer Artículo Completo
@@ -413,13 +420,15 @@ const Blog = () => {
                 </CardHeader>
                 <CardContent>
                   {post.tags && (
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {post.tags.map((tag) => (
-                        <Badge key={tag} variant="outline" className="text-xs">
-                          {tag}
-                        </Badge>
-                      ))}
-                    </div>
+                     <div className="flex flex-wrap gap-2 mb-4">
+                       {post.tags.slice(0, 3).map((tag) => (
+                         <Link key={tag} to={`/blog/tag/${tag.replace(/\s+/g, '-').toLowerCase()}`}>
+                           <Badge variant="outline" className="text-xs hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer">
+                             {tag}
+                           </Badge>
+                         </Link>
+                       ))}
+                     </div>
                   )}
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-muted-foreground flex items-center gap-1">
@@ -466,15 +475,17 @@ const Blog = () => {
                   <CardDescription>{post.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  {post.tags && (
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {post.tags.map((tag) => (
-                        <Badge key={tag} variant="outline" className="text-xs">
-                          {tag}
-                        </Badge>
-                      ))}
-                    </div>
-                  )}
+                   {post.tags && (
+                     <div className="flex flex-wrap gap-2 mb-4">
+                       {post.tags.slice(0, 3).map((tag) => (
+                         <Link key={tag} to={`/blog/tag/${tag.replace(/\s+/g, '-').toLowerCase()}`}>
+                           <Badge variant="outline" className="text-xs hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer">
+                             {tag}
+                           </Badge>
+                         </Link>
+                       ))}
+                     </div>
+                   )}
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-muted-foreground flex items-center gap-1">
                       <Calendar className="h-4 w-4" />
@@ -510,8 +521,9 @@ const Blog = () => {
         </div>
       </section>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </>
   );
 };
 

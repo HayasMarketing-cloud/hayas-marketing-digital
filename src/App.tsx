@@ -104,6 +104,7 @@ import HayasCRM from './pages/HayasCRM';
 import BlogIARedesSociales from './pages/BlogIARedesSociales';
 import BlogFunnelConversionB2B from './pages/BlogFunnelConversionB2B';
 import BlogMarketingGlobalInternacionalizacion from './pages/BlogMarketingGlobalInternacionalizacion';
+import BlogTagPage from './pages/BlogTagPage';
 
 const queryClient = new QueryClient();
 
@@ -188,6 +189,7 @@ const App = () => (
           
            {/* BLOG / RECURSOS */}
            <Route path="/blog" element={<Blog />} />
+           <Route path="/blog/tag/:tag" element={<BlogTagPage />} />
            <Route path="/blog/:id" element={<BlogPost />} />
            <Route path="/blog/perfil-cliente-ideal" element={<BlogPerfilClienteIdeal />} />
            <Route path="/blog/como-crear-buyer-persona-b2b-b2c-guia-completa" element={<BlogPerfilClienteIdeal />} />
