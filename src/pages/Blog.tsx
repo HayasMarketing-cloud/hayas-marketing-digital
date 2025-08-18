@@ -16,6 +16,7 @@ import perfilClienteIdealHero from '@/assets/perfil-cliente-ideal-hero.jpg';
 import calculoInversionHero from '@/assets/calculo-inversion-marketing-hero.jpg';
 import brandingProcesoNamingHero from '@/assets/branding-proceso-tecnicas-naming-hero.jpg';
 import businessModelCanvasHero from '@/assets/business-model-canvas-estrategia-marketing-hero.jpg';
+import marketingNaturalHero from '@/assets/marketing-natural-posicionamiento-organico-hero.jpg';
 import googleConsentModeHero from '@/assets/google-consent-mode-cookieyes-hero.jpg';
 
 const Blog = () => {
@@ -133,7 +134,7 @@ const Blog = () => {
       date: '2024-12-17',
       readTime: '8 min',
       category: 'CRM y Automatización',
-      image: '/assets/sistema-prevision-ventas.jpg',
+      image: '/src/assets/sistema-prevision-ventas.jpg',
       tags: ['Lead Scoring', 'CRM', 'Automatización', 'Ventas', 'Marketing Digital']
     },
     {
@@ -193,7 +194,7 @@ const Blog = () => {
       date: '2025-01-15',
       readTime: '12 min',
       category: 'Marketing Digital',
-      image: '/src/assets/marketing-natural-posicionamiento-organico-hero.jpg',
+      image: marketingNaturalHero,
       tags: ['Marketing Natural', 'Posicionamiento Orgánico', 'SEO', 'Estrategia Digital', 'IA Marketing']
     },
     {
