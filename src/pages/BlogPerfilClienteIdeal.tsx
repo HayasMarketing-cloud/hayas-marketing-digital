@@ -1,5 +1,6 @@
 import React from 'react';
 import BlogPostTemplate from '@/components/BlogPost/BlogPostTemplate';
+import { CheckCircle } from 'lucide-react';
 
 const BlogPerfilClienteIdeal = () => {
   const metadata = {
@@ -153,6 +154,40 @@ const BlogPerfilClienteIdeal = () => {
           <p className="mb-6">
             Una vez recopilada la información, es momento de organizarla y dar vida a tu buyer persona de manera visual. <strong>Crear una ficha visual facilita la comprensión y el uso por parte de todo el equipo.</strong>
           </p>
+
+          {/* Ejemplo Visual de Buyer Persona */}
+          <div className="mb-8">
+            <h3 className="text-2xl font-semibold mb-6 text-foreground">Ejemplo práctico: Buyer Persona para Marketing Manager</h3>
+            <p className="mb-6 text-muted-foreground">
+              A continuación puedes ver un ejemplo de cómo organizar visualmente toda la información recopilada sobre tu buyer persona. Este formato incluye foto, datos demográficos, responsabilidades laborales, problemas, desafíos y comportamiento digital.
+            </p>
+            
+            <div className="bg-white dark:bg-gray-900 rounded-xl border border-border/50 overflow-hidden shadow-lg">
+              <img 
+                src="/lovable-uploads/9b4c2a8f-f75f-451e-9bb6-d3e25aae34e8.png" 
+                alt="Ejemplo de infografía de buyer persona - Marta Jiménez Marketing Manager con información sobre trabajo, problemas, desafíos y comportamiento digital"
+                className="w-full h-auto"
+              />
+            </div>
+            
+            <div className="mt-4 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-950/20 rounded-xl p-6 border border-green-200 dark:border-green-800">
+              <div className="flex items-start gap-4">
+                <div className="p-2 bg-green-100 dark:bg-green-900/50 rounded-lg">
+                  <CheckCircle className="h-5 w-5 text-green-600 dark:text-green-400" />
+                </div>
+                <div>
+                  <h4 className="font-semibold mb-2 text-green-800 dark:text-green-200">Elementos clave de esta infografía</h4>
+                  <ul className="text-green-700 dark:text-green-300 text-sm space-y-1">
+                    <li>• <strong>Foto y datos básicos:</strong> Humaniza al buyer persona</li>
+                    <li>• <strong>Contexto laboral:</strong> Responsabilidades y situación actual</li>
+                    <li>• <strong>Problemas identificados:</strong> Pain points específicos</li>
+                    <li>• <strong>Desafíos:</strong> Objetivos que quiere conseguir</li>
+                    <li>• <strong>Comportamiento digital:</strong> Cómo actúa online</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
 
 
           <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
