@@ -102,6 +102,7 @@ import BlogSeoOffPage from './pages/BlogSeoOffPage';
 import BlogReCommerceEconomiaCircular from './pages/BlogReCommerceEconomiaCircular';
 import HayasCRM from './pages/HayasCRM';
 import BlogIARedesSociales from './pages/BlogIARedesSociales';
+import BlogFunnelConversionB2B from './pages/BlogFunnelConversionB2B';
 
 const queryClient = new QueryClient();
 
@@ -203,7 +204,8 @@ const App = () => (
           <Route path="/blog/seo-on-page-guia-completa" element={<BlogSeoOnPage />} />
           <Route path="/blog/lead-scoring-calificacion-leads" element={<BlogLeadScoringCalificacionLeads />} />
                  <Route path="/blog/seo-inteligencia-artificial" element={<BlogSeoInteligenciaArtificial />} />
-                <Route path="/blog/ia-redes-sociales-herramientas-riesgos" element={<BlogIARedesSociales />} />
+                 <Route path="/blog/ia-redes-sociales-herramientas-riesgos" element={<BlogIARedesSociales />} />
+                 <Route path="/blog/funnel-conversion-b2b" element={<BlogFunnelConversionB2B />} />
           
           
           {/* CONTACTO Y CONSULTAS */}
