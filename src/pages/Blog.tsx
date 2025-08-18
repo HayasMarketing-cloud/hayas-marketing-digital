@@ -33,6 +33,18 @@ const Blog = () => {
 
   const allPosts = [
     {
+      id: 'marketing-global-internacionalizacion',
+      title: "Marketing Global: Internacionalización i18n y Localización l10n",
+      description: "Descubre cómo desarrollar una estrategia de marketing global efectiva mediante la internacionalización (i18n) y localización (l10n) de contenidos para diferentes mercados.",
+      excerpt: "Aprende a expandir tu negocio globalmente con estrategias de internacionalización i18n y localización l10n. Guía completa para adaptar tu marketing a mercados internacionales.",
+      category: "Estrategias Marketing",
+      readTime: "8 min",
+      date: "18 Dic 2024",
+      image: "/marketing-global-hero.jpg",
+      slug: "/blog/marketing-global-internacionalizacion",
+      tags: ["marketing global", "internacionalización", "localización", "i18n", "l10n", "contenidos"]
+    },
+    {
       id: 5,
       title: "Cómo crear tu buyer persona para B2B y B2C [GUÍA COMPLETA + TEMPLATE]",
       description: "Aprende a crear buyer personas efectivos para B2B y B2C con nuestra guía completa. Incluye template descargable y cuestionario para definir el perfil de cliente ideal.",
