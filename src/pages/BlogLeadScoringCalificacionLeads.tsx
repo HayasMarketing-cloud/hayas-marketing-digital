@@ -4,7 +4,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
-import { Target, TrendingUp, Users, Zap, CheckCircle, ArrowRight, Star, BarChart3 } from 'lucide-react';
+import { Target, TrendingUp, Users, Zap, CheckCircle, ArrowRight, Star, BarChart3, Settings, Workflow } from 'lucide-react';
 
 const BlogLeadScoringCalificacionLeads = () => {
   const metadata = {
@@ -496,6 +496,92 @@ const BlogLeadScoringCalificacionLeads = () => {
               </div>
               <Badge variant="outline" className="text-xs mt-2">Económico</Badge>
             </Card>
+          </div>
+
+          {/* Anuncio HubSpot Automation */}
+          <div className="mt-8 bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-950/20 dark:to-red-950/20 rounded-2xl border border-orange-200 dark:border-orange-800 overflow-hidden">
+            <div className="grid lg:grid-cols-2 gap-8 p-8">
+              {/* Left Column - Content */}
+              <div>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-2 bg-orange-100 dark:bg-orange-900/50 rounded-lg">
+                    <Workflow className="h-6 w-6 text-orange-600 dark:text-orange-400" />
+                  </div>
+                  <Badge className="bg-orange-100 text-orange-800 dark:bg-orange-900/50 dark:text-orange-200">
+                    Automatización Avanzada
+                  </Badge>
+                </div>
+                
+                <h3 className="text-2xl font-bold mb-4 text-orange-900 dark:text-orange-100">
+                  ¿Quieres implementar un sistema de lead scoring automatizado con HubSpot Starter?
+                </h3>
+                
+                <p className="text-orange-800 dark:text-orange-200 mb-6 leading-relaxed">
+                  Configuramos workflows automatizados que evalúan tus contactos en tiempo real, 
+                  combinan datos de múltiples fuentes y crean scoring dinámico basado en 
+                  comportamiento web y criterios de negocio. Todo integrado con tu CRM existente.
+                </p>
+                
+                <div className="space-y-3 mb-6">
+                  {[
+                    "Recopilación automática de datos de contactos y empresas",
+                    "Fusión inteligente de información de múltiples fuentes",
+                    "Scoring automático basado en tu matriz personalizada",
+                    "Exportación e integración con hojas de cálculo",
+                    "Actualización continua de contactos en tu CRM"
+                  ].map((feature, index) => (
+                    <div key={index} className="flex items-start gap-3">
+                      <CheckCircle className="h-4 w-4 text-orange-600 dark:text-orange-400 mt-1 flex-shrink-0" />
+                      <span className="text-sm text-orange-700 dark:text-orange-300">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+                
+                <button className="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors flex items-center gap-2 group">
+                  Solicitar Automatización
+                  <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </div>
+              
+              {/* Right Column - Workflow Visual */}
+              <div className="relative">
+                <div className="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-lg border border-orange-200 dark:border-orange-800">
+                  <h4 className="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-200 flex items-center gap-2">
+                    <Settings className="h-5 w-5 text-orange-600 dark:text-orange-400" />
+                    Workflow Automatizado
+                  </h4>
+                  
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-3 p-3 bg-orange-50 dark:bg-orange-950/30 rounded-lg">
+                      <div className="w-8 h-8 bg-orange-600 dark:bg-orange-500 rounded-full flex items-center justify-center text-white text-sm font-bold">1</div>
+                      <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Obtener contactos</span>
+                    </div>
+                    
+                    <div className="flex items-center gap-3 p-3 bg-blue-50 dark:bg-blue-950/30 rounded-lg">
+                      <div className="w-8 h-8 bg-blue-600 dark:bg-blue-500 rounded-full flex items-center justify-center text-white text-sm font-bold">2</div>
+                      <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Combinar información</span>
+                    </div>
+                    
+                    <div className="flex items-center gap-3 p-3 bg-purple-50 dark:bg-purple-950/30 rounded-lg">
+                      <div className="w-8 h-8 bg-purple-600 dark:bg-purple-500 rounded-full flex items-center justify-center text-white text-sm font-bold">3</div>
+                      <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Aplicar Lead Scoring</span>
+                    </div>
+                    
+                    <div className="flex items-center gap-3 p-3 bg-green-50 dark:bg-green-950/30 rounded-lg">
+                      <div className="w-8 h-8 bg-green-600 dark:bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-bold">4</div>
+                      <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Actualizar CRM</span>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-4 p-3 bg-gradient-to-r from-orange-100 to-red-100 dark:from-orange-950/50 dark:to-red-950/50 rounded-lg">
+                    <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                      <span className="text-xs font-medium text-gray-600 dark:text-gray-400">1757 leads procesados automáticamente</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
