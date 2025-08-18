@@ -1,11 +1,8 @@
 import React from "react";
 import { Card } from "@/components/ui/card";
 import GHLFormEmbed from "@/components/GHLFormEmbed";
-
 const JoinFreelancersSection: React.FC = () => {
-
-  return (
-    <section id="unete-freelance" className="py-16 md:py-20 bg-white">
+  return <section id="unete-freelance" className="py-16 md:py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
@@ -25,18 +22,11 @@ const JoinFreelancersSection: React.FC = () => {
           </div>
 
           <div className="relative">
-            <h3 className="text-2xl font-semibold mb-6 text-hayas-primary text-center">Solicita unirte al equipo</h3>
-            <GHLFormEmbed 
-              formId="Jm7egbHEB8NN1jqNNtk5"
-              title="Solicitud colaboradores"
-              className="shadow-corporate border border-gray-100"
-              minHeight={939}
-            />
+            <h3 className="text-2xl font-semibold mb-6 text-hayas-primary text-center">¡Unete a nuestro equipo!</h3>
+            <GHLFormEmbed formId="Jm7egbHEB8NN1jqNNtk5" title="Solicitud colaboradores" className="shadow-corporate border border-gray-100" minHeight={939} />
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default JoinFreelancersSection;
