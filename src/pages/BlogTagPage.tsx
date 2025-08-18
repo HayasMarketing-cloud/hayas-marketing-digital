@@ -153,66 +153,115 @@ const BlogTagPage: React.FC = () => {
               {/* Main Content */}
               <div className="lg:col-span-2">
                 {filteredPosts.length > 0 ? (
-                  <div className="grid gap-8">
-                    {filteredPosts.map((post) => (
-                      <Card key={post.id} className="group hover:shadow-lg transition-all duration-300 overflow-hidden">
-                        <div className="grid md:grid-cols-3 gap-0">
-                          <div className="md:col-span-1">
-                            <div className="aspect-video md:aspect-square relative overflow-hidden">
-                              <img 
-                                src={post.image} 
-                                alt={post.title}
-                                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                              />
-                            </div>
-                          </div>
-                          <CardContent className="md:col-span-2 p-6">
-                            <div className="flex items-center gap-4 mb-3 text-sm text-muted-foreground">
-                              <Badge variant="secondary">{post.category}</Badge>
-                              <div className="flex items-center gap-1">
-                                <Calendar className="h-4 w-4" />
-                                {post.date}
-                              </div>
-                              <div className="flex items-center gap-1">
-                                <Clock className="h-4 w-4" />
-                                {post.readTime}
+                  <>
+                    <div className="grid gap-8 mb-12">
+                      {filteredPosts.map((post) => (
+                        <Card key={post.id} className="group hover:shadow-lg transition-all duration-300 overflow-hidden">
+                          <div className="grid md:grid-cols-3 gap-0">
+                            <div className="md:col-span-1">
+                              <div className="aspect-video md:aspect-square relative overflow-hidden">
+                                <img 
+                                  src={post.image} 
+                                  alt={post.title}
+                                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
                               </div>
                             </div>
-                            
-                            <h2 className="text-xl font-bold mb-3 line-clamp-2 group-hover:text-primary transition-colors">
-                              {post.title}
-                            </h2>
-                            
-                            <p className="text-muted-foreground mb-4 line-clamp-3">
-                              {post.description}
-                            </p>
-                            
-                            <div className="flex items-center justify-between">
-                              <div className="flex flex-wrap gap-2">
-                                {post.tags.slice(0, 3).map((postTag) => (
-                                  <Link key={postTag} to={`/blog/tag/${postTag}`}>
-                                    <Badge 
-                                      variant="outline" 
-                                      className="text-xs hover:bg-primary hover:text-primary-foreground transition-colors"
-                                    >
-                                      {postTag.replace('-', ' ')}
-                                    </Badge>
-                                  </Link>
-                                ))}
+                            <CardContent className="md:col-span-2 p-6">
+                              <div className="flex items-center gap-4 mb-3 text-sm text-muted-foreground">
+                                <Badge variant="secondary">{post.category}</Badge>
+                                <div className="flex items-center gap-1">
+                                  <Calendar className="h-4 w-4" />
+                                  {post.date}
+                                </div>
+                                <div className="flex items-center gap-1">
+                                  <Clock className="h-4 w-4" />
+                                  {post.readTime}
+                                </div>
                               </div>
                               
-                              <Link to={post.slug}>
-                                <Button variant="ghost" size="sm" className="group/btn">
-                                  Leer más
-                                  <ArrowRight className="h-4 w-4 ml-1 group-hover/btn:translate-x-1 transition-transform" />
-                                </Button>
-                              </Link>
-                            </div>
-                          </CardContent>
+                              <h2 className="text-xl font-bold mb-3 line-clamp-2 group-hover:text-primary transition-colors">
+                                {post.title}
+                              </h2>
+                              
+                              <p className="text-muted-foreground mb-4 line-clamp-3">
+                                {post.description}
+                              </p>
+                              
+                              <div className="flex items-center justify-between">
+                                <div className="flex flex-wrap gap-2">
+                                  {post.tags.slice(0, 3).map((postTag) => (
+                                    <Link key={postTag} to={`/blog/tag/${postTag}`}>
+                                      <Badge 
+                                        variant="outline" 
+                                        className="text-xs hover:bg-primary hover:text-primary-foreground transition-colors"
+                                      >
+                                        {postTag.replace('-', ' ')}
+                                      </Badge>
+                                    </Link>
+                                  ))}
+                                </div>
+                                
+                                <Link to={post.slug}>
+                                  <Button variant="ghost" size="sm" className="group/btn">
+                                    Leer más
+                                    <ArrowRight className="h-4 w-4 ml-1 group-hover/btn:translate-x-1 transition-transform" />
+                                  </Button>
+                                </Link>
+                              </div>
+                            </CardContent>
+                          </div>
+                        </Card>
+                      ))}
+                    </div>
+
+                    {/* Posts Relacionados */}
+                    {relatedPosts.length > 0 && (
+                      <div className="border-t border-border pt-8">
+                        <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
+                          <Calendar className="h-6 w-6 text-primary" />
+                          Posts Relacionados
+                        </h3>
+                        <div className="grid gap-6">
+                          {relatedPosts.slice(0, 3).map((post, index) => (
+                            <Card key={index} className="group hover:shadow-lg transition-all duration-300 overflow-hidden">
+                              <div className="grid md:grid-cols-3 gap-0">
+                                <div className="md:col-span-1">
+                                  <div className="aspect-video md:aspect-square relative overflow-hidden bg-muted">
+                                    <div className="absolute inset-0 flex items-center justify-center text-muted-foreground">
+                                      <Calendar className="h-8 w-8" />
+                                    </div>
+                                  </div>
+                                </div>
+                                <CardContent className="md:col-span-2 p-6">
+                                  <div className="flex items-center gap-4 mb-3 text-sm text-muted-foreground">
+                                    <Badge variant="secondary">{post.category}</Badge>
+                                    <div className="flex items-center gap-1">
+                                      <Clock className="h-4 w-4" />
+                                      {post.readTime}
+                                    </div>
+                                  </div>
+                                  
+                                  <h4 className="text-lg font-bold mb-2 line-clamp-2 group-hover:text-primary transition-colors">
+                                    {post.title}
+                                  </h4>
+                                  
+                                  <div className="flex items-center justify-end">
+                                    <Link to={post.slug}>
+                                      <Button variant="ghost" size="sm" className="group/btn">
+                                        Leer más
+                                        <ArrowRight className="h-4 w-4 ml-1 group-hover/btn:translate-x-1 transition-transform" />
+                                      </Button>
+                                    </Link>
+                                  </div>
+                                </CardContent>
+                              </div>
+                            </Card>
+                          ))}
                         </div>
-                      </Card>
-                    ))}
-                  </div>
+                      </div>
+                    )}
+                  </>
                 ) : (
                   <div className="text-center py-12">
                     <h3 className="text-2xl font-bold mb-4">No hay artículos disponibles</h3>
@@ -230,7 +279,7 @@ const BlogTagPage: React.FC = () => {
               <div className="lg:col-span-1">
                 <BlogSidebar 
                   currentTag={tag} 
-                  relatedPosts={relatedPosts}
+                  allPosts={allPosts}
                 />
               </div>
             </div>

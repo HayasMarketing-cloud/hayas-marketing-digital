@@ -9,17 +9,21 @@ import { getTagsByParent, tagsLevel1, type TagLevel1 } from '@/data/blogTags';
 
 interface BlogSidebarProps {
   currentTag?: string;
-  relatedPosts?: Array<{
-    title: string;
-    slug: string;
-    category: string;
-    readTime: string;
+  allPosts?: Array<{
+    tags: string[];
   }>;
 }
 
-const BlogSidebar: React.FC<BlogSidebarProps> = ({ currentTag, relatedPosts = [] }) => {
+const BlogSidebar: React.FC<BlogSidebarProps> = ({ currentTag, allPosts = [] }) => {
   const currentTagData = tagsLevel1.find(tag => tag.slug === currentTag);
   const relatedSubtags = currentTag ? getTagsByParent(currentTag) : [];
+  
+  // Función para contar artículos por tag
+  const getArticleCountByTag = (tagSlug: string): number => {
+    return allPosts.filter(post => 
+      post.tags.some(tag => tag === tagSlug || tag.replace(/\s+/g, '-').toLowerCase() === tagSlug)
+    ).length;
+  };
   
   return (
     <aside className="space-y-6">
@@ -90,52 +94,17 @@ const BlogSidebar: React.FC<BlogSidebarProps> = ({ currentTag, relatedPosts = []
                 to={`/blog/tag/${tag.slug}`}
                 className="block"
               >
-                <div className="flex items-center justify-between p-2 rounded-lg hover:bg-muted/50 transition-colors">
-                  <span className="text-sm font-medium">{tag.name}</span>
-                  <Badge variant="secondary" className="text-xs">
-                    {tag.subtags.length} temas
-                  </Badge>
+                 <div className="flex items-center justify-between p-2 rounded-lg hover:bg-muted/50 transition-colors">
+                   <span className="text-sm font-medium">{tag.name}</span>
+                   <Badge variant="secondary" className="text-xs">
+                     {getArticleCountByTag(tag.slug)} artículo{getArticleCountByTag(tag.slug) !== 1 ? 's' : ''}
+                   </Badge>
                 </div>
               </Link>
             ))}
           </div>
         </CardContent>
       </Card>
-
-      {/* Posts Relacionados */}
-      {relatedPosts.length > 0 && (
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-lg">
-              <Calendar className="h-5 w-5 text-primary" />
-              Posts Relacionados
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-3">
-              {relatedPosts.slice(0, 3).map((post, index) => (
-                <Link 
-                  key={index} 
-                  to={`/blog/${post.slug}`}
-                  className="block"
-                >
-                  <div className="p-3 rounded-lg hover:bg-muted/50 transition-colors">
-                    <h4 className="text-sm font-medium leading-tight mb-1">
-                      {post.title}
-                    </h4>
-                    <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                      <Badge variant="outline" className="text-xs">
-                        {post.category}
-                      </Badge>
-                      <span>{post.readTime}</span>
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
-      )}
     </aside>
   );
 };
