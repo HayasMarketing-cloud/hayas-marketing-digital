@@ -1,5 +1,6 @@
 import React from 'react';
 import BlogPostTemplate from '@/components/BlogPost/BlogPostTemplate';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
@@ -243,6 +244,142 @@ const BlogLeadScoringCalificacionLeads = () => {
                     Al obtener los datos de estas variables en tu CRM, automáticamente calificarás a los 
                     potenciales clientes con una puntuación. Ordenando la lista por scoring, tendrás tus 
                     leads priorizados automáticamente.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Matriz de Calificación - Ejemplo Práctico */}
+          <div className="mt-8">
+            <h3 className="text-2xl font-semibold mb-6 text-foreground">Ejemplo de Matriz de Calificación de Leads</h3>
+            <p className="text-muted-foreground mb-6">
+              A continuación te mostramos un ejemplo práctico de cómo estructurar una matriz de calificación 
+              para una empresa de servicios de localización y traducción:
+            </p>
+
+            <div className="bg-white dark:bg-gray-900 rounded-xl border border-border/50 overflow-hidden shadow-sm">
+              <Table>
+                <TableHeader>
+                  <TableRow className="bg-muted/50">
+                    <TableHead className="font-semibold text-foreground border-r border-border/30">
+                      Scoring Variables / Properties
+                    </TableHead>
+                    <TableHead className="font-semibold text-center bg-purple-50 dark:bg-purple-950/30 text-purple-700 dark:text-purple-300 border-r border-border/30">
+                      HIGH
+                    </TableHead>
+                    <TableHead className="font-semibold text-center bg-gray-50 dark:bg-gray-800/50 text-gray-700 dark:text-gray-300 border-r border-border/30">
+                      MEDIUM
+                    </TableHead>
+                    <TableHead className="font-semibold text-center bg-gray-100 dark:bg-gray-700/50 text-gray-700 dark:text-gray-300">
+                      LOW
+                    </TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  <TableRow className="border-b border-border/30">
+                    <TableCell className="font-medium border-r border-border/30 bg-muted/20">
+                      Country
+                    </TableCell>
+                    <TableCell className="text-center bg-purple-50 dark:bg-purple-950/20 border-r border-border/30">
+                      <span className="font-semibold text-purple-700 dark:text-purple-300">USA</span>
+                    </TableCell>
+                    <TableCell className="text-center text-sm border-r border-border/30">
+                      United Kingdom, Ireland, Germany, Switzerland, South Korea
+                    </TableCell>
+                    <TableCell className="text-center text-sm">
+                      Spain, China, France
+                    </TableCell>
+                  </TableRow>
+                  
+                  <TableRow className="border-b border-border/30">
+                    <TableCell className="font-medium border-r border-border/30 bg-muted/20">
+                      Number of Languages
+                    </TableCell>
+                    <TableCell className="text-center bg-purple-50 dark:bg-purple-950/20 border-r border-border/30">
+                      <span className="font-semibold text-purple-700 dark:text-purple-300">&gt;9 languages</span>
+                    </TableCell>
+                    <TableCell className="text-center text-sm border-r border-border/30">
+                      5 to 9 languages
+                    </TableCell>
+                    <TableCell className="text-center text-sm">
+                      Less than 5 languages
+                    </TableCell>
+                  </TableRow>
+                  
+                  <TableRow className="border-b border-border/30">
+                    <TableCell className="font-medium border-r border-border/30 bg-muted/20">
+                      Buyer Persona
+                    </TableCell>
+                    <TableCell className="text-center bg-purple-50 dark:bg-purple-950/20 border-r border-border/30 text-sm">
+                      <span className="font-semibold text-purple-700 dark:text-purple-300">
+                        Localization manager, CEO and Founder, Procurement
+                      </span>
+                    </TableCell>
+                    <TableCell className="text-center text-sm border-r border-border/30">
+                      Marketing and Content Managers, Technical and Writing Support, Asset and Ecommerce managers, Product Managers
+                    </TableCell>
+                    <TableCell className="text-center text-sm">
+                      Technical and Writing support
+                    </TableCell>
+                  </TableRow>
+                  
+                  <TableRow className="border-b border-border/30">
+                    <TableCell className="font-medium border-r border-border/30 bg-muted/20">
+                      Company Annual Budget
+                    </TableCell>
+                    <TableCell className="text-center bg-purple-50 dark:bg-purple-950/20 border-r border-border/30">
+                      <span className="font-semibold text-purple-700 dark:text-purple-300">150k-500k</span>
+                    </TableCell>
+                    <TableCell className="text-center text-sm border-r border-border/30">
+                      50k-150k
+                    </TableCell>
+                    <TableCell className="text-center text-sm">
+                      0-50k<br />&gt;500K
+                    </TableCell>
+                  </TableRow>
+                  
+                  <TableRow>
+                    <TableCell className="font-medium border-r border-border/30 bg-muted/20">
+                      Technology or Localization program
+                    </TableCell>
+                    <TableCell className="text-center bg-purple-50 dark:bg-purple-950/20 border-r border-border/30">
+                      <span className="font-semibold text-purple-700 dark:text-purple-300">Smartling, Memsource</span>
+                    </TableCell>
+                    <TableCell className="text-center text-sm border-r border-border/30">
+                      Crowdin, XTM, Smartcat
+                    </TableCell>
+                    <TableCell className="text-center text-sm">
+                      no TMS, SDL, Poedit
+                    </TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
+            </div>
+
+            <div className="mt-6 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20 rounded-xl p-6 border border-blue-200 dark:border-blue-800">
+              <div className="flex items-start gap-4">
+                <div className="p-2 bg-blue-100 dark:bg-blue-900/50 rounded-lg">
+                  <Target className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+                </div>
+                <div>
+                  <h4 className="font-semibold mb-2 text-blue-800 dark:text-blue-200">Cómo usar esta matriz</h4>
+                  <p className="text-blue-700 dark:text-blue-300 text-sm mb-3">
+                    Para cada lead, asigna puntuaciones según dónde encaje en cada categoría:
+                  </p>
+                  <div className="grid grid-cols-3 gap-4 text-sm">
+                    <div className="bg-purple-100 dark:bg-purple-900/30 p-2 rounded text-center">
+                      <strong className="text-purple-800 dark:text-purple-200">HIGH = 100 pts</strong>
+                    </div>
+                    <div className="bg-gray-100 dark:bg-gray-800/50 p-2 rounded text-center">
+                      <strong className="text-gray-700 dark:text-gray-300">MEDIUM = 50 pts</strong>
+                    </div>
+                    <div className="bg-gray-200 dark:bg-gray-700/50 p-2 rounded text-center">
+                      <strong className="text-gray-600 dark:text-gray-400">LOW = 25 pts</strong>
+                    </div>
+                  </div>
+                  <p className="text-blue-700 dark:text-blue-300 text-sm mt-3">
+                    La suma total de puntos te dará la prioridad del lead: &gt;400 pts = Alta prioridad, 200-400 pts = Media prioridad, &lt;200 pts = Baja prioridad.
                   </p>
                 </div>
               </div>
