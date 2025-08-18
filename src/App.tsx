@@ -103,6 +103,7 @@ import BlogReCommerceEconomiaCircular from './pages/BlogReCommerceEconomiaCircul
 import HayasCRM from './pages/HayasCRM';
 import BlogIARedesSociales from './pages/BlogIARedesSociales';
 import BlogFunnelConversionB2B from './pages/BlogFunnelConversionB2B';
+import BlogMarketingGlobalInternacionalizacion from './pages/BlogMarketingGlobalInternacionalizacion';
 
 const queryClient = new QueryClient();
 
@@ -205,7 +206,8 @@ const App = () => (
           <Route path="/blog/lead-scoring-calificacion-leads" element={<BlogLeadScoringCalificacionLeads />} />
                  <Route path="/blog/seo-inteligencia-artificial" element={<BlogSeoInteligenciaArtificial />} />
                  <Route path="/blog/ia-redes-sociales-herramientas-riesgos" element={<BlogIARedesSociales />} />
-                 <Route path="/blog/funnel-conversion-b2b" element={<BlogFunnelConversionB2B />} />
+        <Route path="/blog/funnel-conversion-b2b" element={<BlogFunnelConversionB2B />} />
+        <Route path="/blog/marketing-global-internacionalizacion" element={<BlogMarketingGlobalInternacionalizacion />} />
           
           
           {/* CONTACTO Y CONSULTAS */}
