@@ -1,7 +1,5 @@
 import React from 'react';
 import BlogPostTemplate from '@/components/BlogPost/BlogPostTemplate';
-import buyerPersonaInfografia from '@/assets/buyer-persona-infografia.png';
-import descargaCuestionario from '@/assets/descarga-cuestionario-buyer-persona.png';
 
 const BlogPerfilClienteIdeal = () => {
   const metadata = {
@@ -158,8 +156,8 @@ const BlogPerfilClienteIdeal = () => {
 
           <div className="text-center mb-8">
             <img 
-              src={buyerPersonaInfografia} 
-              alt="Ejemplo de infografía de buyer persona con información organizada visualmente"
+              src="/lovable-uploads/327ce3ee-ff2e-4cb9-9194-7684d1582824.png" 
+              alt="Ejemplo de infografía de buyer persona - Marta Jiménez Marketing Manager"
               className="mx-auto rounded-lg shadow-lg max-w-full h-auto"
             />
             <p className="text-sm text-muted-foreground mt-2">
@@ -184,18 +182,14 @@ const BlogPerfilClienteIdeal = () => {
           <div className="text-center mb-8">
             <a 
               href="#" 
-              className="inline-block hover:opacity-90 transition-opacity"
+              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary to-secondary text-white font-semibold rounded-lg hover:opacity-90 transition-opacity shadow-lg"
               onClick={(e) => {
                 e.preventDefault();
                 // Aquí iría la lógica para descargar o mostrar un formulario
                 alert('Funcionalidad de descarga próximamente disponible');
               }}
             >
-              <img 
-                src={descargaCuestionario} 
-                alt="Banner para descargar el cuestionario de buyer persona"
-                className="mx-auto rounded-lg shadow-lg max-w-full h-auto"
-              />
+              📥 Descargar Cuestionario Buyer Persona GRATIS
             </a>
           </div>
         </section>
