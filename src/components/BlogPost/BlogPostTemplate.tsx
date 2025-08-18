@@ -130,19 +130,7 @@ const BlogPostTemplate: React.FC<BlogPostTemplateProps> = ({
                 ))}
               </div>
 
-              {/* Imagen hero - solo si se proporciona */}
-              {heroImage && (
-                <div className="mb-8">
-                  <OptimizedImage 
-                    src={heroImage.src}
-                    alt={heroImage.alt}
-                    className="w-full rounded-lg shadow-lg"
-                    width={heroImage.width || 1200}
-                    height={heroImage.height || 675}
-                    priority={true}
-                  />
-                </div>
-              )}
+              {/* Hero image disabled - no images inside posts */}
             </header>
 
             {/* Contenido del artículo */}

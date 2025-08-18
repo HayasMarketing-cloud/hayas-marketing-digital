@@ -154,16 +154,6 @@ const BlogPerfilClienteIdeal = () => {
             Una vez recopilada la información, es momento de organizarla y dar vida a tu buyer persona de manera visual. <strong>Crear una ficha visual facilita la comprensión y el uso por parte de todo el equipo.</strong>
           </p>
 
-          <div className="text-center mb-8">
-            <img 
-              src="/lovable-uploads/327ce3ee-ff2e-4cb9-9194-7684d1582824.png" 
-              alt="Ejemplo de infografía de buyer persona - Marta Jiménez Marketing Manager"
-              className="mx-auto rounded-lg shadow-lg max-w-full h-auto"
-            />
-            <p className="text-sm text-muted-foreground mt-2">
-              Ejemplo de organización visual de un buyer persona para el sector B2B
-            </p>
-          </div>
 
           <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
             <p className="text-blue-800">

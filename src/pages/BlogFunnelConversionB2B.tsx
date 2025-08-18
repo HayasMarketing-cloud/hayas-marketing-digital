@@ -109,15 +109,6 @@ const BlogFunnelConversionB2B = () => {
         En el contexto B2B, este proceso es especialmente complejo debido a los múltiples decisores involucrados, ciclos de venta más largos y la necesidad de generar confianza y demostrar valor antes de la compra.
       </p>
 
-      <div className="my-8">
-        <OptimizedImage 
-          src="/crm-dashboard-hero.jpg"
-          alt="Visualización gráfica de un funnel de conversión B2B con las etapas TOFU, MOFU y BOFU"
-          className="w-full rounded-lg shadow-lg"
-          width={800}
-          height={500}
-        />
-      </div>
 
       <h2>Las 3 etapas fundamentales de un funnel B2B</h2>
 
@@ -234,15 +225,6 @@ const BlogFunnelConversionB2B = () => {
         <li>Establecer relaciones win-win a largo plazo</li>
       </ul>
 
-      <div className="my-8">
-        <OptimizedImage 
-          src="/crm-sistema-gestion-clientes-hero.jpg"
-          alt="Modelo Flywheel de HubSpot mostrando las fases de Attract, Engage y Delight"
-          className="w-full rounded-lg shadow-lg"
-          width={800}
-          height={500}
-        />
-      </div>
 
       <h2>Conclusión: construye tu funnel B2B step by step</h2>
 
