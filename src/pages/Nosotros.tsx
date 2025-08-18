@@ -238,32 +238,8 @@ const Nosotros = () => {
           </div>
         </section>
 
-        {/* Nuestros Valores - Fondo blanco */}
+        {/* Nuestro Equipo - Fondo blanco */}
         <section className="py-16 md:py-20 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient-primary">Nuestros Valores</h2>
-                <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-                  Los principios que guían cada proyecto y relación con nuestros clientes
-                </p>
-              </div>
-              
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {values.map((value, index) => <div key={index} className="text-center group">
-                    <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                      {value.icon}
-                    </div>
-                    <h3 className="text-xl font-semibold mb-3 text-hayas-primary">{value.title}</h3>
-                    <p className="text-gray-700">{value.description}</p>
-                  </div>)}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Nuestro Equipo - Fondo tenue */}
-        <section className="py-16 md:py-20 bg-gradient-to-br from-hayas-secondary/5 to-hayas-primary/5">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
@@ -281,6 +257,30 @@ const Nosotros = () => {
                     <h3 className="text-xl font-semibold mb-2 text-hayas-primary">{member.name}</h3>
                     <p className="text-hayas-primary font-medium mb-3 text-sm">{member.role}</p>
                     <p className="text-gray-700 text-sm leading-relaxed">{member.description}</p>
+                  </div>)}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Nuestros Valores - Fondo tenue */}
+        <section className="py-16 md:py-20 bg-gradient-to-br from-hayas-secondary/5 to-hayas-primary/5">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient-primary">Nuestros Valores</h2>
+                <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+                  Los principios que guían cada proyecto y relación con nuestros clientes
+                </p>
+              </div>
+              
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {values.map((value, index) => <div key={index} className="text-center group">
+                    <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                      {value.icon}
+                    </div>
+                    <h3 className="text-xl font-semibold mb-3 text-hayas-primary">{value.title}</h3>
+                    <p className="text-gray-700">{value.description}</p>
                   </div>)}
               </div>
             </div>
