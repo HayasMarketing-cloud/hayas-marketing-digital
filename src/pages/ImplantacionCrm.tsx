@@ -7,7 +7,7 @@ import FAQSection from '@/components/FAQSection';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Building2, Users, CheckCircle, ArrowRight, Settings, Target, Mail, Zap, ArrowLeft } from 'lucide-react';
+import { Building2, Users, CheckCircle, ArrowRight, Settings, Target, Mail, Zap, ArrowLeft, Smartphone, BarChart3, Calendar, Database } from 'lucide-react';
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -303,6 +303,118 @@ const ImplantacionCrm = () => {
                   </Link>
                 </CardContent>
               </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Hayas CRM Section */}
+        <section className="py-20 bg-gradient-to-br from-blue-600 via-blue-700 to-purple-800 relative overflow-hidden">
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48Y2lyY2xlIGN4PSIzMCIgY3k9IjMwIiByPSIyIi8+PC9nPjwvZz48L3N2Zz4=')] opacity-30"></div>
+          
+          {/* Decorative elements */}
+          <div className="absolute top-20 left-10 w-20 h-20 bg-cyan-400/20 rounded-full blur-xl"></div>
+          <div className="absolute bottom-20 right-10 w-32 h-32 bg-purple-400/20 rounded-full blur-xl"></div>
+          <div className="absolute top-40 right-20 w-16 h-16 bg-blue-300/30 rounded-full blur-lg"></div>
+          
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Left Column - Content */}
+              <div className="text-white">
+                <div className="inline-flex items-center bg-cyan-400/20 backdrop-blur-sm border border-cyan-300/30 px-4 py-2 rounded-full mb-6">
+                  <span className="text-cyan-200 text-sm font-medium">Solución Personalizada Hayas</span>
+                </div>
+                
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                  Potencia tu negocio con
+                  <span className="block text-cyan-300">Hayas CRM</span>
+                </h2>
+                
+                <p className="text-xl text-blue-100 mb-8 leading-relaxed">
+                  Empresas de todos los tamaños obtienen hasta un <span className="text-cyan-300 font-semibold">300% de aumento</span> en 
+                  conversiones con nuestro CRM personalizado. Marketing automation, ventas y gestión centralizada.
+                </p>
+                
+                {/* Features Icons */}
+                <div className="grid grid-cols-3 gap-6 mb-8">
+                  <div className="text-center">
+                    <div className="bg-white/10 backdrop-blur-sm p-3 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-2">
+                      <Building2 className="h-6 w-6 text-cyan-300" />
+                    </div>
+                    <span className="text-sm text-blue-100">Para PYMES</span>
+                    <p className="text-xs text-blue-200 mt-1">Hasta 50 usuarios</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="bg-white/10 backdrop-blur-sm p-3 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-2">
+                      <BarChart3 className="h-6 w-6 text-cyan-300" />
+                    </div>
+                    <span className="text-sm text-blue-100">Marketing + Ventas</span>
+                    <p className="text-xs text-blue-200 mt-1">Todo integrado</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="bg-white/10 backdrop-blur-sm p-3 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-2">
+                      <Zap className="h-6 w-6 text-cyan-300" />
+                    </div>
+                    <span className="text-sm text-blue-100">Hasta 300%</span>
+                    <p className="text-xs text-blue-200 mt-1">Más conversiones</p>
+                  </div>
+                </div>
+                
+                {/* CTA Buttons */}
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Link to="/hayas-crm">
+                    <Button size="lg" className="bg-cyan-400 text-blue-900 hover:bg-cyan-300 font-semibold px-8 py-3 text-lg w-full sm:w-auto">
+                      Ver Hayas CRM
+                      <ArrowRight className="w-5 h-5 ml-2" />
+                    </Button>
+                  </Link>
+                  <Button 
+                    variant="outline" 
+                    size="lg" 
+                    className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm px-8 py-3 text-lg w-full sm:w-auto"
+                  >
+                    Más Información
+                  </Button>
+                </div>
+                
+                {/* Status Indicator */}
+                <div className="flex items-center mt-6">
+                  <div className="flex items-center bg-green-500/20 backdrop-blur-sm border border-green-400/30 px-3 py-1 rounded-full">
+                    <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
+                    <span className="text-green-200 text-sm font-medium">Disponible ahora</span>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Right Column - Feature Card */}
+              <div className="relative">
+                <Card className="bg-white/95 backdrop-blur-lg border-0 shadow-2xl">
+                  <CardHeader className="text-center pb-6">
+                    <div className="bg-gradient-to-br from-blue-600 to-purple-700 p-4 rounded-2xl w-fit mx-auto mb-4">
+                      <span className="text-2xl font-bold text-white">HAYAS</span>
+                      <span className="block text-cyan-200 text-sm">CRM</span>
+                    </div>
+                    <CardTitle className="text-xl text-gray-800">
+                      CRM personalizado para tu empresa
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    {[
+                      { icon: Smartphone, text: "Gestión integral de leads", color: "text-blue-600" },
+                      { icon: BarChart3, text: "Marketing automation avanzado", color: "text-purple-600" },
+                      { icon: Users, text: "Pipeline de ventas optimizado", color: "text-green-600" },
+                      { icon: Calendar, text: "Seguimiento y analytics", color: "text-orange-600" },
+                      { icon: Database, text: "Integración con tu ecosistema", color: "text-cyan-600" }
+                    ].map((feature, index) => (
+                      <div key={index} className="flex items-center space-x-3 p-2">
+                        <div className="bg-gray-100 p-2 rounded-lg">
+                          <feature.icon className={`h-4 w-4 ${feature.color}`} />
+                        </div>
+                        <span className="text-gray-700 font-medium">{feature.text}</span>
+                      </div>
+                    ))}
+                  </CardContent>
+                </Card>
+              </div>
             </div>
           </div>
         </section>
