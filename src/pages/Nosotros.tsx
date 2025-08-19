@@ -245,7 +245,7 @@ const Nosotros = () => {
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient-primary">Nuestro Equipo</h2>
                 <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-                  Un equipo multidisciplinar de 8 profesionales especializados en marketing digital, desarrollo, CRM y consultoría estratégica
+                  Un equipo multidisciplinar especializado en todas las áreas del Marketing Digital liderados por
                 </p>
               </div>
               
