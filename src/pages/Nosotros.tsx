@@ -121,10 +121,10 @@ const Nosotros = () => {
           
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-8 leading-tight animate-fade-in">
+              <h1 className="title-hero mb-8 leading-tight animate-fade-in">
                 Somos <span className="text-gradient-primary">Hayas Marketing</span>
               </h1>
-              <p className="text-xl md:text-2xl text-gray-700 mb-12 animate-slide-up max-w-4xl mx-auto leading-relaxed">
+              <p className="text-hero text-gray-700 mb-4 animate-slide-up max-w-4xl mx-auto leading-relaxed">
                 Agencia de marketing digital y consultoría especializada en gestión de clientes (CRM) y estrategia digital. 
                 Trabajamos con un enfoque integral centrado en la estrategia, eficiencia, adaptación y crecimiento sostenible.
               </p>
@@ -145,8 +145,8 @@ const Nosotros = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
-                <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gradient-primary">Nuestra Historia</h2>
-                <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+                <h2 className="title-section mb-8 text-gradient-primary">Nuestra Historia</h2>
+                <p className="text-hero text-gray-700 max-w-3xl mx-auto leading-relaxed">
                   Desde 2014, ayudamos a emprendedores y empresas a conectar de forma más efectiva y auténtica con sus clientes, impulsando su crecimiento a través de estrategias de marketing digital esenciales.
                 </p>
               </div>

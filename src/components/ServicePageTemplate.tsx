@@ -145,10 +145,10 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ data }) => {
                 {data.badge}
               </Badge>
               <h1 
-                className="text-4xl md:text-5xl font-bold mb-6 leading-tight"
+                className="title-hero leading-tight"
                 dangerouslySetInnerHTML={{ __html: data.heroTitle }}
               />
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              <p className="text-hero text-gray-600 leading-relaxed">
                 {data.heroSubtitle}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -180,10 +180,10 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ data }) => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 
-              className="text-3xl md:text-4xl font-bold mb-4"
+              className="title-section"
               dangerouslySetInnerHTML={{ __html: data.servicesTitle }}
             />
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-description max-w-3xl mx-auto">
               {data.servicesSubtitle}
             </p>
           </div>
@@ -195,7 +195,7 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ data }) => {
                   <div className="mb-4 p-3 rounded-lg bg-primary/10 w-fit">
                     {service.icon}
                   </div>
-                  <CardTitle className="text-xl font-bold">{service.title}</CardTitle>
+                  <CardTitle className="title-card">{service.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600 leading-relaxed">{service.description}</p>
@@ -215,10 +215,10 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ data }) => {
                 Especialidades
               </Badge>
               <h2 
-                className="text-3xl md:text-4xl font-bold mb-4"
+                className="title-section"
                 dangerouslySetInnerHTML={{ __html: data.typesTitle || '' }}
               />
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              <p className="text-description max-w-3xl mx-auto">
                 {data.typesSubtitle}
               </p>
             </div>
@@ -231,7 +231,7 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ data }) => {
                       <div className="p-2 rounded-lg bg-primary/10">
                         {type.icon}
                       </div>
-                      <CardTitle className="text-xl font-bold">{type.title}</CardTitle>
+                      <CardTitle className="title-card">{type.title}</CardTitle>
                     </div>
                     <p className="text-gray-600">{type.description}</p>
                   </CardHeader>
@@ -258,10 +258,10 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ data }) => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 
-                className="text-3xl md:text-4xl font-bold mb-6"
+                className="title-section mb-2"
                 dangerouslySetInnerHTML={{ __html: data.benefitsTitle }}
               />
-              <p className="text-lg text-gray-600 mb-8">
+              <p className="text-description mb-8">
                 {data.benefitsSubtitle}
               </p>
               
@@ -283,7 +283,7 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ data }) => {
                   <div className="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4">
                     <CheckCircle className="h-8 w-8" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-4">Garantía de Resultados</h3>
+                  <h3 className="title-subsection mb-4">Garantía de Resultados</h3>
                   <p className="text-gray-600 mb-6">
                     Trabajamos con objetivos claros y métricas medibles para asegurar el éxito de tu proyecto.
                   </p>
@@ -302,10 +302,10 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ data }) => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 
-              className="text-3xl md:text-4xl font-bold mb-4"
+              className="title-section"
               dangerouslySetInnerHTML={{ __html: data.processTitle }}
             />
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-description max-w-3xl mx-auto">
               {data.processSubtitle}
             </p>
           </div>
@@ -321,7 +321,7 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ data }) => {
                     <div className="mb-2 text-primary">
                       {step.icon}
                     </div>
-                    <CardTitle className="text-lg">{step.title}</CardTitle>
+                    <CardTitle className="text-lg font-semibold">{step.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-gray-600 text-sm">{step.description}</p>
@@ -350,10 +350,10 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ data }) => {
       {/* CTA Section */}
       <section className="py-16 md:py-20 bg-gradient-to-br from-primary/10 via-white to-accent/10">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="title-section">
             ¿Listo para dar el siguiente paso?
           </h2>
-          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-description mb-8 max-w-2xl mx-auto">
             Agenda una consulta estratégica gratuita y descubre cómo podemos impulsar tu negocio.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

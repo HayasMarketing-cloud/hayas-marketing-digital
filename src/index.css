@@ -126,6 +126,31 @@
     @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
   }
 
+  /* Typography hierarchy utilities */
+  .title-hero {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold mb-6;
+  }
+
+  .title-section {
+    @apply text-3xl md:text-4xl font-bold mb-4;
+  }
+
+  .title-subsection {
+    @apply text-2xl font-bold mb-3;
+  }
+
+  .title-card {
+    @apply text-xl font-bold;
+  }
+
+  .text-hero {
+    @apply text-xl text-gray-600 mb-8;
+  }
+
+  .text-description {
+    @apply text-lg text-gray-600;
+  }
+
   /* Sistema de espaciado vertical unificado */
   .section-tight {
     @apply py-2 md:py-4 lg:py-6;

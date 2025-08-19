@@ -26,10 +26,10 @@ const FAQSection: React.FC<FAQSectionProps> = ({
     <section className="section-normal bg-gradient-to-br from-gray-50 to-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="title-section">
             {title}
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-description max-w-2xl mx-auto">
             {subtitle}
           </p>
         </div>

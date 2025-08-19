@@ -24,8 +24,8 @@ const AllServicesSection = () => {
   return <section id="todos-servicios" className="py-8 md:py-12 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Nuestros Servicios</h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <h2 className="title-section">Nuestros Servicios</h2>
+          <p className="text-description max-w-3xl mx-auto">
             Descubre el catálogo completo de servicios profesionales que ofrecemos para hacer crecer tu negocio de forma estratégica y sostenible.
           </p>
         </div>
@@ -66,7 +66,7 @@ const AllServicesSection = () => {
           return <Card key={service.id} className={`${visible ? '' : 'hidden'} border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full`}>
                 <CardHeader className={view === 'list' ? 'pb-2' : 'pb-2'}>
                   <div className="mb-4">{service.icon}</div>
-                  <CardTitle className="text-xl font-bold">{service.title}</CardTitle>
+                  <CardTitle className="title-card">{service.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className={view === 'grid' ? 'text-gray-600 text-base' : 'text-gray-600 text-lg'}>
