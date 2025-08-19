@@ -1,7 +1,7 @@
 import React from 'react';
 import BlogPostTemplate from '@/components/BlogPost/BlogPostTemplate';
 import { Button } from '@/components/ui/button';
-import kitDigitalHero from '../assets/kit-digital-hero.jpg';
+import kitDigitalHero from '../assets/kit-digital-hero-updated.jpg';
 import { Link } from 'react-router-dom';
 import { AlertTriangle, Calendar, CheckCircle, DollarSign, FileText, Globe, Shield, Users } from 'lucide-react';
 

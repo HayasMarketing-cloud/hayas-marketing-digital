@@ -20,7 +20,7 @@ import brandingProcesoNamingHero from '@/assets/branding-proceso-tecnicas-naming
 import businessModelCanvasHero from '@/assets/business-model-canvas-estrategia-marketing-hero.jpg';
 import marketingNaturalHero from '@/assets/marketing-natural-posicionamiento-organico-hero.jpg';
 import googleConsentModeHero from '@/assets/google-consent-mode-cookieyes-hero.jpg';
-import kitDigitalHero from '@/assets/kit-digital-hero.jpg';
+import kitDigitalHero from '@/assets/kit-digital-hero-updated.jpg';
 
 const Blog = () => {
   const featuredPost = {
