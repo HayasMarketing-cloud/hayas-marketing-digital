@@ -6,8 +6,6 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import KitDigitalBanner from '@/components/KitDigitalBanner';
-
 import FAQSection from '@/components/FAQSection';
 import { Bot, MessageCircle, Clock, Users, Zap, Settings, Brain, ArrowRight, CheckCircle, Star, Sparkles, Timer, Shield, Globe, Smartphone, Monitor, Headphones, BarChart3, Target } from 'lucide-react';
 const aiAssistantServices = [{
@@ -364,49 +362,6 @@ const AsistenteIA: React.FC = () => {
           </div>
         </div>
       </section>
-
-      {/* Casos de Éxito */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-              Casos de Éxito con Asistentes IA
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Empresas que han revolucionado su atención al cliente y aumentado 
-              sus conversiones con nuestros asistentes de inteligencia artificial.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {successCases.map((caso, index) => <Card key={index} className="group hover:shadow-lg transition-all duration-300">
-                <CardHeader>
-                  <div className="flex items-center justify-between mb-2">
-                    <CardTitle className="text-lg">{caso.client}</CardTitle>
-                    <Badge variant="secondary">{caso.timeframe}</Badge>
-                  </div>
-                  <p className="text-sm text-primary font-medium">{caso.implementation}</p>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="bg-green-50 dark:bg-green-950 p-4 rounded-lg">
-                    <p className="text-sm font-medium text-green-700 dark:text-green-300">
-                      {caso.results}
-                    </p>
-                  </div>
-                  <blockquote className="text-sm text-muted-foreground italic border-l-4 border-primary pl-4">
-                    "{caso.testimonial}"
-                  </blockquote>
-                  <div className="flex items-center">
-                    {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
-                  </div>
-                </CardContent>
-              </Card>)}
-          </div>
-        </div>
-      </section>
-
-      {/* Kit Digital */}
-      <KitDigitalBanner />
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground">
