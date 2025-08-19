@@ -11,7 +11,7 @@ const solutions = [
     icon: <Rocket className="h-8 w-8 text-primary" />,
     title: "Impulsa tu marca",
     description: "Construye una marca atractiva, adaptada a tu audiencia, reconocible y consistente. Una identidad sólida no solo genera confianza, sino que convierte al tráfico directo en uno de los principales activos estratégicos de tu empresa.",
-    includes: "Creación de Marca • Marketing y Visibilidad • Gestión del Plan de Marketing",
+    includes: "Creación de Marca • Diseño Web • SEO y Posicionamiento • Creación Tienda Online • Gestión de Redes Sociales • Estrategia de Contenidos",
     href: "/soluciones/impulsa-tu-marca"
   },
   {
@@ -19,7 +19,7 @@ const solutions = [
     icon: <Heart className="h-8 w-8 text-primary" />,
     title: "Conecta con tus clientes",
       description: "La clave para crecer está en conocer a fondo a tus clientes actuales y potenciales. Comprender sus necesidades, comportamientos y expectativas nos permite ayudarte a mejorar tu desempeño, optimizar la experiencia de usuario y, si es necesario, adaptar tus productos o servicios a nuevas demandas del mercado.",
-    includes: "Captación de Leads • CRM y Automatizaciones • Soluciones IA aplicada a Marketing",
+    includes: "Implantación CRM • Captación de Leads y Clientes • Implementación de Funnel • Campañas Inbound Marketing • Marketing Directo • Administración de CRM",
     href: "/soluciones/conecta-con-tus-clientes"
   },
   {
