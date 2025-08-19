@@ -17,7 +17,7 @@ import aiLogo from '@/assets/logos/ai-logo.png';
 import JoinFreelancersSection from '@/components/JoinFreelancersSection';
 const Nosotros = () => {
   const teamMembers = [{
-    name: "Sandra",
+    name: "Rubén",
     role: "CEO & Founder",
     description: "Visionario y líder estratégico, especializado en transformación digital y crecimiento empresarial sostenible.",
     image: "/lovable-uploads/4aedecdb-9c20-490d-ba11-072181bdf3d6.png"
