@@ -5,8 +5,6 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import KitDigitalBanner from '@/components/KitDigitalBanner';
-
 import FAQSection from '@/components/FAQSection';
 import { 
   Search, Target, TrendingUp, BarChart3, Zap, DollarSign, MousePointer,
@@ -185,7 +183,7 @@ const PublicidadGoogleAds: React.FC = () => {
                 SEM & Google Ads
               </Badge>
               <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-                Aparece Primero en Google cuando <span className="text-primary">te Buscan</span>
+                Aparece primero en Google cuando <span className="text-primary">te buscan</span>
               </h1>
               <p className="text-lg text-muted-foreground mb-8">
                 Potencia tu negocio con publicidad estratégica en Google Ads. Aparece justo 
@@ -206,8 +204,8 @@ const PublicidadGoogleAds: React.FC = () => {
             <div className="relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <img 
-                  src="/lovable-uploads/e54905f0-0e84-46b4-bc48-4acf987fcb9a.png"
-                  alt="Publicidad efectiva en Google Ads"
+                  src="/publicidad-google-ads-hero.jpg"
+                  alt="Panel de gestión profesional de Google Ads - Campañas y métricas"
                   className="w-full h-auto"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
@@ -222,7 +220,7 @@ const PublicidadGoogleAds: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-              Todos los Tipos de Campañas de Google Ads
+              Todos los tipos de campañas de Google Ads
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Desde búsquedas hasta display, shopping y video. Utilizamos todos los formatos 
@@ -253,7 +251,7 @@ const PublicidadGoogleAds: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-              Campañas Diseñadas para tus Objetivos
+              Campañas diseñadas para tus objetivos
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Cada negocio tiene objetivos únicos. Configuramos las campañas 
@@ -340,7 +338,7 @@ const PublicidadGoogleAds: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-              Nuestra Metodología de Google Ads
+              Nuestra metodología de Google Ads
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Un proceso probado que garantiza campañas rentables desde el primer día 
@@ -369,53 +367,6 @@ const PublicidadGoogleAds: React.FC = () => {
         </div>
       </section>
 
-      {/* Casos de Éxito */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-              Resultados Reales en Google Ads
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Casos de éxito que demuestran la efectividad de nuestras estrategias 
-              de publicidad en Google para diferentes tipos de negocio.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {successCases.map((caso, index) => (
-              <Card key={index} className="group hover:shadow-lg transition-all duration-300">
-                <CardHeader>
-                  <div className="flex items-center justify-between mb-2">
-                    <CardTitle className="text-lg">{caso.client}</CardTitle>
-                    <Badge variant="secondary">{caso.timeframe}</Badge>
-                  </div>
-                  <p className="text-sm text-primary font-medium">{caso.campaign}</p>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="bg-green-50 dark:bg-green-950 p-4 rounded-lg">
-                    <p className="text-sm font-medium text-green-700 dark:text-green-300">
-                      {caso.results}
-                    </p>
-                  </div>
-                  <blockquote className="text-sm text-muted-foreground italic border-l-4 border-primary pl-4">
-                    "{caso.testimonial}"
-                  </blockquote>
-                  <div className="flex items-center">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Kit Digital */}
-      <KitDigitalBanner />
-
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
@@ -429,12 +380,12 @@ const PublicidadGoogleAds: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" className="group" asChild>
               <Link to="/contacto">
-                Empezar Ahora
+                Empezar ahora
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
             <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary" asChild>
-              <Link to="/casos-exito">Ver Más Casos</Link>
+              <Link to="/casos-exito">Ver más casos</Link>
             </Button>
           </div>
         </div>
