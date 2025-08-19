@@ -99,6 +99,7 @@ import BlogAutomatizacionMarketing from './pages/BlogAutomatizacionMarketing';
 import BlogWeb30 from './pages/BlogWeb30';
 import BlogSeoOnPage from './pages/BlogSeoOnPage';
 import BlogSeoOffPage from './pages/BlogSeoOffPage';
+import BlogKitDigitalMarketing from './pages/BlogKitDigitalMarketing';
 import BlogReCommerceEconomiaCircular from './pages/BlogReCommerceEconomiaCircular';
 import HayasCRM from './pages/HayasCRM';
 import BlogIARedesSociales from './pages/BlogIARedesSociales';
@@ -207,10 +208,11 @@ const App = () => (
           <Route path="/blog/web-3-0-futuro-internet-descentralizado" element={<BlogWeb30 />} />
           <Route path="/blog/seo-on-page-guia-completa" element={<BlogSeoOnPage />} />
           <Route path="/blog/lead-scoring-calificacion-leads" element={<BlogLeadScoringCalificacionLeads />} />
-                 <Route path="/blog/seo-inteligencia-artificial" element={<BlogSeoInteligenciaArtificial />} />
-                 <Route path="/blog/ia-redes-sociales-herramientas-riesgos" element={<BlogIARedesSociales />} />
+                  <Route path="/blog/seo-inteligencia-artificial" element={<BlogSeoInteligenciaArtificial />} />
+                  <Route path="/blog/ia-redes-sociales-herramientas-riesgos" element={<BlogIARedesSociales />} />
         <Route path="/blog/funnel-conversion-b2b" element={<BlogFunnelConversionB2B />} />
         <Route path="/blog/marketing-global-internacionalizacion" element={<BlogMarketingGlobalInternacionalizacion />} />
+        <Route path="/blog/kit-digital-marketing-guia-completa-2025" element={<BlogKitDigitalMarketing />} />
           
           
           {/* CONTACTO Y CONSULTAS */}
