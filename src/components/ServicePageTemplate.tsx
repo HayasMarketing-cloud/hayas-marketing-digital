@@ -6,7 +6,7 @@ import Seo from '@/components/Seo';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import KitDigitalBanner from '@/components/KitDigitalBanner';
+
 import FAQSection from '@/components/FAQSection';
 import SuccessCasesSection from '@/components/SuccessCasesSection';
 import OptimizedImage from '@/components/OptimizedImage';
@@ -346,8 +346,6 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ data }) => {
       {/* Additional Content */}
       {data.additionalContent}
 
-      {/* Kit Digital Banner */}
-      <KitDigitalBanner />
 
       {/* CTA Section */}
       <section className="py-16 md:py-20 bg-gradient-to-br from-primary/10 via-white to-accent/10">
