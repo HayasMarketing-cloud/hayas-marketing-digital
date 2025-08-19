@@ -153,7 +153,6 @@ const App = () => (
           <Route path="/casos-exito/i-virgen-extra" element={<CasoExitoIVirgenExtra />} />
           <Route path="/casos-exito/inbound-students" element={<CasoExitoInboundStudents />} />
           <Route path="/casos-exito/calistenia-online" element={<CasoExitoCalistheniaOnline />} />
-          <Route path="/casos-exito-calisthenia-online" element={<Navigate to="/casos-exito/calistenia-online" replace />} />
           <Route path="/casos-exito/centro-roraima" element={<CasoExitoCentroRoraima />} />
           <Route path="/casos-exito/joints-up" element={<CasoExitoJointsUp />} />
           <Route path="/casos-exito/translate-with-style" element={<CasoExitoTranslateWithStyle />} />
@@ -223,7 +222,7 @@ const App = () => (
           <Route path="/contacto" element={<Contacto />} />
           <Route path="/hayas-crm" element={<HayasCRM />} />
           
-          {/* RUTAS LEGACY - Redirigen a las nuevas categorías */}
+          {/* RUTAS LEGACY - Redirigen a las nuevas URLs estandarizadas */}
           <Route path="/crm-automatizaciones" element={<ConectaConTusClientes />} />
           <Route path="/creacion-marca" element={<ImpulsaTuMarca />} />
           <Route path="/soluciones/crm-automatizacion" element={<ConectaConTusClientes />} />
@@ -233,35 +232,37 @@ const App = () => (
           <Route path="/gestion-marketing" element={<GestionMarketing />} />
           <Route path="/soluciones-ia" element={<SolucionesIA />} />
           <Route path="/implantacion-crm" element={<ImplantacionCrm />} />
-          <Route path="/caso-exito-asendia" element={<CasoExitoAsendia />} />
-          <Route path="/caso-exito-nexo-vital" element={<CasoExitoNexoVital />} />
-          <Route path="/caso-exito-i-virgen-extra" element={<CasoExitoIVirgenExtra />} />
-          <Route path="/caso-exito-inbound-students" element={<CasoExitoInboundStudents />} />
+          
+          {/* Redirecciones de URLs legacy de casos de éxito */}
+          <Route path="/caso-exito-asendia" element={<Navigate to="/casos-exito/asendia" replace />} />
+          <Route path="/caso-exito-nexo-vital" element={<Navigate to="/casos-exito/nexo-vital" replace />} />
+          <Route path="/caso-exito-i-virgen-extra" element={<Navigate to="/casos-exito/i-virgen-extra" replace />} />
+          <Route path="/caso-exito-inbound-students" element={<Navigate to="/casos-exito/inbound-students" replace />} />
           <Route path="/caso-exito-calistenia-online" element={<Navigate to="/casos-exito/calistenia-online" replace />} />
-          <Route path="/caso-exito-centro-roraima" element={<CasoExitoCentroRoraima />} />
-          <Route path="/caso-exito-joints-up" element={<CasoExitoJointsUp />} />
-          <Route path="/caso-exito-translate-with-style" element={<CasoExitoTranslateWithStyle />} />
-          <Route path="/caso-exito-formato-educativo" element={<CasoExitoFormatoEducativo />} />
-          <Route path="/caso-exito-omr" element={<CasoExitoOMR />} />
-          <Route path="/caso-exito-wooptix" element={<CasoExitoWooptix />} />
-          <Route path="/caso-exito-pamdamedia" element={<CasoExitoPamdamedia />} />
-          <Route path="/caso-exito-give-and-go" element={<CasoExitoGiveAndGo />} />
-          <Route path="/caso-exito-hikvision" element={<CasoExitoHikvision />} />
-          <Route path="/caso-exito-owo-game" element={<CasoExitoOWOGame />} />
-           <Route path="/caso-exito-nova-praxis" element={<CasoExitoNovaPraxis />} />
-           <Route path="/caso-exito-aistercel" element={<CasoExitoAistercel />} />
-           <Route path="/caso-exito-quanticbi" element={<CasoExitoQuanticBI />} />
-            <Route path="/caso-exito-peixos-emilio" element={<CasoExitoPeixosEmilio />} />
-               <Route path="/caso-exito-corte-a-films" element={<CasoExitoCorteAFilms />} />
-                 <Route path="/caso-exito-lualca" element={<CasoExitoLualca />} />
-                 <Route path="/caso-exito-plaza-de-la-estacion" element={<CasoExitoPlazaEstacion />} />
-                 <Route path="/caso-exito-rivas-centro" element={<CasoExitoRivasCentro />} />
-                 <Route path="/caso-exito-hubspot-for-startups" element={<CasoExitoHubSpotForStartups />} />
-                 <Route path="/caso-exito-beka-finance" element={<CasoExitoBekaFinance />} />
-                 <Route path="/caso-exito-peris-electricidad" element={<CasoExitoPerisElectricidad />} />
-                 <Route path="/caso-exito-carniceria-picos-de-europa" element={<CasoExitoCarniceriaPicosDeEuropa />} />
-                 <Route path="/caso-exito-pasteleria-la-oriental-sin-gluten" element={<CasoExitoLaOrientalSinGluten />} />
-                 <Route path="/caso-exito-flap-articulos-peluqueria" element={<CasoExitoFLAP />} />
+          <Route path="/caso-exito-centro-roraima" element={<Navigate to="/casos-exito/centro-roraima" replace />} />
+          <Route path="/caso-exito-joints-up" element={<Navigate to="/casos-exito/joints-up" replace />} />
+          <Route path="/caso-exito-translate-with-style" element={<Navigate to="/casos-exito/translate-with-style" replace />} />
+          <Route path="/caso-exito-formato-educativo" element={<Navigate to="/casos-exito/formato-educativo" replace />} />
+          <Route path="/caso-exito-omr" element={<Navigate to="/casos-exito/omr" replace />} />
+          <Route path="/caso-exito-wooptix" element={<Navigate to="/casos-exito/wooptix" replace />} />
+          <Route path="/caso-exito-pamdamedia" element={<Navigate to="/casos-exito/pamdamedia" replace />} />
+          <Route path="/caso-exito-give-and-go" element={<Navigate to="/casos-exito/give-and-go" replace />} />
+          <Route path="/caso-exito-hikvision" element={<Navigate to="/casos-exito/hikvision" replace />} />
+          <Route path="/caso-exito-owo-game" element={<Navigate to="/casos-exito/owo-game" replace />} />
+          <Route path="/caso-exito-nova-praxis" element={<Navigate to="/casos-exito/nova-praxis" replace />} />
+          <Route path="/caso-exito-aistercel" element={<Navigate to="/casos-exito/aistercel" replace />} />
+          <Route path="/caso-exito-quanticbi" element={<Navigate to="/casos-exito/quanticbi" replace />} />
+          <Route path="/caso-exito-peixos-emilio" element={<Navigate to="/casos-exito/peixos-emilio" replace />} />
+          <Route path="/caso-exito-corte-a-films" element={<Navigate to="/casos-exito/corte-a-films" replace />} />
+          <Route path="/caso-exito-lualca" element={<Navigate to="/casos-exito/lualca" replace />} />
+          <Route path="/caso-exito-plaza-de-la-estacion" element={<Navigate to="/casos-exito/plaza-de-la-estacion" replace />} />
+          <Route path="/caso-exito-rivas-centro" element={<Navigate to="/casos-exito/rivas-centro" replace />} />
+          <Route path="/caso-exito-hubspot-for-startups" element={<Navigate to="/casos-exito/hubspot-for-startups" replace />} />
+          <Route path="/caso-exito-beka-finance" element={<Navigate to="/casos-exito/beka-finance" replace />} />
+          <Route path="/caso-exito-peris-electricidad" element={<Navigate to="/casos-exito/peris-electricidad" replace />} />
+          <Route path="/caso-exito-carniceria-picos-de-europa" element={<Navigate to="/casos-exito/carniceria-picos-de-europa" replace />} />
+          <Route path="/caso-exito-pasteleria-la-oriental-sin-gluten" element={<Navigate to="/casos-exito/pasteleria-la-oriental-sin-gluten" replace />} />
+          <Route path="/caso-exito-flap-articulos-peluqueria" element={<Navigate to="/casos-exito/flap-articulos-peluqueria" replace />} />
           
           <Route path="/servicios/creacion-marca" element={<CreacionMarca />} />
           <Route path="/servicios/gestion-redes-sociales" element={<GestionRedesSociales />} />
