@@ -1,4 +1,5 @@
 import React from 'react';
+import publicidadRedesSocialesImage from '@/assets/publicidad-redes-sociales-dashboard.jpg';
 import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -232,8 +233,8 @@ const PublicidadRedesSociales: React.FC = () => {
             <div className="relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <img 
-                  src="/lovable-uploads/821c9806-3d78-4030-8e3f-15a13b79f0fc.png"
-                  alt="Google Ads - Publicidad profesional en redes sociales y Google"
+                  src={publicidadRedesSocialesImage}
+                  alt="Dashboard de publicidad en redes sociales - Facebook, Instagram, TikTok y LinkedIn"
                   className="w-full h-auto"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
