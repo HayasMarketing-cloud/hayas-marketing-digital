@@ -5,8 +5,6 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import KitDigitalBanner from '@/components/KitDigitalBanner';
-
 import FAQSection from '@/components/FAQSection';
 import { 
   Target, TrendingUp, BarChart3, Zap, Users, DollarSign,
@@ -213,7 +211,7 @@ const PublicidadRedesSociales: React.FC = () => {
                 Paid Media & Social Ads
               </Badge>
               <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-                Publicidad que <span className="text-primary">Genera Resultados</span> Inmediatos
+                Publicidad que <span className="text-primary">genera resultados</span> inmediatos
               </h1>
               <p className="text-lg text-muted-foreground mb-8">
                 Impulsa tu negocio con campañas publicitarias altamente efectivas en redes sociales. 
@@ -234,8 +232,8 @@ const PublicidadRedesSociales: React.FC = () => {
             <div className="relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <img 
-                  src="/lovable-uploads/f1127ebc-9bab-490e-8355-de81e13c2f93.png"
-                  alt="Publicidad efectiva en redes sociales"
+                  src="/publicidad-redes-sociales-hero.jpg"
+                  alt="Gestión profesional de publicidad en redes sociales - Dashboards y analíticas"
                   className="w-full h-auto"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
@@ -250,7 +248,7 @@ const PublicidadRedesSociales: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-              Publicidad Estratégica en Todas las Plataformas
+              Publicidad estratégica en todas las plataformas
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Cada plataforma social tiene sus propias oportunidades publicitarias. 
@@ -289,7 +287,7 @@ const PublicidadRedesSociales: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-              Campañas Adaptadas a tus Objetivos
+              Campañas adaptadas a tus objetivos
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Cada objetivo requiere una estrategia específica. Diseñamos campañas 
@@ -326,7 +324,7 @@ const PublicidadRedesSociales: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-              Gestión Integral de Publicidad Digital
+              Gestión integral de publicidad digital
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Desde la estrategia hasta la optimización, nos encargamos de todos los aspectos 
@@ -407,7 +405,7 @@ const PublicidadRedesSociales: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-              Nuestro Proceso de Gestión Publicitaria
+              Nuestro proceso de gestión publicitaria
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Una metodología probada que garantiza campañas exitosas y 
@@ -436,53 +434,6 @@ const PublicidadRedesSociales: React.FC = () => {
         </div>
       </section>
 
-      {/* Casos de Éxito */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-              Resultados Reales en Publicidad Digital
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Casos de éxito que demuestran el poder de una estrategia publicitaria 
-              bien ejecutada y optimizada continuamente.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {successCases.map((caso, index) => (
-              <Card key={index} className="group hover:shadow-lg transition-all duration-300">
-                <CardHeader>
-                  <div className="flex items-center justify-between mb-2">
-                    <CardTitle className="text-lg">{caso.client}</CardTitle>
-                    <Badge variant="secondary">{caso.timeframe}</Badge>
-                  </div>
-                  <p className="text-sm text-primary font-medium">{caso.campaign}</p>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="bg-green-50 dark:bg-green-950 p-4 rounded-lg">
-                    <p className="text-sm font-medium text-green-700 dark:text-green-300">
-                      {caso.results}
-                    </p>
-                  </div>
-                  <blockquote className="text-sm text-muted-foreground italic border-l-4 border-primary pl-4">
-                    "{caso.testimonial}"
-                  </blockquote>
-                  <div className="flex items-center">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Kit Digital */}
-      <KitDigitalBanner />
-
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
@@ -496,12 +447,12 @@ const PublicidadRedesSociales: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" className="group" asChild>
               <Link to="/contacto">
-                Lanzar Campañas
+                Lanzar campañas
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
             <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary" asChild>
-              <Link to="/casos-exito">Ver Más Resultados</Link>
+              <Link to="/casos-exito">Ver más resultados</Link>
             </Button>
           </div>
         </div>
