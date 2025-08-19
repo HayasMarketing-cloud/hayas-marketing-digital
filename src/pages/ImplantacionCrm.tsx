@@ -5,22 +5,22 @@ import { Settings, Target, Mail, Zap, Building2, Users, CheckCircle } from 'luci
 const ImplantacionCrm = () => {
   const features = [
     {
-      icon: Settings,
+      icon: <Settings className="w-6 h-6" />,
       title: "Configuración Completa",
       description: "Integración total con tus activos digitales: web, blog y redes sociales"
     },
     {
-      icon: Target,
+      icon: <Target className="w-6 h-6" />,
       title: "Pipeline Personalizado",
       description: "Diseño de procesos de ventas adaptados a tu modelo de negocio"
     },
     {
-      icon: Mail,
+      icon: <Mail className="w-6 h-6" />,
       title: "Email Marketing Avanzado",
       description: "Automatización de campañas y secuencias de nurturing personalizadas"
     },
     {
-      icon: Zap,
+      icon: <Zap className="w-6 h-6" />,
       title: "Funnels Segmentados",
       description: "Creación de embudos específicos por tipo de cliente y objetivos"
     }
@@ -28,24 +28,28 @@ const ImplantacionCrm = () => {
 
   const steps = [
     {
+      number: "01",
       title: "Análisis y Planificación",
       description: "Evaluamos tu negocio actual y diseñamos la estrategia de implementación perfecta para tus objetivos.",
-      icon: Target
+      icon: <Target className="w-6 h-6" />
     },
     {
+      number: "02",
       title: "Configuración del Sistema",
       description: "Instalamos y configuramos tu CRM con todas las integraciones necesarias para tu ecosistema digital.",
-      icon: Settings
+      icon: <Settings className="w-6 h-6" />
     },
     {
+      number: "03",
       title: "Migración de Datos",
       description: "Transferimos todos tus datos existentes de forma segura, garantizando la continuidad de tu información.",
-      icon: CheckCircle
+      icon: <CheckCircle className="w-6 h-6" />
     },
     {
+      number: "04",
       title: "Formación y Lanzamiento",
       description: "Entrenamos a tu equipo y lanzamos el sistema con soporte completo durante las primeras semanas.",
-      icon: Users
+      icon: <Users className="w-6 h-6" />
     }
   ];
 
@@ -65,7 +69,7 @@ const ImplantacionCrm = () => {
         "Proveedores industriales",
         "Agencias de marketing"
       ],
-      icon: Building2,
+      icon: <Building2 className="w-8 h-8" />,
       variant: "primary"
     },
     {
@@ -83,7 +87,7 @@ const ImplantacionCrm = () => {
         "Educación y formación online",
         "Inmobiliarias y seguros"
       ],
-      icon: Users,
+      icon: <Users className="w-8 h-8" />,
       variant: "secondary"
     }
   ];
