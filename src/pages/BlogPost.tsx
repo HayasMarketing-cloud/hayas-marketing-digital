@@ -1541,7 +1541,7 @@ const BlogPost = () => {
             <div className="bg-muted/30 p-6 rounded-lg mb-8">
               <h3 className="text-xl font-bold mb-4">🇪🇸 AESIA - España</h3>
               <p>
-                En agosto de 2023 se creó la <strong>Agencia Española de Supervisión de la Inteligencia Artificial (AESIA)</strong>, con sede en A Coruña, para implementar y supervisar la normativa de IA a nivel nacional y europeo.
+                En agosto de 2023 se creó la <a href="https://aesia.digital.gob.es/es" target="_blank" rel="noopener noreferrer" className="font-bold text-primary hover:text-primary/80 underline">Agencia Española de Supervisión de la Inteligencia Artificial (AESIA)</a>, con sede en A Coruña, para implementar y supervisar la normativa de IA a nivel nacional y europeo.
               </p>
             </div>
 
