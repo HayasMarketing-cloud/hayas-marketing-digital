@@ -20,7 +20,7 @@ const Nosotros = () => {
     name: "Sandra",
     role: "CEO & Founder",
     description: "Visionario y líder estratégico, especializado en transformación digital y crecimiento empresarial sostenible.",
-    image: "/lovable-uploads/b6816c4b-e843-4d7b-b2b9-7f935a389f54.png"
+    image: "/lovable-uploads/4aedecdb-9c20-490d-ba11-072181bdf3d6.png"
   }, {
     name: "Fátima",
     role: "Social Media Manager",
