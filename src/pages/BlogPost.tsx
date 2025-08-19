@@ -1549,40 +1549,40 @@ const BlogPost = () => {
               <div className="bg-gradient-to-br from-primary/5 to-accent/5 p-6 rounded-lg">
                 <h3 className="text-xl font-bold mb-4">⚙️ Automatización de Campañas</h3>
                 <ul className="space-y-2 text-sm">
-                  <li>• Google Ads Smart Bidding</li>
-                  <li>• Meta Ads con IA integrada</li>
-                  <li>• Albert (plataforma autoaprendizaje)</li>
-                  <li>• Madgicx para optimización</li>
+                  <li>• <a href="https://ads.google.com/intl/es_es/home/campaigns/smart-bidding/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 underline">Google Ads Smart Bidding</a></li>
+                  <li>• <a href="https://business.facebook.com/business/help/164749007013531" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 underline">Meta Ads con IA integrada</a></li>
+                  <li>• <a href="https://albert.ai" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 underline">Albert</a> (plataforma autoaprendizaje)</li>
+                  <li>• <a href="https://madgicx.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 underline">Madgicx</a> para optimización</li>
                 </ul>
               </div>
 
               <div className="bg-gradient-to-br from-accent/5 to-primary/5 p-6 rounded-lg">
                 <h3 className="text-xl font-bold mb-4">Segmentación Avanzada</h3>
                 <ul className="space-y-2 text-sm">
-                  <li>• Google Ads Audience Targeting</li>
-                  <li>• SaveMyLeads para Meta Ads</li>
-                  <li>• Bluecore para personalización</li>
-                  <li>• SegmentStream para análisis predictivo</li>
+                  <li>• <a href="https://ads.google.com/intl/es_es/home/tools/audience-manager/" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent/80 underline">Google Ads Audience Targeting</a></li>
+                  <li>• <a href="https://savemyleads.com" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent/80 underline">SaveMyLeads</a> para Meta Ads</li>
+                  <li>• <a href="https://bluecore.com" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent/80 underline">Bluecore</a> para personalización</li>
+                  <li>• <a href="https://segmentstream.com" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent/80 underline">SegmentStream</a> para análisis predictivo</li>
                 </ul>
               </div>
 
               <div className="bg-gradient-to-br from-primary/5 to-accent/5 p-6 rounded-lg">
                 <h3 className="text-xl font-bold mb-4">Creación de Contenido</h3>
                 <ul className="space-y-2 text-sm">
-                  <li>• AdCreative.ai para creativos</li>
-                  <li>• Google Responsive Search Ads</li>
-                  <li>• Persado para contenido emocional</li>
-                  <li>• Designhill para gráficos automáticos</li>
+                  <li>• <a href="https://adcreative.ai" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 underline">AdCreative.ai</a> para creativos</li>
+                  <li>• <a href="https://ads.google.com/intl/es_es/home/campaigns/search-ads/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 underline">Google Responsive Search Ads</a></li>
+                  <li>• <a href="https://persado.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 underline">Persado</a> para contenido emocional</li>
+                  <li>• <a href="https://designhill.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 underline">Designhill</a> para gráficos automáticos</li>
                 </ul>
               </div>
 
               <div className="bg-gradient-to-br from-accent/5 to-primary/5 p-6 rounded-lg">
                 <h3 className="text-xl font-bold mb-4">📊 Análisis Predictivo</h3>
                 <ul className="space-y-2 text-sm">
-                  <li>• Google Analytics con IA</li>
-                  <li>• Heap Analytics</li>
-                  <li>• SAS Customer Intelligence 360</li>
-                  <li>• AdCreative.ai para scoring</li>
+                  <li>• <a href="https://analytics.google.com/analytics/intelligence/" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent/80 underline">Google Analytics con IA</a></li>
+                  <li>• <a href="https://heap.io" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent/80 underline">Heap Analytics</a></li>
+                  <li>• <a href="https://www.sas.com/en_us/software/customer-intelligence-360.html" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent/80 underline">SAS Customer Intelligence 360</a></li>
+                  <li>• <a href="https://adcreative.ai" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent/80 underline">AdCreative.ai</a> para scoring</li>
                 </ul>
               </div>
             </div>
