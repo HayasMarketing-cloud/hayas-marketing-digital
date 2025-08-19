@@ -67,10 +67,10 @@ const advertisingPlatforms = [
     features: ["Segmentación profesional", "Lead gen forms", "Sponsored content", "Message ads"]
   },
   {
-    name: "TikTok Ads",
-    icon: <MessageCircle className="h-8 w-8" />,
-    description: "Alcanza audiencias jóvenes con contenido viral",
-    features: ["In-feed ads", "Brand takeover", "Hashtag challenge", "Branded effects"]
+    name: "Instagram Stories",
+    icon: <Instagram className="h-8 w-8" />,
+    description: "Contenido efímero que genera engagement inmediato",
+    features: ["Stories interactivas", "Polls y stickers", "Swipe up CTAs", "Branded content"]
   }
 ];
 
