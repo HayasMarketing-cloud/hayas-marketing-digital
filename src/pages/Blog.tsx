@@ -20,6 +20,7 @@ import brandingProcesoNamingHero from '@/assets/branding-proceso-tecnicas-naming
 import businessModelCanvasHero from '@/assets/business-model-canvas-estrategia-marketing-hero.jpg';
 import marketingNaturalHero from '@/assets/marketing-natural-posicionamiento-organico-hero.jpg';
 import googleConsentModeHero from '@/assets/google-consent-mode-cookieyes-hero.jpg';
+import kitDigitalHero from '@/assets/kit-digital-hero.jpg';
 
 const Blog = () => {
   const featuredPost = {
@@ -43,7 +44,7 @@ const Blog = () => {
       category: "Digitalización",
       readTime: "8 min",
       date: "19 Ene 2025",
-      image: "/kit-digital-marketing-hero.jpg",
+      image: kitDigitalHero,
       slug: "/blog/kit-digital-marketing-guia-completa-2025",
       tags: ["Kit Digital", "Digitalización", "Ayudas Públicas", "Marketing Digital", "Transformación Digital"],
       featured: true
