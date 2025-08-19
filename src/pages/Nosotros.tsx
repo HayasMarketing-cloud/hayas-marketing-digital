@@ -32,7 +32,7 @@ const Nosotros = () => {
     description: "Especialista en estrategias digitales integrales, SEO, SEM y automatización de campañas para maximizar el ROI.",
     image: "/lovable-uploads/869ded51-92ac-41e0-815c-65c18ee5a35d.png"
   }, {
-    name: "Sandra",
+    name: "Fátima",
     role: "Directora de Arte",
     description: "Creativa experta en branding, diseño visual y experiencia de usuario. Transforma ideas en identidades visuales impactantes.",
     image: "/lovable-uploads/ce1fa101-303c-4d7c-8fcf-c33db3e18dba.png"
