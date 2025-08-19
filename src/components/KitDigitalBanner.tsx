@@ -3,10 +3,8 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Users, Globe, TrendingUp, Calendar, Settings, ShoppingCart } from 'lucide-react';
-
 const KitDigitalBanner = () => {
-  return (
-    <section className="py-8 md:py-12 bg-gradient-to-br from-blue-900 via-indigo-800 to-blue-900 text-white relative overflow-hidden">
+  return <section className="py-8 md:py-12 bg-gradient-to-br from-blue-900 via-indigo-800 to-blue-900 text-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-10 w-32 h-32 border border-white/20 rounded-lg transform rotate-12"></div>
@@ -41,7 +39,7 @@ const KitDigitalBanner = () => {
                   <Users className="h-5 w-5 text-blue-400" />
                 </div>
                 <div>
-                  <p className="font-semibold text-sm">Autónomos</p>
+                  <p className="font-semibold text-sm">Pymes y Autónomos</p>
                   <p className="text-xs text-gray-400">Hasta 2 empleados</p>
                 </div>
               </div>
@@ -61,28 +59,21 @@ const KitDigitalBanner = () => {
                   <TrendingUp className="h-5 w-5 text-blue-400" />
                 </div>
                 <div>
-                  <p className="font-semibold text-sm">Hasta 3.000€</p>
+                  <p className="font-semibold text-sm">Hasta 2.000€</p>
                   <p className="text-xs text-gray-400">Sin coste</p>
                 </div>
               </div>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                asChild
-                className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-6 text-lg font-semibold shadow-lg"
-              >
+              <Button asChild className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-6 text-lg font-semibold shadow-lg">
                 <Link to="/kit-digital">
                   Quiero mi bono de 3.000€
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
               
-              <Button 
-                asChild
-                variant="outline" 
-                className="border-white/30 text-hayas-600 bg-white hover:bg-gray-100 px-8 py-6 text-lg"
-              >
+              <Button asChild variant="outline" className="border-white/30 text-hayas-600 bg-white hover:bg-gray-100 px-8 py-6 text-lg">
                 <Link to="/kit-digital">
                   Más Información
                 </Link>
@@ -107,11 +98,7 @@ const KitDigitalBanner = () => {
             <div className="relative z-10 bg-white/95 backdrop-blur-sm rounded-2xl p-8 shadow-2xl max-w-md">
               <div className="text-center">
                 <div className="mb-6">
-                  <img 
-                    src="/lovable-uploads/f9d2b651-7c92-42b3-86ce-64e3add924c6.png" 
-                    alt="Kit Digital - Logo oficial" 
-                    className="h-16 w-auto mx-auto"
-                  />
+                  <img src="/lovable-uploads/f9d2b651-7c92-42b3-86ce-64e3add924c6.png" alt="Kit Digital - Logo oficial" className="h-16 w-auto mx-auto" />
                 </div>
                 <p className="text-gray-600 mb-6">Digitalización para autónomos y micropymes</p>
                 
@@ -156,8 +143,6 @@ const KitDigitalBanner = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default KitDigitalBanner;
