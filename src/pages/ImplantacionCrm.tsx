@@ -128,9 +128,9 @@ const ImplantacionCrm = () => {
     // Hero Section
     heroTitle: "Implantación de CRM",
     heroSubtitle: "Personalizada",
-    heroDescription: "Implementamos la solución CRM perfecta para tu empresa, con configuración completa y personalización según tu modelo de negocio y objetivos comerciales.",
+    heroDescription: "Implementamos y configuramos tu CRM ideal con migración completa de datos, integración con tus herramientas actuales y formación personalizada para tu equipo. Soluciones especializadas en HubSpot para B2B y Go High Level para B2C.",
     heroImage: "/implantacion-crm-hero.jpg",
-    heroImageAlt: "Implantación de CRM personalizada - Hayas Marketing",
+    heroImageAlt: "Implementación profesional de CRM - Configuración, migración y formación personalizada",
     badge: "Servicio Especializado",
     primaryCTA: "Solicitar Consultoría Gratuita",
     secondaryCTA: "Ver Planes",
