@@ -280,6 +280,7 @@ const App = () => (
           <Route path="/servicios/administracion-crm" element={<AdministracionCrm />} />
           <Route path="/servicios/automatizacion-procesos-ventas" element={<AutomatizacionProcesosVentas />} />
           <Route path="/servicios/captacion-leads-clientes" element={<CaptacionLeadsClientes />} />
+          <Route path="/servicios/implantacion-crm" element={<ImplantacionCrm />} />
           <Route path="/servicios" element={<NotFound />} />
           
           {/* 404 - DEBE IR SIEMPRE AL FINAL */}
