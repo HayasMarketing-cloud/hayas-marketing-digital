@@ -99,6 +99,15 @@ const Nosotros = () => {
   }, {
     name: "Aircall Partner",
     logo: "/lovable-uploads/b18fc977-3bb3-4613-8232-8fac4fb4d9ee.png"
+  }, {
+    name: "AEPD",
+    logo: "/lovable-uploads/f4b23acc-a714-4f14-92f4-50ba1fda2565.png"
+  }, {
+    name: "Sharpei",
+    logo: "/lovable-uploads/42d61146-8307-49fd-bf0e-6f48707c1284.png"
+  }, {
+    name: "Connectif",
+    logo: "/lovable-uploads/92c382be-7597-473a-97d4-fc45f3d7d598.png"
   }];
   return <div className="min-h-screen flex flex-col">
       <Navigation />
