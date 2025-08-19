@@ -36,6 +36,19 @@ const Blog = () => {
 
   const allPosts = [
     {
+      id: 'kit-digital-marketing-guia-completa-2025',
+      title: "Guía del Kit Digital: qué es, para quién y cómo aprovecharlo (antes del 31 de octubre de 2025)",
+      description: "Descubre todo sobre el Kit Digital: qué es, quién puede solicitarlo, cuánto dinero puedes conseguir y cómo aprovecharlo para digitalizar tu negocio antes del 31 de octubre de 2025.",
+      excerpt: "Última oportunidad para solicitar el Kit Digital. Autónomos y microempresas pueden conseguir hasta 3.000€ para digitalización. Guía completa con requisitos y pasos.",
+      category: "Digitalización",
+      readTime: "8 min",
+      date: "19 Ene 2025",
+      image: "/kit-digital-marketing-hero.jpg",
+      slug: "/blog/kit-digital-marketing-guia-completa-2025",
+      tags: ["Kit Digital", "Digitalización", "Ayudas Públicas", "Marketing Digital", "Transformación Digital"],
+      featured: true
+    },
+    {
       id: 'marketing-global-internacionalizacion',
       title: "Marketing Global: Internacionalización i18n y Localización l10n",
       description: "Descubre cómo desarrollar una estrategia de marketing global efectiva mediante la internacionalización (i18n) y localización (l10n) de contenidos para diferentes mercados.",
@@ -289,6 +302,7 @@ const Blog = () => {
   const allArticles = sortedPosts.slice(6);
 
   const categories = [
+    'Digitalización',
     'Inteligencia Artificial',
     'Marketing de Contenidos',
     'Redes Sociales',
