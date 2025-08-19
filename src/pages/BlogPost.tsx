@@ -1534,7 +1534,7 @@ const BlogPost = () => {
                 El 14 de marzo de 2024, el Parlamento Europeo aprobó la <strong>primera regulación integral sobre IA</strong>, clasificando sistemas según su nivel de riesgo y estableciendo reglas estrictas para IA de alto riesgo.
               </p>
               <p className="text-sm text-muted-foreground">
-                Las empresas pueden usar el <strong>EU AI Act Compliance Checker</strong> para evaluar cumplimiento y evitar sanciones de hasta 7% de ingresos globales.
+                Las empresas pueden usar el <a href="https://artificialintelligenceact.eu/es/evaluacion/comprobador-del-cumplimiento-de-la-ley-de-ai-de-la-ue/" target="_blank" rel="noopener noreferrer" className="font-bold text-primary hover:text-primary/80 underline">EU AI Act Compliance Checker</a> para evaluar cumplimiento y evitar sanciones de hasta 7% de ingresos globales.
               </p>
             </div>
 
