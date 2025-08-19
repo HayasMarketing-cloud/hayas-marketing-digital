@@ -232,8 +232,8 @@ const PublicidadRedesSociales: React.FC = () => {
             <div className="relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <img 
-                  src="/publicidad-redes-sociales-hero.jpg"
-                  alt="Gestión profesional de publicidad en redes sociales - Dashboards y analíticas"
+                  src="/lovable-uploads/6a3d6a63-3c5a-4645-8434-e8fdc293a2d6.png"
+                  alt="Google Ads - Publicidad profesional en redes sociales y Google"
                   className="w-full h-auto"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
