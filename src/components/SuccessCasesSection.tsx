@@ -28,7 +28,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     name: "Nexo Vital",
     industry: "Enfermera especializada en salud integrativa",
     service: "Branding, web, estrategia de contenidos",
-    link: "/caso-exito-nexo-vital",
+    link: "/casos-exito/nexo-vital",
     image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=2071&auto=format&fit=crop",
     tags: ["branding", "creacion-marca", "naming", "diseño-web", "contenidos", "salud", "identidad-visual"]
   },
@@ -36,7 +36,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     name: "I Virgen Extra",
     industry: "Consultor ingeniero en AOVE",
     service: "Branding, desarrollo web, identidad",
-    link: "/caso-exito-i-virgen-extra",
+    link: "/casos-exito/i-virgen-extra",
     image: "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?q=80&w=2069&auto=format&fit=crop",
     tags: ["branding", "creacion-marca", "diseño-web", "identidad-visual", "alimentacion"]
   },
@@ -44,7 +44,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     name: "Inbound Students",
     industry: "Servicios para estudiantes extranjeros",
     service: "Estrategia digital, diseño web",
-    link: "/caso-exito-inbound-students",
+    link: "/casos-exito/inbound-students",
     image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop",
     tags: ["estrategia-digital", "diseño-web", "marketing-digital", "educacion"]
   },
@@ -52,7 +52,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     name: "Calisthenia Online",
     industry: "Entrenador personal online",
     service: "Branding, posicionamiento, automatización",
-    link: "/caso-exito-calisthenia-online",
+    link: "/casos-exito/calisthenia-online",
     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070&auto=format&fit=crop",
     tags: ["branding", "creacion-marca", "naming", "posicionamiento", "deporte", "identidad-visual"]
   },
@@ -60,7 +60,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     name: "Centro Roraima",
     industry: "Centro de desarrollo personal",
     service: "Branding, diseño web, contenidos",
-    link: "/caso-exito-centro-roraima",
+    link: "/casos-exito/centro-roraima",
     image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop",
     tags: ["branding", "creacion-marca", "diseño-web", "contenidos", "desarrollo-personal", "identidad-visual"]
   },
@@ -68,7 +68,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     name: "Joints'Up",
     industry: "Cirujanos traumatólogos",
     service: "Naming, branding, diseño web",
-    link: "/caso-exito-joints-up",
+    link: "/casos-exito/joints-up",
     image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?q=80&w=2087&auto=format&fit=crop",
     tags: ["branding", "creacion-marca", "naming", "diseño-web", "medicina", "salud", "identidad-visual"]
   },
@@ -76,7 +76,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     name: "Dr. Parrón",
     industry: "Traumatólogo especialista en cadera",
     service: "Identidad corporativa, diseño web",
-    link: "/caso-exito-dr-parron",
+    link: "/casos-exito/dr-parron",
     image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=2071&auto=format&fit=crop",
     tags: ["branding", "creacion-marca", "identidad-corporativa", "diseño-web", "medicina", "salud", "identidad-visual"]
   },
@@ -84,7 +84,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     name: "Translate with Style",
     industry: "Traductora profesional",
     service: "Branding, estrategia, identidad visual",
-    link: "/caso-exito-translate-with-style",
+    link: "/casos-exito/translate-with-style",
     image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=2070&auto=format&fit=crop",
     tags: ["branding", "creacion-marca", "identidad-visual", "estrategia", "traduccion"]
   },
