@@ -9,7 +9,7 @@ import Index from "./pages/Index";
 import Nosotros from "./pages/Nosotros";
 import ConectaConTusClientes from "./pages/ConectaConTusClientes";
 import ImpulsaTuMarca from "./pages/ImpulsaTuMarca";
-import ActivaTuEstrategiaDigital from "./pages/ActivaTuEstrategiaDigital";
+import ActivaTusVentas from "./pages/ActivaTusVentas";
 import MarketingVisibilidad from "./pages/MarketingVisibilidad";
 import CaptacionLeads from "./pages/CaptacionLeads";
 import GestionMarketing from "./pages/GestionMarketing";
@@ -126,7 +126,8 @@ const App = () => (
           {/* SOLUCIONES - 3 Nuevas Categorías Estratégicas */}
           <Route path="/soluciones/impulsa-tu-marca" element={<ImpulsaTuMarca />} />
           <Route path="/soluciones/conecta-con-tus-clientes" element={<ConectaConTusClientes />} />
-          <Route path="/soluciones/activa-tu-estrategia-digital" element={<ActivaTuEstrategiaDigital />} />
+          <Route path="/soluciones/activa-tus-ventas" element={<ActivaTusVentas />} />
+          <Route path="/soluciones/activa-tu-estrategia-digital" element={<Navigate to="/soluciones/activa-tus-ventas" replace />} />
           
           {/* SOLUCIONES - Páginas individuales (legacy y específicas) */}
           <Route path="/soluciones/ia-marketing" element={<SolucionesIA />} />

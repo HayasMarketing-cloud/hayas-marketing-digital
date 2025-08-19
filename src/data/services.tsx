@@ -42,8 +42,8 @@ export const pillarMeta: Record<PillarKey, { title: string; href: string; anchor
     anchorId: 'servicios-conecta',
   },
   activa: {
-    title: 'Activa tu estrategia digital',
-    href: '/soluciones/activa-tu-estrategia-digital',
+    title: 'Activa tus Ventas',
+    href: '/soluciones/activa-tus-ventas',
     anchorId: 'servicios-activa',
   },
 };
@@ -151,7 +151,7 @@ export const allServices: ServiceItem[] = [
     title: 'Email marketing y automatizaciones',
     description: 'Workflows y personalización conectados a tu CRM.',
     href: '/servicios/email-marketing-automatizaciones',
-    pillar: 'conecta',
+    pillar: 'activa',
   },
   {
     id: 15,
@@ -207,7 +207,7 @@ export const allServices: ServiceItem[] = [
     title: 'Automatización de procesos de ventas',
     description: 'Automatiza tu pipeline, lead scoring y atribución para acelerar el crecimiento.',
     href: '/servicios/automatizacion-procesos-ventas',
-    pillar: 'conecta',
+    pillar: 'activa',
   },
 ];
 

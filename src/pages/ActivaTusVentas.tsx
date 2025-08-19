@@ -16,68 +16,73 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import KitConsultingBanner from '@/components/KitConsultingBanner';
 
-const ActivaTuEstrategiaDigital = () => {
+const ActivaTusVentas = () => {
   const services = [
     {
       icon: Target,
-      title: "Consultoría Estratégica Digital",
-      description: "Análisis completo de tu situación actual y diseño de una hoja de ruta personalizada para el crecimiento digital de tu negocio."
+      title: "Publicidad Google Ads",
+      description: "Campañas SEM optimizadas para generar leads cualificados y maximizar el ROI de cada click con segmentación avanzada."
     },
     {
       icon: Settings,
-      title: "Automatización de Procesos",
-      description: "Implementamos sistemas que automatizan tareas repetitivas, optimizan workflows y liberan tiempo para actividades estratégicas."
+      title: "Publicidad en Redes Sociales",
+      description: "Campañas publicitarias rentables en Facebook, Instagram y LinkedIn que convierten audiencias en clientes reales."
     },
     {
       icon: BarChart3,
-      title: "Analítica e Informes Avanzados",
-      description: "Dashboards personalizados y reportes que te ayudan a tomar decisiones basadas en datos reales y métricas relevantes."
+      title: "Consultoría Estratégica de Ventas",
+      description: "Análisis de tu funnel de ventas, optimización de procesos comerciales y estrategias para acelerar la conversión."
     },
     {
       icon: Zap,
-      title: "Integración Tecnológica",
-      description: "Conectamos todas tus herramientas digitales para crear un ecosistema tecnológico cohesivo y eficiente."
+      title: "Automatización de Procesos de Ventas",
+      description: "Implementamos sistemas que automatizan tu pipeline, lead scoring y seguimiento para acelerar el cierre de ventas."
+    },
+    {
+      icon: Users,
+      title: "Email Marketing y Automatizaciones",
+      description: "Workflows inteligentes conectados a tu CRM que nutren leads y convierten prospectos en clientes recurrentes."
     }
   ];
 
   const benefits = [
-    "Estrategia digital clara y medible",
-    "Procesos automatizados que ahorran tiempo",
-    "Datos organizados y actionables",
-    "Tecnología al servicio de tus objetivos",
-    "Escalabilidad para el crecimiento",
-    "ROI medible en cada acción"
+    "Conversión de tráfico en ventas reales",
+    "Automatización del proceso comercial",
+    "Optimización del ROI publicitario",
+    "Lead scoring y seguimiento inteligente",
+    "Escalabilidad del crecimiento de ventas",
+    "Métricas de conversión medibles"
   ];
 
   const processSteps = [
     {
       step: "01",
-      title: "Auditoría Digital",
-      description: "Analizamos tu situación actual, herramientas existentes y oportunidades de mejora."
+      title: "Análisis del Funnel de Ventas",
+      description: "Evaluamos tu proceso comercial actual, identificamos cuellos de botella y oportunidades de optimización."
     },
     {
       step: "02", 
-      title: "Diseño de Estrategia",
-      description: "Creamos un plan personalizado con objetivos claros, métricas y cronograma de implementación."
+      title: "Estrategia de Conversión",
+      description: "Diseñamos campañas publicitarias y automatizaciones enfocadas en convertir leads en clientes."
     },
     {
       step: "03",
-      title: "Implementación",
-      description: "Ejecutamos la estrategia paso a paso, integrando tecnologías y automatizaciones necesarias."
+      title: "Implementación y Automatización",
+      description: "Ejecutamos las campañas y configuramos sistemas de automatización para optimizar el proceso de ventas."
     },
     {
       step: "04",
-      title: "Optimización Continua",
-      description: "Monitoreamos resultados, ajustamos estrategias y optimizamos el rendimiento constantemente."
+      title: "Optimización de Resultados",
+      description: "Monitoreamos la conversión, ajustamos campañas y optimizamos el rendimiento comercial constantemente."
     }
   ];
 
   return (
     <div id="top" className="min-h-screen bg-white">
       <Seo
-        title="Activa tu estrategia digital | Plan claro y medible"
-        description="Convierte ideas en resultados con una estrategia a medida que integra Ads, contenidos, SEO y analítica para crecimiento constante y medible."
-        canonical="/soluciones/activa-tu-estrategia-digital"
+        title="Activa tus Ventas | Convierte tráfico en clientes"
+        description="Transforma leads en ventas con estrategias probadas: Google Ads, publicidad social, automatización y consultoría estratégica de ventas."
+        canonical="/soluciones/activa-tus-ventas"
         structuredData={[
           {
             "@context": "https://schema.org",
@@ -89,17 +94,17 @@ const ActivaTuEstrategiaDigital = () => {
           {
             "@context": "https://schema.org",
             "@type": "Service",
-            name: "Consultoría de Estrategia Digital",
-            serviceType: "Digital Strategy Consulting",
+            name: "Activación de Ventas",
+            serviceType: "Sales Conversion Consulting",
             provider: { "@type": "Organization", name: "Hayas Marketing", url: window.location.origin, logo: `${window.location.origin}/favicon.ico` },
-            url: `${window.location.origin}/soluciones/activa-tu-estrategia-digital`,
+            url: `${window.location.origin}/soluciones/activa-tus-ventas`,
             areaServed: "España",
-            description: "Estrategias a medida que integran Ads, contenidos, SEO y analítica para crecimiento constante y medible.",
+            description: "Estrategias de conversión que transforman leads en ventas: Google Ads, publicidad social, automatización y consultoría estratégica.",
           },
           {
             "@context": "https://schema.org",
             "@type": "HowTo",
-            name: "Cómo activar tu estrategia digital",
+            name: "Cómo activar tus ventas",
             step: processSteps.map((s) => ({ "@type": "HowToStep", name: s.title, text: s.description })),
           },
         ]}
@@ -119,7 +124,7 @@ const ActivaTuEstrategiaDigital = () => {
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
-                  <BreadcrumbPage>Activa tu Estrategia Digital</BreadcrumbPage>
+                  <BreadcrumbPage>Activa tus Ventas</BreadcrumbPage>
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
@@ -142,13 +147,13 @@ const ActivaTuEstrategiaDigital = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <Badge variant="outline" className="mb-4 text-hayas-600 border-hayas-200">
-                  Estrategia Digital a Medida
+                  Estrategias de Conversión de Ventas
                 </Badge>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                  Activa tu <span className="text-gradient-primary">Estrategia Digital</span>
+                  Activa tus <span className="text-gradient-primary">Ventas</span>
                 </h1>
                 <p className="text-xl text-gray-700 mb-8 leading-relaxed font-medium">
-                  Convierte tus ideas en resultados con un plan claro, medible y adaptable. Integramos creatividad, datos y ejecución ágil en todos los canales: Google Ads y Meta Ads, contenidos, SEO estratégico y analítica avanzada, para un crecimiento constante y medible.
+                  Convierte el tráfico en clientes y escala tus ventas con estrategias probadas de conversión y automatización. Implementamos sistemas que transforman leads en ventas recurrentes y optimizan cada punto de contacto del customer journey.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link to="/agendar-reunion">
@@ -167,7 +172,7 @@ const ActivaTuEstrategiaDigital = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-hayas-200 to-hayas-300 rounded-3xl transform rotate-6 scale-105 opacity-20"></div>
                 <img 
                   src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop" 
-                  alt="Estrategia digital con tecnología y analítica" 
+                  alt="Activación de ventas con estrategias digitales" 
                   className="relative z-10 w-full h-auto rounded-3xl shadow-2xl"
                 />
               </div>
@@ -179,10 +184,10 @@ const ActivaTuEstrategiaDigital = () => {
       <section className="container mx-auto px-4 py-16">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Nuestros Servicios Estratégicos
+            Servicios de Conversión de Ventas
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Soluciones integrales para activar y potenciar tu presencia digital con resultados medibles
+            Estrategias especializadas que convierten tráfico en clientes y aceleran el crecimiento de ventas
           </p>
         </div>
 
@@ -211,10 +216,10 @@ const ActivaTuEstrategiaDigital = () => {
       <section className="container mx-auto px-4 py-16">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Nuestro Proceso Estratégico
+            Nuestro Proceso de Activación de Ventas
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Metodología probada para transformar tu visión digital en resultados tangibles
+            Metodología probada para transformar tu proceso comercial en una máquina de generar ventas
           </p>
         </div>
 
@@ -242,10 +247,10 @@ const ActivaTuEstrategiaDigital = () => {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                ¿Por qué elegir nuestra estrategia digital?
+                ¿Por qué elegir nuestras estrategias de activación de ventas?
               </h2>
               <p className="text-lg text-muted-foreground">
-                Resultados reales que transforman tu negocio y aceleran tu crecimiento
+                Resultados reales que transforman tu proceso comercial y aceleran el crecimiento
               </p>
             </div>
 
@@ -266,10 +271,10 @@ const ActivaTuEstrategiaDigital = () => {
         <div className="bg-gradient-to-r from-primary to-primary/80 rounded-2xl p-8 md:p-12 text-center text-primary-foreground">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              ¿Listo para activar tu estrategia digital?
+              ¿Listo para activar tus ventas?
             </h2>
             <p className="text-lg mb-8 opacity-90">
-              Agenda una consultoría gratuita y descubre cómo podemos transformar tu negocio con una estrategia digital clara y resultados medibles.
+              Agenda una consultoría gratuita y descubre cómo podemos transformar tu proceso comercial con estrategias que convierten leads en ventas.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="secondary" className="bg-white text-primary hover:bg-white/90">
@@ -290,4 +295,4 @@ const ActivaTuEstrategiaDigital = () => {
   );
 };
 
-export default ActivaTuEstrategiaDigital;
+export default ActivaTusVentas;
