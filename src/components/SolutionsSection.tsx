@@ -25,10 +25,10 @@ const solutions = [
   {
     id: 3,
     icon: <TrendingUp className="h-8 w-8 text-primary" />,
-    title: "Activa tu estrategia digital",
-      description: "Convierte tus ideas en resultados con un plan claro, medible y adaptable a cada etapa de tu negocio. En Hayas Marketing creamos estrategias digitales a medida que combinan creatividad, análisis de datos y ejecución ágil.",
-    includes: "Diseño web/tienda online • Consultoría estratégica • Automatización + IA + Analítica",
-    href: "/soluciones/activa-tu-estrategia-digital"
+    title: "Activa tus Ventas",
+      description: "Convierte el tráfico en clientes y escala tus ventas con estrategias probadas de conversión y automatización. Implementamos sistemas que transforman leads en ventas recurrentes y optimizan cada punto de contacto del customer journey.",
+    includes: "Publicidad Google Ads • Publicidad Redes Sociales • Consultoría Estratégica Ventas • Automatización Procesos de Ventas • Email Marketing y Automatizaciones",
+    href: "/soluciones/activa-tus-ventas"
   }
 ];
 
