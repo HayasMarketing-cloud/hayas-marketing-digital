@@ -92,6 +92,7 @@ import BusinessModelCanvasEstrategiaMarketing from './pages/BusinessModelCanvasE
 import GoogleConsentModeCookieyes from './pages/GoogleConsentModeCookieyes';
 import MarketingNaturalPosicionamientoOrganico from './pages/MarketingNaturalPosicionamientoOrganico';
 import BlogCrmQueEsBeneficios from './pages/BlogCrmQueEsBeneficios';
+import BlogComoElegirMejorCRM from './pages/BlogComoElegirMejorCRM';
 import BlogABMAccountBasedMarketing from './pages/BlogABMAccountBasedMarketing';
 import BlogLeadScoringCalificacionLeads from './pages/BlogLeadScoringCalificacionLeads';
 import BlogSeoInteligenciaArtificial from './pages/BlogSeoInteligenciaArtificial';
@@ -200,7 +201,8 @@ const App = () => (
              <Route path="/blog/business-model-canvas-para-crear-tu-estrategia-de-marketing" element={<BusinessModelCanvasEstrategiaMarketing />} />
               <Route path="/blog/google-consent-mode-cookieyes" element={<GoogleConsentModeCookieyes />} />
               <Route path="/blog/marketing-natural-posicionamiento-organico" element={<MarketingNaturalPosicionamientoOrganico />} />
-               <Route path="/blog/crm-que-es-beneficios" element={<BlogCrmQueEsBeneficios />} />
+          <Route path="/blog/crm-que-es-beneficios" element={<BlogCrmQueEsBeneficios />} />
+          <Route path="/blog/como-elegir-mejor-crm-empresa-organizacion" element={<BlogComoElegirMejorCRM />} />
                <Route path="/blog/abm-account-based-marketing" element={<BlogABMAccountBasedMarketing />} />
         <Route path="/blog/re-commerce-economia-circular-ecommerce-partnership-sharpei" element={<BlogReCommerceEconomiaCircular />} />
         <Route path="/blog/seo-off-page-estrategias-practicas-posicionamiento" element={<BlogSeoOffPage />} />
