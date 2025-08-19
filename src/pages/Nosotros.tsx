@@ -113,69 +113,112 @@ const Nosotros = () => {
       <Navigation />
       
       <main className="flex-grow pt-24">
-        {/* Hero Section - Fondo blanco */}
-        <section className="relative py-24 md:py-32 lg:py-40 overflow-hidden bg-white">
-          {/* Círculos decorativos de fondo */}
-          <div className="absolute -bottom-24 -left-24 w-64 h-64 rounded-full bg-hayas-primary/10 opacity-20" aria-hidden="true"></div>
-          <div className="absolute top-24 -right-24 w-96 h-96 rounded-full bg-hayas-secondary/10 opacity-10" aria-hidden="true"></div>
+        {/* Hero Section - Modernized with gradient background */}
+        <section className="relative py-24 md:py-32 lg:py-40 overflow-hidden bg-header-gradient bg-pattern-dots">
+          {/* Enhanced decorative elements */}
+          <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
+            <div className="absolute -bottom-32 -left-32 w-80 h-80 rounded-full bg-hayas-primary/15 blur-3xl"></div>
+            <div className="absolute top-20 -right-32 w-96 h-96 rounded-full bg-hayas-secondary/10 blur-2xl"></div>
+            <div className="absolute top-1/2 left-1/4 w-40 h-40 rounded-full bg-hayas-primary/8 blur-xl"></div>
+          </div>
           
-          <div className="container mx-auto px-4">
+          {/* Floating geometric shapes */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+            <div className="absolute top-20 left-10 w-6 h-6 bg-hayas-primary/20 rotate-45 animate-pulse"></div>
+            <div className="absolute bottom-32 right-20 w-8 h-8 bg-hayas-secondary/15 rounded-full animate-bounce" style={{animationDelay: '2s'}}></div>
+            <div className="absolute top-40 right-1/4 w-4 h-4 bg-hayas-primary/25 rotate-12"></div>
+          </div>
+          
+          <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-5xl mx-auto text-center">
               <h1 className="title-hero mb-8 leading-tight animate-fade-in">
                 Somos <span className="text-gradient-primary">Hayas Marketing</span>
               </h1>
-              <p className="text-hero text-gray-700 mb-4 animate-slide-up max-w-4xl mx-auto leading-relaxed">
+              <p className="text-hero text-gray-800 mb-8 animate-slide-up max-w-4xl mx-auto leading-relaxed font-medium">
                 Agencia de marketing digital y consultoría especializada en gestión de clientes (CRM) y estrategia digital. 
                 Trabajamos con un enfoque integral centrado en la estrategia, eficiencia, adaptación y crecimiento sostenible.
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center animate-slide-up">
-                <Button className="gradient-primary text-white py-8 px-10 text-xl font-medium shadow-elegant hover-scale focus-ring">
-                  Conocer nuestros servicios
+                <Button className="gradient-primary text-white py-8 px-10 text-xl font-medium shadow-elegant hover-scale focus-ring transform transition-all duration-300">
+                  <span className="flex items-center gap-2">
+                    Conocer nuestros servicios
+                    <ArrowRight className="h-5 w-5" />
+                  </span>
                 </Button>
-                <Button variant="outline" className="py-8 px-10 text-xl font-medium hover-scale focus-ring border-primary text-primary hover:bg-primary hover:text-white">
+                <Button variant="outline" className="py-8 px-10 text-xl font-medium hover-scale focus-ring border-2 border-hayas-primary text-hayas-primary hover:bg-hayas-primary hover:text-white bg-white/90 backdrop-blur-sm shadow-lg">
                   Solicitar consulta gratuita
                 </Button>
               </div>
             </div>
           </div>
+          
+          {/* Bottom section separator */}
+          <div className="absolute bottom-0 left-0 right-0 h-px section-divider"></div>
         </section>
 
-        {/* Nuestra Historia - Fondo tenue */}
-        <section className="py-24 md:py-32 bg-gradient-to-br from-hayas-primary/5 to-hayas-secondary/5">
+        {/* Nuestra Historia - Pure white background for contrast */}
+        <section className="relative py-24 md:py-32 bg-section-light">
+          {/* Subtle top border */}
+          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-hayas-primary/20 to-transparent"></div>
+          
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16">
-                <h2 className="title-section mb-8 text-gradient-primary">Nuestra Historia</h2>
-                <p className="text-hero text-gray-700 max-w-3xl mx-auto leading-relaxed">
+              {/* Enhanced header section */}
+              <div className="text-center mb-20 relative">
+                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-4 w-20 h-1 bg-gradient-primary rounded-full opacity-60"></div>
+                <h2 className="title-section mb-8 text-gradient-primary relative">
+                  Nuestra Historia
+                  <span className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-hayas-primary/30 rounded-full"></span>
+                </h2>
+                <p className="text-hero text-gray-700 max-w-3xl mx-auto leading-relaxed font-medium">
                   Desde 2014, ayudamos a emprendedores y empresas a conectar de forma más efectiva y auténtica con sus clientes, impulsando su crecimiento a través de estrategias de marketing digital esenciales.
                 </p>
               </div>
               
-              <div className="grid md:grid-cols-3 gap-12">
-                <div className="bg-white rounded-xl p-8 text-center shadow-corporate hover-scale">
-                  <Target className="h-16 w-16 text-hayas-primary mx-auto mb-6" />
-                  <h3 className="text-2xl font-semibold mb-4 text-hayas-primary">Nuestra Misión</h3>
-                  <p className="text-gray-700 text-lg leading-relaxed">
-                    Impulsar el crecimiento de emprendedores, pymes y empresas mediante soluciones estratégicas y personalizadas que integren lo esencial en marketing digital, CRM y automatización, generando resultados medibles, sostenibles y con impacto real.
-                  </p>
+              {/* Enhanced cards layout */}
+              <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+                <div className="bg-white rounded-2xl p-8 text-center shadow-elegant hover-scale border border-gray-100 relative overflow-hidden group">
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-primary"></div>
+                  <div className="relative z-10">
+                    <div className="w-20 h-20 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                      <Target className="h-10 w-10 text-white" />
+                    </div>
+                    <h3 className="title-card mb-4 text-hayas-primary">Nuestra Misión</h3>
+                    <p className="text-gray-700 text-lg leading-relaxed">
+                      Impulsar el crecimiento de emprendedores, pymes y empresas mediante soluciones estratégicas y personalizadas que integren lo esencial en marketing digital, CRM y automatización, generando resultados medibles, sostenibles y con impacto real.
+                    </p>
+                  </div>
                 </div>
                 
-                <div className="bg-white rounded-xl p-8 text-center shadow-corporate hover-scale">
-                  <Lightbulb className="h-16 w-16 text-hayas-primary mx-auto mb-6" />
-                  <h3 className="text-2xl font-semibold mb-4 text-hayas-primary">Nuestra Visión</h3>
-                  <p className="text-gray-700 text-lg leading-relaxed">Ser una agencia de marketing internacional de referencia en España, con un enfoque estratégico 360 que combine estrategia digital, gestión de clientes y tecnología avanzada para impulsar el crecimiento y la competitividad de las empresas.</p>
+                <div className="bg-white rounded-2xl p-8 text-center shadow-elegant hover-scale border border-gray-100 relative overflow-hidden group">
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-primary"></div>
+                  <div className="relative z-10">
+                    <div className="w-20 h-20 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                      <Lightbulb className="h-10 w-10 text-white" />
+                    </div>
+                    <h3 className="title-card mb-4 text-hayas-primary">Nuestra Visión</h3>
+                    <p className="text-gray-700 text-lg leading-relaxed">Ser una agencia de marketing internacional de referencia en España, con un enfoque estratégico 360 que combine estrategia digital, gestión de clientes y tecnología avanzada para impulsar el crecimiento y la competitividad de las empresas.</p>
+                  </div>
                 </div>
                 
-                <div className="bg-white rounded-xl p-8 text-center shadow-corporate hover-scale">
-                  <Award className="h-16 w-16 text-hayas-primary mx-auto mb-6" />
-                  <h3 className="text-2xl font-semibold mb-4 text-hayas-primary">Nuestro Compromiso</h3>
-                  <p className="text-gray-700 text-lg leading-relaxed">
-                    Diseñar e implementar soluciones personalizadas que combinen estrategia, creatividad y tecnología para maximizar la eficiencia, la conexión con las audiencias y el retorno de inversión de nuestros clientes, manteniendo siempre un enfoque humano y ético.
-                  </p>
+                <div className="bg-white rounded-2xl p-8 text-center shadow-elegant hover-scale border border-gray-100 relative overflow-hidden group">
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-primary"></div>
+                  <div className="relative z-10">
+                    <div className="w-20 h-20 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                      <Award className="h-10 w-10 text-white" />
+                    </div>
+                    <h3 className="title-card mb-4 text-hayas-primary">Nuestro Compromiso</h3>
+                    <p className="text-gray-700 text-lg leading-relaxed">
+                      Diseñar e implementar soluciones personalizadas que combinen estrategia, creatividad y tecnología para maximizar la eficiencia, la conexión con las audiencias y el retorno de inversión de nuestros clientes, manteniendo siempre un enfoque humano y ético.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+          
+          {/* Bottom section separator */}
+          <div className="absolute bottom-0 left-0 right-0 h-px section-divider"></div>
         </section>
 
         {/* ¿Por qué Hayas? - Sección de origen del nombre */}

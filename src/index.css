@@ -196,6 +196,39 @@
   .text-hayas-tertiary {
     color: hsl(var(--hayas-tertiary));
   }
+
+  /* Typography utilities */
+  .title-hero { @apply text-4xl md:text-5xl lg:text-6xl font-bold mb-6; }
+  .title-section { @apply text-3xl md:text-4xl font-bold mb-4; }
+  .title-subsection { @apply text-2xl font-bold mb-3; }
+  .title-card { @apply text-xl font-bold; }
+  .text-hero { @apply text-xl text-gray-600 mb-8; }
+  .text-description { @apply text-lg text-gray-600; }
+
+  /* Background utilities for sections */
+  .bg-header-gradient { @apply bg-gradient-to-br from-hayas-primary/10 via-white to-hayas-secondary/5; }
+  .bg-section-light { @apply bg-white; }
+  .bg-section-soft { @apply bg-gradient-to-br from-hayas-primary/3 to-hayas-secondary/3; }
+
+  /* Decorative elements */
+  .bg-pattern-dots::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(circle, hsl(var(--hayas-primary)) 1px, transparent 1px);
+    background-size: 30px 30px;
+    opacity: 0.05;
+    pointer-events: none;
+  }
+
+  /* Section separators */
+  .section-divider {
+    background: linear-gradient(90deg, transparent, hsl(var(--hayas-primary) / 0.2), transparent);
+    height: 1px;
+  }
 }
 
 /* Keyframes optimizados */
