@@ -122,6 +122,14 @@ const BlogKitDigitalMarketing: React.FC = () => {
           <Users className="h-6 w-6 text-primary" />
           <h3 className="text-xl font-semibold text-foreground">Está dirigido a:</h3>
         </div>
+        
+        <div className="bg-gradient-to-r from-orange-50 to-yellow-50 border border-orange-200 rounded-lg p-4 mb-4">
+          <p className="text-orange-800 font-semibold text-sm mb-1">📍 Requisito fundamental:</p>
+          <p className="text-orange-700 text-sm">
+            Los beneficiarios deben ser <strong>pequeñas empresas, microempresas o autónomos con domicilio fiscal en España</strong>.
+          </p>
+        </div>
+        
         <ul className="space-y-3 text-muted-foreground">
           <li className="flex items-start gap-2">
             <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
