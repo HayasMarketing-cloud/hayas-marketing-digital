@@ -25,7 +25,7 @@ const Nosotros = () => {
     name: "Fátima",
     role: "Social Media Manager",
     description: "Experta en gestión de redes sociales, creación de contenido y community management para potenciar la presencia digital.",
-    image: "/lovable-uploads/b6816c4b-e843-4d7b-b2b9-7f935a389f54.png"
+    image: "/lovable-uploads/1d44b1f0-6326-4c3b-8653-d985c9724dd2.png"
   }, {
     name: "Ebelyn",
     role: "Digital Marketing Manager",
