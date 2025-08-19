@@ -1587,6 +1587,88 @@ const BlogPost = () => {
               </div>
             </div>
 
+            <h2 className="text-3xl font-bold mt-12 mb-6 text-primary">El impacto de la IA en los CRM actuales</h2>
+            
+            <p className="text-lg leading-relaxed mb-8">
+              La IA está transformando la forma en que las empresas gestionan sus relaciones con los clientes. Las principales tendencias incluyen:
+            </p>
+
+            <div className="space-y-6 mb-8">
+              <div className="bg-gradient-to-r from-primary/5 to-accent/5 p-6 rounded-lg border-l-4 border-primary">
+                <h3 className="text-xl font-bold mb-4 text-primary">🤖 Automatización inteligente</h3>
+                <p className="mb-4">
+                  Los CRM actuales utilizan la IA para automatizar tareas tediosas, desde la emisión de tickets hasta la segmentación y calificación de leads. Con estas herramientas se reducen costes y se mejora la atención al cliente.
+                </p>
+              </div>
+
+              <div className="bg-gradient-to-r from-accent/5 to-primary/5 p-6 rounded-lg border-l-4 border-accent">
+                <h3 className="text-xl font-bold mb-4 text-accent">📊 Datos e insights en tiempo real</h3>
+                <p className="mb-4">
+                  Los análisis impulsados por IA permiten comprender mejor el comportamiento de los clientes, lo que lleva a estrategias de marketing y ventas más efectivas.
+                </p>
+              </div>
+
+              <div className="bg-gradient-to-r from-primary/5 to-accent/5 p-6 rounded-lg border-l-4 border-primary">
+                <h3 className="text-xl font-bold mb-4 text-primary">🎯 Personalización y autoservicio</h3>
+                <p className="mb-4">
+                  Las experiencias omnicanal, apoyadas en IA, ofrecen a los usuarios respuestas y recomendaciones personalizadas en tiempo real, a través de chatbots, asistentes virtuales o aplicaciones de mensajería.
+                </p>
+              </div>
+
+              <div className="bg-gradient-to-r from-accent/5 to-primary/5 p-6 rounded-lg border-l-4 border-accent">
+                <h3 className="text-xl font-bold mb-4 text-accent">🌐 Omnicanalidad y dispositivos conectados</h3>
+                <p className="mb-4">
+                  Los CRM modernos integran web, redes sociales, móvil y otros canales para ofrecer una experiencia unificada, independientemente del dispositivo o punto de contacto.
+                </p>
+              </div>
+
+              <div className="bg-gradient-to-r from-primary/5 to-accent/5 p-6 rounded-lg border-l-4 border-primary">
+                <h3 className="text-xl font-bold mb-4 text-primary">🔗 Integración de nuevas tecnologías</h3>
+                <p className="mb-4">
+                  Herramientas basadas en voz, IA conversacional y redes sociales se integran en los CRM para personalizar la experiencia y adaptarse a necesidades específicas.
+                </p>
+              </div>
+
+              <div className="bg-gradient-to-r from-accent/5 to-primary/5 p-6 rounded-lg border-l-4 border-accent">
+                <h3 className="text-xl font-bold mb-4 text-accent">🔮 Análisis predictivo</h3>
+                <p className="mb-4">
+                  La IA anticipa comportamientos y necesidades, facilitando acciones proactivas y mejorando la satisfacción del cliente.
+                </p>
+              </div>
+            </div>
+
+            <h3 className="text-2xl font-bold mt-10 mb-6 text-primary">Ejemplos destacados en el mercado</h3>
+
+            <div className="grid lg:grid-cols-2 gap-6 mb-8">
+              <div className="bg-gradient-to-br from-primary/10 to-primary/5 p-6 rounded-lg border border-primary/20">
+                <h4 className="text-xl font-bold mb-4 text-primary">Breeze (HubSpot)</h4>
+                <p className="mb-4">
+                  Presentado en INBOUND 2024, <a href="https://www.hubspot.com/products/breeze" target="_blank" rel="noopener noreferrer" className="font-bold text-primary hover:text-primary/80 underline">HubSpot Breeze</a> sustituye a Insights y combina varias aplicaciones: Copilot, Agents y Breeze Intelligence. Esta suite enriquece automáticamente los registros de contactos con datos de una base de más de 200 millones de perfiles, identifica qué empresas visitan la web y acorta formularios usando IA.
+                </p>
+              </div>
+
+              <div className="bg-gradient-to-br from-accent/10 to-accent/5 p-6 rounded-lg border border-accent/20">
+                <h4 className="text-xl font-bold mb-4 text-accent">Einstein Copilot (Salesforce)</h4>
+                <p className="mb-4">
+                  Disponible desde abril de 2024, <a href="https://www.salesforce.com/products/einstein/copilot/" target="_blank" rel="noopener noreferrer" className="font-bold text-accent hover:text-accent/80 underline">Einstein Copilot</a> es un asistente generativo integrado en todas las aplicaciones de Salesforce. Puede responder preguntas basadas en los datos de la empresa, redactar correos personalizados, crear informes y sugerir acciones para ventas y servicio al cliente.
+                </p>
+              </div>
+
+              <div className="bg-gradient-to-br from-primary/10 to-primary/5 p-6 rounded-lg border border-primary/20">
+                <h4 className="text-xl font-bold mb-4 text-primary">C3 AI CRM</h4>
+                <p className="mb-4">
+                  Lanzado en 2020 por <a href="https://c3.ai/products/c3-ai-crm/" target="_blank" rel="noopener noreferrer" className="font-bold text-primary hover:text-primary/80 underline">C3.ai</a>, Microsoft y Adobe, se presenta como el primer CRM empresarial nativo de IA. Integra datos estructurados y no estructurados de toda la cadena de suministro para predecir ingresos, demanda, riesgo de abandono y sugerir la "mejor siguiente oferta".
+                </p>
+              </div>
+
+              <div className="bg-gradient-to-br from-accent/10 to-accent/5 p-6 rounded-lg border border-accent/20">
+                <h4 className="text-xl font-bold mb-4 text-accent">IA en Go High Level: el caso del AI Employee</h4>
+                <p className="mb-4">
+                  <a href="https://www.gohighlevel.com" target="_blank" rel="noopener noreferrer" className="font-bold text-accent hover:text-accent/80 underline">Go High Level</a> ha apostado por un enfoque integral con su AI Employee, un conjunto de seis componentes de IA que automatizan desde la recepción de llamadas hasta la creación de embudos de ventas.
+                </p>
+              </div>
+            </div>
+
             <h2 className="text-3xl font-bold mt-12 mb-6 text-primary">El Futuro de la IA</h2>
             
             <div className="space-y-6 mb-8">
