@@ -77,7 +77,7 @@ const Nosotros = () => {
     logo: "/lovable-uploads/5b8c9d90-e355-4b27-b2a3-018f2c5a6734.png"
   }, {
     name: "Go High Level",
-    logo: ghlLogo
+    logo: "/lovable-uploads/db3b7311-53c8-4d88-9818-3377203174a3.png"
   }, {
     name: "Google Partner",
     logo: googleLogo
@@ -89,7 +89,7 @@ const Nosotros = () => {
     logo: "/lovable-uploads/ed1d9897-ed2d-49a3-9ce2-1cea880aee32.png"
   }, {
     name: "Lovable Partner",
-    logo: lovableLogo
+    logo: "/lovable-uploads/7794bc2d-846f-4d33-96bc-01ea5fe75d53.png"
   }, {
     name: "WhatsApp Business",
     logo: "/lovable-uploads/d5141b27-1db2-4f9b-8ff4-486fb23e0ae8.png"
