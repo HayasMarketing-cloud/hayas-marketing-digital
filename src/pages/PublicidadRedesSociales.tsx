@@ -232,7 +232,7 @@ const PublicidadRedesSociales: React.FC = () => {
             <div className="relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <img 
-                  src="/lovable-uploads/6a3d6a63-3c5a-4645-8434-e8fdc293a2d6.png"
+                  src="/lovable-uploads/821c9806-3d78-4030-8e3f-15a13b79f0fc.png"
                   alt="Google Ads - Publicidad profesional en redes sociales y Google"
                   className="w-full h-auto"
                 />
