@@ -1,6 +1,7 @@
 import React from 'react';
 import BlogPostTemplate from '@/components/BlogPost/BlogPostTemplate';
 import { Button } from '@/components/ui/button';
+import kitDigitalHero from '../assets/kit-digital-hero.jpg';
 import { Link } from 'react-router-dom';
 import { AlertTriangle, Calendar, CheckCircle, DollarSign, FileText, Globe, Shield, Users } from 'lucide-react';
 
@@ -85,6 +86,7 @@ const BlogKitDigitalMarketing: React.FC = () => {
   return (
     <BlogPostTemplate 
       metadata={metadata}
+      heroImage={{ src: kitDigitalHero, alt: "Kit Digital - Guía completa para digitalizar tu negocio", width: 1200, height: 675 }}
       faqs={faqs}
       relatedServices={relatedServices}
     >
