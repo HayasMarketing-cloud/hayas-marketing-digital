@@ -385,7 +385,7 @@ const Nosotros = () => {
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-hayas-primary" />
-                    <span>Estrategia inicial gratuita</span>
+                    <span>Consultoría inicial gratuita</span>
                   </div>
                 </div>
               </div>
