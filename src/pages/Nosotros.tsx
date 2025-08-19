@@ -338,7 +338,11 @@ const Nosotros = () => {
                   {certifications.slice(6).map((cert, index) => <div key={index} className="group hover-scale">
                       <div className="bg-white rounded-xl p-8 shadow-corporate border border-gray-100 group-hover:shadow-elegant transition-all duration-300">
                         <div className="h-20 flex items-center justify-center mb-4">
-                          <img src={cert.logo} alt={`${cert.name} logo`} className="h-16 w-auto object-contain filter transition-all duration-300 group-hover:scale-110" />
+                          <img 
+                            src={cert.logo} 
+                            alt={`${cert.name} logo`} 
+                            className={`${cert.name === 'AEPD' ? 'h-20' : 'h-16'} w-auto object-contain filter transition-all duration-300 group-hover:scale-110`} 
+                          />
                         </div>
                         <p className="text-sm font-semibold text-hayas-primary text-center">{cert.name}</p>
                       </div>
