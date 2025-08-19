@@ -206,9 +206,20 @@
   .text-description { @apply text-lg text-gray-600; }
 
   /* Background utilities for sections */
-  .bg-header-gradient { @apply bg-gradient-to-br from-hayas-primary/10 via-white to-hayas-secondary/5; }
+  .bg-header-gradient { 
+    background: linear-gradient(to bottom right, 
+      hsl(var(--hayas-primary) / 0.1), 
+      white, 
+      hsl(var(--hayas-secondary) / 0.05)
+    ); 
+  }
   .bg-section-light { @apply bg-white; }
-  .bg-section-soft { @apply bg-gradient-to-br from-hayas-primary/3 to-hayas-secondary/3; }
+  .bg-section-soft { 
+    background: linear-gradient(to bottom right, 
+      hsl(var(--hayas-primary) / 0.03), 
+      hsl(var(--hayas-secondary) / 0.03)
+    ); 
+  }
 
   /* Decorative elements */
   .bg-pattern-dots::before {
