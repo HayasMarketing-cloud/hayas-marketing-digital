@@ -29,7 +29,7 @@ const KitDigitalBanner = () => {
             </h2>
             
             <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-              Autónomos y micropymes, obten hasta <span className="font-bold text-cyan-400">3.000€</span> en 
+              Autónomos y micropymes, obten hasta <span className="font-bold text-cyan-400">2.000€</span> en 
               subvención directa para digitalizar tu negocio. Web profesional, SEO, redes sociales y más.
             </p>
 
