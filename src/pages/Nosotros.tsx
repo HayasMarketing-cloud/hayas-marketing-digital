@@ -35,7 +35,7 @@ const Nosotros = () => {
     name: "Sandra",
     role: "Directora de Arte",
     description: "Creativa experta en branding, diseño visual y experiencia de usuario. Transforma ideas en identidades visuales impactantes.",
-    image: "/lovable-uploads/3f14b088-f7f0-4e6d-b0f9-4e317d3e3688.png"
+    image: "/lovable-uploads/1a251b6e-acde-4e14-90a6-7cac838ba078.png"
   }, {
     name: "Iolanda",
     role: "Key Account Manager",
