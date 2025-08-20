@@ -529,13 +529,13 @@ const Nosotros = () => {
                   </p>
                 </div>
                 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button className="gradient-primary text-white py-6 px-8 text-lg font-medium shadow-elegant hover-scale focus-ring">
+                <div className="flex justify-center">
+                  <Button 
+                    className="gradient-primary text-white py-6 px-8 text-lg font-medium shadow-elegant hover-scale focus-ring"
+                    onClick={() => window.location.href = '/agendar-reunion'}
+                  >
                     <ArrowRight className="mr-2 h-5 w-5" />
                     Solicitar Asesoría Gratuita
-                  </Button>
-                  <Button variant="outline" className="py-6 px-8 text-lg font-medium hover-scale focus-ring border-primary text-primary hover:bg-primary hover:text-white">
-                    Conocer nuestros servicios
                   </Button>
                 </div>
                 
