@@ -210,7 +210,7 @@ const ImpulsaTuMarca = () => {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
               <div className="lg:col-span-2">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">Solución: <span className="text-gradient-primary">Creación de Marca</span></h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">Solución: <span className="text-gradient-primary">Servicio Creación de Marca</span></h2>
                 <p className="text-lg text-gray-600 mb-6 max-w-2xl">Conoce en detalle cómo abordamos la creación y el rediseño de marcas: metodología, entregables y ejemplos.</p>
                 <ul className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
                   <li className="flex items-center gap-2 text-gray-700"><CheckCircle className="h-5 w-5 text-hayas-600" /> Naming</li>
