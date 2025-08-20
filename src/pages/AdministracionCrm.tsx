@@ -6,15 +6,36 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import ServiceContactSection from '@/components/ServiceContactSection';
+import ProcessSection from '@/components/ProcessSection';
 import Seo from '@/components/Seo';
 import { Wallet, Clock, Target, Users, Cog, Rocket, Brain, MessageSquare, Mail, BarChart3, CheckCircle } from 'lucide-react';
 
 const AdministracionCrm: React.FC = () => {
-  const howWeWork = [
-    { icon: Wallet, title: 'Sin fee mensual', desc: 'Presupuestamos cada petición de forma independiente.' },
-    { icon: Clock, title: 'Trabajo bajo demanda', desc: 'Solo pagas por lo que realmente ejecutamos.' },
-    { icon: Target, title: 'Planificación estratégica', desc: 'Todas las acciones se alinean con tus objetivos de negocio.' },
-    { icon: Users, title: 'Equipo experto', desc: 'CRM, automatización, marketing, ventas y analítica.' },
+  const howWeWorkSteps = [
+    { 
+      number: '01',
+      title: 'Sin fee mensual', 
+      description: 'Presupuestamos cada petición de forma independiente.',
+      icon: <Wallet className="h-6 w-6" />
+    },
+    { 
+      number: '02',
+      title: 'Trabajo bajo demanda', 
+      description: 'Solo pagas por lo que realmente ejecutamos.',
+      icon: <Clock className="h-6 w-6" />
+    },
+    { 
+      number: '03',
+      title: 'Planificación estratégica', 
+      description: 'Todas las acciones se alinean con tus objetivos de negocio.',
+      icon: <Target className="h-6 w-6" />
+    },
+    { 
+      number: '04',
+      title: 'Equipo experto', 
+      description: 'CRM, automatización, marketing, ventas y analítica.',
+      icon: <Users className="h-6 w-6" />
+    },
   ];
 
   const includes = [
@@ -135,27 +156,12 @@ const AdministracionCrm: React.FC = () => {
         </section>
 
         {/* Cómo trabajamos */}
-        <section className="py-16 bg-muted/50">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-3">Cómo trabajamos</h2>
-              <p className="text-muted-foreground">Modelo flexible, transparente y orientado a resultados</p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {howWeWork.map(({ icon: Icon, title, desc }) => (
-                <Card key={title} className="h-full">
-                  <CardHeader>
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-3">
-                      <Icon className="w-6 h-6 text-primary" />
-                    </div>
-                    <CardTitle className="text-lg">{title}</CardTitle>
-                    <CardDescription>{desc}</CardDescription>
-                  </CardHeader>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ProcessSection 
+          title={<>Cómo <span className="text-gradient-primary">trabajamos</span></>}
+          subtitle="Modelo flexible, transparente y orientado a resultados"
+          steps={howWeWorkSteps}
+          showIcons={true}
+        />
 
         {/* Qué incluye */}
         <section className="py-16">

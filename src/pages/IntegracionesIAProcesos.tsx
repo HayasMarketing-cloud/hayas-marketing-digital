@@ -44,7 +44,7 @@ const IntegracionesIAProcesos: React.FC = () => {
     badge: 'Solución IA',
     heroTitle: 'Integraciones y optimización de procesos con IA',
     heroSubtitle: 'Integramos tus sistemas y aplicamos IA para que marketing y ventas trabajen con eficiencia y datos fiables.',
-    heroImage: '/automatizacion-procesos-ventas-hero.jpg',
+    heroImage: '/integraciones-ia-procesos-hero.jpg',
     heroImageAlt: 'Dashboard de automatización e integración de procesos con IA',
     primaryCTA: 'Explorar integraciones',
     primaryCTALink: '/agendar-reunion',
