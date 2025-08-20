@@ -74,16 +74,9 @@ export default function AgendarReunion() {
                   </div>
                   <h3 className="text-xl font-semibold mb-3">Contacto Directo</h3>
                   <p className="text-muted-foreground mb-6">
-                    Habla directamente con nuestro equipo
+                    Envíanos tu consulta por WhatsApp
                   </p>
                   <div className="space-y-3">
-                    <a 
-                      href="tel:672288182" 
-                      className="flex items-center justify-center gap-3 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 hover:shadow-lg hover:scale-105 w-full"
-                    >
-                      <Phone className="w-5 h-5" />
-                      Llamar
-                    </a>
                     <a 
                       href="https://wa.me/34672288182" 
                       target="_blank" 
