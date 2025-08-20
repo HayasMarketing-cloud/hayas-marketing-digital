@@ -128,8 +128,8 @@ const ConectaConTusClientes = () => {
   const CONNECTA_TAGS = ['crm', 'automatizacion', 'hubspot', 'inbound-marketing'];
   const filteredCasesForConecta = ALL_SUCCESS_CASES.filter(c => CONNECTA_TAGS.some(t => c.tags.includes(t)));
   const TAG_SERVICE_MAP: Record<string, number[]> = {
-    crm: [5, 17],
-    hubspot: [5, 17],
+    crm: [5, 20],
+    hubspot: [5, 20],
     automatizacion: [12, 14, 21],
     'inbound-marketing': [19],
   };
@@ -435,7 +435,7 @@ const ConectaConTusClientes = () => {
                         Solución Integral
                       </Badge>
                       <CardTitle className="text-2xl md:text-3xl font-bold">
-                        Administración CRM y Gestión de Plan de Marketing
+                        Captación de Leads y Automatización de Marketing
                       </CardTitle>
                     </div>
                   </div>
@@ -524,9 +524,9 @@ const ConectaConTusClientes = () => {
                 
                 <div className="border-t pt-6">
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Link to="/servicios/administracion-crm#top">
+                    <Link to="/servicios/captacion-leads-clientes#top">
                       <Button className="gradient-primary text-white px-8 py-3 text-lg font-medium">
-                        Conocer Solución Integral
+                        Conocer Captación de Leads
                       </Button>
                     </Link>
                     <Link to="/solicitar-consulta#top">

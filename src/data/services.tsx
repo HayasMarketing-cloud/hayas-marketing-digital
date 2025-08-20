@@ -170,14 +170,6 @@ export const allServices: ServiceItem[] = [
     pillar: 'activa',
   },
   {
-    id: 17,
-    icon: <Server className="h-10 w-10 text-hayas-primary" />,
-    title: 'Administración de CRM',
-    description: 'Externaliza tu CRM y activos digitales: gestión experta bajo demanda.',
-    href: '/servicios/administracion-crm',
-    pillar: 'conecta',
-  },
-  {
     id: 18,
     icon: <Globe className="h-10 w-10 text-hayas-primary" />,
     title: 'Localización de contenidos',
