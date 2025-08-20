@@ -90,6 +90,7 @@ export default {
 			fontFamily: {
 				sans: ['Helvetica', 'Arial', 'sans-serif'],
 				helvetica: ['Helvetica', 'Arial', 'sans-serif'],
+				arimo: ['Arimo', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

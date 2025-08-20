@@ -240,13 +240,14 @@ const HayasCRM = () => {
               <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-12 shadow-xl border border-border/20">
                 <div className="flex items-center justify-center">
                   <div className="text-center">
-                    {/* Hayas Logo */}
-                    <div className="flex justify-center mb-6">
+                    {/* Hayas Logo with CRM text */}
+                    <div className="flex justify-center items-center gap-4 mb-6">
                       <img 
                         src="/lovable-uploads/897d68a3-3c10-4dd2-a082-88278fe0025a.png" 
                         alt="Hayas Marketing Logo" 
                         className="h-32 w-auto"
                       />
+                      <span className="text-4xl font-arimo font-medium text-foreground">_CRM</span>
                     </div>
                     
                     {/* Powered by High Level */}
