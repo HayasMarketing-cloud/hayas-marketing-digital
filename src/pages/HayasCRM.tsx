@@ -221,52 +221,38 @@ const HayasCRM = () => {
           </div>
         </section>
 
-        {/* Logo Integration Section */}
+        {/* Technology Presentation Section */}
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
-                <Badge variant="outline" className="mb-4 text-primary border-primary/30">
-                  Diseño de Marca
-                </Badge>
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                  Hayas CRM Powered by High Level
+                <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                  El CRM con Tecnología High Level con Servicios y Soporte continuo de HAYAS
                 </h2>
-                <p className="text-xl text-muted-foreground">
-                  La integración perfecta entre nuestra marca y la tecnología líder del mercado
-                </p>
               </div>
               
-              <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-12 shadow-xl border border-border/20">
-                <div className="flex items-center justify-center">
-                  <div className="text-center">
-                    {/* Hayas Logo with CRM text */}
-                    <div className="flex justify-center items-center gap-4 mb-6">
-                      <img 
-                        src="/lovable-uploads/897d68a3-3c10-4dd2-a082-88278fe0025a.png" 
-                        alt="Hayas Marketing Logo" 
-                        className="h-32 w-auto"
-                      />
-                      <span className="text-4xl font-arimo font-medium text-foreground">_CRM</span>
-                    </div>
-                    
-                    {/* Powered by High Level */}
-                    <div className="flex flex-col items-center gap-3">
-                      <div className="text-lg text-muted-foreground font-medium">
-                        Powered by
-                      </div>
-                      <img 
-                        src="/lovable-uploads/b382aaea-b6ea-4bda-87a6-69cce15e9e59.png" 
-                        alt="High Level Logo" 
-                        className="h-12 w-auto"
-                      />
-                    </div>
-                  </div>
+              <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 md:p-12 shadow-xl border border-border/20 mb-12">
+                <div className="prose prose-lg max-w-none text-muted-foreground leading-relaxed">
+                  <p className="mb-6">
+                    En <strong className="text-foreground">Hayas</strong> hemos elegido integrar nuestra solución CRM sobre la plataforma <strong className="text-foreground">HighLevel</strong>, una de las tecnologías de marketing y ventas todo-en-uno más avanzadas del mercado.
+                  </p>
+                  
+                  <p className="mb-6">
+                    HighLevel nació en Estados Unidos en 2018 y, en pocos años, se ha convertido en una de las herramientas preferidas por miles de empresas en todo el mundo gracias a su capacidad para unificar en una sola plataforma funciones que normalmente exigirían varias suscripciones distintas: <strong className="text-foreground">CRM, automatización de marketing, comunicación multicanal (email, SMS, WhatsApp, redes sociales), gestión de citas, embudos de ventas, áreas de clientes</strong> y mucho más.
+                  </p>
+                  
+                  <p className="mb-6">
+                    La compañía cuenta con un crecimiento sostenido y una comunidad internacional muy activa. Su infraestructura está alojada en proveedores líderes como <strong className="text-foreground">Amazon Web Services (AWS)</strong> y <strong className="text-foreground">Google Cloud Platform (GCP)</strong>, lo que garantiza altos niveles de seguridad, escalabilidad y disponibilidad, con estándares reconocidos mundialmente.
+                  </p>
+                  
+                  <p className="text-lg font-medium text-foreground">
+                    En otras palabras, HighLevel es la base tecnológica fiable, robusta y en constante evolución sobre la que construimos <strong>Hayas CRM</strong>.
+                  </p>
                 </div>
               </div>
               
               {/* Información adicional */}
-              <div className="mt-12 grid md:grid-cols-2 gap-8">
+              <div className="grid md:grid-cols-2 gap-8">
                 <Card className="p-6 bg-primary/5 border-primary/20">
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
