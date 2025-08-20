@@ -521,7 +521,7 @@ const Nosotros = () => {
                     <Users className="h-8 w-8 text-white" />
                   </div>
                   <h2 className="text-3xl md:text-4xl font-bold text-gradient-primary mb-4">
-                    ¿Listo para impulsar tu negocio?
+                    👉 ¿Listo para impulsar tu negocio con estrategia y sentido?
                   </h2>
                   <p className="text-lg text-gray-700 max-w-2xl mx-auto">
                     Agenda una consulta gratuita de 30 minutos y descubre cómo podemos ayudarte a 
