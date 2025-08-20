@@ -1,152 +1,107 @@
 import React from 'react';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
-import Seo from '@/components/Seo';
+import ServicePageTemplate, { ServicePageData } from '@/components/ServicePageTemplate';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb';
 import { Link } from 'react-router-dom';
-import ServiceContactSection from '@/components/ServiceContactSection';
-import { Filter, Mail, BarChart3, Zap, Heart } from 'lucide-react';
+import { Filter, Mail, BarChart3, Zap, Heart, Search, Settings, Rocket, TrendingUp } from 'lucide-react';
 
-const includes = [
-  'Diseño e implementación de pipelines de ventas optimizados.',
-  'Integración marketing–ventas en CRM.',
-  'Dashboards de atribución y rendimiento.',
-  'Automatización de tareas repetitivas y notificaciones.',
-  'Seguimiento postventa y fidelización automática.',
+const features = [
+  { icon: <Filter className="h-6 w-6 text-primary" />, title: 'Pipelines optimizados', description: 'Diseño e implementación de pipelines de ventas optimizados.' },
+  { icon: <Mail className="h-6 w-6 text-primary" />, title: 'Marketing–Ventas en CRM', description: 'Integración marketing–ventas en CRM.' },
+  { icon: <BarChart3 className="h-6 w-6 text-primary" />, title: 'Dashboards de rendimiento', description: 'Dashboards de atribución y rendimiento.' },
+  { icon: <Zap className="h-6 w-6 text-primary" />, title: 'Tareas y alertas automáticas', description: 'Automatización de tareas repetitivas y notificaciones.' },
+  { icon: <Heart className="h-6 w-6 text-primary" />, title: 'Postventa y fidelización', description: 'Seguimiento postventa y fidelización automática.' },
+];
+
+const steps = [
+  { number: '1', title: 'Análisis del proceso actual', description: 'Auditoría de tu ciclo de ventas y identificación de oportunidades de automatización.', icon: <Search className="h-6 w-6 text-primary" /> },
+  { number: '2', title: 'Diseño del pipeline', description: 'Configuración de etapas, automatizaciones y workflows personalizados.', icon: <Settings className="h-6 w-6 text-primary" /> },
+  { number: '3', title: 'Implementación', description: 'Integración con CRM, herramientas de marketing y formación del equipo.', icon: <Rocket className="h-6 w-6 text-primary" /> },
+  { number: '4', title: 'Optimización continua', description: 'Monitoreo de KPIs y ajustes para maximizar la conversión.', icon: <TrendingUp className="h-6 w-6 text-primary" /> },
 ];
 
 const benefits = [
-  'Ahorro de tiempo y recursos operativos.',
-  'Mayor control y trazabilidad de oportunidades.',
-  'Mejora en la experiencia del cliente durante todo el proceso comercial.',
+  'Ahorro de tiempo y recursos operativos',
+  'Mayor control y trazabilidad de oportunidades',
+  'Mejora en la experiencia del cliente durante todo el proceso comercial',
+  'Reducción del tiempo de ciclo de ventas',
+  'Incremento en la tasa de conversión',
+  'Mejor seguimiento y fidelización postventa',
+];
+
+const faqs = [
+  { question: '¿Qué herramientas de CRM utilizáis?', answer: 'Trabajamos principalmente con HubSpot y Go High Level, adaptándonos a las necesidades específicas de cada empresa.' },
+  { question: '¿Cuánto tiempo lleva implementar la automatización?', answer: 'Dependiendo de la complejidad, entre 2-6 semanas. Incluye configuración, integración, formación y período de pruebas.' },
+  { question: '¿Ofrecéis formación al equipo?', answer: 'Sí, incluimos formación completa para que tu equipo saque el máximo provecho de los nuevos procesos automatizados.' },
 ];
 
 const AutomatizacionProcesosVentas: React.FC = () => {
-  const title = 'Automatización de procesos de ventas | Hayas Marketing';
-  const description = 'Acelera tu ciclo de ventas con automatización inteligente de principio a fin: de la gestión de leads al seguimiento postventa.';
-  const canonical = '/servicios/automatizacion-procesos-ventas';
+  const serviceData: ServicePageData = {
+    // SEO & Metadata
+    title: 'Automatización de procesos de ventas | Hayas Marketing',
+    description: 'Acelera tu ciclo de ventas con automatización inteligente de principio a fin: de la gestión de leads al seguimiento postventa.',
+    canonical: '/servicios/automatizacion-procesos-ventas',
 
-  const structuredData = {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    name: 'Automatización de procesos de ventas',
-    description,
-    provider: { '@type': 'Organization', name: 'Hayas Marketing' },
-    areaServed: 'ES',
-    serviceType: 'Sales Process Automation',
+    // Hero Section
+    badge: 'Conecta con tus clientes',
+    heroTitle: 'Automatización de Procesos de Ventas',
+    heroSubtitle: 'Acelera tu ciclo de ventas y optimiza recursos con automatización inteligente de principio a fin.',
+    heroImage: '/automatizacion-procesos-ventas-hero.jpg',
+    heroImageAlt: 'Dashboard de automatización de procesos de ventas',
+    primaryCTA: 'Solicitar auditoría de ventas',
+    primaryCTALink: '/solicitar-consulta',
+    secondaryCTA: 'Ver solución: Conecta con tus clientes',
+    secondaryCTALink: '/soluciones/conecta-con-tus-clientes',
+
+    // Services/Features Section
+    servicesTitle: 'Automatiza tu proceso de ventas',
+    servicesSubtitle: 'Herramientas y flujos que impulsan la conversión',
+    services: features,
+
+    // Benefits Section
+    benefitsTitle: 'Beneficios de la automatización',
+    benefitsSubtitle: 'Resultados que transforman tu negocio',
+    benefits,
+
+    // Process Section
+    processTitle: 'Nuestra metodología',
+    processSubtitle: 'Proceso estructurado para automatizar tus ventas',
+    processSteps: steps,
+
+    // FAQ Section
+    faqItems: faqs,
+
+    // Additional content - CTA section
+    additionalContent: (
+      <section className="mb-16 text-center">
+        <div className="p-8 rounded-xl border bg-muted/30">
+          <div className="flex items-center justify-center gap-2 mb-2 text-primary">
+            <Zap className="h-5 w-5" />
+            <span className="text-sm font-medium">Ventas aceleradas</span>
+          </div>
+          <h3 className="text-2xl font-semibold mb-3">Automatiza para centrarte en cerrar ventas</h3>
+          <p className="text-muted-foreground mb-4">Integramos herramientas y procesos para reducir fricción y aumentar control.</p>
+          <Button asChild>
+            <Link to="/solicitar-consulta">Optimiza tu proceso de ventas</Link>
+          </Button>
+        </div>
+      </section>
+    ),
+
+    // Contact Form Section
+    showContactForm: true,
+    contactFormTitle: '¿Hablamos sobre la automatización de tus procesos de ventas?',
+    contactFormSubtitle: 'Cuéntanos tu proceso actual y objetivos. Te responderemos con una propuesta personalizada para automatizar tus ventas.',
+
+    // Breadcrumb
+    breadcrumbItems: [
+      { label: 'Inicio', href: '/' },
+      { label: 'Conecta con tus clientes', href: '/soluciones/conecta-con-tus-clientes' },
+      { label: 'Servicios', href: '/servicios' },
+      { label: 'Automatización de procesos de ventas' },
+    ],
   };
 
-  return (
-    <>
-      <Seo title={title} description={description} canonical={canonical} structuredData={structuredData} />
-      <Navigation />
-
-      <main className="pt-36">
-        <div className="container mx-auto px-4">
-          <Breadcrumb className="mb-6">
-            <BreadcrumbList>
-              <BreadcrumbItem>
-                <BreadcrumbLink asChild>
-                  <Link to="/">Inicio</Link>
-                </BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem>
-                <BreadcrumbLink asChild>
-                  <Link to="/soluciones/conecta-con-tus-clientes">Conecta con tus clientes</Link>
-                </BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem>
-                <BreadcrumbLink asChild>
-                  <Link to="/servicios">Servicios</Link>
-                </BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem>
-                <BreadcrumbPage>Automatización de procesos de ventas</BreadcrumbPage>
-              </BreadcrumbItem>
-            </BreadcrumbList>
-          </Breadcrumb>
-
-          <section className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Automatización de Procesos de Ventas</h1>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Acelera tu ciclo de ventas y optimiza recursos con automatización inteligente de principio a fin.
-            </p>
-            <div className="mt-6 flex justify-center gap-3">
-              <Button asChild className="gradient-primary text-white">
-                <Link to="/solicitar-consulta">Solicitar auditoría de ventas</Link>
-              </Button>
-              <Button variant="outline" asChild>
-                <Link to="/soluciones/conecta-con-tus-clientes">Ver solución: Conecta con tus clientes</Link>
-              </Button>
-            </div>
-          </section>
-
-          <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            {[
-              { icon: <Filter className="h-6 w-6 text-primary" />, title: 'Pipelines optimizados', desc: 'Diseño e implementación de pipelines de ventas optimizados.' },
-              { icon: <Mail className="h-6 w-6 text-primary" />, title: 'Marketing–Ventas en CRM', desc: 'Integración marketing–ventas en CRM.' },
-              { icon: <BarChart3 className="h-6 w-6 text-primary" />, title: 'Dashboards de rendimiento', desc: 'Dashboards de atribución y rendimiento.' },
-              { icon: <Zap className="h-6 w-6 text-primary" />, title: 'Tareas y alertas automáticas', desc: 'Automatización de tareas repetitivas y notificaciones.' },
-              { icon: <Heart className="h-6 w-6 text-primary" />, title: 'Postventa y fidelización', desc: 'Seguimiento postventa y fidelización automática.' },
-            ].map((f) => (
-              <Card key={f.title}>
-                <CardHeader className="flex flex-row items-center gap-3">
-                  {f.icon}
-                  <CardTitle className="text-xl">{f.title}</CardTitle>
-                </CardHeader>
-                <CardContent className="pt-0 text-muted-foreground">{f.desc}</CardContent>
-              </Card>
-            ))}
-          </section>
-
-          <section className="mb-16">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <h2 className="text-2xl font-semibold mb-3">Qué incluye</h2>
-                <ul className="space-y-2 text-muted-foreground">
-                  {includes.map((item) => (
-                    <li key={item}>• {item}</li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <h2 className="text-2xl font-semibold mb-3">Beneficios</h2>
-                <ul className="space-y-2 text-muted-foreground">
-                  {benefits.map((item) => (
-                    <li key={item}>• {item}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </section>
-
-          <section className="mb-16 text-center">
-            <div className="p-8 rounded-xl border bg-muted/30">
-              <div className="flex items-center justify-center gap-2 mb-2 text-primary"><Zap className="h-5 w-5" /><span className="text-sm font-medium">Ventas aceleradas</span></div>
-              <h3 className="text-2xl font-semibold mb-3">Automatiza para centrarte en cerrar ventas</h3>
-              <p className="text-muted-foreground mb-4">Integramos herramientas y procesos para reducir fricción y aumentar control.</p>
-              <Button asChild>
-                <Link to="/solicitar-consulta">Optimiza tu proceso de ventas</Link>
-              </Button>
-            </div>
-          </section>
-
-          <ServiceContactSection
-            title="¿Hablamos sobre la automatización de tus procesos de ventas?"
-            subtitle="Cuéntanos tu proceso actual y objetivos. Te responderemos con una propuesta personalizada para automatizar tus ventas."
-            minHeight={900}
-          />
-        </div>
-      </main>
-
-      <Footer />
-    </>
-  );
+  return <ServicePageTemplate data={serviceData} />;
 };
 
 export default AutomatizacionProcesosVentas;

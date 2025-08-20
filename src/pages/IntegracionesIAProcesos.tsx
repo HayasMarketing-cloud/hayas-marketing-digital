@@ -1,28 +1,30 @@
 import React from 'react';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
-import FAQSection from '@/components/FAQSection';
-
-import KitDigitalBanner from '@/components/KitDigitalBanner';
-import Seo from '@/components/Seo';
+import ServicePageTemplate, { ServicePageData } from '@/components/ServicePageTemplate';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb';
 import { Link } from 'react-router-dom';
-import { PlugZap, BrainCircuit, Workflow, ShieldCheck, Wrench, ChartLine } from 'lucide-react';
+import { PlugZap, BrainCircuit, Workflow, ShieldCheck, ChartLine, Search, Cog, TestTube, TrendingUp } from 'lucide-react';
 
 const features = [
-  { icon: <PlugZap className="h-6 w-6 text-primary" />, title: 'Integraciones', desc: 'Conecta CRM, web, ads y herramientas internas para un dato único.' },
-  { icon: <BrainCircuit className="h-6 w-6 text-primary" />, title: 'IA aplicada', desc: 'Automatiza tareas, personaliza experiencias y acelera operaciones.' },
-  { icon: <Workflow className="h-6 w-6 text-primary" />, title: 'Workflows de procesos', desc: 'Orquestación end-to-end con disparadores y estados.' },
-  { icon: <ShieldCheck className="h-6 w-6 text-primary" />, title: 'Seguridad y RGPD', desc: 'Diseño conforme a normativa y consentimiento explícito.' },
+  { icon: <PlugZap className="h-6 w-6 text-primary" />, title: 'Integraciones', description: 'Conecta CRM, web, ads y herramientas internas para un dato único.' },
+  { icon: <BrainCircuit className="h-6 w-6 text-primary" />, title: 'IA aplicada', description: 'Automatiza tareas, personaliza experiencias y acelera operaciones.' },
+  { icon: <Workflow className="h-6 w-6 text-primary" />, title: 'Workflows de procesos', description: 'Orquestación end-to-end con disparadores y estados.' },
+  { icon: <ShieldCheck className="h-6 w-6 text-primary" />, title: 'Seguridad y RGPD', description: 'Diseño conforme a normativa y consentimiento explícito.' },
 ];
 
 const steps = [
-  { title: 'Descubrimiento', desc: 'Mapa de procesos, sistemas y puntos de fricción.' },
-  { title: 'Arquitectura', desc: 'Definición de integraciones, responsabilidades y SLAs.' },
-  { title: 'Implementación', desc: 'Conexiones, automatizaciones y pruebas de extremo a extremo.' },
-  { title: 'Optimización', desc: 'Monitoreo, mejoras y documentación viva.' },
+  { number: '1', title: 'Descubrimiento', description: 'Mapa de procesos, sistemas y puntos de fricción.', icon: <Search className="h-6 w-6 text-primary" /> },
+  { number: '2', title: 'Arquitectura', description: 'Definición de integraciones, responsabilidades y SLAs.', icon: <Cog className="h-6 w-6 text-primary" /> },
+  { number: '3', title: 'Implementación', description: 'Conexiones, automatizaciones y pruebas de extremo a extremo.', icon: <TestTube className="h-6 w-6 text-primary" /> },
+  { number: '4', title: 'Optimización', description: 'Monitoreo, mejoras y documentación viva.', icon: <TrendingUp className="h-6 w-6 text-primary" /> },
+];
+
+const benefits = [
+  'Sincronización bidireccional CRM-Web-Ads',
+  'Enriquecimiento de leads y priorización con IA',
+  'Automatización de procesos internos (ventas y soporte)',
+  'Contenidos y respuestas asistidas por IA (SofÍA)',
+  'Reducción de costes operativos y tiempo de respuesta',
+  'Mejora en la experiencia del cliente',
 ];
 
 const faqs = [
@@ -32,130 +34,74 @@ const faqs = [
 ];
 
 const IntegracionesIAProcesos: React.FC = () => {
-  const title = 'Integraciones y optimización con IA | Hayas Marketing';
-  const description = 'Conectamos tus sistemas y aplicamos IA para acelerar procesos, reducir costes y mejorar la experiencia del cliente.';
-  const canonical = '/servicios/integraciones-ia-procesos';
+  const serviceData: ServicePageData = {
+    // SEO & Metadata
+    title: 'Integraciones y optimización con IA | Hayas Marketing',
+    description: 'Conectamos tus sistemas y aplicamos IA para acelerar procesos, reducir costes y mejorar la experiencia del cliente.',
+    canonical: '/servicios/integraciones-ia-procesos',
 
-  const structuredData = {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    name: 'Integraciones y optimización de procesos con IA',
-    description,
-    provider: { '@type': 'Organization', name: 'Hayas Marketing' },
-    areaServed: 'ES',
+    // Hero Section
+    badge: 'Solución IA',
+    heroTitle: 'Integraciones y optimización de procesos con IA',
+    heroSubtitle: 'Integramos tus sistemas y aplicamos IA para que marketing y ventas trabajen con eficiencia y datos fiables.',
+    heroImage: '/automatizacion-procesos-ventas-hero.jpg',
+    heroImageAlt: 'Dashboard de automatización e integración de procesos con IA',
+    primaryCTA: 'Explorar integraciones',
+    primaryCTALink: '/agendar-reunion',
+    secondaryCTA: 'Cuéntanos tu caso',
+    secondaryCTALink: '/contacto',
+
+    // Services/Features Section
+    servicesTitle: 'Conectamos tus herramientas',
+    servicesSubtitle: 'Integraciones inteligentes que unifican tus datos y automatizan procesos',
+    services: features,
+
+    // Benefits Section
+    benefitsTitle: 'Casos de uso y beneficios',
+    benefitsSubtitle: 'Optimiza tus procesos con IA aplicada',
+    benefits,
+
+    // Process Section
+    processTitle: 'Nuestra metodología',
+    processSubtitle: 'Proceso estructurado para integraciones exitosas',
+    processSteps: steps,
+
+    // FAQ Section
+    faqItems: faqs,
+
+    // Additional content - CTA section
+    additionalContent: (
+      <section className="mb-16 text-center">
+        <div className="p-8 rounded-xl border bg-muted/30">
+          <div className="flex items-center justify-center gap-2 mb-2 text-primary">
+            <ChartLine className="h-5 w-5" />
+            <span className="text-sm font-medium">Eficiencia operativa</span>
+          </div>
+          <h3 className="text-2xl font-semibold mb-3">Procesos escalables y medibles</h3>
+          <p className="text-muted-foreground mb-4">Menos fricción, más foco en lo que importa.</p>
+          <Button asChild>
+            <Link to="/solicitar-consulta">Quiero integrarlo</Link>
+          </Button>
+        </div>
+      </section>
+    ),
+
+    // Contact Form Section
+    showContactForm: true,
+    contactFormTitle: '¿Hablamos sobre tus integraciones?',
+    contactFormSubtitle: 'Cuéntanos tu contexto tecnológico y objetivos. Te responderemos con una propuesta de integración personalizada.',
+
+    // Breadcrumb
+    breadcrumbItems: [
+      { label: 'Inicio', href: '/' },
+      { label: 'Activa tu estrategia digital', href: '/soluciones/activa-tu-estrategia-digital' },
+      { label: 'Impulsa tu marca', href: '/soluciones/impulsa-tu-marca' },
+      { label: 'Servicios', href: '/servicios' },
+      { label: 'Integraciones y optimización con IA' },
+    ],
   };
 
-  return (
-    <>
-      <Seo title={title} description={description} canonical={canonical} structuredData={structuredData} />
-      <Navigation />
-
-      <main className="pt-36">
-        <div className="container mx-auto px-4">
-          <Breadcrumb className="mb-6">
-            <BreadcrumbList>
-              <BreadcrumbItem>
-                <BreadcrumbLink asChild>
-                  <Link to="/">Inicio</Link>
-                </BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem>
-                <BreadcrumbLink asChild>
-                  <Link to="/soluciones/activa-tu-estrategia-digital">Activa tu estrategia digital</Link>
-                </BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem>
-                <BreadcrumbLink asChild>
-                  <Link to="/soluciones/impulsa-tu-marca">Impulsa tu marca</Link>
-                </BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem>
-                <BreadcrumbLink asChild>
-                  <Link to="/servicios">Servicios</Link>
-                </BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem>
-                <BreadcrumbPage>Integraciones y optimización con IA</BreadcrumbPage>
-              </BreadcrumbItem>
-            </BreadcrumbList>
-          </Breadcrumb>
-
-          <section className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Integraciones y optimización de procesos con IA</h1>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Integramos tus sistemas y aplicamos IA para que marketing y ventas trabajen con eficiencia y datos fiables.
-            </p>
-            <div className="mt-6 flex justify-center gap-3">
-              <Button asChild className="gradient-primary text-white">
-                <Link to="/agendar-reunion">Explorar integraciones</Link>
-              </Button>
-              <Button variant="outline" asChild>
-                <Link to="/contacto">Cuéntanos tu caso</Link>
-              </Button>
-            </div>
-          </section>
-
-          <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            {features.map((f) => (
-              <Card key={f.title}>
-                <CardHeader className="flex flex-row items-center gap-3">
-                  {f.icon}
-                  <CardTitle className="text-xl">{f.title}</CardTitle>
-                </CardHeader>
-                <CardContent className="pt-0 text-muted-foreground">{f.desc}</CardContent>
-              </Card>
-            ))}
-          </section>
-
-          <section className="mb-16">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <h2 className="text-2xl font-semibold mb-3">Casos de uso</h2>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li>• Sincronización bidireccional CRM-Web-Ads</li>
-                  <li>• Enriquecimiento de leads y priorización con IA</li>
-                  <li>• Automatización de procesos internos (ventas y soporte)</li>
-                  <li>• Contenidos y respuestas asistidas por IA (SofÍA)</li>
-                </ul>
-              </div>
-              <div>
-                <h2 className="text-2xl font-semibold mb-3">Metodología</h2>
-                <ol className="space-y-3">
-                  {steps.map((s, i) => (
-                    <li key={s.title} className="p-4 rounded-lg border">
-                      <div className="font-medium">{i + 1}. {s.title}</div>
-                      <p className="text-sm text-muted-foreground">{s.desc}</p>
-                    </li>
-                  ))}
-                </ol>
-              </div>
-            </div>
-          </section>
-
-          <section className="mb-16 text-center">
-            <div className="p-8 rounded-xl border bg-muted/30">
-              <div className="flex items-center justify-center gap-2 mb-2 text-primary"><ChartLine className="h-5 w-5" /><span className="text-sm font-medium">Eficiencia operativa</span></div>
-              <h3 className="text-2xl font-semibold mb-3">Procesos escalables y medibles</h3>
-              <p className="text-muted-foreground mb-4">Menos fricción, más foco en lo que importa.</p>
-              <Button asChild>
-                <Link to="/solicitar-consulta">Quiero integrarlo</Link>
-              </Button>
-            </div>
-          </section>
-
-          <FAQSection faqs={faqs} />
-          <KitDigitalBanner />
-          
-        </div>
-      </main>
-
-      <Footer />
-    </>
-  );
+  return <ServicePageTemplate data={serviceData} />;
 };
 
 export default IntegracionesIAProcesos;
