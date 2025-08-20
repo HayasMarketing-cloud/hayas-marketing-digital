@@ -238,13 +238,63 @@ const AlojamientoMantenimiento: React.FC = () => {
               </div>
             </div>
             <div className="relative">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img 
-                  src="/lovable-uploads/aac546a3-0e75-42e9-b930-60376a6e2f98.png"
-                  alt="Alojamiento web y mantenimiento profesional"
-                  className="w-full h-auto"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+              <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
+                {/* Server Dashboard mockup */}
+                <div className="bg-gray-50 rounded-lg p-6 mb-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex gap-2">
+                      <div className="w-3 h-3 bg-red-400 rounded-full"></div>
+                      <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                      <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+                    </div>
+                    <span className="text-xs text-gray-500">hosting.tuweb.com</span>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2 mb-4">
+                      <Server className="h-4 w-4 text-primary" />
+                      <span className="text-sm font-medium text-gray-700">Panel de Control</span>
+                    </div>
+                    <div className="grid grid-cols-3 gap-3">
+                      <div className="bg-green-100 p-3 rounded text-center">
+                        <div className="text-green-600 font-bold">99.9%</div>
+                        <div className="text-xs text-gray-600">Uptime</div>
+                      </div>
+                      <div className="bg-blue-100 p-3 rounded text-center">
+                        <div className="text-blue-600 font-bold">&lt; 1s</div>
+                        <div className="text-xs text-gray-600">Carga</div>
+                      </div>
+                      <div className="bg-purple-100 p-3 rounded text-center">
+                        <div className="text-purple-600 font-bold">SSL</div>
+                        <div className="text-xs text-gray-600">Seguro</div>
+                      </div>
+                    </div>
+                    <div className="mt-4 space-y-2">
+                      <div className="flex items-center justify-between text-sm">
+                        <span className="text-gray-600">Backup automático</span>
+                        <CheckCircle className="h-4 w-4 text-green-500" />
+                      </div>
+                      <div className="flex items-center justify-between text-sm">
+                        <span className="text-gray-600">Monitoreo 24/7</span>
+                        <CheckCircle className="h-4 w-4 text-green-500" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-gray-600">Hosting Premium WordPress</span>
+                  <div className="flex items-center gap-1 text-green-600">
+                    <Shield className="h-4 w-4" />
+                    <span className="text-sm font-medium">100% Seguro</span>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Floating elements */}
+              <div className="absolute -top-4 -right-4 bg-primary text-white p-3 rounded-full shadow-lg">
+                <Server className="h-6 w-6" />
+              </div>
+              <div className="absolute -bottom-4 -left-4 bg-green-500 text-white p-3 rounded-full shadow-lg">
+                <Shield className="h-6 w-6" />
               </div>
             </div>
           </div>
