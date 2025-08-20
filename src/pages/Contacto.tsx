@@ -48,15 +48,12 @@ const Contacto = () => {
                       Cuéntanos tu contexto y objetivos. Te responderemos con una propuesta alineada a tus necesidades.
                     </p>
                   </div>
-                  <div className="p-8">
-                    <StandardGHLForm
-                      formId="7hfylnczt0dXbyUFFSEt"
-                      title="Formulario de Contacto"
-                      minHeight={820}
-                      showHeader={false}
-                      className="border-0 shadow-none bg-transparent"
-                    />
-                  </div>
+                  <StandardGHLForm
+                    formId="7hfylnczt0dXbyUFFSEt"
+                    title="Formulario de Contacto"
+                    minHeight={820}
+                    showHeader={false}
+                  />
                 </div>
               </div>
 
