@@ -189,8 +189,8 @@ const ActivaTusVentas = () => {
                 <div className="relative">
                   <div className="absolute inset-0 bg-gradient-to-br from-hayas-100 to-secondary/20 rounded-2xl transform rotate-3"></div>
                   <img 
-                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop" 
-                    alt="Estrategia de conversión de ventas integrada" 
+                    src="/activa-ventas-conversion-dashboard.jpg" 
+                    alt="Dashboard de conversión y métricas de ventas" 
                     className="relative z-10 w-full h-auto rounded-2xl shadow-xl"
                   />
                 </div>
@@ -201,12 +201,12 @@ const ActivaTusVentas = () => {
                   Estrategia Integrada
                 </Badge>
                 <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
-                  Una <span className="text-gradient-primary">visión holística</span> que alinea marketing y ventas
+                  Una <span className="text-gradient-primary">máquina de conversión</span> que transforma leads en ventas
                 </h2>
                 <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                  El verdadero poder de un CRM radica en la integración completa de tu estrategia. 
-                  No se trata solo de gestionar contactos, sino de crear un ecosistema donde cada 
-                  acción de marketing alimenta directamente tu pipeline de ventas.
+                  La activación efectiva de ventas requiere una estrategia integral que conecte cada touchpoint 
+                  del customer journey. Transformamos tu proceso comercial en un sistema optimizado que convierte 
+                  cada lead en una oportunidad real de venta y maximiza el retorno de tu inversión publicitaria.
                 </p>
                 
                 <div className="space-y-6">
@@ -215,10 +215,10 @@ const ActivaTusVentas = () => {
                       <Target className="h-6 w-6 text-hayas-600" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold mb-2">Estrategia Unificada</h3>
+                      <h3 className="text-xl font-semibold mb-2">Conversión Optimizada</h3>
                       <p className="text-gray-600">
-                        Alineamos tus objetivos de marketing con tus metas de ventas, creando una 
-                        sinergia que multiplica los resultados.
+                        Diseñamos campañas publicitarias altamente segmentadas que atraen leads cualificados 
+                        y los guían a través de un funnel optimizado para la conversión.
                       </p>
                     </div>
                   </div>
@@ -228,10 +228,10 @@ const ActivaTusVentas = () => {
                       <Zap className="h-6 w-6 text-secondary" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold mb-2">Automatización Inteligente</h3>
+                      <h3 className="text-xl font-semibold mb-2">Seguimiento Automatizado</h3>
                       <p className="text-gray-600">
-                        Cada lead generado se nutre automáticamente hasta convertirse en cliente, 
-                        sin perder oportunidades por el camino.
+                        Implementamos sistemas de lead scoring y workflows automatizados que nutren 
+                        cada prospecto hasta convertirlo en cliente, sin perder oportunidades.
                       </p>
                     </div>
                   </div>
@@ -241,10 +241,10 @@ const ActivaTusVentas = () => {
                       <BarChart3 className="h-6 w-6 text-hayas-600" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold mb-2">Métricas que Importan</h3>
+                      <h3 className="text-xl font-semibold mb-2">ROI Medible</h3>
                       <p className="text-gray-600">
-                        Medimos el ROI real desde el primer touchpoint hasta la venta final, 
-                        optimizando cada etapa del funnel.
+                        Rastreamos cada euro invertido desde la primera impresión hasta la venta final, 
+                        optimizando constantemente para maximizar tu retorno publicitario.
                       </p>
                     </div>
                   </div>
