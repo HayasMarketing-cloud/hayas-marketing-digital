@@ -199,7 +199,7 @@ const SeoPositioning = () => {
       <Navigation />
       
       {/* Breadcrumb */}
-      <div className="bg-gray-50 py-4 mt-20">
+      <div className="bg-muted/30 py-4 mt-20">
         <div className="container mx-auto px-4">
           <nav className="text-sm text-gray-600">
             <Link to="/" className="hover:text-primary">Inicio</Link>

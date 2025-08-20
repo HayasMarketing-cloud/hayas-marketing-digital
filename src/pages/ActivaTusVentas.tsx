@@ -114,7 +114,7 @@ const ActivaTusVentas = () => {
 
       <main>
         {/* Breadcrumbs */}
-        <section className="py-4 bg-gray-50 border-b">
+        <section className="py-4 bg-muted/30">
           <div className="container mx-auto px-4">
             <Breadcrumb>
               <BreadcrumbList>
@@ -133,7 +133,7 @@ const ActivaTusVentas = () => {
         </section>
 
         {/* Header Navigation */}
-        <section className="py-6 bg-gray-50">
+        <section className="py-6 bg-muted/30">
           <div className="container mx-auto px-4">
             <Link to="/#top" className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors">
               <ArrowLeft className="h-4 w-4 mr-2" />
