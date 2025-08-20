@@ -221,6 +221,100 @@ const HayasCRM = () => {
           </div>
         </section>
 
+        {/* Logo Mockup Section */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-12">
+                <Badge variant="outline" className="mb-4 text-primary border-primary/30">
+                  Diseño de Marca
+                </Badge>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                  Mockup del Logotipo Hayas CRM
+                </h2>
+                <p className="text-xl text-muted-foreground">
+                  Diseño conceptual que integra nuestra marca con la tecnología de High Level
+                </p>
+              </div>
+              
+              <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-12 shadow-xl border border-border/20">
+                <div className="flex items-center justify-center">
+                  <div className="relative">
+                    {/* Mockup del logo combinado creado con CSS */}
+                    <div className="bg-white rounded-lg shadow-lg p-8 w-full max-w-2xl border border-border/10">
+                      <div className="flex items-center justify-between">
+                        {/* Logo principal Hayas */}
+                        <div className="flex items-center">
+                          <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent tracking-wider">
+                            HAYAS
+                          </div>
+                          <div className="ml-3 text-lg font-medium text-muted-foreground">
+                            CRM
+                          </div>
+                        </div>
+                        
+                        {/* Powered by High Level */}
+                        <div className="flex items-center gap-2 text-right">
+                          <div className="text-sm text-muted-foreground">
+                            <div>Powered by</div>
+                            <div className="font-semibold text-foreground">High Level</div>
+                          </div>
+                          {/* Logo GHL simulado */}
+                          <div className="w-10 h-10 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-md">
+                            GHL
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Etiqueta de mockup */}
+                    <div className="absolute -top-3 -right-3 bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium shadow-lg">
+                      Mockup Design
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="mt-8 text-center">
+                  <p className="text-muted-foreground text-sm">
+                    *Este es un diseño conceptual creado para mostrar la integración de marca con la plataforma High Level
+                  </p>
+                </div>
+              </div>
+              
+              {/* Información adicional */}
+              <div className="mt-12 grid md:grid-cols-2 gap-8">
+                <Card className="p-6 bg-primary/5 border-primary/20">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                      <Users className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold mb-2">Marca Hayas</h3>
+                      <p className="text-muted-foreground text-sm">
+                        Nuestra identidad corporativa mantiene el protagonismo con la tipografía distintiva y los colores de marca.
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+                
+                <Card className="p-6 bg-accent/5 border-accent/20">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                      <Zap className="h-6 w-6 text-accent" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold mb-2">Powered by High Level</h3>
+                      <p className="text-muted-foreground text-sm">
+                        La mención de la tecnología subyacente aporta confianza y transparencia sobre la plataforma utilizada.
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Benefits Section */}
         <section className="py-20 bg-muted/50">
           <div className="container mx-auto px-4">
