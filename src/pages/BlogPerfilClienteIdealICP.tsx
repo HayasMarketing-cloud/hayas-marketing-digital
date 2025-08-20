@@ -262,6 +262,25 @@ const BlogPerfilClienteIdealICP = () => {
               </div>
             </div>
           </div>
+
+          <h3 className="text-2xl font-semibold mb-4 text-foreground">Matriz de priorización del ICP</h3>
+          <p className="mb-6">
+            Una forma efectiva de organizar tu ICP es mediante una <strong>matriz de priorización</strong> que clasifique las características de tus clientes potenciales según su importancia para tu negocio:
+          </p>
+
+          <div className="mb-8">
+            <img 
+              src="/lovable-uploads/6fad16c6-2f7d-4554-89d6-fd7cf3e55d10.png" 
+              alt="Matriz de priorización del perfil de cliente ideal mostrando clasificación de países, empleados, buyer persona, presupuesto e industria en categorías HIGH, MEDIUM y LOW"
+              className="w-full h-auto rounded-lg border border-border/50 shadow-lg"
+            />
+          </div>
+          
+          <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
+            <p className="text-blue-800">
+              <strong>Cómo usar esta matriz:</strong> Los clientes que encajen en la categoría "HIGH" en múltiples dimensiones deben ser tu prioridad absoluta. Los de categoría "MEDIUM" pueden ser oportunidades secundarias, mientras que los "LOW" requieren mayor inversión para convertirse.
+            </p>
+          </div>
         </section>
 
         <section>
