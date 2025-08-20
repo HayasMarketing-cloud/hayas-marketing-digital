@@ -4,7 +4,7 @@ import Footer from '@/components/Footer';
 import ReviewsSection from '@/components/ReviewsSection';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { Target, Users, TrendingUp, Award, CheckCircle, Lightbulb, Zap, Heart, ArrowRight, Bot, GraduationCap } from 'lucide-react';
+import { Target, Users, TrendingUp, Award, CheckCircle, Lightbulb, Zap, Heart, ArrowRight, Bot, GraduationCap, BarChart3, Settings } from 'lucide-react';
 
 // Import logos
 import hubspotLogo from '@/assets/logos/hubspot-logo.png';
@@ -208,7 +208,7 @@ const Nosotros = () => {
                   <div className="absolute inset-0 bg-gradient-to-br from-hayas-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="relative z-10">
                     <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                      <Bot className="h-8 w-8 text-white" />
+                      <Settings className="h-8 w-8 text-white" />
                     </div>
                     <h3 className="text-lg font-bold mb-4 text-hayas-primary leading-tight">Tecnología con intención</h3>
                     <p className="text-gray-700 text-sm leading-relaxed">
@@ -238,7 +238,7 @@ const Nosotros = () => {
                   <div className="absolute inset-0 bg-gradient-to-br from-hayas-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="relative z-10">
                     <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                      <TrendingUp className="h-8 w-8 text-white" />
+                      <BarChart3 className="h-8 w-8 text-white" />
                     </div>
                     <h3 className="text-lg font-bold mb-4 text-hayas-primary leading-tight">Medición real de resultados</h3>
                     <p className="text-gray-700 text-sm leading-relaxed">
