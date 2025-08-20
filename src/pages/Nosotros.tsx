@@ -115,7 +115,7 @@ const Nosotros = () => {
   }, {
     name: "Sharpei",
     logo: "/lovable-uploads/42d61146-8307-49fd-bf0e-6f48707c1284.png",
-    url: "https://sharpei.com"
+    url: "https://www.gosharpei.com/"
   }, {
     name: "Connectif",
     logo: "/lovable-uploads/92c382be-7597-473a-97d4-fc45f3d7d598.png",
