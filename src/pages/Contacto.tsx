@@ -48,12 +48,13 @@ const Contacto = () => {
                       Cuéntanos tu contexto y objetivos. Te responderemos con una propuesta alineada a tus necesidades.
                     </p>
                   </div>
-                  <div className="p-0">
+                  <div className="p-8">
                     <StandardGHLForm
                       formId="7hfylnczt0dXbyUFFSEt"
                       title="Formulario de Contacto"
                       minHeight={820}
                       showHeader={false}
+                      className="border-0 shadow-none bg-transparent"
                     />
                   </div>
                 </div>
@@ -68,15 +69,8 @@ const Contacto = () => {
                       <Phone className="w-8 h-8 text-white" />
                     </div>
                     <h3 className="text-xl font-semibold mb-3">Contacto Directo</h3>
-                    <p className="text-muted-foreground mb-6">Habla directamente con nuestro equipo</p>
-                    <div className="space-y-3">
-                      <a
-                        href="tel:672288182"
-                        className="flex items-center justify-center gap-3 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 hover:shadow-lg hover:scale-105 w-full"
-                      >
-                        <Phone className="w-5 h-5" />
-                        Llamar
-                      </a>
+                    <p className="text-muted-foreground mb-6">Envíanos un mensaje por WhatsApp</p>
+                    <div>
                       <a
                         href="https://wa.me/34672288182"
                         target="_blank"
