@@ -377,7 +377,7 @@ const Nosotros = () => {
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient-primary">Nuestro Equipo</h2>
                 <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-                  Un equipo diverso, humano y multidisciplinar que comparte una visión: hacer del marketing una herramienta de transformación sostenible.
+                  Nuestro equipo, diverso y multidisciplinar, lidera la estrategia, la coordinación de proyectos y está en contacto directo con nuestros clientes. Son quienes marcan el rumbo, garantizan la calidad y aseguran que cada proyecto refleje la esencia y el impacto que define a Hayas.
                 </p>
               </div>
               
