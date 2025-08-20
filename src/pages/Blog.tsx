@@ -62,6 +62,20 @@ const Blog = () => {
       tags: ["marketing global", "internacionalización", "localización", "i18n", "l10n", "contenidos"]
     },
     {
+      id: 'guia-tecnica-email-marketing-hubspot-configuracion',
+      title: 'Guía técnica de Email Marketing: Configuración y cumplimiento con HubSpot',
+      description: 'Aprende a configurar SPF, DKIM y DMARC en HubSpot para cumplir con las nuevas políticas de Google y Yahoo. Guía técnica completa para 2025.',
+      excerpt: 'Configura email marketing en HubSpot cumpliendo con RGPD, SPF, DKIM y DMARC. Evita el spam y mejora la entregabilidad de tus campañas.',
+      date: '2025-01-18',
+      readTime: '15 min',
+      category: 'Email Marketing',
+      author: 'Equipo Hayas Marketing',
+      image: '/email-marketing-automatizaciones-hero.jpg',
+      slug: '/blog/guia-tecnica-email-marketing-hubspot-configuracion',
+      tags: ['Email Marketing', 'HubSpot', 'SPF', 'DKIM', 'DMARC', 'Cumplimiento', 'RGPD'],
+      featured: true
+    },
+    {
       id: 5,
       title: "Cómo crear tu buyer persona para B2B y B2C [GUÍA COMPLETA + TEMPLATE]",
       description: "Aprende a crear buyer personas efectivos para B2B y B2C con nuestra guía completa. Incluye template descargable y cuestionario para definir el perfil de cliente ideal.",

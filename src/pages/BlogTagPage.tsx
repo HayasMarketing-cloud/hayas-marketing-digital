@@ -16,6 +16,17 @@ import Seo from '@/components/Seo';
 // Posts data - en una app real esto vendría de una API o base de datos
 const allPosts = [
   {
+    id: "guia-tecnica-email-marketing-hubspot-configuracion",
+    title: "Guía técnica de Email Marketing: Configuración y cumplimiento con HubSpot",
+    description: "Aprende a configurar SPF, DKIM y DMARC en HubSpot para cumplir con las nuevas políticas de Google y Yahoo.",
+    slug: "/blog/guia-tecnica-email-marketing-hubspot-configuracion",
+    image: "/email-marketing-automatizaciones-hero.jpg",
+    category: "Email Marketing",
+    readTime: "15 min",
+    date: "2025-01-18",
+    tags: ["email-marketing", "hubspot", "spf", "dkim", "dmarc", "cumplimiento"]
+  },
+  {
     id: "perfil-cliente-ideal",
     title: "Perfil de cliente ideal: qué es y cómo definirlo para tu negocio",
     description: "Descubre cómo crear el perfil de cliente ideal (ICP) perfecto para optimizar tu estrategia de marketing.",
