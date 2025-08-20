@@ -139,16 +139,10 @@ const Nosotros = () => {
               <p className="text-hero text-gray-800 mb-8 animate-slide-up max-w-4xl mx-auto leading-relaxed font-medium">Agencia y consultora de marketing digital especializada en estrategia, automatización e inteligencia artificial al servicio de las personas.</p>
               
               {/* New integrated text content */}
-              <div className="max-w-5xl mx-auto space-y-6 animate-fade-in">
+              <div className="max-w-5xl mx-auto animate-fade-in">
                 <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-8 border border-white/30 shadow-elegant">
                   <p className="text-xl text-gray-800 leading-relaxed font-medium">
                     Desde 2014, ayudamos a emprendedores y empresas a conectar de forma más efectiva y auténtica con sus clientes, impulsando su crecimiento a través de estrategias de marketing digital esenciales.
-                  </p>
-                </div>
-                
-                <div className="bg-gradient-to-r from-hayas-primary/10 to-hayas-secondary/10 backdrop-blur-sm rounded-2xl p-6 border border-hayas-primary/20 shadow-lg">
-                  <p className="text-lg text-gray-700 leading-relaxed font-medium text-center">
-                    Lo hacemos desde la estrategia, la formación y la tecnología, para lograr un marketing que conecta, mide y transforma.
                   </p>
                 </div>
               </div>
@@ -160,7 +154,7 @@ const Nosotros = () => {
         </section>
 
         {/* Nuestro Enfoque - Sección de enfoques estratégicos */}
-        <section className="relative py-20 md:py-28 bg-gradient-to-br from-white via-hayas-primary/5 to-hayas-secondary/10 overflow-hidden">
+        <section className="relative py-20 md:py-28 bg-white overflow-hidden">
           {/* Decorative elements */}
           <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
             <div className="absolute top-20 -left-20 w-64 h-64 rounded-full bg-hayas-primary/10 blur-2xl"></div>
