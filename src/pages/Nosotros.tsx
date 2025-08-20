@@ -44,8 +44,8 @@ const Nosotros = () => {
     image: "/lovable-uploads/55bec5bb-9e3b-4208-9101-ea3fa923568f.png"
   }, {
     name: "Daniela",
-    role: "Key Account Manager",
-    description: "Responsable de desarrollo comercial y atención personalizada a clientes estratégicos, garantizando resultados excepcionales.",
+    role: "Desarrollo web y especialista en CRM",
+    description: "Experta en desarrollo web y gestión de sistemas CRM, especializada en crear soluciones digitales optimizadas y automatizaciones eficientes.",
     image: "/lovable-uploads/26de1124-c82f-4741-800d-030e305eb147.png"
   }];
   const values = [{
