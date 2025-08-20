@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Phone, MessageCircle } from 'lucide-react';
-import GHLFormEmbed from '@/components/GHLFormEmbed';
+import StandardGHLForm from '@/components/StandardGHLForm';
 import Seo from '@/components/Seo';
 
 const Contacto = () => {
@@ -48,11 +48,12 @@ const Contacto = () => {
                       Cuéntanos tu contexto y objetivos. Te responderemos con una propuesta alineada a tus necesidades.
                     </p>
                   </div>
-                  <div className="p-8">
-                    <GHLFormEmbed
+                  <div className="p-0">
+                    <StandardGHLForm
                       formId="7hfylnczt0dXbyUFFSEt"
-                      title="Marketing Form - Claim Offer"
+                      title="Formulario de Contacto"
                       minHeight={820}
+                      showHeader={false}
                     />
                   </div>
                 </div>

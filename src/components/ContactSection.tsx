@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { MessageSquare, Mail, Phone } from 'lucide-react';
@@ -18,9 +18,13 @@ const ContactSection = () => {
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <Card className="border-none shadow-xl bg-white">
-            <CardContent className="p-8">
-              <h3 className="text-2xl font-bold mb-6">Envíanos un mensaje</h3>
+          <Card className="shadow-xl border border-border/20 bg-card">
+            <CardHeader className="pb-6">
+              <CardTitle className="text-2xl font-bold text-foreground">
+                Envíanos un mensaje
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-6">
               <form className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
@@ -31,7 +35,7 @@ const ContactSection = () => {
                   </div>
                   <div className="space-y-2">
                     <label htmlFor="email" className="block text-sm font-medium">
-                      Email
+                      Email *
                     </label>
                     <Input id="email" type="email" placeholder="tu@email.com" />
                   </div>
@@ -52,10 +56,29 @@ const ContactSection = () => {
                     rows={4}
                   />
                 </div>
-                <Button type="submit" className="w-full gradient-primary text-white py-6">
-                  Enviar mensaje
+                <Button type="submit" className="w-full py-6" size="lg">
+                  Enviar Solicitud
                 </Button>
               </form>
+              
+              {/* Footer de privacidad estándar */}
+              <div className="text-center text-xs text-muted-foreground space-y-2 mt-6 pt-6 border-t border-border/20">
+                <p>
+                  En Hayas, protegemos tu privacidad y datos. Estamos adheridos al Pacto Digital 
+                  para un uso ético de la información. Más info:{' '}
+                  <a href="/aviso-legal" className="text-primary hover:underline">AEPD</a>.
+                </p>
+                
+                <div className="flex justify-center space-x-4 pt-2">
+                  <a href="/politica-privacidad" className="text-primary hover:underline">
+                    Política de Privacidad
+                  </a>
+                  <span className="text-muted-foreground">|</span>
+                  <a href="/aviso-legal" className="text-primary hover:underline">
+                    Aviso Legal
+                  </a>
+                </div>
+              </div>
             </CardContent>
           </Card>
           

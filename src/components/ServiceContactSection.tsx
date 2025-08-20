@@ -1,5 +1,5 @@
 import React from 'react';
-import GHLFormEmbed from '@/components/GHLFormEmbed';
+import StandardGHLForm from '@/components/StandardGHLForm';
 
 interface ServiceContactSectionProps {
   formId?: string;
@@ -9,7 +9,7 @@ interface ServiceContactSectionProps {
   className?: string;
 }
 
-// Contact section for service pages using the shared GHL form embed
+// Contact section for service pages using the standardized GHL form design
 const ServiceContactSection: React.FC<ServiceContactSectionProps> = ({
   formId = 'ZHNw4rjAzNdvFbFnIk1V',
   title = '¿Hablamos? Solicita tu propuesta',
@@ -27,12 +27,14 @@ const ServiceContactSection: React.FC<ServiceContactSectionProps> = ({
           </p>
         </div>
 
-        <GHLFormEmbed
-          formId={formId}
-          title="Formulario de Servicio"
-          minHeight={minHeight}
-          className="bg-card"
-        />
+        <div className="max-w-2xl mx-auto">
+          <StandardGHLForm
+            formId={formId}
+            title="Formulario de Servicio"
+            minHeight={minHeight}
+            showHeader={false}
+          />
+        </div>
       </div>
     </section>
   );

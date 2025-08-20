@@ -6,7 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import GHLFormEmbed from '@/components/GHLFormEmbed';
+import StandardGHLForm from '@/components/StandardGHLForm';
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -105,11 +105,12 @@ const SolicitarConsulta = () => {
                       Formulario de contacto
                     </CardTitle>
                   </CardHeader>
-                  <CardContent className="space-y-6">
-                    <GHLFormEmbed
+                  <CardContent className="space-y-6 p-0">
+                    <StandardGHLForm
                       formId="7hfylnczt0dXbyUFFSEt"
-                      title="Marketing Form - Claim Offer"
+                      title="Solicitar Consulta"
                       minHeight={820}
+                      showHeader={false}
                     />
                   </CardContent>
                 </Card>
