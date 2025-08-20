@@ -272,18 +272,29 @@ const ActivaTusVentas = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-          {processSteps.map((step, index) => (
-            <div key={index} className="text-center">
-              <div className="bg-primary text-primary-foreground w-16 h-16 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
-                {step.step}
+        <div className="relative max-w-6xl mx-auto">
+          {/* Connecting line */}
+          <div className="hidden lg:block absolute top-8 left-0 right-0 h-0.5 bg-gradient-to-r from-primary via-primary to-primary opacity-20"></div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {processSteps.map((step, index) => (
+              <div key={index} className="text-center relative">
+                <div className="bg-primary text-primary-foreground w-16 h-16 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4 relative z-10 shadow-lg">
+                  {step.step}
+                </div>
+                {/* Connection indicator for mobile */}
+                {index < processSteps.length - 1 && (
+                  <div className="lg:hidden flex justify-center mt-4">
+                    <div className="w-px h-8 bg-gradient-to-b from-primary to-primary/20"></div>
+                  </div>
+                )}
+                <h3 className="text-lg font-semibold mb-2">{step.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  {step.description}
+                </p>
               </div>
-              <h3 className="text-lg font-semibold mb-2">{step.title}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                {step.description}
-              </p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
