@@ -1,5 +1,5 @@
 import React from 'react';
-import { Star, ExternalLink } from 'lucide-react';
+import { Star, ExternalLink, MapPin } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
@@ -53,10 +53,11 @@ const ReviewsSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gradient">
-            Lo que dicen nuestros clientes
+            📍 Conectamos desde Madrid con marcas de todo el mundo
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Descubre las experiencias reales de empresas que han transformado su marketing con nosotros
+          <p className="text-muted-foreground text-lg max-w-3xl mx-auto leading-relaxed">
+            Nuestra oficina está en el corazón de Madrid, a pocos pasos de Madrid Río y La Latina. 
+            Desde aquí ayudamos a empresas de toda España a crecer con estrategias digitales auténticas.
           </p>
           
           {/* Rating preview */}
@@ -92,14 +93,35 @@ const ReviewsSection = () => {
               </div>
             </div>
 
-            <div className="flex justify-center pt-6 border-t">
-              <Button asChild variant="ghost" className="gap-2">
+            <div className="flex flex-col sm:flex-row justify-center gap-4 pt-6 border-t">
+              <Button asChild variant="default" className="gap-2 bg-hayas-primary hover:bg-hayas-primary/90">
+                <a 
+                  href="https://maps.google.com/maps?q=hayas+marketing+madrid" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  <MapPin className="w-4 h-4" />
+                  Cómo llegar a la oficina
+                </a>
+              </Button>
+              <Button asChild variant="outline" className="gap-2 border-hayas-primary text-hayas-primary hover:bg-hayas-primary hover:text-white">
+                <a 
+                  href="/agendar-reunion"
+                >
+                  💻 Reservar reunión online
+                </a>
+              </Button>
+            </div>
+            
+            {/* Ver todas las reseñas link */}
+            <div className="flex justify-center pt-4">
+              <Button asChild variant="ghost" className="gap-2 text-sm">
                 <a 
                   href="https://maps.google.com/maps?q=hayas+marketing" 
                   target="_blank" 
                   rel="noopener noreferrer"
                 >
-                  <ExternalLink className="w-4 h-4" />
+                  <ExternalLink className="w-3 h-3" />
                   Ver todas las reseñas
                 </a>
               </Button>
