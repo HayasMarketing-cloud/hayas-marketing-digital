@@ -125,7 +125,9 @@ const Nosotros = () => {
           {/* Floating geometric shapes */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
             <div className="absolute top-20 left-10 w-6 h-6 bg-hayas-primary/20 rotate-45 animate-pulse"></div>
-            <div className="absolute bottom-32 right-20 w-8 h-8 bg-hayas-secondary/15 rounded-full animate-bounce" style={{animationDelay: '2s'}}></div>
+            <div className="absolute bottom-32 right-20 w-8 h-8 bg-hayas-secondary/15 rounded-full animate-bounce" style={{
+            animationDelay: '2s'
+          }}></div>
             <div className="absolute top-40 right-1/4 w-4 h-4 bg-hayas-primary/25 rotate-12"></div>
           </div>
           
@@ -134,10 +136,7 @@ const Nosotros = () => {
               <h1 className="title-hero mb-8 leading-tight animate-fade-in">
                 Somos <span className="text-gradient-primary">Hayas Marketing</span>
               </h1>
-              <p className="text-hero text-gray-800 mb-8 animate-slide-up max-w-4xl mx-auto leading-relaxed font-medium">
-                Agencia de marketing digital y consultoría especializada en gestión de clientes (CRM) y estrategia digital. 
-                Trabajamos con un enfoque integral centrado en la estrategia, eficiencia, adaptación y crecimiento sostenible.
-              </p>
+              <p className="text-hero text-gray-800 mb-8 animate-slide-up max-w-4xl mx-auto leading-relaxed font-medium">Agencia y consultora de marketing digital especializada en estrategia, automatización e inteligencia artificial al servicio de las personas.</p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center animate-slide-up">
                 <Button className="gradient-primary text-white py-8 px-10 text-xl font-medium shadow-elegant hover-scale focus-ring transform transition-all duration-300">
                   <span className="flex items-center gap-2">
@@ -381,11 +380,7 @@ const Nosotros = () => {
                   {certifications.slice(6).map((cert, index) => <div key={index} className="group hover-scale">
                       <div className="bg-white rounded-xl p-8 shadow-corporate border border-gray-100 group-hover:shadow-elegant transition-all duration-300">
                         <div className="h-20 flex items-center justify-center mb-4">
-                          <img 
-                            src={cert.logo} 
-                            alt={`${cert.name} logo`} 
-                            className={`${cert.name === 'AEPD' ? 'h-20' : 'h-16'} w-auto object-contain filter transition-all duration-300 group-hover:scale-110`} 
-                          />
+                          <img src={cert.logo} alt={`${cert.name} logo`} className={`${cert.name === 'AEPD' ? 'h-20' : 'h-16'} w-auto object-contain filter transition-all duration-300 group-hover:scale-110`} />
                         </div>
                         <p className="text-sm font-semibold text-hayas-primary text-center">{cert.name}</p>
                       </div>
