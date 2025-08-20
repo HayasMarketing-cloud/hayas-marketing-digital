@@ -259,9 +259,31 @@ const Nosotros = () => {
                     </p>
                   </div>
                 </div>
+                </div>
+              </div>
+              
+              {/* Nuestros Valores - Subsección dentro del enfoque */}
+              <div className="mt-20 pt-16 border-t border-hayas-primary/20">
+                <div className="text-center mb-16">
+                  <h3 className="text-2xl md:text-3xl font-bold mb-6 text-hayas-primary">Nuestros Valores</h3>
+                  <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
+                    Los principios fundamentales que guían cada proyecto y relación con nuestros clientes
+                  </p>
+                </div>
+                
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {values.map((value, index) => (
+                    <div key={index} className="text-center group">
+                      <div className="w-16 h-16 bg-hayas-primary rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                        {value.icon}
+                      </div>
+                      <h4 className="text-xl font-semibold mb-4 text-hayas-primary leading-tight">{value.title}</h4>
+                      <p className="text-gray-700 text-sm leading-relaxed">{value.description}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
           
           {/* Bottom section separator */}
           <div className="absolute bottom-0 left-0 right-0 h-px section-divider"></div>
@@ -361,29 +383,6 @@ const Nosotros = () => {
           </div>
         </section>
 
-        {/* Nuestros Valores - Fondo tenue */}
-        <section className="py-16 md:py-20 bg-gradient-to-br from-hayas-secondary/5 to-hayas-primary/5">
-          <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient-primary">Nuestros Valores</h2>
-                <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-                  Los principios que guían cada proyecto y relación con nuestros clientes
-                </p>
-              </div>
-              
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {values.map((value, index) => <div key={index} className="text-center group">
-                    <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                      {value.icon}
-                    </div>
-                    <h3 className="text-xl font-semibold mb-3 text-hayas-primary">{value.title}</h3>
-                    <p className="text-gray-700">{value.description}</p>
-                  </div>)}
-              </div>
-            </div>
-          </div>
-        </section>
 
         <JoinFreelancersSection />
 
