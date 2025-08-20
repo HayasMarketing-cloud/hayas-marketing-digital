@@ -389,7 +389,11 @@ const TiendaOnline = () => {
 
       {/* Process Section */}
       <ProcessSection
-        title='Nuestro <span className="text-gradient-primary">Proceso</span> de Desarrollo'
+        title={
+          <>
+            Nuestro <span className="text-gradient-primary">Proceso</span> de Desarrollo
+          </>
+        }
         subtitle="Metodología probada que garantiza el éxito de tu tienda online desde la estrategia hasta el lanzamiento."
         steps={processSteps}
         backgroundColor="bg-white"

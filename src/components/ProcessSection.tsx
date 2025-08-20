@@ -8,7 +8,7 @@ interface ProcessStep {
 }
 
 interface ProcessSectionProps {
-  title?: string;
+  title?: React.ReactNode;
   subtitle?: string;
   steps: ProcessStep[];
   backgroundColor?: string;
