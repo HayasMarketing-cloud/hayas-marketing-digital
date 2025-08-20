@@ -41,15 +41,13 @@ const Contacto = () => {
             <div className="grid lg:grid-cols-3 gap-12 items-start max-w-6xl mx-auto">
               {/* Formulario (col-span-2) */}
               <div className="lg:col-span-2">
-                <div key="contacto-form" className="w-full">
-                  <StandardGHLForm
-                    formId="7hfylnczt0dXbyUFFSEt"
-                    title="Envíanos un mensaje"
-                    subtitle="Cuéntanos tu contexto y objetivos. Te responderemos con una propuesta alineada a tus necesidades."
-                    minHeight={820}
-                    showHeader={true}
-                  />
-                </div>
+                <StandardGHLForm
+                  formId="7hfylnczt0dXbyUFFSEt"
+                  title="Envíanos un mensaje"
+                  subtitle="Cuéntanos tu contexto y objetivos. Te responderemos con una propuesta alineada a tus necesidades."
+                  minHeight={820}
+                  showHeader={true}
+                />
               </div>
 
               {/* Sidebar de contacto directo y SofÍA */}
