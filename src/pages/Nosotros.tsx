@@ -190,7 +190,7 @@ const Nosotros = () => {
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-primary opacity-80"></div>
                   <div className="absolute inset-0 bg-gradient-to-br from-hayas-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="relative z-10">
-                    <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <div className="w-16 h-16 bg-hayas-primary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                       <Target className="h-8 w-8 text-white" />
                     </div>
                     <h3 className="text-lg font-bold mb-4 text-hayas-primary leading-tight">Estrategia con propósito</h3>
@@ -205,7 +205,7 @@ const Nosotros = () => {
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-primary opacity-80"></div>
                   <div className="absolute inset-0 bg-gradient-to-br from-hayas-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="relative z-10">
-                    <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <div className="w-16 h-16 bg-hayas-primary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                       <Settings className="h-8 w-8 text-white" />
                     </div>
                     <h3 className="text-lg font-bold mb-4 text-hayas-primary leading-tight">Tecnología con intención</h3>
@@ -220,7 +220,7 @@ const Nosotros = () => {
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-primary opacity-80"></div>
                   <div className="absolute inset-0 bg-gradient-to-br from-hayas-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="relative z-10">
-                    <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <div className="w-16 h-16 bg-hayas-primary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                       <GraduationCap className="h-8 w-8 text-white" />
                     </div>
                     <h3 className="text-lg font-bold mb-4 text-hayas-primary leading-tight">Formación para la autonomía</h3>
@@ -235,7 +235,7 @@ const Nosotros = () => {
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-primary opacity-80"></div>
                   <div className="absolute inset-0 bg-gradient-to-br from-hayas-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="relative z-10">
-                    <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <div className="w-16 h-16 bg-hayas-primary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                       <BarChart3 className="h-8 w-8 text-white" />
                     </div>
                     <h3 className="text-lg font-bold mb-4 text-hayas-primary leading-tight">Medición real de resultados</h3>
@@ -250,7 +250,7 @@ const Nosotros = () => {
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-primary opacity-80"></div>
                   <div className="absolute inset-0 bg-gradient-to-br from-hayas-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="relative z-10">
-                    <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <div className="w-16 h-16 bg-hayas-primary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                       <Heart className="h-8 w-8 text-white" />
                     </div>
                     <h3 className="text-lg font-bold mb-4 text-hayas-primary leading-tight">Conexión humana y marcas con valores</h3>
