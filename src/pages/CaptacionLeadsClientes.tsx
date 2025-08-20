@@ -7,20 +7,27 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb';
 import { Link } from 'react-router-dom';
 import ServiceContactSection from '@/components/ServiceContactSection';
-import { Filter, Megaphone, Mail, Bot, BarChart3 } from 'lucide-react';
+import { Filter, Megaphone, Mail, Bot, BarChart3, Magnet, Settings, MessageSquare, Zap } from 'lucide-react';
 
 const includes = [
+  'Lead magnets estratégicos y ofertas irresistibles.',
+  'Landing pages optimizadas para máxima conversión.',
   'Diseño de funnels de conversión personalizados.',
   'Campañas de Google Ads y Meta Ads segmentadas.',
-  'Lead nurturing automatizado.',
+  'Lead nurturing automatizado con secuencias personalizadas.',
+  'Sistema de lead scoring y calificación inteligente.',
   'Asistentes conversacionales con IA para captación 24/7.',
-  'Análisis y scoring de leads en tiempo real.',
+  'Analytics de conversión y medición detallada.',
 ];
 
 const benefits = [
+  'Convierte visitantes pasivos en leads cualificados.',
   'Más leads cualificados en menos tiempo.',
   'Reducción del coste de adquisición de clientes.',
+  'Sistema automatizado que trabaja 24/7.',
+  'Calificación inteligente para priorizar esfuerzos comerciales.',
   'Mejora en la tasa de conversión gracias a la personalización.',
+  'Medición detallada del ROI de cada canal.',
 ];
 
 const CaptacionLeadsClientes: React.FC = () => {
@@ -71,37 +78,154 @@ const CaptacionLeadsClientes: React.FC = () => {
             </BreadcrumbList>
           </Breadcrumb>
 
+          {/* Hero Section */}
           <section className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Captación de Leads y Clientes</h1>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Convierte el interés en oportunidades reales con estrategias multicanal adaptadas a tu público.
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+              Convierte visitantes en <span className="text-gradient-primary">clientes reales</span>
+            </h1>
+            <p className="text-xl text-gray-700 mb-8 leading-relaxed max-w-4xl mx-auto">
+              Sistemas automatizados de generación y conversión de prospectos que transforman 
+              el tráfico de tu web en una fuente constante de oportunidades de negocio cualificadas.
             </p>
-            <div className="mt-6 flex justify-center gap-3">
-              <Button asChild className="gradient-primary text-white">
-                <Link to="/solicitar-consulta">Solicitar plan de captación</Link>
+            <div className="mt-6 flex flex-col sm:flex-row justify-center gap-3">
+              <Button asChild className="gradient-primary text-white px-8 py-6 text-lg">
+                <Link to="/solicitar-consulta">Generar más leads</Link>
               </Button>
-              <Button variant="outline" asChild>
+              <Button variant="outline" asChild className="px-8 py-6 text-lg">
                 <Link to="/soluciones/conecta-con-tus-clientes">Ver solución: Conecta con tus clientes</Link>
               </Button>
             </div>
           </section>
 
-          <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            {[
-              { icon: <Filter className="h-6 w-6 text-primary" />, title: 'Funnels personalizados', desc: 'Diseño de funnels de conversión adaptados a tu buyer journey.' },
-              { icon: <Megaphone className="h-6 w-6 text-primary" />, title: 'Google & Meta Ads', desc: 'Campañas segmentadas para atraer tráfico cualificado.' },
-              { icon: <Mail className="h-6 w-6 text-primary" />, title: 'Lead nurturing', desc: 'Automatizaciones que convierten interés en oportunidades.' },
-              { icon: <Bot className="h-6 w-6 text-primary" />, title: 'Asistentes con IA', desc: 'Captación y calificación 24/7 con chatbots inteligentes.' },
-              { icon: <BarChart3 className="h-6 w-6 text-primary" />, title: 'Scoring y análisis', desc: 'Puntuación y dashboards en tiempo real para priorizar.' },
-            ].map((f) => (
-              <Card key={f.title}>
-                <CardHeader className="flex flex-row items-center gap-3">
-                  {f.icon}
-                  <CardTitle className="text-xl">{f.title}</CardTitle>
-                </CardHeader>
-                <CardContent className="pt-0 text-muted-foreground">{f.desc}</CardContent>
-              </Card>
-            ))}
+          {/* Value Proposition Section */}
+          <section className="py-8 md:py-12 mb-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="order-2 lg:order-1">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-hayas-100 to-turquesa-100 rounded-2xl transform rotate-3"></div>
+                  <img 
+                    src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070&auto=format&fit=crop" 
+                    alt="Sistema de captación de leads" 
+                    className="relative z-10 w-full h-auto rounded-2xl shadow-xl"
+                  />
+                </div>
+              </div>
+              
+              <div className="order-1 lg:order-2">
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
+                  Cada visitante es una <span className="text-gradient-primary">oportunidad</span> de crecimiento
+                </h2>
+                <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                  No permitas que los visitantes de tu web se vayan sin dejar rastro. Implementamos 
+                  sistemas que capturan, califican y nutren cada prospecto hasta convertirlo en cliente.
+                </p>
+                
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 bg-hayas-100 rounded-lg flex items-center justify-center">
+                      <Magnet className="h-6 w-6 text-hayas-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold mb-2">Lead Magnets Irresistibles</h3>
+                      <p className="text-gray-600">
+                        Creamos ofertas de valor que tus visitantes no pueden rechazar, 
+                        capturando sus datos de forma natural y consentida.
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 bg-turquesa-100 rounded-lg flex items-center justify-center">
+                      <Filter className="h-6 w-6 text-turquesa-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold mb-2">Calificación Inteligente</h3>
+                      <p className="text-gray-600">
+                        Sistema de scoring automático que identifica los leads más prometedores 
+                        para priorizar los esfuerzos de tu equipo comercial.
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 bg-hayas-100 rounded-lg flex items-center justify-center">
+                      <Zap className="h-6 w-6 text-hayas-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold mb-2">Nurturing Automatizado</h3>
+                      <p className="text-gray-600">
+                        Secuencias de email y contenido personalizado que mantienen el interés 
+                        hasta que el lead esté listo para comprar.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Services Section */}
+          <section className="py-8 md:py-12 bg-gradient-to-br from-gray-50 to-white rounded-2xl mb-12">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                Servicios de <span className="text-gradient-primary">Captación de Leads</span>
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Desde la creación de lead magnets hasta la implementación de sistemas de nurturing 
+                automatizado, cubrimos todo el funnel de conversión.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
+              {[
+                {
+                  icon: <Magnet className="h-8 w-8 text-hayas-600" />,
+                  title: "Lead Magnets Estratégicos",
+                  description: "Creación de ofertas irresistibles que capturan datos de calidad de tu audiencia ideal."
+                },
+                {
+                  icon: <Settings className="h-8 w-8 text-turquesa-600" />,
+                  title: "Landing Pages Optimizadas",
+                  description: "Páginas de aterrizaje diseñadas específicamente para maximizar la conversión."
+                },
+                {
+                  icon: <Filter className="h-8 w-8 text-hayas-600" />,
+                  title: "Lead Scoring",
+                  description: "Sistema de puntuación automática para identificar los leads más prometedores."
+                },
+                {
+                  icon: <Mail className="h-8 w-8 text-turquesa-600" />,
+                  title: "Email Marketing Automatizado",
+                  description: "Secuencias de nurturing personalizadas que educan y convierten leads."
+                },
+                {
+                  icon: <MessageSquare className="h-8 w-8 text-hayas-600" />,
+                  title: "Chatbots de Calificación",
+                  description: "Asistentes virtuales que califican y segmentan leads 24/7 en tu web."
+                },
+                {
+                  icon: <BarChart3 className="h-8 w-8 text-turquesa-600" />,
+                  title: "Analytics de Conversión",
+                  description: "Medición detallada del rendimiento de cada canal y campaña de captación."
+                }
+              ].map((service, index) => (
+                <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                  <CardHeader>
+                    <div className="mb-4 p-3 rounded-lg bg-gray-100 w-fit">
+                      {service.icon}
+                    </div>
+                    <CardTitle className="text-xl font-bold">
+                      {service.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-600">
+                      {service.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </section>
 
           <section className="mb-16">
@@ -125,13 +249,17 @@ const CaptacionLeadsClientes: React.FC = () => {
             </div>
           </section>
 
+          {/* CTA Section */}
           <section className="mb-16 text-center">
-            <div className="p-8 rounded-xl border bg-muted/30">
-              <div className="flex items-center justify-center gap-2 mb-2 text-primary"><Filter className="h-5 w-5" /><span className="text-sm font-medium">Captación que convierte</span></div>
-              <h3 className="text-2xl font-semibold mb-3">Optimiza cada punto de contacto</h3>
-              <p className="text-muted-foreground mb-4">Multicanal, automatizado y medible para crecer en clientes.</p>
-              <Button asChild>
-                <Link to="/solicitar-consulta">Empieza a generar más clientes hoy</Link>
+            <div className="p-8 md:p-12 rounded-2xl bg-gradient-to-r from-hayas-600 to-turquesa text-white">
+              <h3 className="text-3xl md:text-4xl font-bold mb-6">
+                ¿Listo para multiplicar tus leads cualificados?
+              </h3>
+              <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+                Implementemos un sistema que convierta tu web en una máquina generadora de oportunidades.
+              </p>
+              <Button className="bg-white text-hayas-600 hover:bg-gray-100 px-8 py-6 text-lg font-semibold" asChild>
+                <Link to="/solicitar-consulta">Configurar mi sistema de leads</Link>
               </Button>
             </div>
           </section>
