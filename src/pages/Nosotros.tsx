@@ -175,115 +175,114 @@ const Nosotros = () => {
               <div className="text-center mb-16 relative">
                 <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-6 w-16 h-1 bg-gradient-primary rounded-full opacity-70"></div>
                 <h2 className="title-section mb-6 text-gradient-primary relative">
-                  Nuestro Enfoque
+                  👉 Lo que nos guía
                   <span className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-hayas-primary/40 rounded-full"></span>
                 </h2>
                 <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-medium">
-                  Cinco pilares fundamentales que guían cada proyecto y definen nuestra forma única de generar resultados sostenibles para nuestros clientes.
+                  Tres pilares fundamentales que definen nuestra forma de trabajar y crear resultados sostenibles para nuestros clientes.
                 </p>
               </div>
               
-              {/* Cards grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 lg:gap-8">
-                {/* Estrategia con propósito */}
-                <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 lg:p-8 text-center shadow-elegant hover-scale border border-white/50 relative overflow-hidden group">
+              {/* 3 Main conceptual blocks */}
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 mb-20">
+                {/* Estrategia, tecnología y autonomía */}
+                <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 text-center shadow-elegant hover-scale border border-gray-100 relative overflow-hidden group">
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-primary opacity-80"></div>
                   <div className="absolute inset-0 bg-gradient-to-br from-hayas-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="relative z-10">
-                    <div className="w-16 h-16 bg-hayas-primary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                      <Target className="h-8 w-8 text-white" />
+                    <div className="w-20 h-20 bg-hayas-primary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <Target className="h-10 w-10 text-white" />
                     </div>
-                    <h3 className="text-lg font-bold mb-4 text-hayas-primary leading-tight">Estrategia con propósito</h3>
-                    <p className="text-gray-700 text-sm leading-relaxed">
-                      Desarrollamos estrategias alineadas con los objetivos reales de tu negocio, enfocándonos en resultados medibles y crecimiento sostenible.
+                    <h3 className="text-xl font-bold mb-6 text-hayas-primary leading-tight">Estrategia, tecnología y autonomía</h3>
+                    <p className="text-gray-700 leading-relaxed">
+                      Diseñamos estrategias alineadas con tus objetivos reales, implementamos tecnología con intención (IA, CRM, automatización) y te formamos para que puedas tomar decisiones con autonomía.
                     </p>
                   </div>
                 </div>
                 
-                {/* Tecnología con intención */}
-                <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 lg:p-8 text-center shadow-elegant hover-scale border border-white/50 relative overflow-hidden group">
+                {/* Resultados medibles y sostenibles */}
+                <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 text-center shadow-elegant hover-scale border border-gray-100 relative overflow-hidden group">
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-primary opacity-80"></div>
                   <div className="absolute inset-0 bg-gradient-to-br from-hayas-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="relative z-10">
-                    <div className="w-16 h-16 bg-hayas-primary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                      <Settings className="h-8 w-8 text-white" />
+                    <div className="w-20 h-20 bg-hayas-primary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <BarChart3 className="h-10 w-10 text-white" />
                     </div>
-                    <h3 className="text-lg font-bold mb-4 text-hayas-primary leading-tight">Tecnología con intención</h3>
-                    <p className="text-gray-700 text-sm leading-relaxed">
-                      Implementamos IA, automatización y CRM de forma estratégica, potenciando la eficiencia sin perder el toque humano.
+                    <h3 className="text-xl font-bold mb-6 text-hayas-primary leading-tight">Resultados medibles y sostenibles</h3>
+                    <p className="text-gray-700 leading-relaxed">
+                      Medimos lo que importa. Establecemos KPIs claros, priorizamos el impacto real y fomentamos el crecimiento sostenible a través de la mejora continua.
                     </p>
                   </div>
                 </div>
                 
-                {/* Formación para la autonomía */}
-                <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 lg:p-8 text-center shadow-elegant hover-scale border border-white/50 relative overflow-hidden group">
+                {/* Conexión humana y propósito */}
+                <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 text-center shadow-elegant hover-scale border border-gray-100 relative overflow-hidden group">
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-primary opacity-80"></div>
                   <div className="absolute inset-0 bg-gradient-to-br from-hayas-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="relative z-10">
-                    <div className="w-16 h-16 bg-hayas-primary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                      <GraduationCap className="h-8 w-8 text-white" />
+                    <div className="w-20 h-20 bg-hayas-primary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <Heart className="h-10 w-10 text-white" />
                     </div>
-                    <h3 className="text-lg font-bold mb-4 text-hayas-primary leading-tight">Formación para la autonomía</h3>
-                    <p className="text-gray-700 text-sm leading-relaxed">
-                      Capacitamos a tu equipo con conocimientos y herramientas para que puedas gestionar y optimizar tus propios procesos.
+                    <h3 className="text-xl font-bold mb-6 text-hayas-primary leading-tight">Conexión humana y propósito</h3>
+                    <p className="text-gray-700 leading-relaxed">
+                      Creemos en las personas, en su autenticidad y en su capacidad para transformar. Priorizamos la transparencia, la inclusión, la conciliación y el respeto como base de toda relación.
                     </p>
                   </div>
-                </div>
-                
-                {/* Medición real de resultados */}
-                <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 lg:p-8 text-center shadow-elegant hover-scale border border-white/50 relative overflow-hidden group">
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-primary opacity-80"></div>
-                  <div className="absolute inset-0 bg-gradient-to-br from-hayas-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="relative z-10">
-                    <div className="w-16 h-16 bg-hayas-primary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                      <BarChart3 className="h-8 w-8 text-white" />
-                    </div>
-                    <h3 className="text-lg font-bold mb-4 text-hayas-primary leading-tight">Medición real de resultados</h3>
-                    <p className="text-gray-700 text-sm leading-relaxed">
-                      Establecemos KPIs claros y reportes transparentes que demuestran el ROI y el impacto real de cada acción.
-                    </p>
-                  </div>
-                </div>
-                
-                {/* Conexión humana y marcas con valores */}
-                <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 lg:p-8 text-center shadow-elegant hover-scale border border-white/50 relative overflow-hidden group md:col-span-2 lg:col-span-1">
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-primary opacity-80"></div>
-                  <div className="absolute inset-0 bg-gradient-to-br from-hayas-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="relative z-10">
-                    <div className="w-16 h-16 bg-hayas-primary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                      <Heart className="h-8 w-8 text-white" />
-                    </div>
-                    <h3 className="text-lg font-bold mb-4 text-hayas-primary leading-tight">Conexión humana y marcas con valores</h3>
-                    <p className="text-gray-700 text-sm leading-relaxed">
-                      Creamos vínculos auténticos entre tu marca y audiencia, priorizando la transparencia y los valores compartidos.
-                    </p>
-                  </div>
-                </div>
                 </div>
               </div>
               
-              {/* Nuestros Valores - Subsección dentro del enfoque */}
-              <div className="mt-20 pt-16 border-t border-hayas-primary/20">
-                <div className="text-center mb-16">
-                  <h3 className="text-2xl md:text-3xl font-bold mb-6 text-hayas-primary">Nuestros Valores</h3>
-                  <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
-                    Los principios fundamentales que guían cada proyecto y relación con nuestros clientes
-                  </p>
+              {/* Nuestros principios - Visual row of small icons */}
+              <div className="pt-12 border-t border-hayas-primary/20">
+                <div className="text-center mb-8">
+                  <h3 className="text-lg font-semibold text-hayas-primary mb-2">Nuestros principios</h3>
                 </div>
                 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {values.map((value, index) => (
-                    <div key={index} className="text-center group">
-                      <div className="w-16 h-16 bg-hayas-primary rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                        {value.icon}
-                      </div>
-                      <h4 className="text-xl font-semibold mb-4 text-hayas-primary leading-tight">{value.title}</h4>
-                      <p className="text-gray-700 text-sm leading-relaxed">{value.description}</p>
+                <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+                  <div className="flex flex-col items-center group">
+                    <div className="w-12 h-12 bg-hayas-primary/10 rounded-full flex items-center justify-center mb-3 group-hover:bg-hayas-primary/20 transition-colors duration-300">
+                      <span className="text-2xl">🔓</span>
                     </div>
-                  ))}
+                    <span className="text-sm font-medium text-gray-700">Educación</span>
+                  </div>
+                  
+                  <div className="flex flex-col items-center group">
+                    <div className="w-12 h-12 bg-hayas-primary/10 rounded-full flex items-center justify-center mb-3 group-hover:bg-hayas-primary/20 transition-colors duration-300">
+                      <span className="text-2xl">🌿</span>
+                    </div>
+                    <span className="text-sm font-medium text-gray-700">Sostenibilidad</span>
+                  </div>
+                  
+                  <div className="flex flex-col items-center group">
+                    <div className="w-12 h-12 bg-hayas-primary/10 rounded-full flex items-center justify-center mb-3 group-hover:bg-hayas-primary/20 transition-colors duration-300">
+                      <span className="text-2xl">⚡</span>
+                    </div>
+                    <span className="text-sm font-medium text-gray-700">Eficiencia</span>
+                  </div>
+                  
+                  <div className="flex flex-col items-center group">
+                    <div className="w-12 h-12 bg-hayas-primary/10 rounded-full flex items-center justify-center mb-3 group-hover:bg-hayas-primary/20 transition-colors duration-300">
+                      <span className="text-2xl">💚</span>
+                    </div>
+                    <span className="text-sm font-medium text-gray-700">Diversidad</span>
+                  </div>
+                  
+                  <div className="flex flex-col items-center group">
+                    <div className="w-12 h-12 bg-hayas-primary/10 rounded-full flex items-center justify-center mb-3 group-hover:bg-hayas-primary/20 transition-colors duration-300">
+                      <span className="text-2xl">🤝</span>
+                    </div>
+                    <span className="text-sm font-medium text-gray-700">Conciliación</span>
+                  </div>
+                  
+                  <div className="flex flex-col items-center group">
+                    <div className="w-12 h-12 bg-hayas-primary/10 rounded-full flex items-center justify-center mb-3 group-hover:bg-hayas-primary/20 transition-colors duration-300">
+                      <span className="text-2xl">🔒</span>
+                    </div>
+                    <span className="text-sm font-medium text-gray-700">Privacidad</span>
+                  </div>
                 </div>
               </div>
             </div>
+          </div>
           
           {/* Bottom section separator */}
           <div className="absolute bottom-0 left-0 right-0 h-px section-divider"></div>
