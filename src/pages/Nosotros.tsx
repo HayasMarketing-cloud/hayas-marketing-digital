@@ -15,6 +15,7 @@ import wordpressLogo from '@/assets/logos/wordpress-logo.png';
 import lovableLogo from '@/assets/logos/lovable-logo.png';
 import aiLogo from '@/assets/logos/ai-logo.png';
 import JoinFreelancersSection from '@/components/JoinFreelancersSection';
+import FAQSection from '@/components/FAQSection';
 const Nosotros = () => {
   const teamMembers = [{
     name: "Rubén",
@@ -480,6 +481,49 @@ const Nosotros = () => {
           <ReviewsSection />
         </section>
 
+        {/* FAQ Section */}
+        <FAQSection 
+          title="Preguntas Frecuentes"
+          subtitle="Resolvemos las dudas más comunes sobre nuestra agencia y servicios"
+          faqs={[
+            {
+              question: "¿Qué tipo de agencia es Hayas Marketing?",
+              answer: "Hayas es una agencia y consultora de marketing digital especializada en Marketing Esencial, que combina estrategia, tecnología e innovación para crear impacto real. Trabajamos bajo un modelo híbrido, con especialistas freelance coordinados por un equipo estratégico que se integra como una extensión del cliente."
+            },
+            {
+              question: "¿A qué tipo de empresas ayudáis?",
+              answer: "Acompañamos a empresas medianas, startups, profesionales y emprendedores que buscan crecer de forma sostenible. Nos especializamos en proyectos que valoran la autenticidad, la estrategia y los resultados medibles."
+            },
+            {
+              question: "¿Qué os diferencia de otras agencias?",
+              answer: "No hacemos ruido: hacemos impacto. Nuestra propuesta se basa en: Estrategias centradas en las personas, Automatización e inteligencia artificial aplicada, Contenidos auténticos y medibles, Un enfoque colaborativo y transparente con nuestros clientes."
+            },
+            {
+              question: "¿Ofrecéis servicios puntuales o acompañamiento continuo?",
+              answer: "Ambos. Podemos crear un proyecto específico (como una web, un CRM o una estrategia SEO) o convertirnos en tu equipo de marketing externalizado, alineado con tus metas a largo plazo."
+            },
+            {
+              question: "¿Qué servicios ofrecéis?",
+              answer: "Nuestros servicios están diseñados para cubrir lo esencial en marketing digital: Estrategias de marketing y ventas, SEO, contenidos y blogs, Redes sociales y publicidad digital, Diseño web, branding y UX, Implementación de CRM HubSpot, Automatización e inteligencia artificial aplicada."
+            },
+            {
+              question: "¿Cómo es trabajar con vosotros?",
+              answer: "Colaboramos con claridad, propósito y compromiso. Cada cliente tiene un equipo asignado, coordinado por un Account Manager que prioriza la eficiencia, la escucha activa y el cumplimiento de objetivos. Usamos herramientas como Slack, ClickUp y HubSpot para mantener una comunicación fluida y transparente."
+            },
+            {
+              question: "¿Cuál es vuestro proceso de trabajo?",
+              answer: "Diagnóstico estratégico, Propuesta de valor personalizada, Ejecución ágil con especialistas, Seguimiento con métricas claras, Optimización continua. Todo bajo un principio clave: menos ruido, más impacto."
+            },
+            {
+              question: "¿Puedo contratar solo un servicio específico?",
+              answer: "Sí. Podemos ayudarte con un servicio puntual (como el diseño de una web, la instalación de HubSpot o una campaña en redes sociales) o diseñar un plan integral. Adaptamos cada propuesta a tus necesidades reales."
+            },
+            {
+              question: "¿Cuáles son vuestros precios?",
+              answer: "Nuestros presupuestos son personalizados. Nos basamos en el alcance del proyecto, los objetivos y los recursos disponibles. Garantizamos transparencia desde el inicio: cada propuesta incluye entregables, cronograma y métricas claras."
+            }
+          ]}
+        />
 
         {/* CTA Final - Solicitar Asesoría */}
         <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
