@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import ProcessSection from '@/components/ProcessSection';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -448,38 +449,13 @@ const SeoPositioning = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-16 md:py-20 bg-gradient-to-br from-gray-50 to-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Nuestro <span className="text-gradient-primary">Proceso</span> SEO
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Metodología probada que garantiza resultados medibles y sostenibles en el posicionamiento de tu negocio.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {processSteps.map((step, index) => (
-              <div key={index} className="relative">
-                <div className="text-center">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-primary to-accent text-white text-xl font-bold mb-4">
-                    {step.number}
-                  </div>
-                  <div className="mb-3 flex justify-center text-primary">
-                    {step.icon}
-                  </div>
-                  <h3 className="text-lg font-bold mb-3">{step.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{step.description}</p>
-                </div>
-                {index < processSteps.length - 1 && (
-                  <div className="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-primary/50 to-transparent -translate-x-8"></div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ProcessSection
+        title='Nuestro <span className="text-gradient-primary">Proceso</span> SEO'
+        subtitle="Metodología probada que garantiza resultados medibles y sostenibles en el posicionamiento de tu negocio."
+        steps={processSteps}
+        backgroundColor="bg-gradient-to-br from-gray-50 to-white"
+        showIcons={true}
+      />
 
       {/* Success Cases */}
       <section id="casos-exito" className="py-16 md:py-20 bg-white">

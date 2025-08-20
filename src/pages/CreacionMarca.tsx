@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import ProcessSection from '@/components/ProcessSection';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -353,38 +354,13 @@ const CreacionMarca: React.FC = () => {
       </section>
 
       {/* Proceso */}
-      <section id="proceso" className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-              Nuestro Proceso de Creación de Marca
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Un proceso estructurado y colaborativo que garantiza una marca 
-              alineada con tus objetivos y que conecte con tu audiencia.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {processSteps.map((step, index) => (
-              <Card key={index} className="text-center group hover:shadow-lg transition-all duration-300">
-                <CardHeader>
-                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
-                    <span className="text-2xl font-bold text-primary">{step.number}</span>
-                  </div>
-                  <div className="mb-2 text-primary group-hover:scale-110 transition-transform duration-300">
-                    {step.icon}
-                  </div>
-                  <CardTitle className="text-lg">{step.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground text-sm">{step.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ProcessSection
+        title="Nuestro Proceso de Creación de Marca"
+        subtitle="Un proceso estructurado y colaborativo que garantiza una marca alineada con tus objetivos y que conecte con tu audiencia."
+        steps={processSteps}
+        backgroundColor="bg-gradient-to-br from-gray-50 to-white"
+        showIcons={true}
+      />
 
 
       {/* Kit Digital */}
