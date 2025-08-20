@@ -58,7 +58,7 @@ const StandardGHLForm: React.FC<StandardGHLFormProps> = ({
           aria-label={title}
         >
           <iframe
-            src={`https://links.hayasmarketing.com/widget/form/${formId}`}
+            src={`https://links.hayasmarketing.com/widget/form/${formId}?theme=modern&button_color=%234F46E5&field_bg=%23FFFFFF&text_color=%23374151&border_radius=8`}
             style={{ 
               width: '100%', 
               height: '100%', 
