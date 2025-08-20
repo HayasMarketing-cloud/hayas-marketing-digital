@@ -83,47 +83,84 @@ const JoinFreelancersSection: React.FC = () => {
           </div>
 
           {/* Form Section */}
-          <div className="grid lg:grid-cols-3 gap-12 items-start">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Left side - CTA */}
             <div className="lg:col-span-1">
-              <Card className="bg-gradient-to-br from-primary to-primary/80 text-primary-foreground border-0">
-                <CardHeader>
-                  <CardTitle className="text-2xl text-center mb-6">
-                    ¡Únete a nuestro equipo!
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <div className="space-y-4">
-                    <div className="flex items-center space-x-3">
-                      <CheckCircle className="w-5 h-5 text-accent" />
-                      <span className="text-sm">Proyectos de calidad</span>
+              <div className="space-y-8">
+                <Card className="bg-gradient-to-br from-primary to-primary/80 text-primary-foreground border-0">
+                  <CardHeader>
+                    <CardTitle className="text-2xl text-center mb-6">
+                      ¡Únete a nuestro equipo!
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-6">
+                    <div className="space-y-4">
+                      <div className="flex items-center space-x-3">
+                        <CheckCircle className="w-5 h-5 text-accent" />
+                        <span className="text-sm">Proyectos de calidad</span>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <CheckCircle className="w-5 h-5 text-accent" />
+                        <span className="text-sm">Pagos puntuales</span>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <CheckCircle className="w-5 h-5 text-accent" />
+                        <span className="text-sm">Flexibilidad horaria</span>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <CheckCircle className="w-5 h-5 text-accent" />
+                        <span className="text-sm">Crecimiento profesional</span>
+                      </div>
                     </div>
-                    <div className="flex items-center space-x-3">
-                      <CheckCircle className="w-5 h-5 text-accent" />
-                      <span className="text-sm">Pagos puntuales</span>
+                    
+                    <div className="pt-4 border-t border-primary-foreground/20">
+                      <p className="text-sm text-primary-foreground/80">
+                        Forma parte de una red de especialistas que trabajan en proyectos innovadores 
+                        para empresas de diferentes sectores.
+                      </p>
                     </div>
-                    <div className="flex items-center space-x-3">
-                      <CheckCircle className="w-5 h-5 text-accent" />
-                      <span className="text-sm">Flexibilidad horaria</span>
+                  </CardContent>
+                </Card>
+
+                {/* Additional content to fill space */}
+                <Card className="bg-gradient-to-br from-secondary/10 to-accent/10 border-secondary/20">
+                  <CardHeader>
+                    <CardTitle className="text-xl text-center">¿Por qué colaborar con nosotros?</CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div className="space-y-3">
+                      <div className="flex items-start space-x-3">
+                        <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                        <p className="text-sm text-muted-foreground">
+                          <strong>Red de especialistas:</strong> Conectamos con profesionales de alto nivel
+                        </p>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                        <p className="text-sm text-muted-foreground">
+                          <strong>Proyectos variados:</strong> Desde startups hasta grandes empresas
+                        </p>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                        <p className="text-sm text-muted-foreground">
+                          <strong>Soporte técnico:</strong> Herramientas y metodologías punteras
+                        </p>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                        <p className="text-sm text-muted-foreground">
+                          <strong>Crecimiento conjunto:</strong> Formación continua y networking
+                        </p>
+                      </div>
                     </div>
-                    <div className="flex items-center space-x-3">
-                      <CheckCircle className="w-5 h-5 text-accent" />
-                      <span className="text-sm">Crecimiento profesional</span>
-                    </div>
-                  </div>
-                  
-                  <div className="pt-4 border-t border-primary-foreground/20">
-                    <p className="text-sm text-primary-foreground/80">
-                      Forma parte de una red de especialistas que trabajan en proyectos innovadores 
-                      para empresas de diferentes sectores.
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
 
             {/* Right side - Form */}
-            <div className="lg:col-span-2">
+            <div className="lg:col-span-1">
               <Card className="shadow-xl">
                 <CardHeader>
                   <CardTitle className="text-2xl text-center">Formulario de Colaboración</CardTitle>
