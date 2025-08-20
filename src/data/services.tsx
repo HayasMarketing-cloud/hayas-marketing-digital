@@ -151,7 +151,7 @@ export const allServices: ServiceItem[] = [
     title: 'Email marketing y automatizaciones',
     description: 'Workflows y personalización conectados a tu CRM.',
     href: '/servicios/email-marketing-automatizaciones',
-    pillar: 'activa',
+    pillar: 'conecta',
   },
   {
     id: 15,
