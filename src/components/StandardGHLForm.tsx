@@ -37,22 +37,23 @@ const StandardGHLForm: React.FC<StandardGHLFormProps> = ({
   }, []);
 
   return (
-    <Card className={`shadow-xl border border-border/20 bg-card ${className}`}>
+    <div className={`bg-background/95 backdrop-blur-sm rounded-2xl border border-border/40 shadow-2xl overflow-hidden ${className}`}>
       {showHeader && (
-        <CardHeader className="pb-6">
-          <CardTitle className="text-2xl text-center font-bold text-foreground">
+        <div className="px-8 pt-8 pb-6 bg-gradient-to-b from-background to-background/80">
+          <h2 className="text-2xl font-bold text-center text-foreground mb-2">
             {title}
-          </CardTitle>
+          </h2>
           {subtitle && (
-            <p className="text-muted-foreground text-center mt-2">
+            <p className="text-muted-foreground text-center text-base leading-relaxed">
               {subtitle}
             </p>
           )}
-        </CardHeader>
+        </div>
       )}
-      <CardContent className="p-0">
+      
+      <div className="px-8 pb-2">
         <div
-          className="relative overflow-hidden"
+          className="relative overflow-hidden rounded-xl bg-background/60 border border-border/20"
           style={{ minHeight }}
           aria-label={title}
         >
@@ -62,7 +63,8 @@ const StandardGHLForm: React.FC<StandardGHLFormProps> = ({
               width: '100%', 
               height: '100%', 
               border: 'none',
-              minHeight: minHeight
+              minHeight: minHeight,
+              borderRadius: '12px'
             }}
             id={iframeId}
             title={title}
@@ -82,27 +84,27 @@ const StandardGHLForm: React.FC<StandardGHLFormProps> = ({
         </div>
         
         {/* Footer de privacidad estándar */}
-        <div className="px-6 pb-6">
-          <div className="text-center text-xs text-muted-foreground space-y-2">
-            <p>
+        <div className="pt-6 pb-6">
+          <div className="text-center text-xs text-muted-foreground/80 space-y-3">
+            <p className="leading-relaxed">
               En Hayas, protegemos tu privacidad y datos. Estamos adheridos al Pacto Digital 
               para un uso ético de la información. Más info:{' '}
-              <a href="/aviso-legal" className="text-primary hover:underline">AEPD</a>.
+              <a href="/aviso-legal" className="text-primary hover:underline font-medium">AEPD</a>.
             </p>
             
-            <div className="flex justify-center space-x-4 pt-2">
-              <a href="/politica-privacidad" className="text-primary hover:underline">
+            <div className="flex justify-center items-center space-x-4 pt-2">
+              <a href="/politica-privacidad" className="text-primary hover:underline font-medium transition-colors">
                 Política de Privacidad
               </a>
-              <span className="text-muted-foreground">|</span>
-              <a href="/aviso-legal" className="text-primary hover:underline">
+              <span className="text-muted-foreground/60">|</span>
+              <a href="/aviso-legal" className="text-primary hover:underline font-medium transition-colors">
                 Aviso Legal
               </a>
             </div>
           </div>
         </div>
-      </CardContent>
-    </Card>
+      </div>
+    </div>
   );
 };
 
