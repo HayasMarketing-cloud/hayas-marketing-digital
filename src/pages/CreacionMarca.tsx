@@ -8,6 +8,7 @@ import { Badge } from '@/components/ui/badge';
 import KitDigitalBanner from '@/components/KitDigitalBanner';
 
 import FAQSection from '@/components/FAQSection';
+import ServiceContactSection from '@/components/ServiceContactSection';
 import { 
   Palette, Lightbulb, FileText, Target, Eye, Users, 
   ArrowRight, CheckCircle, Star, Zap, TrendingUp,
@@ -417,8 +418,11 @@ const CreacionMarca: React.FC = () => {
       <FAQSection faqs={faqItems} />
 
       {/* Contact Section */}
+      <ServiceContactSection
+        title="¿Hablamos sobre tu nueva marca?"
+        subtitle="Cuéntanos tu proyecto y visión. Te responderemos con una propuesta personalizada para crear tu identidad de marca."
+      />
       
-
       <Footer />
     </div>
   );

@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import FAQSection from '@/components/FAQSection';
+import ServiceContactSection from '@/components/ServiceContactSection';
 import { Bot, MessageCircle, Clock, Users, Zap, Settings, Brain, ArrowRight, CheckCircle, Star, Sparkles, Timer, Shield, Globe, Smartphone, Monitor, Headphones, BarChart3, Target } from 'lucide-react';
 const aiAssistantServices = [{
   icon: <MessageCircle className="h-8 w-8 text-primary" />,
@@ -391,7 +392,10 @@ const AsistenteIA: React.FC = () => {
       <FAQSection faqs={faqItems} />
 
       {/* Contact Section */}
-      
+      <ServiceContactSection
+        title="¿Hablamos sobre tu asistente de IA?"
+        subtitle="Cuéntanos tu negocio y objetivos de automatización. Te responderemos con una propuesta personalizada."
+      />
 
       <Footer />
     </div>;

@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import FAQSection from '@/components/FAQSection';
+import ServiceContactSection from '@/components/ServiceContactSection';
 import { 
   Target, TrendingUp, BarChart3, Zap, Users, DollarSign,
   ArrowRight, CheckCircle, Star, Eye, MousePointer, Sparkles,
@@ -463,8 +464,11 @@ const PublicidadRedesSociales: React.FC = () => {
       <FAQSection faqs={faqItems} />
 
       {/* Contact Section */}
+      <ServiceContactSection
+        title="¿Hablamos sobre tu publicidad en redes sociales?"
+        subtitle="Cuéntanos tu negocio y objetivos en redes. Te responderemos con una propuesta personalizada."
+      />
       
-
       <Footer />
     </div>
   );

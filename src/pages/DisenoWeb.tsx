@@ -9,6 +9,7 @@ import KitDigitalBanner from '@/components/KitDigitalBanner';
 
 import FAQSection from '@/components/FAQSection';
 import SuccessCasesSection from '@/components/SuccessCasesSection';
+import ServiceContactSection from '@/components/ServiceContactSection';
 import { 
   Globe, Palette, Code, Smartphone, Search, BarChart3, 
   ArrowRight, CheckCircle, Star, Zap, Users, TrendingUp,
@@ -538,7 +539,10 @@ const DisenoWeb = () => {
       </section>
 
       {/* Contact Section */}
-      
+      <ServiceContactSection
+        title="¿Hablamos sobre tu nuevo sitio web?"
+        subtitle="Cuéntanos tu proyecto y objetivos. Te responderemos con una propuesta personalizada para tu sitio web."
+      />
       
       <Footer />
     </div>

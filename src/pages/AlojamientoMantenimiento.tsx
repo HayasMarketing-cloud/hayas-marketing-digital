@@ -8,6 +8,7 @@ import { Badge } from '@/components/ui/badge';
 import KitDigitalBanner from '@/components/KitDigitalBanner';
 
 import FAQSection from '@/components/FAQSection';
+import ServiceContactSection from '@/components/ServiceContactSection';
 import { 
   Server, Shield, Zap, BarChart3, Settings, Globe, Clock,
   ArrowRight, CheckCircle, Star, Wrench, Database, Monitor,
@@ -580,7 +581,10 @@ const AlojamientoMantenimiento: React.FC = () => {
       <FAQSection faqs={faqItems} />
 
       {/* Contact Section */}
-      
+      <ServiceContactSection
+        title="¿Hablamos sobre el alojamiento y mantenimiento?"
+        subtitle="Cuéntanos tu proyecto web y necesidades técnicas. Te responderemos con una propuesta personalizada."
+      />
 
       <Footer />
     </div>

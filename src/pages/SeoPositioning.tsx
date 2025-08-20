@@ -8,6 +8,7 @@ import { Badge } from '@/components/ui/badge';
 import KitDigitalBanner from '@/components/KitDigitalBanner';
 
 import FAQSection from '@/components/FAQSection';
+import ServiceContactSection from '@/components/ServiceContactSection';
 import { 
   Search, BarChart3, FileText, Link as LinkIcon, Target, 
   ArrowRight, CheckCircle, Star, TrendingUp, Eye, Users,
@@ -581,7 +582,10 @@ const SeoPositioning = () => {
       </section>
 
       {/* Contact Section */}
-      
+      <ServiceContactSection
+        title="¿Hablamos sobre tu estrategia SEO?"
+        subtitle="Cuéntanos tu proyecto y objetivos de posicionamiento. Te responderemos con una propuesta personalizada."
+      />
       
       <Footer />
     </div>

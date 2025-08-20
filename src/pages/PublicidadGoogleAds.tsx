@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import FAQSection from '@/components/FAQSection';
+import ServiceContactSection from '@/components/ServiceContactSection';
 import { 
   Search, Target, TrendingUp, BarChart3, Zap, DollarSign, MousePointer,
   ArrowRight, CheckCircle, Star, Eye, Users, Sparkles, Globe,
@@ -395,8 +396,11 @@ const PublicidadGoogleAds: React.FC = () => {
       <FAQSection faqs={faqItems} />
 
       {/* Contact Section */}
+      <ServiceContactSection
+        title="¿Hablamos sobre tus campañas de Google Ads?"
+        subtitle="Cuéntanos tu negocio y objetivos publicitarios. Te responderemos con una propuesta personalizada."
+      />
       
-
       <Footer />
     </div>
   );

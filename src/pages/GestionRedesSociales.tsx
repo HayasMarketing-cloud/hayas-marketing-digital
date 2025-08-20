@@ -8,6 +8,7 @@ import { Badge } from '@/components/ui/badge';
 import KitDigitalBanner from '@/components/KitDigitalBanner';
 
 import FAQSection from '@/components/FAQSection';
+import ServiceContactSection from '@/components/ServiceContactSection';
 import { 
   Heart, Users, BarChart3, Calendar, Camera, MessageCircle, 
   ArrowRight, CheckCircle, Star, Zap, TrendingUp, Target,
@@ -452,8 +453,11 @@ const GestionRedesSociales: React.FC = () => {
       <FAQSection faqs={faqItems} />
 
       {/* Contact Section */}
+      <ServiceContactSection
+        title="¿Hablamos sobre la gestión de tus redes sociales?"
+        subtitle="Cuéntanos tu negocio y objetivos en redes. Te responderemos con una propuesta personalizada."
+      />
       
-
       <Footer />
     </div>
   );
