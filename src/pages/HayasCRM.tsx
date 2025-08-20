@@ -245,7 +245,7 @@ const HayasCRM = () => {
                       <img 
                         src="/lovable-uploads/897d68a3-3c10-4dd2-a082-88278fe0025a.png" 
                         alt="Hayas Marketing Logo" 
-                        className="h-20 w-auto"
+                        className="h-32 w-auto"
                       />
                     </div>
                     
