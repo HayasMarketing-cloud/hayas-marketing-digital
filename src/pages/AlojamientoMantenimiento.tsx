@@ -306,7 +306,7 @@ const AlojamientoMantenimiento: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-              Los 4 Pilares del Mantenimiento Integral
+              Los 4 pilares del mantenimiento integral
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Un sistema interconectado donde cada pilar refuerza a los demás para 
@@ -345,7 +345,7 @@ const AlojamientoMantenimiento: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-              Servicio Completo de Hosting y Mantenimiento
+              Servicio completo de hosting y mantenimiento
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Todo lo que necesitas para que tu web WordPress funcione perfectamente: 
@@ -376,7 +376,7 @@ const AlojamientoMantenimiento: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-              Planes de Hosting con Mantenimiento Incluido
+              Planes de hosting con mantenimiento incluido
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Elige el plan que mejor se adapte a tu proyecto. Todos incluyen 
@@ -449,7 +449,7 @@ const AlojamientoMantenimiento: React.FC = () => {
               <Card className="p-8 bg-gradient-to-br from-primary/5 to-primary/10">
                 <div className="text-center">
                   <Wrench className="h-16 w-16 text-primary mx-auto mb-4" />
-                  <h3 className="text-2xl font-bold mb-4">Tranquilidad Total</h3>
+                  <h3 className="text-2xl font-bold mb-4">Tranquilidad total</h3>
                   <p className="text-muted-foreground mb-6">
                     Nos encargamos de todo el aspecto técnico para que no tengas que preocuparte
                   </p>
@@ -475,7 +475,7 @@ const AlojamientoMantenimiento: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-              Proceso de Migración Sin Complicaciones
+              Proceso de migración sin complicaciones
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Nos encargamos de todo el proceso técnico para que tu migración 
@@ -509,7 +509,7 @@ const AlojamientoMantenimiento: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-              Casos de Éxito en Hosting y Mantenimiento
+              Casos de éxito en hosting y mantenimiento
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Empresas que han solucionado sus problemas técnicos y mejorado 
