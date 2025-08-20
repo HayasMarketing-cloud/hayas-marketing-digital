@@ -219,7 +219,7 @@ const AlojamientoMantenimiento: React.FC = () => {
                 Hosting & Mantenimiento WordPress
               </Badge>
               <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-                Tu Web <span className="text-primary">Siempre Perfecta</span> sin Preocupaciones
+                Tu web <span className="text-primary">siempre perfecta</span> sin preocupaciones
               </h1>
               <p className="text-lg text-muted-foreground mb-8">
                 Hosting premium optimizado para WordPress + mantenimiento técnico completo. 
