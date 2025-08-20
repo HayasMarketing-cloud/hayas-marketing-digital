@@ -137,16 +137,20 @@ const Nosotros = () => {
                 Somos <span className="text-gradient-primary">Hayas Marketing</span>
               </h1>
               <p className="text-hero text-gray-800 mb-8 animate-slide-up max-w-4xl mx-auto leading-relaxed font-medium">Agencia y consultora de marketing digital especializada en estrategia, automatización e inteligencia artificial al servicio de las personas.</p>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center animate-slide-up">
-                <Button className="gradient-primary text-white py-8 px-10 text-xl font-medium shadow-elegant hover-scale focus-ring transform transition-all duration-300">
-                  <span className="flex items-center gap-2">
-                    Conocer nuestros servicios
-                    <ArrowRight className="h-5 w-5" />
-                  </span>
-                </Button>
-                <Button variant="outline" className="py-8 px-10 text-xl font-medium hover-scale focus-ring border-2 border-hayas-primary text-hayas-primary hover:bg-hayas-primary hover:text-white bg-white/90 backdrop-blur-sm shadow-lg">
-                  Solicitar consulta gratuita
-                </Button>
+              
+              {/* New integrated text content */}
+              <div className="max-w-5xl mx-auto space-y-6 animate-fade-in">
+                <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-8 border border-white/30 shadow-elegant">
+                  <p className="text-xl text-gray-800 leading-relaxed font-medium">
+                    Desde 2014, ayudamos a emprendedores y empresas a conectar de forma más efectiva y auténtica con sus clientes, impulsando su crecimiento a través de estrategias de marketing digital esenciales.
+                  </p>
+                </div>
+                
+                <div className="bg-gradient-to-r from-hayas-primary/10 to-hayas-secondary/10 backdrop-blur-sm rounded-2xl p-6 border border-hayas-primary/20 shadow-lg">
+                  <p className="text-lg text-gray-700 leading-relaxed font-medium text-center">
+                    Lo hacemos desde la estrategia, la formación y la tecnología, para lograr un marketing que conecta, mide y transforma.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
