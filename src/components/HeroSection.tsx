@@ -17,7 +17,7 @@ const HeroSection = () => {
             <p className="text-hero text-gray-700 animate-slide-up">Soluciones que impulsan tu marca, conectan con tus clientes y activan tu estrategia digital.</p>
             <div className="flex flex-col sm:flex-row items-center gap-4 animate-slide-up stack-sm">
               <Button asChild className="gradient-primary text-white py-6 px-8 text-lg font-medium shadow-elegant hover-scale focus-ring" aria-label="Explorar soluciones de Hayas Marketing">
-                
+                <Link to="/?scrollTo=soluciones">Explorar soluciones</Link>
               </Button>
               <Button asChild variant="outline" className="py-6 px-8 text-lg font-medium hover-scale focus-ring border-primary text-primary hover:bg-primary hover:text-white" aria-label="Descubrir cómo trabajamos en Hayas Marketing">
                 <Link to="/?scrollTo=metodologia">Descubre cómo lo hacemos</Link>
@@ -27,7 +27,15 @@ const HeroSection = () => {
           <div className="lg:w-1/2">
             <div className="relative animate-fade-in">
               <div className="absolute inset-0 bg-hayas-secondary/20 rounded-full blur-3xl opacity-20 shadow-glow" aria-hidden="true"></div>
-              <OptimizedImage src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop" alt="Dashboard de marketing digital mostrando análisis de datos, métricas de conversión y automatización de procesos" className="relative z-10 w-full h-auto rounded-xl shadow-corporate" width={800} height={600} priority={true} sizes="(max-width: 768px) 100vw, 50vw" />
+              <OptimizedImage 
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop" 
+                alt="Dashboard de marketing digital mostrando análisis de datos, métricas de conversión y automatización de procesos" 
+                className="relative z-10 w-full h-auto rounded-xl shadow-corporate object-cover aspect-[4/3] md:aspect-auto" 
+                width={800} 
+                height={600} 
+                priority={true} 
+                sizes="(max-width: 768px) 100vw, 50vw" 
+              />
             </div>
           </div>
         </div>
