@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb';
 import { Link } from 'react-router-dom';
-import ServiceContactSection from '@/components/ServiceContactSection';
+import UniversalServiceContactForm from '@/components/UniversalServiceContactForm';
 import { Filter, Mail, BarChart3, Zap, Heart } from 'lucide-react';
 
 const includes = [
@@ -136,7 +136,18 @@ const AutomatizacionProcesosVentas: React.FC = () => {
             </div>
           </section>
 
-          <ServiceContactSection title="¿Auditamos tu proceso comercial?" subtitle="Analizamos tu pipeline, automatizaciones y métricas para proponerte mejoras de alto impacto." />
+          <UniversalServiceContactForm 
+            title="¿Auditamos tu proceso comercial?" 
+            subtitle="Analizamos tu pipeline, automatizaciones y métricas para proponerte mejoras de alto impacto."
+            serviceOptions={[
+              { value: "automatizacion-ventas", label: "Automatización de procesos de ventas" },
+              { value: "optimizacion-pipeline", label: "Optimización de pipeline" },
+              { value: "integracion-crm", label: "Integración CRM-Marketing" },
+              { value: "auditoria-procesos", label: "Auditoría de procesos comerciales" },
+              { value: "consultoria", label: "Consultoría en ventas" },
+              { value: "otros", label: "Otros servicios" }
+            ]}
+          />
         </div>
       </main>
 

@@ -5,7 +5,7 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import ServiceContactSection from '@/components/ServiceContactSection';
+import UniversalServiceContactForm from '@/components/UniversalServiceContactForm';
 import Seo from '@/components/Seo';
 import { Wallet, Clock, Target, Users, Cog, Rocket, Brain, MessageSquare, Mail, BarChart3, CheckCircle } from 'lucide-react';
 
@@ -223,7 +223,19 @@ const AdministracionCrm: React.FC = () => {
         </section>
 
         {/* Formulario de contacto */}
-        <ServiceContactSection className="bg-muted/30" />
+        <UniversalServiceContactForm 
+          title="¿Necesitas apoyo en la administración de tu CRM?"
+          subtitle="Cuéntanos tu situación actual y te ayudaremos a optimizar la gestión de tu sistema y marketing digital."
+          serviceOptions={[
+            { value: "administracion-crm", label: "Administración de CRM" },
+            { value: "gestion-marketing", label: "Gestión de marketing" },
+            { value: "optimizacion-procesos", label: "Optimización de procesos" },
+            { value: "formacion-equipo", label: "Formación del equipo" },
+            { value: "consultoria", label: "Consultoría estratégica" },
+            { value: "otros", label: "Otros servicios" }
+          ]}
+          className="bg-muted/30"
+        />
       </main>
 
       <Footer />

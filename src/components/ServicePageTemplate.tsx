@@ -10,6 +10,7 @@ import { Badge } from '@/components/ui/badge';
 import FAQSection from '@/components/FAQSection';
 import SuccessCasesSection from '@/components/SuccessCasesSection';
 import OptimizedImage from '@/components/OptimizedImage';
+import UniversalServiceContactForm from '@/components/UniversalServiceContactForm';
 import { ArrowRight, CheckCircle } from 'lucide-react';
 
 export interface ServiceFeature {
@@ -79,6 +80,12 @@ export interface ServicePageData {
   // Additional sections
   showSuccessCases?: boolean;
   additionalContent?: React.ReactNode;
+  
+  // Contact Form Section
+  showContactForm?: boolean;
+  contactFormTitle?: string;
+  contactFormSubtitle?: string;
+  contactFormOptions?: Array<{ value: string; label: string }>;
   
   // Breadcrumb
   breadcrumbItems: Array<{
@@ -372,6 +379,15 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ data }) => {
 
       {/* FAQ Section */}
       <FAQSection faqs={data.faqItems} />
+
+      {/* Contact Form Section */}
+      {data.showContactForm && (
+        <UniversalServiceContactForm 
+          title={data.contactFormTitle}
+          subtitle={data.contactFormSubtitle}
+          serviceOptions={data.contactFormOptions}
+        />
+      )}
 
       <Footer />
     </div>

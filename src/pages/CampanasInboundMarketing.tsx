@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb';
 import { Link } from 'react-router-dom';
-import ServiceContactSection from '@/components/ServiceContactSection';
+import UniversalServiceContactForm from '@/components/UniversalServiceContactForm';
 import { BookOpenText, Filter, FileText, Mail, BarChart3 } from 'lucide-react';
 
 const includes = [
@@ -136,7 +136,18 @@ const CampanasInboundMarketing: React.FC = () => {
             </div>
           </section>
 
-          <ServiceContactSection title="¿Hablamos de tu campaña Inbound?" subtitle="Cuéntanos tu público, propuesta de valor y objetivos. Te proponemos un plan realista y medible." />
+          <UniversalServiceContactForm 
+            title="¿Hablamos de tu campaña Inbound?" 
+            subtitle="Cuéntanos tu público, propuesta de valor y objetivos. Te proponemos un plan realista y medible."
+            serviceOptions={[
+              { value: "campañas-inbound", label: "Campañas de Inbound Marketing" },
+              { value: "contenido-premium", label: "Creación de contenido premium" },
+              { value: "lead-magnets", label: "Lead magnets y recursos" },
+              { value: "automatizacion-inbound", label: "Automatización Inbound" },
+              { value: "consultoria-inbound", label: "Consultoría Inbound Marketing" },
+              { value: "otros", label: "Otros servicios" }
+            ]}
+          />
         </div>
       </main>
 

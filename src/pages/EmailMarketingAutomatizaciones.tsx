@@ -94,6 +94,19 @@ const EmailMarketingAutomatizaciones: React.FC = () => {
     // Additional Config
     showSuccessCases: false,
     
+    // Contact Form
+    showContactForm: true,
+    contactFormTitle: "¿Listo para automatizar tu email marketing?",
+    contactFormSubtitle: "Cuéntanos sobre tu estrategia actual y diseñaremos un sistema de automatización personalizado.",
+    contactFormOptions: [
+      { value: "email-automatizacion", label: "Automatizaciones de email" },
+      { value: "email-campañas", label: "Campañas de email marketing" },
+      { value: "email-segmentacion", label: "Segmentación avanzada" },
+      { value: "email-integracion", label: "Integración con CRM" },
+      { value: "email-consultoria", label: "Consultoría en email marketing" },
+      { value: "otros", label: "Otros servicios" }
+    ],
+    
     // Breadcrumb
     breadcrumbItems: [
       { label: 'Inicio', href: '/' },

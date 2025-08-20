@@ -220,6 +220,19 @@ const ImplantacionCrm = () => {
     faqDescription: "Resolvemos las dudas más comunes sobre la implementación de sistemas CRM",
     faqItems: faqs,
     
+    // Contact Form
+    showContactForm: true,
+    contactFormTitle: "¿Listo para transformar tu gestión comercial?",
+    contactFormSubtitle: "Cuéntanos sobre tu negocio y te enviaremos una propuesta de implementación personalizada.",
+    contactFormOptions: [
+      { value: "crm-hubspot", label: "Implementación HubSpot (B2B)" },
+      { value: "crm-ghl", label: "Implementación Go High Level (B2C)" },
+      { value: "migracion-crm", label: "Migración entre CRMs" },
+      { value: "consultoria-crm", label: "Consultoría CRM" },
+      { value: "formacion-crm", label: "Formación en CRM" },
+      { value: "otros", label: "Otros servicios" }
+    ],
+    
     // Breadcrumbs
     breadcrumbItems: [
       { label: "Inicio", href: "/" },
