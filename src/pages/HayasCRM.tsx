@@ -60,28 +60,33 @@ const HayasCRM = () => {
   const benefits = [
     {
       icon: <Users className="h-8 w-8 text-primary" />,
-      title: "Nunca más perderás un lead",
-      description: "Captura y organiza contactos en un solo lugar"
+      title: "Soporte en español, cercano y accesible",
+      description: "Roadmap de evolución por fases según etapa de tu empresa o negocio"
     },
     {
       icon: <Calendar className="h-8 w-8 text-primary" />,
-      title: "Ahórrate olvidos y confirma más citas",
-      description: "Agenda integrada con recordatorios automáticos"
+      title: "Implementación personalizada",
+      description: "Adaptada a la realidad de cada negocio"
     },
     {
       icon: <Zap className="h-8 w-8 text-primary" />,
-      title: "Vende incluso mientras duermes",
-      description: "Automatizaciones de marketing y ventas"
+      title: "Formación continua",
+      description: "Para que tú y tu equipo aproveche al máximo las herramientas"
     },
     {
       icon: <BarChart3 className="h-8 w-8 text-primary" />,
-      title: "Decisiones rápidas sin depender de Excel",
-      description: "Informes claros y fáciles de entender"
+      title: "Acompañamiento estratégico",
+      description: "Ayudándote a definir procesos comerciales y de marketing más efectivos"
     },
     {
       icon: <Phone className="h-8 w-8 text-primary" />,
-      title: "Un CRM potente con un equipo que te acompaña",
-      description: "100% en español + soporte cercano de Hayas"
+      title: "Precios económicos y ajustados",
+      description: "A lo que realmente usas, evitando costes inflados por funciones innecesarias"
+    },
+    {
+      icon: <MessageSquare className="h-8 w-8 text-primary" />,
+      title: "Evolución constante de la plataforma",
+      description: "Nuevas integraciones nativas con WhatsApp, Meta, Google y herramienta de prospección desde Google My Business"
     }
   ];
 
@@ -304,8 +309,8 @@ const HayasCRM = () => {
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">
                   ¿Por qué elegir Hayas CRM?
                 </h2>
-                <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                  Las ventajas que necesitas para hacer crecer tu negocio de forma inteligente
+                <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                  La tecnología por sí sola no es suficiente para garantizar el éxito de un CRM. Por eso, en Hayas vamos un paso más allá:
                 </p>
               </div>
               
