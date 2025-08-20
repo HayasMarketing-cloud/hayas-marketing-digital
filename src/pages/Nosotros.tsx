@@ -516,7 +516,7 @@ const Nosotros = () => {
             },
             {
               question: "¿Puedo contratar solo un servicio específico?",
-              answer: "Sí. Podemos ayudarte con un servicio puntual (como el diseño de una web, la instalación de HubSpot o una campaña en redes sociales) o diseñar un plan integral. Adaptamos cada propuesta a tus necesidades reales."
+              answer: "Sí. Podemos ayudarte con un servicio puntual (como el diseño de una web, la instalación de un CRM o el diseño de un sitio web) o diseñar un plan integral. Adaptamos cada propuesta a tus necesidades reales."
             },
             {
               question: "¿Cuáles son vuestros precios?",
