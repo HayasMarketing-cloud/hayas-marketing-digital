@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb';
 import { Link } from 'react-router-dom';
-import ServiceContactSection from '@/components/ServiceContactSection';
+import LocalizationContactForm from '@/components/LocalizationContactForm';
 import { Globe, Languages, Search, FileText, Sparkles } from 'lucide-react';
 
 const includes = [
@@ -136,7 +136,7 @@ const LocalizacionContenidos: React.FC = () => {
             </div>
           </section>
 
-          <ServiceContactSection title="¿Listo para localizar tus contenidos?" subtitle="Cuéntanos qué mercados quieres abordar y qué activos necesitas adaptar. Te enviaremos una propuesta a medida." />
+          <LocalizationContactForm title="¿Listo para localizar tus contenidos?" subtitle="Cuéntanos qué mercados quieres abordar y qué activos necesitas adaptar. Te enviaremos una propuesta a medida." />
         </div>
       </main>
 
