@@ -17,9 +17,20 @@ import Seo from '@/components/Seo';
 const allPosts = [
   {
     id: "perfil-cliente-ideal",
+    title: "Perfil de cliente ideal: qué es y cómo definirlo para tu negocio",
+    description: "Descubre cómo crear el perfil de cliente ideal (ICP) perfecto para optimizar tu estrategia de marketing.",
+    slug: "/blog/perfil-cliente-ideal",
+    image: "/perfil-cliente-ideal-hero.jpg",
+    category: "Estrategia de Marketing",
+    readTime: "10 min",
+    date: "2025-01-10",
+    tags: ["perfil-cliente-ideal", "icp", "estrategia-marketing", "segmentacion"]
+  },
+  {
+    id: "como-crear-buyer-persona-b2b-b2c-guia-completa",
     title: "Cómo crear tu buyer persona para B2B y B2C [GUÍA COMPLETA + TEMPLATE]",
     description: "Aprende a crear buyer personas efectivos para B2B y B2C con nuestra guía completa. Incluye template descargable y cuestionario.",
-    slug: "/blog/perfil-cliente-ideal",
+    slug: "/blog/como-crear-buyer-persona-b2b-b2c-guia-completa",
     image: "/perfil-cliente-ideal-hero.jpg",
     category: "Estrategia de Marketing",
     readTime: "12 min",

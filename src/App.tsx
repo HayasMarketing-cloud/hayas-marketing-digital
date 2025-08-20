@@ -84,6 +84,7 @@ import AdministracionCrm from './pages/AdministracionCrm';
 import LocalizacionContenidos from './pages/LocalizacionContenidos';
 import CampanasInboundMarketing from './pages/CampanasInboundMarketing';
 import BlogPerfilClienteIdeal from './pages/BlogPerfilClienteIdeal';
+import BlogPerfilClienteIdealICP from './pages/BlogPerfilClienteIdealICP';
 import CaptacionLeadsClientes from './pages/CaptacionLeadsClientes';
 import AutomatizacionProcesosVentas from './pages/AutomatizacionProcesosVentas';
 import BlogCalculoInversionMarketing from './pages/BlogCalculoInversionMarketing';
@@ -193,8 +194,8 @@ const App = () => (
            <Route path="/blog" element={<Blog />} />
            <Route path="/blog/tag/:tag" element={<BlogTagPage />} />
            <Route path="/blog/:id" element={<BlogPost />} />
-           <Route path="/blog/perfil-cliente-ideal" element={<BlogPerfilClienteIdeal />} />
-           <Route path="/blog/como-crear-buyer-persona-b2b-b2c-guia-completa" element={<BlogPerfilClienteIdeal />} />
+            <Route path="/blog/perfil-cliente-ideal" element={<BlogPerfilClienteIdealICP />} />
+            <Route path="/blog/como-crear-buyer-persona-b2b-b2c-guia-completa" element={<BlogPerfilClienteIdeal />} />
            <Route path="/blog/calculo-inversion-plan-marketing-digital" element={<BlogCalculoInversionMarketing />} />
            <Route path="/blog/branding-proceso-tecnicas-naming" element={<BlogBrandingProcesoTecnicasNaming />} />
              <Route path="/blog/business-model-canvas-para-crear-tu-estrategia-de-marketing" element={<BusinessModelCanvasEstrategiaMarketing />} />
