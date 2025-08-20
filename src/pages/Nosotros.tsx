@@ -4,7 +4,7 @@ import Footer from '@/components/Footer';
 import ReviewsSection from '@/components/ReviewsSection';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { Target, Users, TrendingUp, Award, CheckCircle, Lightbulb, Zap, Heart, ArrowRight } from 'lucide-react';
+import { Target, Users, TrendingUp, Award, CheckCircle, Lightbulb, Zap, Heart, ArrowRight, Bot, GraduationCap } from 'lucide-react';
 
 // Import logos
 import hubspotLogo from '@/assets/logos/hubspot-logo.png';
@@ -147,6 +147,120 @@ const Nosotros = () => {
                 <Button variant="outline" className="py-8 px-10 text-xl font-medium hover-scale focus-ring border-2 border-hayas-primary text-hayas-primary hover:bg-hayas-primary hover:text-white bg-white/90 backdrop-blur-sm shadow-lg">
                   Solicitar consulta gratuita
                 </Button>
+              </div>
+            </div>
+          </div>
+          
+          {/* Bottom section separator */}
+          <div className="absolute bottom-0 left-0 right-0 h-px section-divider"></div>
+        </section>
+
+        {/* Nuestro Enfoque - Sección de enfoques estratégicos */}
+        <section className="relative py-20 md:py-28 bg-gradient-to-br from-white via-hayas-primary/5 to-hayas-secondary/10 overflow-hidden">
+          {/* Decorative elements */}
+          <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
+            <div className="absolute top-20 -left-20 w-64 h-64 rounded-full bg-hayas-primary/10 blur-2xl"></div>
+            <div className="absolute bottom-20 -right-20 w-80 h-80 rounded-full bg-hayas-secondary/8 blur-3xl"></div>
+            <div className="absolute top-1/2 left-1/3 w-32 h-32 rounded-full bg-hayas-primary/5 blur-xl"></div>
+          </div>
+          
+          {/* Subtle geometric patterns */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+            <div className="absolute top-32 left-12 w-3 h-3 bg-hayas-primary/20 rotate-45"></div>
+            <div className="absolute bottom-40 right-16 w-4 h-4 bg-hayas-secondary/15 rounded-full"></div>
+            <div className="absolute top-20 right-1/3 w-2 h-2 bg-hayas-primary/25"></div>
+          </div>
+          
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="max-w-7xl mx-auto">
+              {/* Header section */}
+              <div className="text-center mb-16 relative">
+                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-6 w-16 h-1 bg-gradient-primary rounded-full opacity-70"></div>
+                <h2 className="title-section mb-6 text-gradient-primary relative">
+                  Nuestro Enfoque
+                  <span className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-hayas-primary/40 rounded-full"></span>
+                </h2>
+                <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-medium">
+                  Cinco pilares fundamentales que guían cada proyecto y definen nuestra forma única de generar resultados sostenibles para nuestros clientes.
+                </p>
+              </div>
+              
+              {/* Cards grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 lg:gap-8">
+                {/* Estrategia con propósito */}
+                <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 lg:p-8 text-center shadow-elegant hover-scale border border-white/50 relative overflow-hidden group">
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-primary opacity-80"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-hayas-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative z-10">
+                    <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <Target className="h-8 w-8 text-white" />
+                    </div>
+                    <h3 className="text-lg font-bold mb-4 text-hayas-primary leading-tight">Estrategia con propósito</h3>
+                    <p className="text-gray-700 text-sm leading-relaxed">
+                      Desarrollamos estrategias alineadas con los objetivos reales de tu negocio, enfocándonos en resultados medibles y crecimiento sostenible.
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Tecnología con intención */}
+                <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 lg:p-8 text-center shadow-elegant hover-scale border border-white/50 relative overflow-hidden group">
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-primary opacity-80"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-hayas-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative z-10">
+                    <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <Bot className="h-8 w-8 text-white" />
+                    </div>
+                    <h3 className="text-lg font-bold mb-4 text-hayas-primary leading-tight">Tecnología con intención</h3>
+                    <p className="text-gray-700 text-sm leading-relaxed">
+                      Implementamos IA, automatización y CRM de forma estratégica, potenciando la eficiencia sin perder el toque humano.
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Formación para la autonomía */}
+                <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 lg:p-8 text-center shadow-elegant hover-scale border border-white/50 relative overflow-hidden group">
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-primary opacity-80"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-hayas-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative z-10">
+                    <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <GraduationCap className="h-8 w-8 text-white" />
+                    </div>
+                    <h3 className="text-lg font-bold mb-4 text-hayas-primary leading-tight">Formación para la autonomía</h3>
+                    <p className="text-gray-700 text-sm leading-relaxed">
+                      Capacitamos a tu equipo con conocimientos y herramientas para que puedas gestionar y optimizar tus propios procesos.
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Medición real de resultados */}
+                <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 lg:p-8 text-center shadow-elegant hover-scale border border-white/50 relative overflow-hidden group">
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-primary opacity-80"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-hayas-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative z-10">
+                    <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <TrendingUp className="h-8 w-8 text-white" />
+                    </div>
+                    <h3 className="text-lg font-bold mb-4 text-hayas-primary leading-tight">Medición real de resultados</h3>
+                    <p className="text-gray-700 text-sm leading-relaxed">
+                      Establecemos KPIs claros y reportes transparentes que demuestran el ROI y el impacto real de cada acción.
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Conexión humana y marcas con valores */}
+                <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 lg:p-8 text-center shadow-elegant hover-scale border border-white/50 relative overflow-hidden group md:col-span-2 lg:col-span-1">
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-primary opacity-80"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-hayas-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative z-10">
+                    <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <Heart className="h-8 w-8 text-white" />
+                    </div>
+                    <h3 className="text-lg font-bold mb-4 text-hayas-primary leading-tight">Conexión humana y marcas con valores</h3>
+                    <p className="text-gray-700 text-sm leading-relaxed">
+                      Creamos vínculos auténticos entre tu marca y audiencia, priorizando la transparencia y los valores compartidos.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
