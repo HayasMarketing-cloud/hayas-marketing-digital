@@ -454,7 +454,7 @@ const DisenoWeb = () => {
 
       {/* Process Section */}
       <ProcessSection
-        title='Nuestro <span className="text-gradient-primary">Proceso</span> de Desarrollo'
+        title={<>Nuestro <span className="text-gradient-primary">Proceso</span> de Desarrollo</>}
         subtitle="Metodología probada que garantiza el éxito de tu proyecto web desde la estrategia hasta el lanzamiento."
         steps={processSteps}
         backgroundColor="bg-gradient-to-br from-gray-50 to-white"
@@ -469,9 +469,6 @@ const DisenoWeb = () => {
         filterTags={["diseño-web"]}
         showAllLink={true}
       />
-
-      {/* Kit Digital Banner */}
-      <KitDigitalBanner />
 
       {/* CTA Section */}
       <section className="py-16 md:py-20 bg-gradient-to-r from-primary to-accent text-white">
