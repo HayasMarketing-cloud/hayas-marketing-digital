@@ -226,7 +226,7 @@ const HayasCRM = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-7xl mx-auto">
               {/* Logo and Title Integrated Section */}
-              <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 mb-16">
+              <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-20 mb-16">
                 <img 
                   src="/lovable-uploads/190f53d6-cce0-4af9-90e4-9352a672e9b8.png" 
                   alt="Hayas CRM Powered by HighLevel Logo" 
@@ -234,9 +234,9 @@ const HayasCRM = () => {
                 />
                 <div className="text-center lg:text-left">
                   <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
-                    El CRM con Tecnología<br />
+                    El CRM con tecnología<br />
                     <span className="text-primary">High Level</span><br />
-                    con Servicios y Soporte<br />
+                    con servicios y soporte<br />
                     continuo de <span className="text-primary">HAYAS</span>
                   </h2>
                 </div>
