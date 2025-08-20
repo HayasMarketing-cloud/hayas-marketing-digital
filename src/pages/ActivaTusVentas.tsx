@@ -181,37 +181,78 @@ const ActivaTusVentas = () => {
           </div>
         </section>
 
-      {/* Services Grid */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Servicios de Conversión de Ventas
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Estrategias especializadas que convierten tráfico en clientes y aceleran el crecimiento de ventas
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {services.map((service, index) => (
-            <Card key={index} className="group hover:shadow-lg transition-all duration-300 border-primary/20">
-              <CardHeader>
-                <div className="flex items-center gap-4">
-                  <div className="bg-primary/10 p-3 rounded-lg group-hover:bg-primary/20 transition-colors">
-                    <service.icon className="h-6 w-6 text-primary" />
-                  </div>
-                  <CardTitle className="text-xl">{service.title}</CardTitle>
+        {/* Value Proposition Section */}
+        <section className="py-8 md:py-12 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="order-2 lg:order-1">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-hayas-100 to-secondary/20 rounded-2xl transform rotate-3"></div>
+                  <img 
+                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop" 
+                    alt="Estrategia de conversión de ventas integrada" 
+                    className="relative z-10 w-full h-auto rounded-2xl shadow-xl"
+                  />
                 </div>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-base leading-relaxed">
-                  {service.description}
-                </CardDescription>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </section>
+              </div>
+              
+              <div className="order-1 lg:order-2">
+                <Badge variant="outline" className="mb-4 text-hayas-600 border-hayas-200">
+                  Estrategia Integrada
+                </Badge>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
+                  Una <span className="text-gradient-primary">visión holística</span> que alinea marketing y ventas
+                </h2>
+                <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                  El verdadero poder de un CRM radica en la integración completa de tu estrategia. 
+                  No se trata solo de gestionar contactos, sino de crear un ecosistema donde cada 
+                  acción de marketing alimenta directamente tu pipeline de ventas.
+                </p>
+                
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 bg-hayas-100 rounded-lg flex items-center justify-center">
+                      <Target className="h-6 w-6 text-hayas-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold mb-2">Estrategia Unificada</h3>
+                      <p className="text-gray-600">
+                        Alineamos tus objetivos de marketing con tus metas de ventas, creando una 
+                        sinergia que multiplica los resultados.
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center">
+                      <Zap className="h-6 w-6 text-secondary" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold mb-2">Automatización Inteligente</h3>
+                      <p className="text-gray-600">
+                        Cada lead generado se nutre automáticamente hasta convertirse en cliente, 
+                        sin perder oportunidades por el camino.
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 bg-hayas-100 rounded-lg flex items-center justify-center">
+                      <BarChart3 className="h-6 w-6 text-hayas-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold mb-2">Métricas que Importan</h3>
+                      <p className="text-gray-600">
+                        Medimos el ROI real desde el primer touchpoint hasta la venta final, 
+                        optimizando cada etapa del funnel.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
       {/* Nuestros Servicios Section */}
       <PillarServicesSection
