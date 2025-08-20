@@ -56,7 +56,7 @@ const JoinFreelancersSection: React.FC = () => {
             </Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
               ¿Eres profesional freelance en 
-              <span className="text-gradient-primary block mt-4">marketing o martech?</span>
+              <span className="text-gradient-primary block mt-6">marketing o martech?</span>
             </h2>
             <p className="text-xl text-muted-foreground mb-8 max-w-4xl mx-auto leading-relaxed">
               En Hayas Marketing colaboramos con especialistas para proyectos por demanda. 
