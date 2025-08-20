@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb';
 import { Link } from 'react-router-dom';
-import UniversalServiceContactForm from '@/components/UniversalServiceContactForm';
+import ServiceContactSection from '@/components/ServiceContactSection';
 import { Filter, Megaphone, Mail, Bot, BarChart3, Magnet, Settings, MessageSquare, Zap } from 'lucide-react';
 
 const includes = [
@@ -264,17 +264,10 @@ const CaptacionLeadsClientes: React.FC = () => {
             </div>
           </section>
 
-          <UniversalServiceContactForm 
-            title="¿Impulsamos tu captación?" 
-            subtitle="Cuéntanos tu público, canales actuales y objetivos. diseñamos un plan de captación realista y medible."
-            serviceOptions={[
-              { value: "captacion-leads", label: "Captación de leads y clientes" },
-              { value: "lead-magnets", label: "Lead magnets estratégicos" },
-              { value: "landing-pages", label: "Landing pages optimizadas" },
-              { value: "automatizacion-captacion", label: "Automatización de captación" },
-              { value: "consultoria-leads", label: "Consultoría en generación de leads" },
-              { value: "otros", label: "Otros servicios" }
-            ]}
+          <ServiceContactSection
+            title="¿Impulsamos tu captación?"
+            subtitle="Cuéntanos tu público, canales actuales y objetivos. Diseñamos un plan de captación realista y medible."
+            minHeight={900}
           />
         </div>
       </main>

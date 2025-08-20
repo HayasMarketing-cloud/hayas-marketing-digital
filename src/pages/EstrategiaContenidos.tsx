@@ -150,6 +150,11 @@ const EstrategiaContenidos: React.FC = () => {
     faqDescription: "Resolvemos las dudas más comunes sobre estrategia de contenidos",
     faqItems: faqs,
     
+    // Contact Form
+    showContactForm: true,
+    contactFormTitle: "¿Hablamos sobre tu estrategia de contenidos?",
+    contactFormSubtitle: "Cuéntanos tu marca, objetivos y audiencia. Te ayudaremos a diseñar una estrategia de contenidos efectiva.",
+    
     // Breadcrumbs
     breadcrumbItems: [
       { label: "Inicio", href: "/" },

@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb';
 import { Link } from 'react-router-dom';
-import UniversalServiceContactForm from '@/components/UniversalServiceContactForm';
+import ServiceContactSection from '@/components/ServiceContactSection';
 import { Globe, Languages, Search, FileText, Sparkles } from 'lucide-react';
 
 const includes = [
@@ -136,18 +136,10 @@ const LocalizacionContenidos: React.FC = () => {
             </div>
           </section>
 
-          <UniversalServiceContactForm 
+          <ServiceContactSection
             title="¿Listo para localizar tus contenidos?"
             subtitle="Cuéntanos qué mercados quieres abordar y qué activos necesitas adaptar. Te enviaremos una propuesta a medida."
-            serviceOptions={[
-              { value: "localizacion-web", label: "Localización de sitio web" },
-              { value: "localizacion-campañas", label: "Localización de campañas publicitarias" },
-              { value: "localizacion-contenidos", label: "Localización de contenidos" },
-              { value: "seo-multilingue", label: "SEO multilingüe" },
-              { value: "traduccion-especializada", label: "Traducción especializada" },
-              { value: "consultoria-expansion", label: "Consultoría de expansión internacional" },
-              { value: "otros", label: "Otros servicios" }
-            ]}
+            minHeight={900}
           />
         </div>
       </main>

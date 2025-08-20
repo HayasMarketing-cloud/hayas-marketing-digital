@@ -75,8 +75,10 @@ const ConsultoriaEstrategicaAnalitica: React.FC = () => {
     // FAQ Section
     faqItems: faqs,
     
-    // Additional Config
-    showSuccessCases: false,
+    // Contact Form
+    showContactForm: true,
+    contactFormTitle: "¿Hablamos sobre tu consultoría estratégica?",
+    contactFormSubtitle: "Cuéntanos tu situación actual y objetivos. Diseñaremos una estrategia analítica personalizada para impulsar tu crecimiento.",
     
     // Breadcrumb
     breadcrumbItems: [
