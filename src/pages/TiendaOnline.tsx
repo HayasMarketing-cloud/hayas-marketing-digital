@@ -6,7 +6,7 @@ import ProcessSection from '@/components/ProcessSection';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import KitDigitalBanner from '@/components/KitDigitalBanner';
+
 
 import FAQSection from '@/components/FAQSection';
 import ServiceContactSection from '@/components/ServiceContactSection';
@@ -447,8 +447,6 @@ const TiendaOnline = () => {
         </div>
       </section>
 
-      {/* Kit Digital Banner */}
-      <KitDigitalBanner />
 
       {/* CTA Section */}
       <section className="py-16 md:py-20 bg-gradient-to-r from-primary to-accent text-white">
