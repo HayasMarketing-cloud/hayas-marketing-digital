@@ -8,6 +8,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import KitDigitalBanner from '@/components/KitDigitalBanner';
 import SuccessCasesSection from '@/components/SuccessCasesSection';
+import PillarServicesSection from '@/components/PillarServicesSection';
 import Seo from '@/components/Seo';
 import brandingHero from '@/assets/branding-hero-online-offline.jpg';
 
@@ -197,6 +198,12 @@ const ImpulsaTuMarca = () => {
           </div>
         </section>
 
+        {/* Nuestros Servicios Section */}
+        <PillarServicesSection
+          pillar="impulsa"
+          title="Nuestros Servicios de Marca y Visibilidad"
+          description="Descubre todos los servicios profesionales para impulsar tu marca y ganar visibilidad en el mercado."
+        />
 
         {/* Solución destacada: Creación de Marca */}
         <section className="py-12 md:py-16 bg-gray-50">

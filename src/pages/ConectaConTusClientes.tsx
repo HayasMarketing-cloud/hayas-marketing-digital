@@ -18,6 +18,7 @@ import {
   BreadcrumbSeparator,
   BreadcrumbPage,
 } from '@/components/ui/breadcrumb';
+import PillarServicesSection from '@/components/PillarServicesSection';
 import { servicesByPillar } from '@/data/services';
 
 const crmPlatforms = [
@@ -412,157 +413,131 @@ const ConectaConTusClientes = () => {
           </div>
         </section>
 
-        {/* Services Section */}
-        <section className="py-16 bg-gradient-to-br from-hayas-50 to-turquesa-50">
+        {/* Nuestros Servicios Section */}
+        <PillarServicesSection
+          pillar="conecta"
+          title="Nuestros Servicios de Gestión de Clientes"
+          description="Descubre todos los servicios profesionales para conectar con tus clientes y automatizar tu proceso comercial."
+        />
+
+        {/* Premium Service - Full Width */}
+        <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Nuestros <span className="text-gradient-primary">Servicios</span> de CRM y Automatización
-              </h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Soluciones integrales que abarcan desde la implementación hasta la optimización continua de tu estrategia
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {servicesByPillar.conecta.map((s) => (
-                <Card key={s.id} className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                  <CardHeader className="pb-4">
-                    <div className="mb-4 p-3 rounded-lg bg-hayas-100 w-fit text-hayas-600">
-                      {s.icon}
+            <Card className="border-2 border-hayas-200 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-white to-hayas-25">
+              <CardHeader className="pb-6">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-4">
+                    <div className="p-4 rounded-lg bg-gradient-to-br from-hayas-100 to-turquesa-100 text-hayas-600">
+                      <BarChart3 className="h-8 w-8" />
                     </div>
-                    <CardTitle className="text-xl font-bold">{s.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-600 leading-relaxed mb-4">{s.description}</p>
-                    <div className="mt-6">
-                      <Link to={`${s.href}#top`}>
-                        <Button variant="outline" className="w-full">Conocer Servicio en Detalle</Button>
-                      </Link>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-
-            {/* Premium Service - Full Width */}
-            <div className="mt-12">
-              <Card className="border-2 border-hayas-200 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-white to-hayas-25">
-                <CardHeader className="pb-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-4">
-                      <div className="p-4 rounded-lg bg-gradient-to-br from-hayas-100 to-turquesa-100 text-hayas-600">
-                        <BarChart3 className="h-8 w-8" />
-                      </div>
-                      <div>
-                        <Badge variant="outline" className="mb-2 text-hayas-600 border-hayas-300 bg-hayas-50">
-                          Solución Integral
-                        </Badge>
-                        <CardTitle className="text-2xl md:text-3xl font-bold">
-                          Administración CRM y Gestión de Plan de Marketing
-                        </CardTitle>
-                      </div>
+                    <div>
+                      <Badge variant="outline" className="mb-2 text-hayas-600 border-hayas-300 bg-hayas-50">
+                        Solución Integral
+                      </Badge>
+                      <CardTitle className="text-2xl md:text-3xl font-bold">
+                        Administración CRM y Gestión de Plan de Marketing
+                      </CardTitle>
                     </div>
                   </div>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <p className="text-lg text-gray-600 leading-relaxed">
-                    Solución integral que agrupa todos nuestros servicios de CRM y automatización, 
-                    especialmente diseñada para grandes empresas con estrategias de inbound marketing, 
-                    modelo B2B y productos de alto ticket que requieren una gestión completa y estratégica.
-                  </p>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div className="space-y-3">
-                      <h4 className="font-semibold text-hayas-700">Implantación Completa</h4>
-                      <div className="space-y-2">
-                        <div className="flex items-center gap-2">
-                          <CheckCircle className="h-4 w-4 text-green-500" />
-                          <span className="text-sm text-gray-600">Análisis estratégico profundo</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <CheckCircle className="h-4 w-4 text-green-500" />
-                          <span className="text-sm text-gray-600">Personalización avanzada</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <CheckCircle className="h-4 w-4 text-green-500" />
-                          <span className="text-sm text-gray-600">Integración multi-plataforma</span>
-                        </div>
+                </div>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  Solución integral que agrupa todos nuestros servicios de CRM y automatización, 
+                  especialmente diseñada para grandes empresas con estrategias de inbound marketing, 
+                  modelo B2B y productos de alto ticket que requieren una gestión completa y estratégica.
+                </p>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                  <div className="space-y-3">
+                    <h4 className="font-semibold text-hayas-700">Implantación Completa</h4>
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2">
+                        <CheckCircle className="h-4 w-4 text-green-500" />
+                        <span className="text-sm text-gray-600">Análisis estratégico profundo</span>
                       </div>
-                    </div>
-                    
-                    <div className="space-y-3">
-                      <h4 className="font-semibold text-turquesa-700">Inbound Marketing</h4>
-                      <div className="space-y-2">
-                        <div className="flex items-center gap-2">
-                          <CheckCircle className="h-4 w-4 text-green-500" />
-                          <span className="text-sm text-gray-600">Contenidos premium</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <CheckCircle className="h-4 w-4 text-green-500" />
-                          <span className="text-sm text-gray-600">Campañas multicanal</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <CheckCircle className="h-4 w-4 text-green-500" />
-                          <span className="text-sm text-gray-600">Analytics avanzados</span>
-                        </div>
+                      <div className="flex items-center gap-2">
+                        <CheckCircle className="h-4 w-4 text-green-500" />
+                        <span className="text-sm text-gray-600">Personalización avanzada</span>
                       </div>
-                    </div>
-                    
-                    <div className="space-y-3">
-                      <h4 className="font-semibold text-hayas-700">Captación Avanzada</h4>
-                      <div className="space-y-2">
-                        <div className="flex items-center gap-2">
-                          <CheckCircle className="h-4 w-4 text-green-500" />
-                          <span className="text-sm text-gray-600">Funnels complejos B2B</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <CheckCircle className="h-4 w-4 text-green-500" />
-                          <span className="text-sm text-gray-600">Lead scoring inteligente</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <CheckCircle className="h-4 w-4 text-green-500" />
-                          <span className="text-sm text-gray-600">IA conversacional premium</span>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="space-y-3">
-                      <h4 className="font-semibold text-turquesa-700">Automatización Total</h4>
-                      <div className="space-y-2">
-                        <div className="flex items-center gap-2">
-                          <CheckCircle className="h-4 w-4 text-green-500" />
-                          <span className="text-sm text-gray-600">Pipeline enterprise</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <CheckCircle className="h-4 w-4 text-green-500" />
-                          <span className="text-sm text-gray-600">ROI attribution completo</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <CheckCircle className="h-4 w-4 text-green-500" />
-                          <span className="text-sm text-gray-600">Gestión estratégica continua</span>
-                        </div>
+                      <div className="flex items-center gap-2">
+                        <CheckCircle className="h-4 w-4 text-green-500" />
+                        <span className="text-sm text-gray-600">Integración multi-plataforma</span>
                       </div>
                     </div>
                   </div>
                   
-                  <div className="border-t pt-6">
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                      <Link to="/servicios/administracion-crm#top">
-                        <Button className="gradient-primary text-white px-8 py-3 text-lg font-medium">
-                          Conocer Solución Integral
-                        </Button>
-                      </Link>
-                      <Link to="/solicitar-consulta#top">
-                        <Button variant="outline" className="px-8 py-3 text-lg font-medium">
-                          Solicitar Consultoría Estratégica
-                        </Button>
-                      </Link>
+                  <div className="space-y-3">
+                    <h4 className="font-semibold text-turquesa-700">Inbound Marketing</h4>
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2">
+                        <CheckCircle className="h-4 w-4 text-green-500" />
+                        <span className="text-sm text-gray-600">Contenidos premium</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <CheckCircle className="h-4 w-4 text-green-500" />
+                        <span className="text-sm text-gray-600">Campañas multicanal</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <CheckCircle className="h-4 w-4 text-green-500" />
+                        <span className="text-sm text-gray-600">Analytics avanzados</span>
+                      </div>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
-            </div>
+                  
+                  <div className="space-y-3">
+                    <h4 className="font-semibold text-hayas-700">Captación Avanzada</h4>
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2">
+                        <CheckCircle className="h-4 w-4 text-green-500" />
+                        <span className="text-sm text-gray-600">Funnels complejos B2B</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <CheckCircle className="h-4 w-4 text-green-500" />
+                        <span className="text-sm text-gray-600">Lead scoring inteligente</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <CheckCircle className="h-4 w-4 text-green-500" />
+                        <span className="text-sm text-gray-600">IA conversacional premium</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-3">
+                    <h4 className="font-semibold text-turquesa-700">Automatización Total</h4>
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2">
+                        <CheckCircle className="h-4 w-4 text-green-500" />
+                        <span className="text-sm text-gray-600">Pipeline enterprise</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <CheckCircle className="h-4 w-4 text-green-500" />
+                        <span className="text-sm text-gray-600">ROI attribution completo</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <CheckCircle className="h-4 w-4 text-green-500" />
+                        <span className="text-sm text-gray-600">Gestión estratégica continua</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="border-t pt-6">
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <Link to="/servicios/administracion-crm#top">
+                      <Button className="gradient-primary text-white px-8 py-3 text-lg font-medium">
+                        Conocer Solución Integral
+                      </Button>
+                    </Link>
+                    <Link to="/solicitar-consulta#top">
+                      <Button variant="outline" className="px-8 py-3 text-lg font-medium">
+                        Solicitar Consultoría Estratégica
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </section>
 

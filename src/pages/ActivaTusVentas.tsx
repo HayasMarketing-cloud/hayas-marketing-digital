@@ -15,6 +15,7 @@ import Seo from '@/components/Seo';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import KitConsultingBanner from '@/components/KitConsultingBanner';
+import PillarServicesSection from '@/components/PillarServicesSection';
 
 const ActivaTusVentas = () => {
   const services = [
@@ -211,6 +212,13 @@ const ActivaTusVentas = () => {
           ))}
         </div>
       </section>
+
+      {/* Nuestros Servicios Section */}
+      <PillarServicesSection
+        pillar="activa"
+        title="Nuestros Servicios de Activación de Ventas"
+        description="Descubre todos los servicios profesionales para activar tus ventas y convertir leads en clientes."
+      />
 
       {/* Process Section */}
       <section className="container mx-auto px-4 py-16">
