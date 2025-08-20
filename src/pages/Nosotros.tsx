@@ -74,40 +74,52 @@ const Nosotros = () => {
   }];
   const certifications = [{
     name: "HubSpot Partner",
-    logo: "/lovable-uploads/5b8c9d90-e355-4b27-b2a3-018f2c5a6734.png"
+    logo: "/lovable-uploads/5b8c9d90-e355-4b27-b2a3-018f2c5a6734.png",
+    url: "https://www.hubspot.com"
   }, {
     name: "Go High Level",
-    logo: "/lovable-uploads/db3b7311-53c8-4d88-9818-3377203174a3.png"
+    logo: "/lovable-uploads/db3b7311-53c8-4d88-9818-3377203174a3.png",
+    url: "https://www.gohighlevel.com"
   }, {
     name: "Google Partner",
-    logo: googleLogo
+    logo: googleLogo,
+    url: "https://www.google.com/partners"
   }, {
     name: "Meta Business Partner",
-    logo: "/lovable-uploads/e9556961-6aaa-41da-8ccb-fc0cdbd24142.png"
+    logo: "/lovable-uploads/e9556961-6aaa-41da-8ccb-fc0cdbd24142.png",
+    url: "https://business.facebook.com"
   }, {
     name: "WordPress",
-    logo: "/lovable-uploads/ed1d9897-ed2d-49a3-9ce2-1cea880aee32.png"
+    logo: "/lovable-uploads/ed1d9897-ed2d-49a3-9ce2-1cea880aee32.png",
+    url: "https://wordpress.org"
   }, {
     name: "Lovable Partner",
-    logo: "/lovable-uploads/7794bc2d-846f-4d33-96bc-01ea5fe75d53.png"
+    logo: "/lovable-uploads/7794bc2d-846f-4d33-96bc-01ea5fe75d53.png",
+    url: "https://lovable.dev"
   }, {
     name: "WhatsApp Business",
-    logo: "/lovable-uploads/d5141b27-1db2-4f9b-8ff4-486fb23e0ae8.png"
+    logo: "/lovable-uploads/d5141b27-1db2-4f9b-8ff4-486fb23e0ae8.png",
+    url: "https://business.whatsapp.com"
   }, {
     name: "Shopify Partner",
-    logo: "/lovable-uploads/481fb23a-8710-41bb-93e6-b3c991fa58c8.png"
+    logo: "/lovable-uploads/481fb23a-8710-41bb-93e6-b3c991fa58c8.png",
+    url: "https://www.shopify.com/partners"
   }, {
     name: "Aircall Partner",
-    logo: "/lovable-uploads/b18fc977-3bb3-4613-8232-8fac4fb4d9ee.png"
+    logo: "/lovable-uploads/b18fc977-3bb3-4613-8232-8fac4fb4d9ee.png",
+    url: "https://aircall.io"
   }, {
     name: "AEPD",
-    logo: "/lovable-uploads/f4b23acc-a714-4f14-92f4-50ba1fda2565.png"
+    logo: "/lovable-uploads/f4b23acc-a714-4f14-92f4-50ba1fda2565.png",
+    url: "https://www.aepd.es"
   }, {
     name: "Sharpei",
-    logo: "/lovable-uploads/42d61146-8307-49fd-bf0e-6f48707c1284.png"
+    logo: "/lovable-uploads/42d61146-8307-49fd-bf0e-6f48707c1284.png",
+    url: "https://sharpei.com"
   }, {
     name: "Connectif",
-    logo: "/lovable-uploads/92c382be-7597-473a-97d4-fc45f3d7d598.png"
+    logo: "/lovable-uploads/92c382be-7597-473a-97d4-fc45f3d7d598.png",
+    url: "https://connectif.ai"
   }];
   return <div className="min-h-screen flex flex-col">
       <Navigation />
@@ -398,38 +410,65 @@ const Nosotros = () => {
               <div className="space-y-8">
                 {/* Primera línea - 3 logos */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  {certifications.slice(0, 3).map((cert, index) => <div key={index} className="group hover-scale">
-                      <div className="bg-white rounded-xl p-8 shadow-corporate border border-gray-100 group-hover:shadow-elegant transition-all duration-300">
-                        <div className="h-20 flex items-center justify-center mb-4">
-                          <img src={cert.logo} alt={`${cert.name} logo`} className="h-16 w-auto object-contain filter transition-all duration-300 group-hover:scale-110" />
+                  {certifications.slice(0, 3).map((cert, index) => (
+                    <div key={index} className="group hover-scale">
+                      <a 
+                        href={cert.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="block"
+                      >
+                        <div className="bg-white rounded-xl p-8 shadow-corporate border border-gray-100 group-hover:shadow-elegant transition-all duration-300">
+                          <div className="h-20 flex items-center justify-center mb-4">
+                            <img src={cert.logo} alt={`${cert.name} logo`} className="h-16 w-auto object-contain filter transition-all duration-300 group-hover:scale-110" />
+                          </div>
+                          <p className="text-sm font-semibold text-hayas-primary text-center">{cert.name}</p>
                         </div>
-                        <p className="text-sm font-semibold text-hayas-primary text-center">{cert.name}</p>
-                      </div>
-                    </div>)}
+                      </a>
+                    </div>
+                  ))}
                 </div>
                 
                 {/* Segunda línea - 3 logos */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  {certifications.slice(3, 6).map((cert, index) => <div key={index} className="group hover-scale">
-                      <div className="bg-white rounded-xl p-8 shadow-corporate border border-gray-100 group-hover:shadow-elegant transition-all duration-300">
-                        <div className="h-20 flex items-center justify-center mb-4">
-                          <img src={cert.logo} alt={`${cert.name} logo`} className="h-16 w-auto object-contain filter transition-all duration-300 group-hover:scale-110" />
+                  {certifications.slice(3, 6).map((cert, index) => (
+                    <div key={index} className="group hover-scale">
+                      <a 
+                        href={cert.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="block"
+                      >
+                        <div className="bg-white rounded-xl p-8 shadow-corporate border border-gray-100 group-hover:shadow-elegant transition-all duration-300">
+                          <div className="h-20 flex items-center justify-center mb-4">
+                            <img src={cert.logo} alt={`${cert.name} logo`} className="h-16 w-auto object-contain filter transition-all duration-300 group-hover:scale-110" />
+                          </div>
+                          <p className="text-sm font-semibold text-hayas-primary text-center">{cert.name}</p>
                         </div>
-                        <p className="text-sm font-semibold text-hayas-primary text-center">{cert.name}</p>
-                      </div>
-                    </div>)}
+                      </a>
+                    </div>
+                  ))}
                 </div>
                 
                 {/* Tercera línea - 3 logos */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  {certifications.slice(6).map((cert, index) => <div key={index} className="group hover-scale">
-                      <div className="bg-white rounded-xl p-8 shadow-corporate border border-gray-100 group-hover:shadow-elegant transition-all duration-300">
-                        <div className="h-20 flex items-center justify-center mb-4">
-                          <img src={cert.logo} alt={`${cert.name} logo`} className={`${cert.name === 'AEPD' ? 'h-20' : 'h-16'} w-auto object-contain filter transition-all duration-300 group-hover:scale-110`} />
+                  {certifications.slice(6).map((cert, index) => (
+                    <div key={index} className="group hover-scale">
+                      <a 
+                        href={cert.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="block"
+                      >
+                        <div className="bg-white rounded-xl p-8 shadow-corporate border border-gray-100 group-hover:shadow-elegant transition-all duration-300">
+                          <div className="h-20 flex items-center justify-center mb-4">
+                            <img src={cert.logo} alt={`${cert.name} logo`} className={`${cert.name === 'AEPD' ? 'h-20' : 'h-16'} w-auto object-contain filter transition-all duration-300 group-hover:scale-110`} />
+                          </div>
+                          <p className="text-sm font-semibold text-hayas-primary text-center">{cert.name}</p>
                         </div>
-                        <p className="text-sm font-semibold text-hayas-primary text-center">{cert.name}</p>
-                      </div>
-                    </div>)}
+                      </a>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
