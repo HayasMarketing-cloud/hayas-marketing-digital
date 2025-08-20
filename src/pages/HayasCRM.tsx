@@ -224,11 +224,20 @@ const HayasCRM = () => {
         {/* Technology Presentation Section */}
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-7xl mx-auto">
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
                   El CRM con Tecnología High Level con Servicios y Soporte continuo de HAYAS
                 </h2>
+              </div>
+              
+              {/* Logo Section */}
+              <div className="flex justify-center mb-12">
+                <img 
+                  src="/lovable-uploads/190f53d6-cce0-4af9-90e4-9352a672e9b8.png" 
+                  alt="Hayas CRM Powered by HighLevel Logo" 
+                  className="h-32 w-auto"
+                />
               </div>
               
               <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 md:p-12 shadow-xl border border-border/20 mb-12">
