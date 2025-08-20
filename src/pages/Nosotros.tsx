@@ -231,53 +231,53 @@ const Nosotros = () => {
                 </div>
               </div>
               
-              {/* Nuestros principios - Visual row of small icons */}
+              {/* Nuestros principios - Visual row matching main section size */}
               <div className="pt-12 border-t border-hayas-primary/20">
-                <div className="text-center mb-8">
-                  <h3 className="text-lg font-semibold text-hayas-primary mb-2">Nuestros principios</h3>
+                <div className="text-center mb-12">
+                  <h3 className="text-2xl md:text-3xl font-bold text-hayas-primary mb-2">Nuestros principios</h3>
                 </div>
                 
-                <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
                   <div className="flex flex-col items-center group">
-                    <div className="w-12 h-12 bg-hayas-primary/10 rounded-full flex items-center justify-center mb-3 group-hover:bg-hayas-primary/20 transition-colors duration-300">
-                      <span className="text-2xl">🔓</span>
+                    <div className="w-20 h-20 bg-hayas-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-hayas-primary/20 transition-colors duration-300 shadow-lg group-hover:scale-110 transition-transform">
+                      <span className="text-4xl">🎓</span>
                     </div>
-                    <span className="text-sm font-medium text-gray-700">Educación</span>
+                    <span className="text-lg font-semibold text-hayas-primary">Educación</span>
                   </div>
                   
                   <div className="flex flex-col items-center group">
-                    <div className="w-12 h-12 bg-hayas-primary/10 rounded-full flex items-center justify-center mb-3 group-hover:bg-hayas-primary/20 transition-colors duration-300">
-                      <span className="text-2xl">🌿</span>
+                    <div className="w-20 h-20 bg-hayas-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-hayas-primary/20 transition-colors duration-300 shadow-lg group-hover:scale-110 transition-transform">
+                      <span className="text-4xl">🌿</span>
                     </div>
-                    <span className="text-sm font-medium text-gray-700">Sostenibilidad</span>
+                    <span className="text-lg font-semibold text-hayas-primary">Sostenibilidad</span>
                   </div>
                   
                   <div className="flex flex-col items-center group">
-                    <div className="w-12 h-12 bg-hayas-primary/10 rounded-full flex items-center justify-center mb-3 group-hover:bg-hayas-primary/20 transition-colors duration-300">
-                      <span className="text-2xl">⚡</span>
+                    <div className="w-20 h-20 bg-hayas-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-hayas-primary/20 transition-colors duration-300 shadow-lg group-hover:scale-110 transition-transform">
+                      <span className="text-4xl">⚡</span>
                     </div>
-                    <span className="text-sm font-medium text-gray-700">Eficiencia</span>
+                    <span className="text-lg font-semibold text-hayas-primary">Eficiencia</span>
                   </div>
                   
                   <div className="flex flex-col items-center group">
-                    <div className="w-12 h-12 bg-hayas-primary/10 rounded-full flex items-center justify-center mb-3 group-hover:bg-hayas-primary/20 transition-colors duration-300">
-                      <span className="text-2xl">💚</span>
+                    <div className="w-20 h-20 bg-hayas-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-hayas-primary/20 transition-colors duration-300 shadow-lg group-hover:scale-110 transition-transform">
+                      <span className="text-4xl">💚</span>
                     </div>
-                    <span className="text-sm font-medium text-gray-700">Diversidad</span>
+                    <span className="text-lg font-semibold text-hayas-primary">Diversidad</span>
                   </div>
                   
                   <div className="flex flex-col items-center group">
-                    <div className="w-12 h-12 bg-hayas-primary/10 rounded-full flex items-center justify-center mb-3 group-hover:bg-hayas-primary/20 transition-colors duration-300">
-                      <span className="text-2xl">🤝</span>
+                    <div className="w-20 h-20 bg-hayas-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-hayas-primary/20 transition-colors duration-300 shadow-lg group-hover:scale-110 transition-transform">
+                      <span className="text-4xl">🤝</span>
                     </div>
-                    <span className="text-sm font-medium text-gray-700">Conciliación</span>
+                    <span className="text-lg font-semibold text-hayas-primary">Conciliación</span>
                   </div>
                   
                   <div className="flex flex-col items-center group">
-                    <div className="w-12 h-12 bg-hayas-primary/10 rounded-full flex items-center justify-center mb-3 group-hover:bg-hayas-primary/20 transition-colors duration-300">
-                      <span className="text-2xl">🔒</span>
+                    <div className="w-20 h-20 bg-hayas-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-hayas-primary/20 transition-colors duration-300 shadow-lg group-hover:scale-110 transition-transform">
+                      <span className="text-4xl">🔒</span>
                     </div>
-                    <span className="text-sm font-medium text-gray-700">Privacidad</span>
+                    <span className="text-lg font-semibold text-hayas-primary">Privacidad</span>
                   </div>
                 </div>
               </div>
