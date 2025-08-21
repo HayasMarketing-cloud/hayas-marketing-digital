@@ -10,6 +10,8 @@ import KitDigitalBanner from '@/components/KitDigitalBanner';
 
 import FAQSection from '@/components/FAQSection';
 import ServiceContactSection from '@/components/ServiceContactSection';
+import SuccessCasesSection from '@/components/SuccessCasesSection';
+import { getServiceSuccessCasesConfig } from '@/data/serviceSuccessCasesMapping';
 import { 
   Palette, Lightbulb, FileText, Target, Eye, Users, 
   ArrowRight, CheckCircle, Star, Zap, TrendingUp,
@@ -168,6 +170,8 @@ const faqItems = [
 ];
 
 const CreacionMarca: React.FC = () => {
+  const successCasesConfig = getServiceSuccessCasesConfig('creacion-marca');
+  
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -365,6 +369,19 @@ const CreacionMarca: React.FC = () => {
 
       {/* Kit Digital */}
       <KitDigitalBanner />
+
+      {/* Success Cases Section */}
+      {successCasesConfig && (
+        <SuccessCasesSection
+          id="casos-exito"
+          title="Casos de <span className='text-gradient-primary'>éxito</span>"
+          subtitle={successCasesConfig.subtitle}
+          filterTags={successCasesConfig.filterTags}
+          specificCases={successCasesConfig.specificCases}
+          maxCases={4}
+          showAllLink={true}
+        />
+      )}
 
       {/* CTA Section */}
       <section className="section-normal bg-gradient-to-r from-primary to-primary/80 text-primary-foreground">

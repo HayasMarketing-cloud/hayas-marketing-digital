@@ -10,6 +10,8 @@ import KitDigitalBanner from '@/components/KitDigitalBanner';
 
 import FAQSection from '@/components/FAQSection';
 import ServiceContactSection from '@/components/ServiceContactSection';
+import SuccessCasesSection from '@/components/SuccessCasesSection';
+import { getServiceSuccessCasesConfig } from '@/data/serviceSuccessCasesMapping';
 import { 
   Search, BarChart3, FileText, Link as LinkIcon, Target, 
   ArrowRight, CheckCircle, Star, TrendingUp, Eye, Users,
@@ -194,6 +196,8 @@ const faqItems = [
 ];
 
 const SeoPositioning = () => {
+  const successCasesConfig = getServiceSuccessCasesConfig('seo-positioning');
+  
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
@@ -457,60 +461,18 @@ const SeoPositioning = () => {
         showIcons={true}
       />
 
-      {/* Success Cases */}
-      <section id="casos-exito" className="py-16 md:py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Casos de <span className="text-gradient-primary">Éxito SEO</span>
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Resultados reales de clientes que han confiado en nuestra estrategia SEO 
-              para hacer crecer su negocio online.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {successCases.map((case_, index) => (
-              <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 relative overflow-hidden">
-                <div className="absolute top-0 right-0 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
-                  {case_.improvement}
-                </div>
-                <CardHeader className="pb-2">
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className="flex">
-                      {[1,2,3,4,5].map((star) => (
-                        <Star key={star} className="h-4 w-4 text-yellow-500 fill-current" />
-                      ))}
-                    </div>
-                  </div>
-                  <CardTitle className="text-lg">{case_.name}</CardTitle>
-                  <p className="text-sm text-gray-500">{case_.category}</p>
-                </CardHeader>
-                <CardContent className="space-y-3">
-                  <Badge variant="outline" className="text-primary border-primary/30">
-                    {case_.service}
-                  </Badge>
-                  <p className="text-sm text-gray-600 font-medium">{case_.results}</p>
-                  <div className="flex items-center gap-2 text-xs text-gray-500">
-                    <Clock className="h-3 w-3" />
-                    <span>Resultado en {case_.timeframe}</span>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-          
-          <div className="text-center mt-12">
-            <Button variant="outline" size="lg" asChild>
-              <Link to="/casos-de-exito">
-                Ver Todos los Casos de Éxito
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      {/* Success Cases Section - Using standardized component */}
+      {successCasesConfig && (
+        <SuccessCasesSection
+          id="casos-exito"
+          title="Casos de <span className='text-gradient-primary'>éxito</span>"
+          subtitle={successCasesConfig.subtitle}
+          filterTags={successCasesConfig.filterTags}
+          specificCases={successCasesConfig.specificCases}
+          maxCases={4}
+          showAllLink={true}
+        />
+      )}
 
       {/* Kit Digital Banner */}
       <KitDigitalBanner />

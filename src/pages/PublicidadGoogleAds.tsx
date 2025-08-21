@@ -7,6 +7,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import FAQSection from '@/components/FAQSection';
 import ServiceContactSection from '@/components/ServiceContactSection';
+import SuccessCasesSection from '@/components/SuccessCasesSection';
+import { getServiceSuccessCasesConfig } from '@/data/serviceSuccessCasesMapping';
 import { 
   Search, Target, TrendingUp, BarChart3, Zap, DollarSign, MousePointer,
   ArrowRight, CheckCircle, Star, Eye, Users, Sparkles, Globe,
@@ -157,6 +159,8 @@ const faqItems = [
 ];
 
 const PublicidadGoogleAds: React.FC = () => {
+  const successCasesConfig = getServiceSuccessCasesConfig('publicidad-google-ads');
+  
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -391,6 +395,19 @@ const PublicidadGoogleAds: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Success Cases Section */}
+      {successCasesConfig && (
+        <SuccessCasesSection
+          id="casos-exito"
+          title="Casos de <span className='text-gradient-primary'>éxito</span>"
+          subtitle={successCasesConfig.subtitle}
+          filterTags={successCasesConfig.filterTags}
+          specificCases={successCasesConfig.specificCases}
+          maxCases={4}
+          showAllLink={true}
+        />
+      )}
 
       {/* FAQ Section */}
       <FAQSection faqs={faqItems} />
