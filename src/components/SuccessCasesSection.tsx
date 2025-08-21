@@ -70,7 +70,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     industry: "Cirujanos traumatólogos",
     service: "Naming, branding, diseño web",
     link: "/casos-exito/joints-up",
-    image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?q=80&w=2087&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=2070&auto=format&fit=crop",
     tags: ["branding", "creacion-marca", "naming", "diseño-web", "medicina", "salud", "identidad-visual"]
   },
   {
@@ -78,7 +78,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     industry: "Traumatólogo especialista en cadera",
     service: "Identidad corporativa, diseño web",
     link: "/casos-exito/dr-parron",
-    image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?q=80&w=2087&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop",
     tags: ["branding", "creacion-marca", "identidad-corporativa", "diseño-web", "medicina", "salud", "identidad-visual"]
   },
   {
