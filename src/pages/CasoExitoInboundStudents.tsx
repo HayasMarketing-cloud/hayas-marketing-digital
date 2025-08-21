@@ -1,13 +1,12 @@
 import React from 'react';
-import { ArrowLeft, Users, Globe, TrendingUp, Award, ExternalLink, CheckCircle, BookOpen } from 'lucide-react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import Seo from '@/components/Seo';
-import { successCaseImages } from '@/data/successCaseImages';
+import { CheckCircle, ExternalLink, Target, Globe, Zap } from 'lucide-react';
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -29,23 +28,55 @@ const CasoExitoInboundStudents = () => {
     about: "Digitalización de servicios educativos con estrategia digital, diseño web y automatización",
     url: canonical,
     inLanguage: "es",
-    publisher: { "@type": "Organization", name: "Hayas Marketing" },
+    author: { "@type": "Organization", name: "Hayas Marketing" },
+    publisher: {
+      "@type": "Organization",
+      name: "Hayas Marketing",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://hayas.marketing/lovable-uploads/hayas-logo.png"
+      }
+    }
   };
 
+  const resultados = [
+    'Digitalización completa de servicios educativos',
+    'Mejora significativa en experiencia de usuario',
+    'Automatización de procesos de gestión de estudiantes',
+    'Incremento en conversiones de estudiantes internacionales'
+  ];
+
+  const soluciones = [
+    { 
+      icon: Target, 
+      title: 'Estrategia Digital', 
+      desc: 'Planificación integral para digitalizar servicios educativos dirigidos a estudiantes extranjeros, optimizando la captación y conversión.' 
+    },
+    { 
+      icon: Globe, 
+      title: 'Diseño Web Responsive', 
+      desc: 'Desarrollo de sitio web responsive adaptado a audiencias internacionales con UX optimizada para estudiantes extranjeros.' 
+    },
+    { 
+      icon: Zap, 
+      title: 'Automatización de Procesos', 
+      desc: 'Implementación de automatizaciones para gestión de leads, seguimiento de estudiantes y optimización de procesos educativos.' 
+    },
+  ];
+
   return (
-    <div id="top" className="min-h-screen bg-white">
-      <Seo 
-        title={title} 
-        description={description} 
-        canonical={canonical} 
+    <div className="min-h-screen bg-background">
+      <Seo
+        title={title}
+        description={description}
+        canonical={canonical}
         structuredData={structuredData}
-        ogImage={successCaseImages.inboundStudents}
       />
       <Navigation />
       
       <main>
         {/* Breadcrumbs */}
-        <section className="py-4 bg-gray-50 border-b">
+        <section className="py-4 bg-muted/30 border-b">
           <div className="container mx-auto px-4">
             <Breadcrumb>
               <BreadcrumbList>
@@ -57,7 +88,7 @@ const CasoExitoInboundStudents = () => {
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
                   <BreadcrumbLink asChild>
-                    <Link to="/creacion-marca">Creación de Marca</Link>
+                    <Link to="/casos-exito">Casos de Éxito</Link>
                   </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
@@ -69,184 +100,128 @@ const CasoExitoInboundStudents = () => {
           </div>
         </section>
 
-        {/* Header Navigation */}
-        <section className="py-6 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <Link to="/creacion-marca" className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors">
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              Volver a Creación de Marca
-            </Link>
-          </div>
-        </section>
-
         {/* Hero Section */}
-        <section className="relative py-12 md:py-16 bg-gradient-to-br from-hayas-50 to-turquesa-50">
+        <header className="py-14 md:py-20 bg-gradient-to-br from-hayas-50 to-turquesa-50">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <Badge variant="outline" className="mb-4 text-hayas-600 border-hayas-200">
-                  Caso de Éxito
-                </Badge>
-                <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                  Inbound Students: <span className="text-gradient-primary">Facilitando</span> el Futuro Estudiantil
-                </h1>
-                <p className="text-xl text-gray-700 mb-8 leading-relaxed font-medium">
-                  Transformando servicios estudiantiles en una plataforma digital integral para estudiantes internacionales
-                </p>
-                <div className="flex items-center gap-4 mb-8">
-                  <Badge className="bg-hayas-100 text-hayas-700">Servicios Estudiantiles</Badge>
-                  <Badge className="bg-turquesa-100 text-turquesa-700">Estudiantes Internacionales</Badge>
+                <div className="flex gap-2 mb-6">
+                  <Badge variant="secondary">Educación</Badge>
+                  <Badge variant="outline">Diseño Web</Badge>
+                  <Badge variant="outline">Automatización</Badge>
                 </div>
-                <Link to="https://inboundstudents.com" target="_blank">
-                  <Button className="gradient-primary text-white px-6 py-3">
-                    Visitar Web
-                    <ExternalLink className="w-4 h-4 ml-2" />
+                <h1 className="text-4xl lg:text-5xl font-bold mb-6">Inbound Students</h1>
+                <p className="text-xl text-muted-foreground mb-8">
+                  Transformación digital integral para servicios educativos dirigidos a estudiantes extranjeros, 
+                  con diseño web responsive y automatización de procesos
+                </p>
+                <div className="flex gap-4">
+                  <Button asChild>
+                    <a 
+                      href="https://inboundstudents.com" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="gap-2"
+                    >
+                      Visitar Web
+                      <ExternalLink className="h-4 w-4" />
+                    </a>
                   </Button>
-                </Link>
+                </div>
               </div>
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-hayas-200 to-turquesa-200 rounded-3xl transform rotate-6 scale-105 opacity-20"></div>
                 <img 
                   src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop" 
-                  alt="Inbound Students - Servicios Estudiantiles" 
-                  className="relative z-10 w-full h-auto rounded-3xl shadow-2xl"
+                  alt="Inbound Students - Servicios educativos para estudiantes extranjeros"
+                  className="relative z-10 w-full h-[400px] md:h-[400px] object-cover rounded-3xl shadow-2xl"
                 />
               </div>
             </div>
           </div>
-        </section>
+        </header>
 
-        {/* Client Profile */}
-        <section className="py-12 md:py-16 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-                Sobre <span className="text-gradient-primary">Inbound Students</span>
-              </h2>
-              <Card className="border-none shadow-lg">
-                <CardContent className="p-8">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div>
-                      <h3 className="text-xl font-semibold mb-4 text-hayas-600">Perfil del Cliente</h3>
-                      <p className="text-gray-600 mb-6 leading-relaxed">
-                        Plataforma integral de servicios para estudiantes extranjeros que llegan a España. 
-                        Ofrece todo lo necesario para facilitar la transición educativa: desde gestión de visados 
-                        hasta alojamiento, traducciones juradas y apoyo legal especializado.
-                      </p>
-                      <div className="space-y-3">
-                        <div className="flex items-center gap-3">
-                          <CheckCircle className="h-5 w-5 text-hayas-600" />
-                          <span className="text-gray-700">Gestión de visados estudiantiles</span>
-                        </div>
-                        <div className="flex items-center gap-3">
-                          <CheckCircle className="h-5 w-5 text-hayas-600" />
-                          <span className="text-gray-700">Servicios de alojamiento</span>
-                        </div>
-                        <div className="flex items-center gap-3">
-                          <CheckCircle className="h-5 w-5 text-hayas-600" />
-                          <span className="text-gray-700">Traducciones y apoyo legal</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold mb-4 text-turquesa-600">El Reto</h3>
-                      <p className="text-gray-600 leading-relaxed">
-                        Necesitaban unificar servicios dispersos en una plataforma digital cohesiva que transmitiera 
-                        confianza a estudiantes internacionales. El reto era crear una marca que simplificara procesos 
-                        complejos y se posicionara como el partner de confianza para la experiencia educativa en España.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
+        <div className="container mx-auto px-4 py-16">
+          <div className="max-w-4xl mx-auto">
+            
+            {/* Sobre la empresa */}
+            <section className="mb-16">
+              <h2 className="text-2xl font-semibold mb-4">Sobre Inbound Students</h2>
+              <p className="text-muted-foreground leading-relaxed">
+                Inbound Students es una plataforma especializada en ofrecer servicios integrales para estudiantes 
+                extranjeros que desean estudiar en España. Facilitan desde la gestión de documentación hasta 
+                alojamiento y orientación académica, siendo un puente fundamental entre estudiantes internacionales 
+                y el sistema educativo español.
+              </p>
+            </section>
 
-        {/* Solution */}
-        <section className="py-12 md:py-16 bg-gradient-to-br from-gray-50 to-white">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-                Solución <span className="text-gradient-primary">Aplicada</span>
-              </h2>
-              
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {[
-                  {
-                    icon: <BookOpen className="h-8 w-8 text-hayas-600" />,
-                    title: "Estrategia Digital",
-                    description: "Desarrollo de una hoja de ruta digital que integra todos los servicios en una experiencia unificada."
-                  },
-                  {
-                    icon: <Globe className="h-8 w-8 text-turquesa-600" />,
-                    title: "Diseño Web",
-                    description: "Creación de una plataforma intuitiva que simplifica procesos complejos para estudiantes internacionales."
-                  },
-                  {
-                    icon: <Users className="h-8 w-8 text-hayas-600" />,
-                    title: "Automatización",
-                    description: "Consultoría en automatización de procesos para optimizar la atención al estudiante."
-                  }
-                ].map((service, index) => (
-                  <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-all duration-300">
-                    <CardHeader className="text-center">
-                      <div className="mb-4 mx-auto p-3 rounded-lg bg-gray-100 w-fit">
-                        {service.icon}
+            {/* El reto */}
+            <section className="mb-16">
+              <h2 className="text-2xl font-semibold mb-4">El Reto</h2>
+              <p className="text-muted-foreground leading-relaxed">
+                Necesitaban modernizar completamente su presencia digital para atender eficazmente a estudiantes 
+                internacionales. Su web existente no ofrecía una experiencia de usuario optimizada para su audiencia 
+                multicultural, y los procesos de gestión se realizaban de forma manual, generando ineficiencias y 
+                pérdidas de oportunidades comerciales.
+              </p>
+            </section>
+
+            {/* Solución aplicada */}
+            <section className="mb-16">
+              <h2 className="text-2xl font-semibold mb-6">Solución aplicada</h2>
+              <div className="grid md:grid-cols-3 gap-6">
+                {soluciones.map(({ icon: Icon, title, desc }) => (
+                  <Card key={title} className="h-full">
+                    <CardHeader>
+                      <div className="w-10 h-10 rounded-md bg-primary/10 text-primary flex items-center justify-center mb-3">
+                        <Icon className="w-5 h-5" />
                       </div>
-                      <CardTitle className="text-lg font-bold">
-                        {service.title}
-                      </CardTitle>
+                      <CardTitle className="text-lg">{title}</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-gray-600 text-center">
-                        {service.description}
-                      </p>
+                      <p className="text-muted-foreground">{desc}</p>
                     </CardContent>
                   </Card>
                 ))}
               </div>
-            </div>
-          </div>
-        </section>
+            </section>
 
+            {/* Resultados obtenidos */}
+            <section className="mb-16">
+              <h2 className="text-2xl font-semibold mb-4">Resultados obtenidos</h2>
+              <div className="grid gap-4">
+                {resultados.map((resultado, index) => (
+                  <div key={index} className="flex items-center gap-3 p-4 bg-muted/30 rounded-lg">
+                    <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
+                    <span className="font-medium">{resultado}</span>
+                  </div>
+                ))}
+              </div>
+            </section>
 
-        {/* Learning */}
-        <section className="py-12 md:py-16 bg-gradient-to-br from-gray-50 to-white">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8">
-                Lo que <span className="text-gradient-primary">Aprendimos</span>
-              </h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Este proyecto nos enseñó la importancia de la experiencia del usuario en servicios complejos. 
-                Descubrimos que simplificar procesos burocráticos a través del diseño digital puede transformar 
-                completamente un negocio, convirtiendo servicios fragmentados en una experiencia fluida que 
-                genera confianza y fidelidad en un mercado altamente competitivo.
+            {/* Lo que aprendimos */}
+            <section className="mb-16">
+              <h2 className="text-2xl font-semibold mb-4">Lo que aprendimos</h2>
+              <p className="text-muted-foreground leading-relaxed">
+                En servicios dirigidos a audiencias internacionales, la experiencia de usuario debe ser intuitiva 
+                y multicultural. La automatización de procesos no solo mejora la eficiencia operativa, sino que 
+                también permite ofrecer un servicio más personalizado y escalable a estudiantes de diferentes países.
               </p>
-            </div>
-          </div>
-        </section>
+            </section>
 
-        {/* CTA Section */}
-        <section className="py-12 md:py-16 bg-hayas-600 text-white">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              ¿Tienes servicios que necesitan integración digital?
-            </h2>
-            <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-              Transformamos procesos complejos en experiencias digitales simples y efectivas. 
-              Tu plataforma de servicios puede ser la próxima revolución del sector.
-            </p>
-            <Link to="/?scrollTo=contacto">
-              <Button className="bg-white text-hayas-600 hover:bg-gray-100 px-8 py-3 text-lg">
-                Digitalizar mis Servicios
+            {/* CTA */}
+            <section className="text-center py-12 bg-gradient-to-r from-primary/10 to-accent/10 rounded-xl">
+              <h3 className="text-2xl font-bold mb-4">¿Necesitas digitalizar tus servicios?</h3>
+              <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+                Te ayudamos a transformar digitalmente tu negocio con estrategia, diseño web y automatización personalizada.
+              </p>
+              <Button asChild size="lg">
+                <Link to="/agendar-reunion">Digitalizar mi negocio</Link>
               </Button>
-            </Link>
+            </section>
           </div>
-        </section>
+        </div>
       </main>
-
+      
       <Footer />
     </div>
   );

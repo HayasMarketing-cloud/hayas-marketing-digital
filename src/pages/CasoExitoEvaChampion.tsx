@@ -4,8 +4,10 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Seo from '@/components/Seo';
-import { CheckCircle, ExternalLink } from 'lucide-react';
+import { CheckCircle, ExternalLink, User, Globe } from 'lucide-react';
+import { Linkedin } from 'lucide-react';
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -149,29 +151,43 @@ const CasoExitoEvaChampion: React.FC = () => {
 
             {/* Solución Aplicada */}
             <section className="mb-16">
-              <h2 className="text-2xl font-semibold mb-4">Solución aplicada</h2>
-              <div className="space-y-6">
-                <div className="bg-muted/30 p-6 rounded-lg">
-                  <h3 className="font-semibold mb-2">Desarrollo de Marca Personal</h3>
-                  <p className="text-muted-foreground">
-                    Creación de una identidad profesional coherente que reflejara su especialización 
-                    y experiencia en traducción técnica multiidioma.
-                  </p>
-                </div>
-                <div className="bg-muted/30 p-6 rounded-lg">
-                  <h3 className="font-semibold mb-2">Estrategia de LinkedIn</h3>
-                  <p className="text-muted-foreground">
-                    Optimización completa del perfil, desarrollo de estrategia de contenidos y 
-                    plan de networking dirigido a su audiencia objetivo.
-                  </p>
-                </div>
-                <div className="bg-muted/30 p-6 rounded-lg">
-                  <h3 className="font-semibold mb-2">Plan de Contenidos Internacional</h3>
-                  <p className="text-muted-foreground">
-                    Creación de contenido de valor que posicionara su expertise técnica y 
-                    generara engagement con profesionales de su sector.
-                  </p>
-                </div>
+              <h2 className="text-2xl font-semibold mb-6">Solución aplicada</h2>
+              <div className="grid md:grid-cols-3 gap-6">
+                <Card className="h-full">
+                  <CardHeader>
+                    <div className="w-10 h-10 rounded-md bg-primary/10 text-primary flex items-center justify-center mb-3">
+                      <User className="w-5 h-5" />
+                    </div>
+                    <CardTitle className="text-lg">Desarrollo de Marca Personal</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">Creación de una identidad profesional coherente que reflejara su especialización y experiencia en traducción técnica multiidioma.</p>
+                  </CardContent>
+                </Card>
+                
+                <Card className="h-full">
+                  <CardHeader>
+                    <div className="w-10 h-10 rounded-md bg-primary/10 text-primary flex items-center justify-center mb-3">
+                      <Linkedin className="w-5 h-5" />
+                    </div>
+                    <CardTitle className="text-lg">Estrategia de LinkedIn</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">Optimización completa del perfil, desarrollo de estrategia de contenidos y plan de networking dirigido a su audiencia objetivo.</p>
+                  </CardContent>
+                </Card>
+                
+                <Card className="h-full">
+                  <CardHeader>
+                    <div className="w-10 h-10 rounded-md bg-primary/10 text-primary flex items-center justify-center mb-3">
+                      <Globe className="w-5 h-5" />
+                    </div>
+                    <CardTitle className="text-lg">Plan de Contenidos Internacional</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">Creación de contenido de valor que posicionara su expertise técnica y generara engagement con profesionales de su sector.</p>
+                  </CardContent>
+                </Card>
               </div>
             </section>
 
