@@ -12,7 +12,7 @@ const Footer: React.FC<FooterProps> = ({
   const currentYear = new Date().getFullYear();
   return <footer className="bg-gray-900 text-gray-300">
       <div className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           <div>
             <h3 className="text-xl font-bold text-white mb-4">Hayas Marketing</h3>
             <p className="mb-4">En Hayas, integramos automatización e inteligencia artificial con estrategia y propósito para mejorar la eficiencia, escalar las ventas y construir relaciones auténticas entre marcas y personas.</p>
@@ -47,16 +47,24 @@ const Footer: React.FC<FooterProps> = ({
           </div>
           
           <div>
+            <h3 className="text-xl font-bold text-white mb-4">Descubre tu solución</h3>
+            <ul className="space-y-3">
+              <li><Link to="/soluciones/impulsa-tu-marca" className="hover:text-secondary transition-colors">Impulsa tu marca</Link></li>
+              <li><Link to="/soluciones/conecta-con-tus-clientes" className="hover:text-secondary transition-colors">Conecta con tus clientes</Link></li>
+              <li><Link to="/soluciones/activa-tus-ventas" className="hover:text-secondary transition-colors">Activa tus ventas</Link></li>
+              <li><Link to="/soluciones/ia-marketing" className="hover:text-secondary transition-colors">Soluciones IA aplicada a Marketing</Link></li>
+            </ul>
+          </div>
+          
+          <div>
             <h3 className="text-xl font-bold text-white mb-4">Servicios destacados</h3>
             <ul className="space-y-3">
               <li><Link to="/servicios/creacion-marca" className="hover:text-secondary transition-colors">Creación de Marca</Link></li>
               <li><Link to="/servicios/diseno-web" className="hover:text-secondary transition-colors">Diseño web</Link></li>
               <li><Link to="/servicios/implantacion-crm" className="hover:text-secondary transition-colors">Implantación CRM</Link></li>
               <li><Link to="/servicios/automatizacion-procesos-ventas" className="hover:text-secondary transition-colors">Automatización comercial</Link></li>
-              <li><Link to="/soluciones/ia-marketing" className="hover:text-secondary transition-colors">Soluciones IA aplicada a Marketing</Link></li>
             </ul>
           </div>
-          
           
           <div>
             <h3 className="text-xl font-bold text-white mb-4">Contacto</h3>
