@@ -4,7 +4,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage } from '@/components/ui/breadcrumb';
 import Seo from '@/components/Seo';
 import { CheckCircle, TrendingUp, Settings, ExternalLink } from 'lucide-react';
@@ -148,25 +148,29 @@ const CasoExitoOMR = (): React.JSX.Element => {
 
         {/* Solución Aplicada */}
         <section className="py-10 md:py-14 bg-background">
-          <div className="container mx-auto px-4 max-w-5xl">
-            <h3 className="text-2xl font-bold mb-6">Solución Aplicada</h3>
+          <div className="container mx-auto px-4 max-w-6xl">
+            <h3 className="text-2xl font-bold mb-8">Solución aplicada</h3>
             <div className="grid md:grid-cols-2 gap-6">
-              <Card>
-                <CardContent className="p-6">
-                  <h4 className="font-semibold mb-2">Diseño Web</h4>
-                  <p className="text-muted-foreground">
-                    Creamos una página moderna y responsive, con estructura clara de servicios, galería de proyectos y
-                    formularios optimizados para captación de leads.
-                  </p>
+              <Card className="h-full">
+                <CardHeader>
+                  <div className="w-10 h-10 rounded-md bg-primary/10 text-primary flex items-center justify-center mb-3">
+                    <Settings className="w-5 h-5" />
+                  </div>
+                  <CardTitle className="text-lg">Diseño Web</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">Creamos una página moderna y responsive, con estructura clara de servicios, galería de proyectos y formularios optimizados para captación de leads.</p>
                 </CardContent>
               </Card>
-              <Card>
-                <CardContent className="p-6">
-                  <h4 className="font-semibold mb-2">Alojamiento y Mantenimiento</h4>
-                  <p className="text-muted-foreground">
-                    Configuramos un entorno seguro y de alto rendimiento, con actualizaciones periódicas y
-                    monitorización continua para asegurar disponibilidad.
-                  </p>
+              <Card className="h-full">
+                <CardHeader>
+                  <div className="w-10 h-10 rounded-md bg-primary/10 text-primary flex items-center justify-center mb-3">
+                    <TrendingUp className="w-5 h-5" />
+                  </div>
+                  <CardTitle className="text-lg">Alojamiento y Mantenimiento</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">Configuramos un entorno seguro y de alto rendimiento, con actualizaciones periódicas y monitorización continua para asegurar disponibilidad.</p>
                 </CardContent>
               </Card>
             </div>

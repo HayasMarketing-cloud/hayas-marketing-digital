@@ -64,14 +64,41 @@ const CasoExitoModaIntimaVania: React.FC = () => {
 
         {/* Hero */}
         <header className="py-14 md:py-20 bg-gradient-to-br from-hayas-50 to-turquesa-50">
-          <div className="container mx-auto px-4 max-w-5xl">
-            <Badge variant="secondary" className="mb-3">Caso de Éxito</Badge>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Caso de Éxito — Moda Íntima Vania: Estrategia digital para potenciar la experiencia de compra
-            </h1>
-            <h2 className="text-xl md:text-2xl text-muted-foreground">
-              De la boutique al CRM: uniendo redes sociales y gestión de clientes para una marca de moda íntima
-            </h2>
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div className="flex gap-2 mb-6">
+                  <Badge variant="secondary">Moda Íntima</Badge>
+                  <Badge variant="outline">CRM HubSpot</Badge>
+                  <Badge variant="outline">Redes Sociales</Badge>
+                </div>
+                <h1 className="text-4xl lg:text-5xl font-bold mb-6">Moda Íntima Vania</h1>
+                <p className="text-xl text-muted-foreground mb-8">
+                  De la boutique al CRM: uniendo redes sociales y gestión de clientes 
+                  para una marca de moda íntima con atención personalizada
+                </p>
+                <div className="flex gap-4">
+                  <Button asChild>
+                    <a 
+                      href="https://intimavania.com/es/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="gap-2"
+                    >
+                      Visitar Web
+                      <ExternalLink className="h-4 w-4" />
+                    </a>
+                  </Button>
+                </div>
+              </div>
+              <div className="relative">
+                <img 
+                  src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=2070&auto=format&fit=crop" 
+                  alt="Moda Íntima Vania - Boutique especializada en lencería y ropa interior femenina"
+                  className="relative z-10 w-full h-[400px] md:h-[400px] object-cover rounded-3xl shadow-2xl"
+                />
+              </div>
+            </div>
           </div>
         </header>
 
