@@ -168,25 +168,7 @@ const SuccessCaseFilters: React.FC<SuccessCaseFiltersProps> = ({
       </Card>
 
       {/* Filter Categories */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-        {/* All Cases */}
-        <Card className={cn(
-          "cursor-pointer transition-all duration-200 hover:shadow-md",
-          selectedFilter === 'todos' ? 'ring-2 ring-primary bg-primary/5' : 'hover:bg-muted/30'
-        )}>
-          <CardContent 
-            className="p-4 text-center"
-            onClick={() => onFilterChange('todos')}
-          >
-            <div className="flex items-center justify-center gap-2 mb-2">
-              <Filter className="h-5 w-5 text-primary" />
-              <span className="font-semibold">Todos los casos</span>
-            </div>
-            <div className="text-2xl font-bold text-primary">{totalCases}</div>
-            <div className="text-sm text-muted-foreground">proyectos completados</div>
-          </CardContent>
-        </Card>
-
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         {/* Service and Industry Groups */}
         {filteredOptions.map(group => (
           <Card key={group.id} className="overflow-hidden">
@@ -234,6 +216,20 @@ const SuccessCaseFilters: React.FC<SuccessCaseFiltersProps> = ({
           </Card>
         ))}
       </div>
+
+      {/* Show All Link - Only visible when filtered */}
+      {hasActiveFilters && (
+        <div className="text-center">
+          <Button 
+            variant="ghost" 
+            onClick={clearFilter}
+            className="text-primary hover:text-primary/80 hover:bg-primary/10 gap-2"
+          >
+            <Filter className="h-4 w-4" />
+            Mostrar todos los casos
+          </Button>
+        </div>
+      )}
 
       {/* Results Summary */}
       <div className="text-center">
