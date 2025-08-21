@@ -10,8 +10,9 @@ import { CheckCircle } from 'lucide-react';
 
 const CasoExitoEvaChampion: React.FC = () => {
   const pageTitle = 'Caso de Éxito Eva Champion | Marca personal y LinkedIn';
-  const pageDescription = 'Marca personal y estrategia en LinkedIn para visibilidad internacional de una traductora profesional.';
-  const canonical = '/casos-exito/eva-champion';
+  const pageDescription = 'Marca personal y estrategia en LinkedIn para visibilidad internacional de una traductora profesional especializada en francés, inglés y alemán.';
+  const canonical = 'https://hayas.marketing/casos-exito/eva-champion';
+  const ogImage = '/lovable-uploads/2333b7c8-3d18-4b48-9ea7-b712dde6be9c.png';
 
   const structuredData = {
     '@context': 'https://schema.org',
@@ -19,12 +20,28 @@ const CasoExitoEvaChampion: React.FC = () => {
     headline: 'Caso de Éxito — Eva Champion: Marca personal y visibilidad internacional',
     about: 'Marca personal, posicionamiento en LinkedIn y plan de contenidos internacional',
     author: { '@type': 'Organization', name: 'Hayas Marketing' },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Hayas Marketing',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://hayas.marketing/lovable-uploads/hayas-logo.png'
+      }
+    },
+    image: {
+      '@type': 'ImageObject',
+      url: `https://hayas.marketing${ogImage}`,
+      width: 1200,
+      height: 630
+    },
     url: canonical,
+    datePublished: '2024-01-15',
+    dateModified: new Date().toISOString().split('T')[0]
   };
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
-      <Seo title={pageTitle} description={pageDescription} canonical={canonical} structuredData={structuredData} ogImage={successCaseImages.evaChampion} />
+      <Seo title={pageTitle} description={pageDescription} canonical={canonical} structuredData={structuredData} ogImage={ogImage} />
       <Navigation />
 
       <main className="flex-grow">
@@ -75,8 +92,8 @@ const CasoExitoEvaChampion: React.FC = () => {
               </div>
               <div className="rounded-xl overflow-hidden shadow">
                 <img
-                  src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=2069&auto=format&fit=crop"
-                  alt="Eva Champion — traductora profesional"
+                  src="/lovable-uploads/2333b7c8-3d18-4b48-9ea7-b712dde6be9c.png"
+                  alt="Eva Champion — traductora profesional multilingüe especializada en francés, inglés y alemán"
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
