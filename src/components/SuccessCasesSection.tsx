@@ -230,7 +230,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     industry: "Aislamiento industrial y mantenimiento",
     service: "CRM HubSpot y rediseño web",
     link: "/casos-exito/aistercel",
-    image: "https://images.unsplash.com/photo-1581092580496-6c76b21d2b36?q=80&w=2069&auto=format&fit=crop",
+    image: "/lovable-uploads/8590eeb0-6b06-40bb-9703-6b4b4747bc73.png",
     tags: ["crm", "hubspot", "diseño-web", "ux", "industrial", "b2b"]
   },
   {
