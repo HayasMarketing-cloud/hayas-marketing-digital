@@ -1,76 +1,69 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
-import Seo from '@/components/Seo';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { CheckCircle, ArrowLeft } from 'lucide-react';
+import CaseStudyTemplate from '@/components/CaseStudyTemplate';
+import { successCaseImages } from '@/data/successCaseImages';
+import { Search, TrendingUp, Target } from 'lucide-react';
 
 const CasoExitoSuministrosXSKD = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <Seo 
-        title="Caso de Éxito: Suministros XS KD - Posicionamiento SEO Industrial"
-        description="Descubre cómo ayudamos a Suministros XS KD a mejorar su posicionamiento SEO y presencia digital en el sector industrial retail."
-        canonical="https://hayasmarketing.com/casos-exito/suministros-xs-kd"
-      />
-      <Navigation />
-      
-      <section className="py-16 bg-gradient-to-r from-primary/10 to-background">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <Button variant="ghost" asChild className="mb-8">
-              <Link to="/casos-exito" className="gap-2">
-                <ArrowLeft className="h-4 w-4" />
-                Volver a Casos de Éxito
-              </Link>
-            </Button>
-            
-            <div className="text-center mb-8">
-              <div className="flex justify-center gap-2 mb-4">
-                <Badge variant="secondary">Retail Industrial</Badge>
-                <Badge variant="outline">SEO</Badge>
-              </div>
-              <h1 className="text-4xl lg:text-5xl font-bold mb-4">Suministros XS KD</h1>
-              <p className="text-xl text-muted-foreground">
-                Posicionamiento SEO y presencia digital especializada
-              </p>
-            </div>
-
-            <div className="space-y-8">
-              <section>
-                <h2 className="text-2xl font-semibold mb-4">Sobre la empresa</h2>
-                <p className="text-muted-foreground leading-relaxed">
-                  Suministros XS KD es una empresa especializada en la distribución de productos 
-                  industriales y suministros técnicos, que necesitaba mejorar su visibilidad 
-                  online en un mercado altamente competitivo.
-                </p>
-              </section>
-
-              <section>
-                <h2 className="text-2xl font-semibold mb-4">Resultados obtenidos</h2>
-                <div className="grid md:grid-cols-2 gap-4">
-                  {[
-                    "Mejora del 150% en tráfico orgánico",
-                    "Incremento del 80% en consultas comerciales", 
-                    "Posicionamiento top 3 para keywords estratégicas",
-                    "Mayor visibilidad en búsquedas industriales"
-                  ].map((resultado, index) => (
-                    <div key={index} className="flex items-center gap-3 p-4 bg-muted/30 rounded-lg">
-                      <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
-                      <span className="font-medium">{resultado}</span>
-                    </div>
-                  ))}
-                </div>
-              </section>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <Footer />
-    </div>
+    <CaseStudyTemplate
+      pageTitle="Caso de Éxito: Suministros XS KD - Posicionamiento SEO Industrial"
+      pageDescription="Descubre cómo ayudamos a Suministros XS KD a mejorar su posicionamiento SEO y presencia digital en el sector industrial retail."
+      canonical="/casos-exito/suministros-xs-kd"
+      ogImage={successCaseImages.suministrosXSKD}
+      structuredData={{
+        "@context": "https://schema.org",
+        "@type": "CaseStudy",
+        headline: "Caso de Éxito — Suministros XS KD: Posicionamiento SEO y presencia digital especializada",
+        about: "Posicionamiento SEO, mejora de visibilidad online y optimización para el sector industrial",
+        url: "/casos-exito/suministros-xs-kd",
+        inLanguage: "es",
+        author: { "@type": "Organization", name: "Hayas Marketing" },
+        publisher: {
+          "@type": "Organization",
+          name: "Hayas Marketing",
+          logo: {
+            "@type": "ImageObject",
+            url: "https://hayas.marketing/lovable-uploads/hayas-logo.png"
+          }
+        }
+      }}
+      companyName="Suministros XS KD"
+      subtitle="Posicionamiento SEO y presencia digital especializada para distribución de productos industriales y suministros técnicos"
+      badges={["Retail Industrial", "SEO", "Distribución"]}
+      websiteUrl="#"
+      featuredImage={successCaseImages.suministrosXSKD}
+      featuredImageAlt="Suministros XS KD - Distribución de productos industriales y suministros técnicos"
+      aboutCompany="Suministros XS KD es una empresa especializada en la distribución de productos industriales y suministros técnicos, reconocida por su amplio catálogo y servicio personalizado a empresas del sector industrial."
+      challenge="Necesitaban mejorar su visibilidad online en un mercado altamente competitivo, aumentar el tráfico orgánico y generar más consultas comerciales cualificadas a través de su presencia digital."
+      solutions={[
+        {
+          icon: Search,
+          title: 'Estrategia SEO Especializada',
+          description: 'Optimización técnica y de contenidos enfocada en keywords del sector industrial y productos específicos.'
+        },
+        {
+          icon: Target,
+          title: 'Posicionamiento Estratégico',
+          description: 'Trabajo de posicionamiento para keywords de alta conversión en búsquedas industriales y B2B.'
+        },
+        {
+          icon: TrendingUp,
+          title: 'Optimización de Conversión',
+          description: 'Mejora de la arquitectura web y experiencia de usuario para maximizar las consultas comerciales.'
+        }
+      ]}
+      results={[
+        'Mejora del 150% en tráfico orgánico',
+        'Incremento del 80% en consultas comerciales',
+        'Posicionamiento top 3 para keywords estratégicas',
+        'Mayor visibilidad en búsquedas industriales'
+      ]}
+      learnings="En el sector industrial B2B, una estrategia SEO bien ejecutada que combine optimización técnica con contenido especializado puede generar resultados significativos en visibilidad y generación de leads cualificados."
+      ctaTitle="¿Quieres mejorar tu SEO industrial?"
+      ctaDescription="Te ayudamos a posicionar tu empresa en búsquedas industriales y aumentar tus consultas comerciales."
+      ctaButtonText="Solicitar consulta SEO"
+      ctaButtonLink="/agendar-reunion"
+    />
   );
 };
 
