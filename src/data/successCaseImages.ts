@@ -4,7 +4,7 @@
 export const successCaseImages = {
   // Existing cases with current images
   aistercel: "/lovable-uploads/0f26012e-fbd2-4dcb-a1a8-3bdd380a0c10.png",
-  alfixConsultores: "/src/assets/alfix-consultores-office.jpg",
+  alfixConsultores: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2070&auto=format&fit=crop",
   almaCruceros: "/lovable-uploads/9b7cad00-2cca-451d-a515-ac666898dbc9.png",
   asendia: "/lovable-uploads/871690e2-0d95-456b-86a1-c284ffaf7d5e.png",
   aspAsepsia: "/lovable-uploads/6cf96609-e73c-4a3b-8939-bdc4e1330033.png",
@@ -15,9 +15,9 @@ export const successCaseImages = {
   calistheniaOnline: "/lovable-uploads/7020d8c9-edab-4298-9eed-8d2dd8d97487.png",
   carniceriaPicosDeEuropa: "/lovable-uploads/055f5f22-cdd1-4c89-b5a3-a530dab05581.png",
   centroRoraima: "/lovable-uploads/8590eeb0-6b06-40bb-9703-6b4b4747bc73.png",
-  conversaConsultores: "/src/assets/conversa-consultores-meeting.jpg",
+  conversaConsultores: "https://images.unsplash.com/photo-1551836022-4c4c79ecde51?q=80&w=2070&auto=format&fit=crop",
   corteAFilms: "/lovable-uploads/4f747803-3608-4e40-96a3-e5ffb9c63060.png",
-  evaChampion: "/src/assets/eva-champion-translator.jpg",
+  evaChampion: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop",
   flap: "/lovable-uploads/68040c9d-5328-4150-b069-890a269bf640.png",
   formatoEducativo: "/src/assets/sistema-prevision-ventas.jpg",
   giveAndGo: "/lovable-uploads/df8f6237-aac2-47a2-b379-253f7c1e7dd5.png",
