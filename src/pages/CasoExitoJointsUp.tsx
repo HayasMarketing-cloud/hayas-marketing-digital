@@ -156,7 +156,6 @@ const CasoExitoJointsUp = () => {
                 <Card className="border-none shadow-xl bg-white/80 backdrop-blur-sm hover:shadow-2xl transition-all duration-300">
                   <CardHeader className="pb-6">
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="w-3 h-3 bg-gradient-to-r from-turquesa-600 to-turquesa-500 rounded-full"></div>
                       <CardTitle className="text-2xl font-bold text-turquesa-600">
                         El reto
                       </CardTitle>
