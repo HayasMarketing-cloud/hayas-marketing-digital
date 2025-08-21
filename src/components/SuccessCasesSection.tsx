@@ -86,7 +86,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     industry: "Traductora profesional",
     service: "Branding, estrategia, identidad visual",
     link: "/casos-exito/translate-with-style",
-    image: "/src/assets/translate-with-style-macbook.jpg",
+    image: "/lovable-uploads/093269a5-534e-41b3-9cca-a656adc014ca.png",
     tags: ["branding", "creacion-marca", "identidad-visual", "estrategia", "traduccion"]
   },
   {
