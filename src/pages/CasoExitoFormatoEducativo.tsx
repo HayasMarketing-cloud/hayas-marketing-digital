@@ -15,7 +15,6 @@ import {
 } from '@/components/ui/breadcrumb';
 import Seo from '@/components/Seo';
 import { CheckCircle, TrendingUp, Settings, ExternalLink } from 'lucide-react';
-import heroImage from '@/assets/ia-marketing-hero.jpg';
 
 const CasoExitoFormatoEducativo = (): React.JSX.Element => {
   const canonical = typeof window !== 'undefined' ? window.location.href : undefined;
@@ -49,7 +48,7 @@ const CasoExitoFormatoEducativo = (): React.JSX.Element => {
         description="Implementamos y administramos un CRM para Formato Educativo, digitalizando la gestión y mejorando seguimiento y conversión."
         canonical={canonical}
         structuredData={structuredData as unknown as Record<string, any>}
-        ogImage={heroImage}
+        ogImage="https://images.unsplash.com/photo-1513258496099-48168024aec0?q=80&w=2070&auto=format&fit=crop"
       />
 
       <Navigation />
@@ -110,7 +109,7 @@ const CasoExitoFormatoEducativo = (): React.JSX.Element => {
             <div className="relative">
               <div className="aspect-[16/10] rounded-xl overflow-hidden shadow-corporate border">
                 <img
-                  src={heroImage}
+                  src="https://images.unsplash.com/photo-1513258496099-48168024aec0?q=80&w=2070&auto=format&fit=crop"
                   alt="Caso de éxito CRM en educación: Formato Educativo"
                   className="w-full h-full object-cover"
                   loading="lazy"

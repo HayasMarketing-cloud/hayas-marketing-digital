@@ -5,8 +5,15 @@ import Footer from '@/components/Footer';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import Seo from '@/components/Seo';
-import { successCaseImages } from '@/data/successCaseImages';
-import { CheckCircle } from 'lucide-react';
+import { CheckCircle, ExternalLink } from 'lucide-react';
+import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbSeparator,
+  BreadcrumbPage,
+} from '@/components/ui/breadcrumb';
 
 const CasoExitoEvaChampion: React.FC = () => {
   const pageTitle = 'Caso de Éxito Eva Champion | Marca personal y LinkedIn';
@@ -28,153 +35,183 @@ const CasoExitoEvaChampion: React.FC = () => {
         url: 'https://hayas.marketing/lovable-uploads/hayas-logo.png'
       }
     },
-    image: {
-      '@type': 'ImageObject',
-      url: `https://hayas.marketing${ogImage}`,
-      width: 1200,
-      height: 630
-    },
     url: canonical,
-    datePublished: '2024-01-15',
-    dateModified: new Date().toISOString().split('T')[0]
+    image: ogImage,
+    inLanguage: 'es'
   };
 
-  return (
-    <div className="min-h-screen flex flex-col bg-background">
-      <Seo title={pageTitle} description={pageDescription} canonical={canonical} structuredData={structuredData} ogImage={ogImage} />
-      <Navigation />
+  const resultados = [
+    'Posicionamiento como referente en traducción técnica FR-ES',
+    'Incremento significativo de contactos profesionales cualificados',
+    'Mayor visibilidad en su sector de especialización',
+    'Establecimiento de autoridad profesional en LinkedIn'
+  ];
 
-      <main className="flex-grow">
+  return (
+    <div className="min-h-screen bg-background">
+      <Seo
+        title={pageTitle}
+        description={pageDescription}
+        canonical={canonical}
+        ogImage={ogImage}
+        structuredData={structuredData}
+      />
+      <Navigation />
+      
+      <main>
         {/* Breadcrumbs */}
         <section className="py-4 bg-muted/30 border-b">
           <div className="container mx-auto px-4">
-            <div className="text-sm">
-              <Link to="/" className="text-muted-foreground hover:text-foreground">Inicio</Link>
-              <span className="mx-2">/</span>
-              <Link to="/casos-exito" className="text-muted-foreground hover:text-foreground">Casos de Éxito</Link>
-              <span className="mx-2">/</span>
-              <span className="text-foreground">Eva Champion</span>
-            </div>
+            <Breadcrumb>
+              <BreadcrumbList>
+                <BreadcrumbItem>
+                  <BreadcrumbLink asChild>
+                    <Link to="/">Inicio</Link>
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbLink asChild>
+                    <Link to="/casos-exito">Casos de Éxito</Link>
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbPage>Eva Champion</BreadcrumbPage>
+                </BreadcrumbItem>
+              </BreadcrumbList>
+            </Breadcrumb>
           </div>
         </section>
 
-        {/* Header Navigation */}
-        <section className="py-6 bg-muted/30">
-          <div className="container mx-auto px-4">
-            <Link to="/casos-exito" className="inline-flex items-center text-primary hover:underline">
-              ← Volver a Casos de Éxito
-            </Link>
-          </div>
-        </section>
-
-        {/* Hero */}
+        {/* Hero Section */}
         <header className="py-14 md:py-20 bg-gradient-to-br from-hayas-50 to-turquesa-50">
-          <div className="container mx-auto px-4 max-w-5xl">
-            <Badge variant="secondary" className="mb-3">Caso de Éxito</Badge>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Caso de Éxito — Eva Champion: Marca personal y visibilidad internacional para una traductora profesional
-            </h1>
-            <h2 className="text-xl md:text-2xl text-muted-foreground">
-              Potenciando su presencia en LinkedIn con estrategia y contenido de valor
-            </h2>
-          </div>
-        </header>
-
-        {/* Sobre la empresa */}
-        <section className="py-16">
-          <div className="container mx-auto px-4 max-w-5xl">
-            <div className="grid md:grid-cols-2 gap-8 items-start">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h3 className="text-2xl font-bold mb-3">Sobre Eva Champion</h3>
-                <p className="text-muted-foreground">
-                  “Eva Champion es una traductora profesional especializada en traducciones del francés al español, inglés y alemán. Con amplia experiencia y un enfoque de calidad y precisión, trabaja con clientes internacionales que requieren un alto nivel de especialización lingüística y cultural.”
+                <div className="flex gap-2 mb-6">
+                  <Badge variant="secondary">Traducción</Badge>
+                  <Badge variant="outline">Marca Personal</Badge>
+                  <Badge variant="outline">LinkedIn</Badge>
+                </div>
+                <h1 className="text-4xl lg:text-5xl font-bold mb-6">Eva Champion</h1>
+                <p className="text-xl text-muted-foreground mb-8">
+                  Marca personal y estrategia en LinkedIn para una traductora profesional 
+                  especializada en francés, inglés y alemán
                 </p>
+                <div className="flex gap-4">
+                  <Button asChild>
+                    <a 
+                      href="https://www.linkedin.com/in/eva-champion-traductora/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="gap-2"
+                    >
+                      Ver LinkedIn
+                      <ExternalLink className="h-4 w-4" />
+                    </a>
+                  </Button>
+                </div>
               </div>
-              <div className="rounded-xl overflow-hidden shadow">
-                <img
-                  src="/lovable-uploads/2333b7c8-3d18-4b48-9ea7-b712dde6be9c.png"
-                  alt="Eva Champion — traductora profesional multilingüe especializada en francés, inglés y alemán"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
+              <div className="relative">
+                <img 
+                  src="/lovable-uploads/2333b7c8-3d18-4b48-9ea7-b712dde6be9c.png" 
+                  alt="Eva Champion - Traductora profesional especializada en francés, inglés y alemán"
+                  className="relative z-10 w-full h-[400px] md:h-[400px] object-cover rounded-3xl shadow-2xl"
                 />
               </div>
             </div>
           </div>
-        </section>
+        </header>
 
-        {/* El reto */}
-        <section className="py-16 bg-muted/30">
-          <div className="container mx-auto px-4 max-w-5xl">
-            <h3 className="text-2xl font-bold mb-4">El Reto</h3>
-            <p className="text-muted-foreground">
-              “Eva quería consolidar su marca personal y aumentar su visibilidad en LinkedIn para atraer clientes de diferentes mercados internacionales. Buscaba una estrategia que no solo potenciara su imagen de marca, sino que también mostrara su experiencia y especialización.”
-            </p>
-          </div>
-        </section>
+        <div className="container mx-auto px-4 py-16">
+          <div className="max-w-4xl mx-auto">
+            
+            {/* Sobre Eva Champion */}
+            <section className="mb-16">
+              <h2 className="text-2xl font-semibold mb-4">Sobre Eva Champion</h2>
+              <p className="text-muted-foreground leading-relaxed">
+                Eva Champion es una traductora profesional especializada en francés-español, inglés y alemán, 
+                con amplia experiencia en traducción técnica y empresarial. Su objetivo era posicionarse como 
+                referente en su sector y ampliar su red de contactos profesionales a nivel internacional.
+              </p>
+            </section>
 
-        {/* Solución aplicada */}
-        <section className="py-16">
-          <div className="container mx-auto px-4 max-w-5xl">
-            <h3 className="text-2xl font-bold mb-6">Solución aplicada</h3>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 mt-1 text-primary" />
-                <p className="text-muted-foreground">
-                  <strong>Construcción de Imagen de Marca:</strong> Definición de identidad visual y verbal para transmitir profesionalidad, experiencia y confianza, adaptada al entorno de LinkedIn y a su público objetivo.
-                </p>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 mt-1 text-primary" />
-                <p className="text-muted-foreground">
-                  <strong>Posicionamiento de Marca Personal:</strong> Optimización del perfil de LinkedIn para resaltar especialidades, proyectos y logros, mejorando la percepción profesional y el atractivo para potenciales clientes internacionales.
-                </p>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 mt-1 text-primary" />
-                <p className="text-muted-foreground">
-                  <strong>Estrategia y Plan de Contenidos:</strong> Plan editorial específico para LinkedIn con publicaciones temáticas, casos de éxito, consejos de traducción y muestras de trabajo, elaborados en inglés para maximizar el alcance global.
-                </p>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 mt-1 text-primary" />
-                <p className="text-muted-foreground">
-                  <strong>Objetivo empresarial concreto:</strong> Contenidos diseñados para impactar en una audiencia empresarial con necesidades recurrentes de traducción especializada, conectando con decisores clave.
-                </p>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 mt-1 text-primary" />
-                <p className="text-muted-foreground">
-                  <strong>Enfoque internacional:</strong> Orientación del contenido y el networking a audiencias de habla española, inglesa, francesa y alemana para ampliar oportunidades de colaboración.
-                </p>
-              </li>
-            </ul>
-          </div>
-        </section>
+            {/* El Reto */}
+            <section className="mb-16">
+              <h2 className="text-2xl font-semibold mb-4">El Reto</h2>
+              <p className="text-muted-foreground leading-relaxed">
+                A pesar de su experiencia y calidad profesional, Eva necesitaba mayor visibilidad en el mercado 
+                internacional. Su presencia digital era limitada y no reflejaba adecuadamente su expertise, 
+                lo que limitaba las oportunidades de negocio y colaboraciones profesionales.
+              </p>
+            </section>
 
-        {/* Lo que aprendimos */}
-        <section className="py-16">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <h3 className="text-2xl font-bold mb-4">Lo que aprendimos</h3>
-            <p className="text-muted-foreground">
-              “En el sector de los servicios profesionales, una marca personal bien trabajada y una estrategia de contenidos coherente —adaptada al idioma y al público objetivo— pueden posicionar a un profesional como referente en su especialidad y abrir oportunidades internacionales.”
-            </p>
-          </div>
-        </section>
+            {/* Solución Aplicada */}
+            <section className="mb-16">
+              <h2 className="text-2xl font-semibold mb-4">Solución aplicada</h2>
+              <div className="space-y-6">
+                <div className="bg-muted/30 p-6 rounded-lg">
+                  <h3 className="font-semibold mb-2">Desarrollo de Marca Personal</h3>
+                  <p className="text-muted-foreground">
+                    Creación de una identidad profesional coherente que reflejara su especialización 
+                    y experiencia en traducción técnica multiidioma.
+                  </p>
+                </div>
+                <div className="bg-muted/30 p-6 rounded-lg">
+                  <h3 className="font-semibold mb-2">Estrategia de LinkedIn</h3>
+                  <p className="text-muted-foreground">
+                    Optimización completa del perfil, desarrollo de estrategia de contenidos y 
+                    plan de networking dirigido a su audiencia objetivo.
+                  </p>
+                </div>
+                <div className="bg-muted/30 p-6 rounded-lg">
+                  <h3 className="font-semibold mb-2">Plan de Contenidos Internacional</h3>
+                  <p className="text-muted-foreground">
+                    Creación de contenido de valor que posicionara su expertise técnica y 
+                    generara engagement con profesionales de su sector.
+                  </p>
+                </div>
+              </div>
+            </section>
 
-        {/* CTA Cliente */}
-        <section className="py-16 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground">
-          <div className="container mx-auto px-4 text-center max-w-3xl">
-            <h3 className="text-3xl font-bold mb-4">Visita el perfil de Eva Champion</h3>
-            <p className="opacity-90 mb-8">Conoce su experiencia y especialización en proyectos internacionales.</p>
-            <div className="flex justify-center">
-              <Button asChild size="lg" variant="secondary">
-                <a href="https://www.linkedin.com/in/champion-translation/" target="_blank" rel="noopener noreferrer">Visita el perfil de Eva Champion</a>
+            {/* Resultados obtenidos */}
+            <section className="mb-16">
+              <h2 className="text-2xl font-semibold mb-4">Resultados obtenidos</h2>
+              <div className="grid gap-4">
+                {resultados.map((resultado, index) => (
+                  <div key={index} className="flex items-center gap-3 p-4 bg-muted/30 rounded-lg">
+                    <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
+                    <span className="font-medium">{resultado}</span>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Lo que aprendimos */}
+            <section className="mb-16">
+              <h2 className="text-2xl font-semibold mb-4">Lo que aprendimos</h2>
+              <p className="text-muted-foreground leading-relaxed">
+                Una marca personal bien construida y una presencia estratégica en LinkedIn pueden transformar 
+                completamente la visibilidad profesional. La consistencia en el mensaje y la creación de 
+                contenido de valor son clave para establecer autoridad en sectores especializados como la traducción técnica.
+              </p>
+            </section>
+
+            {/* CTA */}
+            <section className="text-center py-12 bg-gradient-to-r from-primary/10 to-accent/10 rounded-xl">
+              <h3 className="text-2xl font-bold mb-4">¿Quieres desarrollar tu marca personal?</h3>
+              <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+                Te ayudamos a construir una marca personal sólida y una estrategia de LinkedIn que impulse tu carrera profesional.
+              </p>
+              <Button asChild size="lg">
+                <Link to="/agendar-reunion">Desarrollar mi marca personal</Link>
               </Button>
-            </div>
+            </section>
           </div>
-        </section>
+        </div>
       </main>
-
+      
       <Footer />
     </div>
   );
