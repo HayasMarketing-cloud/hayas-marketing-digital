@@ -70,7 +70,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     industry: "Cirujanos traumatólogos",
     service: "Naming, branding, diseño web",
     link: "/casos-exito/joints-up",
-    image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=2070&auto=format&fit=crop",
+    image: "/lovable-uploads/00117a14-e9f2-49f7-87ad-ce32c0897eb7.png",
     tags: ["branding", "creacion-marca", "naming", "diseño-web", "medicina", "salud", "identidad-visual"]
   },
   {
