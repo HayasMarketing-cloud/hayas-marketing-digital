@@ -78,7 +78,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     industry: "Traumatólogo especialista en cadera",
     service: "Identidad corporativa, diseño web",
     link: "/casos-exito/dr-parron",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop",
+    image: "/lovable-uploads/81da5b87-d42c-4ae4-a482-2bc8af27213c.png",
     tags: ["branding", "creacion-marca", "identidad-corporativa", "diseño-web", "medicina", "salud", "identidad-visual"]
   },
   {
