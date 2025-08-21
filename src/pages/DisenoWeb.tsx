@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import ProcessSection from '@/components/ProcessSection';
+import ServiceRelatedPosts from '@/components/ServiceRelatedPosts';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -510,6 +511,9 @@ const DisenoWeb = () => {
           </div>
         </div>
       </section>
+
+      {/* Posts Relacionados */}
+      <ServiceRelatedPosts serviceSlug="diseno-web" />
 
       {/* Contact Section */}
       <ServiceContactSection

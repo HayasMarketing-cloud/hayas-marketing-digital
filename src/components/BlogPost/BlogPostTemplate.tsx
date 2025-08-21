@@ -8,6 +8,7 @@ import ArticleBreadcrumbs from './ArticleBreadcrumbs';
 import ArticleUtilitySection from './ArticleUtilitySection';
 import ArticleFAQSection from './ArticleFAQSection';
 import NewsletterSubscription from './NewsletterSubscription';
+import RelatedServiceSection from './RelatedServiceSection';
 import { Badge } from '@/components/ui/badge';
 import { Calendar, Clock, User } from 'lucide-react';
 
@@ -137,6 +138,9 @@ const BlogPostTemplate: React.FC<BlogPostTemplateProps> = ({
             <article className="prose prose-lg max-w-none prose-headings:text-foreground prose-p:text-muted-foreground prose-a:text-primary prose-strong:text-foreground prose-ul:text-muted-foreground prose-ol:text-muted-foreground prose-li:text-muted-foreground">
               {children}
             </article>
+
+            {/* Related Service Section */}
+            <RelatedServiceSection serviceTags={metadata.tags} className="mt-16" />
 
             {/* FAQ Section */}
             {faqs && faqs.length > 0 && (

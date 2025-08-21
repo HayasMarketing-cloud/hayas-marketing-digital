@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom';
 import { getTagBySlug, getParentTag } from '@/data/blogTags';
 import Seo from '@/components/Seo';
 
-// Posts data - en una app real esto vendría de una API o base de datos
+// Posts data actualizados con la nueva taxonomía
 const allPosts = [
   {
     id: "guia-tecnica-email-marketing-hubspot-configuracion",
@@ -24,7 +24,7 @@ const allPosts = [
     category: "Email Marketing",
     readTime: "15 min",
     date: "2025-01-18",
-    tags: ["email-marketing", "hubspot", "spf", "dkim", "dmarc", "cumplimiento"]
+    tags: ["email-marketing-automatizaciones", "conecta-con-tus-clientes"]
   },
   {
     id: "perfil-cliente-ideal",
@@ -35,7 +35,7 @@ const allPosts = [
     category: "Estrategia de Marketing",
     readTime: "10 min",
     date: "2025-01-10",
-    tags: ["perfil-cliente-ideal", "icp", "estrategia-marketing", "segmentacion"]
+    tags: ["captacion-leads-clientes", "conecta-con-tus-clientes"]
   },
   {
     id: "como-crear-buyer-persona-b2b-b2c-guia-completa",
@@ -46,7 +46,7 @@ const allPosts = [
     category: "Estrategia de Marketing",
     readTime: "12 min",
     date: "2025-01-15",
-    tags: ["buyer-persona", "estrategia-marketing", "b2b", "b2c"]
+    tags: ["captacion-leads-clientes", "consultoria-estrategica-analitica", "conecta-con-tus-clientes", "activa-tus-ventas"]
   },
   {
     id: "seo-inteligencia-artificial",
@@ -57,7 +57,7 @@ const allPosts = [
     category: "SEO",
     readTime: "10 min",
     date: "2025-01-12",
-    tags: ["seo", "inteligencia-artificial", "herramientas-ia", "posicionamiento-web"]
+    tags: ["seo-posicionamiento", "impulsa-tu-marca"]
   },
   {
     id: "automatizacion-marketing",
@@ -68,7 +68,7 @@ const allPosts = [
     category: "Marketing Digital",
     readTime: "15 min",
     date: "2025-01-10",
-    tags: ["automatizacion", "marketing-digital", "crm", "ia-marketing"]
+    tags: ["automatizacion-procesos-ventas", "implantacion-crm", "activa-tus-ventas", "conecta-con-tus-clientes"]
   },
   {
     id: "crm-beneficios",
@@ -79,7 +79,7 @@ const allPosts = [
     category: "CRM",
     readTime: "8 min",
     date: "2025-01-08",
-    tags: ["crm", "gestion-clientes", "automatizacion-ventas", "hubspot"]
+    tags: ["implantacion-crm", "conecta-con-tus-clientes"]
   },
   {
     id: "marketing-global",
@@ -90,7 +90,7 @@ const allPosts = [
     category: "Marketing Digital",
     readTime: "14 min",
     date: "2025-01-05",
-    tags: ["marketing-global", "marketing-contenidos", "estrategia-marketing", "marketing-digital"]
+    tags: ["localizacion-contenidos", "estrategia-contenidos", "impulsa-tu-marca"]
   }
 ];
 
@@ -108,9 +108,10 @@ const BlogTagPage: React.FC = () => {
     return <div>Tag no encontrado</div>;
   }
 
-  // Filtrar posts por tag - mejorar el matching
+  // Filtrar posts por tag - mejorado para nueva taxonomía
   const filteredPosts = allPosts.filter(post => {
     const postTags = post.tags.map(tag => tag.toLowerCase().replace(/\s+/g, '-'));
+    // Buscar por tag exacto, padre o servicio relacionado
     return postTags.includes(tag) || 
            postTags.includes(tag.toLowerCase()) ||
            (parentTag && postTags.includes(parentTag.slug));
@@ -215,18 +216,30 @@ const BlogTagPage: React.FC = () => {
                               </p>
                               
                               <div className="flex items-center justify-between">
-                                <div className="flex flex-wrap gap-2">
-                                  {post.tags.slice(0, 3).map((postTag) => (
-                                    <Link key={postTag} to={`/blog/tag/${postTag}`}>
-                                      <Badge 
-                                        variant="outline" 
-                                        className="text-xs hover:bg-primary hover:text-primary-foreground transition-colors"
-                                      >
-                                        {postTag.replace('-', ' ')}
-                                      </Badge>
-                                    </Link>
-                                  ))}
-                                </div>
+                              <div className="flex flex-wrap gap-2">
+                                {post.tags.slice(0, 3).map((postTag) => {
+                                  const tagData = getTagBySlug(postTag);
+                                  const serviceUrl = tagData && 'serviceUrl' in tagData ? tagData.serviceUrl : null;
+                                  
+                                  return (
+                                    <div key={postTag} className="flex items-center gap-1">
+                                      <Link to={`/blog/tag/${postTag}`}>
+                                        <Badge 
+                                          variant="outline" 
+                                          className="text-xs hover:bg-primary hover:text-primary-foreground transition-colors"
+                                        >
+                                          {tagData?.name?.replace('-', ' ') || postTag.replace('-', ' ')}
+                                        </Badge>
+                                      </Link>
+                                      {serviceUrl && (
+                                        <Link to={serviceUrl} className="text-xs text-muted-foreground hover:text-primary">
+                                          →
+                                        </Link>
+                                      )}
+                                    </div>
+                                  );
+                                })}
+                              </div>
                                 
                                 <Link to={post.slug}>
                                   <Button variant="ghost" size="sm" className="group/btn">
