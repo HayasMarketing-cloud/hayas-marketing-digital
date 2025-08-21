@@ -1,5 +1,7 @@
 import React from 'react';
 import { ArrowLeft, Heart, TrendingUp, Award, ExternalLink, CheckCircle, BookOpen, Target, Users, Lightbulb } from 'lucide-react';
+import Seo from '@/components/Seo';
+import { successCaseImages } from '@/data/successCaseImages';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -16,8 +18,29 @@ import {
 } from '@/components/ui/breadcrumb';
 
 const CasoExitoCentroRoraima = () => {
+  const canonical = "/casos-exito/centro-roraima";
+  const title = "Caso de Éxito: Centro Roraima | Branding Médico Salud Mental";
+  const description = "Desarrollamos branding médico integral para Centro Roraima, posicionándolo como referente en atención psiquiátrica y psicológica con enfoque multidisciplinario.";
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "CaseStudy",
+    headline: title,
+    about: "Branding médico y diseño web para centro de salud mental especializado",
+    url: canonical,
+    inLanguage: "es",
+    publisher: { "@type": "Organization", name: "Hayas Marketing" },
+  };
+
   return (
     <div id="top" className="min-h-screen bg-white">
+      <Seo 
+        title={title} 
+        description={description} 
+        canonical={canonical} 
+        structuredData={structuredData}
+        ogImage={successCaseImages.centroRoraima}
+      />
       <Navigation />
       
       <main>

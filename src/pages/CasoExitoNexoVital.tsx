@@ -1,5 +1,7 @@
 import React from 'react';
 import { ArrowLeft, Users, TrendingUp, Heart, Award, ExternalLink, CheckCircle } from 'lucide-react';
+import Seo from '@/components/Seo';
+import { successCaseImages } from '@/data/successCaseImages';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -16,8 +18,29 @@ import {
 } from '@/components/ui/breadcrumb';
 
 const CasoExitoNexoVital = () => {
+  const canonical = "/casos-exito/nexo-vital";
+  const title = "Caso de Éxito: Nexo Vital | Branding Salud Integrativa";
+  const description = "Transformamos una consulta especializada en microbiota en una marca de referencia en salud integrativa con identidad profesional y estrategia digital.";
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "CaseStudy",
+    headline: title,
+    about: "Branding y desarrollo web para consulta especializada en salud integrativa y microbiota",
+    url: canonical,
+    inLanguage: "es",
+    publisher: { "@type": "Organization", name: "Hayas Marketing" },
+  };
+
   return (
     <div id="top" className="min-h-screen bg-white">
+      <Seo 
+        title={title} 
+        description={description} 
+        canonical={canonical} 
+        structuredData={structuredData}
+        ogImage={successCaseImages.nexoVital}
+      />
       <Navigation />
       
       <main>

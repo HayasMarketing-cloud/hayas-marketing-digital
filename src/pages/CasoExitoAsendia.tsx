@@ -1,6 +1,8 @@
 import React from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import Seo from '@/components/Seo';
+import { successCaseImages } from '@/data/successCaseImages';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -80,8 +82,29 @@ const resultsData = [
 ];
 
 const CasoExitoAsendia = () => {
+  const canonical = "/casos-exito/asendia";
+  const title = "Caso de Éxito: Asendia | CRM y Automatización B2B";
+  const description = "Implementamos CRM y automatización para Asendia, optimizando su estrategia comercial B2B con +129% incremento en leads y -60% reducción en ciclo de ventas.";
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "CaseStudy",
+    headline: title,
+    about: "CRM y automatización para soluciones logísticas e-commerce transfronterizo",
+    url: canonical,
+    inLanguage: "es",
+    publisher: { "@type": "Organization", name: "Hayas Marketing" },
+  };
+
   return (
     <div id="top" className="min-h-screen flex flex-col">
+      <Seo 
+        title={title} 
+        description={description} 
+        canonical={canonical} 
+        structuredData={structuredData}
+        ogImage={successCaseImages.asendia}
+      />
       <Navigation />
       
       <main className="flex-grow pt-56">

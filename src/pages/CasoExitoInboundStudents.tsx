@@ -6,6 +6,8 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import Seo from '@/components/Seo';
+import { successCaseImages } from '@/data/successCaseImages';
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -16,8 +18,29 @@ import {
 } from '@/components/ui/breadcrumb';
 
 const CasoExitoInboundStudents = () => {
+  const canonical = "/casos-exito/inbound-students";
+  const title = "Caso de Éxito: Inbound Students | Transformación Digital Educativa";
+  const description = "Desarrollamos estrategia digital integral para Inbound Students, incluyendo diseño web responsive y automatización para digitalizar servicios educativos.";
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "CaseStudy",
+    headline: title,
+    about: "Digitalización de servicios educativos con estrategia digital, diseño web y automatización",
+    url: canonical,
+    inLanguage: "es",
+    publisher: { "@type": "Organization", name: "Hayas Marketing" },
+  };
+
   return (
     <div id="top" className="min-h-screen bg-white">
+      <Seo 
+        title={title} 
+        description={description} 
+        canonical={canonical} 
+        structuredData={structuredData}
+        ogImage={successCaseImages.inboundStudents}
+      />
       <Navigation />
       
       <main>

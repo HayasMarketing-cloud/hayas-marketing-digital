@@ -2,6 +2,7 @@ import React from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import Seo from '@/components/Seo';
+import { successCaseImages } from '@/data/successCaseImages';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 
@@ -32,7 +33,7 @@ const CasoExitoQuanticBI: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Seo title={title} description={description} canonical={canonical} structuredData={structuredData} />
+      <Seo title={title} description={description} canonical={canonical} structuredData={structuredData} ogImage={successCaseImages.quanticBI} />
       <Navigation />
 
       <main className="flex-grow pt-56">
