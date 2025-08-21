@@ -222,7 +222,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     industry: "Consultora estratégica B2B",
     service: "CRM, automatizaciones, LinkedIn, SEO y Google Ads",
     link: "/casos-exito/nova-praxis",
-    image: "https://images.unsplash.com/photo-1551836022-4c4c79ecde51?q=80&w=2069&auto=format&fit=crop",
+    image: "/lovable-uploads/055f5f22-cdd1-4c89-b5a3-a530dab05581.png",
     tags: ["crm", "automatizacion", "linkedin", "seo", "google-ads", "consultoria", "b2b"]
   },
   {
