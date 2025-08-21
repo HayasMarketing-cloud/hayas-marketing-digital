@@ -214,7 +214,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     industry: "Startup de gaming inmersivo (háptica)",
     service: "CRM, SEO y redes sociales para crecimiento internacional",
     link: "/casos-exito/owo-game",
-    image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2069&auto=format&fit=crop",
+    image: "/lovable-uploads/7020d8c9-edab-4298-9eed-8d2dd8d97487.png",
     tags: ["crm", "seo", "redes-sociales", "gaming", "startup"]
   },
   {
