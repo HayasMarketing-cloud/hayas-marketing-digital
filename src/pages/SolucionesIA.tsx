@@ -1,9 +1,9 @@
 import React from 'react';
 import { ArrowLeft, Brain, Bot, Zap, Target, TrendingUp, Sparkles, Eye, MessageSquare, Settings, BarChart3, Shield } from 'lucide-react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import AIServicesSection from '@/components/AIServicesSection';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import KitConsultingBanner from '@/components/KitConsultingBanner';
@@ -160,71 +160,8 @@ const SolucionesIA = () => {
           </div>
         </section>
 
-        {/* Services Section */}
-        <section className="py-8 md:py-12 bg-gradient-to-br from-gray-50 to-white">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Servicios de <span className="text-gradient-primary">IA aplicada a Marketing</span>
-              </h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Implementamos soluciones de inteligencia artificial que se integran perfectamente 
-                con tu estrategia de marketing existente.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  icon: <Bot className="h-8 w-8 text-hayas-600" />,
-                  title: "Chatbots Estratégicos",
-                  description: "Asistentes conversacionales que mejoran la experiencia del cliente y califican leads automáticamente."
-                },
-                {
-                  icon: <Eye className="h-8 w-8 text-turquesa-600" />,
-                  title: "Análisis Predictivo",
-                  description: "Modelos de IA que predicen comportamientos y optimizan campañas en tiempo real."
-                },
-                {
-                  icon: <Target className="h-8 w-8 text-hayas-600" />,
-                  title: "Personalización Dinámica",
-                  description: "Contenido y experiencias personalizadas automáticamente para cada usuario."
-                },
-                {
-                  icon: <Sparkles className="h-8 w-8 text-turquesa-600" />,
-                  title: "Generación de Contenido",
-                  description: "IA para crear contenido optimizado, desde emails hasta publicaciones en redes sociales."
-                },
-                {
-                  icon: <Settings className="h-8 w-8 text-hayas-600" />,
-                  title: "Automatización Inteligente",
-                  description: "Flujos de trabajo que se adaptan automáticamente según el comportamiento del usuario."
-                },
-                {
-                  icon: <BarChart3 className="h-8 w-8 text-turquesa-600" />,
-                  title: "Optimización de Campañas",
-                  description: "IA que ajusta automáticamente tus campañas publicitarias para maximizar el ROI."
-                }
-              ].map((service, index) => (
-                <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                  <CardHeader>
-                    <div className="mb-4 p-3 rounded-lg bg-gray-100 w-fit">
-                      {service.icon}
-                    </div>
-                    <CardTitle className="text-xl font-bold">
-                      {service.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-600">
-                      {service.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* AI Services Section */}
+        <AIServicesSection />
 
         {/* Features Section */}
         <section className="py-8 md:py-12 bg-white">

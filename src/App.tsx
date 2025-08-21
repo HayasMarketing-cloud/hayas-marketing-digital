@@ -78,6 +78,7 @@ import ScrollToTop from './components/ScrollToTop';
 import EmailMarketingAutomatizaciones from './pages/EmailMarketingAutomatizaciones';
 import ConsultoriaEstrategicaAnalitica from './pages/ConsultoriaEstrategicaAnalitica';
 import IntegracionesIAProcesos from './pages/IntegracionesIAProcesos';
+import FormacionIA from './pages/FormacionIA';
 import EstrategiaContenidos from './pages/EstrategiaContenidos';
 import AdministracionCrm from './pages/AdministracionCrm';
 import LocalizacionContenidos from './pages/LocalizacionContenidos';
@@ -272,11 +273,12 @@ const App = () => (
           <Route path="/servicios/publicidad-google-ads" element={<PublicidadGoogleAds />} />
           <Route path="/servicios/email-marketing-automatizaciones" element={<EmailMarketingAutomatizaciones />} />
           <Route path="/servicios/consultoria-estrategica-analitica" element={<ConsultoriaEstrategicaAnalitica />} />
+          <Route path="/servicios/formacion-ia" element={<FormacionIA />} />
           <Route path="/servicios/integraciones-ia-procesos" element={<IntegracionesIAProcesos />} />
           <Route path="/servicios/estrategia-contenidos" element={<EstrategiaContenidos />} />
           <Route path="/servicios/localizacion-contenidos" element={<LocalizacionContenidos />} />
           <Route path="/servicios/campanas-inbound-marketing" element={<CampanasInboundMarketing />} />
-          <Route path="/servicios/asistente-ia-atencion-cliente" element={<AsistenteIA />} />
+          <Route path="/servicios/asistente-ia" element={<AsistenteIA />} />
           <Route path="/servicios/alojamiento-mantenimiento-web" element={<Navigate to="/servicios/diseno-web/alojamiento-mantenimiento" replace />} />
           <Route path="/servicios/marketing-directo" element={<MarketingDirecto />} />
           <Route path="/servicios/implementacion-funnel" element={<ImplementacionFunnel />} />
