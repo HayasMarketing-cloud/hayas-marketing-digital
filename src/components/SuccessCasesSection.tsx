@@ -174,7 +174,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     industry: "Traductora profesional (FR-ES, EN, DE)",
     service: "Marca personal y visibilidad en LinkedIn",
     link: "/casos-exito/eva-champion",
-    image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=2069&auto=format&fit=crop",
+    image: "/src/assets/eva-champion-translator.jpg",
     tags: ["marca-personal", "linkedin", "estrategia", "traduccion", "b2b"]
   },
   {
