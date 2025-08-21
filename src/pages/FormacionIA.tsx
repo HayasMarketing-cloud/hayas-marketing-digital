@@ -18,8 +18,8 @@ const FormacionIA: React.FC = () => {
     heroImageAlt: "Formación en inteligencia artificial aplicada al marketing digital",
     primaryCTA: "Solicitar información del programa",
     primaryCTALink: "/contacto",
-    secondaryCTA: "Ver temario completo",
-    secondaryCTALink: "#temario",
+    secondaryCTA: "Consultar con SofÍA",
+    secondaryCTALink: "/contacto",
     
     // Breadcrumbs
     breadcrumbItems: [
@@ -119,53 +119,8 @@ const FormacionIA: React.FC = () => {
       }
     ],
 
-    // Additional Content
-    additionalContent: (
-      <div id="temario" className="bg-muted/30 p-8 rounded-xl">
-        <h3 className="text-2xl font-bold mb-4">Temario Principal</h3>
-        <div className="grid md:grid-cols-2 gap-6">
-          <div>
-            <h4 className="font-semibold mb-3 text-primary">Módulo 1: Fundamentos de IA en Marketing</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>• Introducción a la IA y Machine Learning</li>
-              <li>• Casos de uso en marketing digital</li>
-              <li>• Herramientas esenciales y ecosistema IA</li>
-              <li>• Ética y mejores prácticas</li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-semibold mb-3 text-primary">Módulo 2: Automatización Inteligente</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>• Chatbots y asistentes virtuales</li>
-              <li>• Email marketing automatizado</li>
-              <li>• Lead scoring con ML</li>
-              <li>• Flujos de nurturing inteligentes</li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-semibold mb-3 text-primary">Módulo 3: Contenido y Creatividad</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>• Generación de contenido con IA</li>
-              <li>• Diseño gráfico automatizado</li>
-              <li>• Video marketing con IA</li>
-              <li>• Personalización de contenidos</li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-semibold mb-3 text-primary">Módulo 4: Análisis y Optimización</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>• Analytics predictivos</li>
-              <li>• Optimización de campañas</li>
-              <li>• ROI y métricas avanzadas</li>
-              <li>• Reporting automatizado</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    ),
-
     // Show sections
-    showSuccessCases: true,
+    showSuccessCases: false,
     showContactForm: true,
     contactFormTitle: "Solicita información del programa",
     contactFormSubtitle: "Cuéntanos sobre tu equipo y te enviaremos información detallada del programa de formación"
