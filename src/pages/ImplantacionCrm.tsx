@@ -125,7 +125,7 @@ const ImplantacionCrm = () => {
           <nav className="text-sm text-gray-600">
             <Link to="/" className="hover:text-primary">Inicio</Link>
             <span className="mx-2">/</span>
-            <Link to="/soluciones" className="hover:text-primary">Soluciones</Link>
+            <Link to="/servicios" className="hover:text-primary">Servicios</Link>
             <span className="mx-2">/</span>
             <span className="text-gray-900">Implantación CRM</span>
           </nav>
@@ -143,7 +143,7 @@ const ImplantacionCrm = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-              Soluciones <span className="text-gradient-primary">Especializadas</span>
+              Soluciones <span className="text-gradient-primary">especializadas</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Elegimos la plataforma perfecta según tu modelo de negocio y objetivos específicos
@@ -167,7 +167,7 @@ const ImplantacionCrm = () => {
                 <CardContent>
                   <div className="space-y-6">
                     <div>
-                      <h4 className="font-semibold mb-3">Características Principales:</h4>
+                      <h4 className="font-semibold mb-3">Características principales:</h4>
                       <ul className="space-y-2">
                         {type.features.map((feature, fIndex) => (
                           <li key={fIndex} className="flex items-start gap-2">
@@ -178,7 +178,7 @@ const ImplantacionCrm = () => {
                       </ul>
                     </div>
                     <div>
-                      <h4 className="font-semibold mb-3">Ideal Para:</h4>
+                      <h4 className="font-semibold mb-3">Ideal para:</h4>
                       <div className="flex flex-wrap gap-2">
                         {type.idealFor.map((item, iIndex) => (
                           <Badge key={iIndex} variant="outline" className="text-xs">
@@ -197,7 +197,7 @@ const ImplantacionCrm = () => {
 
       {/* Sección 4: Cómo funciona */}
       <ProcessSection
-        title={<>Nuestro Proceso de <span className="text-gradient-primary">Implementación</span></>}
+        title={<>Nuestro proceso de <span className="text-gradient-primary">implementación</span></>}
         subtitle="Un enfoque estructurado que garantiza el éxito de tu proyecto CRM"
         steps={processSteps}
       />
