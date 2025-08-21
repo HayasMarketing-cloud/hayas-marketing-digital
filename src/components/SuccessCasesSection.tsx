@@ -134,7 +134,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     industry: "Retail moda íntima",
     service: "Consultoría en redes sociales e implantación de CRM HubSpot",
     link: "/casos-exito/moda-intima-vania",
-    image: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=2070&auto=format&fit=crop",
+    image: "https://intimavania.com/img/cms/lookbook/25H/1603_1.jpg",
     tags: ["crm", "hubspot", "redes-sociales", "retail", "moda", "b2c"]
   },
   {
