@@ -30,7 +30,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     industry: "Enfermera especializada en salud integrativa",
     service: "Branding, web, estrategia de contenidos",
     link: "/casos-exito/nexo-vital",
-    image: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?q=80&w=2071&auto=format&fit=crop",
+    image: "/lovable-uploads/a07d3b40-7f87-4665-a586-cc46889c713b.png",
     tags: ["branding", "creacion-marca", "naming", "diseño-web", "contenidos", "salud", "identidad-visual"]
   },
   {
