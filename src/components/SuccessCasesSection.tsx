@@ -246,7 +246,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     industry: "Distribución mayorista de pescado fresco",
     service: "Ecommerce B2B y gestión de pedidos",
     link: "/casos-exito/peixos-emilio",
-    image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?q=80&w=2069&auto=format&fit=crop",
+    image: "/lovable-uploads/cb5e2b7b-ad42-4a68-b3e7-bf2f51e4ce45.png",
     tags: ["diseño-web", "ecommerce", "b2b", "alimentacion", "menorca"]
   },
   {
