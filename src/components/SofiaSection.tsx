@@ -35,8 +35,15 @@ const getPageHelpMessage = (pathname: string) => {
 const SofiaWidget = () => {
   const location = useLocation();
 
-  // Don't show the widget on the agendar-reunion page
-  if (location.pathname === '/agendar-reunion') {
+  // Only show SofÍA on Home and main solution pages
+  const allowedPages = [
+    '/',
+    '/soluciones/impulsa-tu-marca',
+    '/soluciones/conecta-con-tus-clientes', 
+    '/soluciones/activa-tus-ventas'
+  ];
+
+  if (!allowedPages.includes(location.pathname)) {
     return null;
   }
 
