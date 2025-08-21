@@ -5,7 +5,7 @@ const ChatbotPromoSection = () => {
   return (
     <ServicePromoCTA
       title="Asistentes con IA que atienden, responden... y convierten"
-      subtitle="¿Te imaginas tener un asistente como SofÍA en tu propia web o WhatsApp?"
+      subtitle="¿Te imaginas tener un asistente como SofÍA en cualquier idioma, integrado en tu sitio web o WhatsApp?"
       description="En Hayas te ayudamos a crear asistentes personalizados con inteligencia artificial para automatizar tu atención al cliente, captar leads y mejorar la experiencia digital de tu marca."
       buttonText="Descubre cómo tener tu propio asistente inteligente"
       buttonLink="/asistente-ia"
