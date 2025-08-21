@@ -302,7 +302,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     industry: "Empresa de instalaciones eléctricas",
     service: "Diseño web, CRM HubSpot y estrategia SEO",
     link: "/casos-exito/peris-electricidad",
-    image: "https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=2069&auto=format&fit=crop",
+    image: "/lovable-uploads/0f26012e-fbd2-4dcb-a1a8-3bdd380a0c10.png",
     tags: ["diseño-web", "crm", "hubspot", "seo", "industrial", "servicios-tecnicos", "b2b"]
   },
   {
