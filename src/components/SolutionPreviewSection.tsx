@@ -29,8 +29,8 @@ const SolutionPreviewSection: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Nuestra <span className="text-gradient-primary">Solución</span>: 
-              Webs que Convierten Visitantes en Clientes
+              Nuestra <span className="text-gradient-primary">solución</span>: 
+              webs que convierten visitantes en clientes
             </h2>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
               Desarrollamos sitios web profesionales que combinan diseño excepcional, 
@@ -51,12 +51,12 @@ const SolutionPreviewSection: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="gradient-primary text-white" asChild>
                 <Link to="/agendar-reunion">
-                  Ver Cómo Funciona
+                  Ver cómo funciona
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <Link to="#casos-exito">Casos de Éxito</Link>
+                <Link to="#casos-exito">Casos de éxito</Link>
               </Button>
             </div>
           </div>

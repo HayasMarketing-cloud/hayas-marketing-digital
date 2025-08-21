@@ -123,7 +123,7 @@ const DisenoWeb = () => {
       {/* Sección 5: Prueba social */}
       <SuccessCasesSection
         id="casos-exito"
-        title="Casos de <span className='text-gradient-primary'>Éxito</span>"
+        title="Casos de <span className='text-gradient-primary'>éxito</span>"
         subtitle="Webs que hemos desarrollado y que están generando resultados excepcionales para nuestros clientes."
         filterTags={["diseño-web"]}
         showAllLink={true}
@@ -136,7 +136,7 @@ const DisenoWeb = () => {
 
       {/* Sección 7: Preguntas frecuentes */}
       <FAQSection 
-        title="Preguntas Frecuentes"
+        title="Preguntas frecuentes"
         subtitle="Resolvemos las dudas más comunes sobre el desarrollo de sitios web profesionales"
         faqs={faqItems} 
       />

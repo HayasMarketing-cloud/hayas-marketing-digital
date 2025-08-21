@@ -16,37 +16,37 @@ import {
 const benefits = [
   {
     icon: <Palette className="h-8 w-8" />,
-    title: "Diseño 100% Personalizado",
+    title: "Diseño 100% personalizado",
     description: "Diseño único y a medida que refleja la identidad de tu marca",
     color: "text-purple-600 bg-purple-100"
   },
   {
     icon: <Search className="h-8 w-8" />,
-    title: "SEO Optimizado",
+    title: "SEO optimizado",
     description: "Estructura técnica optimizada para aparecer en Google desde el día uno",
     color: "text-blue-600 bg-blue-100"
   },
   {
     icon: <Zap className="h-8 w-8" />,
-    title: "Velocidad Ultrarrápida",
+    title: "Velocidad ultrarrápida",
     description: "Carga en menos de 3 segundos garantizando mejor experiencia de usuario",
     color: "text-yellow-600 bg-yellow-100"
   },
   {
     icon: <Smartphone className="h-8 w-8" />,
-    title: "100% Responsive",
+    title: "100% responsive",
     description: "Perfecto funcionamiento en móviles, tablets y ordenadores",
     color: "text-green-600 bg-green-100"
   },
   {
     icon: <Shield className="h-8 w-8" />,
-    title: "Seguridad Avanzada",
+    title: "Seguridad avanzada",
     description: "Protección completa con SSL, backups automáticos y monitorización 24/7",
     color: "text-red-600 bg-red-100"
   },
   {
     icon: <HeadphonesIcon className="h-8 w-8" />,
-    title: "Soporte Continuo",
+    title: "Soporte continuo",
     description: "Asistencia técnica, actualizaciones y consultoría estratégica permanente",
     color: "text-indigo-600 bg-indigo-100"
   }
@@ -59,7 +59,7 @@ interface BenefitsGridSectionProps {
 }
 
 const BenefitsGridSection: React.FC<BenefitsGridSectionProps> = ({
-  title = "Beneficios que Marcan la Diferencia",
+  title = "Beneficios que marcan la diferencia",
   subtitle = "Todo lo que necesitas para tener una presencia web exitosa y profesional",
   className = ""
 }) => {

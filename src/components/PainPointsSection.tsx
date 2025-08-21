@@ -4,22 +4,22 @@ import { AlertTriangle, Clock, Search, TrendingDown } from 'lucide-react';
 const painPoints = [
   {
     icon: <Clock className="h-12 w-12 text-red-500" />,
-    title: "Web Lenta",
+    title: "Web lenta",
     description: "Tu sitio web actual tarda más de 5 segundos en cargar, perdiendo visitantes y ventas."
   },
   {
     icon: <AlertTriangle className="h-12 w-12 text-orange-500" />,
-    title: "Diseño Anticuado",
+    title: "Diseño anticuado",
     description: "Un diseño obsoleto transmite falta de profesionalidad y aleja a potenciales clientes."
   },
   {
     icon: <Search className="h-12 w-12 text-blue-500" />,
-    title: "No Aparece en Google",
+    title: "No aparece en Google",
     description: "Sin SEO técnico tu web es invisible en los motores de búsqueda, perdiendo oportunidades."
   },
   {
     icon: <TrendingDown className="h-12 w-12 text-purple-500" />,
-    title: "Baja Conversión",
+    title: "Baja conversión",
     description: "Los visitantes llegan pero no se convierten en leads o clientes por problemas de usabilidad."
   }
 ];
@@ -30,7 +30,7 @@ const PainPointsSection: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            ¿Tu Web Actual te está <span className="text-red-600">Frenando</span>?
+            ¿Tu web actual te está <span className="text-red-600">frenando</span>?
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Estos problemas comunes están costándote clientes y oportunidades de negocio cada día.

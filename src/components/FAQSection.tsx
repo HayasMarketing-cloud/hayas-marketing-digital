@@ -10,7 +10,7 @@ interface FAQSectionProps {
   faqs: FAQ[];
 }
 const FAQSection: React.FC<FAQSectionProps> = ({
-  title = "Preguntas Frecuentes",
+  title = "Preguntas frecuentes",
   subtitle = "Resolvemos las dudas más comunes de nuestros clientes",
   faqs
 }) => {
