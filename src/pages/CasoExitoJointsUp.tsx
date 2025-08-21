@@ -113,9 +113,8 @@ const CasoExitoJointsUp = () => {
                 <Card className="border-none shadow-xl bg-white/80 backdrop-blur-sm hover:shadow-2xl transition-all duration-300">
                   <CardHeader className="pb-6">
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="w-3 h-3 bg-gradient-to-r from-hayas-600 to-hayas-500 rounded-full"></div>
                       <CardTitle className="text-2xl font-bold text-hayas-600">
-                        Perfil del Cliente
+                        Perfil del cliente
                       </CardTitle>
                     </div>
                   </CardHeader>
@@ -130,7 +129,7 @@ const CasoExitoJointsUp = () => {
                     <div className="space-y-4">
                       <h4 className="text-lg font-semibold text-gray-800 mb-4 flex items-center gap-2">
                         <Stethoscope className="h-5 w-5 text-hayas-600" />
-                        Especialidades Médicas
+                        Especialidades médicas
                       </h4>
                       <div className="grid grid-cols-1 gap-3">
                         {[
@@ -159,7 +158,7 @@ const CasoExitoJointsUp = () => {
                     <div className="flex items-center gap-3 mb-4">
                       <div className="w-3 h-3 bg-gradient-to-r from-turquesa-600 to-turquesa-500 rounded-full"></div>
                       <CardTitle className="text-2xl font-bold text-turquesa-600">
-                        El Reto
+                        El reto
                       </CardTitle>
                     </div>
                   </CardHeader>
@@ -174,7 +173,7 @@ const CasoExitoJointsUp = () => {
                     <div className="bg-gradient-to-r from-turquesa-50 to-hayas-50 p-6 rounded-xl border-l-4 border-turquesa-500">
                       <h4 className="font-semibold text-gray-800 mb-3 flex items-center gap-2">
                         <TrendingUp className="h-5 w-5 text-turquesa-600" />
-                        Objetivos Clave
+                        Objetivos clave
                       </h4>
                       <ul className="space-y-2 text-gray-700">
                         <li className="flex items-start gap-2">
@@ -207,24 +206,24 @@ const CasoExitoJointsUp = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-                Solución <span className="text-gradient-primary">Aplicada</span>
+                Solución aplicada
               </h2>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {[
                   {
                     icon: <Award className="h-8 w-8 text-hayas-600" />,
-                    title: "Naming Estratégico",
+                    title: "Naming estratégico",
                     description: "Desarrollo del nombre 'Joints'Up' que comunica especialización articular y mejora ascendente."
                   },
                   {
                     icon: <Stethoscope className="h-8 w-8 text-turquesa-600" />,
-                    title: "Branding Médico",
+                    title: "Branding médico",
                     description: "Identidad visual que equilibra profesionalidad científica con accesibilidad humana."
                   },
                   {
                     icon: <Heart className="h-8 w-8 text-hayas-600" />,
-                    title: "Diseño Web Médico",
+                    title: "Diseño web médico",
                     description: "Plataforma digital que genera confianza y facilita la toma de decisiones del paciente."
                   }
                 ].map((service, index) => (
@@ -254,7 +253,7 @@ const CasoExitoJointsUp = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-                Transformación de Marca y <span className="text-gradient-primary">Posicionamiento Estratégico</span>
+                Transformación de marca y posicionamiento estratégico
               </h2>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
@@ -300,7 +299,7 @@ const CasoExitoJointsUp = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-8">
-                Lo que <span className="text-gradient-primary">Aprendimos</span>
+                Lo que aprendimos
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
                 Este proyecto nos enseñó la complejidad del branding médico especializado. Descubrimos que 
