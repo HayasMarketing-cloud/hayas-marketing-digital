@@ -135,7 +135,7 @@ const App = () => (
           
           {/* SOLUCIONES - Páginas individuales (legacy y específicas) */}
           <Route path="/soluciones/ia-marketing" element={<SolucionesIA />} />
-          <Route path="/soluciones/implantacion-crm" element={<ImplantacionCrm />} />
+          
           <Route path="/servicios/tienda-online" element={<TiendaOnline />} />
           <Route path="/servicios/diseno-web" element={<DisenoWeb />} />
           <Route path="/servicios/diseno-web/alojamiento-mantenimiento" element={<AlojamientoMantenimiento />} />

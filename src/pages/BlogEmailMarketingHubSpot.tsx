@@ -72,7 +72,7 @@ const BlogEmailMarketingHubSpot = () => {
     {
       title: "Implementación de CRM",
       description: "Implementamos HubSpot y otros CRMs con configuración completa de email marketing.",
-      link: "/implantacion-crm"
+      link: "/servicios/implantacion-crm"
     }
   ];
 

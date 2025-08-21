@@ -444,7 +444,7 @@ const BusinessModelCanvasEstrategiaMarketing = () => {
       </div>
 
       <p className="mb-8">
-        Para empresas que buscan una implementación completa, recomendamos complementar el Business Model Canvas con servicios especializados como <Link to="/implantacion-crm" className="text-primary hover:underline">implantación de CRM</Link> y <Link to="/consultoria-estrategica-analitica" className="text-primary hover:underline">consultoría estratégica</Link> que aseguren una ejecución exitosa.
+        Para empresas que buscan una implementación completa, recomendamos complementar el Business Model Canvas con servicios especializados como <Link to="/servicios/implantacion-crm" className="text-primary hover:underline">implantación de CRM</Link> y <Link to="/consultoria-estrategica-analitica" className="text-primary hover:underline">consultoría estratégica</Link> que aseguren una ejecución exitosa.
       </p>
 
       <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-12">

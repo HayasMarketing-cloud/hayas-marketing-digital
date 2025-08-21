@@ -96,7 +96,7 @@ export const tagsLevel2: TagLevel2[] = [
     name: "Implantación CRM", 
     slug: "implantacion-crm", 
     parent: "conecta-con-tus-clientes",
-    serviceUrl: "/soluciones/implantacion-crm",
+    serviceUrl: "/servicios/implantacion-crm",
     description: "Setup completo de CRM personalizado"
   },
   { 

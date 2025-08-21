@@ -72,7 +72,7 @@ const BlogPerfilClienteIdeal = () => {
     {
       title: "Implementación de CRM",
       description: "Configuramos tu CRM para segmentar automáticamente según tus buyer personas y optimizar el proceso comercial.",
-      link: "/implantacion-crm"
+      link: "/servicios/implantacion-crm"
     }
   ];
 

@@ -11,7 +11,7 @@ const getPageMessage = (pathname: string) => {
     '/captacion-leads': '¡Hola! ¿Quieres captar más leads? Te ayudo con estrategias de generación y conversión de prospectos.',
     '/gestion-marketing': '¡Hola! ¿Dudas sobre la gestión de tu plan de marketing? Te asisto con estrategia, planificación y ejecución.',
     '/soluciones-ia': '¡Hola! ¿Interesado en IA para marketing? Te explico cómo implementar chatbots, automatización inteligente y más.',
-    '/implantacion-crm': '¡Hola! ¿Necesitas ayuda con la implantación de CRM? Te guío en el proceso de configuración y optimización.'
+    '/servicios/implantacion-crm': '¡Hola! ¿Necesitas ayuda con la implantación de CRM? Te guío en el proceso de configuración y optimización.'
   };
   
   return messages[pathname] || '¡Hola! Soy SofÍA, tu asistente de IA de Hayas Marketing. ¿En qué puedo ayudarte?';
@@ -26,7 +26,7 @@ const getPageHelpMessage = (pathname: string) => {
     '/captacion-leads': '¿Buscas generar más leads cualificados para tu negocio?',
     '/gestion-marketing': '¿Necesitas una estrategia de marketing integral?',
     '/soluciones-ia': '¿Quieres implementar IA en tu estrategia de marketing?',
-    '/implantacion-crm': '¿Te ayudo con la configuración de tu CRM?'
+    '/servicios/implantacion-crm': '¿Te ayudo con la configuración de tu CRM?'
   };
   
   return helpMessages[pathname] || '¿Te ayudo con alguna información sobre nuestros servicios?';

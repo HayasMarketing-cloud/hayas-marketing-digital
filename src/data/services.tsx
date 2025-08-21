@@ -86,7 +86,7 @@ export const allServices: ServiceItem[] = [
     icon: <Calendar className="h-10 w-10 text-hayas-primary" />,
     title: 'Implantación CRM',
     description: 'Setup completo de CRM personalizado para automatizar tu proceso comercial.',
-    href: '/soluciones/implantacion-crm',
+    href: '/servicios/implantacion-crm',
     pillar: 'conecta',
   },
   {
