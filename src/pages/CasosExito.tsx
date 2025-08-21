@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { ALL_SUCCESS_CASES, SuccessCase } from '@/components/SuccessCasesSection';
 import SuccessCaseFilters from '@/components/SuccessCaseFilters';
+import { getIndustriesInGroup } from '@/data/successCasesTags';
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -38,14 +39,23 @@ const CasosExito = () => {
     ALL_SUCCESS_CASES.flatMap(case_ => case_.tags.industries)
   )).sort();
 
-  // Filter cases based on selected filter
+// Filter cases based on selected filter
   const filteredCases = selectedFilter === 'todos' 
     ? ALL_SUCCESS_CASES
-    : ALL_SUCCESS_CASES.filter(case_ => 
-        case_.tags.services.includes(selectedFilter) ||
-        case_.tags.industries.includes(selectedFilter) ||
-        (case_.tags.tools && case_.tags.tools.includes(selectedFilter))
-      );
+    : ALL_SUCCESS_CASES.filter(case_ => {
+        // Handle grouped industry filters
+        if (selectedFilter.endsWith('-grupo')) {
+          const industriesInGroup = getIndustriesInGroup(selectedFilter);
+          return case_.tags.industries.some(industry => 
+            industriesInGroup.includes(industry)
+          );
+        }
+        
+        // Handle individual service/industry/tool filters
+        return case_.tags.services.includes(selectedFilter) ||
+               case_.tags.industries.includes(selectedFilter) ||
+               (case_.tags.tools && case_.tags.tools.includes(selectedFilter));
+      });
 
   // Define tag categories for better organization
   const tagCategories = {

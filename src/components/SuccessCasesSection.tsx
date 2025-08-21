@@ -278,7 +278,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     image: "/lovable-uploads/74e85587-2487-455d-a14a-f218a5ac37a1.png",
     tags: {
       services: ["diseno-web"],
-      industries: ["tecnologia"],
+      industries: ["audiovisual"],
       tools: []
     }
   },
@@ -484,6 +484,30 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
       services: ["gestion-redes-sociales", "estrategia-contenidos"],
       industries: ["belleza", "retail"],
       tools: ["instagram"]
+    }
+  },
+  {
+    name: "Suministros XS KD",
+    industry: "Retail Industrial",
+    service: "Posicionamiento SEO y presencia digital",
+    link: "/casos-exito/suministros-xs-kd",
+    image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?q=80&w=2070&auto=format&fit=crop",
+    tags: {
+      services: ["seo-positioning"],
+      industries: ["retail", "industrial"],
+      tools: []
+    }
+  },
+  {
+    name: "La Bañera KD",
+    industry: "Medios Audiovisuales",
+    service: "Diseño web y posicionamiento SEO",
+    link: "/casos-exito/la-banera-kd",
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop",
+    tags: {
+      services: ["diseno-web", "seo-positioning"],
+      industries: ["audiovisual"],
+      tools: []
     }
   }
 ];

@@ -1,21 +1,20 @@
 import React, { useState } from 'react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
-import { Card, CardContent } from '@/components/ui/card';
 import { 
-  Search, 
   Filter, 
-  ChevronDown, 
-  ChevronRight, 
-  X,
-  Grid,
-  List,
-  Briefcase,
-  Building,
-  Wrench
+  X, 
+  Grid3X3, 
+  List, 
+  Building2, 
+  Wrench,
+  ChevronDown,
+  ChevronUp
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { GROUPED_INDUSTRIES, getIndustriesInGroup } from '@/data/successCasesTags';
 
 interface SuccessCaseFiltersProps {
   selectedFilter: string;
@@ -26,14 +25,6 @@ interface SuccessCaseFiltersProps {
   filteredCount: number;
   serviceFilters: string[];
   industryFilters: string[];
-}
-
-interface FilterGroup {
-  id: string;
-  label: string;
-  icon: React.ComponentType<{ className?: string }>;
-  filters: string[];
-  expanded: boolean;
 }
 
 const SuccessCaseFilters: React.FC<SuccessCaseFiltersProps> = ({
@@ -47,27 +38,13 @@ const SuccessCaseFilters: React.FC<SuccessCaseFiltersProps> = ({
   industryFilters
 }) => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [filterGroups, setFilterGroups] = useState<FilterGroup[]>([
-    {
-      id: 'servicios',
-      label: 'Servicios',
-      icon: Briefcase,
-      filters: serviceFilters,
-      expanded: false
-    },
-    {
-      id: 'sectores',
-      label: 'Sectores',
-      icon: Building,
-      filters: industryFilters,
-      expanded: false
-    }
-  ]);
+
+  const hasActiveFilters = selectedFilter !== 'todos';
 
   const formatTagName = (tag: string): string => {
     const tagMap: { [key: string]: string } = {
       'implantacion-crm': 'Implantación CRM',
-      'administracion-crm': 'Administración CRM',
+      'administracion-crm': 'Administración CRM', 
       'automatizacion-procesos-ventas': 'Automatización de Ventas',
       'seo-positioning': 'Posicionamiento SEO',
       'publicidad-google-ads': 'Publicidad Google Ads',
@@ -91,60 +68,57 @@ const SuccessCaseFilters: React.FC<SuccessCaseFiltersProps> = ({
     ).join(' ');
   };
 
-  const toggleGroup = (groupId: string) => {
-    setFilterGroups(prev => prev.map(group => 
-      group.id === groupId 
-        ? { ...group, expanded: !group.expanded }
-        : group
-    ));
-  };
-
   const clearFilter = () => {
     onFilterChange('todos');
     setSearchTerm('');
   };
 
-  const filteredOptions = filterGroups.map(group => ({
-    ...group,
-    filters: group.filters.filter(filter => 
-      formatTagName(filter).toLowerCase().includes(searchTerm.toLowerCase())
-    )
+  // Create filter options from the new grouped categories
+  const filterOptions = GROUPED_INDUSTRIES.map(group => ({
+    id: group.slug,
+    label: group.name,
+    icon: Building2,
+    count: filteredCount // We'll use the passed count for now
   }));
-
-  const hasActiveFilters = selectedFilter !== 'todos';
 
   return (
     <div className="space-y-6">
-      {/* Search and Main Controls */}
-      <Card className="bg-card/50 backdrop-blur-sm">
+      {/* Search and View Controls */}
+      <Card>
         <CardContent className="p-6">
-          <div className="flex flex-col lg:flex-row gap-4 items-start lg:items-center justify-between">
-            {/* Search Input */}
+          <div className="flex flex-col lg:flex-row gap-4 items-center">
+            {/* Search */}
             <div className="relative flex-1 max-w-md">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
-                placeholder="Buscar por servicio o sector..."
+                placeholder="Buscar casos de éxito..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-10 bg-background/50"
+                className="pl-10"
               />
+              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <Filter className="h-4 w-4 text-muted-foreground" />
+              </div>
             </div>
 
-            {/* View Mode Controls */}
-            <div className="flex items-center gap-2">
+            {/* View Mode Toggle */}
+            <div className="flex gap-2">
               <Button
                 variant={viewMode === 'grid' ? 'default' : 'outline'}
                 size="sm"
                 onClick={() => onViewModeChange('grid')}
+                className="gap-2"
               >
-                <Grid className="h-4 w-4" />
+                <Grid3X3 className="h-4 w-4" />
+                Grid
               </Button>
               <Button
                 variant={viewMode === 'list' ? 'default' : 'outline'}
                 size="sm"
                 onClick={() => onViewModeChange('list')}
+                className="gap-2"
               >
                 <List className="h-4 w-4" />
+                Lista
               </Button>
             </div>
           </div>
@@ -154,10 +128,10 @@ const SuccessCaseFilters: React.FC<SuccessCaseFiltersProps> = ({
             <div className="flex items-center gap-2 mt-4 pt-4 border-t">
               <span className="text-sm text-muted-foreground">Filtro activo:</span>
               <Badge variant="secondary" className="gap-2">
-                {formatTagName(selectedFilter)}
+                {GROUPED_INDUSTRIES.find(g => g.slug === selectedFilter)?.name || formatTagName(selectedFilter)}
                 <button
                   onClick={clearFilter}
-                  className="ml-1 hover:bg-muted-foreground/20 rounded-full p-0.5"
+                  className="hover:bg-destructive/20 rounded-sm p-0.5"
                 >
                   <X className="h-3 w-3" />
                 </button>
@@ -169,49 +143,25 @@ const SuccessCaseFilters: React.FC<SuccessCaseFiltersProps> = ({
 
       {/* Filter Categories */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        {/* Service and Industry Groups */}
-        {filteredOptions.map(group => (
-          <Card key={group.id} className="overflow-hidden">
-            <CardContent className="p-0">
-              <button
-                onClick={() => toggleGroup(group.id)}
-                className="w-full p-4 flex items-center justify-between hover:bg-muted/50 transition-colors"
-              >
-                <div className="flex items-center gap-2">
-                  <group.icon className="h-5 w-5 text-primary" />
-                  <span className="font-semibold">{group.label}</span>
-                  <Badge variant="outline" className="text-xs">
-                    {group.filters.length}
-                  </Badge>
-                </div>
-                {group.expanded ? (
-                  <ChevronDown className="h-4 w-4" />
-                ) : (
-                  <ChevronRight className="h-4 w-4" />
-                )}
-              </button>
-
-              {group.expanded && (
-                <div className="border-t bg-muted/20 p-3 space-y-2 max-h-60 overflow-y-auto">
-                  {group.filters.length === 0 ? (
-                    <p className="text-sm text-muted-foreground text-center py-2">
-                      No se encontraron filtros
-                    </p>
-                  ) : (
-                    group.filters.map(filter => (
-                      <Button
-                        key={filter}
-                        variant={selectedFilter === filter ? 'default' : 'ghost'}
-                        size="sm"
-                        onClick={() => onFilterChange(filter)}
-                        className="w-full justify-start text-left h-auto py-2 px-3"
-                      >
-                        <span className="truncate">{formatTagName(filter)}</span>
-                      </Button>
-                    ))
-                  )}
-                </div>
-              )}
+        {filterOptions.map(option => (
+          <Card 
+            key={option.id}
+            className={cn(
+              "cursor-pointer transition-all duration-200 hover:shadow-md",
+              selectedFilter === option.id ? 'ring-2 ring-primary bg-primary/5' : 'hover:bg-muted/30'
+            )}
+          >
+            <CardContent 
+              className="p-6 text-center"
+              onClick={() => onFilterChange(option.id)}
+            >
+              <div className="flex items-center justify-center gap-3 mb-3">
+                <option.icon className="h-6 w-6 text-primary" />
+                <span className="font-semibold text-lg">{option.label}</span>
+              </div>
+              <div className="text-sm text-muted-foreground">
+                Ver casos de este sector
+              </div>
             </CardContent>
           </Card>
         ))}
@@ -234,10 +184,11 @@ const SuccessCaseFilters: React.FC<SuccessCaseFiltersProps> = ({
       {/* Results Summary */}
       <div className="text-center">
         <p className="text-sm text-muted-foreground">
-          {selectedFilter === 'todos' 
-            ? `Mostrando todos los ${filteredCount} casos de éxito`
-            : `Mostrando ${filteredCount} casos para "${formatTagName(selectedFilter)}"`
-          }
+          {hasActiveFilters ? (
+            <>Mostrando <span className="font-semibold text-foreground">{filteredCount}</span> de {totalCases} casos</>
+          ) : (
+            <>Mostrando <span className="font-semibold text-foreground">{totalCases}</span> casos de éxito</>
+          )}
         </p>
       </div>
     </div>
