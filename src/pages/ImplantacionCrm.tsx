@@ -2,51 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import ProcessSection from '@/components/ProcessSection';
-import ServiceRelatedPosts from '@/components/ServiceRelatedPosts';
-import ReviewsSection from '@/components/ReviewsSection';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import KitDigitalBanner from '@/components/KitDigitalBanner';
-import FAQSection from '@/components/FAQSection';
-import SuccessCasesSection from '@/components/SuccessCasesSection';
-import ServiceContactSection from '@/components/ServiceContactSection';
-import CRMPainPointsSection from '@/components/CRMPainPointsSection';
-import CRMSolutionPreviewSection from '@/components/CRMSolutionPreviewSection';
-import IntermediateCTA from '@/components/IntermediateCTA';
-import CRMBenefitsGridSection from '@/components/CRMBenefitsGridSection';
 import { 
-  Settings, Target, Mail, Zap, Building2, Users, CheckCircle,
-  ArrowRight, Database, TrendingUp, FileText
+  Building2, Users, CheckCircle, ArrowRight
 } from 'lucide-react';
-
-const processSteps = [
-  {
-    number: "01",
-    title: "Análisis y Planificación",
-    description: "Evaluamos tu negocio actual y diseñamos la estrategia de implementación perfecta para tus objetivos.",
-    icon: <Target className="h-6 w-6" />
-  },
-  {
-    number: "02",
-    title: "Configuración del Sistema",
-    description: "Instalamos y configuramos tu CRM con todas las integraciones necesarias para tu ecosistema digital.",
-    icon: <Settings className="h-6 w-6" />
-  },
-  {
-    number: "03",
-    title: "Migración de Datos",
-    description: "Transferimos todos tus datos existentes de forma segura, garantizando la continuidad de tu información.",
-    icon: <Database className="h-6 w-6" />
-  },
-  {
-    number: "04",
-    title: "Formación y Lanzamiento",
-    description: "Entrenamos a tu equipo y lanzamos el sistema con soporte completo durante las primeras semanas.",
-    icon: <Users className="h-6 w-6" />
-  }
-];
 
 const types = [
   {
@@ -87,33 +48,6 @@ const types = [
   }
 ];
 
-const faqItems = [
-  {
-    question: "¿Cuál es la diferencia entre HubSpot y Go High Level?",
-    answer: "HubSpot es ideal para empresas B2B con procesos de venta complejos, ofertas de alto valor y ciclos largos. Go High Level está optimizado para B2C, conversiones rápidas, gestión masiva de leads y comunicación multicanal (SMS, WhatsApp, email)."
-  },
-  {
-    question: "¿Cuánto tiempo toma la implementación completa?",
-    answer: "La implementación básica toma 2-4 semanas, incluyendo configuración, migración de datos, integración con herramientas existentes y formación del equipo. Las personalizaciones avanzadas pueden extender el plazo a 6-8 semanas."
-  },
-  {
-    question: "¿Pueden migrar nuestros datos actuales?",
-    answer: "Sí, gestionamos la migración completa de datos desde tu sistema actual: contactos, historial de interacciones, oportunidades de venta, y configuraciones personalizadas. Garantizamos que no pierdas información crítica durante el proceso."
-  },
-  {
-    question: "¿Incluyen formación para nuestro equipo?",
-    answer: "Incluimos formación completa: sesiones grupales para todo el equipo, entrenamiento específico por roles, documentación personalizada, videos tutoriales y soporte posterior para resolver dudas durante las primeras semanas de uso."
-  },
-  {
-    question: "¿Se integra con nuestras herramientas actuales?",
-    answer: "Configuramos integraciones con tus herramientas existentes: email marketing, contabilidad, calendarios, redes sociales, sistemas de facturación y cualquier software específico de tu sector. Creamos un ecosistema conectado y eficiente."
-  },
-  {
-    question: "¿Qué soporte ofrecen después de la implementación?",
-    answer: "Proporcionamos soporte técnico prioritario, actualizaciones regulares, optimizaciones basadas en uso real, reuniones de seguimiento mensuales y acceso a nuevas funcionalidades. Tu éxito es nuestro compromiso a largo plazo."
-  }
-];
-
 const ImplantacionCrm = () => {
   return (
     <div className="min-h-screen bg-white">
@@ -132,13 +66,25 @@ const ImplantacionCrm = () => {
         </div>
       </div>
 
-      {/* Sección 1: Dolor / Problema */}
-      <CRMPainPointsSection />
+      {/* Hero Section Básico */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 text-center">
+          <h1 className="text-4xl lg:text-5xl font-bold mb-6">
+            Implantación <span className="text-gradient-primary">CRM</span>
+          </h1>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+            Implementamos y configuramos sistemas CRM profesionales para optimizar tu gestión comercial y automatizar tus procesos de ventas.
+          </p>
+          <Button asChild size="lg">
+            <Link to="/contacto">
+              Solicitar consulta gratuita
+              <ArrowRight className="h-4 w-4 ml-2" />
+            </Link>
+          </Button>
+        </div>
+      </section>
 
-      {/* Sección 2: Propuesta / Nuestra solución */}
-      <CRMSolutionPreviewSection />
-
-      {/* Sección 3: Soluciones Especializadas */}
+      {/* Sección de Soluciones Especializadas */}
       <section id="tipos" className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -195,68 +141,23 @@ const ImplantacionCrm = () => {
         </div>
       </section>
 
-      {/* Sección 4: Cómo funciona */}
-      <ProcessSection
-        title={<>Nuestro proceso de <span className="text-gradient-primary">implementación</span></>}
-        subtitle="Un enfoque estructurado que garantiza el éxito de tu proyecto CRM"
-        steps={processSteps}
-      />
-
-      {/* Sección 5: Beneficios */}
-      <CRMBenefitsGridSection />
-
-      {/* Sección 6: Prueba social */}
-      <SuccessCasesSection
-        id="casos-exito"
-        title="Casos de <span className='text-gradient-primary'>éxito</span>"
-        subtitle="Empresas que han transformado su gestión comercial con nuestras implementaciones CRM."
-        specificCases={["Hayas CRM", "Aistercel", "Conversa Consultores", "FLAP"]}
-        maxCases={4}
-        showAllLink={true}
-      />
-      
-      <ReviewsSection />
-
-      {/* Sección 6: CTA intermedio */}
-      <IntermediateCTA />
-
-      {/* Sección personalizada: Hayas CRM */}
+      {/* CTA Final */}
       <section className="py-20 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-            ¿Prefieres una solución <span className="text-gradient-primary">completamente personalizada</span>?
+            ¿Listo para transformar tu gestión comercial?
           </h2>
           <p className="text-xl text-muted-foreground mb-8">
-            Conoce Hayas CRM: nuestra plataforma desarrollada específicamente para pequeñas y medianas empresas españolas
+            Cuéntanos sobre tu negocio y te enviaremos una propuesta personalizada
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg">
-              <Link to="/hayas-crm" className="flex items-center gap-2">
-                Descubrir Hayas CRM
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
+          <Button asChild size="lg">
+            <Link to="/contacto">
+              Solicitar consulta
+              <ArrowRight className="h-4 w-4 ml-2" />
+            </Link>
+          </Button>
         </div>
       </section>
-
-      {/* Sección 7: Preguntas frecuentes */}
-      <FAQSection 
-        title="Preguntas frecuentes sobre Implantación CRM"
-        subtitle="Resolvemos las dudas más comunes sobre la implementación de sistemas CRM"
-        faqs={faqItems} 
-      />
-
-      {/* Posts Relacionados */}
-      <ServiceRelatedPosts serviceSlug="implantacion-crm" />
-
-      {/* Sección final: CTA fuerte (footer extendido) */}
-      <ServiceContactSection
-        title="¿Listo para transformar tu gestión comercial?"
-        subtitle="Cuéntanos sobre tu negocio y te enviaremos una propuesta de implementación personalizada."
-        formId="ZHNw4rjAzNdvFbFnIk1V"
-        className="bg-gradient-to-br from-primary/10 via-white to-accent/10"
-      />
       
       <Footer />
     </div>
