@@ -310,7 +310,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     industry: "Carnicería tradicional y productos cárnicos de alta calidad",
     service: "Estrategia y gestión de Instagram",
     link: "/casos-exito/carniceria-picos-de-europa",
-    image: "https://images.unsplash.com/photo-1604908177520-1f23f582012f?q=80&w=2069&auto=format&fit=crop",
+    image: "/lovable-uploads/4f747803-3608-4e40-96a3-e5ffb9c63060.png",
     tags: ["redes-sociales", "instagram", "contenidos", "alimentacion", "b2c", "retail"]
   },
   {
