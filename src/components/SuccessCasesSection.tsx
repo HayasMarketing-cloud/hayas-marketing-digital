@@ -262,7 +262,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     industry: "Construcción y mantenimiento industrial",
     service: "Rediseño, alojamiento y mantenimiento web",
     link: "/casos-exito/lualca",
-    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2069&auto=format&fit=crop",
+    image: "/lovable-uploads/df8f6237-aac2-47a2-b379-253f7c1e7dd5.png",
     tags: ["diseño-web", "alojamiento-mantenimiento", "ux", "industrial", "b2b"]
   },
   {
