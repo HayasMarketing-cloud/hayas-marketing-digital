@@ -16,6 +16,7 @@ interface SuccessCasesSectionProps {
   title?: string;
   subtitle?: string;
   filterTags?: string[]; // Tags to filter cases by
+  specificCases?: string[]; // Specific case names to show (takes precedence over filterTags)
   showAllLink?: boolean;
   maxCases?: number;
   className?: string;
@@ -334,6 +335,7 @@ const SuccessCasesSection: React.FC<SuccessCasesSectionProps> = ({
   title = "Casos de éxito",
   subtitle = "Últimos proyectos que han transformado negocios.",
   filterTags = [],
+  specificCases = [],
   showAllLink = true,
   maxCases,
   className = "",
@@ -348,12 +350,14 @@ const SuccessCasesSection: React.FC<SuccessCasesSectionProps> = ({
     return case_;
   });
 
-  // Filter cases based on tags
-  const filteredCases = filterTags.length > 0 
-    ? sourceCases.filter(case_ => 
-        filterTags.some(tag => case_.tags.includes(tag))
-      )
-    : sourceCases;
+  // Filter cases based on specific names (takes precedence) or tags
+  const filteredCases = specificCases.length > 0 
+    ? sourceCases.filter(case_ => specificCases.includes(case_.name))
+    : filterTags.length > 0 
+      ? sourceCases.filter(case_ => 
+          filterTags.some(tag => case_.tags.includes(tag))
+        )
+      : sourceCases;
 
   // Limit number of cases if specified
   const displayCases = maxCases 
@@ -422,13 +426,13 @@ const SuccessCasesSection: React.FC<SuccessCasesSectionProps> = ({
           ))}
         </div>
 
-        {showAllLink && filterTags.length > 0 && (
+        {showAllLink && (filterTags.length > 0 || specificCases.length > 0) && (
           <div className="text-center">
             <Link 
-              to="/casos-exito" 
+              to={`/casos-exito${filterTags.length === 1 ? `?filter=${filterTags[0]}` : specificCases.length > 0 ? '?filter=diseño-web' : ''}`}
               className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors font-medium"
             >
-              Ver todos los casos de éxito →
+              Ver todos los casos de éxito {filterTags.length === 1 ? `de ${filterTags[0] === 'diseño-web' ? 'Diseño Web' : filterTags[0]}` : specificCases.length > 0 ? 'de Diseño Web' : ''} →
             </Link>
           </div>
         )}

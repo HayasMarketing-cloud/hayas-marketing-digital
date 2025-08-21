@@ -125,7 +125,8 @@ const DisenoWeb = () => {
         id="casos-exito"
         title="Casos de <span className='text-gradient-primary'>éxito</span>"
         subtitle="Webs que hemos desarrollado y que están generando resultados excepcionales para nuestros clientes."
-        filterTags={["diseño-web"]}
+        specificCases={["Corte A Films", "Aistercel", "Dr. Parrón", "Inbound Students"]}
+        maxCases={4}
         showAllLink={true}
       />
       

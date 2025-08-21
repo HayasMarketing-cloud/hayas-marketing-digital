@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -17,8 +17,17 @@ import {
 } from '@/components/ui/breadcrumb';
 
 const CasosExito = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
   const [selectedFilter, setSelectedFilter] = useState<string>('todos');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+
+  // Initialize filter from URL parameter
+  useEffect(() => {
+    const filterParam = searchParams.get('filter');
+    if (filterParam) {
+      setSelectedFilter(filterParam);
+    }
+  }, [searchParams]);
 
   // Obtener todas las etiquetas únicas para los filtros
   const allTags = Array.from(
