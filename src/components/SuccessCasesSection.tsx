@@ -286,7 +286,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     industry: "Programa de crecimiento para startups",
     service: "Campaña inbound con storytelling, entrevistas y publicación web",
     link: "/casos-exito/hubspot-for-startups",
-    image: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=2069&auto=format&fit=crop",
+    image: "/lovable-uploads/68040c9d-5328-4150-b069-890a269bf640.png",
     tags: ["inbound-marketing", "contenidos", "seo", "hubspot", "startups", "b2b"]
   },
   {
