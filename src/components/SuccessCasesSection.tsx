@@ -150,7 +150,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     industry: "Turismo y cruceros",
     service: "Campañas en Google Ads y optimización continua",
     link: "/casos-exito/alma-cruceros",
-    image: "https://images.unsplash.com/photo-1476610182048-b716b8518aae?q=80&w=2070&auto=format&fit=crop",
+    image: "/lovable-uploads/9b7cad00-2cca-451d-a515-ac666898dbc9.png",
     tags: ["google-ads", "publicidad", "turismo", "b2c"]
   },
   {
