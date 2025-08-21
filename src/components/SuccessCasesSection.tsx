@@ -182,7 +182,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     industry: "Agencia de traducción e interpretación",
     service: "CRM HubSpot, SEO internacional y LinkedIn",
     link: "/casos-exito/beluga-linguistics",
-    image: "https://images.unsplash.com/photo-1518081461904-9ac4b8653aab?q=80&w=2069&auto=format&fit=crop",
+    image: "/lovable-uploads/871690e2-0d95-456b-86a1-c284ffaf7d5e.png",
     tags: ["crm", "hubspot", "seo", "linkedin", "traduccion", "b2b"]
   },
   {
