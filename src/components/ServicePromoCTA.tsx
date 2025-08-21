@@ -92,7 +92,11 @@ const ServicePromoCTA: React.FC<ServicePromoCTAProps> = ({
             </h2>
             
             {subtitle && (
-              <p className="text-lg md:text-xl text-gray-300 mb-6 md:mb-8">
+              <p 
+                className="text-lg md:text-xl text-gray-300 mb-6 md:mb-8"
+                data-editable="true"
+                data-edit-key="service-promo-subtitle"
+              >
                 {subtitle}
               </p>
             )}
