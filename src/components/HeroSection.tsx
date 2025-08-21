@@ -15,10 +15,7 @@ const HeroSection = () => {
               Agencia de <span className="text-gradient-primary">Marketing Digital</span> y <span className="text-gradient-primary">Gestión de Clientes</span>
             </h1>
             <p className="text-hero text-gray-700 animate-slide-up">Soluciones que impulsan tu marca, conectan con tus clientes y activan tu estrategia digital.</p>
-            <div className="flex flex-col sm:flex-row items-center gap-4 animate-slide-up stack-sm">
-              <Button asChild className="gradient-primary text-white py-6 px-8 text-lg font-medium shadow-elegant hover-scale focus-ring" aria-label="Explorar soluciones de Hayas Marketing">
-                <Link to="/?scrollTo=soluciones">Explorar soluciones</Link>
-              </Button>
+            <div className="flex justify-center animate-slide-up stack-sm">
               <Button asChild variant="outline" className="py-6 px-8 text-lg font-medium hover-scale focus-ring border-primary text-primary hover:bg-primary hover:text-white" aria-label="Descubrir cómo trabajamos en Hayas Marketing">
                 <Link to="/?scrollTo=metodologia">Descubre cómo lo hacemos</Link>
               </Button>
