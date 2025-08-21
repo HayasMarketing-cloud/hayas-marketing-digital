@@ -158,7 +158,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     industry: "Firma de consultoría empresarial",
     service: "Diseño web profesional y estrategia SEO",
     link: "/casos-exito/conversa-consultores",
-    image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?q=80&w=2070&auto=format&fit=crop",
+    image: "/src/assets/conversa-consultores-meeting.jpg",
     tags: ["diseño-web", "posicionamiento", "consultoria", "b2b"]
   },
   {
