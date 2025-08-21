@@ -125,17 +125,19 @@ const successCases = [
 ];
 
 const ConectaConTusClientes = () => {
-  const CONNECTA_TAGS = ['crm', 'automatizacion', 'hubspot', 'inbound-marketing'];
-  const filteredCasesForConecta = ALL_SUCCESS_CASES.filter(c => CONNECTA_TAGS.some(t => c.tags.includes(t)));
+  const CONNECTA_TAGS = ['implantacion-crm', 'automatizacion-procesos-ventas', 'administracion-crm'];
+  const filteredCasesForConecta = ALL_SUCCESS_CASES.filter(c => 
+    CONNECTA_TAGS.some(t => c.tags.services.includes(t))
+  );
   const TAG_SERVICE_MAP: Record<string, number[]> = {
-    crm: [5, 20],
-    hubspot: [5, 20],
-    automatizacion: [12, 14, 21],
-    'inbound-marketing': [19],
+    'implantacion-crm': [5, 20],
+    'administracion-crm': [5, 20],
+    'automatizacion-procesos-ventas': [12, 14, 21],
+    'campanas-inbound': [19],
   };
   const serviceIdSet = new Set<number>();
   filteredCasesForConecta.forEach(c => {
-    c.tags.forEach(tag => {
+    c.tags.services.forEach(tag => {
       TAG_SERVICE_MAP[tag]?.forEach(id => serviceIdSet.add(id));
     });
   });

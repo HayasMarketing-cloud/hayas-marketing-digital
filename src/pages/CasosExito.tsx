@@ -29,33 +29,55 @@ const CasosExito = () => {
     }
   }, [searchParams]);
 
-  // Obtener todas las etiquetas únicas para los filtros
-  const allTags = Array.from(
-    new Set(ALL_SUCCESS_CASES.flatMap(case_ => case_.tags))
-  ).sort();
+  // Extract all unique tags from success cases
+  const allServiceTags = Array.from(new Set(
+    ALL_SUCCESS_CASES.flatMap(case_ => case_.tags.services)
+  )).sort();
+  
+  const allIndustryTags = Array.from(new Set(
+    ALL_SUCCESS_CASES.flatMap(case_ => case_.tags.industries)
+  )).sort();
 
-  // Filtrar casos según la etiqueta seleccionada
+  // Filter cases based on selected filter
   const filteredCases = selectedFilter === 'todos' 
     ? ALL_SUCCESS_CASES
-    : ALL_SUCCESS_CASES.filter(case_ => case_.tags.includes(selectedFilter));
+    : ALL_SUCCESS_CASES.filter(case_ => 
+        case_.tags.services.includes(selectedFilter) ||
+        case_.tags.industries.includes(selectedFilter) ||
+        (case_.tags.tools && case_.tags.tools.includes(selectedFilter))
+      );
 
-  // Categorizar etiquetas para mejor organización
+  // Define tag categories for better organization
   const tagCategories = {
-    'Soluciones': ['branding', 'creacion-marca', 'diseño-web', 'estrategia-digital', 'marketing-digital'],
-    'Servicios': ['naming', 'identidad-visual', 'posicionamiento', 'automatizacion', 'contenidos', 'crm', 'alojamiento-mantenimiento', 'hubspot'],
-    'Sectores': ['medicina', 'salud', 'alimentacion', 'educacion', 'deporte', 'desarrollo-personal', 'traduccion', 'transporte', 'logistica', 'ecommerce', 'higiene', 'b2b']
+    'Servicios': allServiceTags,
+    'Sectores': allIndustryTags
   };
 
-  const getTagCategory = (tag: string) => {
-    for (const [category, tags] of Object.entries(tagCategories)) {
-      if (tags.includes(tag)) return category;
-    }
-    return 'Otros';
-  };
-
-  const formatTagName = (tag: string) => {
-    if (tag === 'diseño-web') return 'Diseño Web';
-    return tag.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase());
+  const formatTagName = (tag: string): string => {
+    const tagMap: { [key: string]: string } = {
+      'implantacion-crm': 'Implantación CRM',
+      'administracion-crm': 'Administración CRM',
+      'automatizacion-procesos-ventas': 'Automatización de Ventas',
+      'seo-positioning': 'Posicionamiento SEO',
+      'publicidad-google-ads': 'Publicidad Google Ads',
+      'publicidad-redes-sociales': 'Publicidad en Redes',
+      'gestion-redes-sociales': 'Gestión de Redes',
+      'estrategia-contenidos': 'Estrategia de Contenidos',
+      'email-marketing': 'Email Marketing',
+      'automatizacion-marketing': 'Automatización Marketing',
+      'creacion-marca': 'Creación de Marca',
+      'diseno-web': 'Diseño Web',
+      'tienda-online': 'Tienda Online',
+      'consultoria-estrategica': 'Consultoría Estratégica',
+      'integraciones-ia': 'Integraciones IA',
+      'formacion-ia': 'Formación IA',
+      'captacion-leads': 'Captación de Leads',
+      'campanas-inbound': 'Campañas Inbound'
+    };
+    
+    return tagMap[tag] || tag.split('-').map(word => 
+      word.charAt(0).toUpperCase() + word.slice(1)
+    ).join(' ');
   };
 
   return (
@@ -123,14 +145,18 @@ const CasosExito = () => {
                 </Button>
                 {Object.entries(tagCategories).map(([category, tags]) => (
                   <div key={category} className="flex flex-wrap gap-2">
-                    {tags.filter(tag => allTags.includes(tag)).map(tag => (
+                    {tags.map(tag => (
                       <Button
                         key={tag}
                         variant={selectedFilter === tag ? 'default' : 'outline'}
                         size="sm"
                         onClick={() => setSelectedFilter(tag)}
                       >
-                        {formatTagName(tag)} ({ALL_SUCCESS_CASES.filter(case_ => case_.tags.includes(tag)).length})
+                        {formatTagName(tag)} ({ALL_SUCCESS_CASES.filter(case_ => 
+                          case_.tags.services.includes(tag) || 
+                          case_.tags.industries.includes(tag) ||
+                          (case_.tags.tools && case_.tags.tools.includes(tag))
+                        ).length})
                       </Button>
                     ))}
                   </div>
@@ -210,7 +236,7 @@ const CasosExito = () => {
                       
                       {/* Tags */}
                       <div className="flex flex-wrap gap-1">
-                        {project.tags.slice(0, viewMode === 'list' ? 6 : 3).map((tag, tagIndex) => (
+                        {project.tags.services.slice(0, viewMode === 'list' ? 3 : 2).map((tag, tagIndex) => (
                           <Badge 
                             key={tagIndex} 
                             variant="secondary" 
@@ -219,9 +245,18 @@ const CasosExito = () => {
                             {formatTagName(tag)}
                           </Badge>
                         ))}
-                        {project.tags.length > (viewMode === 'list' ? 6 : 3) && (
+                        {project.tags.industries.slice(0, 1).map((tag, tagIndex) => (
+                          <Badge 
+                            key={`ind-${tagIndex}`} 
+                            variant="outline" 
+                            className="text-xs"
+                          >
+                            {formatTagName(tag)}
+                          </Badge>
+                        ))}
+                        {(project.tags.services.length + project.tags.industries.length) > (viewMode === 'list' ? 4 : 3) && (
                           <Badge variant="outline" className="text-xs">
-                            +{project.tags.length - (viewMode === 'list' ? 6 : 3)}
+                            +{(project.tags.services.length + project.tags.industries.length) - (viewMode === 'list' ? 4 : 3)}
                           </Badge>
                         )}
                       </div>
