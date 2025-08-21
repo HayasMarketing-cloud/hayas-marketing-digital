@@ -33,12 +33,18 @@ const processSteps = [
   },
   {
     number: "02", 
+    title: "Creación de briefing",
+    description: "Definimos el estilo y tono de la marca así como los contenidos de base.",
+    icon: <FileText className="h-6 w-6" />
+  },
+  {
+    number: "03",
     title: "Diseño y Desarrollo",
     description: "Creamos el diseño UX/UI y desarrollamos tu web con las mejores tecnologías.",
     icon: <Palette className="h-6 w-6" />
   },
   {
-    number: "03",
+    number: "04",
     title: "Lanzamiento y Soporte",
     description: "Publicamos tu web y te acompañamos con soporte técnico y optimización continua.",
     icon: <TrendingUp className="h-6 w-6" />
@@ -107,7 +113,7 @@ const DisenoWeb = () => {
       {/* Sección 3: Cómo funciona */}
       <ProcessSection
         title={<>Cómo <span className="text-gradient-primary">Funciona</span> Nuestro Proceso</>}
-        subtitle="Desarrollamos tu web profesional en 3 pasos claros y eficientes"
+        subtitle="Desarrollamos tu web profesional en 4 pasos claros y eficientes"
         steps={processSteps}
       />
 
