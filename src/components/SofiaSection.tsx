@@ -46,13 +46,57 @@ const SofiaWidget = () => {
   const [hasScrolled, setHasScrolled] = useState(false);
 
   useEffect(() => {
-    if (isOpen && !isMinimized) {
-      // Load Voiceflow widget when chat is opened
+    // Only load script once and avoid reloading
+    const existingScript = document.querySelector('script[src="https://cdn.voiceflow.com/widget-next/bundle.mjs"]');
+    
+    if (isOpen && !isMinimized && !existingScript) {
+      // Load Voiceflow widget when chat is opened for the first time
       const script = document.createElement('script');
       script.type = 'text/javascript';
+      script.async = true;
+      
       script.onload = function() {
+        try {
+          // @ts-ignore
+          if (window.voiceflow) {
+            // @ts-ignore
+            window.voiceflow.chat.load({
+              verify: { projectID: '678fcbc6ec76bf6538a558d8' },
+              url: 'https://general-runtime.voiceflow.com',
+              versionID: 'production',
+              voice: {
+                url: "https://runtime-api.voiceflow.com"
+              },
+              render: {
+                mode: 'embedded',
+                target: document.getElementById('sofia-voiceflow-widget')
+              },
+              launch: {
+                event: {
+                  type: 'launch',
+                  payload: {
+                    message: getPageMessage(location.pathname)
+                  }
+                }
+              }
+            });
+          }
+        } catch (error) {
+          console.warn('Error loading Voiceflow widget:', error);
+        }
+      };
+      
+      script.onerror = function() {
+        console.warn('Failed to load Voiceflow widget script');
+      };
+      
+      script.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
+      document.head.appendChild(script);
+    } else if (isOpen && !isMinimized && existingScript) {
+      // If script already exists, just reinitialize
+      try {
         // @ts-ignore
-        if (window.voiceflow) {
+        if (window.voiceflow && window.voiceflow.chat) {
           // @ts-ignore
           window.voiceflow.chat.load({
             verify: { projectID: '678fcbc6ec76bf6538a558d8' },
@@ -75,19 +119,11 @@ const SofiaWidget = () => {
             }
           });
         }
-      };
-      script.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
-      document.head.appendChild(script);
-
-      return () => {
-        // Cleanup script on unmount
-        const existingScript = document.querySelector('script[src="https://cdn.voiceflow.com/widget-next/bundle.mjs"]');
-        if (existingScript) {
-          document.head.removeChild(existingScript);
-        }
-      };
+      } catch (error) {
+        console.warn('Error reinitializing Voiceflow widget:', error);
+      }
     }
-  }, [isOpen, isMinimized, location.pathname]);
+  }, [isOpen, isMinimized]);
 
   // Listen for custom event to open Sofia chat
   useEffect(() => {
