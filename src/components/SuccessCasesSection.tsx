@@ -126,7 +126,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     industry: "Despacho de abogados",
     service: "Implantación CRM HubSpot y gestión de LinkedIn",
     link: "/casos-exito/bufete-maseras",
-    image: "/lovable-uploads/ac93c5ff-3be5-4f45-99f2-8a747a8b54ab.png",
+    image: "/lovable-uploads/6cf96609-e73c-4a3b-8939-bdc4e1330033.png",
     tags: ["crm", "hubspot", "linkedin", "legal", "b2b"]
   },
   {
