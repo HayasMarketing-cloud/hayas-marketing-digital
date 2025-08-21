@@ -5,8 +5,8 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
-import { Filter, Grid, List } from 'lucide-react';
 import { ALL_SUCCESS_CASES, SuccessCase } from '@/components/SuccessCasesSection';
+import SuccessCaseFilters from '@/components/SuccessCaseFilters';
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -131,64 +131,17 @@ const CasosExito = () => {
 
       <section className="py-8 bg-muted/20">
         <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <div className="flex flex-col lg:flex-row gap-6 items-start justify-center">
-              {/* Filtros */}
-              <div className="flex flex-wrap gap-3">
-                <Button
-                  variant={selectedFilter === 'todos' ? 'default' : 'outline'}
-                  size="sm"
-                  onClick={() => setSelectedFilter('todos')}
-                >
-                  <Filter className="h-4 w-4 mr-2" />
-                  Todos ({ALL_SUCCESS_CASES.length})
-                </Button>
-                {Object.entries(tagCategories).map(([category, tags]) => (
-                  <div key={category} className="flex flex-wrap gap-2">
-                    {tags.map(tag => (
-                      <Button
-                        key={tag}
-                        variant={selectedFilter === tag ? 'default' : 'outline'}
-                        size="sm"
-                        onClick={() => setSelectedFilter(tag)}
-                      >
-                        {formatTagName(tag)} ({ALL_SUCCESS_CASES.filter(case_ => 
-                          case_.tags.services.includes(tag) || 
-                          case_.tags.industries.includes(tag) ||
-                          (case_.tags.tools && case_.tags.tools.includes(tag))
-                        ).length})
-                      </Button>
-                    ))}
-                  </div>
-                ))}
-              </div>
-
-              {/* Controles de vista */}
-              <div className="flex items-center gap-2">
-                <Button
-                  variant={viewMode === 'grid' ? 'default' : 'outline'}
-                  size="sm"
-                  onClick={() => setViewMode('grid')}
-                >
-                  <Grid className="h-4 w-4" />
-                </Button>
-                <Button
-                  variant={viewMode === 'list' ? 'default' : 'outline'}
-                  size="sm"
-                  onClick={() => setViewMode('list')}
-                >
-                  <List className="h-4 w-4" />
-                </Button>
-              </div>
-            </div>
-
-            {/* Resultados del filtro */}
-            <div className="mt-4 text-sm text-muted-foreground">
-              {selectedFilter === 'todos' 
-                ? `Mostrando todos los ${filteredCases.length} casos de éxito`
-                : `Mostrando ${filteredCases.length} casos de éxito para "${formatTagName(selectedFilter)}"`
-              }
-            </div>
+          <div className="max-w-6xl mx-auto">
+            <SuccessCaseFilters
+              selectedFilter={selectedFilter}
+              onFilterChange={setSelectedFilter}
+              viewMode={viewMode}
+              onViewModeChange={setViewMode}
+              totalCases={ALL_SUCCESS_CASES.length}
+              filteredCount={filteredCases.length}
+              serviceFilters={allServiceTags}
+              industryFilters={allIndustryTags}
+            />
           </div>
         </div>
       </section>
@@ -198,12 +151,20 @@ const CasosExito = () => {
         <div className="container mx-auto px-4">
           {filteredCases.length === 0 ? (
             <div className="text-center py-12">
-              <p className="text-lg text-muted-foreground mb-4">
-                No se encontraron casos de éxito para el filtro seleccionado.
-              </p>
-              <Button onClick={() => setSelectedFilter('todos')}>
-                Ver todos los casos
-              </Button>
+              <div className="max-w-md mx-auto">
+                <div className="mb-6">
+                  <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-muted flex items-center justify-center">
+                    <div className="text-2xl">🔍</div>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">No hay resultados</h3>
+                  <p className="text-muted-foreground">
+                    No se encontraron casos de éxito para el filtro seleccionado.
+                  </p>
+                </div>
+                <Button onClick={() => setSelectedFilter('todos')} variant="outline">
+                  Ver todos los casos
+                </Button>
+              </div>
             </div>
           ) : (
             <div className={
