@@ -278,7 +278,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     industry: "Centro comercial urbano en Rivas-Vaciamadrid",
     service: "Estrategia de contenidos, campañas creativas y mantenimiento web",
     link: "/casos-exito/rivas-centro",
-    image: "https://images.unsplash.com/photo-1481437642641-2f0ae875f836?q=80&w=2069&auto=format&fit=crop",
+    image: "/lovable-uploads/de93dd1b-7f99-4499-81a7-87a1ec7c9d5f.png",
     tags: ["redes-sociales", "contenidos", "campañas", "alojamiento-mantenimiento", "retail", "b2c", "rivas-vaciamadrid"]
   },
   {
