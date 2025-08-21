@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import Seo from '@/components/Seo';
+import { successCaseImages } from '@/data/successCaseImages';
 import { CheckCircle, ArrowLeft, Target, Database } from 'lucide-react';
 
 const CasoExitoAlfixConsultores: React.FC = () => {
@@ -35,7 +36,7 @@ const CasoExitoAlfixConsultores: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
-      <Seo title={pageTitle} description={pageDescription} canonical={canonical} structuredData={structuredData} />
+      <Seo title={pageTitle} description={pageDescription} canonical={canonical} structuredData={structuredData} ogImage={successCaseImages.alfixConsultores} />
       <Navigation />
 
       <main className="flex-grow">

@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import Seo from '@/components/Seo';
+import { successCaseImages } from '@/data/successCaseImages';
 import { CheckCircle } from 'lucide-react';
 
 const CasoExitoConversaConsultores: React.FC = () => {
@@ -23,7 +24,7 @@ const CasoExitoConversaConsultores: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
-      <Seo title={pageTitle} description={pageDescription} canonical={canonical} structuredData={structuredData} />
+      <Seo title={pageTitle} description={pageDescription} canonical={canonical} structuredData={structuredData} ogImage={successCaseImages.conversaConsultores} />
       <Navigation />
 
       <main className="flex-grow">
