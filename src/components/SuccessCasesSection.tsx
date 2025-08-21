@@ -203,7 +203,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     industry: "Asesoría fiscal y despacho de abogados",
     service: "Implantación CRM HubSpot con enfoque en eficiencia y venta cruzada",
     link: "/casos-exito/alfix-consultores",
-    image: "/src/assets/alfix-consultores-office.jpg",
+    image: "/lovable-uploads/ac02e71a-419d-4ad5-b089-5e8472a441c5.png",
     tags: {
       services: ["implantacion-crm", "automatizacion-procesos-ventas"],
       industries: ["legal", "consultoria"],

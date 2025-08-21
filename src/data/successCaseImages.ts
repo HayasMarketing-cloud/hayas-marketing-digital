@@ -4,7 +4,7 @@
 export const successCaseImages = {
   // Existing cases with current images
   aistercel: "/lovable-uploads/0f26012e-fbd2-4dcb-a1a8-3bdd380a0c10.png",
-  alfixConsultores: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2070&auto=format&fit=crop",
+  alfixConsultores: "/lovable-uploads/ac02e71a-419d-4ad5-b089-5e8472a441c5.png",
   almaCruceros: "/lovable-uploads/9b7cad00-2cca-451d-a515-ac666898dbc9.png",
   asendia: "/lovable-uploads/871690e2-0d95-456b-86a1-c284ffaf7d5e.png",
   aspAsepsia: "/lovable-uploads/6cf96609-e73c-4a3b-8939-bdc4e1330033.png",

@@ -116,8 +116,8 @@ const CasoExitoAlfixConsultores: React.FC = () => {
               </div>
               <div className="relative">
                 <img 
-                  src="/src/assets/alfix-consultores-office.jpg" 
-                  alt="ALFIX Consultores - Oficina profesional de asesoría fiscal y legal"
+                  src="/lovable-uploads/ac02e71a-419d-4ad5-b089-5e8472a441c5.png" 
+                  alt="ALFIX Consultores - Profesional en oficina con títulos y certificaciones"
                   className="relative z-10 w-full h-[400px] md:h-[400px] object-cover rounded-3xl shadow-2xl"
                 />
               </div>
