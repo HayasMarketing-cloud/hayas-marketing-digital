@@ -53,83 +53,136 @@ const SofiaWidget = () => {
   const [hasScrolled, setHasScrolled] = useState(false);
 
   useEffect(() => {
-    // Only load script once and avoid reloading
+    let timeoutId: NodeJS.Timeout;
+    
+    // Only proceed if chat is open and not minimized
+    if (!isOpen || isMinimized) return;
+
+    // Check if script already exists
     const existingScript = document.querySelector('script[src="https://cdn.voiceflow.com/widget-next/bundle.mjs"]');
     
-    if (isOpen && !isMinimized && !existingScript) {
-      // Load Voiceflow widget when chat is opened for the first time
-      const script = document.createElement('script');
-      script.type = 'text/javascript';
-      script.async = true;
-      
-      script.onload = function() {
-        try {
-          // @ts-ignore
-          if (window.voiceflow) {
+    // Add a delay to prevent rapid-fire requests
+    timeoutId = setTimeout(() => {
+      if (!existingScript) {
+        // Load Voiceflow widget script only once
+        const script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.async = true;
+        script.defer = true;
+        
+        let loadAttempts = 0;
+        const maxAttempts = 2;
+        
+        const initializeWidget = () => {
+          try {
             // @ts-ignore
-            window.voiceflow.chat.load({
-              verify: { projectID: '678fcbc6ec76bf6538a558d8' },
-              url: 'https://general-runtime.voiceflow.com',
-              versionID: 'production',
-              voice: {
-                url: "https://runtime-api.voiceflow.com"
-              },
-              render: {
-                mode: 'embedded',
-                target: document.getElementById('sofia-voiceflow-widget')
-              },
-              launch: {
-                event: {
-                  type: 'launch',
-                  payload: {
-                    message: getPageMessage(location.pathname)
+            if (window.voiceflow && window.voiceflow.chat) {
+              const targetElement = document.getElementById('sofia-voiceflow-widget');
+              if (targetElement) {
+                // @ts-ignore
+                window.voiceflow.chat.load({
+                  verify: { projectID: '678fcbc6ec76bf6538a558d8' },
+                  url: 'https://general-runtime.voiceflow.com',
+                  versionID: 'production',
+                  render: {
+                    mode: 'embedded',
+                    target: targetElement
+                  },
+                  launch: {
+                    event: {
+                      type: 'launch',
+                      payload: {
+                        message: getPageMessage(location.pathname)
+                      }
+                    }
                   }
-                }
-              }
-            });
-          }
-        } catch (error) {
-          console.warn('Error loading Voiceflow widget:', error);
-        }
-      };
-      
-      script.onerror = function() {
-        console.warn('Failed to load Voiceflow widget script');
-      };
-      
-      script.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
-      document.head.appendChild(script);
-    } else if (isOpen && !isMinimized && existingScript) {
-      // If script already exists, just reinitialize
-      try {
-        // @ts-ignore
-        if (window.voiceflow && window.voiceflow.chat) {
-          // @ts-ignore
-          window.voiceflow.chat.load({
-            verify: { projectID: '678fcbc6ec76bf6538a558d8' },
-            url: 'https://general-runtime.voiceflow.com',
-            versionID: 'production',
-            voice: {
-              url: "https://runtime-api.voiceflow.com"
-            },
-            render: {
-              mode: 'embedded',
-              target: document.getElementById('sofia-voiceflow-widget')
-            },
-            launch: {
-              event: {
-                type: 'launch',
-                payload: {
-                  message: getPageMessage(location.pathname)
-                }
+                });
               }
             }
-          });
+          } catch (error) {
+            console.warn('Error initializing Voiceflow widget:', error);
+          }
+        };
+        
+        script.onload = () => {
+          // Wait a bit for the script to fully initialize
+          setTimeout(initializeWidget, 100);
+        };
+        
+        script.onerror = () => {
+          loadAttempts++;
+          console.warn(`Failed to load Voiceflow widget script (attempt ${loadAttempts})`);
+          
+          // Remove failed script and retry once
+          if (loadAttempts < maxAttempts) {
+            document.head.removeChild(script);
+            setTimeout(() => {
+              const retryScript = document.createElement('script');
+              retryScript.src = script.src;
+              retryScript.async = true;
+              retryScript.defer = true;
+              retryScript.onload = script.onload;
+              retryScript.onerror = script.onerror;
+              document.head.appendChild(retryScript);
+            }, 1000);
+          }
+        };
+        
+        script.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
+        document.head.appendChild(script);
+        
+      } else if ((window as any).voiceflow) {
+        // Script exists, just reinitialize
+        const targetElement = document.getElementById('sofia-voiceflow-widget');
+        if (targetElement) {
+          try {
+            // @ts-ignore
+            if ((window as any).voiceflow.chat) {
+              // @ts-ignore
+              window.voiceflow.chat.load({
+                verify: { projectID: '678fcbc6ec76bf6538a558d8' },
+                url: 'https://general-runtime.voiceflow.com',
+                versionID: 'production',
+                render: {
+                  mode: 'embedded',
+                  target: targetElement
+                },
+                launch: {
+                  event: {
+                    type: 'launch',
+                    payload: {
+                      message: getPageMessage(location.pathname)
+                    }
+                  }
+                }
+              });
+            }
+          } catch (error) {
+            console.warn('Error reinitializing Voiceflow widget:', error);
+            // Show fallback message if Voiceflow fails
+            if (targetElement) {
+              targetElement.innerHTML = `
+                <div class="flex items-center justify-center h-full p-4">
+                  <div class="text-center">
+                    <p class="text-gray-600 mb-2">¡Hola! Soy SofÍA</p>
+                    <p class="text-sm text-gray-500">El asistente no está disponible temporalmente</p>
+                    <a href="/contacto" class="inline-block mt-3 px-4 py-2 bg-lime-500 text-white rounded-lg text-sm hover:bg-lime-600 transition-colors">
+                      Contactar directamente
+                    </a>
+                  </div>
+                </div>
+              `;
+            }
+          }
         }
-      } catch (error) {
-        console.warn('Error reinitializing Voiceflow widget:', error);
       }
-    }
+    }, 300); // Small delay to prevent rapid requests
+
+    return () => {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+    };
   }, [isOpen, isMinimized]);
 
   // Listen for custom event to open Sofia chat
