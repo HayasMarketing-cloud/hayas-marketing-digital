@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { ChevronDown, ArrowRight } from 'lucide-react';
+import { ChevronDown, ArrowRight, ArrowLeft } from 'lucide-react';
 
 import { servicesByPillar, pillarMeta } from '@/data/services';
 import type { PillarKey } from '@/data/services';
@@ -13,6 +13,7 @@ const Navigation = () => {
   const [hoverTimeout, setHoverTimeout] = useState<NodeJS.Timeout | null>(null);
   const headerRef = useRef<HTMLElement | null>(null);
   const [headerHeight, setHeaderHeight] = useState<number>(0);
+  const [mobileMenuLevel, setMobileMenuLevel] = useState<'main' | 'soluciones' | 'servicios'>('main');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -86,6 +87,15 @@ const Navigation = () => {
   ];
 
   const pillarKeys: PillarKey[] = ['impulsa', 'conecta', 'activa'];
+
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+    setMobileMenuLevel('main');
+  };
+
+  const navigateToLevel = (level: 'main' | 'soluciones' | 'servicios') => {
+    setMobileMenuLevel(level);
+  };
 
   return (
     <>
@@ -179,102 +189,167 @@ const Navigation = () => {
 
           {/* Mobile Navigation Menu */}
           {mobileMenuOpen && (
-            <div className="lg:hidden bg-background border border-border mt-4 py-4 px-2 rounded-lg shadow-corporate animate-slideUp">
-              <nav className="flex flex-col stack-sm">
-                {/* Soluciones Accordion Mobile */}
-                <div className="px-4 py-2">
-                  <div className="text-foreground font-medium mb-4 border-b border-border pb-2">Soluciones</div>
-                  <div className="space-y-4">
-                    {/* Pillar quick links */}
-                    <div className="pl-2 mb-2">
-                      <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2">Enfoques estratégicos</h4>
-                      <div className="pl-2 space-y-2">
-                        {pillars.map((p) => (
-                          <Link
-                            key={p.href}
-                            to={p.href}
-                            className="block text-sm text-foreground hover:text-primary transition-colors py-2 hover:bg-muted/50 px-2 rounded"
-                            onClick={() => setMobileMenuOpen(false)}
-                          >
-                            {p.title}
-                          </Link>
-                        ))}
-                      </div>
+            <div className="lg:hidden bg-background border border-border mt-4 py-4 px-2 rounded-lg shadow-corporate animate-slideUp max-h-[80vh] overflow-y-auto">
+              <nav className="flex flex-col">
+                
+                {/* Main Level */}
+                {mobileMenuLevel === 'main' && (
+                  <div className="space-y-2">
+                    <button
+                      onClick={() => navigateToLevel('soluciones')}
+                      className="w-full flex items-center justify-between text-foreground hover:text-primary font-medium transition-colors px-4 py-3 hover:bg-muted/50 rounded text-left"
+                    >
+                      <span>Soluciones</span>
+                      <ArrowRight className="h-4 w-4" />
+                    </button>
+                    
+                    <Link
+                      to="/casos-exito"
+                      className="block text-foreground hover:text-primary font-medium transition-colors px-4 py-3 hover:bg-muted/50 rounded"
+                      onClick={closeMobileMenu}
+                    >
+                      Casos de Éxito
+                    </Link>
+                    
+                    <button
+                      onClick={() => navigateToLevel('servicios')}
+                      className="w-full flex items-center justify-between text-foreground hover:text-primary font-medium transition-colors px-4 py-3 hover:bg-muted/50 rounded text-left"
+                    >
+                      <span>Servicios</span>
+                      <ArrowRight className="h-4 w-4" />
+                    </button>
+                    
+                    <Link
+                      to="/nosotros"
+                      className="block text-foreground hover:text-primary font-medium transition-colors px-4 py-3 hover:bg-muted/50 rounded"
+                      onClick={closeMobileMenu}
+                    >
+                      La Agencia
+                    </Link>
+                    
+                    <Link
+                      to="/blog"
+                      className="block text-foreground hover:text-primary font-medium transition-colors px-4 py-3 hover:bg-muted/50 rounded"
+                      onClick={closeMobileMenu}
+                    >
+                      Blog
+                    </Link>
+                    
+                    <Link
+                      to="/contacto"
+                      className="block text-foreground hover:text-primary font-medium transition-colors px-4 py-3 hover:bg-muted/50 rounded"
+                      onClick={closeMobileMenu}
+                    >
+                      Contacto
+                    </Link>
+                    
+                    <div className="mt-4 px-4">
+                      <Button asChild className="gradient-primary text-white w-full hover-scale">
+                        <Link to="/agendar-reunion" onClick={closeMobileMenu}>Solicitar Consulta</Link>
+                      </Button>
                     </div>
+                  </div>
+                )}
 
-                    {/* Categories (deprecated, kept for structure) */}
-                    {megaMenuData.soluciones.categories.map((category: any, idx: number) => (
-                      <div key={idx}>
-                        <h4 className="font-medium text-sm text-muted-foreground mb-2 px-2">{category.title}</h4>
-                        <div className="pl-4 space-y-2">
-                          {category.items.map((item: any) => (
+                {/* Soluciones Level */}
+                {mobileMenuLevel === 'soluciones' && (
+                  <div className="space-y-2">
+                    <div className="flex items-center px-4 py-3 border-b border-border mb-4">
+                      <button
+                        onClick={() => navigateToLevel('main')}
+                        className="flex items-center text-muted-foreground hover:text-primary transition-colors"
+                      >
+                        <ArrowLeft className="h-4 w-4 mr-2" />
+                        Volver
+                      </button>
+                      <span className="ml-4 font-medium text-foreground">Soluciones</span>
+                    </div>
+                    
+                    <div className="px-4 space-y-3">
+                      <div className="mb-6">
+                        <h4 className="font-medium text-sm text-muted-foreground mb-3">Enfoques estratégicos</h4>
+                        <div className="space-y-2">
+                          {pillars.map((p) => (
                             <Link
-                              key={item.href}
-                              to={item.href}
-                              className="block text-sm text-foreground hover:text-primary transition-colors py-1 hover:bg-muted/50 px-2 rounded"
-                              onClick={() => setMobileMenuOpen(false)}
+                              key={p.href}
+                              to={p.href}
+                              className="block text-foreground hover:text-primary transition-colors py-3 px-3 hover:bg-muted/50 rounded-lg border border-border/50"
+                              onClick={closeMobileMenu}
                             >
-                              {item.title}
+                              <div className="flex items-center justify-between">
+                                <span className="font-medium">{p.title}</span>
+                                <ArrowRight className="h-4 w-4 text-muted-foreground" />
+                              </div>
                             </Link>
                           ))}
                         </div>
                       </div>
-                    ))}
+                      
+                      <div>
+                        <h4 className="font-medium text-sm text-muted-foreground mb-3">Servicios por categoría</h4>
+                        <div className="space-y-4">
+                          {pillarKeys.map((key) => (
+                            <div key={key} className="space-y-2">
+                              <h5 className="text-xs font-medium text-primary uppercase tracking-wide">
+                                {pillarMeta[key].title}
+                              </h5>
+                              <div className="space-y-1">
+                                {servicesByPillar[key].slice(0, 4).map((svc) => (
+                                  <Link
+                                    key={svc.href}
+                                    to={svc.href}
+                                    className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 px-2 hover:bg-muted/30 rounded"
+                                    onClick={closeMobileMenu}
+                                  >
+                                    • {svc.title}
+                                  </Link>
+                                ))}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
+                )}
 
-                {/* Casos de Éxito Mobile: solo enlace */}
-                <div className="px-4 py-2">
-                  <Link
-                    to="/casos-exito"
-                    className="block text-foreground hover:text-primary transition-colors py-2 hover:bg-muted/50 px-2 rounded"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Casos de Éxito
-                  </Link>
-                </div>
-
-                {/* Servicios Mobile */}
-                <div className="px-4 py-2">
-                  <div className="text-foreground font-medium mb-3 border-b border-border pb-2">Servicios</div>
+                {/* Servicios Level */}
+                {mobileMenuLevel === 'servicios' && (
                   <div className="space-y-2">
-                    {megaMenuData.servicios.map((servicio) => (
-                      <Link
-                        key={servicio.href}
-                        to={servicio.href}
-                        className="block text-sm text-foreground hover:text-primary transition-colors py-2 hover:bg-muted/50 px-2 rounded"
-                        onClick={() => setMobileMenuOpen(false)}
+                    <div className="flex items-center px-4 py-3 border-b border-border mb-4">
+                      <button
+                        onClick={() => navigateToLevel('main')}
+                        className="flex items-center text-muted-foreground hover:text-primary transition-colors"
                       >
-                        {servicio.title}
-                      </Link>
-                    ))}
+                        <ArrowLeft className="h-4 w-4 mr-2" />
+                        Volver
+                      </button>
+                      <span className="ml-4 font-medium text-foreground">Servicios</span>
+                    </div>
+                    
+                    <div className="px-4 space-y-2">
+                      {megaMenuData.servicios.map((servicio) => (
+                        <Link
+                          key={servicio.href}
+                          to={servicio.href}
+                          className="block hover:bg-muted/50 py-3 px-3 rounded-lg transition-colors border border-border/30"
+                          onClick={closeMobileMenu}
+                        >
+                          <div className="flex items-start justify-between">
+                            <div className="flex-1">
+                              <h5 className="font-medium text-foreground mb-1">
+                                {servicio.title}
+                              </h5>
+                              <p className="text-xs text-muted-foreground">{servicio.description}</p>
+                            </div>
+                            <ArrowRight className="h-4 w-4 text-muted-foreground mt-1 ml-2 flex-shrink-0" />
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
                   </div>
-                </div>
-
-                <Link
-                  to="/nosotros"
-                  className="text-foreground hover:text-primary font-medium transition-colors px-4 py-2 hover:bg-muted/50 rounded"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  La Agencia
-                </Link>
-                <Link
-                  to="/blog"
-                  className="text-foreground hover:text-primary font-medium transition-colors px-4 py-2 hover:bg-muted/50 rounded"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Blog
-                </Link>
-                <Link
-                  to="/contacto"
-                  className="text-foreground hover:text-primary font-medium transition-colors px-4 py-2 hover:bg-muted/50 rounded"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Contacto
-                </Link>
-                <Button asChild className="gradient-primary text-white mx-4 hover-scale">
-                  <Link to="/agendar-reunion">Solicitar Consulta</Link>
-                </Button>
+                )}
+                
               </nav>
             </div>
           )}
