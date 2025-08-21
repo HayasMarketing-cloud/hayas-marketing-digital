@@ -12,7 +12,7 @@ const Footer: React.FC<FooterProps> = ({
   const currentYear = new Date().getFullYear();
   return <footer className="bg-gray-900 text-gray-300">
       <div className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div>
             <h3 className="text-xl font-bold text-white mb-4">Hayas Marketing</h3>
             <p className="mb-4">En Hayas, integramos automatización e inteligencia artificial con estrategia y propósito para mejorar la eficiencia, escalar las ventas y construir relaciones auténticas entre marcas y personas.</p>
@@ -57,16 +57,6 @@ const Footer: React.FC<FooterProps> = ({
             </ul>
           </div>
           
-          <div>
-            <h3 className="text-xl font-bold text-white mb-4">Enlaces rápidos</h3>
-            <ul className="space-y-3">
-              <li><a href="/#top" className="hover:text-secondary transition-colors">Inicio</a></li>
-              <li><a href="#todos-servicios" className="hover:text-secondary transition-colors">Servicios</a></li>
-              <li><a href="#nosotros" className="hover:text-secondary transition-colors">¿Por qué elegirnos?</a></li>
-              <li><a href="#contacto" className="hover:text-secondary transition-colors">Contacto</a></li>
-              <li><a href="#" className="hover:text-secondary transition-colors">Blog</a></li>
-            </ul>
-          </div>
           
           <div>
             <h3 className="text-xl font-bold text-white mb-4">Contacto</h3>
