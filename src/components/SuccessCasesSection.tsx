@@ -270,7 +270,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
   industry: "Retail y ocio",
   service: "Estrategia de redes sociales, campañas y mantenimiento web",
   link: "/casos-exito/plaza-de-la-estacion",
-  image: "https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=2069&auto=format&fit=crop",
+  image: "/lovable-uploads/69abb7c5-dcbb-4711-9201-5d724ed944f3.png",
   tags: ["redes-sociales", "contenidos", "campañas", "alojamiento-mantenimiento", "retail", "b2c", "fuenlabrada"]
   },
   {
