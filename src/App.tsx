@@ -19,7 +19,7 @@ import CasoExitoAsendia from "./pages/CasoExitoAsendia";
 import CasoExitoNexoVital from "./pages/CasoExitoNexoVital";
 import CasoExitoIVirgenExtra from "./pages/CasoExitoIVirgenExtra";
 import CasoExitoInboundStudents from "./pages/CasoExitoInboundStudents";
-import CasoExitoCalistheniaOnline from "./pages/CasoExitoCalistheniaOnline";
+import CalistheniaOnlinePage from "./pages/CalistheniaOnlinePage";
 import CasoExitoCentroRoraima from "./pages/CasoExitoCentroRoraima";
 import CasoExitoJointsUp from "./pages/CasoExitoJointsUp";
 import CasoExitoTranslateWithStyle from "./pages/CasoExitoTranslateWithStyle";
@@ -154,7 +154,7 @@ const App = () => (
           <Route path="/casos-exito/nexo-vital" element={<CasoExitoNexoVital />} />
           <Route path="/casos-exito/i-virgen-extra" element={<CasoExitoIVirgenExtra />} />
           <Route path="/casos-exito/inbound-students" element={<CasoExitoInboundStudents />} />
-          <Route path="/casos-exito/calistenia-online" element={<CasoExitoCalistheniaOnline />} />
+          <Route path="/casos-exito/calistenia-online" element={<CalistheniaOnlinePage />} />
           <Route path="/casos-exito/centro-roraima" element={<CasoExitoCentroRoraima />} />
           <Route path="/casos-exito/joints-up" element={<CasoExitoJointsUp />} />
           <Route path="/casos-exito/translate-with-style" element={<CasoExitoTranslateWithStyle />} />
