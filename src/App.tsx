@@ -159,7 +159,7 @@ const App = () => (
           <Route path="/casos-exito/nexo-vital" element={<CasoExitoNexoVital />} />
           <Route path="/casos-exito/i-virgen-extra" element={<CasoExitoIVirgenExtra />} />
           <Route path="/casos-exito/inbound-students" element={<CasoExitoInboundStudents />} />
-          <Route path="/casos-exito/calistenia-online" element={<CalistheniaOnlinePage />} />
+          <Route path="/casos-exito/calisthenia-online" element={<CalistheniaOnlinePage />} />
           <Route path="/casos-exito/centro-roraima" element={<CasoExitoCentroRoraima />} />
           <Route path="/casos-exito/joints-up" element={<CasoExitoJointsUp />} />
           <Route path="/casos-exito/translate-with-style" element={<CasoExitoTranslateWithStyle />} />
@@ -246,7 +246,7 @@ const App = () => (
           <Route path="/caso-exito-nexo-vital" element={<Navigate to="/casos-exito/nexo-vital" replace />} />
           <Route path="/caso-exito-i-virgen-extra" element={<Navigate to="/casos-exito/i-virgen-extra" replace />} />
           <Route path="/caso-exito-inbound-students" element={<Navigate to="/casos-exito/inbound-students" replace />} />
-          <Route path="/caso-exito-calistenia-online" element={<Navigate to="/casos-exito/calistenia-online" replace />} />
+          <Route path="/caso-exito-calistenia-online" element={<Navigate to="/casos-exito/calisthenia-online" replace />} />
           <Route path="/caso-exito-centro-roraima" element={<Navigate to="/casos-exito/centro-roraima" replace />} />
           <Route path="/caso-exito-joints-up" element={<Navigate to="/casos-exito/joints-up" replace />} />
           <Route path="/caso-exito-translate-with-style" element={<Navigate to="/casos-exito/translate-with-style" replace />} />
