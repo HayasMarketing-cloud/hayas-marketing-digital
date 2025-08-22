@@ -3,21 +3,23 @@ import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import ProcessSection from '@/components/ProcessSection';
+import ServiceRelatedPosts from '@/components/ServiceRelatedPosts';
+import ReviewsSection from '@/components/ReviewsSection';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import KitDigitalBanner from '@/components/KitDigitalBanner';
-
 import FAQSection from '@/components/FAQSection';
-import ServiceContactSection from '@/components/ServiceContactSection';
 import SuccessCasesSection from '@/components/SuccessCasesSection';
-import { getServiceSuccessCasesConfig } from '@/data/serviceSuccessCasesMapping';
+import ServiceContactSection from '@/components/ServiceContactSection';
+import BrandingPainPointsSection from '@/components/BrandingPainPointsSection';
+import BrandingSolutionPreviewSection from '@/components/BrandingSolutionPreviewSection';
+import IntermediateCTA from '@/components/IntermediateCTA';
+import BrandingBenefitsGridSection from '@/components/BrandingBenefitsGridSection';
 import { 
-  Palette, Lightbulb, FileText, Target, Eye, Users, 
-  ArrowRight, CheckCircle, Star, Zap, TrendingUp,
-  Sparkles, Shield, Timer, Settings, BarChart3, Globe
+  Palette, Target, BarChart3, Globe, CheckCircle, ArrowRight,
+  Lightbulb, FileText, Eye, Users
 } from 'lucide-react';
-import OptimizedImage from '@/components/OptimizedImage';
+import { getServiceSuccessCasesConfig } from '@/data/serviceSuccessCasesMapping';
 
 const brandingServices = [
   {
@@ -169,133 +171,70 @@ const faqItems = [
   }
 ];
 
-const CreacionMarca: React.FC = () => {
-  const successCasesConfig = getServiceSuccessCasesConfig('creacion-marca');
-  
+const CreacionMarca = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       <Navigation />
       
       {/* Breadcrumb */}
-      <div className="bg-muted/30 py-3 md:py-4 mb-4 md:mb-6">
+      <div className="bg-muted/30 py-4 mt-20">
         <div className="container mx-auto px-4">
-          <nav className="text-sm text-muted-foreground" role="navigation" aria-label="Breadcrumb">
+          <nav className="text-sm text-gray-600">
             <Link to="/" className="hover:text-primary">Inicio</Link>
             <span className="mx-2">/</span>
             <Link to="/servicios" className="hover:text-primary">Servicios</Link>
             <span className="mx-2">/</span>
-            <span className="text-foreground">Creación de Marca</span>
+            <span className="text-gray-900">Creación de Marca</span>
           </nav>
         </div>
       </div>
 
-      {/* Hero Section */}
-      <section className="section-tight bg-gradient-to-r from-primary/10 via-primary/5 to-background">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="stack-sm">
-                <Badge variant="secondary" className="mb-4">
-                  <Sparkles className="h-4 w-4 mr-2" />
-                  Branding & Identidad Visual
-                </Badge>
-                <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-                  Creamos Marcas que <span className="text-primary">Conectan y Convierten</span>
-                </h1>
-              </div>
-              <p className="text-lg text-muted-foreground mb-8">
-                Transformamos tu idea en una marca memorable que destaque en el mercado. 
-                Desde la estrategia hasta la implementación, creamos identidades visuales 
-                que generan conexión emocional con tu audiencia.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="group" asChild>
-                  <Link to="/contacto">
-                    Crear mi Marca
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </Button>
-                <Button variant="outline" size="lg" asChild>
-                  <Link to="#proceso">Ver Proceso</Link>
-                </Button>
-              </div>
-            </div>
-            <div className="relative">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <OptimizedImage
-                  src="/lovable-uploads/bf24688d-75b9-4512-979e-8e9ace8f1643.png"
-                  alt="Creación de marca: paletas de color, pruebas de identidad visual y aplicaciones digitales"
-                  className="w-full h-auto"
-                  priority
-                  sizes="(max-width: 1024px) 100vw, 600px"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Sección 1: Dolor / Problema */}
+      <BrandingPainPointsSection />
 
-      {/* Servicios Integrales */}
-      <section className="py-20">
+      {/* Sección 2: Propuesta / Nuestra solución */}
+      <BrandingSolutionPreviewSection />
+
+      {/* Sección 3: Soluciones Especializadas */}
+      <section id="tipos" className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-              Branding Integral que Marca la Diferencia
+              Tipos de <span className="text-gradient-primary">Branding</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Desarrollamos todos los elementos necesarios para que tu marca tenga una presencia 
-              coherente, memorable y efectiva en todos los puntos de contacto con tus clientes.
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Adaptamos nuestra metodología según tu tipo de proyecto y objetivos específicos
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {brandingServices.map((service, index) => (
-              <Card key={index} className="group hover:shadow-lg transition-all duration-300 border-border/50 hover:border-primary/20">
-                <CardHeader>
-                  <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
-                    {service.icon}
-                  </div>
-                  <CardTitle className="text-xl mb-2">{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{service.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Tipos de Branding */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-              Branding Especializado para cada Necesidad
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Adaptamos nuestra metodología de branding según el tipo de proyecto, 
-              sector y objetivos específicos de tu negocio.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {brandingTypes.map((type, index) => (
-              <Card key={index} className="h-full">
-                <CardHeader>
-                  <CardTitle className="text-xl text-primary">{type.title}</CardTitle>
+              <Card key={index} className="relative overflow-hidden hover:shadow-xl transition-shadow">
+                <CardHeader className="pb-4">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className={`p-3 rounded-lg ${index % 2 === 0 ? 'bg-primary/10 text-primary' : 'bg-secondary/10 text-secondary'}`}>
+                      <Palette className="w-8 h-8" />
+                    </div>
+                    <div>
+                      <CardTitle className="text-xl">{type.title}</CardTitle>
+                    </div>
+                  </div>
                   <p className="text-muted-foreground">{type.description}</p>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-2">
-                    {type.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center">
-                        <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
-                        <span className="text-sm">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="space-y-6">
+                    <div>
+                      <h4 className="font-semibold mb-3">Incluye:</h4>
+                      <ul className="space-y-2">
+                        {type.features.map((feature, fIndex) => (
+                          <li key={fIndex} className="flex items-start gap-2">
+                            <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                            <span className="text-sm">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
             ))}
@@ -303,117 +242,47 @@ const CreacionMarca: React.FC = () => {
         </div>
       </section>
 
-      {/* Por qué Elegirnos */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-                ¿Por qué crear tu marca con nosotros?
-              </h2>
-              <p className="text-lg text-muted-foreground mb-8">
-                Combinamos estrategia, creatividad y experiencia para crear marcas 
-                que no solo se ven bien, sino que funcionan y generan resultados reales.
-              </p>
-              
-              <div className="grid gap-6">
-                {benefits.map((benefit, index) => (
-                  <div key={index} className="flex items-start">
-                    <div className="flex-shrink-0 w-6 h-6 bg-primary rounded-full flex items-center justify-center mr-4 mt-1">
-                      <CheckCircle className="w-4 h-4 text-primary-foreground" />
-                    </div>
-                    <span className="text-foreground">{benefit}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            
-            <div className="relative">
-              <Card className="p-8 bg-gradient-to-br from-primary/5 to-primary/10">
-                <div className="text-center">
-                  <Zap className="h-16 w-16 text-primary mx-auto mb-4" />
-                  <h3 className="text-2xl font-bold mb-4">Resultados Garantizados</h3>
-                  <p className="text-muted-foreground mb-6">
-                    Más de 50 marcas creadas y renovadas con resultados medibles
-                  </p>
-                  <div className="grid grid-cols-3 gap-4 text-center">
-                    <div>
-                      <div className="text-2xl font-bold text-primary">98%</div>
-                      <div className="text-sm text-muted-foreground">Satisfacción</div>
-                    </div>
-                    <div>
-                      <div className="text-2xl font-bold text-primary">+50</div>
-                      <div className="text-sm text-muted-foreground">Marcas Creadas</div>
-                    </div>
-                    <div>
-                      <div className="text-2xl font-bold text-primary">6-12</div>
-                      <div className="text-sm text-muted-foreground">Semanas</div>
-                    </div>
-                  </div>
-                </div>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Proceso */}
+      {/* Sección 4: Cómo funciona */}
       <ProcessSection
-        title="Nuestro Proceso de Creación de Marca"
-        subtitle="Un proceso estructurado y colaborativo que garantiza una marca alineada con tus objetivos y que conecte con tu audiencia."
+        title={<>Nuestro proceso de <span className="text-gradient-primary">creación de marca</span></>}
+        subtitle="Un enfoque estructurado que garantiza una marca alineada con tus objetivos"
         steps={processSteps}
-        backgroundColor="bg-gradient-to-br from-gray-50 to-white"
-        showIcons={true}
       />
 
+      {/* Sección 5: Beneficios */}
+      <BrandingBenefitsGridSection />
 
-      {/* Kit Digital */}
-      <KitDigitalBanner />
+      {/* Sección 6: Prueba social */}
+      <SuccessCasesSection
+        id="casos-exito"
+        title="Casos de <span className='text-gradient-primary'>éxito</span>"
+        subtitle="Marcas que hemos creado y que están generando resultados excepcionales para nuestros clientes."
+        specificCases={["Centro Roraima", "JointsUp", "IV Extra", "Dr. Parrón"]}
+        maxCases={4}
+        showAllLink={true}
+      />
+      
+      <ReviewsSection />
 
-      {/* Success Cases Section */}
-      {successCasesConfig && (
-        <SuccessCasesSection
-          id="casos-exito"
-          title="Casos de <span className='text-gradient-primary'>éxito</span>"
-          subtitle={successCasesConfig.subtitle}
-          filterTags={successCasesConfig.filterTags}
-          specificCases={successCasesConfig.specificCases}
-          maxCases={4}
-          showAllLink={true}
-        />
-      )}
+      {/* Sección 6: CTA intermedio */}
+      <IntermediateCTA />
 
-      {/* CTA Section */}
-      <section className="section-normal bg-gradient-to-r from-primary to-primary/80 text-primary-foreground">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-            ¿Listo para crear una marca memorable?
-          </h2>
-          <p className="text-lg opacity-90 mb-8 max-w-2xl mx-auto">
-            Deja que tu marca hable por ti. Creamos identidades visuales que conectan, 
-            convierten y perduran en la memoria de tus clientes.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" className="group" asChild>
-              <Link to="/contacto">
-                Empezar mi Proyecto
-                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary" asChild>
-              <Link to="/casos-exito">Ver Casos de Éxito</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      {/* Sección 7: Preguntas frecuentes */}
+      <FAQSection 
+        title="Preguntas frecuentes sobre Creación de Marca"
+        subtitle="Resolvemos las dudas más comunes sobre el proceso de branding e identidad visual"
+        faqs={faqItems} 
+      />
 
-      {/* FAQ Section */}
-      <FAQSection faqs={faqItems} />
+      {/* Posts Relacionados */}
+      <ServiceRelatedPosts serviceSlug="creacion-marca" />
 
-      {/* Contact Section */}
+      {/* Sección final: CTA fuerte (footer extendido) */}
       <ServiceContactSection
-        title="¿Hablamos sobre tu nueva marca?"
+        title="¿Listo para crear una marca memorable?"
         subtitle="Cuéntanos tu proyecto y visión. Te responderemos con una propuesta personalizada para crear tu identidad de marca."
+        formId="ZHNw4rjAzNdvFbFnIk1V"
+        className="bg-gradient-to-br from-primary/10 via-white to-accent/10"
       />
       
       <Footer />
