@@ -20,6 +20,8 @@ import CasoExitoNexoVital from "./pages/CasoExitoNexoVital";
 import CasoExitoIVirgenExtra from "./pages/CasoExitoIVirgenExtra";
 import CasoExitoInboundStudents from "./pages/CasoExitoInboundStudents";
 import CalistheniaOnlinePage from "./pages/CalistheniaOnlinePage";
+
+console.log('🔍 Import de CalistheniaOnlinePage:', CalistheniaOnlinePage);
 import CasoExitoCentroRoraima from "./pages/CasoExitoCentroRoraima";
 import CasoExitoJointsUp from "./pages/CasoExitoJointsUp";
 import CasoExitoTranslateWithStyle from "./pages/CasoExitoTranslateWithStyle";
@@ -111,6 +113,9 @@ import BlogMarketingGlobalInternacionalizacion from './pages/BlogMarketingGlobal
 import BlogTagPage from './pages/BlogTagPage';
 
 const queryClient = new QueryClient();
+
+console.log('🛣️  Registrando rutas...');
+console.log('✅ Componente CalistheniaOnlinePage disponible:', typeof CalistheniaOnlinePage);
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
