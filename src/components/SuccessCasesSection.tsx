@@ -509,6 +509,18 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
       industries: ["audiovisual"],
       tools: []
     }
+  },
+  {
+    name: "Wideum",
+    industry: "Tecnología Industrial",
+    service: "Diseño Web y Localización",
+    link: "/casos-exito/wideum",
+    image: "/lovable-uploads/wideum-case-study.jpg",
+    tags: {
+      services: ["diseno-web", "localizacion-contenidos"],
+      industries: ["tecnologia", "industrial"],
+      tools: []
+    }
   }
 ];
 
