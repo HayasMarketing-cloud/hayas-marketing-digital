@@ -2,7 +2,7 @@
 import React from 'react';
 import CaseStudyTemplate from '@/components/CaseStudyTemplate';
 import { successCaseImages } from '@/data/successCaseImages';
-import { Target, Users, TrendingUp, Award } from 'lucide-react';
+import { Palette, Monitor } from 'lucide-react';
 
 const CalistheniaOnlinePage = () => {
   return (
@@ -31,24 +31,14 @@ const CalistheniaOnlinePage = () => {
       challenge="Calisthenia online quiere transformar la forma en que las personas entrenan y se cuidan. En Calisthenia Online, el reto va más allá del ejercicio físico. Queremos romper barreras mentales, sociales y tecnológicas para que cualquier persona, sin importar su nivel o entorno, pueda acceder a entrenamientos eficaces, motivadores y adaptados a su realidad. Nuestro desafío es que más personas descubran el poder de su propio cuerpo, desarrollen fuerza y disciplina, y encuentren en la calistenia una herramienta de cambio duradero."
       solutions={[
         {
-          icon: Target,
-          title: "Plataforma E-Learning",
-          description: "Desarrollo de plataforma educativa completa con gestión de cursos, estudiantes y progreso de entrenamiento."
+          icon: Palette,
+          title: "Creación de Marca",
+          description: "Desarrollo de identidad visual completa, desde el logotipo hasta la paleta de colores y tipografías que reflejan la esencia deportiva y profesional."
         },
         {
-          icon: Users,
-          title: "Sistema de Membresías",
-          description: "Implementación de sistema de suscripciones y membresías con diferentes niveles de acceso al contenido."
-        },
-        {
-          icon: TrendingUp,
-          title: "Marketing Digital Especializado",
-          description: "Estrategia de marketing enfocada en el nicho deportivo con campañas en redes sociales y Google Ads."
-        },
-        {
-          icon: Award,
-          title: "Comunidad Online",
-          description: "Creación de comunidad digital para estudiantes con foros, seguimiento de progreso y motivación grupal."
+          icon: Monitor,
+          title: "Diseño Web",
+          description: "Creación de sitio web responsive y optimizado, diseñado para convertir visitantes en miembros activos de la comunidad fitness."
         }
       ]}
       results={[
