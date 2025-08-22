@@ -265,7 +265,29 @@ const CreacionMarca = () => {
       <ReviewsSection />
 
       {/* Sección 6: CTA intermedio */}
-      <IntermediateCTA />
+      <section className="py-20 bg-gradient-to-r from-primary to-primary/90 text-primary-foreground">
+        <div className="container mx-auto px-4 text-center">
+          <div className="max-w-4xl mx-auto">
+            <div className="mb-6">
+              <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Palette className="h-8 w-8 text-white" />
+              </div>
+            </div>
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6">
+              Descubre cómo puede ayudarte una marca profesional
+            </h2>
+            <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
+              Solicita una consulta gratuita y te mostraremos cómo transformar tu identidad de marca para conectar mejor con tu audiencia
+            </p>
+            <Button size="lg" variant="secondary" className="group" asChild>
+              <Link to="#contacto">
+                Hablar con un especialista
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
 
       {/* Sección 7: Preguntas frecuentes */}
       <FAQSection 
