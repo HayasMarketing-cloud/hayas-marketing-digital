@@ -28,7 +28,7 @@ const CalistheniaOnlinePage = () => {
       featuredImage={successCaseImages.calistheniaOnline}
       featuredImageAlt="Plataforma digital Calisthenia Online - Academia de entrenamiento"
       aboutCompany="Calisthenia Online nace como la evolución natural de la marca personal de Nicolás Reyero, dando un salto hacia una identidad más sólida, especializada y conectada con el mundo del deporte. Nuestro objetivo: llevar la calistenia a más personas a través de una plataforma digital completa, diseñada para ofrecer entrenamientos, cursos y recursos que potencien el progreso físico y mental desde cualquier lugar. Nos transformamos para crecer, y con esta transformación, abrimos las puertas a una comunidad que busca superarse día a día. Ya no se trata solo de un entrenador, sino de una experiencia integral para quienes quieren entrenar con libertad, constancia y resultados reales."
-      challenge="La empresa necesitaba digitalizar completamente su modelo de negocio, pasando de clases presenciales a una plataforma online robusta que permitiera gestionar estudiantes, contenido educativo y pagos de forma automatizada."
+      challenge="Calisthenia online quiere transformar la forma en que las personas entrenan y se cuidan. En Calisthenia Online, el reto va más allá del ejercicio físico. Queremos romper barreras mentales, sociales y tecnológicas para que cualquier persona, sin importar su nivel o entorno, pueda acceder a entrenamientos eficaces, motivadores y adaptados a su realidad. Nuestro desafío es que más personas descubran el poder de su propio cuerpo, desarrollen fuerza y disciplina, y encuentren en la calistenia una herramienta de cambio duradero."
       solutions={[
         {
           icon: Target,
