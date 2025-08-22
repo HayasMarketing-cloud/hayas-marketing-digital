@@ -4,7 +4,7 @@ import { tagsLevel2 } from './blogTags';
 // New grouped industry categories (8 categories)
 export const GROUPED_INDUSTRIES = [
   {
-    name: 'Educación',
+    name: 'Educación y formación',
     slug: 'educacion-grupo',
     industries: ['educacion']
   },

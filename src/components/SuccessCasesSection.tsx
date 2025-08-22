@@ -74,7 +74,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070&auto=format&fit=crop",
     tags: {
       services: ["creacion-marca", "seo-positioning"],
-      industries: ["deporte"],
+      industries: ["deporte", "educacion"],
       tools: []
     }
   },
