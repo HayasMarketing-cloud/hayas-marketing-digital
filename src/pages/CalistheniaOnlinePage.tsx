@@ -1,32 +1,33 @@
+
 import React from 'react';
 import CaseStudyTemplate from '@/components/CaseStudyTemplate';
 import { successCaseImages } from '@/data/successCaseImages';
 import { Target, Users, TrendingUp, Award } from 'lucide-react';
 
-const CasoExitoCalisteniaOnline = () => {
+const CalistheniaOnlinePage = () => {
   return (
     <CaseStudyTemplate
-      pageTitle="Caso de Éxito: Calistenia Online - Transformación Digital Deportiva | Hayas Marketing"
-      pageDescription="Descubre cómo ayudamos a Calistenia Online a digitalizar su academia de entrenamiento físico y aumentar su base de estudiantes online en un 300%."
-      canonical="/casos-exito/calistenia-online"
-      ogImage="/casos-exito/calistenia-online/og-image.jpg"
+      pageTitle="Caso de Éxito: Calisthenia Online - Transformación Digital Deportiva | Hayas Marketing"
+      pageDescription="Descubre cómo ayudamos a Calisthenia Online a digitalizar su academia de entrenamiento físico y aumentar su base de estudiantes online en un 300%."
+      canonical="/casos-exito/calisthenia-online"
+      ogImage="/casos-exito/calisthenia-online/og-image.jpg"
       structuredData={{
         "@context": "https://schema.org",
         "@type": "CaseStudy",
-        "name": "Caso de Éxito: Calistenia Online",
+        "name": "Caso de Éxito: Calisthenia Online",
         "description": "Transformación digital de academia de entrenamiento físico",
         "publisher": {
           "@type": "Organization",
           "name": "Hayas Marketing"
         }
       }}
-      companyName="Calistenia Online"
+      companyName="Calisthenia Online"
       subtitle="Transformación Digital de Academia Deportiva"
       badges={["Educación Online", "Deporte", "Transformación Digital"]}
-      websiteUrl="https://calisteniaonline.com"
+      websiteUrl="https://calisthenia.online/"
       featuredImage={successCaseImages.calistheniaOnline}
-      featuredImageAlt="Plataforma digital Calistenia Online - Academia de entrenamiento"
-      aboutCompany="Calistenia Online es una academia especializada en entrenamiento físico basado en calistenia, que buscaba expandir su alcance mediante una plataforma digital completa para ofrecer cursos y entrenamientos online."
+      featuredImageAlt="Plataforma digital Calisthenia Online - Academia de entrenamiento"
+      aboutCompany="Calisthenia Online es una academia especializada en entrenamiento físico basado en calistenia, que buscaba expandir su alcance mediante una plataforma digital completa para ofrecer cursos y entrenamientos online."
       challenge="La empresa necesitaba digitalizar completamente su modelo de negocio, pasando de clases presenciales a una plataforma online robusta que permitiera gestionar estudiantes, contenido educativo y pagos de forma automatizada."
       solutions={[
         {
@@ -66,4 +67,4 @@ const CasoExitoCalisteniaOnline = () => {
   );
 };
 
-export default CasoExitoCalisteniaOnline;
+export default CalistheniaOnlinePage;
