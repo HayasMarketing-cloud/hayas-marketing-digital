@@ -41,13 +41,7 @@ const CalistheniaOnlinePage = () => {
           description: "Creación de sitio web responsive y optimizado, diseñado para convertir visitantes en miembros activos de la comunidad fitness."
         }
       ]}
-      results={[
-        "Aumento del 300% en la base de estudiantes online",
-        "Incremento del 250% en ingresos mensuales", 
-        "Creación de una comunidad activa de más de 1,500 miembros",
-        "Reducción del 60% en tiempo de gestión administrativa",
-        "Mejora del 85% en satisfacción de estudiantes"
-      ]}
+      results={[]}
       learnings="La digitalización completa del modelo de negocio deportivo requiere no solo tecnología, sino también una estrategia de comunidad sólida que mantenga la motivación y el compromiso de los estudiantes a distancia."
       ctaTitle="¿Quieres digitalizar tu academia o negocio deportivo?"
       ctaDescription="Te ayudamos a crear tu plataforma educativa online y desarrollar una estrategia digital que conecte con tu audiencia deportiva."
