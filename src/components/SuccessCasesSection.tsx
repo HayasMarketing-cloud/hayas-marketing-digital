@@ -253,7 +253,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     link: "/casos-exito/eva-champion",
     image: "/lovable-uploads/2333b7c8-3d18-4b48-9ea7-b712dde6be9c.png",
     tags: {
-      services: ["creacion-marca", "gestion-redes-sociales"],
+      services: ["gestion-redes-sociales"],
       industries: ["traduccion"],
       tools: ["linkedin"]
     }
@@ -313,7 +313,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     link: "/casos-exito/owo-game",
     image: "/lovable-uploads/7020d8c9-edab-4298-9eed-8d2dd8d97487.png",
     tags: {
-      services: ["implantacion-crm", "seo-positioning", "gestion-redes-sociales"],
+      services: ["implantacion-crm", "seo-positioning", "gestion-redes-sociales", "publicidad-google-ads"],
       industries: ["gaming", "tecnologia"],
       tools: []
     }
