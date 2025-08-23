@@ -16,8 +16,7 @@ const ChatbotPromoSection = () => {
           {/* Content */}
           <div className="space-y-6">
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-              Asistentes IA que atienden, responder... y{' '}
-              <span className="text-primary-foreground/90">convierten visitas en clientes</span>
+              Asistentes IA que atienden y convierten visitas en clientes
             </h2>
             
             <p className="text-lg text-white/90 sm:text-xl">
