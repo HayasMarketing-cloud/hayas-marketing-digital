@@ -235,25 +235,6 @@ const SolicitarConsulta = () => {
                 ))}
               </div>
               
-              {/* Additional CTA */}
-              <div className="text-center mt-16">
-                <div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl p-8 max-w-4xl mx-auto border border-primary/20">
-                  <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                    ¿Listo para dar el siguiente paso?
-                  </h3>
-                  <p className="text-lg text-muted-foreground mb-6">
-                    No esperes más. El momento perfecto para hacer crecer tu negocio es ahora.
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <Button size="lg" className="px-8 py-6 text-lg">
-                      Solicitar Consulta
-                    </Button>
-                    <Button variant="outline" size="lg" className="px-8 py-6 text-lg" asChild>
-                      <Link to="/contacto">Ver más opciones</Link>
-                    </Button>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </section>
