@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowLeft, Calendar, MessageSquare, Phone, Mail, Clock, CheckCircle } from 'lucide-react';
+import { ArrowLeft, Calendar, MessageSquare, Phone, Mail, Clock, CheckCircle, Users, Award, Zap } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import StandardGHLForm from '@/components/StandardGHLForm';
+import GHLBookingWidget from '@/components/GHLBookingWidget';
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -52,31 +53,44 @@ const SolicitarConsulta = () => {
         </section>
 
         {/* Hero Section */}
-        <section className="py-12 md:py-16 bg-gradient-to-br from-hayas-50 to-turquesa-50">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <Badge variant="outline" className="mb-4 text-hayas-600 border-hayas-200">
-                Consulta Gratuita
+        <section className="py-16 md:py-20 bg-gradient-to-br from-background via-primary/5 to-accent/10 relative overflow-hidden">
+          <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+          <div className="container mx-auto px-4 relative">
+            <div className="max-w-5xl mx-auto text-center">
+              <Badge variant="outline" className="mb-6 px-4 py-2 text-primary border-primary/20 bg-primary/5">
+                <Award className="h-4 w-4 mr-2" />
+                Consulta Estratégica Gratuita
               </Badge>
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                Solicita tu <span className="text-gradient-primary">consulta estratégica</span> gratuita
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                Impulsa tu negocio con una
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
+                  estrategia digital ganadora
+                </span>
               </h1>
-              <p className="text-xl text-gray-700 mb-8 leading-relaxed">
-                Analizamos tu situación actual y te proponemos las mejores soluciones para hacer crecer tu negocio
+              <p className="text-xl md:text-2xl text-muted-foreground mb-10 leading-relaxed max-w-3xl mx-auto">
+                Conecta con nosotros y descubre las oportunidades de crecimiento que está esperando tu empresa
               </p>
               
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                <div className="flex items-center justify-center gap-3 bg-white/80 backdrop-blur-sm rounded-lg p-4">
-                  <Clock className="h-6 w-6 text-hayas-600" />
-                  <span className="font-medium">30 min gratuitos</span>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 max-w-4xl mx-auto">
+                <div className="flex flex-col items-center gap-2 bg-card/80 backdrop-blur-sm rounded-xl p-4 border shadow-sm hover:shadow-md transition-shadow">
+                  <Clock className="h-8 w-8 text-primary" />
+                  <span className="font-semibold text-sm">30 min</span>
+                  <span className="text-xs text-muted-foreground text-center">Consulta gratuita</span>
                 </div>
-                <div className="flex items-center justify-center gap-3 bg-white/80 backdrop-blur-sm rounded-lg p-4">
-                  <MessageSquare className="h-6 w-6 text-turquesa-600" />
-                  <span className="font-medium">Análisis personalizado</span>
+                <div className="flex flex-col items-center gap-2 bg-card/80 backdrop-blur-sm rounded-xl p-4 border shadow-sm hover:shadow-md transition-shadow">
+                  <Zap className="h-8 w-8 text-accent" />
+                  <span className="font-semibold text-sm">Análisis</span>
+                  <span className="text-xs text-muted-foreground text-center">Personalizado</span>
                 </div>
-                <div className="flex items-center justify-center gap-3 bg-white/80 backdrop-blur-sm rounded-lg p-4">
-                  <CheckCircle className="h-6 w-6 text-hayas-600" />
-                  <span className="font-medium">Sin compromiso</span>
+                <div className="flex flex-col items-center gap-2 bg-card/80 backdrop-blur-sm rounded-xl p-4 border shadow-sm hover:shadow-md transition-shadow">
+                  <Users className="h-8 w-8 text-primary" />
+                  <span className="font-semibold text-sm">+200</span>
+                  <span className="text-xs text-muted-foreground text-center">Proyectos</span>
+                </div>
+                <div className="flex flex-col items-center gap-2 bg-card/80 backdrop-blur-sm rounded-xl p-4 border shadow-sm hover:shadow-md transition-shadow">
+                  <CheckCircle className="h-8 w-8 text-accent" />
+                  <span className="font-semibold text-sm">Sin</span>
+                  <span className="text-xs text-muted-foreground text-center">Compromiso</span>
                 </div>
               </div>
             </div>
@@ -84,89 +98,88 @@ const SolicitarConsulta = () => {
         </section>
 
         {/* Contact Options */}
-        <section className="py-12 md:py-16 bg-white">
+        <section className="py-16 md:py-20 bg-background">
           <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                  Elige cómo quieres <span className="text-gradient-primary">contactarnos</span>
+            <div className="max-w-7xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+                  Dos formas de <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">conectar</span>
                 </h2>
-                <p className="text-lg text-gray-600">
-                  Estamos aquí para ayudarte de la forma que te resulte más cómoda
+                <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+                  Elige la opción que mejor se adapte a ti: completa el formulario o agenda directamente tu reunión
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
                 {/* Contact Form */}
-                <Card className="border-none shadow-lg">
-                  <CardHeader>
-                    <CardTitle className="text-2xl font-bold flex items-center gap-3">
-                      <MessageSquare className="h-6 w-6 text-hayas-600" />
-                      Formulario de contacto
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-6 p-0">
-                    <StandardGHLForm
-                      formId="7hfylnczt0dXbyUFFSEt"
-                      title="Solicitar Consulta"
-                      minHeight={820}
-                      showHeader={false}
-                    />
-                  </CardContent>
-                </Card>
+                <div className="order-2 lg:order-1">
+                  <Card className="border-2 border-primary/10 shadow-xl bg-card/50 backdrop-blur-sm">
+                    <CardHeader className="text-center pb-6">
+                      <div className="mx-auto mb-4 p-3 bg-primary/10 rounded-full w-fit">
+                        <MessageSquare className="h-8 w-8 text-primary" />
+                      </div>
+                      <CardTitle className="text-2xl md:text-3xl font-bold">
+                        Formulario de contacto
+                      </CardTitle>
+                      <p className="text-muted-foreground">
+                        Cuéntanos tu proyecto y te responderemos en menos de 24 horas
+                      </p>
+                    </CardHeader>
+                    <CardContent className="p-0">
+                      <StandardGHLForm
+                        formId="7hfylnczt0dXbyUFFSEt"
+                        title="Solicitar Consulta"
+                        minHeight={820}
+                        showHeader={false}
+                      />
+                    </CardContent>
+                  </Card>
+                </div>
 
-                {/* Direct Contact Options */}
-                <div className="space-y-6">
-                  <Card className="border-none shadow-lg">
-                    <CardHeader>
-                      <CardTitle className="text-2xl font-bold flex items-center gap-3">
-                        <Calendar className="h-6 w-6 text-turquesa-600" />
+                {/* Booking Widget */}
+                <div className="order-1 lg:order-2">
+                  <Card className="border-2 border-accent/10 shadow-xl bg-card/50 backdrop-blur-sm">
+                    <CardHeader className="text-center pb-6">
+                      <div className="mx-auto mb-4 p-3 bg-accent/10 rounded-full w-fit">
+                        <Calendar className="h-8 w-8 text-accent" />
+                      </div>
+                      <CardTitle className="text-2xl md:text-3xl font-bold">
                         Agendar reunión
                       </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-gray-600 mb-6">
-                        Reserva directamente una videollamada de 30 minutos para analizar tu proyecto en detalle.
+                      <p className="text-muted-foreground">
+                        Reserva tu slot y hablemos en directo sobre tu proyecto
                       </p>
-                      <Link to="/agendar-reunion">
-                        <Button className="w-full gradient-primary text-white py-4">
-                          Agendar reunión gratuita
-                        </Button>
-                      </Link>
-                    </CardContent>
-                  </Card>
-
-                  <Card className="border-none shadow-lg">
-                    <CardHeader>
-                      <CardTitle className="text-2xl font-bold flex items-center gap-3">
-                        <Phone className="h-6 w-6 text-hayas-600" />
-                        Contacto directo
-                      </CardTitle>
                     </CardHeader>
-                    <CardContent className="space-y-4">
-                      <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
-                        <Phone className="h-5 w-5 text-hayas-600" />
-                        <div>
-                          <p className="font-medium">Teléfono</p>
-                          <p className="text-gray-600">+34 XXX XXX XXX</p>
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
-                        <Mail className="h-5 w-5 text-turquesa-600" />
-                        <div>
-                          <p className="font-medium">Email</p>
-                          <p className="text-gray-600">hola@hayasmarketing.com</p>
-                        </div>
-                      </div>
-
-                      <Link to="/contacto">
-                        <Button variant="outline" className="w-full py-4">
-                          Ver más opciones de contacto
-                        </Button>
-                      </Link>
+                    <CardContent className="p-0">
+                      <GHLBookingWidget
+                        bookingId="42ZHsWsLcCFmHjxmh3dU"
+                        title="Agendar Reunión Estratégica"
+                        minHeight={820}
+                      />
                     </CardContent>
                   </Card>
+                </div>
+              </div>
+
+              {/* Trust Indicators */}
+              <div className="mt-16 text-center">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                  <div className="p-4 bg-card/30 rounded-xl border">
+                    <div className="text-2xl font-bold text-primary">+200</div>
+                    <div className="text-sm text-muted-foreground">Proyectos completados</div>
+                  </div>
+                  <div className="p-4 bg-card/30 rounded-xl border">
+                    <div className="text-2xl font-bold text-primary">4.9</div>
+                    <div className="text-sm text-muted-foreground">Valoración media</div>
+                  </div>
+                  <div className="p-4 bg-card/30 rounded-xl border">
+                    <div className="text-2xl font-bold text-primary">&lt;24h</div>
+                    <div className="text-sm text-muted-foreground">Tiempo respuesta</div>
+                  </div>
+                  <div className="p-4 bg-card/30 rounded-xl border">
+                    <div className="text-2xl font-bold text-primary">100%</div>
+                    <div className="text-sm text-muted-foreground">Confidencialidad</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -174,47 +187,72 @@ const SolicitarConsulta = () => {
         </section>
 
         {/* Benefits Section */}
-        <section className="py-12 md:py-16 bg-gradient-to-br from-gray-50 to-white">
+        <section className="py-16 md:py-20 bg-gradient-to-br from-muted/30 via-background to-primary/5">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                ¿Qué obtienes en tu <span className="text-gradient-primary">consulta gratuita</span>?
-              </h2>
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+                  ¿Qué obtienes en tu <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">consulta gratuita</span>?
+                </h2>
+                <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+                  Una sesión estratégica enfocada en impulsar el crecimiento de tu negocio
+                </p>
+              </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {[
                   {
-                    icon: <MessageSquare className="h-10 w-10 text-hayas-600" />,
-                    title: "Análisis de situación",
-                    description: "Evaluamos tu presencia digital actual y identificamos oportunidades de mejora."
+                    icon: <Zap className="h-12 w-12 text-primary" />,
+                    title: "Diagnóstico completo",
+                    description: "Analizamos tu situación actual, competencia y oportunidades de mercado para identificar las palancas de crecimiento más efectivas."
                   },
                   {
-                    icon: <CheckCircle className="h-10 w-10 text-turquesa-600" />,
-                    title: "Propuesta personalizada",
-                    description: "Te presentamos las soluciones más adecuadas para tus objetivos y presupuesto."
+                    icon: <CheckCircle className="h-12 w-12 text-accent" />,
+                    title: "Estrategia personalizada",
+                    description: "Diseñamos una hoja de ruta específica para tu negocio, con acciones priorizadas según tu presupuesto y objetivos."
                   },
                   {
-                    icon: <Calendar className="h-10 w-10 text-hayas-600" />,
-                    title: "Plan de acción",
-                    description: "Definimos los próximos pasos y tiempos para hacer realidad tu proyecto."
+                    icon: <Calendar className="h-12 w-12 text-primary" />,
+                    title: "Plan de implementación",
+                    description: "Te entregamos un cronograma detallado con los próximos pasos, plazos realistas y métricas de seguimiento."
                   }
                 ].map((benefit, index) => (
-                  <Card key={index} className="border-none shadow-lg text-center">
-                    <CardHeader>
-                      <div className="mx-auto mb-4 p-3 bg-gray-100 rounded-lg w-fit">
+                  <Card key={index} className="group border-2 border-muted/20 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-primary/20 bg-card/50 backdrop-blur-sm">
+                    <CardHeader className="text-center">
+                      <div className="mx-auto mb-6 p-4 bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl w-fit group-hover:scale-110 transition-transform duration-300">
                         {benefit.icon}
                       </div>
-                      <CardTitle className="text-xl font-bold">
+                      <CardTitle className="text-xl md:text-2xl font-bold mb-3">
                         {benefit.title}
                       </CardTitle>
                     </CardHeader>
-                    <CardContent>
-                      <p className="text-gray-600">
+                    <CardContent className="text-center">
+                      <p className="text-muted-foreground leading-relaxed">
                         {benefit.description}
                       </p>
                     </CardContent>
                   </Card>
                 ))}
+              </div>
+              
+              {/* Additional CTA */}
+              <div className="text-center mt-16">
+                <div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl p-8 max-w-4xl mx-auto border border-primary/20">
+                  <h3 className="text-2xl md:text-3xl font-bold mb-4">
+                    ¿Listo para dar el siguiente paso?
+                  </h3>
+                  <p className="text-lg text-muted-foreground mb-6">
+                    No esperes más. El momento perfecto para hacer crecer tu negocio es ahora.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <Button size="lg" className="px-8 py-6 text-lg">
+                      Solicitar Consulta
+                    </Button>
+                    <Button variant="outline" size="lg" className="px-8 py-6 text-lg" asChild>
+                      <Link to="/contacto">Ver más opciones</Link>
+                    </Button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
