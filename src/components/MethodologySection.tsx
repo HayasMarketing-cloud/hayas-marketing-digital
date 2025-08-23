@@ -18,8 +18,8 @@ const MethodologySection: React.FC = () => {
           </p>
         </header>
 
-        {/* Modalidades de colaboración */}
-        <div className="grid gap-6 sm:gap-8 lg:grid-cols-3 mb-12">
+        {/* Modalidades de colaboración - Primera fila */}
+        <div className="grid gap-6 sm:gap-8 md:grid-cols-2 mb-8">
           {/* Contratación de servicio/s */}
           <article className="animate-fade-in">
             <Card className="h-full">
@@ -67,36 +67,38 @@ const MethodologySection: React.FC = () => {
               </CardContent>
             </Card>
           </article>
+        </div>
 
-          {/* Externalización completa */}
-          <article className="animate-fade-in lg:col-span-1">
+        {/* Externalización completa - Full width */}
+        <div className="mb-12">
+          <article className="animate-fade-in">
             <Card className="h-full">
               <CardHeader className="flex-row items-center gap-4">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
                   <Users className="h-6 w-6" aria-hidden="true" />
                 </div>
-                <CardTitle className="text-lg">Externalización completa</CardTitle>
+                <CardTitle className="text-xl">Externalización completa</CardTitle>
               </CardHeader>
               <CardContent className="pt-2">
-                <div className="bg-primary/5 p-4 rounded-lg mb-4">
+                <div className="bg-primary/5 p-4 rounded-lg mb-6">
                   <p className="font-semibold text-primary text-sm uppercase tracking-wide mb-2">NOSOTROS NOS ENCARGAMOS DE TODO</p>
                   <p className="text-sm text-muted-foreground">Delegas la ejecución continua en nuestro equipo</p>
                 </div>
-                <div className="space-y-3">
+                <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <p className="font-semibold text-sm text-foreground mb-2">Marketing Digital:</p>
-                    <ul className="text-sm text-muted-foreground space-y-1 pl-3">
+                    <p className="font-semibold text-base text-foreground mb-3">Marketing Digital:</p>
+                    <ul className="text-sm text-muted-foreground space-y-2 pl-3">
                       <li>• Equipo especialista por área (SEO, campañas, contenidos, redes sociales)</li>
                       <li>• Key Account Manager como punto de referencia</li>
                       <li>• Contacto directo con especialistas o via KAM</li>
                     </ul>
                   </div>
                   <div>
-                    <p className="font-semibold text-sm text-foreground mb-2 flex items-center gap-2">
-                      <Database className="h-4 w-4" />
+                    <p className="font-semibold text-base text-foreground mb-3 flex items-center gap-2">
+                      <Database className="h-5 w-5" />
                       Gestión CRM:
                     </p>
-                    <ul className="text-sm text-muted-foreground space-y-1 pl-3">
+                    <ul className="text-sm text-muted-foreground space-y-2 pl-3">
                       <li>• Administración integral HubSpot o CRM Hayas</li>
                       <li>• Soporte y consultas de tu equipo</li>
                       <li>• Fee mensual o facturación bajo demanda</li>
