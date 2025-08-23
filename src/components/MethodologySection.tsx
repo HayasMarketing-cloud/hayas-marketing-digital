@@ -1,5 +1,7 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 import { Briefcase, GraduationCap, ShoppingCart, Users, Database, Calendar, Zap, Star } from 'lucide-react';
 const MethodologySection: React.FC = () => {
   return (
@@ -150,12 +152,16 @@ const MethodologySection: React.FC = () => {
             <h3 className="text-xl font-semibold text-foreground">Lo que nos diferencia</h3>
             <Star className="h-6 w-6 text-accent fill-accent" />
           </div>
-          <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-4xl mx-auto mb-8">
             Todas estas opciones son <span className="font-semibold text-foreground">complementarias y totalmente personalizables</span>. 
             En Hayas diseñamos propuestas únicas que combinan servicios, formación y externalización según tus necesidades específicas. 
             Así conseguimos una <span className="font-semibold text-primary">solución 360</span> que abarca estrategia, ejecución y soporte continuo 
             para que tu negocio crezca con eficiencia y visión a largo plazo.
           </p>
+          
+          <Button asChild className="gradient-primary text-white hover-scale">
+            <Link to="/agendar-reunion">Solicitar Consulta</Link>
+          </Button>
         </div>
       </div>
     </section>
