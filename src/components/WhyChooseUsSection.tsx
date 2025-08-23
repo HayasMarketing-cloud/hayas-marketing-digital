@@ -1,6 +1,8 @@
 
 import React from 'react';
 import { Check, Users } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const reasons = [
   {
@@ -41,7 +43,7 @@ const WhyChooseUsSection = () => {
               Nuestro compromiso es crear herramientas que no solo automatizan procesos, sino que realmente transforman la manera en que conectas con tus clientes.
             </p>
             
-            <div className="space-y-4">
+            <div className="space-y-4 mb-8">
               {reasons.map((reason) => (
                 <div key={reason.id} className="flex items-start">
                   <div className="mt-1 mr-4 h-6 w-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
@@ -54,6 +56,10 @@ const WhyChooseUsSection = () => {
                 </div>
               ))}
             </div>
+            
+            <Button asChild className="gradient-primary text-white hover-scale">
+              <Link to="/agendar-reunion">Solicitar Consulta</Link>
+            </Button>
           </div>
           
           <div className="lg:w-1/2 relative">
