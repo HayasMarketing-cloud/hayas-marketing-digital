@@ -535,6 +535,18 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     }
   },
   {
+    name: "COVEBO",
+    industry: "Agencia de empleo internacional",
+    service: "Gestión de redes sociales y estrategia de contenidos",
+    link: "/casos-exito/covebo",
+    image: "/lovable-uploads/afe158ac-6126-4bde-86d8-82a591c3351b.png",
+    tags: {
+      services: ["gestion-redes-sociales", "estrategia-contenidos", "creacion-marca"],
+      industries: ["educacion"],
+      tools: []
+    }
+  },
+  {
     name: "Wideum",
     industry: "Tecnología Industrial",
     service: "Diseño Web y Localización",

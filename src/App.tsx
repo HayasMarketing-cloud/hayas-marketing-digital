@@ -60,6 +60,7 @@ import CasoExitoFLAP from "./pages/CasoExitoFLAP";
 import CasoExitoWideum from "./pages/CasoExitoWideum";
 import CasoExitoAECOC from '@/pages/CasoExitoAECOC';
 import CasoExitoFINECT from '@/pages/CasoExitoFINECT';
+import CasoExitoCOVEBO from '@/pages/CasoExitoCOVEBO';
 import ImplantacionCrm from "./pages/ImplantacionCrm";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
@@ -201,6 +202,7 @@ const App = () => (
           <Route path="/casos-exito/wideum" element={<CasoExitoWideum />} />
           <Route path="/casos-exito/aecoc" element={<CasoExitoAECOC />} />
           <Route path="/casos-exito/finect" element={<CasoExitoFINECT />} />
+          <Route path="/casos-exito/covebo" element={<CasoExitoCOVEBO />} />
           
            {/* BLOG / RECURSOS */}
            <Route path="/blog" element={<Blog />} />
