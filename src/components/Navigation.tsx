@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
-import { ChevronDown, ArrowRight, ArrowLeft } from 'lucide-react';
+import { ChevronDown, ArrowRight, ArrowLeft, Zap, Users, Wrench } from 'lucide-react';
 
 import { servicesByPillar, pillarMeta } from '@/data/services';
 import type { PillarKey } from '@/data/services';
@@ -56,29 +57,17 @@ const Navigation = () => {
     setHoverTimeout(timeout);
   };
 
-  const megaMenuData = {
-    soluciones: {
-      title: 'Soluciones',
-      categories: [],
-    },
-    servicios: [
-      { title: 'Creación de Marca', href: '/servicios/creacion-marca', description: 'Identidad visual y branding completo' },
-      { title: 'Gestión de Redes Sociales', href: '/servicios/gestion-redes-sociales', description: 'Community management profesional' },
-      { title: 'Publicidad en Redes Sociales', href: '/servicios/publicidad-redes-sociales', description: 'Campañas publicitarias rentables' },
-      { title: 'Publicidad en Google Ads', href: '/servicios/publicidad-google-ads', description: 'SEM y campañas en Google' },
-      { title: 'Estrategia de contenidos', href: '/servicios/estrategia-contenidos', description: 'Plan editorial SEO y distribución multicanal' },
-      { title: 'Email marketing y automatizaciones', href: '/servicios/email-marketing-automatizaciones', description: 'Workflows y personalización conectados a tu CRM' },
-      { title: 'Consultoría estratégica y analítica', href: '/servicios/consultoria-estrategica-analitica', description: 'Decisiones con datos y reporting fiable' },
-      { title: 'Integraciones y optimización con IA', href: '/servicios/integraciones-ia-procesos', description: 'Conecta sistemas y automatiza procesos' },
-      { title: 'Marketing Directo', href: '/servicios/marketing-directo', description: 'Catálogos e invitaciones con envío y email' },
-      { title: 'Implementación de Funnel', href: '/servicios/implementacion-funnel', description: 'Embudo de conversión con automatización' },
-      { title: 'Implantación CRM', href: '/servicios/implantacion-crm', description: 'Setup completo de CRM personalizado' },
-      { title: 'Asistente IA para Atención al Cliente', href: '/servicios/asistente-ia-atencion-cliente', description: 'Chatbots inteligentes 24/7' },
-      { title: 'Diseño Web', href: '/servicios/diseno-web', description: 'Webs que convierten visitantes en clientes' },
-      { title: 'SEO y Posicionamiento', href: '/servicios/seo-posicionamiento', description: 'Aparece primero en Google' },
-      { title: 'Creación Tienda Online', href: '/servicios/tienda-online', description: 'E-commerce que vende 24/7' },
-    ],
-  } as const;
+  const pillarIcons = {
+    impulsa: Zap,
+    conecta: Users,
+    activa: Wrench,
+  };
+
+  const pillarColors = {
+    impulsa: 'bg-purple-100 text-purple-800 border-purple-200',
+    conecta: 'bg-blue-100 text-blue-800 border-blue-200', 
+    activa: 'bg-green-100 text-green-800 border-green-200',
+  };
 
   const pillars = [
     { title: 'Impulsa tu marca', href: '/soluciones/impulsa-tu-marca' },
@@ -327,26 +316,35 @@ const Navigation = () => {
                       <span className="ml-4 font-medium text-foreground">Servicios</span>
                     </div>
                     
-                    <div className="px-4 space-y-2">
-                      {megaMenuData.servicios.map((servicio) => (
-                        <Link
-                          key={servicio.href}
-                          to={servicio.href}
-                          className="block hover:bg-muted/50 py-3 px-3 rounded-lg transition-colors border border-border/30"
-                          onClick={closeMobileMenu}
-                        >
-                          <div className="flex items-start justify-between">
-                            <div className="flex-1">
-                              <h5 className="font-medium text-foreground mb-1">
-                                {servicio.title}
-                              </h5>
-                              <p className="text-xs text-muted-foreground">{servicio.description}</p>
-                            </div>
-                            <ArrowRight className="h-4 w-4 text-muted-foreground mt-1 ml-2 flex-shrink-0" />
-                          </div>
-                        </Link>
-                      ))}
-                    </div>
+                     <div className="px-4 space-y-4">
+                       {pillarKeys.map((key) => {
+                         const Icon = pillarIcons[key];
+                         return (
+                           <div key={key} className="space-y-2">
+                             <div className="flex items-center gap-2 mb-3">
+                               <Icon className="h-4 w-4 text-primary" />
+                               <h5 className="font-medium text-sm text-foreground">
+                                 {pillarMeta[key].title}
+                               </h5>
+                             </div>
+                             <div className="space-y-1">
+                               {servicesByPillar[key].map((service) => (
+                                 <Link
+                                   key={service.href}
+                                   to={service.href}
+                                   className="block hover:bg-muted/50 py-2 px-3 rounded-lg transition-colors border border-border/30"
+                                   onClick={closeMobileMenu}
+                                 >
+                                   <span className="font-medium text-foreground text-sm">
+                                     {service.title}
+                                   </span>
+                                 </Link>
+                               ))}
+                             </div>
+                           </div>
+                         );
+                       })}
+                     </div>
                   </div>
                 )}
                 
@@ -420,28 +418,37 @@ const Navigation = () => {
         >
           <div className="container mx-auto px-4">
             <div className="p-6">
-              <h4 className="font-semibold text-foreground mb-4 border-b border-border pb-2">Nuestros Servicios</h4>
-              <div className="max-h-[60vh] overflow-auto pr-2">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                  {megaMenuData.servicios.map((servicio) => (
-                    <Link
-                      key={servicio.href}
-                      to={servicio.href}
-                      className="block group hover:bg-muted/50 p-4 rounded-lg transition-all duration-200"
-                      onClick={() => setActiveMegaMenu(null)}
-                    >
-                      <div className="flex items-start justify-between">
-                        <div>
-                          <h5 className="font-medium text-foreground group-hover:text-primary transition-colors">
-                            {servicio.title}
-                          </h5>
-                          <p className="text-sm text-muted-foreground mt-1">{servicio.description}</p>
-                        </div>
-                        <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-all duration-200 transform group-hover:translate-x-1" />
+              <h4 className="font-semibold text-foreground mb-6 text-center">Nuestros Servicios</h4>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {pillarKeys.map((key) => {
+                  const Icon = pillarIcons[key];
+                  return (
+                    <div key={key} className="space-y-4">
+                      <div className="flex items-center gap-2 pb-3 border-b border-border">
+                        <Icon className="h-5 w-5 text-primary" />
+                        <h5 className="font-semibold text-foreground">
+                          {pillarMeta[key].title}
+                        </h5>
                       </div>
-                    </Link>
-                  ))}
-                </div>
+                      <div className="flex flex-wrap gap-2">
+                        {servicesByPillar[key].map((service) => (
+                          <Link
+                            key={service.href}
+                            to={service.href}
+                            onClick={() => setActiveMegaMenu(null)}
+                          >
+                            <Badge 
+                              variant="outline"
+                              className={`${pillarColors[key]} hover:opacity-80 transition-opacity cursor-pointer text-xs py-1 px-2`}
+                            >
+                              {service.title}
+                            </Badge>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>
