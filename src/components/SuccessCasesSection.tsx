@@ -527,7 +527,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     industry: "Plataforma de información financiera",
     service: "CRM y consultoría estratégica para educación financiera",
     link: "/casos-exito/finect",
-    image: "/lovable-uploads/2d59811e-1566-454e-b207-b7efa2c90d04.png",
+    image: "/lovable-uploads/e8f0ab4b-8a60-45d7-b73f-d0774e1de395.png",
     tags: {
       services: ["implantacion-crm", "consultoria-estrategica-analitica"],
       industries: ["educacion"],
