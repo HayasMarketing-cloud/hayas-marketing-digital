@@ -595,6 +595,18 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     }
   },
   {
+    name: "UNITRIPS",
+    industry: "Turismo juvenil y viajes en grupo",
+    service: "CRM especializado en turismo y consultoría estratégica",
+    link: "/casos-exito/unitrips",
+    image: "/lovable-uploads/unitrips-europe-travel.png",
+    tags: {
+      services: ["implantacion-crm", "consultoria-estrategica-analitica"],
+      industries: ["turismo"],
+      tools: []
+    }
+  },
+  {
     name: "Wideum",
     industry: "Tecnología Industrial",
     service: "Diseño Web y Localización",
