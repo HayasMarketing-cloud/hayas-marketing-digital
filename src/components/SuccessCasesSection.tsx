@@ -571,6 +571,18 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     }
   },
   {
+    name: "Eurobits Technologies",
+    industry: "Fintech y agregación financiera",
+    service: "Diseño web, redes sociales y localización de contenidos",
+    link: "/casos-exito/eurobits-technologies",
+    image: "/lovable-uploads/eurobits-technologies-15-years.png",
+    tags: {
+      services: ["diseno-web", "gestion-redes-sociales", "estrategia-contenidos", "localizacion-contenidos"],
+      industries: ["tecnologia"],
+      tools: []
+    }
+  },
+  {
     name: "Wideum",
     industry: "Tecnología Industrial",
     service: "Diseño Web y Localización",
