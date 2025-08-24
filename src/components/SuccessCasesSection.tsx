@@ -631,6 +631,18 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     }
   },
   {
+    name: "Hotteo Travel",
+    industry: "Agencia de viajes y experiencias únicas",
+    service: "Estrategia digital, SEO y consultoría estratégica",
+    link: "/casos-exito/hotteo-travel",
+    image: "/lovable-uploads/hotteo-travel-patagonia-experience.png",
+    tags: {
+      services: ["seo-posicionamiento", "estrategia-contenidos", "consultoria-estrategica-analitica"],
+      industries: ["turismo"],
+      tools: []
+    }
+  },
+  {
     name: "Wideum",
     industry: "Tecnología Industrial",
     service: "Diseño Web y Localización",
