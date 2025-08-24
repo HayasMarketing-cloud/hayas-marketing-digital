@@ -61,7 +61,7 @@ const SolicitarConsulta = () => {
                 <Award className="h-4 w-4 mr-2" />
                 Consulta Estratégica Gratuita
               </Badge>
-              <h1 className="text-4xl md:text-6xl font-bold mb-10 leading-relaxed">
+              <h1 className="text-4xl md:text-6xl font-bold title-safe">
                 Impulsa tu negocio con una
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
                   estrategia digital ganadora
