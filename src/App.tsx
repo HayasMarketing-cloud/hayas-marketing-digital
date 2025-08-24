@@ -36,6 +36,7 @@ import CasoExitoLaBaneraKD from "./pages/CasoExitoLaBaneraKD";
 import CasoExitoSuministrosXSKD from "./pages/CasoExitoSuministrosXSKD";
 import CasoExitoConversaConsultores from "./pages/CasoExitoConversaConsultores";
 import CasoExitoBuhobike from "./pages/CasoExitoBuhobike";
+import CasoExitoCabreraCervantes from "./pages/CasoExitoCabreraCervantes";
 import CasoExitoEvaChampion from "./pages/CasoExitoEvaChampion";
 import CasoExitoBelugaLinguistics from "./pages/CasoExitoBelugaLinguistics";
 import CasoExitoWooptix from "./pages/CasoExitoWooptix";
@@ -186,6 +187,7 @@ const App = () => (
           <Route path="/casos-exito/suministros-xs-kd" element={<CasoExitoSuministrosXSKD />} />
           <Route path="/casos-exito/conversa-consultores" element={<CasoExitoConversaConsultores />} />
           <Route path="/casos-exito/buhobike" element={<CasoExitoBuhobike />} />
+          <Route path="/casos-exito/cabrera-cervantes" element={<CasoExitoCabreraCervantes />} />
           <Route path="/casos-exito/eva-champion" element={<CasoExitoEvaChampion />} />
           <Route path="/casos-exito/beluga-linguistics" element={<CasoExitoBelugaLinguistics />} />
           <Route path="/casos-exito/wooptix" element={<CasoExitoWooptix />} />

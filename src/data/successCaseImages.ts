@@ -12,6 +12,7 @@ export const successCaseImages = {
   belugaLinguistics: "/lovable-uploads/871690e2-0d95-456b-86a1-c284ffaf7d5e.png",
   bufeteMaseras: "/lovable-uploads/6cf96609-e73c-4a3b-8939-bdc4e1330033.png",
   buhobike: "/lovable-uploads/fefc6b22-9bf5-4307-8e2c-f3693015279f.png",
+  cabreraCervantes: "/lovable-uploads/cabrera-cervantes-asesoria-legal.png",
   calistheniaOnline: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070&auto=format&fit=crop",
   carniceriaPicosDeEuropa: "/lovable-uploads/4f747803-3608-4e40-96a3-e5ffb9c63060.png",
   centroRoraima: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2070&auto=format&fit=crop",

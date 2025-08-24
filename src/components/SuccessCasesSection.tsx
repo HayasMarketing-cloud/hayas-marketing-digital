@@ -247,6 +247,18 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     }
   },
   {
+    name: "Cabrera Cervantes Asesoría",
+    industry: "Legal / Servicios profesionales",
+    service: "Diseño web profesional en WordPress",
+    link: "/casos-exito/cabrera-cervantes",
+    image: "/lovable-uploads/cabrera-cervantes-asesoria-legal.png",
+    tags: {
+      services: ["diseno-web"],
+      industries: ["legal", "servicios-profesionales"],
+      tools: []
+    }
+  },
+  {
     name: "Eva Champion",
     industry: "Traductora profesional (FR-ES, EN, DE)",
     service: "Marca personal y visibilidad en LinkedIn",
