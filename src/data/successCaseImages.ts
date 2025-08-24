@@ -26,7 +26,7 @@ export const successCaseImages = {
   inboundStudents: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop",
   iVirgenExtra: "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?q=80&w=2069&auto=format&fit=crop",
   jointsUp: "/lovable-uploads/00117a14-e9f2-49f7-87ad-ce32c0897eb7.png",
-  laBaneraKD: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop",
+  laBaneraKD: "/lovable-uploads/30665cd3-50a6-4406-a490-bb3a841e31c7.png",
   laOrientalSinGluten: "/lovable-uploads/f992e622-1775-438c-9118-04b7bb343f9c.png",
   lualca: "/lovable-uploads/df8f6237-aac2-47a2-b379-253f7c1e7dd5.png",
   modaIntimaVania: "https://intimavania.com/img/cms/lookbook/25H/1603_1.jpg",
