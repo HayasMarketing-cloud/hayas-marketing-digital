@@ -535,6 +535,18 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     }
   },
   {
+    name: "Fundación Casa de México",
+    industry: "Cultura y eventos",
+    service: "Consultoría estratégica, filtro de redes sociales y engagement digital",
+    link: "/casos-exito/fundacion-casa-mexico",
+    image: "/lovable-uploads/fundacion-casa-mexico-dia-muertos.png",
+    tags: {
+      services: ["consultoria-estrategica-analitica", "gestion-redes-sociales"],
+      industries: ["cultura"],
+      tools: []
+    }
+  },
+  {
     name: "COVEBO",
     industry: "Agencia de empleo internacional",
     service: "Gestión de redes sociales y estrategia de contenidos",
