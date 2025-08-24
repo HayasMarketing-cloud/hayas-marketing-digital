@@ -61,7 +61,7 @@ const SolicitarConsulta = () => {
                 <Award className="h-4 w-4 mr-2" />
                 Consulta Estratégica Gratuita
               </Badge>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+              <h1 className="text-4xl md:text-6xl font-bold mb-10 leading-relaxed">
                 Impulsa tu negocio con una
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
                   estrategia digital ganadora
@@ -102,7 +102,7 @@ const SolicitarConsulta = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-7xl mx-auto">
               <div className="text-center mb-16">
-                <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+                <h2 className="text-3xl md:text-5xl font-bold mb-10 leading-relaxed">
                   Dos formas de <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">conectar</span>
                 </h2>
                 <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -191,7 +191,7 @@ const SolicitarConsulta = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
-                <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+                <h2 className="text-3xl md:text-5xl font-bold mb-10 leading-relaxed">
                   ¿Qué obtienes en tu <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">consulta gratuita</span>?
                 </h2>
                 <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">

@@ -126,6 +126,12 @@
     @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
   }
 
+  /* Title spacing to prevent letter cutting */
+  .title-safe {
+    line-height: 1.15;
+    margin-bottom: 2.5rem;
+  }
+
   /* Typography hierarchy utilities */
   .title-hero {
     @apply text-4xl md:text-5xl lg:text-6xl font-bold mb-6;
