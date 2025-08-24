@@ -607,6 +607,18 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     }
   },
   {
+    name: "Lola Robles Abogada",
+    industry: "Servicios legales - Derecho Civil, Familia y Administrativo",
+    service: "Diseño web WordPress, alojamiento y mantenimiento profesional",
+    link: "/casos-exito/lola-robles-abogada",
+    image: "/lovable-uploads/lola-robles-abogada-familia.png",
+    tags: {
+      services: ["diseno-web", "alojamiento-mantenimiento"],
+      industries: ["legal"],
+      tools: []
+    }
+  },
+  {
     name: "Wideum",
     industry: "Tecnología Industrial",
     service: "Diseño Web y Localización",
