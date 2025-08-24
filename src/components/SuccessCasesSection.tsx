@@ -511,6 +511,18 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     }
   },
   {
+    name: "AECOC",
+    industry: "Asociación empresarial del sector consumo",
+    service: "CRM, administración, redes sociales, publicidad",
+    link: "/casos-exito/aecoc",
+    image: "/lovable-uploads/34af75c9-4cb5-4537-853e-73361c647202.png",
+    tags: {
+      services: ["implantacion-crm", "administracion-crm", "gestion-redes-sociales", "publicidad-redes-sociales"],
+      industries: ["educacion"],
+      tools: []
+    }
+  },
+  {
     name: "Wideum",
     industry: "Tecnología Industrial",
     service: "Diseño Web y Localización",

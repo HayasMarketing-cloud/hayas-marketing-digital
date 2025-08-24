@@ -58,6 +58,7 @@ import CasoExitoCarniceriaPicosDeEuropa from "./pages/CasoExitoCarniceriaPicosDe
 import CasoExitoLaOrientalSinGluten from "./pages/CasoExitoLaOrientalSinGluten";
 import CasoExitoFLAP from "./pages/CasoExitoFLAP";
 import CasoExitoWideum from "./pages/CasoExitoWideum";
+import CasoExitoAECOC from "./pages/CasoExitoAECOC";
 import ImplantacionCrm from "./pages/ImplantacionCrm";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
@@ -197,6 +198,7 @@ const App = () => (
           <Route path="/casos-exito/pasteleria-la-oriental-sin-gluten" element={<CasoExitoLaOrientalSinGluten />} />
           <Route path="/casos-exito/flap-articulos-peluqueria" element={<CasoExitoFLAP />} />
           <Route path="/casos-exito/wideum" element={<CasoExitoWideum />} />
+          <Route path="/casos-exito/aecoc" element={<CasoExitoAECOC />} />
           
            {/* BLOG / RECURSOS */}
            <Route path="/blog" element={<Blog />} />
