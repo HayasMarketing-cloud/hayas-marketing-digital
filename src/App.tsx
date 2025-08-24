@@ -62,6 +62,7 @@ import CasoExitoAECOC from '@/pages/CasoExitoAECOC';
 import CasoExitoFINECT from '@/pages/CasoExitoFINECT';
 import CasoExitoCOVEBO from '@/pages/CasoExitoCOVEBO';
 import CasoExitoFundacionCasaMexico from '@/pages/CasoExitoFundacionCasaMexico';
+import CasoExitoMotivaTuMente from '@/pages/CasoExitoMotivaTuMente';
 import ImplantacionCrm from "./pages/ImplantacionCrm";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
@@ -205,6 +206,7 @@ const App = () => (
           <Route path="/casos-exito/finect" element={<CasoExitoFINECT />} />
           <Route path="/casos-exito/covebo" element={<CasoExitoCOVEBO />} />
           <Route path="/casos-exito/fundacion-casa-mexico" element={<CasoExitoFundacionCasaMexico />} />
+          <Route path="/casos-exito/motiva-tu-mente" element={<CasoExitoMotivaTuMente />} />
           
            {/* BLOG / RECURSOS */}
            <Route path="/blog" element={<Blog />} />

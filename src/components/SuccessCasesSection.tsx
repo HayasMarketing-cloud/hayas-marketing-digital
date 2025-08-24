@@ -559,6 +559,18 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     }
   },
   {
+    name: "Motiva tu Mente",
+    industry: "Desarrollo personal y bienestar",
+    service: "Diseño web en WordPress y identidad visual",
+    link: "/casos-exito/motiva-tu-mente",
+    image: "/lovable-uploads/motiva-tu-mente-ester.png",
+    tags: {
+      services: ["diseno-web", "creacion-marca"],
+      industries: ["salud"],
+      tools: []
+    }
+  },
+  {
     name: "Wideum",
     industry: "Tecnología Industrial",
     service: "Diseño Web y Localización",
