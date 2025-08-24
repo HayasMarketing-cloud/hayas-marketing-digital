@@ -77,6 +77,13 @@ const Navigation = () => {
 
   const pillarKeys: PillarKey[] = ['impulsa', 'conecta', 'activa'];
 
+  // Icons and colors for each pillar
+  const pillarConfig = {
+    'Impulsa tu marca': { icon: Zap, color: 'text-purple-600', bgColor: 'bg-purple-50 hover:bg-purple-100' },
+    'Conecta con tus clientes': { icon: Users, color: 'text-blue-600', bgColor: 'bg-blue-50 hover:bg-blue-100' },
+    'Activa tus ventas': { icon: Wrench, color: 'text-green-600', bgColor: 'bg-green-50 hover:bg-green-100' },
+  };
+
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
     setMobileMenuLevel('main');
@@ -367,42 +374,30 @@ const Navigation = () => {
         >
           <div className="container mx-auto px-4">
             <div className="p-8 space-y-6">
-              {/* Pillar Pages quick access */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {pillars.map((p) => (
-                  <Link
-                    key={p.href}
-                    to={p.href}
-                    className="flex items-center justify-between px-4 py-3 rounded-lg border hover:bg-muted/50 transition-colors group"
-                    onClick={() => setActiveMegaMenu(null)}
-                  >
-                    <span className="font-medium text-foreground group-hover:text-primary">{p.title}</span>
-                    <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-transform group-hover:translate-x-1" />
-                  </Link>
-                ))}
-              </div>
-
-              {/* Servicios asociados por solución */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {pillarKeys.map((key) => (
-                  <div key={key} className="space-y-2">
-                    <ul className="space-y-1">
-                      {servicesByPillar[key].map((svc) => (
-                        <li key={svc.href}>
-                          <Link
-                            to={svc.href}
-                            className="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 py-1"
-                            onClick={() => setActiveMegaMenu(null)}
-                            aria-label={`${svc.title} — ${pillarMeta[key].title}`}
-                          >
-                            <span className="w-1.5 h-1.5 rounded-full bg-primary/60" />
-                            {svc.title}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
+              {/* Soluciones principales con iconos y colores */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {pillars.map((p) => {
+                  const config = pillarConfig[p.title as keyof typeof pillarConfig];
+                  const Icon = config.icon;
+                  return (
+                    <Link
+                      key={p.href}
+                      to={p.href}
+                      className={`flex items-center gap-4 px-6 py-5 rounded-xl border-2 ${config.bgColor} border-gray-100 hover:border-gray-200 transition-all duration-200 group hover:shadow-lg`}
+                      onClick={() => setActiveMegaMenu(null)}
+                    >
+                      <div className={`p-3 rounded-lg bg-white shadow-sm ${config.color}`}>
+                        <Icon className="h-6 w-6" />
+                      </div>
+                      <div className="flex-1">
+                        <span className="font-semibold text-gray-900 group-hover:text-gray-700 transition-colors">
+                          {p.title}
+                        </span>
+                        <ArrowRight className="h-4 w-4 text-gray-400 group-hover:text-gray-600 transition-all group-hover:translate-x-1 float-right mt-1" />
+                      </div>
+                    </Link>
+                  );
+                })}
               </div>
             </div>
           </div>
