@@ -619,6 +619,18 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     }
   },
   {
+    name: "AIP Clinic",
+    industry: "Clínica dermatológica online",
+    service: "Google Ads, publicidad en redes sociales y consultoría estratégica",
+    link: "/casos-exito/aip-clinic",
+    image: "/lovable-uploads/aip-clinic-dermatologia-online.png",
+    tags: {
+      services: ["publicidad-google-ads", "publicidad-redes-sociales", "consultoria-estrategica-analitica"],
+      industries: ["salud"],
+      tools: []
+    }
+  },
+  {
     name: "Wideum",
     industry: "Tecnología Industrial",
     service: "Diseño Web y Localización",
