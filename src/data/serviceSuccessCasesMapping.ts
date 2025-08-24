@@ -25,8 +25,8 @@ export const SERVICE_SUCCESS_CASES_MAPPING: Record<string, ServiceCasesConfig> =
     subtitle: "Campañas publicitarias en redes sociales que han multiplicado el alcance y conversiones de nuestros clientes."
   },
   'creacion-marca': {
-    filterTags: ["creacion-marca"],
-    subtitle: "Marcas que hemos creado y que han logrado diferenciarse y conectar exitosamente con su audiencia."
+    specificCases: ["Centro Roraima", "Dr. Parrón", "Calisthenia Online", "Inbound Students", "Nexo Vital", "Beka Finance"],
+    subtitle: "Proyectos de creación de marca que han transformado la identidad y posicionamiento de nuestros clientes."
   },
   'gestion-redes-sociales': {
     filterTags: ["gestion-redes-sociales"],

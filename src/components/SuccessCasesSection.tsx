@@ -61,7 +61,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     link: "/casos-exito/inbound-students",
     image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop",
     tags: {
-      services: ["diseno-web", "estrategia-contenidos"],
+      services: ["diseno-web", "estrategia-contenidos", "creacion-marca"],
       industries: ["educacion"],
       tools: []
     }
