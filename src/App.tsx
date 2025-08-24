@@ -64,6 +64,7 @@ import CasoExitoCOVEBO from '@/pages/CasoExitoCOVEBO';
 import CasoExitoFundacionCasaMexico from '@/pages/CasoExitoFundacionCasaMexico';
 import CasoExitoMotivaTuMente from '@/pages/CasoExitoMotivaTuMente';
 import CasoExitoEurobitsTechnologies from '@/pages/CasoExitoEurobitsTechnologies';
+import CasoExitoBodegasVilano from '@/pages/CasoExitoBodegasVilano';
 import ImplantacionCrm from "./pages/ImplantacionCrm";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
@@ -209,6 +210,7 @@ const App = () => (
           <Route path="/casos-exito/fundacion-casa-mexico" element={<CasoExitoFundacionCasaMexico />} />
           <Route path="/casos-exito/motiva-tu-mente" element={<CasoExitoMotivaTuMente />} />
           <Route path="/casos-exito/eurobits-technologies" element={<CasoExitoEurobitsTechnologies />} />
+          <Route path="/casos-exito/bodegas-vilano" element={<CasoExitoBodegasVilano />} />
           
            {/* BLOG / RECURSOS */}
            <Route path="/blog" element={<Blog />} />

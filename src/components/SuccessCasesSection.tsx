@@ -583,6 +583,18 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     }
   },
   {
+    name: "Bodegas Vilano",
+    industry: "Vino y alimentación - Ribera del Duero",
+    service: "CRM HubSpot, tienda online WooCommerce, SEO y marketplaces internacionales",
+    link: "/casos-exito/bodegas-vilano",
+    image: "/lovable-uploads/bodegas-vilano-case-study.png",
+    tags: {
+      services: ["implantacion-crm", "tienda-online", "seo-posicionamiento"],
+      industries: ["retail"],
+      tools: []
+    }
+  },
+  {
     name: "Wideum",
     industry: "Tecnología Industrial",
     service: "Diseño Web y Localización",
