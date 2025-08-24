@@ -58,7 +58,8 @@ import CasoExitoCarniceriaPicosDeEuropa from "./pages/CasoExitoCarniceriaPicosDe
 import CasoExitoLaOrientalSinGluten from "./pages/CasoExitoLaOrientalSinGluten";
 import CasoExitoFLAP from "./pages/CasoExitoFLAP";
 import CasoExitoWideum from "./pages/CasoExitoWideum";
-import CasoExitoAECOC from "./pages/CasoExitoAECOC";
+import CasoExitoAECOC from '@/pages/CasoExitoAECOC';
+import CasoExitoFINECT from '@/pages/CasoExitoFINECT';
 import ImplantacionCrm from "./pages/ImplantacionCrm";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
@@ -199,6 +200,7 @@ const App = () => (
           <Route path="/casos-exito/flap-articulos-peluqueria" element={<CasoExitoFLAP />} />
           <Route path="/casos-exito/wideum" element={<CasoExitoWideum />} />
           <Route path="/casos-exito/aecoc" element={<CasoExitoAECOC />} />
+          <Route path="/casos-exito/finect" element={<CasoExitoFINECT />} />
           
            {/* BLOG / RECURSOS */}
            <Route path="/blog" element={<Blog />} />

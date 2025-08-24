@@ -523,6 +523,18 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     }
   },
   {
+    name: "FINECT",
+    industry: "Plataforma de información financiera",
+    service: "CRM y consultoría estratégica para educación financiera",
+    link: "/casos-exito/finect",
+    image: "/lovable-uploads/b07a61c5-c2de-4de9-b7c0-ef3bb40498ed.png",
+    tags: {
+      services: ["implantacion-crm", "consultoria-estrategica-analitica"],
+      industries: ["educacion"],
+      tools: []
+    }
+  },
+  {
     name: "Wideum",
     industry: "Tecnología Industrial",
     service: "Diseño Web y Localización",
