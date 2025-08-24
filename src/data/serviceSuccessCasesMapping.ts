@@ -77,7 +77,7 @@ export const SERVICE_SUCCESS_CASES_MAPPING: Record<string, ServiceCasesConfig> =
     subtitle: "Automatizaciones de procesos de ventas que han mejorado la eficiencia comercial y las tasas de conversión."
   },
   'localizacion-contenidos': {
-    specificCases: ["Wideum", "Eva Champion", "Asendia", "Beluga Linguistics"],
+    specificCases: ["Wideum", "Eva Champion", "Asendia", "Formato Educativo"],
     subtitle: "Proyectos de localización de contenidos que han expandido exitosamente el alcance internacional de nuestros clientes."
   },
   'integraciones-ia-procesos': {
