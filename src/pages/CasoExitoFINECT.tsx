@@ -6,7 +6,7 @@ const CasoExitoFINECT = () => {
   const pageTitle = "Caso de Éxito FINECT - CRM y Estrategia Digital para Educación Financiera | Hayas Marketing";
   const pageDescription = "Descubre cómo FINECT optimizó su relación con inversores y gestoras mediante CRM y consultoría estratégica para impulsar la educación financiera.";
   const canonical = "https://hayasmarketing.com/casos-exito/finect";
-  const ogImage = "https://hayasmarketing.com/lovable-uploads/finect-case-study.jpg";
+  const ogImage = "https://hayasmarketing.com/lovable-uploads/2d59811e-1566-454e-b207-b7efa2c90d04.png";
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -45,7 +45,7 @@ const CasoExitoFINECT = () => {
       subtitle="Cómo una plataforma líder en información financiera optimizó su relación con inversores y gestoras para seguir formando a su comunidad"
       badges={["Educación / Formación", "Servicios Financieros", "CRM"]}
       websiteUrl="https://www.finect.com"
-      featuredImage="/lovable-uploads/b07a61c5-c2de-4de9-b7c0-ef3bb40498ed.png"
+      featuredImage="/lovable-uploads/2d59811e-1566-454e-b207-b7efa2c90d04.png"
       featuredImageAlt="Caso de éxito FINECT - Educación financiera con CRM y estrategia digital"
       aboutCompany="FINECT es una plataforma de contenidos especializada en fondos de inversión y valores que se ha convertido en un referente para gestoras de fondos y ahorradores individuales. Cada día publica noticias y análisis sobre la actualidad financiera y ofrece herramientas para comparar fondos de inversión, ETFs, roboadvisors y planes de pensiones. Con un equipo de unas 20 personas, su objetivo es ofrecer a usuarios y entidades los mejores servicios y convertirse en un medio de referencia para inversores. Además de informar, FINECT busca formar a sus usuarios: cada mes, más de 500.000 inversores y profesionales visitan su plataforma y realizan más de 50.000 comparaciones de productos financieros."
       challenge="A medida que crecía su comunidad de usuarios y su catálogo de servicios, FINECT necesitaba dar un salto en la gestión de sus relaciones y en su estrategia digital. Se enfrentaba a varios desafíos: centralizar la relación con inversores y gestoras, segmentar y personalizar la comunicación para diferentes perfiles y niveles formativos, atraer y acompañar a los usuarios en su formación (eventos, webinars, premios académicos), y contar con asesoramiento estratégico que redefiniera procesos, buyer personas y funnels de captación."
