@@ -4,10 +4,10 @@ import Footer from '@/components/Footer';
 import { Phone, MessageCircle } from 'lucide-react';
 export default function AgendarReunion() {
   useEffect(() => {
-    // Load HubSpot meetings script
+    // Load Go High Level form embed script
     const script = document.createElement('script');
     script.type = 'text/javascript';
-    script.src = 'https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js';
+    script.src = 'https://links.hayasmarketing.com/js/form_embed.js';
     script.async = true;
     document.body.appendChild(script);
     return () => {
@@ -48,8 +48,22 @@ export default function AgendarReunion() {
                 </div>
                 
                 <div className="p-8">
-                  {/* HubSpot Meetings Embed */}
-                  <div className="meetings-iframe-container w-full min-h-[600px]" data-src="https://meetings.hubspot.com/rubenreyero/reunion-con-equipo-de-hayas?embed=true"></div>
+                  {/* Go High Level Booking Widget */}
+                  <div className="booking-widget-container w-full min-h-[600px] rounded-lg overflow-hidden">
+                    <iframe 
+                      src="https://links.hayasmarketing.com/widget/booking/42ZHsWsLcCFmHjxmh3dU" 
+                      style={{
+                        width: '100%',
+                        border: 'none',
+                        overflow: 'hidden',
+                        minHeight: '600px',
+                        borderRadius: '8px'
+                      }}
+                      scrolling="no" 
+                      id="ZqA90LNiqw9xgwiLQfOB_booking_widget"
+                      title="Agendar Reunión - Hayas Marketing"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
