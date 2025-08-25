@@ -437,7 +437,7 @@ const ConectaConTusClientes = () => {
                         Solución Integral
                       </Badge>
                       <CardTitle className="text-2xl md:text-3xl font-bold">
-                        Captación de Leads y Automatización de Marketing
+                        Administración CRM y gestión del Plan de Marketing
                       </CardTitle>
                     </div>
                   </div>
@@ -506,19 +506,19 @@ const ConectaConTusClientes = () => {
                   </div>
                   
                   <div className="space-y-3">
-                    <h4 className="font-semibold text-turquesa-700">Automatización Total</h4>
+                    <h4 className="font-semibold text-turquesa-700">Gestión Marketing</h4>
                     <div className="space-y-2">
                       <div className="flex items-center gap-2">
                         <CheckCircle className="h-4 w-4 text-green-500" />
-                        <span className="text-sm text-gray-600">Pipeline enterprise</span>
+                        <span className="text-sm text-gray-600">Campañas Google ADS</span>
                       </div>
                       <div className="flex items-center gap-2">
                         <CheckCircle className="h-4 w-4 text-green-500" />
-                        <span className="text-sm text-gray-600">ROI attribution completo</span>
+                        <span className="text-sm text-gray-600">Gestión Redes Sociales</span>
                       </div>
                       <div className="flex items-center gap-2">
                         <CheckCircle className="h-4 w-4 text-green-500" />
-                        <span className="text-sm text-gray-600">Gestión estratégica continua</span>
+                        <span className="text-sm text-gray-600">Optimización SEO</span>
                       </div>
                     </div>
                   </div>
@@ -526,9 +526,9 @@ const ConectaConTusClientes = () => {
                 
                 <div className="border-t pt-6">
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Link to="/servicios/captacion-leads-clientes#top">
+                    <Link to="/servicios/administracion-crm#top">
                       <Button className="gradient-primary text-white px-8 py-3 text-lg font-medium">
-                        Conocer Captación de Leads
+                        Conocer Administración CRM
                       </Button>
                     </Link>
                     <Link to="/solicitar-consulta#top">
