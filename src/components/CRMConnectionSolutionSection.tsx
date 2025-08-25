@@ -10,25 +10,25 @@ const solutions = [
   {
     platform: "HubSpot",
     logo: hubspotLogo,
-    description: "Ideal para empresas medianas y grandes con procesos complejos",
+    description: "Ideal para procesos complejos y escalabilidad",
     features: [
-      "Plataforma todo-en-uno completa",
-      "Analytics avanzados y reporting",
-      "Integraciones empresariales nativas",
-      "Escalabilidad ilimitada"
+      "Plataforma todo-en-uno para marketing, ventas y servicio.",
+      "Datos que importan: reporting avanzado y visión completa del cliente.",
+      "Integración nativa con tus herramientas empresariales actuales.",
+      "Escalabilidad sin límites para crecer a nivel internacional."
     ],
     badges: ["Medianas y Grandes Empresas", "Multinacionales", "B2B"],
     variant: "primary"
   },
   {
-    platform: "HighLevel (GHL)",
+    platform: "Go High Level",
     logo: ghlLogo,
-    description: "El todo-en-uno más competitivo para pymes y emprendedores",
+    description: "El todo-en-uno más competitivo",
     features: [
-      "Automatización multicanal integrada",
-      "Landing pages y funnels incluidos",
-      "WhatsApp, SMS y email unificados",
-      "Precio más accesible"
+      "Automatización multicanal (email, WhatsApp, SMS) en una sola plataforma.",
+      "Landing pages y funnels incluidos, sin costes extra.",
+      "Gestión de leads simplificada, ahorrando tiempo y tareas manuales.",
+      "Precio accesible, pensado para negocios en crecimiento."
     ],
     badges: ["PYMEs", "Emprendedores", "Agencias", "B2B", "B2C", "eCommerce"],
     variant: "secondary"
@@ -41,10 +41,10 @@ const CRMConnectionSolutionSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-            Nuestra <span className="text-gradient-primary">propuesta</span>
+            Nuestra <span className="text-gradient-primary">propuesta de valor</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto mb-8">
-            En Hayas no somos fabricantes, somos consultores imparciales: te ayudamos a elegir la herramienta que mejor encaje con tu negocio, realizamos el análisis estratégico, la implantación personalizada, el onboarding de tu equipo y ofrecemos mantenimiento opcional para que siempre aproveches al máximo tu inversión.
+            En Hayas no vendemos software: diseñamos contigo la estrategia, implantamos el CRM que mejor encaja con tu negocio y te acompañamos con soporte continuo y servicios de marketing y ventas para que tu inversión dé resultados desde el primer día.
           </p>
         </div>
 
@@ -61,7 +61,8 @@ const CRMConnectionSolutionSection = () => {
                       loading="lazy"
                     />
                   </div>
-                  <div className="flex flex-wrap gap-2 justify-center">
+                  <h2 className="text-2xl font-bold text-center mb-4">CRM {solution.platform}</h2>
+                  <div className="flex flex-wrap gap-2 justify-center mb-4">
                     {solution.badges.map((badgeText, badgeIndex) => (
                       <Badge key={badgeIndex} variant={solution.variant === 'primary' ? 'default' : 'secondary'}>
                         {badgeText}
@@ -69,13 +70,13 @@ const CRMConnectionSolutionSection = () => {
                     ))}
                   </div>
                 </div>
-                <p className="text-muted-foreground text-center">{solution.description}</p>
+                <p className="text-muted-foreground text-center font-medium">{solution.description}</p>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3">
                   {solution.features.map((feature, fIndex) => (
                     <li key={fIndex} className="flex items-start gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="h-5 w-5 text-conecta-500 mt-0.5 flex-shrink-0" />
                       <span>{feature}</span>
                     </li>
                   ))}
@@ -87,15 +88,15 @@ const CRMConnectionSolutionSection = () => {
 
         <div className="bg-muted/50 rounded-2xl p-8 max-w-4xl mx-auto mb-8">
           <div className="flex items-start gap-4">
-            <div className="p-3 bg-accent/10 rounded-lg">
-              <Lightbulb className="h-6 w-6 text-accent" />
+            <div className="p-3 bg-conecta-100 rounded-lg">
+              <Lightbulb className="h-6 w-6 text-conecta-600" />
             </div>
             <div className="flex-1">
               <h3 className="text-xl font-semibold mb-3">Más que tecnología, un ecosistema completo</h3>
               <p className="text-muted-foreground mb-4">
-                Además de la tecnología, ofrecemos todos los servicios de marketing y ventas asociados a tu CRM, con soporte y mejora continua para que tu empresa evolucione y se adapte siempre a las nuevas tecnologías.
+                Con Hayas tu CRM no está solo: te ofrecemos consultoría estratégica, campañas de marketing, automatizaciones, funnels y soporte continuo. Así tu empresa evoluciona con las nuevas tecnologías sin perder la conexión con tus clientes.
               </p>
-              <div className="flex items-center gap-2 text-sm text-primary">
+              <div className="flex items-center gap-2 text-sm text-conecta-600">
                 <HeadphonesIcon className="h-4 w-4" />
                 <span className="font-medium">Soporte continuo y consultoría estratégica incluidos</span>
               </div>
@@ -104,8 +105,8 @@ const CRMConnectionSolutionSection = () => {
         </div>
 
         <div className="text-center">
-          <Button variant="default" size="lg" className="gap-2">
-            Ver comparativa completa HubSpot vs HighLevel
+          <Button variant="default" size="lg" className="gap-2 bg-conecta-500 hover:bg-conecta-600">
+            👉 Solicitar asesoría gratuita
             <ArrowRight className="h-4 w-4" />
           </Button>
         </div>
