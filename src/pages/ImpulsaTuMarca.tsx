@@ -10,6 +10,7 @@ import SuccessCasesSection from '@/components/SuccessCasesSection';
 import Seo from '@/components/Seo';
 import FAQSection from '@/components/FAQSection';
 import { servicesByPillar } from '@/data/services';
+import { successCaseImages } from '@/data/successCaseImages';
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -72,22 +73,22 @@ const successCases = [
   {
     title: "Calistenia Online",
     description: "Academia online de entrenamiento",
-    image: "/lovable-uploads/pamdamedia-laptop-mockup.png"
+    image: successCaseImages.calistheniaOnline
   },
   {
     title: "Nexo Vital",
     description: "Clínica de salud con estrategia digital integral",
-    image: "/lovable-uploads/cabrera-cervantes-asesoria-legal-optimized.png"
+    image: successCaseImages.nexoVital
   },
   {
     title: "Beka Finance",
     description: "Posicionamiento de marca en sector financiero",
-    image: "/lovable-uploads/eurobits-technologies-15-years.png"
+    image: successCaseImages.bekaFinance
   },
   {
     title: "Joints'Up",
     description: "Startup deportiva con branding y crecimiento online",
-    image: "/lovable-uploads/wideum-case-study.jpg"
+    image: successCaseImages.jointsUp
   }
 ];
 
