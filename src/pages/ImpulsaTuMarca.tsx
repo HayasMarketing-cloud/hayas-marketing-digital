@@ -9,6 +9,7 @@ import Footer from '@/components/Footer';
 import SuccessCasesSection from '@/components/SuccessCasesSection';
 import Seo from '@/components/Seo';
 import FAQSection from '@/components/FAQSection';
+import IntermediateCTA from '@/components/IntermediateCTA';
 import { servicesByPillar } from '@/data/services';
 import { successCaseImages } from '@/data/successCaseImages';
 import {
@@ -424,6 +425,14 @@ const ImpulsaTuMarca = () => {
             </div>
           </div>
         </section>
+
+        {/* Intermediate CTA */}
+        <IntermediateCTA 
+          title="Descubre como podemos hacer que tu Marca sea tu principal activo digital"
+          subtitle="Solicita una asesoria gratuita y te mostraremos nuestra metodologia y el potencial de tu Marca"
+          buttonText="Solicitar asesoria gratuita"
+          buttonLink="/solicitar-consulta"
+        />
 
         {/* CTA final Section */}
         <section className="py-16 md:py-20 bg-gradient-to-r from-impulsa-primary via-impulsa-primary/90 to-impulsa-600">
