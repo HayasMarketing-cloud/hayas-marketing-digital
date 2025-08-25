@@ -50,27 +50,27 @@ const CRMConnectionSolutionSection = () => {
 
         <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16">
           {solutions.map((solution, index) => (
-            <Card key={index} className="hover:shadow-xl transition-shadow">
-              <CardHeader>
-                <div className="flex items-center justify-center mb-4">
+            <Card key={index} className="hover:shadow-xl transition-shadow overflow-hidden">
+              <div className="p-6 pb-4">
+                <div className="flex items-center justify-center mb-3">
                   <img
                     src={solution.logo}
                     alt={`${solution.platform} logo`}
-                    className="h-20 w-auto object-contain"
+                    className="h-16 w-auto object-contain"
                     loading="lazy"
                   />
                 </div>
-                <h2 className="text-2xl font-bold text-center mb-4">CRM {solution.platform}</h2>
-                <div className="flex flex-wrap gap-2 justify-center mb-4">
+                <h2 className="text-2xl font-bold text-center mb-3">CRM {solution.platform}</h2>
+                <div className="flex flex-wrap gap-2 justify-center mb-3">
                   {solution.badges.map((badgeText, badgeIndex) => (
                     <Badge key={badgeIndex} variant={solution.variant === 'primary' ? 'default' : 'secondary'}>
                       {badgeText}
                     </Badge>
                   ))}
                 </div>
-                <p className="text-muted-foreground text-center font-medium mb-6">{solution.description}</p>
-              </CardHeader>
-              <CardContent>
+                <p className="text-muted-foreground text-center font-medium">{solution.description}</p>
+              </div>
+              <div className="px-6 pb-6">
                 <ul className="space-y-3">
                   {solution.features.map((feature, fIndex) => (
                     <li key={fIndex} className="flex items-start gap-3">
@@ -79,7 +79,7 @@ const CRMConnectionSolutionSection = () => {
                     </li>
                   ))}
                 </ul>
-              </CardContent>
+              </div>
             </Card>
           ))}
         </div>
