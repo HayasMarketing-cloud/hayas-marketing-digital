@@ -2,6 +2,7 @@ import React from 'react';
 import Seo from '@/components/Seo';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import lovableLogo from '@/assets/logos/lovable-logo.png';
 
 
 import { Button } from '@/components/ui/button';
@@ -23,7 +24,7 @@ import { servicesByPillar } from '@/data/services';
 
 const crmPlatforms = [
   { name: "HubSpot", logo: "/lovable-uploads/4e3422d2-6a85-4615-8631-c0ed5ccf1b00.png" },
-  { name: "Salesforce", logo: "/lovable-uploads/b4b8749f-0600-4376-8d4f-b15521fae5df.png" },
+  { name: "Lovable", logo: lovableLogo },
   { name: "Go High Level", logo: "/lovable-uploads/e54905f0-0e84-46b4-bc48-4acf987fcb9a.png" },
   { name: "n8n", logo: "/lovable-uploads/d597d918-bb87-477e-8fb1-7d8a7ba41138.png" },
   { name: "Botpress", logo: "/lovable-uploads/01333c02-039e-4e5c-a08f-d3db20e1e7a8.png" },
