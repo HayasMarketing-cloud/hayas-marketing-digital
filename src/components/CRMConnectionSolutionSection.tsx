@@ -53,17 +53,15 @@ const CRMConnectionSolutionSection = () => {
           {solutions.map((solution, index) => (
             <Card key={index} className="hover:shadow-xl transition-shadow">
               <CardHeader>
-                <div className="mb-4">
+                <div className="mb-6">
                   <div className="flex items-center justify-center mb-4">
-                    <div className={`p-4 rounded-lg ${solution.variant === 'primary' ? 'bg-primary/10' : 'bg-secondary/10'}`}>
-                      <OptimizedImage
-                        src={solution.logo}
-                        alt={`${solution.platform} logo`}
-                        width={120}
-                        height={40}
-                        className="h-10 w-auto object-contain"
-                      />
-                    </div>
+                    <OptimizedImage
+                      src={solution.logo}
+                      alt={`${solution.platform} logo`}
+                      width={200}
+                      height={80}
+                      className="h-16 w-auto object-contain"
+                    />
                   </div>
                   <div className="flex flex-wrap gap-2 justify-center">
                     {solution.badges.map((badgeText, badgeIndex) => (
