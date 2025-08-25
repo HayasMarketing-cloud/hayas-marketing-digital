@@ -4,7 +4,6 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import ServiceContactSection from '@/components/ServiceContactSection';
 import SuccessCasesSection from '@/components/SuccessCasesSection';
-import ReviewsSection from '@/components/ReviewsSection';
 import ServiceRelatedPosts from '@/components/ServiceRelatedPosts';
 import { Button } from '@/components/ui/button';
 import FAQSection from '@/components/FAQSection';
@@ -217,7 +216,7 @@ const ConectaConTusClientes = () => {
         filterTags={["CONECTA CON TUS CLIENTES"]}
       />
 
-      <ReviewsSection />
+      
 
       {/* Intermediate CTA */}
       <IntermediateCTA 
