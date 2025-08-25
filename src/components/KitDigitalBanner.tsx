@@ -26,7 +26,7 @@ const KitDigitalBanner = () => {
               </h2>
               
               <p className="text-lg text-gray-300 leading-relaxed">
-                Accede a ayudas de hasta <span className="font-bold text-orange-400">12.000€</span> para la transformación digital de tu PYME. 
+                Accede a tu bono digital de hasta <span className="font-bold text-orange-400">3.000€</span> para la transformación digital de tu negocio. 
                 Especialistas certificados en digitalización, diseño web, e-commerce y más.
               </p>
               
@@ -47,8 +47,8 @@ const KitDigitalBanner = () => {
                   <Building2 className="h-5 w-5 text-orange-400" />
                 </div>
                 <div>
-                  <div className="text-sm font-semibold">Para PYMEs</div>
-                  <div className="text-xs text-gray-400">Especializado</div>
+                  <div className="text-sm font-semibold">Para Autónomos</div>
+                  <div className="text-xs text-gray-400">y pymes hasta 2 empleados</div>
                 </div>
               </div>
               
@@ -67,7 +67,7 @@ const KitDigitalBanner = () => {
                   <Euro className="h-5 w-5 text-green-400" />
                 </div>
                 <div>
-                  <div className="text-sm font-semibold">Hasta 12.000€</div>
+                  <div className="text-sm font-semibold">Hasta 3.000€</div>
                   <div className="text-xs text-gray-400">Por solución</div>
                 </div>
               </div>
@@ -110,7 +110,7 @@ const KitDigitalBanner = () => {
               <div className="space-y-6">
                 <div className="mx-auto flex items-center justify-center">
                   <img 
-                    src="/lovable-uploads/56268ede-69aa-4ce7-a0bf-cdbbc130b0b6.png" 
+                    src="/lovable-uploads/6e8dd311-f7cc-4c6d-ad4b-0402c053afda.png" 
                     alt="Kit Digital Logo Oficial"
                     className="h-20 w-auto"
                   />
