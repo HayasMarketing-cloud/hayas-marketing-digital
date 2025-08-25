@@ -90,6 +90,19 @@
     background: linear-gradient(135deg, hsl(var(--hayas-primary) / 0.1), hsl(var(--hayas-tertiary) / 0.1));
   }
 
+  /* Gradientes específicos por solución */
+  .gradient-impulsa {
+    background: linear-gradient(135deg, #9333ea, #7c3aed);
+  }
+
+  .gradient-conecta {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  }
+
+  .gradient-activa {
+    background: linear-gradient(135deg, #16a34a, #15803d);
+  }
+
   /* Sombras corporativas */
   .shadow-elegant {
     box-shadow: 0 10px 30px -10px hsl(var(--hayas-primary) / 0.2);

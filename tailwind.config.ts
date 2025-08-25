@@ -79,6 +79,43 @@ export default {
 					800: '#115e59',
 					900: '#134e4a',
 				},
+				// Colores específicos por solución
+				'impulsa': {
+					50: '#faf5ff',
+					100: '#f3e8ff',
+					200: '#e9d5ff',
+					300: '#d8b4fe',
+					400: '#c084fc',
+					500: '#9333ea', // Púrpura principal
+					600: '#7c3aed',
+					700: '#6d28d9',
+					800: '#5b21b6',
+					900: '#4c1d95',
+				},
+				'conecta': {
+					50: '#eff6ff',
+					100: '#dbeafe',
+					200: '#bfdbfe',
+					300: '#93c5fd',
+					400: '#60a5fa',
+					500: '#2563eb', // Azul principal
+					600: '#1d4ed8',
+					700: '#1e40af',
+					800: '#1e3a8a',
+					900: '#1e293b',
+				},
+				'activa': {
+					50: '#f0fdf4',
+					100: '#dcfce7',
+					200: '#bbf7d0',
+					300: '#86efac',
+					400: '#4ade80',
+					500: '#16a34a', // Verde principal
+					600: '#15803d',
+					700: '#166534',
+					800: '#14532d',
+					900: '#052e16',
+				},
 				'hayas-secondary': {
 					DEFAULT: '#04725A',
 					light: '#069668',

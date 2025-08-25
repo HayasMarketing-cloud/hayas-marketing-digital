@@ -259,6 +259,7 @@ const ActivaTusVentas = () => {
         pillar="activa"
         title="Nuestros Servicios de Activación de Ventas"
         description="Descubre todos los servicios profesionales para activar tus ventas y convertir leads en clientes."
+        accentColor="activa"
       />
 
       {/* Process Section */}

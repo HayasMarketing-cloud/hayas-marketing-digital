@@ -203,6 +203,7 @@ const ImpulsaTuMarca = () => {
           pillar="impulsa"
           title="Nuestros Servicios de Marca y Visibilidad"
           description="Descubre todos los servicios profesionales para impulsar tu marca y ganar visibilidad en el mercado."
+          accentColor="impulsa"
         />
 
         {/* Solución destacada: Creación de Marca */}
@@ -213,9 +214,9 @@ const ImpulsaTuMarca = () => {
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">Solución: <span className="text-gradient-primary">Servicio Creación de Marca</span></h2>
                 <p className="text-lg text-gray-600 mb-6 max-w-2xl">Conoce en detalle cómo abordamos la creación y el rediseño de marcas: metodología, entregables y ejemplos.</p>
                 <ul className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-                  <li className="flex items-center gap-2 text-gray-700"><CheckCircle className="h-5 w-5 text-hayas-600" /> Naming</li>
-                  <li className="flex items-center gap-2 text-gray-700"><CheckCircle className="h-5 w-5 text-hayas-600" /> Imagen de marca</li>
-                  <li className="flex items-center gap-2 text-gray-700"><CheckCircle className="h-5 w-5 text-hayas-600" /> Manual de marca</li>
+                  <li className="flex items-center gap-2 text-gray-700"><CheckCircle className="h-5 w-5 text-impulsa-500" /> Naming</li>
+                  <li className="flex items-center gap-2 text-gray-700"><CheckCircle className="h-5 w-5 text-impulsa-500" /> Imagen de marca</li>
+                  <li className="flex items-center gap-2 text-gray-700"><CheckCircle className="h-5 w-5 text-impulsa-500" /> Manual de marca</li>
                 </ul>
                 <Link to="/servicios/creacion-marca">
                   <Button className="gradient-primary text-white px-6 py-6">Ver contenido de la solución<ArrowRight className="w-4 h-4 ml-2" /></Button>
@@ -223,7 +224,7 @@ const ImpulsaTuMarca = () => {
               </div>
               <Card className="shadow-lg border-none">
                 <CardHeader className="pb-3">
-                  <div className="w-12 h-12 rounded-lg bg-hayas-100 flex items-center justify-center mb-3"><Palette className="h-6 w-6 text-hayas-600" /></div>
+                  <div className="w-12 h-12 rounded-lg bg-impulsa-100 flex items-center justify-center mb-3"><Palette className="h-6 w-6 text-impulsa-600" /></div>
                   <CardTitle>Creación de Marca</CardTitle>
                   <CardDescription>Identidad y posicionamiento para destacar en tu mercado.</CardDescription>
                 </CardHeader>

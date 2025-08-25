@@ -9,17 +9,28 @@ interface PillarServicesSectionProps {
   pillar: PillarKey;
   title?: string;
   description?: string;
+  accentColor?: 'impulsa' | 'conecta' | 'activa';
 }
 
 const PillarServicesSection: React.FC<PillarServicesSectionProps> = ({
   pillar,
   title = 'Nuestros Servicios',
-  description = 'Descubre todos los servicios profesionales de esta solución para hacer crecer tu negocio de forma estratégica y sostenible.'
+  description = 'Descubre todos los servicios profesionales de esta solución para hacer crecer tu negocio de forma estratégica y sostenible.',
+  accentColor = 'impulsa'
 }) => {
   const [expanded, setExpanded] = useState(false);
   const [view, setView] = useState<'grid' | 'list'>('grid');
   
   const services = servicesByPillar[pillar] ?? [];
+  
+  const getAccentColorClass = (baseClass: string) => {
+    const colorMap = {
+      impulsa: baseClass.replace('primary', 'impulsa-500'),
+      conecta: baseClass.replace('primary', 'conecta-500'),
+      activa: baseClass.replace('primary', 'activa-500')
+    };
+    return colorMap[accentColor] || baseClass;
+  };
   
   return (
     <section id="nuestros-servicios" className="py-8 md:py-12 bg-white">
@@ -77,7 +88,7 @@ const PillarServicesSection: React.FC<PillarServicesSectionProps> = ({
                 </CardContent>
                 <CardFooter>
                   <Link to={service.href} aria-label={`Ver ${service.title}`}>
-                    <Button size="sm">Ver {service.title}</Button>
+                    <Button size="sm" className={getAccentColorClass('bg-primary hover:bg-primary/90')}>Ver {service.title}</Button>
                   </Link>
                 </CardFooter>
               </Card>
