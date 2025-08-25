@@ -460,7 +460,7 @@ const ImpulsaTuMarca = () => {
         <FAQSection
           title="Preguntas Frecuentes sobre Branding"
           subtitle="Resuelve tus dudas sobre la creación e impulso de marca"
-          faqItems={faqItems}
+          faqs={faqItems}
         />
       </main>
       
