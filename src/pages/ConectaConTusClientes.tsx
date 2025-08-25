@@ -330,7 +330,7 @@ const ConectaConTusClientes = () => {
                   <img 
                     src={platform.logo} 
                     alt={platform.name}
-                    className="w-full h-24 object-contain"
+                    className="w-full h-16 object-contain filter brightness-75 hover:brightness-100 transition-all duration-300"
                   />
                 </div>
               ))}
