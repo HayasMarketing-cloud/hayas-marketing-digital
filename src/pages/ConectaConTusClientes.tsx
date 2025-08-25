@@ -113,8 +113,6 @@ const ConectaConTusClientes = () => {
       <PillarServicesSection 
         title="Servicios que potencian tu CRM"
         pillar="conecta"
-        services={servicesByPillar["conecta"] || []}
-        showViewAll={false}
       />
 
       {/* Sección 6: Casos de éxito */}
