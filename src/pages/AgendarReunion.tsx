@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Phone, MessageCircle } from 'lucide-react';
+
 export default function AgendarReunion() {
   useEffect(() => {
     // Load Go High Level form embed script
@@ -10,6 +11,7 @@ export default function AgendarReunion() {
     script.src = 'https://links.hayasmarketing.com/js/form_embed.js';
     script.async = true;
     document.body.appendChild(script);
+    
     return () => {
       // Cleanup script on unmount
       if (document.body.contains(script)) {
@@ -17,28 +19,33 @@ export default function AgendarReunion() {
       }
     };
   }, []);
+
   const handleSofiaChat = () => {
     // Trigger Sofia chat widget
     window.dispatchEvent(new CustomEvent('openSofiaChat'));
   };
-  return <div className="min-h-screen bg-gradient-to-br from-background via-background/95 to-primary/5 pt-24">
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-background via-background/95 to-primary/5 pt-24">
       <Navigation />
       
-      <main className="container mx-auto px-6 py-12">
-        <div className="max-w-6xl mx-auto">
+      <main className="w-full px-4 py-12">
+        <div className="w-full max-w-none">
           {/* Header Section */}
-          <div className="text-center mb-12">
-            <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">Agenda tu reunión con nuestro equipo</h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <div className="text-center mb-12 max-w-4xl mx-auto">
+            <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+              Agenda tu reunión con nuestro equipo
+            </h1>
+            <p className="text-xl text-muted-foreground leading-relaxed">
               Descubre cómo podemos impulsar tu negocio con estrategias personalizadas de marketing digital e IA. 
               Elige el momento que mejor se adapte a tu agenda.
             </p>
           </div>
 
-          {/* Main Content Grid */}
-          <div className="grid lg:grid-cols-3 gap-12 items-start">
-            {/* Meeting Scheduler */}
-            <div className="lg:col-span-2">
+          {/* Main Content Grid - Full Width */}
+          <div className="grid lg:grid-cols-12 gap-8 items-start px-4 lg:px-8">
+            {/* Meeting Scheduler - Takes up more space */}
+            <div className="lg:col-span-8">
               <div className="bg-card rounded-2xl shadow-2xl border border-border/50 overflow-hidden">
                 <div className="p-8 border-b border-border/30">
                   <h2 className="text-2xl font-semibold mb-3">Selecciona tu Horario Preferido</h2>
@@ -68,25 +75,25 @@ export default function AgendarReunion() {
               </div>
             </div>
 
-            {/* Contact Options Sidebar */}
-            <div className="space-y-6">
+            {/* Contact Options Sidebar - Compact */}
+            <div className="lg:col-span-4 space-y-6">
               {/* Phone Contact */}
-              <div className="bg-card rounded-2xl p-8 shadow-xl border border-border/50">
+              <div className="bg-card rounded-2xl p-6 shadow-xl border border-border/50">
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-r from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Phone className="w-8 h-8 text-white" />
+                  <div className="w-14 h-14 bg-gradient-to-r from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Phone className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-3">Contacto Directo</h3>
-                  <p className="text-muted-foreground mb-6">
+                  <h3 className="text-lg font-semibold mb-2">Contacto Directo</h3>
+                  <p className="text-muted-foreground text-sm mb-4">
                     Habla directamente con nuestro equipo
                   </p>
                   <div className="space-y-3">
-                    <a href="tel:672288182" className="flex items-center justify-center gap-3 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 hover:shadow-lg hover:scale-105 w-full">
-                      <Phone className="w-5 h-5" />
+                    <a href="tel:672288182" className="flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary text-white px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 hover:shadow-lg hover:scale-105 w-full">
+                      <Phone className="w-4 h-4" />
                       Llamar
                     </a>
-                    <a href="https://wa.me/34672288182" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 hover:shadow-lg hover:scale-105 w-full">
-                      <MessageCircle className="w-5 h-5" />
+                    <a href="https://wa.me/34672288182" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 hover:shadow-lg hover:scale-105 w-full">
+                      <MessageCircle className="w-4 h-4" />
                       WhatsApp
                     </a>
                   </div>
@@ -94,32 +101,32 @@ export default function AgendarReunion() {
               </div>
 
               {/* Sofia Chat */}
-              <div className="bg-card rounded-2xl p-8 shadow-xl border border-border/50">
+              <div className="bg-card rounded-2xl p-6 shadow-xl border border-border/50">
                 <div className="text-center">
-                  <div className="relative w-20 h-20 mx-auto mb-6">
-                    <div className="w-20 h-20 bg-gradient-to-r from-accent to-accent/80 rounded-full flex items-center justify-center relative overflow-hidden">
-                      <img src="/lovable-uploads/2a2adcf5-d531-4d8c-91bd-bb12aac27976.png" alt="SofÍA" className="w-16 h-16 rounded-full object-cover" />
-                      <div className="absolute -top-1 -right-1 w-5 h-5 bg-green-500 rounded-full border-2 border-white">
+                  <div className="relative w-16 h-16 mx-auto mb-4">
+                    <div className="w-16 h-16 bg-gradient-to-r from-accent to-accent/80 rounded-full flex items-center justify-center relative overflow-hidden">
+                      <img src="/lovable-uploads/2a2adcf5-d531-4d8c-91bd-bb12aac27976.png" alt="SofÍA" className="w-12 h-12 rounded-full object-cover" />
+                      <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white">
                         <div className="absolute inset-0 bg-green-400 rounded-full animate-ping"></div>
                       </div>
                     </div>
                   </div>
-                  <h3 className="text-xl font-semibold mb-3 text-foreground">Chatea con SofÍA</h3>
-                  <p className="text-muted-foreground mb-6">
+                  <h3 className="text-lg font-semibold mb-2 text-foreground">Chatea con SofÍA</h3>
+                  <p className="text-muted-foreground text-sm mb-4">
                     Nuestra asistente de IA está disponible 24/7 para resolver tus dudas sobre nuestros servicios
                   </p>
-                  <button onClick={handleSofiaChat} className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-lime-500 to-lime-600 hover:from-lime-600 hover:to-lime-700 text-white px-8 py-4 rounded-xl font-medium transition-all duration-300 hover:shadow-lg hover:scale-105 w-full shadow-md">
-                    <MessageCircle className="w-5 h-5" />
+                  <button onClick={handleSofiaChat} className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-lime-500 to-lime-600 hover:from-lime-600 hover:to-lime-700 text-white px-6 py-3 rounded-xl text-sm font-medium transition-all duration-300 hover:shadow-lg hover:scale-105 w-full shadow-md">
+                    <MessageCircle className="w-4 h-4" />
                     Iniciar Conversación
                   </button>
-                  <p className="text-xs text-muted-foreground mt-3">
+                  <p className="text-xs text-muted-foreground mt-2">
                     Respuesta inmediata • Disponible siempre
                   </p>
                 </div>
               </div>
 
               {/* Benefits */}
-              <div className="bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl p-8 border border-primary/10">
+              <div className="bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl p-6 border border-primary/10">
                 <h3 className="text-lg font-semibold mb-4">¿Qué incluye la reunión?</h3>
                 <ul className="space-y-3 text-sm text-muted-foreground">
                   <li className="flex items-start gap-3">
@@ -164,5 +171,6 @@ export default function AgendarReunion() {
       </main>
 
       <Footer />
-    </div>;
+    </div>
+  );
 }
