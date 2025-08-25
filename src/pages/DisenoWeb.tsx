@@ -132,6 +132,9 @@ const DisenoWeb = () => {
       
       <ReviewsSection />
 
+      {/* Kit Digital Banner */}
+      <KitDigitalBanner />
+
       {/* Sección 6: CTA intermedio */}
       <IntermediateCTA />
 
