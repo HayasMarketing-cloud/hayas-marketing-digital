@@ -29,6 +29,15 @@ const KitDigitalBanner = () => {
                 Accede a ayudas de hasta <span className="font-bold text-orange-400">12.000€</span> para la transformación digital de tu PYME. 
                 Especialistas certificados en digitalización, diseño web, e-commerce y más.
               </p>
+              
+              <div className="bg-orange-500/20 border border-orange-500/30 rounded-lg p-4 mb-4">
+                <p className="text-orange-300 text-sm mb-2">
+                  <span className="font-semibold">Para empresas constituidas en España.</span>
+                </p>
+                <p className="text-white font-bold text-lg">
+                  ¡Solicítalo antes del próximo 31 de octubre!
+                </p>
+              </div>
             </div>
             
             {/* Features */}
@@ -99,14 +108,15 @@ const KitDigitalBanner = () => {
               
               {/* Logo */}
               <div className="space-y-6">
-                <div className="w-24 h-24 bg-gradient-to-br from-orange-400 to-blue-500 rounded-2xl mx-auto flex items-center justify-center">
-                  <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center">
-                    <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-blue-600 rounded-md"></div>
-                  </div>
+                <div className="mx-auto flex items-center justify-center">
+                  <img 
+                    src="/lovable-uploads/56268ede-69aa-4ce7-a0bf-cdbbc130b0b6.png" 
+                    alt="Kit Digital Logo Oficial"
+                    className="h-20 w-auto"
+                  />
                 </div>
                 
                 <div>
-                  <h3 className="text-2xl font-bold text-white mb-2">KIT DIGITAL</h3>
                   <p className="text-gray-300 text-sm">Juntos hacia un futuro digital</p>
                 </div>
               </div>
