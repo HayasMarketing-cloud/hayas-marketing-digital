@@ -446,41 +446,17 @@ const ActivaTusVentas = () => {
         {/* Kit Consulting Banner */}
         <KitConsultingBanner />
 
-        {/* CTA final Section */}
-        <section className="py-16 md:py-20 bg-gradient-to-r from-activa-primary via-activa-primary/90 to-accent">
-          <div className="container mx-auto px-4">
-            <div className="text-center text-white">
-              <div className="flex justify-center mb-4">
-                <div className="p-3 bg-white/10 rounded-full backdrop-blur-sm">
-                  <Rocket className="h-8 w-8" />
-                </div>
-              </div>
-              
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                ¿Listo para activar tus ventas?
-              </h2>
-              
-              <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
-                Las ventas son el motor de tu negocio. Empieza con una asesoría gratuita y descubre cómo podemos ayudarte a diseñar campañas más efectivas, integrar IA y multiplicar tus conversiones.
-              </p>
-              
-              <Button 
-                size="lg" 
-                className="bg-white text-activa-primary hover:bg-white/90 font-semibold" 
-                asChild
-              >
-                <Link to="/agendar-reunion">
-                  👉 Solicita tu asesoría gratuita
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </section>
+        {/* Intermediate CTA */}
+        <IntermediateCTA 
+          title="¿Listo para activar tus ventas?"
+          subtitle="Las ventas son el motor de tu negocio. Empieza con una asesoría gratuita y descubre cómo podemos ayudarte a diseñar campañas más efectivas, integrar IA y multiplicar tus conversiones."
+          buttonText="👉 Solicita tu asesoría gratuita"
+          buttonLink="/agendar-reunion"
+        />
 
         {/* FAQ Section */}
         <FAQSection 
-          title="Preguntas frecuentes"
+          title="Preguntas Frecuentes"
           subtitle="Resolvemos las dudas más comunes sobre activación de ventas y campañas digitales"
           faqs={faqItems} 
         />
