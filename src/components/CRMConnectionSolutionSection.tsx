@@ -14,7 +14,7 @@ const solutions = [
       "Integraciones empresariales nativas",
       "Escalabilidad ilimitada"
     ],
-    badge: "Empresas B2B",
+    badge: "Medianas y Grandes Empresas • Multinacionales • B2B",
     variant: "primary"
   },
   {
@@ -27,7 +27,7 @@ const solutions = [
       "WhatsApp, SMS y email unificados",
       "Precio más accesible"
     ],
-    badge: "PYMEs y Emprendedores",
+    badge: "PYMEs • Emprendedores • Agencias • B2B • B2C • eCommerce",
     variant: "secondary"
   }
 ];
