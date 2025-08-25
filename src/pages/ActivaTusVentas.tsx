@@ -130,14 +130,14 @@ const services = [
 // Success cases data
 const successCases = [
   {
-    title: "AIP Clinic",
+    title: "Nexo Vital",
     description: "Captación de pacientes con campañas en Google Ads y redes",
-    image: successCaseImages.aipClinic
+    image: successCaseImages.nexoVital
   },
   {
-    title: "Hotteo Travel",
-    description: "Estrategia SEO y publicidad digital para atraer viajeros",
-    image: successCaseImages.hotteoTravel
+    title: "Beka Finance",
+    description: "Estrategia de conversión y publicidad digital para servicios financieros",
+    image: successCaseImages.bekaFinance
   },
   {
     title: "La Oriental Sin Gluten",
