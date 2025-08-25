@@ -115,40 +115,90 @@ const ConectaConTusClientes = () => {
         pillar="conecta"
       />
 
-      {/* Servicio Integral: Administración CRM */}
-      <section className="py-16 bg-gradient-to-br from-muted/20 to-background">
+      {/* Servicio Integral: Administración CRM y Gestión Marketing */}
+      <section className="py-20 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <div className="max-w-7xl mx-auto">
+            {/* Header */}
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
                 Servicio <span className="text-gradient-primary">Integral</span>
               </h2>
-              <p className="text-lg text-muted-foreground">
-                Para empresas que necesitan administración completa de su CRM
-              </p>
+              <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-gray-900">
+                Administración CRM y Gestión Marketing
+              </h3>
+              <div className="max-w-4xl mx-auto">
+                <p className="text-lg md:text-xl text-muted-foreground mb-6 leading-relaxed">
+                  Nuestro modelo de <strong>administración bajo demanda sin fee mensual</strong> te permite acceder a un equipo completo de especialistas que gestionan tu CRM y estrategia de marketing digital de forma integral.
+                </p>
+                <p className="text-md text-muted-foreground">
+                  Solo pagas por las horas de trabajo efectivo, obteniendo el máximo valor sin comprometer tu presupuesto.
+                </p>
+              </div>
             </div>
-            
-            <div className="max-w-2xl mx-auto">
-              <div className="bg-white rounded-xl shadow-lg border border-border/20 p-8 hover:shadow-xl transition-all duration-300 group">
-                <div className="flex items-start gap-6">
-                  <div className="p-4 bg-primary/10 rounded-xl group-hover:bg-primary/20 transition-colors duration-300">
-                    <Calendar className="h-10 w-10 text-primary" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold mb-3 text-gray-900">
-                      Administración CRM
-                    </h3>
-                    <p className="text-muted-foreground mb-6 leading-relaxed">
-                      Gestión completa y estratégica de tu CRM. Desde la configuración inicial hasta la optimización continua, nos ocupamos de todo para que tu equipo se enfoque en vender.
-                    </p>
-                    <Button asChild size="lg" className="group/btn">
-                      <Link to="/servicios/administracion-crm" className="flex items-center gap-2">
-                        Ver servicio completo
-                        <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
-                      </Link>
-                    </Button>
-                  </div>
+
+            {/* Grid de 4 columnas con beneficios */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+              {/* Implantación Completa */}
+              <div className="bg-white rounded-xl p-8 shadow-lg border border-border/20 hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
+                <div className="p-4 bg-primary/10 rounded-xl mb-6 group-hover:bg-primary/20 transition-colors duration-300 w-fit">
+                  <Calendar className="h-8 w-8 text-primary" />
                 </div>
+                <h4 className="text-xl font-bold mb-4 text-gray-900">Implantación Completa</h4>
+                <p className="text-muted-foreground leading-relaxed">
+                  Configuración y puesta en marcha de tu CRM, migración de datos, automatizaciones y formación del equipo.
+                </p>
+              </div>
+
+              {/* Inbound Marketing */}
+              <div className="bg-white rounded-xl p-8 shadow-lg border border-border/20 hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
+                <div className="p-4 bg-secondary/10 rounded-xl mb-6 group-hover:bg-secondary/20 transition-colors duration-300 w-fit">
+                  <MessageSquare className="h-8 w-8 text-secondary" />
+                </div>
+                <h4 className="text-xl font-bold mb-4 text-gray-900">Inbound Marketing</h4>
+                <p className="text-muted-foreground leading-relaxed">
+                  Estrategia de contenidos, lead nurturing, email marketing y workflows que atraen y educan a tus prospectos.
+                </p>
+              </div>
+
+              {/* Captación Avanzada */}
+              <div className="bg-white rounded-xl p-8 shadow-lg border border-border/20 hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
+                <div className="p-4 bg-accent/10 rounded-xl mb-6 group-hover:bg-accent/20 transition-colors duration-300 w-fit">
+                  <ArrowRight className="h-8 w-8 text-accent" />
+                </div>
+                <h4 className="text-xl font-bold mb-4 text-gray-900">Captación Avanzada</h4>
+                <p className="text-muted-foreground leading-relaxed">
+                  Landing pages optimizadas, formularios inteligentes, lead scoring y segmentación automática de contactos.
+                </p>
+              </div>
+
+              {/* Gestión Marketing */}
+              <div className="bg-white rounded-xl p-8 shadow-lg border border-border/20 hover:shadow-xl transition-all duration-300 group hover:-translate-y-2">
+                <div className="p-4 bg-primary/10 rounded-xl mb-6 group-hover:bg-primary/20 transition-colors duration-300 w-fit">
+                  <MessageSquare className="h-8 w-8 text-primary" />
+                </div>
+                <h4 className="text-xl font-bold mb-4 text-gray-900">Gestión Marketing</h4>
+                <p className="text-muted-foreground leading-relaxed">
+                  Análisis de métricas, optimización continua, reporting personalizado y ajustes estratégicos basados en datos.
+                </p>
+              </div>
+            </div>
+
+            {/* CTAs */}
+            <div className="text-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button asChild size="lg" className="group">
+                  <Link to="/agendar-reunion" className="flex items-center gap-2">
+                    Solicitar consultoría gratuita
+                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" size="lg" className="group">
+                  <Link to="/servicios/administracion-crm" className="flex items-center gap-2">
+                    Ver servicio completo
+                    <MessageSquare className="h-4 w-4 group-hover:scale-110 transition-transform" />
+                  </Link>
+                </Button>
               </div>
             </div>
           </div>
