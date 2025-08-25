@@ -15,7 +15,7 @@ import CRMConnectionSolutionSection from '@/components/CRMConnectionSolutionSect
 import CRMConnectionBenefitsSection from '@/components/CRMConnectionBenefitsSection';
 import CRMComparisonSection from '@/components/CRMComparisonSection';
 import { servicesByPillar } from '@/data/services';
-import { ArrowRight, MessageSquare } from 'lucide-react';
+import { ArrowRight, MessageSquare, Calendar } from 'lucide-react';
 
 // DATOS GUARDADOS TEMPORALMENTE - Sección de tecnologías para uso futuro
 const crmPlatforms = [
@@ -115,13 +115,53 @@ const ConectaConTusClientes = () => {
         pillar="conecta"
       />
 
+      {/* Servicio Integral: Administración CRM */}
+      <section className="py-16 bg-gradient-to-br from-muted/20 to-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Servicio <span className="text-gradient-primary">Integral</span>
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                Para empresas que necesitan administración completa de su CRM
+              </p>
+            </div>
+            
+            <div className="max-w-2xl mx-auto">
+              <div className="bg-white rounded-xl shadow-lg border border-border/20 p-8 hover:shadow-xl transition-all duration-300 group">
+                <div className="flex items-start gap-6">
+                  <div className="p-4 bg-primary/10 rounded-xl group-hover:bg-primary/20 transition-colors duration-300">
+                    <Calendar className="h-10 w-10 text-primary" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-bold mb-3 text-gray-900">
+                      Administración CRM
+                    </h3>
+                    <p className="text-muted-foreground mb-6 leading-relaxed">
+                      Gestión completa y estratégica de tu CRM. Desde la configuración inicial hasta la optimización continua, nos ocupamos de todo para que tu equipo se enfoque en vender.
+                    </p>
+                    <Button asChild size="lg" className="group/btn">
+                      <Link to="/servicios/administracion-crm" className="flex items-center gap-2">
+                        Ver servicio completo
+                        <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Sección 6: Casos de éxito */}
       <SuccessCasesSection
         id="casos-exito"
         title="Historias reales, <span className='text-gradient-primary'>resultados tangibles</span>"
         subtitle="Empresas que han transformado su relación con clientes gracias a nuestras soluciones CRM."
-        specificCases={["Asendia", "Formato Educativo", "ASP ASEPSIA"]}
-        maxCases={3}
+        specificCases={["Asendia", "Formato Educativo", "ASP ASEPSIA", "Nova Praxis"]}
+        maxCases={4}
         showAllLink={true}
         filterTags={["CONECTA CON TUS CLIENTES"]}
       />
@@ -129,7 +169,12 @@ const ConectaConTusClientes = () => {
       <ReviewsSection />
 
       {/* Intermediate CTA */}
-      <IntermediateCTA />
+      <IntermediateCTA 
+        title="Descubre cómo un CRM puede transformar tu negocio"
+        subtitle="Solicita una asesoría gratuita y te mostraremos cómo optimizar la relación con tus clientes"
+        buttonText="Solicitar asesoría gratuita"
+        buttonLink="/solicitar-consulta"
+      />
 
       {/* FAQ Section */}
       <FAQSection 
