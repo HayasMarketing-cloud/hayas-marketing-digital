@@ -132,9 +132,6 @@ const DisenoWeb = () => {
       
       <ReviewsSection />
 
-      {/* Kit Digital Banner */}
-      <KitDigitalBanner />
-
       {/* Sección 6: CTA intermedio */}
       <IntermediateCTA />
 
@@ -147,6 +144,9 @@ const DisenoWeb = () => {
 
       {/* Posts Relacionados */}
       <ServiceRelatedPosts serviceSlug="diseno-web" />
+
+      {/* Kit Digital Banner */}
+      <KitDigitalBanner />
 
       {/* Sección final: CTA fuerte (footer extendido) */}
       <ServiceContactSection
