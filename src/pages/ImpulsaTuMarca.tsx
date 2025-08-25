@@ -436,33 +436,31 @@ const ImpulsaTuMarca = () => {
 
         {/* CTA final Section */}
         <section className="py-16 md:py-20 bg-gradient-to-r from-impulsa-primary via-impulsa-primary/90 to-impulsa-600">
-          <div className="container mx-auto px-4">
-            <div className="text-center text-white">
-              <div className="flex justify-center mb-6">
-                <div className="p-4 bg-white/10 rounded-full backdrop-blur-sm">
-                  <Sparkles className="h-12 w-12" />
-                </div>
+          <div className="container mx-auto px-4 text-center text-white">
+            <div className="flex justify-center mb-6">
+              <div className="p-4 bg-white/10 rounded-full backdrop-blur-sm">
+                <Sparkles className="h-12 w-12" />
               </div>
-              
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                ¿Listo para impulsar tu marca?
-              </h2>
-              
-              <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
-                El branding es la base de todo crecimiento. Empieza con una asesoría gratuita y, si lo deseas, solicita una demo personalizada de cómo podemos transformar la identidad de tu negocio.
-              </p>
-              
-              <Button 
-                size="lg" 
-                className="bg-white text-impulsa-primary hover:bg-white/90 font-semibold" 
-                asChild
-              >
-                <Link to="/agendar-reunion">
-                  👉 Solicita tu asesoría gratuita
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
             </div>
+            
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              ¿Listo para impulsar tu marca?
+            </h2>
+            
+            <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
+              El branding es la base de todo crecimiento. Empieza con una asesoría gratuita y, si lo deseas, solicita una demo personalizada de cómo podemos transformar la identidad de tu negocio.
+            </p>
+            
+            <Button 
+              size="lg" 
+              className="bg-white text-impulsa-primary hover:bg-white/90 font-semibold" 
+              asChild
+            >
+              <Link to="/agendar-reunion">
+                👉 Solicita tu asesoría gratuita
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
           </div>
         </section>
         
