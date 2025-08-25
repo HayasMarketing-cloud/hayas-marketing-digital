@@ -1,12 +1,16 @@
 import React from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { CheckCircle, Building2, Users, Lightbulb, HeadphonesIcon } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { CheckCircle, Lightbulb, HeadphonesIcon, ArrowRight } from 'lucide-react';
+import OptimizedImage from '@/components/OptimizedImage';
+import hubspotLogo from '@/assets/logos/hubspot-logo.png';
+import ghlLogo from '@/assets/logos/ghl-logo.png';
 
 const solutions = [
   {
     platform: "HubSpot",
-    icon: <Building2 className="h-8 w-8" />,
+    logo: hubspotLogo,
     description: "Ideal para empresas medianas y grandes con procesos complejos",
     features: [
       "Plataforma todo-en-uno completa",
@@ -19,7 +23,7 @@ const solutions = [
   },
   {
     platform: "HighLevel (GHL)",
-    icon: <Users className="h-8 w-8" />,
+    logo: ghlLogo,
     description: "El todo-en-uno más competitivo para pymes y emprendedores",
     features: [
       "Automatización multicanal integrada",
@@ -41,7 +45,7 @@ const CRMConnectionSolutionSection = () => {
             Nuestra <span className="text-gradient-primary">propuesta</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto mb-8">
-            En Hayas no somos fabricantes, somos consultores imparciales: te ayudamos a elegir la herramienta que mejor encaje con tu negocio y la ponemos en marcha contigo.
+            En Hayas no somos fabricantes, somos consultores imparciales: te ayudamos a elegir la herramienta que mejor encaje con tu negocio, realizamos el análisis estratégico, la implantación personalizada, el onboarding de tu equipo y ofrecemos mantenimiento opcional para que siempre aproveches al máximo tu inversión.
           </p>
         </div>
 
@@ -50,12 +54,18 @@ const CRMConnectionSolutionSection = () => {
             <Card key={index} className="hover:shadow-xl transition-shadow">
               <CardHeader>
                 <div className="mb-4">
-                  <div className="flex items-center justify-start mb-3">
-                    <div className={`p-3 rounded-lg ${solution.variant === 'primary' ? 'bg-primary/10 text-primary' : 'bg-secondary/10 text-secondary'}`}>
-                      {solution.icon}
+                  <div className="flex items-center justify-center mb-4">
+                    <div className={`p-4 rounded-lg ${solution.variant === 'primary' ? 'bg-primary/10' : 'bg-secondary/10'}`}>
+                      <OptimizedImage
+                        src={solution.logo}
+                        alt={`${solution.platform} logo`}
+                        width={120}
+                        height={40}
+                        className="h-10 w-auto object-contain"
+                      />
                     </div>
                   </div>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 justify-center">
                     {solution.badges.map((badgeText, badgeIndex) => (
                       <Badge key={badgeIndex} variant={solution.variant === 'primary' ? 'default' : 'secondary'}>
                         {badgeText}
@@ -63,8 +73,7 @@ const CRMConnectionSolutionSection = () => {
                     ))}
                   </div>
                 </div>
-                <CardTitle className="text-2xl">{solution.platform}</CardTitle>
-                <p className="text-muted-foreground">{solution.description}</p>
+                <p className="text-muted-foreground text-center">{solution.description}</p>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3">
@@ -80,7 +89,7 @@ const CRMConnectionSolutionSection = () => {
           ))}
         </div>
 
-        <div className="bg-muted/50 rounded-2xl p-8 max-w-4xl mx-auto">
+        <div className="bg-muted/50 rounded-2xl p-8 max-w-4xl mx-auto mb-8">
           <div className="flex items-start gap-4">
             <div className="p-3 bg-accent/10 rounded-lg">
               <Lightbulb className="h-6 w-6 text-accent" />
@@ -96,6 +105,13 @@ const CRMConnectionSolutionSection = () => {
               </div>
             </div>
           </div>
+        </div>
+
+        <div className="text-center">
+          <Button variant="default" size="lg" className="gap-2">
+            Ver comparativa completa HubSpot vs HighLevel
+            <ArrowRight className="h-4 w-4" />
+          </Button>
         </div>
       </div>
     </section>
