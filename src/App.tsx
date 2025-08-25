@@ -124,6 +124,7 @@ import BlogFunnelConversionB2B from './pages/BlogFunnelConversionB2B';
 import BlogEmailMarketingHubSpot from './pages/BlogEmailMarketingHubSpot';
 import BlogMarketingGlobalInternacionalizacion from './pages/BlogMarketingGlobalInternacionalizacion';
 import BlogTagPage from './pages/BlogTagPage';
+import ComparativaHubSpotGoHighLevel from './pages/ComparativaHubSpotGoHighLevel';
 
 const queryClient = new QueryClient();
 
@@ -247,7 +248,10 @@ const App = () => (
                   <Route path="/blog/ia-redes-sociales-herramientas-riesgos" element={<BlogIARedesSociales />} />
         <Route path="/blog/funnel-conversion-b2b" element={<BlogFunnelConversionB2B />} />
         <Route path="/blog/marketing-global-internacionalizacion" element={<BlogMarketingGlobalInternacionalizacion />} />
-        <Route path="/blog/kit-digital-marketing-guia-completa-2025" element={<BlogKitDigitalMarketing />} />
+          <Route path="/blog/kit-digital-marketing-guia-completa-2025" element={<BlogKitDigitalMarketing />} />
+          
+          {/* COMPARATIVAS */}
+          <Route path="/comparativa/hubspot-vs-go-high-level" element={<ComparativaHubSpotGoHighLevel />} />
           
           
           {/* CONTACTO Y CONSULTAS */}

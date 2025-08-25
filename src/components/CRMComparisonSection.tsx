@@ -51,7 +51,7 @@ const CRMComparisonSection = () => {
 
         <div className="text-center">
           <Button asChild size="lg" className="group">
-            <Link to="/solicitar-consulta" className="flex items-center gap-2">
+            <Link to="/comparativa/hubspot-vs-go-high-level" className="flex items-center gap-2">
               Ver comparativa completa HubSpot vs HighLevel
               <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Link>
