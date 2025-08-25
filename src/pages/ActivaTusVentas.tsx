@@ -1,8 +1,17 @@
-import { ArrowLeft, Settings, TrendingUp, Zap, BarChart3, Target, Users, CheckCircle2 } from "lucide-react";
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import React from 'react';
+import { ArrowRight, AlertTriangle, TrendingUp, Eye, Target, Users, Bot, BarChart3, Zap, Settings, CheckCircle, Rocket, DollarSign, Star, Trophy, ArrowLeft } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
+import SuccessCasesSection from '@/components/SuccessCasesSection';
+import Seo from '@/components/Seo';
+import FAQSection from '@/components/FAQSection';
+import IntermediateCTA from '@/components/IntermediateCTA';
+import KitConsultingBanner from '@/components/KitConsultingBanner';
+import { successCaseImages } from '@/data/successCaseImages';
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -10,79 +19,164 @@ import {
   BreadcrumbLink,
   BreadcrumbSeparator,
   BreadcrumbPage,
-} from "@/components/ui/breadcrumb";
-import Seo from '@/components/Seo';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
-import KitConsultingBanner from '@/components/KitConsultingBanner';
-import PillarServicesSection from '@/components/PillarServicesSection';
+} from '@/components/ui/breadcrumb';
+
+// Pain points data
+const painPoints = [
+  {
+    icon: <AlertTriangle className="h-8 w-8 text-red-500" />,
+    title: "Inviertes en publicidad pero no logras un retorno claro",
+    description: "Sin una estrategia de medición clara, tu inversión publicitaria se convierte en gasto sin resultados visibles."
+  },
+  {
+    icon: <Users className="h-8 w-8 text-orange-500" />,
+    title: "Tus clientes potenciales se pierden en el camino",
+    description: "La falta de seguimiento y automatización hace que pierdas oportunidades de venta valiosas."
+  },
+  {
+    icon: <Settings className="h-8 w-8 text-red-500" />,
+    title: "No cuentas con la tecnología necesaria",
+    description: "Sin las herramientas adecuadas para optimizar campañas y automatizar ventas, tu crecimiento se ve limitado."
+  }
+];
+
+// Solution points
+const solutionPoints = [
+  {
+    icon: <Target className="h-8 w-8 text-activa-primary" />,
+    title: "Campañas digitales rentables",
+    description: "Diseñamos y gestionamos campañas en redes sociales y Google que generan leads cualificados con ROI medible."
+  },
+  {
+    icon: <Bot className="h-8 w-8 text-activa-primary" />,
+    title: "IA aplicada a marketing y ventas",
+    description: "Implementamos inteligencia artificial para mejorar conversiones, reducir costes y automatizar procesos."
+  },
+  {
+    icon: <Eye className="h-8 w-8 text-activa-primary" />,
+    title: "Experiencias personalizadas",
+    description: "Creamos experiencias únicas que convierten más visitantes en clientes y fidelizan mejor."
+  },
+  {
+    icon: <BarChart3 className="h-8 w-8 text-activa-primary" />,
+    title: "Consultoría estratégica y analítica",
+    description: "Te ofrecemos consultoría continua para evolucionar tus resultados con análisis de datos reales."
+  }
+];
+
+// Benefits data
+const benefits = [
+  {
+    icon: <Rocket className="h-8 w-8 text-activa-primary" />,
+    title: "Más clientes",
+    description: "Campañas de publicidad optimizadas que generan leads de calidad"
+  },
+  {
+    icon: <BarChart3 className="h-8 w-8 text-activa-primary" />,
+    title: "Resultados medibles",
+    description: "Analítica clara para saber qué funciona y qué no"
+  },
+  {
+    icon: <Bot className="h-8 w-8 text-activa-primary" />,
+    title: "Atención mejorada",
+    description: "Asistentes de IA para dar soporte y captar leads 24/7"
+  },
+  {
+    icon: <Target className="h-8 w-8 text-activa-primary" />,
+    title: "Optimización constante",
+    description: "Procesos que evolucionan con tus objetivos"
+  },
+  {
+    icon: <TrendingUp className="h-8 w-8 text-activa-primary" />,
+    title: "Escalabilidad",
+    description: "Soluciones que crecen al ritmo de tu negocio"
+  }
+];
+
+// Services data
+const services = [
+  {
+    icon: <Target className="h-8 w-8 text-activa-primary" />,
+    title: "Publicidad en Redes Sociales",
+    description: "Campañas en Meta, LinkedIn y más para captar clientes.",
+    href: "/servicios/publicidad-redes-sociales"
+  },
+  {
+    icon: <Settings className="h-8 w-8 text-activa-primary" />,
+    title: "Publicidad en Google Ads",
+    description: "Estrategias SEM para generar leads y ventas.",
+    href: "/servicios/publicidad-google-ads"
+  },
+  {
+    icon: <Bot className="h-8 w-8 text-activa-primary" />,
+    title: "Asistente IA para Atención al Cliente",
+    description: "Chatbots inteligentes para mejorar conversión y soporte.",
+    href: "/servicios/asistente-ia"
+  },
+  {
+    icon: <BarChart3 className="h-8 w-8 text-activa-primary" />,
+    title: "Consultoría estratégica y analítica",
+    description: "Definición de KPIs, seguimiento y mejora continua.",
+    href: "/servicios/consultoria-estrategica-analitica"
+  },
+  {
+    icon: <Zap className="h-8 w-8 text-activa-primary" />,
+    title: "Integraciones y optimización con IA",
+    description: "Conexión de sistemas y optimización predictiva.",
+    href: "/servicios/integraciones-ia-procesos"
+  }
+];
+
+// Success cases data
+const successCases = [
+  {
+    title: "AIP Clinic",
+    description: "Captación de pacientes con campañas en Google Ads y redes",
+    image: successCaseImages.aipClinic
+  },
+  {
+    title: "Hotteo Travel",
+    description: "Estrategia SEO y publicidad digital para atraer viajeros",
+    image: successCaseImages.hotteoTravel
+  },
+  {
+    title: "La Oriental Sin Gluten",
+    description: "Ecommerce optimizado con campañas digitales",
+    image: successCaseImages.laOrientalSinGluten
+  },
+  {
+    title: "Nova Praxis",
+    description: "Captación B2B con campañas de Google Ads y LinkedIn",
+    image: successCaseImages.novaPraxis
+  }
+];
+
+// FAQ data
+const faqItems = [
+  {
+    question: "¿Cuánto tiempo se tarda en ver resultados en las campañas?",
+    answer: "Los primeros resultados suelen aparecer en 2-4 semanas. Sin embargo, la optimización completa de campañas requiere 2-3 meses para alcanzar su máximo potencial de conversión."
+  },
+  {
+    question: "¿Incluyen la gestión completa de las campañas publicitarias?",
+    answer: "Sí, nos encargamos de todo: investigación de palabras clave, creación de anuncios, configuración de audiencias, optimización continua y reporting detallado de resultados."
+  },
+  {
+    question: "¿Qué plataformas de publicidad manejan?",
+    answer: "Trabajamos con Google Ads (Search, Display, Shopping, YouTube), Meta (Facebook e Instagram), LinkedIn Ads, y otras plataformas según tu sector y objetivos específicos."
+  },
+  {
+    question: "¿Cómo integran la IA en el proceso de ventas?",
+    answer: "Implementamos chatbots inteligentes, lead scoring automatizado, personalización de contenidos, análisis predictivo de conversiones y automatización de workflows de nurturing."
+  }
+];
 
 const ActivaTusVentas = () => {
-  const services = [
-    {
-      icon: Target,
-      title: "Publicidad Google Ads",
-      description: "Campañas SEM optimizadas para generar leads cualificados y maximizar el ROI de cada click con segmentación avanzada."
-    },
-    {
-      icon: Settings,
-      title: "Publicidad en Redes Sociales",
-      description: "Campañas publicitarias rentables en Facebook, Instagram y LinkedIn que convierten audiencias en clientes reales."
-    },
-    {
-      icon: BarChart3,
-      title: "Consultoría Estratégica de Ventas",
-      description: "Análisis de tu funnel de ventas, optimización de procesos comerciales y estrategias para acelerar la conversión."
-    },
-    {
-      icon: Zap,
-      title: "Automatización de Procesos de Ventas",
-      description: "Implementamos sistemas que automatizan tu pipeline, lead scoring y seguimiento para acelerar el cierre de ventas."
-    },
-    {
-      icon: Users,
-      title: "Email Marketing y Automatizaciones",
-      description: "Workflows inteligentes conectados a tu CRM que nutren leads y convierten prospectos en clientes recurrentes."
-    }
-  ];
-
-  const benefits = [
-    "Conversión de tráfico en ventas reales",
-    "Automatización del proceso comercial",
-    "Optimización del ROI publicitario",
-    "Lead scoring y seguimiento inteligente",
-    "Escalabilidad del crecimiento de ventas",
-    "Métricas de conversión medibles"
-  ];
-
-  const processSteps = [
-    {
-      step: "01",
-      title: "Análisis del Funnel de Ventas",
-      description: "Evaluamos tu proceso comercial actual, identificamos cuellos de botella y oportunidades de optimización."
-    },
-    {
-      step: "02", 
-      title: "Estrategia de Conversión",
-      description: "Diseñamos campañas publicitarias y automatizaciones enfocadas en convertir leads en clientes."
-    },
-    {
-      step: "03",
-      title: "Implementación y Automatización",
-      description: "Ejecutamos las campañas y configuramos sistemas de automatización para optimizar el proceso de ventas."
-    },
-    {
-      step: "04",
-      title: "Optimización de Resultados",
-      description: "Monitoreamos la conversión, ajustamos campañas y optimizamos el rendimiento comercial constantemente."
-    }
-  ];
-
   return (
     <div id="top" className="min-h-screen bg-white">
       <Seo
-        title="Activa tus Ventas | Convierte tráfico en clientes"
-        description="Transforma leads en ventas con estrategias probadas: Google Ads, publicidad social, automatización y consultoría estratégica de ventas."
+        title="Activa tus ventas y multiplica tus resultados"
+        description="Las campañas digitales y la inteligencia artificial son la clave para atraer más clientes y cerrar más ventas. En Hayas combinamos publicidad, analítica y automatización para generar un impacto real en tu negocio."
         canonical="/soluciones/activa-tus-ventas"
         structuredData={[
           {
@@ -96,25 +190,19 @@ const ActivaTusVentas = () => {
             "@context": "https://schema.org",
             "@type": "Service",
             name: "Activación de Ventas",
-            serviceType: "Sales Conversion Consulting",
+            serviceType: "Sales Activation",
             provider: { "@type": "Organization", name: "Hayas Marketing", url: window.location.origin, logo: `${window.location.origin}/favicon.ico` },
             url: `${window.location.origin}/soluciones/activa-tus-ventas`,
             areaServed: "España",
-            description: "Estrategias de conversión que transforman leads en ventas: Google Ads, publicidad social, automatización y consultoría estratégica.",
-          },
-          {
-            "@context": "https://schema.org",
-            "@type": "HowTo",
-            name: "Cómo activar tus ventas",
-            step: processSteps.map((s) => ({ "@type": "HowToStep", name: s.title, text: s.description })),
+            description: "Campañas digitales y IA para activar ventas, generar leads y multiplicar resultados comerciales.",
           },
         ]}
       />
       <Navigation />
-
+      
       <main>
         {/* Breadcrumbs */}
-        <section className="py-4 bg-muted/30">
+        <section className="py-4 bg-gray-50 border-b">
           <div className="container mx-auto px-4">
             <Breadcrumb>
               <BreadcrumbList>
@@ -125,55 +213,44 @@ const ActivaTusVentas = () => {
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
-                  <BreadcrumbPage>Activa tus Ventas</BreadcrumbPage>
+                  <BreadcrumbPage>Activa tus ventas</BreadcrumbPage>
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
           </div>
         </section>
 
-        {/* Header Navigation */}
-        <section className="py-6 bg-muted/30">
-          <div className="container mx-auto px-4">
-            <Link to="/#top" className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors">
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              Volver al Inicio
-            </Link>
-          </div>
-        </section>
-
         {/* Hero Section */}
-        <section className="relative py-8 md:py-12 bg-gradient-to-br from-hayas-50 to-hayas-100 overflow-hidden">
+        <section className="relative py-16 md:py-20 bg-gradient-to-br from-activa-50 to-activa-100 overflow-hidden">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <Badge variant="outline" className="mb-4 text-hayas-600 border-hayas-200">
-                  Estrategias de Conversión de Ventas
+                <Badge variant="outline" className="mb-6 text-activa-primary border-activa-200 bg-white/50">
+                  Solución Activa tus ventas
                 </Badge>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                  Activa tus <span className="text-gradient-primary">Ventas</span>
+                  Activa tus ventas y multiplica tus resultados
                 </h1>
-                <p className="text-xl text-gray-700 mb-8 leading-relaxed font-medium">
-                  Convierte el tráfico en clientes y escala tus ventas con estrategias probadas de conversión y automatización. Implementamos sistemas que transforman leads en ventas recurrentes y optimizan cada punto de contacto del customer journey.
+                <p className="text-xl text-gray-700 mb-8 leading-relaxed">
+                  Las campañas digitales y la inteligencia artificial son la clave para atraer más clientes y cerrar más ventas. En Hayas combinamos publicidad, analítica y automatización para que tus acciones de marketing generen un impacto real en tu negocio.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Link to="/agendar-reunion">
-                    <Button className="gradient-primary text-white px-8 py-6 text-lg w-full sm:w-auto">
-                      Solicitar Consultoría Gratuita
-                    </Button>
-                  </Link>
-                  <a href="#casos-exito">
-                    <Button variant="outline" className="px-8 py-6 text-lg">
-                      Ver Casos de Éxito
-                    </Button>
-                  </a>
+                  <Button size="lg" className="bg-activa-primary hover:bg-activa-primary/90 text-white" asChild>
+                    <Link to="/agendar-reunion">
+                      👉 Solicita tu asesoría gratuita
+                      <ArrowRight className="ml-2 h-5 w-5" />
+                    </Link>
+                  </Button>
+                  <Button variant="outline" size="lg" asChild>
+                    <a href="#casos-exito">Ver casos de éxito</a>
+                  </Button>
                 </div>
               </div>
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-hayas-200 to-hayas-300 rounded-3xl transform rotate-6 scale-105 opacity-20"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-activa-200 to-activa-300 rounded-3xl transform rotate-6 scale-105 opacity-20"></div>
                 <img 
-                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop" 
-                  alt="Activación de ventas con estrategias digitales" 
+                  src="/activa-tus-ventas-hero.jpg"
+                  alt="Activación de ventas con campañas digitales e IA"
                   className="relative z-10 w-full h-auto rounded-3xl shadow-2xl"
                 />
               </div>
@@ -181,177 +258,235 @@ const ActivaTusVentas = () => {
           </div>
         </section>
 
-        {/* Value Proposition Section */}
-        <section className="py-8 md:py-12 bg-white">
+        {/* El problema Section */}
+        <section className="py-16 md:py-20 bg-gray-50">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="order-2 lg:order-1">
-                <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-br from-hayas-100 to-secondary/20 rounded-2xl transform rotate-3"></div>
-                  <img 
-                    src="/activa-ventas-conversion-dashboard.jpg" 
-                    alt="Dashboard de conversión y métricas de ventas" 
-                    className="relative z-10 w-full h-auto rounded-2xl shadow-xl"
-                  />
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                ¿Por qué necesitas activar tus ventas?
+              </h2>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+              {painPoints.map((point, index) => (
+                <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-shadow h-full">
+                  <CardHeader className="text-center pb-4">
+                    <div className="mb-4 mx-auto p-4 rounded-full w-fit bg-gray-100">
+                      {point.icon}
+                    </div>
+                    <CardTitle className="text-xl font-bold">
+                      {point.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="pt-0">
+                    <p className="text-gray-600 leading-relaxed text-center">
+                      {point.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            <div className="text-center bg-activa-50 rounded-2xl p-8">
+              <div className="flex justify-center mb-4">
+                <div className="p-3 bg-activa-100 rounded-full">
+                  <TrendingUp className="h-8 w-8 text-activa-primary" />
                 </div>
               </div>
-              
-              <div className="order-1 lg:order-2">
-                <Badge variant="outline" className="mb-4 text-hayas-600 border-hayas-200">
-                  Estrategia Integrada
-                </Badge>
-                <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
-                  Una <span className="text-gradient-primary">máquina de conversión</span> que transforma leads en ventas
-                </h2>
-                <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                  La activación efectiva de ventas requiere una estrategia integral que conecte cada touchpoint 
-                  del customer journey. Transformamos tu proceso comercial en un sistema optimizado que convierte 
-                  cada lead en una oportunidad real de venta y maximiza el retorno de tu inversión publicitaria.
-                </p>
-                
-                <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-hayas-100 rounded-lg flex items-center justify-center">
-                      <Target className="h-6 w-6 text-hayas-600" />
+              <p className="text-lg font-semibold text-gray-800">
+                👉 Con la estrategia adecuada, cada euro invertido en marketing se convierte en crecimiento tangible.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* La solución Section */}
+        <section className="py-16 md:py-20 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                Nuestra propuesta
+              </h2>
+            </div>
+            
+            <div className="max-w-4xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {solutionPoints.map((point, index) => (
+                  <div key={index} className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 bg-activa-100 rounded-lg flex items-center justify-center">
+                      {point.icon}
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold mb-2">Conversión Optimizada</h3>
-                      <p className="text-gray-600">
-                        Diseñamos campañas publicitarias altamente segmentadas que atraen leads cualificados 
-                        y los guían a través de un funnel optimizado para la conversión.
+                      <h3 className="text-xl font-semibold mb-3">{point.title}</h3>
+                      <p className="text-gray-600 leading-relaxed">
+                        {point.description}
                       </p>
                     </div>
                   </div>
-                  
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center">
-                      <Zap className="h-6 w-6 text-secondary" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">Seguimiento Automatizado</h3>
-                      <p className="text-gray-600">
-                        Implementamos sistemas de lead scoring y workflows automatizados que nutren 
-                        cada prospecto hasta convertirlo en cliente, sin perder oportunidades.
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-hayas-100 rounded-lg flex items-center justify-center">
-                      <BarChart3 className="h-6 w-6 text-hayas-600" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">ROI Medible</h3>
-                      <p className="text-gray-600">
-                        Rastreamos cada euro invertido desde la primera impresión hasta la venta final, 
-                        optimizando constantemente para maximizar tu retorno publicitario.
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
         </section>
 
-      {/* Nuestros Servicios Section */}
-      <PillarServicesSection
-        pillar="activa"
-        title="Nuestros Servicios de Activación de Ventas"
-        description="Descubre todos los servicios profesionales para activar tus ventas y convertir leads en clientes."
-        accentColor="activa"
-      />
-
-      {/* Process Section */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Nuestro Proceso de Activación de Ventas
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Metodología probada para transformar tu proceso comercial en una máquina de generar ventas
-          </p>
-        </div>
-
-        <div className="relative max-w-6xl mx-auto">
-          {/* Connecting line */}
-          <div className="hidden lg:block absolute top-8 left-0 right-0 h-0.5 bg-gradient-to-r from-primary via-primary to-primary opacity-20"></div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {processSteps.map((step, index) => (
-              <div key={index} className="text-center relative">
-                <div className="bg-primary text-primary-foreground w-16 h-16 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4 relative z-10 shadow-lg">
-                  {step.step}
-                </div>
-                {/* Connection indicator for mobile */}
-                {index < processSteps.length - 1 && (
-                  <div className="lg:hidden flex justify-center mt-4">
-                    <div className="w-px h-8 bg-gradient-to-b from-primary to-primary/20"></div>
-                  </div>
-                )}
-                <h3 className="text-lg font-semibold mb-2">{step.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {step.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Kit Consulting Banner */}
-      <KitConsultingBanner />
-
-      {/* Benefits Section */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="bg-card rounded-2xl p-8 md:p-12 border border-primary/20">
-          <div className="max-w-4xl mx-auto">
+        {/* Beneficios clave Section */}
+        <section className="py-16 md:py-20 bg-gradient-to-br from-activa-50 to-white">
+          <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                ¿Por qué elegir nuestras estrategias de activación de ventas?
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                Qué ganarás con nosotros
               </h2>
-              <p className="text-lg text-muted-foreground">
-                Resultados reales que transforman tu proceso comercial y aceleran el crecimiento
-              </p>
             </div>
-
-            <div className="grid md:grid-cols-2 gap-6">
-              {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-center gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0" />
-                  <span className="text-foreground font-medium">{benefit}</span>
-                </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {benefits.slice(0, 5).map((benefit, index) => (
+                <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 h-full">
+                  <CardHeader className="text-center pb-4">
+                    <div className="mb-4 mx-auto p-4 rounded-full w-fit bg-activa-100">
+                      {benefit.icon}
+                    </div>
+                    <CardTitle className="text-xl font-bold">
+                      🚀 {benefit.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="pt-0">
+                    <p className="text-gray-600 leading-relaxed text-center">
+                      {benefit.description}
+                    </p>
+                  </CardContent>
+                </Card>
               ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* CTA Section */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="bg-gradient-to-r from-primary to-primary/80 rounded-2xl p-8 md:p-12 text-center text-primary-foreground">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              ¿Listo para activar tus ventas?
-            </h2>
-            <p className="text-lg mb-8 opacity-90">
-              Agenda una consultoría gratuita y descubre cómo podemos transformar tu proceso comercial con estrategias que convierten leads en ventas.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary" className="bg-white text-primary hover:bg-white/90">
-                Consultoría Gratuita
-              </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-                Llamar Ahora
+        {/* Servicios relacionados Section */}
+        <section className="py-16 md:py-20 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                Servicios que activan tus ventas
+              </h2>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {services.map((service, index) => (
+                <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 h-full">
+                  <CardHeader className="text-center pb-4">
+                    <div className="mb-4 mx-auto p-4 rounded-full w-fit bg-activa-100">
+                      {service.icon}
+                    </div>
+                    <CardTitle className="text-xl font-bold">
+                      {service.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="pt-0">
+                    <p className="text-gray-600 leading-relaxed text-center mb-4">
+                      {service.description}
+                    </p>
+                    <div className="text-center">
+                      <Button variant="outline" size="sm" asChild>
+                        <Link to={service.href}>
+                          Ver servicio
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        </Link>
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Casos de éxito Section */}
+        <section id="casos-exito" className="py-16 md:py-20 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                Historias reales, resultados tangibles
+              </h2>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+              {successCases.map((case_study, index) => (
+                <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 h-full">
+                  <CardHeader className="pb-4">
+                    <div className="mb-4">
+                      <img 
+                        src={case_study.image} 
+                        alt={case_study.title}
+                        className="w-full h-40 object-cover rounded-lg"
+                      />
+                    </div>
+                    <CardTitle className="text-lg font-bold">
+                      {case_study.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="pt-0">
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      {case_study.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            <div className="text-center">
+              <Button variant="outline" size="lg" asChild>
+                <Link to="/casos-exito?pillar=activa">
+                  Ver casos de éxito de Activa tus ventas
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
               </Button>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-        </main>
+        {/* Kit Consulting Banner */}
+        <KitConsultingBanner />
 
-        <Footer />
+        {/* CTA final Section */}
+        <section className="py-16 md:py-20 bg-gradient-to-r from-activa-primary via-activa-primary/90 to-accent">
+          <div className="container mx-auto px-4">
+            <div className="text-center text-white">
+              <div className="flex justify-center mb-4">
+                <div className="p-3 bg-white/10 rounded-full backdrop-blur-sm">
+                  <Rocket className="h-8 w-8" />
+                </div>
+              </div>
+              
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                ¿Listo para activar tus ventas?
+              </h2>
+              
+              <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
+                Las ventas son el motor de tu negocio. Empieza con una asesoría gratuita y descubre cómo podemos ayudarte a diseñar campañas más efectivas, integrar IA y multiplicar tus conversiones.
+              </p>
+              
+              <Button 
+                size="lg" 
+                className="bg-white text-activa-primary hover:bg-white/90 font-semibold" 
+                asChild
+              >
+                <Link to="/agendar-reunion">
+                  👉 Solicita tu asesoría gratuita
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <FAQSection 
+          title="Preguntas frecuentes"
+          subtitle="Resolvemos las dudas más comunes sobre activación de ventas y campañas digitales"
+          faqs={faqItems} 
+        />
+      </main>
+
+      <Footer />
     </div>
   );
 };
