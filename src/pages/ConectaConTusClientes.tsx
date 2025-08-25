@@ -21,6 +21,8 @@ import {
 import PillarServicesSection from '@/components/PillarServicesSection';
 import { servicesByPillar } from '@/data/services';
 
+// DATOS GUARDADOS TEMPORALMENTE - Sección de tecnologías removida para uso futuro
+/*
 const crmPlatforms = [
   { name: "HubSpot", logo: "/lovable-uploads/4e3422d2-6a85-4615-8631-c0ed5ccf1b00.png" },
   { name: "Lovable", logo: "/lovable-uploads/8d7ef1ce-f54f-401e-a664-a0025231c767.png" },
@@ -32,6 +34,7 @@ const crmPlatforms = [
   { name: "Gemini", logo: "/lovable-uploads/37a206e4-890d-4d31-a1c4-7dc674fe47a4.png" },
   { name: "Claude", logo: "/lovable-uploads/523cad5a-116d-41e6-b169-599c84a7f8cf.png" }
 ];
+*/
 
 const benefits = [
   {
@@ -312,39 +315,6 @@ const ConectaConTusClientes = () => {
           </div>
         </section>
 
-        {/* CRM Platforms Section */}
-        <section className="py-8 md:py-12">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Trabajamos con las últimas <span className="text-gradient-primary">tecnologías</span> y las mejores herramientas
-              </h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Adaptamos la implementación al stack de aplicaciones de tu empresa para maximizar la integración y los resultados
-              </p>
-            </div>
-
-            <div className="grid grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto">
-              {crmPlatforms.map((platform, index) => (
-                <div key={index} className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                  <img 
-                    src={platform.logo} 
-                    alt={platform.name}
-                    className="w-full h-16 object-contain filter brightness-75 hover:brightness-100 transition-all duration-300"
-                  />
-                </div>
-              ))}
-            </div>
-
-            <div className="text-center">
-              <p className="text-gray-600 max-w-4xl mx-auto text-lg leading-relaxed">
-                Una única plataforma CRM es la herramienta perfecta para que puedas gestionar todos tus canales 
-                y automatizar tu estrategia de marketing fácil y rápido. Una sola plataforma MAESTRA para gestionar 
-                tu estrategia, ventas, productividad y dar seguimiento personalizado a tus clientes.
-              </p>
-            </div>
-          </div>
-        </section>
 
         {/* Benefits Section */}
         <section className="py-8 md:py-12 bg-gradient-to-br from-white to-gray-50">
