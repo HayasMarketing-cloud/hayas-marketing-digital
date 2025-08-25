@@ -1,244 +1,180 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import ServiceContactSection from '@/components/ServiceContactSection';
-import ProcessSection from '@/components/ProcessSection';
-import Seo from '@/components/Seo';
-import { Wallet, Clock, Target, Users, Cog, Rocket, Brain, MessageSquare, Mail, BarChart3, CheckCircle } from 'lucide-react';
+import ServicePageTemplate, { ServicePageData } from '@/components/ServicePageTemplate';
+import CRMAdministrationPainPointsSection from '@/components/CRMAdministrationPainPointsSection';
+import IntermediateCTA from '@/components/IntermediateCTA';
+import ReviewsSection from '@/components/ReviewsSection';
+import { 
+  Settings, 
+  MessageSquare, 
+  Rocket, 
+  BarChart3,
+  Target,
+  Clock,
+  Users,
+  Wallet
+} from 'lucide-react';
 
-const AdministracionCrm: React.FC = () => {
-  const howWeWorkSteps = [
-    { 
+const servicePageData: ServicePageData = {
+  // SEO & Metadata
+  title: 'Administración CRM y gestión del Plan de Marketing | Hayas Marketing',
+  description: 'Externaliza la gestión de tu CRM y activos digitales: sin fee, bajo demanda y con planificación estratégica. Centralizas CRM, marketing y ventas en un solo equipo.',
+  canonical: '/servicios/administracion-crm',
+  
+  // Hero Section
+  badge: 'Servicio de Conecta con tus clientes',
+  heroTitle: 'Administración CRM y gestión del Plan de Marketing',
+  heroSubtitle: 'Externaliza la gestión de tu CRM y de todos tus activos digitales con un equipo especializado, sin cuotas fijas y con control total de costes.',
+  heroImage: '/administracion-crm-hero.jpg',
+  heroImageAlt: 'Dashboard de administración CRM con métricas de marketing y ventas',
+  primaryCTA: 'Solicitar consultoría gratuita',
+  primaryCTALink: '/agendar-reunion',
+  secondaryCTA: 'Ver solución Conecta con tus clientes',
+  secondaryCTALink: '/soluciones/conecta-con-tus-clientes',
+  
+  // Breadcrumb
+  breadcrumbItems: [
+    { label: 'Inicio', href: '/' },
+    { label: 'Soluciones', href: '/#soluciones' },
+    { label: 'Conecta con tus clientes', href: '/soluciones/conecta-con-tus-clientes' },
+    { label: 'Administración CRM' }
+  ],
+  
+  // Services/Features Section - Los 4 pilares exactos de la CTA
+  servicesTitle: 'Qué incluye nuestra administración CRM',
+  servicesSubtitle: 'Cobertura completa para escalar marketing y ventas sin ampliar tu plantilla',
+  services: [
+    {
+      icon: <Settings className="w-6 h-6" />,
+      title: 'Implantación Completa',
+      description: 'Análisis estratégico profundo, personalización avanzada e integración multi-plataforma para maximizar tu ROI.'
+    },
+    {
+      icon: <MessageSquare className="w-6 h-6" />,
+      title: 'Inbound Marketing',
+      description: 'Contenidos premium, campañas multicanal y analytics avanzados para atraer y convertir leads cualificados.'
+    },
+    {
+      icon: <Rocket className="w-6 h-6" />,
+      title: 'Captación Avanzada',
+      description: 'Funnels complejos B2B, lead scoring inteligente e IA conversacional premium para maximizar conversiones.'
+    },
+    {
+      icon: <BarChart3 className="w-6 h-6" />,
+      title: 'Gestión Marketing',
+      description: 'Campañas Google ADS, gestión de redes sociales y optimización SEO integrada con tu estrategia CRM.'
+    }
+  ],
+  
+  // Benefits Section
+  benefitsTitle: 'Beneficios clave de externalizar tu CRM',
+  benefitsSubtitle: 'Más control, velocidad y crecimiento sostenido',
+  benefits: [
+    'Centralizas en un solo equipo la gestión de CRM, marketing y ventas',
+    'Escalas sin ampliar tu plantilla interna ni costes fijos',
+    'Mayor control y transparencia de costes con modelo bajo demanda',
+    'Resultados medibles y optimización constante por especialistas',
+    'Acceso inmediato a conocimientos especializados sin formación interna',
+    'Coordinación perfecta entre todas tus herramientas y canales digitales'
+  ],
+  
+  // Process Section
+  processTitle: 'Cómo trabajamos',
+  processSubtitle: 'Modelo flexible, transparente y orientado a resultados',
+  processSteps: [
+    {
       number: '01',
-      title: 'Sin fee mensual', 
-      description: 'Presupuestamos cada petición de forma independiente.',
+      title: 'Sin fee mensual',
+      description: 'Presupuestamos cada petición de forma independiente. Solo pagas por lo que realmente necesitas y ejecutamos.',
       icon: <Wallet className="h-6 w-6" />
     },
-    { 
+    {
       number: '02',
-      title: 'Trabajo bajo demanda', 
-      description: 'Solo pagas por lo que realmente ejecutamos.',
+      title: 'Trabajo bajo demanda',
+      description: 'Activas nuestro equipo cuando lo necesitas. Máxima flexibilidad y control de costes.',
       icon: <Clock className="h-6 w-6" />
     },
-    { 
+    {
       number: '03',
-      title: 'Planificación estratégica', 
-      description: 'Todas las acciones se alinean con tus objetivos de negocio.',
+      title: 'Planificación estratégica',
+      description: 'Todas las acciones se alinean con tus objetivos de negocio y KPIs específicos.',
       icon: <Target className="h-6 w-6" />
     },
-    { 
+    {
       number: '04',
-      title: 'Equipo experto', 
-      description: 'CRM, automatización, marketing, ventas y analítica.',
+      title: 'Equipo experto',
+      description: 'Especialistas en CRM, automatización, marketing, ventas y analítica trabajando coordinadamente.',
       icon: <Users className="h-6 w-6" />
-    },
-  ];
-
-  const includes = [
+    }
+  ],
+  
+  // FAQ Section
+  faqItems: [
     {
-      icon: Cog,
-      title: 'Implantación Completa',
-      items: [
-        'Análisis estratégico profundo',
-        'Personalización avanzada',
-        'Integración multi-plataforma',
-      ],
+      question: '¿Cómo funciona el modelo "sin fee mensual"?',
+      answer: 'Presupuestamos cada proyecto o tarea de forma independiente. No pagas cuotas fijas ni retainers. Solo inviertes cuando hay trabajo real que ejecutar, con total transparencia de costes.'
     },
     {
-      icon: MessageSquare,
-      title: 'Inbound Marketing',
-      items: [
-        'Contenidos premium',
-        'Campañas multicanal',
-        'Analítica avanzada',
-      ],
+      question: '¿Qué diferencia hay con tener un equipo interno?',
+      answer: 'Obtienes acceso inmediato a especialistas sin costes de contratación, formación o retención. Mayor flexibilidad, conocimientos actualizados y coordinación perfecta entre todas las disciplinas.'
     },
     {
-      icon: Rocket,
-      title: 'Captación Avanzada',
-      items: [
-        'Funnels complejos B2B',
-        'Lead scoring inteligente',
-        'IA conversacional premium',
-      ],
+      question: '¿Pueden gestionar nuestro CRM actual o necesitamos cambiarlo?',
+      answer: 'Trabajamos con cualquier CRM existente: HubSpot, Salesforce, Pipedrive, Go High Level, etc. Optimizamos lo que tienes o recomendamos cambios solo si es realmente necesario para tus objetivos.'
     },
     {
-      icon: Brain,
-      title: 'Automatización Total',
-      items: [
-        'Pipeline optimizado para ventas',
-        'Atribución completa de ROI',
-        'Gestión estratégica continua',
-      ],
+      question: '¿Incluyen la gestión del plan de marketing completo?',
+      answer: 'La gestión del plan de marketing es opcional y adaptable. Podemos gestionar desde campañas específicas hasta la estrategia completa, siempre alineado con tu CRM y objetivos de ventas.'
     },
     {
-      icon: BarChart3,
-      title: 'Gestión del Plan de Marketing (opcional)',
-      items: [
-        'Campañas de publicidad',
-        'Optimización SEO',
-        'Campañas de email marketing',
-      ],
+      question: '¿Cómo garantizan la coordinación entre CRM y marketing?',
+      answer: 'Nuestro equipo trabaja de forma integrada. Todos los canales y acciones de marketing se planifican y ejecutan pensando en el impacto en tu pipeline de ventas y métricas CRM.'
     },
-  ];
-
-  const beneficios = [
-    'Centralizas en un solo equipo la gestión de CRM, marketing y ventas.',
-    'Escalas sin ampliar tu plantilla interna.',
-    'Mayor control y transparencia de costes.',
-    'Resultados medibles y optimización constante.',
-  ];
-
-  const pageTitle = 'Administración de CRM | Conecta con tus clientes';
-  const pageDescription = 'Externaliza la gestión de tu CRM y activos digitales: sin fee, bajo demanda y con planificación estratégica.';
-  const canonical = '/servicios/administracion-crm';
-
-  const structuredData = {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    name: 'Administración de CRM y Gestión de Plan de Marketing',
-    description: pageDescription,
-    serviceType: 'CRM Management',
-    areaServed: 'ES',
-    provider: {
-      '@type': 'Organization',
-      name: 'Hayas Marketing',
+    {
+      question: '¿Qué nivel de acceso necesitan a nuestros sistemas?',
+      answer: 'Necesitamos acceso de administración a tu CRM y herramientas de marketing. Trabajamos bajo estrictos protocolos de seguridad y confidencialidad, con accesos limitados solo a lo necesario.'
     },
-    url: canonical,
-  };
+    {
+      question: '¿Ofrecen reporting y métricas de resultados?',
+      answer: 'Sí, proporcionamos dashboards personalizados con todas las métricas clave: performance CRM, ROI de campañas, evolución de pipeline, costes por lead y cualquier KPI específico de tu negocio.'
+    },
+    {
+      question: '¿Cuál es el tiempo mínimo de compromiso?',
+      answer: 'No hay compromiso mínimo. Puedes trabajar con nosotros por proyectos puntuales o establecer una colaboración continua. La flexibilidad total es una de nuestras ventajas principales.'
+    }
+  ],
+  
+  // Additional Configuration
+  showSuccessCases: true,
+  showContactForm: true,
+  contactFormTitle: '¿Hablamos sobre la administración de tu CRM?',
+  contactFormSubtitle: 'Cuéntanos tu situación actual y objetivos. Te responderemos con una propuesta personalizada para optimizar tu CRM.',
+  contactFormOptions: [
+    { value: 'crm-administration', label: 'Administración CRM completa' },
+    { value: 'crm-optimization', label: 'Optimización CRM existente' },
+    { value: 'marketing-integration', label: 'Integración marketing y CRM' },
+    { value: 'team-outsourcing', label: 'Outsourcing equipo marketing' },
+    { value: 'other', label: 'Otro (especificar en mensaje)' }
+  ],
+  
+  // Additional Content - Pain Points y CTAs intermedios
+  additionalContent: (
+    <>
+      <CRMAdministrationPainPointsSection />
+      
+      <IntermediateCTA 
+        title="¿Quieres delegar tu CRM con garantías?"
+        subtitle="Agenda una consultoría gratuita y diseñamos juntos el plan de acción para optimizar tu CRM y canales digitales"
+        buttonText="Solicitar consultoría gratuita"
+        buttonLink="/agendar-reunion"
+      />
+      
+      <ReviewsSection />
+    </>
+  )
+};
 
-  return (
-    <div className="min-h-screen flex flex-col">
-      <Seo title={pageTitle} description={pageDescription} canonical={canonical} structuredData={structuredData} />
-      <Navigation />
-
-      <main className="flex-grow">
-        {/* Hero */}
-        <header className="py-16 md:py-24 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
-          <div className="container mx-auto px-4 text-center max-w-4xl">
-            <Badge variant="secondary" className="mb-4">Servicio de Conecta con tus clientes</Badge>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Administración de CRM y Gestión de Plan de Marketing
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8">
-              Externaliza la gestión de tu CRM y de todos tus activos digitales con un equipo especializado,
-              sin cuotas fijas y con control total de costes.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/agendar-reunion">
-                <Button size="lg" className="px-8">
-                  Solicitar consultoría gratuita
-                </Button>
-              </Link>
-              <Link to="/soluciones/conecta-con-tus-clientes">
-                <Button variant="outline" size="lg" className="px-8">
-                  Ver solución Conecta con tus clientes
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </header>
-
-        {/* Qué es esta solución */}
-        <section className="py-16">
-          <div className="container mx-auto px-4 max-w-5xl">
-            <div className="prose prose-lg max-w-none">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">¿Qué es esta solución?</h2>
-              <p className="text-muted-foreground">
-                Es un servicio integral que centraliza la operación, mantenimiento y optimización de tu CRM y de todos tus canales y activos digitales, para que marketing y ventas trabajen como un único sistema coordinado. Podemos gestionar también tu plan de marketing de forma estratégica y continua, aunque esta opción es 100% adaptable y opcional.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Cómo trabajamos */}
-        <ProcessSection 
-          title={<>Cómo <span className="text-gradient-primary">trabajamos</span></>}
-          subtitle="Modelo flexible, transparente y orientado a resultados"
-          steps={howWeWorkSteps}
-          showIcons={true}
-        />
-
-        {/* Qué incluye */}
-        <section className="py-16">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-3">Qué incluye</h2>
-              <p className="text-muted-foreground">Cobertura completa para escalar marketing y ventas</p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {includes.map(({ icon: Icon, title, items }) => (
-                <Card key={title} className="h-full">
-                  <CardHeader>
-                    <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center mb-3">
-                      <Icon className="w-6 h-6 text-secondary" />
-                    </div>
-                    <CardTitle className="text-lg">{title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-2">
-                      {items.map((it) => (
-                        <li key={it} className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 mt-1 text-primary" />
-                          <span className="text-foreground">{it}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Beneficios clave */}
-        <section className="py-16 bg-muted/50">
-          <div className="container mx-auto px-4 max-w-5xl">
-            <div className="text-center mb-10">
-              <h2 className="text-3xl md:text-4xl font-bold mb-3">Beneficios clave</h2>
-              <p className="text-muted-foreground">Más control, velocidad y crecimiento sostenido</p>
-            </div>
-            <Card>
-              <CardContent className="py-8">
-                <ul className="grid md:grid-cols-2 gap-4">
-                  {beneficios.map((b) => (
-                    <li key={b} className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 mt-0.5 text-primary" />
-                      <span>{b}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
-        {/* CTA final */}
-        <section className="py-16">
-          <div className="container mx-auto px-4 text-center max-w-3xl">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">¿Quieres delegar tu CRM con garantías?</h3>
-            <p className="text-muted-foreground mb-6">Agenda una consultoría gratuita y diseñamos juntos el plan de acción.</p>
-            <Link to="/agendar-reunion">
-              <Button size="lg" className="px-8">Solicitar consultoría gratuita</Button>
-            </Link>
-          </div>
-        </section>
-
-        {/* Formulario de contacto */}
-        <ServiceContactSection
-          title="¿Hablamos sobre la administración de tu CRM?"
-          subtitle="Cuéntanos tu situación actual y objetivos. Te responderemos con una propuesta personalizada para optimizar tu CRM."
-          minHeight={900}
-        />
-      </main>
-
-      <Footer />
-    </div>
-  );
+const AdministracionCrm: React.FC = () => {
+  return <ServicePageTemplate data={servicePageData} />;
 };
 
 export default AdministracionCrm;
