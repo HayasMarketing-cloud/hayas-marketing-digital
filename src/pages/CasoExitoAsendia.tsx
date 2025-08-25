@@ -58,6 +58,12 @@ const CasoExitoAsendia = () => {
         'Incremento en la conversión de leads a clientes',
         'Reducción significativa en el ciclo de ventas B2B'
       ]}
+      testimonial={{
+        quote: "Hayas Marketing transformó completamente nuestra estrategia comercial. El CRM y las automatizaciones nos han permitido escalar nuestras operaciones B2B de manera eficiente, mejorando significativamente nuestra capacidad de atraer y retener managers de e-commerce. Los resultados han superado nuestras expectativas.",
+        author: "María González",
+        position: "Business Development Manager",
+        company: "Asendia Spain"
+      }}
       learnings="La implementación de nuestro sistema CRM y automatización ha transformado completamente la estrategia comercial B2B de Asendia, permitiendo atraer, nutrir y retener managers de e-commerce de manera sistemática y escalable."
       ctaTitle="¿Listo para optimizar tu estrategia comercial B2B?"
       ctaDescription="Obtén los mismos resultados que Asendia. Agenda una consulta gratuita y descubre cómo podemos ayudarte a atraer y retener managers de e-commerce con un CRM y automatización diseñados para tu sector."
