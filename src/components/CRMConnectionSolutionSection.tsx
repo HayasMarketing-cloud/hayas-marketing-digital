@@ -52,25 +52,23 @@ const CRMConnectionSolutionSection = () => {
           {solutions.map((solution, index) => (
             <Card key={index} className="hover:shadow-xl transition-shadow">
               <CardHeader>
-                <div className="mb-6">
-                  <div className="flex items-center justify-center mb-6">
-                    <img
-                      src={solution.logo}
-                      alt={`${solution.platform} logo`}
-                      className="h-20 w-auto object-contain"
-                      loading="lazy"
-                    />
-                  </div>
-                  <h2 className="text-2xl font-bold text-center mb-4">CRM {solution.platform}</h2>
-                  <div className="flex flex-wrap gap-2 justify-center mb-4">
-                    {solution.badges.map((badgeText, badgeIndex) => (
-                      <Badge key={badgeIndex} variant={solution.variant === 'primary' ? 'default' : 'secondary'}>
-                        {badgeText}
-                      </Badge>
-                    ))}
-                  </div>
+                <div className="flex items-center justify-center mb-4">
+                  <img
+                    src={solution.logo}
+                    alt={`${solution.platform} logo`}
+                    className="h-20 w-auto object-contain"
+                    loading="lazy"
+                  />
                 </div>
-                <p className="text-muted-foreground text-center font-medium">{solution.description}</p>
+                <h2 className="text-2xl font-bold text-center mb-4">CRM {solution.platform}</h2>
+                <div className="flex flex-wrap gap-2 justify-center mb-4">
+                  {solution.badges.map((badgeText, badgeIndex) => (
+                    <Badge key={badgeIndex} variant={solution.variant === 'primary' ? 'default' : 'secondary'}>
+                      {badgeText}
+                    </Badge>
+                  ))}
+                </div>
+                <p className="text-muted-foreground text-center font-medium mb-6">{solution.description}</p>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3">
