@@ -3,7 +3,6 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { CheckCircle, Lightbulb, HeadphonesIcon, ArrowRight } from 'lucide-react';
-import OptimizedImage from '@/components/OptimizedImage';
 import hubspotLogo from '@/assets/logos/hubspot-logo.png';
 import ghlLogo from '@/assets/logos/ghl-logo.png';
 
@@ -55,12 +54,11 @@ const CRMConnectionSolutionSection = () => {
               <CardHeader>
                 <div className="mb-6">
                   <div className="flex items-center justify-center mb-4">
-                    <OptimizedImage
+                    <img
                       src={solution.logo}
                       alt={`${solution.platform} logo`}
-                      width={200}
-                      height={80}
                       className="h-16 w-auto object-contain"
+                      loading="lazy"
                     />
                   </div>
                   <div className="flex flex-wrap gap-2 justify-center">
