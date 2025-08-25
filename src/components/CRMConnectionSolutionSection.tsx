@@ -14,7 +14,7 @@ const solutions = [
       "Integraciones empresariales nativas",
       "Escalabilidad ilimitada"
     ],
-    badge: "Medianas y Grandes Empresas • Multinacionales • B2B",
+    badges: ["Medianas y Grandes Empresas", "Multinacionales", "B2B"],
     variant: "primary"
   },
   {
@@ -27,7 +27,7 @@ const solutions = [
       "WhatsApp, SMS y email unificados",
       "Precio más accesible"
     ],
-    badge: "PYMEs • Emprendedores • Agencias • B2B • B2C • eCommerce",
+    badges: ["PYMEs", "Emprendedores", "Agencias", "B2B", "B2C", "eCommerce"],
     variant: "secondary"
   }
 ];
@@ -49,13 +49,19 @@ const CRMConnectionSolutionSection = () => {
           {solutions.map((solution, index) => (
             <Card key={index} className="hover:shadow-xl transition-shadow">
               <CardHeader>
-                <div className="flex items-center justify-between mb-4">
-                  <div className={`p-3 rounded-lg ${solution.variant === 'primary' ? 'bg-primary/10 text-primary' : 'bg-secondary/10 text-secondary'}`}>
-                    {solution.icon}
+                <div className="mb-4">
+                  <div className="flex items-center justify-start mb-3">
+                    <div className={`p-3 rounded-lg ${solution.variant === 'primary' ? 'bg-primary/10 text-primary' : 'bg-secondary/10 text-secondary'}`}>
+                      {solution.icon}
+                    </div>
                   </div>
-                  <Badge variant={solution.variant === 'primary' ? 'default' : 'secondary'}>
-                    {solution.badge}
-                  </Badge>
+                  <div className="flex flex-wrap gap-2">
+                    {solution.badges.map((badgeText, badgeIndex) => (
+                      <Badge key={badgeIndex} variant={solution.variant === 'primary' ? 'default' : 'secondary'}>
+                        {badgeText}
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
                 <CardTitle className="text-2xl">{solution.platform}</CardTitle>
                 <p className="text-muted-foreground">{solution.description}</p>
