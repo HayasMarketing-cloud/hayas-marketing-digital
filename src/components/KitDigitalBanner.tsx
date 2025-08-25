@@ -21,8 +21,8 @@ const KitDigitalBanner = () => {
               </Badge>
               
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-                Somos Agentes Digitalizadores del{' '}
-                <span className="text-gradient-primary">Kit Digital</span>
+                Aplica tu bono digital para la creación de tu{' '}
+                <span className="text-gradient-primary">sitio web</span>
               </h2>
               
               <p className="text-lg text-gray-300 leading-relaxed">
@@ -73,23 +73,11 @@ const KitDigitalBanner = () => {
               </div>
             </div>
             
-            {/* Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            {/* Button */}
+            <div className="flex justify-start">
               <Button 
                 size="lg" 
                 className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-6 text-lg"
-                asChild
-              >
-                <Link to="/kit-digital">
-                  Solicitar Asesoramiento
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="border-white/30 text-white hover:bg-white/10 font-medium px-8 py-6 text-lg"
                 asChild
               >
                 <Link to="/kit-digital">
