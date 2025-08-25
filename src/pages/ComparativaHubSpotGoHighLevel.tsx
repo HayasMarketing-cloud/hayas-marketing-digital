@@ -120,8 +120,8 @@ const ComparativaHubSpotGoHighLevel = () => {
             {/* HubSpot */}
             <Card className="p-8 text-center border-2 border-orange-200 bg-orange-50/50 hover:shadow-xl transition-all duration-300">
               <CardHeader className="pb-6">
-                <div className="w-20 h-20 bg-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <img src="/lovable-uploads/4e3422d2-6a85-4615-8631-c0ed5ccf1b00.png" alt="HubSpot" className="h-12 w-12" />
+                <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 p-3">
+                  <img src="/lovable-uploads/ba197ffa-03bd-4cb9-8540-56f4aa82594e.png" alt="HubSpot" className="h-12 w-auto" />
                 </div>
                 <CardTitle className="text-2xl font-bold text-orange-900">HubSpot</CardTitle>
               </CardHeader>
@@ -149,8 +149,8 @@ const ComparativaHubSpotGoHighLevel = () => {
             {/* Go High Level */}
             <Card className="p-8 text-center border-2 border-blue-200 bg-blue-50/50 hover:shadow-xl transition-all duration-300">
               <CardHeader className="pb-6">
-                <div className="w-20 h-20 bg-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <img src="/lovable-uploads/e54905f0-0e84-46b4-bc48-4acf987fcb9a.png" alt="Go High Level" className="h-12 w-12" />
+                <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 p-3">
+                  <img src="/lovable-uploads/611a7129-40d9-4ced-be17-6836749a97e5.png" alt="Go High Level" className="h-12 w-auto" />
                 </div>
                 <CardTitle className="text-2xl font-bold text-blue-900">Go High Level</CardTitle>
               </CardHeader>
@@ -498,8 +498,8 @@ const ComparativaHubSpotGoHighLevel = () => {
             {/* HubSpot Pricing */}
             <Card className="p-8 border-2 border-orange-200 hover:shadow-xl transition-all duration-300">
               <CardHeader className="text-center pb-6">
-                <div className="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <img src="/lovable-uploads/4e3422d2-6a85-4615-8631-c0ed5ccf1b00.png" alt="HubSpot" className="h-10 w-10" />
+                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-4 p-2">
+                  <img src="/lovable-uploads/ba197ffa-03bd-4cb9-8540-56f4aa82594e.png" alt="HubSpot" className="h-10 w-auto" />
                 </div>
                 <CardTitle className="text-2xl font-bold text-orange-900">HubSpot</CardTitle>
               </CardHeader>
@@ -529,8 +529,8 @@ const ComparativaHubSpotGoHighLevel = () => {
             {/* Go High Level Pricing */}
             <Card className="p-8 border-2 border-blue-200 hover:shadow-xl transition-all duration-300">
               <CardHeader className="text-center pb-6">
-                <div className="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <img src="/lovable-uploads/e54905f0-0e84-46b4-bc48-4acf987fcb9a.png" alt="Go High Level" className="h-10 w-10" />
+                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-4 p-2">
+                  <img src="/lovable-uploads/611a7129-40d9-4ced-be17-6836749a97e5.png" alt="Go High Level" className="h-10 w-auto" />
                 </div>
                 <CardTitle className="text-2xl font-bold text-blue-900">Go High Level</CardTitle>
               </CardHeader>
