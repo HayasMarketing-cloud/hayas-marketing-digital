@@ -12,7 +12,7 @@ const platforms = [
   },
   {
     name: "HighLevel",
-    logo: "/lovable-uploads/highlevel-logo.png",
+    logo: "/lovable-uploads/b8f3fb1a-2052-4922-9dc3-ba84c7f13752.png",
     alt: "HighLevel (Go High Level) CRM Platform"
   }
 ];
