@@ -99,6 +99,12 @@ interface ServicePageTemplateProps {
 }
 
 const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ data }) => {
+  console.log('ServicePageTemplate data:', data);
+  console.log('breadcrumbItems:', data.breadcrumbItems);
+  console.log('services:', data.services);
+  console.log('benefits:', data.benefits);
+  console.log('processSteps:', data.processSteps);
+  
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Service",
