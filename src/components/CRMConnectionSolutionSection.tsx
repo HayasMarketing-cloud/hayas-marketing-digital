@@ -53,11 +53,11 @@ const CRMConnectionSolutionSection = () => {
             <Card key={index} className="hover:shadow-xl transition-shadow">
               <CardHeader>
                 <div className="mb-6">
-                  <div className="flex items-center justify-center mb-4">
+                  <div className="flex items-center justify-center mb-6">
                     <img
                       src={solution.logo}
                       alt={`${solution.platform} logo`}
-                      className="h-16 w-auto object-contain"
+                      className="h-20 w-auto object-contain"
                       loading="lazy"
                     />
                   </div>
