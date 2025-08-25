@@ -23,7 +23,7 @@ import { servicesByPillar } from '@/data/services';
 
 const crmPlatforms = [
   { name: "HubSpot", logo: "/lovable-uploads/4e3422d2-6a85-4615-8631-c0ed5ccf1b00.png" },
-  { name: "Lovable", logo: "/lovable-uploads/4a739233-3c48-45e3-89a3-c72deb6e29c5.png" },
+  { name: "Lovable", logo: "/lovable-uploads/8d7ef1ce-f54f-401e-a664-a0025231c767.png" },
   { name: "Go High Level", logo: "/lovable-uploads/e54905f0-0e84-46b4-bc48-4acf987fcb9a.png" },
   { name: "n8n", logo: "/lovable-uploads/d597d918-bb87-477e-8fb1-7d8a7ba41138.png" },
   { name: "Botpress", logo: "/lovable-uploads/01333c02-039e-4e5c-a08f-d3db20e1e7a8.png" },
