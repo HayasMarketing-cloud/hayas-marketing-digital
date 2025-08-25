@@ -1,6 +1,7 @@
 import React from 'react';
 import ServicePageTemplate, { ServicePageData } from '@/components/ServicePageTemplate';
 import SuccessCasesSection from '@/components/SuccessCasesSection';
+import ProcessSection from '@/components/ProcessSection';
 import { getServiceSuccessCasesConfig } from '@/data/serviceSuccessCasesMapping';
 import { Globe, Languages, Search, Target, Sparkles, Users, TrendingUp, CheckCircle } from 'lucide-react';
 
@@ -18,7 +19,7 @@ const LocalizacionContenidos: React.FC = () => {
     badge: '🌍 Expansión Internacional',
     heroTitle: 'Localización de <span class="text-gradient-primary">contenidos</span>',
     heroSubtitle: 'Conecta con audiencias globales adaptando tu mensaje a su idioma, cultura y contexto. Más que traducción: localización integral con enfoque SEO.',
-    heroImage: '/marketing-global-hero.jpg',
+    heroImage: '/estrategia-contenidos-hero.jpg',
     heroImageAlt: 'Localización de contenidos para expansión internacional',
     primaryCTA: 'Solicitar propuesta de localización',
     primaryCTALink: '/solicitar-consulta',
@@ -73,35 +74,10 @@ const LocalizacionContenidos: React.FC = () => {
       'Experiencia de usuario nativa en cada idioma y región'
     ],
     
-    // Process Section
-    processTitle: 'Nuestro proceso de <span class="text-gradient-primary">localización</span>',
-    processSubtitle: 'Metodología probada en 4 fases para garantizar el éxito en cada mercado objetivo.',
-    processSteps: [
-      {
-        number: '01',
-        title: 'Análisis cultural y de mercado',
-        description: 'Investigamos tu audiencia objetivo, competencia local, keywords regionales y contexto cultural específico.',
-        icon: <Target className="h-6 w-6" />
-      },
-      {
-        number: '02',
-        title: 'Adaptación lingüística especializada',
-        description: 'Localización por expertos nativos especializados en tu sector, respetando matices culturales y técnicos.',
-        icon: <Languages className="h-6 w-6" />
-      },
-      {
-        number: '03',
-        title: 'Implementación técnica y SEO',
-        description: 'Configuración técnica multiidioma, optimización SEO local y testing de funcionalidades por región.',
-        icon: <Search className="h-6 w-6" />
-      },
-      {
-        number: '04',
-        title: 'Optimización y medición',
-        description: 'Monitorización de rendimiento, ajustes basados en métricas locales y optimización continua.',
-        icon: <TrendingUp className="h-6 w-6" />
-      }
-    ],
+    // Process Section (handled by ProcessSection component)
+    processTitle: '',
+    processSubtitle: '',
+    processSteps: [],
     
     // FAQ Section
     faqItems: [
@@ -156,9 +132,45 @@ const LocalizacionContenidos: React.FC = () => {
     ]
   };
 
+  const processSteps = [
+    {
+      number: '01',
+      title: 'Análisis cultural y de mercado',
+      description: 'Investigamos tu audiencia objetivo, competencia local, keywords regionales y contexto cultural específico.',
+      icon: <Target className="h-6 w-6" />
+    },
+    {
+      number: '02',
+      title: 'Adaptación lingüística especializada',
+      description: 'Localización por expertos nativos especializados en tu sector, respetando matices culturales y técnicos.',
+      icon: <Languages className="h-6 w-6" />
+    },
+    {
+      number: '03',
+      title: 'Implementación técnica y SEO',
+      description: 'Configuración técnica multiidioma, optimización SEO local y testing de funcionalidades por región.',
+      icon: <Search className="h-6 w-6" />
+    },
+    {
+      number: '04',
+      title: 'Optimización y medición',
+      description: 'Monitorización de rendimiento, ajustes basados en métricas locales y optimización continua.',
+      icon: <TrendingUp className="h-6 w-6" />
+    }
+  ];
+
   return (
     <>
       <ServicePageTemplate data={servicePageData} />
+      
+      {/* Modern Process Section */}
+      <ProcessSection
+        title={<>Nuestro proceso de <span className="text-gradient-primary">localización</span></>}
+        subtitle="Metodología probada en 4 fases para garantizar el éxito en cada mercado objetivo."
+        steps={processSteps}
+        backgroundColor="bg-gradient-to-br from-gray-50 to-white"
+        showIcons={true}
+      />
       
       {/* Success Cases Section with specific cases */}
       {serviceConfig && (
