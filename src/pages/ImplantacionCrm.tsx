@@ -226,8 +226,6 @@ const ImplantacionCrm = () => {
         faqs={faqItems} 
       />
 
-      {/* Posts Relacionados */}
-      <ServiceRelatedPosts serviceSlug="implantacion-crm" />
 
       {/* Sección final: CTA fuerte (footer extendido) */}
       <ServiceContactSection

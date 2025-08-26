@@ -17,8 +17,12 @@ const FAQSection: React.FC<FAQSectionProps> = ({
   return <section className="section-normal bg-gradient-to-br from-gray-50 to-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          
-          
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4" dangerouslySetInnerHTML={{ __html: title }} />
+          {subtitle && (
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              {subtitle}
+            </p>
+          )}
         </div>
 
         <div className="max-w-4xl mx-auto">
