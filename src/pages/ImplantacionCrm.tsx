@@ -150,7 +150,7 @@ const ImplantacionCrm = () => {
       <CRMBenefitsGridSection />
 
       {/* Sección 6: Prueba social */}
-      <SuccessCasesSection id="casos-exito" title="Casos de <span className='text-gradient-primary'>éxito</span>" subtitle="Empresas que han transformado su gestión comercial con nuestras implementaciones CRM." filterTags={["implantacion-crm"]} maxCases={4} showAllLink={true} />
+      <SuccessCasesSection id="casos-exito" title="Casos de <span className='text-gradient-primary'>éxito</span>" subtitle="Empresas que han transformado su gestión comercial con nuestras implementaciones CRM." specificCases={["Formato Educativo", "Asendia", "ASP ASEPSIA", "ALFIX Consultores"]} showAllLink={true} />
       
       <ReviewsSection />
 
