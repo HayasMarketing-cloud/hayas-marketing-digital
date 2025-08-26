@@ -5,7 +5,7 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
-import { ALL_SUCCESS_CASES, SuccessCase } from '@/components/SuccessCasesSection';
+import { ALL_SUCCESS_CASES, SuccessCase } from '@/data/successCases';
 import SuccessCaseFilters from '@/components/SuccessCaseFilters';
 import { getIndustriesInGroup, getServicesWithSuccessCases } from '@/data/successCasesTags';
 import {

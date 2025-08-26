@@ -1,5 +1,6 @@
 // Success Cases Tag System aligned with Blog Tags
 import { tagsLevel2 } from './blogTags';
+import { ALL_SUCCESS_CASES } from './successCases';
 
 // New grouped industry categories (8 categories)
 export const GROUPED_INDUSTRIES = [
@@ -128,12 +129,9 @@ export const getServiceTag = (slug: string) => {
 
 // Helper function to get only services that have success cases
 export const getServicesWithSuccessCases = () => {
-  // Import here to avoid circular dependency
-  const { ALL_SUCCESS_CASES } = require('@/components/SuccessCasesSection');
-  
   // Extract all unique service tags from success cases
   const servicesWithCases = Array.from(new Set(
-    ALL_SUCCESS_CASES.flatMap((case_: any) => case_.tags.services)
+    ALL_SUCCESS_CASES.flatMap((case_) => case_.tags.services)
   )).sort();
   
   // Filter tagsLevel2 to only include services that have cases
