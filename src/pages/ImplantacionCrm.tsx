@@ -217,7 +217,7 @@ const ImplantacionCrm = () => {
       <ReviewsSection />
 
       {/* Sección 6: CTA intermedio */}
-      <IntermediateCTA />
+      <IntermediateCTA title="¿Quieres saber cómo un CRM puede ayudarte con tus objetivos?" />
 
       {/* Sección personalizada: Hayas CRM */}
       <section className="py-20 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
