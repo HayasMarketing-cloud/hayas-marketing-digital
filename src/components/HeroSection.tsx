@@ -14,7 +14,7 @@ const HeroSection = () => {
             <h1 className="title-hero leading-tight animate-fade-in">
               Agencia de <span className="text-gradient-primary">Marketing Digital</span> y <span className="text-gradient-primary">Gestión de Clientes</span>
             </h1>
-            <p className="text-hero text-gray-700 animate-slide-up mb-6">Aportamos soluciones que impulsan tu marca, conectan con tus clientes y activan tus ventas. Con una Estrategia personalizada y adaptada a tus recursos y objetivos.</p>
+            <p className="text-hero text-gray-700 animate-slide-up mb-6">Te ayudamos a crecer con una estrategia personalizada que combina creatividad, tecnología y datos, siempre adaptada a tus recursos y objetivos.</p>
             <div className="flex justify-start animate-slide-up">
               <Button asChild variant="outline" className="py-6 px-8 text-lg font-medium hover-scale focus-ring border-primary text-primary hover:bg-primary hover:text-white" aria-label="Descubrir cómo trabajamos en Hayas Marketing">
                 <Link to="/?scrollTo=metodologia">Descubre cómo lo hacemos</Link>
