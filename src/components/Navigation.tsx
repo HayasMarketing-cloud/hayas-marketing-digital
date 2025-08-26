@@ -262,48 +262,20 @@ const Navigation = () => {
                     </div>
                     
                     <div className="px-4 space-y-3">
-                      <div className="mb-6">
-                        <h4 className="font-medium text-sm text-muted-foreground mb-3">Enfoques estratégicos</h4>
-                        <div className="space-y-2">
-                          {pillars.map((p) => (
-                            <Link
-                              key={p.href}
-                              to={p.href}
-                              className="block text-foreground hover:text-primary transition-colors py-3 px-3 hover:bg-muted/50 rounded-lg border border-border/50"
-                              onClick={closeMobileMenu}
-                            >
-                              <div className="flex items-center justify-between">
-                                <span className="font-medium">{p.title}</span>
-                                <ArrowRight className="h-4 w-4 text-muted-foreground" />
-                              </div>
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                      
-                      <div>
-                        <h4 className="font-medium text-sm text-muted-foreground mb-3">Servicios por categoría</h4>
-                        <div className="space-y-4">
-                          {pillarKeys.map((key) => (
-                            <div key={key} className="space-y-2">
-                              <h5 className="text-xs font-medium text-primary uppercase tracking-wide">
-                                {pillarMeta[key].title}
-                              </h5>
-                              <div className="space-y-1">
-                                {servicesByPillar[key].slice(0, 4).map((svc) => (
-                                  <Link
-                                    key={svc.href}
-                                    to={svc.href}
-                                    className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 px-2 hover:bg-muted/30 rounded"
-                                    onClick={closeMobileMenu}
-                                  >
-                                    • {svc.title}
-                                  </Link>
-                                ))}
-                              </div>
+                      <div className="space-y-2">
+                        {pillars.map((p) => (
+                          <Link
+                            key={p.href}
+                            to={p.href}
+                            className="block text-foreground hover:text-primary transition-colors py-3 px-3 hover:bg-muted/50 rounded-lg border border-border/50"
+                            onClick={closeMobileMenu}
+                          >
+                            <div className="flex items-center justify-between">
+                              <span className="font-medium">{p.title}</span>
+                              <ArrowRight className="h-4 w-4 text-muted-foreground" />
                             </div>
-                          ))}
-                        </div>
+                          </Link>
+                        ))}
                       </div>
                     </div>
                   </div>
