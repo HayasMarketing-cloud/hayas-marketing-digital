@@ -209,7 +209,7 @@ const ImplantacionCrm = () => {
         id="casos-exito"
         title="Casos de <span className='text-gradient-primary'>éxito</span>"
         subtitle="Empresas que han transformado su gestión comercial con nuestras implementaciones CRM."
-        specificCases={["Hayas CRM", "Aistercel", "Conversa Consultores", "FLAP"]}
+        filterTags={["implantacion-crm"]}
         maxCases={4}
         showAllLink={true}
       />

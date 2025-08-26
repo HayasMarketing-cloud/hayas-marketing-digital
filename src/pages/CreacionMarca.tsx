@@ -257,7 +257,7 @@ const CreacionMarca = () => {
         id="casos-exito"
         title="Casos de <span className='text-gradient-primary'>éxito</span>"
         subtitle="Marcas que hemos creado y que están generando resultados excepcionales para nuestros clientes."
-        specificCases={["Centro Roraima", "JointsUp", "IV Extra", "Dr. Parrón"]}
+        filterTags={["creacion-marca"]}
         maxCases={4}
         showAllLink={true}
       />

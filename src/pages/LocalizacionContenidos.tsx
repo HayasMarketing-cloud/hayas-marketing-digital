@@ -405,7 +405,7 @@ const LocalizacionContenidos = () => {
         id="casos-exito"
         title="Casos de <span className='text-gradient-primary'>éxito</span> en localización"
         subtitle="Proyectos internacionales que han conseguido resultados excepcionales gracias a la localización profesional."
-        specificCases={["Asendia", "Wideum", "COVEBO", "Eva Champion"]}
+        filterTags={["traduccion"]}
         maxCases={4}
         showAllLink={true}
       />
