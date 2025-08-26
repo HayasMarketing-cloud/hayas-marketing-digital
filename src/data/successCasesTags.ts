@@ -125,3 +125,17 @@ export const formatTagName = (tag: string): string => {
 export const getServiceTag = (slug: string) => {
   return tagsLevel2.find(tag => tag.slug === slug);
 };
+
+// Helper function to get only services that have success cases
+export const getServicesWithSuccessCases = () => {
+  // Import here to avoid circular dependency
+  const { ALL_SUCCESS_CASES } = require('@/components/SuccessCasesSection');
+  
+  // Extract all unique service tags from success cases
+  const servicesWithCases = Array.from(new Set(
+    ALL_SUCCESS_CASES.flatMap((case_: any) => case_.tags.services)
+  )).sort();
+  
+  // Filter tagsLevel2 to only include services that have cases
+  return tagsLevel2.filter(tag => servicesWithCases.includes(tag.slug));
+};

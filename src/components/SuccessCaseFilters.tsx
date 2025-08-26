@@ -12,7 +12,7 @@ import {
   Users
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { GROUPED_INDUSTRIES } from '@/data/successCasesTags';
+import { GROUPED_INDUSTRIES, getServicesWithSuccessCases } from '@/data/successCasesTags';
 import { tagsLevel2, getTagsByParent } from '@/data/blogTags';
 
 interface SuccessCaseFiltersProps {
@@ -69,10 +69,19 @@ const SuccessCaseFilters: React.FC<SuccessCaseFiltersProps> = ({
     onFilterChange('todos');
   };
 
-  // Get pillar services organized by parent
-  const impulsaServices = getTagsByParent('impulsa-tu-marca');
-  const conectaServices = getTagsByParent('conecta-con-tus-clientes');  
-  const activaServices = getTagsByParent('activa-tus-ventas');
+  // Get only services that have success cases
+  const servicesWithCases = getServicesWithSuccessCases();
+  
+  // Filter pillar services to only include those with success cases
+  const impulsaServices = getTagsByParent('impulsa-tu-marca').filter(service => 
+    servicesWithCases.some(s => s.slug === service.slug)
+  );
+  const conectaServices = getTagsByParent('conecta-con-tus-clientes').filter(service => 
+    servicesWithCases.some(s => s.slug === service.slug)
+  );
+  const activaServices = getTagsByParent('activa-tus-ventas').filter(service => 
+    servicesWithCases.some(s => s.slug === service.slug)
+  );
 
   // Pillar icons and colors
   const pillarConfig = {

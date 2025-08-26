@@ -7,7 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { ALL_SUCCESS_CASES, SuccessCase } from '@/components/SuccessCasesSection';
 import SuccessCaseFilters from '@/components/SuccessCaseFilters';
-import { getIndustriesInGroup } from '@/data/successCasesTags';
+import { getIndustriesInGroup, getServicesWithSuccessCases } from '@/data/successCasesTags';
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -30,10 +30,9 @@ const CasosExito = () => {
     }
   }, [searchParams]);
 
-  // Extract all unique tags from success cases
-  const allServiceTags = Array.from(new Set(
-    ALL_SUCCESS_CASES.flatMap(case_ => case_.tags.services)
-  )).sort();
+  // Extract unique service tags that have success cases
+  const servicesWithCases = getServicesWithSuccessCases();
+  const allServiceTags = servicesWithCases.map(service => service.slug).sort();
   
   const allIndustryTags = Array.from(new Set(
     ALL_SUCCESS_CASES.flatMap(case_ => case_.tags.industries)
