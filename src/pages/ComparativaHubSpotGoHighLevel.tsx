@@ -556,6 +556,18 @@ const ComparativaHubSpotGoHighLevel = () => {
               </CardContent>
             </Card>
           </div>
+          
+          {/* Nota aclaratoria de precios */}
+          <div className="text-center mt-12 max-w-4xl mx-auto">
+            <p className="text-muted-foreground mb-6">
+              *Los precios mostrados son orientativos. Para disponer de un presupuesto personalizado y adaptado a tus necesidades específicas, contacta con nosotros.
+            </p>
+            <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
+              <Link to="/contacto">
+                Solicitar presupuesto
+              </Link>
+            </Button>
+          </div>
         </div>
       </section>
 
