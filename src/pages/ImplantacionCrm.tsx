@@ -219,29 +219,9 @@ const ImplantacionCrm = () => {
       {/* Sección 6: CTA intermedio */}
       <IntermediateCTA title="¿Quieres saber cómo un CRM puede ayudarte con tus objetivos?" />
 
-      {/* Sección personalizada: Hayas CRM */}
-      <section className="py-20 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-            ¿Prefieres una solución <span className="text-gradient-primary">completamente personalizada</span>?
-          </h2>
-          <p className="text-xl text-muted-foreground mb-8">
-            Conoce Hayas CRM: nuestra plataforma desarrollada específicamente para pequeñas y medianas empresas españolas
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg">
-              <Link to="/hayas-crm" className="flex items-center gap-2">
-                Descubrir Hayas CRM
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
       {/* Sección 7: Preguntas frecuentes */}
       <FAQSection 
-        title="Preguntas frecuentes sobre Implantación CRM"
+        title="Preguntas frecuentes sobre implantación de CRM de Hayas Marketing"
         subtitle="Resolvemos las dudas más comunes sobre la implementación de sistemas CRM"
         faqs={faqItems} 
       />
