@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import ProcessSection from '@/components/ProcessSection';
-import ServiceRelatedPosts from '@/components/ServiceRelatedPosts';
+
 import ReviewsSection from '@/components/ReviewsSection';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -38,14 +38,14 @@ const processSteps = [{
   icon: <Users className="h-6 w-6" />
 }];
 const types = [{
-  title: "Solución B2B con HubSpot",
+  title: "Solucion CRM con HubSpot",
   description: "Perfecta para empresas que venden a otras empresas con procesos de venta complejos.",
   features: ["Plataforma todo-en-uno para marketing, ventas y servicio", "Integración nativa con herramientas empresariales", "Analytics avanzados y reporting completo", "Escalabilidad empresarial"],
   idealFor: ["Consultorías y servicios profesionales", "Software y tecnología", "Proveedores industriales", "Agencias de marketing"],
   icon: <Building2 className="w-8 h-8" />,
   variant: "primary"
 }, {
-  title: "Solución B2C con Go High Level",
+  title: "Solucion CRM con Go High Level",
   description: "Optimizada para empresas que venden directamente al consumidor final.",
   features: ["Automatización de marketing multicanal", "Landing pages y funnels integrados", "SMS, WhatsApp y email en una plataforma", "Calendario y reservas online"],
   idealFor: ["E-commerce y retail", "Servicios locales (gym, belleza, salud)", "Educación y formación online", "Inmobiliarias y seguros"],
@@ -157,31 +157,10 @@ const ImplantacionCrm = () => {
       {/* Sección 6: CTA intermedio */}
       <IntermediateCTA />
 
-      {/* Sección personalizada: Hayas CRM */}
-      <section className="py-20 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-            ¿Prefieres una solución <span className="text-gradient-primary">completamente personalizada</span>?
-          </h2>
-          <p className="text-xl text-muted-foreground mb-8">
-            Conoce Hayas CRM: nuestra plataforma desarrollada específicamente para pequeñas y medianas empresas españolas
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg">
-              <Link to="/hayas-crm" className="flex items-center gap-2">
-                Descubrir Hayas CRM
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
 
       {/* Sección 7: Preguntas frecuentes */}
-      <FAQSection title="Preguntas frecuentes sobre Implantación CRM" subtitle="Resolvemos las dudas más comunes sobre la implementación de sistemas CRM" faqs={faqItems} />
+      <FAQSection title="Preguntas frecuentes sobre implantación de CRM de Hayas Marketing" subtitle="Resolvemos las dudas más comunes sobre la implementación de sistemas CRM" faqs={faqItems} />
 
-      {/* Posts Relacionados */}
-      <ServiceRelatedPosts serviceSlug="implantacion-crm" />
 
       {/* Sección final: CTA fuerte (footer extendido) */}
       <ServiceContactSection title="¿Listo para transformar tu gestión comercial?" subtitle="Cuéntanos sobre tu negocio y te enviaremos una propuesta de implementación personalizada." formId="ZHNw4rjAzNdvFbFnIk1V" className="bg-gradient-to-br from-primary/10 via-white to-accent/10" />
