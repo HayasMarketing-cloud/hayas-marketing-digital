@@ -11,6 +11,7 @@ import FAQSection from '@/components/FAQSection';
 import SuccessCasesSection from '@/components/SuccessCasesSection';
 import OptimizedImage from '@/components/OptimizedImage';
 import UniversalServiceContactForm from '@/components/UniversalServiceContactForm';
+import { getServiceSuccessCasesConfig } from '@/data/serviceSuccessCasesMapping';
 import { ArrowRight, CheckCircle } from 'lucide-react';
 
 export interface ServiceFeature {
@@ -79,6 +80,8 @@ export interface ServicePageData {
   
   // Additional sections
   showSuccessCases?: boolean;
+  successCasesServiceSlug?: string;
+  successCasesTitle?: string;
   additionalContent?: React.ReactNode;
   
   // Contact Form Section
@@ -352,9 +355,22 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ data }) => {
       </section>
 
       {/* Success Cases (Optional) */}
-      {data.showSuccessCases && (
-        <SuccessCasesSection />
-      )}
+      {data.showSuccessCases && data.successCasesServiceSlug && (() => {
+        const casesConfig = getServiceSuccessCasesConfig(data.successCasesServiceSlug);
+        if (casesConfig) {
+          return (
+            <SuccessCasesSection
+              title={data.successCasesTitle || "Casos de Éxito"}
+              subtitle={casesConfig.subtitle}
+              filterTags={casesConfig.filterTags}
+              specificCases={casesConfig.specificCases}
+              maxCases={4}
+              showAllLink={true}
+            />
+          );
+        }
+        return null;
+      })()}
 
       {/* Additional Content */}
       {data.additionalContent}

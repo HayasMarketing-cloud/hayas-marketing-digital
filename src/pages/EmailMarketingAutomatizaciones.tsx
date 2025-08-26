@@ -92,7 +92,9 @@ const EmailMarketingAutomatizaciones: React.FC = () => {
     faqItems: faqs,
     
     // Additional Config
-    showSuccessCases: false,
+    showSuccessCases: true,
+    successCasesServiceSlug: 'email-marketing-automatizaciones',
+    successCasesTitle: 'Casos de Éxito',
     
     // Contact Form
     showContactForm: true,

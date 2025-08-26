@@ -145,6 +145,8 @@ const servicePageData: ServicePageData = {
   
   // Additional Configuration
   showSuccessCases: true,
+  successCasesServiceSlug: 'administracion-crm',
+  successCasesTitle: 'Casos de Éxito',
   showContactForm: true,
   contactFormTitle: '¿Hablamos sobre la administración de tu CRM?',
   contactFormSubtitle: 'Cuéntanos tu situación actual y objetivos. Te responderemos con una propuesta personalizada para optimizar tu CRM.',

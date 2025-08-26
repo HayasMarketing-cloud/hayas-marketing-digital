@@ -75,6 +75,11 @@ const ConsultoriaEstrategicaAnalitica: React.FC = () => {
     // FAQ Section
     faqItems: faqs,
     
+    // Success Cases
+    showSuccessCases: true,
+    successCasesServiceSlug: 'consultoria-estrategica-analitica',
+    successCasesTitle: 'Casos de Éxito',
+    
     // Contact Form
     showContactForm: true,
     contactFormTitle: "¿Hablamos sobre tu consultoría estratégica?",

@@ -87,6 +87,11 @@ const AutomatizacionProcesosVentas: React.FC = () => {
       </section>
     ),
 
+    // Success Cases
+    showSuccessCases: true,
+    successCasesServiceSlug: 'automatizacion-procesos-ventas',
+    successCasesTitle: 'Casos de Éxito',
+
     // Contact Form Section
     showContactForm: true,
     contactFormTitle: '¿Hablamos sobre la automatización de tus procesos de ventas?',

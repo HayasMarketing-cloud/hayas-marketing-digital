@@ -150,6 +150,11 @@ const EstrategiaContenidos: React.FC = () => {
     faqDescription: "Resolvemos las dudas más comunes sobre estrategia de contenidos",
     faqItems: faqs,
     
+    // Success Cases
+    showSuccessCases: true,
+    successCasesServiceSlug: 'estrategia-contenidos',
+    successCasesTitle: 'Casos de Éxito',
+    
     // Contact Form
     showContactForm: true,
     contactFormTitle: "¿Hablamos sobre tu estrategia de contenidos?",

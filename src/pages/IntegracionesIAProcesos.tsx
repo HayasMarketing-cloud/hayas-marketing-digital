@@ -69,6 +69,11 @@ const IntegracionesIAProcesos: React.FC = () => {
     // FAQ Section
     faqItems: faqs,
 
+    // Success Cases
+    showSuccessCases: true,
+    successCasesServiceSlug: 'integraciones-ia-procesos',
+    successCasesTitle: 'Casos de Éxito',
+
     // Additional content - CTA section
     additionalContent: (
       <section className="mb-16 text-center">
