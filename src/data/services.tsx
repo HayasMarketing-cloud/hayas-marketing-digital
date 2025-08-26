@@ -204,17 +204,9 @@ export const allServices: ServiceItem[] = [
   {
     id: 22,
     icon: <Server className="h-10 w-10 text-hayas-primary" />,
-    title: 'Administración CRM',
-    description: 'Gestión completa y mantenimiento de tu sistema CRM para máximo rendimiento.',
+    title: 'Administración CRM y gestión de Marketing',
+    description: 'Gestión completa de tu sistema CRM y estrategias de marketing para máximo rendimiento.',
     href: '/servicios/administracion-crm',
-    pillar: 'conecta',
-  },
-  {
-    id: 23,
-    icon: <MessageSquare className="h-10 w-10 text-hayas-primary" />,
-    title: 'Gestión de marketing',
-    description: 'Gestión integral de estrategias de marketing y campañas multicanal.',
-    href: '/servicios/gestion-marketing',
     pillar: 'conecta',
   },
 ];

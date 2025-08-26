@@ -11,7 +11,6 @@ import ConectaConTusClientes from "./pages/ConectaConTusClientes";
 import ImpulsaTuMarca from "./pages/ImpulsaTuMarca";
 import ActivaTusVentas from "./pages/ActivaTusVentas";
 import MarketingVisibilidad from "./pages/MarketingVisibilidad";
-import GestionMarketing from "./pages/GestionMarketing";
 import SolucionesIA from "./pages/SolucionesIA";
 import KitConsulting from "./pages/KitConsulting";
 import KitDigital from "./pages/KitDigital";
@@ -160,7 +159,7 @@ const App = () => (
           <Route path="/servicios/diseno-web/alojamiento-mantenimiento" element={<AlojamientoMantenimiento />} />
           <Route path="/servicios/seo-posicionamiento" element={<SeoPositioning />} />
           <Route path="/soluciones/marketing-digital" element={<MarketingVisibilidad />} />
-          <Route path="/soluciones/gestion-marketing" element={<GestionMarketing />} />
+          <Route path="/soluciones/gestion-marketing" element={<Navigate to="/servicios/administracion-crm" replace />} />
           <Route path="/soluciones/captacion-leads" element={<CaptacionLeadsClientes />} />
           <Route path="/kit-consulting" element={<KitConsulting />} />
           <Route path="/kit-digital" element={<KitDigital />} />
@@ -267,7 +266,7 @@ const App = () => (
           <Route path="/soluciones/branding-marca" element={<ImpulsaTuMarca />} />
           <Route path="/marketing-visibilidad" element={<MarketingVisibilidad />} />
           <Route path="/captacion-leads" element={<CaptacionLeadsClientes />} />
-          <Route path="/gestion-marketing" element={<GestionMarketing />} />
+          <Route path="/gestion-marketing" element={<Navigate to="/servicios/administracion-crm" replace />} />
           <Route path="/soluciones-ia" element={<SolucionesIA />} />
           <Route path="/implantacion-crm" element={<ImplantacionCrm />} />
           
