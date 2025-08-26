@@ -67,7 +67,7 @@ const types = [
     variant: "primary"
   },
   {
-    title: "Solución B2C con Go High Level",
+    title: "Solucion CRM con Go High Level",
     description: "Optimizada para empresas que venden directamente al consumidor final.",
     features: [
       "Automatización de marketing multicanal",
