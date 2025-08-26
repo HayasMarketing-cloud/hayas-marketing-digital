@@ -166,8 +166,8 @@ const AsistenteIA: React.FC = () => {
                 que resuelve dudas, captura leads y mejora la experiencia de tus clientes las 24 horas.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="group" asChild>
-                  <Link to="/contacto">
+                <Button size="lg" variant="cta" className="group" asChild>
+                  <Link to="/agendar-reunion">
                     Crear mi Asistente IA
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
