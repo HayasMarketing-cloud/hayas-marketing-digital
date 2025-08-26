@@ -49,7 +49,7 @@ const processSteps = [
 
 const types = [
   {
-    title: "Solución B2B con HubSpot",
+    title: "Solucion CRM con HubSpot",
     description: "Perfecta para empresas que venden a otras empresas con procesos de venta complejos.",
     features: [
       "Plataforma todo-en-uno para marketing, ventas y servicio",
