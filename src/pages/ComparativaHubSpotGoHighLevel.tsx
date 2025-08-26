@@ -498,7 +498,7 @@ const ComparativaHubSpotGoHighLevel = () => {
             {/* HubSpot Pricing */}
             <Card className="p-8 border-2 border-orange-200 hover:shadow-xl transition-all duration-300">
               <CardHeader className="text-center pb-6">
-                <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 p-4 shadow-sm">
+                <div className="w-48 h-48 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 p-8 shadow-sm">
                   <img src="/lovable-uploads/ba197ffa-03bd-4cb9-8540-56f4aa82594e.png" alt="HubSpot" className="max-w-full max-h-full object-contain" />
                 </div>
               </CardHeader>
@@ -528,7 +528,7 @@ const ComparativaHubSpotGoHighLevel = () => {
             {/* Go High Level Pricing */}
             <Card className="p-8 border-2 border-blue-200 hover:shadow-xl transition-all duration-300">
               <CardHeader className="text-center pb-6">
-                <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 p-4 shadow-sm">
+                <div className="w-48 h-48 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 p-8 shadow-sm">
                   <img src="/lovable-uploads/611a7129-40d9-4ced-be17-6836749a97e5.png" alt="Go High Level" className="max-w-full max-h-full object-contain" />
                 </div>
               </CardHeader>
