@@ -1,7 +1,6 @@
-# Robots.txt para Hayas Marketing (Producción/Staging)
+# Robots.txt para Hayas Marketing (Desarrollo - NO INDEXAR)
 
 User-agent: *
-Allow: /
+Disallow: /
 
-# Sitemap
-Sitemap: https://lovable.hayasmarketing.com/sitemap.xml
+# Sitio en desarrollo - No indexar
