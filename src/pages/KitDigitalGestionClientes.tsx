@@ -394,6 +394,10 @@ const KitDigitalGestionClientes = () => {
                 <CheckCircle className="h-4 w-4 text-green-600 mt-0.5 shrink-0" />
                 <span>Cumplir requisitos específicos del segmento correspondiente</span>
               </div>
+              <div className="flex items-start gap-2 md:col-span-2">
+                <CheckCircle className="h-4 w-4 text-green-600 mt-0.5 shrink-0" />
+                <span>Estar inscrito en el Censo de empresarios, profesionales y retenedores de la Agencia Tributaria</span>
+              </div>
             </div>
           </div>
         </div>
