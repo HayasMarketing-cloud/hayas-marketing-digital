@@ -46,6 +46,7 @@ const KitDigital = () => {
     {
       icon: <Database className="h-8 w-8 text-turquesa-600" />,
       title: "Gestión de Clientes",
+      subtitle: "Estrategia e implementación de CRM",
       description: "Implementación y configuración de CRM profesional para optimizar tus procesos de ventas y marketing.",
       activities: ["Creación de pipeline de ventas", "Configuración email marketing y campañas", "Diseño de funnel de automatización", "Setup CRM (GoHighLevel o HubSpot)"],
       funding: "Hasta 2.000 €"
