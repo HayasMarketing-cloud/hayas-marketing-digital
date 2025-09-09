@@ -122,7 +122,7 @@ const KitDigital = () => {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button className="gradient-primary text-white px-8 py-6 text-lg">
-                    Quiero mi bono de 3.000€
+                    Quiero mi bono de 2.000€
                   </Button>
                   <Button variant="outline" className="px-8 py-6 text-lg">
                     Consulta con SofÍA
@@ -394,7 +394,7 @@ const KitDigital = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button className="bg-white text-hayas-700 hover:bg-gray-100 hover:text-hayas-800 px-8 py-6 text-lg font-bold shadow-xl">
-                Quiero mi bono de 3.000€
+                Quiero mi bono de 2.000€
               </Button>
               <Button variant="outline" className="border-2 border-white text-white bg-white/10 hover:bg-white hover:text-hayas-700 backdrop-blur-sm px-8 py-6 text-lg font-semibold">
                 Más Información
