@@ -440,7 +440,7 @@ const KitDigitalGestionClientes = () => {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 font-semibold" asChild>
+              <Button size="lg" className="bg-white/20 text-white border border-white/30 hover:bg-white hover:text-gray-900 font-semibold" asChild>
                 <Link to="/agendar-reunion">Agenda tu reunión</Link>
               </Button>
             </div>
