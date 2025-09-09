@@ -8,7 +8,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import Seo from '@/components/Seo';
 import FAQSection from '@/components/FAQSection';
-import ServiceContactSection from '@/components/ServiceContactSection';
 import { 
   Search, TrendingUp, FileText, Target, 
   BarChart3, Zap, Globe, Settings,
@@ -456,12 +455,41 @@ const KitDigitalPresenciaAvanzada = () => {
       </section>
 
       {/* Contact Section */}
-      <ServiceContactSection
-        formId="ZHNw4rjAzNdvFbFnIk1V"
-        title="Solicita tu asesoría gratuita para SEO Avanzado Kit Digital"
-        subtitle="Te ayudamos con todo el proceso: desde la solicitud del bono hasta la optimización completa de tu posicionamiento SEO."
-        minHeight={820}
-      />
+      <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Solicita tu asesoría gratuita para SEO Avanzado Kit Digital
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Te ayudamos con todo el proceso: desde la solicitud del bono hasta la optimización completa de tu posicionamiento SEO.
+            </p>
+          </div>
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden" style={{minHeight: '820px'}}>
+              <iframe
+                src="https://links.hayasmarketing.com/widget/form/CIBs3XkPVEQVfMfwBIe2"
+                style={{width:'100%',height:'100%',border:'none',borderRadius:'4px'}}
+                id="inline-CIBs3XkPVEQVfMfwBIe2" 
+                data-layout="{'id':'INLINE'}"
+                data-trigger-type="alwaysShow"
+                data-trigger-value=""
+                data-activation-type="alwaysActivated"
+                data-activation-value=""
+                data-deactivation-type="neverDeactivate"
+                data-deactivation-value=""
+                data-form-name="WEB KD Form  - Solution request"
+                data-height="805"
+                data-layout-iframe-id="inline-CIBs3XkPVEQVfMfwBIe2"
+                data-form-id="CIBs3XkPVEQVfMfwBIe2"
+                title="WEB KD Form  - Solution request"
+              >
+              </iframe>
+              <script src="https://links.hayasmarketing.com/js/form_embed.js"></script>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <Footer />
     </div>
