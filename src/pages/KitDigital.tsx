@@ -21,7 +21,8 @@ const KitDigital = () => {
   const solutions = [
     {
       icon: <Globe className="h-8 w-8 text-hayas-600" />,
-      title: "Diseño Web o Tienda Online",
+      title: "Presencia básica en internet",
+      subtitle: "Diseño Página Web o Tienda Online",
       description: "Web profesional o e-commerce completo para que tu negocio tenga presencia digital de calidad.",
       activities: ["Diseño responsive", "Optimización de velocidad", "Integración de pagos", "Panel de administración"],
       funding: "Hasta 2.000 €"
