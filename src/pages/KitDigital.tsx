@@ -1,11 +1,12 @@
 import React from 'react';
-import { ArrowLeft, Smartphone, Globe, TrendingUp, Users, CheckCircle, Euro, Building2, Award, Target, Calendar, Phone, Mail, Database } from 'lucide-react';
+import { ArrowLeft, Smartphone, Globe, TrendingUp, Users, CheckCircle, Euro, Building2, Award, Target, Calendar, Phone, Mail, Database, MessageCircle } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import StandardGHLForm from '@/components/StandardGHLForm';
 
 import {
   Breadcrumb,
@@ -335,6 +336,90 @@ const KitDigital = () => {
                   <p className="text-gray-600">{step.description}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Form Section */}
+        <section className="py-8 md:py-12 bg-gradient-to-br from-background via-background/95 to-primary/5">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                Solicita tu <span className="text-gradient-primary">Kit Digital</span>
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Rellena el formulario y nos pondremos en contacto contigo para gestionar tu bono digital 
+                y comenzar la transformación de tu negocio.
+              </p>
+            </div>
+
+            {/* Main grid: Form + Sidebar */}
+            <div className="grid lg:grid-cols-3 gap-12 items-start max-w-6xl mx-auto">
+              {/* Formulario (col-span-2) */}
+              <div className="lg:col-span-2">
+                <StandardGHLForm
+                  formId="6XcKN5LKbIWM0JYth1SZ"
+                  title="Solicita tu Kit Digital"
+                  subtitle="Cuéntanos sobre tu negocio y te ayudaremos a conseguir tu bono digital de hasta 2.000€."
+                  minHeight={822}
+                  showHeader={true}
+                />
+              </div>
+
+              {/* Sidebar de contacto directo y SofÍA */}
+              <div className="space-y-6">
+                {/* Contacto Directo */}
+                <div className="bg-card rounded-2xl p-8 shadow-xl border border-border/50">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-gradient-to-r from-hayas-600 to-turquesa-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                      <Mail className="w-8 h-8 text-white" />
+                    </div>
+                    <h3 className="text-xl font-semibold mb-3">Contacto Directo</h3>
+                    <p className="text-muted-foreground mb-6">Envíanos un mensaje por WhatsApp</p>
+                    <div>
+                      <a
+                        href="https://wa.me/34672288182"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-3 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 hover:shadow-lg hover:scale-105 w-full"
+                      >
+                        <MessageCircle className="w-5 h-5" />
+                        WhatsApp
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                {/* SofÍA */}
+                <div className="bg-card rounded-2xl p-8 shadow-xl border border-border/50">
+                  <div className="text-center">
+                    <div className="relative w-20 h-20 mx-auto mb-6">
+                      <div className="w-20 h-20 bg-gradient-to-r from-accent to-accent/80 rounded-full flex items-center justify-center relative overflow-hidden">
+                        <img
+                          src="/lovable-uploads/2a2adcf5-d531-4d8c-91bd-bb12aac27976.png"
+                          alt="SofÍA"
+                          className="w-16 h-16 rounded-full object-cover"
+                        />
+                        <div className="absolute -top-1 -right-1 w-5 h-5 bg-green-500 rounded-full border-2 border-white">
+                          <div className="absolute inset-0 bg-green-400 rounded-full animate-ping"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <h3 className="text-xl font-semibold mb-3 text-foreground">Chatea con SofÍA</h3>
+                    <p className="text-muted-foreground mb-6">
+                      Nuestra asistente de IA está disponible 24/7 para resolver tus dudas sobre el Kit Digital
+                    </p>
+                    <button
+                      onClick={() => window.dispatchEvent(new CustomEvent('openSofiaChat'))}
+                      className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-lime-500 to-lime-600 hover:from-lime-600 hover:to-lime-700 text-white px-8 py-4 rounded-xl font-medium transition-all duration-300 hover:shadow-lg hover:scale-105 w-full shadow-md"
+                    >
+                      <MessageCircle className="w-5 h-5" />
+                      Iniciar Conversación
+                    </button>
+                    <p className="text-xs text-muted-foreground mt-3">Respuesta inmediata • Disponible siempre</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
