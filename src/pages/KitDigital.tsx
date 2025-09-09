@@ -36,7 +36,8 @@ const KitDigital = () => {
     },
     {
       icon: <Smartphone className="h-8 w-8 text-hayas-600" />,
-      title: "Gestión de Redes Sociales",
+      title: "Gestión de una red social",
+      subtitle: "Instagram | Facebook | LinkedIn",
       description: "Estrategia y gestión profesional de tus redes sociales para conectar con tu audiencia.",
       activities: ["Estrategia de contenidos", "Diseño gráfico", "Programación de posts", "Análisis de métricas"],
       funding: "Hasta 2.000 €"
