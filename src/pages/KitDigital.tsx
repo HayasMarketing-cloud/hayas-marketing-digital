@@ -28,7 +28,8 @@ const KitDigital = () => {
     },
     {
       icon: <TrendingUp className="h-8 w-8 text-turquesa-600" />,
-      title: "Optimización SEO",
+      title: "Presencia avanzada en internet",
+      subtitle: "estrategia y optimización SEO",
       description: "Posicionamiento en Google para que tus clientes potenciales te encuentren fácilmente.",
       activities: ["Análisis de palabras clave", "Optimización técnica", "Contenido SEO", "Seguimiento de rankings"],
       funding: "Hasta 2.000 €"
@@ -259,17 +260,22 @@ const KitDigital = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {solutions.map((solution, index) => (
                 <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                  <CardHeader>
-                    <div className="mb-4 p-3 rounded-lg bg-gray-100 w-fit">
-                      {solution.icon}
-                    </div>
-                    <CardTitle className="text-xl font-bold">
-                      {solution.title}
-                    </CardTitle>
-                    <Badge className="w-fit text-green-800 bg-green-100">
-                      {solution.funding}
-                    </Badge>
-                  </CardHeader>
+                   <CardHeader>
+                     <div className="mb-4 p-3 rounded-lg bg-gray-100 w-fit">
+                       {solution.icon}
+                     </div>
+                     <CardTitle className="text-xl font-bold">
+                       {solution.title}
+                     </CardTitle>
+                     {solution.subtitle && (
+                       <p className="text-sm text-gray-600 font-medium mt-1">
+                         {solution.subtitle}
+                       </p>
+                     )}
+                     <Badge className="w-fit text-green-800 bg-green-100">
+                       {solution.funding}
+                     </Badge>
+                   </CardHeader>
                   <CardContent>
                     <p className="text-gray-600 mb-4">
                       {solution.description}
