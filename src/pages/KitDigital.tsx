@@ -29,7 +29,7 @@ const KitDigital = () => {
     {
       icon: <TrendingUp className="h-8 w-8 text-turquesa-600" />,
       title: "Presencia avanzada en internet",
-      subtitle: "estrategia y optimización SEO",
+      subtitle: "Estrategia y optimización SEO",
       description: "Posicionamiento en Google para que tus clientes potenciales te encuentren fácilmente.",
       activities: ["Análisis de palabras clave", "Optimización técnica", "Contenido SEO", "Seguimiento de rankings"],
       funding: "Hasta 2.000 €"
