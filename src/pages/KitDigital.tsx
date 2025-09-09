@@ -210,8 +210,8 @@ const KitDigital = () => {
                 },
                 {
                   icon: <Building2 className="h-8 w-8 text-turquesa-600" />,
-                  title: "Domicilio fiscal",
-                  description: "En territorio español"
+                  title: "Censado en España",
+                  description: "Inscrito en el Censo de empresarios, profesionales y retenedores de la Agencia Tributaria"
                 },
                 {
                   icon: <CheckCircle className="h-8 w-8 text-hayas-600" />,
