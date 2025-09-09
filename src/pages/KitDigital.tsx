@@ -318,7 +318,7 @@ const KitDigital = () => {
                 },
                 {
                   step: "02", 
-                  title: "Te llamamos en 48h",
+                  title: "Te llamamos en menos de 24 horas",
                   description: "Nuestro equipo se pone en contacto contigo para definir la estrategia perfecta."
                 },
                 {
