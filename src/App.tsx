@@ -124,6 +124,10 @@ import BlogEmailMarketingHubSpot from './pages/BlogEmailMarketingHubSpot';
 import BlogMarketingGlobalInternacionalizacion from './pages/BlogMarketingGlobalInternacionalizacion';
 import BlogTagPage from './pages/BlogTagPage';
 import ComparativaHubSpotGoHighLevel from './pages/ComparativaHubSpotGoHighLevel';
+import KitDigitalPresenciaBasica from './pages/KitDigitalPresenciaBasica';
+import KitDigitalGestionClientes from './pages/KitDigitalGestionClientes';
+import KitDigitalRedesSociales from './pages/KitDigitalRedesSociales';
+import KitDigitalPresenciaAvanzada from './pages/KitDigitalPresenciaAvanzada';
 
 const queryClient = new QueryClient();
 
@@ -163,6 +167,10 @@ const App = () => (
           <Route path="/soluciones/captacion-leads" element={<CaptacionLeadsClientes />} />
           <Route path="/kit-consulting" element={<KitConsulting />} />
           <Route path="/kit-digital" element={<KitDigital />} />
+          <Route path="/kit-digital/presencia-basica-internet" element={<KitDigitalPresenciaBasica />} />
+          <Route path="/kit-digital/gestion-clientes-crm" element={<KitDigitalGestionClientes />} />
+          <Route path="/kit-digital/gestion-red-social" element={<KitDigitalRedesSociales />} />
+          <Route path="/kit-digital/presencia-avanzada-seo" element={<KitDigitalPresenciaAvanzada />} />
           
           {/* CASOS DE ÉXITO - Página principal */}
           <Route path="/casos-exito" element={<CasosExito />} />

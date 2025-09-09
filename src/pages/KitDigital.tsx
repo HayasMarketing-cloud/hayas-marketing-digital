@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowLeft, Smartphone, Globe, TrendingUp, Users, CheckCircle, Euro, Building2, Award, Target, Calendar, Phone, Mail, Database, MessageCircle } from 'lucide-react';
+import { ArrowLeft, Smartphone, Globe, TrendingUp, Users, CheckCircle, Euro, Building2, Award, Target, Calendar, Phone, Mail, Database, MessageCircle, ChevronRight } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -25,7 +25,8 @@ const KitDigital = () => {
       subtitle: "Diseño Página Web o Tienda Online",
       description: "Web profesional o e-commerce completo para que tu negocio tenga presencia digital de calidad.",
       activities: ["Diseño responsive", "Optimización de velocidad", "Integración de pagos", "Panel de administración"],
-      funding: "Hasta 2.000 €"
+      funding: "Hasta 2.000 €",
+      link: "/kit-digital/presencia-basica-internet"
     },
     {
       icon: <TrendingUp className="h-8 w-8 text-turquesa-600" />,
@@ -33,7 +34,8 @@ const KitDigital = () => {
       subtitle: "Estrategia y optimización SEO",
       description: "Posicionamiento en Google para que tus clientes potenciales te encuentren fácilmente.",
       activities: ["Análisis de palabras clave", "Optimización técnica", "Contenido SEO", "Seguimiento de rankings"],
-      funding: "Hasta 2.000 €"
+      funding: "Hasta 2.000 €",
+      link: "/kit-digital/presencia-avanzada-seo"
     },
     {
       icon: <Smartphone className="h-8 w-8 text-hayas-600" />,
@@ -41,7 +43,8 @@ const KitDigital = () => {
       subtitle: "Instagram | Facebook | LinkedIn",
       description: "Estrategia y gestión profesional de tus redes sociales para conectar con tu audiencia.",
       activities: ["Estrategia de contenidos", "Diseño gráfico", "Programación de posts", "Análisis de métricas"],
-      funding: "Hasta 2.000 €"
+      funding: "Hasta 2.000 €",
+      link: "/kit-digital/gestion-red-social"
     },
     {
       icon: <Database className="h-8 w-8 text-turquesa-600" />,
@@ -49,7 +52,8 @@ const KitDigital = () => {
       subtitle: "Estrategia e implementación de CRM",
       description: "Implementación y configuración de CRM profesional para optimizar tus procesos de ventas y marketing.",
       activities: ["Creación de pipeline de ventas", "Configuración email marketing y campañas", "Diseño de funnel de automatización", "Setup CRM (GoHighLevel o HubSpot)"],
-      funding: "Hasta 2.000 €"
+      funding: "Hasta 2.000 €",
+      link: "/kit-digital/gestion-clientes-crm"
     }
   ];
 
@@ -283,7 +287,7 @@ const KitDigital = () => {
                     <p className="text-gray-600 mb-4">
                       {solution.description}
                     </p>
-                    <div className="space-y-2">
+                    <div className="space-y-2 mb-4">
                       <h4 className="font-semibold text-sm">Incluye:</h4>
                       <ul className="space-y-1">
                         {solution.activities.slice(0, 3).map((activity, actIndex) => (
@@ -298,6 +302,18 @@ const KitDigital = () => {
                           </li>
                         )}
                       </ul>
+                    </div>
+                    <div className="mt-4 pt-4 border-t border-gray-100">
+                      <Button 
+                        asChild 
+                        variant="outline" 
+                        className="w-full text-hayas-600 border-hayas-200 hover:bg-hayas-50"
+                      >
+                        <Link to={solution.link}>
+                          Ver solución
+                          <ChevronRight className="h-4 w-4 ml-1" />
+                        </Link>
+                      </Button>
                     </div>
                   </CardContent>
                 </Card>
