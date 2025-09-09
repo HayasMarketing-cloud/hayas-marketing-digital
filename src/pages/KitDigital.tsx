@@ -424,42 +424,6 @@ const KitDigital = () => {
           </div>
         </section>
 
-        {/* Contact Section */}
-        <section className="py-8 md:py-12 bg-gradient-to-br from-gray-50 to-white">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                ¿Tienes <span className="text-gradient-primary">dudas</span>?
-              </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
-                Estamos para acompañarte con honestidad, estrategia y resultados.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-hayas-100 rounded-lg flex items-center justify-center">
-                    <Mail className="h-6 w-6 text-hayas-600" />
-                  </div>
-                  <div className="text-left">
-                    <p className="font-semibold">Email</p>
-                    <p className="text-gray-600">hola@hayas.es</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-turquesa-100 rounded-lg flex items-center justify-center">
-                    <Phone className="h-6 w-6 text-turquesa-600" />
-                  </div>
-                  <div className="text-left">
-                    <p className="font-semibold">Teléfono</p>
-                    <p className="text-gray-600">+34 656 90 86 15</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* CTA Section */}
         <section className="py-8 md:py-12 bg-gradient-to-br from-hayas-600 via-hayas-700 to-turquesa-600 text-white relative overflow-hidden">
           {/* Background Pattern for visual interest */}
