@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowLeft, Smartphone, Globe, TrendingUp, Users, CheckCircle, Euro, Building2, Award, Target, Calendar, Phone, Mail } from 'lucide-react';
+import { ArrowLeft, Smartphone, Globe, TrendingUp, Users, CheckCircle, Euro, Building2, Award, Target, Calendar, Phone, Mail, Database } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -37,6 +37,13 @@ const KitDigital = () => {
       title: "Gestión de Redes Sociales",
       description: "Estrategia y gestión profesional de tus redes sociales para conectar con tu audiencia.",
       activities: ["Estrategia de contenidos", "Diseño gráfico", "Programación de posts", "Análisis de métricas"],
+      funding: "Hasta 2.000 €"
+    },
+    {
+      icon: <Database className="h-8 w-8 text-turquesa-600" />,
+      title: "Gestión de Clientes",
+      description: "Implementación y configuración de CRM profesional para optimizar tus procesos de ventas y marketing.",
+      activities: ["Creación de pipeline de ventas", "Configuración email marketing y campañas", "Diseño de funnel de automatización", "Setup CRM (GoHighLevel o HubSpot)"],
       funding: "Hasta 2.000 €"
     }
   ];
@@ -248,7 +255,7 @@ const KitDigital = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {solutions.map((solution, index) => (
                 <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                   <CardHeader>
