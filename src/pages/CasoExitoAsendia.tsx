@@ -45,7 +45,7 @@ const CasoExitoAsendia = () => {
         },
         {
           icon: Users,
-          title: 'Onboarding Automatizado',
+          title: 'Mantenimiento sitio web',
           description: 'Proceso sistemático para integrar nuevos managers de e-commerce de manera eficiente y escalable.'
         }
       ]}
