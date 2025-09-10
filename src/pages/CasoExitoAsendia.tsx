@@ -36,7 +36,7 @@ const CasoExitoAsendia = () => {
         {
           icon: Zap,
           title: 'Automatización de Marketing',
-          description: 'Workflows automáticos para nurturing de managers de e-commerce, desde lead hasta cliente recurrente.'
+          description: 'Diseño de workflows de lead nurturing por campañas de Marketing.'
         },
         {
           icon: BarChart3,
