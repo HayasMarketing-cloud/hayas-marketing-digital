@@ -1,7 +1,7 @@
 import React from 'react';
 import CaseStudyTemplate from '@/components/CaseStudyTemplate';
 import { successCaseImages } from '@/data/successCaseImages';
-import { Target, Zap, BarChart3, Users } from 'lucide-react';
+import { Target, Zap, BarChart3, Users, Megaphone, Mail } from 'lucide-react';
 
 const CasoExitoAsendia = () => {
   return (
@@ -47,6 +47,16 @@ const CasoExitoAsendia = () => {
           icon: Users,
           title: 'Mantenimiento sitio web',
           description: 'Creación y localización de contenidos en 7 idiomas para 15 unidades de negocio.'
+        },
+        {
+          icon: Megaphone,
+          title: 'Campañas de Inbound Marketing',
+          description: 'Creamos y localizamos nuevas campañas de Inbound Marketing para captación de clientes.'
+        },
+        {
+          icon: Mail,
+          title: 'Marketing Directo',
+          description: 'Diseñamos campañas creativas de Marketing Directo así como el diseño y producción de merchandising.'
         }
       ]}
       results={[

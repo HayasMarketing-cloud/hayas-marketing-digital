@@ -190,6 +190,7 @@ const CaseStudyTemplate: React.FC<CaseStudyProps> = ({
                 solutions.length === 1 ? 'md:grid-cols-1' :
                 solutions.length === 2 ? 'md:grid-cols-2' : 
                 solutions.length === 3 ? 'md:grid-cols-3' : 
+                solutions.length === 6 ? 'md:grid-cols-2 lg:grid-cols-3' :
                 'md:grid-cols-2 lg:grid-cols-4'
               }`}>
                 {solutions.map(({ icon: Icon, title, description }, index) => (
