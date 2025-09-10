@@ -40,7 +40,7 @@ const CasoExitoAsendia = () => {
         },
         {
           icon: BarChart3,
-          title: 'Reporting Automatizado',
+          title: 'Soporte CRM y CMS especializado',
           description: 'Dashboards para demostrar ROI a clientes B2B y métricas de rendimiento para el equipo comercial.'
         },
         {
