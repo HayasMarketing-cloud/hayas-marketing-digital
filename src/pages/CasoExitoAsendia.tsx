@@ -46,7 +46,7 @@ const CasoExitoAsendia = () => {
         {
           icon: Users,
           title: 'Mantenimiento sitio web',
-          description: 'Proceso sistemático para integrar nuevos managers de e-commerce de manera eficiente y escalable.'
+          description: 'Creación y localización de contenidos en 7 idiomas para 15 unidades de negocio.'
         }
       ]}
       results={[
