@@ -87,14 +87,14 @@ const CasoExitoNovaPraxis = () => {
 
   const reviewData = [
     {
-      id: "miguel-ab-nova-praxis",
-      name: "Miguel AB",
-      position: "Director",
+      id: "miguel-alonso-nova-praxis",
+      name: "Miguel Alonso",
+      position: "Socio Director",
       company: "Nova Praxis",
       message: "Hayas demuestra gran profesionalidad y profundidad en la definición estratégica del marketing",
       rating: 5,
-      date: "Hace 7 meses",
-      avatar: "/lovable-uploads/d5ee597c-2a63-44e3-b54e-0542b3548c6f.png"
+      date: "",
+      avatar: "/lovable-uploads/844b8adb-0e8c-48df-9265-49d739a1fd14.png"
     }
   ];
 

@@ -46,7 +46,11 @@ const ReviewSection: React.FC<ReviewSectionProps> = ({
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+        <div className={`grid gap-8 max-w-6xl mx-auto ${
+          reviews.length === 1 
+            ? 'md:grid-cols-1 max-w-md' 
+            : 'md:grid-cols-2 lg:grid-cols-3'
+        }`}>
           {reviews.map((review) => (
             <Card key={review.id} className="h-full hover:shadow-lg transition-shadow">
               <CardContent className="p-6">
@@ -80,9 +84,11 @@ const ReviewSection: React.FC<ReviewSectionProps> = ({
 
                 <div className="flex items-center gap-1 mb-3">
                   {renderStars(review.rating)}
-                  <span className="text-sm text-muted-foreground ml-2">
-                    {review.date}
-                  </span>
+                  {review.date && (
+                    <span className="text-sm text-muted-foreground ml-2">
+                      {review.date}
+                    </span>
+                  )}
                 </div>
 
                 <blockquote className="text-foreground leading-relaxed">
