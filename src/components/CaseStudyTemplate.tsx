@@ -51,7 +51,7 @@ interface CaseStudyProps {
   solutions: Solution[];
   results: string[];
   testimonial?: Testimonial;
-  learnings: string;
+  learnings?: string;
 
   // CTA
   ctaTitle: string;
@@ -247,12 +247,14 @@ const CaseStudyTemplate: React.FC<CaseStudyProps> = ({
             )}
 
             {/* Lo que aprendimos */}
-            <section className="mb-16">
-              <h2 className="text-2xl font-semibold mb-4">Lo que aprendimos</h2>
-              <p className="text-muted-foreground leading-relaxed">
-                {learnings}
-              </p>
-            </section>
+            {learnings && (
+              <section className="mb-16">
+                <h2 className="text-2xl font-semibold mb-4">Lo que aprendimos</h2>
+                <p className="text-muted-foreground leading-relaxed">
+                  {learnings}
+                </p>
+              </section>
+            )}
 
             {/* CTA */}
             <section className="text-center py-12 bg-gradient-to-r from-primary/10 to-accent/10 rounded-xl">
