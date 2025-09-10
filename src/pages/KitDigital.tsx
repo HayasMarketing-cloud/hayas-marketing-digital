@@ -251,6 +251,85 @@ const KitDigital = () => {
           </div>
         </section>
 
+        {/* Funding Information Section */}
+        <section className="py-8 md:py-12 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                Convocatorias vigentes y <span className="text-gradient-primary">cuantía</span>
+              </h2>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8 mb-12">
+              <Card className="p-6 border-hayas-200 bg-gradient-to-br from-hayas-50 to-white">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-2 bg-hayas-500 rounded-lg">
+                    <Users className="h-6 w-6 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold">Segmento III</h3>
+                </div>
+                <p className="text-gray-600 mb-4">Empresas de 0 a 2 empleados</p>
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span>Bono disponible:</span>
+                    <span className="font-bold text-hayas-600">3.000€</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span>Plazo solicitud:</span>
+                    <span className="font-medium">Hasta 31/10/2025</span>
+                  </div>
+                </div>
+              </Card>
+
+              <Card className="p-6 border-turquesa-200 bg-gradient-to-br from-turquesa-50 to-white">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-2 bg-turquesa-500 rounded-lg">
+                    <CheckCircle className="h-6 w-6 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold">Comunidades de Bienes</h3>
+                </div>
+                <p className="text-gray-600 mb-4">Sociedades civiles, explotaciones agrarias (hasta 50 empleados)</p>
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span>Bono disponible:</span>
+                    <span className="font-bold text-turquesa-600">Hasta 12.000€</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span>Plazo solicitud:</span>
+                    <span className="font-medium">Hasta 31/10/2025</span>
+                  </div>
+                </div>
+              </Card>
+            </div>
+
+            <div className="bg-gray-50 rounded-xl p-6">
+              <h4 className="font-bold mb-4">Requisitos generales:</h4>
+              <div className="grid md:grid-cols-2 gap-4 text-sm">
+                <div className="flex items-start gap-2">
+                  <CheckCircle className="h-4 w-4 text-green-600 mt-0.5 shrink-0" />
+                  <span>Estar al corriente de obligaciones tributarias y de Seguridad Social</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <CheckCircle className="h-4 w-4 text-green-600 mt-0.5 shrink-0" />
+                  <span>No estar en situación de crisis</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <CheckCircle className="h-4 w-4 text-green-600 mt-0.5 shrink-0" />
+                  <span>No haber superado el límite de ayudas de minimis</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <CheckCircle className="h-4 w-4 text-green-600 mt-0.5 shrink-0" />
+                  <span>Cumplir requisitos específicos del segmento correspondiente</span>
+                </div>
+                <div className="flex items-start gap-2 md:col-span-2">
+                  <CheckCircle className="h-4 w-4 text-green-600 mt-0.5 shrink-0" />
+                  <span>Estar inscrito en el Censo de empresarios, profesionales y retenedores de la Agencia Tributaria</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Solutions Section */}
         <section className="py-8 md:py-12 bg-gradient-to-br from-gray-50 to-white">
           <div className="container mx-auto px-4">
