@@ -30,8 +30,8 @@ const CasoExitoAsendia = () => {
       solutions={[
         {
           icon: Target,
-          title: 'CRM B2B Especializado',
-          description: 'Implementación de HubSpot configurado específicamente para gestionar leads y clientes managers de e-commerce.'
+          title: 'Soporte CRM y CMS para 15 países',
+          description: 'Soporte a todos los equipos de Asendia del CMS y CRM de HubSpot.'
         },
         {
           icon: Zap,
