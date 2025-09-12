@@ -1233,7 +1233,7 @@ const BlogPost = () => {
   }
 
   // Post específico de IA en Marketing
-  if (id === 'ia-aplicacion-marketing') {
+  if (id === 'la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing') {
     return <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 py-24 max-w-4xl">
           {/* Breadcrumb */}
