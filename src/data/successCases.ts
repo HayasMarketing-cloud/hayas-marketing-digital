@@ -530,11 +530,11 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     }
   },
   {
-    name: "La Bañera K.D.",
+    name: "La Bañera",
     industry: "Rehabilitación y reforma de baños",
     service: "Branding, diseño web y estrategia SEO local",
     link: "/casos-exito/la-banera-kd",
-    image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=2070&auto=format&fit=crop",
+    image: "/lovable-uploads/30665cd3-50a6-4406-a490-bb3a841e31c7.png",
     tags: {
       services: ["creacion-marca", "diseno-web", "seo-positioning"],
       industries: ["construccion"],
