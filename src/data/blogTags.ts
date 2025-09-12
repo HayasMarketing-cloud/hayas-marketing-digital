@@ -19,7 +19,7 @@ export const tagsLevel1: TagLevel1[] = [
   {
     name: "Impulsa tu marca",
     slug: "impulsa-tu-marca",
-    subtags: ["creacion-marca", "diseno-web", "seo-posicionamiento", "tienda-online", "gestion-redes-sociales", "estrategia-contenidos", "localizacion-contenidos"],
+    subtags: ["creacion-marca", "diseno-web", "seo-positioning", "tienda-online", "gestion-redes-sociales", "estrategia-contenidos", "localizacion-contenidos"],
     color: "bg-primary",
     description: "Todo lo necesario para crear, posicionar y hacer visible tu marca"
   },
@@ -57,7 +57,7 @@ export const tagsLevel2: TagLevel2[] = [
   },
   { 
     name: "SEO y Posicionamiento", 
-    slug: "seo-posicionamiento", 
+    slug: "seo-positioning", 
     parent: "impulsa-tu-marca",
     serviceUrl: "/servicios/seo-posicionamiento",
     description: "Aparece primero en Google"
