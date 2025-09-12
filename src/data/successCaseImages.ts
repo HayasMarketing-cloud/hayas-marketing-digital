@@ -41,7 +41,7 @@ export const successCaseImages = {
   plazaEstacion: "/lovable-uploads/69abb7c5-dcbb-4711-9201-5d724ed944f3.png",
   quanticBI: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2069&auto=format&fit=crop",
   rivasCentro: "/lovable-uploads/de93dd1b-7f99-4499-81a7-87a1ec7c9d5f.png",
-  suministrosXSKD: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?q=80&w=2070&auto=format&fit=crop",
+  suministrosXSKD: "/src/assets/suministros-xs-case-study-hero.webp",
   translateWithStyle: "/lovable-uploads/093269a5-534e-41b3-9cca-a656adc014ca.png",
   wideum: "/lovable-uploads/wideum-case-study.jpg",
   wooptix: "/lovable-uploads/e38029c3-0b86-40ab-9262-21d4d0516c2e.png"

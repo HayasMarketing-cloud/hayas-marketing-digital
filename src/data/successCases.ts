@@ -486,7 +486,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     industry: "Distribución de equipos de higiene y limpieza",
     service: "Rediseño web, identidad visual y optimización SEO",
     link: "/casos-exito/suministros-xs-kd",
-    image: "/lovable-uploads/da9fe9f5-5fa0-4e88-b211-cca674665b34.png",
+    image: "/src/assets/suministros-xs-case-study-hero.webp",
     tags: {
       services: ["diseno-web", "creacion-marca", "seo-positioning"],
       industries: ["industrial"],
