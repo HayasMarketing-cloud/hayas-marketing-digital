@@ -509,7 +509,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     name: "Motiva tu Mente con Ester",
     industry: "Coach personal y bienestar emocional",
     service: "Branding personal, web y estrategia de contenidos",
-    link: "/casos-exito/motiva-tu-mente-ester",
+    link: "/casos-exito/motiva-tu-mente",
     image: "/lovable-uploads/motiva-tu-mente-ester.png",
     tags: {
       services: ["creacion-marca", "diseno-web", "estrategia-contenidos"],
