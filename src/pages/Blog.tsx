@@ -453,11 +453,17 @@ const Blog = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {recentPosts.map((post) => (
               <Card key={post.id} className="overflow-hidden hover:shadow-lg transition-shadow group">
-                <img 
-                  src={post.image} 
-                  alt={post.title}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
+                <div className="w-full h-48 overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
+                  <img 
+                    src={post.image} 
+                    alt={post.title}
+                    className={`group-hover:scale-105 transition-transform duration-300 ${
+                      post.id === 'kit-digital-marketing-guia-completa-2025' 
+                        ? 'h-20 w-auto object-contain' 
+                        : 'w-full h-full object-cover'
+                    }`}
+                  />
+                </div>
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
                     <Badge variant="secondary">{post.category}</Badge>
@@ -509,11 +515,17 @@ const Blog = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {allArticles.map((post) => (
               <Card key={post.id} className="overflow-hidden hover:shadow-lg transition-shadow group">
-                <img 
-                  src={post.image} 
-                  alt={post.title}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
+                <div className="w-full h-48 overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
+                  <img 
+                    src={post.image} 
+                    alt={post.title}
+                    className={`group-hover:scale-105 transition-transform duration-300 ${
+                      post.id === 'kit-digital-marketing-guia-completa-2025' 
+                        ? 'h-20 w-auto object-contain' 
+                        : 'w-full h-full object-cover'
+                    }`}
+                  />
+                </div>
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
                     <Badge variant="secondary">{post.category}</Badge>
