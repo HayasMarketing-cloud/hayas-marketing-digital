@@ -92,6 +92,7 @@ import ScrollToTop from './components/ScrollToTop';
 import DraftProtection from './components/DraftProtection';
 import EmailMarketingAutomatizaciones from './pages/EmailMarketingAutomatizaciones';
 import ConsultoriaEstrategicaAnalitica from './pages/ConsultoriaEstrategicaAnalitica';
+import Servicios from './pages/Servicios';
 import IntegracionesIAProcesos from './pages/IntegracionesIAProcesos';
 import FormacionIA from './pages/FormacionIA';
 import EstrategiaContenidos from './pages/EstrategiaContenidos';
@@ -291,7 +292,7 @@ const App = () => (
           <Route path="/servicios/automatizacion-procesos-ventas" element={<AutomatizacionProcesosVentas />} />
           <Route path="/servicios/captacion-leads-clientes" element={<CaptacionLeadsClientes />} />
           <Route path="/servicios/implantacion-crm" element={<ImplantacionCrm />} />
-          <Route path="/servicios" element={<NotFound />} />
+          <Route path="/servicios" element={<Servicios />} />
           
           {/* 404 - DEBE IR SIEMPRE AL FINAL */}
           <Route path="*" element={<NotFound />} />
