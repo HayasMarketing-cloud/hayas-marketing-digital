@@ -56,8 +56,8 @@ const Blog = () => {
       excerpt: "Última oportunidad para solicitar el Kit Digital. Autónomos y microempresas pueden conseguir hasta 3.000€ para digitalización. Guía completa con requisitos y pasos.",
       category: "Digitalización",
       readTime: "8 min",
-      date: "19 Ene 2025",
-      image: kitDigitalHero,
+      date: "20 Jun 2025",
+      image: "/lovable-uploads/1d3d828c-9af7-4b97-bdf9-9da500195c62.png",
       slug: "/blog/kit-digital-marketing-guia-completa-2025",
       tags: ["Kit Digital", "Digitalización", "Ayudas Públicas", "Marketing Digital", "Transformación Digital"],
       featured: true
