@@ -15,7 +15,7 @@ const Footer: React.FC<FooterProps> = ({
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           <div>
             <h3 className="text-xl font-bold text-white mb-4">Hayas Marketing</h3>
-            <p className="mb-4">En Hayas, ayudamos a empresas y emprendedores a prosperar con estrategias de marketing esenciales que integran inteligencia artificial y automatización, combinadas con propósito y visión estratégica. Así logramos eficiencia, escalamos ventas y, sobre todo, construimos relaciones auténticas entre marcas y personas.</p>
+            <p className="mb-4">En Hayas, ayudamos a empresas y emprendedores a prosperar con estrategias de marketing esenciales que integran inteligencia artificial y automatización, totalmente alineadas a propósito y visión estratégica. </p>
             <div className="flex space-x-4">
               <a href="https://www.facebook.com/hayasmarketing" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
