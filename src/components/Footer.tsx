@@ -15,7 +15,7 @@ const Footer: React.FC<FooterProps> = ({
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           <div>
             <h3 className="text-xl font-bold text-white mb-4">Hayas Marketing</h3>
-            <p className="mb-4">En Hayas, integramos automatización e inteligencia artificial con estrategia y propósito para mejorar la eficiencia, escalar las ventas y construir relaciones auténticas entre marcas y personas.</p>
+            <p className="mb-4">En Hayas, ayudamos a empresas y emprendedores a prosperar con estrategias de marketing esenciales que integran inteligencia artificial y automatización, combinadas con propósito y visión estratégica. Así logramos eficiencia, escalamos ventas y, sobre todo, construimos relaciones auténticas entre marcas y personas.</p>
             <div className="flex space-x-4">
               <a href="https://www.facebook.com/hayasmarketing" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -40,7 +40,7 @@ const Footer: React.FC<FooterProps> = ({
               </a>
               <a href="https://www.tiktok.com/@hayas_marketing" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-.88-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/>
+                  <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-.88-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z" />
                 </svg>
               </a>
             </div>
