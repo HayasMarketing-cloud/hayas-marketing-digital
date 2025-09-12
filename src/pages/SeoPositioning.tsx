@@ -7,199 +7,142 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import KitDigitalBanner from '@/components/KitDigitalBanner';
-
 import FAQSection from '@/components/FAQSection';
 import ServiceContactSection from '@/components/ServiceContactSection';
 import SuccessCasesSection from '@/components/SuccessCasesSection';
 import { getServiceSuccessCasesConfig } from '@/data/serviceSuccessCasesMapping';
-import { 
-  Search, BarChart3, FileText, Link as LinkIcon, Target, 
-  ArrowRight, CheckCircle, Star, TrendingUp, Eye, Users,
-  Globe, Lightbulb, Award, Calendar, Bot, Gauge, 
-  MessageSquare, Settings, Zap, PieChart, Clock
-} from 'lucide-react';
-
-const seoServices = [
-  {
-    icon: <Search className="h-8 w-8 text-primary" />,
-    title: "Análisis de Palabras Clave",
-    description: "Investigación exhaustiva de keywords relevantes para tu sector, competencia y audiencia objetivo.",
-    features: ["Research de keywords", "Análisis de competencia", "Búsqueda de long-tail", "Intención de búsqueda"]
-  },
-  {
-    icon: <FileText className="h-8 w-8 text-primary" />,
-    title: "SEO On-Page",
-    description: "Optimización técnica y de contenido dentro de tu sitio web para mejorar el posicionamiento.",
-    features: ["Optimización de títulos", "Meta descripciones", "Estructura HTML", "Velocidad de carga"]
-  },
-  {
-    icon: <LinkIcon className="h-8 w-8 text-primary" />,
-    title: "Link Building",
-    description: "Construcción de enlaces de calidad desde sitios web relevantes y con autoridad.",
-    features: ["Enlaces naturales", "Guest posting", "Directorios especializados", "Relaciones públicas digitales"]
-  },
-  {
-    icon: <Target className="h-8 w-8 text-primary" />,
-    title: "SEO Local",
-    description: "Posicionamiento en búsquedas locales para atraer clientes de tu zona geográfica.",
-    features: ["Google My Business", "Citas locales", "Reseñas y reputación", "Mapas de Google"]
-  },
-  {
-    icon: <BarChart3 className="h-8 w-8 text-primary" />,
-    title: "Auditoría SEO",
-    description: "Análisis completo de tu sitio web para identificar oportunidades de mejora.",
-    features: ["Análisis técnico", "Contenido duplicado", "Errores de crawling", "Oportunidades de optimización"]
-  },
-  {
-    icon: <Bot className="h-8 w-8 text-primary" />,
-    title: "SEO con IA",
-    description: "Utilizamos inteligencia artificial para optimizar y automatizar procesos SEO.",
-    features: ["Generación de contenido", "Análisis predictivo", "Automatización", "Optimización continua"]
-  }
-];
-
-const seoTypes = [
-  {
-    icon: <Globe className="h-6 w-6 text-primary" />,
-    title: "SEO Nacional",
-    description: "Posicionamiento a nivel nacional para alcanzar audiencias amplias.",
-    metrics: ["Ranking nacional", "Tráfico orgánico masivo", "Competencia alta"]
-  },
-  {
-    icon: <Target className="h-6 w-6 text-primary" />,
-    title: "SEO Local",
-    description: "Domina las búsquedas locales y atrae clientes de tu zona.",
-    metrics: ["Google My Business", "Búsquedas cercanas", "Conversión local"]
-  },
-  {
-    icon: <Settings className="h-6 w-6 text-primary" />,
-    title: "SEO Técnico",
-    description: "Optimización técnica avanzada para sitios web complejos.",
-    metrics: ["Core Web Vitals", "Indexación", "Arquitectura web"]
-  },
-  {
-    icon: <MessageSquare className="h-6 w-6 text-primary" />,
-    title: "SEO de Contenidos",
-    description: "Estrategia de contenido optimizada para atraer tráfico cualificado.",
-    metrics: ["Content marketing", "Blog SEO", "Engagement"]
-  }
-];
-
-const processSteps = [
-  {
-    number: "01",
-    title: "Auditoría y Análisis",
-    description: "Analizamos tu sitio web, competencia y palabras clave para crear una estrategia personalizada.",
-    icon: <Search className="h-6 w-6" />
-  },
-  {
-    number: "02", 
-    title: "Estrategia SEO",
-    description: "Desarrollamos un plan integral que combina SEO técnico, contenido y link building.",
-    icon: <Target className="h-6 w-6" />
-  },
-  {
-    number: "03",
-    title: "Implementación",
-    description: "Ejecutamos todas las optimizaciones on-page, creamos contenido y construimos enlaces.",
-    icon: <Settings className="h-6 w-6" />
-  },
-  {
-    number: "04",
-    title: "Monitoreo y Optimización",
-    description: "Seguimos y optimizamos continuamente basándose en datos y resultados reales.",
-    icon: <BarChart3 className="h-6 w-6" />
-  }
-];
-
-const successCases = [
-  {
-    name: "Asendia",
-    category: "Servicios Logísticos",
-    service: "SEO Nacional + Local",
-    results: "+450% tráfico orgánico, Top 3 en 85% keywords",
-    improvement: "+450%",
-    timeframe: "6 meses"
-  },
-  {
-    name: "Nova Praxis",
-    category: "Consultora Data Analytics", 
-    service: "SEO Técnico + Contenidos",
-    results: "+320% leads orgánicos, #1 en 'data analytics'",
-    improvement: "+320%",
-    timeframe: "4 meses"
-  },
-  {
-    name: "Get Time",
-    category: "Software de Gestión",
-    service: "SEO SaaS + Link Building",
-    results: "+280% tráfico cualificado, 40% más demos",
-    improvement: "+280%",
-    timeframe: "5 meses"
-  },
-  {
-    name: "Asesoría Robles",
-    category: "Servicios Integrales",
-    service: "SEO Local + Reputación",
-    results: "+200% consultas, dominio local completo",
-    improvement: "+200%",
-    timeframe: "3 meses"
-  }
-];
-
-const benefits = [
-  "Más tráfico orgánico cualificado",
-  "Mejor posicionamiento en Google",
-  "Mayor visibilidad de marca",
-  "Incremento en leads y ventas",
-  "ROI superior a la publicidad pagada",
-  "Resultados sostenibles a largo plazo",
-  "Autoridad y credibilidad online",
-  "Ventaja competitiva sostenida",
-  "Análisis y reportes detallados",
-  "Estrategia adaptada a tu sector"
-];
-
-const faqItems = [
-  {
-    question: "¿Cuánto tiempo tardan en verse los resultados del SEO?",
-    answer: "Los primeros resultados del SEO suelen verse entre 3-6 meses, aunque esto puede variar según la competencia del sector y el estado actual de tu web. Los resultados más significativos se alcanzan entre 6-12 meses, pero el SEO es una inversión a largo plazo que proporciona beneficios sostenidos."
-  },
-  {
-    question: "¿Qué diferencia hay entre SEO y publicidad pagada (SEM)?",
-    answer: "El SEO genera tráfico orgánico gratuito a largo plazo, mientras que SEM requiere pago continuo por cada clic. El SEO tiene un ROI superior a largo plazo, mayor credibilidad y resultados sostenibles, aunque requiere más tiempo para ver resultados que la publicidad pagada."
-  },
-  {
-    question: "¿Garantizan la primera posición en Google?",
-    answer: "No ofrecemos garantías de posiciones específicas ya que Google cambia constantemente sus algoritmos. Sin embargo, garantizamos mejoras medibles en tráfico orgánico, posicionamiento de keywords relevantes y visibilidad general basándose en nuestra metodología probada."
-  },
-  {
-    question: "¿Qué incluye el servicio de SEO mensual?",
-    answer: "Incluye optimización on-page continua, creación de contenido SEO, link building, monitoreo de posiciones, análisis de competencia, reportes mensuales detallados y ajustes estratégicos basados en los resultados y cambios del algoritmo."
-  },
-  {
-    question: "¿Trabajan SEO local para mi negocio físico?",
-    answer: "Sí, tenemos amplia experiencia en SEO local. Optimizamos Google My Business, creamos citas locales consistentes, gestionamos reseñas, optimizamos para búsquedas 'cerca de mí' y implementamos schema markup local para maximizar tu visibilidad en tu zona geográfica."
-  },
-  {
-    question: "¿Cómo miden y reportan los resultados SEO?",
-    answer: "Utilizamos herramientas profesionales como Google Analytics, Search Console, SEMrush y Ahrefs para medir tráfico orgánico, posiciones de keywords, CTR, conversiones y ROI. Enviamos reportes mensuales detallados con análisis de progreso y recomendaciones estratégicas."
-  },
-  {
-    question: "¿Pueden trabajar con mi web actual o necesito una nueva?",
-    answer: "Podemos optimizar cualquier web existente. Realizamos una auditoría inicial para identificar oportunidades de mejora técnica y de contenido. Solo recomendamos una nueva web si los problemas técnicos son tan severos que impiden un SEO efectivo."
-  },
-  {
-    question: "¿Qué pasa si Google cambia su algoritmo?",
-    answer: "Seguimos de cerca todas las actualizaciones de Google y adaptamos nuestras estrategias en consecuencia. Usamos técnicas 'white hat' que se alinean con las directrices de Google, por lo que nuestros clientes están protegidos ante cambios algorítmicos y mantienen sus posiciones."
-  }
-];
-
+import { Search, BarChart3, FileText, Link as LinkIcon, Target, ArrowRight, CheckCircle, Star, TrendingUp, Eye, Users, Globe, Lightbulb, Award, Calendar, Bot, Gauge, MessageSquare, Settings, Zap, PieChart, Clock } from 'lucide-react';
+const seoServices = [{
+  icon: <Search className="h-8 w-8 text-primary" />,
+  title: "Análisis de Palabras Clave",
+  description: "Investigación exhaustiva de keywords relevantes para tu sector, competencia y audiencia objetivo.",
+  features: ["Research de keywords", "Análisis de competencia", "Búsqueda de long-tail", "Intención de búsqueda"]
+}, {
+  icon: <FileText className="h-8 w-8 text-primary" />,
+  title: "SEO On-Page",
+  description: "Optimización técnica y de contenido dentro de tu sitio web para mejorar el posicionamiento.",
+  features: ["Optimización de títulos", "Meta descripciones", "Estructura HTML", "Velocidad de carga"]
+}, {
+  icon: <LinkIcon className="h-8 w-8 text-primary" />,
+  title: "Link Building",
+  description: "Construcción de enlaces de calidad desde sitios web relevantes y con autoridad.",
+  features: ["Enlaces naturales", "Guest posting", "Directorios especializados", "Relaciones públicas digitales"]
+}, {
+  icon: <Target className="h-8 w-8 text-primary" />,
+  title: "SEO Local",
+  description: "Posicionamiento en búsquedas locales para atraer clientes de tu zona geográfica.",
+  features: ["Google My Business", "Citas locales", "Reseñas y reputación", "Mapas de Google"]
+}, {
+  icon: <BarChart3 className="h-8 w-8 text-primary" />,
+  title: "Auditoría SEO",
+  description: "Análisis completo de tu sitio web para identificar oportunidades de mejora.",
+  features: ["Análisis técnico", "Contenido duplicado", "Errores de crawling", "Oportunidades de optimización"]
+}, {
+  icon: <Bot className="h-8 w-8 text-primary" />,
+  title: "SEO con IA",
+  description: "Utilizamos inteligencia artificial para optimizar y automatizar procesos SEO.",
+  features: ["Generación de contenido", "Análisis predictivo", "Automatización", "Optimización continua"]
+}];
+const seoTypes = [{
+  icon: <Globe className="h-6 w-6 text-primary" />,
+  title: "SEO Nacional",
+  description: "Posicionamiento a nivel nacional para alcanzar audiencias amplias.",
+  metrics: ["Ranking nacional", "Tráfico orgánico masivo", "Competencia alta"]
+}, {
+  icon: <Target className="h-6 w-6 text-primary" />,
+  title: "SEO Local",
+  description: "Domina las búsquedas locales y atrae clientes de tu zona.",
+  metrics: ["Google My Business", "Búsquedas cercanas", "Conversión local"]
+}, {
+  icon: <Settings className="h-6 w-6 text-primary" />,
+  title: "SEO Técnico",
+  description: "Optimización técnica avanzada para sitios web complejos.",
+  metrics: ["Core Web Vitals", "Indexación", "Arquitectura web"]
+}, {
+  icon: <MessageSquare className="h-6 w-6 text-primary" />,
+  title: "SEO de Contenidos",
+  description: "Estrategia de contenido optimizada para atraer tráfico cualificado.",
+  metrics: ["Content marketing", "Blog SEO", "Engagement"]
+}];
+const processSteps = [{
+  number: "01",
+  title: "Auditoría y Análisis",
+  description: "Analizamos tu sitio web, competencia y palabras clave para crear una estrategia personalizada.",
+  icon: <Search className="h-6 w-6" />
+}, {
+  number: "02",
+  title: "Estrategia SEO",
+  description: "Desarrollamos un plan integral que combina SEO técnico, contenido y link building.",
+  icon: <Target className="h-6 w-6" />
+}, {
+  number: "03",
+  title: "Implementación",
+  description: "Ejecutamos todas las optimizaciones on-page, creamos contenido y construimos enlaces.",
+  icon: <Settings className="h-6 w-6" />
+}, {
+  number: "04",
+  title: "Monitoreo y Optimización",
+  description: "Seguimos y optimizamos continuamente basándose en datos y resultados reales.",
+  icon: <BarChart3 className="h-6 w-6" />
+}];
+const successCases = [{
+  name: "Asendia",
+  category: "Servicios Logísticos",
+  service: "SEO Nacional + Local",
+  results: "+450% tráfico orgánico, Top 3 en 85% keywords",
+  improvement: "+450%",
+  timeframe: "6 meses"
+}, {
+  name: "Nova Praxis",
+  category: "Consultora Data Analytics",
+  service: "SEO Técnico + Contenidos",
+  results: "+320% leads orgánicos, #1 en 'data analytics'",
+  improvement: "+320%",
+  timeframe: "4 meses"
+}, {
+  name: "Get Time",
+  category: "Software de Gestión",
+  service: "SEO SaaS + Link Building",
+  results: "+280% tráfico cualificado, 40% más demos",
+  improvement: "+280%",
+  timeframe: "5 meses"
+}, {
+  name: "Asesoría Robles",
+  category: "Servicios Integrales",
+  service: "SEO Local + Reputación",
+  results: "+200% consultas, dominio local completo",
+  improvement: "+200%",
+  timeframe: "3 meses"
+}];
+const benefits = ["Más tráfico orgánico cualificado", "Mejor posicionamiento en Google", "Mayor visibilidad de marca", "Incremento en leads y ventas", "ROI superior a la publicidad pagada", "Resultados sostenibles a largo plazo", "Autoridad y credibilidad online", "Ventaja competitiva sostenida", "Análisis y reportes detallados", "Estrategia adaptada a tu sector"];
+const faqItems = [{
+  question: "¿Cuánto tiempo tardan en verse los resultados del SEO?",
+  answer: "Los primeros resultados del SEO suelen verse entre 3-6 meses, aunque esto puede variar según la competencia del sector y el estado actual de tu web. Los resultados más significativos se alcanzan entre 6-12 meses, pero el SEO es una inversión a largo plazo que proporciona beneficios sostenidos."
+}, {
+  question: "¿Qué diferencia hay entre SEO y publicidad pagada (SEM)?",
+  answer: "El SEO genera tráfico orgánico gratuito a largo plazo, mientras que SEM requiere pago continuo por cada clic. El SEO tiene un ROI superior a largo plazo, mayor credibilidad y resultados sostenibles, aunque requiere más tiempo para ver resultados que la publicidad pagada."
+}, {
+  question: "¿Garantizan la primera posición en Google?",
+  answer: "No ofrecemos garantías de posiciones específicas ya que Google cambia constantemente sus algoritmos. Sin embargo, garantizamos mejoras medibles en tráfico orgánico, posicionamiento de keywords relevantes y visibilidad general basándose en nuestra metodología probada."
+}, {
+  question: "¿Qué incluye el servicio de SEO mensual?",
+  answer: "Incluye optimización on-page continua, creación de contenido SEO, link building, monitoreo de posiciones, análisis de competencia, reportes mensuales detallados y ajustes estratégicos basados en los resultados y cambios del algoritmo."
+}, {
+  question: "¿Trabajan SEO local para mi negocio físico?",
+  answer: "Sí, tenemos amplia experiencia en SEO local. Optimizamos Google My Business, creamos citas locales consistentes, gestionamos reseñas, optimizamos para búsquedas 'cerca de mí' y implementamos schema markup local para maximizar tu visibilidad en tu zona geográfica."
+}, {
+  question: "¿Cómo miden y reportan los resultados SEO?",
+  answer: "Utilizamos herramientas profesionales como Google Analytics, Search Console, SEMrush y Ahrefs para medir tráfico orgánico, posiciones de keywords, CTR, conversiones y ROI. Enviamos reportes mensuales detallados con análisis de progreso y recomendaciones estratégicas."
+}, {
+  question: "¿Pueden trabajar con mi web actual o necesito una nueva?",
+  answer: "Podemos optimizar cualquier web existente. Realizamos una auditoría inicial para identificar oportunidades de mejora técnica y de contenido. Solo recomendamos una nueva web si los problemas técnicos son tan severos que impiden un SEO efectivo."
+}, {
+  question: "¿Qué pasa si Google cambia su algoritmo?",
+  answer: "Seguimos de cerca todas las actualizaciones de Google y adaptamos nuestras estrategias en consecuencia. Usamos técnicas 'white hat' que se alinean con las directrices de Google, por lo que nuestros clientes están protegidos ante cambios algorítmicos y mantienen sus posiciones."
+}];
 const SeoPositioning = () => {
   const successCasesConfig = getServiceSuccessCasesConfig('seo-positioning');
-  
-  return (
-    <div className="min-h-screen bg-white">
+  return <div className="min-h-screen bg-white">
       <Navigation />
       
       {/* Breadcrumb */}
@@ -321,8 +264,7 @@ const SeoPositioning = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {seoServices.map((service, index) => (
-              <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full">
+            {seoServices.map((service, index) => <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full">
                 <CardHeader className="pb-4">
                   <div className="mb-4 p-3 rounded-lg bg-primary/10 w-fit">
                     {service.icon}
@@ -332,16 +274,13 @@ const SeoPositioning = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-2">
-                    {service.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center gap-2">
+                    {service.features.map((feature, idx) => <div key={idx} className="flex items-center gap-2">
                         <CheckCircle className="h-4 w-4 text-green-600" />
                         <span className="text-sm text-gray-600">{feature}</span>
-                      </div>
-                    ))}
+                      </div>)}
                   </div>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -362,8 +301,7 @@ const SeoPositioning = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {seoTypes.map((type, index) => (
-              <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full">
+            {seoTypes.map((type, index) => <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full">
                 <CardHeader className="text-center">
                   <div className="mx-auto mb-4 p-3 rounded-lg bg-primary/10 w-fit">
                     {type.icon}
@@ -373,16 +311,13 @@ const SeoPositioning = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-2">
-                    {type.metrics.map((metric, idx) => (
-                      <div key={idx} className="flex items-center gap-2">
+                    {type.metrics.map((metric, idx) => <div key={idx} className="flex items-center gap-2">
                         <div className="w-2 h-2 bg-primary rounded-full"></div>
                         <span className="text-xs text-gray-600">{metric}</span>
-                      </div>
-                    ))}
+                      </div>)}
                   </div>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -400,12 +335,10 @@ const SeoPositioning = () => {
                 autoridad, credibilidad y genera resultados sostenibles a largo plazo.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {benefits.map((benefit, index) => (
-                  <div key={index} className="flex items-center gap-3">
+                {benefits.map((benefit, index) => <div key={index} className="flex items-center gap-3">
                     <CheckCircle className="h-5 w-5 text-green-600 shrink-0" />
                     <span className="text-sm text-gray-700">{benefit}</span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
             
@@ -453,26 +386,10 @@ const SeoPositioning = () => {
       </section>
 
       {/* Process Section */}
-      <ProcessSection
-        title='Nuestro <span className="text-gradient-primary">Proceso</span> SEO'
-        subtitle="Metodología probada que garantiza resultados medibles y sostenibles en el posicionamiento de tu negocio."
-        steps={processSteps}
-        backgroundColor="bg-gradient-to-br from-gray-50 to-white"
-        showIcons={true}
-      />
+      <ProcessSection title='Nuestro <span className="text-gradient-primary">Proceso</span> SEO' subtitle="Metodología probada que garantiza resultados medibles y sostenibles en el posicionamiento de tu negocio." steps={processSteps} backgroundColor="bg-gradient-to-br from-gray-50 to-white" showIcons={true} />
 
       {/* Success Cases Section - Using standardized component */}
-      {successCasesConfig && (
-        <SuccessCasesSection
-          id="casos-exito"
-          title="Casos de <span className='text-gradient-primary'>éxito</span>"
-          subtitle={successCasesConfig.subtitle}
-          filterTags={successCasesConfig.filterTags}
-          specificCases={successCasesConfig.specificCases}
-          maxCases={4}
-          showAllLink={true}
-        />
-      )}
+      {successCasesConfig && <SuccessCasesSection id="casos-exito" title="Casos de <span className='text-gradient-primary'>éxito</span>" subtitle={successCasesConfig.subtitle} filterTags={successCasesConfig.filterTags} specificCases={successCasesConfig.specificCases} maxCases={4} showAllLink={true} />}
 
       {/* Kit Digital Banner */}
       <KitDigitalBanner />
@@ -480,9 +397,7 @@ const SeoPositioning = () => {
       {/* CTA Section */}
       <section className="py-16 md:py-20 bg-gradient-to-r from-primary to-accent text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            ¿Preparado para Dominar Google?
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">¿Preparado para dominar Google?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
             Agenda una auditoría SEO gratuita y descubre cómo podemos llevar tu negocio 
             a la primera página de Google.
@@ -520,14 +435,9 @@ const SeoPositioning = () => {
       </section>
 
       {/* Contact Section */}
-      <ServiceContactSection
-        title="¿Hablamos sobre tu estrategia SEO?"
-        subtitle="Cuéntanos tu proyecto y objetivos de posicionamiento. Te responderemos con una propuesta personalizada."
-      />
+      <ServiceContactSection title="¿Hablamos sobre tu estrategia SEO?" subtitle="Cuéntanos tu proyecto y objetivos de posicionamiento. Te responderemos con una propuesta personalizada." />
       
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default SeoPositioning;
