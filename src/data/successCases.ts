@@ -660,17 +660,5 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
       industries: ["tecnologia"],
       tools: []
     }
-  },
-  {
-    name: "Hayas CRM",
-    industry: "Sistema CRM para pequeñas y medianas empresas",
-    service: "Branding de producto, web y estrategia go-to-market",
-    link: "/casos-exito/hayas-crm",
-    image: "/lovable-uploads/hayas-logo.png",
-    tags: {
-      services: ["creacion-marca", "diseno-web", "estrategia-contenidos"],
-      industries: ["software", "tecnologia"],
-      tools: []
-    }
   }
 ];
