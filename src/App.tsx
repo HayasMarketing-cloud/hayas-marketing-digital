@@ -89,6 +89,7 @@ import MarketingDirecto from './pages/MarketingDirecto';
 import ImplementacionFunnel from './pages/ImplementacionFunnel';
 import CasosExito from './pages/CasosExito';
 import ScrollToTop from './components/ScrollToTop';
+import DraftProtection from './components/DraftProtection';
 import EmailMarketingAutomatizaciones from './pages/EmailMarketingAutomatizaciones';
 import ConsultoriaEstrategicaAnalitica from './pages/ConsultoriaEstrategicaAnalitica';
 import IntegracionesIAProcesos from './pages/IntegracionesIAProcesos';
@@ -142,7 +143,8 @@ const App = () => (
     <BrowserRouter>
       <ScrollToTop />
         <SofiaWidget />
-        <Routes>
+        <DraftProtection>
+          <Routes>
           {/* PÁGINA PRINCIPAL */}
           <Route path="/" element={<Index />} />
           
@@ -292,6 +294,7 @@ const App = () => (
           {/* 404 - DEBE IR SIEMPRE AL FINAL */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        </DraftProtection>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
