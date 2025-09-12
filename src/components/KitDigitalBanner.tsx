@@ -21,8 +21,8 @@ const KitDigitalBanner = () => {
               </Badge>
               
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-                Aplica tu bono digital para la creación de tu{' '}
-                <span className="text-gradient-primary">sitio web</span>
+                Aplica tu bono digital para mejorar tu presencia orgánica en{' '}
+                <span className="text-gradient-primary">Google</span>
               </h2>
               
               <p className="text-lg text-gray-300 leading-relaxed">
