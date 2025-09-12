@@ -37,6 +37,19 @@ const Blog = () => {
 
   const allPosts = [
     {
+      id: 'configuracion-email-marketing-cumplimiento-normativo',
+      title: 'Guía técnica para configurar tu email marketing con cumplimiento normativo (en cualquier plataforma)',
+      description: 'Aprende a configurar SPF, DKIM y DMARC en cualquier plataforma de email marketing. Guía completa para cumplir con RGPD, CAN-SPAM y garantizar la entregabilidad.',
+      excerpt: 'Configura tu email marketing profesionalmente en HubSpot, Go High Level, Mailchimp y más. Cumple normativas RGPD y mejora la entregabilidad.',
+      category: 'Email Marketing',
+      readTime: '12 min',
+      date: '12 Sep 2025',
+      image: '/email-marketing-automatizaciones-hero.jpg',
+      slug: '/blog/configuracion-email-marketing-cumplimiento-normativo',
+      tags: ['Email Marketing', 'Cumplimiento Normativo', 'SPF', 'DKIM', 'DMARC', 'RGPD', 'HubSpot', 'Go High Level', 'Mailchimp'],
+      featured: true
+    },
+    {
       id: 'kit-digital-marketing-guia-completa-2025',
       title: "Guía del Kit Digital: qué es, para quién y cómo aprovecharlo (antes del 31 de octubre de 2025)",
       description: "Descubre todo sobre el Kit Digital: qué es, quién puede solicitarlo, cuánto dinero puedes conseguir y cómo aprovecharlo para digitalizar tu negocio antes del 31 de octubre de 2025.",
