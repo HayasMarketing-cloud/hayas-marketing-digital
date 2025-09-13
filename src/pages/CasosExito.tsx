@@ -139,7 +139,7 @@ const CasosExito = () => {
             />
             <div className="flex items-center justify-center gap-4 text-sm text-muted-foreground">
               <Badge variant="secondary" className="text-sm">
-                {ALL_SUCCESS_CASES.length} Proyectos Completados
+                {'>'}200 proyectos completados
               </Badge>
               <Badge variant="secondary" className="text-sm">
                 +15 Sectores
