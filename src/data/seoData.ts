@@ -1,6 +1,13 @@
 // Central SEO data with advanced Schema.org and canonical strategy
 import { allServices } from './services';
 
+export interface PageHeadings {
+  h1?: string;
+  h2Primary?: string;
+  h2Secondary?: string[];
+  h3Strategic?: string[];
+}
+
 export interface EnhancedPageSEOData {
   // Basic SEO
   title: string;
@@ -31,6 +38,9 @@ export interface EnhancedPageSEOData {
   
   // Content categorization
   category: 'main' | 'service' | 'solution' | 'blog' | 'case-study' | 'kit-digital';
+  
+  // Headings structure for SEO optimization  
+  headings?: PageHeadings;
 }
 
 // Organization Schema - Complete data
@@ -149,7 +159,20 @@ export const seoData: Record<string, EnhancedPageSEOData> = {
         question: "¿Cuánto tiempo toma ver resultados?",
         answer: "Los primeros resultados en campañas publicitarias pueden verse en 2-4 semanas. Para SEO y estrategias de contenido, los resultados sólidos aparecen entre 3-6 meses. La implementación de CRM y automatizaciones genera eficiencias inmediatas desde el primer mes."
       }
-    ]
+    ],
+    headings: {
+      h2Primary: 'Servicios de marketing digital y CRM integral',
+      h2Secondary: [
+        'Soluciones de automatización y captación de leads',
+        'Ventajas de nuestras estrategias de marketing digital',
+        'Casos de éxito en marketing y CRM'
+      ],
+      h3Strategic: [
+        'Automatización de procesos comerciales',
+        'Estrategias de branding personalizadas',
+        'Captación de leads cualificados'
+      ]
+    }
   },
 
   '/blog': {
@@ -162,7 +185,20 @@ export const seoData: Record<string, EnhancedPageSEOData> = {
     about: ['Marketing Digital', 'CRM', 'Automatización', 'Inteligencia Artificial', 'Tendencias'],
     mentions: ['HubSpot', 'GoHighLevel', 'Google Analytics', 'Meta Business'],
     inLanguage: 'es-ES',
-    category: 'main'
+    category: 'main',
+    headings: {
+      h2Primary: 'Estrategias de marketing digital y CRM destacadas',
+      h2Secondary: [
+        'Últimas tendencias en marketing y automatización',
+        'Guías prácticas para implementar CRM',
+        'Casos de éxito en marketing digital'
+      ],
+      h3Strategic: [
+        'Herramientas de automatización de marketing',
+        'Técnicas de captación de leads',
+        'Optimización de procesos comerciales'
+      ]
+    }
   },
 
   '/servicios': {
@@ -175,7 +211,20 @@ export const seoData: Record<string, EnhancedPageSEOData> = {
     about: ['Servicios de Marketing', 'CRM', 'Automatización', 'Diseño Web', 'SEO'],
     mentions: ['Branding', 'Google Ads', 'Meta Ads', 'HubSpot', 'GoHighLevel'],
     inLanguage: 'es-ES',
-    category: 'main'
+    category: 'main',
+    headings: {
+      h2Primary: 'Soluciones especializadas en marketing digital y CRM',
+      h2Secondary: [
+        'Servicios de branding y posicionamiento web',
+        'Automatización CRM y gestión de clientes',
+        'Estrategias de captación y conversión de leads'
+      ],
+      h3Strategic: [
+        'Diseño web profesional y SEO',
+        'Implementación de sistemas CRM',
+        'Campañas de marketing digital'
+      ]
+    }
   },
 
   '/casos-exito': {

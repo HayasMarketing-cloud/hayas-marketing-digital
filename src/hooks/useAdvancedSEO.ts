@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
-import { getSEOData, EnhancedPageSEOData, extractConceptsFromContent } from '@/data/seoData';
+import { getSEOData, EnhancedPageSEOData, extractConceptsFromContent, PageHeadings } from '@/data/seoData';
 
 interface UseAdvancedSEOOptions {
   pageContent?: string; // For automatic about/mentions extraction
@@ -25,6 +25,7 @@ interface AdvancedSEOResult {
   category: string;
   pillarPage?: string;
   isCanonical: boolean; // Whether this page should be indexed
+  headings?: PageHeadings;
 }
 
 export const useAdvancedSEO = (options: UseAdvancedSEOOptions = {}): AdvancedSEOResult => {
@@ -90,7 +91,8 @@ export const useAdvancedSEO = (options: UseAdvancedSEOOptions = {}): AdvancedSEO
       schemaType: mergedSEO.schemaType,
       category: mergedSEO.category,
       pillarPage: mergedSEO.pillarPage,
-      isCanonical
+      isCanonical,
+      headings: mergedSEO.headings
     };
   }, [location.pathname, pageContent, customSEO, skipAutoExtraction]);
 };

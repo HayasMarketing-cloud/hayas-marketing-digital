@@ -10,13 +10,15 @@ interface PillarServicesSectionProps {
   title?: string;
   description?: string;
   accentColor?: 'impulsa' | 'conecta' | 'activa';
+  useOptimizedH2?: boolean;
 }
 
 const PillarServicesSection: React.FC<PillarServicesSectionProps> = ({
   pillar,
   title = 'Nuestros Servicios',
   description = 'Descubre todos los servicios profesionales de esta solución para hacer crecer tu negocio de forma estratégica y sostenible.',
-  accentColor = 'impulsa'
+  accentColor = 'impulsa',
+  useOptimizedH2 = false
 }) => {
   const [expanded, setExpanded] = useState(false);
   const [view, setView] = useState<'grid' | 'list'>('grid');
@@ -36,7 +38,14 @@ const PillarServicesSection: React.FC<PillarServicesSectionProps> = ({
     <section id="nuestros-servicios" className="py-8 md:py-12 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="title-section">{title}</h2>
+          <h2 className="title-section">
+            {useOptimizedH2 ? (
+              pillar === 'impulsa' ? 'Servicios de branding y posicionamiento web' :
+              pillar === 'conecta' ? 'Automatización CRM y gestión de clientes' :
+              pillar === 'activa' ? 'Estrategias de captación y conversión de leads' :
+              title
+            ) : title}
+          </h2>
           <p className="text-description max-w-3xl mx-auto">
             {description}
           </p>

@@ -109,7 +109,9 @@ const Servicios = () => {
                   </div>
                   
                   <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-                    {pillarMeta[key].title}
+                    {key === 'impulsa' && 'Servicios de branding y posicionamiento web'}
+                    {key === 'conecta' && 'Automatización CRM y gestión de clientes'}
+                    {key === 'activa' && 'Estrategias de captación y conversión de leads'}
                   </h2>
                   
                   <div className="w-24 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto mb-6 rounded-full"></div>

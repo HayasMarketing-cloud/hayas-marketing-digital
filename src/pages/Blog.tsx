@@ -389,7 +389,7 @@ const Blog = () => {
       {/* Featured Post */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-center">Artículo Destacado</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center">Estrategias de marketing digital y CRM destacadas</h2>
           <div className="max-w-4xl mx-auto">
             <Card className="overflow-hidden hover:shadow-xl transition-shadow">
               <div className="md:flex">
@@ -449,7 +449,7 @@ const Blog = () => {
       {/* Recent Posts */}
       <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-center">Artículos Recientes</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center">Últimas tendencias en marketing y automatización</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {recentPosts.map((post) => (
               <Card key={post.id} className="overflow-hidden hover:shadow-lg transition-shadow group">
@@ -511,7 +511,7 @@ const Blog = () => {
       {/* All Articles */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-center">Todos los artículos</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center">Guías prácticas para implementar CRM</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {allArticles.map((post) => (
               <Card key={post.id} className="overflow-hidden hover:shadow-lg transition-shadow group">
