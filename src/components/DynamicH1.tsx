@@ -18,8 +18,8 @@ export const DynamicH1: React.FC<DynamicH1Props> = ({
 }) => {
   const optimizedH1 = useDynamicH1(fallback);
   
-  // Use optimized H1 if available, otherwise use children or fallback
-  const content = optimizedH1 !== fallback ? optimizedH1 : (children || fallback);
+  // Use children first, then optimized H1, then fallback
+  const content = children || (optimizedH1 !== fallback ? optimizedH1 : fallback);
   
   return (
     <h1 className={className}>
