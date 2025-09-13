@@ -169,7 +169,7 @@ export const seoData: Record<string, EnhancedPageSEOData> = {
   // Main Pages
   '/': {
     title: 'Hayas Marketing | Estrategia, CRM, IA y Marketing Digital',
-    h1: 'Agencia de marketing digital y gestión de clientes',
+    h1: 'Agencia de Marketing Digital',
     description: 'Soluciones de marketing y ventas: branding, captación de leads, CRM, automatización e IA para hacer crecer tu negocio.',
     keywords: ['marketing digital', 'CRM', 'automatización', 'inteligencia artificial', 'leads', 'ventas'],
     canonical: '/',
