@@ -90,10 +90,17 @@ const Index = () => {
   return (
     <div id="top" className="min-h-screen flex flex-col">
       <Seo
-        title="Hayas Marketing | Estrategia, CRM, IA y Marketing"
+        title="Hayas Marketing | Estrategia, CRM, IA y Marketing Digital"
         description="Soluciones de marketing y ventas: branding, captación de leads, CRM, automatización e IA para hacer crecer tu negocio."
         canonical="/"
-        structuredData={[org, website, faqSchema]}
+        keywords={['marketing digital', 'CRM', 'automatización', 'inteligencia artificial', 'leads', 'ventas']}
+        ogImage="/og-home.jpg"
+        ogType="website"
+        inLanguage="es-ES"
+        about={['Marketing Digital', 'CRM', 'Automatización de Ventas', 'Inteligencia Artificial']}
+        mentions={['HubSpot', 'GoHighLevel', 'SofÍA', 'Google Ads', 'Meta Ads']}
+        faqs={homeFaqs}
+        structuredData={[org, website]}
       />
       <Navigation />
       

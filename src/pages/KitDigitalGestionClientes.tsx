@@ -149,7 +149,7 @@ const KitDigitalGestionClientes = () => {
   const seoData = {
     title: "Kit Digital Gestión de Clientes CRM - Ayuda hasta 12.000€ | Hayas Marketing",
     description: "Implementa tu CRM profesional con el Kit Digital 2025. Ayudas hasta 3.000€ para Segmento III y hasta 12.000€ para comunidades de bienes. Automatiza tu gestión comercial.",
-    keywords: "Kit Digital, CRM, gestión clientes, automatización ventas, HubSpot, GoHighLevel, bono digital, Segmento III, comunidades bienes",
+    keywords: ["Kit Digital", "CRM", "gestión clientes", "automatización ventas", "HubSpot", "GoHighLevel", "bono digital", "Segmento III", "comunidades bienes"],
     canonical: "https://hayasmarketing.com/kit-digital/gestion-clientes-crm"
   };
 

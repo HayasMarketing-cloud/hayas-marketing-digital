@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import { servicesByPillar, pillarMeta, PillarKey } from '@/data/services';
 import EnhancedBreadcrumbs from '@/components/EnhancedBreadcrumbs';
 import Seo from '@/components/Seo';
+import { DynamicH1 } from '@/components/DynamicH1';
 import { Sparkles, Target, Users2, Zap } from 'lucide-react';
 
 const pillarOrder: PillarKey[] = ['impulsa', 'conecta', 'activa'];
@@ -27,9 +28,15 @@ const Servicios = () => {
   return (
     <>
       <Seo 
-        title="Servicios de Marketing Digital - Hayas Marketing"
+        title="Servicios de Marketing Digital y CRM - Hayas Marketing"
         description="Descubre todos nuestros servicios de marketing digital: creación de marca, diseño web, SEO, CRM, automatización y más. Soluciones integrales para hacer crecer tu negocio."
         canonical="/servicios"
+        keywords={['servicios marketing digital', 'CRM', 'automatización', 'diseño web', 'SEO']}
+        ogImage="/og-servicios.jpg"
+        ogType="website"
+        inLanguage="es-ES"
+        about={['Servicios de Marketing', 'CRM', 'Automatización', 'Diseño Web', 'SEO']}
+        mentions={['Branding', 'Google Ads', 'Meta Ads', 'HubSpot', 'GoHighLevel']}
       />
       <Navigation />
       
@@ -59,9 +66,10 @@ const Servicios = () => {
                 </div>
               </div>
               
-              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 bg-gradient-to-r from-white via-purple-100 to-blue-100 bg-clip-text text-transparent">
-                Servicios Hayas Marketing
-              </h1>
+              <DynamicH1 
+                fallback="Servicios Hayas Marketing"
+                className="text-4xl md:text-6xl font-bold text-white mb-6 bg-gradient-to-r from-white via-purple-100 to-blue-100 bg-clip-text text-transparent"
+              />
               
               <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
                 Soluciones integrales de marketing digital e inteligencia artificial

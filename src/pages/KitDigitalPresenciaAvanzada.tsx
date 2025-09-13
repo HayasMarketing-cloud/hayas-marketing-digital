@@ -149,7 +149,7 @@ const KitDigitalPresenciaAvanzada = () => {
   const seoData = {
     title: "Kit Digital Presencia Avanzada SEO - Ayuda hasta 12.000€ | Hayas Marketing",
     description: "Optimiza tu posicionamiento SEO con el Kit Digital 2025. Ayudas hasta 3.000€ para Segmento III y hasta 12.000€ para comunidades de bienes. Domina Google con SEO profesional.",
-    keywords: "Kit Digital, SEO avanzado, posicionamiento Google, optimización SEO, presencia avanzada internet, bono digital, Segmento III, comunidades bienes",
+    keywords: ["Kit Digital", "SEO avanzado", "posicionamiento Google", "optimización SEO", "presencia avanzada internet", "bono digital", "Segmento III", "comunidades bienes"],
     canonical: "https://hayasmarketing.com/kit-digital/presencia-avanzada-seo"
   };
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import { DynamicH1 } from '@/components/DynamicH1';
 import OptimizedImage from './OptimizedImage';
 const HeroSection = () => {
   return <main className="relative section-tight overflow-hidden">
@@ -11,9 +12,12 @@ const HeroSection = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center">
           <div className="lg:w-1/2 lg:pr-12 mb-10 lg:mb-0">
-            <h1 className="title-hero leading-tight animate-fade-in">
-              Agencia de <span className="text-gradient-primary">Marketing Digital</span> y <span className="text-gradient-primary">Gestión de Clientes</span>
-            </h1>
+            <DynamicH1 
+              fallback="Agencia de Marketing Digital y Gestión de Clientes"
+              className="title-hero leading-tight animate-fade-in"
+            >
+              Agencia de <span className="text-gradient-primary">marketing digital</span> y <span className="text-gradient-primary">gestión de clientes</span>
+            </DynamicH1>
             <p className="text-hero text-gray-700 animate-slide-up mb-6">Te ayudamos a crecer con una estrategia personalizada que combina creatividad, tecnología y datos, siempre adaptada a tus recursos y objetivos.</p>
             <div className="flex justify-start animate-slide-up">
               <Button asChild variant="outline" className="py-6 px-8 text-lg font-medium hover-scale focus-ring border-primary text-primary hover:bg-primary hover:text-white" aria-label="Descubrir cómo trabajamos en Hayas Marketing">

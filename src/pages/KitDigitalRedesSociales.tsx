@@ -149,7 +149,7 @@ const KitDigitalRedesSociales = () => {
   const seoData = {
     title: "Kit Digital Gestión de Red Social - Ayuda hasta 12.000€ | Hayas Marketing",
     description: "Gestiona tus redes sociales profesionalmente con el Kit Digital 2025. Ayudas hasta 3.000€ para Segmento III y hasta 12.000€ para comunidades de bienes. Aumenta tu presencia digital.",
-    keywords: "Kit Digital, redes sociales, social media, gestión redes, contenido digital, publicidad redes, bono digital, Segmento III, comunidades bienes",
+    keywords: ["Kit Digital", "redes sociales", "social media", "gestión redes", "contenido digital", "publicidad redes", "bono digital", "Segmento III", "comunidades bienes"],
     canonical: "https://hayasmarketing.com/kit-digital/gestion-red-social"
   };
 

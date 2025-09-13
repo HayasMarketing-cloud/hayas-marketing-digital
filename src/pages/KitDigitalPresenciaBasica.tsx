@@ -145,7 +145,7 @@ const KitDigitalPresenciaBasica = () => {
   const seoData = {
     title: "Kit Digital Presencia Básica en Internet - Ayuda hasta 12.000€ | Hayas Marketing",
     description: "Crea tu página web profesional con el Kit Digital 2025. Ayudas hasta 3.000€ para Segmento III y hasta 12.000€ para comunidades de bienes. Solicita tu asesoría gratuita.",
-    keywords: "Kit Digital, presencia básica internet, página web, diseño web, ayuda digitalización, bono digital, Segmento III, comunidades bienes",
+    keywords: ["Kit Digital", "presencia básica internet", "página web", "diseño web", "ayuda digitalización", "bono digital", "Segmento III", "comunidades bienes"],
     canonical: "https://hayasmarketing.com/kit-digital/presencia-basica-internet"
   };
 
