@@ -8,6 +8,9 @@ import { Card, CardContent } from '@/components/ui/card';
 import { ALL_SUCCESS_CASES, SuccessCase } from '@/data/successCases';
 import SuccessCaseFilters from '@/components/SuccessCaseFilters';
 import { getIndustriesInGroup, getServicesWithSuccessCases } from '@/data/successCasesTags';
+import { EnhancedSEO } from '@/components/EnhancedSEO';
+import { DynamicH1 } from '@/components/DynamicH1';
+import { DynamicH2 } from '@/components/DynamicH2';
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -91,6 +94,15 @@ const CasosExito = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <EnhancedSEO 
+        customSEO={{
+          title: 'Casos de Éxito en Marketing Digital y CRM - Hayas Marketing',
+          description: 'Descubre casos reales de transformación digital con marketing, CRM y automatización. Resultados medibles en más de 15 sectores diferentes.',
+          canonical: '/casos-exito',
+          keywords: ['casos éxito marketing digital', 'gestión de clientes', 'transformación digital', 'resultados marketing', 'CRM casos reales'],
+          robots: 'index, follow'
+        }}
+      />
       <Navigation />
       
       {/* Breadcrumbs */}
@@ -116,13 +128,15 @@ const CasosExito = () => {
       <section className="py-20 bg-gradient-to-r from-primary/10 via-primary/5 to-background">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-              Casos de <span className="text-primary">Éxito</span>
-            </h1>
-            <p className="text-lg text-muted-foreground mb-8">
-              Descubre cómo hemos transformado negocios reales con nuestras soluciones integrales 
-              de marketing, branding y tecnología. Cada proyecto es único, cada resultado es medible.
-            </p>
+            <DynamicH1 
+              fallback="Casos de Éxito en Marketing Digital y CRM"
+              className="text-4xl lg:text-5xl font-bold mb-6"
+            />
+            <DynamicH2 
+              type="primary"
+              fallback="Transformaciones digitales exitosas de nuestros clientes"
+              className="text-lg text-muted-foreground mb-8"
+            />
             <div className="flex items-center justify-center gap-4 text-sm text-muted-foreground">
               <Badge variant="secondary" className="text-sm">
                 {ALL_SUCCESS_CASES.length} Proyectos Completados
@@ -242,9 +256,12 @@ const CasosExito = () => {
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-            ¿Quieres ser nuestro próximo caso de éxito?
-          </h2>
+          <DynamicH2 
+            type="secondary"
+            index={2}
+            fallback="¿Quieres ser nuestro próximo caso de éxito?"
+            className="text-3xl lg:text-4xl font-bold mb-4"
+          />
           <p className="text-lg opacity-90 mb-8 max-w-2xl mx-auto">
             Cada proyecto es único, pero el resultado es siempre el mismo: 
             crecimiento medible y transformación digital real.

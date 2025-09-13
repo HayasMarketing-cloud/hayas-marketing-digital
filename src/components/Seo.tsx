@@ -13,6 +13,7 @@ interface SeoProps {
   about?: string[];
   mentions?: string[];
   faqs?: Array<{ question: string; answer: string }>;
+  robots?: string; // e.g., "noindex, follow" or "index, follow"
 }
 
 const Seo = ({ 
@@ -26,7 +27,8 @@ const Seo = ({
   inLanguage = 'es-ES',
   about,
   mentions,
-  faqs
+  faqs,
+  robots
 }: SeoProps) => {
   useEffect(() => {
     // Title
@@ -57,22 +59,43 @@ const Seo = ({
     // Language
     document.documentElement.lang = inLanguage.split('-')[0];
 
-    // Canonical
-    if (canonical) {
-      const href = canonical.startsWith('http') ? canonical : `${window.location.origin}${canonical}`;
-      let linkCanonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-      if (!linkCanonical) {
-        linkCanonical = document.createElement('link');
-        linkCanonical.rel = 'canonical';
-        document.head.appendChild(linkCanonical);
+    // Robots meta tag for indexing control
+    if (robots) {
+      let robotsMeta = document.querySelector('meta[name="robots"]') as HTMLMetaElement | null;
+      if (!robotsMeta) {
+        robotsMeta = document.createElement('meta');
+        robotsMeta.name = 'robots';
+        document.head.appendChild(robotsMeta);
       }
-      linkCanonical.href = href;
+      robotsMeta.content = robots;
+    } else {
+      // Default to index, follow if no robots specified
+      let robotsMeta = document.querySelector('meta[name="robots"]') as HTMLMetaElement | null;
+      if (!robotsMeta) {
+        robotsMeta = document.createElement('meta');
+        robotsMeta.name = 'robots';
+        document.head.appendChild(robotsMeta);
+      }
+      robotsMeta.content = 'index, follow';
     }
+
+    // Canonical - always add canonical tag
+    const currentPath = window.location.pathname;
+    const canonicalUrl = canonical || currentPath;
+    const href = canonicalUrl.startsWith('http') ? canonicalUrl : `${window.location.origin}${canonicalUrl}`;
+    
+    let linkCanonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (!linkCanonical) {
+      linkCanonical = document.createElement('link');
+      linkCanonical.rel = 'canonical';
+      document.head.appendChild(linkCanonical);
+    }
+    linkCanonical.href = href;
 
     // Open Graph & Twitter
     const pageUrl = canonical
       ? (canonical.startsWith('http') ? canonical : `${window.location.origin}${canonical}`)
-      : window.location.href;
+      : `${window.location.origin}${currentPath}`;
 
     const setMeta = (attr: 'name' | 'property', key: string, value: string) => {
       let el = document.querySelector(`meta[${attr}="${key}"]`) as HTMLMetaElement | null;
@@ -193,7 +216,7 @@ const Seo = ({
         if (document.head.contains(s)) document.head.removeChild(s);
       });
     };
-  }, [title, description, keywords, canonical, structuredData, ogImage, ogType, inLanguage, about, mentions, faqs]);
+  }, [title, description, keywords, canonical, structuredData, ogImage, ogType, inLanguage, about, mentions, faqs, robots]);
 
   return null;
 };

@@ -46,6 +46,7 @@ export const EnhancedSEO: React.FC<EnhancedSEOProps> = ({
       mentions={seoData.mentions}
       faqs={seoData.faqs}
       structuredData={seoData.structuredData}
+      robots={seoData.robots}
     />
   );
 };

@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
-import { getSEOData, EnhancedPageSEOData, extractConceptsFromContent, PageHeadings } from '@/data/seoData';
+import { getSEOData, EnhancedPageSEOData, extractConceptsFromContent, PageHeadings, getCanonicalUrl, getRobotsDirective } from '@/data/seoData';
 
 interface UseAdvancedSEOOptions {
   pageContent?: string; // For automatic about/mentions extraction
@@ -26,6 +26,7 @@ interface AdvancedSEOResult {
   pillarPage?: string;
   isCanonical: boolean; // Whether this page should be indexed
   headings?: PageHeadings;
+  robots?: string; // Robots directive for indexing control
 }
 
 export const useAdvancedSEO = (options: UseAdvancedSEOOptions = {}): AdvancedSEOResult => {
@@ -55,10 +56,15 @@ export const useAdvancedSEO = (options: UseAdvancedSEOOptions = {}): AdvancedSEO
       extractedConcepts = extractConceptsFromContent(pageContent);
     }
 
-    // Merge all SEO data
+    // Merge all SEO data with canonical and robots strategy
+    const strategicCanonical = getCanonicalUrl(path);
+    const strategicRobots = getRobotsDirective(path);
+    
     const mergedSEO = {
       ...baseSEO,
       ...customSEO,
+      canonical: customSEO?.canonical || baseSEO?.canonical || strategicCanonical,
+      robots: customSEO?.robots || baseSEO?.robots || strategicRobots,
       about: customSEO?.about || baseSEO.about || extractedConcepts.about,
       mentions: customSEO?.mentions || baseSEO.mentions || extractedConcepts.mentions,
     };
@@ -73,7 +79,7 @@ export const useAdvancedSEO = (options: UseAdvancedSEOOptions = {}): AdvancedSEO
     ];
 
     // Determine if this is a canonical page (should be indexed)
-    const isCanonical = !mergedSEO.pillarPage;
+    const isCanonical = mergedSEO.robots?.includes('index') !== false && !mergedSEO.pillarPage;
 
     return {
       title: mergedSEO.title,
@@ -92,7 +98,8 @@ export const useAdvancedSEO = (options: UseAdvancedSEOOptions = {}): AdvancedSEO
       category: mergedSEO.category,
       pillarPage: mergedSEO.pillarPage,
       isCanonical,
-      headings: mergedSEO.headings
+      headings: mergedSEO.headings,
+      robots: mergedSEO.robots
     };
   }, [location.pathname, pageContent, customSEO, skipAutoExtraction]);
 };

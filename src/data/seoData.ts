@@ -41,6 +41,10 @@ export interface EnhancedPageSEOData {
   
   // Headings structure for SEO optimization  
   headings?: PageHeadings;
+  
+  // Robots and indexing control
+  robots?: string; // e.g., "noindex, follow" or "index, follow"
+  isIndexable?: boolean; // Helper for clarity
 }
 
 // Organization Schema - Complete data
@@ -91,7 +95,31 @@ export const hayasOrganizationSchema = {
 
 // Strategic canonical mapping to avoid cannibalization
 export const canonicalStrategy = {
+  // Main pillar pages that should receive canonical links from related pages
   pillars: {
+    '/casos-exito': {
+      // All individual case studies should point here for SEO consolidation
+      satellites: [
+        // All CasoExito* pages should canonical to /casos-exito
+        '/casos-exito/aecoc', '/casos-exito/aip-clinic', '/casos-exito/aistercel',
+        '/casos-exito/alfix-consultores', '/casos-exito/alma-cruceros', '/casos-exito/asendia',
+        '/casos-exito/asp-asepsia', '/casos-exito/beka-finance', '/casos-exito/beluga-linguistics',
+        '/casos-exito/bodegas-vilano', '/casos-exito/bufete-maseras', '/casos-exito/buhobike',
+        '/casos-exito/covebo', '/casos-exito/cabrera-cervantes', '/casos-exito/carniceria-picos-europa',
+        '/casos-exito/centro-roraima', '/casos-exito/conversa-consultores', '/casos-exito/corte-a-films',
+        '/casos-exito/eurobits-technologies', '/casos-exito/eva-champion', '/casos-exito/finect',
+        '/casos-exito/flap', '/casos-exito/formato-educativo', '/casos-exito/fundacion-casa-mexico',
+        '/casos-exito/give-and-go', '/casos-exito/hikvision', '/casos-exito/hotteo-travel',
+        '/casos-exito/hubspot-for-startups', '/casos-exito/i-virgen-extra', '/casos-exito/inbound-students',
+        '/casos-exito/jointsup', '/casos-exito/la-banera-kd', '/casos-exito/la-oriental-sin-gluten',
+        '/casos-exito/lola-robles-abogada', '/casos-exito/lualca', '/casos-exito/moda-intima-vania',
+        '/casos-exito/motiva-tu-mente', '/casos-exito/nexo-vital', '/casos-exito/nova-praxis',
+        '/casos-exito/omr', '/casos-exito/owo-game', '/casos-exito/pamdamedia', '/casos-exito/peixos-emilio',
+        '/casos-exito/peris-electricidad', '/casos-exito/plaza-estacion', '/casos-exito/quantic-bi',
+        '/casos-exito/rivas-centro', '/casos-exito/suministros-xskd', '/casos-exito/translate-with-style',
+        '/casos-exito/unitrips', '/casos-exito/wideum', '/casos-exito/wooptix'
+      ]
+    },
     '/servicios': {
       satellites: [
         '/servicios/creacion-marca',
@@ -123,11 +151,17 @@ export const canonicalStrategy = {
         '/soluciones/impulsa-tu-marca',
         '/soluciones/marketing-visibilidad'
       ]
-    },
-    '/casos-exito': {
-      satellites: [] // All case studies should canonical to main page to avoid dilution
     }
-  }
+  },
+  
+  // Pages that should not be indexed for SEO but need canonical
+  noIndexPages: [
+    '/gracias',
+    '/confirmacion',
+    '/legal/privacidad',
+    '/legal/cookies',
+    '/legal/terminos'
+  ]
 };
 
 // Enhanced SEO Data with H1s from CSV and advanced Schema.org
@@ -229,15 +263,30 @@ export const seoData: Record<string, EnhancedPageSEOData> = {
 
   '/casos-exito': {
     title: 'Casos de Éxito en Marketing Digital y CRM - Hayas Marketing',
-    h1: 'Casos de éxito en marketing digital y CRM',
-    description: 'Descubre cómo hemos ayudado a empresas a crecer con nuestras soluciones de marketing digital, CRM y automatización. Casos reales con resultados medibles.',
-    keywords: ['casos éxito', 'marketing digital', 'CRM', 'resultados', 'clientes'],
+    h1: 'Casos de éxito en marketing digital y gestión de clientes',
+    description: 'Descubre casos reales de transformación digital con marketing, CRM y automatización. Resultados medibles en más de 15 sectores diferentes.',
+    keywords: ['casos éxito marketing digital', 'gestión de clientes', 'transformación digital', 'resultados marketing', 'CRM casos reales'],
     canonical: '/casos-exito',
     schemaType: 'WebPage',
-    about: ['Casos de Éxito', 'Resultados', 'Transformación Digital', 'ROI'],
+    about: ['Casos de Éxito', 'Marketing Digital', 'Gestión de Clientes', 'Transformación Digital', 'ROI'],
     mentions: ['HubSpot', 'GoHighLevel', 'Google Ads', 'SEO', 'Automatización'],
     inLanguage: 'es-ES',
-    category: 'main'
+    category: 'main',
+    isIndexable: true,
+    robots: 'index, follow',
+    headings: {
+      h2Primary: 'Transformaciones digitales exitosas de nuestros clientes',
+      h2Secondary: [
+        'Casos de éxito en marketing digital por sectores',
+        'Resultados medibles en CRM y automatización',
+        'Testimonios y métricas de crecimiento'
+      ],
+      h3Strategic: [
+        'Implementaciones de CRM exitosas',
+        'Estrategias de marketing que funcionan',
+        'ROI comprobado en transformación digital'
+      ]
+    }
   },
 
   '/contacto': {
@@ -421,7 +470,7 @@ export const seoData: Record<string, EnhancedPageSEOData> = {
   }
 };
 
-// Helper function to get SEO data with fallbacks
+// Helper function to get SEO data with canonical strategy
 export const getSEOData = (path: string): EnhancedPageSEOData | null => {
   // Direct match
   if (seoData[path]) {
@@ -441,6 +490,44 @@ export const getSEOData = (path: string): EnhancedPageSEOData | null => {
   }
   
   return null;
+};
+
+// Helper function to determine canonical URL based on strategy
+export const getCanonicalUrl = (currentPath: string): string => {
+  // Check if current path is a satellite page that should canonical to pillar
+  for (const pillarUrl in canonicalStrategy.pillars) {
+    const pillar = canonicalStrategy.pillars[pillarUrl as keyof typeof canonicalStrategy.pillars];
+    if (pillar.satellites.includes(currentPath)) {
+      return pillarUrl;
+    }
+  }
+  
+  // Default to self-canonical
+  return currentPath;
+};
+
+// Helper function to determine robots directive
+export const getRobotsDirective = (currentPath: string): string => {
+  // No-index pages
+  if (canonicalStrategy.noIndexPages.includes(currentPath)) {
+    return 'noindex, follow';
+  }
+  
+  // Individual case study pages (CasoExito pattern)
+  if (currentPath.match(/^\/casos-exito\/.+/) || currentPath.includes('CasoExito')) {
+    return 'noindex, follow';
+  }
+  
+  // Satellite pages that canonical to pillar pages
+  for (const pillarUrl in canonicalStrategy.pillars) {
+    const pillar = canonicalStrategy.pillars[pillarUrl as keyof typeof canonicalStrategy.pillars];
+    if (pillar.satellites.includes(currentPath)) {
+      return 'noindex, follow';
+    }
+  }
+  
+  // Default indexable pages
+  return 'index, follow';
 };
 
 // Helper to extract about and mentions from content
