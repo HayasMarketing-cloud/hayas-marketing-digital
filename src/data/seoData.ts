@@ -299,7 +299,20 @@ export const seoData: Record<string, EnhancedPageSEOData> = {
     about: ['Contacto', 'Consulta Gratuita', 'Atención al Cliente'],
     mentions: ['SofÍA', 'Consultoría', 'Reunión'],
     inLanguage: 'es-ES',
-    category: 'main'
+    category: 'main',
+    headings: {
+      h2Primary: 'Solicita tu consulta gratuita de marketing digital',
+      h2Secondary: [
+        'Contacta con nuestros expertos en CRM y automatización',
+        'Agenda una reunión estratégica sin compromiso',
+        'Hayas Marketing: tu partner en transformación digital'
+      ],
+      h3Strategic: [
+        'Consultoría especializada en marketing digital',
+        'Análisis gratuito de tu situación actual',
+        'Propuesta personalizada para tu negocio'
+      ]
+    }
   },
 
   '/nosotros': {
@@ -312,7 +325,20 @@ export const seoData: Record<string, EnhancedPageSEOData> = {
     about: ['Empresa', 'Equipo', 'Experiencia', 'Valores'],
     mentions: ['Marketing Digital', 'CRM', 'Inteligencia Artificial'],
     inLanguage: 'es-ES',
-    category: 'main'
+    category: 'main',
+    headings: {
+      h2Primary: 'Equipo especializado en marketing digital y CRM',
+      h2Secondary: [
+        'Nuestra experiencia en transformación digital',
+        'Valores y metodología Hayas Marketing',
+        'Casos de éxito de nuestro equipo'
+      ],
+      h3Strategic: [
+        'Expertos en implementación de CRM',
+        'Especialistas en automatización de marketing',
+        'Consultores en inteligencia artificial'
+      ]
+    }
   },
 
   '/agendar-reunion': {
@@ -325,7 +351,20 @@ export const seoData: Record<string, EnhancedPageSEOData> = {
     about: ['Consulta Estratégica', 'Reunión', 'Análisis de Negocio'],
     mentions: ['Estrategia', 'CRM', 'Marketing Digital'],
     inLanguage: 'es-ES',
-    category: 'main'
+    category: 'main',
+    headings: {
+      h2Primary: 'Consulta estratégica gratuita personalizada',
+      h2Secondary: [
+        'Reunión con expertos en marketing digital y CRM',
+        'Análisis completo de tu situación actual',
+        'Propuesta de soluciones adaptadas a tu negocio'
+      ],
+      h3Strategic: [
+        'Diagnóstico gratuito de marketing digital',
+        'Evaluación de herramientas CRM actuales',
+        'Plan de acción personalizado'
+      ]
+    }
   },
 
   // Solution Pages
@@ -340,7 +379,20 @@ export const seoData: Record<string, EnhancedPageSEOData> = {
     about: ['Automatización de Ventas', 'CRM', 'Lead Scoring', 'Conversión'],
     mentions: ['HubSpot', 'GoHighLevel', 'Pipeline', 'ROI'],
     inLanguage: 'es-ES',
-    category: 'solution'
+    category: 'solution',
+    headings: {
+      h2Primary: 'Automatización de procesos de ventas y CRM',
+      h2Secondary: [
+        'Sistemas CRM para optimizar tu pipeline comercial',
+        'Lead scoring y gestión inteligente de prospectos',
+        'Automatizaciones que cierran más ventas'
+      ],
+      h3Strategic: [
+        'Pipeline de ventas optimizado con HubSpot',
+        'Automatización de seguimiento de leads',
+        'Integración CRM con herramientas de marketing'
+      ]
+    }
   },
 
   '/soluciones/conecta-con-tus-clientes': {
@@ -354,7 +406,20 @@ export const seoData: Record<string, EnhancedPageSEOData> = {
     about: ['Gestión de Clientes', 'CRM', 'Fidelización', 'Comunicación'],
     mentions: ['Email Marketing', 'Segmentación', 'Automatización'],
     inLanguage: 'es-ES',
-    category: 'solution'
+    category: 'solution',
+    headings: {
+      h2Primary: 'Herramientas CRM para gestión de clientes',
+      h2Secondary: [
+        'Automatización de comunicaciones personalizadas',
+        'Email marketing y segmentación avanzada',
+        'Fidelización de clientes con CRM inteligente'
+      ],
+      h3Strategic: [
+        'Segmentación de clientes para email marketing',
+        'Automatización de comunicaciones multicanal',
+        'Sistema de fidelización personalizado'
+      ]
+    }
   },
 
   '/soluciones/impulsa-tu-marca': {
@@ -368,7 +433,20 @@ export const seoData: Record<string, EnhancedPageSEOData> = {
     about: ['Branding', 'Identidad de Marca', 'Marketing de Contenidos', 'Visibilidad'],
     mentions: ['Diseño Web', 'SEO', 'Redes Sociales', 'Posicionamiento'],
     inLanguage: 'es-ES',
-    category: 'solution'
+    category: 'solution',
+    headings: {
+      h2Primary: 'Servicios de branding e identidad visual',
+      h2Secondary: [
+        'Creación de marca profesional y memorable',
+        'Estrategias de visibilidad y posicionamiento web',
+        'Marketing de contenidos para impulsar tu marca'
+      ],
+      h3Strategic: [
+        'Diseño de logotipo y manual de marca',
+        'Posicionamiento SEO para mayor visibilidad',
+        'Estrategia de contenidos para redes sociales'
+      ]
+    }
   },
 
   '/soluciones/marketing-visibilidad': {
@@ -382,7 +460,74 @@ export const seoData: Record<string, EnhancedPageSEOData> = {
     about: ['Visibilidad Digital', 'SEO', 'Publicidad Digital', 'Marketing'],
     mentions: ['Google Ads', 'Meta Ads', 'Content Marketing', 'Conversión'],
     inLanguage: 'es-ES',
-    category: 'solution'
+    category: 'solution',
+    headings: {
+      h2Primary: 'Estrategias de visibilidad y posicionamiento web',
+      h2Secondary: [
+        'SEO técnico y marketing de contenidos',
+        'Publicidad digital en Google y Meta',
+        'Optimización de conversión y landing pages'
+      ],
+      h3Strategic: [
+        'Posicionamiento SEO local y nacional',
+        'Campañas de Google Ads rentables',
+        'Marketing de contenidos para redes sociales'
+      ]
+    }
+  },
+
+  '/soluciones/ia-marketing': {
+    title: 'Inteligencia Artificial en Marketing - Automatización Inteligente | Hayas Marketing',
+    h1: 'Inteligencia artificial aplicada al marketing digital',
+    description: 'Implementa IA en tu estrategia de marketing: chatbots inteligentes, personalización, automatización avanzada y análisis predictivo.',
+    keywords: ['inteligencia artificial', 'IA marketing', 'chatbots', 'automatización'],
+    canonical: '/soluciones/ia-marketing',
+    pillarPage: '/soluciones',
+    schemaType: 'Service',
+    about: ['Inteligencia Artificial', 'Marketing Automation', 'Chatbots', 'Personalización'],
+    mentions: ['SofÍA', 'Machine Learning', 'Análisis Predictivo', 'Automatización'],
+    inLanguage: 'es-ES',
+    category: 'solution',
+    headings: {
+      h2Primary: 'Inteligencia artificial aplicada al marketing',
+      h2Secondary: [
+        'Chatbots inteligentes y personalización avanzada',
+        'Automatización de marketing con IA',
+        'Análisis predictivo y optimización continua'
+      ],
+      h3Strategic: [
+        'Implementación de chatbot SofÍA personalizado',
+        'Machine learning para segmentación',
+        'Automatización inteligente de campañas'
+      ]
+    }
+  },
+
+  '/soluciones/marketing-digital': {
+    title: 'Marketing Digital Integral - Estrategia Completa | Hayas Marketing',
+    h1: 'Estrategias integrales de marketing digital',
+    description: 'Solución completa de marketing digital: estrategia, implementación, análisis y optimización continua para hacer crecer tu negocio online.',
+    keywords: ['marketing digital', 'estrategia integral', 'crecimiento online', 'marketing'],
+    canonical: '/soluciones/marketing-digital',
+    pillarPage: '/soluciones',
+    schemaType: 'Service',
+    about: ['Marketing Digital', 'Estrategia Integral', 'Crecimiento Online', 'Análisis'],
+    mentions: ['SEO', 'SEM', 'Social Media', 'Email Marketing', 'Analytics'],
+    inLanguage: 'es-ES',
+    category: 'solution',
+    headings: {
+      h2Primary: 'Estrategias de marketing digital y posicionamiento',
+      h2Secondary: [
+        'Plan integral de marketing digital personalizado',
+        'Implementación multicanal coordinada',
+        'Análisis y optimización continua de resultados'
+      ],
+      h3Strategic: [
+        'Auditoría completa de presencia digital',
+        'Estrategia multicanal integrada',
+        'KPIs y métricas de crecimiento'
+      ]
+    }
   },
 
   // Key Service Pages
@@ -397,7 +542,20 @@ export const seoData: Record<string, EnhancedPageSEOData> = {
     about: ['Branding', 'Identidad de Marca', 'Diseño Gráfico', 'Naming'],
     mentions: ['Logotipo', 'Manual de Marca', 'Identidad Visual'],
     inLanguage: 'es-ES',
-    category: 'service'
+    category: 'service',
+    headings: {
+      h2Primary: 'Servicios profesionales de creación de marca',
+      h2Secondary: [
+        'Desarrollo de identidad visual corporativa',
+        'Naming y creación de logotipo personalizado',
+        'Manual de marca completo y profesional'
+      ],
+      h3Strategic: [
+        'Proceso de naming y registro de marca',
+        'Diseño de logotipo y elementos gráficos',
+        'Paleta cromática y tipografías corporativas'
+      ]
+    }
   },
 
   '/servicios/diseno-web': {
@@ -453,7 +611,20 @@ export const seoData: Record<string, EnhancedPageSEOData> = {
     about: ['Kit Digital', 'Digitalización', 'Subvenciones', 'Transformación Digital'],
     mentions: ['Gobierno España', 'Fondos Europeos', 'PYME'],
     inLanguage: 'es-ES',
-    category: 'kit-digital'
+    category: 'kit-digital',
+    headings: {
+      h2Primary: 'Digitalización empresarial con ayudas Kit Digital',
+      h2Secondary: [
+        'Subvenciones para transformación digital de PYMEs',
+        'Servicios digitales subvencionados al 100%',
+        'Kit Digital: presencia web y gestión de clientes'
+      ],
+      h3Strategic: [
+        'Solicitud de ayudas Kit Digital paso a paso',
+        'Desarrollo web con subvención completa',
+        'Implementación CRM financiada'
+      ]
+    }
   },
 
   '/kit-consulting': {
@@ -466,7 +637,20 @@ export const seoData: Record<string, EnhancedPageSEOData> = {
     about: ['Consultoría Digital', 'PYME', 'Transformación Digital', 'Estrategia'],
     mentions: ['Digitalización', 'Procesos', 'Tecnología'],
     inLanguage: 'es-ES',
-    category: 'kit-digital'
+    category: 'kit-digital',
+    headings: {
+      h2Primary: 'Consultoría digital especializada para PYMEs',
+      h2Secondary: [
+        'Transformación digital estratégica para empresas',
+        'Implementación de procesos digitales eficientes',
+        'Seguimiento y optimización continua'
+      ],
+      h3Strategic: [
+        'Análisis de procesos empresariales actuales',
+        'Diseño de estrategia de digitalización',
+        'Implementación tecnológica personalizada'
+      ]
+    }
   }
 };
 
