@@ -257,15 +257,129 @@ const CaseStudyTemplate: React.FC<CaseStudyProps> = ({
               </section>
             )}
 
-            {/* CTA */}
+            {/* Strategic Internal Linking */}
+            <section className="mb-16">
+              <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-8">
+                <h3 className="text-xl font-semibold mb-6 text-center">
+                  Servicios relacionados con este caso de éxito
+                </h3>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                  <Link 
+                    to="/servicios/implantacion-crm"
+                    className="flex items-center gap-3 p-4 bg-white rounded-lg hover:shadow-md transition-all duration-200 group"
+                  >
+                    <CheckCircle className="w-5 h-5 text-green-600" />
+                    <div>
+                      <div className="font-medium text-sm group-hover:text-primary transition-colors">
+                        Implantación CRM
+                      </div>
+                      <div className="text-xs text-primary font-medium">Popular</div>
+                    </div>
+                  </Link>
+                  
+                  <Link 
+                    to="/servicios/automatizacion-procesos-ventas"
+                    className="flex items-center gap-3 p-4 bg-white rounded-lg hover:shadow-md transition-all duration-200 group"
+                  >
+                    <CheckCircle className="w-5 h-5 text-green-600" />
+                    <div>
+                      <div className="font-medium text-sm group-hover:text-primary transition-colors">
+                        Automatización Ventas
+                      </div>
+                      <div className="text-xs text-primary font-medium">Estratégico</div>
+                    </div>
+                  </Link>
+                  
+                  <Link 
+                    to="/servicios/consultoria-estrategica-analitica"
+                    className="flex items-center gap-3 p-4 bg-white rounded-lg hover:shadow-md transition-all duration-200 group"
+                  >
+                    <CheckCircle className="w-5 h-5 text-green-600" />
+                    <div>
+                      <div className="font-medium text-sm group-hover:text-primary transition-colors">
+                        Consultoría Estratégica
+                      </div>
+                      <div className="text-xs text-primary font-medium">Premium</div>
+                    </div>
+                  </Link>
+                  
+                  <Link 
+                    to="/servicios/captacion-leads-clientes"
+                    className="flex items-center gap-3 p-4 bg-white rounded-lg hover:shadow-md transition-all duration-200 group"
+                  >
+                    <CheckCircle className="w-5 h-5 text-green-600" />
+                    <div>
+                      <div className="font-medium text-sm group-hover:text-primary transition-colors">
+                        Captación de Leads
+                      </div>
+                      <div className="text-xs text-primary font-medium">ROI</div>
+                    </div>
+                  </Link>
+                </div>
+                
+                <div className="text-center mt-6">
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Descubre cómo estas soluciones pueden transformar tu negocio
+                  </p>
+                  <div className="flex flex-wrap justify-center gap-2">
+                    <Button asChild variant="outline" size="sm">
+                      <Link to="/soluciones/conecta-con-tus-clientes">
+                        Ver solución completa
+                      </Link>
+                    </Button>
+                    <Button asChild variant="ghost" size="sm">
+                      <Link to="/casos-exito">
+                        Más casos de éxito
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* CTA with Internal Links */}
             <section className="text-center py-12 bg-gradient-to-r from-primary/10 to-accent/10 rounded-xl">
               <h3 className="text-2xl font-bold mb-4">{ctaTitle}</h3>
               <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
                 {ctaDescription}
               </p>
-              <Button asChild size="lg">
-                <Link to={ctaButtonLink}>{ctaButtonText}</Link>
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                <Button asChild size="lg">
+                  <Link to={ctaButtonLink}>{ctaButtonText}</Link>
+                </Button>
+                <Button asChild size="lg" variant="outline">
+                  <Link to="/casos-exito">Ver más casos de éxito</Link>
+                </Button>
+              </div>
+              
+              {/* Strategic Internal Links */}
+              <div className="border-t border-border/20 pt-8 mt-8">
+                <p className="text-sm text-muted-foreground mb-4">
+                  Descubre nuestras soluciones relacionadas:
+                </p>
+                <div className="flex flex-wrap justify-center gap-2">
+                  <Button asChild variant="ghost" size="sm">
+                    <Link to="/servicios/implantacion-crm">
+                      Implantación CRM
+                    </Link>
+                  </Button>
+                  <Button asChild variant="ghost" size="sm">
+                    <Link to="/servicios/automatizacion-procesos-ventas">
+                      Automatización de Ventas
+                    </Link>
+                  </Button>
+                  <Button asChild variant="ghost" size="sm">
+                    <Link to="/servicios/consultoria-estrategica-analitica">
+                      Consultoría Estratégica
+                    </Link>
+                  </Button>
+                  <Button asChild variant="ghost" size="sm">
+                    <Link to="/soluciones/conecta-con-tus-clientes">
+                      Conecta con tus Clientes
+                    </Link>
+                  </Button>
+                </div>
+              </div>
             </section>
           </div>
         </div>
