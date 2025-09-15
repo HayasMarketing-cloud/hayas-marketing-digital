@@ -1,5 +1,7 @@
 import React from 'react';
 import { ArrowLeft, Brain, Bot, Zap, Target, TrendingUp, Sparkles, Eye, MessageSquare, Settings, BarChart3, Shield } from 'lucide-react';
+import DynamicH1 from '@/components/DynamicH1';
+import { useAdvancedSEO } from '@/hooks/useAdvancedSEO';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -18,8 +20,23 @@ import {
 } from '@/components/ui/breadcrumb';
 
 const SolucionesIA = () => {
+  const seoData = useAdvancedSEO({
+    pageContent: "Servicios profesionales de implementación de IA para marketing digital y gestión de clientes. Ofrecemos automatización inteligente, chatbots, personalización y consultoría estratégica."
+  });
+
   return (
     <div id="top" className="min-h-screen bg-white">
+      <head>
+        <title>{seoData.title}</title>
+        <meta name="description" content={seoData.description} />
+        <link rel="canonical" href={`https://hayasmarketing.com${seoData.canonical}`} />
+        <meta name="robots" content={seoData.robots} />
+        {seoData.structuredData && (
+          <script type="application/ld+json">
+            {JSON.stringify(seoData.structuredData)}
+          </script>
+        )}
+      </head>
       <Navigation />
       
       <main>
@@ -59,9 +76,12 @@ const SolucionesIA = () => {
                 <Badge variant="outline" className="mb-4 text-hayas-600 border-hayas-200">
                   Soluciones IA aplicada a Marketing
                 </Badge>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                <DynamicH1 
+                  fallback="Soluciones de IA aplicada a Marketing"
+                  className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
+                >
                   Potencia tu marketing con <span className="text-gradient-primary">inteligencia artificial</span>
-                </h1>
+                </DynamicH1>
                 <p className="text-xl text-gray-700 mb-8 leading-relaxed">
                   Implementación de inteligencia artificial para automatizar procesos, personalizar 
                   experiencias y optimizar resultados en tu estrategia comercial y de marketing.

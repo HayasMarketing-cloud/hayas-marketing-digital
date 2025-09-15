@@ -116,33 +116,24 @@ const faqItems = [
 const ImpulsaTuMarca = () => {
   // Get impulsa services
   const impulsaServices = servicesByPillar.impulsa || [];
+  
+  const seoData = useAdvancedSEO({
+    pageContent: "Branding estratégico, diseño de identidad y manual de marca para diferenciar tu negocio. Servicios profesionales de creación y desarrollo de marca."
+  });
 
   return (
     <div id="top" className="min-h-screen bg-white">
-      <Seo
-        title="Impulsa tu marca y destaca en un mercado competitivo"
-        description="La identidad de tu marca es tu mayor activo. En Hayas te ayudamos a crear una presencia auténtica, diferenciada y memorable, combinando branding, diseño y marketing estratégico."
-        canonical="/soluciones/impulsa-tu-marca"
-        structuredData={[
-          {
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            name: "Hayas Marketing",
-            url: window.location.origin,
-            logo: `${window.location.origin}/favicon.ico`,
-          },
-          {
-            "@context": "https://schema.org",
-            "@type": "Service",
-            name: "Branding e Identidad de Marca",
-            serviceType: "Branding",
-            provider: { "@type": "Organization", name: "Hayas Marketing", url: window.location.origin, logo: `${window.location.origin}/favicon.ico` },
-            url: `${window.location.origin}/soluciones/impulsa-tu-marca`,
-            areaServed: "España",
-            description: "Branding estratégico, diseño de identidad y manual de marca para diferenciar tu negocio.",
-          },
-        ]}
-      />
+      <head>
+        <title>{seoData.title}</title>
+        <meta name="description" content={seoData.description} />
+        <link rel="canonical" href={`https://hayasmarketing.com${seoData.canonical}`} />
+        <meta name="robots" content={seoData.robots} />
+        {seoData.structuredData && (
+          <script type="application/ld+json">
+            {JSON.stringify(seoData.structuredData)}
+          </script>
+        )}
+      </head>
       <Navigation />
       
       <main>
@@ -173,9 +164,12 @@ const ImpulsaTuMarca = () => {
                 <Badge variant="outline" className="mb-6 text-impulsa-primary border-impulsa-200 bg-white/50">
                   Solución Impulsa tu marca
                 </Badge>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                <DynamicH1 
+                  fallback="Impulsa tu marca y destaca en un mercado competitivo"
+                  className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
+                >
                   Impulsa tu marca y destaca en un mercado competitivo
-                </h1>
+                </DynamicH1>
                 <p className="text-xl text-gray-700 mb-8 leading-relaxed">
                   La identidad de tu marca es tu mayor activo. En Hayas te ayudamos a crear una presencia auténtica, diferenciada y memorable, combinando branding, diseño y marketing estratégico para que tu negocio crezca con propósito.
                 </p>

@@ -15,6 +15,8 @@ import CRMConnectionBenefitsSection from '@/components/CRMConnectionBenefitsSect
 import CRMComparisonSection from '@/components/CRMComparisonSection';
 import { servicesByPillar } from '@/data/services';
 import { ArrowRight, MessageSquare, Calendar } from 'lucide-react';
+import DynamicH1 from '@/components/DynamicH1';
+import { useAdvancedSEO } from '@/hooks/useAdvancedSEO';
 
 // DATOS GUARDADOS TEMPORALMENTE - Sección de tecnologías para uso futuro
 const crmPlatforms = [
@@ -57,8 +59,23 @@ const faqItems = [
 ];
 
 const ConectaConTusClientes = () => {
+  const seoData = useAdvancedSEO({
+    pageContent: "Soluciones CRM profesionales con HubSpot y GoHighLevel. Implementación, configuración y gestión de clientes para empresas que buscan crecimiento sostenible."
+  });
+
   return (
     <div className="min-h-screen bg-white">
+      <head>
+        <title>{seoData.title}</title>
+        <meta name="description" content={seoData.description} />
+        <link rel="canonical" href={`https://hayasmarketing.com${seoData.canonical}`} />
+        <meta name="robots" content={seoData.robots} />
+        {seoData.structuredData && (
+          <script type="application/ld+json">
+            {JSON.stringify(seoData.structuredData)}
+          </script>
+        )}
+      </head>
       <Navigation />
       
       {/* Breadcrumb */}
@@ -78,9 +95,12 @@ const ConectaConTusClientes = () => {
       <section className="py-20 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <DynamicH1 
+              fallback="Conecta con tus clientes, actuales y potenciales"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+            >
               Conecta con tus clientes, <span className="text-gradient-primary">actuales y potenciales</span>
-            </h1>
+            </DynamicH1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
               La verdadera conexión empieza con un CRM que te permite conocer, segmentar y acompañar a tus clientes en cada etapa del camino. En Hayas te ayudamos a elegir e implantar la solución más adecuada entre HubSpot y HighLevel (GHL) para que multipliques tus oportunidades y fortalezcas tus relaciones.
             </p>

@@ -1,5 +1,7 @@
 import React from 'react';
 import { ArrowRight, AlertTriangle, TrendingUp, Eye, Target, Users, Bot, BarChart3, Zap, Settings, CheckCircle, Rocket, DollarSign, Star, Trophy, ArrowLeft } from 'lucide-react';
+import DynamicH1 from '@/components/DynamicH1';
+import { useAdvancedSEO } from '@/hooks/useAdvancedSEO';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -172,32 +174,23 @@ const faqItems = [
 ];
 
 const ActivaTusVentas = () => {
+  const seoData = useAdvancedSEO({
+    pageContent: "Campañas digitales y IA para activar ventas, generar leads y multiplicar resultados comerciales. Especialistas en publicidad online y automatización de procesos de ventas."
+  });
+
   return (
     <div id="top" className="min-h-screen bg-white">
-      <Seo
-        title="Activa tus ventas y multiplica tus resultados"
-        description="Las campañas digitales y la inteligencia artificial son la clave para atraer más clientes y cerrar más ventas. En Hayas combinamos publicidad, analítica y automatización para generar un impacto real en tu negocio."
-        canonical="/soluciones/activa-tus-ventas"
-        structuredData={[
-          {
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            name: "Hayas Marketing",
-            url: window.location.origin,
-            logo: `${window.location.origin}/favicon.ico`,
-          },
-          {
-            "@context": "https://schema.org",
-            "@type": "Service",
-            name: "Activación de Ventas",
-            serviceType: "Sales Activation",
-            provider: { "@type": "Organization", name: "Hayas Marketing", url: window.location.origin, logo: `${window.location.origin}/favicon.ico` },
-            url: `${window.location.origin}/soluciones/activa-tus-ventas`,
-            areaServed: "España",
-            description: "Campañas digitales y IA para activar ventas, generar leads y multiplicar resultados comerciales.",
-          },
-        ]}
-      />
+      <head>
+        <title>{seoData.title}</title>
+        <meta name="description" content={seoData.description} />
+        <link rel="canonical" href={`https://hayasmarketing.com${seoData.canonical}`} />
+        <meta name="robots" content={seoData.robots} />
+        {seoData.structuredData && (
+          <script type="application/ld+json">
+            {JSON.stringify(seoData.structuredData)}
+          </script>
+        )}
+      </head>
       <Navigation />
       
       <main>
@@ -228,9 +221,12 @@ const ActivaTusVentas = () => {
                 <Badge variant="outline" className="mb-6 text-activa-primary border-activa-200 bg-white/50">
                   Solución Activa tus ventas
                 </Badge>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                <DynamicH1 
+                  fallback="Activa tus ventas y multiplica tus resultados"
+                  className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
+                >
                   Activa tus ventas y multiplica tus resultados
-                </h1>
+                </DynamicH1>
                 <p className="text-xl text-gray-700 mb-8 leading-relaxed">
                   Las campañas digitales y la inteligencia artificial son la clave para atraer más clientes y cerrar más ventas. En Hayas combinamos publicidad, analítica y automatización para que tus acciones de marketing generen un impacto real en tu negocio.
                 </p>

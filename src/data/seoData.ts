@@ -477,28 +477,28 @@ export const seoData: Record<string, EnhancedPageSEOData> = {
   },
 
   '/soluciones/ia-marketing': {
-    title: 'Inteligencia Artificial en Marketing - Automatización Inteligente | Hayas Marketing',
-    h1: 'Inteligencia artificial aplicada al marketing digital',
-    description: 'Implementa IA en tu estrategia de marketing: chatbots inteligentes, personalización, automatización avanzada y análisis predictivo.',
-    keywords: ['inteligencia artificial', 'IA marketing', 'chatbots', 'automatización'],
+    title: 'Soluciones de IA aplicada a Marketing y Gestión de Clientes | Hayas Marketing',
+    h1: 'Soluciones de IA aplicada a Marketing y Gestión de Clientes',
+    description: 'Servicios profesionales de implementación de IA para marketing digital. Automatización de procesos, gestión inteligente de clientes y optimización comercial con inteligencia artificial.',
+    keywords: ['soluciones IA marketing', 'servicios automatización IA', 'implementación inteligencia artificial', 'gestión clientes IA', 'consultoría IA marketing'],
     canonical: '/soluciones/ia-marketing',
     pillarPage: '/soluciones',
     schemaType: 'Service',
-    about: ['Inteligencia Artificial', 'Marketing Automation', 'Chatbots', 'Personalización'],
-    mentions: ['SofÍA', 'Machine Learning', 'Análisis Predictivo', 'Automatización'],
+    about: ['Soluciones IA Marketing', 'Automatización Comercial', 'Gestión Inteligente', 'Consultoría IA'],
+    mentions: ['SofÍA', 'Implementación IA', 'Servicios IA', 'Automatización Marketing'],
     inLanguage: 'es-ES',
     category: 'solution',
     headings: {
-      h2Primary: 'Inteligencia artificial aplicada al marketing',
+      h2Primary: 'Servicios profesionales de implementación de IA',
       h2Secondary: [
-        'Chatbots inteligentes y personalización avanzada',
-        'Automatización de marketing con IA',
-        'Análisis predictivo y optimización continua'
+        'Automatización inteligente para resultados comerciales',
+        'Gestión avanzada de clientes con IA',
+        'Consultoría estratégica en inteligencia artificial'
       ],
       h3Strategic: [
-        'Implementación de chatbot SofÍA personalizado',
-        'Machine learning para segmentación',
-        'Automatización inteligente de campañas'
+        'Implementación de soluciones IA personalizadas',
+        'Automatización de procesos comerciales',
+        'Integración IA con sistemas existentes'
       ]
     }
   },
@@ -649,6 +649,33 @@ export const seoData: Record<string, EnhancedPageSEOData> = {
         'Análisis de procesos empresariales actuales',
         'Diseño de estrategia de digitalización',
         'Implementación tecnológica personalizada'
+      ]
+    }
+  },
+
+  '/soluciones/activa-tu-estrategia-digital': {
+    title: 'Activa tu Estrategia Digital Integral | Hayas Marketing',
+    h1: 'Activa tu Estrategia Digital Integral',
+    description: 'Desarrolla una estrategia digital completa que alinee branding, captación y ventas. Consultoría estratégica para el crecimiento sostenido de tu negocio.',
+    keywords: ['estrategia digital integral', 'consultoría estrategia marketing', 'transformación digital empresas', 'planificación marketing digital'],
+    canonical: '/soluciones/activa-tu-estrategia-digital',
+    pillarPage: '/soluciones',
+    schemaType: 'Service',
+    about: ['Estrategia Digital', 'Consultoría Marketing', 'Planificación Digital', 'Crecimiento Sostenible'],
+    mentions: ['Branding', 'Captación', 'Ventas', 'Automatización', 'ROI'],
+    inLanguage: 'es-ES',
+    category: 'solution',
+    headings: {
+      h2Primary: 'Consultoría estratégica para el crecimiento digital',
+      h2Secondary: [
+        'Estrategia completa: branding, captación y ventas',
+        'Planificación digital alineada con objetivos',
+        'Implementación y seguimiento de resultados'
+      ],
+      h3Strategic: [
+        'Auditoría digital completa y diagnóstico',
+        'Diseño de estrategia integral personalizada',
+        'Implementación por fases y medición ROI'
       ]
     }
   }
