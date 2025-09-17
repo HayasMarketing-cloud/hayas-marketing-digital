@@ -10,6 +10,8 @@ import SuccessCasesSection from '@/components/SuccessCasesSection';
 import Seo from '@/components/Seo';
 import FAQSection from '@/components/FAQSection';
 import IntermediateCTA from '@/components/IntermediateCTA';
+import DynamicH1 from '@/components/DynamicH1';
+import { useAdvancedSEO } from '@/hooks/useAdvancedSEO';
 import { servicesByPillar } from '@/data/services';
 import { successCaseImages } from '@/data/successCaseImages';
 import {
