@@ -100,8 +100,100 @@ Redirect 301 /casos-de-exito/formato-educativo /es/casos-de-exito/estrategia-de-
 </IfModule>
 
 # ========================================
+# REDIRECCIONES ADICIONALES DEL PDF - PÁGINAS PRINCIPALES
+# ========================================
+# Redirecciones de páginas principales y navegación
+
+Redirect 301 /es/soluciones/ /es
+Redirect 301 /es/herramientas/ /es
+Redirect 301 /es/recursos/ /es/blog
+Redirect 301 /es/precios/ /es
+Redirect 301 /es/contacto/ /es/contacto
+Redirect 301 /es/about/ /es/nosotros
+Redirect 301 /es/team/ /es/nosotros
+
+# ========================================
+# REDIRECCIONES ADICIONALES DEL PDF - ARTÍCULOS DE BLOG
+# ========================================
+# Artículos específicos y genéricos del blog
+
+Redirect 301 /es/blog/marketing-automation-hubspot/ /es/blog/automatizacion-de-marketing-digital
+Redirect 301 /es/blog/inbound-marketing-strategy/ /es/blog/estrategia-de-marketing-de-contenidos-eficaz
+Redirect 301 /es/blog/lead-generation-tips/ /es/blog
+Redirect 301 /es/blog/crm-implementation/ /es/blog/que-es-un-crm-o-customer-relationship-management
+Redirect 301 /es/blog/digital-transformation/ /es/blog/automatizacion-de-marketing-digital
+Redirect 301 /es/blog/social-media-strategy/ /es/blog
+Redirect 301 /es/blog/content-marketing-best-practices/ /es/blog/como-crear-una-estrategia-de-marketing-de-contenidos-eficaz
+Redirect 301 /es/blog/email-marketing-automation/ /es/blog/buenas-practicas-tecnicas-de-email-marketing-con-hubspot
+Redirect 301 /es/blog/hubspot-onboarding/ /es/blog/que-es-un-crm-o-customer-relationship-management
+Redirect 301 /es/blog/seo-fundamentals/ /es/blog
+Redirect 301 /es/blog/web-design-trends/ /es/blog
+Redirect 301 /es/blog/analytics-setup/ /es/blog
+Redirect 301 /es/blog/conversion-optimization/ /es/blog
+
+# ========================================
+# REDIRECCIONES ADICIONALES DEL PDF - SERVICIOS Y PÁGINAS COMERCIALES
+# ========================================
+# URLs de servicios que redirigen a la nueva estructura
+
+Redirect 301 /es/servicios/ /es
+Redirect 301 /es/marketing-digital/ /es/servicios/estrategia-de-marketing-digital-360
+Redirect 301 /es/diseno-web/ /es/servicios/diseno-y-desarrollo-paginas-web
+Redirect 301 /es/desarrollo-web/ /es/servicios/diseno-y-desarrollo-paginas-web
+Redirect 301 /es/seo/ /es/servicios/posicionamiento-web-seo
+Redirect 301 /es/sem/ /es/servicios/publicidad-en-google-ads
+Redirect 301 /es/social-media/ /es/servicios/estrategia-de-marketing-digital-360
+Redirect 301 /es/branding/ /es/servicios/branding-e-identidad-de-marca
+Redirect 301 /es/ecommerce/ /es/servicios/diseno-de-tienda-online
+Redirect 301 /es/analytics/ /es/servicios/estrategia-de-marketing-digital-360
+Redirect 301 /es/hubspot/ /es/servicios/crm-y-automatizacion-de-marketing
+Redirect 301 /es/crm/ /es/servicios/crm-y-automatizacion-de-marketing
+Redirect 301 /es/lead-generation/ /es/servicios/estrategia-de-marketing-digital-360
+Redirect 301 /es/conversion-optimization/ /es/servicios/estrategia-de-marketing-digital-360
+Redirect 301 /es/marketing-automation/ /es/servicios/crm-y-automatizacion-de-marketing
+Redirect 301 /es/digital-strategy/ /es/servicios/estrategia-de-marketing-digital-360
+Redirect 301 /es/web-development/ /es/servicios/diseno-y-desarrollo-paginas-web
+Redirect 301 /es/ppc/ /es/servicios/publicidad-en-google-ads
+Redirect 301 /es/content-marketing/ /es/servicios/estrategia-de-marketing-digital-360
+Redirect 301 /es/email-marketing/ /es/servicios/estrategia-de-marketing-digital-360
+
+# ========================================
+# REDIRECCIONES ADICIONALES DEL PDF - VARIACIONES Y CORRECCIONES
+# ========================================
+# Variaciones de URLs y correcciones ortográficas
+
+Redirect 301 /es/kit-digital-gestion-de-clientes/ /es/servicios/kit-digital-gestion-de-clientes-crm
+Redirect 301 /es/kit-digital-presencia-basica-web/ /es/servicios/kit-digital-presencia-basica-web
+Redirect 301 /es/kit-digital-paginas-web/ /es/kit-digital
+Redirect 301 /es/inbound-marketing/ /es/servicios/estrategia-de-marketing-digital-360
+Redirect 301 /es/inbound-sales/ /es/servicios/estrategia-de-marketing-digital-360
+Redirect 301 /es/automatizacion/ /es/servicios/crm-y-automatizacion-de-marketing
+Redirect 301 /es/consultoria/ /es/servicios/estrategia-de-marketing-digital-360
+Redirect 301 /es/formacion/ /es/servicios/crm-y-automatizacion-de-marketing
+Redirect 301 /es/publicidad/ /es/servicios/publicidad-en-google-ads
+Redirect 301 /es/posicionamiento/ /es/servicios/posicionamiento-web-seo
+
+# ========================================
+# REDIRECCIONES ADICIONALES DEL PDF - KIT CONSULTING ELIMINADO
+# ========================================
+# URLs de Kit Consulting que redirigen a página de contenido eliminado
+
+Redirect 301 /es/kit-consulting/ /es/contenido-eliminado
+Redirect 301 /es/kitconsulting/ /es/contenido-eliminado
+Redirect 301 /es/asesoramiento-ia/ /es/contenido-eliminado
+Redirect 301 /es/asesoramiento-datos/ /es/contenido-eliminado
+Redirect 301 /es/asesoramiento-transformacion/ /es/contenido-eliminado
+Redirect 301 /es/asesoramiento-ventas/ /es/contenido-eliminado
+Redirect 301 /es/asesoramiento-ciberseguridad/ /es/contenido-eliminado
+Redirect 301 /es/consulting-ia/ /es/contenido-eliminado
+Redirect 301 /es/consulting-datos/ /es/contenido-eliminado
+Redirect 301 /es/consulting-digital/ /es/contenido-eliminado
+
+# ========================================
 # NOTA IMPORTANTE
 # ========================================
 # Redirecciones migradas desde WordPress/RankMath para mantener SEO.
-# Todas las URLs críticas del blog y servicios han sido preservadas.
-# Las redirecciones están organizadas por categorías para facilitar el mantenimiento.
+# Total de ~100 redirecciones implementadas:
+# - ~40 redirecciones originales (blog, servicios críticos, legacy)
+# - ~60 redirecciones adicionales del PDF validadas
+# Todas están organizadas por categorías para facilitar el mantenimiento.
