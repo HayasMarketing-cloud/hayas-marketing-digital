@@ -15,7 +15,7 @@ const BlogTagFilter: React.FC<BlogTagFilterProps> = ({ className }) => {
     <div className={cn("bg-muted/30 border-y border-border", className)}>
       <div className="container mx-auto px-4 py-6">
         <div className="flex flex-wrap gap-3 justify-center">
-          <Link to="/blog">
+          <Link to="/es/blog">
             <Badge 
               variant={!tag ? "default" : "secondary"}
               className={cn(
@@ -30,7 +30,7 @@ const BlogTagFilter: React.FC<BlogTagFilterProps> = ({ className }) => {
           </Link>
           
           {tagsLevel1.map((tagData) => (
-            <Link key={tagData.slug} to={`/blog/tag/${tagData.slug}`}>
+            <Link key={tagData.slug} to={`/es/blog/tag/${tagData.slug}`}>
               <Badge 
                 variant={tag === tagData.slug ? "default" : "secondary"}
                 className={cn(

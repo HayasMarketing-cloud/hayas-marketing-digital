@@ -134,7 +134,7 @@ const Footer: React.FC<FooterProps> = ({
                       </Badge>
                     </div>
                     <Button asChild variant="secondary" size="sm" className="bg-white text-hayas-700 hover:bg-gray-100 font-semibold">
-                      <Link to="/kit-consulting">
+                      <Link to="/es/kit-consulting">
                         Solicítalo ahora <ArrowRight className="ml-1 h-4 w-4" />
                       </Link>
                     </Button>
@@ -169,7 +169,7 @@ const Footer: React.FC<FooterProps> = ({
                       </Badge>
                     </div>
                     <Button asChild variant="secondary" size="sm" className="bg-white text-blue-700 hover:bg-gray-100 font-semibold">
-                      <Link to="/kit-digital">
+                      <Link to="/es/kit-digital">
                         Solicítalo ahora <ArrowRight className="ml-1 h-4 w-4" />
                       </Link>
                     </Button>

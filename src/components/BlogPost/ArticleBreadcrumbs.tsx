@@ -19,10 +19,10 @@ const ArticleBreadcrumbs: React.FC<ArticleBreadcrumbsProps> = ({
       <nav className="flex items-center space-x-2 text-sm">
         {showHome && (
           <>
-            <Link 
-              to="/" 
-              className="flex items-center text-muted-foreground hover:text-primary transition-colors"
-            >
+        <Link 
+          to="/es/" 
+          className="flex items-center text-muted-foreground hover:text-primary transition-colors"
+        >
               <Home className="h-4 w-4 mr-1" />
               Inicio
             </Link>
@@ -31,7 +31,7 @@ const ArticleBreadcrumbs: React.FC<ArticleBreadcrumbsProps> = ({
         )}
         
         <Link 
-          to="/blog" 
+          to="/es/blog" 
           className="flex items-center text-muted-foreground hover:text-primary transition-colors group"
         >
           <ChevronLeft className="h-4 w-4 mr-1 group-hover:-translate-x-1 transition-transform" />

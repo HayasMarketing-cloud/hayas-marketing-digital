@@ -104,7 +104,7 @@ const Navigation = () => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center">
-              <Link to="/" className="flex items-center" onClick={() => window.scrollTo(0, 0)}>
+              <Link to="/es/" className="flex items-center" onClick={() => window.scrollTo(0, 0)}>
                 <img
                   src="/lovable-uploads/7ec653d8-b796-48ee-9657-8f0301af6e55.png"
                   alt="Hayas Marketing Logo"
@@ -132,7 +132,7 @@ const Navigation = () => {
 
               {/* Casos de Éxito: solo enlace */}
               <Link
-                to="/casos-exito"
+                to="/es/casos-exito"
                 className="text-foreground hover:text-primary font-medium transition-colors py-2"
                 onClick={() => window.scrollTo(0, 0)}
               >
@@ -200,7 +200,7 @@ const Navigation = () => {
                     </button>
                     
                     <Link
-                      to="/casos-exito"
+                      to="/es/casos-exito"
                       className="block text-foreground hover:text-primary font-medium transition-colors px-4 py-3 hover:bg-muted/50 rounded"
                       onClick={closeMobileMenu}
                     >
@@ -216,7 +216,7 @@ const Navigation = () => {
                     </button>
                     
                     <Link
-                      to="/nosotros"
+                      to="/es/nosotros"
                       className="block text-foreground hover:text-primary font-medium transition-colors px-4 py-3 hover:bg-muted/50 rounded"
                       onClick={closeMobileMenu}
                     >
@@ -224,7 +224,7 @@ const Navigation = () => {
                     </Link>
                     
                     <Link
-                      to="/blog"
+                      to="/es/blog"
                       className="block text-foreground hover:text-primary font-medium transition-colors px-4 py-3 hover:bg-muted/50 rounded"
                       onClick={closeMobileMenu}
                     >
@@ -232,7 +232,7 @@ const Navigation = () => {
                     </Link>
                     
                     <Link
-                      to="/contacto"
+                      to="/es/contacto"
                       className="block text-foreground hover:text-primary font-medium transition-colors px-4 py-3 hover:bg-muted/50 rounded"
                       onClick={closeMobileMenu}
                     >

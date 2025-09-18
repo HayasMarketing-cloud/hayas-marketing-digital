@@ -81,7 +81,7 @@ const CaseStudyTemplate: React.FC<CaseStudyProps> = ({
   ctaTitle,
   ctaDescription,
   ctaButtonText,
-  ctaButtonLink = "/agendar-reunion"
+  ctaButtonLink = "/es/agendar-reunion"
 }) => {
   return (
     <div className="min-h-screen bg-background">
@@ -100,17 +100,17 @@ const CaseStudyTemplate: React.FC<CaseStudyProps> = ({
           <div className="container mx-auto px-4">
             <Breadcrumb>
               <BreadcrumbList>
-                <BreadcrumbItem>
-                  <BreadcrumbLink asChild>
-                    <Link to="/">Inicio</Link>
-                  </BreadcrumbLink>
-                </BreadcrumbItem>
-                <BreadcrumbSeparator />
-                <BreadcrumbItem>
-                  <BreadcrumbLink asChild>
-                    <Link to="/casos-exito">Casos de Éxito</Link>
-                  </BreadcrumbLink>
-                </BreadcrumbItem>
+                  <BreadcrumbItem>
+                    <BreadcrumbLink asChild>
+                      <Link to="/es/">Inicio</Link>
+                    </BreadcrumbLink>
+                  </BreadcrumbItem>
+                  <BreadcrumbSeparator />
+                  <BreadcrumbItem>
+                    <BreadcrumbLink asChild>
+                      <Link to="/es/casos-exito">Casos de Éxito</Link>
+                    </BreadcrumbLink>
+                  </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
                   <BreadcrumbPage>{companyName}</BreadcrumbPage>
@@ -265,7 +265,7 @@ const CaseStudyTemplate: React.FC<CaseStudyProps> = ({
                 </h3>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
                   <Link 
-                    to="/servicios/implantacion-crm"
+                    to="/es/servicios/implantacion-crm"
                     className="flex items-center gap-3 p-4 bg-white rounded-lg hover:shadow-md transition-all duration-200 group"
                   >
                     <CheckCircle className="w-5 h-5 text-green-600" />
@@ -278,7 +278,7 @@ const CaseStudyTemplate: React.FC<CaseStudyProps> = ({
                   </Link>
                   
                   <Link 
-                    to="/servicios/automatizacion-procesos-ventas"
+                    to="/es/servicios/automatizacion-procesos-ventas"
                     className="flex items-center gap-3 p-4 bg-white rounded-lg hover:shadow-md transition-all duration-200 group"
                   >
                     <CheckCircle className="w-5 h-5 text-green-600" />
@@ -291,7 +291,7 @@ const CaseStudyTemplate: React.FC<CaseStudyProps> = ({
                   </Link>
                   
                   <Link 
-                    to="/servicios/consultoria-estrategica-analitica"
+                    to="/es/servicios/consultoria-estrategica-analitica"
                     className="flex items-center gap-3 p-4 bg-white rounded-lg hover:shadow-md transition-all duration-200 group"
                   >
                     <CheckCircle className="w-5 h-5 text-green-600" />
@@ -304,7 +304,7 @@ const CaseStudyTemplate: React.FC<CaseStudyProps> = ({
                   </Link>
                   
                   <Link 
-                    to="/servicios/captacion-leads-clientes"
+                    to="/es/servicios/captacion-leads-clientes"
                     className="flex items-center gap-3 p-4 bg-white rounded-lg hover:shadow-md transition-all duration-200 group"
                   >
                     <CheckCircle className="w-5 h-5 text-green-600" />
@@ -323,15 +323,15 @@ const CaseStudyTemplate: React.FC<CaseStudyProps> = ({
                   </p>
                   <div className="flex flex-wrap justify-center gap-2">
                     <Button asChild variant="outline" size="sm">
-                      <Link to="/soluciones/conecta-con-tus-clientes">
+                      <Link to="/es/soluciones/conecta-con-tus-clientes">
                         Ver solución completa
                       </Link>
                     </Button>
-                    <Button asChild variant="ghost" size="sm">
-                      <Link to="/casos-exito">
-                        Más casos de éxito
-                      </Link>
-                    </Button>
+                  <Button asChild variant="ghost" size="sm">
+                    <Link to="/es/casos-exito">
+                      Más casos de éxito
+                    </Link>
+                  </Button>
                   </div>
                 </div>
               </div>
@@ -348,7 +348,7 @@ const CaseStudyTemplate: React.FC<CaseStudyProps> = ({
                   <Link to={ctaButtonLink}>{ctaButtonText}</Link>
                 </Button>
                 <Button asChild size="lg" variant="outline">
-                  <Link to="/casos-exito">Ver más casos de éxito</Link>
+                  <Link to="/es/casos-exito">Ver más casos de éxito</Link>
                 </Button>
               </div>
               
@@ -359,22 +359,22 @@ const CaseStudyTemplate: React.FC<CaseStudyProps> = ({
                 </p>
                 <div className="flex flex-wrap justify-center gap-2">
                   <Button asChild variant="ghost" size="sm">
-                    <Link to="/servicios/implantacion-crm">
+                    <Link to="/es/servicios/implantacion-crm">
                       Implantación CRM
                     </Link>
                   </Button>
                   <Button asChild variant="ghost" size="sm">
-                    <Link to="/servicios/automatizacion-procesos-ventas">
+                    <Link to="/es/servicios/automatizacion-procesos-ventas">
                       Automatización de Ventas
                     </Link>
                   </Button>
                   <Button asChild variant="ghost" size="sm">
-                    <Link to="/servicios/consultoria-estrategica-analitica">
+                    <Link to="/es/servicios/consultoria-estrategica-analitica">
                       Consultoría Estratégica
                     </Link>
                   </Button>
                   <Button asChild variant="ghost" size="sm">
-                    <Link to="/soluciones/conecta-con-tus-clientes">
+                    <Link to="/es/soluciones/conecta-con-tus-clientes">
                       Conecta con tus Clientes
                     </Link>
                   </Button>

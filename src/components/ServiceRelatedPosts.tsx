@@ -179,7 +179,7 @@ const ServiceRelatedPosts: React.FC<ServiceRelatedPostsProps> = ({
 
           {relatedPosts.length > 0 && (
             <div className="text-center mt-8">
-              <Link to="/blog">
+              <Link to="/es/blog">
                 <Button variant="outline" size="lg">
                   Ver todos los artículos
                   <ArrowRight className="h-4 w-4 ml-2" />

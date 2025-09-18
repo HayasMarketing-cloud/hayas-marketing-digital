@@ -48,7 +48,7 @@ const RelatedServiceSection: React.FC<RelatedServiceSectionProps> = ({
               <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
           </Link>
-          <Link to="/contacto" className="flex-1">
+          <Link to="/es/contacto" className="flex-1">
             <Button variant="outline" className="w-full">
               Consulta gratuita
             </Button>

@@ -204,7 +204,7 @@ export const InternalLinkingSection: React.FC<InternalLinkingSectionProps> = ({
                 ¿No encuentras lo que buscas?
               </span>
               <Button asChild size="sm">
-                <Link to="/contacto">
+                <Link to="/es/contacto">
                   Hablemos de tu proyecto
                 </Link>
               </Button>

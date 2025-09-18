@@ -73,7 +73,7 @@ const KitConsultingBanner = () => {
                 asChild
                 className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-6 text-lg font-semibold shadow-lg"
               >
-                <Link to="/kit-consulting">
+                <Link to="/es/kit-consulting">
                   Solicitar Asesoramiento
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
@@ -84,7 +84,7 @@ const KitConsultingBanner = () => {
                 variant="outline" 
                 className="border-white/30 text-hayas-600 bg-white hover:bg-gray-100 px-8 py-6 text-lg"
               >
-                <Link to="/kit-consulting">
+                <Link to="/es/kit-consulting">
                   Más Información
                 </Link>
               </Button>

@@ -34,7 +34,7 @@ const ChatbotPromoSection = () => {
               size="lg"
               className="inline-flex bg-white text-primary hover:bg-white/90 hover:text-primary/90"
             >
-              <Link to="/asistente-ia">
+              <Link to="/es/asistente-ia">
                 Descubre cómo tener tu propio asistente inteligente
               </Link>
             </Button>

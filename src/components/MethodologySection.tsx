@@ -160,7 +160,7 @@ const MethodologySection: React.FC = () => {
           </p>
           
           <Button asChild className="gradient-primary text-white hover-scale">
-            <Link to="/agendar-reunion">Solicitar Consulta</Link>
+            <Link to="/es/agendar-reunion">Solicitar Consulta</Link>
           </Button>
         </div>
       </div>

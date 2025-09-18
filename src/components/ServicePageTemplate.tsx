@@ -393,7 +393,7 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ data }) => {
               </Link>
             </Button>
             <Button size="lg" variant="outline" asChild>
-              <Link to="/contacto">Consulta Personalizada</Link>
+              <Link to="/es/contacto">Consulta Personalizada</Link>
             </Button>
           </div>
         </div>

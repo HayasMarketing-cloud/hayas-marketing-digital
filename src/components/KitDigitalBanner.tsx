@@ -80,7 +80,7 @@ const KitDigitalBanner = () => {
                 className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-6 text-lg"
                 asChild
               >
-                <Link to="/kit-digital">
+                <Link to="/es/kit-digital">
                   Más Información
                 </Link>
               </Button>

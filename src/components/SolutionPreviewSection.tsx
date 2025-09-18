@@ -50,7 +50,7 @@ const SolutionPreviewSection: React.FC = () => {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="gradient-primary text-white" asChild>
-                <Link to="/agendar-reunion">
+                <Link to="/es/agendar-reunion">
                   Ver cómo funciona
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>

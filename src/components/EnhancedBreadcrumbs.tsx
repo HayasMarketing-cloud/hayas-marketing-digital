@@ -27,7 +27,7 @@ const EnhancedBreadcrumbs: React.FC<EnhancedBreadcrumbsProps> = ({
       <nav className={className}>
         <div className="flex items-center space-x-2 text-sm">
           <Link 
-            to="/" 
+            to="/es/" 
             className="flex items-center text-muted-foreground hover:text-primary transition-colors"
           >
             <Home className="h-4 w-4 mr-1" />
@@ -56,7 +56,7 @@ const EnhancedBreadcrumbs: React.FC<EnhancedBreadcrumbsProps> = ({
 
   // Generar breadcrumbs automáticamente para tags
   const breadcrumbItems: BreadcrumbItem[] = [
-    { label: "Blog", href: "/blog" }
+    { label: "Blog", href: "/es/blog" }
   ];
 
   if (currentTag) {
@@ -67,7 +67,7 @@ const EnhancedBreadcrumbs: React.FC<EnhancedBreadcrumbsProps> = ({
     if (parentTag && tagData && 'parent' in tagData) {
       breadcrumbItems.push({
         label: parentTag.name,
-        href: `/blog/tag/${parentTag.slug}`
+        href: `/es/blog/tag/${parentTag.slug}`
       });
     }
     
@@ -75,7 +75,7 @@ const EnhancedBreadcrumbs: React.FC<EnhancedBreadcrumbsProps> = ({
     if (tagData) {
       breadcrumbItems.push({
         label: tagData.name,
-        href: `/blog/tag/${tagData.slug}`
+        href: `/es/blog/tag/${tagData.slug}`
       });
     }
   }
@@ -92,7 +92,7 @@ const EnhancedBreadcrumbs: React.FC<EnhancedBreadcrumbsProps> = ({
     <nav className={className}>
       <div className="flex items-center space-x-2 text-sm">
         <Link 
-          to="/" 
+          to="/es/" 
           className="flex items-center text-muted-foreground hover:text-primary transition-colors"
         >
           <Home className="h-4 w-4 mr-1" />
