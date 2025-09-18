@@ -7,10 +7,20 @@
 RewriteEngine On
 
 # ========================================
-# REDIRECCIÓN HOME PRINCIPAL
+# REDIRECCIÓN HOME PRINCIPAL Y URLS SIN /es/
 # ========================================
 # Redirigir home principal a versión en español
 Redirect 301 / /es
+
+# ========================================
+# REDIRECCIONES AUTOMÁTICAS PARA URLs SIN /es/
+# ========================================
+<IfModule mod_rewrite.c>
+    # Redirigir URLs principales que no empiecen con /es/ 
+    RewriteCond %{REQUEST_URI} !^/es/
+    RewriteCond %{REQUEST_URI} ^/(servicios|soluciones|blog|casos-exito|nosotros|contacto|agendar-reunion|kit-digital)(/.*)?$
+    RewriteRule ^(.*)$ /es/$1 [R=301,L]
+</IfModule>
 
 # ========================================
 # REDIRECCIONES LEGACY DE OTROS IDIOMAS  

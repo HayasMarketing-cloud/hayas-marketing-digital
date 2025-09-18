@@ -145,13 +145,17 @@ const Navigation = () => {
                 onMouseEnter={() => handleMouseEnter('servicios')}
                 onMouseLeave={handleMouseLeave}
               >
-                <button className="text-foreground hover:text-primary font-medium transition-colors flex items-center gap-1 py-2">
+                <Link
+                  to="/es/servicios"
+                  className="text-foreground hover:text-primary font-medium transition-colors flex items-center gap-1 py-2"
+                  onClick={() => window.scrollTo(0, 0)}
+                >
                   Servicios
                   <ChevronDown
                     className="h-4 w-4 transition-transform duration-200"
                     style={{ transform: activeMegaMenu === 'servicios' ? 'rotate(180deg)' : 'rotate(0deg)' }}
                   />
-                </button>
+                </Link>
               </div>
 
               <Link to="/es/nosotros" className="text-foreground hover:text-primary font-medium transition-colors">
@@ -207,13 +211,22 @@ const Navigation = () => {
                       Casos de Éxito
                     </Link>
                     
-                    <button
-                      onClick={() => navigateToLevel('servicios')}
-                      className="w-full flex items-center justify-between text-foreground hover:text-primary font-medium transition-colors px-4 py-3 hover:bg-muted/50 rounded text-left"
-                    >
-                      <span>Servicios</span>
-                      <ArrowRight className="h-4 w-4" />
-                    </button>
+                    <div className="space-y-2">
+                      <Link
+                        to="/es/servicios"
+                        className="block text-foreground hover:text-primary font-medium transition-colors px-4 py-3 hover:bg-muted/50 rounded"
+                        onClick={closeMobileMenu}
+                      >
+                        Ver Todos los Servicios
+                      </Link>
+                      <button
+                        onClick={() => navigateToLevel('servicios')}
+                        className="w-full flex items-center justify-between text-foreground hover:text-primary font-medium transition-colors px-4 py-3 hover:bg-muted/50 rounded text-left"
+                      >
+                        <span>Por Categorías</span>
+                        <ArrowRight className="h-4 w-4" />
+                      </button>
+                    </div>
                     
                     <Link
                       to="/es/nosotros"
