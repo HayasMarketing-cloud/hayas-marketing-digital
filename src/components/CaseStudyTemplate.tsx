@@ -102,7 +102,7 @@ const CaseStudyTemplate: React.FC<CaseStudyProps> = ({
               <BreadcrumbList>
                   <BreadcrumbItem>
                     <BreadcrumbLink asChild>
-                      <Link to="/es/">Inicio</Link>
+                      <Link to="/es">Inicio</Link>
                     </BreadcrumbLink>
                   </BreadcrumbItem>
                   <BreadcrumbSeparator />

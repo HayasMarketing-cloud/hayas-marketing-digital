@@ -149,10 +149,10 @@ const App = () => (
         <DraftProtection>
           <Routes>
           {/* REDIRECCIÓN ROOT A ESPAÑOL */}
-          <Route path="/" element={<Navigate to="/es/" replace />} />
+          <Route path="/" element={<Navigate to="/es" replace />} />
           
           {/* RUTAS EN ESPAÑOL */}
-          <Route path="/es/" element={<Index />} />
+          <Route path="/es" element={<Index />} />
           
           {/* NOSOTROS */}
           <Route path="/es/nosotros" element={<Nosotros />} />

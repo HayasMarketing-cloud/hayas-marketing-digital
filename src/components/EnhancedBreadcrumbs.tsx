@@ -27,7 +27,7 @@ const EnhancedBreadcrumbs: React.FC<EnhancedBreadcrumbsProps> = ({
       <nav className={className}>
         <div className="flex items-center space-x-2 text-sm">
           <Link 
-            to="/es/" 
+            to="/es" 
             className="flex items-center text-muted-foreground hover:text-primary transition-colors"
           >
             <Home className="h-4 w-4 mr-1" />
@@ -92,7 +92,7 @@ const EnhancedBreadcrumbs: React.FC<EnhancedBreadcrumbsProps> = ({
     <nav className={className}>
       <div className="flex items-center space-x-2 text-sm">
         <Link 
-          to="/es/" 
+          to="/es" 
           className="flex items-center text-muted-foreground hover:text-primary transition-colors"
         >
           <Home className="h-4 w-4 mr-1" />

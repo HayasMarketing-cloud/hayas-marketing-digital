@@ -20,7 +20,7 @@ const ArticleBreadcrumbs: React.FC<ArticleBreadcrumbsProps> = ({
         {showHome && (
           <>
         <Link 
-          to="/es/" 
+          to="/es" 
           className="flex items-center text-muted-foreground hover:text-primary transition-colors"
         >
               <Home className="h-4 w-4 mr-1" />
