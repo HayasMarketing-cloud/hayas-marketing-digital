@@ -2,21 +2,22 @@
 # ARQUITECTURA MULTIIDIOMA - ESPAÑOL POR DEFECTO
 # ========================================
 # Web migrada a estructura internacional con /es/
+# URLs estandarizadas SIN barra final para mejor SEO
 
 RewriteEngine On
 
 # ========================================
-# REDIRECCIÓN HOME LEGACY
+# REDIRECCIÓN HOME PRINCIPAL
 # ========================================
-# Solo para compatibilidad temporal - eliminar después de migración completa
-Redirect 301 /es/ /es/
+# Redirigir home principal a versión en español
+Redirect 301 / /es
 
 # ========================================
 # REDIRECCIONES LEGACY DE OTROS IDIOMAS  
 # ========================================
 # Mantener para evitar 404s de bots
-Redirect 301 /en/ /es/
-Redirect 301 /zh/ /es/
+Redirect 301 /en /es
+Redirect 301 /zh /es
 
 # ========================================
 # REDIRECCIONES CRÍTICAS DE WORDPRESS - BLOG
@@ -24,60 +25,60 @@ Redirect 301 /zh/ /es/
 # Redirecciones de URLs del blog para mantener SEO
 
 # Blog - Artículos importantes
-Redirect 301 /blog/qué-es-un-crm-o-customer-relationship-management /es/blog/que-es-un-crm-o-customer-relationship-management/
-Redirect 301 /blog/buenas-prácticas-técnicas-de-email-marketing-con-hubspot /es/blog/buenas-practicas-tecnicas-de-email-marketing-con-hubspot/
-Redirect 301 /blog/cómo-solicitar-tu-bono-del-kit-digital /es/blog/como-solicitar-tu-bono-del-kit-digital/
-Redirect 301 /blog/como-crear-una-estrategia-de-contenidos /es/blog/como-crear-una-estrategia-de-marketing-de-contenidos-eficaz/
-Redirect 301 /blog/digitalizacion-y-automatizacion-de-procesos-de-marketing-digital /es/blog/automatizacion-de-marketing-digital/
-Redirect 301 /blog/estrategia-abm-para-captar-grandes-cuentas /es/blog/estrategia-account-based-marketing-abm-para-captar-grandes-cuentas/
-Redirect 301 /blog/proyectos-b2b-con-tecnologia-blockchain /es/blog/proyectos-de-empresas-con-tecnologia-blockchain/
-Redirect 301 /blog/tik-tok-y-la-generación-z-por-qué-deberías-incluirla-en-tu-estrategia-de-marketing /es/blog/tiktok-y-la-generacion-zeta-por-que-deberias-incluirla-en-tu-estrategia-de-marketing-digital/
-Redirect 301 /blog/como-calcular-la-inversion-de-tu-estrategia-de-marketing-incluye-plantilla /es/blog/claves-para-invertir-en-tu-estrategia-de-marketing-digital/
-Redirect 301 /blog/que-es-marketing-natural /es/blog/marketing-natural-atrae-a-tus-clientes-de-forma-organica/
-Redirect 301 /blog/cómo-solicitar-el-kit-digital-paso-a-paso-en-2024 /es/blog/como-solicitar-el-kit-digital-paso-a-paso-en-2024/
-Redirect 301 /blog/marketing-de-influencers-eleccion-estrategica-entre-influencers-y-microinfluencers /es/blog/marketing-de-influencers-vs-microinfluencers/
+Redirect 301 /blog/qué-es-un-crm-o-customer-relationship-management /es/blog/que-es-un-crm-o-customer-relationship-management
+Redirect 301 /blog/buenas-prácticas-técnicas-de-email-marketing-con-hubspot /es/blog/buenas-practicas-tecnicas-de-email-marketing-con-hubspot
+Redirect 301 /blog/cómo-solicitar-tu-bono-del-kit-digital /es/blog/como-solicitar-tu-bono-del-kit-digital
+Redirect 301 /blog/como-crear-una-estrategia-de-contenidos /es/blog/como-crear-una-estrategia-de-marketing-de-contenidos-eficaz
+Redirect 301 /blog/digitalizacion-y-automatizacion-de-procesos-de-marketing-digital /es/blog/automatizacion-de-marketing-digital
+Redirect 301 /blog/estrategia-abm-para-captar-grandes-cuentas /es/blog/estrategia-account-based-marketing-abm-para-captar-grandes-cuentas
+Redirect 301 /blog/proyectos-b2b-con-tecnologia-blockchain /es/blog/proyectos-de-empresas-con-tecnologia-blockchain
+Redirect 301 /blog/tik-tok-y-la-generación-z-por-qué-deberías-incluirla-en-tu-estrategia-de-marketing /es/blog/tiktok-y-la-generacion-zeta-por-que-deberias-incluirla-en-tu-estrategia-de-marketing-digital
+Redirect 301 /blog/como-calcular-la-inversion-de-tu-estrategia-de-marketing-incluye-plantilla /es/blog/claves-para-invertir-en-tu-estrategia-de-marketing-digital
+Redirect 301 /blog/que-es-marketing-natural /es/blog/marketing-natural-atrae-a-tus-clientes-de-forma-organica
+Redirect 301 /blog/cómo-solicitar-el-kit-digital-paso-a-paso-en-2024 /es/blog/como-solicitar-el-kit-digital-paso-a-paso-en-2024
+Redirect 301 /blog/marketing-de-influencers-eleccion-estrategica-entre-influencers-y-microinfluencers /es/blog/marketing-de-influencers-vs-microinfluencers
 
 # Blog - Redirecciones genéricas al blog
-Redirect 301 /blog/las-11-mejores-practicas-para-el-envio-masivo-de-correos-electronicos /es/blog/
-Redirect 301 /blog/diseno-de-apps-para-movil.-guia-para-principiantes /es/blog/
-Redirect 301 /blog/cómo-chat-gpt-podría-afectar-a-tu-puesto-de-trabajo /es/blog/
-Redirect 301 /blog/10-consejos-para-que-tu-web-b2b-venda-24/7 /es/blog/
-Redirect 301 /blog/meta-y-ray-ban-desvelan-las-lentes-inteligentes-de-próxima-generación /es/blog/
-Redirect 301 /blog/pagina-web-inbound-que-es-y-como-funciona /es/blog/
-Redirect 301 /blog/el-fin-del-spam-telefónico-en-españa-qué-significa-para-los-profesionales-del-marketing-digital /es/blog/
-Redirect 301 /blog/el-social-selling-como-trend-de-los-negocios /es/blog/
-Redirect 301 /blog/qué-es-un-landing-page /es/blog/
-Redirect 301 /blog/programar-publicaciones-y-automatizar-las-redes-sociales /es/blog/
-Redirect 301 /blog/como-hacer-una-campana-de-inbound-marketing-en-hubspot /es/blog/
-Redirect 301 /blog/que-hub-de-hubspot-elegir-marketing-o-sales /es/blog/
-Redirect 301 /blog/meta-y-su-metaverso-productividad-o-entretenimiento /es/blog/
-Redirect 301 /blog/lo-que-tienes-que-saber-de-google-analytics-4 /es/blog/
+Redirect 301 /blog/las-11-mejores-practicas-para-el-envio-masivo-de-correos-electronicos /es/blog
+Redirect 301 /blog/diseno-de-apps-para-movil.-guia-para-principiantes /es/blog
+Redirect 301 /blog/cómo-chat-gpt-podría-afectar-a-tu-puesto-de-trabajo /es/blog
+Redirect 301 /blog/10-consejos-para-que-tu-web-b2b-venda-24/7 /es/blog
+Redirect 301 /blog/meta-y-ray-ban-desvelan-las-lentes-inteligentes-de-próxima-generación /es/blog
+Redirect 301 /blog/pagina-web-inbound-que-es-y-como-funciona /es/blog
+Redirect 301 /blog/el-fin-del-spam-telefónico-en-españa-qué-significa-para-los-profesionales-del-marketing-digital /es/blog
+Redirect 301 /blog/el-social-selling-como-trend-de-los-negocios /es/blog
+Redirect 301 /blog/qué-es-un-landing-page /es/blog
+Redirect 301 /blog/programar-publicaciones-y-automatizar-las-redes-sociales /es/blog
+Redirect 301 /blog/como-hacer-una-campana-de-inbound-marketing-en-hubspot /es/blog
+Redirect 301 /blog/que-hub-de-hubspot-elegir-marketing-o-sales /es/blog
+Redirect 301 /blog/meta-y-su-metaverso-productividad-o-entretenimiento /es/blog
+Redirect 301 /blog/lo-que-tienes-que-saber-de-google-analytics-4 /es/blog
 
 # Categorías del blog
-Redirect 301 /blog/tag/inteligencia-artificial /es/blog/category/ia/
+Redirect 301 /blog/tag/inteligencia-artificial /es/blog/category/ia
 
 # ========================================
 # REDIRECCIONES CRÍTICAS - SERVICIOS Y PÁGINAS
 # ========================================
 # Servicios principales que deben redirigir a la nueva estructura
 
-Redirect 301 /es/inbound-marketing-crea-un-sistema-mas-eficiente-y-de-mejora-continua/ /es/servicios/estrategia-de-marketing-digital-360/
-Redirect 301 /es/automatizacion-marketing /es/servicios/crm-y-automatizacion-de-marketing/
-Redirect 301 /es/onboarding-hubspot /es/servicios/crm-y-automatizacion-de-marketing/
-Redirect 301 /es/automatizacion-hubspot /es/servicios/crm-y-automatizacion-de-marketing/
-Redirect 301 /es/kit-digital-gestion-de-clientes-crm-hubspot/ /es/servicios/kit-digital-gestion-de-clientes-crm/
-Redirect 301 /es/inbound-sales-convierte-y-cierra-mas-y-mejores-ventas /es/servicios/estrategia-de-marketing-digital-360/
-Redirect 301 /es/publicidad-digital /es/servicios/publicidad-en-google-ads/
-Redirect 301 /es/estrategia-marketing-digital-y-ventas /es/servicios/estrategia-de-marketing-digital-360/
-Redirect 301 /es/consultoria-formacion-hubspot /es/servicios/crm-y-automatizacion-de-marketing/
-Redirect 301 /es/campana-inbound-marketing /es/
-Redirect 301 /es/diseño-y-desarrollo-paginas-web /es/servicios/diseno-y-desarrollo-paginas-web/
-Redirect 301 /es/gestion-de-clientes-con-la-plataforma-crm-de-hubspot /es/servicios/kit-digital-gestion-de-clientes-crm/
-Redirect 301 /es/inbound-marketing-y-ventas-para-empresas-de-logistica-y-transporte /es/
+Redirect 301 /es/inbound-marketing-crea-un-sistema-mas-eficiente-y-de-mejora-continua/ /es/servicios/estrategia-de-marketing-digital-360
+Redirect 301 /es/automatizacion-marketing /es/servicios/crm-y-automatizacion-de-marketing
+Redirect 301 /es/onboarding-hubspot /es/servicios/crm-y-automatizacion-de-marketing
+Redirect 301 /es/automatizacion-hubspot /es/servicios/crm-y-automatizacion-de-marketing
+Redirect 301 /es/kit-digital-gestion-de-clientes-crm-hubspot/ /es/servicios/kit-digital-gestion-de-clientes-crm
+Redirect 301 /es/inbound-sales-convierte-y-cierra-mas-y-mejores-ventas /es/servicios/estrategia-de-marketing-digital-360
+Redirect 301 /es/publicidad-digital /es/servicios/publicidad-en-google-ads
+Redirect 301 /es/estrategia-marketing-digital-y-ventas /es/servicios/estrategia-de-marketing-digital-360
+Redirect 301 /es/consultoria-formacion-hubspot /es/servicios/crm-y-automatizacion-de-marketing
+Redirect 301 /es/campana-inbound-marketing /es
+Redirect 301 /es/diseño-y-desarrollo-paginas-web /es/servicios/diseno-y-desarrollo-paginas-web
+Redirect 301 /es/gestion-de-clientes-con-la-plataforma-crm-de-hubspot /es/servicios/kit-digital-gestion-de-clientes-crm
+Redirect 301 /es/inbound-marketing-y-ventas-para-empresas-de-logistica-y-transporte /es
 
 # Páginas institucionales
-Redirect 301 /es/agencia-de-inbound-marketing-y-ventas-online/ /es/nosotros/
-Redirect 301 /casos-de-exito/formato-educativo /es/casos-de-exito/estrategia-de-captacion-de-leads-para-la-escuela-de-negocios-formato-educativo/
+Redirect 301 /es/agencia-de-inbound-marketing-y-ventas-online/ /es/nosotros
+Redirect 301 /casos-de-exito/formato-educativo /es/casos-de-exito/estrategia-de-captacion-de-leads-para-la-escuela-de-negocios-formato-educativo
 
 # ========================================
 # REDIRECCIONES DE CONTENIDO ELIMINADO
@@ -95,7 +96,7 @@ Redirect 301 /casos-de-exito/formato-educativo /es/casos-de-exito/estrategia-de-
     RewriteCond %{REQUEST_URI} ^/es/kitconsulting/asesoramiento-en-inteligencia-artificial-aplicada-a-marketing-digital-con-kit-consulting/?$ [OR]
     RewriteCond %{REQUEST_URI} ^/es/kitconsulting/asesoramiento-estrategia-rendimiento-de-negocio-ia-kit-consulting/?$ [OR]
     RewriteCond %{REQUEST_URI} ^/es/kitconsulting/?$
-    RewriteRule ^ /es/contenido-eliminado/ [R=301,L]
+    RewriteRule ^ /es/contenido-eliminado [R=301,L]
 </IfModule>
 
 # ========================================
