@@ -70,9 +70,9 @@ const Navigation = () => {
   };
 
   const pillars = [
-    { title: 'Impulsa tu marca', href: '/soluciones/impulsa-tu-marca' },
-    { title: 'Conecta con tus clientes', href: '/soluciones/conecta-con-tus-clientes' },
-    { title: 'Activa tus ventas', href: '/soluciones/activa-tu-estrategia-digital' },
+    { title: 'Impulsa tu marca', href: '/es/impulsa-tu-marca' },
+    { title: 'Conecta con tus clientes', href: '/es/conecta-con-tus-clientes' },
+    { title: 'Activa tus ventas', href: '/es/activa-tus-ventas' },
   ];
 
   const pillarKeys: PillarKey[] = ['impulsa', 'conecta', 'activa'];

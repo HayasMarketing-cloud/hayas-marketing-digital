@@ -33,17 +33,17 @@ export interface ServiceItem {
 export const pillarMeta: Record<PillarKey, { title: string; href: string; anchorId: string }> = {
   impulsa: {
     title: 'Impulsa tu marca',
-    href: '/soluciones/impulsa-tu-marca',
+    href: '/es/impulsa-tu-marca',
     anchorId: 'servicios-impulsa',
   },
   conecta: {
     title: 'Conecta con tus clientes',
-    href: '/soluciones/conecta-con-tus-clientes',
+    href: '/es/conecta-con-tus-clientes',
     anchorId: 'servicios-conecta',
   },
   activa: {
     title: 'Activa tus Ventas',
-    href: '/soluciones/activa-tus-ventas',
+    href: '/es/activa-tus-ventas',
     anchorId: 'servicios-activa',
   },
 };
@@ -54,7 +54,7 @@ export const allServices: ServiceItem[] = [
     icon: <Paintbrush className="h-10 w-10 text-hayas-primary" />,
     title: 'Creación de Marca',
     description: 'Identidad visual y branding completo para diferenciarte de la competencia.',
-    href: '/servicios/creacion-marca',
+    href: '/es/servicios/creacion-marca',
     pillar: 'impulsa',
   },
   {
@@ -62,7 +62,7 @@ export const allServices: ServiceItem[] = [
     icon: <Users className="h-10 w-10 text-hayas-primary" />,
     title: 'Gestión de Redes Sociales',
     description: 'Community management profesional que construye comunidad y engagement.',
-    href: '/servicios/gestion-redes-sociales',
+    href: '/es/servicios/gestion-redes-sociales',
     pillar: 'impulsa',
   },
   {
@@ -70,7 +70,7 @@ export const allServices: ServiceItem[] = [
     icon: <Star className="h-10 w-10 text-hayas-primary" />,
     title: 'Publicidad en Redes Sociales',
     description: 'Campañas publicitarias rentables en Facebook, Instagram y LinkedIn.',
-    href: '/servicios/publicidad-redes-sociales',
+    href: '/es/servicios/publicidad-redes-sociales',
     pillar: 'activa',
   },
   {
@@ -78,7 +78,7 @@ export const allServices: ServiceItem[] = [
     icon: <GoogleGIcon className="h-10 w-10 text-hayas-primary" />,
     title: 'Publicidad en Google Ads',
     description: 'SEM y campañas en Google para generar leads cualificados.',
-    href: '/servicios/publicidad-google-ads',
+    href: '/es/servicios/publicidad-google-ads',
     pillar: 'activa',
   },
   {
@@ -86,7 +86,7 @@ export const allServices: ServiceItem[] = [
     icon: <Calendar className="h-10 w-10 text-hayas-primary" />,
     title: 'Implantación CRM',
     description: 'Setup completo de CRM personalizado para automatizar tu proceso comercial.',
-    href: '/servicios/implantacion-crm',
+    href: '/es/servicios/implantacion-crm',
     pillar: 'conecta',
   },
   {
@@ -94,7 +94,7 @@ export const allServices: ServiceItem[] = [
     icon: <Bot className="h-10 w-10 text-hayas-primary" />,
     title: 'Asistente IA para Atención al Cliente',
     description: 'Chatbots inteligentes 24/7 que mejoran la experiencia del cliente.',
-    href: '/servicios/asistente-ia-atencion-cliente',
+    href: '/es/servicios/asistente-ia-atencion-cliente',
     pillar: 'activa',
   },
   {
@@ -102,7 +102,7 @@ export const allServices: ServiceItem[] = [
     icon: <Globe className="h-10 w-10 text-hayas-primary" />,
     title: 'Diseño Web',
     description: 'Webs que convierten visitantes en clientes con diseño profesional.',
-    href: '/servicios/diseno-web',
+    href: '/es/servicios/diseno-web',
     pillar: 'impulsa',
   },
   {
@@ -110,7 +110,7 @@ export const allServices: ServiceItem[] = [
     icon: <Search className="h-10 w-10 text-hayas-primary" />,
     title: 'SEO y Posicionamiento',
     description: 'Aparece primero en Google con nuestras estrategias de SEO.',
-    href: '/servicios/seo-posicionamiento',
+    href: '/es/servicios/seo-posicionamiento',
     pillar: 'impulsa',
   },
   {
@@ -118,7 +118,7 @@ export const allServices: ServiceItem[] = [
     icon: <ShoppingCart className="h-10 w-10 text-hayas-primary" />,
     title: 'Creación Tienda Online',
     description: 'E-commerce que vende 24/7 con integración completa de sistemas.',
-    href: '/servicios/tienda-online',
+    href: '/es/servicios/tienda-online',
     pillar: 'impulsa',
   },
   {
@@ -126,7 +126,7 @@ export const allServices: ServiceItem[] = [
     icon: <Megaphone className="h-10 w-10 text-hayas-primary" />,
     title: 'Marketing Directo',
     description: 'Campañas físicas (catálogos, invitaciones, merchandising) + email marketing.',
-    href: '/servicios/marketing-directo',
+    href: '/es/servicios/marketing-directo',
     pillar: 'conecta',
   },
   {
@@ -134,7 +134,7 @@ export const allServices: ServiceItem[] = [
     icon: <Filter className="h-10 w-10 text-hayas-primary" />,
     title: 'Implementación de Funnel',
     description: 'Diseño, automatización y optimización de embudos de conversión.',
-    href: '/servicios/implementacion-funnel',
+    href: '/es/servicios/implementacion-funnel',
     pillar: 'conecta',
   },
   {
@@ -142,7 +142,7 @@ export const allServices: ServiceItem[] = [
     icon: <FileText className="h-10 w-10 text-hayas-primary" />,
     title: 'Estrategia de contenidos',
     description: 'Plan editorial y distribución multicanal para impulsar tu marca.',
-    href: '/servicios/estrategia-contenidos',
+    href: '/es/servicios/estrategia-contenidos',
     pillar: 'impulsa',
   },
   {
@@ -150,7 +150,7 @@ export const allServices: ServiceItem[] = [
     icon: <Zap className="h-10 w-10 text-hayas-primary" />,
     title: 'Email marketing y automatizaciones',
     description: 'Workflows y personalización conectados a tu CRM.',
-    href: '/servicios/email-marketing-automatizaciones',
+    href: '/es/servicios/email-marketing-automatizaciones',
     pillar: 'conecta',
   },
   {
@@ -158,7 +158,7 @@ export const allServices: ServiceItem[] = [
     icon: <Check className="h-10 w-10 text-hayas-primary" />,
     title: 'Consultoría estratégica y analítica',
     description: 'Decisiones con datos y reporting fiable.',
-    href: '/servicios/consultoria-estrategica-analitica',
+    href: '/es/servicios/consultoria-estrategica-analitica',
     pillar: 'activa',
   },
   {
@@ -166,7 +166,7 @@ export const allServices: ServiceItem[] = [
     icon: <Globe className="h-10 w-10 text-hayas-primary" />,
     title: 'Integraciones y optimización con IA',
     description: 'Conecta sistemas y automatiza procesos.',
-    href: '/servicios/integraciones-ia-procesos',
+    href: '/es/servicios/integraciones-ia-procesos',
     pillar: 'activa',
   },
   {
@@ -174,7 +174,7 @@ export const allServices: ServiceItem[] = [
     icon: <Globe className="h-10 w-10 text-hayas-primary" />,
     title: 'Localización de contenidos',
     description: 'Adapta tu comunicación a cada mercado: idioma, cultura y SEO.',
-    href: '/servicios/localizacion-contenidos',
+    href: '/es/servicios/localizacion-contenidos',
     pillar: 'impulsa',
   },
   {
@@ -182,7 +182,7 @@ export const allServices: ServiceItem[] = [
     icon: <Megaphone className="h-10 w-10 text-hayas-primary" />,
     title: 'Campañas Inbound Marketing',
     description: 'Contenido premium + automatización para atraer y convertir.',
-    href: '/servicios/campanas-inbound-marketing',
+    href: '/es/servicios/campanas-inbound-marketing',
     pillar: 'conecta',
   },
   {
@@ -190,7 +190,7 @@ export const allServices: ServiceItem[] = [
     icon: <Users className="h-10 w-10 text-hayas-primary" />,
     title: 'Captación de Leads y Clientes',
     description: 'Estrategias multicanal para atraer leads cualificados y convertirlos en clientes.',
-    href: '/servicios/captacion-leads-clientes',
+    href: '/es/servicios/captacion-leads-clientes',
     pillar: 'conecta',
   },
   {
@@ -198,7 +198,7 @@ export const allServices: ServiceItem[] = [
     icon: <Zap className="h-10 w-10 text-hayas-primary" />,
     title: 'Automatización de procesos de ventas',
     description: 'Automatiza tu pipeline, lead scoring y atribución para acelerar el crecimiento.',
-    href: '/servicios/automatizacion-procesos-ventas',
+    href: '/es/servicios/automatizacion-procesos-ventas',
     pillar: 'conecta',
   },
   {
@@ -206,7 +206,7 @@ export const allServices: ServiceItem[] = [
     icon: <Server className="h-10 w-10 text-hayas-primary" />,
     title: 'Administración CRM y gestión de Marketing',
     description: 'Gestión completa de tu sistema CRM y estrategias de marketing para máximo rendimiento.',
-    href: '/servicios/administracion-crm',
+    href: '/es/servicios/administracion-crm',
     pillar: 'conecta',
   },
 ];
