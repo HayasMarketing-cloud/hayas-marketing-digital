@@ -1,28 +1,22 @@
 # ========================================
-# REDIRECCIONES SEO CRÍTICAS - MIGRACIÓN
+# ARQUITECTURA MULTIIDIOMA - ESPAÑOL POR DEFECTO
 # ========================================
-# Migración de web /es/ a nueva estructura sin prefijo
+# Web migrada a estructura internacional con /es/
 
 RewriteEngine On
 
 # ========================================
-# REDIRECCIÓN PRINCIPAL CRÍTICA
+# REDIRECCIÓN HOME LEGACY
 # ========================================
-# Home page específica (máxima prioridad SEO)
-Redirect 301 /es/ /
+# Solo para compatibilidad temporal - eliminar después de migración completa
+Redirect 301 /es/ /es/
 
 # ========================================
-# REDIRECCIÓN AUTOMÁTICA PARA TODO
-# ========================================
-# Esta regla cubre TODAS las demás URLs /es/[cualquier-cosa]
-RedirectMatch 301 ^/es/(.*)$ /$1
-
-# ========================================
-# REDIRECCIONES LEGACY DE OTROS IDIOMAS
+# REDIRECCIONES LEGACY DE OTROS IDIOMAS  
 # ========================================
 # Mantener para evitar 404s de bots
-Redirect 301 /en/ /
-Redirect 301 /zh/ /
+Redirect 301 /en/ /es/
+Redirect 301 /zh/ /es/
 
 # ========================================
 # NOTA IMPORTANTE

@@ -2,37 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Main Pages - Highest Priority (Indexable Only) -->
   <url>
-    <loc>https://hayasmarketing.com/</loc>
+    <loc>https://hayasmarketing.com/es/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <lastmod>2025-01-13</lastmod>
   </url>
   <url>
-    <loc>https://hayasmarketing.com/servicios</loc>
+    <loc>https://hayasmarketing.com/es/servicios</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <lastmod>2025-01-13</lastmod>
   </url>
   <url>
-    <loc>https://hayasmarketing.com/casos-exito</loc>
+    <loc>https://hayasmarketing.com/es/casos-exito</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <lastmod>2025-01-13</lastmod>
   </url>
   <url>
-    <loc>https://hayasmarketing.com/blog</loc>
+    <loc>https://hayasmarketing.com/es/blog</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <lastmod>2025-01-13</lastmod>
   </url>
   <url>
-    <loc>https://hayasmarketing.com/nosotros</loc>
+    <loc>https://hayasmarketing.com/es/nosotros</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <lastmod>2025-01-13</lastmod>
   </url>
   <url>
-    <loc>https://hayasmarketing.com/contacto</loc>
+    <loc>https://hayasmarketing.com/es/contacto</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <lastmod>2025-01-13</lastmod>
@@ -40,19 +40,19 @@
 
   <!-- Solution Pages - High Priority Pillars -->
   <url>
-    <loc>https://hayasmarketing.com/soluciones/impulsa-tu-marca</loc>
+    <loc>https://hayasmarketing.com/es/soluciones/impulsa-tu-marca</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <lastmod>2025-01-13</lastmod>
   </url>
   <url>
-    <loc>https://hayasmarketing.com/soluciones/conecta-con-tus-clientes</loc>
+    <loc>https://hayasmarketing.com/es/soluciones/conecta-con-tus-clientes</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <lastmod>2025-01-13</lastmod>
   </url>
   <url>
-    <loc>https://hayasmarketing.com/soluciones/activa-tus-ventas</loc>
+    <loc>https://hayasmarketing.com/es/soluciones/activa-tus-ventas</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <lastmod>2025-01-13</lastmod>
@@ -60,79 +60,79 @@
 
   <!-- Strategic Service Pages - Medium-High Priority -->
   <url>
-    <loc>https://hayasmarketing.com/servicios/creacion-marca</loc>
+    <loc>https://hayasmarketing.com/es/servicios/creacion-marca</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <lastmod>2025-01-13</lastmod>
   </url>
   <url>
-    <loc>https://hayasmarketing.com/servicios/diseno-web</loc>
+    <loc>https://hayasmarketing.com/es/servicios/diseno-web</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <lastmod>2025-01-13</lastmod>
   </url>
   <url>
-    <loc>https://hayasmarketing.com/servicios/seo-positioning</loc>
+    <loc>https://hayasmarketing.com/es/servicios/seo-positioning</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <lastmod>2025-01-13</lastmod>
   </url>
   <url>
-    <loc>https://hayasmarketing.com/servicios/implantacion-crm</loc>
+    <loc>https://hayasmarketing.com/es/servicios/implantacion-crm</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <lastmod>2025-01-13</lastmod>
   </url>
   <url>
-    <loc>https://hayasmarketing.com/servicios/administracion-crm</loc>
+    <loc>https://hayasmarketing.com/es/servicios/administracion-crm</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <lastmod>2025-01-13</lastmod>
   </url>
   <url>
-    <loc>https://hayasmarketing.com/servicios/automatizacion-procesos-ventas</loc>
+    <loc>https://hayasmarketing.com/es/servicios/automatizacion-procesos-ventas</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <lastmod>2025-01-13</lastmod>
   </url>
   <url>
-    <loc>https://hayasmarketing.com/servicios/captacion-leads-clientes</loc>
+    <loc>https://hayasmarketing.com/es/servicios/captacion-leads-clientes</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <lastmod>2025-01-13</lastmod>
   </url>
   <url>
-    <loc>https://hayasmarketing.com/servicios/publicidad-google-ads</loc>
+    <loc>https://hayasmarketing.com/es/servicios/publicidad-google-ads</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <lastmod>2025-01-13</lastmod>
   </url>
   <url>
-    <loc>https://hayasmarketing.com/servicios/publicidad-redes-sociales</loc>
+    <loc>https://hayasmarketing.com/es/servicios/publicidad-redes-sociales</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <lastmod>2025-01-13</lastmod>
   </url>
   <url>
-    <loc>https://hayasmarketing.com/servicios/gestion-redes-sociales</loc>
+    <loc>https://hayasmarketing.com/es/servicios/gestion-redes-sociales</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <lastmod>2025-01-13</lastmod>
   </url>
   <url>
-    <loc>https://hayasmarketing.com/servicios/email-marketing-automatizaciones</loc>
+    <loc>https://hayasmarketing.com/es/servicios/email-marketing-automatizaciones</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <lastmod>2025-01-13</lastmod>
   </url>
   <url>
-    <loc>https://hayasmarketing.com/servicios/estrategia-contenidos</loc>
+    <loc>https://hayasmarketing.com/es/servicios/estrategia-contenidos</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <lastmod>2025-01-13</lastmod>
   </url>
   <url>
-    <loc>https://hayasmarketing.com/servicios/consultoria-estrategica-analitica</loc>
+    <loc>https://hayasmarketing.com/es/servicios/consultoria-estrategica-analitica</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <lastmod>2025-01-13</lastmod>
@@ -140,13 +140,13 @@
 
   <!-- Kit Digital Pages - Business Value -->
   <url>
-    <loc>https://hayasmarketing.com/kit-digital</loc>
+    <loc>https://hayasmarketing.com/es/kit-digital</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <lastmod>2025-01-13</lastmod>
   </url>
   <url>
-    <loc>https://hayasmarketing.com/kit-consulting</loc>
+    <loc>https://hayasmarketing.com/es/kit-consulting</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <lastmod>2025-01-13</lastmod>
@@ -154,13 +154,13 @@
 
   <!-- Conversion Pages -->
   <url>
-    <loc>https://hayasmarketing.com/agendar-reunion</loc>
+    <loc>https://hayasmarketing.com/es/agendar-reunion</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <lastmod>2025-01-13</lastmod>
   </url>
   <url>
-    <loc>https://hayasmarketing.com/solicitar-consulta</loc>
+    <loc>https://hayasmarketing.com/es/solicitar-consulta</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <lastmod>2025-01-13</lastmod>

@@ -154,20 +154,20 @@ const Navigation = () => {
                 </button>
               </div>
 
-              <Link to="/nosotros" className="text-foreground hover:text-primary font-medium transition-colors">
+              <Link to="/es/nosotros" className="text-foreground hover:text-primary font-medium transition-colors">
                 La Agencia
               </Link>
-              <Link to="/blog" className="text-foreground hover:text-primary font-medium transition-colors">
+              <Link to="/es/blog" className="text-foreground hover:text-primary font-medium transition-colors">
                 Blog
               </Link>
-              <Link to="/contacto" className="text-foreground hover:text-primary font-medium transition-colors">
+              <Link to="/es/contacto" className="text-foreground hover:text-primary font-medium transition-colors">
                 Contacto
               </Link>
             </nav>
 
             <div className="hidden lg:block">
               <Button asChild className="gradient-primary text-white hover-scale">
-                <Link to="/agendar-reunion">Solicitar Consulta</Link>
+                <Link to="/es/agendar-reunion">Solicitar Consulta</Link>
               </Button>
             </div>
 
@@ -241,7 +241,7 @@ const Navigation = () => {
                     
                     <div className="mt-4 px-4">
                       <Button asChild className="gradient-primary text-white w-full hover-scale">
-                        <Link to="/agendar-reunion" onClick={closeMobileMenu}>Solicitar Consulta</Link>
+                        <Link to="/es/agendar-reunion" onClick={closeMobileMenu}>Solicitar Consulta</Link>
                       </Button>
                     </div>
                   </div>
