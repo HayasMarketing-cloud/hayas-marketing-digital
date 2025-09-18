@@ -1,31 +1,28 @@
 # ========================================
-# REDIRECCIONES 301 CRÍTICAS PARA SEO
+# REDIRECCIONES SEO CRÍTICAS - MIGRACIÓN
 # ========================================
-# Solo redirecciones esenciales para evitar 404s críticos
+# Migración de web /es/ a nueva estructura sin prefijo
 
 RewriteEngine On
 
 # ========================================
-# REDIRECCIONES CRÍTICAS DE IDIOMAS
+# REDIRECCIÓN PRINCIPAL CRÍTICA
 # ========================================
-# Mantener para evitar 404s de bots y tráfico legacy
+# Home page específica (máxima prioridad SEO)
 Redirect 301 /es/ /
+
+# ========================================
+# REDIRECCIÓN AUTOMÁTICA PARA TODO
+# ========================================
+# Esta regla cubre TODAS las demás URLs /es/[cualquier-cosa]
+RedirectMatch 301 ^/es/(.*)$ /$1
+
+# ========================================
+# REDIRECCIONES LEGACY DE OTROS IDIOMAS
+# ========================================
+# Mantener para evitar 404s de bots
 Redirect 301 /en/ /
 Redirect 301 /zh/ /
-
-# ========================================
-# PÁGINAS PRINCIPALES CRÍTICAS
-# ========================================
-# Solo mantener si reciben tráfico SEO significativo
-Redirect 301 /es/nosotros/ /nosotros
-Redirect 301 /es/contacto/ /contacto
-Redirect 301 /es/blog/ /blog
-
-# ========================================
-# REDIRECCIONES DE FALLBACK CRÍTICAS
-# ========================================
-# Cualquier otra página /es/ que no esté mapeada específicamente
-RedirectMatch 301 ^/es/(.*)$ /$1
 
 # ========================================
 # NOTA IMPORTANTE
