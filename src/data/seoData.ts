@@ -602,27 +602,53 @@ export const seoData: Record<string, EnhancedPageSEOData> = {
 
   // Kit Digital Pages
   '/kit-digital': {
-    title: 'Kit Digital - Digitaliza tu Negocio Paso a Paso | Hayas Marketing',
-    h1: 'Kit Digital: digitaliza tu negocio paso a paso',
-    description: 'Aprovecha las ayudas del Kit Digital para digitalizar tu empresa. Presencia web, e-commerce, gestión de redes sociales y CRM con subvención.',
-    keywords: ['kit digital', 'digitalización', 'subvención', 'ayudas'],
+    title: 'Kit Digital Autónomos y PYMES - Subvención hasta 3.000€ | Hayas Marketing',
+    h1: 'Kit Digital para autónomos y PYMES: digitaliza tu negocio con subvención',
+    description: 'Aprovecha las ayudas del Kit Digital para digitalizar tu empresa. Hasta 3.000€ en subvención para presencia web, SEO, e-commerce y CRM.',
+    keywords: ['kit digital', 'kit digital autónomos', 'subvención digitalización', 'ayudas pymes', 'kit digital 2024', 'fondos europeos'],
     canonical: '/kit-digital',
-    schemaType: 'Service',
-    about: ['Kit Digital', 'Digitalización', 'Subvenciones', 'Transformación Digital'],
-    mentions: ['Gobierno España', 'Fondos Europeos', 'PYME'],
+    schemaType: 'FAQPage',
+    about: ['Kit Digital', 'Subvención Digitalización', 'Autónomos PYMES', 'Fondos Europeos', 'Apps 4 Business SL'],
+    mentions: ['Gobierno España', 'Fondos Next Generation EU', 'Red.es', 'Acelera PYME', 'Segmento III'],
     inLanguage: 'es-ES',
     category: 'kit-digital',
+    faqs: [
+      {
+        question: "¿Qué es el Kit Digital para autónomos y pymes?",
+        answer: "Es una ayuda económica financiada por la Unión Europea a través de los fondos Next Generation EU, destinada a impulsar la digitalización de autónomos, microempresas y pequeñas empresas en España. Permite acceder a soluciones digitales como páginas web, gestión de redes sociales, ecommerce, etc."
+      },
+      {
+        question: "¿Cuánto dinero es la subvención del kit digital para autónomos y pymes de menos de 3 empleados?",
+        answer: "Si eres autónomo (Segmento III: de 0 a menos de 3 empleados), puedes recibir hasta 3.000 €. De estos, 1.000 € están reservados obligatoriamente para \"Puesto de trabajo seguro en internet\", por lo que tendrás disponibles hasta 2.000 € para el resto de soluciones ofrecidas por Hayas Marketing."
+      },
+      {
+        question: "¿Qué requisitos debo cumplir para solicitar el Kit Digital como autónomo?",
+        answer: "Debes cumplir los siguientes requisitos: Estar dado de alta como autónomo. Tener una antigüedad mínima (generalmente 6 meses). Estar al corriente de tus obligaciones tributarias y con la Seguridad Social. No estar en situación de crisis económica. No haber superado el límite de ayudas mínimis (200.000 € en 3 años). No tener una orden de recuperación pendiente por ayudas ilegales de la UE."
+      },
+      {
+        question: "¿Qué pasos debo seguir para la solicitud del Kit Digital para autónomos?",
+        answer: "El proceso es sencillo y lo puedes realizar tú mismo o a través de Hayas Marketing: Alta en Acelera Pyme: en https://www.acelerapyme.gob.es/registro-pyme. Hacer el test de diagnóstico de transformación digital. Solicitar la subvención en el portal RED.ES en la página de tu convocatoria. Para los autónomos y empresas que decidan implementar una solución del kit digital con nosotros les ofrecemos la gestión de la solicitud de tu kit digital totalmente gratis. Envíanos un Whatsapp o un formulario de contacto y te ayudamos también con la solicitud."
+      },
+      {
+        question: "¿Puedo usar el bono de autónom@ y el de mi empresa para digitalizar el mismo negocio?",
+        answer: "❌ No puedes usar el bono de autónom@ para digitalizar una empresa. Si tienes una empresa constituida, el bono digital debe estar a nombre de la empresa. ✅ Pero sí puedes usar ambos bonos para soluciones distintas, siempre que estén claramente separadas: El bono de la empresa puede aplicarse a la web o al SEO. El bono como autónoma a otras soluciones como factura electrónica u oficina virtual, si se justifican como parte de tu actividad como persona física."
+      },
+      {
+        question: "¿Qué solución del Kit Digital puedo implementar con Hayas Marketing?",
+        answer: "Con Hayas Marketing puedes implementar las siguientes soluciones del Kit Digital incluidas en el catálogo oficial: Sitio web y presencia básica en internet - Diseño y desarrollo de una web profesional, optimizada para buscadores y adaptada a móviles. Presencia avanzada en internet (SEO avanzado) - Mejora del posicionamiento web para atraer más visitas cualificadas desde buscadores como Google. Comercio electrónico - Creación de una tienda online con pasarela de pago, gestión de productos y diseño personalizado. Gestión de una red social - Plan de contenidos, publicación periódica, dinamización de perfiles y mejora de la presencia en redes. Gestión de clientes (CRM) - Herramientas para organizar y automatizar relaciones con clientes, mejorar el seguimiento comercial y la fidelización. Marketplace - Asistencia para vender tus productos en plataformas como Amazon, eBay u otras, con gestión de catálogo. Nos encontrarás en el Catálogo de Agentes Digitalizadores del Kit Digital con nuestra razón social: Apps 4 Business SL"
+      }
+    ],
     headings: {
-      h2Primary: 'Digitalización empresarial con ayudas Kit Digital',
+      h2Primary: 'Kit Digital 2024: digitalización subvencionada para autónomos',
       h2Secondary: [
-        'Subvenciones para transformación digital de PYMEs',
-        'Servicios digitales subvencionados al 100%',
-        'Kit Digital: presencia web y gestión de clientes'
+        'Subvenciones hasta 3.000€ para transformación digital',
+        'Soluciones digitales del catálogo oficial Kit Digital',
+        'Requisitos y proceso de solicitud paso a paso'
       ],
       h3Strategic: [
-        'Solicitud de ayudas Kit Digital paso a paso',
-        'Desarrollo web con subvención completa',
-        'Implementación CRM financiada'
+        'Agente digitalizador Apps 4 Business SL certificado',
+        'Gestión gratuita de tu solicitud Kit Digital',
+        'Implementación completa de soluciones digitales'
       ]
     }
   },
