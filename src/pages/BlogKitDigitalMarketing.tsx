@@ -340,7 +340,7 @@ const BlogKitDigitalMarketing: React.FC = () => {
       </div>
 
       <div className="text-center mt-12">
-        <Link to="/contacto">
+        <Link to="/es/contacto">
           <Button size="lg" className="text-lg px-8 py-4">
             Solicitar Consulta Gratuita
           </Button>

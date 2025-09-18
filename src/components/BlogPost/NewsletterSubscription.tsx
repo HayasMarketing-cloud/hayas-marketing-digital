@@ -59,15 +59,15 @@ const NewsletterSubscription: React.FC = () => {
                   <p>
                     En Hayas, protegemos tu privacidad y datos. Estamos adheridos al Pacto Digital 
                     para un uso ético de la información. Más info:{' '}
-                    <a href="/aviso-legal" className="text-primary hover:underline">AEPD</a>.
+                     <a href="/es/aviso-legal" className="text-primary hover:underline">AEPD</a>.
                   </p>
                   
                   <div className="flex justify-center space-x-4 pt-2">
-                    <a href="/politica-privacidad" className="text-primary hover:underline">
+                     <a href="/es/politica-privacidad" className="text-primary hover:underline">
                       Política de Privacidad
                     </a>
                     <span className="text-muted-foreground">|</span>
-                    <a href="/aviso-legal" className="text-primary hover:underline">
+                     <a href="/es/aviso-legal" className="text-primary hover:underline">
                       Aviso Legal
                     </a>
                   </div>
@@ -122,7 +122,7 @@ const NewsletterSubscription: React.FC = () => {
                 
                 <p className="text-xs text-muted-foreground text-center">
                   No spam. Cancela cuando quieras. Revisa nuestra{' '}
-                  <a href="/politica-privacidad" className="text-primary hover:underline">
+                   <a href="/es/politica-privacidad" className="text-primary hover:underline">
                     política de privacidad
                   </a>.
                 </p>
@@ -133,15 +133,15 @@ const NewsletterSubscription: React.FC = () => {
                 <p>
                   En Hayas, protegemos tu privacidad y datos. Estamos adheridos al Pacto Digital 
                   para un uso ético de la información. Más info:{' '}
-                  <a href="/aviso-legal" className="text-primary hover:underline">AEPD</a>.
+                  <a href="/es/aviso-legal" className="text-primary hover:underline">AEPD</a>.
                 </p>
                 
                 <div className="flex justify-center space-x-4 pt-2">
-                  <a href="/politica-privacidad" className="text-primary hover:underline">
+                  <a href="/es/politica-privacidad" className="text-primary hover:underline">
                     Política de Privacidad
                   </a>
                   <span className="text-muted-foreground">|</span>
-                  <a href="/aviso-legal" className="text-primary hover:underline">
+                  <a href="/es/aviso-legal" className="text-primary hover:underline">
                     Aviso Legal
                   </a>
                 </div>

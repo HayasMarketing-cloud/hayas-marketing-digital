@@ -292,7 +292,7 @@ const BlogCalculoInversionMarketing = () => {
 
       <div className="text-center mt-16">
         <p className="text-lg text-muted-foreground mb-6">
-          ¿Necesitas ayuda calculando tu inversión en marketing digital? <Link to="/consultoria-estrategica-analitica" className="text-primary hover:underline font-medium">Solicita una consulta gratuita</Link> y te ayudamos a crear tu plan personalizado.
+          ¿Necesitas ayuda calculando tu inversión en marketing digital? <Link to="/es/consultoria-estrategica-analitica" className="text-primary hover:underline font-medium">Solicita una consulta gratuita</Link> y te ayudamos a crear tu plan personalizado.
         </p>
       </div>
     </BlogPostTemplate>

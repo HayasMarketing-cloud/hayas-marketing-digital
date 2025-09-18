@@ -81,7 +81,7 @@ const AutomatizacionProcesosVentas: React.FC = () => {
           <h3 className="text-2xl font-semibold mb-3">Automatiza para centrarte en cerrar ventas</h3>
           <p className="text-muted-foreground mb-4">Integramos herramientas y procesos para reducir fricción y aumentar control.</p>
           <Button asChild>
-            <Link to="/solicitar-consulta">Optimiza tu proceso de ventas</Link>
+            <Link to="/es/solicitar-consulta">Optimiza tu proceso de ventas</Link>
           </Button>
         </div>
       </section>

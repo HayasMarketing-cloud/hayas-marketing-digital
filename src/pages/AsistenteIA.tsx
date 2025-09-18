@@ -140,9 +140,9 @@ const AsistenteIA: React.FC = () => {
       <div className="bg-muted/30 py-6 pt-24">
         <div className="container mx-auto px-4">
           <nav className="text-sm text-muted-foreground">
-            <Link to="/" className="hover:text-primary">Inicio</Link>
+            <Link to="/es" className="hover:text-primary">Inicio</Link>
             <span className="mx-2">/</span>
-            <Link to="/servicios" className="hover:text-primary">Servicios</Link>
+            <Link to="/es/servicios" className="hover:text-primary">Servicios</Link>
             <span className="mx-2">/</span>
             <span className="text-foreground">Asistente IA para Atención al Cliente</span>
           </nav>
@@ -167,13 +167,13 @@ const AsistenteIA: React.FC = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" variant="green" className="group" asChild>
-                  <Link to="/agendar-reunion">
+                  <Link to="/es/agendar-reunion">
                     Crear mi Asistente IA
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </Button>
                 <Button size="lg" variant="outline" asChild>
-                  <Link to="/soluciones/activa-tu-estrategia-digital">Ver solución: Activa tu estrategia digital</Link>
+                  <Link to="/es/soluciones/activa-tu-estrategia-digital">Ver solución: Activa tu estrategia digital</Link>
                 </Button>
               </div>
             </div>
@@ -376,13 +376,13 @@ const AsistenteIA: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" className="group" asChild>
-              <Link to="/contacto">
+              <Link to="/es/contacto">
                 Crear mi Asistente IA
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
             <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary" asChild>
-              <Link to="/casos-exito">Ver Más Casos</Link>
+              <Link to="/es/casos-exito">Ver Más Casos</Link>
             </Button>
           </div>
         </div>

@@ -300,7 +300,7 @@ const BlogEmailMarketingHubSpot = () => {
               En Hayas, convertimos las normativas en ventajas competitivas, construyendo un marketing digital más transparente, auténtico y sostenible.
             </p>
             <a 
-              href="/contacto" 
+              href="/es/contacto" 
               className="inline-flex items-center px-6 py-3 bg-white text-primary font-semibold rounded-lg hover:bg-gray-50 transition-colors"
             >
               Solicita tu consulta técnica gratuita →

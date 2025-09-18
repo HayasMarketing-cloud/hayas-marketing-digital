@@ -296,7 +296,7 @@ const BlogPerfilClienteIdeal = () => {
               Nuestro equipo puede ayudarte a desarrollar buyer personas precisos y crear estrategias de marketing que generen resultados reales.
             </p>
             <a 
-              href="/contacto" 
+              href="/es/contacto" 
               className="inline-flex items-center px-6 py-3 bg-white text-primary font-semibold rounded-lg hover:bg-gray-50 transition-colors"
             >
               Solicita una consulta gratuita →

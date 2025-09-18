@@ -137,7 +137,7 @@ const EstrategiaContenidos: React.FC = () => {
             </div>
             <h3 className="text-2xl font-semibold mb-3">Construye autoridad con un sistema de contenidos</h3>
             <p className="text-muted-foreground mb-4">De la estrategia al calendario, con ejecución y medición reales.</p>
-            <a href="/solicitar-consulta" className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary/90 transition-colors">
+            <a href="/es/solicitar-consulta" className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary/90 transition-colors">
               Quiero empezar
             </a>
           </div>

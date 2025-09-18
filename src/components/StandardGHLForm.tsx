@@ -93,15 +93,15 @@ const StandardGHLForm: React.FC<StandardGHLFormProps> = ({
             <p className="leading-relaxed">
               En Hayas, protegemos tu privacidad y datos. Estamos adheridos al Pacto Digital 
               para un uso ético de la información. Más info:{' '}
-              <a href="/aviso-legal" className="text-primary hover:underline font-medium">AEPD</a>.
+              <a href="/es/aviso-legal" className="text-primary hover:underline font-medium">AEPD</a>.
             </p>
             
             <div className="flex justify-center items-center space-x-4 pt-2">
-              <a href="/politica-privacidad" className="text-primary hover:underline font-medium transition-colors">
+              <a href="/es/politica-privacidad" className="text-primary hover:underline font-medium transition-colors">
                 Política de Privacidad
               </a>
               <span className="text-muted-foreground/60">|</span>
-              <a href="/aviso-legal" className="text-primary hover:underline font-medium transition-colors">
+              <a href="/es/aviso-legal" className="text-primary hover:underline font-medium transition-colors">
                 Aviso Legal
               </a>
             </div>

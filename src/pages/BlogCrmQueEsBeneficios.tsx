@@ -366,7 +366,7 @@ const BlogCrmQueEsBeneficios = () => {
             Un CRM bien configurado puede transformar tu marketing y ventas en semanas. En Hayas, nos encargamos de todo: elección, configuración, automatización e integración.
           </p>
           <Link 
-            to="/servicios/implantacion-crm"
+            to="/es/servicios/implantacion-crm"
             className="inline-flex items-center justify-center px-8 py-3 bg-primary text-primary-foreground font-semibold rounded-lg hover:bg-primary/90 transition-colors"
           >
             Descubre nuestro servicio de Implantación de CRM

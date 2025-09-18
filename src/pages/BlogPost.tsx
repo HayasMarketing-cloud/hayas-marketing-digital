@@ -26,7 +26,7 @@ const BlogPost = () => {
         <div className="container mx-auto px-4 py-24 max-w-4xl">
           {/* Breadcrumb */}
           <div className="mb-8">
-            <Link to="/blog" className="flex items-center text-muted-foreground hover:text-primary transition-colors">
+             <Link to="/es/blog" className="flex items-center text-muted-foreground hover:text-primary transition-colors">
               <ArrowLeft className="h-4 w-4 mr-2" />
               Volver al Blog
             </Link>
@@ -405,14 +405,14 @@ const BlogPost = () => {
             <div className="bg-gradient-to-r from-primary/5 to-accent/5 p-6 rounded-lg mt-12">
               <h3 className="text-2xl font-bold mb-4 text-center">¿Necesitas ayuda para desarrollar tu estrategia de contenidos?</h3>
               <p className="text-center mb-6">
-                En <strong>Hayas Marketing</strong> creamos <Link to="/servicios/estrategia-contenidos" className="text-primary hover:underline">estrategias de contenido personalizadas</Link> que conectan con tu audiencia y generan resultados medibles. Desde la conceptualización hasta la medición, te acompañamos en cada paso.
+                En <strong>Hayas Marketing</strong> creamos <Link to="/es/servicios/estrategia-contenidos" className="text-primary hover:underline">estrategias de contenido personalizadas</Link> que conectan con tu audiencia y generan resultados medibles. Desde la conceptualización hasta la medición, te acompañamos en cada paso.
               </p>
               <div className="text-center space-y-4">
                 <Button asChild size="lg" className="mr-4">
-                  <Link to="/servicios/estrategia-contenidos">Ver Servicios de Contenido</Link>
+                  <Link to="/es/servicios/estrategia-contenidos">Ver Servicios de Contenido</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <Link to="/agendar-reunion">Solicitar Asesoría Gratuita</Link>
+                  <Link to="/es/agendar-reunion">Solicitar Asesoría Gratuita</Link>
                 </Button>
               </div>
             </div>
@@ -420,15 +420,15 @@ const BlogPost = () => {
             <div className="mt-12 pt-8 border-t">
               <h3 className="text-xl font-bold mb-4">📚 Artículos relacionados que te pueden interesar:</h3>
               <div className="grid md:grid-cols-3 gap-4">
-                <Link to="/blog/mantenimiento-wordpress-emprendedores-2025" className="block p-4 border rounded-lg hover:bg-muted/50 transition-colors">
+                <Link to="/es/blog/mantenimiento-wordpress-emprendedores-2025" className="block p-4 border rounded-lg hover:bg-muted/50 transition-colors">
                   <h4 className="font-semibold mb-2">Mantenimiento WordPress para Emprendedores</h4>
                   <p className="text-sm text-muted-foreground">Mantén tu WordPress seguro y optimizado</p>
                 </Link>
-                <Link to="/seo-positioning" className="block p-4 border rounded-lg hover:bg-muted/50 transition-colors">
+                 <Link to="/es/seo-positioning" className="block p-4 border rounded-lg hover:bg-muted/50 transition-colors">
                   <h4 className="font-semibold mb-2">SEO y Posicionamiento Web</h4>
                   <p className="text-sm text-muted-foreground">Estrategias SEO que realmente funcionan</p>
                 </Link>
-                <Link to="/gestion-marketing" className="block p-4 border rounded-lg hover:bg-muted/50 transition-colors">
+                <Link to="/es/gestion-marketing" className="block p-4 border rounded-lg hover:bg-muted/50 transition-colors">
                   <h4 className="font-semibold mb-2">Gestión Integral de Marketing</h4>
                   <p className="text-sm text-muted-foreground">Servicios completos de marketing digital</p>
                 </Link>
@@ -438,7 +438,7 @@ const BlogPost = () => {
 
           {/* Navigation */}
           <div className="flex justify-between items-center mt-12 pt-8 border-t">
-            <Link to="/blog" className="flex items-center text-muted-foreground hover:text-primary transition-colors">
+             <Link to="/es/blog" className="flex items-center text-muted-foreground hover:text-primary transition-colors">
               <ArrowLeft className="h-4 w-4 mr-2" />
               Volver al Blog
             </Link>
@@ -490,7 +490,7 @@ const BlogPost = () => {
         <div className="container mx-auto px-4 py-24 max-w-4xl">
           {/* Breadcrumb */}
           <div className="mb-8">
-            <Link to="/blog" className="flex items-center text-muted-foreground hover:text-primary transition-colors">
+             <Link to="/es/blog" className="flex items-center text-muted-foreground hover:text-primary transition-colors">
               <ArrowLeft className="h-4 w-4 mr-2" />
               Volver al Blog
             </Link>
@@ -893,10 +893,10 @@ const BlogPost = () => {
               </p>
               <div className="text-center space-y-4">
                 <Button asChild size="lg" className="mr-4">
-                  <Link to="/alojamiento-mantenimiento">Ver Servicio de Mantenimiento</Link>
+                  <Link to="/es/alojamiento-mantenimiento">Ver Servicio de Mantenimiento</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <Link to="/contacto">Consulta Gratuita</Link>
+                  <Link to="/es/contacto">Consulta Gratuita</Link>
                 </Button>
               </div>
             </div>

@@ -549,10 +549,10 @@ const BlogIARedesSociales = () => {
         <p className="text-sm mb-4">¿Qué medidas tomas para protegerte de los riesgos? ¡Comparte tu experiencia con nosotros!</p>
         <div className="text-center space-y-4">
           <Button asChild size="lg" variant="secondary" className="mr-4">
-            <Link to="/soluciones-ia">Ver Soluciones de IA</Link>
+            <Link to="/es/soluciones-ia">Ver Soluciones de IA</Link>
           </Button>
           <Button asChild variant="outline" size="lg" className="bg-white/10 text-white border-white/20 hover:bg-white/20">
-            <Link to="/contacto">Consulta Gratuita</Link>
+            <Link to="/es/contacto">Consulta Gratuita</Link>
           </Button>
         </div>
       </div>

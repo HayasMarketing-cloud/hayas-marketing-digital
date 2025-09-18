@@ -201,7 +201,7 @@ const ActivaTusVentas = () => {
               <BreadcrumbList>
                 <BreadcrumbItem>
                   <BreadcrumbLink asChild>
-                    <Link to="/">Inicio</Link>
+                    <Link to="/es">Inicio</Link>
                   </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
@@ -232,7 +232,7 @@ const ActivaTusVentas = () => {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button size="lg" className="bg-activa-primary hover:bg-activa-primary/90 text-white" asChild>
-                    <Link to="/agendar-reunion">
+                    <Link to="/es/agendar-reunion">
                       👉 Solicita tu asesoría gratuita
                       <ArrowRight className="ml-2 h-5 w-5" />
                     </Link>
@@ -430,7 +430,7 @@ const ActivaTusVentas = () => {
 
             <div className="text-center">
               <Button variant="outline" size="lg" asChild>
-                <Link to="/casos-exito?pillar=activa">
+                <Link to="/es/casos-exito?pillar=activa">
                   Ver casos de éxito de Activa tus ventas
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>

@@ -84,7 +84,7 @@ const BlogComoElegirMejorCRM = () => {
       <div className="space-y-8">
         <section>
           <p className="text-lg">
-            En este artículo te facilitamos una guía que te ayudará a seleccionar el mejor CRM para tu Empresa u Organización. Si te falta información sobre qué es y para qué sirve un CRM, puedes leer nuestro artículo <a href="/blog/crm-que-es-beneficios" className="text-primary hover:underline">«¿Qué es un CRM o Customer Relationship Management?»</a>
+            En este artículo te facilitamos una guía que te ayudará a seleccionar el mejor CRM para tu Empresa u Organización. Si te falta información sobre qué es y para qué sirve un CRM, puedes leer nuestro artículo <a href="/es/blog/crm-que-es-beneficios" className="text-primary hover:underline">«¿Qué es un CRM o Customer Relationship Management?»</a>
           </p>
           
           <p>

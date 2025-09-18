@@ -351,7 +351,7 @@ const BlogBrandingProcesoTecnicasNaming = () => {
 
       <div className="text-center mt-16">
         <p className="text-lg text-muted-foreground mb-6">
-          ¿Necesitas ayuda profesional con tu proceso de branding y naming? <Link to="/creacion-marca" className="text-primary hover:underline font-medium">Descubre nuestro servicio completo</Link> y lleva tu marca al siguiente nivel.
+          ¿Necesitas ayuda profesional con tu proceso de branding y naming? <Link to="/es/creacion-marca" className="text-primary hover:underline font-medium">Descubre nuestro servicio completo</Link> y lleva tu marca al siguiente nivel.
         </p>
       </div>
     </BlogPostTemplate>

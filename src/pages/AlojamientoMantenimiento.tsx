@@ -201,9 +201,9 @@ const AlojamientoMantenimiento: React.FC = () => {
       <div className="bg-muted/30 py-4">
         <div className="container mx-auto px-4">
           <nav className="text-sm text-muted-foreground">
-            <Link to="/" className="hover:text-primary">Inicio</Link>
+            <Link to="/es" className="hover:text-primary">Inicio</Link>
             <span className="mx-2">/</span>
-            <Link to="/servicios/diseno-web" className="hover:text-primary">Diseño Web</Link>
+            <Link to="/es/servicios/diseno-web" className="hover:text-primary">Diseño Web</Link>
             <span className="mx-2">/</span>
             <span className="text-foreground">Alojamiento y Mantenimiento Web</span>
           </nav>
@@ -228,7 +228,7 @@ const AlojamientoMantenimiento: React.FC = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="group" asChild>
-                  <Link to="/contacto">
+                   <Link to="/es/contacto">
                     Migrar mi Web
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
@@ -412,7 +412,7 @@ const AlojamientoMantenimiento: React.FC = () => {
                     variant={index === 1 ? "default" : "outline"}
                     asChild
                   >
-                    <Link to="/contacto">Contratar Plan</Link>
+                    <Link to="/es/contacto">Contratar Plan</Link>
                   </Button>
                 </CardContent>
               </Card>
@@ -565,13 +565,13 @@ const AlojamientoMantenimiento: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" className="group" asChild>
-              <Link to="/contacto">
+              <Link to="/es/contacto">
                 Migrar mi Web Ahora
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
             <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary" asChild>
-              <Link to="/casos-exito">Ver Más Casos</Link>
+              <Link to="/es/casos-exito">Ver Más Casos</Link>
             </Button>
           </div>
         </div>

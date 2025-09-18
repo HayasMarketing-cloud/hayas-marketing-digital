@@ -147,7 +147,7 @@ const UniversalServiceContactForm: React.FC<ServiceContactFormProps> = ({
                     <p className="text-xs text-muted-foreground">
                       Puedes darte de baja en cualquier momento. Para más información sobre 
                       nuestra gestión de datos y tu privacidad, consulta nuestra{' '}
-                      <a href="/politica-privacidad" className="text-primary hover:underline">
+                       <a href="/es/politica-privacidad" className="text-primary hover:underline">
                         Política de Privacidad
                       </a>.
                     </p>
@@ -163,15 +163,15 @@ const UniversalServiceContactForm: React.FC<ServiceContactFormProps> = ({
                 <div className="text-center text-xs text-muted-foreground">
                   En Hayas, protegemos tu privacidad y datos. Estamos adheridos al Pacto Digital 
                   para un uso ético de la información. Más info:{' '}
-                  <a href="/aviso-legal" className="text-primary hover:underline">AEPD</a>.
+                  <a href="/es/aviso-legal" className="text-primary hover:underline">AEPD</a>.
                 </div>
 
                 <div className="flex justify-center space-x-4 text-xs">
-                  <a href="/politica-privacidad" className="text-primary hover:underline">
+                  <a href="/es/politica-privacidad" className="text-primary hover:underline">
                     Política de Privacidad
                   </a>
                   <span className="text-muted-foreground">|</span>
-                  <a href="/aviso-legal" className="text-primary hover:underline">
+                  <a href="/es/aviso-legal" className="text-primary hover:underline">
                     Aviso Legal
                   </a>
                 </div>

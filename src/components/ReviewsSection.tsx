@@ -106,7 +106,7 @@ const ReviewsSection = () => {
               </Button>
               <Button asChild variant="outline" className="gap-2 border-hayas-primary text-hayas-primary hover:bg-hayas-primary hover:text-white">
                 <a 
-                  href="/agendar-reunion"
+                  href="/es/agendar-reunion"
                 >
                   💻 Reservar reunión online
                 </a>

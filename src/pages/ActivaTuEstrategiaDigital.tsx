@@ -134,7 +134,7 @@ const ActivaTuEstrategiaDigital = () => {
               <BreadcrumbList>
                 <BreadcrumbItem>
                   <BreadcrumbLink asChild>
-                    <Link to="/">Inicio</Link>
+                    <Link to="/es">Inicio</Link>
                   </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
@@ -149,7 +149,7 @@ const ActivaTuEstrategiaDigital = () => {
         {/* Header Navigation */}
         <section className="py-6 bg-gray-50">
           <div className="container mx-auto px-4">
-            <Link to="/#top" className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors">
+            <Link to="/es#top" className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors">
               <ArrowLeft className="h-4 w-4 mr-2" />
               Volver al Inicio
             </Link>
@@ -176,7 +176,7 @@ const ActivaTuEstrategiaDigital = () => {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button size="lg" className="bg-estrategia-primary hover:bg-estrategia-primary/90 text-white" asChild>
-                    <Link to="/agendar-reunion">
+                     <Link to="/es/agendar-reunion">
                       👉 Solicita tu asesoría estratégica
                       <ArrowRight className="ml-2 h-5 w-5" />
                     </Link>
@@ -324,7 +324,7 @@ const ActivaTuEstrategiaDigital = () => {
               todos tus esfuerzos digitales hacia el crecimiento sostenible.
             </p>
             <Button size="lg" className="bg-white text-estrategia-600 hover:bg-gray-100" asChild>
-              <Link to="/agendar-reunion">
+              <Link to="/es/agendar-reunion">
                 Solicitar Consulta Estratégica Gratuita
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>

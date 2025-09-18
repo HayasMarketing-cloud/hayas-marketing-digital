@@ -358,7 +358,7 @@ const BlogPerfilClienteIdealICP = () => {
               Te ayudamos a definir tu ICP perfecto y crear estrategias de marketing que generen resultados medibles.
             </p>
             <a 
-              href="/contacto" 
+              href="/es/contacto" 
               className="inline-flex items-center px-6 py-3 bg-white text-primary font-semibold rounded-lg hover:bg-gray-50 transition-colors"
             >
               Solicita tu consulta estratégica gratuita →

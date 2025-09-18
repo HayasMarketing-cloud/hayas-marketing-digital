@@ -66,15 +66,15 @@ const ContactSection = () => {
                 <p>
                   En Hayas, protegemos tu privacidad y datos. Estamos adheridos al Pacto Digital 
                   para un uso ético de la información. Más info:{' '}
-                  <a href="/aviso-legal" className="text-primary hover:underline">AEPD</a>.
+                  <a href="/es/aviso-legal" className="text-primary hover:underline">AEPD</a>.
                 </p>
                 
                 <div className="flex justify-center space-x-4 pt-2">
-                  <a href="/politica-privacidad" className="text-primary hover:underline">
+                  <a href="/es/politica-privacidad" className="text-primary hover:underline">
                     Política de Privacidad
                   </a>
                   <span className="text-muted-foreground">|</span>
-                  <a href="/aviso-legal" className="text-primary hover:underline">
+                  <a href="/es/aviso-legal" className="text-primary hover:underline">
                     Aviso Legal
                   </a>
                 </div>

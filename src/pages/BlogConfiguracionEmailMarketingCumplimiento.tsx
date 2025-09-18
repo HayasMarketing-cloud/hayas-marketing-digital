@@ -856,14 +856,14 @@ const BlogConfiguracionEmailMarketingCumplimiento = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
-                href="/contacto"
+                href="/es/contacto"
                 className="bg-white text-primary font-semibold px-8 py-3 rounded-lg hover:bg-gray-50 transition-colors inline-flex items-center justify-center gap-2"
               >
                 Revisar mi configuración actual
                 <ArrowRight className="h-4 w-4" />
               </a>
               <a 
-                href="/servicios/email-marketing-automatizaciones"
+                href="/es/servicios/email-marketing-automatizaciones"
                 className="border-2 border-white text-white font-semibold px-8 py-3 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center justify-center gap-2"
               >
                 Ver servicio completo

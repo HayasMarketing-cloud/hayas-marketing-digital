@@ -166,7 +166,7 @@ const SofiaWidget = () => {
                   <div class="text-center">
                     <p class="text-gray-600 mb-2">¡Hola! Soy SofÍA</p>
                     <p class="text-sm text-gray-500">El asistente no está disponible temporalmente</p>
-                    <a href="/contacto" class="inline-block mt-3 px-4 py-2 bg-lime-500 text-white rounded-lg text-sm hover:bg-lime-600 transition-colors">
+                    <a href="/es/contacto" class="inline-block mt-3 px-4 py-2 bg-lime-500 text-white rounded-lg text-sm hover:bg-lime-600 transition-colors">
                       Contactar directamente
                     </a>
                   </div>
