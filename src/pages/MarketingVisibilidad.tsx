@@ -25,7 +25,7 @@ const MarketingVisibilidad = () => {
       <Seo 
         title="Marketing y Visibilidad | SEO, Contenidos y Campañas"
         description="Estrategias completas de SEO, contenidos y campañas digitales para posicionar tu marca y generar clientes potenciales."
-        canonical="/soluciones/marketing-digital"
+        canonical="/soluciones/marketing-visibilidad"
         structuredData={{
           '@context': 'https://schema.org',
           '@type': 'Service',

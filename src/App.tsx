@@ -152,6 +152,13 @@ const App = () => (
           {/* REDIRECCIÓN ROOT A ESPAÑOL */}
           <Route path="/" element={<Navigate to="/es" replace />} />
           
+          {/* REDIRECCIONES SIN PREFIJO /es/ */}
+          <Route path="/nosotros" element={<Navigate to="/es/nosotros" replace />} />
+          <Route path="/servicios/marketing-directo" element={<Navigate to="/es/servicios/marketing-directo" replace />} />
+          <Route path="/servicios/seo-positioning" element={<Navigate to="/es/servicios/seo-positioning" replace />} />
+          <Route path="/comparativa-hubspot-gohighlevel" element={<Navigate to="/es/comparativa/hubspot-vs-go-high-level" replace />} />
+          <Route path="/soluciones/marketing-visibilidad" element={<Navigate to="/es/soluciones/marketing-visibilidad" replace />} />
+          
           {/* RUTAS EN ESPAÑOL */}
           <Route path="/es" element={<Index />} />
           
@@ -171,7 +178,9 @@ const App = () => (
           <Route path="/es/servicios/diseno-web" element={<DisenoWeb />} />
           <Route path="/es/servicios/diseno-web/alojamiento-mantenimiento" element={<AlojamientoMantenimiento />} />
           <Route path="/es/servicios/seo-posicionamiento" element={<SeoPositioning />} />
-          <Route path="/es/soluciones/marketing-digital" element={<MarketingVisibilidad />} />
+          <Route path="/es/servicios/seo-positioning" element={<SeoPositioning />} />
+          <Route path="/es/soluciones/marketing-visibilidad" element={<MarketingVisibilidad />} />
+          <Route path="/es/servicios/marketing-directo" element={<MarketingVisibilidad />} />
           <Route path="/es/soluciones/gestion-marketing" element={<Navigate to="/es/servicios/administracion-crm" replace />} />
           <Route path="/es/soluciones/captacion-leads" element={<CaptacionLeadsClientes />} />
           <Route path="/es/kit-consulting" element={<KitConsulting />} />
