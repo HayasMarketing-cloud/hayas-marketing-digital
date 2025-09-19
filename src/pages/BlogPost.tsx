@@ -1730,13 +1730,13 @@ const BlogPost = () => {
                 En Hayas diseñamos soluciones con IA que no solo suenan bien, <strong>funcionan de verdad</strong>. Desde automatización comercial hasta dashboards predictivos, ya estamos ayudando a marcas a trabajar mejor, vender más y conectar de forma más humana.
               </p>
               <div className="text-center">
-                <Link to="/es/servicios/soluciones-ia">
+                <Link to="/es/servicios">
                   <Button size="lg" className="gradient-primary mr-4">
                     <BookOpen className="mr-2 h-4 w-4" />
                     Ver Servicios de IA
                   </Button>
                 </Link>
-                <Link to="/es#contacto">
+                <Link to="/es/agendar-reunion">
                   <Button size="lg" variant="outline">
                     Solicitar Consulta
                   </Button>
