@@ -74,9 +74,14 @@ const AIServicesSection: React.FC<AIServicesSectionProps> = ({
     <section className={`py-8 md:py-12 bg-gradient-to-br from-muted/30 to-background ${className}`}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            {description}
-          </p>
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-6">
+            {description.replace(/soluciones de inteligencia artificial/gi, '|||GRADIENT|||soluciones de inteligencia artificial|||GRADIENT|||').split('|||GRADIENT|||').map((part, index) => {
+              if (part === 'soluciones de inteligencia artificial') {
+                return <span key={index} className="text-gradient-primary">{part}</span>;
+              }
+              return part;
+            })}
+          </h2>
         </div>
 
         {/* View Toggle */}
