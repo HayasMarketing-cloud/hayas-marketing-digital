@@ -194,7 +194,7 @@ const KitDigitalGestionClientes = () => {
                   </Link>
                 </Button>
                 <Button size="lg" variant="outline" className="border-hayas-200 text-hayas-700 hover:bg-hayas-50" asChild>
-                  <Link to="/agendar-reunion">Agenda tu reunión</Link>
+                  <Link to="/es/agendar-reunion">Agenda tu reunión</Link>
                 </Button>
               </div>
               

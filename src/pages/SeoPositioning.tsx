@@ -175,7 +175,7 @@ const SeoPositioning = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Button size="lg" className="gradient-primary text-white" asChild>
-                  <Link to="/agendar-reunion">
+                  <Link to="/es/agendar-reunion">
                     Auditoría SEO Gratuita
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>

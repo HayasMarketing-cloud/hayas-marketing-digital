@@ -546,7 +546,7 @@ const Nosotros = () => {
                 <div className="flex justify-center">
                   <Button 
                     className="gradient-primary text-white py-6 px-8 text-lg font-medium shadow-elegant hover-scale focus-ring"
-                    onClick={() => window.location.href = '/agendar-reunion'}
+                    onClick={() => window.location.href = '/es/agendar-reunion'}
                   >
                     <ArrowRight className="mr-2 h-5 w-5" />
                     Solicitar Asesoría Gratuita

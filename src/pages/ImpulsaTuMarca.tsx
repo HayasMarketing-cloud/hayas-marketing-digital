@@ -178,7 +178,7 @@ const ImpulsaTuMarca = () => {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button size="lg" className="bg-impulsa-primary hover:bg-impulsa-primary/90 text-white" asChild>
-                    <Link to="/agendar-reunion">
+                    <Link to="/es/agendar-reunion">
                       👉 Solicita tu asesoría gratuita
                       <ArrowRight className="ml-2 h-5 w-5" />
                     </Link>

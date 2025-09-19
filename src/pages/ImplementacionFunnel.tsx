@@ -82,7 +82,7 @@ const ImplementacionFunnel: React.FC = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="group" asChild>
-                  <Link to="/agendar-reunion">
+                  <Link to="/es/agendar-reunion">
                     Solicitar Propuesta
                     <CalendarCheck2 className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
