@@ -9,7 +9,7 @@ import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
 import Seo from '@/components/Seo';
 import OptimizedImage from '@/components/OptimizedImage';
-import iaMarketingHero from '@/assets/ia-marketing-hero.jpg';
+import teamMarketingCollaboration from '@/assets/team-marketing-collaboration.jpg';
 import avisosLegalesHero from '@/assets/avisos-legales-hero.jpg';
 import mantenimientoWordpressHero from '@/assets/mantenimiento-wordpress-hero.jpg';
 import estrategiaMarketingContenidosHero from '@/assets/estrategia-marketing-contenidos-hero.jpg';
@@ -1275,7 +1275,7 @@ const BlogPost = () => {
               </Button>
             </div>
 
-            <img src={iaMarketingHero} alt="Inteligencia Artificial en Marketing - Transformación digital" className="w-full h-64 md:h-80 object-cover rounded-lg mt-8 shadow-lg" />
+            <img src={teamMarketingCollaboration} alt="Equipo de marketing colaborando en estrategias digitales" className="w-full h-64 md:h-80 object-cover rounded-lg mt-8 shadow-lg" />
           </header>
 
           {/* Content */}
