@@ -12,7 +12,7 @@ const solutions = [
     title: "Impulsa tu marca",
     description: "Construye una marca atractiva, adaptada a tu audiencia, reconocible y consistente. Una identidad sólida no solo genera confianza, sino que convierte al tráfico directo en uno de los principales activos estratégicos de tu empresa.",
     includes: "Creación de Marca • Diseño Web • SEO y Posicionamiento • Creación Tienda Online • Gestión de Redes Sociales • Estrategia de Contenidos",
-    href: "/soluciones/impulsa-tu-marca"
+    href: "/es/soluciones/impulsa-tu-marca"
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ const solutions = [
     title: "Conecta con tus clientes",
       description: "La clave para crecer está en conocer a fondo a tus clientes actuales y potenciales. Comprender sus necesidades, comportamientos y expectativas nos permite ayudarte a mejorar tu desempeño, optimizar la experiencia de usuario y, si es necesario, adaptar tus productos o servicios a nuevas demandas del mercado.",
     includes: "Implantación CRM • Captación de Leads y Clientes • Implementación de Funnel • Campañas Inbound Marketing • Marketing Directo • Administración de CRM",
-    href: "/soluciones/conecta-con-tus-clientes"
+    href: "/es/soluciones/conecta-con-tus-clientes"
   },
   {
     id: 3,
@@ -28,7 +28,7 @@ const solutions = [
     title: "Activa tus Ventas",
       description: "Convierte el tráfico en clientes y escala tus ventas con estrategias probadas de conversión y automatización. Implementamos sistemas que transforman leads en ventas recurrentes y optimizan cada punto de contacto del customer journey.",
     includes: "Publicidad Google Ads • Publicidad Redes Sociales • Consultoría Estratégica Ventas • Automatización Procesos de Ventas • Email Marketing y Automatizaciones",
-    href: "/soluciones/activa-tus-ventas"
+    href: "/es/soluciones/activa-tus-ventas"
   }
 ];
 

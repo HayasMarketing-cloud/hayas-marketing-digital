@@ -25,7 +25,7 @@ const aiServices: AIService[] = [
       "Integración con WhatsApp y web",
       "Soporte multiidioma"
     ],
-    link: "/servicios/asistente-ia",
+    link: "/es/servicios/asistente-ia",
     badge: "Más Popular"
   },
   {
@@ -38,7 +38,7 @@ const aiServices: AIService[] = [
       "Optimización con ML",
       "Análisis predictivo"
     ],
-    link: "/servicios/integraciones-ia-procesos"
+    link: "/es/servicios/integraciones-ia-procesos"
   },
   {
     icon: <GraduationCap className="h-8 w-8 text-primary" />,
@@ -50,7 +50,7 @@ const aiServices: AIService[] = [
       "Certificación incluida",
       "Soporte post-formación"
     ],
-    link: "/servicios/formacion-ia"
+    link: "/es/servicios/formacion-ia"
   }
 ];
 
