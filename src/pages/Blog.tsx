@@ -8,7 +8,7 @@ import Footer from '@/components/Footer';
 import Navigation from '@/components/Navigation';
 import BlogTagFilter from '@/components/BlogTagFilter';
 import Seo from '@/components/Seo';
-import iaMarketingHero from '@/assets/ia-marketing-hero.jpg';
+import teamMarketingCollaboration from '@/assets/team-marketing-collaboration.jpg';
 import avisosLegalesHero from '@/assets/avisos-legales-hero.jpg';
 import mantenimientoWordpressHero from '@/assets/mantenimiento-wordpress-hero.jpg';
 import estrategiaMarketingContenidosHero from '@/assets/estrategia-marketing-contenidos-hero.jpg';
@@ -30,7 +30,7 @@ const Blog = () => {
     date: '2024-12-15',
     readTime: '15 min',
     author: 'Equipo Hayas Marketing',
-    image: iaMarketingHero,
+    image: teamMarketingCollaboration,
     category: 'Inteligencia Artificial',
     tags: ['IA', 'Marketing Digital', 'Automatización', 'Estrategia']
   };
