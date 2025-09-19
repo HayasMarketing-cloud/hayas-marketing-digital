@@ -62,7 +62,7 @@ const ArticleUtilitySection: React.FC<ArticleUtilitySectionProps> = ({ title, ur
                 variant="outline" 
                 size="sm"
                 onClick={() => handleShare('x')}
-                className="group hover:bg-gray-50 hover:border-gray-400"
+                className="group hover:bg-gray-50 hover:border-gray-400 hover:text-gray-900"
               >
                 <Hash className="w-4 h-4 mr-2 text-gray-900 group-hover:scale-110 transition-transform" />
                 X
@@ -72,7 +72,7 @@ const ArticleUtilitySection: React.FC<ArticleUtilitySectionProps> = ({ title, ur
                 variant="outline" 
                 size="sm"
                 onClick={() => handleShare('facebook')}
-                className="group hover:bg-blue-50 hover:border-blue-600"
+                className="group hover:bg-blue-50 hover:border-blue-600 hover:text-blue-700"
               >
                 <Users className="w-4 h-4 mr-2 text-blue-600 group-hover:scale-110 transition-transform" />
                 Facebook
@@ -82,7 +82,7 @@ const ArticleUtilitySection: React.FC<ArticleUtilitySectionProps> = ({ title, ur
                 variant="outline" 
                 size="sm"
                 onClick={() => handleShare('linkedin')}
-                className="group hover:bg-blue-50 hover:border-blue-700"
+                className="group hover:bg-blue-50 hover:border-blue-700 hover:text-blue-800"
               >
                 <Briefcase className="w-4 h-4 mr-2 text-blue-700 group-hover:scale-110 transition-transform" />
                 LinkedIn
@@ -92,7 +92,7 @@ const ArticleUtilitySection: React.FC<ArticleUtilitySectionProps> = ({ title, ur
                 variant="outline" 
                 size="sm"
                 onClick={() => handleShare('copy')}
-                className="group hover:bg-gray-50 hover:border-gray-400"
+                className="group hover:bg-gray-50 hover:border-gray-400 hover:text-gray-700"
               >
                 <Link2 className="w-4 h-4 mr-2 text-gray-600 group-hover:scale-110 transition-transform" />
                 Copiar enlace
