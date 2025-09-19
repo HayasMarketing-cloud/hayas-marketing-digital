@@ -3,6 +3,7 @@ import { ArrowRight, Palette, Eye, Target, TrendingUp, Users, Star, Heart, Light
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import brandingHeroImage from '@/assets/branding-proceso-tecnicas-naming-hero.jpg';
 import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -190,8 +191,8 @@ const ImpulsaTuMarca = () => {
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-impulsa-200 to-impulsa-300 rounded-3xl transform rotate-6 scale-105 opacity-20"></div>
                 <img 
-                  src="/src/assets/impulsa-marca-creative-hero.jpg"
-                  alt="Estrategia de marca y diseño creativo"
+                  src={brandingHeroImage}
+                  alt="Estrategia de marca y diseño creativo - Impulsa tu marca con Hayas Marketing"
                   className="relative z-10 w-full h-auto rounded-3xl shadow-2xl"
                 />
               </div>

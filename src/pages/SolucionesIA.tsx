@@ -3,6 +3,7 @@ import { ArrowLeft, Brain, Bot, Zap, Target, TrendingUp, Sparkles, Eye, MessageS
 import DynamicH1 from '@/components/DynamicH1';
 import { useAdvancedSEO } from '@/hooks/useAdvancedSEO';
 import { Badge } from '@/components/ui/badge';
+import asistenteiAHeroImage from '@/assets/asistente-ia-hero.jpg';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import AIServicesSection from '@/components/AIServicesSection';
@@ -98,8 +99,8 @@ const SolucionesIA = () => {
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-hayas-200 to-turquesa-200 rounded-3xl transform rotate-6 scale-105 opacity-20"></div>
                 <img 
-                  src="/src/assets/soluciones-ia-marketing-hero.jpg"
-                  alt="Soluciones de inteligencia artificial aplicada al marketing digital" 
+                  src={asistenteiAHeroImage}
+                  alt="Soluciones de inteligencia artificial aplicada al marketing digital - SofÍA asistente IA" 
                   className="relative z-10 w-full h-auto rounded-3xl shadow-2xl"
                 />
               </div>
