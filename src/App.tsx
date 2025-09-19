@@ -73,6 +73,7 @@ import CasoExitoHotteoTravel from '@/pages/CasoExitoHotteoTravel';
 import ImplantacionCrm from "./pages/ImplantacionCrm";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import BlogIAMarketing from "./pages/BlogIAMarketing";
 import AgendarReunion from "./pages/AgendarReunion";
 import SolicitarConsulta from "./pages/SolicitarConsulta";
 import Contacto from "./pages/Contacto";
@@ -242,7 +243,7 @@ const App = () => (
            <Route path="/es/blog" element={<Blog />} />
            
            {/* URL CRÍTICA - Post IA Marketing (indexada en Google) */}
-           <Route path="/es/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing" element={<BlogPost />} />
+           <Route path="/es/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing" element={<BlogIAMarketing />} />
            
            <Route path="/es/blog/guia-tecnica-email-marketing-hubspot-configuracion" element={<BlogEmailMarketingHubSpot />} />
            <Route path="/es/blog/configuracion-email-marketing-cumplimiento-normativo" element={<BlogConfiguracionEmailMarketingCumplimiento />} />
