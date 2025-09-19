@@ -54,7 +54,7 @@ const CasoExitoIVirgenExtra = () => {
       ctaTitle="¿Quieres posicionarte como experto en tu sector?"
       ctaDescription="Creamos marcas que transmiten autoridad y expertise técnico. Tu consultoría especializada merece una identidad a su altura."
       ctaButtonText="Desarrollar mi Marca Profesional"
-      ctaButtonLink="/agendar-reunion"
+      ctaButtonLink="/es/agendar-reunion"
     />
   );
 };

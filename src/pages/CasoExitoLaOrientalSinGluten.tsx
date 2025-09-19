@@ -67,7 +67,7 @@ const CasoExitoLaOrientalSinGluten = () => {
       ctaTitle="¿Quieres resultados como estos?"
       ctaDescription="Te ayudamos a modernizar tu ecommerce y desarrollar una estrategia integral como lo hicimos con La Oriental Sin Gluten."
       ctaButtonText="Conversemos"
-      ctaButtonLink="/agendar-reunion"
+      ctaButtonLink="/es/agendar-reunion"
     />
   );
 };

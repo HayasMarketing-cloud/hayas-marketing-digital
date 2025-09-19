@@ -54,7 +54,7 @@ const CasoExitoCentroRoraima = () => {
       ctaTitle="¿Tu centro de salud necesita mayor visibilidad?"
       ctaDescription="Ayudamos a centros de salud mental y clínicas especializadas a posicionarse como referentes en su sector a través de estrategias de marca médicas auténticas y efectivas."
       ctaButtonText="Posicionar mi Centro de Salud"
-      ctaButtonLink="/contacto"
+      ctaButtonLink="/es/contacto"
     />
   );
 };

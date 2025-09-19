@@ -58,7 +58,7 @@ const CasoExitoHikvision: React.FC = () => {
       ctaTitle="¿Necesitas una landing que convierta?"
       ctaDescription="Creamos landing pages optimizadas que maximizan las conversiones y captan leads cualificados para tus eventos y campañas."
       ctaButtonText="Crear mi landing page"
-      ctaButtonLink="/agendar-reunion"
+      ctaButtonLink="/es/agendar-reunion"
     />
   );
 };

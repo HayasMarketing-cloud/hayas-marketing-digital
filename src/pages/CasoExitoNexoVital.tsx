@@ -62,7 +62,7 @@ const CasoExitoNexoVital = () => {
       ctaTitle="¿Necesitas profesionalizar tu consulta?"
       ctaDescription="Te ayudamos a crear una marca profesional que genere confianza y te posicione como referente en tu especialidad."
       ctaButtonText="Desarrollar mi marca profesional"
-      ctaButtonLink="/agendar-reunion"
+      ctaButtonLink="/es/agendar-reunion"
     />
   );
 };

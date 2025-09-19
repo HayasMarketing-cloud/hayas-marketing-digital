@@ -62,7 +62,7 @@ const CasoExitoInboundStudents = () => {
       ctaTitle="¿Necesitas digitalizar tus servicios?"
       ctaDescription="Te ayudamos a transformar digitalmente tu negocio con estrategia, diseño web y automatización personalizada."
       ctaButtonText="Digitalizar mi negocio"
-      ctaButtonLink="/agendar-reunion"
+      ctaButtonLink="/es/agendar-reunion"
     />
   );
 };

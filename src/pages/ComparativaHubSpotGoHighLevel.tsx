@@ -660,7 +660,7 @@ const ComparativaHubSpotGoHighLevel = () => {
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="group">
-                <Link to="/agendar-reunion" className="flex items-center gap-2">
+                <Link to="/es/agendar-reunion" className="flex items-center gap-2">
                   👉 Agenda tu demo personalizada
                   <MessageSquare className="h-4 w-4 group-hover:scale-110 transition-transform" />
                 </Link>

@@ -56,7 +56,7 @@ const CasoExitoAlmaCruceros = () => {
       ctaTitle="¿Quieres un resultado similar?"
       ctaDescription="Hablemos de tu contexto y diseñemos campañas de Google Ads enfocadas a reservas y ROI."
       ctaButtonText="Solicitar consulta gratuita"
-      ctaButtonLink="/agendar-reunion"
+      ctaButtonLink="/es/agendar-reunion"
     />
   );
 };

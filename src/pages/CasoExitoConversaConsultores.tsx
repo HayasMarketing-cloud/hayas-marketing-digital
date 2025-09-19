@@ -53,7 +53,7 @@ const CasoExitoConversaConsultores: React.FC = () => {
       ctaTitle="¿Quieres una web que genere autoridad?"
       ctaDescription="Combinamos diseño web profesional con estrategias SEO efectivas para posicionar tu consultoría como referente en tu sector."
       ctaButtonText="Posicionar mi consultoría"
-      ctaButtonLink="/agendar-reunion"
+      ctaButtonLink="/es/agendar-reunion"
     />
   );
 };

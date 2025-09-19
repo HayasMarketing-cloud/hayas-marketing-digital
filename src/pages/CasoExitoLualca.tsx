@@ -54,7 +54,7 @@ const CasoExitoLualca: React.FC = () => {
       ctaTitle="¿Quieres un resultado similar?"
       ctaDescription="Hablemos de tu contexto y diseñemos una solución web integral para tu empresa."
       ctaButtonText="Solicitar consulta gratuita"
-      ctaButtonLink="/agendar-reunion"
+      ctaButtonLink="/es/agendar-reunion"
     />
   );
 };

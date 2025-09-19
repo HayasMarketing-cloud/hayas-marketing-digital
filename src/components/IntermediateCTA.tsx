@@ -15,7 +15,7 @@ const IntermediateCTA: React.FC<IntermediateCTAProps> = ({
   title = "Descubre cómo puede ayudarte un diseño web profesional",
   subtitle = "Solicita una consulta gratuita y te mostraremos cómo transformar tu presencia digital",
   buttonText = "Hablar con un especialista",
-  buttonLink = "/agendar-reunion",
+  buttonLink = "/es/agendar-reunion",
   className = ""
 }) => {
   return (

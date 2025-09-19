@@ -62,7 +62,7 @@ const CasoExitoSuministrosXSKD = () => {
       ctaTitle="¿Quieres mejorar tu SEO industrial?"
       ctaDescription="Te ayudamos a posicionar tu empresa en búsquedas industriales y aumentar tus consultas comerciales."
       ctaButtonText="Solicitar consulta SEO"
-      ctaButtonLink="/agendar-reunion"
+      ctaButtonLink="/es/agendar-reunion"
     />
   );
 };

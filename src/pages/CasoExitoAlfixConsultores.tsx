@@ -56,7 +56,7 @@ const CasoExitoAlfixConsultores = () => {
       ctaTitle="¿Quieres un resultado similar?"
       ctaDescription="Hablemos de tu contexto y diseñemos una implantación de HubSpot alineada a tus servicios."
       ctaButtonText="Solicitar consulta gratuita"
-      ctaButtonLink="/agendar-reunion"
+      ctaButtonLink="/es/agendar-reunion"
     />
   );
 };

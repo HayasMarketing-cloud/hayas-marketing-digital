@@ -67,7 +67,7 @@ const CasoExitoRivasCentro: React.FC = () => {
       ctaTitle="¿Tienes un centro comercial?"
       ctaDescription="Te ayudamos a crear una estrategia digital efectiva para conectar con tu comunidad local."
       ctaButtonText="Hablemos de tu proyecto"
-      ctaButtonLink="/agendar-reunion"
+      ctaButtonLink="/es/agendar-reunion"
     />
   );
 };

@@ -64,7 +64,7 @@ const CasoExitoFormatoEducativo = (): React.JSX.Element => {
       ctaTitle="¿Necesitas digitalizar tu gestión educativa?"
       ctaDescription="Te ayudamos a implementar un CRM que transforme la manera en que gestionas tus estudiantes y procesos educativos."
       ctaButtonText="Solicitar consulta gratuita"
-      ctaButtonLink="/agendar-reunion"
+      ctaButtonLink="/es/agendar-reunion"
     />
   );
 };

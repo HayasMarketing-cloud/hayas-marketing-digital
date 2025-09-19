@@ -59,7 +59,7 @@ const CasoExitoOMR = (): React.JSX.Element => {
       ctaTitle="¿Quieres una web que te ayude a crecer?"
       ctaDescription="Diseñamos y mantenemos tu web para que puedas concentrarte en tus clientes. Rendimiento, seguridad y captación en una sola solución."
       ctaButtonText="Solicitar Consulta"
-      ctaButtonLink="/solicitar-consulta"
+      ctaButtonLink="/es/solicitar-consulta"
     />
   );
 };

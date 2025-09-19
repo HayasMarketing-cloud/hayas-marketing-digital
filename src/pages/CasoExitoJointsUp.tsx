@@ -54,7 +54,7 @@ const CasoExitoJointsUp = () => {
       ctaTitle="¿Tu práctica médica necesita una marca de confianza?"
       ctaDescription="Creamos identidades médicas que transmiten autoridad profesional y generan confianza inmediata en pacientes. Tu especialización merece una marca a su altura."
       ctaButtonText="Crear mi Marca Médica"
-      ctaButtonLink="/agendar-reunion"
+      ctaButtonLink="/es/agendar-reunion"
     />
   );
 };

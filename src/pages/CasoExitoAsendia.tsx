@@ -78,7 +78,7 @@ const CasoExitoAsendia = () => {
       ctaTitle="¿Listo para optimizar tu estrategia comercial B2B?"
       ctaDescription="Obtén los mismos resultados que Asendia. Agenda una consulta gratuita y descubre cómo podemos ayudarte a atraer y retener managers de e-commerce con un CRM y automatización diseñados para tu sector."
       ctaButtonText="Agenda tu consulta gratuita"
-      ctaButtonLink="/agendar-reunion"
+      ctaButtonLink="/es/agendar-reunion"
     />
   );
 };

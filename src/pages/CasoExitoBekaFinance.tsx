@@ -64,7 +64,7 @@ const CasoExitoBekaFinance: React.FC = () => {
     ctaTitle: '¿Quieres una marca sólida para tu sector?',
     ctaDescription: 'Te ayudamos a crear una identidad de marca que proyecte confianza y liderazgo como lo hicimos con Beka Finance.',
     ctaButtonText: 'Crear mi marca sólida',
-    ctaButtonLink: '/agendar-reunion'
+    ctaButtonLink: '/es/agendar-reunion'
   };
 
   return <CaseStudyTemplate {...caseStudyData} />;

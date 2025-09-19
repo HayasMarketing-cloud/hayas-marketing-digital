@@ -54,7 +54,7 @@ const CasoExitoCabreraCervantes = () => {
       ctaTitle="¿Necesitas una web profesional para tu despacho?"
       ctaDescription="Creamos presencias digitales que transmiten confianza y profesionalidad, adaptadas específicamente al sector legal y de servicios profesionales."
       ctaButtonText="Solicitar consulta gratuita"
-      ctaButtonLink="/agendar-reunion"
+      ctaButtonLink="/es/agendar-reunion"
     />
   );
 };

@@ -53,7 +53,7 @@ const CasoExitoGiveAndGo: React.FC = () => {
       ctaTitle="¿Quieres digitalizar tu negocio de eventos?"
       ctaDescription="Te ayudamos a crear una plataforma web con ecommerce integrado que optimice la gestión de tus eventos y mejore la experiencia de tus clientes."
       ctaButtonText="Digitalizar mi negocio"
-      ctaButtonLink="/agendar-reunion"
+      ctaButtonLink="/es/agendar-reunion"
     />
   );
 };

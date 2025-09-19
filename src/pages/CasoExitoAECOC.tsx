@@ -59,7 +59,7 @@ const CasoExitoAECOC = () => {
       ctaTitle="¿Quieres impulsar un proyecto social o educativo?"
       ctaDescription="Descubre cómo nuestras soluciones digitales pueden ayudarte a conseguir un impacto real en tu sector."
       ctaButtonText="Solicitar consulta gratuita"
-      ctaButtonLink="/contacto"
+      ctaButtonLink="/es/contacto"
     />
   );
 };

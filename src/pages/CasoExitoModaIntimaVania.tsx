@@ -47,7 +47,7 @@ const CasoExitoModaIntimaVania: React.FC = () => {
       ctaTitle="¿Quieres un resultado similar?"
       ctaDescription="Hablemos de tu contexto y diseñemos una implantación de HubSpot y estrategia en redes sociales a medida."
       ctaButtonText="Solicitar consulta gratuita"
-      ctaButtonLink="/agendar-reunion"
+      ctaButtonLink="/es/agendar-reunion"
     />
   );
 };

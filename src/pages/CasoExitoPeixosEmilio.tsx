@@ -67,7 +67,7 @@ const CasoExitoPeixosEmilio = () => {
       ctaTitle="¿Necesitas digitalizar tu negocio tradicional?"
       ctaDescription="Te ayudamos a llevar tu negocio al entorno digital manteniendo su esencia y calidad."
       ctaButtonText="Digitalizar mi negocio"
-      ctaButtonLink="/agendar-reunion"
+      ctaButtonLink="/es/agendar-reunion"
     />
   );
 };

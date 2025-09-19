@@ -208,7 +208,7 @@ const ConectaConTusClientes = () => {
             <div className="text-center">
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild size="lg" className="group">
-                  <Link to="/agendar-reunion" className="flex items-center gap-2">
+                  <Link to="/es/agendar-reunion" className="flex items-center gap-2">
                     Solicitar consultoría gratuita
                     <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
@@ -243,7 +243,7 @@ const ConectaConTusClientes = () => {
         title="Descubre cómo un CRM puede transformar tu negocio"
         subtitle="Solicita una asesoría gratuita y te mostraremos cómo optimizar la relación con tus clientes"
         buttonText="Solicitar asesoría gratuita"
-        buttonLink="/solicitar-consulta"
+        buttonLink="/es/solicitar-consulta"
       />
 
       {/* FAQ Section */}
@@ -274,7 +274,7 @@ const ConectaConTusClientes = () => {
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="group">
-                <Link to="/agendar-reunion" className="flex items-center gap-2">
+                <Link to="/es/agendar-reunion" className="flex items-center gap-2">
                   👉 Agenda tu demo personalizada
                   <MessageSquare className="h-4 w-4 group-hover:scale-110 transition-transform" />
                 </Link>

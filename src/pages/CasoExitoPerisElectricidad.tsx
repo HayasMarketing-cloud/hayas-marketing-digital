@@ -67,7 +67,7 @@ const CasoExitoPerisElectricidad = () => {
       ctaTitle="¿Quieres este enfoque para tu empresa?"
       ctaDescription="Te ayudamos a modernizar tu presencia digital y optimizar tus procesos comerciales como lo hicimos con Peris Electricidad."
       ctaButtonText="Hablemos"
-      ctaButtonLink="/agendar-reunion"
+      ctaButtonLink="/es/agendar-reunion"
     />
   );
 };

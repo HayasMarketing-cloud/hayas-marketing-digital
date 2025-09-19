@@ -54,7 +54,7 @@ const CasoExitoCorteAFilms: React.FC = () => {
       ctaTitle="¿Quieres un resultado similar?"
       ctaDescription="Hablemos de tu proyecto audiovisual y diseñemos una web que cuente tu historia."
       ctaButtonText="Solicitar consulta gratuita"
-      ctaButtonLink="/agendar-reunion"
+      ctaButtonLink="/es/agendar-reunion"
     />
   );
 };

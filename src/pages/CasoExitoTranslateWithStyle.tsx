@@ -62,7 +62,7 @@ const CasoExitoTranslateWithStyle = () => {
       ctaTitle="¿Tu expertise merece posicionamiento premium?"
       ctaDescription="Transformamos servicios profesionales especializados en marcas premium que atraen los clientes más selectos del mercado. Tu especialización puede ser tu mayor ventaja competitiva."
       ctaButtonText="Crear mi Marca Premium"
-      ctaButtonLink="/agendar-reunion"
+      ctaButtonLink="/es/agendar-reunion"
     />
   );
 };
