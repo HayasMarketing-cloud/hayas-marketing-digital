@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Share2, X, Facebook, Linkedin, Link2 } from 'lucide-react';
+import { Share2, Hash, Users, Briefcase, Link2 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 interface ArticleUtilitySectionProps {
@@ -64,7 +64,7 @@ const ArticleUtilitySection: React.FC<ArticleUtilitySectionProps> = ({ title, ur
                 onClick={() => handleShare('x')}
                 className="group hover:bg-gray-50 hover:border-gray-400"
               >
-                <X className="w-4 h-4 mr-2 text-gray-900 group-hover:scale-110 transition-transform" />
+                <Hash className="w-4 h-4 mr-2 text-gray-900 group-hover:scale-110 transition-transform" />
                 X
               </Button>
               
@@ -74,7 +74,7 @@ const ArticleUtilitySection: React.FC<ArticleUtilitySectionProps> = ({ title, ur
                 onClick={() => handleShare('facebook')}
                 className="group hover:bg-blue-50 hover:border-blue-600"
               >
-                <Facebook className="w-4 h-4 mr-2 text-blue-600 group-hover:scale-110 transition-transform" />
+                <Users className="w-4 h-4 mr-2 text-blue-600 group-hover:scale-110 transition-transform" />
                 Facebook
               </Button>
               
@@ -84,7 +84,7 @@ const ArticleUtilitySection: React.FC<ArticleUtilitySectionProps> = ({ title, ur
                 onClick={() => handleShare('linkedin')}
                 className="group hover:bg-blue-50 hover:border-blue-700"
               >
-                <Linkedin className="w-4 h-4 mr-2 text-blue-700 group-hover:scale-110 transition-transform" />
+                <Briefcase className="w-4 h-4 mr-2 text-blue-700 group-hover:scale-110 transition-transform" />
                 LinkedIn
               </Button>
               
