@@ -1,6 +1,17 @@
-# Robots.txt para Hayas Marketing (Desarrollo - NO INDEXAR)
+# Robots.txt para Hayas Marketing - Producción
 
 User-agent: *
-Disallow: /
+Allow: /
 
-# Sitio en desarrollo - No indexar
+# Sitemap
+Sitemap: https://hayasmarketing.com/sitemap-optimized.xml
+
+# Directrices específicas
+Crawl-delay: 1
+
+# Bloquear archivos innecesarios
+Disallow: /tmp/
+Disallow: /*.json$
+Disallow: /api/
+Disallow: /*?*utm_*
+Disallow: /*?*fbclid*
