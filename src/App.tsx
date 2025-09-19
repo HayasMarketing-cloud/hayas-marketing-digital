@@ -240,6 +240,10 @@ const App = () => (
           
            {/* BLOG / RECURSOS */}
            <Route path="/es/blog" element={<Blog />} />
+           
+           {/* URL CRÍTICA - Post IA Marketing (indexada en Google) */}
+           <Route path="/es/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing" element={<BlogPost />} />
+           
            <Route path="/es/blog/guia-tecnica-email-marketing-hubspot-configuracion" element={<BlogEmailMarketingHubSpot />} />
            <Route path="/es/blog/configuracion-email-marketing-cumplimiento-normativo" element={<BlogConfiguracionEmailMarketingCumplimiento />} />
              <Route path="/es/blog/tag/:tag" element={<BlogTagPage />} />
