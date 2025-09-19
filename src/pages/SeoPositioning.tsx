@@ -410,7 +410,7 @@ const SeoPositioning = () => {
               </Link>
             </Button>
             <Button size="lg" variant="outline" className="border-white text-white bg-white/10 hover:bg-white/20" asChild>
-              <Link to="/contacto">Solicitar Información</Link>
+              <Link to="/es/contacto">Solicitar Información</Link>
             </Button>
           </div>
         </div>

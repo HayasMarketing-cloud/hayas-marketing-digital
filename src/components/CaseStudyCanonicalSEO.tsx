@@ -29,7 +29,7 @@ export const CaseStudyCanonicalSEO: React.FC<CaseStudyCanonicalSEOProps> = ({
       customSEO={{
         title,
         description,
-        canonical: '/casos-exito', // Canonical to main cases page
+        canonical: '/es/casos-exito', // Canonical to main cases page
         robots: 'noindex, follow', // Don't index individual cases
         ogImage: featuredImage,
         ogType: 'article',

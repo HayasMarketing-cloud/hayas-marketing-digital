@@ -118,7 +118,7 @@ const SuccessCasesSection: React.FC<SuccessCasesSectionProps> = ({
         {showAllLink && (filterTags.length > 0 || specificCases.length > 0) && (
           <div className="text-center">
             <Link 
-              to={`/casos-exito${filterTags.length === 1 ? `?filter=${filterTags[0]}` : ''}`}
+              to={`/es/casos-exito${filterTags.length === 1 ? `?filter=${filterTags[0]}` : ''}`}
               className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors font-medium"
             >
               Ver todos los casos de éxito {filterTags.length === 1 ? `de ${formatTagName(filterTags[0])}` : ''} →

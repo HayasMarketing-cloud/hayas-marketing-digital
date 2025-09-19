@@ -406,7 +406,7 @@ const GoogleConsentModeCookieyes: React.FC = () => {
         <p className="text-purple-600 text-sm mb-6">
           Ofrecemos servicios de consultoría, implementación y formación en Google Tag Manager, Google Analytics y herramientas de privacy compliance.
         </p>
-        <Link to="/solicitar-consulta">
+        <Link to="/es/solicitar-consulta">
           <Button className="gradient-primary">
             Solicitar Consulta Gratuita
           </Button>

@@ -416,7 +416,7 @@ En Hayas llevamos más de 10 años combinando estrategia, creatividad y tecnolog
         <p className="text-primary-darker text-sm mb-6">
           Ofrecemos consultoría estratégica, implementación completa y formación en marketing natural y herramientas de IA.
         </p>
-        <Link to="/solicitar-consulta">
+        <Link to="/es/solicitar-consulta">
           <Button className="gradient-primary">
             Solicitar Consulta Gratuita
           </Button>

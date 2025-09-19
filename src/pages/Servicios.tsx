@@ -176,7 +176,7 @@ const Servicios = () => {
             <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
               Te ayudamos a identificar las mejores soluciones para tu negocio con una consulta estratégica gratuita
             </p>
-            <Link to="/contacto">
+            <Link to="/es/contacto">
               <Button size="lg" variant="secondary" className="bg-white text-purple-600 hover:bg-gray-100">
                 Solicitar consulta gratuita
               </Button>

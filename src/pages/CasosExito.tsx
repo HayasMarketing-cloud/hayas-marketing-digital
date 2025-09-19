@@ -268,12 +268,12 @@ const CasosExito = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" asChild>
-              <Link to="/contacto">
+              <Link to="/es/contacto">
                 Iniciar mi Proyecto
               </Link>
             </Button>
             <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary" asChild>
-              <Link to="/solicitar-consulta">
+              <Link to="/es/solicitar-consulta">
                 Solicitar Consulta Gratuita
               </Link>
             </Button>

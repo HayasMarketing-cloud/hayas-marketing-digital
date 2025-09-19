@@ -85,7 +85,7 @@ const IntegracionesIAProcesos: React.FC = () => {
           <h3 className="text-2xl font-semibold mb-3">Procesos escalables y medibles</h3>
           <p className="text-muted-foreground mb-4">Menos fricción, más foco en lo que importa.</p>
           <Button asChild>
-            <Link to="/solicitar-consulta">Quiero integrarlo</Link>
+            <Link to="/es/solicitar-consulta">Quiero integrarlo</Link>
           </Button>
         </div>
       </section>

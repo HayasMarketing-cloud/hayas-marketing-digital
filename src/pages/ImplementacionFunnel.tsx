@@ -168,7 +168,7 @@ const ImplementacionFunnel: React.FC = () => {
               </div>
               <div className="text-right">
                 <Button size="lg" asChild>
-                  <Link to="/solicitar-consulta">Solicitar Consulta</Link>
+                  <Link to="/es/solicitar-consulta">Solicitar Consulta</Link>
                 </Button>
               </div>
             </div>

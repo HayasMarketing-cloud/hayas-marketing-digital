@@ -85,7 +85,7 @@ const ComparativaHubSpotGoHighLevel = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="group">
-                <Link to="/solicitar-consulta" className="flex items-center gap-2">
+                <Link to="/es/solicitar-consulta" className="flex items-center gap-2">
                   👉 Solicita tu asesoría gratuita
                   <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
@@ -563,7 +563,7 @@ const ComparativaHubSpotGoHighLevel = () => {
               *Los precios mostrados son orientativos. Para disponer de un presupuesto personalizado y adaptado a tus necesidades específicas, contacta con nosotros.
             </p>
             <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
-              <Link to="/contacto">
+              <Link to="/es/contacto">
                 Solicitar presupuesto
               </Link>
             </Button>
@@ -654,7 +654,7 @@ const ComparativaHubSpotGoHighLevel = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="group">
-                <Link to="/solicitar-consulta" className="flex items-center gap-2">
+                <Link to="/es/solicitar-consulta" className="flex items-center gap-2">
                   👉 Solicita tu asesoría gratuita
                   <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Link>

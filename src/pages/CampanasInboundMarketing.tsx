@@ -78,7 +78,7 @@ const CampanasInboundMarketing: React.FC = () => {
             </p>
             <div className="mt-6 flex justify-center gap-3">
               <Button asChild className="gradient-primary text-white">
-                <Link to="/solicitar-consulta">Solicitar estrategia Inbound</Link>
+                <Link to="/es/solicitar-consulta">Solicitar estrategia Inbound</Link>
               </Button>
               <Button variant="outline" asChild>
                 <Link to="/soluciones/conecta-con-tus-clientes">Ver solución: Conecta con tus clientes</Link>
@@ -131,7 +131,7 @@ const CampanasInboundMarketing: React.FC = () => {
               <h3 className="text-2xl font-semibold mb-3">Un sistema continuo de atracción y conversión</h3>
               <p className="text-muted-foreground mb-4">Diseño, ejecución y medición para que el Inbound impacte en ventas.</p>
               <Button asChild>
-                <Link to="/solicitar-consulta">Comienza tu campaña Inbound</Link>
+                <Link to="/es/solicitar-consulta">Comienza tu campaña Inbound</Link>
               </Button>
             </div>
           </section>

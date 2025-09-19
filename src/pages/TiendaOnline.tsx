@@ -465,7 +465,7 @@ const TiendaOnline = () => {
               </Link>
             </Button>
             <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10" asChild>
-              <Link to="/contacto">Solicitar Información</Link>
+              <Link to="/es/contacto">Solicitar Información</Link>
             </Button>
           </div>
         </div>

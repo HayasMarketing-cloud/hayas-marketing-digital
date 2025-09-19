@@ -89,7 +89,7 @@ const CaptacionLeadsClientes: React.FC = () => {
             </p>
             <div className="mt-6 flex flex-col sm:flex-row justify-center gap-3">
               <Button asChild className="gradient-primary text-white px-8 py-6 text-lg">
-                <Link to="/solicitar-consulta">Generar más leads</Link>
+                <Link to="/es/solicitar-consulta">Generar más leads</Link>
               </Button>
               <Button variant="outline" asChild className="px-8 py-6 text-lg">
                 <Link to="/soluciones/conecta-con-tus-clientes">Ver solución: Conecta con tus clientes</Link>
@@ -259,7 +259,7 @@ const CaptacionLeadsClientes: React.FC = () => {
                 Implementemos un sistema que convierta tu web en una máquina generadora de oportunidades.
               </p>
               <Button className="bg-white text-hayas-600 hover:bg-gray-100 px-8 py-6 text-lg font-semibold" asChild>
-                <Link to="/solicitar-consulta">Configurar mi sistema de leads</Link>
+                <Link to="/es/solicitar-consulta">Configurar mi sistema de leads</Link>
               </Button>
             </div>
           </section>

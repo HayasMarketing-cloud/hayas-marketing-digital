@@ -106,7 +106,7 @@ const ConectaConTusClientes = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="group">
-                <Link to="/solicitar-consulta" className="flex items-center gap-2">
+                <Link to="/es/solicitar-consulta" className="flex items-center gap-2">
                   👉 Solicita tu asesoría gratuita
                   <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
@@ -268,7 +268,7 @@ const ConectaConTusClientes = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="group">
-                <Link to="/solicitar-consulta" className="flex items-center gap-2">
+                <Link to="/es/solicitar-consulta" className="flex items-center gap-2">
                   👉 Solicita tu asesoría gratuita
                   <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Link>

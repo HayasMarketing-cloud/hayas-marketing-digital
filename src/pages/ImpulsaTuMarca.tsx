@@ -413,7 +413,7 @@ const ImpulsaTuMarca = () => {
 
             <div className="text-center">
               <Button variant="outline" size="lg" asChild>
-                <Link to="/casos-exito?filter=branding">
+                <Link to="/es/casos-exito?filter=branding">
                   👉 Ver casos de éxito de Impulsa tu marca
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>

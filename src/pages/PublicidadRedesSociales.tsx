@@ -225,7 +225,7 @@ const PublicidadRedesSociales: React.FC = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="group" asChild>
-                  <Link to="/contacto">
+                  <Link to="/es/contacto">
                     Empezar Campaña
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
@@ -452,13 +452,13 @@ const PublicidadRedesSociales: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" className="group" asChild>
-              <Link to="/contacto">
+              <Link to="/es/contacto">
                 Lanzar campañas
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
             <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary" asChild>
-              <Link to="/casos-exito">Ver más resultados</Link>
+              <Link to="/es/casos-exito">Ver más resultados</Link>
             </Button>
           </div>
         </div>
