@@ -8,6 +8,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
 import Seo from '@/components/Seo';
+import ArticleUtilitySection from '@/components/BlogPost/ArticleUtilitySection';
 import teamMarketingCollaboration from '@/assets/team-marketing-collaboration.jpg';
 
 const BlogIAMarketing = () => {
@@ -560,20 +561,10 @@ const BlogIAMarketing = () => {
 
             <Separator className="my-12" />
 
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-sm text-muted-foreground">¿Te ha parecido útil este artículo?</p>
-                <div className="flex gap-2 mt-2">
-                  <Button variant="outline" size="sm">👍 Útil</Button>
-                  <Button variant="outline" size="sm">💡 Interesante</Button>
-                  <Button variant="outline" size="sm">📚 Educativo</Button>
-                </div>
-              </div>
-              <Button variant="outline">
-                <Share2 className="h-4 w-4 mr-2" />
-                Compartir artículo
-              </Button>
-            </div>
+            <ArticleUtilitySection 
+              title="La Inteligencia Artificial (IA) y su aplicación en Marketing"
+              url="https://hayasmarketing.com/es/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing"
+            />
 
             {/* Navigation */}
             <div className="flex justify-between items-center mt-12 pt-8 border-t">
