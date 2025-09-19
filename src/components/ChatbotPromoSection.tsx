@@ -34,9 +34,9 @@ const ChatbotPromoSection = () => {
               size="lg"
               className="inline-flex bg-white text-primary hover:bg-white/90 hover:text-primary/90"
             >
-              <Link to="/es/servicios/asistente-ia">
+              <a href="https://hayasmarketing.com/es/servicios/asistente-ia" target="_blank" rel="noopener noreferrer">
                 Descubre cómo tener tu propio asistente inteligente
-              </Link>
+              </a>
             </Button>
           </div>
           
