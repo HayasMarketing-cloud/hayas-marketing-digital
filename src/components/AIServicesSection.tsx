@@ -74,17 +74,6 @@ const AIServicesSection: React.FC<AIServicesSectionProps> = ({
     <section className={`py-8 md:py-12 bg-gradient-to-br from-muted/30 to-background ${className}`}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            {title.split('IA aplicada a Marketing Digital').map((part, index, array) => (
-              index === array.length - 1 && part === '' ? (
-                <span key={index} className="text-gradient-primary">IA aplicada a Marketing Digital</span>
-              ) : index === 0 ? (
-                <span key={index}>{part}<span className="text-gradient-primary">IA aplicada a Marketing Digital</span></span>
-              ) : (
-                <span key={index}>{part}</span>
-              )
-            ))}
-          </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             {description}
           </p>
