@@ -19,7 +19,7 @@ const allPosts = [
     id: "guia-tecnica-email-marketing-hubspot-configuracion",
     title: "Guía técnica de Email Marketing: Configuración y cumplimiento con HubSpot",
     description: "Aprende a configurar SPF, DKIM y DMARC en HubSpot para cumplir con las nuevas políticas de Google y Yahoo.",
-    slug: "/blog/guia-tecnica-email-marketing-hubspot-configuracion",
+    slug: "/es/blog/guia-tecnica-email-marketing-hubspot-configuracion",
     image: "/email-marketing-automatizaciones-hero.jpg",
     category: "Email Marketing",
     readTime: "15 min",
@@ -30,7 +30,7 @@ const allPosts = [
     id: "perfil-cliente-ideal",
     title: "Perfil de cliente ideal: qué es y cómo definirlo para tu negocio",
     description: "Descubre cómo crear el perfil de cliente ideal (ICP) perfecto para optimizar tu estrategia de marketing.",
-    slug: "/blog/perfil-cliente-ideal",
+    slug: "/es/blog/perfil-cliente-ideal",
     image: "/perfil-cliente-ideal-hero.jpg",
     category: "Estrategia de Marketing",
     readTime: "10 min",
@@ -41,7 +41,7 @@ const allPosts = [
     id: "como-crear-buyer-persona-b2b-b2c-guia-completa",
     title: "Cómo crear tu buyer persona para B2B y B2C [GUÍA COMPLETA + TEMPLATE]",
     description: "Aprende a crear buyer personas efectivos para B2B y B2C con nuestra guía completa. Incluye template descargable y cuestionario.",
-    slug: "/blog/como-crear-buyer-persona-b2b-b2c-guia-completa",
+    slug: "/es/blog/como-crear-buyer-persona-b2b-b2c-guia-completa",
     image: "/perfil-cliente-ideal-hero.jpg",
     category: "Estrategia de Marketing",
     readTime: "12 min",
@@ -52,7 +52,7 @@ const allPosts = [
     id: "seo-inteligencia-artificial",
     title: "SEO e Inteligencia Artificial: Cómo optimizar tu estrategia en 2025",
     description: "Descubre cómo la IA está revolucionando el SEO y las mejores herramientas para optimizar tu posicionamiento web.",
-    slug: "/blog/seo-inteligencia-artificial",
+    slug: "/es/blog/seo-inteligencia-artificial",
     image: "/seo-inteligencia-artificial-hero.jpg",
     category: "SEO",
     readTime: "10 min",
@@ -63,7 +63,7 @@ const allPosts = [
     id: "automatizacion-marketing",
     title: "Automatización de Marketing Digital: Guía completa 2025",
     description: "Todo lo que necesitas saber sobre automatización de marketing: herramientas, estrategias y casos de éxito.",
-    slug: "/blog/automatizacion-marketing-digital-guia-completa",
+    slug: "/es/blog/automatizacion-marketing-digital-guia-completa",
     image: "/automatizacion-marketing-hero.jpg",
     category: "Marketing Digital",
     readTime: "15 min",
@@ -74,7 +74,7 @@ const allPosts = [
     id: "crm-beneficios",
     title: "CRM: Qué es, beneficios y cómo elegir el mejor para tu empresa",
     description: "Guía completa sobre sistemas CRM: definición, ventajas, tipos y recomendaciones para elegir la mejor opción.",
-    slug: "/blog/crm-que-es-beneficios",
+    slug: "/es/blog/crm-que-es-beneficios",
     image: "/crm-sistema-gestion-clientes-hero.jpg",
     category: "CRM",
     readTime: "8 min",
@@ -85,7 +85,7 @@ const allPosts = [
     id: "marketing-global",
     title: "Marketing Global e Internacionalización: Estrategias de localización",
     description: "Aprende las claves del marketing internacional y cómo adaptar tu estrategia para expandirte globalmente.",
-    slug: "/blog/marketing-global-internacionalizacion",
+    slug: "/es/blog/marketing-global-internacionalizacion",
     image: "/marketing-global-hero.jpg",
     category: "Marketing Digital",
     readTime: "14 min",
@@ -137,7 +137,7 @@ const BlogTagPage: React.FC = () => {
       <Seo 
         title={`${tagData.name} - Blog de Marketing Digital | Hayas Marketing`}
         description={tagData.description || `Todos los artículos sobre ${tagData.name.toLowerCase()} en nuestro blog de marketing digital.`}
-        canonical={`/blog/tag/${tag}`}
+        canonical={`/es/blog/tag/${tag}`}
       />
       
       <Navigation />
@@ -223,7 +223,7 @@ const BlogTagPage: React.FC = () => {
                                   
                                   return (
                                     <div key={postTag} className="flex items-center gap-1">
-                                      <Link to={`/blog/tag/${postTag}`}>
+                                      <Link to={`/es/blog/tag/${postTag}`}>
                                         <Badge 
                                           variant="outline" 
                                           className="text-xs hover:bg-primary hover:text-primary-foreground transition-colors"
@@ -307,7 +307,7 @@ const BlogTagPage: React.FC = () => {
                     <p className="text-muted-foreground mb-6">
                       Aún no tenemos artículos para esta categoría, pero estamos trabajando en ello.
                     </p>
-                    <Link to="/blog">
+                    <Link to="/es/blog">
                       <Button>Ver todos los artículos</Button>
                     </Link>
                   </div>

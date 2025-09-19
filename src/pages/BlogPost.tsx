@@ -904,15 +904,15 @@ const BlogPost = () => {
             <div className="mt-12 pt-8 border-t">
               <h3 className="text-xl font-bold mb-4">📚 Artículos relacionados que te pueden interesar:</h3>
               <div className="grid md:grid-cols-3 gap-4">
-                <Link to="/blog/avisos-legales-paginas-web" className="block p-4 border rounded-lg hover:bg-muted/50 transition-colors">
+                <Link to="/es/blog/avisos-legales-paginas-web" className="block p-4 border rounded-lg hover:bg-muted/50 transition-colors">
                   <h4 className="font-semibold mb-2">Avisos Legales para tu WordPress</h4>
                   <p className="text-sm text-muted-foreground">Cumple con la normativa legal en tu web</p>
                 </Link>
-                <Link to="/diseno-web" className="block p-4 border rounded-lg hover:bg-muted/50 transition-colors">
+                <Link to="/es/servicios/diseno-web" className="block p-4 border rounded-lg hover:bg-muted/50 transition-colors">
                   <h4 className="font-semibold mb-2">Diseño Web para Emprendedores</h4>
                   <p className="text-sm text-muted-foreground">Crea una web que convierta visitantes en clientes</p>
                 </Link>
-                <Link to="/seo-positioning" className="block p-4 border rounded-lg hover:bg-muted/50 transition-colors">
+                <Link to="/es/servicios/seo-positioning" className="block p-4 border rounded-lg hover:bg-muted/50 transition-colors">
                   <h4 className="font-semibold mb-2">SEO para WordPress</h4>
                   <p className="text-sm text-muted-foreground">Posiciona tu web en Google</p>
                 </Link>
@@ -922,7 +922,7 @@ const BlogPost = () => {
 
           {/* Navigation */}
           <div className="flex justify-between items-center mt-12 pt-8 border-t">
-            <Link to="/blog" className="flex items-center text-muted-foreground hover:text-primary transition-colors">
+             <Link to="/es/blog" className="flex items-center text-muted-foreground hover:text-primary transition-colors">
               <ArrowLeft className="h-4 w-4 mr-2" />
               Volver al Blog
             </Link>
@@ -974,7 +974,7 @@ const BlogPost = () => {
         <div className="container mx-auto px-4 py-24 max-w-4xl">
           {/* Breadcrumb */}
           <div className="mb-8">
-            <Link to="/blog" className="flex items-center text-muted-foreground hover:text-primary transition-colors">
+             <Link to="/es/blog" className="flex items-center text-muted-foreground hover:text-primary transition-colors">
               <ArrowLeft className="h-4 w-4 mr-2" />
               Volver al Blog
             </Link>
@@ -1206,7 +1206,7 @@ const BlogPost = () => {
                 consultoría para ayudarte con la estrategia, contenidos y diseño de tu sitio web.
               </p>
               <div className="text-center">
-                <Link to="/agendar-reunion">
+                 <Link to="/es/servicios/agendar-reunion">
                   <Button size="lg" className="gradient-primary">
                     Solicitar consulta gratuita
                   </Button>
@@ -1217,7 +1217,7 @@ const BlogPost = () => {
 
           {/* Navigation */}
           <div className="flex justify-between items-center mt-12 pt-8 border-t">
-            <Link to="/blog" className="flex items-center text-muted-foreground hover:text-primary transition-colors">
+             <Link to="/es/blog" className="flex items-center text-muted-foreground hover:text-primary transition-colors">
               <ArrowLeft className="h-4 w-4 mr-2" />
               Volver al Blog
             </Link>
@@ -1238,7 +1238,7 @@ const BlogPost = () => {
         <div className="container mx-auto px-4 py-24 max-w-4xl">
           {/* Breadcrumb */}
           <div className="mb-8">
-            <Link to="/blog" className="flex items-center text-muted-foreground hover:text-primary transition-colors">
+            <Link to="/es/blog" className="flex items-center text-muted-foreground hover:text-primary transition-colors">
               <ArrowLeft className="h-4 w-4 mr-2" />
               Volver al Blog
             </Link>
@@ -1730,13 +1730,13 @@ const BlogPost = () => {
                 En Hayas diseñamos soluciones con IA que no solo suenan bien, <strong>funcionan de verdad</strong>. Desde automatización comercial hasta dashboards predictivos, ya estamos ayudando a marcas a trabajar mejor, vender más y conectar de forma más humana.
               </p>
               <div className="text-center">
-                <Link to="/soluciones-ia">
+                <Link to="/es/servicios/soluciones-ia">
                   <Button size="lg" className="gradient-primary mr-4">
                     <BookOpen className="mr-2 h-4 w-4" />
                     Ver Servicios de IA
                   </Button>
                 </Link>
-                <Link to="/#contacto">
+                <Link to="/es#contacto">
                   <Button size="lg" variant="outline">
                     Solicitar Consulta
                   </Button>
@@ -1772,7 +1772,7 @@ const BlogPost = () => {
             <Seo title="Cómo aprovechar la inteligencia artificial en redes sociales | Guía 2025" description="Descubre las mejores herramientas de IA para redes sociales, sus beneficios y riesgos. Guía completa para profesionales del social media marketing en 2025." ogImage="/src/assets/ia-redes-sociales-hero.jpg" />
             
             <div className="text-center mb-8">
-              <Link to="/blog" className="text-sm text-muted-foreground hover:text-primary">
+               <Link to="/es/blog" className="text-sm text-muted-foreground hover:text-primary">
                 ← Volver al Blog
               </Link>
             </div>
@@ -1807,14 +1807,14 @@ const BlogPost = () => {
               <div className="bg-gradient-to-r from-primary/5 to-accent/5 p-6 rounded-lg mt-12">
                 <h3 className="text-2xl font-bold mb-4 text-center">¿Necesitas implementar IA en tu estrategia de redes sociales?</h3>
                 <p className="text-center mb-6">
-                  En <strong>Hayas Marketing</strong> te ayudamos a integrar <Link to="/solucioes-ia" className="text-primary hover:underline">soluciones de inteligencia artificial</Link> en tu estrategia de redes sociales de forma ética y eficaz.
+                  En <strong>Hayas Marketing</strong> te ayudamos a integrar <Link to="/es/servicios/soluciones-ia" className="text-primary hover:underline">soluciones de inteligencia artificial</Link> en tu estrategia de redes sociales de forma ética y eficaz.
                 </p>
                 <div className="text-center space-y-4">
                   <Button asChild size="lg" className="mr-4">
-                    <Link to="/solucioes-ia">Ver Soluciones de IA</Link>
+                    <Link to="/es/servicios/soluciones-ia">Ver Soluciones de IA</Link>
                   </Button>
                   <Button asChild variant="outline" size="lg">
-                    <Link to="/agendar-reunion">Consulta Gratuita</Link>
+                    <Link to="/es/servicios/agendar-reunion">Consulta Gratuita</Link>
                   </Button>
                 </div>
               </div>
@@ -1833,7 +1833,7 @@ const BlogPost = () => {
             <Seo title="TikTok marketing: cómo integrar TikTok en tu estrategia digital 2025" description="Descubre cómo usar TikTok marketing para conectar con tu audiencia. Estrategias, tipos de campañas y consejos para promocionar tu marca en TikTok efectivamente." ogImage="/src/assets/tiktok-marketing-hero.jpg" />
             
             <div className="text-center mb-8">
-              <Link to="/blog" className="text-sm text-muted-foreground hover:text-primary">
+              <Link to="/es/blog" className="text-sm text-muted-foreground hover:text-primary">
                 ← Volver al Blog
               </Link>
             </div>
@@ -2085,14 +2085,14 @@ const BlogPost = () => {
               <div className="bg-gradient-to-r from-primary/5 to-accent/5 p-6 rounded-lg mt-12">
                 <h3 className="text-2xl font-bold mb-4 text-center">¿Necesitas ayuda con tu estrategia de TikTok marketing?</h3>
                 <p className="text-center mb-6">
-                  En <strong>Hayas Marketing</strong> te ayudamos a desarrollar e implementar estrategias de <Link to="/servicios/gestion-redes-sociales" className="text-primary hover:underline">gestión de redes sociales</Link> efectivas. Desde la creación de contenido hasta la gestión de campañas publicitarias, optimizamos tu presencia en TikTok para conectar auténticamente con tu audiencia.
+                  En <strong>Hayas Marketing</strong> te ayudamos a desarrollar e implementar estrategias de <Link to="/es/servicios/gestion-redes-sociales" className="text-primary hover:underline">gestión de redes sociales</Link> efectivas. Desde la creación de contenido hasta la gestión de campañas publicitarias, optimizamos tu presencia en TikTok para conectar auténticamente con tu audiencia.
                 </p>
                 <div className="text-center space-y-4">
                   <Button asChild size="lg" className="mr-4">
-                    <Link to="/servicios/gestion-redes-sociales">Ver Servicios de Redes Sociales</Link>
+                    <Link to="/es/servicios/gestion-redes-sociales">Ver Servicios de Redes Sociales</Link>
                   </Button>
                   <Button asChild variant="outline" size="lg">
-                    <Link to="/agendar-reunion">Consulta Gratuita</Link>
+                    <Link to="/es/servicios/agendar-reunion">Consulta Gratuita</Link>
                   </Button>
                 </div>
               </div>
@@ -2102,7 +2102,7 @@ const BlogPost = () => {
                 <div className="grid md:grid-cols-3 gap-6">
                   <div className="border rounded-lg p-4 hover:shadow-lg transition-shadow">
                     <h4 className="font-semibold mb-2">
-                      <Link to="/blog/ia-redes-sociales-herramientas-riesgos" className="text-primary hover:underline">
+                      <Link to="/es/blog/ia-redes-sociales-herramientas-riesgos" className="text-primary hover:underline">
                         Cómo aprovechar la inteligencia artificial en redes sociales
                       </Link>
                     </h4>
@@ -2111,7 +2111,7 @@ const BlogPost = () => {
                   
                   <div className="border rounded-lg p-4 hover:shadow-lg transition-shadow">
                     <h4 className="font-semibold mb-2">
-                      <Link to="/blog/estrategia-marketing-contenidos-eficaz-2025" className="text-primary hover:underline">
+                      <Link to="/es/blog/estrategia-marketing-contenidos-eficaz-2025" className="text-primary hover:underline">
                         Estrategia de marketing de contenidos eficaz: Guía 2025
                       </Link>
                     </h4>
@@ -2120,7 +2120,7 @@ const BlogPost = () => {
                   
                   <div className="border rounded-lg p-4 hover:shadow-lg transition-shadow">
                     <h4 className="font-semibold mb-2">
-                      <Link to="/servicios/publicidad-redes-sociales" className="text-primary hover:underline">
+                      <Link to="/es/servicios/publicidad-redes-sociales" className="text-primary hover:underline">
                         Publicidad en redes sociales
                       </Link>
                     </h4>
@@ -2171,7 +2171,7 @@ const BlogPost = () => {
       <div className="text-center">
         <h1 className="text-4xl font-bold mb-4">Artículo no encontrado</h1>
         <p className="text-muted-foreground mb-8">Lo sentimos, el artículo que buscas no existe.</p>
-        <Link to="/blog">
+        <Link to="/es/blog">
           <Button>
             <ArrowLeft className="h-4 w-4 mr-2" />
             Volver al Blog

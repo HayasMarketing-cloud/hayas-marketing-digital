@@ -58,7 +58,7 @@ const Blog = () => {
       readTime: "8 min",
       date: "20 Jun 2025",
       image: "/lovable-uploads/1d3d828c-9af7-4b97-bdf9-9da500195c62.png",
-      slug: "/blog/kit-digital-marketing-guia-completa-2025",
+      slug: "/es/blog/kit-digital-marketing-guia-completa-2025",
       tags: ["Kit Digital", "Digitalización", "Ayudas Públicas", "Marketing Digital", "Transformación Digital"],
       featured: true
     },
@@ -71,7 +71,7 @@ const Blog = () => {
       readTime: "8 min",
       date: "18 Dic 2024",
       image: "/marketing-global-hero.jpg",
-      slug: "/blog/marketing-global-internacionalizacion",
+      slug: "/es/blog/marketing-global-internacionalizacion",
       tags: ["marketing global", "internacionalización", "localización", "i18n", "l10n", "contenidos"]
     },
     {
@@ -97,7 +97,7 @@ const Blog = () => {
       readTime: "12 min",
       date: "15 Ene 2025",
       image: "/perfil-cliente-ideal-hero.jpg",
-      slug: "/blog/como-crear-buyer-persona-b2b-b2c-guia-completa",
+      slug: "/es/blog/como-crear-buyer-persona-b2b-b2c-guia-completa",
       tags: ["buyer persona", "perfil cliente ideal", "estrategia marketing", "B2B", "B2C"]
     },
     {
@@ -363,7 +363,7 @@ const Blog = () => {
       <Seo 
         title="Blog de Marketing Digital | Hayas Marketing"
         description="Descubre las últimas estrategias, herramientas y tendencias en marketing digital, CRM, automatización y más en nuestro blog especializado."
-        canonical="/blog"
+        canonical="/es/blog"
       />
       
       <div className="min-h-screen bg-background">
@@ -425,14 +425,14 @@ const Blog = () => {
                     </div>
                      <div className="flex flex-wrap gap-2 mb-4">
                        {featuredPost.tags.map((tag) => (
-                         <Link key={tag} to={`/blog/tag/${tag.replace(/\s+/g, '-').toLowerCase()}`}>
-                           <Badge variant="outline" className="text-xs hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer">
-                             {tag}
-                           </Badge>
-                         </Link>
+                          <Link key={tag} to={`/es/blog/tag/${tag.replace(/\s+/g, '-').toLowerCase()}`}>
+                            <Badge variant="outline" className="text-xs hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer">
+                              {tag}
+                            </Badge>
+                          </Link>
                        ))}
                      </div>
-                    <Link to={`/blog/${featuredPost.id}`}>
+                    <Link to={`/es/blog/${featuredPost.id}`}>
                       <Button className="w-full group">
                         Leer Artículo Completo
                         <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -481,11 +481,11 @@ const Blog = () => {
                   {post.tags && (
                      <div className="flex flex-wrap gap-2 mb-4">
                        {post.tags.slice(0, 3).map((tag) => (
-                         <Link key={tag} to={`/blog/tag/${tag.replace(/\s+/g, '-').toLowerCase()}`}>
-                           <Badge variant="outline" className="text-xs hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer">
-                             {tag}
-                           </Badge>
-                         </Link>
+                          <Link key={tag} to={`/es/blog/tag/${tag.replace(/\s+/g, '-').toLowerCase()}`}>
+                            <Badge variant="outline" className="text-xs hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer">
+                              {tag}
+                            </Badge>
+                          </Link>
                        ))}
                      </div>
                   )}
@@ -494,12 +494,12 @@ const Blog = () => {
                       <Calendar className="h-4 w-4" />
                       {new Date(post.date).toLocaleDateString('es-ES')}
                     </span>
-                     <Link to={post.slug || `/blog/${post.id}`}>
-                       <Button variant="ghost" size="sm" className="group/btn">
-                         Leer más
-                         <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
-                       </Button>
-                     </Link>
+                      <Link to={post.slug || `/es/blog/${post.id}`}>
+                        <Button variant="ghost" size="sm" className="group/btn">
+                          Leer más
+                          <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+                        </Button>
+                      </Link>
                   </div>
                 </CardContent>
               </Card>
@@ -543,11 +543,11 @@ const Blog = () => {
                    {post.tags && (
                      <div className="flex flex-wrap gap-2 mb-4">
                        {post.tags.slice(0, 3).map((tag) => (
-                         <Link key={tag} to={`/blog/tag/${tag.replace(/\s+/g, '-').toLowerCase()}`}>
-                           <Badge variant="outline" className="text-xs hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer">
-                             {tag}
-                           </Badge>
-                         </Link>
+                          <Link key={tag} to={`/es/blog/tag/${tag.replace(/\s+/g, '-').toLowerCase()}`}>
+                            <Badge variant="outline" className="text-xs hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer">
+                              {tag}
+                            </Badge>
+                          </Link>
                        ))}
                      </div>
                    )}
@@ -556,12 +556,12 @@ const Blog = () => {
                       <Calendar className="h-4 w-4" />
                       {new Date(post.date).toLocaleDateString('es-ES')}
                     </span>
-                     <Link to={post.slug || `/blog/${post.id}`}>
-                       <Button variant="ghost" size="sm" className="group/btn">
-                         Leer más
-                         <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
-                       </Button>
-                     </Link>
+                      <Link to={post.slug || `/es/blog/${post.id}`}>
+                        <Button variant="ghost" size="sm" className="group/btn">
+                          Leer más
+                          <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+                        </Button>
+                      </Link>
                   </div>
                 </CardContent>
               </Card>

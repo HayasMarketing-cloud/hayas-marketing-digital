@@ -25,21 +25,21 @@ export const InternalLinkingSection: React.FC<InternalLinkingSectionProps> = ({
         {
           title: 'Impulsa tu Marca',
           description: 'Branding, diseño web y posicionamiento SEO',
-          href: '/soluciones/impulsa-tu-marca',
+          href: '/es/soluciones/impulsa-tu-marca',
           icon: Target,
           color: 'text-purple-600'
         },
         {
           title: 'Conecta con tus Clientes', 
           description: 'CRM, automatización y gestión de clientes',
-          href: '/soluciones/conecta-con-tus-clientes',
+          href: '/es/soluciones/conecta-con-tus-clientes',
           icon: Users,
           color: 'text-blue-600'
         },
         {
           title: 'Activa tus Ventas',
           description: 'Captación de leads y conversión',
-          href: '/soluciones/activa-tus-ventas',
+          href: '/es/soluciones/activa-tus-ventas',
           icon: Zap,
           color: 'text-green-600'
         }
@@ -47,39 +47,39 @@ export const InternalLinkingSection: React.FC<InternalLinkingSectionProps> = ({
       services: [
         {
           title: 'Implantación CRM',
-          href: '/servicios/implantacion-crm',
+          href: '/es/servicios/implantacion-crm',
           badge: 'Popular'
         },
         {
           title: 'Automatización de Ventas',
-          href: '/servicios/automatizacion-procesos-ventas',
+          href: '/es/servicios/automatizacion-procesos-ventas',
           badge: 'Estratégico'
         },
         {
           title: 'Consultoría Estratégica',
-          href: '/servicios/consultoria-estrategica-analitica',
+          href: '/es/servicios/consultoria-estrategica-analitica',
           badge: 'Premium'
         },
         {
           title: 'Captación de Leads',
-          href: '/servicios/captacion-leads-clientes',
+          href: '/es/servicios/captacion-leads-clientes',
           badge: 'ROI'
         }
       ],
       resources: [
         {
           title: 'Casos de Éxito',
-          href: '/casos-exito',
+          href: '/es/casos-exito',
           description: 'Resultados reales de nuestros clientes'
         },
         {
           title: 'Blog Marketing',
-          href: '/blog',
+          href: '/es/blog',
           description: 'Guías y estrategias actualizadas'
         },
         {
           title: 'Agendar Consulta',
-          href: '/agendar-reunion',
+          href: '/es/agendar-reunion',
           description: 'Análisis gratuito de tu negocio'
         }
       ]

@@ -66,7 +66,7 @@ const BlogSidebar: React.FC<BlogSidebarProps> = ({ currentTag, allPosts = [] }) 
           <CardContent>
             <div className="space-y-2">
               {relatedSubtags.map((subtag) => (
-                <Link key={subtag.slug} to={`/blog/tag/${subtag.slug}`} className="block">
+                <Link key={subtag.slug} to={`/es/blog/tag/${subtag.slug}`} className="block">
                   <div className="flex items-center justify-between p-2 rounded-lg hover:bg-muted/50 transition-colors">
                     <span className="text-sm font-medium">{subtag.name}</span>
                     <Badge variant="secondary" className="text-xs">
@@ -93,7 +93,7 @@ const BlogSidebar: React.FC<BlogSidebarProps> = ({ currentTag, allPosts = [] }) 
             {tagsLevel1.map((tag) => (
               <Link 
                 key={tag.slug} 
-                to={`/blog/tag/${tag.slug}`}
+                to={`/es/blog/tag/${tag.slug}`}
                 className="block"
               >
                  <div className="flex items-center justify-between p-2 rounded-lg hover:bg-muted/50 transition-colors">
