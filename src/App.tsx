@@ -253,6 +253,7 @@ const App = () => (
            
            {/* URL CRÍTICA - Post IA Marketing (indexada en Google) */}
            <Route path="/es/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing" element={<BlogIAMarketing />} />
+           <Route path="/es/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing" element={<BlogIAMarketing />} />
            
            <Route path="/es/blog/guia-tecnica-email-marketing-hubspot-configuracion" element={<BlogEmailMarketingHubSpot />} />
            <Route path="/es/blog/configuracion-email-marketing-cumplimiento-normativo" element={<BlogConfiguracionEmailMarketingCumplimiento />} />
