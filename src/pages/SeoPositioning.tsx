@@ -149,9 +149,9 @@ const SeoPositioning = () => {
       <div className="bg-muted/30 py-4 mt-20">
         <div className="container mx-auto px-4">
           <nav className="text-sm text-gray-600">
-            <Link to="/" className="hover:text-primary">Inicio</Link>
+            <Link to="/es" className="hover:text-primary">Inicio</Link>
             <span className="mx-2">/</span>
-            <Link to="/soluciones" className="hover:text-primary">Soluciones</Link>
+            <Link to="/es#soluciones" className="hover:text-primary">Soluciones</Link>
             <span className="mx-2">/</span>
             <span className="text-gray-900">SEO y Posicionamiento</span>
           </nav>

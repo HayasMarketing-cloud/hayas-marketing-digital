@@ -37,10 +37,10 @@ const SofiaWidget = () => {
 
   // Only show SofÍA on Home and main solution pages
   const allowedPages = [
-    '/',
-    '/soluciones/impulsa-tu-marca',
-    '/soluciones/conecta-con-tus-clientes', 
-    '/soluciones/activa-tus-ventas'
+    '/es',
+    '/es/soluciones/impulsa-tu-marca',
+    '/es/soluciones/conecta-con-tus-clientes', 
+    '/es/soluciones/activa-tus-ventas'
   ];
 
   if (!allowedPages.includes(location.pathname)) {
