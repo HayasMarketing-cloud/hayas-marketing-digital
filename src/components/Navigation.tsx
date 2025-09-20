@@ -105,11 +105,13 @@ const Navigation = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               <Link to="/es" className="flex items-center" onClick={() => window.scrollTo(0, 0)}>
-                <img
-                  src="/lovable-uploads/7ec653d8-b796-48ee-9657-8f0301af6e55.png"
-                  alt="Hayas Marketing Logo"
-                  className="h-12 md:h-14 w-auto"
-                />
+                <div className="logo-container relative inline-flex items-center origin-left scale-110 md:scale-125">
+                  <img
+                    src="/lovable-uploads/7ec653d8-b796-48ee-9657-8f0301af6e55.png"
+                    alt="Hayas Marketing Logo"
+                    className="h-10 md:h-12 w-auto"
+                  />
+                </div>
               </Link>
             </div>
 
