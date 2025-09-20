@@ -49,7 +49,7 @@ const BlogIAMarketing = () => {
       
       <Navigation />
       
-      <main className="pt-20">
+      <main className="mt-4 md:mt-6">
         <div className="container mx-auto px-4 py-24 max-w-4xl">
           {/* Breadcrumb */}
           <div className="mb-8">

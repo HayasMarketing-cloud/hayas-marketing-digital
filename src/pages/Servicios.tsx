@@ -42,7 +42,7 @@ const Servicios = () => {
       
       <main>
         {/* Hero Banner */}
-        <section className="relative bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 pt-20 pb-16 overflow-hidden">
+        <section className="relative bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 mt-4 md:mt-6 pb-16 overflow-hidden">
           <div className="absolute inset-0 bg-black/20"></div>
           <div className="absolute inset-0">
             <div className="absolute top-10 left-10 w-32 h-32 bg-gradient-to-r from-purple-400/30 to-pink-400/30 rounded-full blur-xl"></div>

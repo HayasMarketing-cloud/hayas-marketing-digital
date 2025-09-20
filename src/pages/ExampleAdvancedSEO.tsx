@@ -60,7 +60,7 @@ const ExampleAdvancedSEO = () => {
       
       <Navigation />
       
-      <main className="pt-24">
+      <main className="mt-4 md:mt-6">
         {/* Hero Section */}
         <section className="py-16 bg-gradient-to-br from-purple-50 to-blue-50">
           <div className="container mx-auto px-4">

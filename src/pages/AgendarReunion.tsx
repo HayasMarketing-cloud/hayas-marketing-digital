@@ -26,10 +26,10 @@ export default function AgendarReunion() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background/95 to-primary/5 pt-24">
+    <div className="min-h-screen bg-gradient-to-br from-background via-background/95 to-primary/5">
       <Navigation />
       
-      <main className="w-full px-4 py-12">
+      <main className="w-full px-4 py-12 mt-4 md:mt-6">
         <div className="w-full max-w-none">
           {/* Header Section */}
           <div className="text-center mb-12 max-w-4xl mx-auto">

@@ -75,7 +75,7 @@ const faqItems = [
 // Hero Section Component
 const HeroSection = () => {
   return (
-    <section className="relative pt-20 pb-16 bg-gradient-to-br from-primary/5 via-white to-accent/5 overflow-hidden">
+    <section className="relative mt-4 md:mt-6 pb-16 bg-gradient-to-br from-primary/5 via-white to-accent/5 overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">

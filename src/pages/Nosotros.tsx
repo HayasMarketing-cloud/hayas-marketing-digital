@@ -125,7 +125,7 @@ const Nosotros = () => {
   return <div className="min-h-screen flex flex-col">
       <Navigation />
       
-      <main className="flex-grow pt-24">
+      <main className="flex-grow mt-4 md:mt-6">
         {/* Hero Section - Modernized with gradient background */}
         <section className="relative py-24 md:py-32 lg:py-40 overflow-hidden bg-header-gradient bg-pattern-dots">
           {/* Enhanced decorative elements */}

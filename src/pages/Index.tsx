@@ -104,7 +104,7 @@ const Index = () => {
       />
       <Navigation />
       
-      <main className="flex-grow pt-24" role="main">
+      <main className="flex-grow mt-4 md:mt-6" role="main">
         <HeroSection />
         <SolutionsSection />
         

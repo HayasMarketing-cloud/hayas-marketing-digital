@@ -11,7 +11,7 @@ const ArticleBreadcrumbs: React.FC<ArticleBreadcrumbsProps> = ({
   position = 'top', 
   showHome = false 
 }) => {
-  const topClasses = "container mx-auto px-4 pt-24 pb-8";
+  const topClasses = "container mx-auto px-4 pt-4 md:pt-6 pb-8";
   const bottomClasses = "container mx-auto px-4 py-8 border-t border-border bg-muted/30";
 
   return (
