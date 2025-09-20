@@ -98,14 +98,14 @@ const Navigation = () => {
       <header
         ref={headerRef}
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 bg-background/95 backdrop-blur-md border-b border-border/50 ${
-          isScrolled ? 'shadow-corporate py-2 md:py-3' : 'py-3 md:py-4'
+          isScrolled ? 'shadow-corporate py-3 md:py-4' : 'py-4 md:py-5'
         }`}
       >
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               <Link to="/es" className="flex items-center overflow-visible" onClick={() => window.scrollTo(0, 0)}>
-                <div className="logo-container relative inline-flex items-center origin-left overflow-visible -ml-1 md:-ml-2 scale-150 md:scale-[1.85]">
+                <div className="logo-container relative inline-flex items-center origin-left overflow-visible -ml-2 md:-ml-3 scale-[2.2] md:scale-[2.8]">
                   <img
                     src="/lovable-uploads/7ec653d8-b796-48ee-9657-8f0301af6e55.png"
                     alt="Hayas Marketing Logo"
