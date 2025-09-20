@@ -148,7 +148,7 @@
 
   /* Typography hierarchy utilities */
   .title-hero {
-    @apply text-4xl md:text-5xl lg:text-6xl font-bold mb-6;
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-6;
   }
 
   .title-section {
@@ -218,7 +218,6 @@
   }
 
   /* Typography utilities */
-  .title-hero { @apply text-4xl md:text-5xl lg:text-6xl font-bold mb-6; }
   .title-section { @apply text-3xl md:text-4xl font-bold mb-4; }
   .title-subsection { @apply text-2xl font-bold mb-3; }
   .title-card { @apply text-xl font-bold; }
