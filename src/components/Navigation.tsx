@@ -104,12 +104,12 @@ const Navigation = () => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center">
-              <Link to="/es" className="flex items-center" onClick={() => window.scrollTo(0, 0)}>
-                <div className="logo-container relative inline-flex items-center origin-left scale-150 md:scale-175">
+              <Link to="/es" className="flex items-center overflow-visible" onClick={() => window.scrollTo(0, 0)}>
+                <div className="logo-container relative inline-flex items-center origin-left overflow-visible">
                   <img
                     src="/lovable-uploads/7ec653d8-b796-48ee-9657-8f0301af6e55.png"
                     alt="Hayas Marketing Logo"
-                    className="h-10 md:h-12 w-auto"
+                    className="h-16 md:h-20 w-auto"
                   />
                 </div>
               </Link>
