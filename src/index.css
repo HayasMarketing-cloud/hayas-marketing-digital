@@ -220,6 +220,11 @@
   /* Typography utilities */
   .title-section { @apply text-3xl md:text-4xl font-bold mb-4; }
   .title-subsection { @apply text-2xl font-bold mb-3; }
+  
+  /* Hero image standardization */
+  .hero-image { 
+    @apply w-full h-64 md:h-80 lg:h-96 object-cover rounded-xl shadow-corporate; 
+  }
   .title-card { @apply text-xl font-bold; }
   .text-hero { @apply text-xl text-gray-600 mb-8; }
   .text-description { @apply text-lg text-gray-600; }

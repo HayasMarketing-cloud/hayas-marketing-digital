@@ -28,7 +28,7 @@ const HeroSection = () => {
           <div className="lg:w-1/2">
             <div className="relative animate-fade-in">
               <div className="absolute inset-0 bg-hayas-secondary/20 rounded-full blur-3xl opacity-20 shadow-glow" aria-hidden="true"></div>
-              <OptimizedImage src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop" alt="Dashboard de marketing digital mostrando análisis de datos, métricas de conversión y automatización de procesos" className="relative z-10 w-full h-auto rounded-xl shadow-corporate object-cover aspect-[4/3] md:aspect-auto" width={800} height={600} priority={true} sizes="(max-width: 768px) 100vw, 50vw" />
+              <OptimizedImage src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop" alt="Dashboard de marketing digital mostrando análisis de datos, métricas de conversión y automatización de procesos" className="relative z-10 hero-image" width={800} height={600} priority={true} sizes="(max-width: 768px) 100vw, 50vw" />
             </div>
           </div>
         </div>

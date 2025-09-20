@@ -184,7 +184,7 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ data }) => {
               <OptimizedImage
                 src={data.heroImage}
                 alt={data.heroImageAlt}
-                className="w-full h-auto rounded-2xl shadow-2xl"
+                className="hero-image rounded-2xl shadow-2xl"
               />
             </div>
           </div>
