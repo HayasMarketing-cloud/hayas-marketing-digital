@@ -14,7 +14,7 @@ const FormacionIA: React.FC = () => {
     badge: "Formación Especializada",
     heroTitle: "Formación IA aplicada a Marketing Digital",
     heroSubtitle: "Capacita a tu equipo en el uso estratégico de herramientas de inteligencia artificial para maximizar los resultados de marketing",
-    heroImage: "/src/assets/ia-marketing-hero.jpg",
+    heroImage: "/formacion-ia-hero.jpg",
     heroImageAlt: "Formación en inteligencia artificial aplicada al marketing digital",
     primaryCTA: "Solicitar información del programa",
     primaryCTALink: "/contacto",
