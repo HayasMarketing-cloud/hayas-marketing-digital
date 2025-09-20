@@ -7,44 +7,41 @@ import { Calendar, User, Clock, ArrowLeft, Share2, BookOpen, Brain, Target, Tren
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
-import Seo from '@/components/Seo';
+import EnhancedSEO from '@/components/EnhancedSEO';
 import ArticleUtilitySection from '@/components/BlogPost/ArticleUtilitySection';
 import teamMarketingCollaboration from '@/assets/team-marketing-collaboration.jpg';
 
 const BlogIAMarketing = () => {
+  // Extract article content for SEO analysis
+  const articleContent = `
+    La Inteligencia Artificial (IA) y su aplicación en Marketing Digital
+    
+    En un mundo donde la tecnología avanza a pasos agigantados, la Inteligencia Artificial ha emergido como una herramienta transformadora en el marketing digital. 
+    
+    ¿Qué es la Inteligencia Artificial aplicada al Marketing?
+    La inteligencia artificial en marketing es el uso de tecnologías como machine learning, procesamiento de lenguaje natural y análisis predictivo para automatizar, personalizar y optimizar estrategias de marketing digital.
+    
+    Principales aplicaciones de IA en Marketing Digital
+    Automatización de procesos, personalización de contenidos, análisis predictivo, optimización de campañas publicitarias, chatbots inteligentes, segmentación avanzada de audiencias.
+    
+    Herramientas de IA para Marketing: ChatGPT, Gemini y Copilot
+    ChatGPT para creación de contenidos, Google Gemini para análisis de datos, Microsoft Copilot para automatización de procesos.
+    
+    IA en SEO y Posicionamiento Web
+    Optimización de contenidos, análisis de keywords, mejora de experiencia de usuario, automatización de tareas SEO.
+    
+    Automatización de Marketing con Inteligencia Artificial
+    Email marketing automatizado, lead scoring, nurturing personalizado, segmentación dinámica.
+    
+    El futuro del Marketing con IA: Tendencias 2025
+    Marketing predictivo, personalización hipersegmentada, automatización completa de campañas, análisis de sentimientos en tiempo real.
+  `;
+
   return (
     <div className="min-h-screen bg-background">
-      <Seo
-        title="La Inteligencia Artificial (IA) y su aplicación en Marketing"
-        description="Descubre cómo la inteligencia artificial está revolucionando el marketing digital. Aprende sobre automatización, personalización y optimización con IA en Hayas Marketing."
-        keywords={["inteligencia artificial marketing", "IA marketing", "automatización marketing", "personalización IA", "marketing digital IA"]}
-        canonical="https://hayasmarketing.com/es/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing"
-        structuredData={{
-          "@context": "https://schema.org",
-          "@type": "Article",
-          "headline": "La Inteligencia Artificial (IA) y su aplicación en Marketing",
-          "description": "Descubre cómo la inteligencia artificial está revolucionando el marketing digital.",
-          "image": "https://hayasmarketing.com/assets/team-marketing-collaboration.jpg",
-          "author": {
-            "@type": "Organization",
-            "name": "Hayas Marketing"
-          },
-          "publisher": {
-            "@type": "Organization",
-            "name": "Hayas Marketing",
-            "logo": {
-              "@type": "ImageObject",
-              "url": "https://hayasmarketing.com/favicon.ico"
-            }
-          },
-          "datePublished": "2024-12-15",
-          "dateModified": "2025-01-19",
-          "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://hayasmarketing.com/es/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing"
-          },
-          "keywords": "inteligencia artificial marketing, IA marketing, automatización marketing, personalización IA, marketing digital IA"
-        }}
+      <EnhancedSEO 
+        showValidationWarnings={true}
+        pageContent={articleContent}
       />
       
       <Navigation />

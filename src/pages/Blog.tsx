@@ -24,7 +24,7 @@ import kitDigitalHero from '@/assets/kit-digital-hero-updated.jpg';
 
 const Blog = () => {
   const featuredPost = {
-    id: 'la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing',
+    id: 'blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing',
     title: 'La Inteligencia Artificial (IA) y su aplicación en Marketing',
     description: 'En un mundo donde la tecnología avanza a pasos agigantados, la Inteligencia Artificial ha emergido como una herramienta transformadora en el marketing digital.',
     date: '2024-12-15',
