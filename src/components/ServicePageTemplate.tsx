@@ -136,18 +136,20 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ data }) => {
       <div className="bg-gray-50 py-4 mt-20">
         <div className="container mx-auto px-4">
           <nav className="text-sm text-gray-600">
-            {data.breadcrumbItems.map((item, index) => (
-              <React.Fragment key={index}>
-                {index > 0 && <span className="mx-2">/</span>}
-                {item.href ? (
-                  <Link to={item.href} className="hover:text-primary">
-                    {item.label}
-                  </Link>
-                ) : (
-                  <span className="text-gray-900">{item.label}</span>
-                )}
-              </React.Fragment>
-            ))}
+            <nav className="text-sm text-gray-600">
+              {data.breadcrumbItems.map((item, index) => (
+                <span key={index} className="inline">
+                  {index > 0 && <span className="mx-2">/</span>}
+                  {item.href ? (
+                    <Link to={item.href} className="hover:text-primary">
+                      {item.label}
+                    </Link>
+                  ) : (
+                    <span className="text-gray-900">{item.label}</span>
+                  )}
+                </span>
+              ))}
+            </nav>
           </nav>
         </div>
       </div>
@@ -185,6 +187,7 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ data }) => {
                 src={data.heroImage}
                 alt={data.heroImageAlt}
                 className="hero-image rounded-2xl shadow-2xl"
+                priority={true}
               />
             </div>
           </div>

@@ -51,11 +51,10 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
         sizes={sizes}
         onLoad={handleLoad}
         onError={handleError}
-        style={{ 
-          display: isLoaded ? 'block' : 'none',
-          width: width ? `${width}px` : 'auto',
-          height: height ? `${height}px` : 'auto'
-        }}
+          style={{ 
+            width: width ? `${width}px` : undefined,
+            height: height ? `${height}px` : undefined
+          }}
       />
     </div>
   );
