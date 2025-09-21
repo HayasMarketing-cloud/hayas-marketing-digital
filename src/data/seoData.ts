@@ -235,9 +235,67 @@ export const seoData: Record<string, EnhancedPageSEOData> = {
     }
   },
   
-  // ========================================
-  // BLOG POSTS
-  // ========================================
+  '/es/legal/aviso-legal': {
+    title: 'Aviso Legal - Hayas Marketing',
+    h1: 'Aviso Legal',
+    description: 'Información legal, términos de uso y datos identificativos de Hayas Marketing. Consulta nuestras condiciones legales y políticas corporativas.',
+    keywords: ['aviso legal', 'información legal', 'términos uso', 'hayas marketing'],
+    canonical: '/es/legal/aviso-legal',
+    schemaType: 'WebPage',
+    about: ['Aviso Legal', 'Información Corporativa', 'Términos de Uso'],
+    mentions: ['Hayas Marketing', 'Madrid', 'España'],
+    inLanguage: 'es-ES',
+    robots: 'noindex, follow',
+    isIndexable: false,
+    category: 'main'
+  },
+
+  '/es/legal/politica-privacidad': {
+    title: 'Política de Privacidad - Hayas Marketing',
+    h1: 'Política de Privacidad',
+    description: 'Política de privacidad y protección de datos de Hayas Marketing. Información sobre tratamiento de datos personales conforme al RGPD.',
+    keywords: ['política privacidad', 'protección datos', 'RGPD', 'datos personales'],
+    canonical: '/es/legal/politica-privacidad',
+    schemaType: 'WebPage',
+    about: ['Protección de Datos', 'RGPD', 'Privacidad', 'Datos Personales'],
+    mentions: ['RGPD', 'HubSpot', 'GoHighLevel', 'SofÍA', 'Google Analytics'],
+    inLanguage: 'es-ES',
+    robots: 'noindex, follow',
+    isIndexable: false,
+    category: 'main'
+  },
+
+  '/es/legal/terminos-servicio': {
+    title: 'Términos de Servicio - Hayas Marketing',
+    h1: 'Términos de Servicio',
+    description: 'Términos y condiciones generales para servicios de marketing digital, CRM, automatización e inteligencia artificial de Hayas Marketing.',
+    keywords: ['términos servicio', 'condiciones generales', 'servicios marketing', 'CRM'],
+    canonical: '/es/legal/terminos-servicio',
+    schemaType: 'WebPage',
+    about: ['Términos de Servicio', 'Condiciones Comerciales', 'Marketing Digital'],
+    mentions: ['Marketing Digital', 'CRM', 'Automatización', 'HubSpot', 'GoHighLevel'],
+    inLanguage: 'es-ES',
+    robots: 'noindex, follow',
+    isIndexable: false,
+    category: 'main'
+  },
+
+  '/es/legal/politica-cookies': {
+    title: 'Política de Cookies - Hayas Marketing',
+    h1: 'Política de Cookies',
+    description: 'Información sobre el uso de cookies en el sitio web de Hayas Marketing. Tipos de cookies, finalidades y configuración del consentimiento.',
+    keywords: ['política cookies', 'cookies web', 'consentimiento', 'análisis web'],
+    canonical: '/es/legal/politica-cookies',
+    schemaType: 'WebPage',
+    about: ['Cookies', 'Análisis Web', 'Consentimiento', 'SofÍA Chatbot'],
+    mentions: ['Google Analytics', 'Meta Pixel', 'LinkedIn', 'SofÍA', 'Cookies'],
+    inLanguage: 'es-ES',
+    robots: 'noindex, follow',
+    isIndexable: false,
+    category: 'main'
+  },
+  
+  // ... rest of existing seoData
   
   '/es/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing': {
     title: 'Guía Completa: Inteligencia Artificial en Marketing Digital 2025',

@@ -133,6 +133,10 @@ import KitDigitalPresenciaBasica from './pages/KitDigitalPresenciaBasica';
 import KitDigitalGestionClientes from './pages/KitDigitalGestionClientes';
 import KitDigitalRedesSociales from './pages/KitDigitalRedesSociales';
 import KitDigitalPresenciaAvanzada from './pages/KitDigitalPresenciaAvanzada';
+import AvisoLegal from './pages/AvisoLegal';
+import PoliticaPrivacidad from './pages/PoliticaPrivacidad';
+import TerminosServicio from './pages/TerminosServicio';
+import PoliticaCookies from './pages/PoliticaCookies';
 
 const queryClient = new QueryClient();
 
@@ -310,6 +314,12 @@ const App = () => (
           <Route path="/es/servicios/captacion-leads-clientes" element={<CaptacionLeadsClientes />} />
           <Route path="/es/servicios/implantacion-crm" element={<ImplantacionCrm />} />
           <Route path="/es/servicios" element={<Servicios />} />
+          
+          {/* PÁGINAS LEGALES */}
+          <Route path="/es/legal/aviso-legal" element={<AvisoLegal />} />
+          <Route path="/es/legal/politica-privacidad" element={<PoliticaPrivacidad />} />
+          <Route path="/es/legal/terminos-servicio" element={<TerminosServicio />} />
+          <Route path="/es/legal/politica-cookies" element={<PoliticaCookies />} />
           
           {/* 404 - DEBE IR SIEMPRE AL FINAL */}
           <Route path="*" element={<NotFound />} />

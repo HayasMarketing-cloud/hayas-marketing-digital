@@ -193,9 +193,10 @@ const Footer: React.FC<FooterProps> = ({
             <p>&copy; {currentYear} Hayas Marketing. Todos los derechos reservados.</p>
           </div>
           <div className="flex space-x-6">
-            <a href="#" className="hover:text-secondary transition-colors">Política de Privacidad</a>
-            <a href="#" className="hover:text-secondary transition-colors">Términos de Servicio</a>
-            <a href="#" className="hover:text-secondary transition-colors">Cookies</a>
+            <Link to="/es/legal/aviso-legal" className="hover:text-secondary transition-colors">Aviso Legal</Link>
+            <Link to="/es/legal/politica-privacidad" className="hover:text-secondary transition-colors">Política de Privacidad</Link>
+            <Link to="/es/legal/terminos-servicio" className="hover:text-secondary transition-colors">Términos de Servicio</Link>
+            <Link to="/es/legal/politica-cookies" className="hover:text-secondary transition-colors">Cookies</Link>
           </div>
         </div>
       </div>
