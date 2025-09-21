@@ -11,7 +11,7 @@ const BlogEmailMarketingHubSpot = () => {
     category: "Email Marketing",
     author: "Equipo Hayas Marketing",
     tags: ["email marketing", "hubspot", "spf", "dkim", "dmarc", "cumplimiento", "rgpd"],
-    canonical: "/blog/guia-tecnica-email-marketing-hubspot-configuracion",
+    canonical: "/es/blog/guia-tecnica-email-marketing-hubspot-configuracion",
     ogImage: "/email-marketing-automatizaciones-hero.jpg",
     metaTitle: "Email Marketing con HubSpot: Configuración SPF, DKIM y DMARC - Guía 2025",
     metaDescription: "Guía técnica completa para configurar email marketing en HubSpot cumpliendo con RGPD, SPF, DKIM y DMARC. Evita el spam y mejora la entregabilidad.",

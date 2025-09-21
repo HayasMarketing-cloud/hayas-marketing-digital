@@ -14,7 +14,7 @@ const BlogABMAccountBasedMarketing = () => {
     category: "Marketing Digital",
     author: "Equipo Hayas Marketing",
     tags: ["ABM", "Marketing ABM", "Account-Based Marketing", "B2B", "Grandes Cuentas"],
-    canonical: "/blog/abm-account-based-marketing",
+    canonical: "/es/blog/abm-account-based-marketing",
     ogImage: "/src/assets/business-model-canvas-estrategia-marketing-hero.jpg",
     mainKeyword: "ABM",
     secondaryKeywords: ["Marketing ABM", "Account-Based Marketing", "estrategia ABM", "cuentas objetivo"],

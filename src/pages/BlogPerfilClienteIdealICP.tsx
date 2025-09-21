@@ -11,7 +11,7 @@ const BlogPerfilClienteIdealICP = () => {
     category: "Estrategia de Marketing",
     author: "Equipo Hayas Marketing",
     tags: ["perfil cliente ideal", "ICP", "estrategia marketing", "segmentación", "ventas"],
-    canonical: "/blog/perfil-cliente-ideal",
+    canonical: "/es/blog/perfil-cliente-ideal",
     ogImage: "/perfil-cliente-ideal-hero.jpg",
     metaTitle: "Perfil de cliente ideal (ICP): qué es y cómo definirlo - Guía 2025",
     metaDescription: "Aprende a crear el perfil de cliente ideal (ICP) perfecto para tu negocio. Guía completa con ejemplos, templates y estrategias para maximizar tus ventas.",

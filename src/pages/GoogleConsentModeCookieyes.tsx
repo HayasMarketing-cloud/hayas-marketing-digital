@@ -14,7 +14,7 @@ const metadata = {
   category: "Analítica Digital",
   author: "Daniela Hayas",
   tags: ['Google Tag Manager', 'Consent Mode', 'CookieYes', 'GDPR', 'Privacidad', 'Analítica'],
-  canonical: "/blog/google-consent-mode-cookieyes",
+  canonical: "/es/blog/google-consent-mode-cookieyes",
   ogImage: "/src/assets/google-consent-mode-cookieyes-hero.jpg",
   structuredData: {
     "@context": "https://schema.org",

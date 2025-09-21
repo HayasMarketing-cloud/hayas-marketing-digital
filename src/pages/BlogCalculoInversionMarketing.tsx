@@ -15,7 +15,7 @@ const BlogCalculoInversionMarketing = () => {
     category: "Marketing Digital",
     author: "Equipo Hayas Marketing",
     tags: ["ROI Marketing", "Presupuesto", "KPIs", "Marketing Digital", "Inversión"],
-    canonical: "/blog/calculo-inversion-plan-marketing-digital",
+    canonical: "/es/blog/calculo-inversion-plan-marketing-digital",
     ogImage: calculoInversionHero,
     mainKeyword: "cálculo inversión marketing digital",
     secondaryKeywords: ["ROI marketing", "presupuesto marketing", "KPIs marketing digital", "inversión publicitaria"],

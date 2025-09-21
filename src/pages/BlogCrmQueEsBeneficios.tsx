@@ -30,7 +30,7 @@ const BlogCrmQueEsBeneficios = () => {
     category: "CRM y Automatización",
     author: "Hayas Marketing",
     tags: ["CRM", "Marketing", "Ventas", "Automatización", "Gestión de Clientes"],
-    canonical: "/blog/crm-que-es-beneficios-como-elegir",
+    canonical: "/es/blog/crm-que-es-beneficios-como-elegir",
     ogImage: "/lovable-uploads/marketing-kpis-dashboard.jpg",
     mainKeyword: "CRM",
     secondaryKeywords: ["qué es un CRM", "CRM marketing", "beneficios CRM", "elegir CRM"],

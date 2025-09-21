@@ -13,7 +13,7 @@ const BlogFunnelConversionB2B = () => {
     category: "Estrategias Marketing",
     author: "Equipo Hayas Marketing",
     tags: ["Funnel de Conversión", "B2B", "Automatización", "HubSpot", "Marketing Digital", "Lead Generation"],
-    canonical: "/blog/funnel-conversion-b2b",
+    canonical: "/es/blog/funnel-conversion-b2b",
     ogImage: "/public/automatizacion-marketing-hero.jpg",
     metaTitle: "Cómo crear un funnel de conversión B2B efectivo | Guía 2025",
     metaDescription: "Guía completa para crear funnels de conversión B2B. Aprende las etapas TOFU, MOFU, BOFU y automatización con HubSpot. Estrategias probadas para aumentar conversiones.",

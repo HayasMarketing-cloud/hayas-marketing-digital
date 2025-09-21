@@ -13,7 +13,7 @@ const metadata = {
   category: "Digitalización",
   author: "Hayas Marketing",
   tags: ["Kit Digital", "Digitalización", "Ayudas Públicas", "Marketing Digital", "Transformación Digital"],
-  canonical: "/blog/kit-digital-marketing-guia-completa-2025",
+  canonical: "/es/blog/kit-digital-marketing-guia-completa-2025",
   ogImage: "/kit-digital-marketing-hero.jpg",
   metaTitle: "Kit Digital para Marketing: Guía Completa 2025 | Hayas Marketing",
   metaDescription: "Guía completa del Kit Digital 2025: requisitos, convocatorias abiertas, soluciones financiadas y cómo aprovecharlo para tu marketing digital. ¡Hasta 12.000€!",

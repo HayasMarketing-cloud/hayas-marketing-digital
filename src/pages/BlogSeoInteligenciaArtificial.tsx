@@ -10,7 +10,7 @@ const BlogSeoInteligenciaArtificial = () => {
     category: "SEO y Marketing Digital",
     readTime: "8 min",
     tags: ["SEO", "Inteligencia Artificial", "Herramientas IA", "Posicionamiento Web", "Marketing Digital"],
-    canonical: "/blog/seo-inteligencia-artificial",
+    canonical: "/es/blog/seo-inteligencia-artificial",
     ogImage: "/public/seo-inteligencia-artificial-hero.jpg",
     structuredData: {
       "@context": "https://schema.org",

@@ -17,7 +17,7 @@ const BusinessModelCanvasEstrategiaMarketing = () => {
     category: "Marketing Digital",
     author: "Equipo Hayas Marketing",
     tags: ["Business Model Canvas", "Marketing Digital", "Estrategia", "Modelo de Negocio", "Canvas"],
-    canonical: "/blog/business-model-canvas-para-crear-tu-estrategia-de-marketing",
+    canonical: "/es/blog/business-model-canvas-para-crear-tu-estrategia-de-marketing",
     ogImage: heroImage,
     mainKeyword: "business model canvas marketing",
     secondaryKeywords: ["estrategia marketing", "modelo de negocio", "canvas marketing", "propuesta de valor"],
@@ -170,7 +170,7 @@ const BusinessModelCanvasEstrategiaMarketing = () => {
         <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
           <h3 className="text-lg font-semibold mb-3 text-blue-800">👥 Segmentos de clientes</h3>
           <p className="text-blue-700 text-sm mb-3">
-            Define claramente a quién te diriges. Fundamental para crear <Link to="/blog/perfil-cliente-ideal" className="text-primary hover:underline">buyer personas</Link> efectivos.
+            Define claramente a quién te diriges. Fundamental para crear <Link to="/es/blog/perfil-cliente-ideal" className="text-primary hover:underline">buyer personas</Link> efectivos.
           </p>
           <p className="text-xs text-blue-600">
             <strong>Impacto en marketing:</strong> Personalización de mensajes, selección de canales, segmentación de campañas.

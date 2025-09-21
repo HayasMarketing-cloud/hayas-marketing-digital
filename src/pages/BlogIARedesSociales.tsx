@@ -18,7 +18,7 @@ const BlogIARedesSociales = () => {
     category: "Inteligencia Artificial",
     author: "Equipo Hayas Marketing",
     tags: ["IA", "Redes Sociales", "Automatización", "Social Media", "Marketing Digital", "Herramientas IA", "Community Management"],
-    canonical: "/blog/ia-redes-sociales-herramientas-riesgos",
+    canonical: "/es/blog/ia-redes-sociales-herramientas-riesgos",
     ogImage: iaRedesSocialesHero,
     structuredData: {
       "@context": "https://schema.org",

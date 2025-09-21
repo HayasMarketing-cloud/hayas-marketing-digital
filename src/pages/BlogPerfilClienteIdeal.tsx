@@ -11,7 +11,7 @@ const BlogPerfilClienteIdeal = () => {
     category: "Estrategia de Marketing",
     author: "Equipo Hayas Marketing",
     tags: ["buyer persona", "perfil cliente ideal", "estrategia marketing", "B2B", "B2C"],
-    canonical: "/blog/como-crear-buyer-persona-b2b-b2c-guia-completa",
+    canonical: "/es/blog/como-crear-buyer-persona-b2b-b2c-guia-completa",
     ogImage: "/perfil-cliente-ideal-hero.jpg",
     metaTitle: "Cómo crear tu buyer persona para B2B y B2C - Guía completa con template",
     metaDescription: "Descubre cómo crear buyer personas efectivos paso a paso. Guía completa con template descargable, cuestionario y ejemplos prácticos para B2B y B2C.",

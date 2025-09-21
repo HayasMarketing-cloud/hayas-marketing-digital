@@ -14,7 +14,7 @@ const BlogWeb30 = () => {
     category: "Tecnología",
     author: "Equipo Hayas Marketing",
     tags: ["Web 3.0", "Blockchain", "Descentralización", "Tecnología", "Internet", "Metaverso"],
-    canonical: "/blog/web-3-0-futuro-internet-descentralizado",
+    canonical: "/es/blog/web-3-0-futuro-internet-descentralizado",
     ogImage: "/web-3-0-hero.jpg",
     metaTitle: "Web 3.0: El Futuro Descentralizado de Internet | Guía Completa",
     metaDescription: "Explora la Web 3.0 y su impacto en el futuro digital. Blockchain, descentralización, NFTs y metaverso. Todo lo que necesitas saber.",

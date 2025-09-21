@@ -12,7 +12,7 @@ const BlogSeoOffPage = () => {
     category: "SEO",
     author: "Hayas Marketing",
     tags: ["SEO", "Link Building", "Posicionamiento Web", "Marketing Digital", "Backlinks"],
-    canonical: "/blog/seo-off-page-estrategias-practicas-posicionamiento",
+    canonical: "/es/blog/seo-off-page-estrategias-practicas-posicionamiento",
     ogImage: "/seo-off-page-hero.jpg",
     mainKeyword: "seo off page",
     secondaryKeywords: ["link building", "posicionamiento web", "backlinks", "autoridad de dominio", "seo externo"],

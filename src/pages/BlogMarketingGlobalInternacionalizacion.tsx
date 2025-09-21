@@ -13,7 +13,7 @@ const BlogMarketingGlobalInternacionalizacion = () => {
     category: "Estrategias Marketing",
     author: "Equipo Hayas Marketing",
     tags: ["Marketing Global", "Internacionalización", "Localización", "i18n", "l10n", "Contenidos"],
-    canonical: "/blog/marketing-global-internacionalizacion",
+    canonical: "/es/blog/marketing-global-internacionalizacion",
     ogImage: "/marketing-global-hero.jpg",
     metaTitle: "Marketing Global: Guía de Internacionalización i18n y Localización l10n",
     metaDescription: "Aprende a expandir tu negocio globalmente con estrategias de internacionalización i18n y localización l10n. Guía completa para adaptar tu marketing a mercados internacionales.",

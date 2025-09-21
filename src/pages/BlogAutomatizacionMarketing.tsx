@@ -13,7 +13,7 @@ const BlogAutomatizacionMarketing = () => {
     category: "Marketing Automation",
     author: "Equipo Hayas Marketing",
     tags: ["Automatización de Marketing", "Marketing Digital", "Email Marketing", "Lead Nurturing", "CRM", "Workflows"],
-    canonical: "/blog/automatizacion-marketing-digital-guia-completa",
+    canonical: "/es/blog/automatizacion-marketing-digital-guia-completa",
     ogImage: "/automatizacion-marketing-hero.jpg",
     metaTitle: "Automatización de Marketing Digital: Guía Completa para Empresas 2025",
     metaDescription: "Aprende a automatizar tu marketing digital. Estrategias, herramientas y casos de éxito para optimizar tus campañas y aumentar conversiones.",

@@ -11,7 +11,7 @@ const BlogConfiguracionEmailMarketingCumplimiento = () => {
     category: "Email Marketing",
     author: "Equipo Hayas Marketing",
     tags: ["email marketing", "spf", "dkim", "dmarc", "cumplimiento", "rgpd", "hubspot", "go high level", "mailchimp"],
-    canonical: "/blog/configuracion-email-marketing-cumplimiento-normativo",
+    canonical: "/es/blog/configuracion-email-marketing-cumplimiento-normativo",
     ogImage: "/email-marketing-automatizaciones-hero.jpg",
     metaTitle: "Configuración Email Marketing: SPF, DKIM y DMARC para Cualquier Plataforma 2025",
     metaDescription: "Guía técnica universal para configurar email marketing cumpliendo RGPD y normativas. Ejemplos prácticos para HubSpot, Go High Level y Mailchimp.",

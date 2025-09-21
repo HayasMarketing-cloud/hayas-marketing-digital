@@ -14,7 +14,7 @@ const BlogSeoOnPage = () => {
     category: "SEO",
     author: "Equipo Hayas Marketing",
     tags: ["SEO", "SEO On-Page", "Optimización Web", "Marketing Digital", "Google"],
-    canonical: "/blog/seo-on-page-guia-completa",
+    canonical: "/es/blog/seo-on-page-guia-completa",
     ogImage: "/seo-on-page-hero.jpg",
     metaTitle: "SEO On-Page: Guía Completa para Optimizar tu Web en 2025",
     metaDescription: "Descubre cómo aplicar SEO on-page efectivo. Técnicas actualizadas, ejemplos prácticos y herramientas para posicionar tu web en Google.",

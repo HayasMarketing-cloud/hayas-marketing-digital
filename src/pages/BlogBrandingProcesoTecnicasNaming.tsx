@@ -15,7 +15,7 @@ const BlogBrandingProcesoTecnicasNaming = () => {
     category: "Branding",
     author: "Equipo Hayas Marketing",
     tags: ["Branding", "Naming", "Identidad de Marca", "Estrategia", "Creatividad"],
-    canonical: "/blog/branding-proceso-tecnicas-naming",
+    canonical: "/es/blog/branding-proceso-tecnicas-naming",
     ogImage: brandingHeroImage,
     mainKeyword: "técnicas de naming",
     secondaryKeywords: ["branding proceso", "naming empresas", "identidad corporativa", "arquetipos Jung"],

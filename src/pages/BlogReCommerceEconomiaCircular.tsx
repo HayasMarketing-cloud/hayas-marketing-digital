@@ -16,7 +16,7 @@ const BlogReCommerceEconomiaCircular = () => {
     category: "E-commerce",
     author: "Hayas Marketing",
     tags: ["Economía Circular", "E-commerce", "Partnership", "Sostenibilidad", "Re-commerce", "Sharpei"],
-    canonical: "/blog/re-commerce-economia-circular-ecommerce-partnership-sharpei",
+    canonical: "/es/blog/re-commerce-economia-circular-ecommerce-partnership-sharpei",
     ogImage: "/re-commerce-economia-circular-hero.jpg",
     mainKeyword: "economia circular y ecommerce",
     secondaryKeywords: ["re-commerce", "sostenibilidad ecommerce", "partnership sharpei", "economia circular", "comercio sostenible"],

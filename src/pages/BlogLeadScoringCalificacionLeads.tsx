@@ -15,7 +15,7 @@ const BlogLeadScoringCalificacionLeads = () => {
     category: "CRM y Automatización",
     author: "Equipo Hayas Marketing",
     tags: ["Lead Scoring", "CRM", "Automatización", "Ventas", "Marketing Digital"],
-    canonical: "/blog/lead-scoring-calificacion-leads",
+    canonical: "/es/blog/lead-scoring-calificacion-leads",
     ogImage: "/assets/sistema-prevision-ventas.jpg",
     metaTitle: "Lead Scoring: Guía completa para calificar y priorizar leads | Hayas Marketing",
     metaDescription: "Aprende a crear un sistema de lead scoring efectivo. Optimiza tu proceso comercial, prioriza oportunidades y mejora las conversiones. Guía paso a paso.",
