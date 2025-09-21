@@ -38,6 +38,7 @@ Redirect 301 /zh /es
 Redirect 301 /la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing /es/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing
 
 # CRM - Redirecciones consolidadas para todas las variantes
+Redirect 301 /blog/crm-que-es-beneficios /es/blog/crm-que-es-beneficios
 Redirect 301 /blog/qué-es-un-crm-o-customer-relationship-management /es/blog/crm-que-es-beneficios
 Redirect 301 /blog/que-es-un-crm-o-customer-relationship-management /es/blog/crm-que-es-beneficios
 Redirect 301 /es/que-es-un-crm-o-customer-relationship-management/ /es/blog/crm-que-es-beneficios

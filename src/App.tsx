@@ -158,7 +158,8 @@ const App = () => (
            
            
            {/* REDIRECCIONES SIN PREFIJO /es/ */}
-          <Route path="/nosotros" element={<Navigate to="/es/nosotros" replace />} />
+           <Route path="/blog/crm-que-es-beneficios" element={<Navigate to="/es/blog/crm-que-es-beneficios" replace />} />
+           <Route path="/nosotros" element={<Navigate to="/es/nosotros" replace />} />
           <Route path="/servicios/marketing-directo" element={<Navigate to="/es/servicios/marketing-directo" replace />} />
           <Route path="/servicios/seo-positioning" element={<Navigate to="/es/servicios/seo-positioning" replace />} />
           <Route path="/comparativa-hubspot-gohighlevel" element={<Navigate to="/es/comparativa/hubspot-vs-go-high-level" replace />} />
