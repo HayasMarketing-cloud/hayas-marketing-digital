@@ -117,21 +117,6 @@ const BlogTagPage: React.FC = () => {
            (parentTag && postTags.includes(parentTag.slug));
   });
 
-  // Posts relacionados para la sidebar
-  const relatedPosts = allPosts
-    .filter(post => {
-      const postTags = post.tags.map(tag => tag.toLowerCase().replace(/\s+/g, '-'));
-      return tagData && 'subtags' in tagData ? 
-        tagData.subtags.some(subtag => postTags.includes(subtag)) : false;
-    })
-    .slice(0, 3)
-    .map(post => ({
-      title: post.title,
-      slug: post.slug,
-      category: post.category,
-      readTime: post.readTime
-    }));
-
   return (
     <>
       <Seo 
@@ -253,66 +238,6 @@ const BlogTagPage: React.FC = () => {
                         </Card>
                       ))}
                     </div>
-
-                    {/* Posts Relacionados */}
-                    {relatedPosts.length > 0 && (
-                      <div className="border-t border-border pt-8">
-                        <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                          <Calendar className="h-6 w-6 text-primary" />
-                          Posts Relacionados
-                        </h3>
-                        <div className="grid gap-6">
-                          {relatedPosts.slice(0, 3).map((post, index) => {
-                            // Buscar el post completo para obtener la imagen
-                            const fullPost = allPosts.find(p => p.slug === post.slug);
-                            
-                            return (
-                            <Card key={index} className="group hover:shadow-lg transition-all duration-300 overflow-hidden">
-                              <div className="grid md:grid-cols-3 gap-0">
-                                <div className="md:col-span-1">
-                                  <div className="aspect-video md:aspect-square relative overflow-hidden">
-                                    {fullPost?.image ? (
-                                      <img 
-                                        src={fullPost.image} 
-                                        alt={post.title}
-                                        className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                                      />
-                                    ) : (
-                                      <div className="absolute inset-0 bg-muted flex items-center justify-center text-muted-foreground">
-                                        <Calendar className="h-8 w-8" />
-                                      </div>
-                                    )}
-                                  </div>
-                                </div>
-                                <CardContent className="md:col-span-2 p-6">
-                                  <div className="flex items-center gap-4 mb-3 text-sm text-muted-foreground">
-                                    <Badge variant="secondary">{post.category}</Badge>
-                                    <div className="flex items-center gap-1">
-                                      <Clock className="h-4 w-4" />
-                                      {post.readTime}
-                                    </div>
-                                  </div>
-                                  
-                                  <h4 className="text-lg font-bold mb-2 line-clamp-2 group-hover:text-primary transition-colors">
-                                    {post.title}
-                                  </h4>
-                                  
-                                  <div className="flex items-center justify-end">
-                                    <Link to={post.slug}>
-                                      <Button variant="ghost" size="sm" className="group/btn">
-                                        Leer más
-                                        <ArrowRight className="h-4 w-4 ml-1 group-hover/btn:translate-x-1 transition-transform" />
-                                      </Button>
-                                    </Link>
-                                  </div>
-                                </CardContent>
-                              </div>
-                            </Card>
-                            );
-                          })}
-                        </div>
-                      </div>
-                    )}
                   </>
                 ) : (
                   <div className="text-center py-12">
