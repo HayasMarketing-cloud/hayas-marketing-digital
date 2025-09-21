@@ -94,7 +94,7 @@ const EstrategiaContenidos: React.FC = () => {
     heroTitle: "Estrategia de contenidos",
     heroSubtitle: "Atrae y convierte con un plan editorial alineado a tu marca y objetivos: investigación, SEO, producción y distribución que funciona.",
     heroDescription: "",
-    heroImage: "/estrategia-contenidos-hero.jpg",
+    heroImage: "/estrategia-contenidos-hero-new.jpg",
     heroImageAlt: "Estrategia de contenidos profesional - Planificación editorial y SEO",
     badge: "Contenido que impulsa marca",
     primaryCTA: "Solicitar propuesta",
