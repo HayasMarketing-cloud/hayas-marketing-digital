@@ -153,10 +153,16 @@ const App = () => (
         <SofiaWidget />
         <DraftProtection>
           <Routes>
-          {/* REDIRECCIÓN ROOT A ESPAÑOL */}
-          <Route path="/" element={<Navigate to="/es" replace />} />
-          
-          {/* REDIRECCIONES SIN PREFIJO /es/ */}
+           {/* REDIRECCIÓN ROOT A ESPAÑOL */}
+           <Route path="/" element={<Navigate to="/es" replace />} />
+           
+           {/* REDIRECCIONES LEGACY CRM - Fallback client-side */}
+           <Route path="/es/que-es-un-crm-o-customer-relationship-management" element={<Navigate to="/es/blog/crm-que-es-beneficios" replace />} />
+           <Route path="/es/que-es-un-crm-o-customer-relationship-management/" element={<Navigate to="/es/blog/crm-que-es-beneficios" replace />} />
+           <Route path="/blog/que-es-un-crm-o-customer-relationship-management" element={<Navigate to="/es/blog/crm-que-es-beneficios" replace />} />
+           <Route path="/blog/qué-es-un-crm-o-customer-relationship-management" element={<Navigate to="/es/blog/crm-que-es-beneficios" replace />} />
+           
+           {/* REDIRECCIONES SIN PREFIJO /es/ */}
           <Route path="/nosotros" element={<Navigate to="/es/nosotros" replace />} />
           <Route path="/servicios/marketing-directo" element={<Navigate to="/es/servicios/marketing-directo" replace />} />
           <Route path="/servicios/seo-positioning" element={<Navigate to="/es/servicios/seo-positioning" replace />} />
