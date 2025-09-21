@@ -62,7 +62,7 @@ const Contacto = () => {
                     <p className="text-muted-foreground mb-6">Envíanos un mensaje por WhatsApp</p>
                     <div>
                       <a
-                        href="https://wa.me/34672288182"
+                        href="https://wa.me/34656908615"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center justify-center gap-3 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 hover:shadow-lg hover:scale-105 w-full"
