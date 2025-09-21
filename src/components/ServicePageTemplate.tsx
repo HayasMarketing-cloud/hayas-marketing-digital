@@ -91,7 +91,7 @@ export interface ServicePageData {
   showContactForm?: boolean;
   contactFormTitle?: string;
   contactFormSubtitle?: string;
-  contactFormOptions?: string[];
+  contactFormOptions?: Array<{ value: string; label: string }>;
   
   // Breadcrumb
   breadcrumbItems: Array<{
