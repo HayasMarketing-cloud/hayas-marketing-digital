@@ -14,7 +14,7 @@ const Navigation = () => {
   const [hoverTimeout, setHoverTimeout] = useState<NodeJS.Timeout | null>(null);
   const headerRef = useRef<HTMLElement | null>(null);
   const [headerHeight, setHeaderHeight] = useState<number>(0);
-  const [mobileMenuLevel, setMobileMenuLevel] = useState<'main' | 'soluciones' | 'servicios'>('main');
+  const [mobileMenuLevel, setMobileMenuLevel] = useState<'main' | 'soluciones'>('main');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -89,7 +89,7 @@ const Navigation = () => {
     setMobileMenuLevel('main');
   };
 
-  const navigateToLevel = (level: 'main' | 'soluciones' | 'servicios') => {
+  const navigateToLevel = (level: 'main' | 'soluciones') => {
     setMobileMenuLevel(level);
   };
 
@@ -226,23 +226,6 @@ const Navigation = () => {
                       Casos de Éxito
                     </Link>
                     
-                    <div className="space-y-2">
-                      <Link
-                        to="/es/servicios"
-                        className="block text-foreground hover:text-primary font-medium transition-colors px-4 py-3 hover:bg-muted/50 rounded"
-                        onClick={closeMobileMenu}
-                      >
-                        Ver Todos los Servicios
-                      </Link>
-                      <button
-                        onClick={() => navigateToLevel('servicios')}
-                        className="w-full flex items-center justify-between text-foreground hover:text-primary font-medium transition-colors px-4 py-3 hover:bg-muted/50 rounded text-left"
-                      >
-                        <span>Por Categorías</span>
-                        <ArrowRight className="h-4 w-4" />
-                      </button>
-                    </div>
-                    
                     <Link
                       to="/es/nosotros"
                       className="block text-foreground hover:text-primary font-medium transition-colors px-4 py-3 hover:bg-muted/50 rounded"
@@ -309,51 +292,6 @@ const Navigation = () => {
                   </div>
                 )}
 
-                {/* Servicios Level */}
-                {mobileMenuLevel === 'servicios' && (
-                  <div className="space-y-2">
-                    <div className="flex items-center px-4 py-3 border-b border-border mb-4">
-                      <button
-                        onClick={() => navigateToLevel('main')}
-                        className="flex items-center text-muted-foreground hover:text-primary transition-colors"
-                      >
-                        <ArrowLeft className="h-4 w-4 mr-2" />
-                        Volver
-                      </button>
-                      <span className="ml-4 font-medium text-foreground">Servicios</span>
-                    </div>
-                    
-                     <div className="px-4 space-y-4">
-                       {pillarKeys.map((key) => {
-                         const Icon = pillarIcons[key];
-                         return (
-                           <div key={key} className="space-y-2">
-                             <div className="flex items-center gap-2 mb-3">
-                               <Icon className="h-4 w-4 text-primary" />
-                               <h5 className="font-medium text-sm text-foreground">
-                                 {pillarMeta[key].title}
-                               </h5>
-                             </div>
-                             <div className="space-y-1">
-                               {servicesByPillar[key].map((service) => (
-                                 <Link
-                                   key={service.href}
-                                   to={service.href}
-                                   className="block hover:bg-muted/50 py-2 px-3 rounded-lg transition-colors border border-border/30"
-                                   onClick={closeMobileMenu}
-                                 >
-                                   <span className="font-medium text-foreground text-sm">
-                                     {service.title}
-                                   </span>
-                                 </Link>
-                               ))}
-                             </div>
-                           </div>
-                         );
-                       })}
-                     </div>
-                  </div>
-                )}
                 
               </nav>
             </div>
