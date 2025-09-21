@@ -156,11 +156,6 @@ const App = () => (
            {/* REDIRECCIÓN ROOT A ESPAÑOL */}
            <Route path="/" element={<Navigate to="/es" replace />} />
            
-           {/* REDIRECCIONES LEGACY CRM - Fallback client-side */}
-           <Route path="/es/que-es-un-crm-o-customer-relationship-management" element={<Navigate to="/es/blog/crm-que-es-beneficios" replace />} />
-           <Route path="/es/que-es-un-crm-o-customer-relationship-management/" element={<Navigate to="/es/blog/crm-que-es-beneficios" replace />} />
-           <Route path="/blog/que-es-un-crm-o-customer-relationship-management" element={<Navigate to="/es/blog/crm-que-es-beneficios" replace />} />
-           <Route path="/blog/qué-es-un-crm-o-customer-relationship-management" element={<Navigate to="/es/blog/crm-que-es-beneficios" replace />} />
            
            {/* REDIRECCIONES SIN PREFIJO /es/ */}
           <Route path="/nosotros" element={<Navigate to="/es/nosotros" replace />} />
