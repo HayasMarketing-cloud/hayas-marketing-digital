@@ -1,147 +1,17 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import SofiaWidget from "./components/SofiaSection";
-import Index from "./pages/Index";
-import Nosotros from "./pages/Nosotros";
-import ConectaConTusClientes from "./pages/ConectaConTusClientes";
-import ImpulsaTuMarca from "./pages/ImpulsaTuMarca";
-import ActivaTusVentas from "./pages/ActivaTusVentas";
-import MarketingVisibilidad from "./pages/MarketingVisibilidad";
-import ActivaTuEstrategiaDigital from "./pages/ActivaTuEstrategiaDigital";
-import SolucionesIA from "./pages/SolucionesIA";
-import KitConsulting from "./pages/KitConsulting";
-import KitDigital from "./pages/KitDigital";
-import CasoExitoAsendia from "./pages/CasoExitoAsendia";
-import CasoExitoNexoVital from "./pages/CasoExitoNexoVital";
-import CasoExitoIVirgenExtra from "./pages/CasoExitoIVirgenExtra";
-import CasoExitoInboundStudents from "./pages/CasoExitoInboundStudents";
-import CalistheniaOnlinePage from "./pages/CalistheniaOnlinePage";
-
-console.log('🔍 Import de CalistheniaOnlinePage:', CalistheniaOnlinePage);
-import CasoExitoCentroRoraima from "./pages/CasoExitoCentroRoraima";
-import CasoExitoJointsUp from "./pages/CasoExitoJointsUp";
-import CasoExitoTranslateWithStyle from "./pages/CasoExitoTranslateWithStyle";
-import CasoExitoFormatoEducativo from "./pages/CasoExitoFormatoEducativo";
-import CasoExitoOMR from "./pages/CasoExitoOMR";
-import CasoExitoAspAsepsia from "./pages/CasoExitoAspAsepsia";
-import CasoExitoBufeteMaseras from "./pages/CasoExitoBufeteMaseras";
-import CasoExitoModaIntimaVania from "./pages/CasoExitoModaIntimaVania";
-import CasoExitoAlfixConsultores from "./pages/CasoExitoAlfixConsultores";
-import CasoExitoAlmaCruceros from "./pages/CasoExitoAlmaCruceros";
-import CasoExitoLaBaneraKD from "./pages/CasoExitoLaBaneraKD";
-import CasoExitoSuministrosXSKD from "./pages/CasoExitoSuministrosXSKD";
-import CasoExitoConversaConsultores from "./pages/CasoExitoConversaConsultores";
-import CasoExitoBuhobike from "./pages/CasoExitoBuhobike";
-import CasoExitoCabreraCervantes from "./pages/CasoExitoCabreraCervantes";
-import CasoExitoEvaChampion from "./pages/CasoExitoEvaChampion";
-import CasoExitoBelugaLinguistics from "./pages/CasoExitoBelugaLinguistics";
-import CasoExitoWooptix from "./pages/CasoExitoWooptix";
-import CasoExitoPamdamedia from "./pages/CasoExitoPamdamedia";
-import CasoExitoGiveAndGo from "./pages/CasoExitoGiveAndGo";
-import CasoExitoHikvision from "./pages/CasoExitoHikvision";
-import CasoExitoOWOGame from "./pages/CasoExitoOWOGame";
-import CasoExitoNovaPraxis from "./pages/CasoExitoNovaPraxis";
-import CasoExitoAistercel from "./pages/CasoExitoAistercel";
-import CasoExitoQuanticBI from "./pages/CasoExitoQuanticBI";
-import CasoExitoPeixosEmilio from "./pages/CasoExitoPeixosEmilio";
-import CasoExitoCorteAFilms from "./pages/CasoExitoCorteAFilms";
-import CasoExitoLualca from "./pages/CasoExitoLualca";
-import CasoExitoPlazaEstacion from "./pages/CasoExitoPlazaEstacion";
-import CasoExitoRivasCentro from "./pages/CasoExitoRivasCentro";
-import CasoExitoHubSpotForStartups from "./pages/CasoExitoHubSpotForStartups";
-import CasoExitoBekaFinance from "./pages/CasoExitoBekaFinance";
-import CasoExitoPerisElectricidad from "./pages/CasoExitoPerisElectricidad";
-import CasoExitoCarniceriaPicosDeEuropa from "./pages/CasoExitoCarniceriaPicosDeEuropa";
-import CasoExitoLaOrientalSinGluten from "./pages/CasoExitoLaOrientalSinGluten";
-import CasoExitoFLAP from "./pages/CasoExitoFLAP";
-import CasoExitoWideum from "./pages/CasoExitoWideum";
-import CasoExitoAECOC from '@/pages/CasoExitoAECOC';
-import CasoExitoFINECT from '@/pages/CasoExitoFINECT';
-import CasoExitoCOVEBO from '@/pages/CasoExitoCOVEBO';
-import CasoExitoFundacionCasaMexico from '@/pages/CasoExitoFundacionCasaMexico';
-import CasoExitoMotivaTuMente from '@/pages/CasoExitoMotivaTuMente';
-import CasoExitoEurobitsTechnologies from '@/pages/CasoExitoEurobitsTechnologies';
-import CasoExitoBodegasVilano from '@/pages/CasoExitoBodegasVilano';
-import CasoExitoUnitrips from '@/pages/CasoExitoUnitrips';
-import CasoExitoLolaRoblesAbogada from '@/pages/CasoExitoLolaRoblesAbogada';
-import CasoExitoAIPClinic from '@/pages/CasoExitoAIPClinic';
-import CasoExitoHotteoTravel from '@/pages/CasoExitoHotteoTravel';
-import ImplantacionCrm from "./pages/ImplantacionCrm";
-import Blog from "./pages/Blog";
-import BlogPost from "./pages/BlogPost";
-import BlogIAMarketing from "./pages/BlogIAMarketing";
-import AgendarReunion from "./pages/AgendarReunion";
-import SolicitarConsulta from "./pages/SolicitarConsulta";
-import Contacto from "./pages/Contacto";
-import NotFound from "./pages/NotFound";
-import TiendaOnline from "./pages/TiendaOnline";
-import DisenoWeb from "./pages/DisenoWeb";
-import SeoPositioning from "./pages/SeoPositioning";
-import CreacionMarca from './pages/CreacionMarca';
-import GestionRedesSociales from './pages/GestionRedesSociales';
-import PublicidadRedesSociales from './pages/PublicidadRedesSociales';
-import PublicidadGoogleAds from './pages/PublicidadGoogleAds';
-import AsistenteIA from './pages/AsistenteIA';
-import AlojamientoMantenimiento from './pages/AlojamientoMantenimiento';
-import MarketingDirecto from './pages/MarketingDirecto';
-import ImplementacionFunnel from './pages/ImplementacionFunnel';
-import CasosExito from './pages/CasosExito';
 import ScrollToTop from './components/ScrollToTop';
 import DraftProtection from './components/DraftProtection';
-import EmailMarketingAutomatizaciones from './pages/EmailMarketingAutomatizaciones';
-import ConsultoriaEstrategicaAnalitica from './pages/ConsultoriaEstrategicaAnalitica';
-import Servicios from './pages/Servicios';
-import IntegracionesIAProcesos from './pages/IntegracionesIAProcesos';
-import FormacionIA from './pages/FormacionIA';
-import EstrategiaContenidos from './pages/EstrategiaContenidos';
-import AdministracionCrm from './pages/AdministracionCrm';
-import LocalizacionContenidos from './pages/LocalizacionContenidos';
-import CampanasInboundMarketing from './pages/CampanasInboundMarketing';
-import BlogPerfilClienteIdeal from './pages/BlogPerfilClienteIdeal';
-import BlogPerfilClienteIdealICP from './pages/BlogPerfilClienteIdealICP';
-import CaptacionLeadsClientes from './pages/CaptacionLeadsClientes';
-import AutomatizacionProcesosVentas from './pages/AutomatizacionProcesosVentas';
-import BlogCalculoInversionMarketing from './pages/BlogCalculoInversionMarketing';
-import BlogBrandingProcesoTecnicasNaming from './pages/BlogBrandingProcesoTecnicasNaming';
-import BusinessModelCanvasEstrategiaMarketing from './pages/BusinessModelCanvasEstrategiaMarketing';
-import GoogleConsentModeCookieyes from './pages/GoogleConsentModeCookieyes';
-import MarketingNaturalPosicionamientoOrganico from './pages/MarketingNaturalPosicionamientoOrganico';
-import BlogCrmQueEsBeneficios from './pages/BlogCrmQueEsBeneficios';
-import BlogComoElegirMejorCRM from './pages/BlogComoElegirMejorCRM';
-import BlogABMAccountBasedMarketing from './pages/BlogABMAccountBasedMarketing';
-import BlogLeadScoringCalificacionLeads from './pages/BlogLeadScoringCalificacionLeads';
-import BlogSeoInteligenciaArtificial from './pages/BlogSeoInteligenciaArtificial';
-import BlogAutomatizacionMarketing from './pages/BlogAutomatizacionMarketing';
-import BlogWeb30 from './pages/BlogWeb30';
-import BlogSeoOnPage from './pages/BlogSeoOnPage';
-import BlogSeoOffPage from './pages/BlogSeoOffPage';
-import BlogKitDigitalMarketing from './pages/BlogKitDigitalMarketing';
-import BlogReCommerceEconomiaCircular from './pages/BlogReCommerceEconomiaCircular';
-import HayasCRM from './pages/HayasCRM';
-import BlogIARedesSociales from './pages/BlogIARedesSociales';
-import BlogFunnelConversionB2B from './pages/BlogFunnelConversionB2B';
-import BlogEmailMarketingHubSpot from './pages/BlogEmailMarketingHubSpot';
-import BlogConfiguracionEmailMarketingCumplimiento from './pages/BlogConfiguracionEmailMarketingCumplimiento';
-import BlogMarketingGlobalInternacionalizacion from './pages/BlogMarketingGlobalInternacionalizacion';
-import BlogTagPage from './pages/BlogTagPage';
-import ComparativaHubSpotGoHighLevel from './pages/ComparativaHubSpotGoHighLevel';
-import KitDigitalPresenciaBasica from './pages/KitDigitalPresenciaBasica';
-import KitDigitalGestionClientes from './pages/KitDigitalGestionClientes';
-import KitDigitalRedesSociales from './pages/KitDigitalRedesSociales';
-import KitDigitalPresenciaAvanzada from './pages/KitDigitalPresenciaAvanzada';
-import AvisoLegal from './pages/AvisoLegal';
-import PoliticaPrivacidad from './pages/PoliticaPrivacidad';
-import TerminosServicio from './pages/TerminosServicio';
-import PoliticaCookies from './pages/PoliticaCookies';
+import PageSuspense from './components/PageSuspense';
+
+// Lazy imports organizados por categoría
+import * as Pages from './utils/lazyImports';
 
 const queryClient = new QueryClient();
-
-console.log('🛣️  Registrando rutas...');
-console.log('✅ Componente CalistheniaOnlinePage disponible:', typeof CalistheniaOnlinePage);
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -156,7 +26,6 @@ const App = () => (
            {/* REDIRECCIÓN ROOT A ESPAÑOL */}
            <Route path="/" element={<Navigate to="/es" replace />} />
            
-           
            {/* REDIRECCIONES SIN PREFIJO /es/ */}
            <Route path="/blog/crm-que-es-beneficios" element={<Navigate to="/es/blog/crm-que-es-beneficios" replace />} />
            <Route path="/nosotros" element={<Navigate to="/es/nosotros" replace />} />
@@ -166,165 +35,165 @@ const App = () => (
           <Route path="/soluciones/marketing-visibilidad" element={<Navigate to="/es/soluciones/marketing-visibilidad" replace />} />
           
           {/* RUTAS EN ESPAÑOL */}
-          <Route path="/es" element={<Index />} />
+          <Route path="/es" element={<PageSuspense><Pages.Index /></PageSuspense>} />
           
           {/* NOSOTROS */}
-          <Route path="/es/nosotros" element={<Nosotros />} />
+          <Route path="/es/nosotros" element={<PageSuspense><Pages.Nosotros /></PageSuspense>} />
           
           {/* SOLUCIONES - 3 Nuevas Categorías Estratégicas */}
-          <Route path="/es/soluciones/impulsa-tu-marca" element={<ImpulsaTuMarca />} />
-          <Route path="/es/soluciones/conecta-con-tus-clientes" element={<ConectaConTusClientes />} />
-          <Route path="/es/soluciones/activa-tus-ventas" element={<ActivaTusVentas />} />
-          <Route path="/es/soluciones/activa-tu-estrategia-digital" element={<ActivaTuEstrategiaDigital />} />
+          <Route path="/es/soluciones/impulsa-tu-marca" element={<PageSuspense><Pages.ImpulsaTuMarca /></PageSuspense>} />
+          <Route path="/es/soluciones/conecta-con-tus-clientes" element={<PageSuspense><Pages.ConectaConTusClientes /></PageSuspense>} />
+          <Route path="/es/soluciones/activa-tus-ventas" element={<PageSuspense><Pages.ActivaTusVentas /></PageSuspense>} />
+          <Route path="/es/soluciones/activa-tu-estrategia-digital" element={<PageSuspense><Pages.ActivaTuEstrategiaDigital /></PageSuspense>} />
           
           {/* SOLUCIONES - Páginas individuales (legacy y específicas) */}
-          <Route path="/es/soluciones/ia-marketing" element={<SolucionesIA />} />
+          <Route path="/es/soluciones/ia-marketing" element={<PageSuspense><Pages.SolucionesIA /></PageSuspense>} />
           
-          <Route path="/es/servicios/tienda-online" element={<TiendaOnline />} />
-          <Route path="/es/servicios/diseno-web" element={<DisenoWeb />} />
-          <Route path="/es/servicios/diseno-web/alojamiento-mantenimiento" element={<AlojamientoMantenimiento />} />
-          <Route path="/es/servicios/seo-posicionamiento" element={<SeoPositioning />} />
-          <Route path="/es/servicios/seo-positioning" element={<SeoPositioning />} />
-          <Route path="/es/soluciones/marketing-visibilidad" element={<MarketingVisibilidad />} />
+          <Route path="/es/servicios/tienda-online" element={<PageSuspense><Pages.TiendaOnline /></PageSuspense>} />
+          <Route path="/es/servicios/diseno-web" element={<PageSuspense><Pages.DisenoWeb /></PageSuspense>} />
+          <Route path="/es/servicios/diseno-web/alojamiento-mantenimiento" element={<PageSuspense><Pages.AlojamientoMantenimiento /></PageSuspense>} />
+          <Route path="/es/servicios/seo-posicionamiento" element={<PageSuspense><Pages.SeoPositioning /></PageSuspense>} />
+          <Route path="/es/servicios/seo-positioning" element={<PageSuspense><Pages.SeoPositioning /></PageSuspense>} />
+          <Route path="/es/soluciones/marketing-visibilidad" element={<PageSuspense><Pages.MarketingVisibilidad /></PageSuspense>} />
           <Route path="/es/soluciones/gestion-marketing" element={<Navigate to="/es/servicios/administracion-crm" replace />} />
-          <Route path="/es/soluciones/captacion-leads" element={<CaptacionLeadsClientes />} />
-          <Route path="/es/kit-consulting" element={<KitConsulting />} />
-          <Route path="/es/kit-digital" element={<KitDigital />} />
-          <Route path="/es/kit-digital/presencia-basica-internet" element={<KitDigitalPresenciaBasica />} />
-          <Route path="/es/kit-digital/gestion-clientes-crm" element={<KitDigitalGestionClientes />} />
-          <Route path="/es/kit-digital/gestion-red-social" element={<KitDigitalRedesSociales />} />
-          <Route path="/es/kit-digital/presencia-avanzada-seo" element={<KitDigitalPresenciaAvanzada />} />
+          <Route path="/es/soluciones/captacion-leads" element={<PageSuspense><Pages.CaptacionLeadsClientes /></PageSuspense>} />
+          <Route path="/es/kit-consulting" element={<PageSuspense><Pages.KitConsulting /></PageSuspense>} />
+          <Route path="/es/kit-digital" element={<PageSuspense><Pages.KitDigital /></PageSuspense>} />
+          <Route path="/es/kit-digital/presencia-basica-internet" element={<PageSuspense><Pages.KitDigitalPresenciaBasica /></PageSuspense>} />
+          <Route path="/es/kit-digital/gestion-clientes-crm" element={<PageSuspense><Pages.KitDigitalGestionClientes /></PageSuspense>} />
+          <Route path="/es/kit-digital/gestion-red-social" element={<PageSuspense><Pages.KitDigitalRedesSociales /></PageSuspense>} />
+          <Route path="/es/kit-digital/presencia-avanzada-seo" element={<PageSuspense><Pages.KitDigitalPresenciaAvanzada /></PageSuspense>} />
           
           {/* CASOS DE ÉXITO - Página principal */}
-          <Route path="/es/casos-exito" element={<CasosExito />} />
+          <Route path="/es/casos-exito" element={<PageSuspense><Pages.CasosExito /></PageSuspense>} />
           
           {/* CASOS DE ÉXITO - Apoyan las soluciones */}
-          <Route path="/es/casos-exito/asendia" element={<CasoExitoAsendia />} />
-          <Route path="/es/casos-exito/nexo-vital" element={<CasoExitoNexoVital />} />
-          <Route path="/es/casos-exito/i-virgen-extra" element={<CasoExitoIVirgenExtra />} />
-          <Route path="/es/casos-exito/inbound-students" element={<CasoExitoInboundStudents />} />
-          <Route path="/es/casos-exito/calisthenia-online" element={<CalistheniaOnlinePage />} />
-          <Route path="/es/casos-exito/centro-roraima" element={<CasoExitoCentroRoraima />} />
-          <Route path="/es/casos-exito/joints-up" element={<CasoExitoJointsUp />} />
-          <Route path="/es/casos-exito/translate-with-style" element={<CasoExitoTranslateWithStyle />} />
-          <Route path="/es/casos-exito/formato-educativo" element={<CasoExitoFormatoEducativo />} />
-          <Route path="/es/casos-exito/omr" element={<CasoExitoOMR />} />
-          <Route path="/es/casos-exito/asp-asepsia" element={<CasoExitoAspAsepsia />} />
-          <Route path="/es/casos-exito/bufete-maseras" element={<CasoExitoBufeteMaseras />} />
-          <Route path="/es/casos-exito/moda-intima-vania" element={<CasoExitoModaIntimaVania />} />
-          <Route path="/es/casos-exito/alfix-consultores" element={<CasoExitoAlfixConsultores />} />
-          <Route path="/es/casos-exito/alma-cruceros" element={<CasoExitoAlmaCruceros />} />
-          <Route path="/es/casos-exito/la-banera-kd" element={<CasoExitoLaBaneraKD />} />
-          <Route path="/es/casos-exito/suministros-xs-kd" element={<CasoExitoSuministrosXSKD />} />
-          <Route path="/es/casos-exito/conversa-consultores" element={<CasoExitoConversaConsultores />} />
-          <Route path="/es/casos-exito/buhobike" element={<CasoExitoBuhobike />} />
-          <Route path="/es/casos-exito/cabrera-cervantes" element={<CasoExitoCabreraCervantes />} />
-          <Route path="/es/casos-exito/eva-champion" element={<CasoExitoEvaChampion />} />
-          <Route path="/es/casos-exito/beluga-linguistics" element={<CasoExitoBelugaLinguistics />} />
-          <Route path="/es/casos-exito/wooptix" element={<CasoExitoWooptix />} />
-          <Route path="/es/casos-exito/pamdamedia" element={<CasoExitoPamdamedia />} />
-          <Route path="/es/casos-exito/give-and-go" element={<CasoExitoGiveAndGo />} />
-          <Route path="/es/casos-exito/hikvision" element={<CasoExitoHikvision />} />
-          <Route path="/es/casos-exito/owo-game" element={<CasoExitoOWOGame />} />
-          <Route path="/es/casos-exito/nova-praxis" element={<CasoExitoNovaPraxis />} />
-          <Route path="/es/casos-exito/aistercel" element={<CasoExitoAistercel />} />
-          <Route path="/es/casos-exito/quanticbi" element={<CasoExitoQuanticBI />} />
-          <Route path="/es/casos-exito/peixos-emilio" element={<CasoExitoPeixosEmilio />} />
-          <Route path="/es/casos-exito/corte-a-films" element={<CasoExitoCorteAFilms />} />
-          <Route path="/es/casos-exito/lualca" element={<CasoExitoLualca />} />
-          <Route path="/es/casos-exito/plaza-de-la-estacion" element={<CasoExitoPlazaEstacion />} />
-          <Route path="/es/casos-exito/rivas-centro" element={<CasoExitoRivasCentro />} />
-          <Route path="/es/casos-exito/hubspot-for-startups" element={<CasoExitoHubSpotForStartups />} />
-          <Route path="/es/casos-exito/beka-finance" element={<CasoExitoBekaFinance />} />
-          <Route path="/es/casos-exito/peris-electricidad" element={<CasoExitoPerisElectricidad />} />
-          <Route path="/es/casos-exito/carniceria-picos-de-europa" element={<CasoExitoCarniceriaPicosDeEuropa />} />
-          <Route path="/es/casos-exito/pasteleria-la-oriental-sin-gluten" element={<CasoExitoLaOrientalSinGluten />} />
-          <Route path="/es/casos-exito/flap-articulos-peluqueria" element={<CasoExitoFLAP />} />
-          <Route path="/es/casos-exito/wideum" element={<CasoExitoWideum />} />
-          <Route path="/es/casos-exito/aecoc" element={<CasoExitoAECOC />} />
-          <Route path="/es/casos-exito/finect" element={<CasoExitoFINECT />} />
-          <Route path="/es/casos-exito/covebo" element={<CasoExitoCOVEBO />} />
-          <Route path="/es/casos-exito/fundacion-casa-mexico" element={<CasoExitoFundacionCasaMexico />} />
-          <Route path="/es/casos-exito/motiva-tu-mente" element={<CasoExitoMotivaTuMente />} />
-          <Route path="/es/casos-exito/eurobits-technologies" element={<CasoExitoEurobitsTechnologies />} />
-          <Route path="/es/casos-exito/bodegas-vilano" element={<CasoExitoBodegasVilano />} />
-          <Route path="/es/casos-exito/unitrips" element={<CasoExitoUnitrips />} />
-          <Route path="/es/casos-exito/lola-robles-abogada" element={<CasoExitoLolaRoblesAbogada />} />
-          <Route path="/es/casos-exito/aip-clinic" element={<CasoExitoAIPClinic />} />
-          <Route path="/es/casos-exito/hotteo-travel" element={<CasoExitoHotteoTravel />} />
+          <Route path="/es/casos-exito/asendia" element={<PageSuspense><Pages.CasoExitoAsendia /></PageSuspense>} />
+          <Route path="/es/casos-exito/nexo-vital" element={<PageSuspense><Pages.CasoExitoNexoVital /></PageSuspense>} />
+          <Route path="/es/casos-exito/i-virgen-extra" element={<PageSuspense><Pages.CasoExitoIVirgenExtra /></PageSuspense>} />
+          <Route path="/es/casos-exito/inbound-students" element={<PageSuspense><Pages.CasoExitoInboundStudents /></PageSuspense>} />
+          <Route path="/es/casos-exito/calisthenia-online" element={<PageSuspense><Pages.CalistheniaOnlinePage /></PageSuspense>} />
+          <Route path="/es/casos-exito/centro-roraima" element={<PageSuspense><Pages.CasoExitoCentroRoraima /></PageSuspense>} />
+          <Route path="/es/casos-exito/joints-up" element={<PageSuspense><Pages.CasoExitoJointsUp /></PageSuspense>} />
+          <Route path="/es/casos-exito/translate-with-style" element={<PageSuspense><Pages.CasoExitoTranslateWithStyle /></PageSuspense>} />
+          <Route path="/es/casos-exito/formato-educativo" element={<PageSuspense><Pages.CasoExitoFormatoEducativo /></PageSuspense>} />
+          <Route path="/es/casos-exito/omr" element={<PageSuspense><Pages.CasoExitoOMR /></PageSuspense>} />
+          <Route path="/es/casos-exito/asp-asepsia" element={<PageSuspense><Pages.CasoExitoAspAsepsia /></PageSuspense>} />
+          <Route path="/es/casos-exito/bufete-maseras" element={<PageSuspense><Pages.CasoExitoBufeteMaseras /></PageSuspense>} />
+          <Route path="/es/casos-exito/moda-intima-vania" element={<PageSuspense><Pages.CasoExitoModaIntimaVania /></PageSuspense>} />
+          <Route path="/es/casos-exito/alfix-consultores" element={<PageSuspense><Pages.CasoExitoAlfixConsultores /></PageSuspense>} />
+          <Route path="/es/casos-exito/alma-cruceros" element={<PageSuspense><Pages.CasoExitoAlmaCruceros /></PageSuspense>} />
+          <Route path="/es/casos-exito/la-banera-kd" element={<PageSuspense><Pages.CasoExitoLaBaneraKD /></PageSuspense>} />
+          <Route path="/es/casos-exito/suministros-xs-kd" element={<PageSuspense><Pages.CasoExitoSuministrosXSKD /></PageSuspense>} />
+          <Route path="/es/casos-exito/conversa-consultores" element={<PageSuspense><Pages.CasoExitoConversaConsultores /></PageSuspense>} />
+          <Route path="/es/casos-exito/buhobike" element={<PageSuspense><Pages.CasoExitoBuhobike /></PageSuspense>} />
+          <Route path="/es/casos-exito/cabrera-cervantes" element={<PageSuspense><Pages.CasoExitoCabreraCervantes /></PageSuspense>} />
+          <Route path="/es/casos-exito/eva-champion" element={<PageSuspense><Pages.CasoExitoEvaChampion /></PageSuspense>} />
+          <Route path="/es/casos-exito/beluga-linguistics" element={<PageSuspense><Pages.CasoExitoBelugaLinguistics /></PageSuspense>} />
+          <Route path="/es/casos-exito/wooptix" element={<PageSuspense><Pages.CasoExitoWooptix /></PageSuspense>} />
+          <Route path="/es/casos-exito/pamdamedia" element={<PageSuspense><Pages.CasoExitoPamdamedia /></PageSuspense>} />
+          <Route path="/es/casos-exito/give-and-go" element={<PageSuspense><Pages.CasoExitoGiveAndGo /></PageSuspense>} />
+          <Route path="/es/casos-exito/hikvision" element={<PageSuspense><Pages.CasoExitoHikvision /></PageSuspense>} />
+          <Route path="/es/casos-exito/owo-game" element={<PageSuspense><Pages.CasoExitoOWOGame /></PageSuspense>} />
+          <Route path="/es/casos-exito/nova-praxis" element={<PageSuspense><Pages.CasoExitoNovaPraxis /></PageSuspense>} />
+          <Route path="/es/casos-exito/aistercel" element={<PageSuspense><Pages.CasoExitoAistercel /></PageSuspense>} />
+          <Route path="/es/casos-exito/quanticbi" element={<PageSuspense><Pages.CasoExitoQuanticBI /></PageSuspense>} />
+          <Route path="/es/casos-exito/peixos-emilio" element={<PageSuspense><Pages.CasoExitoPeixosEmilio /></PageSuspense>} />
+          <Route path="/es/casos-exito/corte-a-films" element={<PageSuspense><Pages.CasoExitoCorteAFilms /></PageSuspense>} />
+          <Route path="/es/casos-exito/lualca" element={<PageSuspense><Pages.CasoExitoLualca /></PageSuspense>} />
+          <Route path="/es/casos-exito/plaza-de-la-estacion" element={<PageSuspense><Pages.CasoExitoPlazaEstacion /></PageSuspense>} />
+          <Route path="/es/casos-exito/rivas-centro" element={<PageSuspense><Pages.CasoExitoRivasCentro /></PageSuspense>} />
+          <Route path="/es/casos-exito/hubspot-for-startups" element={<PageSuspense><Pages.CasoExitoHubSpotForStartups /></PageSuspense>} />
+          <Route path="/es/casos-exito/beka-finance" element={<PageSuspense><Pages.CasoExitoBekaFinance /></PageSuspense>} />
+          <Route path="/es/casos-exito/peris-electricidad" element={<PageSuspense><Pages.CasoExitoPerisElectricidad /></PageSuspense>} />
+          <Route path="/es/casos-exito/carniceria-picos-de-europa" element={<PageSuspense><Pages.CasoExitoCarniceriaPicosDeEuropa /></PageSuspense>} />
+          <Route path="/es/casos-exito/pasteleria-la-oriental-sin-gluten" element={<PageSuspense><Pages.CasoExitoLaOrientalSinGluten /></PageSuspense>} />
+          <Route path="/es/casos-exito/flap-articulos-peluqueria" element={<PageSuspense><Pages.CasoExitoFLAP /></PageSuspense>} />
+          <Route path="/es/casos-exito/wideum" element={<PageSuspense><Pages.CasoExitoWideum /></PageSuspense>} />
+          <Route path="/es/casos-exito/aecoc" element={<PageSuspense><Pages.CasoExitoAECOC /></PageSuspense>} />
+          <Route path="/es/casos-exito/finect" element={<PageSuspense><Pages.CasoExitoFINECT /></PageSuspense>} />
+          <Route path="/es/casos-exito/covebo" element={<PageSuspense><Pages.CasoExitoCOVEBO /></PageSuspense>} />
+          <Route path="/es/casos-exito/fundacion-casa-mexico" element={<PageSuspense><Pages.CasoExitoFundacionCasaMexico /></PageSuspense>} />
+          <Route path="/es/casos-exito/motiva-tu-mente" element={<PageSuspense><Pages.CasoExitoMotivaTuMente /></PageSuspense>} />
+          <Route path="/es/casos-exito/eurobits-technologies" element={<PageSuspense><Pages.CasoExitoEurobitsTechnologies /></PageSuspense>} />
+          <Route path="/es/casos-exito/bodegas-vilano" element={<PageSuspense><Pages.CasoExitoBodegasVilano /></PageSuspense>} />
+          <Route path="/es/casos-exito/unitrips" element={<PageSuspense><Pages.CasoExitoUnitrips /></PageSuspense>} />
+          <Route path="/es/casos-exito/lola-robles-abogada" element={<PageSuspense><Pages.CasoExitoLolaRoblesAbogada /></PageSuspense>} />
+          <Route path="/es/casos-exito/aip-clinic" element={<PageSuspense><Pages.CasoExitoAIPClinic /></PageSuspense>} />
+          <Route path="/es/casos-exito/hotteo-travel" element={<PageSuspense><Pages.CasoExitoHotteoTravel /></PageSuspense>} />
           
            {/* BLOG / RECURSOS */}
-           <Route path="/es/blog" element={<Blog />} />
+           <Route path="/es/blog" element={<PageSuspense><Pages.Blog /></PageSuspense>} />
            
            {/* URL CANÓNICA - Post IA Marketing */}
-           <Route path="/es/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing" element={<BlogIAMarketing />} />
+           <Route path="/es/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing" element={<PageSuspense><Pages.BlogIAMarketing /></PageSuspense>} />
            
-           <Route path="/es/blog/guia-tecnica-email-marketing-hubspot-configuracion" element={<BlogEmailMarketingHubSpot />} />
-           <Route path="/es/blog/configuracion-email-marketing-cumplimiento-normativo" element={<BlogConfiguracionEmailMarketingCumplimiento />} />
-             <Route path="/es/blog/tag/:tag" element={<BlogTagPage />} />
-            <Route path="/es/blog/:id" element={<BlogPost />} />
-            <Route path="/es/blog/perfil-cliente-ideal" element={<BlogPerfilClienteIdealICP />} />
-            <Route path="/es/blog/como-crear-buyer-persona-b2b-b2c-guia-completa" element={<BlogPerfilClienteIdeal />} />
-           <Route path="/es/blog/calculo-inversion-plan-marketing-digital" element={<BlogCalculoInversionMarketing />} />
-           <Route path="/es/blog/branding-proceso-tecnicas-naming" element={<BlogBrandingProcesoTecnicasNaming />} />
-             <Route path="/es/blog/business-model-canvas-para-crear-tu-estrategia-de-marketing" element={<BusinessModelCanvasEstrategiaMarketing />} />
-              <Route path="/es/blog/google-consent-mode-cookieyes" element={<GoogleConsentModeCookieyes />} />
-              <Route path="/es/blog/marketing-natural-posicionamiento-organico" element={<MarketingNaturalPosicionamientoOrganico />} />
-          <Route path="/es/blog/crm-que-es-beneficios" element={<BlogCrmQueEsBeneficios />} />
-          <Route path="/es/blog/como-elegir-mejor-crm-empresa-organizacion" element={<BlogComoElegirMejorCRM />} />
-               <Route path="/es/blog/abm-account-based-marketing" element={<BlogABMAccountBasedMarketing />} />
-        <Route path="/es/blog/re-commerce-economia-circular-ecommerce-partnership-sharpei" element={<BlogReCommerceEconomiaCircular />} />
-        <Route path="/es/blog/seo-off-page-estrategias-practicas-posicionamiento" element={<BlogSeoOffPage />} />
-        <Route path="/es/blog/automatizacion-marketing-digital-guia-completa" element={<BlogAutomatizacionMarketing />} />
-          <Route path="/es/blog/web-3-0-futuro-internet-descentralizado" element={<BlogWeb30 />} />
-          <Route path="/es/blog/seo-on-page-guia-completa" element={<BlogSeoOnPage />} />
-          <Route path="/es/blog/lead-scoring-calificacion-leads" element={<BlogLeadScoringCalificacionLeads />} />
-                  <Route path="/es/blog/seo-inteligencia-artificial" element={<BlogSeoInteligenciaArtificial />} />
-                  <Route path="/es/blog/ia-redes-sociales-herramientas-riesgos" element={<BlogIARedesSociales />} />
-        <Route path="/es/blog/funnel-conversion-b2b" element={<BlogFunnelConversionB2B />} />
-        <Route path="/es/blog/marketing-global-internacionalizacion" element={<BlogMarketingGlobalInternacionalizacion />} />
-          <Route path="/es/blog/kit-digital-marketing-guia-completa-2025" element={<BlogKitDigitalMarketing />} />
+           <Route path="/es/blog/guia-tecnica-email-marketing-hubspot-configuracion" element={<PageSuspense><Pages.BlogEmailMarketingHubSpot /></PageSuspense>} />
+           <Route path="/es/blog/configuracion-email-marketing-cumplimiento-normativo" element={<PageSuspense><Pages.BlogConfiguracionEmailMarketingCumplimiento /></PageSuspense>} />
+             <Route path="/es/blog/tag/:tag" element={<PageSuspense><Pages.BlogTagPage /></PageSuspense>} />
+            <Route path="/es/blog/:id" element={<PageSuspense><Pages.BlogPost /></PageSuspense>} />
+            <Route path="/es/blog/perfil-cliente-ideal" element={<PageSuspense><Pages.BlogPerfilClienteIdealICP /></PageSuspense>} />
+            <Route path="/es/blog/como-crear-buyer-persona-b2b-b2c-guia-completa" element={<PageSuspense><Pages.BlogPerfilClienteIdeal /></PageSuspense>} />
+           <Route path="/es/blog/calculo-inversion-plan-marketing-digital" element={<PageSuspense><Pages.BlogCalculoInversionMarketing /></PageSuspense>} />
+           <Route path="/es/blog/branding-proceso-tecnicas-naming" element={<PageSuspense><Pages.BlogBrandingProcesoTecnicasNaming /></PageSuspense>} />
+             <Route path="/es/blog/business-model-canvas-para-crear-tu-estrategia-de-marketing" element={<PageSuspense><Pages.BusinessModelCanvasEstrategiaMarketing /></PageSuspense>} />
+              <Route path="/es/blog/google-consent-mode-cookieyes" element={<PageSuspense><Pages.GoogleConsentModeCookieyes /></PageSuspense>} />
+              <Route path="/es/blog/marketing-natural-posicionamiento-organico" element={<PageSuspense><Pages.MarketingNaturalPosicionamientoOrganico /></PageSuspense>} />
+          <Route path="/es/blog/crm-que-es-beneficios" element={<PageSuspense><Pages.BlogCrmQueEsBeneficios /></PageSuspense>} />
+          <Route path="/es/blog/como-elegir-mejor-crm-empresa-organizacion" element={<PageSuspense><Pages.BlogComoElegirMejorCRM /></PageSuspense>} />
+               <Route path="/es/blog/abm-account-based-marketing" element={<PageSuspense><Pages.BlogABMAccountBasedMarketing /></PageSuspense>} />
+        <Route path="/es/blog/re-commerce-economia-circular-ecommerce-partnership-sharpei" element={<PageSuspense><Pages.BlogReCommerceEconomiaCircular /></PageSuspense>} />
+        <Route path="/es/blog/seo-off-page-estrategias-practicas-posicionamiento" element={<PageSuspense><Pages.BlogSeoOffPage /></PageSuspense>} />
+        <Route path="/es/blog/automatizacion-marketing-digital-guia-completa" element={<PageSuspense><Pages.BlogAutomatizacionMarketing /></PageSuspense>} />
+          <Route path="/es/blog/web-3-0-futuro-internet-descentralizado" element={<PageSuspense><Pages.BlogWeb30 /></PageSuspense>} />
+          <Route path="/es/blog/seo-on-page-guia-completa" element={<PageSuspense><Pages.BlogSeoOnPage /></PageSuspense>} />
+          <Route path="/es/blog/lead-scoring-calificacion-leads" element={<PageSuspense><Pages.BlogLeadScoringCalificacionLeads /></PageSuspense>} />
+                  <Route path="/es/blog/seo-inteligencia-artificial" element={<PageSuspense><Pages.BlogSeoInteligenciaArtificial /></PageSuspense>} />
+                  <Route path="/es/blog/ia-redes-sociales-herramientas-riesgos" element={<PageSuspense><Pages.BlogIARedesSociales /></PageSuspense>} />
+        <Route path="/es/blog/funnel-conversion-b2B" element={<PageSuspense><Pages.BlogFunnelConversionB2B /></PageSuspense>} />
+        <Route path="/es/blog/marketing-global-internacionalizacion" element={<PageSuspense><Pages.BlogMarketingGlobalInternacionalizacion /></PageSuspense>} />
+          <Route path="/es/blog/kit-digital-marketing-guia-completa-2025" element={<PageSuspense><Pages.BlogKitDigitalMarketing /></PageSuspense>} />
           
           {/* COMPARATIVAS */}
-          <Route path="/es/comparativa/hubspot-vs-go-high-level" element={<ComparativaHubSpotGoHighLevel />} />
+          <Route path="/es/comparativa/hubspot-vs-go-high-level" element={<PageSuspense><Pages.ComparativaHubSpotGoHighLevel /></PageSuspense>} />
           
           
           {/* CONTACTO Y CONSULTAS */}
-          <Route path="/es/agendar-reunion" element={<AgendarReunion />} />
-          <Route path="/es/solicitar-consulta" element={<SolicitarConsulta />} />
-          <Route path="/es/contacto" element={<Contacto />} />
-          <Route path="/es/hayas-crm" element={<HayasCRM />} />
+          <Route path="/es/agendar-reunion" element={<PageSuspense><Pages.AgendarReunion /></PageSuspense>} />
+          <Route path="/es/solicitar-consulta" element={<PageSuspense><Pages.SolicitarConsulta /></PageSuspense>} />
+          <Route path="/es/contacto" element={<PageSuspense><Pages.Contacto /></PageSuspense>} />
+          <Route path="/es/hayas-crm" element={<PageSuspense><Pages.HayasCRM /></PageSuspense>} />
           
           
-          <Route path="/es/servicios/creacion-marca" element={<CreacionMarca />} />
-          <Route path="/es/servicios/gestion-redes-sociales" element={<GestionRedesSociales />} />
-          <Route path="/es/servicios/publicidad-redes-sociales" element={<PublicidadRedesSociales />} />
-          <Route path="/es/servicios/publicidad-google-ads" element={<PublicidadGoogleAds />} />
-          <Route path="/es/servicios/email-marketing-automatizaciones" element={<EmailMarketingAutomatizaciones />} />
-          <Route path="/es/servicios/consultoria-estrategica-analitica" element={<ConsultoriaEstrategicaAnalitica />} />
-          <Route path="/es/servicios/formacion-ia" element={<FormacionIA />} />
-          <Route path="/es/servicios/integraciones-ia-procesos" element={<IntegracionesIAProcesos />} />
-          <Route path="/es/servicios/estrategia-contenidos" element={<EstrategiaContenidos />} />
-          <Route path="/es/servicios/localizacion-contenidos" element={<LocalizacionContenidos />} />
-          <Route path="/es/servicios/campanas-inbound-marketing" element={<CampanasInboundMarketing />} />
-          <Route path="/es/servicios/asistente-ia" element={<AsistenteIA />} />
+          <Route path="/es/servicios/creacion-marca" element={<PageSuspense><Pages.CreacionMarca /></PageSuspense>} />
+          <Route path="/es/servicios/gestion-redes-sociales" element={<PageSuspense><Pages.GestionRedesSociales /></PageSuspense>} />
+          <Route path="/es/servicios/publicidad-redes-sociales" element={<PageSuspense><Pages.PublicidadRedesSociales /></PageSuspense>} />
+          <Route path="/es/servicios/publicidad-google-ads" element={<PageSuspense><Pages.PublicidadGoogleAds /></PageSuspense>} />
+          <Route path="/es/servicios/email-marketing-automatizaciones" element={<PageSuspense><Pages.EmailMarketingAutomatizaciones /></PageSuspense>} />
+          <Route path="/es/servicios/consultoria-estrategica-analitica" element={<PageSuspense><Pages.ConsultoriaEstrategicaAnalitica /></PageSuspense>} />
+          <Route path="/es/servicios/formacion-ia" element={<PageSuspense><Pages.FormacionIA /></PageSuspense>} />
+          <Route path="/es/servicios/integraciones-ia-procesos" element={<PageSuspense><Pages.IntegracionesIAProcesos /></PageSuspense>} />
+          <Route path="/es/servicios/estrategia-contenidos" element={<PageSuspense><Pages.EstrategiaContenidos /></PageSuspense>} />
+          <Route path="/es/servicios/localizacion-contenidos" element={<PageSuspense><Pages.LocalizacionContenidos /></PageSuspense>} />
+          <Route path="/es/servicios/campanas-inbound-marketing" element={<PageSuspense><Pages.CampanasInboundMarketing /></PageSuspense>} />
+          <Route path="/es/servicios/asistente-ia" element={<PageSuspense><Pages.AsistenteIA /></PageSuspense>} />
           <Route path="/es/servicios/alojamiento-mantenimiento-web" element={<Navigate to="/es/servicios/diseno-web/alojamiento-mantenimiento" replace />} />
-          <Route path="/es/servicios/marketing-directo" element={<MarketingDirecto />} />
-          <Route path="/es/servicios/implementacion-funnel" element={<ImplementacionFunnel />} />
-          <Route path="/es/servicios/administracion-crm" element={<AdministracionCrm />} />
-          <Route path="/es/servicios/automatizacion-procesos-ventas" element={<AutomatizacionProcesosVentas />} />
-          <Route path="/es/servicios/captacion-leads-clientes" element={<CaptacionLeadsClientes />} />
-          <Route path="/es/servicios/implantacion-crm" element={<ImplantacionCrm />} />
-          <Route path="/es/servicios" element={<Servicios />} />
+          <Route path="/es/servicios/marketing-directo" element={<PageSuspense><Pages.MarketingDirecto /></PageSuspense>} />
+          <Route path="/es/servicios/implementacion-funnel" element={<PageSuspense><Pages.ImplementacionFunnel /></PageSuspense>} />
+          <Route path="/es/servicios/administracion-crm" element={<PageSuspense><Pages.AdministracionCrm /></PageSuspense>} />
+          <Route path="/es/servicios/automatizacion-procesos-ventas" element={<PageSuspense><Pages.AutomatizacionProcesosVentas /></PageSuspense>} />
+          <Route path="/es/servicios/captacion-leads-clientes" element={<PageSuspense><Pages.CaptacionLeadsClientes /></PageSuspense>} />
+          <Route path="/es/servicios/implantacion-crm" element={<PageSuspense><Pages.ImplantacionCrm /></PageSuspense>} />
+          <Route path="/es/servicios" element={<PageSuspense><Pages.Servicios /></PageSuspense>} />
           
           {/* PÁGINAS LEGALES */}
-          <Route path="/es/legal/aviso-legal" element={<AvisoLegal />} />
-          <Route path="/es/legal/politica-privacidad" element={<PoliticaPrivacidad />} />
-          <Route path="/es/legal/terminos-servicio" element={<TerminosServicio />} />
-          <Route path="/es/legal/politica-cookies" element={<PoliticaCookies />} />
+          <Route path="/es/legal/aviso-legal" element={<PageSuspense><Pages.AvisoLegal /></PageSuspense>} />
+          <Route path="/es/legal/politica-privacidad" element={<PageSuspense><Pages.PoliticaPrivacidad /></PageSuspense>} />
+          <Route path="/es/legal/terminos-servicio" element={<PageSuspense><Pages.TerminosServicio /></PageSuspense>} />
+          <Route path="/es/legal/politica-cookies" element={<PageSuspense><Pages.PoliticaCookies /></PageSuspense>} />
           
           {/* 404 - DEBE IR SIEMPRE AL FINAL */}
-          <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<PageSuspense><Pages.NotFound /></PageSuspense>} />
         </Routes>
         </DraftProtection>
       </BrowserRouter>
