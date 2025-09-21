@@ -342,7 +342,7 @@ const ActivaTusVentas = () => {
                       {benefit.icon}
                     </div>
                     <CardTitle className="text-xl font-bold">
-                      🚀 {benefit.title}
+                      {benefit.title}
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="pt-0">
