@@ -87,12 +87,8 @@ export default function AgendarReunion() {
                   <p className="text-muted-foreground text-sm mb-4">
                     Habla directamente con nuestro equipo
                   </p>
-                  <div className="space-y-3">
-                    <a href="tel:672288182" className="flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary text-white px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 hover:shadow-lg hover:scale-105 w-full">
-                      <Phone className="w-4 h-4" />
-                      Llamar
-                    </a>
-                    <a href="https://wa.me/34672288182" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 hover:shadow-lg hover:scale-105 w-full">
+                  <div>
+                    <a href="https://wa.me/34656908615" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 hover:shadow-lg hover:scale-105 w-full">
                       <MessageCircle className="w-4 h-4" />
                       WhatsApp
                     </a>
