@@ -33,6 +33,9 @@ export const useAdvancedSEO = (options: UseAdvancedSEOOptions = {}): AdvancedSEO
   const location = useLocation();
   const { pageContent, customSEO, skipAutoExtraction = false } = options;
 
+  // Stabilize origin to prevent re-renders
+  const origin = useMemo(() => window.location.origin, []);
+
   return useMemo(() => {
     const path = location.pathname;
     const seoData = getSEOData(path);
@@ -70,7 +73,7 @@ export const useAdvancedSEO = (options: UseAdvancedSEOOptions = {}): AdvancedSEO
     };
 
     // Generate base structured data based on schema type
-    const baseStructuredData = generateBaseStructuredData(mergedSEO, path);
+    const baseStructuredData = generateBaseStructuredData(mergedSEO, path, origin);
     
     // Combine with additional structured data
     const allStructuredData = [
@@ -101,12 +104,11 @@ export const useAdvancedSEO = (options: UseAdvancedSEOOptions = {}): AdvancedSEO
       headings: mergedSEO.headings,
       robots: mergedSEO.robots
     };
-  }, [location.pathname, pageContent, customSEO, skipAutoExtraction]);
+  }, [location.pathname, pageContent, customSEO, skipAutoExtraction, origin]);
 };
 
 // Generate base structured data based on schema type
-const generateBaseStructuredData = (seoData: EnhancedPageSEOData, path: string): Record<string, any> => {
-  const baseUrl = window.location.origin;
+const generateBaseStructuredData = (seoData: EnhancedPageSEOData, path: string, baseUrl: string): Record<string, any> => {
   const fullUrl = `${baseUrl}${path}`;
   
   const baseSchema = {
