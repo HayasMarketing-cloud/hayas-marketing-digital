@@ -48,22 +48,50 @@ export const InternalLinkingSection: React.FC<InternalLinkingSectionProps> = ({
         {
           title: 'Implantación CRM',
           href: '/es/servicios/implantacion-crm',
-          badge: 'Popular'
+          badge: 'Popular',
+          description: 'Configura y optimiza tu sistema de gestión de clientes'
         },
         {
           title: 'Automatización de Ventas',
           href: '/es/servicios/automatizacion-procesos-ventas',
-          badge: 'Estratégico'
+          badge: 'Estratégico',
+          description: 'Automatiza tu proceso comercial completo'
         },
         {
           title: 'Consultoría Estratégica',
           href: '/es/servicios/consultoria-estrategica-analitica',
-          badge: 'Premium'
+          badge: 'Premium',
+          description: 'Análisis y estrategia personalizada para tu negocio'
         },
         {
           title: 'Captación de Leads',
           href: '/es/servicios/captacion-leads-clientes',
-          badge: 'ROI'
+          badge: 'ROI',
+          description: 'Genera leads cualificados de forma constante'
+        },
+        {
+          title: 'Diseño Web',
+          href: '/es/servicios/diseno-web',
+          badge: 'Esencial',
+          description: 'Websites que convierten visitantes en clientes'
+        },
+        {
+          title: 'SEO Posicionamiento',
+          href: '/es/servicios/seo-posicionamiento',
+          badge: 'Crecimiento',
+          description: 'Posiciona tu web en los primeros resultados'
+        },
+        {
+          title: 'Creación de Marca',
+          href: '/es/servicios/creacion-marca',
+          badge: 'Branding',
+          description: 'Construye una identidad que conecte con tu audiencia'
+        },
+        {
+          title: 'Email Marketing',
+          href: '/es/servicios/email-marketing-automatizaciones',
+          badge: 'Conversión',
+          description: 'Campañas automatizadas que nutren y convierten'
         }
       ],
       resources: [
@@ -76,6 +104,11 @@ export const InternalLinkingSection: React.FC<InternalLinkingSectionProps> = ({
           title: 'Blog Marketing',
           href: '/es/blog',
           description: 'Guías y estrategias actualizadas'
+        },
+        {
+          title: 'Todos los Servicios',
+          href: '/es/servicios',
+          description: 'Catálogo completo de nuestras soluciones'
         },
         {
           title: 'Agendar Consulta',
@@ -175,22 +208,29 @@ export const InternalLinkingSection: React.FC<InternalLinkingSectionProps> = ({
                 <div key={index} className="group">
                   <Link 
                     to={service.href}
-                    className="flex items-center justify-between p-4 rounded-lg border hover:border-primary/30 hover:bg-primary/5 transition-all duration-200"
+                    className="flex flex-col p-4 rounded-lg border hover:border-primary/30 hover:bg-primary/5 transition-all duration-200 h-full"
                   >
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-600" />
-                      <div>
-                        <div className="font-medium text-sm group-hover:text-primary transition-colors">
-                          {service.title}
-                        </div>
-                        {service.badge && (
-                          <div className="text-xs text-primary font-medium">
-                            {service.badge}
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center gap-3">
+                        <CheckCircle className="w-5 h-5 text-green-600" />
+                        <div>
+                          <div className="font-medium text-sm group-hover:text-primary transition-colors">
+                            {service.title}
                           </div>
-                        )}
+                          {service.badge && (
+                            <div className="text-xs text-primary font-medium">
+                              {service.badge}
+                            </div>
+                          )}
+                        </div>
                       </div>
+                      <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all flex-shrink-0" />
                     </div>
-                    <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
+                    {service.description && (
+                      <p className="text-xs text-muted-foreground mt-1 line-clamp-2">
+                        {service.description}
+                      </p>
+                    )}
                   </Link>
                 </div>
               ))}

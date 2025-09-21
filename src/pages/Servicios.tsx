@@ -167,6 +167,93 @@ const Servicios = () => {
           </div>
         </section>
 
+        {/* Cross-linking Section */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-3xl font-bold mb-6">Servicios por objetivo</h2>
+              <p className="text-lg text-muted-foreground mb-12">
+                Encuentra rápidamente el servicio que necesitas según tu objetivo principal
+              </p>
+              
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                <Link to="/es/servicios/creacion-marca" className="group p-6 rounded-xl border border-gray-200 hover:border-purple-300 hover:bg-purple-50 transition-all">
+                  <div className="text-center">
+                    <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-purple-100 flex items-center justify-center group-hover:bg-purple-200 transition-colors">
+                      <Sparkles className="h-6 w-6 text-purple-600" />
+                    </div>
+                    <h3 className="font-semibold mb-2 group-hover:text-purple-700 transition-colors">Crear mi marca</h3>
+                    <p className="text-sm text-muted-foreground">Identidad, logo y manual de marca</p>
+                  </div>
+                </Link>
+
+                <Link to="/es/servicios/diseno-web" className="group p-6 rounded-xl border border-gray-200 hover:border-blue-300 hover:bg-blue-50 transition-all">
+                  <div className="text-center">
+                    <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-blue-100 flex items-center justify-center group-hover:bg-blue-200 transition-colors">
+                      <Target className="h-6 w-6 text-blue-600" />
+                    </div>
+                    <h3 className="font-semibold mb-2 group-hover:text-blue-700 transition-colors">Tener una web</h3>
+                    <p className="text-sm text-muted-foreground">Diseño web profesional y optimizado</p>
+                  </div>
+                </Link>
+
+                <Link to="/es/servicios/seo-posicionamiento" className="group p-6 rounded-xl border border-gray-200 hover:border-green-300 hover:bg-green-50 transition-all">
+                  <div className="text-center">
+                    <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-green-100 flex items-center justify-center group-hover:bg-green-200 transition-colors">
+                      <Zap className="h-6 w-6 text-green-600" />
+                    </div>
+                    <h3 className="font-semibold mb-2 group-hover:text-green-700 transition-colors">Aparecer en Google</h3>
+                    <p className="text-sm text-muted-foreground">SEO y posicionamiento orgánico</p>
+                  </div>
+                </Link>
+
+                <Link to="/es/servicios/implantacion-crm" className="group p-6 rounded-xl border border-gray-200 hover:border-orange-300 hover:bg-orange-50 transition-all">
+                  <div className="text-center">
+                    <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-orange-100 flex items-center justify-center group-hover:bg-orange-200 transition-colors">
+                      <Users2 className="h-6 w-6 text-orange-600" />
+                    </div>
+                    <h3 className="font-semibold mb-2 group-hover:text-orange-700 transition-colors">Organizar mi CRM</h3>
+                    <p className="text-sm text-muted-foreground">Gestión profesional de clientes</p>
+                  </div>
+                </Link>
+
+                <Link to="/es/servicios/captacion-leads-clientes" className="group p-6 rounded-xl border border-gray-200 hover:border-indigo-300 hover:bg-indigo-50 transition-all">
+                  <div className="text-center">
+                    <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-indigo-100 flex items-center justify-center group-hover:bg-indigo-200 transition-colors">
+                      <Target className="h-6 w-6 text-indigo-600" />
+                    </div>
+                    <h3 className="font-semibold mb-2 group-hover:text-indigo-700 transition-colors">Generar más leads</h3>
+                    <p className="text-sm text-muted-foreground">Estrategias de captación</p>
+                  </div>
+                </Link>
+
+                <Link to="/es/servicios/automatizacion-procesos-ventas" className="group p-6 rounded-xl border border-gray-200 hover:border-red-300 hover:bg-red-50 transition-all">
+                  <div className="text-center">
+                    <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-red-100 flex items-center justify-center group-hover:bg-red-200 transition-colors">
+                      <Zap className="h-6 w-6 text-red-600" />
+                    </div>
+                    <h3 className="font-semibold mb-2 group-hover:text-red-700 transition-colors">Automatizar ventas</h3>
+                    <p className="text-sm text-muted-foreground">Procesos comerciales automáticos</p>
+                  </div>
+                </Link>
+              </div>
+
+              <div className="text-center">
+                <Link to="/es/casos-exito">
+                  <Button variant="outline" size="lg" className="mr-4">
+                    Ver casos de éxito
+                  </Button>
+                </Link>
+                <Link to="/es/blog">
+                  <Button variant="outline" size="lg">
+                    Leer nuestro blog
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* CTA Final */}
         <section className="py-16 bg-gradient-to-r from-purple-600 to-blue-600">
           <div className="container mx-auto px-4 text-center">
@@ -176,11 +263,18 @@ const Servicios = () => {
             <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
               Te ayudamos a identificar las mejores soluciones para tu negocio con una consulta estratégica gratuita
             </p>
-            <Link to="/es/contacto">
-              <Button size="lg" variant="secondary" className="bg-white text-purple-600 hover:bg-gray-100">
-                Solicitar consulta gratuita
-              </Button>
-            </Link>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link to="/es/contacto">
+                <Button size="lg" variant="secondary" className="bg-white text-purple-600 hover:bg-gray-100">
+                  Solicitar consulta gratuita
+                </Button>
+              </Link>
+              <Link to="/es/agendar-reunion">
+                <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10">
+                  Agendar reunión
+                </Button>
+              </Link>
+            </div>
           </div>
         </section>
       </main>
