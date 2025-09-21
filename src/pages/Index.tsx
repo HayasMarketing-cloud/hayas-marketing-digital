@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
@@ -15,6 +15,12 @@ import MethodologySection from '@/components/MethodologySection';
 
 const Index = () => {
   const [searchParams] = useSearchParams();
+  const [origin, setOrigin] = useState('');
+  
+  useEffect(() => {
+    // Set origin only on client side to prevent hydration issues
+    setOrigin(window.location.origin);
+  }, []);
   
   useEffect(() => {
     const scrollTo = searchParams.get('scrollTo');
@@ -61,21 +67,21 @@ const Index = () => {
     },
   ];
 
-  const origin = window.location.origin;
-  const org = {
+  // Generate structured data only when origin is available
+  const org = origin ? {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Hayas Marketing",
     url: origin,
     logo: `${origin}/favicon.ico`,
-  } as const;
+  } as const : null;
 
-  const website = {
+  const website = origin ? {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "Hayas Marketing",
     url: origin,
-  } as const;
+  } as const : null;
 
   const faqSchema = {
     "@context": "https://schema.org",
@@ -100,7 +106,7 @@ const Index = () => {
         about={['Marketing Digital', 'CRM', 'Automatización de Ventas', 'Inteligencia Artificial']}
         mentions={['HubSpot', 'GoHighLevel', 'SofÍA', 'Google Ads', 'Meta Ads']}
         faqs={homeFaqs}
-        structuredData={[org, website]}
+        structuredData={[org, website].filter(Boolean)}
       />
       <Navigation />
       
