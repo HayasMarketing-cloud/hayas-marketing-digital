@@ -46,27 +46,27 @@ const painPoints = [
 // Benefits data
 const benefits = [
   {
-    icon: <Shield className="h-8 w-8 text-impulsa-primary" />,
+    icon: <Shield className="h-8 w-8 text-impulsa-500" />,
     title: "Identidad sólida",
     description: "Coherente y reconocible en todos los canales"
   },
   {
-    icon: <Target className="h-8 w-8 text-impulsa-primary" />,
+    icon: <Target className="h-8 w-8 text-impulsa-500" />,
     title: "Diferenciación real",
     description: "Destaca con un mensaje único"
   },
   {
-    icon: <Heart className="h-8 w-8 text-impulsa-primary" />,
+    icon: <Heart className="h-8 w-8 text-impulsa-500" />,
     title: "Confianza",
     description: "Transmite profesionalidad y fideliza"
   },
   {
-    icon: <Eye className="h-8 w-8 text-impulsa-primary" />,
+    icon: <Eye className="h-8 w-8 text-impulsa-500" />,
     title: "Visibilidad",
     description: "Reconocimiento en buscadores, redes y puntos de contacto"
   },
   {
-    icon: <Zap className="h-8 w-8 text-impulsa-primary" />,
+    icon: <Zap className="h-8 w-8 text-impulsa-500" />,
     title: "Crecimiento sostenible",
     description: "Una marca pensada para evolucionar a largo plazo"
   }
@@ -164,7 +164,7 @@ const ImpulsaTuMarca = () => {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <Badge variant="outline" className="mb-6 text-impulsa-primary border-impulsa-200 bg-white/50">
+                <Badge variant="outline" className="mb-6 text-impulsa-500 border-impulsa-200 bg-white/50">
                   Solución Impulsa tu marca
                 </Badge>
                 <DynamicH1 
@@ -177,13 +177,13 @@ const ImpulsaTuMarca = () => {
                   La identidad de tu marca es tu mayor activo. En Hayas te ayudamos a crear una presencia auténtica, diferenciada y memorable, combinando branding, diseño y marketing estratégico para que tu negocio crezca con propósito.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button size="lg" className="bg-impulsa-primary hover:bg-impulsa-primary/90 text-white" asChild>
+                  <Button size="lg" className="bg-impulsa-500 hover:bg-impulsa-600 text-white" asChild>
                     <Link to="/es/agendar-reunion">
                       👉 Solicita tu asesoría gratuita
                       <ArrowRight className="ml-2 h-5 w-5" />
                     </Link>
                   </Button>
-                  <Button variant="outline" size="lg" asChild>
+                  <Button variant="impulsa-outline" size="lg" asChild>
                     <a href="#casos-exito">Ver casos de éxito</a>
                   </Button>
                 </div>
@@ -232,7 +232,7 @@ const ImpulsaTuMarca = () => {
             <div className="text-center bg-impulsa-50 rounded-2xl p-8">
               <div className="flex justify-center mb-4">
                 <div className="p-3 bg-impulsa-100 rounded-full">
-                  <TrendingUp className="h-8 w-8 text-impulsa-primary" />
+                  <TrendingUp className="h-8 w-8 text-impulsa-500" />
                 </div>
               </div>
               <p className="text-lg font-semibold text-gray-800">
@@ -256,7 +256,7 @@ const ImpulsaTuMarca = () => {
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 w-12 h-12 bg-impulsa-100 rounded-lg flex items-center justify-center">
-                      <Palette className="h-6 w-6 text-impulsa-primary" />
+                      <Palette className="h-6 w-6 text-impulsa-500" />
                     </div>
                     <div>
                       <h3 className="text-xl font-semibold mb-3">Estrategias de marca completas</h3>
@@ -268,7 +268,7 @@ const ImpulsaTuMarca = () => {
                   
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 w-12 h-12 bg-impulsa-100 rounded-lg flex items-center justify-center">
-                      <Heart className="h-6 w-6 text-impulsa-primary" />
+                      <Heart className="h-6 w-6 text-impulsa-500" />
                     </div>
                     <div>
                       <h3 className="text-xl font-semibold mb-3">Branding auténtico</h3>
@@ -282,7 +282,7 @@ const ImpulsaTuMarca = () => {
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 w-12 h-12 bg-impulsa-100 rounded-lg flex items-center justify-center">
-                      <Globe className="h-6 w-6 text-impulsa-primary" />
+                      <Globe className="h-6 w-6 text-impulsa-500" />
                     </div>
                     <div>
                       <h3 className="text-xl font-semibold mb-3">Integración completa</h3>
@@ -294,7 +294,7 @@ const ImpulsaTuMarca = () => {
                   
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 w-12 h-12 bg-impulsa-100 rounded-lg flex items-center justify-center">
-                      <Clock className="h-6 w-6 text-impulsa-primary" />
+                      <Clock className="h-6 w-6 text-impulsa-500" />
                     </div>
                     <div>
                       <h3 className="text-xl font-semibold mb-3">Soporte continuo</h3>
