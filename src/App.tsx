@@ -180,7 +180,6 @@ const App = () => (
           <Route path="/es/servicios/seo-posicionamiento" element={<SeoPositioning />} />
           <Route path="/es/servicios/seo-positioning" element={<SeoPositioning />} />
           <Route path="/es/soluciones/marketing-visibilidad" element={<MarketingVisibilidad />} />
-          <Route path="/es/servicios/marketing-directo" element={<MarketingVisibilidad />} />
           <Route path="/es/soluciones/gestion-marketing" element={<Navigate to="/es/servicios/administracion-crm" replace />} />
           <Route path="/es/soluciones/captacion-leads" element={<CaptacionLeadsClientes />} />
           <Route path="/es/kit-consulting" element={<KitConsulting />} />
