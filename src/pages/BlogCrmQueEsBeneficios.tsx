@@ -84,12 +84,12 @@ const BlogCrmQueEsBeneficios = () => {
     {
       title: "Implantación de CRM",
       description: "Configuramos tu CRM personalizado con automatizaciones, integraciones y formación completa del equipo.",
-      link: "/servicios/implantacion-crm"
+      link: "/es/servicios/implantacion-crm"
     },
     {
       title: "Automatización de Procesos",
       description: "Diseñamos workflows que conectan marketing, ventas y atención al cliente de forma fluida.",
-      link: "/servicios/automatizacion-procesos-ventas"
+      link: "/es/servicios/automatizacion-procesos-ventas"
     }
   ];
 
