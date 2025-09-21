@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { X, Minimize2 } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const getPageMessage = (pathname: string) => {
   const messages: { [key: string]: string } = {
@@ -34,6 +35,12 @@ const getPageHelpMessage = (pathname: string) => {
 
 const SofiaWidget = () => {
   const location = useLocation();
+  const isMobile = useIsMobile();
+
+  // Hide SofÍA on mobile devices
+  if (isMobile) {
+    return null;
+  }
 
   // Only show SofÍA on Home and main solution pages
   const allowedPages = [
