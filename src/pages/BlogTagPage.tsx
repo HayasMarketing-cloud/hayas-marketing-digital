@@ -262,14 +262,26 @@ const BlogTagPage: React.FC = () => {
                           Posts Relacionados
                         </h3>
                         <div className="grid gap-6">
-                          {relatedPosts.slice(0, 3).map((post, index) => (
+                          {relatedPosts.slice(0, 3).map((post, index) => {
+                            // Buscar el post completo para obtener la imagen
+                            const fullPost = allPosts.find(p => p.slug === post.slug);
+                            
+                            return (
                             <Card key={index} className="group hover:shadow-lg transition-all duration-300 overflow-hidden">
                               <div className="grid md:grid-cols-3 gap-0">
                                 <div className="md:col-span-1">
-                                  <div className="aspect-video md:aspect-square relative overflow-hidden bg-muted">
-                                    <div className="absolute inset-0 flex items-center justify-center text-muted-foreground">
-                                      <Calendar className="h-8 w-8" />
-                                    </div>
+                                  <div className="aspect-video md:aspect-square relative overflow-hidden">
+                                    {fullPost?.image ? (
+                                      <img 
+                                        src={fullPost.image} 
+                                        alt={post.title}
+                                        className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                      />
+                                    ) : (
+                                      <div className="absolute inset-0 bg-muted flex items-center justify-center text-muted-foreground">
+                                        <Calendar className="h-8 w-8" />
+                                      </div>
+                                    )}
                                   </div>
                                 </div>
                                 <CardContent className="md:col-span-2 p-6">
@@ -296,7 +308,8 @@ const BlogTagPage: React.FC = () => {
                                 </CardContent>
                               </div>
                             </Card>
-                          ))}
+                            );
+                          })}
                         </div>
                       </div>
                     )}
