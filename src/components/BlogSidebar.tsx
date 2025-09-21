@@ -1,11 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Mail, Tag, TrendingUp, Calendar } from 'lucide-react';
-import { getTagsByParent, tagsLevel1, type TagLevel1 } from '@/data/blogTags';
+import { Mail, Calendar } from 'lucide-react';
 
 interface BlogSidebarProps {
   currentTag?: string;
@@ -15,17 +13,6 @@ interface BlogSidebarProps {
 }
 
 const BlogSidebar: React.FC<BlogSidebarProps> = ({ currentTag, allPosts = [] }) => {
-  const currentTagData = tagsLevel1.find(tag => tag.slug === currentTag);
-  const relatedSubtags = currentTag ? getTagsByParent(currentTag) : [];
-  
-  // Función para contar artículos por tag
-  const getArticleCountByTag = (tagSlug: string): number => {
-    return allPosts.filter(post => {
-      const postTags = post.tags.map(tag => tag.toLowerCase().replace(/\s+/g, '-'));
-      return postTags.includes(tagSlug) || 
-             postTags.includes(tagSlug.toLowerCase());
-    }).length;
-  };
   
   return (
     <aside className="space-y-6">
@@ -34,77 +21,46 @@ const BlogSidebar: React.FC<BlogSidebarProps> = ({ currentTag, allPosts = [] }) 
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-lg">
             <Mail className="h-5 w-5 text-primary" />
-            Newsletter
+            Newsletter de Marketing
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           <p className="text-sm text-muted-foreground">
-            Recibe las últimas tendencias de marketing digital directamente en tu email.
+            Recibe las últimas tendencias de marketing digital, estrategias exclusivas y contenido premium directamente en tu email.
           </p>
           <div className="space-y-2">
             <Input 
               type="email" 
-              placeholder="Tu email" 
+              placeholder="Tu email profesional" 
               className="w-full"
             />
             <Button className="w-full" size="sm">
-              Suscribirse
+              Suscribirse Gratis
             </Button>
           </div>
+          <p className="text-xs text-muted-foreground text-center">
+            📧 Sin spam. Cancela cuando quieras.
+          </p>
         </CardContent>
       </Card>
 
-      {/* Servicios en este Pilar */}
-      {currentTagData && relatedSubtags.length > 0 && (
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-lg">
-              <Tag className="h-5 w-5 text-primary" />
-              Servicios en {currentTagData.name}
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-2">
-              {relatedSubtags.map((subtag) => (
-                <Link key={subtag.slug} to={`/es/blog/tag/${subtag.slug}`} className="block">
-                  <div className="flex items-center justify-between p-2 rounded-lg hover:bg-muted/50 transition-colors">
-                    <span className="text-sm font-medium">{subtag.name}</span>
-                    <Badge variant="secondary" className="text-xs">
-                      {getArticleCountByTag(subtag.slug)} post{getArticleCountByTag(subtag.slug) !== 1 ? 's' : ''}
-                    </Badge>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
-      )}
-
-      {/* Todos los Pilares */}
+      {/* Artículos destacados */}
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-lg">
-            <TrendingUp className="h-5 w-5 text-primary" />
-            Todos los Pilares
+            <Calendar className="h-5 w-5 text-primary" />
+            Contenido Recomendado
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="space-y-2">
-            {tagsLevel1.map((tag) => (
-              <Link 
-                key={tag.slug} 
-                to={`/es/blog/tag/${tag.slug}`}
-                className="block"
-              >
-                 <div className="flex items-center justify-between p-2 rounded-lg hover:bg-muted/50 transition-colors">
-                   <span className="text-sm font-medium">{tag.name}</span>
-                   <Badge variant="secondary" className="text-xs">
-                     {getArticleCountByTag(tag.slug)} post{getArticleCountByTag(tag.slug) !== 1 ? 's' : ''}
-                   </Badge>
-                </div>
-              </Link>
-            ))}
-          </div>
+          <p className="text-sm text-muted-foreground mb-4">
+            Explora nuestros artículos más populares y estrategias que están transformando negocios.
+          </p>
+          <Link to="/es/blog">
+            <Button variant="outline" className="w-full" size="sm">
+              Ver Todos los Artículos
+            </Button>
+          </Link>
         </CardContent>
       </Card>
     </aside>
