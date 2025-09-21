@@ -37,18 +37,27 @@ const SofiaWidget = () => {
   const location = useLocation();
   const isMobile = useIsMobile();
   
+  // Determine if component should render BEFORE declaring state
+  const allowedPages = [
+    '/es',
+    '/es/soluciones/impulsa-tu-marca',
+    '/es/soluciones/conecta-con-tus-clientes', 
+    '/es/soluciones/activa-tus-ventas'
+  ];
+  
+  const shouldRender = !isMobile && allowedPages.includes(location.pathname);
+  
   // ALL hooks must be declared BEFORE any conditional logic
   const [isOpen, setIsOpen] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
   const [showHelpMessage, setShowHelpMessage] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
 
-  // Main Voiceflow initialization effect
+  // Main Voiceflow initialization effect - ALWAYS call but conditionally execute
   useEffect(() => {
-    let timeoutId: NodeJS.Timeout;
+    if (!shouldRender || !isOpen || isMinimized) return;
     
-    // Only proceed if chat is open and not minimized
-    if (!isOpen || isMinimized) return;
+    let timeoutId: NodeJS.Timeout;
 
     // Check if script already exists
     const existingScript = document.querySelector('script[src="https://cdn.voiceflow.com/widget-next/bundle.mjs"]');
@@ -175,10 +184,12 @@ const SofiaWidget = () => {
         clearTimeout(timeoutId);
       }
     };
-  }, [isOpen, isMinimized]);
+  }, [shouldRender, isOpen, isMinimized, location.pathname]);
 
-  // Listen for custom event to open Sofia chat
+  // Listen for custom event to open Sofia chat - ALWAYS call but conditionally execute
   useEffect(() => {
+    if (!shouldRender) return;
+    
     const handleOpenSofiaChat = () => {
       setIsOpen(true);
       setIsMinimized(false);
@@ -187,10 +198,12 @@ const SofiaWidget = () => {
 
     window.addEventListener('openSofiaChat', handleOpenSofiaChat);
     return () => window.removeEventListener('openSofiaChat', handleOpenSofiaChat);
-  }, []);
+  }, [shouldRender]);
 
-  // Scroll detection
+  // Scroll detection - ALWAYS call but conditionally execute
   useEffect(() => {
+    if (!shouldRender) return;
+    
     const handleScroll = () => {
       const scrolled = window.scrollY > 300;
       setHasScrolled(scrolled);
@@ -209,18 +222,10 @@ const SofiaWidget = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [isOpen, hasScrolled]);
+  }, [shouldRender, isOpen, hasScrolled]);
 
-  // Conditional rendering logic AFTER all hooks
-  const allowedPages = [
-    '/es',
-    '/es/soluciones/impulsa-tu-marca',
-    '/es/soluciones/conecta-con-tus-clientes', 
-    '/es/soluciones/activa-tus-ventas'
-  ];
-
-  // Hide SofÍA on mobile devices or non-allowed pages
-  if (isMobile || !allowedPages.includes(location.pathname)) {
+  // Early return AFTER all hooks are called
+  if (!shouldRender) {
     return null;
   }
 
