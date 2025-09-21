@@ -37,29 +37,13 @@ const SofiaWidget = () => {
   const location = useLocation();
   const isMobile = useIsMobile();
   
-  // All hooks must be declared BEFORE any conditional logic
+  // ALL hooks must be declared BEFORE any conditional logic
   const [isOpen, setIsOpen] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
   const [showHelpMessage, setShowHelpMessage] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
 
-  // Hide SofÍA on mobile devices
-  if (isMobile) {
-    return null;
-  }
-
-  // Only show SofÍA on Home and main solution pages
-  const allowedPages = [
-    '/es',
-    '/es/soluciones/impulsa-tu-marca',
-    '/es/soluciones/conecta-con-tus-clientes', 
-    '/es/soluciones/activa-tus-ventas'
-  ];
-
-  if (!allowedPages.includes(location.pathname)) {
-    return null;
-  }
-
+  // Main Voiceflow initialization effect
   useEffect(() => {
     let timeoutId: NodeJS.Timeout;
     
@@ -226,6 +210,19 @@ const SofiaWidget = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isOpen, hasScrolled]);
+
+  // Conditional rendering logic AFTER all hooks
+  const allowedPages = [
+    '/es',
+    '/es/soluciones/impulsa-tu-marca',
+    '/es/soluciones/conecta-con-tus-clientes', 
+    '/es/soluciones/activa-tus-ventas'
+  ];
+
+  // Hide SofÍA on mobile devices or non-allowed pages
+  if (isMobile || !allowedPages.includes(location.pathname)) {
+    return null;
+  }
 
   const handleToggleChat = () => {
     setIsOpen(!isOpen);
