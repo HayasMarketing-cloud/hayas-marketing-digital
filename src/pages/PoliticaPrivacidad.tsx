@@ -26,11 +26,11 @@ const PoliticaPrivacidad = () => {
                 <section>
                   <h2 className="text-2xl font-semibold mb-4 text-foreground">1. Responsable del tratamiento</h2>
                   <div className="space-y-3 text-muted-foreground">
-                    <p><strong>Responsable:</strong> Hayas Marketing</p>
-                    <p><strong>CIF:</strong> [PENDIENTE - Completar con CIF real]</p>
-                    <p><strong>Domicilio:</strong> Madrid, España [PENDIENTE - Dirección fiscal completa]</p>
-                    <p><strong>Email de contacto DPO:</strong> privacidad@hayasmarketing.com</p>
-                    <p><strong>Teléfono:</strong> [PENDIENTE - Teléfono de contacto]</p>
+                    <p><strong>Responsable:</strong> Apps 4 Business SL</p>
+                    <p><strong>CIF:</strong> B86554490</p>
+                    <p><strong>Domicilio:</strong> Calle Manzanares 4 - 28005 Madrid</p>
+                    <p><strong>Email de contacto DPO:</strong> ruben@hayas.es</p>
+                    <p><strong>Teléfono:</strong> 672288182</p>
                   </div>
                 </section>
 
@@ -129,7 +129,7 @@ const PoliticaPrivacidad = () => {
                       <li><strong>Decisiones automatizadas:</strong> No ser objeto de decisiones basadas únicamente en tratamiento automatizado</li>
                     </ul>
                     <p className="mt-4">
-                      Para ejercer estos derechos, puede contactar con nosotros en: <strong>privacidad@hayasmarketing.com</strong>
+                      Para ejercer estos derechos, puede contactar con nosotros en: <strong>ruben@hayas.es</strong>
                     </p>
                   </div>
                 </section>

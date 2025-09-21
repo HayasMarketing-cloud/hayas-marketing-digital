@@ -26,11 +26,11 @@ const AvisoLegal = () => {
                 <section>
                   <h2 className="text-2xl font-semibold mb-4 text-foreground">1. Datos identificativos</h2>
                   <div className="space-y-3 text-muted-foreground">
-                    <p><strong>Titular:</strong> Hayas Marketing</p>
-                    <p><strong>CIF:</strong> [PENDIENTE - Completar con CIF real]</p>
-                    <p><strong>Domicilio:</strong> Madrid, España [PENDIENTE - Dirección fiscal completa]</p>
+                    <p><strong>Titular:</strong> Apps 4 Business SL</p>
+                    <p><strong>CIF:</strong> B86554490</p>
+                    <p><strong>Domicilio:</strong> Calle Manzanares 4 - 28005 Madrid</p>
                     <p><strong>Email:</strong> info@hayasmarketing.com</p>
-                    <p><strong>Teléfono:</strong> [PENDIENTE - Teléfono de contacto]</p>
+                    <p><strong>Teléfono:</strong> 672288182</p>
                   </div>
                 </section>
 

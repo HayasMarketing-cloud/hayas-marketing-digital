@@ -212,7 +212,7 @@ const PoliticaCookies = () => {
                     Si tiene preguntas sobre nuestra política de cookies, puede contactarnos en:
                   </p>
                   <ul className="list-none space-y-1 ml-4 text-muted-foreground mt-2">
-                    <li><strong>Email:</strong> privacidad@hayasmarketing.com</li>
+                    <li><strong>Email:</strong> ruben@hayas.es</li>
                     <li><strong>Web:</strong> hayasmarketing.com/contacto</li>
                   </ul>
                 </section>
