@@ -101,31 +101,31 @@ const services = [
     icon: <Target className="h-8 w-8 text-activa-500" />,
     title: "Publicidad en Redes Sociales",
     description: "Campañas en Meta, LinkedIn y más para captar clientes.",
-    href: "/servicios/publicidad-redes-sociales"
+    href: "/es/servicios/publicidad-redes-sociales"
   },
   {
     icon: <Settings className="h-8 w-8 text-activa-500" />,
     title: "Publicidad en Google Ads",
     description: "Estrategias SEM para generar leads y ventas.",
-    href: "/servicios/publicidad-google-ads"
+    href: "/es/servicios/publicidad-google-ads"
   },
   {
     icon: <Bot className="h-8 w-8 text-activa-500" />,
     title: "Asistente IA para Atención al Cliente",
     description: "Chatbots inteligentes para mejorar conversión y soporte.",
-    href: "/servicios/asistente-ia"
+    href: "/es/servicios/asistente-ia"
   },
   {
     icon: <BarChart3 className="h-8 w-8 text-activa-500" />,
     title: "Consultoría estratégica y analítica",
     description: "Definición de KPIs, seguimiento y mejora continua.",
-    href: "/servicios/consultoria-estrategica-analitica"
+    href: "/es/servicios/consultoria-estrategica-analitica"
   },
   {
     icon: <Zap className="h-8 w-8 text-activa-500" />,
     title: "Integraciones y optimización con IA",
     description: "Conexión de sistemas y optimización predictiva.",
-    href: "/servicios/integraciones-ia-procesos"
+    href: "/es/servicios/integraciones-ia-procesos"
   }
 ];
 
