@@ -37,6 +37,7 @@ Redirect 301 /zh /es
 # Blog - Artículos importantes
 Redirect 301 /la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing /es/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing
 Redirect 301 /blog/qué-es-un-crm-o-customer-relationship-management /es/blog/que-es-un-crm-o-customer-relationship-management
+Redirect 301 /es/que-es-un-crm-o-customer-relationship-management/ /es/blog/crm-que-es-beneficios
 Redirect 301 /blog/buenas-prácticas-técnicas-de-email-marketing-con-hubspot /es/blog/buenas-practicas-tecnicas-de-email-marketing-con-hubspot
 Redirect 301 /blog/cómo-solicitar-tu-bono-del-kit-digital /es/blog/como-solicitar-tu-bono-del-kit-digital
 Redirect 301 /blog/como-crear-una-estrategia-de-contenidos /es/blog/como-crear-una-estrategia-de-marketing-de-contenidos-eficaz
