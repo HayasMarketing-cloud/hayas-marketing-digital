@@ -372,7 +372,7 @@ const Blog = () => {
         <section className="pt-32 pb-16 bg-gradient-to-br from-primary/10 via-background to-accent/10">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-6xl font-bold mb-10 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <h1 className="text-4xl md:text-6xl font-bold mb-10 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent" style={{ lineHeight: 1.2 }}>
                 Blog Hayas Marketing
               </h1>
               <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
