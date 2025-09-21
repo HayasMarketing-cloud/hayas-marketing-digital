@@ -4,7 +4,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://hayasmarketing.com/sitemap-optimized.xml
+Sitemap: https://hayasmarketing.com/sitemap.xml
 
 # Directrices específicas
 Crawl-delay: 1

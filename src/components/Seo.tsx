@@ -92,6 +92,16 @@ const Seo = ({
     }
     linkCanonical.href = href;
 
+    // Sitemap reference
+    let linkSitemap = document.querySelector('link[rel="sitemap"]') as HTMLLinkElement | null;
+    if (!linkSitemap) {
+      linkSitemap = document.createElement('link');
+      linkSitemap.rel = 'sitemap';
+      linkSitemap.type = 'application/xml';
+      document.head.appendChild(linkSitemap);
+    }
+    linkSitemap.href = `${window.location.origin}/sitemap.xml`;
+
     // Open Graph & Twitter
     const pageUrl = canonical
       ? (canonical.startsWith('http') ? canonical : `${window.location.origin}${canonical}`)
