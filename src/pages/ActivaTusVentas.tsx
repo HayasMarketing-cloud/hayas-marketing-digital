@@ -45,22 +45,22 @@ const painPoints = [
 // Solution points
 const solutionPoints = [
   {
-    icon: <Target className="h-8 w-8 text-activa-primary" />,
+    icon: <Target className="h-8 w-8 text-activa-500" />,
     title: "Campañas digitales rentables",
     description: "Diseñamos y gestionamos campañas en redes sociales y Google que generan leads cualificados con ROI medible."
   },
   {
-    icon: <Bot className="h-8 w-8 text-activa-primary" />,
+    icon: <Bot className="h-8 w-8 text-activa-500" />,
     title: "IA aplicada a marketing y ventas",
     description: "Implementamos inteligencia artificial para mejorar conversiones, reducir costes y automatizar procesos."
   },
   {
-    icon: <Eye className="h-8 w-8 text-activa-primary" />,
+    icon: <Eye className="h-8 w-8 text-activa-500" />,
     title: "Experiencias personalizadas",
     description: "Creamos experiencias únicas que convierten más visitantes en clientes y fidelizan mejor."
   },
   {
-    icon: <BarChart3 className="h-8 w-8 text-activa-primary" />,
+    icon: <BarChart3 className="h-8 w-8 text-activa-500" />,
     title: "Consultoría estratégica y analítica",
     description: "Te ofrecemos consultoría continua para evolucionar tus resultados con análisis de datos reales."
   }
@@ -69,27 +69,27 @@ const solutionPoints = [
 // Benefits data
 const benefits = [
   {
-    icon: <Rocket className="h-8 w-8 text-activa-primary" />,
+    icon: <Rocket className="h-8 w-8 text-activa-500" />,
     title: "Más clientes",
     description: "Campañas de publicidad optimizadas que generan leads de calidad"
   },
   {
-    icon: <BarChart3 className="h-8 w-8 text-activa-primary" />,
+    icon: <BarChart3 className="h-8 w-8 text-activa-500" />,
     title: "Resultados medibles",
     description: "Analítica clara para saber qué funciona y qué no"
   },
   {
-    icon: <Bot className="h-8 w-8 text-activa-primary" />,
+    icon: <Bot className="h-8 w-8 text-activa-500" />,
     title: "Atención mejorada",
     description: "Asistentes de IA para dar soporte y captar leads 24/7"
   },
   {
-    icon: <Target className="h-8 w-8 text-activa-primary" />,
+    icon: <Target className="h-8 w-8 text-activa-500" />,
     title: "Optimización constante",
     description: "Procesos que evolucionan con tus objetivos"
   },
   {
-    icon: <TrendingUp className="h-8 w-8 text-activa-primary" />,
+    icon: <TrendingUp className="h-8 w-8 text-activa-500" />,
     title: "Escalabilidad",
     description: "Soluciones que crecen al ritmo de tu negocio"
   }
@@ -98,31 +98,31 @@ const benefits = [
 // Services data
 const services = [
   {
-    icon: <Target className="h-8 w-8 text-activa-primary" />,
+    icon: <Target className="h-8 w-8 text-activa-500" />,
     title: "Publicidad en Redes Sociales",
     description: "Campañas en Meta, LinkedIn y más para captar clientes.",
     href: "/servicios/publicidad-redes-sociales"
   },
   {
-    icon: <Settings className="h-8 w-8 text-activa-primary" />,
+    icon: <Settings className="h-8 w-8 text-activa-500" />,
     title: "Publicidad en Google Ads",
     description: "Estrategias SEM para generar leads y ventas.",
     href: "/servicios/publicidad-google-ads"
   },
   {
-    icon: <Bot className="h-8 w-8 text-activa-primary" />,
+    icon: <Bot className="h-8 w-8 text-activa-500" />,
     title: "Asistente IA para Atención al Cliente",
     description: "Chatbots inteligentes para mejorar conversión y soporte.",
     href: "/servicios/asistente-ia"
   },
   {
-    icon: <BarChart3 className="h-8 w-8 text-activa-primary" />,
+    icon: <BarChart3 className="h-8 w-8 text-activa-500" />,
     title: "Consultoría estratégica y analítica",
     description: "Definición de KPIs, seguimiento y mejora continua.",
     href: "/servicios/consultoria-estrategica-analitica"
   },
   {
-    icon: <Zap className="h-8 w-8 text-activa-primary" />,
+    icon: <Zap className="h-8 w-8 text-activa-500" />,
     title: "Integraciones y optimización con IA",
     description: "Conexión de sistemas y optimización predictiva.",
     href: "/servicios/integraciones-ia-procesos"
@@ -218,7 +218,7 @@ const ActivaTusVentas = () => {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <Badge variant="outline" className="mb-6 text-activa-primary border-activa-200 bg-white/50">
+                <Badge variant="outline" className="mb-6 text-activa-500 border-activa-200 bg-white/50">
                   Solución Activa tus ventas
                 </Badge>
                 <DynamicH1 
@@ -231,13 +231,13 @@ const ActivaTusVentas = () => {
                   Las campañas digitales y la inteligencia artificial son la clave para atraer más clientes y cerrar más ventas. En Hayas combinamos publicidad, analítica y automatización para que tus acciones de marketing generen un impacto real en tu negocio.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button size="lg" className="bg-activa-primary hover:bg-activa-primary/90 text-white" asChild>
+                  <Button size="lg" className="bg-activa-500 hover:bg-activa-600 text-white" asChild>
                     <Link to="/es/agendar-reunion">
                       👉 Solicita tu asesoría gratuita
                       <ArrowRight className="ml-2 h-5 w-5" />
                     </Link>
                   </Button>
-                  <Button variant="outline" size="lg" asChild>
+                  <Button variant="activa-outline" size="lg" asChild>
                     <a href="#casos-exito">Ver casos de éxito</a>
                   </Button>
                 </div>
@@ -286,7 +286,7 @@ const ActivaTusVentas = () => {
             <div className="text-center bg-activa-50 rounded-2xl p-8">
               <div className="flex justify-center mb-4">
                 <div className="p-3 bg-activa-100 rounded-full">
-                  <TrendingUp className="h-8 w-8 text-activa-primary" />
+                  <TrendingUp className="h-8 w-8 text-activa-500" />
                 </div>
               </div>
               <p className="text-lg font-semibold text-gray-800">
