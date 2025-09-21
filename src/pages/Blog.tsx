@@ -45,7 +45,7 @@ const Blog = () => {
       readTime: '12 min',
       date: '12 Sep 2025',
       image: '/email-marketing-automatizaciones-hero.jpg',
-      slug: '/blog/configuracion-email-marketing-cumplimiento-normativo',
+      slug: '/es/blog/configuracion-email-marketing-cumplimiento-normativo',
       tags: ['Email Marketing', 'Cumplimiento Normativo', 'SPF', 'DKIM', 'DMARC', 'RGPD', 'HubSpot', 'Go High Level', 'Mailchimp'],
       featured: true
     },
@@ -84,7 +84,7 @@ const Blog = () => {
       category: 'Email Marketing',
       author: 'Equipo Hayas Marketing',
       image: '/email-marketing-automatizaciones-hero.jpg',
-      slug: '/blog/guia-tecnica-email-marketing-hubspot-configuracion',
+      slug: '/es/blog/guia-tecnica-email-marketing-hubspot-configuracion',
       tags: ['Email Marketing', 'HubSpot', 'SPF', 'DKIM', 'DMARC', 'Cumplimiento', 'RGPD'],
       featured: true
     },
@@ -110,7 +110,7 @@ const Blog = () => {
       category: 'E-commerce',
       author: 'Equipo Hayas Marketing',
       image: '/re-commerce-economia-circular-hero.jpg',
-      slug: '/blog/re-commerce-economia-circular-ecommerce-partnership-sharpei',
+      slug: '/es/blog/re-commerce-economia-circular-ecommerce-partnership-sharpei',
       tags: ['Economía Circular', 'E-commerce', 'Partnership', 'Sostenibilidad', 'Re-commerce', 'Sharpei'],
       featured: true
     },
@@ -124,7 +124,7 @@ const Blog = () => {
       category: 'SEO',
       author: 'Equipo Hayas Marketing',
       image: '/seo-off-page-hero.jpg',
-      slug: '/blog/seo-off-page-estrategias-practicas-posicionamiento',
+      slug: '/es/blog/seo-off-page-estrategias-practicas-posicionamiento',
       tags: ['SEO', 'Link Building', 'Posicionamiento Web', 'Marketing Digital', 'Backlinks'],
       featured: true
     },
@@ -138,7 +138,7 @@ const Blog = () => {
       category: 'Marketing Automation',
       author: 'Equipo Hayas Marketing',
       image: '/automatizacion-marketing-hero.jpg',
-      slug: '/blog/automatizacion-marketing-digital-guia-completa',
+      slug: '/es/blog/automatizacion-marketing-digital-guia-completa',
       tags: ['Automatización de Marketing', 'Marketing Digital', 'Email Marketing', 'Lead Nurturing', 'CRM', 'Workflows'],
       featured: true
     },
@@ -152,7 +152,7 @@ const Blog = () => {
       category: 'Tecnología',
       author: 'Equipo Hayas Marketing',
       image: '/web-3-0-hero.jpg',
-      slug: '/blog/web-3-0-futuro-internet-descentralizado',
+      slug: '/es/blog/web-3-0-futuro-internet-descentralizado',
       tags: ['Web 3.0', 'Blockchain', 'Descentralización', 'Tecnología', 'Internet', 'Metaverso'],
       featured: true
     },
@@ -166,7 +166,7 @@ const Blog = () => {
       category: 'SEO',
       author: 'Equipo Hayas Marketing',
       image: '/seo-on-page-hero.jpg',
-      slug: '/blog/seo-on-page-guia-completa',
+      slug: '/es/blog/seo-on-page-guia-completa',
       tags: ['SEO', 'SEO On-Page', 'Optimización Web', 'Marketing Digital', 'Google'],
       featured: true
     },
@@ -208,7 +208,7 @@ const Blog = () => {
       readTime: '16 min',
       category: 'CRM',
       image: '/crm-sistema-gestion-clientes-hero.jpg',
-      slug: '/blog/como-elegir-mejor-crm-empresa-organizacion',
+      slug: '/es/blog/como-elegir-mejor-crm-empresa-organizacion',
       tags: ['CRM', 'Selección CRM', 'Marketing Digital', 'Automatización', 'ROI', 'Implementación']
     },
     {
