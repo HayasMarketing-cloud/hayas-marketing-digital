@@ -36,6 +36,12 @@ const getPageHelpMessage = (pathname: string) => {
 const SofiaWidget = () => {
   const location = useLocation();
   const isMobile = useIsMobile();
+  
+  // All hooks must be declared BEFORE any conditional logic
+  const [isOpen, setIsOpen] = useState(false);
+  const [isMinimized, setIsMinimized] = useState(false);
+  const [showHelpMessage, setShowHelpMessage] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false);
 
   // Hide SofÍA on mobile devices
   if (isMobile) {
@@ -53,11 +59,6 @@ const SofiaWidget = () => {
   if (!allowedPages.includes(location.pathname)) {
     return null;
   }
-
-  const [isOpen, setIsOpen] = useState(false);
-  const [isMinimized, setIsMinimized] = useState(false);
-  const [showHelpMessage, setShowHelpMessage] = useState(false);
-  const [hasScrolled, setHasScrolled] = useState(false);
 
   useEffect(() => {
     let timeoutId: NodeJS.Timeout;
