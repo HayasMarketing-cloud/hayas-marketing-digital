@@ -1,9 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Mail, Calendar } from 'lucide-react';
+import { Mail } from 'lucide-react';
 
 interface BlogSidebarProps {
   currentTag?: string;
@@ -41,26 +40,6 @@ const BlogSidebar: React.FC<BlogSidebarProps> = ({ currentTag, allPosts = [] }) 
           <p className="text-xs text-muted-foreground text-center">
             📧 Sin spam. Cancela cuando quieras.
           </p>
-        </CardContent>
-      </Card>
-
-      {/* Artículos destacados */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2 text-lg">
-            <Calendar className="h-5 w-5 text-primary" />
-            Contenido Recomendado
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p className="text-sm text-muted-foreground mb-4">
-            Explora nuestros artículos más populares y estrategias que están transformando negocios.
-          </p>
-          <Link to="/es/blog">
-            <Button variant="outline" className="w-full" size="sm">
-              Ver Todos los Artículos
-            </Button>
-          </Link>
         </CardContent>
       </Card>
     </aside>
