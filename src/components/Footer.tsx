@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight, Building2, Users, Linkedin, Youtube, MessageSquare, Mail, MapPin } from 'lucide-react';
+import whatsappIcon from '@/assets/whatsapp-icon.jpg';
 interface FooterProps {
   showKitSection?: boolean;
 }
@@ -91,7 +92,7 @@ const Footer: React.FC<FooterProps> = ({
               <a href="mailto:hola@hayas.es" className="hover:text-secondary transition-colors text-sm">hola@hayas.es</a>
             </div>
             <div className="flex items-center gap-2">
-              <MessageSquare className="h-4 w-4 text-secondary" />
+              <img src={whatsappIcon} alt="WhatsApp" className="h-4 w-4 object-contain" />
               <a href="https://wa.me/34656908615" target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition-colors text-sm">656 908 615</a>
             </div>
             <div className="flex items-center gap-2">
