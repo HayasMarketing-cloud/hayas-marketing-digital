@@ -1,1 +1,16 @@
 project_id = "pmldrjkmkjwbvaudjjye"
+
+[functions.webhook-handler]
+verify_jwt = false
+
+[functions.create-checkout-session]
+verify_jwt = false
+
+[functions.customer-portal]
+verify_jwt = true
+
+[functions.check-subscription]
+verify_jwt = true
+
+[functions.get-user-orders]
+verify_jwt = true

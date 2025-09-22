@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { AuthProvider } from '@/contexts/AuthContext';
 import SofiaWidget from "./components/SofiaSection";
 import ScrollToTop from './components/ScrollToTop';
 import DraftProtection from './components/DraftProtection';
@@ -18,7 +19,8 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-    <BrowserRouter>
+      <AuthProvider>
+        <BrowserRouter>
       <ScrollToTop />
         <SofiaWidget />
         <DraftProtection>
@@ -198,6 +200,7 @@ const App = () => (
         </Routes>
         </DraftProtection>
       </BrowserRouter>
+      </AuthProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );
