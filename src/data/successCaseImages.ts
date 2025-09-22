@@ -3,7 +3,7 @@
 
 export const successCaseImages = {
   // Images matching exactly with cards in SuccessCasesSection
-  drParron: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=2069&auto=format&fit=crop",
+  drParron: "/lovable-uploads/dr-parron.png",
   aistercel: "/lovable-uploads/8590eeb0-6b06-40bb-9703-6b4b4747bc73.png",
   alfixConsultores: "/lovable-uploads/ac02e71a-419d-4ad5-b089-5e8472a441c5.png",
   almaCruceros: "/lovable-uploads/9b7cad00-2cca-451d-a515-ac666898dbc9.png",
