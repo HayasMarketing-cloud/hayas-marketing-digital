@@ -3,7 +3,7 @@
 
 export const successCaseImages = {
   // Images matching exactly with cards in SuccessCasesSection
-  drParron: "/src/assets/dr-parron-professional-case.jpg",
+  drParron: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=2069&auto=format&fit=crop",
   aistercel: "/lovable-uploads/8590eeb0-6b06-40bb-9703-6b4b4747bc73.png",
   alfixConsultores: "/lovable-uploads/ac02e71a-419d-4ad5-b089-5e8472a441c5.png",
   almaCruceros: "/lovable-uploads/9b7cad00-2cca-451d-a515-ac666898dbc9.png",
@@ -17,7 +17,7 @@ export const successCaseImages = {
   calistheniaOnline: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070&auto=format&fit=crop",
   carniceriaPicosDeEuropa: "/lovable-uploads/4f747803-3608-4e40-96a3-e5ffb9c63060.png",
   centroRoraima: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2070&auto=format&fit=crop",
-  conversaConsultores: "/src/assets/conversa-consultores-meeting-case.jpg",
+  conversaConsultores: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop",
   corteAFilms: "https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?q=80&w=2069&auto=format&fit=crop",
   evaChampion: "/lovable-uploads/2333b7c8-3d18-4b48-9ea7-b712dde6be9c.png",
   flap: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=2069&auto=format&fit=crop",
@@ -42,7 +42,7 @@ export const successCaseImages = {
   plazaEstacion: "/lovable-uploads/69abb7c5-dcbb-4711-9201-5d724ed944f3.png",
   quanticBI: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2069&auto=format&fit=crop",
   rivasCentro: "/lovable-uploads/de93dd1b-7f99-4499-81a7-87a1ec7c9d5f.png",
-  suministrosXSKD: "/src/assets/suministros-xs-industrial-case.jpg",
+  suministrosXSKD: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070&auto=format&fit=crop",
   translateWithStyle: "/lovable-uploads/093269a5-534e-41b3-9cca-a656adc014ca.png",
   wideum: "/lovable-uploads/wideum-case-study.jpg",
   wooptix: "/lovable-uploads/e38029c3-0b86-40ab-9262-21d4d0516c2e.png"

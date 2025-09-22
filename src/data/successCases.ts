@@ -90,7 +90,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     industry: "Traumatólogo especialista en cadera",
     service: "Identidad corporativa, diseño web",
     link: "/es/casos-exito/dr-parron",
-    image: "/src/assets/dr-parron-professional-case.jpg",
+    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=2069&auto=format&fit=crop",
     tags: {
       services: ["creacion-marca", "diseno-web"],
       industries: ["salud"],
@@ -210,7 +210,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     industry: "Firma de consultoría empresarial",
     service: "Diseño web profesional y estrategia SEO",
     link: "/es/casos-exito/conversa-consultores",
-    image: "/src/assets/conversa-consultores-meeting-case.jpg",
+    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop",
     tags: {
       services: ["diseno-web", "seo-positioning"],
       industries: ["consultoria"],
@@ -486,7 +486,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     industry: "Distribución de equipos de higiene y limpieza",
     service: "Rediseño web, identidad visual y optimización SEO",
     link: "/es/casos-exito/suministros-xs-kd",
-    image: "/src/assets/suministros-xs-industrial-case.jpg",
+    image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070&auto=format&fit=crop",
     tags: {
       services: ["diseno-web", "creacion-marca", "seo-positioning"],
       industries: ["industrial"],
