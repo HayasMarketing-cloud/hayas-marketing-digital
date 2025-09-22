@@ -272,7 +272,7 @@ const CasosExito = () => {
                 Iniciar mi Proyecto
               </Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary" asChild>
+            <Button size="lg" variant="outline" className="border-white text-white bg-white/20 hover:bg-white hover:text-primary backdrop-blur-sm" asChild>
               <Link to="/es/solicitar-consulta">
                 Solicitar Consulta Gratuita
               </Link>
