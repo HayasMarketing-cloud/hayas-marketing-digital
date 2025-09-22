@@ -259,7 +259,7 @@ const CasosExito = () => {
           <DynamicH2 
             type="secondary"
             index={2}
-            fallback="¿Quieres ser nuestro próximo caso de éxito?"
+            fallback="¿Quieres ser un caso de éxito?"
             className="text-3xl lg:text-4xl font-bold mb-4"
           />
           <p className="text-lg opacity-90 mb-8 max-w-2xl mx-auto">
