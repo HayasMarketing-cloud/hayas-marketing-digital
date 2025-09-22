@@ -14,7 +14,194 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      customers: {
+        Row: {
+          company: string | null
+          created_at: string
+          email: string
+          id: string
+          name: string | null
+          phone: string | null
+          stripe_customer_id: string | null
+          updated_at: string
+          user_id: string | null
+        }
+        Insert: {
+          company?: string | null
+          created_at?: string
+          email: string
+          id?: string
+          name?: string | null
+          phone?: string | null
+          stripe_customer_id?: string | null
+          updated_at?: string
+          user_id?: string | null
+        }
+        Update: {
+          company?: string | null
+          created_at?: string
+          email?: string
+          id?: string
+          name?: string | null
+          phone?: string | null
+          stripe_customer_id?: string | null
+          updated_at?: string
+          user_id?: string | null
+        }
+        Relationships: []
+      }
+      orders: {
+        Row: {
+          amount_total: number
+          created_at: string
+          currency: string
+          customer_id: string
+          id: string
+          metadata: Json | null
+          product_id: string
+          status: string
+          stripe_payment_intent_id: string | null
+          stripe_session_id: string | null
+          stripe_subscription_id: string | null
+          updated_at: string
+        }
+        Insert: {
+          amount_total: number
+          created_at?: string
+          currency?: string
+          customer_id: string
+          id?: string
+          metadata?: Json | null
+          product_id: string
+          status?: string
+          stripe_payment_intent_id?: string | null
+          stripe_session_id?: string | null
+          stripe_subscription_id?: string | null
+          updated_at?: string
+        }
+        Update: {
+          amount_total?: number
+          created_at?: string
+          currency?: string
+          customer_id?: string
+          id?: string
+          metadata?: Json | null
+          product_id?: string
+          status?: string
+          stripe_payment_intent_id?: string | null
+          stripe_session_id?: string | null
+          stripe_subscription_id?: string | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "orders_customer_id_fkey"
+            columns: ["customer_id"]
+            isOneToOne: false
+            referencedRelation: "customers"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "orders_product_id_fkey"
+            columns: ["product_id"]
+            isOneToOne: false
+            referencedRelation: "products"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      payments: {
+        Row: {
+          amount: number
+          created_at: string
+          currency: string
+          id: string
+          order_id: string
+          payment_method_type: string | null
+          status: string
+          stripe_payment_id: string
+          stripe_webhook_data: Json | null
+        }
+        Insert: {
+          amount: number
+          created_at?: string
+          currency?: string
+          id?: string
+          order_id: string
+          payment_method_type?: string | null
+          status: string
+          stripe_payment_id: string
+          stripe_webhook_data?: Json | null
+        }
+        Update: {
+          amount?: number
+          created_at?: string
+          currency?: string
+          id?: string
+          order_id?: string
+          payment_method_type?: string | null
+          status?: string
+          stripe_payment_id?: string
+          stripe_webhook_data?: Json | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "payments_order_id_fkey"
+            columns: ["order_id"]
+            isOneToOne: false
+            referencedRelation: "orders"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      products: {
+        Row: {
+          billing_interval: string | null
+          billing_type: string
+          category: string
+          created_at: string
+          currency: string
+          description: string | null
+          id: string
+          is_active: boolean
+          name: string
+          price_amount: number
+          stripe_price_id: string
+          stripe_product_id: string
+          updated_at: string
+        }
+        Insert: {
+          billing_interval?: string | null
+          billing_type?: string
+          category: string
+          created_at?: string
+          currency?: string
+          description?: string | null
+          id?: string
+          is_active?: boolean
+          name: string
+          price_amount: number
+          stripe_price_id: string
+          stripe_product_id: string
+          updated_at?: string
+        }
+        Update: {
+          billing_interval?: string | null
+          billing_type?: string
+          category?: string
+          created_at?: string
+          currency?: string
+          description?: string | null
+          id?: string
+          is_active?: boolean
+          name?: string
+          price_amount?: number
+          stripe_price_id?: string
+          stripe_product_id?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
