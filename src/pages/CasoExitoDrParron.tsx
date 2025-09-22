@@ -1,7 +1,7 @@
 import React from 'react';
 import CaseStudyTemplate from '@/components/CaseStudyTemplate';
 import { Palette, Globe, Users } from 'lucide-react';
-// Image is now served from public directory
+import drParronWebp from '@/assets/dr-parron-webp.webp';
 
 const CasoExitoDrParron: React.FC = () => {
   return (
@@ -10,7 +10,7 @@ const CasoExitoDrParron: React.FC = () => {
       pageTitle="Caso de Éxito Dr. Parrón - Traumatólogo Especialista en Cadera"
       pageDescription="Descubre cómo ayudamos al Dr. Parrón, traumatólogo especialista en cadera, a crear su identidad corporativa y diseño web profesional. Caso de éxito con resultados reales."
       canonical="/es/casos-exito/dr-parron"
-      ogImage="/lovable-uploads/dr-parron.png"
+      ogImage="/src/assets/dr-parron-webp.webp"
       
       // Structured Data
       structuredData={{
@@ -35,7 +35,7 @@ const CasoExitoDrParron: React.FC = () => {
       subtitle="Traumatólogo especialista en cadera"
       badges={["Identidad Corporativa", "Diseño Web Médico", "Sector Salud"]}
       websiteUrl="https://drparron.com"
-      featuredImage="/lovable-uploads/dr-parron.png"
+      featuredImage={drParronWebp}
       featuredImageAlt="Dr. Parrón - Traumatólogo especialista en cadera"
       
       // Company Description
