@@ -95,6 +95,7 @@ export const CasoExitoInboundStudents = lazy(() => import("@/pages/CasoExitoInbo
 export const CalistheniaOnlinePage = lazy(() => import("@/pages/CalistheniaOnlinePage"));
 export const CasoExitoCentroRoraima = lazy(() => import("@/pages/CasoExitoCentroRoraima"));
 export const CasoExitoJointsUp = lazy(() => import("@/pages/CasoExitoJointsUp"));
+export const CasoExitoDrParron = lazy(() => import("@/pages/CasoExitoDrParron"));
 export const CasoExitoTranslateWithStyle = lazy(() => import("@/pages/CasoExitoTranslateWithStyle"));
 export const CasoExitoFormatoEducativo = lazy(() => import("@/pages/CasoExitoFormatoEducativo"));
 export const CasoExitoOMR = lazy(() => import("@/pages/CasoExitoOMR"));

@@ -90,7 +90,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     industry: "Traumatólogo especialista en cadera",
     service: "Identidad corporativa, diseño web",
     link: "/es/casos-exito/dr-parron",
-    image: "/src/assets/dr-parron-professional.png",
+    image: "/src/assets/dr-parron-professional-case.jpg",
     tags: {
       services: ["creacion-marca", "diseno-web"],
       industries: ["salud"],
@@ -210,7 +210,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     industry: "Firma de consultoría empresarial",
     service: "Diseño web profesional y estrategia SEO",
     link: "/es/casos-exito/conversa-consultores",
-    image: "/src/assets/conversa-consultores-meeting.jpg",
+    image: "/src/assets/conversa-consultores-meeting-case.jpg",
     tags: {
       services: ["diseno-web", "seo-positioning"],
       industries: ["consultoria"],
@@ -234,7 +234,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     industry: "Legal / Servicios profesionales",
     service: "Diseño web profesional en WordPress",
     link: "/es/casos-exito/cabrera-cervantes",
-    image: "/lovable-uploads/cabrera-cervantes-asesoria-legal.png",
+    image: "/lovable-uploads/cabrera-cervantes-asesoria-legal-optimized.png",
     tags: {
       services: ["diseno-web"],
       industries: ["legal", "servicios-profesionales"],
@@ -486,7 +486,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     industry: "Distribución de equipos de higiene y limpieza",
     service: "Rediseño web, identidad visual y optimización SEO",
     link: "/es/casos-exito/suministros-xs-kd",
-    image: "/src/assets/suministros-xs-card-thumbnail.webp",
+    image: "/src/assets/suministros-xs-industrial-case.jpg",
     tags: {
       services: ["diseno-web", "creacion-marca", "seo-positioning"],
       industries: ["industrial"],

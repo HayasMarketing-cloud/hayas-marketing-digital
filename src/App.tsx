@@ -75,6 +75,7 @@ const App = () => (
           <Route path="/es/casos-exito/calisthenia-online" element={<PageSuspense><Pages.CalistheniaOnlinePage /></PageSuspense>} />
           <Route path="/es/casos-exito/centro-roraima" element={<PageSuspense><Pages.CasoExitoCentroRoraima /></PageSuspense>} />
           <Route path="/es/casos-exito/joints-up" element={<PageSuspense><Pages.CasoExitoJointsUp /></PageSuspense>} />
+          <Route path="/es/casos-exito/dr-parron" element={<PageSuspense><Pages.CasoExitoDrParron /></PageSuspense>} />
           <Route path="/es/casos-exito/translate-with-style" element={<PageSuspense><Pages.CasoExitoTranslateWithStyle /></PageSuspense>} />
           <Route path="/es/casos-exito/formato-educativo" element={<PageSuspense><Pages.CasoExitoFormatoEducativo /></PageSuspense>} />
           <Route path="/es/casos-exito/omr" element={<PageSuspense><Pages.CasoExitoOMR /></PageSuspense>} />
