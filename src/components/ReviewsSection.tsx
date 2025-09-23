@@ -96,7 +96,7 @@ const ReviewsSection = () => {
             <div className="flex flex-col sm:flex-row justify-center gap-4 pt-6 border-t">
               <Button asChild variant="default" className="gap-2 bg-hayas-primary hover:bg-hayas-primary/90">
                 <a 
-                  href="https://www.google.com/maps/dir//Hayas+Marketing,+C.+de+Manzanares,+4,+Arganzuela,+28005+Madrid/@40.4131968,-3.7181521,13z/data=!3m1!5s0xd4187f94bd5c253:0xce3603858abda8b!4m9!4m8!1m0!1m5!1m1!1s0xd42292583f70915:0xe81f97d299b30595!2m2!1d-3.718206!2d40.413032!3e3?entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D" 
+                  href="https://www.google.com/maps/dir/?api=1&destination=C.+de+Manzanares,+4,+Arganzuela,+28005+Madrid" 
                   target="_blank" 
                   rel="noopener noreferrer"
                 >
