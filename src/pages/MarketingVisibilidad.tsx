@@ -23,6 +23,9 @@ import {
 const MarketingVisibilidad = () => {
   const seoData = getSEOData('/agencia-marketingdigital-madrid');
   
+  // Debug log to verify the page is loading
+  console.log('MarketingVisibilidad component loaded:', { seoData, currentPath: window.location.pathname });
+  
   return (
     <div id="top" className="min-h-screen bg-white">
       <Seo 
