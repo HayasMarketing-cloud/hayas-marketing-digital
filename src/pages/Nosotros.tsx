@@ -52,6 +52,11 @@ const Nosotros = () => {
     role: "CRM Manager",
     description: "Especialista en implementación y gestión de HubSpot. Experto en automatización de procesos comerciales, lead scoring y optimización de customer journey para maximizar conversiones.",
     image: "/lovable-uploads/foto_tomas.jpg"
+  }, {
+    name: "Styng Arias",
+    role: "Full Stack Developer",
+    description: "Desarrollador Full Stack especializado en arquitecturas modernas web y mobile. Experto en React, Node.js y bases de datos, enfocado en crear soluciones escalables y experiencias de usuario excepcionales.",
+    image: "/lovable-uploads/foto_styng.png"
   }];
   const values = [{
     icon: <Lightbulb className="h-8 w-8 text-white" />,
