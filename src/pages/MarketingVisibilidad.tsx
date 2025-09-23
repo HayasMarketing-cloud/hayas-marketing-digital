@@ -21,26 +21,14 @@ import {
 } from '@/components/ui/breadcrumb';
 
 const MarketingVisibilidad = () => {
-  const seoData = getSEOData('/agencia-marketingdigital-madrid');
-  
-  // Debug log to verify the page is loading
-  console.log('MarketingVisibilidad component loaded:', { seoData, currentPath: window.location.pathname });
-  
   return (
     <div id="top" className="min-h-screen bg-white">
       <Seo 
-        title={seoData?.title || "Agencia Marketing Digital Madrid | Hayas Marketing"}
-        description={seoData?.description || "Agencia especializada en marketing digital en Madrid. SEO, SEM, redes sociales y estrategias integrales para hacer crecer tu negocio."}
-        canonical={seoData?.canonical || "/agencia-marketingdigital-madrid"}
-        keywords={seoData?.keywords}
-        structuredData={seoData?.additionalSchema}
-        faqs={seoData?.faqs}
-        robots={seoData?.robots}
-        ogImage={seoData?.ogImage}
-        ogType={seoData?.ogType}
-        inLanguage={seoData?.inLanguage}
-        about={seoData?.about}
-        mentions={seoData?.mentions}
+        title="Marketing Digital y Visibilidad Online | Hayas Marketing"
+        description="Estrategias integrales de marketing digital para aumentar tu visibilidad online. SEO, contenidos, redes sociales y publicidad digital que generan resultados."
+        canonical="/soluciones/marketing-visibilidad"
+        keywords={['marketing digital', 'visibilidad online', 'SEO', 'contenidos', 'redes sociales', 'publicidad digital']}
+        robots="index, follow"
       />
       <Navigation />
       
@@ -57,7 +45,13 @@ const MarketingVisibilidad = () => {
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
-                  <BreadcrumbPage>Agencia Marketing Digital Madrid</BreadcrumbPage>
+                  <BreadcrumbLink asChild>
+                    <Link to="/soluciones">Soluciones</Link>
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbPage>Marketing y Visibilidad</BreadcrumbPage>
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
@@ -79,10 +73,10 @@ const MarketingVisibilidad = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <Badge variant="outline" className="mb-4 text-hayas-600 border-hayas-200">
-                  Agencia Marketing Digital Madrid
+                  Marketing y Visibilidad
                 </Badge>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                  {seoData?.h1 || "Agencia Marketing Digital en Madrid | Expertos en Crecimiento Online"}
+                  Aumenta tu <span className="text-gradient-primary">visibilidad online</span> con estrategias integrales
                 </h1>
                 <p className="text-xl text-gray-700 mb-8 leading-relaxed">
                   Estrategias completas de SEO, contenidos y campañas digitales para posicionar tu marca 

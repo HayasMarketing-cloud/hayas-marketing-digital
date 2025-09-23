@@ -144,12 +144,12 @@ export const canonicalStrategy = {
         '/servicios/localizacion-contenidos'
       ]
     },
-    '/soluciones': {
+     '/soluciones': {
       satellites: [
         '/soluciones/activa-tus-ventas',
         '/soluciones/conecta-con-tus-clientes', 
         '/soluciones/impulsa-tu-marca',
-        '/agencia-marketingdigital-madrid'
+        '/soluciones/marketing-visibilidad'
       ]
     }
   },
@@ -596,64 +596,6 @@ export const seoData: Record<string, EnhancedPageSEOData> = {
         'Estrategia de contenidos para redes sociales'
       ]
     }
-  },
-
-  '/agencia-marketingdigital-madrid': {
-    title: 'Agencia de Marketing Digital en Madrid | Expertos en SEO y Publicidad Online',
-    h1: 'Agencia de Marketing Digital en Madrid: Estrategias que Funcionan',
-    description: 'Agencia de marketing digital especializada en Madrid. Servicios de SEO, Google Ads, redes sociales y CRM. Resultados reales para empresas madrileñas.',
-    keywords: ['agencia marketing digital Madrid', 'SEO Madrid', 'publicidad online Madrid', 'Google Ads Madrid', 'marketing digital empresas Madrid'],
-    canonical: '/agencia-marketingdigital-madrid',
-    schemaType: 'Service',
-    about: ['Agencia Marketing Digital Madrid', 'SEO Local Madrid', 'Publicidad Online Madrid', 'Marketing Empresas Madrid'],
-    mentions: ['Google Ads Madrid', 'Meta Ads', 'SEO Madrid', 'CRM Madrid', 'Marketing Local'],
-    inLanguage: 'es-ES',
-    category: 'solution',
-    additionalSchema: {
-      '@type': ['Service', 'LocalBusiness'],
-      'address': {
-        '@type': 'PostalAddress',
-        'addressLocality': 'Madrid',
-        'addressRegion': 'Madrid',
-        'addressCountry': 'ES'
-      },
-      'areaServed': {
-        '@type': 'City',
-        'name': 'Madrid'
-      },
-      'geo': {
-        '@type': 'GeoCoordinates',
-        'latitude': '40.4168',
-        'longitude': '-3.7038'
-      }
-    },
-    headings: {
-      h2Primary: '¿Por qué elegir nuestra agencia de marketing digital en Madrid?',
-      h2Secondary: [
-        'Servicios de SEO para empresas en Madrid',
-        'Campañas de Google Ads con resultados en Madrid',
-        'Marketing de contenidos localizado para el mercado madrileño'
-      ],
-      h3Strategic: [
-        'Posicionamiento SEO local en Madrid',
-        'Gestión de Google My Business Madrid',
-        'Publicidad digital geolocalizada Madrid'
-      ]
-    },
-    faqs: [
-      {
-        question: '¿Por qué elegir una agencia de marketing digital en Madrid?',
-        answer: 'Una agencia local como Hayas Marketing entiende el mercado madrileño, puede ofrecer reuniones presenciales y conoce las particularidades del negocio local en Madrid.'
-      },
-      {
-        question: '¿Qué servicios de marketing digital ofrecen en Madrid?',
-        answer: 'Ofrecemos SEO local, Google Ads, gestión de redes sociales, diseño web, CRM y automatización de marketing, todos adaptados al mercado de Madrid.'
-      },
-      {
-        question: '¿Cuánto tiempo toma posicionar en Google en Madrid?',
-        answer: 'El posicionamiento SEO local en Madrid puede mostrar primeros resultados entre 3-6 meses, dependiendo de la competencia y el sector específico.'
-      }
-    ]
   },
 
   '/soluciones/ia-marketing': {
