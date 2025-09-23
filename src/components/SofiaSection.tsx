@@ -13,7 +13,8 @@ const getPageMessage = (pathname: string) => {
     '/gestion-marketing': '¡Hola! ¿Dudas sobre la gestión de tu plan de marketing? Te asisto con estrategia, planificación y ejecución.',
     '/soluciones-ia': '¡Hola! ¿Interesado en IA para marketing? Te explico cómo implementar chatbots, automatización inteligente y más.',
     '/servicios/implantacion-crm': '¡Hola! ¿Necesitas ayuda con la implantación de CRM? Te guío en el proceso de configuración y optimización.',
-    '/es/agendar-reunion': '¡Hola! Perfecto que quieras agendar una reunión. Te ayudo con cualquier duda sobre nuestros servicios o el proceso de consultoría.'
+    '/es/agendar-reunion': '¡Hola! Perfecto que quieras agendar una reunión. Te ayudo con cualquier duda sobre nuestros servicios o el proceso de consultoría.',
+    '/es/contacto': '¡Hola! ¿Necesitas contactar con nosotros? Te ayudo con cualquier consulta sobre nuestros servicios o el proceso de trabajo.'
   };
   
   return messages[pathname] || '¡Hola! Soy SofÍA, tu asistente de IA de Hayas Marketing. ¿En qué puedo ayudarte?';
@@ -29,7 +30,8 @@ const getPageHelpMessage = (pathname: string) => {
     '/gestion-marketing': '¿Necesitas una estrategia de marketing integral?',
     '/soluciones-ia': '¿Quieres implementar IA en tu estrategia de marketing?',
     '/servicios/implantacion-crm': '¿Te ayudo con la configuración de tu CRM?',
-    '/es/agendar-reunion': '¿Tienes dudas antes de agendar? ¿Te ayudo a elegir el mejor horario o servicio?'
+    '/es/agendar-reunion': '¿Tienes dudas antes de agendar? ¿Te ayudo a elegir el mejor horario o servicio?',
+    '/es/contacto': '¿Necesitas información personalizada sobre nuestros servicios?'
   };
   
   return helpMessages[pathname] || '¿Te ayudo con alguna información sobre nuestros servicios?';
@@ -45,7 +47,8 @@ const SofiaWidget = () => {
     '/es/soluciones/impulsa-tu-marca',
     '/es/soluciones/conecta-con-tus-clientes', 
     '/es/soluciones/activa-tus-ventas',
-    '/es/agendar-reunion'
+    '/es/agendar-reunion',
+    '/es/contacto'
   ];
   
   const shouldRender = !isMobile && allowedPages.includes(location.pathname);
