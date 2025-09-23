@@ -56,7 +56,9 @@ const App = () => (
           <Route path="/es/servicios/diseno-web/alojamiento-mantenimiento" element={<PageSuspense><Pages.AlojamientoMantenimiento /></PageSuspense>} />
           <Route path="/es/servicios/seo-posicionamiento" element={<PageSuspense><Pages.SeoPositioning /></PageSuspense>} />
           <Route path="/es/servicios/seo-positioning" element={<PageSuspense><Pages.SeoPositioning /></PageSuspense>} />
-          <Route path="/es/soluciones/marketing-visibilidad" element={<PageSuspense><Pages.MarketingVisibilidad /></PageSuspense>} />
+           <Route path="/es/agencia-marketingdigital-madrid" element={<PageSuspense><Pages.MarketingVisibilidad /></PageSuspense>} />
+           {/* Redirect from legacy URL with trailing slash */}
+           <Route path="/es/agencia-marketingdigital-madrid/" element={<Navigate to="/es/agencia-marketingdigital-madrid" replace />} />
           <Route path="/es/soluciones/gestion-marketing" element={<Navigate to="/es/servicios/administracion-crm" replace />} />
           <Route path="/es/soluciones/captacion-leads" element={<PageSuspense><Pages.CaptacionLeadsClientes /></PageSuspense>} />
           <Route path="/es/kit-consulting" element={<PageSuspense><Pages.KitConsulting /></PageSuspense>} />
