@@ -12,7 +12,8 @@ const getPageMessage = (pathname: string) => {
     '/captacion-leads': '¡Hola! ¿Quieres captar más leads? Te ayudo con estrategias de generación y conversión de prospectos.',
     '/gestion-marketing': '¡Hola! ¿Dudas sobre la gestión de tu plan de marketing? Te asisto con estrategia, planificación y ejecución.',
     '/soluciones-ia': '¡Hola! ¿Interesado en IA para marketing? Te explico cómo implementar chatbots, automatización inteligente y más.',
-    '/servicios/implantacion-crm': '¡Hola! ¿Necesitas ayuda con la implantación de CRM? Te guío en el proceso de configuración y optimización.'
+    '/servicios/implantacion-crm': '¡Hola! ¿Necesitas ayuda con la implantación de CRM? Te guío en el proceso de configuración y optimización.',
+    '/es/agendar-reunion': '¡Hola! Perfecto que quieras agendar una reunión. Te ayudo con cualquier duda sobre nuestros servicios o el proceso de consultoría.'
   };
   
   return messages[pathname] || '¡Hola! Soy SofÍA, tu asistente de IA de Hayas Marketing. ¿En qué puedo ayudarte?';
@@ -27,7 +28,8 @@ const getPageHelpMessage = (pathname: string) => {
     '/captacion-leads': '¿Buscas generar más leads cualificados para tu negocio?',
     '/gestion-marketing': '¿Necesitas una estrategia de marketing integral?',
     '/soluciones-ia': '¿Quieres implementar IA en tu estrategia de marketing?',
-    '/servicios/implantacion-crm': '¿Te ayudo con la configuración de tu CRM?'
+    '/servicios/implantacion-crm': '¿Te ayudo con la configuración de tu CRM?',
+    '/es/agendar-reunion': '¿Tienes dudas antes de agendar? ¿Te ayudo a elegir el mejor horario o servicio?'
   };
   
   return helpMessages[pathname] || '¿Te ayudo con alguna información sobre nuestros servicios?';
@@ -42,7 +44,8 @@ const SofiaWidget = () => {
     '/es',
     '/es/soluciones/impulsa-tu-marca',
     '/es/soluciones/conecta-con-tus-clientes', 
-    '/es/soluciones/activa-tus-ventas'
+    '/es/soluciones/activa-tus-ventas',
+    '/es/agendar-reunion'
   ];
   
   const shouldRender = !isMobile && allowedPages.includes(location.pathname);
