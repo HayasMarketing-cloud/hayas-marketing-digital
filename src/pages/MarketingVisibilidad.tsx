@@ -8,6 +8,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import KitDigitalBanner from '@/components/KitDigitalBanner';
 import Seo from '@/components/Seo';
+import { getSEOData } from '@/data/seoData';
 
 import FAQSection from '@/components/FAQSection';
 import {
@@ -20,21 +21,23 @@ import {
 } from '@/components/ui/breadcrumb';
 
 const MarketingVisibilidad = () => {
+  const seoData = getSEOData('/agencia-marketingdigital-madrid');
+  
   return (
     <div id="top" className="min-h-screen bg-white">
       <Seo 
-        title="Marketing y Visibilidad | SEO, Contenidos y Campañas"
-        description="Estrategias completas de SEO, contenidos y campañas digitales para posicionar tu marca y generar clientes potenciales."
-        canonical="/soluciones/marketing-visibilidad"
-        structuredData={{
-          '@context': 'https://schema.org',
-          '@type': 'Service',
-          name: 'Marketing y Visibilidad',
-          serviceType: 'Servicios de Marketing Digital',
-          areaServed: 'ES',
-          provider: { '@type': 'Organization', name: 'Hayas Marketing' },
-          description: 'Estrategias completas de SEO, contenidos y campañas digitales para posicionar tu marca y generar clientes potenciales.'
-        }}
+        title={seoData?.title || "Agencia Marketing Digital Madrid | Hayas Marketing"}
+        description={seoData?.description || "Agencia especializada en marketing digital en Madrid. SEO, SEM, redes sociales y estrategias integrales para hacer crecer tu negocio."}
+        canonical={seoData?.canonical || "/agencia-marketingdigital-madrid"}
+        keywords={seoData?.keywords}
+        structuredData={seoData?.additionalSchema}
+        faqs={seoData?.faqs}
+        robots={seoData?.robots}
+        ogImage={seoData?.ogImage}
+        ogType={seoData?.ogType}
+        inLanguage={seoData?.inLanguage}
+        about={seoData?.about}
+        mentions={seoData?.mentions}
       />
       <Navigation />
       
@@ -51,7 +54,7 @@ const MarketingVisibilidad = () => {
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
-                  <BreadcrumbPage>Marketing y Visibilidad</BreadcrumbPage>
+                  <BreadcrumbPage>Agencia Marketing Digital Madrid</BreadcrumbPage>
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
@@ -73,10 +76,10 @@ const MarketingVisibilidad = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <Badge variant="outline" className="mb-4 text-hayas-600 border-hayas-200">
-                  Marketing y Visibilidad
+                  Agencia Marketing Digital Madrid
                 </Badge>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                  Aumenta tu <span className="text-gradient-primary">visibilidad digital</span> y atrae más clientes
+                  {seoData?.h1 || "Agencia Marketing Digital en Madrid | Expertos en Crecimiento Online"}
                 </h1>
                 <p className="text-xl text-gray-700 mb-8 leading-relaxed">
                   Estrategias completas de SEO, contenidos y campañas digitales para posicionar tu marca 
