@@ -96,7 +96,7 @@ const ReviewsSection = () => {
             <div className="flex flex-col sm:flex-row justify-center gap-4 pt-6 border-t">
               <Button asChild variant="default" className="gap-2 bg-hayas-primary hover:bg-hayas-primary/90">
                 <a 
-                  href="https://www.google.com/maps/dir/?api=1&destination=C.+de+Manzanares,+4,+Arganzuela,+28005+Madrid" 
+                  href="https://www.google.es/maps/dir/?api=1&destination=C.+de+Manzanares,+4,+Arganzuela,+28005+Madrid" 
                   target="_blank" 
                   rel="noopener noreferrer"
                 >
