@@ -47,6 +47,11 @@ const Nosotros = () => {
     role: "Desarrollo web y especialista en CRM",
     description: "Experta en desarrollo web y gestión de sistemas CRM, especializada en crear soluciones digitales optimizadas y automatizaciones eficientes.",
     image: "/lovable-uploads/26de1124-c82f-4741-800d-030e305eb147.png"
+  }, {
+    name: "Tomás White",
+    role: "CRM Manager",
+    description: "Especialista en implementación y gestión de HubSpot. Experto en automatización de procesos comerciales, lead scoring y optimización de customer journey para maximizar conversiones.",
+    image: "/lovable-uploads/foto_tomas.jpg"
   }];
   const values = [{
     icon: <Lightbulb className="h-8 w-8 text-white" />,
