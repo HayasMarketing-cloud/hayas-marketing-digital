@@ -30,7 +30,7 @@ const SolicitarConsulta = () => {
               <BreadcrumbList>
                 <BreadcrumbItem>
                   <BreadcrumbLink asChild>
-                    <Link to="/">Inicio</Link>
+                    <Link to="/es">Inicio</Link>
                   </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
@@ -192,10 +192,10 @@ const SolicitarConsulta = () => {
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
                 <h2 className="text-3xl md:text-5xl font-bold mb-10 leading-relaxed">
-                  ¿Qué obtienes en tu <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">consulta gratuita</span>?
+                  ¿Qué te llevas en tu <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">sesión gratuita</span>?
                 </h2>
                 <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-                  Una sesión estratégica enfocada en impulsar el crecimiento de tu negocio
+                  Una conversación estratégica, sin compromiso, donde analizamos tu negocio y te orientamos con criterio profesional.
                 </p>
               </div>
               
@@ -203,18 +203,18 @@ const SolicitarConsulta = () => {
                 {[
                   {
                     icon: <Zap className="h-12 w-12 text-primary" />,
-                    title: "Diagnóstico completo",
-                    description: "Analizamos tu situación actual, competencia y oportunidades de mercado para identificar las palancas de crecimiento más efectivas."
+                    title: "Visión externa clara",
+                    description: "Te daremos feedback honesto sobre tu situación digital actual: qué funciona, qué frena tu crecimiento y dónde hay margen de mejora."
                   },
                   {
                     icon: <CheckCircle className="h-12 w-12 text-accent" />,
-                    title: "Estrategia personalizada",
-                    description: "Diseñamos una hoja de ruta específica para tu negocio, con acciones priorizadas según tu presupuesto y objetivos."
+                    title: "Ideas accionables",
+                    description: "Saldrás con 2 o 3 propuestas concretas que podrías aplicar para mejorar tu visibilidad, captar más clientes o automatizar tareas."
                   },
                   {
                     icon: <Calendar className="h-12 w-12 text-primary" />,
-                    title: "Plan de implementación",
-                    description: "Te entregamos un cronograma detallado con los próximos pasos, plazos realistas y métricas de seguimiento."
+                    title: "Próximo paso sugerido",
+                    description: "No te venderemos humo. Te diremos qué tendría más sentido para ti, según tu presupuesto, objetivos y momento actual."
                   }
                 ].map((benefit, index) => (
                   <Card key={index} className="group border-2 border-muted/20 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-primary/20 bg-card/50 backdrop-blur-sm">
