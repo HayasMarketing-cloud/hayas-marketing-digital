@@ -31,9 +31,6 @@ const SuccessCasesSection: React.FC<SuccessCasesSectionProps> = ({
     if (url.startsWith('http://') || url.startsWith('https://')) {
       return url;
     }
-    if (url.startsWith('/lovable-uploads/')) {
-      return url.replace('/lovable-uploads/', '/');
-    }
     if (!url.startsWith('/')) {
       return `/${url}`;
     }
