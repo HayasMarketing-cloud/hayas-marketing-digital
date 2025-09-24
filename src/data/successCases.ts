@@ -141,7 +141,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop",
     tags: {
       services: ["implantacion-crm", "automatizacion-procesos-ventas"],
-      industries: ["logistica"],
+      industries: ["logistica", "traduccion"],
       tools: ["hubspot"]
     }
   },
@@ -246,7 +246,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     industry: "Traductora profesional (FR-ES, EN, DE)",
     service: "Marca personal y visibilidad en LinkedIn",
     link: "/es/casos-exito/eva-champion",
-    image: "/lovable-uploads/2333b7c8-3d18-4b48-9ea7-b712dde6be9c.png",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2070&auto=format&fit=crop",
     tags: {
       services: ["gestion-redes-sociales"],
       industries: ["traduccion"],
@@ -570,10 +570,10 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     industry: "Consultora tecnológica e innovación digital",
     service: "Branding corporativo, web y posicionamiento",
     link: "/es/casos-exito/wideum",
-    image: "/lovable-uploads/wideum-case-study.jpg",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop",
     tags: {
       services: ["creacion-marca", "diseno-web", "seo-positioning"],
-      industries: ["tecnologia"],
+      industries: ["tecnologia", "traduccion"],
       tools: []
     }
   },
