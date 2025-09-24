@@ -417,7 +417,7 @@ const LocalizacionContenidos = () => {
         title="¿Listo para expandir tu negocio internacionalmente?"
         subtitle="Solicita una consulta gratuita y descubre cómo la localización profesional puede multiplicar tu alcance y conversiones en mercados internacionales"
         buttonText="Solicitar consulta gratuita"
-        buttonLink="/solicitar-consulta"
+        buttonLink="/es/solicitar-consulta"
       />
 
       {/* FAQ Section */}
