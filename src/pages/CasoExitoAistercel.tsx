@@ -1,5 +1,6 @@
 import React from 'react';
 import CaseStudyTemplate from '@/components/CaseStudyTemplate';
+import { successCaseImages } from '@/data/successCaseImages';
 import { Building2, Globe, Target, Wrench } from 'lucide-react';
 
 const CasoExitoAistercel: React.FC = () => {
@@ -8,7 +9,7 @@ const CasoExitoAistercel: React.FC = () => {
     pageTitle: 'Caso de éxito Aistercel | CRM y rediseño web',
     pageDescription: 'Implantación de CRM HubSpot y rediseño web para Aistercel: presencia digital moderna y gestión comercial centralizada.',
     canonical: '/casos-exito/aistercel',
-    ogImage: '/lovable-uploads/0f26012e-fbd2-4dcb-a1a8-3bdd380a0c10.png',
+    ogImage: successCaseImages.aistercel,
     structuredData: {
       '@context': 'https://schema.org',
       '@type': 'CaseStudy',
@@ -33,7 +34,7 @@ const CasoExitoAistercel: React.FC = () => {
     subtitle: 'Digitalizando la gestión y renovando la presencia online para una empresa de aislamiento industrial y mantenimiento',
     badges: ['Aislamiento Industrial', 'CRM HubSpot', 'Rediseño Web'],
     websiteUrl: 'https://aistercel.es',
-    featuredImage: '/lovable-uploads/0f26012e-fbd2-4dcb-a1a8-3bdd380a0c10.png',
+    featuredImage: successCaseImages.aistercel,
     featuredImageAlt: 'Aistercel - Empresa especializada en aislamiento industrial y mantenimiento',
 
     // Content sections
