@@ -34,7 +34,7 @@ export const UniversalBreadcrumbs: React.FC<UniversalBreadcrumbsProps> = ({
     
     const pathSegments = location.pathname.split('/').filter(Boolean);
     const breadcrumbs: BreadcrumbItem[] = [
-      { label: 'Inicio', href: '/' }
+      { label: 'Inicio', href: '/es' }
     ];
 
     // Build breadcrumbs from path segments

@@ -162,9 +162,9 @@ const KitDigitalRedesSociales = () => {
       <div className="bg-muted/30 py-4 mt-20">
         <div className="container mx-auto px-4">
           <nav className="text-sm text-gray-600">
-            <Link to="/" className="hover:text-primary">Inicio</Link>
+            <Link to="/es" className="hover:text-primary">Inicio</Link>
             <span className="mx-2">/</span>
-            <Link to="/kit-digital" className="hover:text-primary">Kit Digital</Link>
+            <Link to="/es/kit-digital" className="hover:text-primary">Kit Digital</Link>
             <span className="mx-2">/</span>
             <span className="text-gray-900">Gestión de Red Social</span>
           </nav>
