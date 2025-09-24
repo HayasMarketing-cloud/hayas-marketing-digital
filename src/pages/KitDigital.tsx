@@ -55,7 +55,7 @@ const KitDigital = () => {
       description: "Web profesional o e-commerce completo para que tu negocio tenga presencia digital de calidad.",
       activities: ["Diseño responsive", "Optimización de velocidad", "Integración de pagos", "Panel de administración"],
       funding: "Hasta 2.000 €",
-      link: "/kit-digital/presencia-basica-internet"
+      link: "/es/kit-digital/presencia-basica-internet"
     },
     {
       icon: <TrendingUp className="h-8 w-8 text-turquesa-600" />,
@@ -64,7 +64,7 @@ const KitDigital = () => {
       description: "Posicionamiento en Google para que tus clientes potenciales te encuentren fácilmente.",
       activities: ["Análisis de palabras clave", "Optimización técnica", "Contenido SEO", "Seguimiento de rankings"],
       funding: "Hasta 2.000 €",
-      link: "/kit-digital/presencia-avanzada-seo"
+      link: "/es/kit-digital/presencia-avanzada-seo"
     },
     {
       icon: <Smartphone className="h-8 w-8 text-hayas-600" />,
@@ -73,7 +73,7 @@ const KitDigital = () => {
       description: "Estrategia y gestión profesional de tus redes sociales para conectar con tu audiencia.",
       activities: ["Estrategia de contenidos", "Diseño gráfico", "Programación de posts", "Análisis de métricas"],
       funding: "Hasta 2.000 €",
-      link: "/kit-digital/gestion-red-social"
+      link: "/es/kit-digital/gestion-red-social"
     },
     {
       icon: <Database className="h-8 w-8 text-turquesa-600" />,
@@ -82,7 +82,7 @@ const KitDigital = () => {
       description: "Implementación y configuración de CRM profesional para optimizar tus procesos de ventas y marketing.",
       activities: ["Creación de pipeline de ventas", "Configuración email marketing y campañas", "Diseño de funnel de automatización", "Setup CRM (GoHighLevel o HubSpot)"],
       funding: "Hasta 2.000 €",
-      link: "/kit-digital/gestion-clientes-crm"
+      link: "/es/kit-digital/gestion-clientes-crm"
     }
   ];
 
