@@ -76,7 +76,7 @@ const SuccessCasesSection: React.FC<SuccessCasesSectionProps> = ({
           {displayCases.map((project, index) => (
             <Link key={index} to={project.link}>
               <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden cursor-pointer h-full">
-                <div className="aspect-square overflow-hidden">
+                <div className="aspect-square overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
                   <img 
                     src={project.image} 
                     alt={project.name}
@@ -84,6 +84,11 @@ const SuccessCasesSection: React.FC<SuccessCasesSectionProps> = ({
                     height={300}
                     loading="lazy"
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = `https://images.unsplash.com/photo-1560472354-b33ff0c44a43?q=80&w=400&h=400&auto=format&fit=crop&ixlib=rb-4.0.3`;
+                      target.onerror = null; // Prevent infinite loop
+                    }}
                   />
                 </div>
                 <CardContent className="p-4">
