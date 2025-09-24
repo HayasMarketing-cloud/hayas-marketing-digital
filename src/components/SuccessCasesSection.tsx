@@ -26,6 +26,19 @@ const SuccessCasesSection: React.FC<SuccessCasesSectionProps> = ({
   className = "",
   id
 }) => {
+  // Helper function to normalize image URLs
+  const normalizeImageUrl = (url: string): string => {
+    if (url.startsWith('http://') || url.startsWith('https://')) {
+      return url;
+    }
+    if (url.startsWith('/lovable-uploads/')) {
+      return url.replace('/lovable-uploads/', '/');
+    }
+    if (!url.startsWith('/')) {
+      return `/${url}`;
+    }
+    return url;
+  };
   // Filter cases based on specific names (takes precedence) or tags
   const filteredCases = specificCases.length > 0 
     ? ALL_SUCCESS_CASES.filter(case_ => specificCases.includes(case_.name))
@@ -76,18 +89,16 @@ const SuccessCasesSection: React.FC<SuccessCasesSectionProps> = ({
           {displayCases.map((project, index) => (
             <Link key={index} to={project.link}>
               <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden cursor-pointer h-full">
-                <div className="aspect-square overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
+                <div className="aspect-square overflow-hidden">
                   <img 
-                    src={project.image} 
+                    src={normalizeImageUrl(project.image)} 
                     alt={project.name}
-                    width={300}
-                    height={300}
-                    loading="lazy"
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.src = `https://images.unsplash.com/photo-1560472354-b33ff0c44a43?q=80&w=400&h=400&auto=format&fit=crop&ixlib=rb-4.0.3`;
-                      target.onerror = null; // Prevent infinite loop
+                      target.onerror = null;
+                      console.warn(`Failed to load image for ${project.name}: ${project.image}`);
                     }}
                   />
                 </div>
