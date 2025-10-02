@@ -8,14 +8,14 @@ const CasoExitoIVirgenExtra = () => {
     <CaseStudyTemplate
       pageTitle="Caso de Éxito: I Virgen Extra | Consultoría Industrial AOVE"
       pageDescription="Transformando la consultoría industrial en una marca de autoridad en producción de aceite de oliva virgen extra (AOVE)."
-      canonical="/casos-exito/i-virgen-extra"
+      canonical="/es/casos-exito"
       ogImage={successCaseImages.iVirgenExtra}
       structuredData={{
         '@context': 'https://schema.org',
         '@type': 'CaseStudy',
         headline: 'Caso de Éxito: I Virgen Extra | Consultoría Industrial AOVE',
         about: 'Branding técnico y desarrollo web para consultoría especializada en aceite de oliva',
-        url: '/casos-exito/i-virgen-extra',
+        url: '/es/casos-exito/i-virgen-extra',
         inLanguage: 'es',
         publisher: { '@type': 'Organization', name: 'Hayas Marketing' }
       }}

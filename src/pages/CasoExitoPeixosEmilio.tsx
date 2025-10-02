@@ -8,14 +8,14 @@ const CasoExitoPeixosEmilio = () => {
     <CaseStudyTemplate
       pageTitle="Caso de éxito Peixos Emilio | Ecommerce B2B Menorca"
       pageDescription="Ecommerce B2B y gestión de pedidos para hoteles y restaurantes: digitalización de Peixos Emilio en Menorca."
-      canonical="/casos-exito/peixos-emilio"
+      canonical="/es/casos-exito"
       ogImage={successCaseImages.peixosEmilio}
       structuredData={{
         "@context": "https://schema.org",
         "@type": "CaseStudy",
         headline: "Caso de Éxito — Peixos Emilio: Digitalizando una tradición pesquera en Menorca",
         about: "Ecommerce B2B, gestión de pedidos y optimización de experiencia de compra",
-        url: "/casos-exito/peixos-emilio",
+        url: '/es/casos-exito/peixos-emilio',
         inLanguage: "es",
         author: { "@type": "Organization", name: "Hayas Marketing" },
         publisher: {

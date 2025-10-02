@@ -8,14 +8,14 @@ const CasoExitoAlmaCruceros = () => {
     <CaseStudyTemplate
       pageTitle="Caso de Éxito Alma Cruceros | Campañas Google Ads"
       pageDescription="Estrategia publicitaria para aumentar reservas y visibilidad online mediante campañas segmentadas en Google Ads."
-      canonical="/casos-exito/alma-cruceros"
+      canonical="/es/casos-exito"
       ogImage={successCaseImages.almaCruceros}
       structuredData={{
         "@context": "https://schema.org",
         "@type": "CaseStudy",
         headline: "Caso de Éxito — Alma Cruceros: Navegando hacia más clientes con Google Ads",
         about: "Campañas en Google Ads y optimización continua",
-        url: "/casos-exito/alma-cruceros",
+        url: "/es/casos-exito/alma-cruceros",
         inLanguage: "es",
         author: { "@type": "Organization", name: "Hayas Marketing" },
         publisher: {

@@ -7,14 +7,14 @@ const CasoExitoAECOC = () => {
     <CaseStudyTemplate
       pageTitle="Caso de Éxito: AECOC | CRM y Marketing Digital para Educación"
       pageDescription="Implementamos CRM y estrategia digital para AECOC, conectando estudiantes con grandes empresas del sector consumo mediante un proyecto social innovador."
-      canonical="/casos-exito/aecoc"
+      canonical="/es/casos-exito"
       ogImage="/lovable-uploads/34af75c9-4cb5-4537-853e-73361c647202.png"
       structuredData={{
         "@context": "https://schema.org",
         "@type": "CaseStudy",
         headline: "Caso de Éxito: AECOC | CRM y Marketing Digital para Educación",
         about: "Proyecto social para conectar estudiantes universitarios y de FP con empresas del sector consumo",
-        url: "/casos-exito/aecoc",
+        url: "/es/casos-exito/aecoc",
         inLanguage: "es",
         publisher: { "@type": "Organization", name: "Hayas Marketing" },
       }}

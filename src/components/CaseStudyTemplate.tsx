@@ -13,7 +13,7 @@ import {
   BreadcrumbSeparator,
   BreadcrumbPage,
 } from '@/components/ui/breadcrumb';
-import Seo from '@/components/Seo';
+import EnhancedSEO from '@/components/EnhancedSEO';
 import { CheckCircle, ExternalLink, LucideIcon } from 'lucide-react';
 
 interface Solution {
@@ -85,12 +85,14 @@ const CaseStudyTemplate: React.FC<CaseStudyProps> = ({
 }) => {
   return (
     <div className="min-h-screen bg-background">
-      <Seo
-        title={pageTitle}
-        description={pageDescription}
-        canonical={canonical}
-        ogImage={ogImage}
-        structuredData={structuredData}
+      <EnhancedSEO
+        customSEO={{
+          title: pageTitle,
+          description: pageDescription,
+          canonical: canonical,
+          ogImage: ogImage,
+          additionalSchema: structuredData
+        }}
       />
       <Navigation />
       

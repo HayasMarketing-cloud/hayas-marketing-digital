@@ -8,14 +8,14 @@ const CasoExitoPlazaEstacion: React.FC = () => {
     <CaseStudyTemplate
       pageTitle="Caso de éxito Plaza de la Estación | Redes sociales y web"
       pageDescription="Estrategia, contenido, campañas y mantenimiento web para el Centro Comercial Plaza de la Estación (Fuenlabrada)."
-      canonical="/casos-exito/plaza-de-la-estacion"
+      canonical="/es/casos-exito"
       ogImage={successCaseImages.plazaEstacion}
       structuredData={{
         "@context": "https://schema.org",
         "@type": "CaseStudy",
         headline: "Caso de Éxito — Centro Comercial Plaza de la Estación: Conectando con su comunidad a través de redes sociales",
         about: "Estrategia de contenidos, campañas creativas, coordinación de canales y mantenimiento web",
-        url: "/casos-exito/plaza-de-la-estacion",
+        url: '/es/casos-exito/plaza-de-la-estacion',
         inLanguage: "es",
         author: { "@type": "Organization", name: "Hayas Marketing" },
         publisher: {

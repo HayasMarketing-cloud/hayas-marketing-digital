@@ -8,7 +8,7 @@ const CasoExitoWideum: React.FC = () => {
     <CaseStudyTemplate
       pageTitle="Caso de Éxito: Wideum - Transformación Digital Global | Hayas Marketing"
       pageDescription="Cómo ayudamos a Wideum, líder en videoasistencia remota industrial, a evolucionar de startup nacional a empresa multinacional con diseño web y localización a 8 idiomas."
-      canonical="https://www.hayasmarketing.com/casos-exito/wideum"
+      canonical="/es/casos-exito"
       ogImage={successCaseImages.wideum}
       structuredData={{
         "@context": "https://schema.org",

@@ -8,14 +8,14 @@ const CasoExitoFLAP: React.FC = () => {
     <CaseStudyTemplate
       pageTitle="Caso de éxito FLAP | Contenidos e Instagram"
       pageDescription="Estrategia de contenidos y producción audiovisual para Instagram."
-      canonical="/casos-exito/flap-articulos-peluqueria"
+      canonical="/es/casos-exito"
       ogImage={successCaseImages.flap}
       structuredData={{
         "@context": "https://schema.org",
         "@type": "CaseStudy",
         headline: "Caso de Éxito — FLAP Artículos de Peluquería: Impulsando una marca de belleza en redes sociales",
         about: "Estrategia de contenidos para Instagram, producción de Reels, optimización de perfil e interacción con la comunidad",
-        url: "/casos-exito/flap-articulos-peluqueria",
+        url: "/es/casos-exito/flap-articulos-peluqueria",
         inLanguage: "es",
         publisher: { "@type": "Organization", name: "Hayas Marketing" }
       }}

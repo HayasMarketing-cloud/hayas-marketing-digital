@@ -8,7 +8,7 @@ const CasoExitoConversaConsultores: React.FC = () => {
     <CaseStudyTemplate
       pageTitle="Caso de Éxito Conversa Consultores | Web profesional y SEO"
       pageDescription="Web profesional y SEO estratégico para Conversa Consultores: más visibilidad y leads cualificados."
-      canonical="/casos-exito/conversa-consultores"
+      canonical="/es/casos-exito"
       ogImage={successCaseImages.conversaConsultores}
       structuredData={{
         '@context': 'https://schema.org',

@@ -8,14 +8,14 @@ const CasoExitoJointsUp = () => {
     <CaseStudyTemplate
       pageTitle="Caso de Éxito: Joints'Up | Branding Médico Especializado"
       pageDescription="Creando una marca médica de confianza para cirujanos traumatólogos especializados en cirugía articular."
-      canonical="/casos-exito/jointsup"
+      canonical="/es/casos-exito"
       ogImage={successCaseImages.jointsUp}
       structuredData={{
         '@context': 'https://schema.org',
         '@type': 'CaseStudy',
         headline: 'Caso de Éxito: Joints\'Up | Branding Médico Especializado',
         about: 'Naming estratégico, branding médico y diseño web para cirujanos traumatólogos',
-        url: '/casos-exito/jointsup',
+        url: '/es/casos-exito/jointsup',
         inLanguage: 'es',
         publisher: { '@type': 'Organization', name: 'Hayas Marketing' }
       }}

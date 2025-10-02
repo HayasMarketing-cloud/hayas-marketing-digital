@@ -8,14 +8,14 @@ const CasoExitoOWOGame = () => {
     <CaseStudyTemplate
       pageTitle="Caso de Éxito OWO Game | CRM, SEO y Redes Sociales"
       pageDescription="CRM HubSpot, redes sociales y SEO para impulsar el crecimiento internacional de OWO Game."
-      canonical="/casos-exito/owo-game"
+      canonical="/es/casos-exito"
       ogImage={successCaseImages.owoGame}
       structuredData={{
         "@context": "https://schema.org",
         "@type": "CaseStudy",
         headline: "Caso de Éxito — OWO Game: Tecnología háptica y marketing para un crecimiento global",
         about: "Implantación de CRM, estrategia SEO y consultoría de redes sociales para startup de gaming inmersivo",
-        url: "/casos-exito/owo-game",
+        url: '/es/casos-exito/owo-game',
         inLanguage: "es",
         author: { "@type": "Organization", name: "Hayas Marketing" },
         publisher: {

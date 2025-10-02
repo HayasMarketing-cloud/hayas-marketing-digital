@@ -8,14 +8,14 @@ const CasoExitoPerisElectricidad = () => {
     <CaseStudyTemplate
       pageTitle="Caso de éxito Peris Electricidad | Web, CRM y SEO"
       pageDescription="Diseño web, CRM HubSpot y estrategia SEO para una empresa eléctrica con visión de futuro."
-      canonical="/casos-exito/peris-electricidad"
+      canonical="/es/casos-exito"
       ogImage={successCaseImages.perisElectricidad}
       structuredData={{
         "@context": "https://schema.org",
         "@type": "CaseStudy",
         headline: "Caso de Éxito — Peris Electricidad: Energía renovada para crecer en el entorno digital",
         about: "Diseño web responsive, implantación de CRM HubSpot, estrategia SEO e integración marketing-ventas",
-        url: "/casos-exito/peris-electricidad",
+        url: '/es/casos-exito/peris-electricidad',
         inLanguage: "es",
         author: { "@type": "Organization", name: "Hayas Marketing" },
         publisher: {

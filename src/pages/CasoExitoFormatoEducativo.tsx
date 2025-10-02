@@ -8,14 +8,14 @@ const CasoExitoFormatoEducativo = (): React.JSX.Element => {
     <CaseStudyTemplate
       pageTitle="Caso de Éxito Formato Educativo | CRM Educativo"
       pageDescription="Implementación y administración de CRM para digitalizar la gestión educativa de Formato Educativo, mejorando el seguimiento y la conversión."
-      canonical="/casos-exito/formato-educativo"
+      canonical="/es/casos-exito"
       ogImage={successCaseImages.formatoEducativo}
       structuredData={{
         '@context': 'https://schema.org',
         '@type': 'CaseStudy',
         name: 'Caso de Éxito — Formato Educativo: CRM que potencia tu gestión',
         description: 'Implementación y administración de CRM para digitalizar la gestión educativa de Formato Educativo, mejorando el seguimiento y la conversión.',
-        url: '/casos-exito/formato-educativo',
+        url: '/es/casos-exito/formato-educativo',
         inLanguage: 'es',
         about: {
           '@type': 'Organization',

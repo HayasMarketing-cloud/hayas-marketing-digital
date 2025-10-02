@@ -8,14 +8,14 @@ const CasoExitoSuministrosXSKD = () => {
     <CaseStudyTemplate
       pageTitle="Caso de Éxito: Suministros XS KD - Posicionamiento SEO Industrial"
       pageDescription="Descubre cómo ayudamos a Suministros XS KD a mejorar su posicionamiento SEO y presencia digital en el sector industrial retail."
-      canonical="/casos-exito/suministros-xs-kd"
+      canonical="/es/casos-exito"
       ogImage={successCaseImages.suministrosXSKD}
       structuredData={{
         "@context": "https://schema.org",
         "@type": "CaseStudy",
         headline: "Caso de Éxito — Suministros XS KD: Posicionamiento SEO y presencia digital especializada",
         about: "Posicionamiento SEO, mejora de visibilidad online y optimización para el sector industrial",
-        url: "/casos-exito/suministros-xs-kd",
+        url: '/es/casos-exito/suministros-xs-kd',
         inLanguage: "es",
         author: { "@type": "Organization", name: "Hayas Marketing" },
         publisher: {

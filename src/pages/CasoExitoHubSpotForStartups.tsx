@@ -8,14 +8,14 @@ const CasoExitoHubSpotForStartups: React.FC = () => {
     <CaseStudyTemplate
       pageTitle="Caso éxito HubSpot for Startups | Inbound"
       pageDescription="Campaña de inbound con casos de éxito para impulsar la visibilidad de startups en su web."
-      canonical="/casos-exito/hubspot-for-startups"
+      canonical="/es/casos-exito"
       ogImage={successCaseImages.hubSpotForStartups}
       structuredData={{
         "@context": "https://schema.org",
         "@type": "CaseStudy",
         headline: "Caso de Éxito — HubSpot for Startups: Historias reales para inspirar el crecimiento",
         about: "Cuestionarios personalizados, entrevistas, assets visuales, redacción SEO y publicación web",
-        url: "/casos-exito/hubspot-for-startups",
+        url: '/es/casos-exito/hubspot-for-startups',
         inLanguage: "es",
         publisher: { "@type": "Organization", name: "Hayas Marketing" }
       }}

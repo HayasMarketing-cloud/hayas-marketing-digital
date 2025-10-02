@@ -8,14 +8,14 @@ const CasoExitoRivasCentro: React.FC = () => {
     <CaseStudyTemplate
       pageTitle="Caso de éxito Rivas Centro | Estrategia digital y web"
       pageDescription="Contenido, campañas creativas y mantenimiento web para Rivas Centro (Rivas-Vaciamadrid)."
-      canonical="/casos-exito/rivas-centro"
+      canonical="/es/casos-exito"
       ogImage={successCaseImages.rivasCentro}
       structuredData={{
         "@context": "https://schema.org",
         "@type": "CaseStudy",
         headline: "Caso de Éxito — Rivas Centro: Estrategia digital y mantenimiento web para un centro comercial urbano",
         about: "Estrategia y plan de contenidos, campañas creativas, optimización de comunicación online y mantenimiento web",
-        url: "/casos-exito/rivas-centro",
+        url: '/es/casos-exito/rivas-centro',
         inLanguage: "es",
         author: { "@type": "Organization", name: "Hayas Marketing" },
         publisher: {

@@ -8,7 +8,7 @@ const CasoExitoHikvision: React.FC = () => {
     <CaseStudyTemplate
       pageTitle="Caso de Éxito Hikvision | Landing B2B para Smart Cities"
       pageDescription="Landing page optimizada para inscripciones en evento de Smart Cities: diseño, copy y formulario de registro."
-      canonical="/casos-exito/hikvision"
+      canonical="/es/casos-exito"
       ogImage={successCaseImages.hikvision}
       structuredData={{
         '@context': 'https://schema.org',
@@ -16,7 +16,7 @@ const CasoExitoHikvision: React.FC = () => {
         headline: 'Caso de Éxito — Hikvision: Captando asistentes para un evento de Smart Cities',
         about: 'Landing page B2B optimizada para registro de participantes en evento tecnológico',
         author: { '@type': 'Organization', name: 'Hayas Marketing' },
-        url: '/casos-exito/hikvision',
+        url: '/es/casos-exito/hikvision',
       }}
       companyName="Hikvision"
       subtitle="Captando asistentes para un evento de Smart Cities"

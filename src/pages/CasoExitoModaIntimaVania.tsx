@@ -8,7 +8,7 @@ const CasoExitoModaIntimaVania: React.FC = () => {
     <CaseStudyTemplate
       pageTitle="Caso de Éxito Moda Íntima Vania | CRM HubSpot + Redes Sociales"
       pageDescription="De la boutique al CRM: uniendo redes sociales y gestión de clientes para una marca de moda íntima."
-      canonical="/casos-exito/moda-intima-vania"
+      canonical="/es/casos-exito"
       ogImage={successCaseImages.modaIntimaVania}
       structuredData={{
         '@context': 'https://schema.org',
@@ -16,7 +16,7 @@ const CasoExitoModaIntimaVania: React.FC = () => {
         headline: 'Caso de Éxito — Moda Íntima Vania: Estrategia digital para potenciar la experiencia de compra',
         about: 'Consultoría en redes sociales e implantación de CRM HubSpot',
         author: { '@type': 'Organization', name: 'Hayas Marketing' },
-        url: '/casos-exito/moda-intima-vania'
+        url: '/es/casos-exito/moda-intima-vania'
       }}
       companyName="Moda Íntima Vania"
       subtitle="De la boutique al CRM: uniendo redes sociales y gestión de clientes para una marca de moda íntima con atención personalizada"

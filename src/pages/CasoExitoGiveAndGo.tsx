@@ -8,7 +8,7 @@ const CasoExitoGiveAndGo: React.FC = () => {
     <CaseStudyTemplate
       pageTitle="Caso de Éxito Give and Go | Web con ecommerce para eventos"
       pageDescription="Diseño web con ecommerce para gestionar inscripciones y mejorar la conversión en eventos deportivos."
-      canonical="/casos-exito/give-and-go"
+      canonical="/es/casos-exito"
       ogImage={successCaseImages.giveAndGo}
       structuredData={{
         '@context': 'https://schema.org',
@@ -16,7 +16,7 @@ const CasoExitoGiveAndGo: React.FC = () => {
         headline: 'Caso de Éxito — Give and Go: Digitalizando la gestión de eventos deportivos',
         about: 'Diseño web personalizado con ecommerce y optimización UX para agencia de baloncesto',
         author: { '@type': 'Organization', name: 'Hayas Marketing' },
-        url: '/casos-exito/give-and-go',
+        url: '/es/casos-exito/give-and-go',
       }}
       companyName="Give and Go"
       subtitle="Digitalizando la gestión de eventos deportivos"

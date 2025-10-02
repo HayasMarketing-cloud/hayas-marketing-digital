@@ -8,14 +8,14 @@ const CasoExitoTranslateWithStyle = () => {
     <CaseStudyTemplate
       pageTitle="Caso de Éxito: Translate With Style | Elegancia Lingüística"
       pageDescription="Posicionando una traductora profesional como referente en marketing y moda internacional con branding sofisticado y estrategia premium."
-      canonical="/casos-exito/translate-with-style"
+      canonical="/es/casos-exito"
       ogImage={successCaseImages.translateWithStyle}
       structuredData={{
         '@context': 'https://schema.org',
         '@type': 'CaseStudy',
         headline: 'Caso de Éxito: Translate With Style | Elegancia Lingüística',
         about: 'Branding sofisticado y posicionamiento premium para traductora especializada en marketing y moda',
-        url: '/casos-exito/translate-with-style',
+        url: '/es/casos-exito/translate-with-style',
         inLanguage: 'es',
         author: { '@type': 'Organization', name: 'Hayas Marketing' },
         publisher: {

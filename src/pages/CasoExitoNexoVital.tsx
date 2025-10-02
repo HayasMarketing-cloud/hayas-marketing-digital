@@ -8,14 +8,14 @@ const CasoExitoNexoVital = () => {
     <CaseStudyTemplate
       pageTitle="Caso de Éxito: Nexo Vital | Branding Salud Integrativa"
       pageDescription="Transformamos una consulta especializada en microbiota en una marca de referencia en salud integrativa con identidad profesional y estrategia digital."
-      canonical="/casos-exito/nexo-vital"
+      canonical="/es/casos-exito"
       ogImage={successCaseImages.nexoVital}
       structuredData={{
         "@context": "https://schema.org",
         "@type": "CaseStudy",
         headline: "Caso de Éxito: Nexo Vital | Branding Salud Integrativa",
         about: "Branding y desarrollo web para consulta especializada en salud integrativa y microbiota",
-        url: "/casos-exito/nexo-vital",
+        url: '/es/casos-exito/nexo-vital',
         inLanguage: "es",
         author: { "@type": "Organization", name: "Hayas Marketing" },
         publisher: {

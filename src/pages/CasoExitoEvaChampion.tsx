@@ -8,7 +8,7 @@ const CasoExitoEvaChampion: React.FC = () => {
     <CaseStudyTemplate
       pageTitle="Caso de Éxito Eva Champion | Marca personal y LinkedIn"
       pageDescription="Marca personal y estrategia en LinkedIn para visibilidad internacional de una traductora profesional especializada en francés, inglés y alemán."
-      canonical="/casos-exito/eva-champion"
+      canonical="/es/casos-exito"
       ogImage={successCaseImages.evaChampion}
       structuredData={{
         '@context': 'https://schema.org',
@@ -16,7 +16,7 @@ const CasoExitoEvaChampion: React.FC = () => {
         headline: 'Caso de Éxito — Eva Champion: Marca personal y visibilidad internacional',
         about: 'Marca personal, posicionamiento en LinkedIn y plan de contenidos internacional',
         author: { '@type': 'Organization', name: 'Hayas Marketing' },
-        url: '/casos-exito/eva-champion',
+        url: '/es/casos-exito/eva-champion',
         inLanguage: 'es'
       }}
       companyName="Eva Champion"

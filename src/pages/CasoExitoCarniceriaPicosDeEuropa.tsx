@@ -8,14 +8,14 @@ const CasoExitoCarniceriaPicosDeEuropa: React.FC = () => {
     <CaseStudyTemplate
       pageTitle="Caso de éxito Carnicería Picos de Europa | Instagram y contenidos"
       pageDescription="Estrategia y gestión de Instagram para acercar un producto de calidad a su comunidad."
-      canonical="/casos-exito/carniceria-picos-de-europa"
+      canonical="/es/casos-exito"
       ogImage={successCaseImages.carniceriaPicosDeEuropa}
       structuredData={{
         "@context": "https://schema.org",
         "@type": "CaseStudy",
         headline: "Caso de Éxito — Carnicería Picos de Europa: Potenciando la tradición cárnica en redes sociales",
         about: "Estrategia de contenidos en Instagram, gestión de publicaciones, optimización de perfil e interacción con la comunidad",
-        url: "/casos-exito/carniceria-picos-de-europa",
+        url: "/es/casos-exito/carniceria-picos-de-europa",
         inLanguage: "es",
         publisher: { "@type": "Organization", name: "Hayas Marketing" }
       }}

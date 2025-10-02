@@ -8,14 +8,14 @@ const CasoExitoInboundStudents = () => {
     <CaseStudyTemplate
       pageTitle="Caso de Éxito: Inbound Students | Transformación Digital Educativa"
       pageDescription="Desarrollamos estrategia digital integral para Inbound Students, incluyendo diseño web responsive y automatización para digitalizar servicios educativos."
-      canonical="/casos-exito/inbound-students"
+      canonical="/es/casos-exito"
       ogImage={successCaseImages.inboundStudents}
       structuredData={{
         "@context": "https://schema.org",
         "@type": "CaseStudy",
         headline: "Caso de Éxito: Inbound Students | Transformación Digital Educativa",
         about: "Digitalización de servicios educativos con estrategia digital, diseño web y automatización",
-        url: "/casos-exito/inbound-students",
+        url: '/es/casos-exito/inbound-students',
         inLanguage: "es",
         author: { "@type": "Organization", name: "Hayas Marketing" },
         publisher: {

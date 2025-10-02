@@ -8,14 +8,14 @@ const CasoExitoLualca: React.FC = () => {
     <CaseStudyTemplate
       pageTitle="Caso de éxito Lualca | Rediseño, hosting y mantenimiento"
       pageDescription="Rediseño, alojamiento y mantenimiento web para Lualca: mejor presencia online y experiencia de usuario."
-      canonical="/casos-exito/lualca"
+      canonical="/es/casos-exito"
       ogImage={successCaseImages.lualca}
       structuredData={{
         "@context": "https://schema.org",
         "@type": "CaseStudy",
         headline: "Caso de Éxito — Lualca: Renovando la imagen digital de una empresa líder en su sector",
         about: "Rediseño web, alojamiento, mantenimiento, UX y refuerzo visual",
-        url: "/casos-exito/lualca",
+        url: "/es/casos-exito/lualca",
         inLanguage: "es",
         publisher: { "@type": "Organization", name: "Hayas Marketing" }
       }}

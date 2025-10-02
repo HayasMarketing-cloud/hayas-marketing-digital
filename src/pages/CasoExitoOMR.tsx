@@ -7,14 +7,14 @@ const CasoExitoOMR = (): React.JSX.Element => {
     <CaseStudyTemplate
       pageTitle="Caso de Éxito: OMR | Diseño web y mantenimiento"
       pageDescription="Rediseñamos la web de OMR y gestionamos su alojamiento/mantenimiento para mejorar captación y rendimiento."
-      canonical="/casos-exito/omr"
+      canonical="/es/casos-exito"
       ogImage={successCaseImages.omr}
       structuredData={{
         '@context': 'https://schema.org',
         '@type': 'CaseStudy',
         name: 'Caso de Éxito — OMR: Diseño web para un transporte a medida',
         description: 'Diseño web y alojamiento/mantenimiento para OMR, modernizando su presencia digital y asegurando rendimiento y disponibilidad.',
-        url: '/casos-exito/omr',
+        url: '/es/casos-exito/omr',
         inLanguage: 'es',
         about: {
           '@type': 'Organization',

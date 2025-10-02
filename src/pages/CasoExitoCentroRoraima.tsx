@@ -8,14 +8,14 @@ const CasoExitoCentroRoraima = () => {
     <CaseStudyTemplate
       pageTitle="Caso de Éxito: Centro Roraima | Branding Médico Salud Mental"
       pageDescription="Desarrollamos branding médico integral para Centro Roraima, posicionándolo como referente en atención psiquiátrica y psicológica con enfoque multidisciplinario."
-      canonical="/casos-exito/centro-roraima"
+      canonical="/es/casos-exito"
       ogImage={successCaseImages.centroRoraima}
       structuredData={{
         "@context": "https://schema.org",
         "@type": "CaseStudy",
         headline: "Caso de Éxito: Centro Roraima | Branding Médico Salud Mental",
         about: "Branding médico y diseño web para centro de salud mental especializado",
-        url: "/casos-exito/centro-roraima",
+        url: "/es/casos-exito/centro-roraima",
         inLanguage: "es",
         publisher: { "@type": "Organization", name: "Hayas Marketing" }
       }}

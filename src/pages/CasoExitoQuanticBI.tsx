@@ -8,14 +8,14 @@ const CasoExitoQuanticBI: React.FC = () => {
     <CaseStudyTemplate
       pageTitle="Caso de éxito QuanticBI | CRM para consultora de datos"
       pageDescription="Implantación de CRM HubSpot y automatizaciones para QuanticBI: gestión comercial centralizada y visibilidad en tiempo real."
-      canonical="/casos-exito/quanticbi"
+      canonical="/es/casos-exito"
       ogImage={successCaseImages.quanticBI}
       structuredData={{
         "@context": "https://schema.org",
         "@type": "CaseStudy",
         headline: "Caso de Éxito — QuanticBI: Inteligencia de negocio con gestión comercial optimizada",
         about: "Implantación de CRM HubSpot, automatización de procesos y reportes para consultora de datos",
-        url: "/casos-exito/quanticbi",
+        url: '/es/casos-exito/quanticbi',
         inLanguage: "es",
         author: { "@type": "Organization", name: "Hayas Marketing" },
         publisher: {

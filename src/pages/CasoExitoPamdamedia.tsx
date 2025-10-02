@@ -8,7 +8,7 @@ const CasoExitoPamdamedia: React.FC = () => {
     <CaseStudyTemplate
       pageTitle="Caso de Éxito Pamdamedia | Rediseño web y conversión"
       pageDescription="Rediseño web, UX y orientación a la conversión para Pamdamedia, agencia de publicidad exterior."
-      canonical="/casos-exito/pamdamedia"
+      canonical="/es/casos-exito"
       ogImage={successCaseImages.pamdamedia}
       structuredData={{
         '@context': 'https://schema.org',
@@ -16,7 +16,7 @@ const CasoExitoPamdamedia: React.FC = () => {
         headline: 'Caso de Éxito — Pamdamedia: Un rediseño web para reforzar la presencia y la conversión',
         about: 'Rediseño web, UX, refuerzo visual y CTAs estratégicos',
         author: { '@type': 'Organization', name: 'Hayas Marketing' },
-        url: '/casos-exito/pamdamedia'
+        url: '/es/casos-exito/pamdamedia'
       }}
       companyName="Pamdamedia"
       subtitle="Un rediseño web para reforzar la presencia y la conversión: actualizando la imagen digital de una agencia de publicidad exterior"

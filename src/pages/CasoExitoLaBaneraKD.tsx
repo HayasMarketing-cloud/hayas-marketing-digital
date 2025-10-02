@@ -8,14 +8,14 @@ const CasoExitoLaBaneraKD = () => {
     <CaseStudyTemplate
       pageTitle="Caso de Éxito: La Bañera KD - Diseño Web y SEO para Medios Audiovisuales"
       pageDescription="Conoce cómo transformamos la presencia digital de La Bañera KD con un diseño web moderno y estrategia SEO efectiva."
-      canonical="/casos-exito/la-banera-kd"
+      canonical="/es/casos-exito"
       ogImage={successCaseImages.laBaneraKD}
       structuredData={{
         '@context': 'https://schema.org',
         '@type': 'CaseStudy',
         headline: 'Caso de Éxito: La Bañera KD - Diseño Web y SEO para Medios Audiovisuales',
         about: 'Diseño web y posicionamiento SEO para productora audiovisual',
-        url: '/casos-exito/la-banera-kd',
+        url: "/es/casos-exito/la-banera-kd",
         inLanguage: 'es',
         publisher: { '@type': 'Organization', name: 'Hayas Marketing' }
       }}

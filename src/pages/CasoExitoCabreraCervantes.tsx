@@ -8,14 +8,14 @@ const CasoExitoCabreraCervantes = () => {
     <CaseStudyTemplate
       pageTitle="Caso de Éxito: Cabrera Cervantes Asesoría - Web Profesional en WordPress"
       pageDescription="Conoce cómo transformamos la presencia digital de Cabrera Cervantes Asesoría con un diseño web profesional y moderno."
-      canonical="/casos-exito/cabrera-cervantes"
+      canonical="/es/casos-exito"
       ogImage={successCaseImages.cabreraCervantes}
       structuredData={{
         '@context': 'https://schema.org',
         '@type': 'CaseStudy',
         headline: 'Caso de Éxito: Cabrera Cervantes Asesoría - Web Profesional en WordPress',
         about: 'Diseño web profesional para asesoría jurídica y contable',
-        url: '/casos-exito/cabrera-cervantes',
+        url: '/es/casos-exito/cabrera-cervantes',
         inLanguage: 'es',
         publisher: { '@type': 'Organization', name: 'Hayas Marketing' }
       }}

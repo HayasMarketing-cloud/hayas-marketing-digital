@@ -8,14 +8,14 @@ const CasoExitoAlfixConsultores = () => {
     <CaseStudyTemplate
       pageTitle="Caso de Éxito ALFIX Consultores | HubSpot CRM"
       pageDescription="Organización y datos centralizados con HubSpot para mejorar atención, eficiencia y venta cruzada."
-      canonical="/casos-exito/alfix-consultores"
+      canonical="/es/casos-exito"
       ogImage={successCaseImages.alfixConsultores}
       structuredData={{
         "@context": "https://schema.org",
         "@type": "CaseStudy",
         headline: "Caso de Éxito — ALFIX Consultores: Organización y datos para un servicio más eficiente",
         about: "Implantación de CRM HubSpot con enfoque en eficiencia y venta cruzada",
-        url: "/casos-exito/alfix-consultores",
+        url: "/es/casos-exito/alfix-consultores",
         inLanguage: "es",
         author: { "@type": "Organization", name: "Hayas Marketing" },
         publisher: {

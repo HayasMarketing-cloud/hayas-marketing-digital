@@ -8,7 +8,7 @@ const CasoExitoBuhobike: React.FC = () => {
     <CaseStudyTemplate
       pageTitle="Caso de Éxito Buhobike | Estrategia, Analítica y Mercado"
       pageDescription="Consultoría estratégica, analítica avanzada e inteligencia de mercado para Buhobike, ecommerce líder en ciclismo."
-      canonical="/casos-exito/buhobike"
+      canonical="/es/casos-exito"
       ogImage={successCaseImages.buhobike}
       structuredData={{
         '@context': 'https://schema.org',
@@ -16,7 +16,7 @@ const CasoExitoBuhobike: React.FC = () => {
         headline: 'Caso de Éxito — Buhobike: Pedaleando hacia el éxito digital',
         about: 'Estrategia digital, analítica avanzada e inteligencia de mercado para ecommerce de ciclismo',
         author: { '@type': 'Organization', name: 'Hayas Marketing' },
-        url: '/casos-exito/buhobike'
+        url: '/es/casos-exito/buhobike'
       }}
       companyName="Buhobike"
       subtitle="Pedaleando hacia el éxito digital"

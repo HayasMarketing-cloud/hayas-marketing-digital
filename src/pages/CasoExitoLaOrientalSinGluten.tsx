@@ -8,14 +8,14 @@ const CasoExitoLaOrientalSinGluten = () => {
     <CaseStudyTemplate
       pageTitle="Caso de éxito La Oriental Sin Gluten | Ecommerce, CRM y RRSS"
       pageDescription="Rediseño de ecommerce, CRM HubSpot y estrategia en redes sociales para crecer de forma sostenible."
-      canonical="/casos-exito/pasteleria-la-oriental-sin-gluten"
+      canonical="/es/casos-exito"
       ogImage={successCaseImages.laOrientalSinGluten}
       structuredData={{
         "@context": "https://schema.org",
         "@type": "CaseStudy",
         headline: "Caso de Éxito — Pastelería La Oriental Sin Gluten: Endulzando el mercado digital",
         about: "Rediseño de ecommerce, implantación de CRM HubSpot, estrategia de contenidos en redes sociales y optimización de UX",
-        url: "/casos-exito/pasteleria-la-oriental-sin-gluten",
+        url: "/es/casos-exito/pasteleria-la-oriental-sin-gluten",
         inLanguage: "es",
         author: { "@type": "Organization", name: "Hayas Marketing" },
         publisher: {

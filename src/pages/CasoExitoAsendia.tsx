@@ -8,14 +8,14 @@ const CasoExitoAsendia = () => {
     <CaseStudyTemplate
       pageTitle="Caso de Éxito: Asendia | CRM y Automatización B2B"
       pageDescription="Implementamos CRM y automatización para Asendia, optimizando su estrategia comercial B2B con +129% incremento en leads y -60% reducción en ciclo de ventas."
-      canonical="/casos-exito/asendia"
+      canonical="/es/casos-exito"
       ogImage={successCaseImages.asendia}
       structuredData={{
         "@context": "https://schema.org",
         "@type": "CaseStudy",
         headline: "Caso de Éxito: Asendia | CRM y Automatización B2B",
         about: "CRM y automatización para soluciones logísticas e-commerce transfronterizo",
-        url: "/casos-exito/asendia",
+        url: "/es/casos-exito/asendia",
         inLanguage: "es",
         publisher: { "@type": "Organization", name: "Hayas Marketing" },
       }}
