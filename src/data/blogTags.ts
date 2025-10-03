@@ -154,7 +154,7 @@ export const tagsLevel2: TagLevel2[] = [
     name: "Asistente IA para Atención al Cliente", 
     slug: "asistente-ia-atencion-cliente", 
     parent: "activa-tus-ventas",
-    serviceUrl: "/servicios/asistente-ia-atencion-cliente",
+    serviceUrl: "/es/servicios/asistente-ia",
     description: "Chatbots inteligentes 24/7"
   },
   { 

@@ -48,7 +48,7 @@ export const SERVICE_SUCCESS_CASES_MAPPING: Record<string, ServiceCasesConfig> =
     filterTags: ["tienda-online"],
     subtitle: "E-commerce y tiendas online que han multiplicado las ventas digitales de nuestros clientes."
   },
-  'asistente-ia-atencion-cliente': {
+  'asistente-ia': {
     filterTags: ["asistente-ia", "automatizacion-procesos-ventas"],
     subtitle: "Implementaciones de asistentes IA que han mejorado la atención al cliente y automatizado procesos de ventas."
   },

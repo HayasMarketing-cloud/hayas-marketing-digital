@@ -94,7 +94,7 @@ export const allServices: ServiceItem[] = [
     icon: <Bot className="h-10 w-10 text-hayas-primary" />,
     title: 'Asistente IA para Atención al Cliente',
     description: 'Chatbots inteligentes 24/7 que mejoran la experiencia del cliente.',
-    href: '/es/servicios/asistente-ia-atencion-cliente',
+    href: '/es/servicios/asistente-ia',
     pillar: 'activa',
   },
   {
