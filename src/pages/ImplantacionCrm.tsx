@@ -15,6 +15,7 @@ import CRMPainPointsSection from '@/components/CRMPainPointsSection';
 import CRMSolutionPreviewSection from '@/components/CRMSolutionPreviewSection';
 import IntermediateCTA from '@/components/IntermediateCTA';
 import CRMBenefitsGridSection from '@/components/CRMBenefitsGridSection';
+import KitCRMBanner from '@/components/KitCRMBanner';
 import { Settings, Target, Building2, Users, CheckCircle, ArrowRight, Database } from 'lucide-react';
 const processSteps = [{
   number: "01",
@@ -161,6 +162,8 @@ const ImplantacionCrm = () => {
       {/* Sección 7: Preguntas frecuentes */}
       <FAQSection title="Preguntas frecuentes sobre implantación de CRM de Hayas Marketing" subtitle="Resolvemos las dudas más comunes sobre la implementación de sistemas CRM" faqs={faqItems} />
 
+      {/* Sección 8: Kit Digital CRM Banner */}
+      <KitCRMBanner />
 
       {/* Sección final: CTA fuerte (footer extendido) */}
       <ServiceContactSection title="¿Listo para transformar tu gestión comercial?" subtitle="Cuéntanos sobre tu negocio y te enviaremos una propuesta de implementación personalizada." formId="ZHNw4rjAzNdvFbFnIk1V" className="bg-gradient-to-br from-primary/10 via-white to-accent/10" />
