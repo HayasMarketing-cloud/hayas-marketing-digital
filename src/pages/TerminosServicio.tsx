@@ -10,7 +10,12 @@ const TerminosServicio = () => {
       
       <main className="min-h-screen bg-background">
         <div className="container mx-auto px-4 py-8 max-w-4xl">
-          <UniversalBreadcrumbs />
+          <UniversalBreadcrumbs 
+            customItems={[
+              { label: 'Inicio', href: '/es' },
+              { label: 'Términos de Servicio' }
+            ]} 
+          />
           
           <div className="space-y-8 mt-6">
             <header className="text-center space-y-4">
