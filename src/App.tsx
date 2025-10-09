@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, HashRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from '@/contexts/AuthContext';
 import SofiaWidget from "./components/SofiaSection";
 import ScrollToTop from './components/ScrollToTop';
@@ -15,13 +15,17 @@ import * as Pages from './utils/lazyImports';
 
 const queryClient = new QueryClient();
 
+// Use HashRouter if specified in environment, otherwise BrowserRouter
+const useHashRouter = import.meta.env.VITE_USE_HASHROUTER === 'true';
+const Router = useHashRouter ? HashRouter : BrowserRouter;
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
       <AuthProvider>
-        <BrowserRouter>
+        <Router>
           <ScrollToTop />
           <SofiaWidget />
           <AppErrorBoundary>
@@ -199,10 +203,10 @@ const App = () => (
           
           {/* 404 - DEBE IR SIEMPRE AL FINAL */}
           <Route path="*" element={<PageSuspense><Pages.NotFound /></PageSuspense>} />
-        </Routes>
+              </Routes>
             </DraftProtection>
           </AppErrorBoundary>
-        </BrowserRouter>
+        </Router>
       </AuthProvider>
     </TooltipProvider>
   </QueryClientProvider>
