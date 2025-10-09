@@ -447,7 +447,7 @@ const ActivaTusVentas = () => {
           title="¿Listo para activar tus ventas?"
           subtitle="Las ventas son el motor de tu negocio. Empieza con una asesoría gratuita y descubre cómo podemos ayudarte a diseñar campañas más efectivas, integrar IA y multiplicar tus conversiones."
           buttonText="👉 Solicita tu asesoría gratuita"
-          buttonLink="/agendar-reunion"
+          buttonLink="/es/solicitar-consulta"
         />
 
         {/* FAQ Section */}

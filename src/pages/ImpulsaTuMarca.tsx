@@ -428,7 +428,7 @@ const ImpulsaTuMarca = () => {
           title="Descubre como podemos hacer que tu Marca sea tu principal activo digital"
           subtitle="Solicita una asesoria gratuita y te mostraremos nuestra metodologia y el potencial de tu Marca"
           buttonText="Solicitar asesoria gratuita"
-          buttonLink="/solicitar-consulta"
+          buttonLink="/es/solicitar-consulta"
         />
 
         {/* FAQ Section */}
