@@ -15,9 +15,12 @@ import * as Pages from './utils/lazyImports';
 
 const queryClient = new QueryClient();
 
-// Use HashRouter if specified in environment, otherwise BrowserRouter
-const useHashRouter = import.meta.env.VITE_USE_HASHROUTER === 'true';
+// Force HashRouter in production by default (unless VITE_USE_BROWSER_ROUTER is explicitly true)
+const useHashRouter = import.meta.env.PROD && import.meta.env.VITE_USE_BROWSER_ROUTER !== 'true';
 const Router = useHashRouter ? HashRouter : BrowserRouter;
+
+// Log which router is being used
+console.log(`[Hayas Marketing] Using ${useHashRouter ? 'HashRouter' : 'BrowserRouter'} (production: ${import.meta.env.PROD})`);
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -30,9 +33,9 @@ const App = () => (
           <SofiaWidget />
           <AppErrorBoundary>
             <DraftProtection>
-              <Routes>
-           {/* REDIRECCIÓN ROOT A ESPAÑOL */}
-           <Route path="/" element={<Navigate to="/es" replace />} />
+          <Routes>
+           {/* HOME - Renderizar directamente sin redirección */}
+           <Route path="/" element={<PageSuspense><Pages.Index /></PageSuspense>} />
            
            {/* REDIRECCIONES SIN PREFIJO /es/ */}
            <Route path="/blog/crm-que-es-beneficios" element={<Navigate to="/es/blog/crm-que-es-beneficios" replace />} />

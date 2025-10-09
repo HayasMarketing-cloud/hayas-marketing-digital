@@ -43,6 +43,7 @@ const SofiaWidget = () => {
   
   // Determine if component should render BEFORE declaring state
   const allowedPages = [
+    '/',
     '/es',
     '/es/soluciones/impulsa-tu-marca',
     '/es/soluciones/conecta-con-tus-clientes', 
