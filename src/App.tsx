@@ -8,6 +8,7 @@ import SofiaWidget from "./components/SofiaSection";
 import ScrollToTop from './components/ScrollToTop';
 import DraftProtection from './components/DraftProtection';
 import PageSuspense from './components/PageSuspense';
+import AppErrorBoundary from './components/AppErrorBoundary';
 
 // Lazy imports organizados por categoría
 import * as Pages from './utils/lazyImports';
@@ -21,10 +22,11 @@ const App = () => (
       <Sonner />
       <AuthProvider>
         <BrowserRouter>
-      <ScrollToTop />
-        <SofiaWidget />
-        <DraftProtection>
-          <Routes>
+          <ScrollToTop />
+          <SofiaWidget />
+          <AppErrorBoundary>
+            <DraftProtection>
+              <Routes>
            {/* REDIRECCIÓN ROOT A ESPAÑOL */}
            <Route path="/" element={<Navigate to="/es" replace />} />
            
@@ -198,8 +200,9 @@ const App = () => (
           {/* 404 - DEBE IR SIEMPRE AL FINAL */}
           <Route path="*" element={<PageSuspense><Pages.NotFound /></PageSuspense>} />
         </Routes>
-        </DraftProtection>
-      </BrowserRouter>
+            </DraftProtection>
+          </AppErrorBoundary>
+        </BrowserRouter>
       </AuthProvider>
     </TooltipProvider>
   </QueryClientProvider>
