@@ -150,9 +150,10 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ data }) => {
                   <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
                     {data.badge}
                   </Badge>
-                  <h1 className="title-hero text-foreground">
-                    {data.heroTitle}
-                  </h1>
+                  <h1 
+                    className="title-hero text-foreground"
+                    dangerouslySetInnerHTML={{ __html: data.heroTitle }}
+                  />
                   <p className="text-hero text-muted-foreground">
                     {data.heroSubtitle}
                   </p>
@@ -219,7 +220,7 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ data }) => {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="stack-md">
                 <div>
-                  <h2 className="title-section">{data.benefitsTitle}</h2>
+                  <h2 className="title-section" dangerouslySetInnerHTML={{ __html: data.benefitsTitle }} />
                   <p className="text-description">{data.benefitsSubtitle}</p>
                 </div>
                 
@@ -259,7 +260,7 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ data }) => {
         <section className="section-loose bg-section-soft">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16 stack-md">
-              <h2 className="title-section">{data.processTitle}</h2>
+              <h2 className="title-section" dangerouslySetInnerHTML={{ __html: data.processTitle }} />
               <p className="text-description max-w-3xl mx-auto">{data.processSubtitle}</p>
             </div>
             

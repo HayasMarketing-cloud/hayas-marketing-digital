@@ -2,25 +2,17 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, HashRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from '@/contexts/AuthContext';
 import SofiaWidget from "./components/SofiaSection";
 import ScrollToTop from './components/ScrollToTop';
 import DraftProtection from './components/DraftProtection';
 import PageSuspense from './components/PageSuspense';
-import AppErrorBoundary from './components/AppErrorBoundary';
 
 // Lazy imports organizados por categoría
 import * as Pages from './utils/lazyImports';
 
 const queryClient = new QueryClient();
-
-// Force HashRouter in production by default (unless VITE_USE_BROWSER_ROUTER is explicitly true)
-const useHashRouter = import.meta.env.PROD && import.meta.env.VITE_USE_BROWSER_ROUTER !== 'true';
-const Router = useHashRouter ? HashRouter : BrowserRouter;
-
-// Log which router is being used
-console.log(`[Hayas Marketing] Using ${useHashRouter ? 'HashRouter' : 'BrowserRouter'} (production: ${import.meta.env.PROD})`);
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -28,14 +20,13 @@ const App = () => (
       <Toaster />
       <Sonner />
       <AuthProvider>
-        <Router>
-          <ScrollToTop />
-          <SofiaWidget />
-          <AppErrorBoundary>
-            <DraftProtection>
+        <BrowserRouter>
+      <ScrollToTop />
+        <SofiaWidget />
+        <DraftProtection>
           <Routes>
-           {/* HOME - Renderizar directamente sin redirección */}
-           <Route path="/" element={<PageSuspense><Pages.Index /></PageSuspense>} />
+           {/* REDIRECCIÓN ROOT A ESPAÑOL */}
+           <Route path="/" element={<Navigate to="/es" replace />} />
            
            {/* REDIRECCIONES SIN PREFIJO /es/ */}
            <Route path="/blog/crm-que-es-beneficios" element={<Navigate to="/es/blog/crm-que-es-beneficios" replace />} />
@@ -206,10 +197,9 @@ const App = () => (
           
           {/* 404 - DEBE IR SIEMPRE AL FINAL */}
           <Route path="*" element={<PageSuspense><Pages.NotFound /></PageSuspense>} />
-              </Routes>
-            </DraftProtection>
-          </AppErrorBoundary>
-        </Router>
+        </Routes>
+        </DraftProtection>
+      </BrowserRouter>
       </AuthProvider>
     </TooltipProvider>
   </QueryClientProvider>
