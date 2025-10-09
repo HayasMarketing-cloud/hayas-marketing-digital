@@ -117,20 +117,22 @@ export const UniversalBreadcrumbs: React.FC<UniversalBreadcrumbsProps> = ({
       <div className="container mx-auto px-4">
         <Breadcrumb>
           <BreadcrumbList>
-            {breadcrumbs.map((item, index) => (
-              <React.Fragment key={index}>
-                <BreadcrumbItem>
-                  {item.href ? (
-                    <BreadcrumbLink asChild>
-                      <Link to={item.href}>{item.label}</Link>
-                    </BreadcrumbLink>
-                  ) : (
-                    <BreadcrumbPage>{item.label}</BreadcrumbPage>
-                  )}
-                </BreadcrumbItem>
-                {index < breadcrumbs.length - 1 && <BreadcrumbSeparator />}
-              </React.Fragment>
-            ))}
+          {breadcrumbs.map((item, index) => (
+            <React.Fragment key={`breadcrumb-${index}`}>
+              <BreadcrumbItem key={`item-${index}`}>
+                {item.href ? (
+                  <BreadcrumbLink asChild>
+                    <Link to={item.href}>{item.label}</Link>
+                  </BreadcrumbLink>
+                ) : (
+                  <BreadcrumbPage>{item.label}</BreadcrumbPage>
+                )}
+              </BreadcrumbItem>
+              {index < breadcrumbs.length - 1 && (
+                <BreadcrumbSeparator key={`sep-${index}`} />
+              )}
+            </React.Fragment>
+          ))}
           </BreadcrumbList>
         </Breadcrumb>
       </div>
