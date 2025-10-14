@@ -5,6 +5,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
+    <!-- Security Headers (Essential) -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()" />
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+    
     <!-- SEO Fundamentals -->
     <title>Hayas Marketing - Soluciones de IA, CRM y Marketing Digital</title>
     <meta name="description" content="Descubre cómo combinar marketing digital, CRM e inteligencia artificial para potenciar tu negocio y ofrecer experiencias excepcionales a tus clientes.">
@@ -55,13 +62,26 @@
     <link rel="apple-touch-icon" href="/favicon.png">
     
     <!-- Performance Optimizations -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Arimo:wght@400;500;600;700&display=swap">
+    <!-- DNS Prefetch for external resources -->
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
+    <link rel="dns-prefetch" href="https://cdn.gpteng.co">
     
-    <!-- Critical Resource Preloads -->
-    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop" crossorigin>
-    <link rel="preload" as="style" href="/src/index.css">
+    <!-- Preconnect to critical origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    
+    <!-- Fonts with display=swap for better performance -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Arimo:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Arimo:wght@400;500;600;700&display=swap"></noscript>
+    
+    <!-- Critical Resource Preloads with fetchpriority -->
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop" fetchpriority="high" crossorigin>
+    <link rel="preload" as="style" href="/src/index.css" fetchpriority="high">
+    <link rel="modulepreload" href="/src/main.tsx" fetchpriority="high">
     
     <!-- Structured Data -->
     <script type="application/ld+json">
