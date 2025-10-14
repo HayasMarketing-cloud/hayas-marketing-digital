@@ -33,7 +33,7 @@
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true; j.crossOrigin='anonymous'; j.referrerPolicy='strict-origin-when-cross-origin'; j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-WKMHQ2PM');</script>
     <!-- End Google Tag Manager -->
@@ -77,8 +77,7 @@
     
     <!-- Critical Resource Preloads with fetchpriority -->
     <link rel="preload" as="image" href="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop" fetchpriority="high" crossorigin>
-    <link rel="preload" as="style" href="/src/index.css" fetchpriority="high">
-    <link rel="modulepreload" href="/src/main.tsx" fetchpriority="high">
+    <!-- Nota: el CSS de la app se importa dentro de main.tsx; evitamos preloads que pueden fallar en producción -->
     
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -131,7 +130,7 @@
     
     <div id="root"></div>
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module" crossorigin="anonymous"></script>
+    <script type="module" src="/src/main.tsx" crossorigin="anonymous"></script>
   </body>
 </html>
