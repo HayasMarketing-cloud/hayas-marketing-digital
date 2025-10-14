@@ -126,17 +126,17 @@ const ImpulsaTuMarca = () => {
 
   return (
     <div id="top" className="min-h-screen bg-white">
-      <head>
-        <title>{seoData.title}</title>
-        <meta name="description" content={seoData.description} />
-        <link rel="canonical" href={`https://hayasmarketing.com${seoData.canonical}`} />
-        <meta name="robots" content={seoData.robots} />
-        {seoData.structuredData && (
-          <script type="application/ld+json">
-            {JSON.stringify(seoData.structuredData)}
-          </script>
-        )}
-      </head>
+      <Seo 
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
+        canonical={seoData.canonical}
+        structuredData={seoData.structuredData}
+        robots={seoData.robots}
+        ogImage={seoData.ogImage}
+        ogType={seoData.ogType}
+        inLanguage={seoData.inLanguage}
+      />
       <Navigation />
       
       <main>
