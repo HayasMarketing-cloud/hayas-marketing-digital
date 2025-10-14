@@ -44,13 +44,17 @@ serve(async (req) => {
     let event: Stripe.Event;
 
     try {
-      // En producción, necesitarás configurar el webhook endpoint secret
-      // Por ahora, parseamos el evento directamente
-      event = JSON.parse(body) as Stripe.Event;
-      logStep("Event parsed", { type: event.type, id: event.id });
+      // Verify webhook signature for security
+      const webhookSecret = Deno.env.get("STRIPE_WEBHOOK_SECRET");
+      if (!webhookSecret) {
+        throw new Error("STRIPE_WEBHOOK_SECRET is not configured");
+      }
+      
+      event = stripe.webhooks.constructEvent(body, signature, webhookSecret);
+      logStep("Event verified and parsed", { type: event.type, id: event.id });
     } catch (err) {
-      logStep("ERROR parsing webhook body", { error: err });
-      throw new Error("Invalid payload");
+      logStep("ERROR verifying webhook signature", { error: err });
+      throw new Error("Webhook signature verification failed");
     }
 
     // Procesar diferentes tipos de eventos
