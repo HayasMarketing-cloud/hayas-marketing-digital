@@ -58,6 +58,34 @@ const CONVERSION_PAGES = [
   '/solicitar-consulta'
 ];
 
+// Blog posts - high-value content pages
+const BLOG_PAGES = [
+  '/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing',
+  '/blog/guia-tecnica-email-marketing-hubspot-configuracion',
+  '/blog/configuracion-email-marketing-cumplimiento-normativo',
+  '/blog/perfil-cliente-ideal',
+  '/blog/como-crear-buyer-persona-b2b-b2c-guia-completa',
+  '/blog/calculo-inversion-plan-marketing-digital',
+  '/blog/branding-proceso-tecnicas-naming',
+  '/blog/business-model-canvas-para-crear-tu-estrategia-de-marketing',
+  '/blog/google-consent-mode-cookieyes',
+  '/blog/marketing-natural-posicionamiento-organico',
+  '/blog/crm-que-es-beneficios',
+  '/blog/como-elegir-mejor-crm-empresa-organizacion',
+  '/blog/abm-account-based-marketing',
+  '/blog/re-commerce-economia-circular-ecommerce-partnership-sharpei',
+  '/blog/seo-off-page-estrategias-practicas-posicionamiento',
+  '/blog/automatizacion-marketing-digital-guia-completa',
+  '/blog/web-3-0-futuro-internet-descentralizado',
+  '/blog/seo-on-page-guia-completa',
+  '/blog/lead-scoring-calificacion-leads',
+  '/blog/seo-inteligencia-artificial',
+  '/blog/ia-redes-sociales-herramientas-riesgos',
+  '/blog/funnel-conversion-b2B',
+  '/blog/marketing-global-internacionalizacion',
+  '/blog/kit-digital-marketing-guia-completa-2025'
+];
+
 /**
  * Generates dynamic sitemap XML content
  * Only includes indexable pages based on robots directive
@@ -105,6 +133,11 @@ export const generateSitemapXML = (): string => {
     addUrlIfIndexable(path, 'monthly', 0.5);
   });
 
+  // Add blog posts (content value)
+  BLOG_PAGES.forEach(path => {
+    addUrlIfIndexable(path, 'weekly', 0.7);
+  });
+
   // Generate XML
   const xmlContent = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -128,7 +161,8 @@ export const getIndexableUrls = (): string[] => {
     ...SOLUTION_PAGES, 
     ...STRATEGIC_SERVICE_PAGES,
     ...KIT_DIGITAL_PAGES,
-    ...CONVERSION_PAGES
+    ...CONVERSION_PAGES,
+    ...BLOG_PAGES
   ];
 
   return allPages.filter(path => {
@@ -146,7 +180,8 @@ export const getCrawlBudgetStats = () => {
     ...SOLUTION_PAGES,
     ...STRATEGIC_SERVICE_PAGES,
     ...KIT_DIGITAL_PAGES,
-    ...CONVERSION_PAGES
+    ...CONVERSION_PAGES,
+    ...BLOG_PAGES
   ];
 
   const indexablePages = allPages.filter(path => {
