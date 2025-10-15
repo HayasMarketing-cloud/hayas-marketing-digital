@@ -16,7 +16,7 @@ export const successCaseImages = {
   cabreraCervantes: "/lovable-uploads/cabrera-cervantes-asesoria-legal-optimized.png",
   calistheniaOnline: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070&auto=format&fit=crop",
   carniceriaPicosDeEuropa: "/lovable-uploads/4f747803-3608-4e40-96a3-e5ffb9c63060.png",
-  centroRoraima: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2070&auto=format&fit=crop",
+  centroRoraima: "/lovable-uploads/centro-roraima.webp",
   conversaConsultores: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop",
   corteAFilms: "https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?q=80&w=2069&auto=format&fit=crop",
   evaChampion: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2070&auto=format&fit=crop",
