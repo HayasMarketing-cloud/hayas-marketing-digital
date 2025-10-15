@@ -66,7 +66,7 @@ export const ALL_SUCCESS_CASES: SuccessCase[] = [
     industry: "Centro de desarrollo personal",
     service: "Branding, diseño web, contenidos",
     link: "/es/casos-exito/centro-roraima",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2070&auto=format&fit=crop",
+      image: "/lovable-uploads/centro-roraima.webp",
     tags: {
       services: ["creacion-marca", "diseno-web", "estrategia-contenidos"],
       industries: ["salud"],
