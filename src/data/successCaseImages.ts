@@ -19,7 +19,7 @@ export const successCaseImages = {
   centroRoraima: "/lovable-uploads/centro-roraima.webp",
   conversaConsultores: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop",
   corteAFilms: "https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?q=80&w=2069&auto=format&fit=crop",
-  evaChampion: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2070&auto=format&fit=crop",
+  evaChampion: "/lovable-uploads/2333b7c8-3d18-4b48-9ea7-b712dde6be9c.png",
   flap: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=2069&auto=format&fit=crop",
   formatoEducativo: "https://images.unsplash.com/photo-1513258496099-48168024aec0?q=80&w=2070&auto=format&fit=crop",
   giveAndGo: "https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=2069&auto=format&fit=crop",
