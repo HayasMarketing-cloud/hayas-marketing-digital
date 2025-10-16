@@ -94,7 +94,7 @@ serve(async (req) => {
     const errorMessage = error instanceof Error ? error.message : String(error);
     logStep("ERROR in webhook-handler", { message: errorMessage });
     return new Response(
-      JSON.stringify({ error: errorMessage }),
+      JSON.stringify({ error: "Webhook processing failed" }),
       {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
         status: 400,

@@ -89,7 +89,7 @@ serve(async (req) => {
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : String(error);
     logStep("ERROR in get-user-orders", { message: errorMessage });
-    return new Response(JSON.stringify({ error: errorMessage }), {
+    return new Response(JSON.stringify({ error: "An error occurred processing your request" }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
       status: 500,
     });

@@ -1,18 +1,19 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import Stripe from "https://esm.sh/stripe@18.5.0";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
+import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
 };
 
-interface CheckoutRequest {
-  price_id: string;
-  quantity?: number;
-  success_url?: string;
-  cancel_url?: string;
-}
+const CheckoutSchema = z.object({
+  price_id: z.string().regex(/^price_[a-zA-Z0-9_]+$/, "Invalid Stripe price ID format"),
+  quantity: z.number().int().min(1).max(100).default(1),
+  success_url: z.string().url().optional(),
+  cancel_url: z.string().url().optional()
+});
 
 const logStep = (step: string, details?: any) => {
   const detailsStr = details ? ` - ${JSON.stringify(details)}` : '';
@@ -38,13 +39,23 @@ serve(async (req) => {
     if (!stripeKey) throw new Error("STRIPE_SECRET_KEY is not set");
     logStep("Stripe key verified");
 
-    // Obtener datos del request
-    const { price_id, quantity = 1, success_url, cancel_url }: CheckoutRequest = await req.json();
-    logStep("Request data parsed", { price_id, quantity });
-
-    if (!price_id) {
-      throw new Error("price_id is required");
+    // Obtener y validar datos del request
+    const rawData = await req.json();
+    const validationResult = CheckoutSchema.safeParse(rawData);
+    
+    if (!validationResult.success) {
+      logStep("Validation failed", { errors: validationResult.error.errors });
+      return new Response(
+        JSON.stringify({ error: "Invalid request data" }),
+        {
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+          status: 400,
+        }
+      );
     }
+
+    const { price_id, quantity, success_url, cancel_url } = validationResult.data;
+    logStep("Request data validated", { price_id, quantity });
 
     // Verificar si el usuario está autenticado (opcional)
     const authHeader = req.headers.get("Authorization");
@@ -182,7 +193,7 @@ serve(async (req) => {
     const errorMessage = error instanceof Error ? error.message : String(error);
     logStep("ERROR in create-checkout-session", { message: errorMessage });
     return new Response(
-      JSON.stringify({ error: errorMessage }),
+      JSON.stringify({ error: "An error occurred processing your request" }),
       {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
         status: 500,
