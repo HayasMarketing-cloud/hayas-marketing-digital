@@ -68,7 +68,7 @@ serve(async (req) => {
       
       if (!userError && userData.user) {
         user = userData.user;
-        logStep("User authenticated", { userId: user.id, email: user.email });
+        logStep("User authenticated", { userId: user.id });
 
         // Buscar o crear customer en la base de datos
         const { data: existingCustomer } = await supabaseClient

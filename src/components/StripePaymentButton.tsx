@@ -40,7 +40,9 @@ export const StripePaymentButton: React.FC<StripePaymentButtonProps> = ({
     setLoading(true);
 
     try {
-      console.log('Creating checkout session for:', { priceId, productName });
+      if (import.meta.env.DEV) {
+        console.log('Creating checkout session for:', { priceId, productName });
+      }
 
       const { data, error } = await supabase.functions.invoke('create-checkout-session', {
         body: {
@@ -55,13 +57,17 @@ export const StripePaymentButton: React.FC<StripePaymentButtonProps> = ({
       });
 
       if (error) {
-        console.error('Error creating checkout session:', error);
+        if (import.meta.env.DEV) {
+          console.error('Error creating checkout session:', error);
+        }
         toast.error('Error al crear la sesión de pago');
         return;
       }
 
       if (data?.url) {
-        console.log('Redirecting to checkout:', data.url);
+        if (import.meta.env.DEV) {
+          console.log('Redirecting to checkout');
+        }
         // Abrir en nueva pestaña para mejor experiencia
         window.open(data.url, '_blank');
       } else {
@@ -69,7 +75,9 @@ export const StripePaymentButton: React.FC<StripePaymentButtonProps> = ({
       }
 
     } catch (error) {
-      console.error('Payment error:', error);
+      if (import.meta.env.DEV) {
+        console.error('Payment error:', error);
+      }
       toast.error('Error al procesar el pago');
     } finally {
       setLoading(false);

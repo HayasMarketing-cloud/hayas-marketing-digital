@@ -54,14 +54,18 @@ const MiCuenta = () => {
       });
 
       if (error) {
-        console.error('Error fetching orders:', error);
+        if (import.meta.env.DEV) {
+          console.error('Error fetching orders:', error);
+        }
         toast.error('Error al cargar el historial de pedidos');
         return;
       }
 
       setOrders(data?.orders || []);
     } catch (error) {
-      console.error('Error:', error);
+      if (import.meta.env.DEV) {
+        console.error('Error:', error);
+      }
       toast.error('Error al cargar los datos');
     } finally {
       setLoading(false);
@@ -77,7 +81,9 @@ const MiCuenta = () => {
       });
 
       if (error) {
-        console.error('Error opening customer portal:', error);
+        if (import.meta.env.DEV) {
+          console.error('Error opening customer portal:', error);
+        }
         toast.error('Error al abrir el portal de cliente');
         return;
       }
@@ -86,7 +92,9 @@ const MiCuenta = () => {
         window.open(data.url, '_blank');
       }
     } catch (error) {
-      console.error('Error:', error);
+      if (import.meta.env.DEV) {
+        console.error('Error:', error);
+      }
       toast.error('Error al acceder al portal');
     }
   };
