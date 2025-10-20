@@ -111,7 +111,7 @@ const Gracias = () => {
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4 text-sm text-gray-700">
                 <a 
-                  href="https://wa.me/34XXXXXXXXX" 
+                  href="https://wa.me/34656908615" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center justify-center hover:text-primary transition-colors"
@@ -120,14 +120,11 @@ const Gracias = () => {
                   WhatsApp
                 </a>
                 <a 
-                  href="mailto:info@hayasmarketing.com"
+                  href="mailto:hola@hayas.es"
                   className="flex items-center justify-center hover:text-primary transition-colors"
                 >
-                  📧 info@hayasmarketing.com
+                  📧 hola@hayas.es
                 </a>
-                <span className="flex items-center justify-center">
-                  📞 +34 XXX XXX XXX
-                </span>
               </div>
             </CardContent>
           </Card>
