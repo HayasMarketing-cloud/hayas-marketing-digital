@@ -167,6 +167,7 @@ const App = () => (
           <Route path="/es/contacto" element={<PageSuspense><Pages.Contacto /></PageSuspense>} />
            <Route path="/es/gracias" element={<PageSuspense><Pages.Gracias /></PageSuspense>} />
            <Route path="/es/gracias_por_agendar_reunion" element={<PageSuspense><Pages.GraciasPorAgendarReunion /></PageSuspense>} />
+           <Route path="/es/gracias_por_agendar_reunión" element={<PageSuspense><Pages.GraciasPorAgendarReunion /></PageSuspense>} />
            <Route path="/es/hayas-crm" element={<PageSuspense><Pages.HayasCRM /></PageSuspense>} />
           
           
