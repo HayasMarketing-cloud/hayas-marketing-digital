@@ -25,7 +25,7 @@ const features = [
 
 const CRMSolutionPreviewSection = () => {
   return (
-    <section className="py-20 bg-gradient-to-r from-primary/8 via-white to-secondary/8">
+    <section className="py-20 bg-gradient-to-r from-primary/12 via-accent/5 to-secondary/12">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Contenido */}
