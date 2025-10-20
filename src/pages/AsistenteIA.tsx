@@ -381,7 +381,7 @@ const AsistenteIA: React.FC = () => {
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary" asChild>
+            <Button size="lg" variant="secondary" asChild>
               <Link to="/es/casos-exito">Ver Más Casos</Link>
             </Button>
           </div>
