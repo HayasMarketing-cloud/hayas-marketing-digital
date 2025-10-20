@@ -2,6 +2,7 @@ import React from 'react';
 import { CheckCircle, Zap, BarChart3, Users, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { Link } from 'react-router-dom';
 
 const features = [
   {
@@ -54,12 +55,11 @@ const CRMSolutionPreviewSection = () => {
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="flex items-center gap-2">
-                Solicitar Implementación
-                <ArrowRight className="h-4 w-4" />
-              </Button>
-              <Button variant="outline" size="lg">
-                Ver Demo en Vivo
+              <Button size="lg" className="flex items-center gap-2" asChild>
+                <Link to="/es/agendar-reunion">
+                  Solicitar Implementación
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
               </Button>
             </div>
           </div>
