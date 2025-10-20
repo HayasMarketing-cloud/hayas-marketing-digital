@@ -8,6 +8,31 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Checkbox } from "@/components/ui/checkbox";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Users, Target, Zap } from "lucide-react";
+import { toast } from "sonner";
+import { z } from "zod";
+import { supabase } from "@/integrations/supabase/client";
+
+// Validation schema
+const URLSchema = z
+  .string()
+  .trim()
+  .url("Formato de URL inválido")
+  .max(500)
+  .optional()
+  .or(z.literal(""));
+
+const FreelancerFormSchema = z.object({
+  firstName: z.string().trim().min(1, "El nombre es requerido").max(100),
+  email: z.string().trim().email("Formato de email inválido").max(255).toLowerCase(),
+  area: z.string().trim().min(1, "La especialidad es requerida").max(100),
+  experience: z.string().trim().min(1, "La experiencia es requerida").max(50),
+  portfolio: URLSchema,
+  linkedin: URLSchema,
+  about: z.string().trim().max(1000).optional(),
+  acceptCommunications: z.boolean().refine((val) => val === true, {
+    message: "Debes aceptar recibir comunicaciones",
+  }),
+});
 
 const JoinFreelancersSection: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -20,11 +45,69 @@ const JoinFreelancersSection: React.FC = () => {
     about: '',
     acceptCommunications: false
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errors, setErrors] = useState<Record<string, string>>({});
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Aquí iría la lógica para enviar el formulario
-    console.log('Form submitted:', formData);
+    setErrors({});
+    
+    // Client-side validation with Zod
+    const validationResult = FreelancerFormSchema.safeParse(formData);
+    
+    if (!validationResult.success) {
+      const newErrors: Record<string, string> = {};
+      validationResult.error.issues.forEach((issue) => {
+        const path = issue.path[0] as string;
+        newErrors[path] = issue.message;
+      });
+      setErrors(newErrors);
+      toast.error("Por favor, corrige los errores del formulario");
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const { data, error } = await supabase.functions.invoke('submit-freelancer-form', {
+        body: formData,
+      });
+
+      if (error) {
+        throw error;
+      }
+
+      if (data?.error) {
+        // Handle rate limiting
+        if (data.retryAfter) {
+          toast.error(`${data.error} Inténtalo de nuevo en ${Math.ceil(data.retryAfter / 60)} minutos.`);
+        } else {
+          toast.error(data.error);
+        }
+        return;
+      }
+
+      toast.success("¡Tu solicitud ha sido enviada correctamente! Revisaremos tu perfil y nos pondremos en contacto contigo pronto.");
+      
+      // Reset form
+      setFormData({
+        firstName: '',
+        email: '',
+        area: '',
+        experience: '',
+        portfolio: '',
+        linkedin: '',
+        about: '',
+        acceptCommunications: false
+      });
+    } catch (error: any) {
+      if (import.meta.env.DEV) {
+        console.error('Error submitting form:', error);
+      }
+      toast.error("Error al enviar el formulario. Por favor, inténtalo de nuevo.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const features = [
@@ -169,7 +252,7 @@ const JoinFreelancersSection: React.FC = () => {
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-2">
-                        <Label htmlFor="firstName">Nombre</Label>
+                        <Label htmlFor="firstName">Nombre *</Label>
                         <Input
                           id="firstName"
                           placeholder="Tu nombre"
@@ -177,6 +260,9 @@ const JoinFreelancersSection: React.FC = () => {
                           onChange={(e) => setFormData({...formData, firstName: e.target.value})}
                           required
                         />
+                        {errors.firstName && (
+                          <p className="text-sm text-destructive">{errors.firstName}</p>
+                        )}
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="email">Email *</Label>
@@ -188,12 +274,15 @@ const JoinFreelancersSection: React.FC = () => {
                           onChange={(e) => setFormData({...formData, email: e.target.value})}
                           required
                         />
+                        {errors.email && (
+                          <p className="text-sm text-destructive">{errors.email}</p>
+                        )}
                       </div>
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-2">
-                        <Label htmlFor="area">Área/s principal/es</Label>
+                        <Label htmlFor="area">Área/s principal/es *</Label>
                         <Select value={formData.area} onValueChange={(value) => setFormData({...formData, area: value})}>
                           <SelectTrigger>
                             <SelectValue placeholder="Selecciona tu especialidad" />
@@ -211,9 +300,12 @@ const JoinFreelancersSection: React.FC = () => {
                             <SelectItem value="otros">Otros</SelectItem>
                           </SelectContent>
                         </Select>
+                        {errors.area && (
+                          <p className="text-sm text-destructive">{errors.area}</p>
+                        )}
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="experience">Experiencia</Label>
+                        <Label htmlFor="experience">Experiencia *</Label>
                         <Select value={formData.experience} onValueChange={(value) => setFormData({...formData, experience: value})}>
                           <SelectTrigger>
                             <SelectValue placeholder="Años de experiencia" />
@@ -225,6 +317,9 @@ const JoinFreelancersSection: React.FC = () => {
                             <SelectItem value="10+">+10 años</SelectItem>
                           </SelectContent>
                         </Select>
+                        {errors.experience && (
+                          <p className="text-sm text-destructive">{errors.experience}</p>
+                        )}
                       </div>
                     </div>
 
@@ -236,6 +331,9 @@ const JoinFreelancersSection: React.FC = () => {
                         value={formData.portfolio}
                         onChange={(e) => setFormData({...formData, portfolio: e.target.value})}
                       />
+                      {errors.portfolio && (
+                        <p className="text-sm text-destructive">{errors.portfolio}</p>
+                      )}
                     </div>
 
                     <div className="space-y-2">
@@ -246,6 +344,9 @@ const JoinFreelancersSection: React.FC = () => {
                         value={formData.linkedin}
                         onChange={(e) => setFormData({...formData, linkedin: e.target.value})}
                       />
+                      {errors.linkedin && (
+                        <p className="text-sm text-destructive">{errors.linkedin}</p>
+                      )}
                     </div>
 
                     <div className="space-y-2">
@@ -278,10 +379,13 @@ const JoinFreelancersSection: React.FC = () => {
                         </p>
                       </div>
                     </div>
+                    {errors.acceptCommunications && (
+                      <p className="text-sm text-destructive">{errors.acceptCommunications}</p>
+                    )}
 
                     <div className="pt-4">
-                      <Button type="submit" className="w-full" size="lg">
-                        Enviar Solicitud
+                      <Button type="submit" className="w-full" size="lg" disabled={isSubmitting}>
+                        {isSubmitting ? "ENVIANDO..." : "Enviar Solicitud"}
                       </Button>
                     </div>
 

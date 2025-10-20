@@ -6,6 +6,9 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
+import { toast } from "sonner";
+import { ContactFormSchema } from "@/lib/validations";
+import { supabase } from "@/integrations/supabase/client";
 
 interface ServiceContactFormProps {
   title?: string;
@@ -38,11 +41,66 @@ const UniversalServiceContactForm: React.FC<ServiceContactFormProps> = ({
     mensaje: '',
     acceptCommunications: false
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errors, setErrors] = useState<Record<string, string>>({});
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Aquí iría la lógica para enviar el formulario
-    console.log('Form submitted:', formData);
+    setErrors({});
+    
+    // Client-side validation with Zod
+    const validationResult = ContactFormSchema.safeParse(formData);
+    
+    if (!validationResult.success) {
+      const newErrors: Record<string, string> = {};
+      validationResult.error.issues.forEach((issue) => {
+        const path = issue.path[0] as string;
+        newErrors[path] = issue.message;
+      });
+      setErrors(newErrors);
+      toast.error("Por favor, corrige los errores del formulario");
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const { data, error } = await supabase.functions.invoke('submit-contact-form', {
+        body: formData,
+      });
+
+      if (error) {
+        throw error;
+      }
+
+      if (data?.error) {
+        // Handle rate limiting
+        if (data.retryAfter) {
+          toast.error(`${data.error} Inténtalo de nuevo en ${Math.ceil(data.retryAfter / 60)} minutos.`);
+        } else {
+          toast.error(data.error);
+        }
+        return;
+      }
+
+      toast.success("¡Formulario enviado correctamente! Nos pondremos en contacto contigo pronto.");
+      
+      // Reset form
+      setFormData({
+        nombre: '',
+        email: '',
+        ayuda: '',
+        telefono: '',
+        empresa: '',
+        mensaje: '',
+        acceptCommunications: false
+      });
+    } catch (error: any) {
+      console.error('Error submitting form:', error);
+      toast.error("Error al enviar el formulario. Por favor, inténtalo de nuevo.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -64,7 +122,7 @@ const UniversalServiceContactForm: React.FC<ServiceContactFormProps> = ({
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <Label htmlFor="nombre">Nombre</Label>
+                    <Label htmlFor="nombre">Nombre *</Label>
                     <Input 
                       id="nombre" 
                       placeholder="Tu nombre" 
@@ -72,6 +130,9 @@ const UniversalServiceContactForm: React.FC<ServiceContactFormProps> = ({
                       onChange={e => setFormData({ ...formData, nombre: e.target.value })} 
                       required 
                     />
+                    {errors.nombre && (
+                      <p className="text-sm text-destructive">{errors.nombre}</p>
+                    )}
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="email">Email *</Label>
@@ -83,6 +144,9 @@ const UniversalServiceContactForm: React.FC<ServiceContactFormProps> = ({
                       onChange={e => setFormData({ ...formData, email: e.target.value })} 
                       required 
                     />
+                    {errors.email && (
+                      <p className="text-sm text-destructive">{errors.email}</p>
+                    )}
                   </div>
                 </div>
 
@@ -154,9 +218,13 @@ const UniversalServiceContactForm: React.FC<ServiceContactFormProps> = ({
                   </div>
                 </div>
 
+                {errors.acceptCommunications && (
+                  <p className="text-sm text-destructive">{errors.acceptCommunications}</p>
+                )}
+
                 <div className="pt-4">
-                  <Button type="submit" className="w-full" size="lg">
-                    ENVIAR
+                  <Button type="submit" className="w-full" size="lg" disabled={isSubmitting}>
+                    {isSubmitting ? "ENVIANDO..." : "ENVIAR"}
                   </Button>
                 </div>
 

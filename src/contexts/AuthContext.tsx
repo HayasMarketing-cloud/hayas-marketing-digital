@@ -44,7 +44,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
     // Listen for auth changes
     const { data: { subscription: authSubscription } } = supabase.auth.onAuthStateChange(async (event, session) => {
-      console.log('Auth state changed:', event, session?.user?.email);
+      if (import.meta.env.DEV) {
+        console.log('Auth state changed:', event);
+      }
       setSession(session);
       setUser(session?.user ?? null);
       setLoading(false);
@@ -73,13 +75,17 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       });
 
       if (error) {
-        console.error('Error checking subscription:', error);
+        if (import.meta.env.DEV) {
+          console.error('Error checking subscription:', error);
+        }
         return;
       }
 
       setSubscription(data);
     } catch (error) {
-      console.error('Error refreshing subscription:', error);
+      if (import.meta.env.DEV) {
+        console.error('Error refreshing subscription:', error);
+      }
     }
   };
 
