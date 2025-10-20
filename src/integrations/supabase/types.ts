@@ -24,7 +24,7 @@ export type Database = {
           phone: string | null
           stripe_customer_id: string | null
           updated_at: string
-          user_id: string | null
+          user_id: string
         }
         Insert: {
           company?: string | null
@@ -35,7 +35,7 @@ export type Database = {
           phone?: string | null
           stripe_customer_id?: string | null
           updated_at?: string
-          user_id?: string | null
+          user_id: string
         }
         Update: {
           company?: string | null
@@ -46,7 +46,7 @@ export type Database = {
           phone?: string | null
           stripe_customer_id?: string | null
           updated_at?: string
-          user_id?: string | null
+          user_id?: string
         }
         Relationships: []
       }
