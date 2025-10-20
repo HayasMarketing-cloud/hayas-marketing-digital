@@ -77,7 +77,7 @@ const ImplantacionCrm = () => {
       <Navigation />
       
       {/* Breadcrumb */}
-      <div className="bg-muted/30 py-4 mt-20">
+      <div className="bg-muted/50 py-4 mt-20">
         <div className="container mx-auto px-4">
           <nav className="text-sm text-gray-600">
             <Link to="/" className="hover:text-primary">Inicio</Link>
@@ -96,7 +96,7 @@ const ImplantacionCrm = () => {
       <CRMSolutionPreviewSection />
 
       {/* Sección 3: Soluciones Especializadas */}
-      <section id="tipos" className="py-20 bg-muted/30">
+      <section id="tipos" className="py-20 bg-gradient-to-br from-muted/40 via-muted/50 to-muted/60">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
@@ -166,7 +166,7 @@ const ImplantacionCrm = () => {
       <KitCRMBanner />
 
       {/* Sección final: CTA fuerte (footer extendido) */}
-      <ServiceContactSection title="¿Listo para transformar tu gestión comercial?" subtitle="Cuéntanos sobre tu negocio y te enviaremos una propuesta de implementación personalizada." formId="ZHNw4rjAzNdvFbFnIk1V" className="bg-gradient-to-br from-primary/10 via-white to-accent/10" />
+      <ServiceContactSection title="¿Listo para transformar tu gestión comercial?" subtitle="Cuéntanos sobre tu negocio y te enviaremos una propuesta de implementación personalizada." formId="ZHNw4rjAzNdvFbFnIk1V" className="bg-gradient-to-br from-primary/15 via-muted/40 to-accent/15" />
       
       <Footer />
     </div>;
