@@ -7,6 +7,7 @@ export const NotFound = lazy(() => import("@/pages/NotFound"));
 // Nosotros y contacto
 export const Nosotros = lazy(() => import("@/pages/Nosotros"));
 export const Contacto = lazy(() => import("@/pages/Contacto"));
+export const Gracias = lazy(() => import("@/pages/Gracias"));
 export const AgendarReunion = lazy(() => import("@/pages/AgendarReunion"));
 export const SolicitarConsulta = lazy(() => import("@/pages/SolicitarConsulta"));
 

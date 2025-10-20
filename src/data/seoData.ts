@@ -294,6 +294,21 @@ export const seoData: Record<string, EnhancedPageSEOData> = {
     isIndexable: false,
     category: 'main'
   },
+
+  '/es/gracias': {
+    title: 'Gracias por Contactarnos | Hayas Marketing',
+    h1: '¡Gracias por confiar en Hayas Marketing!',
+    description: 'Hemos recibido tu mensaje. Nuestro equipo te contactará en las próximas 24 horas para ofrecerte una propuesta personalizada.',
+    keywords: ['gracias', 'contacto recibido', 'confirmación', 'hayas marketing'],
+    canonical: '/es/gracias',
+    schemaType: 'WebPage',
+    about: ['Confirmación de Contacto', 'Servicio al Cliente', 'Hayas Marketing'],
+    mentions: ['Hayas Marketing', 'Marketing Digital', 'CRM', 'Automatización'],
+    inLanguage: 'es-ES',
+    robots: 'noindex, follow',
+    isIndexable: false,
+    category: 'main'
+  },
   
   // ... rest of existing seoData
   

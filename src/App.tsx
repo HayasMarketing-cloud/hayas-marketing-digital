@@ -165,6 +165,7 @@ const App = () => (
           <Route path="/es/agendar-reunion" element={<PageSuspense><Pages.AgendarReunion /></PageSuspense>} />
           <Route path="/es/solicitar-consulta" element={<PageSuspense><Pages.SolicitarConsulta /></PageSuspense>} />
           <Route path="/es/contacto" element={<PageSuspense><Pages.Contacto /></PageSuspense>} />
+          <Route path="/es/gracias" element={<PageSuspense><Pages.Gracias /></PageSuspense>} />
           <Route path="/es/hayas-crm" element={<PageSuspense><Pages.HayasCRM /></PageSuspense>} />
           
           
