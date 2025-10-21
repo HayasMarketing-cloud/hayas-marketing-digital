@@ -11,7 +11,7 @@ import UniversalBreadcrumbs from '@/components/UniversalBreadcrumbs';
 import FAQSection from '@/components/FAQSection';
 import SuccessCasesSection from '@/components/SuccessCasesSection';
 import OptimizedImage from '@/components/OptimizedImage';
-import UniversalServiceContactForm from '@/components/UniversalServiceContactForm';
+import ServiceContactSection from '@/components/ServiceContactSection';
 import { getServiceSuccessCasesConfig } from '@/data/serviceSuccessCasesMapping';
 import { ArrowRight, CheckCircle } from 'lucide-react';
 
@@ -293,10 +293,11 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ data }) => {
 
         {/* Contact Form Section */}
         {data.showContactForm && (
-          <UniversalServiceContactForm 
-            title={data.contactFormTitle}
-            subtitle={data.contactFormSubtitle}
-            serviceOptions={data.contactFormOptions}
+          <ServiceContactSection 
+            formId="ZHNw4rjAzNdvFbFnIk1V"
+            title={data.contactFormTitle || '¿Hablamos? Solicita tu propuesta'}
+            subtitle={data.contactFormSubtitle || 'Cuéntanos tu contexto y objetivos. Te responderemos con una propuesta alineada a tus necesidades.'}
+            minHeight={820}
           />
         )}
       </main>
