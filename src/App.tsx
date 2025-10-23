@@ -344,7 +344,6 @@ const App = () => (
             <Route path="/es/re-commerce-la-economia-circular-del-e-commerce" element={<Navigate to="/es/blog/re-commerce-economia-circular-ecommerce-partnership-sharpei" replace />} />
            
            <Route path="/es/blog/tag/:tag" element={<PageSuspense><Pages.BlogTagPage /></PageSuspense>} />
-           <Route path="/es/blog/:id" element={<PageSuspense><Pages.BlogPost /></PageSuspense>} />
             <Route path="/es/blog/perfil-cliente-ideal" element={<PageSuspense><Pages.BlogPerfilClienteIdealICP /></PageSuspense>} />
             <Route path="/es/blog/como-crear-buyer-persona-b2b-b2c-guia-completa" element={<PageSuspense><Pages.BlogPerfilClienteIdeal /></PageSuspense>} />
            <Route path="/es/blog/calculo-inversion-plan-marketing-digital" element={<PageSuspense><Pages.BlogCalculoInversionMarketing /></PageSuspense>} />
@@ -366,6 +365,7 @@ const App = () => (
         <Route path="/es/blog/funnel-conversion-b2B" element={<PageSuspense><Pages.BlogFunnelConversionB2B /></PageSuspense>} />
         <Route path="/es/blog/marketing-global-internacionalizacion" element={<PageSuspense><Pages.BlogMarketingGlobalInternacionalizacion /></PageSuspense>} />
           <Route path="/es/blog/kit-digital-marketing-guia-completa-2025" element={<PageSuspense><Pages.BlogKitDigitalMarketing /></PageSuspense>} />
+           <Route path="/es/blog/:id" element={<PageSuspense><Pages.BlogPost /></PageSuspense>} />
           
           {/* COMPARATIVAS */}
           <Route path="/es/comparativa/hubspot-vs-go-high-level" element={<PageSuspense><Pages.ComparativaHubSpotGoHighLevel /></PageSuspense>} />
