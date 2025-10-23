@@ -39,7 +39,8 @@ const UniversalServiceContactForm: React.FC<ServiceContactFormProps> = ({
     telefono: '',
     empresa: '',
     mensaje: '',
-    acceptCommunications: false
+    acceptCommunications: false,
+    website: '' // Honeypot field for bot protection
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -93,7 +94,8 @@ const UniversalServiceContactForm: React.FC<ServiceContactFormProps> = ({
         telefono: '',
         empresa: '',
         mensaje: '',
-        acceptCommunications: false
+        acceptCommunications: false,
+        website: ''
       });
     } catch (error: any) {
       console.error('Error submitting form:', error);
@@ -197,6 +199,18 @@ const UniversalServiceContactForm: React.FC<ServiceContactFormProps> = ({
                     rows={4} 
                   />
                 </div>
+
+                {/* Honeypot field - hidden from humans but visible to bots */}
+                <input
+                  type="text"
+                  name="website"
+                  value={formData.website}
+                  onChange={e => setFormData({ ...formData, website: e.target.value })}
+                  tabIndex={-1}
+                  autoComplete="off"
+                  style={{ position: 'absolute', left: '-9999px', height: 0, width: 0 }}
+                  aria-hidden="true"
+                />
 
                 <div className="flex items-start space-x-2">
                   <Checkbox 

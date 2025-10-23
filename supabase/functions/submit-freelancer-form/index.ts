@@ -28,6 +28,7 @@ const FreelancerFormSchema = z.object({
   linkedin: URLSchema,
   about: z.string().trim().max(1000).optional(),
   acceptCommunications: z.boolean().refine((val) => val === true),
+  website: z.string().max(0), // Honeypot field - must be empty
 });
 
 const logStep = (step: string, details?: any) => {
@@ -102,6 +103,20 @@ serve(async (req) => {
 
     const formData = validationResult.data;
     logStep("Form data validated successfully");
+
+    // Check honeypot field for bot protection
+    if (formData.website) {
+      logStep("Honeypot triggered - potential bot", { email });
+      return new Response(
+        JSON.stringify({
+          error: "Solicitud inválida",
+        }),
+        {
+          status: 400,
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+        }
+      );
+    }
 
     // Here you would typically:
     // 1. Save to database (freelancers table)

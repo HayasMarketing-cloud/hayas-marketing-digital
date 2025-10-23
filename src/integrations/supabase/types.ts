@@ -234,10 +234,7 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      cleanup_rate_limit_logs: {
-        Args: Record<PropertyKey, never>
-        Returns: undefined
-      }
+      cleanup_rate_limit_logs: { Args: never; Returns: undefined }
     }
     Enums: {
       [_ in never]: never

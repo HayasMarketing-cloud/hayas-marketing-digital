@@ -26,13 +26,22 @@ serve(async (req) => {
     logStep("Function started");
 
     const authHeader = req.headers.get("Authorization");
-    if (!authHeader) throw new Error("No authorization header provided");
+    if (!authHeader) {
+      logStep("ERROR: No authorization header");
+      throw new Error("Authentication required");
+    }
 
     const token = authHeader.replace("Bearer ", "");
     const { data: userData, error: userError } = await supabaseClient.auth.getUser(token);
-    if (userError) throw new Error(`Authentication error: ${userError.message}`);
+    if (userError) {
+      logStep("ERROR: User authentication failed", { error: userError.message });
+      throw new Error("Authentication failed");
+    }
     const user = userData.user;
-    if (!user) throw new Error("User not authenticated");
+    if (!user) {
+      logStep("ERROR: No user found");
+      throw new Error("Authentication failed");
+    }
     logStep("User authenticated", { userId: user.id });
 
     // Buscar customer
@@ -73,7 +82,8 @@ serve(async (req) => {
       .order('created_at', { ascending: false });
 
     if (ordersError) {
-      throw new Error(`Error fetching orders: ${ordersError.message}`);
+      logStep("ERROR: Failed to fetch orders", { error: ordersError.message });
+      throw new Error("Failed to fetch orders");
     }
 
     logStep("Orders fetched", { count: orders?.length || 0 });

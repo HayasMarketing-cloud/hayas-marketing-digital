@@ -45,6 +45,7 @@ export const ContactFormSchema = z.object({
   acceptCommunications: z.boolean().refine((val) => val === true, {
     message: "Debes aceptar recibir comunicaciones",
   }),
+  website: z.string().max(0).optional(), // Honeypot field for bot protection
 });
 
 // Freelancer form validation schema
@@ -75,6 +76,7 @@ export const FreelancerFormSchema = z.object({
   acceptCommunications: z.boolean().refine((val) => val === true, {
     message: "Debes aceptar recibir comunicaciones",
   }),
+  website: z.string().max(0).optional(), // Honeypot field for bot protection
 });
 
 export type ContactFormData = z.infer<typeof ContactFormSchema>;

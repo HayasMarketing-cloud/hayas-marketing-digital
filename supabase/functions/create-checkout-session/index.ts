@@ -68,7 +68,10 @@ serve(async (req) => {
 
     // Verificar Stripe key
     const stripeKey = Deno.env.get("STRIPE_SECRET_KEY");
-    if (!stripeKey) throw new Error("STRIPE_SECRET_KEY is not set");
+    if (!stripeKey) {
+      logStep("ERROR: Stripe key not configured");
+      throw new Error("Service configuration error");
+    }
     logStep("Stripe key verified");
 
     // Obtener y validar datos del request
@@ -125,7 +128,8 @@ serve(async (req) => {
       .single();
 
     if (productError || !product) {
-      throw new Error(`Product not found for price_id: ${price_id}`);
+      logStep("ERROR: Product not found", { price_id, error: productError?.message });
+      throw new Error("Product not available");
     }
     logStep("Product found", { productName: product.name, category: product.category });
 

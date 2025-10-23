@@ -29,7 +29,10 @@ serve(async (req) => {
 
     // Verificar Stripe key
     const stripeKey = Deno.env.get("STRIPE_SECRET_KEY");
-    if (!stripeKey) throw new Error("STRIPE_SECRET_KEY is not set");
+    if (!stripeKey) {
+      logStep("ERROR: Stripe key not configured");
+      throw new Error("Service configuration error");
+    }
 
     const stripe = new Stripe(stripeKey, { apiVersion: "2025-08-27.basil" });
 
@@ -38,7 +41,8 @@ serve(async (req) => {
     const signature = req.headers.get("stripe-signature");
 
     if (!signature) {
-      throw new Error("No signature found");
+      logStep("ERROR: No signature in webhook request");
+      throw new Error("Invalid webhook request");
     }
 
     let event: Stripe.Event;
@@ -47,14 +51,15 @@ serve(async (req) => {
       // Verify webhook signature for security
       const webhookSecret = Deno.env.get("STRIPE_WEBHOOK_SECRET");
       if (!webhookSecret) {
-        throw new Error("STRIPE_WEBHOOK_SECRET is not configured");
+        logStep("ERROR: Webhook secret not configured");
+        throw new Error("Service configuration error");
       }
       
       event = stripe.webhooks.constructEvent(body, signature, webhookSecret);
       logStep("Event verified and parsed", { type: event.type, id: event.id });
     } catch (err) {
       logStep("ERROR verifying webhook signature", { error: err });
-      throw new Error("Webhook signature verification failed");
+      throw new Error("Invalid webhook signature");
     }
 
     // Procesar diferentes tipos de eventos

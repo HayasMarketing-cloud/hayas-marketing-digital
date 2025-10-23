@@ -29,19 +29,31 @@ serve(async (req) => {
 
     // Verificar Stripe key
     const stripeKey = Deno.env.get("STRIPE_SECRET_KEY");
-    if (!stripeKey) throw new Error("STRIPE_SECRET_KEY is not set");
+    if (!stripeKey) {
+      logStep("ERROR: Stripe key not configured");
+      throw new Error("Service configuration error");
+    }
     logStep("Stripe key verified");
 
     // Verificar autenticación
     const authHeader = req.headers.get("Authorization");
-    if (!authHeader) throw new Error("No authorization header provided");
+    if (!authHeader) {
+      logStep("ERROR: No authorization header");
+      throw new Error("Authentication required");
+    }
     logStep("Authorization header found");
 
     const token = authHeader.replace("Bearer ", "");
     const { data: userData, error: userError } = await supabaseClient.auth.getUser(token);
-    if (userError) throw new Error(`Authentication error: ${userError.message}`);
+    if (userError) {
+      logStep("ERROR: User authentication failed", { error: userError.message });
+      throw new Error("Authentication failed");
+    }
     const user = userData.user;
-    if (!user?.email) throw new Error("User not authenticated or email not available");
+    if (!user?.email) {
+      logStep("ERROR: User has no email");
+      throw new Error("Authentication failed");
+    }
     logStep("User authenticated", { userId: user.id });
 
     // Buscar customer en la base de datos
@@ -52,7 +64,8 @@ serve(async (req) => {
       .single();
 
     if (customerError || !customer?.stripe_customer_id) {
-      throw new Error("No Stripe customer found for this user");
+      logStep("ERROR: Customer not found", { error: customerError?.message });
+      throw new Error("Customer not found");
     }
     logStep("Customer found", { customerId: customer.stripe_customer_id });
 
