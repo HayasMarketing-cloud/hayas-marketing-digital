@@ -1,0 +1,117 @@
+# ========================================
+# OPTIMIZACIÓN DE CACHÉ Y SEGURIDAD - SPA
+# ========================================
+# Headers para Netlify/Cloudflare Pages
+# Optimiza rendimiento y seguridad para Hayas Marketing
+
+# ========================================
+# ASSETS ESTÁTICOS - CACHÉ AGRESIVO (1 año)
+# ========================================
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+  X-Content-Type-Options: nosniff
+
+# Imágenes - Caché largo plazo
+/*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+  X-Content-Type-Options: nosniff
+  
+/*.jpeg
+  Cache-Control: public, max-age=31536000, immutable
+  X-Content-Type-Options: nosniff
+  
+/*.png
+  Cache-Control: public, max-age=31536000, immutable
+  X-Content-Type-Options: nosniff
+  
+/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+  X-Content-Type-Options: nosniff
+  
+/*.svg
+  Cache-Control: public, max-age=31536000, immutable
+  X-Content-Type-Options: nosniff
+  Content-Type: image/svg+xml
+
+# Fuentes - Caché permanente
+/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+  
+/*.woff
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+  
+/*.ttf
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+
+# JavaScript y CSS con hash - Caché permanente
+/*.js
+  Cache-Control: public, max-age=31536000, immutable
+  X-Content-Type-Options: nosniff
+  
+/*.css
+  Cache-Control: public, max-age=31536000, immutable
+  X-Content-Type-Options: nosniff
+
+# ========================================
+# HTML - CACHÉ CORTO CON REVALIDACIÓN
+# ========================================
+/*.html
+  Cache-Control: public, max-age=3600, must-revalidate
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# Index HTML - Revalidación frecuente
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# ========================================
+# CONFIGURACIÓN JSON Y XML
+# ========================================
+/sitemap.xml
+  Cache-Control: public, max-age=3600, must-revalidate
+  Content-Type: application/xml
+  
+/robots.txt
+  Cache-Control: public, max-age=3600, must-revalidate
+  Content-Type: text/plain
+  
+/manifest.json
+  Cache-Control: public, max-age=86400, must-revalidate
+  Content-Type: application/json
+
+# ========================================
+# HEADERS DE SEGURIDAD GLOBALES
+# ========================================
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  
+# ========================================
+# PRECONNECT PARA RECURSOS EXTERNOS
+# ========================================
+/*
+  Link: <https://fonts.googleapis.com>; rel=preconnect; crossorigin
+  Link: <https://fonts.gstatic.com>; rel=preconnect; crossorigin
+  Link: <https://www.google-analytics.com>; rel=preconnect
+  Link: <https://www.googletagmanager.com>; rel=preconnect
+
+# ========================================
+# NOTA IMPORTANTE
+# ========================================
+# Headers optimizados para SPA con múltiples páginas:
+# - Assets estáticos: caché 1 año (inmutable)
+# - HTML: caché 1 hora con revalidación
+# - Seguridad: Headers OWASP recomendados
+# - Performance: Preconnect a recursos críticos externos

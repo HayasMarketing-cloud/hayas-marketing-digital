@@ -1,0 +1,207 @@
+# ========================================
+# ARQUITECTURA MULTIIDIOMA - ESPAÑOL POR DEFECTO
+# ========================================
+# Web migrada a estructura internacional con /es/
+# URLs estandarizadas SIN barra final para mejor SEO
+# Formato: Netlify/Cloudflare Pages redirects
+
+# ========================================
+# REDIRECCIÓN HOME PRINCIPAL
+# ========================================
+/  /es  301
+
+# ========================================
+# REDIRECCIONES LEGACY DE OTROS IDIOMAS  
+# ========================================
+/en  /es  301
+/zh  /es  301
+
+# ========================================
+# REDIRECCIONES CRÍTICAS DE WORDPRESS - BLOG
+# ========================================
+# Blog - Artículos importantes
+/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing  /es/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing  301
+/es/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing  /es/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing  301
+
+# CRM - Redirecciones consolidadas para todas las variantes
+/blog/crm-que-es-beneficios  /es/blog/crm-que-es-beneficios  301
+/blog/qué-es-un-crm-o-customer-relationship-management  /es/blog/crm-que-es-beneficios  301
+/blog/que-es-un-crm-o-customer-relationship-management  /es/blog/crm-que-es-beneficios  301
+/es/que-es-un-crm-o-customer-relationship-management/  /es/blog/crm-que-es-beneficios  301
+/es/que-es-un-crm-o-customer-relationship-management  /es/blog/crm-que-es-beneficios  301
+/blog/buenas-prácticas-técnicas-de-email-marketing-con-hubspot  /es/blog/buenas-practicas-tecnicas-de-email-marketing-con-hubspot  301
+/blog/cómo-solicitar-tu-bono-del-kit-digital  /es/blog/como-solicitar-tu-bono-del-kit-digital  301
+/blog/como-crear-una-estrategia-de-contenidos  /es/blog/como-crear-una-estrategia-de-marketing-de-contenidos-eficaz  301
+/blog/digitalizacion-y-automatizacion-de-procesos-de-marketing-digital  /es/blog/automatizacion-de-marketing-digital  301
+/blog/estrategia-abm-para-captar-grandes-cuentas  /es/blog/estrategia-account-based-marketing-abm-para-captar-grandes-cuentas  301
+/blog/proyectos-b2b-con-tecnologia-blockchain  /es/blog/proyectos-de-empresas-con-tecnologia-blockchain  301
+/blog/tik-tok-y-la-generación-z-por-qué-deberías-incluirla-en-tu-estrategia-de-marketing  /es/blog/tiktok-y-la-generacion-zeta-por-que-deberias-incluirla-en-tu-estrategia-de-marketing-digital  301
+/blog/como-calcular-la-inversion-de-tu-estrategia-de-marketing-incluye-plantilla  /es/blog/claves-para-invertir-en-tu-estrategia-de-marketing-digital  301
+/blog/que-es-marketing-natural  /es/blog/marketing-natural-atrae-a-tus-clientes-de-forma-organica  301
+/blog/cómo-solicitar-el-kit-digital-paso-a-paso-en-2024  /es/blog/como-solicitar-el-kit-digital-paso-a-paso-en-2024  301
+/blog/marketing-de-influencers-eleccion-estrategica-entre-influencers-y-microinfluencers  /es/blog/marketing-de-influencers-vs-microinfluencers  301
+
+# Blog - Redirecciones genéricas al blog
+/blog/las-11-mejores-practicas-para-el-envio-masivo-de-correos-electronicos  /es/blog  301
+/blog/diseno-de-apps-para-movil.-guia-para-principiantes  /es/blog  301
+/blog/cómo-chat-gpt-podría-afectar-a-tu-puesto-de-trabajo  /es/blog  301
+/blog/10-consejos-para-que-tu-web-b2b-venda-24/7  /es/blog  301
+/blog/meta-y-ray-ban-desvelan-las-lentes-inteligentes-de-próxima-generación  /es/blog  301
+/blog/pagina-web-inbound-que-es-y-como-funciona  /es/blog  301
+/blog/el-fin-del-spam-telefónico-en-españa-qué-significa-para-los-profesionales-del-marketing-digital  /es/blog  301
+/blog/el-social-selling-como-trend-de-los-negocios  /es/blog  301
+/blog/qué-es-un-landing-page  /es/blog  301
+/blog/programar-publicaciones-y-automatizar-las-redes-sociales  /es/blog  301
+/blog/como-hacer-una-campana-de-inbound-marketing-en-hubspot  /es/blog  301
+/blog/que-hub-de-hubspot-elegir-marketing-o-sales  /es/blog  301
+/blog/meta-y-su-metaverso-productividad-o-entretenimiento  /es/blog  301
+/blog/lo-que-tienes-que-saber-de-google-analytics-4  /es/blog  301
+
+# Categorías del blog
+/blog/tag/inteligencia-artificial  /es/blog/category/ia  301
+
+# ========================================
+# REDIRECCIONES CRÍTICAS - SERVICIOS Y PÁGINAS
+# ========================================
+/es/inbound-marketing-crea-un-sistema-mas-eficiente-y-de-mejora-continua/  /es/servicios/estrategia-de-marketing-digital-360  301
+/es/automatizacion-marketing  /es/servicios/crm-y-automatizacion-de-marketing  301
+/es/onboarding-hubspot  /es/servicios/crm-y-automatizacion-de-marketing  301
+/es/automatizacion-hubspot  /es/servicios/crm-y-automatizacion-de-marketing  301
+/es/kit-digital-gestion-de-clientes-crm-hubspot/  /es/servicios/kit-digital-gestion-de-clientes-crm  301
+/es/inbound-sales-convierte-y-cierra-mas-y-mejores-ventas  /es/servicios/estrategia-de-marketing-digital-360  301
+/es/publicidad-digital  /es/servicios/publicidad-en-google-ads  301
+/es/estrategia-marketing-digital-y-ventas  /es/servicios/estrategia-de-marketing-digital-360  301
+/es/consultoria-formacion-hubspot  /es/servicios/crm-y-automatizacion-de-marketing  301
+/es/campana-inbound-marketing  /es  301
+/es/diseño-y-desarrollo-paginas-web  /es/servicios/diseno-y-desarrollo-paginas-web  301
+/es/gestion-de-clientes-con-la-plataforma-crm-de-hubspot  /es/servicios/kit-digital-gestion-de-clientes-crm  301
+/es/inbound-marketing-y-ventas-para-empresas-de-logistica-y-transporte  /es  301
+
+# Páginas institucionales
+/es/agencia-de-inbound-marketing-y-ventas-online/  /es/nosotros  301
+/casos-de-exito/formato-educativo  /es/casos-de-exito/estrategia-de-captacion-de-leads-para-la-escuela-de-negocios-formato-educativo  301
+
+# ========================================
+# REDIRECCIONES DE CONTENIDO ELIMINADO
+# ========================================
+/es/servicio-de-asesoramiento-en-inteligencia-artificial-con-kit-consulting  /es/contenido-eliminado  301
+/es/servicio-de-asesoramiento-en-inteligencia-artificial-con-kit-consulting/  /es/contenido-eliminado  301
+/es/servicio-de-asesoramiento-en-analisis-de-datos-avanzado-con-kit-consulting  /es/contenido-eliminado  301
+/es/servicio-de-asesoramiento-en-analisis-de-datos-avanzado-con-kit-consulting/  /es/contenido-eliminado  301
+/es/servicio-de-asesoramiento-en-transformacion-digital-360-con-kit-consulting  /es/contenido-eliminado  301
+/es/servicio-de-asesoramiento-en-transformacion-digital-360-con-kit-consulting/  /es/contenido-eliminado  301
+/es/servicio-de-asesoramiento-en-ventas-digitales-con-kit-consulting  /es/contenido-eliminado  301
+/es/servicio-de-asesoramiento-en-ventas-digitales-con-kit-consulting/  /es/contenido-eliminado  301
+/es/servicio-de-asesoramiento-en-analisis-de-datos-basico-con-kit-consulting  /es/contenido-eliminado  301
+/es/servicio-de-asesoramiento-en-analisis-de-datos-basico-con-kit-consulting/  /es/contenido-eliminado  301
+/es/servicio-de-asesoramiento-en-ciberseguridad-con-kit-consulting  /es/contenido-eliminado  301
+/es/servicio-de-asesoramiento-en-ciberseguridad-con-kit-consulting/  /es/contenido-eliminado  301
+/es/kitconsulting/asesoramiento-en-inteligencia-artificial-aplicada-a-marketing-digital-con-kit-consulting  /es/contenido-eliminado  301
+/es/kitconsulting/asesoramiento-en-inteligencia-artificial-aplicada-a-marketing-digital-con-kit-consulting/  /es/contenido-eliminado  301
+/es/kitconsulting/asesoramiento-estrategia-rendimiento-de-negocio-ia-kit-consulting  /es/contenido-eliminado  301
+/es/kitconsulting/asesoramiento-estrategia-rendimiento-de-negocio-ia-kit-consulting/  /es/contenido-eliminado  301
+/es/kitconsulting  /es/contenido-eliminado  301
+/es/kitconsulting/  /es/contenido-eliminado  301
+
+# ========================================
+# REDIRECCIONES ADICIONALES - PÁGINAS PRINCIPALES
+# ========================================
+/es/soluciones/  /es  301
+/es/herramientas/  /es  301
+/es/recursos/  /es/blog  301
+/es/precios/  /es  301
+/es/contacto/  /es/contacto  301
+/es/about/  /es/nosotros  301
+/es/team/  /es/nosotros  301
+
+# ========================================
+# REDIRECCIONES ADICIONALES - ARTÍCULOS DE BLOG
+# ========================================
+/es/blog/marketing-automation-hubspot/  /es/blog/automatizacion-de-marketing-digital  301
+/es/blog/inbound-marketing-strategy/  /es/blog/estrategia-de-marketing-de-contenidos-eficaz  301
+/es/blog/lead-generation-tips/  /es/blog  301
+/es/blog/crm-implementation/  /es/blog/que-es-un-crm-o-customer-relationship-management  301
+/es/blog/digital-transformation/  /es/blog/automatizacion-de-marketing-digital  301
+/es/blog/social-media-strategy/  /es/blog  301
+/es/blog/content-marketing-best-practices/  /es/blog/como-crear-una-estrategia-de-marketing-de-contenidos-eficaz  301
+/es/blog/email-marketing-automation/  /es/blog/buenas-practicas-tecnicas-de-email-marketing-con-hubspot  301
+/es/blog/hubspot-onboarding/  /es/blog/que-es-un-crm-o-customer-relationship-management  301
+/es/blog/seo-fundamentals/  /es/blog  301
+/es/blog/web-design-trends/  /es/blog  301
+/es/blog/analytics-setup/  /es/blog  301
+/es/blog/conversion-optimization/  /es/blog  301
+
+# ========================================
+# REDIRECCIONES ADICIONALES - SERVICIOS Y PÁGINAS COMERCIALES
+# ========================================
+/es/servicios/  /es  301
+/es/marketing-digital/  /es/servicios/estrategia-de-marketing-digital-360  301
+/es/diseno-web/  /es/servicios/diseno-y-desarrollo-paginas-web  301
+/es/desarrollo-web/  /es/servicios/diseno-y-desarrollo-paginas-web  301
+/es/seo/  /es/servicios/posicionamiento-web-seo  301
+/es/sem/  /es/servicios/publicidad-en-google-ads  301
+/es/social-media/  /es/servicios/estrategia-de-marketing-digital-360  301
+/es/branding/  /es/servicios/branding-e-identidad-de-marca  301
+/es/ecommerce/  /es/servicios/diseno-de-tienda-online  301
+/es/analytics/  /es/servicios/estrategia-de-marketing-digital-360  301
+/es/hubspot/  /es/servicios/crm-y-automatizacion-de-marketing  301
+/es/crm/  /es/servicios/crm-y-automatizacion-de-marketing  301
+/es/lead-generation/  /es/servicios/estrategia-de-marketing-digital-360  301
+/es/conversion-optimization/  /es/servicios/estrategia-de-marketing-digital-360  301
+/es/marketing-automation/  /es/servicios/crm-y-automatizacion-de-marketing  301
+/es/digital-strategy/  /es/servicios/estrategia-de-marketing-digital-360  301
+/es/web-development/  /es/servicios/diseno-y-desarrollo-paginas-web  301
+/es/ppc/  /es/servicios/publicidad-en-google-ads  301
+/es/content-marketing/  /es/servicios/estrategia-de-marketing-digital-360  301
+/es/email-marketing/  /es/servicios/estrategia-de-marketing-digital-360  301
+
+# ========================================
+# REDIRECCIONES ADICIONALES - VARIACIONES Y CORRECCIONES
+# ========================================
+/es/kit-digital-gestion-de-clientes/  /es/servicios/kit-digital-gestion-de-clientes-crm  301
+/es/kit-digital-presencia-basica-web/  /es/servicios/kit-digital-presencia-basica-web  301
+/es/kit-digital-paginas-web/  /es/kit-digital  301
+/es/inbound-marketing/  /es/servicios/estrategia-de-marketing-digital-360  301
+/es/inbound-sales/  /es/servicios/estrategia-de-marketing-digital-360  301
+/es/automatizacion/  /es/servicios/crm-y-automatizacion-de-marketing  301
+/es/consultoria/  /es/servicios/estrategia-de-marketing-digital-360  301
+/es/formacion/  /es/servicios/crm-y-automatizacion-de-marketing  301
+/es/publicidad/  /es/servicios/publicidad-en-google-ads  301
+/es/posicionamiento/  /es/servicios/posicionamiento-web-seo  301
+
+# ========================================
+# REDIRECCIONES ADICIONALES - KIT CONSULTING ELIMINADO
+# ========================================
+/es/kit-consulting/  /es/contenido-eliminado  301
+/es/kitconsulting/  /es/contenido-eliminado  301
+/es/asesoramiento-ia/  /es/contenido-eliminado  301
+/es/asesoramiento-datos/  /es/contenido-eliminado  301
+/es/asesoramiento-transformacion/  /es/contenido-eliminado  301
+/es/asesoramiento-ventas/  /es/contenido-eliminado  301
+/es/asesoramiento-ciberseguridad/  /es/contenido-eliminado  301
+/es/consulting-ia/  /es/contenido-eliminado  301
+/es/consulting-datos/  /es/contenido-eliminado  301
+/es/consulting-digital/  /es/contenido-eliminado  301
+
+# ========================================
+# SPLAT RULE - REDIRECCIONES AUTOMÁTICAS PARA URLs SIN /es/
+# ========================================
+# Redirigir URLs principales que no empiecen con /es/ (debe ir al final)
+/servicios/*  /es/servicios/:splat  301
+/soluciones/*  /es/soluciones/:splat  301
+/blog/*  /es/blog/:splat  301
+/casos-exito/*  /es/casos-exito/:splat  301
+/nosotros  /es/nosotros  301
+/contacto  /es/contacto  301
+/agendar-reunion  /es/agendar-reunion  301
+/kit-digital  /es/kit-digital  301
+
+# ========================================
+# NOTA IMPORTANTE
+# ========================================
+# Redirecciones migradas desde redirects.htaccess (Apache) a formato Netlify/Cloudflare Pages
+# Total de ~155 redirecciones implementadas:
+# - Incluye todas las redirecciones del .htaccess original
+# - Añadidas variaciones con/sin barra final
+# - Splat rules para capturar patrones dinámicos
+# Formato: /source /destination 301

@@ -34,7 +34,6 @@ export default defineConfig(({ mode }) => ({
             './src/pages/CasoExitoAsendia.tsx',
             './src/pages/CasoExitoNexoVital.tsx',
             './src/pages/CasoExitoIVirgenExtra.tsx',
-            // Más casos de éxito se agruparán automáticamente
           ],
           
           // Chunk para blog posts (lazy load group)
@@ -42,7 +41,6 @@ export default defineConfig(({ mode }) => ({
             './src/pages/BlogIAMarketing.tsx',
             './src/pages/BlogPerfilClienteIdeal.tsx',
             './src/pages/BlogCalculoInversionMarketing.tsx',
-            // Más posts del blog se agruparán automáticamente
           ],
           
           // Chunk para servicios (lazy load group)
@@ -50,7 +48,6 @@ export default defineConfig(({ mode }) => ({
             './src/pages/TiendaOnline.tsx',
             './src/pages/DisenoWeb.tsx',
             './src/pages/SeoPositioning.tsx',
-            // Más servicios se agruparán automáticamente
           ]
         }
       }
@@ -59,7 +56,11 @@ export default defineConfig(({ mode }) => ({
     chunkSizeWarningLimit: 1000,
     minify: 'esbuild',
     target: 'es2015',
-    sourcemap: false
+    sourcemap: false,
+    // Optimizaciones adicionales para SPA
+    cssCodeSplit: true,
+    assetsInlineLimit: 4096,
+    reportCompressedSize: false, // Acelera builds
   },
   // Optimizaciones adicionales
   esbuild: {

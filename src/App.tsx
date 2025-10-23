@@ -8,6 +8,7 @@ import SofiaWidget from "./components/SofiaSection";
 import ScrollToTop from './components/ScrollToTop';
 import DraftProtection from './components/DraftProtection';
 import PageSuspense from './components/PageSuspense';
+import RoutePreloader from './components/RoutePreloader';
 
 // Lazy imports organizados por categoría
 import * as Pages from './utils/lazyImports';
@@ -21,9 +22,10 @@ const App = () => (
       <Sonner />
       <AuthProvider>
         <BrowserRouter>
-      <ScrollToTop />
-        <SofiaWidget />
-        <DraftProtection>
+          <ScrollToTop />
+          <RoutePreloader />
+          <SofiaWidget />
+          <DraftProtection>
           <Routes>
            {/* REDIRECCIÓN ROOT A ESPAÑOL */}
            <Route path="/" element={<Navigate to="/es" replace />} />
