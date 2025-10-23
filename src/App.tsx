@@ -48,6 +48,9 @@ const App = () => (
            {/* REDIRECCIÓN ESPECÍFICA BLOG POST */}
            <Route path="/es/que-es-y-para-que-sirve-el-perfil-de-cliente-ideal" element={<Navigate to="/es/blog/perfil-cliente-ideal" replace />} />
            <Route path="/es/que-es-y-para-que-sirve-el-perfil-de-cliente-ideal/" element={<Navigate to="/es/blog/perfil-cliente-ideal" replace />} />
+           {/* Legacy corto → slug definitivo */}
+           <Route path="/es/ia-en-redes-sociales" element={<Navigate to="/es/blog/ia-redes-sociales-herramientas-riesgos" replace />} />
+           <Route path="/es/ia-en-redes-sociales/" element={<Navigate to="/es/blog/ia-redes-sociales-herramientas-riesgos" replace />} />
            
            {/* REDIRECCIONES SIN PREFIJO /es/ */}
            <Route path="/blog/crm-que-es-beneficios" element={<Navigate to="/es/blog/crm-que-es-beneficios" replace />} />
