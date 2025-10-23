@@ -129,29 +129,51 @@ const App = () => (
            <Route path="/kit-digital-gestion-redes-sociales/" element={<Navigate to="/es/kit-digital" replace />} />
            <Route path="/kit-digital-tienda-online/" element={<Navigate to="/es/kit-digital" replace />} />
            
-           {/* CASOS DE ÉXITO - Redirecciones legacy SIN /es/ */}
+           {/* CASOS DE ÉXITO - Redirecciones legacy SIN /es/ (sin y con trailing slash) */}
            <Route path="/casos-exito/motiva-tu-mente" element={<Navigate to="/es/casos-exito/motiva-tu-mente" replace />} />
+           <Route path="/casos-exito/motiva-tu-mente/" element={<Navigate to="/es/casos-exito/motiva-tu-mente" replace />} />
            <Route path="/casos-exito/aistercel" element={<Navigate to="/es/casos-exito/aistercel" replace />} />
+           <Route path="/casos-exito/aistercel/" element={<Navigate to="/es/casos-exito/aistercel" replace />} />
            <Route path="/casos-exito/moda-intima-vania" element={<Navigate to="/es/casos-exito/moda-intima-vania" replace />} />
+           <Route path="/casos-exito/moda-intima-vania/" element={<Navigate to="/es/casos-exito/moda-intima-vania" replace />} />
            <Route path="/casos-exito/wooptix" element={<Navigate to="/es/casos-exito/wooptix" replace />} />
+           <Route path="/casos-exito/wooptix/" element={<Navigate to="/es/casos-exito/wooptix" replace />} />
            <Route path="/casos-exito/plaza-de-la-estacion" element={<Navigate to="/es/casos-exito/plaza-de-la-estacion" replace />} />
+           <Route path="/casos-exito/plaza-de-la-estacion/" element={<Navigate to="/es/casos-exito/plaza-de-la-estacion" replace />} />
            <Route path="/casos-exito/unitrips" element={<Navigate to="/es/casos-exito/unitrips" replace />} />
+           <Route path="/casos-exito/unitrips/" element={<Navigate to="/es/casos-exito/unitrips" replace />} />
            <Route path="/casos-exito/finect" element={<Navigate to="/es/casos-exito/finect" replace />} />
+           <Route path="/casos-exito/finect/" element={<Navigate to="/es/casos-exito/finect" replace />} />
            <Route path="/casos-exito/eurobits-technologies" element={<Navigate to="/es/casos-exito/eurobits-technologies" replace />} />
+           <Route path="/casos-exito/eurobits-technologies/" element={<Navigate to="/es/casos-exito/eurobits-technologies" replace />} />
            <Route path="/casos-exito/fundacion-casa-mexico" element={<Navigate to="/es/casos-exito/fundacion-casa-mexico" replace />} />
+           <Route path="/casos-exito/fundacion-casa-mexico/" element={<Navigate to="/es/casos-exito/fundacion-casa-mexico" replace />} />
            <Route path="/casos-exito/covebo" element={<Navigate to="/es/casos-exito/covebo" replace />} />
+           <Route path="/casos-exito/covebo/" element={<Navigate to="/es/casos-exito/covebo" replace />} />
            <Route path="/casos-exito/beka-finance" element={<Navigate to="/es/casos-exito/beka-finance" replace />} />
+           <Route path="/casos-exito/beka-finance/" element={<Navigate to="/es/casos-exito/beka-finance" replace />} />
            <Route path="/casos-exito/give-and-go" element={<Navigate to="/es/casos-exito/give-and-go" replace />} />
+           <Route path="/casos-exito/give-and-go/" element={<Navigate to="/es/casos-exito/give-and-go" replace />} />
            <Route path="/casos-exito/lualca" element={<Navigate to="/es/casos-exito/lualca" replace />} />
+           <Route path="/casos-exito/lualca/" element={<Navigate to="/es/casos-exito/lualca" replace />} />
            <Route path="/casos-exito/aecoc" element={<Navigate to="/es/casos-exito/aecoc" replace />} />
+           <Route path="/casos-exito/aecoc/" element={<Navigate to="/es/casos-exito/aecoc" replace />} />
            <Route path="/casos-exito/asendia" element={<Navigate to="/es/casos-exito/asendia" replace />} />
+           <Route path="/casos-exito/asendia/" element={<Navigate to="/es/casos-exito/asendia" replace />} />
            <Route path="/casos-exito/asp-asepsia" element={<Navigate to="/es/casos-exito/asp-asepsia" replace />} />
+           <Route path="/casos-exito/asp-asepsia/" element={<Navigate to="/es/casos-exito/asp-asepsia" replace />} />
            <Route path="/casos-exito/buhobike" element={<Navigate to="/es/casos-exito/buhobike" replace />} />
+           <Route path="/casos-exito/buhobike/" element={<Navigate to="/es/casos-exito/buhobike" replace />} />
            <Route path="/casos-exito/cabrera-cervantes" element={<Navigate to="/es/casos-exito/cabrera-cervantes" replace />} />
+           <Route path="/casos-exito/cabrera-cervantes/" element={<Navigate to="/es/casos-exito/cabrera-cervantes" replace />} />
            <Route path="/casos-exito/jointsup" element={<Navigate to="/es/casos-exito/joints-up" replace />} />
+           <Route path="/casos-exito/jointsup/" element={<Navigate to="/es/casos-exito/joints-up" replace />} />
            <Route path="/casos-exito/aip-clinic" element={<Navigate to="/es/casos-exito/aip-clinic" replace />} />
+           <Route path="/casos-exito/aip-clinic/" element={<Navigate to="/es/casos-exito/aip-clinic" replace />} />
            <Route path="/casos-exito/hotteo-travel" element={<Navigate to="/es/casos-exito/hotteo-travel" replace />} />
+           <Route path="/casos-exito/hotteo-travel/" element={<Navigate to="/es/casos-exito/hotteo-travel" replace />} />
            <Route path="/casos-exito" element={<Navigate to="/es/casos-exito" replace />} />
+           <Route path="/casos-exito/" element={<Navigate to="/es/casos-exito" replace />} />
            
            {/* CASOS DE ÉXITO - Página principal */}
            <Route path="/es/casos-exito" element={<PageSuspense><Pages.CasosExito /></PageSuspense>} />
