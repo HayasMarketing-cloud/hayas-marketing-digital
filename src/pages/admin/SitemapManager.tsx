@@ -1,6 +1,7 @@
 import React from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import SEONavigation from '@/components/seo-dashboard/SEONavigation';
 import { SitemapTree } from '@/components/seo-dashboard/SitemapTree';
 import { analyzeSitemap } from '@/utils/seo-analytics/sitemapAnalyzer';
 import { Button } from '@/components/ui/button';
@@ -23,6 +24,7 @@ const SitemapManager: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navigation />
+      <SEONavigation />
       <main className="flex-1 container mx-auto px-4 py-8">
         <div className="max-w-7xl mx-auto space-y-6">
           <div className="flex justify-between items-center">

@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import SEONavigation from '@/components/seo-dashboard/SEONavigation';
 import { MetricsCard } from '@/components/seo-dashboard/MetricsCard';
 import { SEOHealthIndicator } from '@/components/seo-dashboard/SEOHealthIndicator';
 import { FileText, Globe, ArrowRight, Map, AlertTriangle } from 'lucide-react';
@@ -49,6 +50,7 @@ const SEODashboard: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navigation />
+      <SEONavigation />
       
       <main className="flex-1 container mx-auto px-4 py-8">
         <div className="max-w-7xl mx-auto space-y-8">

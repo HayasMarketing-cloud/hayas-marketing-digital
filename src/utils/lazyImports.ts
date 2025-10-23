@@ -148,6 +148,7 @@ export const CasoExitoHotteoTravel = lazy(() => import("@/pages/CasoExitoHotteoT
 // Admin - SEO Control Center
 export const SEODashboard = lazy(() => import("@/pages/admin/SEODashboard"));
 export const SitemapManager = lazy(() => import("@/pages/admin/SitemapManager"));
+export const RobotsManager = lazy(() => import("@/pages/admin/RobotsManager"));
 export const RedirectsManager = lazy(() => import("@/pages/admin/RedirectsManager"));
 
 // Páginas legales
