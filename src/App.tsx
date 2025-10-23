@@ -130,13 +130,49 @@ const App = () => (
            {/* BLOG / RECURSOS */}
            <Route path="/es/blog" element={<PageSuspense><Pages.Blog /></PageSuspense>} />
            
+           {/* REDIRECCIONES CLIENT-SIDE - Post IA Marketing (URLs legacy SIN /blog/) */}
+           <Route path="/es/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing" 
+                  element={<Navigate to="/es/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing" replace />} />
+           <Route path="/es/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing/" 
+                  element={<Navigate to="/es/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing" replace />} />
+           <Route path="/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing" 
+                  element={<Navigate to="/es/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing" replace />} />
+           <Route path="/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing/" 
+                  element={<Navigate to="/es/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing" replace />} />
+           
            {/* URL CANÓNICA - Post IA Marketing */}
            <Route path="/es/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing" element={<PageSuspense><Pages.BlogIAMarketing /></PageSuspense>} />
            
            <Route path="/es/blog/guia-tecnica-email-marketing-hubspot-configuracion" element={<PageSuspense><Pages.BlogEmailMarketingHubSpot /></PageSuspense>} />
            <Route path="/es/blog/configuracion-email-marketing-cumplimiento-normativo" element={<PageSuspense><Pages.BlogConfiguracionEmailMarketingCumplimiento /></PageSuspense>} />
-             <Route path="/es/blog/tag/:tag" element={<PageSuspense><Pages.BlogTagPage /></PageSuspense>} />
-            <Route path="/es/blog/:id" element={<PageSuspense><Pages.BlogPost /></PageSuspense>} />
+           
+           {/* REDIRECCIONES CRÍTICAS - URLs truncadas y legacy de otros posts */}
+           {/* Buyer Persona - Redirecciones legacy */}
+           <Route path="/es/blog/como-crear-tu-buyer-persona-para-b2b-infografia" 
+                  element={<Navigate to="/es/blog/como-crear-buyer-persona-b2b-b2c-guia-completa" replace />} />
+           <Route path="/es/blog/como-crear-tu-buyer-persona-para-b2b-infografia/" 
+                  element={<Navigate to="/es/blog/como-crear-buyer-persona-b2b-b2c-guia-completa" replace />} />
+           <Route path="/blog/como-crear-tu-buyer-persona-para-b2b-infografia" 
+                  element={<Navigate to="/es/blog/como-crear-buyer-persona-b2b-b2c-guia-completa" replace />} />
+           <Route path="/blog/como-crear-tu-buyer-persona-para-b2b-infografia/" 
+                  element={<Navigate to="/es/blog/como-crear-buyer-persona-b2b-b2c-guia-completa" replace />} />
+           
+           {/* Re-commerce - URLs truncadas */}
+           <Route path="/es/re-commerce-la-economia-circular-del-e-" 
+                  element={<Navigate to="/es/blog/re-commerce-economia-circular-ecommerce-partnership-sharpei" replace />} />
+           
+           {/* IA Marketing - URLs truncadas */}
+           <Route path="/es/la-inteligencia-" 
+                  element={<Navigate to="/es/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing" replace />} />
+           <Route path="/es/la-inteligencia-artificial-ia-y-su-aplicacion-en-" 
+                  element={<Navigate to="/es/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing" replace />} />
+           <Route path="/es/la-inteligencia-artificial-ia-y-su" 
+                  element={<Navigate to="/es/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing" replace />} />
+           <Route path="/blog/como-crear-tu-buyer-persona-para-b2b-" 
+                  element={<Navigate to="/es/blog/como-crear-buyer-persona-b2b-b2c-guia-completa" replace />} />
+           
+           <Route path="/es/blog/tag/:tag" element={<PageSuspense><Pages.BlogTagPage /></PageSuspense>} />
+           <Route path="/es/blog/:id" element={<PageSuspense><Pages.BlogPost /></PageSuspense>} />
             <Route path="/es/blog/perfil-cliente-ideal" element={<PageSuspense><Pages.BlogPerfilClienteIdealICP /></PageSuspense>} />
             <Route path="/es/blog/como-crear-buyer-persona-b2b-b2c-guia-completa" element={<PageSuspense><Pages.BlogPerfilClienteIdeal /></PageSuspense>} />
            <Route path="/es/blog/calculo-inversion-plan-marketing-digital" element={<PageSuspense><Pages.BlogCalculoInversionMarketing /></PageSuspense>} />
