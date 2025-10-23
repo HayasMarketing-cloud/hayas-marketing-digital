@@ -1,5 +1,5 @@
-import React from 'react';
-import { useParams, Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
@@ -15,10 +15,32 @@ import mantenimientoWordpressHero from '@/assets/mantenimiento-wordpress-hero.jp
 import estrategiaMarketingContenidosHero from '@/assets/estrategia-marketing-contenidos-hero.jpg';
 import iaRedesSocialesHero from '@/assets/ia-redes-sociales-hero.jpg';
 import tiktokMarketingHero from '@/assets/tiktok-marketing-hero.jpg';
+
 const BlogPost = () => {
-  const {
-    id
-  } = useParams();
+  const { id } = useParams();
+  const navigate = useNavigate();
+
+  // Mapeo de URLs legacy a URLs canónicas (redirecciones temporales client-side)
+  const LEGACY_REDIRECTS: Record<string, string> = {
+    // URLs truncadas
+    'la-inteligencia-': '/es/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing',
+    'la-inteligencia-artificial-ia-y-su-aplicacion-en-': '/es/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing',
+    'la-inteligencia-artificial-ia-y-su': '/es/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing',
+    
+    // Buyer persona
+    'como-crear-tu-buyer-persona-para-b2b-infografia': '/es/blog/como-crear-buyer-persona-b2b-b2c-guia-completa',
+    'como-crear-tu-buyer-persona-para-b2b-': '/es/blog/como-crear-buyer-persona-b2b-b2c-guia-completa',
+    
+    // Re-commerce
+    're-commerce-la-economia-circular-del-e-': '/es/blog/re-commerce-economia-circular-ecommerce-partnership-sharpei',
+  };
+
+  // Redirigir automáticamente si es una URL legacy
+  useEffect(() => {
+    if (id && LEGACY_REDIRECTS[id]) {
+      navigate(LEGACY_REDIRECTS[id], { replace: true });
+    }
+  }, [id, navigate]);
 
   // Post específico de Estrategia de Marketing de Contenidos
   if (id === 'estrategia-marketing-contenidos-eficaz-2025') {
