@@ -458,10 +458,11 @@ const App = () => (
            <Route path="/ampliacion-de-las-ayudas-del-kit-digital-en-2024/" element={<Navigate to="/es/blog" replace />} />
           
            {/* ADMIN - SEO Control Center */}
-           <Route path="/admin/seo" element={<PageSuspense><Pages.SEODashboard /></PageSuspense>} />
-           <Route path="/admin/seo/sitemap" element={<PageSuspense><Pages.SitemapManager /></PageSuspense>} />
-           <Route path="/admin/seo/robots" element={<PageSuspense><Pages.RobotsManager /></PageSuspense>} />
-           <Route path="/admin/seo/redirects" element={<PageSuspense><Pages.RedirectsManager /></PageSuspense>} />
+          <Route path="/admin/seo" element={<PageSuspense><Pages.SEODashboard /></PageSuspense>} />
+          <Route path="/admin/seo/sitemap" element={<PageSuspense><Pages.SitemapManager /></PageSuspense>} />
+          <Route path="/admin/seo/robots" element={<PageSuspense><Pages.RobotsManager /></PageSuspense>} />
+          <Route path="/admin/seo/redirects" element={<PageSuspense><Pages.RedirectsManager /></PageSuspense>} />
+          <Route path="/admin/seo/gsc" element={<PageSuspense><Pages.GSCFullReport /></PageSuspense>} />
           <Route path="/es/servicios/implementacion-funnel" element={<PageSuspense><Pages.ImplementacionFunnel /></PageSuspense>} />
           <Route path="/es/servicios/administracion-crm" element={<PageSuspense><Pages.AdministracionCrm /></PageSuspense>} />
           <Route path="/es/servicios/automatizacion-procesos-ventas" element={<PageSuspense><Pages.AutomatizacionProcesosVentas /></PageSuspense>} />

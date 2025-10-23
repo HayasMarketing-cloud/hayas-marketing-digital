@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
-import { LayoutDashboard, Map, Globe, ArrowRight } from 'lucide-react';
+import { LayoutDashboard, Map, Globe, ArrowRight, BarChart3 } from 'lucide-react';
 
 const SEONavigation: React.FC = () => {
   const location = useLocation();
 
   const navItems = [
     { path: '/admin/seo', label: 'Dashboard', icon: LayoutDashboard },
+    { path: '/admin/seo/gsc', label: 'Search Console', icon: BarChart3 },
     { path: '/admin/seo/sitemap', label: 'Sitemap', icon: Map },
     { path: '/admin/seo/robots', label: 'Robots.txt', icon: Globe },
     { path: '/admin/seo/redirects', label: 'Redirecciones', icon: ArrowRight },

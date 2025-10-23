@@ -3,8 +3,9 @@ import { useQuery } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Globe, TrendingUp, MousePointerClick, Search, AlertCircle, RefreshCw } from 'lucide-react';
+import { Globe, TrendingUp, MousePointerClick, Search, AlertCircle, RefreshCw, ArrowRight } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { Link } from 'react-router-dom';
 
 interface GSCRow {
   keys: string[];
@@ -64,11 +65,11 @@ export const GSCWidget: React.FC = () => {
       return acc;
     }, {});
 
-  const topPagesArray = topPages ? Object.values(topPages).sort((a, b) => b.clicks - a.clicks).slice(0, 5) : [];
+  const topPagesArray = topPages ? Object.values(topPages).sort((a, b) => b.clicks - a.clicks).slice(0, 10) : [];
 
   const topQueries = data?.rows
     ?.sort((a, b) => b.clicks - a.clicks)
-    .slice(0, 5);
+    .slice(0, 10);
 
   const totalClicks = data?.rows?.reduce((sum, row) => sum + row.clicks, 0) || 0;
   const totalImpressions = data?.rows?.reduce((sum, row) => sum + row.impressions, 0) || 0;
@@ -164,7 +165,14 @@ export const GSCWidget: React.FC = () => {
       {/* Top Pages */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-lg">Top 5 Páginas por Clicks</CardTitle>
+          <div className="flex items-center justify-between">
+            <CardTitle className="text-lg">Top 10 Páginas por Clicks</CardTitle>
+            <Link to="/admin/seo/gsc">
+              <Button variant="ghost" size="sm">
+                Ver todas <ArrowRight className="h-4 w-4 ml-1" />
+              </Button>
+            </Link>
+          </div>
         </CardHeader>
         <CardContent>
           {isLoading ? (
@@ -205,7 +213,14 @@ export const GSCWidget: React.FC = () => {
       {topQueries && topQueries.length > 0 && (
         <Card>
           <CardHeader>
-            <CardTitle className="text-lg">Top 5 Keywords</CardTitle>
+            <div className="flex items-center justify-between">
+              <CardTitle className="text-lg">Top 10 Keywords</CardTitle>
+              <Link to="/admin/seo/gsc">
+                <Button variant="ghost" size="sm">
+                  Ver todas <ArrowRight className="h-4 w-4 ml-1" />
+                </Button>
+              </Link>
+            </div>
           </CardHeader>
           <CardContent>
             <div className="space-y-3">
