@@ -12,6 +12,8 @@ import { analyzeSitemap } from '@/utils/seo-analytics/sitemapAnalyzer';
 import { parseHtaccess, validateRedirects } from '@/utils/seo-analytics/htaccessParser';
 import { parseRobotsTxt } from '@/utils/seo-analytics/robotsTxtParser';
 import { calculateSEOHealth } from '@/utils/seo-analytics/seoHealthScorer';
+import { GSCWidget } from '@/components/seo-dashboard/GSCWidget';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 const SEODashboard: React.FC = () => {
   const navigate = useNavigate();
@@ -61,6 +63,19 @@ const SEODashboard: React.FC = () => {
           
           {/* Health Score */}
           <SEOHealthIndicator health={dashboardData.health} />
+          
+          {/* Google Search Console Integration */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Globe className="h-5 w-5" />
+                Google Search Console
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <GSCWidget />
+            </CardContent>
+          </Card>
           
           {/* Quick Metrics */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
