@@ -185,6 +185,10 @@ const App = () => (
           <Route path="/es/servicios/asistente-ia" element={<PageSuspense><Pages.AsistenteIA /></PageSuspense>} />
           <Route path="/es/servicios/alojamiento-mantenimiento-web" element={<Navigate to="/es/servicios/diseno-web/alojamiento-mantenimiento" replace />} />
           <Route path="/es/servicios/marketing-directo" element={<PageSuspense><Pages.MarketingDirecto /></PageSuspense>} />
+          
+          {/* ADMIN - SEO Control Center */}
+          <Route path="/admin/seo" element={<PageSuspense><Pages.SEODashboard /></PageSuspense>} />
+          <Route path="/admin/seo/sitemap" element={<PageSuspense><Pages.SitemapManager /></PageSuspense>} />
           <Route path="/es/servicios/implementacion-funnel" element={<PageSuspense><Pages.ImplementacionFunnel /></PageSuspense>} />
           <Route path="/es/servicios/administracion-crm" element={<PageSuspense><Pages.AdministracionCrm /></PageSuspense>} />
           <Route path="/es/servicios/automatizacion-procesos-ventas" element={<PageSuspense><Pages.AutomatizacionProcesosVentas /></PageSuspense>} />
