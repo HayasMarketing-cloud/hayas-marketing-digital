@@ -459,6 +459,7 @@ const App = () => (
           
           {/* ADMIN - SEO Control Center */}
           <Route path="/admin/seo" element={<PageSuspense><Pages.SEODashboard /></PageSuspense>} />
+          <Route path="/admin/seo/redirects" element={<PageSuspense><Pages.RedirectsManager /></PageSuspense>} />
           <Route path="/admin/seo/sitemap" element={<PageSuspense><Pages.SitemapManager /></PageSuspense>} />
           <Route path="/es/servicios/implementacion-funnel" element={<PageSuspense><Pages.ImplementacionFunnel /></PageSuspense>} />
           <Route path="/es/servicios/administracion-crm" element={<PageSuspense><Pages.AdministracionCrm /></PageSuspense>} />
