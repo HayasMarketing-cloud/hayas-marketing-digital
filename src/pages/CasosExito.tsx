@@ -98,7 +98,7 @@ const CasosExito = () => {
         customSEO={{
           title: 'Casos de Éxito en Marketing Digital y CRM - Hayas Marketing',
           description: 'Descubre casos reales de transformación digital con marketing, CRM y automatización. Resultados medibles en más de 15 sectores diferentes.',
-          canonical: '/casos-exito',
+          canonical: '/es/casos-exito',
           keywords: ['casos éxito marketing digital', 'gestión de clientes', 'transformación digital', 'resultados marketing', 'CRM casos reales'],
           robots: 'index, follow'
         }}

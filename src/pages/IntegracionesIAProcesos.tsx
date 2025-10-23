@@ -38,7 +38,7 @@ const IntegracionesIAProcesos: React.FC = () => {
     // SEO & Metadata
     title: 'Integraciones y optimización con IA | Hayas Marketing',
     description: 'Conectamos tus sistemas y aplicamos IA para acelerar procesos, reducir costes y mejorar la experiencia del cliente.',
-    canonical: '/servicios/integraciones-ia-procesos',
+    canonical: '/es/servicios/integraciones-ia-procesos',
 
     // Hero Section
     badge: 'Solución IA',

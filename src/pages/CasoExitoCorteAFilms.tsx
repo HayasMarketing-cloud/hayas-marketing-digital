@@ -8,7 +8,7 @@ const CasoExitoCorteAFilms: React.FC = () => {
     <CaseStudyTemplate
       pageTitle="Caso de éxito Corte A Films | Diseño web audiovisual"
       pageDescription="Diseño web visual e inspirador con portfolio optimizado para Corte A Films, productora audiovisual."
-      canonical="/es/casos-exito"
+      canonical="/es/casos-exito/corte-a-films"
       ogImage={successCaseImages.corteAFilms}
       structuredData={{
         "@context": "https://schema.org",

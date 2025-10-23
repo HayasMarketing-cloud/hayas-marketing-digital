@@ -89,7 +89,7 @@ const MarketingDirecto: React.FC = () => {
       <Seo 
         title="Marketing Directo | Campañas y Envíos Personalizados"
         description="Campañas de marketing directo para grandes empresas: concepto, diseño, producción y envío + email marketing personalizado."
-        canonical="/servicios/marketing-directo"
+        canonical="/es/servicios/marketing-directo"
         structuredData={{
           '@context': 'https://schema.org',
           '@type': 'Service',

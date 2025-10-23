@@ -18,7 +18,7 @@ const servicePageData: ServicePageData = {
   // SEO & Metadata
   title: 'Administración CRM y gestión del Plan de Marketing | Hayas Marketing',
   description: 'Externaliza la gestión de tu CRM y activos digitales: sin fee, bajo demanda y con planificación estratégica. Centralizas CRM, marketing y ventas en un solo equipo.',
-  canonical: '/servicios/administracion-crm',
+  canonical: '/es/servicios/administracion-crm',
   
   // Hero Section
   badge: 'Servicio de Conecta con tus clientes',

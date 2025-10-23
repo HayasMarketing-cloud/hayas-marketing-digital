@@ -10,7 +10,7 @@ import { CheckCircle } from 'lucide-react';
 const CasoExitoWooptix: React.FC = () => {
   const pageTitle = 'Caso de Éxito Wooptix | IA y CRM para crecer';
   const pageDescription = 'IA aplicada y CRM HubSpot para optimizar marketing y ventas en una startup deep tech.';
-  const canonical = '/casos-exito/wooptix';
+  const canonical = '/es/casos-exito/wooptix';
 
   const structuredData = {
     '@context': 'https://schema.org',

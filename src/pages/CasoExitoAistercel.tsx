@@ -8,7 +8,7 @@ const CasoExitoAistercel: React.FC = () => {
     // SEO and Meta
     pageTitle: 'Caso de éxito Aistercel | CRM y rediseño web',
     pageDescription: 'Implantación de CRM HubSpot y rediseño web para Aistercel: presencia digital moderna y gestión comercial centralizada.',
-    canonical: '/casos-exito/aistercel',
+    canonical: '/es/casos-exito/aistercel',
     ogImage: successCaseImages.aistercel,
     structuredData: {
       '@context': 'https://schema.org',

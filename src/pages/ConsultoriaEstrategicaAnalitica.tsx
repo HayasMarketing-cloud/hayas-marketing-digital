@@ -27,7 +27,7 @@ const ConsultoriaEstrategicaAnalitica: React.FC = () => {
     // SEO & Metadata
     title: 'Consultoría estratégica y analítica | Hayas Marketing',
     description: 'Impulsamos el crecimiento con decisiones basadas en datos: objetivos claros, medición fiable y optimización continua.',
-    canonical: '/servicios/consultoria-estrategica-analitica',
+    canonical: '/es/servicios/consultoria-estrategica-analitica',
     ogImage: '/consultoria-estrategica-hero.jpg',
     
     // Hero Section

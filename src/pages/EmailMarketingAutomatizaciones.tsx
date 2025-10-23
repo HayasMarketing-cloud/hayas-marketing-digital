@@ -43,7 +43,7 @@ const EmailMarketingAutomatizaciones: React.FC = () => {
     // SEO & Metadata
     title: 'Email marketing y automatizaciones | Hayas Marketing',
     description: 'Implementamos estrategias de email y workflows que convierten: segmentación, personalización y reporting unido a tu CRM.',
-    canonical: '/servicios/email-marketing-automatizaciones',
+    canonical: '/es/servicios/email-marketing-automatizaciones',
     ogImage: '/email-marketing-automatizaciones-hero.jpg',
     
     // Hero Section

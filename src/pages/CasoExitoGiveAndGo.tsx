@@ -8,7 +8,7 @@ const CasoExitoGiveAndGo: React.FC = () => {
     <CaseStudyTemplate
       pageTitle="Caso de Éxito Give and Go | Web con ecommerce para eventos"
       pageDescription="Diseño web con ecommerce para gestionar inscripciones y mejorar la conversión en eventos deportivos."
-      canonical="/es/casos-exito"
+      canonical="/es/casos-exito/give-and-go"
       ogImage={successCaseImages.giveAndGo}
       structuredData={{
         '@context': 'https://schema.org',

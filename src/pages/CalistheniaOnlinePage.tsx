@@ -9,7 +9,7 @@ const CalistheniaOnlinePage = () => {
     <CaseStudyTemplate
       pageTitle="Caso de Éxito: Calisthenia Online - Transformación Digital Deportiva | Hayas Marketing"
       pageDescription="Descubre cómo ayudamos a Calisthenia Online a digitalizar su academia de entrenamiento físico y aumentar su base de estudiantes online en un 300%."
-      canonical="/casos-exito/calisthenia-online"
+      canonical="/es/casos-exito/calisthenia-online"
       ogImage="/casos-exito/calisthenia-online/og-image.jpg"
       structuredData={{
         "@context": "https://schema.org",

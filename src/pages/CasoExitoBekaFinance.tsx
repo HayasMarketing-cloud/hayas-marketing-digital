@@ -7,7 +7,7 @@ const CasoExitoBekaFinance: React.FC = () => {
     // SEO and Meta
     pageTitle: 'Caso de éxito Beka Finance | Naming e identidad visual',
     pageDescription: 'Naming e identidad visual para proyectar confianza y liderazgo en el sector financiero.',
-    canonical: '/casos-exito/beka-finance',
+    canonical: '/es/casos-exito/beka-finance',
     ogImage: '/lovable-uploads/cb5e2b7b-ad42-4a68-b3e7-bf2f51e4ce45.png',
     structuredData: {
       '@context': 'https://schema.org',

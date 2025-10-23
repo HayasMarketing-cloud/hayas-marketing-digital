@@ -22,7 +22,7 @@ const CasoExitoNovaPraxis = () => {
   const caseStudyData = {
     pageTitle: "Caso de Éxito Nova Praxis | CRM, SEO, LinkedIn y Ads",
     pageDescription: "CRM con automatizaciones, SEO, LinkedIn y Google Ads para impulsar el crecimiento B2B de Nova Praxis.",
-    canonical: "/casos-exito/nova-praxis",
+    canonical: "/es/casos-exito/nova-praxis",
     ogImage: successCaseImages.novaPraxis,
     structuredData: {
       "@context": "https://schema.org",

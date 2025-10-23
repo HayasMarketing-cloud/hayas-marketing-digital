@@ -39,7 +39,7 @@ const AutomatizacionProcesosVentas: React.FC = () => {
     // SEO & Metadata
     title: 'Automatización de procesos de ventas | Hayas Marketing',
     description: 'Acelera tu ciclo de ventas con automatización inteligente de principio a fin: de la gestión de leads al seguimiento postventa.',
-    canonical: '/servicios/automatizacion-procesos-ventas',
+    canonical: '/es/servicios/automatizacion-procesos-ventas',
 
     // Hero Section
     badge: 'Conecta con tus clientes',

@@ -88,7 +88,7 @@ const EstrategiaContenidos: React.FC = () => {
     // SEO Data
     title: 'Estrategia de contenidos | Hayas Marketing',
     description: 'Diseñamos tu estrategia de contenidos: research SEO, plan editorial, distribución y medición para impulsar tu marca.',
-    canonical: '/servicios/estrategia-contenidos',
+    canonical: '/es/servicios/estrategia-contenidos',
     
     // Hero Section
     heroTitle: "Estrategia de contenidos",

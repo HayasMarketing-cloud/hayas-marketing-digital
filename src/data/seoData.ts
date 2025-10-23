@@ -97,59 +97,59 @@ export const hayasOrganizationSchema = {
 export const canonicalStrategy = {
   // Main pillar pages that should receive canonical links from related pages
   pillars: {
-    '/casos-exito': {
+    '/es/casos-exito': {
       // All individual case studies should point here for SEO consolidation
       satellites: [
-        // All CasoExito* pages should canonical to /casos-exito
-        '/casos-exito/aecoc', '/casos-exito/aip-clinic', '/casos-exito/aistercel',
-        '/casos-exito/alfix-consultores', '/casos-exito/alma-cruceros', '/casos-exito/asendia',
-        '/casos-exito/asp-asepsia', '/casos-exito/beka-finance', '/casos-exito/beluga-linguistics',
-        '/casos-exito/bodegas-vilano', '/casos-exito/bufete-maseras', '/casos-exito/buhobike',
-        '/casos-exito/covebo', '/casos-exito/cabrera-cervantes', '/casos-exito/carniceria-picos-europa',
-        '/casos-exito/centro-roraima', '/casos-exito/conversa-consultores', '/casos-exito/corte-a-films',
-        '/casos-exito/eurobits-technologies', '/casos-exito/eva-champion', '/casos-exito/finect',
-        '/casos-exito/flap', '/casos-exito/formato-educativo', '/casos-exito/fundacion-casa-mexico',
-        '/casos-exito/give-and-go', '/casos-exito/hikvision', '/casos-exito/hotteo-travel',
-        '/casos-exito/hubspot-for-startups', '/casos-exito/i-virgen-extra', '/casos-exito/inbound-students',
-        '/casos-exito/jointsup', '/casos-exito/la-banera-kd', '/casos-exito/la-oriental-sin-gluten',
-        '/casos-exito/lola-robles-abogada', '/casos-exito/lualca', '/casos-exito/moda-intima-vania',
-        '/casos-exito/motiva-tu-mente', '/casos-exito/nexo-vital', '/casos-exito/nova-praxis',
-        '/casos-exito/omr', '/casos-exito/owo-game', '/casos-exito/pamdamedia', '/casos-exito/peixos-emilio',
-        '/casos-exito/peris-electricidad', '/casos-exito/plaza-estacion', '/casos-exito/quantic-bi',
-        '/casos-exito/rivas-centro', '/casos-exito/suministros-xskd', '/casos-exito/translate-with-style',
-        '/casos-exito/unitrips', '/casos-exito/wideum', '/casos-exito/wooptix'
+        // All CasoExito* pages should canonical to /es/casos-exito
+        '/es/casos-exito/aecoc', '/es/casos-exito/aip-clinic', '/es/casos-exito/aistercel',
+        '/es/casos-exito/alfix-consultores', '/es/casos-exito/alma-cruceros', '/es/casos-exito/asendia',
+        '/es/casos-exito/asp-asepsia', '/es/casos-exito/beka-finance', '/es/casos-exito/beluga-linguistics',
+        '/es/casos-exito/bodegas-vilano', '/es/casos-exito/bufete-maseras', '/es/casos-exito/buhobike',
+        '/es/casos-exito/covebo', '/es/casos-exito/cabrera-cervantes', '/es/casos-exito/carniceria-picos-europa',
+        '/es/casos-exito/centro-roraima', '/es/casos-exito/conversa-consultores', '/es/casos-exito/corte-a-films',
+        '/es/casos-exito/eurobits-technologies', '/es/casos-exito/eva-champion', '/es/casos-exito/finect',
+        '/es/casos-exito/flap', '/es/casos-exito/formato-educativo', '/es/casos-exito/fundacion-casa-mexico',
+        '/es/casos-exito/give-and-go', '/es/casos-exito/hikvision', '/es/casos-exito/hotteo-travel',
+        '/es/casos-exito/hubspot-for-startups', '/es/casos-exito/i-virgen-extra', '/es/casos-exito/inbound-students',
+        '/es/casos-exito/jointsup', '/es/casos-exito/la-banera-kd', '/es/casos-exito/la-oriental-sin-gluten',
+        '/es/casos-exito/lola-robles-abogada', '/es/casos-exito/lualca', '/es/casos-exito/moda-intima-vania',
+        '/es/casos-exito/motiva-tu-mente', '/es/casos-exito/nexo-vital', '/es/casos-exito/nova-praxis',
+        '/es/casos-exito/omr', '/es/casos-exito/owo-game', '/es/casos-exito/pamdamedia', '/es/casos-exito/peixos-emilio',
+        '/es/casos-exito/peris-electricidad', '/es/casos-exito/plaza-estacion', '/es/casos-exito/quantic-bi',
+        '/es/casos-exito/rivas-centro', '/es/casos-exito/suministros-xskd', '/es/casos-exito/translate-with-style',
+        '/es/casos-exito/unitrips', '/es/casos-exito/wideum', '/es/casos-exito/wooptix'
       ]
     },
-    '/servicios': {
+    '/es/servicios': {
       satellites: [
-        '/servicios/creacion-marca',
-        '/servicios/diseno-web', 
-        '/servicios/seo-positioning',
-        '/servicios/publicidad-google-ads',
-        '/servicios/publicidad-redes-sociales',
-        '/servicios/gestion-redes-sociales',
-        '/servicios/estrategia-contenidos',
-        '/servicios/tienda-online',
-        '/servicios/email-marketing-automatizaciones',
-        '/servicios/campanas-inbound-marketing',
-        '/servicios/implantacion-crm',
-        '/servicios/administracion-crm',
-        '/servicios/automatizacion-procesos-ventas',
-        '/servicios/captacion-leads-clientes',
-        '/servicios/consultoria-estrategica-analitica',
-        '/servicios/integraciones-ia-procesos',
-        '/servicios/formacion-ia',
-        '/servicios/asistente-ia',
-        '/servicios/marketing-directo',
-        '/servicios/localizacion-contenidos'
+        '/es/servicios/creacion-marca',
+        '/es/servicios/diseno-web', 
+        '/es/servicios/seo-positioning',
+        '/es/servicios/publicidad-google-ads',
+        '/es/servicios/publicidad-redes-sociales',
+        '/es/servicios/gestion-redes-sociales',
+        '/es/servicios/estrategia-contenidos',
+        '/es/servicios/tienda-online',
+        '/es/servicios/email-marketing-automatizaciones',
+        '/es/servicios/campanas-inbound-marketing',
+        '/es/servicios/implantacion-crm',
+        '/es/servicios/administracion-crm',
+        '/es/servicios/automatizacion-procesos-ventas',
+        '/es/servicios/captacion-leads-clientes',
+        '/es/servicios/consultoria-estrategica-analitica',
+        '/es/servicios/integraciones-ia-procesos',
+        '/es/servicios/formacion-ia',
+        '/es/servicios/asistente-ia',
+        '/es/servicios/marketing-directo',
+        '/es/servicios/localizacion-contenidos'
       ]
     },
-     '/soluciones': {
+     '/es/soluciones': {
       satellites: [
-        '/soluciones/activa-tus-ventas',
-        '/soluciones/conecta-con-tus-clientes', 
-        '/soluciones/impulsa-tu-marca',
-        '/soluciones/marketing-visibilidad'
+        '/es/soluciones/activa-tus-ventas',
+        '/es/soluciones/conecta-con-tus-clientes', 
+        '/es/soluciones/impulsa-tu-marca',
+        '/es/soluciones/marketing-visibilidad'
       ]
     }
   },

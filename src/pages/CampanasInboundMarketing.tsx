@@ -26,7 +26,7 @@ const benefits = [
 const CampanasInboundMarketing: React.FC = () => {
   const title = 'Campañas Inbound Marketing | Hayas Marketing';
   const description = 'Atrae a tus clientes de forma orgánica con campañas que educan, informan y generan confianza. Contenido premium + automatización.';
-  const canonical = '/servicios/campanas-inbound-marketing';
+  const canonical = '/es/servicios/campanas-inbound-marketing';
 
   const structuredData = {
     '@context': 'https://schema.org',

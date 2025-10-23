@@ -43,7 +43,7 @@ const ImplementacionFunnel: React.FC = () => {
       <Seo 
         title="Implementación de Funnel | Diseño y Automatización"
         description="Diseño, implementación y optimización de embudos de conversión con automatización en CRM, pruebas A/B y analítica."
-        canonical="/servicios/implementacion-funnel"
+        canonical="/es/servicios/implementacion-funnel"
         structuredData={{
           '@context': 'https://schema.org',
           '@type': 'Service',

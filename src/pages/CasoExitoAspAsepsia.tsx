@@ -7,7 +7,7 @@ const CasoExitoAspAsepsia: React.FC = () => {
     // SEO and Meta
     pageTitle: 'Caso de Éxito — ASP ASEPSIA: CRM y automatización para optimizar la gestión comercial',
     pageDescription: 'Implantación de HubSpot y consultoría continua para una empresa de soluciones de higiene y desinfección',
-    canonical: '/casos-exito/asp-asepsia',
+    canonical: '/es/casos-exito/asp-asepsia',
     ogImage: '/lovable-uploads/6cf96609-e73c-4a3b-8939-bdc4e1330033.png',
     structuredData: {
       '@context': 'https://schema.org',

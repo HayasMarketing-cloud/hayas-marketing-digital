@@ -8,7 +8,7 @@ const CasoExitoLualca: React.FC = () => {
     <CaseStudyTemplate
       pageTitle="Caso de éxito Lualca | Rediseño, hosting y mantenimiento"
       pageDescription="Rediseño, alojamiento y mantenimiento web para Lualca: mejor presencia online y experiencia de usuario."
-      canonical="/es/casos-exito"
+      canonical="/es/casos-exito/lualca"
       ogImage={successCaseImages.lualca}
       structuredData={{
         "@context": "https://schema.org",

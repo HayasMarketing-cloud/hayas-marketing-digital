@@ -7,7 +7,7 @@ const CasoExitoBelugaLinguistics: React.FC = () => {
     // SEO and Meta
     pageTitle: 'Caso de Éxito Beluga Linguistics | CRM, SEO y LinkedIn',
     pageDescription: 'CRM HubSpot, estrategia SEO y LinkedIn para escalar una agencia de traducción con alcance internacional.',
-    canonical: '/casos-exito/beluga-linguistics',
+    canonical: '/es/casos-exito/beluga-linguistics',
     ogImage: '/lovable-uploads/de93dd1b-7f99-4499-81a7-87a1ec7c9d5f.png',
     structuredData: {
       '@context': 'https://schema.org',

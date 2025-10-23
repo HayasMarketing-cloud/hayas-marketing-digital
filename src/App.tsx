@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useParams } from "react-router-dom";
 import { AuthProvider } from '@/contexts/AuthContext';
 import SofiaWidget from "./components/SofiaSection";
 import ScrollToTop from './components/ScrollToTop';
@@ -14,6 +14,13 @@ import RoutePreloader from './components/RoutePreloader';
 import * as Pages from './utils/lazyImports';
 
 const queryClient = new QueryClient();
+
+// Componente reutilizable para redirecciones legacy
+function LegacyRedirect({ section }: { section: string }) {
+  const { slug } = useParams();
+  const path = slug ? `${section}/${slug}` : section;
+  return <Navigate to={`/es/${path}`} replace />;
+}
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -30,6 +37,17 @@ const App = () => (
            {/* REDIRECCIÓN ROOT A ESPAÑOL */}
            <Route path="/" element={<Navigate to="/es" replace />} />
            <Route path="/e" element={<Navigate to="/es" replace />} />
+           
+           {/* REDIRECCIONES DINÁMICAS LEGACY (sin /es/) */}
+           <Route path="/casos-exito/:slug/*" element={<LegacyRedirect section="casos-exito" />} />
+           <Route path="/servicios/:slug/*" element={<LegacyRedirect section="servicios" />} />
+           <Route path="/blog/:slug/*" element={<LegacyRedirect section="blog" />} />
+           <Route path="/kit-digital/:slug/*" element={<LegacyRedirect section="kit-digital" />} />
+           <Route path="/soluciones/:slug/*" element={<LegacyRedirect section="soluciones" />} />
+           
+           {/* REDIRECCIÓN ESPECÍFICA BLOG POST */}
+           <Route path="/es/que-es-y-para-que-sirve-el-perfil-de-cliente-ideal" element={<Navigate to="/es/blog/perfil-cliente-ideal" replace />} />
+           <Route path="/es/que-es-y-para-que-sirve-el-perfil-de-cliente-ideal/" element={<Navigate to="/es/blog/perfil-cliente-ideal" replace />} />
            
            {/* REDIRECCIONES SIN PREFIJO /es/ */}
            <Route path="/blog/crm-que-es-beneficios" element={<Navigate to="/es/blog/crm-que-es-beneficios" replace />} />

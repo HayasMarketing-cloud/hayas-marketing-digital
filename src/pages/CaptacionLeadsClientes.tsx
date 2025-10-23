@@ -33,7 +33,7 @@ const benefits = [
 const CaptacionLeadsClientes: React.FC = () => {
   const title = 'Captación de Leads y Clientes | Hayas Marketing';
   const description = 'Convierte el interés en oportunidades reales con estrategias multicanal: redes sociales, buscadores, email, ads y automatización.';
-  const canonical = '/servicios/captacion-leads-clientes';
+  const canonical = '/es/servicios/captacion-leads-clientes';
 
   const structuredData = {
     '@context': 'https://schema.org',

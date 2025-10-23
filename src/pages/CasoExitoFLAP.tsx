@@ -8,7 +8,7 @@ const CasoExitoFLAP: React.FC = () => {
     <CaseStudyTemplate
       pageTitle="Caso de éxito FLAP | Contenidos e Instagram"
       pageDescription="Estrategia de contenidos y producción audiovisual para Instagram."
-      canonical="/es/casos-exito"
+      canonical="/es/casos-exito/flap-articulos-peluqueria"
       ogImage={successCaseImages.flap}
       structuredData={{
         "@context": "https://schema.org",

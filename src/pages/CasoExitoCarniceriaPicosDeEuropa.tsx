@@ -8,7 +8,7 @@ const CasoExitoCarniceriaPicosDeEuropa: React.FC = () => {
     <CaseStudyTemplate
       pageTitle="Caso de éxito Carnicería Picos de Europa | Instagram y contenidos"
       pageDescription="Estrategia y gestión de Instagram para acercar un producto de calidad a su comunidad."
-      canonical="/es/casos-exito"
+      canonical="/es/casos-exito/carniceria-picos-de-europa"
       ogImage={successCaseImages.carniceriaPicosDeEuropa}
       structuredData={{
         "@context": "https://schema.org",
