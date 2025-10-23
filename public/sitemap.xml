@@ -5,37 +5,37 @@
     <loc>https://hayasmarketing.com/es/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/servicios</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/casos-exito</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/nosotros</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/contacto</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
   </url>
 
   <!-- Solution Pages - High Priority Pillars -->
@@ -43,25 +43,43 @@
     <loc>https://hayasmarketing.com/es/soluciones/impulsa-tu-marca</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/soluciones/conecta-con-tus-clientes</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/soluciones/activa-tus-ventas</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/soluciones/activa-tu-estrategia-digital</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/soluciones/marketing-visibilidad</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/soluciones/ia-marketing</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/soluciones/captacion-leads</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2025-05-23</lastmod>
   </url>
 
   <!-- Strategic Service Pages - Medium-High Priority -->
@@ -69,117 +87,491 @@
     <loc>https://hayasmarketing.com/es/servicios/creacion-marca</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/servicios/diseno-web</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
-    <loc>https://hayasmarketing.com/es/servicios/seo-positioning</loc>
+    <loc>https://hayasmarketing.com/es/servicios/tienda-online</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/servicios/seo-posicionamiento</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/servicios/implantacion-crm</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/servicios/administracion-crm</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/servicios/automatizacion-procesos-ventas</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/servicios/captacion-leads-clientes</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/servicios/implementacion-funnel</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/servicios/publicidad-google-ads</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/servicios/publicidad-redes-sociales</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/servicios/gestion-redes-sociales</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/servicios/email-marketing-automatizaciones</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/servicios/estrategia-contenidos</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/servicios/localizacion-contenidos</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/servicios/consultoria-estrategica-analitica</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/servicios/integraciones-ia-procesos</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/servicios/formacion-ia</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/servicios/asistente-ia</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/servicios/campanas-inbound-marketing</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/servicios/marketing-directo</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2025-05-23</lastmod>
   </url>
 
-  <!-- Kit Digital Pages - Business Value -->
+  <!-- Kit Digital & Consulting Pages -->
   <url>
     <loc>https://hayasmarketing.com/es/kit-digital</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/kit-consulting</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
-    <loc>https://hayasmarketing.com/es/kit-digital/presencia-basica</loc>
+    <loc>https://hayasmarketing.com/es/kit-digital/presencia-basica-internet</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
-    <loc>https://hayasmarketing.com/es/kit-digital/presencia-avanzada</loc>
+    <loc>https://hayasmarketing.com/es/kit-digital/presencia-avanzada-seo</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
-    <loc>https://hayasmarketing.com/es/kit-digital/gestion-clientes</loc>
+    <loc>https://hayasmarketing.com/es/kit-digital/gestion-clientes-crm</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
-    <loc>https://hayasmarketing.com/es/kit-digital/redes-sociales</loc>
+    <loc>https://hayasmarketing.com/es/kit-digital/gestion-red-social</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+
+  <!-- Casos de Éxito - High Value Social Proof -->
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/asendia</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/nexo-vital</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/i-virgen-extra</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/inbound-students</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/calisthenia-online</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/centro-roraima</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/joints-up</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/dr-parron</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/translate-with-style</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/formato-educativo</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/omr</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/asp-asepsia</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/bufete-maseras</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/moda-intima-vania</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/alfix-consultores</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/alma-cruceros</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/la-banera-kd</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/suministros-xs-kd</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/conversa-consultores</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/buhobike</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/cabrera-cervantes</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/eva-champion</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/beluga-linguistics</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/wooptix</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/pamdamedia</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/give-and-go</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/hikvision</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/owo-game</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/nova-praxis</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/aistercel</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/quanticbi</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/peixos-emilio</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/corte-a-films</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/lualca</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/plaza-de-la-estacion</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/rivas-centro</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/hubspot-for-startups</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/beka-finance</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/peris-electricidad</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/carniceria-picos-de-europa</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/pasteleria-la-oriental-sin-gluten</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/flap-articulos-peluqueria</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/wideum</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/aecoc</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/finect</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/covebo</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/fundacion-casa-mexico</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/motiva-tu-mente</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/eurobits-technologies</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/bodegas-vilano</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/unitrips</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/lola-robles-abogada</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/aip-clinic</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/hotteo-travel</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
   </url>
 
   <!-- Conversion Pages -->
@@ -187,158 +579,172 @@
     <loc>https://hayasmarketing.com/es/agendar-reunion</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/solicitar-consulta</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
   </url>
 
-  <!-- Blog Posts - High Value Content (23 posts) -->
+  <!-- Comparativas -->
+  <url>
+    <loc>https://hayasmarketing.com/es/comparativa/hubspot-vs-go-high-level</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+
+  <!-- Blog Posts - High Value Content -->
   <url>
     <loc>https://hayasmarketing.com/es/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/guia-tecnica-email-marketing-hubspot-configuracion</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/configuracion-email-marketing-cumplimiento-normativo</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/perfil-cliente-ideal</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/como-crear-buyer-persona-b2b-b2c-guia-completa</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/calculo-inversion-plan-marketing-digital</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/branding-proceso-tecnicas-naming</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/business-model-canvas-para-crear-tu-estrategia-de-marketing</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/google-consent-mode-cookieyes</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/marketing-natural-posicionamiento-organico</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/crm-que-es-beneficios</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/como-elegir-mejor-crm-empresa-organizacion</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/abm-account-based-marketing</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/re-commerce-economia-circular-ecommerce-partnership-sharpei</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/seo-off-page-estrategias-practicas-posicionamiento</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/automatizacion-marketing-digital-guia-completa</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/web-3-0-futuro-internet-descentralizado</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/seo-on-page-guia-completa</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/lead-scoring-calificacion-leads</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/seo-inteligencia-artificial</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/ia-redes-sociales-herramientas-riesgos</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/funnel-conversion-b2B</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/marketing-global-internacionalizacion</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/kit-digital-marketing-guia-completa-2025</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/blog/proyectos-empresas-blockchain</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2025-05-23</lastmod>
   </url>
 </urlset>

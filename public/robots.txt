@@ -15,3 +15,18 @@ Disallow: /*.json$
 Disallow: /api/
 Disallow: /*?*utm_*
 Disallow: /*?*fbclid*
+Disallow: /*?*hsLang*
+Disallow: /*?*cta_guid*
+
+# Bloquear páginas de admin y dashboard
+Disallow: /admin/
+Disallow: /admin/seo/
+Disallow: /admin/seo/sitemap
+
+# Bloquear páginas de conversión/gracias (no indexable)
+Disallow: /es/gracias
+Disallow: /es/gracias_por_agendar_reunion
+Disallow: /es/gracias_por_agendar_reunión
+
+# Bloquear contenido eliminado
+Disallow: /es/contenido-eliminado
