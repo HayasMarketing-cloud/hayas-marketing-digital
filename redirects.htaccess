@@ -36,6 +36,7 @@ Redirect 301 /zh /es
 
 # Blog - Artículos importantes
 Redirect 301 /la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing /es/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing
+Redirect 301 /es/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing /es/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing
 
 # CRM - Redirecciones consolidadas para todas las variantes
 Redirect 301 /blog/crm-que-es-beneficios /es/blog/crm-que-es-beneficios
