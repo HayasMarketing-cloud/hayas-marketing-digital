@@ -145,6 +145,10 @@ export const CasoExitoLolaRoblesAbogada = lazy(() => import("@/pages/CasoExitoLo
 export const CasoExitoAIPClinic = lazy(() => import("@/pages/CasoExitoAIPClinic"));
 export const CasoExitoHotteoTravel = lazy(() => import("@/pages/CasoExitoHotteoTravel"));
 
+// Admin - SEO Control Center
+export const SEODashboard = lazy(() => import("@/pages/admin/SEODashboard"));
+export const SitemapManager = lazy(() => import("@/pages/admin/SitemapManager"));
+
 // Páginas legales
 export const AvisoLegal = lazy(() => import("@/pages/AvisoLegal"));
 export const PoliticaPrivacidad = lazy(() => import("@/pages/PoliticaPrivacidad"));
