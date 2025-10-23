@@ -2,6 +2,7 @@ import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import Stripe from "https://esm.sh/stripe@18.5.0";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
 import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
+import { checkRateLimit } from "../_shared/rate-limiter.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -33,6 +34,37 @@ serve(async (req) => {
 
   try {
     logStep("Function started");
+
+    // Get client IP for rate limiting
+    const clientIp = req.headers.get("x-forwarded-for")?.split(",")[0] || 
+                     req.headers.get("x-real-ip") || 
+                     "unknown";
+    logStep("Client IP identified", { ip: clientIp });
+
+    // Apply rate limiting: 10 checkout sessions per 5 minutes
+    const rateLimitResult = await checkRateLimit(supabaseClient, clientIp, {
+      maxRequests: 10,
+      windowMs: 5 * 60 * 1000,
+      endpoint: "create-checkout-session",
+    });
+
+    if (!rateLimitResult.allowed) {
+      logStep("Rate limit exceeded", { 
+        ip: clientIp, 
+        resetAt: new Date(rateLimitResult.resetAt).toISOString() 
+      });
+      return new Response(
+        JSON.stringify({ 
+          error: "Too many requests. Please try again later.",
+          resetAt: rateLimitResult.resetAt 
+        }),
+        {
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+          status: 429,
+        }
+      );
+    }
+    logStep("Rate limit check passed", { remaining: rateLimitResult.remaining });
 
     // Verificar Stripe key
     const stripeKey = Deno.env.get("STRIPE_SECRET_KEY");
