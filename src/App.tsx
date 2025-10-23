@@ -60,39 +60,40 @@ const App = () => (
            <Route path="/contacto" element={<Navigate to="/es/contacto" replace />} />
            <Route path="/contactar" element={<Navigate to="/es/contacto" replace />} />
            <Route path="/agenda-una-reunion/" element={<Navigate to="/es/contacto" replace />} />
-           <Route path="/captacion-leads" element={<Navigate to="/es/soluciones" replace />} />
-           <Route path="/captacion-leads-clientes" element={<Navigate to="/es/soluciones" replace />} />
-           <Route path="/creacion-marca" element={<Navigate to="/es/soluciones/branding-identidad" replace />} />
-           <Route path="/estrategia-contenidos" element={<Navigate to="/es/soluciones/marketing-visibilidad" replace />} />
-           <Route path="/gestion-marketing" element={<Navigate to="/es/soluciones" replace />} />
-           <Route path="/automatizacion-procesos-ventas" element={<Navigate to="/es/soluciones/gestion-conversion-clientes" replace />} />
+           <Route path="/captacion-leads" element={<Navigate to="/es/soluciones/captacion-leads" replace />} />
+           <Route path="/captacion-leads-clientes" element={<Navigate to="/es/servicios/captacion-leads-clientes" replace />} />
+           <Route path="/creacion-marca" element={<Navigate to="/es/servicios/creacion-marca" replace />} />
+           <Route path="/estrategia-contenidos" element={<Navigate to="/es/servicios/estrategia-contenidos" replace />} />
+           <Route path="/gestion-marketing" element={<Navigate to="/es/servicios/campanas-inbound-marketing" replace />} />
+           <Route path="/automatizacion-procesos-ventas" element={<Navigate to="/es/servicios/automatizacion-procesos-ventas" replace />} />
            <Route path="/sector-fintech" element={<Navigate to="/es/soluciones" replace />} />
            <Route path="/sector-educacion" element={<Navigate to="/es/soluciones" replace />} />
-           <Route path="/servicios-inbound-marketing-b2b/seo" element={<Navigate to="/es/soluciones/marketing-visibilidad" replace />} />
-           <Route path="/servicios-inbound-marketing-b2b/automatizacion-marketing" element={<Navigate to="/es/soluciones/gestion-conversion-clientes" replace />} />
+           <Route path="/servicios-inbound-marketing-b2b/seo" element={<Navigate to="/es/servicios/seo-posicionamiento" replace />} />
+           <Route path="/servicios-inbound-marketing-b2b/automatizacion-marketing" element={<Navigate to="/es/servicios/automatizacion-procesos-ventas" replace />} />
            <Route path="/que-es-marketing-natural" element={<Navigate to="/es/blog/marketing-natural-posicionamiento-organico" replace />} />
-           <Route path="/agencia-marketingdigital-madrid" element={<Navigate to="/es/nosotros" replace />} />
+           <Route path="/agencia-marketingdigital-madrid" element={<Navigate to="/es/servicios" replace />} />
            
            {/* Servicios Legacy SIN /es/ */}
-           <Route path="/servicios/email-marketing-automatizaciones" element={<Navigate to="/es/soluciones/gestion-conversion-clientes" replace />} />
-           <Route path="/servicios/consultoria-estrategica-analitica" element={<Navigate to="/es/soluciones/consultoria-estrategica" replace />} />
-           <Route path="/servicios/integraciones-ia-procesos" element={<Navigate to="/es/soluciones/ia-aplicada" replace />} />
-           <Route path="/servicios" element={<Navigate to="/es/soluciones" replace />} />
-           <Route path="/branding-e-identidad-de-marca/" element={<Navigate to="/es/soluciones/branding-identidad" replace />} />
-           <Route path="/publicidad-en-google-ads/" element={<Navigate to="/es/soluciones/marketing-visibilidad" replace />} />
-           <Route path="/publicidad-google-ads" element={<Navigate to="/es/soluciones/marketing-visibilidad" replace />} />
-           <Route path="/contenidos-y-seo/" element={<Navigate to="/es/soluciones/marketing-visibilidad" replace />} />
-           <Route path="/diseno-y-desarrollo-paginas-web/" element={<Navigate to="/es/soluciones/creacion-web" replace />} />
-           <Route path="/diseno-web" element={<Navigate to="/es/soluciones/creacion-web" replace />} />
-           <Route path="/gestion-de-redes-sociales/" element={<Navigate to="/es/soluciones/marketing-visibilidad" replace />} />
-           <Route path="/gestion-redes-sociales" element={<Navigate to="/es/soluciones/marketing-visibilidad" replace />} />
-           <Route path="/crm-y-automatizacion-de-marketing/" element={<Navigate to="/es/soluciones/gestion-conversion-clientes" replace />} />
-           <Route path="/seo-y-posicionamiento-en-buscadores/" element={<Navigate to="/es/soluciones/marketing-visibilidad" replace />} />
-           <Route path="/estrategia-de-marketing-digital-360/" element={<Navigate to="/es/soluciones/consultoria-estrategica" replace />} />
-           <Route path="/email-marketing-automatizaciones" element={<Navigate to="/es/soluciones/gestion-conversion-clientes" replace />} />
-           <Route path="/consultoria-estrategica-analitica" element={<Navigate to="/es/soluciones/consultoria-estrategica" replace />} />
-           <Route path="/consultoria-seo" element={<Navigate to="/es/soluciones/marketing-visibilidad" replace />} />
-           <Route path="/link-building" element={<Navigate to="/es/soluciones/marketing-visibilidad" replace />} />
+           <Route path="/servicios/email-marketing-automatizaciones" element={<Navigate to="/es/servicios/email-marketing-automatizaciones" replace />} />
+           <Route path="/servicios/consultoria-estrategica-analitica" element={<Navigate to="/es/servicios/consultoria-estrategica-analitica" replace />} />
+           <Route path="/servicios/integraciones-ia-procesos" element={<Navigate to="/es/servicios/integraciones-ia-procesos" replace />} />
+           <Route path="/servicios" element={<Navigate to="/es/servicios" replace />} />
+           <Route path="/branding-e-identidad-de-marca/" element={<Navigate to="/es/servicios/creacion-marca" replace />} />
+           <Route path="/publicidad-en-google-ads/" element={<Navigate to="/es/servicios/publicidad-google-ads" replace />} />
+           <Route path="/publicidad-google-ads" element={<Navigate to="/es/servicios/publicidad-google-ads" replace />} />
+           <Route path="/contenidos-y-seo/" element={<Navigate to="/es/servicios/estrategia-contenidos" replace />} />
+           <Route path="/diseno-y-desarrollo-paginas-web/" element={<Navigate to="/es/servicios/diseno-web" replace />} />
+           <Route path="/diseno-web" element={<Navigate to="/es/servicios/diseno-web" replace />} />
+           <Route path="/gestion-de-redes-sociales/" element={<Navigate to="/es/servicios/gestion-redes-sociales" replace />} />
+           <Route path="/gestion-redes-sociales" element={<Navigate to="/es/servicios/gestion-redes-sociales" replace />} />
+           <Route path="/crm-y-automatizacion-de-marketing/" element={<Navigate to="/es/servicios/implantacion-crm" replace />} />
+           <Route path="/seo-y-posicionamiento-en-buscadores/" element={<Navigate to="/es/servicios/seo-posicionamiento" replace />} />
+           <Route path="/estrategia-de-marketing-digital-360/" element={<Navigate to="/es/servicios/campanas-inbound-marketing" replace />} />
+           <Route path="/email-marketing-automatizaciones" element={<Navigate to="/es/servicios/email-marketing-automatizaciones" replace />} />
+           <Route path="/consultoria-estrategica-analitica" element={<Navigate to="/es/servicios/consultoria-estrategica-analitica" replace />} />
+           <Route path="/consultoria-seo" element={<Navigate to="/es/servicios/seo-posicionamiento" replace />} />
+           <Route path="/link-building" element={<Navigate to="/es/servicios/seo-posicionamiento" replace />} />
+           <Route path="/servicios-de-marketing-digital-integrados-en-tu-estrategia" element={<Navigate to="/es/servicios" replace />} />
           <Route path="/servicios/marketing-directo" element={<Navigate to="/es/servicios/marketing-directo" replace />} />
           <Route path="/servicios/seo-positioning" element={<Navigate to="/es/servicios/seo-positioning" replace />} />
           <Route path="/comparativa-hubspot-gohighlevel" element={<Navigate to="/es/comparativa/hubspot-vs-go-high-level" replace />} />
@@ -263,8 +264,27 @@ const App = () => (
             <Route path="/como-crear-un-funnel-de-conversion-para-empresas-b2b" element={<Navigate to="/es/blog/funnel-conversion-b2B" replace />} />
             <Route path="/blog/marketing-global-internacionalizacion-i18n-y-localizacion-l10n" element={<Navigate to="/es/blog/marketing-global-internacionalizacion" replace />} />
             <Route path="/marketing-global-internacionalizacion-i18n-y-localizacion-l10n/" element={<Navigate to="/es/blog/marketing-global-internacionalizacion" replace />} />
-            <Route path="/re-commerce-la-economia-circular-del-e-commerce/" element={<Navigate to="/es/blog/re-commerce-economia-circular-ecommerce-partnership-sharpei" replace />} />
-            <Route path="/branding-proceso-y-tecnicas-de-naming" element={<Navigate to="/es/blog/branding-proceso-tecnicas-naming" replace />} />
+           <Route path="/re-commerce-la-economia-circular-del-e-commerce/" element={<Navigate to="/es/blog/re-commerce-economia-circular-ecommerce-partnership-sharpei" replace />} />
+           <Route path="/branding-proceso-y-tecnicas-de-naming" element={<Navigate to="/es/blog/branding-proceso-tecnicas-naming" replace />} />
+           <Route path="/que-es-smarketing" element={<Navigate to="/es/blog/abm-account-based-marketing" replace />} />
+           <Route path="/como-elegir-el-mejor-crm-para-tu-empresa-u-organizacion/" element={<Navigate to="/es/blog/como-elegir-mejor-crm-empresa-organizacion" replace />} />
+           <Route path="/food-design-festival-2024-innovacion-y-tecnologia-en-el-sector-alimentario/" element={<Navigate to="/es/blog" replace />} />
+           <Route path="/llega-la-web-3-0/" element={<Navigate to="/es/blog/web-3-0-futuro-internet-descentralizado" replace />} />
+           <Route path="/identidad-corporativa-para-restaurantes/" element={<Navigate to="/es/casos-exito" replace />} />
+           <Route path="/marketing-de-influencers-vs-microinfluencers/" element={<Navigate to="/es/blog" replace />} />
+           <Route path="/buenas-practicas-tecnicas-de-email-marketing-con-hubspot/" element={<Navigate to="/es/blog/guia-tecnica-email-marketing-hubspot-configuracion" replace />} />
+           <Route path="/como-crear-una-estrategia-de-marketing-de-contenidos-eficaz/" element={<Navigate to="/es/blog/business-model-canvas-para-crear-tu-estrategia-de-marketing" replace />} />
+           <Route path="/estrategia-de-marketing-digital-360/" element={<Navigate to="/es/servicios/campanas-inbound-marketing" replace />} />
+           <Route path="/como-crear-un-funnel-de-conversion-para-empresas-b2b/" element={<Navigate to="/es/blog/funnel-conversion-b2B" replace />} />
+           <Route path="/proyectos-de-empresas-con-tecnologia-blockchain/" element={<Navigate to="/es/blog/proyectos-empresas-blockchain" replace />} />
+           <Route path="/guia-completa-kit-digital-2024-para-autonomos-y-pymes/" element={<Navigate to="/es/blog/kit-digital-marketing-guia-completa-2025" replace />} />
+           <Route path="/como-configurar-tu-crm-de-hubspot/" element={<Navigate to="/es/blog/guia-tecnica-email-marketing-hubspot-configuracion" replace />} />
+           <Route path="/que-es-y-para-que-sirven-los-buyer-personas/" element={<Navigate to="/es/blog/como-crear-buyer-persona-b2b-b2c-guia-completa" replace />} />
+           <Route path="/crm-y-automatizacion-de-marketing/" element={<Navigate to="/es/blog/crm-que-es-beneficios" replace />} />
+           <Route path="/que-es-un-crm-o-customer-relationship-management/" element={<Navigate to="/es/blog/crm-que-es-beneficios" replace />} />
+           <Route path="/como-se-crea-una-estrategia-de-branding/" element={<Navigate to="/es/blog/branding-proceso-tecnicas-naming" replace />} />
+           <Route path="/tu-estrategia-con-marketing-model-canvas/" element={<Navigate to="/es/blog/business-model-canvas-para-crear-tu-estrategia-de-marketing" replace />} />
+           <Route path="/descubre-los-verdaderos-ladrones-del-tiempo-y-recupera-tu-productividad/" element={<Navigate to="/es/blog" replace />} />
             <Route path="/branding-proceso-y-tecnicas-de-naming/" element={<Navigate to="/es/blog/branding-proceso-tecnicas-naming" replace />} />
             <Route path="/blog/branding-proceso-y-tecnicas-de-naming" element={<Navigate to="/es/blog/branding-proceso-tecnicas-naming" replace />} />
             <Route path="/como-crear-tu-buyer-persona-para-b2b-infografia/" element={<Navigate to="/es/blog/como-crear-buyer-persona-b2b-b2c-guia-completa" replace />} />
@@ -400,29 +420,32 @@ const App = () => (
            <Route path="/es/servicios/marketing-directo" element={<PageSuspense><Pages.MarketingDirecto /></PageSuspense>} />
            
            {/* Páginas específicas con /es/ que necesitan redirección */}
-           <Route path="/es/servicios-publicidad-en-redes-sociales/" element={<Navigate to="/es/soluciones/marketing-visibilidad" replace />} />
-           <Route path="/es/crm-y-automatizacion-de-marketing/" element={<Navigate to="/es/soluciones/gestion-conversion-clientes" replace />} />
-           <Route path="/es/crm-y-automatizacion-de-marketing" element={<Navigate to="/es/soluciones/gestion-conversion-clientes" replace />} />
-           <Route path="/es/gestion-de-redes-sociales/" element={<Navigate to="/es/soluciones/marketing-visibilidad" replace />} />
-           <Route path="/es/gestion-de-redes-sociales" element={<Navigate to="/es/soluciones/marketing-visibilidad" replace />} />
-           <Route path="/es/diseno-y-desarrollo-paginas-web/" element={<Navigate to="/es/soluciones/creacion-web" replace />} />
-           <Route path="/es/diseno-y-desarrollo-paginas-web" element={<Navigate to="/es/soluciones/creacion-web" replace />} />
-           <Route path="/es/branding-e-identidad-de-marca/" element={<Navigate to="/es/soluciones/branding-identidad" replace />} />
-           <Route path="/es/branding-e-identidad-de-marca" element={<Navigate to="/es/soluciones/branding-identidad" replace />} />
-           <Route path="/es/publicidad-en-google-ads/" element={<Navigate to="/es/soluciones/marketing-visibilidad" replace />} />
-           <Route path="/es/contenidos-y-seo/" element={<Navigate to="/es/soluciones/marketing-visibilidad" replace />} />
-           <Route path="/es/contenidos-y-seo" element={<Navigate to="/es/soluciones/marketing-visibilidad" replace />} />
-           <Route path="/es/seo-y-posicionamiento-en-buscadores/" element={<Navigate to="/es/soluciones/marketing-visibilidad" replace />} />
-           <Route path="/es/estrategia-de-marketing-digital-360/" element={<Navigate to="/es/soluciones/consultoria-estrategica" replace />} />
-           <Route path="/es/estrategia-de-marketing-digital-360" element={<Navigate to="/es/soluciones/consultoria-estrategica" replace />} />
-           <Route path="/es/servicios-de-marketing-digital-integrados-en-tu-estrategia/" element={<Navigate to="/es/soluciones" replace />} />
-           <Route path="/es/servicios-de-marketing-digital-integrados-en-tu-estrategia" element={<Navigate to="/es/soluciones" replace />} />
-           <Route path="/servicios-de-marketing-digital-integrados-en-tu-estrategia" element={<Navigate to="/es/soluciones" replace />} />
+           <Route path="/es/servicios-publicidad-en-redes-sociales/" element={<Navigate to="/es/servicios/publicidad-redes-sociales" replace />} />
+           <Route path="/es/crm-y-automatizacion-de-marketing/" element={<Navigate to="/es/servicios/implantacion-crm" replace />} />
+           <Route path="/es/crm-y-automatizacion-de-marketing" element={<Navigate to="/es/servicios/implantacion-crm" replace />} />
+           <Route path="/es/gestion-de-redes-sociales/" element={<Navigate to="/es/servicios/gestion-redes-sociales" replace />} />
+           <Route path="/es/gestion-de-redes-sociales" element={<Navigate to="/es/servicios/gestion-redes-sociales" replace />} />
+           <Route path="/es/diseno-y-desarrollo-paginas-web/" element={<Navigate to="/es/servicios/diseno-web" replace />} />
+           <Route path="/es/diseno-y-desarrollo-paginas-web" element={<Navigate to="/es/servicios/diseno-web" replace />} />
+           <Route path="/es/branding-e-identidad-de-marca/" element={<Navigate to="/es/servicios/creacion-marca" replace />} />
+           <Route path="/es/branding-e-identidad-de-marca" element={<Navigate to="/es/servicios/creacion-marca" replace />} />
+           <Route path="/es/publicidad-en-google-ads/" element={<Navigate to="/es/servicios/publicidad-google-ads" replace />} />
+           <Route path="/es/contenidos-y-seo/" element={<Navigate to="/es/servicios/estrategia-contenidos" replace />} />
+           <Route path="/es/contenidos-y-seo" element={<Navigate to="/es/servicios/estrategia-contenidos" replace />} />
+           <Route path="/es/seo-y-posicionamiento-en-buscadores/" element={<Navigate to="/es/servicios/seo-posicionamiento" replace />} />
+           <Route path="/es/estrategia-de-marketing-digital-360/" element={<Navigate to="/es/servicios/campanas-inbound-marketing" replace />} />
+           <Route path="/es/estrategia-de-marketing-digital-360" element={<Navigate to="/es/servicios/campanas-inbound-marketing" replace />} />
+           <Route path="/es/servicios-de-marketing-digital-integrados-en-tu-estrategia/" element={<Navigate to="/es/servicios" replace />} />
+           <Route path="/es/servicios-de-marketing-digital-integrados-en-tu-estrategia" element={<Navigate to="/es/servicios" replace />} />
+           <Route path="/servicios-de-marketing-digital-integrados-en-tu-estrategia" element={<Navigate to="/es/servicios" replace />} />
            <Route path="/es/automatizacion-de-marketing-digital/" element={<Navigate to="/es/blog/automatizacion-marketing-digital-guia-completa" replace />} />
            <Route path="/es/automatizacion-de-marketing-digital" element={<Navigate to="/es/blog/automatizacion-marketing-digital-guia-completa" replace />} />
-           <Route path="/es/ecommerce-tienda-online/" element={<Navigate to="/es/soluciones/creacion-web" replace />} />
-           <Route path="/es/alojamiento-mantenimiento" element={<Navigate to="/es/soluciones/creacion-web" replace />} />
-           <Route path="/es/soluciones-ia" element={<Navigate to="/es/soluciones/ia-aplicada" replace />} />
+           <Route path="/es/ecommerce-tienda-online/" element={<Navigate to="/es/servicios/tienda-online" replace />} />
+           <Route path="/es/alojamiento-mantenimiento" element={<Navigate to="/es/servicios/diseno-web/alojamiento-mantenimiento" replace />} />
+           <Route path="/es/soluciones-ia" element={<Navigate to="/es/soluciones/ia-marketing" replace />} />
+           
+           {/* URLs malformadas - Limpiar */}
+           <Route path="/https:/*" element={<Navigate to="/es" replace />} />
            <Route path="/es/conecta-con-tus-clientes" element={<Navigate to="/es/soluciones/gestion-conversion-clientes" replace />} />
            <Route path="/es/activa-tus-ventas" element={<Navigate to="/es/soluciones/gestion-conversion-clientes" replace />} />
            <Route path="/es/impulsa-tu-marca" element={<Navigate to="/es/soluciones/branding-identidad" replace />} />
