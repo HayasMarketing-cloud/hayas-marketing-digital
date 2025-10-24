@@ -7,10 +7,11 @@ const corsHeaders = {
 
 const INDEXNOW_API_KEY = 'f8e9d7c6b5a4938271605948372615af';
 const INDEXNOW_ENDPOINT = 'https://api.indexnow.org/indexnow';
-const ALLOWED_HOST = 'hayasmarketing.com';
+const PRODUCTION_HOST = 'hayasmarketing.com';
 
 interface IndexNowRequest {
   urls: string[];
+  host: string;
 }
 
 interface IndexNowResponse {
@@ -20,12 +21,12 @@ interface IndexNowResponse {
 }
 
 /**
- * Valida que una URL sea válida y pertenezca al dominio permitido
+ * Valida que una URL sea válida y pertenezca al dominio especificado
  */
-function validateUrl(url: string): boolean {
+function validateUrl(url: string, allowedHost: string): boolean {
   try {
     const urlObj = new URL(url);
-    return urlObj.host === ALLOWED_HOST || urlObj.host === `www.${ALLOWED_HOST}`;
+    return urlObj.host === allowedHost || urlObj.host === `www.${allowedHost}`;
   } catch {
     return false;
   }
@@ -51,7 +52,7 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    const { urls }: IndexNowRequest = await req.json();
+    const { urls, host }: IndexNowRequest = await req.json();
 
     if (!urls || !Array.isArray(urls)) {
       return new Response(
@@ -66,8 +67,21 @@ const handler = async (req: Request): Promise<Response> => {
       );
     }
 
-    // Filtrar URLs válidas
-    const validUrls = urls.filter(validateUrl);
+    if (!host) {
+      return new Response(
+        JSON.stringify({ 
+          success: false, 
+          message: 'El campo "host" es requerido.' 
+        }),
+        {
+          status: 400,
+          headers: { 'Content-Type': 'application/json', ...corsHeaders },
+        }
+      );
+    }
+
+    // Filtrar URLs válidas para el host especificado
+    const validUrls = urls.filter(url => validateUrl(url, host));
     
     if (validUrls.length === 0) {
       console.log('No valid URLs found:', urls);
@@ -113,15 +127,17 @@ const handler = async (req: Request): Promise<Response> => {
       });
     } else {
       // Notificación bulk (POST)
+      // Usar el host de producción para IndexNow independientemente del host actual
+      const indexNowHost = PRODUCTION_HOST;
       response = await fetch(INDEXNOW_ENDPOINT, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          host: ALLOWED_HOST,
+          host: indexNowHost,
           key: INDEXNOW_API_KEY,
-          keyLocation: `https://${ALLOWED_HOST}/${INDEXNOW_API_KEY}.txt`,
+          keyLocation: `https://${indexNowHost}/${INDEXNOW_API_KEY}.txt`,
           urlList: validUrls
         })
       });

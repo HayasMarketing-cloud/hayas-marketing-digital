@@ -45,7 +45,8 @@ export async function notifyIndexNow(url: string): Promise<IndexNowResponse> {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        urls: [url]
+        urls: [url],
+        host: SITE_HOST
       })
     });
 
@@ -88,7 +89,8 @@ export async function notifyBulkIndexNow(urls: string[]): Promise<IndexNowRespon
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        urls: validUrls
+        urls: validUrls,
+        host: SITE_HOST
       })
     });
 
