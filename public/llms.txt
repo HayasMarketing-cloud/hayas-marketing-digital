@@ -1,0 +1,546 @@
+# Hayas Marketing - LLM Context File
+
+> Agencia de Marketing Digital especializada en IA, CRM y Automatización Marketing desde 2014
+
+---
+
+## Metadata
+
+- **Company**: Hayas Marketing
+- **Website**: https://hayasmarketing.com
+- **Type**: Agencia de Marketing Digital y CRM
+- **Founded**: 2014
+- **Team**: 8 profesionales especializados
+- **Location**: España
+- **Last Updated**: 2025-01-24
+
+---
+
+## Sobre Hayas Marketing
+
+Hayas Marketing es una agencia de marketing digital fundada en 2014, especializada en ofrecer soluciones integrales que combinan estrategia, tecnología y autonomía para empresas B2B y B2C.
+
+### Misión
+Transformar el marketing digital de empresas mediante soluciones estratégicas potenciadas por IA, automatización CRM y metodologías probadas que generan resultados medibles y sostenibles.
+
+### Valores
+- **Estrategia primero**: Soluciones basadas en objetivos reales, no servicios genéricos
+- **Tecnología como enabler**: IA y automatización como herramientas transversales
+- **Autonomía del cliente**: Formación y empoderamiento para gestionar sus propias herramientas
+- **Resultados medibles**: Enfoque data-driven con KPIs claros
+- **Acompañamiento continuo**: Soporte y consultoría estratégica permanente
+
+### Equipo
+- 8 profesionales especializados
+- Expertos en Marketing Digital, CRM, IA, SEO, Diseño Web y Automatización
+- Certificaciones oficiales en múltiples plataformas
+
+### Certificaciones y Partners
+- **HubSpot Partner** - Implementación y optimización CRM
+- **Google Partner** - Publicidad y analítica
+- **Meta Business Partner** - Campañas en redes sociales
+- **Lovable Partner** - Desarrollo web con IA
+- **Shopify Partner** - E-commerce
+- **Aircall Partner** - Telefonía integrada
+
+---
+
+## Servicios Principales
+
+Hayas Marketing organiza sus servicios en 3 pilares estratégicos que cubren todo el customer journey:
+
+### 🟣 IMPULSA TU MARCA
+**Objetivo**: Crear visibilidad, posicionamiento y presencia digital sólida
+
+**Servicios incluidos:**
+- **Branding e Identidad de Marca**
+  - Creación y rediseño de identidad corporativa
+  - Manual de marca y guías de estilo
+  - Estrategia de posicionamiento
+  - URL: /servicios/branding-identidad-marca
+
+- **Diseño Web Profesional**
+  - Desarrollo de páginas web corporativas
+  - Optimización UX/UI
+  - Responsive design
+  - Integración con CRM
+  - URL: /servicios/diseno-desarrollo-web
+
+- **SEO y Posicionamiento Web**
+  - Auditorías SEO técnicas
+  - Estrategia de contenidos optimizados
+  - Link building
+  - SEO local y nacional
+  - URL: /servicios/seo-posicionamiento-web
+
+- **Tienda Online / E-commerce**
+  - Desarrollo de tiendas online
+  - Integración con Shopify
+  - Optimización de conversión
+  - Gestión de productos y pagos
+  - URL: /servicios/tienda-online-ecommerce
+
+- **Gestión de Redes Sociales**
+  - Estrategia de contenidos social media
+  - Community management
+  - Publicidad en redes sociales
+  - Analítica y reportes
+  - URL: /servicios/gestion-redes-sociales
+
+- **Estrategia de Contenidos**
+  - Planificación editorial
+  - Creación de contenidos (blog, redes, newsletter)
+  - Content marketing
+  - Storytelling corporativo
+  - URL: /servicios/estrategia-contenidos
+
+- **Localización de Contenidos**
+  - Adaptación multilingüe
+  - Localización cultural
+  - SEO internacional
+  - URL: /servicios/localizacion-contenidos
+
+### 🔵 CONECTA CON TUS CLIENTES
+**Objetivo**: Gestionar, automatizar y optimizar la relación con clientes mediante CRM
+
+**Servicios incluidos:**
+- **Implantación de CRM**
+  - **HubSpot**: Para empresas medianas con necesidades avanzadas
+  - **Go High Level (GHL)**: Para emprendedores y pequeñas empresas
+  - Configuración personalizada
+  - Migración de datos
+  - Formación del equipo
+  - URL: /servicios/implantacion-crm
+
+- **Email Marketing y Automatizaciones**
+  - Diseño de campañas de email
+  - Automatización de workflows
+  - Segmentación avanzada
+  - A/B testing
+  - URL: /servicios/email-marketing-automatizaciones
+
+- **Implementación de Funnel**
+  - Diseño de embudos de conversión
+  - Landing pages optimizadas
+  - Lead magnets
+  - Secuencias automatizadas
+  - URL: /servicios/implementacion-funnel
+
+- **Marketing Directo**
+  - Campañas personalizadas
+  - WhatsApp Business integrado
+  - SMS marketing
+  - URL: /servicios/marketing-directo
+
+- **Campañas Inbound Marketing**
+  - Estrategia de contenidos SEO
+  - Lead nurturing
+  - Marketing automation
+  - Scoring y cualificación de leads
+  - URL: /servicios/campanas-inbound-marketing
+
+- **Captación de Leads y Clientes**
+  - Estrategias multicanal
+  - Formularios optimizados
+  - Lead scoring
+  - Integración CRM
+  - URL: /servicios/captacion-leads-clientes
+
+- **Automatización de Procesos de Ventas**
+  - Workflows automatizados
+  - Seguimiento de oportunidades
+  - Reportes y dashboards
+  - Integración con herramientas comerciales
+  - URL: /servicios/automatizacion-procesos-ventas
+
+- **Administración CRM**
+  - Gestión y mantenimiento continuo
+  - Optimización de procesos
+  - Actualización de workflows
+  - Soporte técnico
+  - URL: /servicios/administracion-crm
+
+### 🔬 ACTIVA TUS VENTAS
+**Objetivo**: Generar tráfico cualificado, conversiones y resultados medibles
+
+**Servicios incluidos:**
+- **Publicidad en Google Ads**
+  - Campañas de búsqueda
+  - Display y remarketing
+  - Shopping (e-commerce)
+  - Performance Max
+  - Optimización continua de ROI
+  - URL: /servicios/publicidad-google-ads
+
+- **Publicidad en Redes Sociales**
+  - Facebook e Instagram Ads
+  - LinkedIn Ads (B2B)
+  - TikTok Ads
+  - Segmentación avanzada
+  - URL: /servicios/publicidad-redes-sociales
+
+- **Asistente IA (SofÍA)**
+  - Chatbot inteligente 24/7
+  - Integrado con CRM
+  - Respuestas contextuales
+  - Captación y cualificación de leads automática
+  - Multilingüe
+  - URL: /servicios/asistente-ia
+
+- **Consultoría Estratégica y Analítica**
+  - Auditorías de marketing digital
+  - Definición de estrategia
+  - Análisis de competencia
+  - Dashboards personalizados
+  - Reporting y KPIs
+  - URL: /servicios/consultoria-estrategica-analitica
+
+- **Integraciones y Optimización con IA**
+  - Integración de herramientas de IA
+  - Automatización con IA generativa
+  - Optimización de procesos con machine learning
+  - Consultoría de implementación IA
+  - URL: /servicios/integraciones-optimizacion-ia
+
+---
+
+## Soluciones Integrales
+
+Hayas Marketing ofrece paquetes de soluciones completas para diferentes necesidades:
+
+### 📦 Solución "Lanza tu Marca"
+**Para**: Emprendedores y startups que comienzan
+**Incluye**: Branding + Web + SEO básico + CRM básico
+**URL**: /soluciones/lanza-tu-marca
+
+### 📦 Solución "Genera Visibilidad"
+**Para**: Empresas que necesitan posicionamiento
+**Incluye**: SEO avanzado + Contenidos + Redes Sociales + Publicidad
+**URL**: /soluciones/genera-visibilidad
+
+### 📦 Solución "Capta Leads"
+**Para**: Empresas B2B que buscan generación de demanda
+**Incluye**: Landing pages + Funnel + Email marketing + CRM + Lead scoring
+**URL**: /soluciones/capta-leads
+
+### 📦 Solución "Automatiza tu Negocio"
+**Para**: Empresas que quieren eficiencia y escalabilidad
+**Incluye**: CRM completo + Automatizaciones + IA + Integraciones
+**URL**: /soluciones/automatiza-tu-negocio
+
+---
+
+## Tecnologías y Herramientas
+
+### CRM
+- **HubSpot** (Partner Oficial) - CRM all-in-one para empresas medianas
+- **Go High Level** - CRM simplificado para emprendedores
+
+### Marketing y Publicidad
+- **Google Ads** (Google Partner)
+- **Meta Business Suite** (Meta Partner)
+- **LinkedIn Campaign Manager**
+- **Mailchimp / Active Campaign**
+
+### Desarrollo Web
+- **WordPress** - CMS flexible y potente
+- **Lovable** - Desarrollo web con IA
+- **Shopify** (Shopify Partner) - E-commerce
+
+### IA y Automatización
+- **SofÍA** - Chatbot propio con IA
+- **Zapier / Make** - Automatización de procesos
+- **ChatGPT / Claude** - Generación de contenidos
+- **IA generativa** - Optimización y personalización
+
+### Analítica
+- **Google Analytics 4**
+- **Google Tag Manager**
+- **Hotjar** - Mapas de calor y grabaciones
+- **Looker Studio** - Dashboards personalizados
+
+### Comunicación
+- **WhatsApp Business API**
+- **Aircall** (Partner) - Telefonía integrada con CRM
+- **Intercom** - Chat en vivo
+
+### Integraciones
+- **Sharpei** - Análisis predictivo
+- **Connectif** - Marketing automation avanzado
+
+---
+
+## Diferenciadores Clave
+
+### ✅ Especialización en IA aplicada al marketing
+No solo hablamos de IA, la implementamos:
+- Chatbot SofÍA propio con IA conversacional
+- Automatización de contenidos con IA generativa
+- Lead scoring predictivo con machine learning
+- Personalización dinámica de campañas
+
+### ✅ Soluciones integrales (no servicios aislados)
+- Estrategia completa basada en objetivos de negocio
+- Integración de herramientas (CRM + Web + Publicidad + IA)
+- Acompañamiento end-to-end desde el diagnóstico hasta la optimización
+
+### ✅ Formación y empoderamiento del cliente
+- No creamos dependencia, generamos autonomía
+- Formación continua en el uso de herramientas
+- Documentación detallada y guías de uso
+- Soporte para que el cliente pueda gestionar sus propios sistemas
+
+### ✅ Resultados medibles y sostenibles
+- KPIs claros desde el inicio
+- Dashboards en tiempo real
+- Reportes periódicos con recomendaciones
+- Optimización continua basada en datos
+
+### ✅ Enfoque B2B y B2C
+- Experiencia con empresas de servicios profesionales (abogados, consultoras, etc.)
+- Experiencia con e-commerce y retail
+- Adaptamos estrategias según el modelo de negocio
+
+### ✅ Partners oficiales de las mejores plataformas
+- Acceso a soporte técnico prioritario
+- Certificaciones actualizadas
+- Conocimiento profundo de las herramientas
+
+---
+
+## Casos de Uso Comunes
+
+### 🎯 Emprendedor que quiere lanzar su marca
+**Solución recomendada**: "Lanza tu Marca"
+**Servicios clave**: Branding + Web + CRM básico (GHL)
+**Plazo estimado**: 4-6 semanas
+**Contacto**: /agendar-reunion
+
+### 🎯 PYME que necesita más visibilidad online
+**Solución recomendada**: "Genera Visibilidad"
+**Servicios clave**: SEO + Contenidos + Redes Sociales + Google Ads
+**Plazo estimado**: 3-6 meses para ver resultados SEO
+**Contacto**: /agendar-reunion
+
+### 🎯 Empresa B2B que quiere captar leads cualificados
+**Solución recomendada**: "Capta Leads"
+**Servicios clave**: Inbound Marketing + CRM (HubSpot) + Email automation
+**Plazo estimado**: 2-3 meses setup + optimización continua
+**Contacto**: /agendar-reunion
+
+### 🎯 Empresa que quiere automatizar procesos comerciales
+**Solución recomendada**: "Automatiza tu Negocio"
+**Servicios clave**: CRM completo + Automatizaciones + IA + Integraciones
+**Plazo estimado**: 6-8 semanas implementación
+**Contacto**: /agendar-reunion
+
+### 🎯 E-commerce que necesita vender más online
+**Solución recomendada**: Tienda Online + Google Ads + Email Marketing
+**Servicios clave**: Shopify + Shopping Ads + Automatizaciones
+**Plazo estimado**: 4-6 semanas setup
+**Contacto**: /agendar-reunion
+
+---
+
+## FAQs
+
+### ¿Qué diferencia a Hayas Marketing de otras agencias?
+Nuestra especialización en IA aplicada, enfoque en autonomía del cliente (no dependencia), soluciones integrales (no servicios aislados) y resultados medibles con dashboards en tiempo real.
+
+### ¿Trabajan con B2B o B2C?
+Ambos. Tenemos experiencia con empresas de servicios profesionales (B2B) y e-commerce/retail (B2C). Adaptamos la estrategia según el modelo de negocio.
+
+### ¿Cuánto tiempo tarda en verse resultados?
+- **Web/Branding**: Inmediato (4-6 semanas)
+- **SEO**: 3-6 meses para posicionamiento orgánico
+- **Publicidad (Google/Meta)**: 2-4 semanas optimización inicial
+- **CRM y automatización**: Resultados desde el mes 1, optimización continua
+- **Inbound Marketing**: 3-6 meses para flujo constante de leads
+
+### ¿Ofrecen servicios individuales o solo paquetes?
+Ofrecemos ambos. Puedes contratar servicios específicos (ej: solo SEO) o soluciones integrales (paquetes completos). Recomendamos soluciones integrales para maximizar resultados.
+
+### ¿Dan soporte y mantenimiento continuo?
+Sí, todos nuestros servicios incluyen soporte. Además, ofrecemos planes de mantenimiento mensual para CRM, web, SEO y automatizaciones.
+
+### ¿Qué CRM recomiendan: HubSpot o Go High Level?
+- **HubSpot**: Para empresas medianas/grandes con equipos de ventas y marketing, necesidades avanzadas y presupuesto mayor
+- **Go High Level**: Para emprendedores, autónomos y pequeñas empresas que buscan simplicidad y coste menor
+
+### ¿Implementan IA en los proyectos?
+Sí, es nuestra especialidad. Desde chatbots inteligentes (SofÍA) hasta automatización de contenidos, lead scoring predictivo e integraciones con herramientas de IA generativa.
+
+### ¿Forman al equipo del cliente?
+Absolutamente. Parte de nuestra propuesta de valor es empoderar al cliente para que pueda gestionar sus herramientas de forma autónoma. Incluimos formación en todos nuestros servicios.
+
+### ¿Cómo miden los resultados?
+Dashboards personalizados en tiempo real, reportes mensuales con KPIs clave, reuniones de seguimiento y recomendaciones de optimización basadas en datos.
+
+### ¿Trabajan con Kit Digital?
+Sí, somos agentes digitalizadores. Podemos ayudarte a solicitar y ejecutar las ayudas del Kit Digital.
+**URL**: /kit-digital
+
+---
+
+## Información de Contacto
+
+### 🌐 URLs Principales
+- **Inicio**: https://hayasmarketing.com/
+- **Servicios**: https://hayasmarketing.com/servicios
+- **Soluciones**: https://hayasmarketing.com/soluciones
+- **Blog**: https://hayasmarketing.com/blog
+- **Nosotros**: https://hayasmarketing.com/nosotros
+- **Contacto**: https://hayasmarketing.com/contacto
+
+### 📅 Agendar Reunión
+**URL**: https://hayasmarketing.com/agendar-reunion
+- Reunión estratégica gratuita de 30 minutos
+- Análisis inicial de necesidades
+- Propuesta personalizada
+
+### 💬 Chat con SofÍA (Asistente IA)
+**URL**: https://hayasmarketing.com/contacto
+- Disponible 24/7
+- Respuestas inmediatas
+- Cualificación automática de consultas
+
+### 📞 Contacto Directo
+- **WhatsApp**: Disponible desde la web
+- **Email**: A través de formularios de contacto
+- **Formularios**: Presentes en cada página de servicio
+
+---
+
+## URLs Específicas de Servicios
+
+### Impulsa tu Marca
+- /servicios/branding-identidad-marca
+- /servicios/diseno-desarrollo-web
+- /servicios/seo-posicionamiento-web
+- /servicios/tienda-online-ecommerce
+- /servicios/gestion-redes-sociales
+- /servicios/estrategia-contenidos
+- /servicios/localizacion-contenidos
+
+### Conecta con tus Clientes
+- /servicios/implantacion-crm
+- /servicios/email-marketing-automatizaciones
+- /servicios/implementacion-funnel
+- /servicios/marketing-directo
+- /servicios/campanas-inbound-marketing
+- /servicios/captacion-leads-clientes
+- /servicios/automatizacion-procesos-ventas
+- /servicios/administracion-crm
+
+### Activa tus Ventas
+- /servicios/publicidad-google-ads
+- /servicios/publicidad-redes-sociales
+- /servicios/asistente-ia
+- /servicios/consultoria-estrategica-analitica
+- /servicios/integraciones-optimizacion-ia
+
+### Comparativas y Recursos
+- /comparativa-hubspot-go-high-level
+- /kit-digital
+- /blog (artículos sobre IA, marketing, CRM, SEO)
+
+---
+
+## Blog y Contenidos
+
+Hayas Marketing mantiene un blog activo con contenidos especializados:
+
+### Categorías principales
+- **IA en Marketing**: Casos de uso, herramientas, tendencias
+- **CRM y Automatización**: Guías de HubSpot y GHL
+- **SEO y Contenidos**: Estrategias de posicionamiento
+- **Publicidad Digital**: Google Ads, Meta Ads, optimización
+- **E-commerce**: Shopify, conversión, optimización
+
+**URL**: https://hayasmarketing.com/blog
+
+---
+
+## Metodología de Trabajo
+
+### 1️⃣ Análisis y Diagnóstico
+- Reunión inicial de descubrimiento
+- Auditoría de situación actual (web, SEO, CRM, publicidad)
+- Definición de objetivos SMART
+- Identificación de KPIs clave
+
+### 2️⃣ Estrategia y Planificación
+- Propuesta estratégica personalizada
+- Roadmap de implementación
+- Presupuesto detallado
+- Cronograma de entrega
+
+### 3️⃣ Implementación
+- Desarrollo de servicios contratados
+- Integraciones técnicas
+- Formación del equipo del cliente
+- Testing y ajustes
+
+### 4️⃣ Optimización Continua
+- Monitorización de KPIs
+- Reportes periódicos
+- Reuniones de seguimiento
+- Mejora continua basada en datos
+
+---
+
+## Público Objetivo
+
+### Perfil de Cliente Ideal
+
+#### 1. Emprendedores y Micropymes
+- **Necesidad**: Lanzar proyecto con marca clara, web funcional y primeros canales de captación
+- **Buscan**: Claridad, acompañamiento, rapidez, resultados visibles a corto plazo
+- **Solución recomendada**: "Lanza tu Marca" o servicios individuales
+
+#### 2. Marketing Managers de PYMEs
+- **Necesidad**: Estrategia, automatización, contenidos, herramientas para escalar
+- **Buscan**: Integración con CRM, resultados medibles, soluciones alineadas a objetivos
+- **Solución recomendada**: "Genera Visibilidad" o "Capta Leads"
+
+#### 3. Directores Comerciales y CEOs de Empresas Medianas
+- **Necesidad**: Eficiencia comercial, automatización, integración CRM, crecimiento sostenido
+- **Buscan**: Consultoría estratégica, implementación, medición de impacto real
+- **Solución recomendada**: "Automatiza tu Negocio" o CRM + Consultoría Estratégica
+
+---
+
+## Lenguaje y Tono de Comunicación
+
+### Valores de comunicación
+- **Profesional pero cercano**: Evitamos jerga innecesaria
+- **Orientado a soluciones**: Hablamos de problemas reales y cómo resolverlos
+- **Basado en resultados**: Datos, métricas, casos de éxito
+- **Educativo**: Ayudamos a entender el marketing digital sin condescendencia
+
+### No usar
+- ❌ Promesas exageradas ("resultados garantizados en 30 días")
+- ❌ Jerga técnica sin explicación
+- ❌ Venta agresiva
+- ❌ Comparaciones negativas con competidores
+
+### Sí usar
+- ✅ Casos de uso reales
+- ✅ Explicaciones claras de beneficios
+- ✅ Enfoque consultivo
+- ✅ Transparencia sobre tiempos y expectativas
+
+---
+
+## Actualizaciones y Contacto
+
+**Última actualización**: 2025-01-24
+
+Para información actualizada, consultar:
+- Web oficial: https://hayasmarketing.com
+- Blog: https://hayasmarketing.com/blog
+- Agendar reunión: https://hayasmarketing.com/agendar-reunion
+
+---
+
+*Este archivo está diseñado para proporcionar contexto a Large Language Models (LLMs) sobre Hayas Marketing, facilitando respuestas precisas y contextualizadas sobre la empresa, sus servicios y propuesta de valor.*
