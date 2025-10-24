@@ -9,81 +9,81 @@ interface SitemapUrl {
 
 // Main pages - highest priority, indexable only
 const MAIN_PAGES = [
-  '/',
-  '/servicios', 
-  '/casos-exito',
-  '/blog',
-  '/nosotros',
-  '/contacto'
+  '/es',
+  '/es/servicios', 
+  '/es/casos-exito',
+  '/es/blog',
+  '/es/nosotros',
+  '/es/contacto'
 ];
 
 // Solution pages - high priority pillar pages
 const SOLUTION_PAGES = [
-  '/soluciones/impulsa-tu-marca',
-  '/soluciones/conecta-con-tus-clientes',
-  '/soluciones/activa-tus-ventas',
-  '/soluciones/marketing-visibilidad'
+  '/es/soluciones/impulsa-tu-marca',
+  '/es/soluciones/conecta-con-tus-clientes',
+  '/es/soluciones/activa-tus-ventas',
+  '/es/soluciones/marketing-visibilidad'
 ];
 
 // High-value service pages - medium priority, strategic
 const STRATEGIC_SERVICE_PAGES = [
-  '/servicios/creacion-marca',
-  '/servicios/diseno-web',
-  '/servicios/seo-positioning',
-  '/servicios/implantacion-crm',
-  '/servicios/administracion-crm',
-  '/servicios/automatizacion-procesos-ventas',
-  '/servicios/captacion-leads-clientes',
-  '/servicios/publicidad-google-ads',
-  '/servicios/publicidad-redes-sociales',
-  '/servicios/gestion-redes-sociales',
-  '/servicios/email-marketing-automatizaciones',
-  '/servicios/estrategia-contenidos',
-  '/servicios/consultoria-estrategica-analitica'
+  '/es/servicios/creacion-marca',
+  '/es/servicios/diseno-web',
+  '/es/servicios/seo-positioning',
+  '/es/servicios/implantacion-crm',
+  '/es/servicios/administracion-crm',
+  '/es/servicios/automatizacion-procesos-ventas',
+  '/es/servicios/captacion-leads-clientes',
+  '/es/servicios/publicidad-google-ads',
+  '/es/servicios/publicidad-redes-sociales',
+  '/es/servicios/gestion-redes-sociales',
+  '/es/servicios/email-marketing-automatizaciones',
+  '/es/servicios/estrategia-contenidos',
+  '/es/servicios/consultoria-estrategica-analitica'
 ];
 
 // Kit Digital pages - special business value
 const KIT_DIGITAL_PAGES = [
-  '/kit-digital',
-  '/kit-consulting',
-  '/kit-digital/presencia-basica',
-  '/kit-digital/presencia-avanzada',
-  '/kit-digital/gestion-clientes',
-  '/kit-digital/redes-sociales'
+  '/es/kit-digital',
+  '/es/kit-consulting',
+  '/es/kit-digital/presencia-basica',
+  '/es/kit-digital/presencia-avanzada',
+  '/es/kit-digital/gestion-clientes',
+  '/es/kit-digital/redes-sociales'
 ];
 
 // CTA and conversion pages
 const CONVERSION_PAGES = [
-  '/agendar-reunion',
-  '/solicitar-consulta'
+  '/es/agendar-reunion',
+  '/es/solicitar-consulta'
 ];
 
 // Blog posts - high-value content pages
 const BLOG_PAGES = [
-  '/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing',
-  '/blog/guia-tecnica-email-marketing-hubspot-configuracion',
-  '/blog/configuracion-email-marketing-cumplimiento-normativo',
-  '/blog/perfil-cliente-ideal',
-  '/blog/como-crear-buyer-persona-b2b-b2c-guia-completa',
-  '/blog/calculo-inversion-plan-marketing-digital',
-  '/blog/branding-proceso-tecnicas-naming',
-  '/blog/business-model-canvas-para-crear-tu-estrategia-de-marketing',
-  '/blog/google-consent-mode-cookieyes',
-  '/blog/marketing-natural-posicionamiento-organico',
-  '/blog/crm-que-es-beneficios',
-  '/blog/como-elegir-mejor-crm-empresa-organizacion',
-  '/blog/abm-account-based-marketing',
-  '/blog/re-commerce-economia-circular-ecommerce-partnership-sharpei',
-  '/blog/seo-off-page-estrategias-practicas-posicionamiento',
-  '/blog/automatizacion-marketing-digital-guia-completa',
-  '/blog/web-3-0-futuro-internet-descentralizado',
-  '/blog/seo-on-page-guia-completa',
-  '/blog/lead-scoring-calificacion-leads',
-  '/blog/seo-inteligencia-artificial',
-  '/blog/ia-redes-sociales-herramientas-riesgos',
-  '/blog/funnel-conversion-b2B',
-  '/blog/marketing-global-internacionalizacion',
-  '/blog/kit-digital-marketing-guia-completa-2025'
+  '/es/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing',
+  '/es/blog/guia-tecnica-email-marketing-hubspot-configuracion',
+  '/es/blog/configuracion-email-marketing-cumplimiento-normativo',
+  '/es/blog/perfil-cliente-ideal',
+  '/es/blog/como-crear-buyer-persona-b2b-b2c-guia-completa',
+  '/es/blog/calculo-inversion-plan-marketing-digital',
+  '/es/blog/branding-proceso-tecnicas-naming',
+  '/es/blog/business-model-canvas-para-crear-tu-estrategia-de-marketing',
+  '/es/blog/google-consent-mode-cookieyes',
+  '/es/blog/marketing-natural-posicionamiento-organico',
+  '/es/blog/crm-que-es-beneficios',
+  '/es/blog/como-elegir-mejor-crm-empresa-organizacion',
+  '/es/blog/abm-account-based-marketing',
+  '/es/blog/re-commerce-economia-circular-ecommerce-partnership-sharpei',
+  '/es/blog/seo-off-page-estrategias-practicas-posicionamiento',
+  '/es/blog/automatizacion-marketing-digital-guia-completa',
+  '/es/blog/web-3-0-futuro-internet-descentralizado',
+  '/es/blog/seo-on-page-guia-completa',
+  '/es/blog/lead-scoring-calificacion-leads',
+  '/es/blog/seo-inteligencia-artificial',
+  '/es/blog/ia-redes-sociales-herramientas-riesgos',
+  '/es/blog/funnel-conversion-b2B',
+  '/es/blog/marketing-global-internacionalizacion',
+  '/es/blog/kit-digital-marketing-guia-completa-2025'
 ];
 
 /**
@@ -110,7 +110,7 @@ export const generateSitemapXML = (): string => {
 
   // Add main pages (highest priority)
   MAIN_PAGES.forEach(path => {
-    addUrlIfIndexable(path, 'weekly', path === '/' ? 1.0 : 0.9);
+    addUrlIfIndexable(path, 'weekly', path === '/es' ? 1.0 : 0.9);
   });
 
   // Add solution pages (high priority pillars)
