@@ -32,6 +32,19 @@ function validateUrl(url: string, allowedHost: string): boolean {
   }
 }
 
+/**
+ * Transforma una URL del dominio actual al dominio de producción
+ */
+function transformUrlToProduction(url: string, productionHost: string): string {
+  try {
+    const urlObj = new URL(url);
+    urlObj.host = productionHost;
+    return urlObj.toString();
+  } catch {
+    return url; // Si falla, devolver la original
+  }
+}
+
 const handler = async (req: Request): Promise<Response> => {
   // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
@@ -110,15 +123,21 @@ const handler = async (req: Request): Promise<Response> => {
       );
     }
 
-    console.log(`Notifying ${validUrls.length} URLs to IndexNow...`);
+    // Transformar URLs al dominio de producción
+    const transformedUrls = validUrls.map(url => 
+      transformUrlToProduction(url, PRODUCTION_HOST)
+    );
+
+    console.log(`Notifying ${transformedUrls.length} URLs to IndexNow...`);
+    console.log('Transformed URLs:', transformedUrls.slice(0, 3)); // Log primeras 3 URLs
 
     // Notificación única o bulk según la cantidad de URLs
     let response: globalThis.Response;
     
-    if (validUrls.length === 1) {
+    if (transformedUrls.length === 1) {
       // Notificación única (GET)
       const params = new URLSearchParams({
-        url: validUrls[0],
+        url: transformedUrls[0],
         key: INDEXNOW_API_KEY
       });
       
@@ -138,7 +157,7 @@ const handler = async (req: Request): Promise<Response> => {
           host: indexNowHost,
           key: INDEXNOW_API_KEY,
           keyLocation: `https://${indexNowHost}/${INDEXNOW_API_KEY}.txt`,
-          urlList: validUrls
+          urlList: transformedUrls
         })
       });
     }
@@ -146,7 +165,7 @@ const handler = async (req: Request): Promise<Response> => {
     const result: IndexNowResponse = {
       success: response.ok,
       message: response.ok 
-        ? `${validUrls.length} URL(s) notificadas exitosamente a IndexNow`
+        ? `${transformedUrls.length} URL(s) notificadas exitosamente a IndexNow`
         : `Error al notificar: ${response.status} ${response.statusText}`,
       statusCode: response.status
     };
