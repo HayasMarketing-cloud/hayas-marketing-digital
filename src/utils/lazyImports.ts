@@ -151,6 +151,7 @@ export const SitemapManager = lazy(() => import("@/pages/admin/SitemapManager"))
 export const RobotsManager = lazy(() => import("@/pages/admin/RobotsManager"));
 export const RedirectsManager = lazy(() => import("@/pages/admin/RedirectsManager"));
 export const GSCFullReport = lazy(() => import("@/pages/admin/GSCFullReport"));
+export const IndexNowManager = lazy(() => import("@/pages/admin/IndexNowManager"));
 
 // Páginas legales
 export const AvisoLegal = lazy(() => import("@/pages/AvisoLegal"));

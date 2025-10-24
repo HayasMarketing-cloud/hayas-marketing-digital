@@ -463,6 +463,7 @@ const App = () => (
           <Route path="/admin/seo/robots" element={<PageSuspense><Pages.RobotsManager /></PageSuspense>} />
           <Route path="/admin/seo/redirects" element={<PageSuspense><Pages.RedirectsManager /></PageSuspense>} />
           <Route path="/admin/seo/gsc" element={<PageSuspense><Pages.GSCFullReport /></PageSuspense>} />
+          <Route path="/admin/seo/indexnow" element={<PageSuspense><Pages.IndexNowManager /></PageSuspense>} />
           <Route path="/es/servicios/implementacion-funnel" element={<PageSuspense><Pages.ImplementacionFunnel /></PageSuspense>} />
           <Route path="/es/servicios/administracion-crm" element={<PageSuspense><Pages.AdministracionCrm /></PageSuspense>} />
           <Route path="/es/servicios/automatizacion-procesos-ventas" element={<PageSuspense><Pages.AutomatizacionProcesosVentas /></PageSuspense>} />

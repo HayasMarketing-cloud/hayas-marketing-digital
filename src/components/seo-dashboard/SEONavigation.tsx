@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
-import { LayoutDashboard, Map, Globe, ArrowRight, BarChart3 } from 'lucide-react';
+import { LayoutDashboard, Map, Globe, ArrowRight, BarChart3, Zap } from 'lucide-react';
 
 const SEONavigation: React.FC = () => {
   const location = useLocation();
@@ -12,6 +12,7 @@ const SEONavigation: React.FC = () => {
     { path: '/admin/seo/sitemap', label: 'Sitemap', icon: Map },
     { path: '/admin/seo/robots', label: 'Robots.txt', icon: Globe },
     { path: '/admin/seo/redirects', label: 'Redirecciones', icon: ArrowRight },
+    { path: '/admin/seo/indexnow', label: 'IndexNow', icon: Zap },
   ];
 
   return (
