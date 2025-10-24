@@ -101,7 +101,7 @@ export default function AgendarReunion() {
                 <div className="text-center">
                   <div className="relative w-16 h-16 mx-auto mb-4">
                     <div className="w-16 h-16 bg-gradient-to-r from-accent to-accent/80 rounded-full flex items-center justify-center relative overflow-hidden">
-                      <img src="/lovable-uploads/2a2adcf5-d531-4d8c-91bd-bb12aac27976.png" alt="SofÍA" className="w-12 h-12 rounded-full object-cover" />
+                      <img src="/lovable-uploads/2a2adcf5-d531-4d8c-91bd-bb12aac27976.png" alt="SofÍA" width={48} height={48} className="w-12 h-12 rounded-full object-cover" style={{ aspectRatio: '1/1' }} />
                       <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white">
                         <div className="absolute inset-0 bg-green-400 rounded-full animate-ping"></div>
                       </div>

@@ -179,7 +179,7 @@ const AsistenteIA: React.FC = () => {
             </div>
             <div className="relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img src={assistantHeroImage} alt="Asistente IA para atención al cliente" className="w-full h-auto object-cover" />
+                <img src={assistantHeroImage} alt="Asistente IA para atención al cliente" width={1920} height={1080} className="w-full object-cover" style={{ aspectRatio: '16/9' }} />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
               </div>
             </div>

@@ -121,7 +121,7 @@ const ComparativaHubSpotGoHighLevel = () => {
             <Card className="p-8 text-center border-2 border-orange-200 bg-orange-50/50 hover:shadow-xl transition-all duration-300">
               <CardHeader className="pb-6">
                 <div className="w-32 h-32 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 p-6 shadow-sm">
-                  <img src="/lovable-uploads/ba197ffa-03bd-4cb9-8540-56f4aa82594e.png" alt="HubSpot" className="max-w-full max-h-full object-contain" />
+                  <img src="/lovable-uploads/ba197ffa-03bd-4cb9-8540-56f4aa82594e.png" alt="HubSpot" width={200} height={60} className="max-w-full max-h-full object-contain" style={{ aspectRatio: '200/60' }} />
                 </div>
                 <CardTitle className="text-2xl font-bold text-orange-900">HubSpot</CardTitle>
               </CardHeader>
@@ -150,7 +150,7 @@ const ComparativaHubSpotGoHighLevel = () => {
             <Card className="p-8 text-center border-2 border-blue-200 bg-blue-50/50 hover:shadow-xl transition-all duration-300">
               <CardHeader className="pb-6">
                 <div className="w-32 h-32 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 p-6 shadow-sm">
-                  <img src="/lovable-uploads/611a7129-40d9-4ced-be17-6836749a97e5.png" alt="Go High Level" className="max-w-full max-h-full object-contain" />
+                  <img src="/lovable-uploads/611a7129-40d9-4ced-be17-6836749a97e5.png" alt="Go High Level" width={200} height={60} className="max-w-full max-h-full object-contain" style={{ aspectRatio: '200/60' }} />
                 </div>
                 <CardTitle className="text-2xl font-bold text-blue-900">Go High Level</CardTitle>
               </CardHeader>
@@ -499,7 +499,7 @@ const ComparativaHubSpotGoHighLevel = () => {
             <Card className="p-8 border-2 border-orange-200 hover:shadow-xl transition-all duration-300">
               <CardHeader className="text-center pb-6">
                 <div className="w-48 h-48 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 p-8 shadow-sm">
-                  <img src="/lovable-uploads/ba197ffa-03bd-4cb9-8540-56f4aa82594e.png" alt="HubSpot" className="max-w-full max-h-full object-contain" />
+                  <img src="/lovable-uploads/ba197ffa-03bd-4cb9-8540-56f4aa82594e.png" alt="HubSpot" width={200} height={60} className="max-w-full max-h-full object-contain" style={{ aspectRatio: '200/60' }} />
                 </div>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -529,7 +529,7 @@ const ComparativaHubSpotGoHighLevel = () => {
             <Card className="p-8 border-2 border-blue-200 hover:shadow-xl transition-all duration-300">
               <CardHeader className="text-center pb-6">
                 <div className="w-48 h-48 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 p-8 shadow-sm">
-                  <img src="/lovable-uploads/611a7129-40d9-4ced-be17-6836749a97e5.png" alt="Go High Level" className="max-w-full max-h-full object-contain" />
+                  <img src="/lovable-uploads/611a7129-40d9-4ced-be17-6836749a97e5.png" alt="Go High Level" width={200} height={60} className="max-w-full max-h-full object-contain" style={{ aspectRatio: '200/60' }} />
                 </div>
               </CardHeader>
               <CardContent className="space-y-4">

@@ -393,8 +393,8 @@ const Nosotros = () => {
               
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {teamMembers.map((member, index) => <div key={index} className="bg-white rounded-xl p-6 text-center shadow-corporate hover-scale group">
-                    <div className="relative w-48 h-48 mx-auto mb-4 overflow-hidden rounded-full border-4 border-gradient-primary">
-                      <img src={member.image} alt={`${member.name} - ${member.role}`} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
+                  <div className="relative w-48 h-48 mx-auto mb-4 overflow-hidden rounded-full border-4 border-gradient-primary">
+                      <img src={member.image} alt={`${member.name} - ${member.role}`} width={400} height={400} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" style={{ aspectRatio: '1/1' }} />
                     </div>
                     <h3 className="text-xl font-semibold mb-2 text-hayas-primary">{member.name}</h3>
                     <p className="text-hayas-primary font-medium mb-3 text-sm">{member.role}</p>
@@ -431,7 +431,7 @@ const Nosotros = () => {
                       >
                         <div className="bg-white rounded-xl p-8 shadow-corporate border border-gray-100 group-hover:shadow-elegant transition-all duration-300">
                           <div className="h-20 flex items-center justify-center mb-4">
-                            <img src={cert.logo} alt={`${cert.name} logo`} className="h-16 w-auto object-contain filter transition-all duration-300 group-hover:scale-110" />
+                            <img src={cert.logo} alt={`${cert.name} logo`} width={150} height={64} className="h-16 object-contain filter transition-all duration-300 group-hover:scale-110" style={{ aspectRatio: '150/64' }} />
                           </div>
                           <p className="text-sm font-semibold text-hayas-primary text-center">{cert.name}</p>
                         </div>
@@ -452,7 +452,7 @@ const Nosotros = () => {
                       >
                         <div className="bg-white rounded-xl p-8 shadow-corporate border border-gray-100 group-hover:shadow-elegant transition-all duration-300">
                           <div className="h-20 flex items-center justify-center mb-4">
-                            <img src={cert.logo} alt={`${cert.name} logo`} className="h-16 w-auto object-contain filter transition-all duration-300 group-hover:scale-110" />
+                            <img src={cert.logo} alt={`${cert.name} logo`} width={150} height={64} className="h-16 object-contain filter transition-all duration-300 group-hover:scale-110" style={{ aspectRatio: '150/64' }} />
                           </div>
                           <p className="text-sm font-semibold text-hayas-primary text-center">{cert.name}</p>
                         </div>
@@ -473,7 +473,7 @@ const Nosotros = () => {
                       >
                         <div className="bg-white rounded-xl p-8 shadow-corporate border border-gray-100 group-hover:shadow-elegant transition-all duration-300">
                           <div className="h-20 flex items-center justify-center mb-4">
-                            <img src={cert.logo} alt={`${cert.name} logo`} className={`${cert.name === 'AEPD' ? 'h-20' : 'h-16'} w-auto object-contain filter transition-all duration-300 group-hover:scale-110`} />
+                            <img src={cert.logo} alt={`${cert.name} logo`} width={150} height={cert.name === 'AEPD' ? 80 : 64} className={`${cert.name === 'AEPD' ? 'h-20' : 'h-16'} object-contain filter transition-all duration-300 group-hover:scale-110`} style={{ aspectRatio: cert.name === 'AEPD' ? '150/80' : '150/64' }} />
                           </div>
                           <p className="text-sm font-semibold text-hayas-primary text-center">{cert.name}</p>
                         </div>

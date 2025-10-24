@@ -107,7 +107,7 @@ const Footer: React.FC<FooterProps> = ({
               <h3 className="text-2xl font-bold text-white mb-6">Agentes de transformación digital a través de los Fondos Next Generation de la Unión Europea</h3>
               <div className="flex justify-center mb-6">
                 <div className="bg-white rounded-lg p-4 shadow-lg">
-                  <img src="/lovable-uploads/e3910419-c73c-4448-a631-ed5f0eff61fe.png" alt="Agentes oficiales - Gobierno de España, Red.es, Kit Digital, Financiado por la Unión Europea" className="h-12 w-auto max-w-full" />
+                  <img src="/lovable-uploads/e3910419-c73c-4448-a631-ed5f0eff61fe.png" alt="Agentes oficiales - Gobierno de España, Red.es, Kit Digital, Financiado por la Unión Europea" width={400} height={48} className="h-12 max-w-full" style={{ aspectRatio: '400/48' }} />
                 </div>
               </div>
               <p className="text-gray-400 max-w-2xl mx-auto text-xl">
@@ -122,7 +122,7 @@ const Footer: React.FC<FooterProps> = ({
                 <div className="relative z-10">
                   <div className="flex items-center gap-4 mb-4">
                     <div className="w-24 h-24 bg-white/90 rounded-lg p-3 flex items-center justify-center">
-                      <img src="/lovable-uploads/33d68296-8cdf-4012-934b-214b42e6902d.png" alt="Kit Consulting Logo" className="w-full h-auto" />
+                      <img src="/lovable-uploads/33d68296-8cdf-4012-934b-214b42e6902d.png" alt="Kit Consulting Logo" width={96} height={96} className="w-full" style={{ aspectRatio: '1/1' }} />
                     </div>
                     <div>
                       <h4 className="font-bold text-lg">Kit Consulting</h4>
@@ -157,7 +157,7 @@ const Footer: React.FC<FooterProps> = ({
                 <div className="relative z-10">
                   <div className="flex items-center gap-4 mb-4">
                     <div className="w-24 h-24 bg-white/90 rounded-lg p-3 flex items-center justify-center">
-                      <img src="/lovable-uploads/f9d2b651-7c92-42b3-86ce-64e3add924c6.png" alt="Kit Digital Logo" className="w-full h-auto" />
+                      <img src="/lovable-uploads/f9d2b651-7c92-42b3-86ce-64e3add924c6.png" alt="Kit Digital Logo" width={96} height={96} className="w-full" style={{ aspectRatio: '1/1' }} />
                     </div>
                     <div>
                       <h4 className="font-bold text-lg">Kit Digital</h4>

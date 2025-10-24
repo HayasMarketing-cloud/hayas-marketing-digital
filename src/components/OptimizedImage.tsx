@@ -23,17 +23,27 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
 
-  // Generate WebP source and fallback
+  // Generate responsive WebP source and fallback
   const generateSrcSet = (baseSrc: string) => {
     if (baseSrc.includes('unsplash.com')) {
-      return `${baseSrc}&fm=webp&q=75 1x, ${baseSrc}&fm=webp&q=75&dpr=2 2x`;
+      const baseUrl = baseSrc.split('?')[0];
+      return [
+        `${baseUrl}?w=640&fm=webp&q=75 640w`,
+        `${baseUrl}?w=1024&fm=webp&q=75 1024w`,
+        `${baseUrl}?w=1920&fm=webp&q=75 1920w`,
+      ].join(', ');
     }
     return undefined;
   };
 
   const generateFallbackSrcSet = (baseSrc: string) => {
     if (baseSrc.includes('unsplash.com')) {
-      return `${baseSrc}&q=75 1x, ${baseSrc}&q=75&dpr=2 2x`;
+      const baseUrl = baseSrc.split('?')[0];
+      return [
+        `${baseUrl}?w=640&q=75 640w`,
+        `${baseUrl}?w=1024&q=75 1024w`,
+        `${baseUrl}?w=1920&q=75 1920w`,
+      ].join(', ');
     }
     return undefined;
   };
@@ -58,10 +68,11 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
     <div className="relative">
       {!isLoaded && (
         <div 
-          className={`absolute inset-0 bg-muted animate-pulse ${className}`}
+          className={`absolute inset-0 bg-muted animate-pulse`}
           style={{ 
-            width, 
-            height,
+            width: width ? `${width}px` : '100%', 
+            height: height ? `${height}px` : '100%',
+            aspectRatio: (width && height) ? `${width}/${height}` : undefined,
             backgroundImage: blurDataURL ? `url(${blurDataURL})` : undefined,
             backgroundSize: 'cover',
             backgroundPosition: 'center',

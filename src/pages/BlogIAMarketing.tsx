@@ -87,7 +87,7 @@ const BlogIAMarketing = () => {
               </Button>
             </div>
 
-            <img src={teamMarketingCollaboration} alt="Equipo de marketing colaborando en estrategias digitales" className="w-full h-64 md:h-80 object-cover rounded-lg mt-8 shadow-lg" />
+            <img src={teamMarketingCollaboration} alt="Equipo de marketing colaborando en estrategias digitales" width={1920} height={1080} className="w-full h-64 md:h-80 object-cover rounded-lg mt-8 shadow-lg" style={{ aspectRatio: '16/9' }} />
           </header>
 
           {/* Content */}
