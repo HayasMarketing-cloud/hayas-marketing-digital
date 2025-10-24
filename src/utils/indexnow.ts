@@ -4,8 +4,8 @@
  * para indexación inmediata (1-2 horas vs 2-7 días)
  */
 
-const INDEXNOW_API_KEY = 'f8e9d7c6b5a4938271605948372615af';
-const INDEXNOW_ENDPOINT = 'https://api.indexnow.org/indexnow';
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
+const INDEXNOW_PROXY_ENDPOINT = `${SUPABASE_URL}/functions/v1/indexnow-proxy`;
 const SITE_HOST = window.location.host;
 
 export interface IndexNowResponse {
@@ -39,28 +39,18 @@ export async function notifyIndexNow(url: string): Promise<IndexNowResponse> {
   }
 
   try {
-    const params = new URLSearchParams({
-      url: url,
-      key: INDEXNOW_API_KEY
+    const response = await fetch(INDEXNOW_PROXY_ENDPOINT, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        urls: [url]
+      })
     });
 
-    const response = await fetch(`${INDEXNOW_ENDPOINT}?${params.toString()}`, {
-      method: 'GET',
-    });
-
-    if (response.ok) {
-      return {
-        success: true,
-        message: 'URL notificada exitosamente a IndexNow',
-        statusCode: response.status
-      };
-    } else {
-      return {
-        success: false,
-        message: `Error al notificar: ${response.status} ${response.statusText}`,
-        statusCode: response.status
-      };
-    }
+    const data: IndexNowResponse = await response.json();
+    return data;
   } catch (error) {
     return {
       success: false,
@@ -92,32 +82,18 @@ export async function notifyBulkIndexNow(urls: string[]): Promise<IndexNowRespon
   }
 
   try {
-    const response = await fetch(INDEXNOW_ENDPOINT, {
+    const response = await fetch(INDEXNOW_PROXY_ENDPOINT, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        host: SITE_HOST,
-        key: INDEXNOW_API_KEY,
-        keyLocation: `https://${SITE_HOST}/${INDEXNOW_API_KEY}.txt`,
-        urlList: validUrls
+        urls: validUrls
       })
     });
 
-    if (response.ok) {
-      return {
-        success: true,
-        message: `${validUrls.length} URL(s) notificadas exitosamente a IndexNow`,
-        statusCode: response.status
-      };
-    } else {
-      return {
-        success: false,
-        message: `Error al notificar: ${response.status} ${response.statusText}`,
-        statusCode: response.status
-      };
-    }
+    const data: IndexNowResponse = await response.json();
+    return data;
   } catch (error) {
     return {
       success: false,
