@@ -25,27 +25,27 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
 
   // Generate responsive WebP source and fallback
   const generateSrcSet = (baseSrc: string) => {
-    if (baseSrc.includes('unsplash.com')) {
-      const baseUrl = baseSrc.split('?')[0];
-      return [
-        `${baseUrl}?w=640&fm=webp&q=75 640w`,
-        `${baseUrl}?w=1024&fm=webp&q=75 1024w`,
-        `${baseUrl}?w=1920&fm=webp&q=75 1920w`,
-      ].join(', ');
+    if (!baseSrc || !baseSrc.includes('unsplash.com')) {
+      return undefined;
     }
-    return undefined;
+    const baseUrl = baseSrc.split('?')[0];
+    return [
+      `${baseUrl}?w=640&fm=webp&q=75 640w`,
+      `${baseUrl}?w=1024&fm=webp&q=75 1024w`,
+      `${baseUrl}?w=1920&fm=webp&q=75 1920w`,
+    ].join(', ');
   };
 
   const generateFallbackSrcSet = (baseSrc: string) => {
-    if (baseSrc.includes('unsplash.com')) {
-      const baseUrl = baseSrc.split('?')[0];
-      return [
-        `${baseUrl}?w=640&q=75 640w`,
-        `${baseUrl}?w=1024&q=75 1024w`,
-        `${baseUrl}?w=1920&q=75 1920w`,
-      ].join(', ');
+    if (!baseSrc || !baseSrc.includes('unsplash.com')) {
+      return undefined;
     }
-    return undefined;
+    const baseUrl = baseSrc.split('?')[0];
+    return [
+      `${baseUrl}?w=640&q=75 640w`,
+      `${baseUrl}?w=1024&q=75 1024w`,
+      `${baseUrl}?w=1920&q=75 1920w`,
+    ].join(', ');
   };
   const handleLoad = useCallback(() => {
     setIsLoaded(true);
