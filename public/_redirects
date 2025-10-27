@@ -228,6 +228,28 @@
 /es/consulting-digital/  /es/contenido-eliminado  301
 
 # ========================================
+# REDIRECCIONES CRÍTICAS ESPECÍFICAS
+# ========================================
+# Idiomas Inactivos
+/zh/  /es  301
+/zh  /es  301
+
+# Paginación Legacy del Blog
+/blog/page/2  /es/blog  301
+/blog/page/*  /es/blog  301
+
+# URLs Truncadas del Blog
+/blog/branding-proceso-y-  /es/branding-proceso-y-tecnicas-de-naming/  301
+/blog/como-crear-tu-buyer-persona-para-b2b-  /es/blog/como-crear-tu-buyer-persona-para-b2b-infografia  301
+/es/re-commerce-la-economia-circular-del-e-  /es/re-commerce-la-economia-circular-del-e-commerce/  301
+
+# URLs Malformadas
+/e  /es  301
+
+# Feed RSS Legacy
+/es/*/feed/  /es/blog  301
+
+# ========================================
 # SPLAT RULE - REDIRECCIONES AUTOMÁTICAS PARA URLs SIN /es/
 # ========================================
 # Redirigir URLs principales que no empiecen con /es/ (debe ir al final)

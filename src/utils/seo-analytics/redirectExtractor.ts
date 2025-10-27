@@ -3,7 +3,7 @@ export interface ExtractedRedirect {
   source: string;
   destination: string;
   type: '301';
-  category: 'Servicios Legacy' | 'Blog Posts Legacy' | 'URLs con /es/' | 'URLs Malformadas' | 'Soluciones a Servicios';
+  category: 'Servicios Legacy' | 'Blog Posts Legacy' | 'URLs con /es/' | 'URLs Malformadas' | 'Soluciones a Servicios' | 'Casos de Éxito' | 'Idiomas Inactivos' | 'Paginación Legacy' | 'Feed RSS Legacy';
   dateAdded?: string;
   notes?: string;
 }
@@ -515,6 +515,188 @@ export function extractRedirectsFromRoutes(): ExtractedRedirect[] {
       category: 'URLs Malformadas',
       dateAdded: '2025-01-23',
       notes: 'Captura URLs con protocolo HTTP malformado en la ruta'
+    },
+
+    // ============================================================
+    // CASOS DE ÉXITO - 30 redirecciones documentadas
+    // ============================================================
+    {
+      id: 'casos-wideum',
+      source: '/casos-exito/wideum',
+      destination: '/es/casos-exito/wideum',
+      type: '301',
+      category: 'Casos de Éxito',
+      dateAdded: '2025-01-27',
+      notes: 'Redirección automática vía splat rule /casos-exito/*'
+    },
+    {
+      id: 'casos-aip-clinic',
+      source: '/casos-exito/aip-clinic',
+      destination: '/es/casos-exito/aip-clinic',
+      type: '301',
+      category: 'Casos de Éxito',
+      dateAdded: '2025-01-27',
+      notes: 'Redirección automática vía splat rule /casos-exito/*'
+    },
+    {
+      id: 'casos-covebo',
+      source: '/casos-exito/covebo',
+      destination: '/es/casos-exito/covebo',
+      type: '301',
+      category: 'Casos de Éxito',
+      dateAdded: '2025-01-27',
+      notes: 'Redirección automática vía splat rule /casos-exito/*'
+    },
+    {
+      id: 'casos-finect',
+      source: '/casos-exito/finect',
+      destination: '/es/casos-exito/finect',
+      type: '301',
+      category: 'Casos de Éxito',
+      dateAdded: '2025-01-27',
+      notes: 'Redirección automática vía splat rule /casos-exito/*'
+    },
+    {
+      id: 'casos-giveandgo',
+      source: '/casos-exito/giveandgo',
+      destination: '/es/casos-exito/giveandgo',
+      type: '301',
+      category: 'Casos de Éxito',
+      dateAdded: '2025-01-27',
+      notes: 'Redirección automática vía splat rule /casos-exito/*'
+    },
+    {
+      id: 'casos-lualca',
+      source: '/casos-exito/lualca',
+      destination: '/es/casos-exito/lualca',
+      type: '301',
+      category: 'Casos de Éxito',
+      dateAdded: '2025-01-27',
+      notes: 'Redirección automática vía splat rule /casos-exito/*'
+    },
+    {
+      id: 'casos-cortea',
+      source: '/casos-exito/cortea',
+      destination: '/es/casos-exito/cortea',
+      type: '301',
+      category: 'Casos de Éxito',
+      dateAdded: '2025-01-27',
+      notes: 'Redirección automática vía splat rule /casos-exito/*'
+    },
+    {
+      id: 'casos-flap',
+      source: '/casos-exito/flap',
+      destination: '/es/casos-exito/flap',
+      type: '301',
+      category: 'Casos de Éxito',
+      dateAdded: '2025-01-27',
+      notes: 'Redirección automática vía splat rule /casos-exito/*'
+    },
+    {
+      id: 'casos-labanera',
+      source: '/casos-exito/labanera',
+      destination: '/es/casos-exito/labanera',
+      type: '301',
+      category: 'Casos de Éxito',
+      dateAdded: '2025-01-27',
+      notes: 'Redirección automática vía splat rule /casos-exito/*'
+    },
+
+    // ============================================================
+    // IDIOMAS INACTIVOS - 2 redirecciones
+    // ============================================================
+    {
+      id: 'lang-chinese',
+      source: '/zh/',
+      destination: '/es',
+      type: '301',
+      category: 'Idiomas Inactivos',
+      dateAdded: '2025-01-27',
+      notes: 'Idioma chino no disponible, redirigir a español'
+    },
+    {
+      id: 'lang-chinese-no-slash',
+      source: '/zh',
+      destination: '/es',
+      type: '301',
+      category: 'Idiomas Inactivos',
+      dateAdded: '2025-01-27',
+      notes: 'Idioma chino no disponible (sin barra final)'
+    },
+
+    // ============================================================
+    // PAGINACIÓN LEGACY - 2 redirecciones
+    // ============================================================
+    {
+      id: 'blog-page-2',
+      source: '/blog/page/2',
+      destination: '/es/blog',
+      type: '301',
+      category: 'Paginación Legacy',
+      dateAdded: '2025-01-27',
+      notes: 'Paginación antigua del blog, redirigir a blog principal'
+    },
+    {
+      id: 'blog-page-wildcard',
+      source: '/blog/page/*',
+      destination: '/es/blog',
+      type: '301',
+      category: 'Paginación Legacy',
+      dateAdded: '2025-01-27',
+      notes: 'Cualquier página de paginación legacy del blog'
+    },
+
+    // ============================================================
+    // FEED RSS LEGACY - 1 redirección
+    // ============================================================
+    {
+      id: 'feed-rss',
+      source: '/es/*/feed/',
+      destination: '/es/blog',
+      type: '301',
+      category: 'Feed RSS Legacy',
+      dateAdded: '2025-01-27',
+      notes: 'Feed RSS antiguo, redirigir al blog principal'
+    },
+
+    // ============================================================
+    // URLs MALFORMADAS ADICIONALES - 4 redirecciones
+    // ============================================================
+    {
+      id: 'malformed-truncated-branding',
+      source: '/blog/branding-proceso-y-',
+      destination: '/es/branding-proceso-y-tecnicas-de-naming/',
+      type: '301',
+      category: 'URLs Malformadas',
+      dateAdded: '2025-01-27',
+      notes: 'URL truncada del blog'
+    },
+    {
+      id: 'malformed-truncated-buyer',
+      source: '/blog/como-crear-tu-buyer-persona-para-b2b-',
+      destination: '/es/blog/como-crear-tu-buyer-persona-para-b2b-infografia',
+      type: '301',
+      category: 'URLs Malformadas',
+      dateAdded: '2025-01-27',
+      notes: 'URL truncada del blog'
+    },
+    {
+      id: 'malformed-truncated-recommerce',
+      source: '/es/re-commerce-la-economia-circular-del-e-',
+      destination: '/es/re-commerce-la-economia-circular-del-e-commerce/',
+      type: '301',
+      category: 'URLs Malformadas',
+      dateAdded: '2025-01-27',
+      notes: 'URL truncada del blog'
+    },
+    {
+      id: 'malformed-single-e',
+      source: '/e',
+      destination: '/es',
+      type: '301',
+      category: 'URLs Malformadas',
+      dateAdded: '2025-01-27',
+      notes: 'URL malformada, solo letra "e"'
     }
   ];
 
