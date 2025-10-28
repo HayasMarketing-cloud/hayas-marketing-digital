@@ -1,4 +1,16 @@
-# Welcome to your Lovable project
+# Hayas Marketing - Website
+
+## Project info
+
+**Proyecto:** Hayas Marketing - Web Corporativa  
+**Tecnología:** React + Vite + TypeScript + Tailwind CSS  
+**Backend:** Lovable Cloud (Supabase)
+
+## 📋 Documentación del Proyecto
+
+- **[Sistema de Redirecciones](./REDIRECTS.md)** - Guía completa de gestión de redirects 301
+- **[Changelog](./CHANGELOG.md)** - Historial de cambios del proyecto
+- **[Conocimiento Personalizado](./custom-knowledge.md)** - Guidelines y contexto del proyecto
 
 ## Project info
 
