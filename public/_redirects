@@ -263,6 +263,15 @@
 /kit-digital  /es/kit-digital  301
 
 # ========================================
+# SPA FALLBACK - DEBE IR AL FINAL
+# ========================================
+# Para React Router: todas las rutas no capturadas anteriormente
+# se sirven con index.html para manejo client-side
+# IMPORTANTE: Cloudflare Pages servirá 404.html con código 404 real
+# para URLs que no coincidan con ninguna ruta de React Router
+/* /index.html 200
+
+# ========================================
 # NOTA IMPORTANTE
 # ========================================
 # Redirecciones migradas desde redirects.htaccess (Apache) a formato Netlify/Cloudflare Pages
@@ -271,3 +280,9 @@
 # - Añadidas variaciones con/sin barra final
 # - Splat rules para capturar patrones dinámicos
 # Formato: /source /destination 301
+# 
+# SOLUCIÓN SOFT 404:
+# - Todas las redirecciones específicas (301) se aplican PRIMERO
+# - Las rutas válidas de React Router se sirven vía index.html (200)
+# - URLs no válidas obtienen 404.html automáticamente (Cloudflare Pages)
+# - Google recibirá código HTTP 404 real para páginas inexistentes
