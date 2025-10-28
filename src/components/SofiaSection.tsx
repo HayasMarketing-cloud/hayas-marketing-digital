@@ -41,7 +41,14 @@ const SofiaWidget = () => {
   const location = useLocation();
   const isMobile = useIsMobile();
   
-  // Determine if component should render BEFORE declaring state
+  // ALL hooks must be declared BEFORE any conditional logic
+  const [isOpen, setIsOpen] = useState(false);
+  const [isMinimized, setIsMinimized] = useState(false);
+  const [showHelpMessage, setShowHelpMessage] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false);
+  const [isReady, setIsReady] = useState(false);
+  
+  // Determine if component should render AFTER state initialization
   const allowedPages = [
     '/es',
     '/es/soluciones/impulsa-tu-marca',
@@ -51,13 +58,12 @@ const SofiaWidget = () => {
     '/es/contacto'
   ];
   
-  const shouldRender = !isMobile && allowedPages.includes(location.pathname);
+  const shouldRender = isReady && !isMobile && allowedPages.includes(location.pathname);
   
-  // ALL hooks must be declared BEFORE any conditional logic
-  const [isOpen, setIsOpen] = useState(false);
-  const [isMinimized, setIsMinimized] = useState(false);
-  const [showHelpMessage, setShowHelpMessage] = useState(false);
-  const [hasScrolled, setHasScrolled] = useState(false);
+  // Initialize component safely after mount
+  useEffect(() => {
+    setIsReady(true);
+  }, []);
 
   // Main Voiceflow initialization effect - ALWAYS call but conditionally execute
   useEffect(() => {
