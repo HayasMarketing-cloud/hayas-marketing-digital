@@ -250,6 +250,123 @@
 /es/*/feed/  /es/blog  301
 
 # ========================================
+# REDIRECCIONES FALTANTES DE GSC - SERVICIOS SIN /es/
+# ========================================
+/branding-e-identidad-de-marca  /es/servicios/creacion-marca  301
+/branding-e-identidad-de-marca/  /es/servicios/creacion-marca  301
+/email-marketing-automatizaciones  /es/servicios/email-marketing-automatizaciones  301
+/email-marketing-automatizaciones/  /es/servicios/email-marketing-automatizaciones  301
+/administracion-crm  /es/servicios/crm-y-automatizacion-de-marketing  301
+/administracion-crm/  /es/servicios/crm-y-automatizacion-de-marketing  301
+/consultoria-estrategica-analitica  /es/servicios/estrategia-de-marketing-digital-360  301
+/consultoria-estrategica-analitica/  /es/servicios/estrategia-de-marketing-digital-360  301
+/consultoria-seo  /es/servicios/posicionamiento-web-seo  301
+/consultoria-seo/  /es/servicios/posicionamiento-web-seo  301
+/link-building  /es/servicios/posicionamiento-web-seo  301
+/link-building/  /es/servicios/posicionamiento-web-seo  301
+/diseno-web  /es/servicios/diseno-y-desarrollo-paginas-web  301
+/diseno-web/  /es/servicios/diseno-y-desarrollo-paginas-web  301
+/gestion-redes-sociales  /es/servicios/gestion-de-redes-sociales  301
+/gestion-redes-sociales/  /es/servicios/gestion-de-redes-sociales  301
+/publicidad-google-ads  /es/servicios/publicidad-en-google-ads  301
+/publicidad-google-ads/  /es/servicios/publicidad-en-google-ads  301
+/captacion-leads  /es/servicios/estrategia-de-marketing-digital-360  301
+/captacion-leads/  /es/servicios/estrategia-de-marketing-digital-360  301
+/captacion-leads-clientes  /es/servicios/estrategia-de-marketing-digital-360  301
+/captacion-leads-clientes/  /es/servicios/estrategia-de-marketing-digital-360  301
+/automatizacion-procesos-ventas  /es/servicios/crm-y-automatizacion-de-marketing  301
+/automatizacion-procesos-ventas/  /es/servicios/crm-y-automatizacion-de-marketing  301
+/gestion-marketing  /es/servicios/estrategia-de-marketing-digital-360  301
+/gestion-marketing/  /es/servicios/estrategia-de-marketing-digital-360  301
+/estrategia-contenidos  /es/servicios/estrategia-de-marketing-digital-360  301
+/estrategia-contenidos/  /es/servicios/estrategia-de-marketing-digital-360  301
+/creacion-marca  /es/servicios/creacion-marca  301
+/creacion-marca/  /es/servicios/creacion-marca  301
+/servicios-de-marketing-digital-integrados-en-tu-estrategia  /es/servicios/estrategia-de-marketing-digital-360  301
+/servicios-de-marketing-digital-integrados-en-tu-estrategia/  /es/servicios/estrategia-de-marketing-digital-360  301
+/servicios-publicidad-en-redes-sociales  /es/servicios/gestion-de-redes-sociales  301
+/servicios-publicidad-en-redes-sociales/  /es/servicios/gestion-de-redes-sociales  301
+
+# ========================================
+# REDIRECCIONES FALTANTES DE GSC - SOLUCIONES SIN /es/
+# ========================================
+/soluciones/activa-tu-estrategia-digital  /es/soluciones/activa-tus-ventas  301
+/soluciones/activa-tu-estrategia-digital/  /es/soluciones/activa-tus-ventas  301
+/servicios/integraciones-ia-procesos  /es/soluciones/conecta-con-tus-clientes  301
+/servicios/integraciones-ia-procesos/  /es/soluciones/conecta-con-tus-clientes  301
+
+# ========================================
+# REDIRECCIONES FALTANTES DE GSC - PÁGINAS INSTITUCIONALES SIN /es/
+# ========================================
+/contactar  /es/contacto  301
+/contactar/  /es/contacto  301
+/agenda-una-reunion  /es/agendar-reunion  301
+/agenda-una-reunion/  /es/agendar-reunion  301
+/sector-fintech  /es  301
+/sector-fintech/  /es  301
+/sector-educacion  /es  301
+/sector-educacion/  /es  301
+/agencia-marketingdigital-madrid  /es/nosotros  301
+/agencia-marketingdigital-madrid/  /es/nosotros  301
+
+# ========================================
+# REDIRECCIONES FALTANTES DE GSC - BLOG POSTS SIN /es/
+# ========================================
+/como-se-crea-una-estrategia-de-branding  /es/blog/como-se-crea-una-estrategia-de-branding  301
+/como-se-crea-una-estrategia-de-branding/  /es/blog/como-se-crea-una-estrategia-de-branding  301
+/que-es-marketing-natural  /es/blog/marketing-natural-atrae-a-tus-clientes-de-forma-organica  301
+/que-es-marketing-natural/  /es/blog/marketing-natural-atrae-a-tus-clientes-de-forma-organica  301
+/descubre-los-verdaderos-ladrones-del-tiempo-y-recupera-tu-productividad  /es/blog/descubre-los-verdaderos-ladrones-del-tiempo-y-recupera-tu-productividad  301
+/descubre-los-verdaderos-ladrones-del-tiempo-y-recupera-tu-productividad/  /es/blog/descubre-los-verdaderos-ladrones-del-tiempo-y-recupera-tu-productividad  301
+/tu-estrategia-con-marketing-model-canvas  /es/blog/tu-estrategia-con-marketing-model-canvas  301
+/tu-estrategia-con-marketing-model-canvas/  /es/blog/tu-estrategia-con-marketing-model-canvas  301
+/buenas-practicas-tecnicas-de-email-marketing-con-hubspot  /es/blog/buenas-practicas-tecnicas-de-email-marketing-con-hubspot  301
+/buenas-practicas-tecnicas-de-email-marketing-con-hubspot/  /es/blog/buenas-practicas-tecnicas-de-email-marketing-con-hubspot  301
+/marketing-de-influencers-vs-microinfluencers  /es/blog/marketing-de-influencers-vs-microinfluencers  301
+/marketing-de-influencers-vs-microinfluencers/  /es/blog/marketing-de-influencers-vs-microinfluencers  301
+/marketing-global-internacionalizacion-i18n-y-localizacion-l10n  /es/blog/marketing-global-internacionalizacion-i18n-y-localizacion-l10n  301
+/marketing-global-internacionalizacion-i18n-y-localizacion-l10n/  /es/blog/marketing-global-internacionalizacion-i18n-y-localizacion-l10n  301
+/re-commerce-la-economia-circular-del-e-commerce  /es/blog/re-commerce-economia-circular-ecommerce-partnership-sharpei  301
+/re-commerce-la-economia-circular-del-e-commerce/  /es/blog/re-commerce-economia-circular-ecommerce-partnership-sharpei  301
+/como-elegir-el-mejor-crm-para-tu-empresa-u-organizacion  /es/blog/como-elegir-el-mejor-crm-para-tu-empresa-u-organizacion  301
+/como-elegir-el-mejor-crm-para-tu-empresa-u-organizacion/  /es/blog/como-elegir-el-mejor-crm-para-tu-empresa-u-organizacion  301
+/branding-proceso-y-tecnicas-de-naming  /es/blog/branding-proceso-y-tecnicas-de-naming  301
+/branding-proceso-y-tecnicas-de-naming/  /es/blog/branding-proceso-y-tecnicas-de-naming  301
+/llega-la-web-3-0  /es/blog/llega-la-web-3-0  301
+/llega-la-web-3-0/  /es/blog/llega-la-web-3-0  301
+/identidad-corporativa-para-restaurantes  /es/blog/identidad-corporativa-para-restaurantes  301
+/identidad-corporativa-para-restaurantes/  /es/blog/identidad-corporativa-para-restaurantes  301
+/que-es-smarketing  /es/blog/que-es-smarketing  301
+/que-es-smarketing/  /es/blog/que-es-smarketing  301
+/food-design-festival-2024-innovacion-y-tecnologia-en-el-sector-alimentario  /es/blog/food-design-festival-2024-innovacion-y-tecnologia-en-el-sector-alimentario  301
+/food-design-festival-2024-innovacion-y-tecnologia-en-el-sector-alimentario/  /es/blog/food-design-festival-2024-innovacion-y-tecnologia-en-el-sector-alimentario  301
+/contenidos-y-seo  /es/blog/contenidos-y-seo  301
+/contenidos-y-seo/  /es/blog/contenidos-y-seo  301
+/ampliacion-de-las-ayudas-del-kit-digital-en-2024  /es/blog/ampliacion-de-las-ayudas-del-kit-digital-en-2024  301
+/ampliacion-de-las-ayudas-del-kit-digital-en-2024/  /es/blog/ampliacion-de-las-ayudas-del-kit-digital-en-2024  301
+
+# ========================================
+# REDIRECCIONES FALTANTES DE GSC - URLs TRUNCADAS ADICIONALES
+# ========================================
+/es/estrategia-account-based-marketing-  /es/blog/estrategia-account-based-marketing-abm-para-captar-grandes-cuentas  301
+/es/que-es-un-crm-o-customer-  /es/blog/crm-que-es-beneficios  301
+/blog/marketing-de-  /es/blog/marketing-de-influencers-vs-microinfluencers  301
+/blog/branding-proceso-y-  /es/blog/branding-proceso-y-tecnicas-de-naming  301
+/kit-digital-seo-avanzado  /es/servicios/kit-digital-seo-avanzado  301
+/kit-digital-seo-avanzado/  /es/servicios/kit-digital-seo-avanzado  301
+
+# ========================================
+# REDIRECCIONES FALTANTES DE GSC - CASOS DE ÉXITO SIN /es/
+# ========================================
+/casos-exito/jointsup  /es/casos-exito/jointsup  301
+/casos-exito/jointsup/  /es/casos-exito/jointsup  301
+
+# ========================================
+# REDIRECCIONES FALTANTES DE GSC - VARIANTES DE BLOG CON /blog/
+# ========================================
+/blog/guia-completa-kit-digital-2024-para-autonomos-y-pymes  /es/blog/guia-completa-kit-digital-2024-para-autonomos-y-pymes  301
+
+# ========================================
 # SPLAT RULE - REDIRECCIONES AUTOMÁTICAS PARA URLs SIN /es/
 # ========================================
 # Redirigir URLs principales que no empiecen con /es/ (debe ir al final)
