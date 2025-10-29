@@ -1,6 +1,13 @@
 import React, { useEffect, useId } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
+// Declaración de tipos para GTM dataLayer
+declare global {
+  interface Window {
+    dataLayer: Record<string, any>[];
+  }
+}
+
 interface StandardGHLFormProps {
   formId: string;
   title?: string;
@@ -35,6 +42,67 @@ const StandardGHLForm: React.FC<StandardGHLFormProps> = ({
       document.body.appendChild(script);
     }
   }, []);
+
+  // Tracking GTM: Detectar envío del formulario GHL vía postMessage
+  useEffect(() => {
+    const handleFormSubmit = (event: MessageEvent) => {
+      if (event.data && event.data.type === "hsFormCallback" && event.data.eventName === "onFormSubmit") {
+        const detectedFormId = event.data.id || formId;
+        const pageUrl = window.location.href;
+
+        // Push a dataLayer para GTM
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: "ghl_form_submit",
+          form_id: detectedFormId,
+          page_url: pageUrl,
+          form_name: title
+        });
+
+        console.log("✅ Formulario GHL enviado:", detectedFormId, "desde", pageUrl);
+      }
+    };
+
+    window.addEventListener("message", handleFormSubmit);
+
+    return () => {
+      window.removeEventListener("message", handleFormSubmit);
+    };
+  }, [formId, title]);
+
+  // Intentar insertar campo oculto con page_url en el iframe
+  useEffect(() => {
+    const iframe = document.getElementById(iframeId) as HTMLIFrameElement;
+    
+    if (!iframe) return;
+
+    const insertHiddenField = () => {
+      try {
+        const iframeDoc = iframe.contentDocument || iframe.contentWindow?.document;
+        if (!iframeDoc) return;
+
+        const input = iframeDoc.createElement("input");
+        input.type = "hidden";
+        input.name = "page_url";
+        input.value = window.location.href;
+        
+        const form = iframeDoc.querySelector("form");
+        if (form && !form.querySelector('input[name="page_url"]')) {
+          form.appendChild(input);
+          console.log("✅ Campo oculto page_url añadido al formulario GHL");
+        }
+      } catch (err) {
+        // Cross-origin blocking esperado - no rompe funcionalidad
+        console.warn("ℹ️ No se pudo insertar campo oculto (cross-domain):", err);
+      }
+    };
+
+    iframe.addEventListener('load', insertHiddenField);
+
+    return () => {
+      iframe.removeEventListener('load', insertHiddenField);
+    };
+  }, [iframeId]);
 
   return (
     <div className={`bg-background/95 backdrop-blur-sm rounded-2xl border border-border/40 shadow-2xl overflow-hidden ${className}`}>
