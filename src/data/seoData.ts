@@ -74,13 +74,15 @@ export const hayasOrganizationSchema = {
   foundingDate: "2020",
   address: {
     "@type": "PostalAddress",
+    streetAddress: "Calle Manzanares, 4",
+    postalCode: "28005",
     addressLocality: "Madrid",
     addressRegion: "Madrid",
     addressCountry: "ES"
   },
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+34-XXX-XXX-XXX",
+    telephone: "+34-656-908-615",
     contactType: "customer service",
     areaServed: "ES",
     availableLanguage: ["Spanish", "English"]
