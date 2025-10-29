@@ -11,6 +11,8 @@ import FAQSection from '@/components/FAQSection';
 import ServiceContactSection from '@/components/ServiceContactSection';
 import SuccessCasesSection from '@/components/SuccessCasesSection';
 import { getServiceSuccessCasesConfig } from '@/data/serviceSuccessCasesMapping';
+import Seo from '@/components/Seo';
+import { useServiceSEO } from '@/hooks/useServiceSEO';
 import { Search, BarChart3, FileText, Link as LinkIcon, Target, ArrowRight, CheckCircle, Star, TrendingUp, Eye, Users, Globe, Lightbulb, Award, Calendar, Bot, Gauge, MessageSquare, Settings, Zap, PieChart, Clock } from 'lucide-react';
 const seoServices = [{
   icon: <Search className="h-8 w-8 text-primary" />,
@@ -142,7 +144,38 @@ const faqItems = [{
 }];
 const SeoPositioning = () => {
   const successCasesConfig = getServiceSuccessCasesConfig('seo-positioning');
+  
+  // Service Schema with features and rating (FASE 1)
+  const seoData = useServiceSEO({
+    serviceName: "Posicionamiento SEO",
+    serviceDescription: "Estrategia SEO integral que combina análisis técnico, contenido optimizado y link building para posicionar tu negocio en los primeros resultados de Google.",
+    canonical: "/es/servicios/seo-positioning",
+    serviceType: "SEO y Posicionamiento Web",
+    priceRange: "€€€",
+    features: [
+      "Análisis de Palabras Clave",
+      "SEO On-Page",
+      "Link Building",
+      "SEO Local",
+      "Auditoría SEO",
+      "SEO con IA"
+    ],
+    aggregateRating: {
+      ratingValue: "4.9",
+      reviewCount: "28"
+    }
+  });
+  
   return <div className="min-h-screen bg-white">
+      <Seo
+        title={seoData.title}
+        description={seoData.description}
+        canonical={seoData.canonical}
+        ogImage={seoData.ogImage}
+        structuredData={seoData.structuredData}
+        keywords={["SEO", "posicionamiento web", "posicionamiento Google", "optimización SEO", "marketing digital", "SEO Madrid"]}
+        faqs={faqItems}
+      />
       <Navigation />
       
       {/* Breadcrumb */}

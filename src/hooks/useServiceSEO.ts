@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { generateServiceSchema } from '@/data/seoData';
 
 interface ServiceSEOData {
   title: string;
@@ -13,34 +14,39 @@ interface UseServiceSEOProps {
   serviceDescription: string;
   canonical: string;
   heroImagePath?: string;
+  serviceType?: string;
+  priceRange?: string;
+  features?: string[];
+  aggregateRating?: {
+    ratingValue: string;
+    reviewCount: string;
+  };
 }
 
 export const useServiceSEO = ({ 
   serviceName, 
   serviceDescription, 
   canonical,
-  heroImagePath 
+  heroImagePath,
+  serviceType = "Marketing Digital",
+  priceRange,
+  features,
+  aggregateRating
 }: UseServiceSEOProps): ServiceSEOData => {
   return useMemo(() => {
     const title = `${serviceName} | Hayas Marketing`;
     const ogImage = heroImagePath ? `${window.location.origin}${heroImagePath}` : undefined;
     
-    const structuredData = {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      name: serviceName,
-      description: serviceDescription,
-      provider: {
-        "@type": "Organization",
-        name: "Hayas Marketing",
-        url: "https://hayasmarketing.com",
-        logo: `${window.location.origin}/favicon.ico`
-      },
-      areaServed: "ES",
-      url: `${window.location.origin}${canonical}`,
-      serviceType: "Marketing Digital",
-      category: "Marketing y Publicidad"
-    };
+    // Use new generateServiceSchema helper (FASE 1)
+    const structuredData = generateServiceSchema({
+      serviceName,
+      serviceDescription,
+      serviceType,
+      canonical,
+      priceRange,
+      features,
+      aggregateRating
+    });
 
     return {
       title,
@@ -49,7 +55,7 @@ export const useServiceSEO = ({
       ogImage,
       structuredData
     };
-  }, [serviceName, serviceDescription, canonical, heroImagePath]);
+  }, [serviceName, serviceDescription, canonical, heroImagePath, serviceType, priceRange, features, aggregateRating]);
 };
 
 export default useServiceSEO;
