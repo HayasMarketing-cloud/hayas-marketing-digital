@@ -57,6 +57,7 @@ const StandardGHLForm: React.FC<StandardGHLFormProps> = ({
   // Tracking GTM: Detectar envío del formulario GHL vía postMessage
   useEffect(() => {
     const handleFormSubmit = (event: MessageEvent) => {
+      // 1. Envío del formulario (desde GHL iframe)
       if (event.data && event.data.type === "hsFormCallback" && event.data.eventName === "onFormSubmit") {
         const detectedFormId = event.data.id || formId;
         const pageUrl = window.location.href;
@@ -81,6 +82,28 @@ const StandardGHLForm: React.FC<StandardGHLFormProps> = ({
         });
 
         console.log("✅ Formulario GHL enviado:", detectedFormId, "desde", pageUrl);
+      }
+
+      // 2. Página de gracias cargada en iframe (puente iframe→parent)
+      if (event.data && event.data.type === "ghl_iframe_thankyou") {
+        try {
+          const raw = sessionStorage.getItem('ghl_last_form');
+          if (raw) {
+            const data = JSON.parse(raw);
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+              event: 'ghl_thankyou',
+              form_id: data.form_id,
+              origin_url: data.origin_url,
+              thankyou_url: event.data.thankyou_url,
+              form_name: data.form_name
+            });
+            console.log('✅ GTM: ghl_thankyou enviado desde iframe', data);
+            sessionStorage.removeItem('ghl_last_form');
+          }
+        } catch (e) {
+          console.warn('ℹ️ No se pudo procesar ghl_iframe_thankyou:', e);
+        }
       }
     };
 

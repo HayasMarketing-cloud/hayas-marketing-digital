@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -8,6 +8,24 @@ import { CheckCircle, ArrowRight, MessageCircle, Search, FileText, PhoneCall } f
 import EnhancedSEO from '@/components/EnhancedSEO';
 
 const Gracias = () => {
+  // GTM: Si estamos en iframe, notificar al parent que se cargó la página de gracias
+  useEffect(() => {
+    try {
+      // Detectar si estamos dentro de un iframe
+      if (window.self !== window.top) {
+        const message = {
+          type: 'ghl_iframe_thankyou',
+          thankyou_url: window.location.href
+        };
+        window.parent.postMessage(message, '*');
+        console.log('✅ postMessage enviado al parent:', message);
+      }
+    } catch (e) {
+      // Cross-origin blocking - no rompe funcionalidad
+      console.warn('ℹ️ No se pudo enviar postMessage (cross-domain):', e);
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 to-white">
       <EnhancedSEO customSEO={{ canonical: '/es/gracias', robots: 'noindex, follow' }} />
