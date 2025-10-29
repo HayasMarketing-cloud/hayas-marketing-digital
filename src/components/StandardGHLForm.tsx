@@ -43,12 +43,33 @@ const StandardGHLForm: React.FC<StandardGHLFormProps> = ({
     }
   }, []);
 
+  // Guardar la URL de origen al montar el componente para usarla tras el submit
+  useEffect(() => {
+    try {
+      sessionStorage.setItem(`ghl_form_origin_${formId}`, JSON.stringify({
+        origin_url: window.location.href,
+        form_name: title,
+        ts: Date.now()
+      }));
+    } catch {}
+  }, [formId, title]);
+
   // Tracking GTM: Detectar envío del formulario GHL vía postMessage
   useEffect(() => {
     const handleFormSubmit = (event: MessageEvent) => {
       if (event.data && event.data.type === "hsFormCallback" && event.data.eventName === "onFormSubmit") {
         const detectedFormId = event.data.id || formId;
         const pageUrl = window.location.href;
+
+        // Persistir origen para usarlo en página de gracias
+        try {
+          sessionStorage.setItem('ghl_last_form', JSON.stringify({
+            form_id: detectedFormId,
+            origin_url: pageUrl,
+            form_name: title,
+            ts: Date.now()
+          }));
+        } catch {}
 
         // Push a dataLayer para GTM
         window.dataLayer = window.dataLayer || [];

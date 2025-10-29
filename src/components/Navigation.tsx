@@ -42,6 +42,29 @@ const Navigation = () => {
     return () => window.removeEventListener('resize', updateHeight);
   }, [isScrolled]);
 
+  // GTM: Enviar origen en página de gracias si existe en sessionStorage
+  useEffect(() => {
+    try {
+      const isThankYou = window.location.pathname.startsWith('/es/gracias');
+      const raw = sessionStorage.getItem('ghl_last_form');
+      if (isThankYou && raw) {
+        const data = JSON.parse(raw);
+        (window as any).dataLayer = (window as any).dataLayer || [];
+        (window as any).dataLayer.push({
+          event: 'ghl_thankyou',
+          form_id: data.form_id,
+          origin_url: data.origin_url,
+          thankyou_url: window.location.href,
+          form_name: data.form_name
+        });
+        console.log('ℹ️ GTM: ghl_thankyou enviado', data);
+        sessionStorage.removeItem('ghl_last_form');
+      }
+    } catch (e) {
+      // no-op
+    }
+  }, []);
+
   const handleMouseEnter = (menuName: string) => {
     if (hoverTimeout) {
       clearTimeout(hoverTimeout);
