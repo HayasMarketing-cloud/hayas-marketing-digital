@@ -51,16 +51,19 @@ export interface EnhancedPageSEOData {
 export const hayasOrganizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": "https://hayasmarketing.com/#organization",
   name: "Hayas Marketing",
   alternateName: "Hayas Marketing Digital",
   url: "https://hayasmarketing.com",
   logo: {
     "@type": "ImageObject",
+    "@id": "https://hayasmarketing.com/#logo",
     url: "https://hayasmarketing.com/lovable-uploads/hayas-logo.webp",
-    width: "300",
-    height: "100",
-    format: "image/webp"
+    width: 300,
+    height: 100,
+    caption: "Hayas Marketing Logo"
   },
+  image: "https://hayasmarketing.com/lovable-uploads/hayas-logo.webp",
   sameAs: [
     "https://www.linkedin.com/company/hayas-marketing",
     "https://www.facebook.com/hayasmarketing",
@@ -85,11 +88,11 @@ export const hayasOrganizationSchema = {
     telephone: "+34-656-908-615",
     contactType: "customer service",
     areaServed: "ES",
-    availableLanguage: ["Spanish", "English"]
+    availableLanguage: ["es", "en"]
   },
   description: "Agencia de marketing digital especializada en CRM, automatización e inteligencia artificial para empresas",
   knowsAbout: ["Marketing Digital", "CRM", "Inteligencia Artificial", "Automatización", "SEO", "Publicidad Digital"],
-  serviceArea: {
+  areaServed: {
     "@type": "Country",
     name: "España"
   }
