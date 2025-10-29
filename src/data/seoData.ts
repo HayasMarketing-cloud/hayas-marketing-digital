@@ -252,6 +252,35 @@ export const generateServiceSchema = (params: {
   return schema;
 };
 
+// Helper function to generate ItemList Schema (FASE 3)
+export const generateItemListSchema = (params: {
+  items: Array<{ name: string; url: string; description?: string }>;
+  listName: string;
+  listDescription?: string;
+}) => {
+  const { items, listName, listDescription } = params;
+  
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": `https://hayasmarketing.com${items[0]?.url.split('/').slice(0, -1).join('/')}#itemlist`,
+    name: listName,
+    description: listDescription,
+    numberOfItems: items.length,
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "Thing",
+        "@id": `https://hayasmarketing.com${item.url}`,
+        name: item.name,
+        url: `https://hayasmarketing.com${item.url}`,
+        description: item.description
+      }
+    }))
+  };
+};
+
 // Strategic canonical mapping to avoid cannibalization
 export const canonicalStrategy = {
   // Main pillar pages that should receive canonical links from related pages

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import ProcessSection from '@/components/ProcessSection';
-
+import Seo from '@/components/Seo';
 import ReviewsSection from '@/components/ReviewsSection';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -16,6 +16,7 @@ import CRMSolutionPreviewSection from '@/components/CRMSolutionPreviewSection';
 import IntermediateCTA from '@/components/IntermediateCTA';
 import CRMBenefitsGridSection from '@/components/CRMBenefitsGridSection';
 import KitCRMBanner from '@/components/KitCRMBanner';
+import { useServiceSEO } from '@/hooks/useServiceSEO';
 import { Settings, Target, Building2, Users, CheckCircle, ArrowRight, Database } from 'lucide-react';
 const processSteps = [{
   number: "01",
@@ -73,7 +74,28 @@ const faqItems = [{
   answer: "Proporcionamos soporte técnico prioritario, actualizaciones regulares, optimizaciones basadas en uso real, reuniones de seguimiento mensuales y acceso a nuevas funcionalidades. Tu éxito es nuestro compromiso a largo plazo."
 }];
 const ImplantacionCrm = () => {
+  const { title, description, canonical, ogImage, structuredData } = useServiceSEO({
+    serviceName: 'Implantación de CRM',
+    serviceDescription: 'Implementación completa de CRM (HubSpot o Go High Level) para gestionar leads, automatizar ventas y escalar tu negocio.',
+    canonical: '/es/servicios/implantacion-crm',
+    features: [
+      'Implementación HubSpot o Go High Level',
+      'Migración de datos segura',
+      'Automatización de procesos',
+      'Formación completa del equipo'
+    ],
+    priceRange: '€€€',
+    aggregateRating: { ratingValue: '4.9', reviewCount: '38' }
+  });
+
   return <div className="min-h-screen bg-white">
+      <Seo 
+        title={title}
+        description={description}
+        canonical={canonical}
+        ogImage={ogImage}
+        structuredData={structuredData}
+      />
       <Navigation />
       
       {/* Breadcrumb */}

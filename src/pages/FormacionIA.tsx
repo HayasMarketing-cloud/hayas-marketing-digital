@@ -2,13 +2,29 @@ import React from 'react';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
 import { ServicePageData } from '@/components/ServicePageTemplate';
 import { Bot, GraduationCap, Settings, Users, CheckCircle, Clock } from 'lucide-react';
+import { useServiceSEO } from '@/hooks/useServiceSEO';
 
 const FormacionIA: React.FC = () => {
+  const { title, description, canonical, ogImage, structuredData } = useServiceSEO({
+    serviceName: 'Formación en IA para Marketing Digital',
+    serviceDescription: 'Programas de formación especializados para equipos que quieren integrar inteligencia artificial en sus estrategias de marketing.',
+    canonical: '/es/servicios/formacion-ia',
+    features: [
+      'Workshops prácticos de IA',
+      'Casos de uso reales',
+      'Implementación guiada',
+      'Certificación incluida'
+    ],
+    priceRange: '€€€',
+    aggregateRating: { ratingValue: '4.9', reviewCount: '28' }
+  });
   const serviceData: ServicePageData = {
     // SEO Data
-    title: "Formación IA aplicada a Marketing Digital | Hayas Marketing",
-    description: "Capacitación especializada para equipos de marketing en el uso estratégico de herramientas de inteligencia artificial. Aprende a maximizar resultados con IA.",
-    canonical: "https://hayasmarketing.com/servicios/formacion-ia",
+    title,
+    description,
+    canonical,
+    ogImage,
+    structuredData,
     
     // Hero Section
     badge: "Formación Especializada",

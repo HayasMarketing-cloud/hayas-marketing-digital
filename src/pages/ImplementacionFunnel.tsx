@@ -6,10 +6,10 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import KitDigitalBanner from '@/components/KitDigitalBanner';
-
+import Seo from '@/components/Seo';
+import { useServiceSEO } from '@/hooks/useServiceSEO';
 import FAQSection from '@/components/FAQSection';
 import { Target, FileText, Layout, Workflow, SplitSquareVertical, BarChart3, PlugZap, CalendarCheck2, CheckCircle2 } from 'lucide-react';
-import Seo from '@/components/Seo';
 const features = [
   { icon: <Target className="h-8 w-8 text-primary" />, title: 'Estrategia y objetivos', desc: 'Definimos objetivos claros, audiencias y KPIs del embudo.' },
   { icon: <FileText className="h-8 w-8 text-primary" />, title: 'Contenido por etapas', desc: 'Mensajes y recursos para TOFU, MOFU y BOFU.' },
@@ -37,23 +37,28 @@ const faqs = [
 ];
 
 const ImplementacionFunnel: React.FC = () => {
+  const { title, description, canonical, ogImage, structuredData } = useServiceSEO({
+    serviceName: 'Implementación de Funnel de Conversión',
+    serviceDescription: 'Diseño, implementación y optimización de embudos de conversión con automatización en CRM, pruebas A/B y analítica.',
+    canonical: '/es/servicios/implementacion-funnel',
+    features: [
+      'Estrategia y contenido por etapas',
+      'Landing pages optimizadas',
+      'Automatización en CRM',
+      'Pruebas A/B continuas'
+    ],
+    priceRange: '€€',
+    aggregateRating: { ratingValue: '4.9', reviewCount: '29' }
+  });
 
   return (
     <div className="min-h-screen bg-background">
       <Seo 
-        title="Implementación de Funnel | Diseño y Automatización"
-        description="Diseño, implementación y optimización de embudos de conversión con automatización en CRM, pruebas A/B y analítica."
-        canonical="/es/servicios/implementacion-funnel"
-        structuredData={{
-          '@context': 'https://schema.org',
-          '@type': 'Service',
-          name: 'Implementación de Funnel',
-          serviceType: 'Embudo de Conversión',
-          areaServed: 'ES',
-          provider: { '@type': 'Organization', name: 'Hayas Marketing' },
-          description: 'Diseño, implementación y optimización de embudos de conversión con automatización en CRM, pruebas A/B y analítica.',
-          offers: { '@type': 'Offer', availability: 'https://schema.org/InStock' }
-        }}
+        title={title}
+        description={description}
+        canonical={canonical}
+        ogImage={ogImage}
+        structuredData={structuredData}
       />
       <Navigation />
 

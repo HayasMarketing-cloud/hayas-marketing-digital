@@ -1,8 +1,22 @@
 import React from 'react';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
 import { Target, Search, CalendarDays, Share2, Recycle, BarChart3, BookOpenText } from 'lucide-react';
+import { useServiceSEO } from '@/hooks/useServiceSEO';
 
 const EstrategiaContenidos: React.FC = () => {
+  const { title, description, canonical, ogImage, structuredData } = useServiceSEO({
+    serviceName: 'Estrategia de Contenidos',
+    serviceDescription: 'Desarrollamos estrategias de contenido alineadas con tus objetivos de negocio para atraer, educar y convertir a tu audiencia ideal.',
+    canonical: '/es/servicios/estrategia-contenidos',
+    features: [
+      'Auditoría de contenido',
+      'Planificación editorial',
+      'Creación de contenido SEO',
+      'Análisis de rendimiento'
+    ],
+    priceRange: '€€',
+    aggregateRating: { ratingValue: '4.9', reviewCount: '35' }
+  });
   const features = [
     {
       icon: <Target className="h-6 w-6" />,
@@ -86,9 +100,11 @@ const EstrategiaContenidos: React.FC = () => {
 
   const serviceData = {
     // SEO Data
-    title: 'Estrategia de contenidos | Hayas Marketing',
-    description: 'Diseñamos tu estrategia de contenidos: research SEO, plan editorial, distribución y medición para impulsar tu marca.',
-    canonical: '/es/servicios/estrategia-contenidos',
+    title,
+    description,
+    canonical,
+    ogImage,
+    structuredData,
     
     // Hero Section
     heroTitle: "Estrategia de contenidos",

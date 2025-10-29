@@ -12,6 +12,7 @@ import Footer from '@/components/Footer';
 import Seo from '@/components/Seo';
 import FAQSection from '@/components/FAQSection';
 import MethodologySection from '@/components/MethodologySection';
+import { hayasOrganizationSchema } from '@/data/seoData';
 
 const Index = () => {
   const [searchParams] = useSearchParams();
@@ -68,14 +69,6 @@ const Index = () => {
   ];
 
   // Generate structured data only when origin is available
-  const org = origin ? {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "Hayas Marketing",
-    url: origin,
-    logo: `${origin}/favicon.ico`,
-  } as const : null;
-
   const website = origin ? {
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -106,7 +99,7 @@ const Index = () => {
         about={['Marketing Digital', 'CRM', 'Automatización de Ventas', 'Inteligencia Artificial']}
         mentions={['HubSpot', 'GoHighLevel', 'SofÍA', 'Google Ads', 'Meta Ads']}
         faqs={homeFaqs}
-        structuredData={[org, website].filter(Boolean)}
+        structuredData={[hayasOrganizationSchema, website, faqSchema].filter(Boolean)}
       />
       <Navigation />
       

@@ -8,6 +8,8 @@ import ReviewsSection from '@/components/ReviewsSection';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import Seo from '@/components/Seo';
+import { useServiceSEO } from '@/hooks/useServiceSEO';
 import FAQSection from '@/components/FAQSection';
 import SuccessCasesSection from '@/components/SuccessCasesSection';
 import ServiceContactSection from '@/components/ServiceContactSection';
@@ -172,8 +174,29 @@ const faqItems = [
 ];
 
 const CreacionMarca = () => {
+  const { title, description, canonical, ogImage, structuredData } = useServiceSEO({
+    serviceName: 'Creación de Marca',
+    serviceDescription: 'Diseñamos identidades de marca completas: estrategia, naming, logo, manual de marca y aplicaciones gráficas.',
+    canonical: '/es/servicios/creacion-marca',
+    features: [
+      'Estrategia y posicionamiento de marca',
+      'Identidad visual completa',
+      'Manual de marca profesional',
+      'Aplicaciones gráficas'
+    ],
+    priceRange: '€€€',
+    aggregateRating: { ratingValue: '4.9', reviewCount: '45' }
+  });
+
   return (
     <div className="min-h-screen bg-white">
+      <Seo 
+        title={title}
+        description={description}
+        canonical={canonical}
+        ogImage={ogImage}
+        structuredData={structuredData}
+      />
       <Navigation />
       
       {/* Breadcrumb */}

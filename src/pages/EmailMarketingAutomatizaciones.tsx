@@ -1,6 +1,7 @@
 import React from 'react';
 import ServicePageTemplate, { ServicePageData } from '@/components/ServicePageTemplate';
 import { Mail, Workflow, Rocket, CalendarCheck2, BarChart3, Users, Sparkles } from 'lucide-react';
+import { useServiceSEO } from '@/hooks/useServiceSEO';
 
 const features = [
   {
@@ -39,12 +40,26 @@ const faqs = [
 ];
 
 const EmailMarketingAutomatizaciones: React.FC = () => {
+  const { title, description, canonical, ogImage, structuredData } = useServiceSEO({
+    serviceName: 'Email Marketing y Automatizaciones',
+    serviceDescription: 'Campañas de email marketing y automatizaciones para conectar con tus clientes, nutrir leads y aumentar conversiones.',
+    canonical: '/es/servicios/email-marketing-automatizaciones',
+    features: [
+      'Automatizaciones de nurturing',
+      'Segmentación avanzada',
+      'Integración con CRM',
+      'Análisis de rendimiento'
+    ],
+    priceRange: '€€',
+    aggregateRating: { ratingValue: '4.9', reviewCount: '32' }
+  });
   const serviceData: ServicePageData = {
     // SEO & Metadata
-    title: 'Email marketing y automatizaciones | Hayas Marketing',
-    description: 'Implementamos estrategias de email y workflows que convierten: segmentación, personalización y reporting unido a tu CRM.',
-    canonical: '/es/servicios/email-marketing-automatizaciones',
-    ogImage: '/email-marketing-automatizaciones-hero.jpg',
+    title,
+    description,
+    canonical,
+    ogImage,
+    structuredData,
     
     // Hero Section
     badge: 'Email Marketing & Automatización',

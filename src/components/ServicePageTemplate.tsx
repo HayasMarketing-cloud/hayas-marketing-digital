@@ -41,6 +41,7 @@ export interface ServicePageData {
   description: string;
   canonical: string;
   ogImage?: string;
+  structuredData?: Record<string, any>; // Optional custom structured data
   
   // Hero Section
   badge: string;
@@ -105,7 +106,8 @@ interface ServicePageTemplateProps {
 }
 
 const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ data }) => {
-  const structuredData = {
+  // Use custom structured data if provided, otherwise generate default
+  const structuredData = data.structuredData || {
     "@context": "https://schema.org",
     "@type": "Service",
     name: data.heroTitle,

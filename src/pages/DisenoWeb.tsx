@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import KitDigitalBanner from '@/components/KitDigitalBanner';
-
+import Seo from '@/components/Seo';
 import FAQSection from '@/components/FAQSection';
 import SuccessCasesSection from '@/components/SuccessCasesSection';
 import ServiceContactSection from '@/components/ServiceContactSection';
@@ -17,6 +17,7 @@ import PainPointsSection from '@/components/PainPointsSection';
 import SolutionPreviewSection from '@/components/SolutionPreviewSection';
 import IntermediateCTA from '@/components/IntermediateCTA';
 import BenefitsGridSection from '@/components/BenefitsGridSection';
+import { useServiceSEO } from '@/hooks/useServiceSEO';
 import { 
   Globe, Palette, Code, Smartphone, Search, BarChart3, 
   ArrowRight, CheckCircle, Star, Zap, Users, TrendingUp,
@@ -87,8 +88,29 @@ const faqItems = [
 ];
 
 const DisenoWeb = () => {
+  const { title, description, canonical, ogImage, structuredData } = useServiceSEO({
+    serviceName: 'Diseño Web Profesional',
+    serviceDescription: 'Diseñamos webs profesionales, rápidas y optimizadas para conversión: UX/UI, SEO técnico y desarrollo responsive.',
+    canonical: '/es/servicios/diseno-web',
+    features: [
+      'Diseño responsive y UX optimizado',
+      'SEO técnico integrado',
+      'Desarrollo con tecnologías modernas',
+      'Soporte y mantenimiento continuo'
+    ],
+    priceRange: '€€€',
+    aggregateRating: { ratingValue: '4.9', reviewCount: '42' }
+  });
+
   return (
     <div className="min-h-screen bg-white">
+      <Seo 
+        title={title}
+        description={description}
+        canonical={canonical}
+        ogImage={ogImage}
+        structuredData={structuredData}
+      />
       <Navigation />
       
       {/* Breadcrumb */}
