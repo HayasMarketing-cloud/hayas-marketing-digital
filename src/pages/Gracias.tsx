@@ -17,12 +17,34 @@ const Gracias = () => {
           type: 'ghl_iframe_thankyou',
           thankyou_url: window.location.href
         };
-        window.parent.postMessage(message, '*');
-        console.log('✅ postMessage enviado al parent:', message);
+        
+        // Retry mechanism: intentar enviar el mensaje varias veces
+        let attempts = 0;
+        const maxAttempts = 3;
+        const sendMessage = () => {
+          attempts++;
+          window.parent.postMessage(message, '*');
+          console.log(`✅ postMessage enviado al parent (intento ${attempts}):`, message);
+          
+          if (attempts < maxAttempts) {
+            setTimeout(sendMessage, 100); // Reintentar después de 100ms
+          }
+        };
+        
+        sendMessage();
       }
     } catch (e) {
       // Cross-origin blocking - no rompe funcionalidad
       console.warn('ℹ️ No se pudo enviar postMessage (cross-domain):', e);
+    }
+  }, []);
+
+  // Limpiar parámetros de la URL sin recargar la página
+  useEffect(() => {
+    if (window.location.search) {
+      const cleanUrl = window.location.pathname;
+      window.history.replaceState({}, document.title, cleanUrl);
+      console.log('🧹 URL limpiada:', cleanUrl);
     }
   }, []);
 

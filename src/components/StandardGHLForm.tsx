@@ -57,52 +57,67 @@ const StandardGHLForm: React.FC<StandardGHLFormProps> = ({
   // Tracking GTM: Detectar envío del formulario GHL vía postMessage
   useEffect(() => {
     const handleFormSubmit = (event: MessageEvent) => {
+      // Debug: mostrar todos los postMessage recibidos
+      if (event.data && event.data.type) {
+        console.log('📨 postMessage recibido:', event.data.type, event.data);
+      }
+
       // 1. Envío del formulario (desde GHL iframe)
       if (event.data && event.data.type === "hsFormCallback" && event.data.eventName === "onFormSubmit") {
         const detectedFormId = event.data.id || formId;
         const pageUrl = window.location.href;
+        
+        // Almacenar datos para usar en página de gracias
+        const formData = {
+          form_id: detectedFormId,
+          origin_url: pageUrl,
+          form_name: title,
+          timestamp: Date.now()
+        };
+        sessionStorage.setItem('ghl_last_form', JSON.stringify(formData));
+        console.log('💾 Datos guardados en sessionStorage:', formData);
 
-        // Persistir origen para usarlo en página de gracias
-        try {
-          sessionStorage.setItem('ghl_last_form', JSON.stringify({
-            form_id: detectedFormId,
-            origin_url: pageUrl,
-            form_name: title,
-            ts: Date.now()
-          }));
-        } catch {}
-
-        // Push a dataLayer para GTM
+        // Push al dataLayer
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
-          event: "ghl_form_submit",
+          event: 'ghl_form_submit',
           form_id: detectedFormId,
           page_url: pageUrl,
           form_name: title
         });
 
-        console.log("✅ Formulario GHL enviado:", detectedFormId, "desde", pageUrl);
+        console.log("✅ GTM: ghl_form_submit enviado:", detectedFormId, "desde", pageUrl);
       }
 
       // 2. Página de gracias cargada en iframe (puente iframe→parent)
       if (event.data && event.data.type === "ghl_iframe_thankyou") {
+        console.log('🎯 Recibido ghl_iframe_thankyou desde iframe');
         try {
           const raw = sessionStorage.getItem('ghl_last_form');
+          console.log('📦 sessionStorage contenido:', raw);
+          
           if (raw) {
             const data = JSON.parse(raw);
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({
+            const thankyouData = {
               event: 'ghl_thankyou',
               form_id: data.form_id,
               origin_url: data.origin_url,
               thankyou_url: event.data.thankyou_url,
               form_name: data.form_name
-            });
-            console.log('✅ GTM: ghl_thankyou enviado desde iframe', data);
+            };
+            
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push(thankyouData);
+            console.log('✅ GTM: ghl_thankyou enviado:', thankyouData);
+            
+            // Limpiar después de usar
             sessionStorage.removeItem('ghl_last_form');
+            console.log('🧹 sessionStorage limpiado');
+          } else {
+            console.warn('⚠️ No hay datos en sessionStorage para ghl_thankyou');
           }
         } catch (e) {
-          console.warn('ℹ️ No se pudo procesar ghl_iframe_thankyou:', e);
+          console.error('❌ Error procesando ghl_iframe_thankyou:', e);
         }
       }
     };
