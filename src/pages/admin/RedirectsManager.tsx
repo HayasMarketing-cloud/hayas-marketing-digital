@@ -8,12 +8,8 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { RedirectTable } from '@/components/seo-dashboard/RedirectTable';
-import { 
-  extractRedirectsFromRoutes, 
-  getRedirectStats,
-  validateRedirectDestinations,
-  ExtractedRedirect 
-} from '@/utils/seo-analytics/redirectExtractor';
+import { useRedirects } from '@/hooks/useRedirects';
+import { getRedirectStatsFromParsed } from '@/utils/seo-analytics/redirectsParser';
 import { 
   ArrowLeft, 
   CheckCircle2, 
@@ -21,38 +17,54 @@ import {
   Calendar,
   FileText,
   TrendingUp,
-  Shield
+  Shield,
+  Loader2
 } from 'lucide-react';
 
 const RedirectsManager: React.FC = () => {
   const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
-  const redirectsData = useMemo(() => {
-    const redirects = extractRedirectsFromRoutes();
-    const stats = getRedirectStats();
-    const validation = validateRedirectDestinations();
-    
-    return {
-      redirects,
-      stats,
-      validation,
-      categories: Object.keys(stats.byCategory)
-    };
-  }, []);
+  const { redirects, isLoading, error, source } = useRedirects();
+
+  const stats = useMemo(() => {
+    if (redirects.length === 0) return { total: 0, byCategory: {}, byType: {}, valid: 0, warnings: 0, splatRules: 0 };
+    return getRedirectStatsFromParsed(redirects);
+  }, [redirects]);
+
+  const categories = useMemo(() => Object.keys(stats.byCategory || {}), [stats]);
 
   const filteredRedirects = useMemo(() => {
     if (selectedCategory === 'all') {
-      return redirectsData.redirects;
+      return redirects;
     }
-    return redirectsData.redirects.filter(r => r.category === selectedCategory);
-  }, [redirectsData.redirects, selectedCategory]);
+    return redirects.filter(r => r.category === selectedCategory);
+  }, [redirects, selectedCategory]);
 
   const healthScore = useMemo(() => {
-    const { valid, warnings } = redirectsData.validation;
-    const total = redirectsData.stats.total;
-    return Math.round((valid / total) * 100);
-  }, [redirectsData]);
+    if (redirects.length === 0) return 0;
+    return Math.round((stats.valid / redirects.length) * 100);
+  }, [redirects, stats]);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex flex-col bg-background">
+        <Navigation />
+        <SEONavigation />
+        
+        <main className="flex-1 container mx-auto px-4 py-8">
+          <div className="flex items-center justify-center h-[50vh]">
+            <div className="flex flex-col items-center gap-4">
+              <Loader2 className="h-8 w-8 animate-spin text-primary" />
+              <p className="text-muted-foreground">Cargando redirecciones...</p>
+            </div>
+          </div>
+        </main>
+        
+        <Footer />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -79,6 +91,7 @@ const RedirectsManager: React.FC = () => {
             <h1 className="text-4xl font-bold mb-2">Gestión de Redirecciones</h1>
             <p className="text-muted-foreground">
               Catálogo completo y documentación de las redirecciones 301 implementadas
+              {source === 'fallback' && ' (modo fallback)'}
             </p>
           </div>
 
@@ -92,7 +105,7 @@ const RedirectsManager: React.FC = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="text-3xl font-bold">{redirectsData.stats.total}</div>
+                <div className="text-3xl font-bold">{redirects.length}</div>
                 <p className="text-xs text-muted-foreground mt-1">Redirecciones 301</p>
               </CardContent>
             </Card>
@@ -107,7 +120,7 @@ const RedirectsManager: React.FC = () => {
               <CardContent>
                 <div className="text-3xl font-bold">{healthScore}%</div>
                 <p className="text-xs text-muted-foreground mt-1">
-                  {redirectsData.validation.valid}/{redirectsData.stats.total} válidas
+                  {stats.valid}/{redirects.length} válidas
                 </p>
               </CardContent>
             </Card>
@@ -120,7 +133,7 @@ const RedirectsManager: React.FC = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="text-3xl font-bold">{redirectsData.categories.length}</div>
+                <div className="text-3xl font-bold">{categories.length}</div>
                 <p className="text-xs text-muted-foreground mt-1">Tipos diferentes</p>
               </CardContent>
             </Card>
@@ -157,7 +170,7 @@ const RedirectsManager: React.FC = () => {
                   type: r.type,
                   category: r.category
                 }))}
-                categories={['all', ...redirectsData.categories]}
+                categories={['all', ...categories]}
               />
             </TabsContent>
 
@@ -508,29 +521,15 @@ const RedirectsManager: React.FC = () => {
                           <CheckCircle2 className="h-5 w-5 text-green-600" />
                           <span className="font-medium">Redirecciones Válidas</span>
                         </div>
-                        <span className="text-2xl font-bold">{redirectsData.validation.valid}</span>
+                        <span className="text-2xl font-bold">{stats.valid}</span>
                       </div>
 
-                      {redirectsData.validation.warnings.length > 0 ? (
-                        <div className="p-3 bg-orange-50 dark:bg-orange-950/30 rounded-lg border border-orange-200 dark:border-orange-800">
-                          <div className="flex items-center gap-2 mb-2">
-                            <AlertTriangle className="h-5 w-5 text-orange-600" />
-                            <span className="font-medium">Advertencias</span>
-                          </div>
-                          <ul className="text-sm space-y-1 ml-7">
-                            {redirectsData.validation.warnings.map((warning, idx) => (
-                              <li key={idx} className="text-muted-foreground">{warning}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      ) : (
-                        <div className="p-3 bg-green-50 dark:bg-green-950/30 rounded-lg border border-green-200 dark:border-green-800">
+                      <div className="p-3 bg-green-50 dark:bg-green-950/30 rounded-lg border border-green-200 dark:border-green-800">
                           <div className="flex items-center gap-2">
                             <CheckCircle2 className="h-5 w-5 text-green-600" />
                             <span className="font-medium">No se encontraron problemas</span>
                           </div>
                         </div>
-                      )}
 
                       <div className="pt-4 border-t">
                         <h4 className="font-semibold text-sm mb-2">Métricas de Calidad</h4>

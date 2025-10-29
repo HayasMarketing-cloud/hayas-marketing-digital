@@ -2,8 +2,8 @@ export interface ExtractedRedirect {
   id: string;
   source: string;
   destination: string;
-  type: '301';
-  category: 'Servicios Legacy' | 'Blog Posts Legacy' | 'URLs con /es/' | 'URLs Malformadas' | 'Soluciones a Servicios' | 'Casos de Éxito' | 'Idiomas Inactivos' | 'Paginación Legacy' | 'Feed RSS Legacy';
+  type: '301' | '302' | '200';
+  category: string;
   dateAdded?: string;
   notes?: string;
 }
