@@ -97,10 +97,26 @@ const StandardGHLForm: React.FC<StandardGHLFormProps> = ({
       }
     };
 
-    iframe.addEventListener('load', insertHiddenField);
+    const onLoad = () => {
+      insertHiddenField();
+      try {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: "ghl_form_loaded",
+          form_id: formId,
+          page_url: window.location.href,
+          form_name: title
+        });
+        console.log("ℹ️ GHL form loaded:", formId, "en", window.location.href);
+      } catch (e) {
+        // No-op
+      }
+    };
+
+    iframe.addEventListener('load', onLoad);
 
     return () => {
-      iframe.removeEventListener('load', insertHiddenField);
+      iframe.removeEventListener('load', onLoad);
     };
   }, [iframeId]);
 
