@@ -1,6 +1,7 @@
 import React from 'react';
 import ServicePageTemplate, { ServicePageData } from '@/components/ServicePageTemplate';
 import { LineChart, Target, GaugeCircle, FileBarChart2, Lightbulb, Workflow } from 'lucide-react';
+import { useServiceSEO } from '@/hooks/useServiceSEO';
 
 const features = [
   { icon: <Target className="h-6 w-6 text-primary" />, title: 'Objetivos y KPIs', desc: 'Definimos métricas accionables y tableros claros para la toma de decisiones.' },
@@ -23,12 +24,23 @@ const faqs = [
 ];
 
 const ConsultoriaEstrategicaAnalitica: React.FC = () => {
+  const { title, description, canonical, ogImage, structuredData } = useServiceSEO({
+    serviceName: 'Consultoría estratégica y analítica',
+    serviceDescription: 'Impulsamos el crecimiento con decisiones basadas en datos: objetivos claros, medición fiable y optimización continua.',
+    canonical: '/es/servicios/consultoria-estrategica-analitica',
+    heroImagePath: '/consultoria-estrategica-hero.jpg',
+    features: ['Objetivos y KPIs', 'Analítica avanzada', 'Dashboards ejecutivos', 'Consultoría estratégica'],
+    priceRange: '€€€',
+    aggregateRating: { ratingValue: '4.9', reviewCount: '28' }
+  });
+
   const serviceData: ServicePageData = {
     // SEO & Metadata
-    title: 'Consultoría estratégica y analítica | Hayas Marketing',
-    description: 'Impulsamos el crecimiento con decisiones basadas en datos: objetivos claros, medición fiable y optimización continua.',
-    canonical: '/es/servicios/consultoria-estrategica-analitica',
-    ogImage: '/consultoria-estrategica-hero.jpg',
+    title,
+    description,
+    canonical,
+    ogImage,
+    structuredData,
     
     // Hero Section
     badge: 'Consultoría Estratégica',

@@ -15,6 +15,7 @@ import DynamicH1 from '@/components/DynamicH1';
 import { useAdvancedSEO } from '@/hooks/useAdvancedSEO';
 import { servicesByPillar } from '@/data/services';
 import { successCaseImages } from '@/data/successCaseImages';
+import { generateItemListSchema } from '@/data/seoData';
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -124,6 +125,19 @@ const ImpulsaTuMarca = () => {
     pageContent: "Branding estratégico, diseño de identidad y manual de marca para diferenciar tu negocio. Servicios profesionales de creación y desarrollo de marca."
   });
 
+  // Generate ItemList schema for services
+  const itemListSchema = generateItemListSchema({
+    items: impulsaServices.map(s => ({
+      name: s.title,
+      url: `https://hayasmarketing.com${s.href}`,
+      description: s.description
+    })),
+    listName: 'Servicios Impulsa tu marca - Hayas Marketing',
+    listDescription: 'Servicios de branding, diseño web, SEO y contenidos para impulsar y diferenciar tu marca en el mercado.'
+  });
+
+  const combinedStructuredData = [seoData.structuredData, itemListSchema].filter(Boolean);
+
   return (
     <div id="top" className="min-h-screen bg-white">
       <Seo 
@@ -131,7 +145,7 @@ const ImpulsaTuMarca = () => {
         description={seoData.description}
         keywords={seoData.keywords}
         canonical={seoData.canonical}
-        structuredData={seoData.structuredData}
+        structuredData={combinedStructuredData}
         robots={seoData.robots}
         ogImage={seoData.ogImage}
         ogType={seoData.ogType}

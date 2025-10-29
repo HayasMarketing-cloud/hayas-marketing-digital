@@ -3,6 +3,7 @@ import ServicePageTemplate, { ServicePageData } from '@/components/ServicePageTe
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Filter, Mail, BarChart3, Zap, Heart, Search, Settings, Rocket, TrendingUp } from 'lucide-react';
+import { useServiceSEO } from '@/hooks/useServiceSEO';
 
 const features = [
   { icon: <Filter className="h-6 w-6 text-primary" />, title: 'Pipelines optimizados', description: 'Diseño e implementación de pipelines de ventas optimizados.' },
@@ -35,11 +36,23 @@ const faqs = [
 ];
 
 const AutomatizacionProcesosVentas: React.FC = () => {
+  const { title, description, canonical, ogImage, structuredData } = useServiceSEO({
+    serviceName: 'Automatización de procesos de ventas',
+    serviceDescription: 'Acelera tu ciclo de ventas con automatización inteligente de principio a fin: de la gestión de leads al seguimiento postventa.',
+    canonical: '/es/servicios/automatizacion-procesos-ventas',
+    heroImagePath: '/automatizacion-procesos-ventas-hero.jpg',
+    features: ['Pipelines optimizados', 'Marketing–Ventas en CRM', 'Dashboards de rendimiento', 'Tareas y alertas automáticas'],
+    priceRange: '€€€',
+    aggregateRating: { ratingValue: '4.9', reviewCount: '28' }
+  });
+
   const serviceData: ServicePageData = {
     // SEO & Metadata
-    title: 'Automatización de procesos de ventas | Hayas Marketing',
-    description: 'Acelera tu ciclo de ventas con automatización inteligente de principio a fin: de la gestión de leads al seguimiento postventa.',
-    canonical: '/es/servicios/automatizacion-procesos-ventas',
+    title,
+    description,
+    canonical,
+    ogImage,
+    structuredData,
 
     // Hero Section
     badge: 'Conecta con tus clientes',

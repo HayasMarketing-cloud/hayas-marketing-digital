@@ -3,6 +3,7 @@ import ServicePageTemplate, { ServicePageData } from '@/components/ServicePageTe
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { PlugZap, BrainCircuit, Workflow, ShieldCheck, ChartLine, Search, Cog, TestTube, TrendingUp } from 'lucide-react';
+import { useServiceSEO } from '@/hooks/useServiceSEO';
 
 const features = [
   { icon: <PlugZap className="h-6 w-6 text-primary" />, title: 'Integraciones', description: 'Conecta CRM, web, ads y herramientas internas para un dato único.' },
@@ -34,11 +35,23 @@ const faqs = [
 ];
 
 const IntegracionesIAProcesos: React.FC = () => {
+  const { title, description, canonical, ogImage, structuredData } = useServiceSEO({
+    serviceName: 'Integraciones y optimización con IA',
+    serviceDescription: 'Conectamos tus sistemas y aplicamos IA para acelerar procesos, reducir costes y mejorar la experiencia del cliente.',
+    canonical: '/es/servicios/integraciones-ia-procesos',
+    heroImagePath: '/integraciones-ia-procesos-hero.jpg',
+    features: ['Integraciones CRM-Web-Ads', 'IA aplicada', 'Workflows de procesos', 'Seguridad y RGPD'],
+    priceRange: '€€€',
+    aggregateRating: { ratingValue: '4.9', reviewCount: '28' }
+  });
+
   const serviceData: ServicePageData = {
     // SEO & Metadata
-    title: 'Integraciones y optimización con IA | Hayas Marketing',
-    description: 'Conectamos tus sistemas y aplicamos IA para acelerar procesos, reducir costes y mejorar la experiencia del cliente.',
-    canonical: '/es/servicios/integraciones-ia-procesos',
+    title,
+    description,
+    canonical,
+    ogImage,
+    structuredData,
 
     // Hero Section
     badge: 'Solución IA',

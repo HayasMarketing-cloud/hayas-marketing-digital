@@ -1,286 +1,209 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
-import { servicesByPillar, pillarMeta, PillarKey } from '@/data/services';
-import EnhancedBreadcrumbs from '@/components/EnhancedBreadcrumbs';
 import Seo from '@/components/Seo';
-import { DynamicH1 } from '@/components/DynamicH1';
-import { Sparkles, Target, Users2, Zap } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { ArrowRight, Search } from 'lucide-react';
+import { allServices, pillarMeta, PillarKey } from '@/data/services';
+import { generateItemListSchema } from '@/data/seoData';
+import DynamicH1 from '@/components/DynamicH1';
 
-const pillarOrder: PillarKey[] = ['impulsa', 'conecta', 'activa'];
+const Servicios: React.FC = () => {
+  const [selectedPillar, setSelectedPillar] = useState<PillarKey | 'all'>('all');
+  const [searchQuery, setSearchQuery] = useState('');
 
-const pillarIcons = {
-  impulsa: <Sparkles className="h-8 w-8 text-white" />,
-  conecta: <Users2 className="h-8 w-8 text-white" />,
-  activa: <Zap className="h-8 w-8 text-white" />
-};
+  // Generate ItemList schema for all services
+  const itemListSchema = generateItemListSchema({
+    items: allServices.map(s => ({
+      name: s.title,
+      url: `https://hayasmarketing.com${s.href}`,
+      description: s.description
+    })),
+    listName: 'Servicios de Marketing Digital - Hayas Marketing',
+    listDescription: 'Catálogo completo de servicios: branding, web, SEO, publicidad, CRM, IA y automatización para hacer crecer tu negocio.'
+  });
 
-const pillarColors = {
-  impulsa: 'from-purple-600 to-pink-600',
-  conecta: 'from-blue-600 to-cyan-600', 
-  activa: 'from-green-600 to-emerald-600'
-};
+  // Filter services
+  const filteredServices = allServices.filter(service => {
+    const matchesPillar = selectedPillar === 'all' || service.pillar === selectedPillar;
+    const matchesSearch = service.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                          service.description.toLowerCase().includes(searchQuery.toLowerCase());
+    return matchesPillar && matchesSearch;
+  });
 
-const Servicios = () => {
+  const getPillarColor = (pillar: PillarKey) => {
+    const colors = {
+      impulsa: 'impulsa',
+      conecta: 'conecta',
+      activa: 'activa'
+    };
+    return colors[pillar];
+  };
+
   return (
-    <>
-      <Seo 
-        title="Servicios de Marketing Digital y CRM - Hayas Marketing"
-        description="Descubre todos nuestros servicios de marketing digital: creación de marca, diseño web, SEO, CRM, automatización y más. Soluciones integrales para hacer crecer tu negocio."
-        canonical="/servicios"
-        keywords={['servicios marketing digital', 'CRM', 'automatización', 'diseño web', 'SEO']}
-        ogImage="/og-servicios.jpg"
-        ogType="website"
-        inLanguage="es-ES"
-        about={['Servicios de Marketing', 'CRM', 'Automatización', 'Diseño Web', 'SEO']}
-        mentions={['Branding', 'Google Ads', 'Meta Ads', 'HubSpot', 'GoHighLevel']}
+    <div className="min-h-screen bg-white">
+      <Seo
+        title="Servicios de Marketing Digital | Hayas Marketing"
+        description="Descubre nuestros servicios de marketing digital: branding, diseño web, SEO, publicidad online, CRM, automatización e inteligencia artificial para impulsar tu negocio."
+        canonical="/es/servicios"
+        structuredData={[itemListSchema]}
+        keywords={["servicios marketing digital", "agencia marketing", "branding", "diseño web", "SEO", "publicidad online", "CRM", "automatización", "inteligencia artificial"]}
       />
       <Navigation />
-      
-      <main>
-        {/* Hero Banner */}
-        <section className="relative bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 mt-4 md:mt-6 pb-16 overflow-hidden">
-          <div className="absolute inset-0 bg-black/20"></div>
-          <div className="absolute inset-0">
-            <div className="absolute top-10 left-10 w-32 h-32 bg-gradient-to-r from-purple-400/30 to-pink-400/30 rounded-full blur-xl"></div>
-            <div className="absolute top-40 right-20 w-48 h-48 bg-gradient-to-r from-blue-400/20 to-cyan-400/20 rounded-full blur-2xl"></div>
-            <div className="absolute bottom-20 left-1/3 w-64 h-64 bg-gradient-to-r from-indigo-400/10 to-purple-400/10 rounded-full blur-3xl"></div>
-          </div>
-          
-          <div className="container mx-auto px-4 relative z-10">
-            <EnhancedBreadcrumbs 
-              items={[
-                { label: 'Inicio', href: '/' },
-                { label: 'Servicios', href: '/servicios' }
-              ]}
-              className="mb-8 [&_a]:text-white/80 [&_a:hover]:text-white [&_span]:text-white/60"
-            />
-            
-            <div className="text-center max-w-4xl mx-auto">
-              <div className="flex justify-center mb-6">
-                <div className="p-4 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
-                  <Target className="h-12 w-12 text-white" />
-                </div>
-              </div>
-              
-              <DynamicH1 
-                fallback="Servicios Hayas Marketing"
-                className="text-4xl md:text-6xl font-bold text-white mb-6 bg-gradient-to-r from-white via-purple-100 to-blue-100 bg-clip-text text-transparent"
-              />
-              
-              <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
-                Soluciones integrales de marketing digital e inteligencia artificial
-                <br />
-                <span className="text-lg text-white/80">Diseñadas para hacer crecer tu negocio de forma estratégica y sostenible</span>
-              </p>
-              
-              <div className="flex flex-wrap justify-center gap-4 text-white/80">
-                <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20">
-                  <Sparkles className="h-5 w-5" />
-                  <span>Impulsa tu marca</span>
-                </div>
-                <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20">
-                  <Users2 className="h-5 w-5" />
-                  <span>Conecta con tus clientes</span>
-                </div>
-                <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20">
-                  <Zap className="h-5 w-5" />
-                  <span>Activa tus ventas</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
 
-        {/* Servicios por Pilares */}
-        <section className="py-16 md:py-20 bg-gray-50">
-          <div className="container mx-auto px-4">
-            {pillarOrder.map((key, index) => (
-              <div key={key} className={`mb-16 ${index !== pillarOrder.length - 1 ? 'border-b border-gray-200 pb-16' : ''}`}>
-                {/* Header del Pilar */}
-                <div className="text-center mb-12">
-                  <div className="flex justify-center mb-6">
-                    <div className={`p-4 bg-gradient-to-r ${pillarColors[key]} rounded-2xl shadow-lg`}>
-                      {pillarIcons[key]}
-                    </div>
-                  </div>
-                  
-                  <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-                    {key === 'impulsa' && 'Servicios de branding y posicionamiento web'}
-                    {key === 'conecta' && 'Automatización CRM y gestión de clientes'}
-                    {key === 'activa' && 'Estrategias de captación y conversión de leads'}
-                  </h2>
-                  
-                  <div className="w-24 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto mb-6 rounded-full"></div>
-                  
-                  <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                    {key === 'impulsa' && 'Construye una identidad sólida y aumenta tu visibilidad en el mercado'}
-                    {key === 'conecta' && 'Establece relaciones duraderas y gestiona eficientemente tus clientes'}
-                    {key === 'activa' && 'Optimiza tus procesos de venta y maximiza tu conversión'}
-                  </p>
-                </div>
-
-                {/* Grid de Servicios */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {servicesByPillar[key]?.map((service) => (
-                    <Card key={service.id} className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group bg-white">
-                      <CardHeader className="pb-4">
-                        <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
-                          {service.icon}
-                        </div>
-                        <CardTitle className="text-xl font-bold text-gray-900 group-hover:text-purple-700 transition-colors">
-                          {service.title}
-                        </CardTitle>
-                      </CardHeader>
-                      <CardContent className="flex-grow">
-                        <CardDescription className="text-gray-600 text-base leading-relaxed">
-                          {service.description}
-                        </CardDescription>
-                      </CardContent>
-                      <CardFooter className="pt-4">
-                        <Link to={service.href} className="w-full" aria-label={`Ver detalles de ${service.title}`}>
-                          <Button className="w-full group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-blue-600 transition-all duration-300">
-                            Ver detalles
-                          </Button>
-                        </Link>
-                      </CardFooter>
-                    </Card>
-                  ))}
-                </div>
-
-                {/* CTA del Pilar */}
-                <div className="text-center mt-12">
-                  <Link to={pillarMeta[key].href}>
-                    <Button variant="outline" size="lg" className="group">
-                      Ver todas las soluciones de {pillarMeta[key].title}
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </Button>
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Cross-linking Section */}
-        <section className="py-16 bg-white">
+      <main className="pt-20">
+        {/* Hero Section */}
+        <section className="py-16 md:py-20 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl font-bold mb-6">Servicios por objetivo</h2>
-              <p className="text-lg text-muted-foreground mb-12">
-                Encuentra rápidamente el servicio que necesitas según tu objetivo principal
+              <DynamicH1 
+                fallback="Servicios de Marketing Digital"
+                className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+              >
+                Servicios de <span className="text-gradient-primary">Marketing Digital</span>
+              </DynamicH1>
+              <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
+                Soluciones integrales para impulsar tu marca, conectar con tus clientes y activar tus ventas. 
+                Desde branding y diseño web hasta automatización con IA.
               </p>
-              
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-                <Link to="/es/servicios/creacion-marca" className="group p-6 rounded-xl border border-gray-200 hover:border-purple-300 hover:bg-purple-50 transition-all">
-                  <div className="text-center">
-                    <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-purple-100 flex items-center justify-center group-hover:bg-purple-200 transition-colors">
-                      <Sparkles className="h-6 w-6 text-purple-600" />
-                    </div>
-                    <h3 className="font-semibold mb-2 group-hover:text-purple-700 transition-colors">Crear mi marca</h3>
-                    <p className="text-sm text-muted-foreground">Identidad, logo y manual de marca</p>
-                  </div>
-                </Link>
+            </div>
+          </div>
+        </section>
 
-                <Link to="/es/servicios/diseno-web" className="group p-6 rounded-xl border border-gray-200 hover:border-blue-300 hover:bg-blue-50 transition-all">
-                  <div className="text-center">
-                    <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-blue-100 flex items-center justify-center group-hover:bg-blue-200 transition-colors">
-                      <Target className="h-6 w-6 text-blue-600" />
-                    </div>
-                    <h3 className="font-semibold mb-2 group-hover:text-blue-700 transition-colors">Tener una web</h3>
-                    <p className="text-sm text-muted-foreground">Diseño web profesional y optimizado</p>
-                  </div>
-                </Link>
-
-                <Link to="/es/servicios/seo-posicionamiento" className="group p-6 rounded-xl border border-gray-200 hover:border-green-300 hover:bg-green-50 transition-all">
-                  <div className="text-center">
-                    <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-green-100 flex items-center justify-center group-hover:bg-green-200 transition-colors">
-                      <Zap className="h-6 w-6 text-green-600" />
-                    </div>
-                    <h3 className="font-semibold mb-2 group-hover:text-green-700 transition-colors">Aparecer en Google</h3>
-                    <p className="text-sm text-muted-foreground">SEO y posicionamiento orgánico</p>
-                  </div>
-                </Link>
-
-                <Link to="/es/servicios/implantacion-crm" className="group p-6 rounded-xl border border-gray-200 hover:border-orange-300 hover:bg-orange-50 transition-all">
-                  <div className="text-center">
-                    <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-orange-100 flex items-center justify-center group-hover:bg-orange-200 transition-colors">
-                      <Users2 className="h-6 w-6 text-orange-600" />
-                    </div>
-                    <h3 className="font-semibold mb-2 group-hover:text-orange-700 transition-colors">Organizar mi CRM</h3>
-                    <p className="text-sm text-muted-foreground">Gestión profesional de clientes</p>
-                  </div>
-                </Link>
-
-                <Link to="/es/servicios/captacion-leads-clientes" className="group p-6 rounded-xl border border-gray-200 hover:border-indigo-300 hover:bg-indigo-50 transition-all">
-                  <div className="text-center">
-                    <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-indigo-100 flex items-center justify-center group-hover:bg-indigo-200 transition-colors">
-                      <Target className="h-6 w-6 text-indigo-600" />
-                    </div>
-                    <h3 className="font-semibold mb-2 group-hover:text-indigo-700 transition-colors">Generar más leads</h3>
-                    <p className="text-sm text-muted-foreground">Estrategias de captación</p>
-                  </div>
-                </Link>
-
-                <Link to="/es/servicios/automatizacion-procesos-ventas" className="group p-6 rounded-xl border border-gray-200 hover:border-red-300 hover:bg-red-50 transition-all">
-                  <div className="text-center">
-                    <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-red-100 flex items-center justify-center group-hover:bg-red-200 transition-colors">
-                      <Zap className="h-6 w-6 text-red-600" />
-                    </div>
-                    <h3 className="font-semibold mb-2 group-hover:text-red-700 transition-colors">Automatizar ventas</h3>
-                    <p className="text-sm text-muted-foreground">Procesos comerciales automáticos</p>
-                  </div>
-                </Link>
+        {/* Filters Section */}
+        <section className="py-8 bg-muted/30 border-b">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
+              {/* Search */}
+              <div className="relative w-full md:w-96">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                <input
+                  type="text"
+                  placeholder="Buscar servicios..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                />
               </div>
 
-              <div className="text-center">
-                <Link to="/es/casos-exito">
-                  <Button variant="outline" size="lg" className="mr-4">
-                    Ver casos de éxito
-                  </Button>
-                </Link>
-                <Link to="/es/blog">
-                  <Button variant="outline" size="lg">
-                    Leer nuestro blog
-                  </Button>
-                </Link>
+              {/* Pillar filters */}
+              <div className="flex gap-2 flex-wrap">
+                <Button
+                  variant={selectedPillar === 'all' ? 'default' : 'outline'}
+                  size="sm"
+                  onClick={() => setSelectedPillar('all')}
+                >
+                  Todos
+                </Button>
+                <Button
+                  variant={selectedPillar === 'impulsa' ? 'default' : 'outline'}
+                  size="sm"
+                  onClick={() => setSelectedPillar('impulsa')}
+                  className={selectedPillar === 'impulsa' ? 'bg-impulsa-500 hover:bg-impulsa-600' : ''}
+                >
+                  Impulsa tu marca
+                </Button>
+                <Button
+                  variant={selectedPillar === 'conecta' ? 'default' : 'outline'}
+                  size="sm"
+                  onClick={() => setSelectedPillar('conecta')}
+                  className={selectedPillar === 'conecta' ? 'bg-conecta-500 hover:bg-conecta-600' : ''}
+                >
+                  Conecta con tus clientes
+                </Button>
+                <Button
+                  variant={selectedPillar === 'activa' ? 'default' : 'outline'}
+                  size="sm"
+                  onClick={() => setSelectedPillar('activa')}
+                  className={selectedPillar === 'activa' ? 'bg-activa-500 hover:bg-activa-600' : ''}
+                >
+                  Activa tus ventas
+                </Button>
               </div>
             </div>
           </div>
         </section>
 
-        {/* CTA Final */}
-        <section className="py-16 bg-gradient-to-r from-purple-600 to-blue-600">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              ¿No sabes por dónde empezar?
-            </h2>
-            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Te ayudamos a identificar las mejores soluciones para tu negocio con una consulta estratégica gratuita
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link to="/es/contacto">
-                <Button size="lg" variant="secondary" className="bg-white text-purple-600 hover:bg-gray-100">
-                  Solicitar consulta gratuita
+        {/* Services Grid */}
+        <section className="py-16 md:py-20">
+          <div className="container mx-auto px-4">
+            {filteredServices.length === 0 ? (
+              <div className="text-center py-12">
+                <p className="text-xl text-muted-foreground">
+                  No se encontraron servicios que coincidan con tu búsqueda.
+                </p>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {filteredServices.map((service) => (
+                  <Card 
+                    key={service.id} 
+                    className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 h-full group"
+                  >
+                    <CardHeader className="text-center pb-4">
+                      <div className={`mb-4 mx-auto p-4 rounded-full w-fit bg-${getPillarColor(service.pillar)}-100 group-hover:bg-${getPillarColor(service.pillar)}-200 transition-colors duration-300`}>
+                        {service.icon}
+                      </div>
+                      <Badge variant="outline" className={`mb-2 text-${getPillarColor(service.pillar)}-600 border-${getPillarColor(service.pillar)}-200`}>
+                        {pillarMeta[service.pillar].title}
+                      </Badge>
+                      <CardTitle className="text-xl font-bold">
+                        {service.title}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="pt-0">
+                      <p className="text-gray-600 leading-relaxed text-center mb-4">
+                        {service.description}
+                      </p>
+                      <div className="text-center">
+                        <Button variant="outline" size="sm" asChild className="group-hover:bg-primary group-hover:text-white transition-colors">
+                          <Link to={service.href}>
+                            Ver servicio
+                            <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                          </Link>
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            )}
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-16 md:py-20 bg-gradient-to-br from-primary/10 via-white to-accent/10">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                ¿No sabes qué servicio necesitas?
+              </h2>
+              <p className="text-xl text-muted-foreground mb-8">
+                Agenda una consulta gratuita y te ayudaremos a diseñar la estrategia perfecta para tu negocio.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button size="lg" asChild>
+                  <Link to="/es/solicitar-consulta">
+                    Solicitar consultoría gratuita
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
                 </Button>
-              </Link>
-              <Link to="/es/agendar-reunion">
-                <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10">
-                  Agendar reunión
+                <Button variant="outline" size="lg" asChild>
+                  <Link to="/es/casos-exito">
+                    Ver casos de éxito
+                  </Link>
                 </Button>
-              </Link>
+              </div>
             </div>
           </div>
         </section>
       </main>
 
       <Footer />
-    </>
+    </div>
   );
 };
 

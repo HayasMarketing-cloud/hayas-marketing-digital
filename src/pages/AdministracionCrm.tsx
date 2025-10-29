@@ -13,6 +13,7 @@ import {
   Users,
   Wallet
 } from 'lucide-react';
+import { useServiceSEO } from '@/hooks/useServiceSEO';
 
 const servicePageData: ServicePageData = {
   // SEO & Metadata
@@ -176,7 +177,26 @@ const servicePageData: ServicePageData = {
 };
 
 const AdministracionCrm: React.FC = () => {
-  return <ServicePageTemplate data={servicePageData} />;
+  const { title, description, canonical, ogImage, structuredData } = useServiceSEO({
+    serviceName: 'Administración CRM y gestión del Plan de Marketing',
+    serviceDescription: 'Externaliza la gestión de tu CRM y activos digitales: sin fee, bajo demanda y con planificación estratégica. Centralizas CRM, marketing y ventas en un solo equipo.',
+    canonical: '/es/servicios/administracion-crm',
+    heroImagePath: '/administracion-crm-hero.jpg',
+    features: ['Implantación Completa', 'Inbound Marketing', 'Captación Avanzada', 'Gestión Marketing'],
+    priceRange: '€€€',
+    aggregateRating: { ratingValue: '4.9', reviewCount: '28' }
+  });
+
+  const updatedServicePageData: ServicePageData = {
+    ...servicePageData,
+    title,
+    description,
+    canonical,
+    ogImage,
+    structuredData
+  };
+
+  return <ServicePageTemplate data={updatedServicePageData} />;
 };
 
 export default AdministracionCrm;

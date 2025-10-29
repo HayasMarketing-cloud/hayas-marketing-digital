@@ -17,6 +17,7 @@ import { servicesByPillar } from '@/data/services';
 import { ArrowRight, MessageSquare, Calendar } from 'lucide-react';
 import DynamicH1 from '@/components/DynamicH1';
 import { useAdvancedSEO } from '@/hooks/useAdvancedSEO';
+import { generateItemListSchema } from '@/data/seoData';
 
 // DATOS GUARDADOS TEMPORALMENTE - Sección de tecnologías para uso futuro
 const crmPlatforms = [
@@ -59,9 +60,24 @@ const faqItems = [
 ];
 
 const ConectaConTusClientes = () => {
+  const conectaServices = servicesByPillar.conecta || [];
+  
   const seoData = useAdvancedSEO({
     pageContent: "Soluciones CRM profesionales con HubSpot y GoHighLevel. Implementación, configuración y gestión de clientes para empresas que buscan crecimiento sostenible."
   });
+
+  // Generate ItemList schema for services
+  const itemListSchema = generateItemListSchema({
+    items: conectaServices.map(s => ({
+      name: s.title,
+      url: `https://hayasmarketing.com${s.href}`,
+      description: s.description
+    })),
+    listName: 'Servicios Conecta con tus clientes - Hayas Marketing',
+    listDescription: 'Soluciones CRM, automatización de marketing, email marketing y funnels de conversión para conectar con tus clientes.'
+  });
+
+  const combinedStructuredData = [seoData.structuredData, itemListSchema].filter(Boolean);
 
   return (
     <div className="min-h-screen bg-white">
@@ -70,9 +86,9 @@ const ConectaConTusClientes = () => {
         <meta name="description" content={seoData.description} />
         <link rel="canonical" href={`https://hayasmarketing.com${seoData.canonical}`} />
         <meta name="robots" content={seoData.robots} />
-        {seoData.structuredData && (
+        {combinedStructuredData && (
           <script type="application/ld+json">
-            {JSON.stringify(seoData.structuredData)}
+            {JSON.stringify(combinedStructuredData)}
           </script>
         )}
       </head>

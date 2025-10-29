@@ -2,6 +2,8 @@ import React from 'react';
 import { ArrowRight, AlertTriangle, TrendingUp, Eye, Target, Users, Bot, BarChart3, Zap, Settings, CheckCircle, Rocket, DollarSign, Star, Trophy, ArrowLeft } from 'lucide-react';
 import DynamicH1 from '@/components/DynamicH1';
 import { useAdvancedSEO } from '@/hooks/useAdvancedSEO';
+import { generateItemListSchema } from '@/data/seoData';
+import { servicesByPillar } from '@/data/services';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -174,9 +176,24 @@ const faqItems = [
 ];
 
 const ActivaTusVentas = () => {
+  const activaServices = servicesByPillar.activa || [];
+  
   const seoData = useAdvancedSEO({
     pageContent: "Campañas digitales y IA para activar ventas, generar leads y multiplicar resultados comerciales. Especialistas en publicidad online y automatización de procesos de ventas."
   });
+
+  // Generate ItemList schema for services
+  const itemListSchema = generateItemListSchema({
+    items: activaServices.map(s => ({
+      name: s.title,
+      url: `https://hayasmarketing.com${s.href}`,
+      description: s.description
+    })),
+    listName: 'Servicios Activa tus ventas - Hayas Marketing',
+    listDescription: 'Campañas publicitarias, consultoría estratégica, inteligencia artificial y automatización para activar y multiplicar tus ventas.'
+  });
+
+  const combinedStructuredData = [seoData.structuredData, itemListSchema].filter(Boolean);
 
   return (
     <div id="top" className="min-h-screen bg-white">
@@ -185,9 +202,9 @@ const ActivaTusVentas = () => {
         <meta name="description" content={seoData.description} />
         <link rel="canonical" href={`https://hayasmarketing.com${seoData.canonical}`} />
         <meta name="robots" content={seoData.robots} />
-        {seoData.structuredData && (
+        {combinedStructuredData && (
           <script type="application/ld+json">
-            {JSON.stringify(seoData.structuredData)}
+            {JSON.stringify(combinedStructuredData)}
           </script>
         )}
       </head>

@@ -11,6 +11,7 @@ import { getIndustriesInGroup, getServicesWithSuccessCases } from '@/data/succes
 import { EnhancedSEO } from '@/components/EnhancedSEO';
 import { DynamicH1 } from '@/components/DynamicH1';
 import { DynamicH2 } from '@/components/DynamicH2';
+import { generateItemListSchema } from '@/data/seoData';
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -91,6 +92,17 @@ const CasosExito = () => {
       word.charAt(0).toUpperCase() + word.slice(1)
     ).join(' ');
   };
+
+  // Generate ItemList schema for success cases
+  const itemListSchema = generateItemListSchema({
+    items: filteredCases.map(c => ({
+      name: c.name,
+      url: `https://hayasmarketing.com/es/casos-exito/${c.urlSlug || c.name.toLowerCase().replace(/\s+/g, '-')}`,
+      description: c.industry
+    })),
+    listName: 'Casos de Éxito en Marketing Digital - Hayas Marketing',
+    listDescription: 'Proyectos reales de transformación digital con marketing, CRM y automatización en más de 15 sectores diferentes.'
+  });
 
   return (
     <div className="min-h-screen bg-background">
