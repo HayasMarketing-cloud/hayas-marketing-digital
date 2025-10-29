@@ -97,7 +97,7 @@ const CasosExito = () => {
   const itemListSchema = generateItemListSchema({
     items: filteredCases.map(c => ({
       name: c.name,
-      url: `https://hayasmarketing.com/es/casos-exito/${c.urlSlug || c.name.toLowerCase().replace(/\s+/g, '-')}`,
+      url: `https://hayasmarketing.com${c.link}`,
       description: c.industry
     })),
     listName: 'Casos de Éxito en Marketing Digital - Hayas Marketing',
