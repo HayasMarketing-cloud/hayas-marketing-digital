@@ -57,27 +57,26 @@ const StandardGHLForm: React.FC<StandardGHLFormProps> = ({
   // Tracking GTM: Detectar envío del formulario GHL vía postMessage
   useEffect(() => {
     const handleFormSubmit = (event: MessageEvent) => {
-      // Debug: mostrar todos los postMessage recibidos
-      if (event.data && event.data.type) {
-        console.log('📨 postMessage recibido:', event.data.type, event.data);
-      }
+      if (!event.data || !event.data.type) return;
 
       // 1. Envío del formulario (desde GHL iframe)
-      if (event.data && event.data.type === "hsFormCallback" && event.data.eventName === "onFormSubmit") {
+      if (event.data.type === "hsFormCallback" && event.data.eventName === "onFormSubmit") {
         const detectedFormId = event.data.id || formId;
         const pageUrl = window.location.href;
         
-        // Almacenar datos para usar en página de gracias
         const formData = {
           form_id: detectedFormId,
           origin_url: pageUrl,
           form_name: title,
           timestamp: Date.now()
         };
-        sessionStorage.setItem('ghl_last_form', JSON.stringify(formData));
-        console.log('💾 Datos guardados en sessionStorage:', formData);
+        
+        try {
+          sessionStorage.setItem('ghl_last_form', JSON.stringify(formData));
+        } catch (e) {
+          console.warn('No se pudo guardar en sessionStorage:', e);
+        }
 
-        // Push al dataLayer
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
           event: 'ghl_form_submit',
@@ -86,98 +85,70 @@ const StandardGHLForm: React.FC<StandardGHLFormProps> = ({
           form_name: title
         });
 
-        console.log("✅ GTM: ghl_form_submit enviado:", detectedFormId, "desde", pageUrl);
+        console.log("✅ GTM: ghl_form_submit enviado");
       }
 
       // 2. Página de gracias cargada en iframe (puente iframe→parent)
-      if (event.data && event.data.type === "ghl_iframe_thankyou") {
-        console.log('🎯 Recibido ghl_iframe_thankyou desde iframe');
+      if (event.data.type === "ghl_iframe_thankyou") {
         try {
           const raw = sessionStorage.getItem('ghl_last_form');
-          console.log('📦 sessionStorage contenido:', raw);
-          
           if (raw) {
             const data = JSON.parse(raw);
-            const thankyouData = {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
               event: 'ghl_thankyou',
               form_id: data.form_id,
               origin_url: data.origin_url,
               thankyou_url: event.data.thankyou_url,
               form_name: data.form_name
-            };
-            
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push(thankyouData);
-            console.log('✅ GTM: ghl_thankyou enviado:', thankyouData);
-            
-            // Limpiar después de usar
+            });
             sessionStorage.removeItem('ghl_last_form');
-            console.log('🧹 sessionStorage limpiado');
-          } else {
-            console.warn('⚠️ No hay datos en sessionStorage para ghl_thankyou');
+            console.log('✅ GTM: ghl_thankyou enviado');
           }
         } catch (e) {
-          console.error('❌ Error procesando ghl_iframe_thankyou:', e);
+          console.warn('Error procesando ghl_iframe_thankyou:', e);
         }
       }
     };
 
     window.addEventListener("message", handleFormSubmit);
-
-    return () => {
-      window.removeEventListener("message", handleFormSubmit);
-    };
+    return () => window.removeEventListener("message", handleFormSubmit);
   }, [formId, title]);
 
   // Intentar insertar campo oculto con page_url en el iframe
   useEffect(() => {
     const iframe = document.getElementById(iframeId) as HTMLIFrameElement;
-    
     if (!iframe) return;
 
-    const insertHiddenField = () => {
+    const onLoad = () => {
       try {
         const iframeDoc = iframe.contentDocument || iframe.contentWindow?.document;
-        if (!iframeDoc) return;
-
-        const input = iframeDoc.createElement("input");
-        input.type = "hidden";
-        input.name = "page_url";
-        input.value = window.location.href;
-        
-        const form = iframeDoc.querySelector("form");
-        if (form && !form.querySelector('input[name="page_url"]')) {
-          form.appendChild(input);
-          console.log("✅ Campo oculto page_url añadido al formulario GHL");
+        if (iframeDoc) {
+          const form = iframeDoc.querySelector("form");
+          if (form && !form.querySelector('input[name="page_url"]')) {
+            const input = iframeDoc.createElement("input");
+            input.type = "hidden";
+            input.name = "page_url";
+            input.value = window.location.href;
+            form.appendChild(input);
+          }
         }
       } catch (err) {
-        // Cross-origin blocking esperado - no rompe funcionalidad
-        console.warn("ℹ️ No se pudo insertar campo oculto (cross-domain):", err);
+        // Cross-origin blocking - no rompe funcionalidad
       }
-    };
 
-    const onLoad = () => {
-      insertHiddenField();
-      try {
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-          event: "ghl_form_loaded",
-          form_id: formId,
-          page_url: window.location.href,
-          form_name: title
-        });
-        console.log("ℹ️ GHL form loaded:", formId, "en", window.location.href);
-      } catch (e) {
-        // No-op
-      }
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "ghl_form_loaded",
+        form_id: formId,
+        page_url: window.location.href,
+        form_name: title
+      });
     };
 
     iframe.addEventListener('load', onLoad);
-
-    return () => {
-      iframe.removeEventListener('load', onLoad);
-    };
-  }, [iframeId]);
+    return () => iframe.removeEventListener('load', onLoad);
+  }, [iframeId, formId, title]);
 
   return (
     <div className={`bg-background/95 backdrop-blur-sm rounded-2xl border border-border/40 shadow-2xl overflow-hidden ${className}`}>

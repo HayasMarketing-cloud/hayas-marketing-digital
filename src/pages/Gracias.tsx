@@ -11,40 +11,21 @@ const Gracias = () => {
   // GTM: Si estamos en iframe, notificar al parent que se cargó la página de gracias
   useEffect(() => {
     try {
-      // Detectar si estamos dentro de un iframe
       if (window.self !== window.top) {
-        const message = {
+        window.parent.postMessage({
           type: 'ghl_iframe_thankyou',
           thankyou_url: window.location.href
-        };
-        
-        // Retry mechanism: intentar enviar el mensaje varias veces
-        let attempts = 0;
-        const maxAttempts = 3;
-        const sendMessage = () => {
-          attempts++;
-          window.parent.postMessage(message, '*');
-          console.log(`✅ postMessage enviado al parent (intento ${attempts}):`, message);
-          
-          if (attempts < maxAttempts) {
-            setTimeout(sendMessage, 100); // Reintentar después de 100ms
-          }
-        };
-        
-        sendMessage();
+        }, '*');
+        console.log('✅ postMessage enviado al parent desde página de gracias');
       }
     } catch (e) {
-      // Cross-origin blocking - no rompe funcionalidad
       console.warn('ℹ️ No se pudo enviar postMessage (cross-domain):', e);
     }
-  }, []);
 
-  // Limpiar parámetros de la URL sin recargar la página
-  useEffect(() => {
+    // Limpiar parámetros de la URL
     if (window.location.search) {
       const cleanUrl = window.location.pathname;
       window.history.replaceState({}, document.title, cleanUrl);
-      console.log('🧹 URL limpiada:', cleanUrl);
     }
   }, []);
 
