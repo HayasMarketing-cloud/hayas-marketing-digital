@@ -229,6 +229,90 @@ export type Database = {
         }
         Relationships: []
       }
+      seo_pages: {
+        Row: {
+          about: Json | null
+          additional_schema: Json | null
+          canonical: string
+          category: string | null
+          created_at: string | null
+          description: string
+          faqs: Json | null
+          h1: string
+          h2_primary: string | null
+          h2_secondary: Json | null
+          h3_strategic: Json | null
+          id: string
+          in_language: string | null
+          is_indexable: boolean | null
+          keywords: Json | null
+          mentions: Json | null
+          og_image: string | null
+          og_type: string | null
+          path: string
+          pillar_page: string | null
+          related_pages: Json | null
+          robots: string | null
+          schema_type: string | null
+          title: string
+          updated_at: string | null
+        }
+        Insert: {
+          about?: Json | null
+          additional_schema?: Json | null
+          canonical: string
+          category?: string | null
+          created_at?: string | null
+          description: string
+          faqs?: Json | null
+          h1: string
+          h2_primary?: string | null
+          h2_secondary?: Json | null
+          h3_strategic?: Json | null
+          id?: string
+          in_language?: string | null
+          is_indexable?: boolean | null
+          keywords?: Json | null
+          mentions?: Json | null
+          og_image?: string | null
+          og_type?: string | null
+          path: string
+          pillar_page?: string | null
+          related_pages?: Json | null
+          robots?: string | null
+          schema_type?: string | null
+          title: string
+          updated_at?: string | null
+        }
+        Update: {
+          about?: Json | null
+          additional_schema?: Json | null
+          canonical?: string
+          category?: string | null
+          created_at?: string | null
+          description?: string
+          faqs?: Json | null
+          h1?: string
+          h2_primary?: string | null
+          h2_secondary?: Json | null
+          h3_strategic?: Json | null
+          id?: string
+          in_language?: string | null
+          is_indexable?: boolean | null
+          keywords?: Json | null
+          mentions?: Json | null
+          og_image?: string | null
+          og_type?: string | null
+          path?: string
+          pillar_page?: string | null
+          related_pages?: Json | null
+          robots?: string | null
+          schema_type?: string | null
+          title?: string
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 import { getSEOData, EnhancedPageSEOData, extractConceptsFromContent, PageHeadings, getCanonicalUrl, getRobotsDirective } from '@/data/seoData';
+import { useSEOPage } from './useSEOData';
 
 interface UseAdvancedSEOOptions {
   pageContent?: string; // For automatic about/mentions extraction
@@ -33,12 +34,23 @@ export const useAdvancedSEO = (options: UseAdvancedSEOOptions = {}): AdvancedSEO
   const location = useLocation();
   const { pageContent, customSEO, skipAutoExtraction = false } = options;
 
+  // ✨ NUEVO: Consultar DB primero
+  const { data: dbSEOPage } = useSEOPage(location.pathname);
+
   // Stabilize origin to prevent re-renders
   const origin = useMemo(() => window.location.origin, []);
 
   return useMemo(() => {
     const path = location.pathname;
-    const seoData = getSEOData(path);
+    
+    // ✨ Priorizar DB sobre fallback
+    let seoData: EnhancedPageSEOData | null = null;
+    
+    if (dbSEOPage?.data) {
+      seoData = dbSEOPage.data; // Usar datos de DB si existen
+    } else {
+      seoData = getSEOData(path); // Fallback a seoData.ts
+    }
     
     // Fallback SEO data if not found in central data
     const fallbackSEO: EnhancedPageSEOData = {
@@ -104,7 +116,7 @@ export const useAdvancedSEO = (options: UseAdvancedSEOOptions = {}): AdvancedSEO
       headings: mergedSEO.headings,
       robots: mergedSEO.robots
     };
-  }, [location.pathname, pageContent, customSEO, skipAutoExtraction, origin]);
+  }, [location.pathname, pageContent, customSEO, skipAutoExtraction, origin, dbSEOPage]);
 };
 
 // Generate base structured data based on schema type
