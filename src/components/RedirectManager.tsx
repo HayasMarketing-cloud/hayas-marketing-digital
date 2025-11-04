@@ -16,28 +16,38 @@ export const RedirectManager: React.FC = () => {
   const location = useLocation();
 
   useEffect(() => {
-    const redirect = getRedirectForPath(location.pathname);
-    if (redirect) {
-      console.log(
-        `[RedirectManager] ${redirect.type} redirect: ${redirect.source} → ${redirect.destination}`,
-        `(${redirect.category})`
-      );
+    try {
+      const redirect = getRedirectForPath(location.pathname);
+      if (redirect) {
+        console.log(
+          `[RedirectManager] ${redirect.type} redirect: ${redirect.source} → ${redirect.destination}`,
+          `(${redirect.category})`
+        );
+      }
+    } catch (error) {
+      console.error('[RedirectManager] Error processing redirect:', error);
     }
   }, [location.pathname]);
 
-  const redirect = getRedirectForPath(location.pathname);
+  try {
+    const redirect = getRedirectForPath(location.pathname);
 
-  // Si hay un redirect configurado, aplicarlo
-  if (redirect) {
-    if (redirect.type === '301') {
-      // Redirección permanente - usar replace para no agregar al historial
-      return <Navigate to={redirect.destination} replace />;
+    // Si hay un redirect configurado, aplicarlo
+    if (redirect) {
+      if (redirect.type === '301') {
+        // Redirección permanente - usar replace para no agregar al historial
+        return <Navigate to={redirect.destination} replace />;
+      }
+      
+      if (redirect.type === '404') {
+        // Contenido inexistente - enviar a página 404 dedicada
+        return <Navigate to="/es/404" replace />;
+      }
     }
-    
-    if (redirect.type === '404') {
-      // Contenido inexistente - enviar a página 404 dedicada
-      return <Navigate to="/es/404" replace />;
-    }
+  } catch (error) {
+    console.error('[RedirectManager] Critical error:', error);
+    // En caso de error crítico, permitir que el routing normal continúe
+    return null;
   }
 
   // No hay redirect, continuar con el routing normal

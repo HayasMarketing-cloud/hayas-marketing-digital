@@ -162,7 +162,7 @@ export const redirectsConfig: RedirectRule[] = [
   { id: 'srv-es-7', source: '/es/estrategia-marketing-digital-y-ventas', destination: '/es/servicios/estrategia-de-marketing-digital-360', type: '301', category: 'Servicios con /es/' },
   { id: 'srv-es-8', source: '/es/consultoria-formacion-hubspot', destination: '/es/servicios/crm-y-automatizacion-de-marketing', type: '301', category: 'Servicios con /es/' },
   { id: 'srv-es-9', source: '/es/campana-inbound-marketing', destination: '/es', type: '301', category: 'Servicios con /es/' },
-  { id: 'srv-es-10', source: '/es/diseño-y-desarrollo-paginas-web', destination: '/es/servicios/diseno-y-desarrollo-paginas-web', type: '301', category: 'Servicios con /es/' },
+  { id: 'srv-es-10', source: '/es/diseno-y-desarrollo-paginas-web', destination: '/es/servicios/diseno-y-desarrollo-paginas-web', type: '301', category: 'Servicios con /es/' },
   { id: 'srv-es-11', source: '/es/gestion-de-clientes-con-la-plataforma-crm-de-hubspot', destination: '/es/servicios/kit-digital-gestion-de-clientes-crm', type: '301', category: 'Servicios con /es/' },
   { id: 'srv-es-12', source: '/es/inbound-marketing-y-ventas-para-empresas-de-logistica-y-transporte', destination: '/es', type: '301', category: 'Servicios con /es/' },
 
@@ -218,9 +218,8 @@ export const redirectsConfig: RedirectRule[] = [
   { id: 'feed-1', source: '/es/*/feed/', destination: '/es/blog', type: '301', category: 'Feed RSS' },
 
   // ============================================================
-  // SERVICIOS ADICIONALES (40 redirects)
+  // SERVICIOS ADICIONALES (30 redirects)
   // ============================================================
-  { id: 'srv-add-1', source: '/es/servicios/', destination: '/es', type: '301', category: 'Servicios Adicionales' },
   { id: 'srv-add-2', source: '/es/marketing-digital/', destination: '/es/servicios/estrategia-de-marketing-digital-360', type: '301', category: 'Servicios Adicionales' },
   { id: 'srv-add-3', source: '/es/diseno-web/', destination: '/es/servicios/diseno-y-desarrollo-paginas-web', type: '301', category: 'Servicios Adicionales' },
   { id: 'srv-add-4', source: '/es/desarrollo-web/', destination: '/es/servicios/diseno-y-desarrollo-paginas-web', type: '301', category: 'Servicios Adicionales' },
