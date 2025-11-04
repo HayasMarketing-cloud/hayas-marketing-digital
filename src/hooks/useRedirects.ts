@@ -1,53 +1,40 @@
 import { useState, useEffect } from 'react';
-import { ParsedRedirect, parseRedirectsFile, loadRedirectsFile } from '@/utils/seo-analytics/redirectsParser';
-import { extractRedirectsFromRoutes } from '@/utils/seo-analytics/redirectExtractor';
+import { redirectsConfig, RedirectRule } from '@/config/redirectsConfig';
 
 interface UseRedirectsReturn {
-  redirects: ParsedRedirect[];
+  redirects: RedirectRule[];
   isLoading: boolean;
   error: Error | null;
-  source: 'file' | 'fallback';
+  source: 'config' | 'fallback';
 }
 
 /**
- * Hook para cargar y parsear las redirecciones desde public/_redirects
- * Con fallback a datos legacy si falla la carga
+ * Hook para cargar las redirecciones desde redirectsConfig.ts
+ * Nueva arquitectura React Router nativa (Enero 2025)
  */
 export function useRedirects(): UseRedirectsReturn {
-  const [redirects, setRedirects] = useState<ParsedRedirect[]>([]);
+  const [redirects, setRedirects] = useState<RedirectRule[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
-  const [source, setSource] = useState<'file' | 'fallback'>('file');
 
   useEffect(() => {
-    async function loadRedirects() {
-      try {
-        setIsLoading(true);
-        const content = await loadRedirectsFile();
-        const parsed = parseRedirectsFile(content);
-        setRedirects(parsed);
-        setSource('file');
-        setError(null);
-      } catch (err) {
-        console.error('Error loading _redirects file:', err);
-        setError(err instanceof Error ? err : new Error('Unknown error'));
-        
-        // Fallback a datos legacy
-        const fallbackData = extractRedirectsFromRoutes();
-        const parsedFallback: ParsedRedirect[] = fallbackData.map((r, idx) => ({
-          ...r,
-          isSplat: false,
-          lineNumber: idx + 1
-        }));
-        setRedirects(parsedFallback);
-        setSource('fallback');
-      } finally {
-        setIsLoading(false);
-      }
+    setIsLoading(true);
+    try {
+      // Cargar desde redirectsConfig.ts (síncrono)
+      setRedirects(redirectsConfig);
+      setError(null);
+    } catch (err) {
+      console.error('Error loading redirectsConfig:', err);
+      setError(err instanceof Error ? err : new Error('Unknown error'));
+    } finally {
+      setIsLoading(false);
     }
-
-    loadRedirects();
   }, []);
 
-  return { redirects, isLoading, error, source };
+  return { 
+    redirects, 
+    isLoading, 
+    error, 
+    source: 'config' 
+  };
 }

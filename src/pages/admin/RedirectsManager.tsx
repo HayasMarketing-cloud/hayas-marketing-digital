@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { RedirectTable } from '@/components/seo-dashboard/RedirectTable';
 import { useRedirects } from '@/hooks/useRedirects';
-import { getRedirectStatsFromParsed } from '@/utils/seo-analytics/redirectsParser';
+import { getRedirectStats } from '@/config/redirectsConfig';
 import { 
   ArrowLeft, 
   CheckCircle2, 
@@ -28,8 +28,8 @@ const RedirectsManager: React.FC = () => {
   const { redirects, isLoading, error, source } = useRedirects();
 
   const stats = useMemo(() => {
-    if (redirects.length === 0) return { total: 0, byCategory: {}, byType: {}, valid: 0, warnings: 0, splatRules: 0 };
-    return getRedirectStatsFromParsed(redirects);
+    if (redirects.length === 0) return { total: 0, byCategory: {}, byType: {}, valid: 0, categories: [] };
+    return getRedirectStats();
   }, [redirects]);
 
   const categories = useMemo(() => Object.keys(stats.byCategory || {}), [stats]);

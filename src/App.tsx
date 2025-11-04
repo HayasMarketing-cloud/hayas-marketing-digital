@@ -9,6 +9,7 @@ import ScrollToTop from './components/ScrollToTop';
 import DraftProtection from './components/DraftProtection';
 import PageSuspense from './components/PageSuspense';
 import RoutePreloader from './components/RoutePreloader';
+import { RedirectManager } from './components/RedirectManager';
 
 // Lazy imports organizados por categoría
 import * as Pages from './utils/lazyImports';
@@ -33,7 +34,10 @@ const App = () => (
           <RoutePreloader />
           <SofiaWidget />
           <DraftProtection>
-          <Routes>
+            {/* Gestor de redirecciones React Router nativo */}
+            <RedirectManager />
+            
+            <Routes>
            {/* REDIRECCIÓN ROOT A ESPAÑOL */}
            <Route path="/" element={<Navigate to="/es" replace />} />
            <Route path="/e" element={<Navigate to="/es" replace />} />
@@ -464,6 +468,9 @@ const App = () => (
            <Route path="/admin/seo/sitemap" element={<PageSuspense><Pages.SitemapManager /></PageSuspense>} />
            <Route path="/admin/seo/robots" element={<PageSuspense><Pages.RobotsManager /></PageSuspense>} />
            <Route path="/admin/seo/redirects" element={<PageSuspense><Pages.RedirectsManager /></PageSuspense>} />
+           
+           {/* Página 404 dedicada */}
+           <Route path="/es/404" element={<PageSuspense><Pages.Error404 /></PageSuspense>} />
            <Route path="/admin/seo/indexnow" element={<PageSuspense><Pages.IndexNowManager /></PageSuspense>} />
           <Route path="/es/servicios/implementacion-funnel" element={<PageSuspense><Pages.ImplementacionFunnel /></PageSuspense>} />
           <Route path="/es/servicios/administracion-crm" element={<PageSuspense><Pages.AdministracionCrm /></PageSuspense>} />

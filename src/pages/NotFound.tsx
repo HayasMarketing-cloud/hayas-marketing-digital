@@ -1,5 +1,6 @@
 import { useLocation, Link } from "react-router-dom";
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { Home, Search, Mail, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -19,7 +20,14 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
+    <>
+      <Helmet>
+        <meta name="robots" content="noindex, follow" />
+        <meta name="googlebot" content="noindex, follow" />
+        <title>Página no encontrada | Hayas Marketing</title>
+      </Helmet>
+      
+      <div className="min-h-screen flex items-center justify-center bg-background">
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-2xl mx-auto text-center">
           {/* Error Code con gradiente corporativo */}
@@ -91,6 +99,7 @@ const NotFound = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
