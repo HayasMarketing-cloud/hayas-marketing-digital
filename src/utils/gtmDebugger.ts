@@ -7,8 +7,6 @@
  * - gtmDebugger.enableDebugMode() - Instrucciones para activar modo debug
  */
 
-import '@/types/gtm';
-
 export const gtmDebugger = {
   /**
    * Verifica si GTM está cargado correctamente
