@@ -1,12 +1,6 @@
 import React, { useEffect, useId } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-
-// Declaración de tipos para GTM dataLayer
-declare global {
-  interface Window {
-    dataLayer: Record<string, any>[];
-  }
-}
+import '@/types/gtm';
 
 interface StandardGHLFormProps {
   formId: string;

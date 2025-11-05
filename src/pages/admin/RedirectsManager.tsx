@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -18,14 +18,34 @@ import {
   FileText,
   TrendingUp,
   Shield,
-  Loader2
+  Loader2,
+  Radio
 } from 'lucide-react';
 
 const RedirectsManager: React.FC = () => {
   const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [gtmStatus, setGtmStatus] = useState({
+    loaded: false,
+    eventsCount: 0
+  });
 
   const { redirects, isLoading, error, source } = useRedirects();
+
+  // Verificar estado de GTM cada 5 segundos
+  useEffect(() => {
+    const checkGTM = () => {
+      setGtmStatus({
+        loaded: !!(window as any).google_tag_manager && !!(window as any).dataLayer,
+        eventsCount: (window as any).dataLayer?.length || 0
+      });
+    };
+    
+    checkGTM();
+    const interval = setInterval(checkGTM, 5000);
+    
+    return () => clearInterval(interval);
+  }, []);
 
   const stats = useMemo(() => {
     if (redirects.length === 0) return { total: 0, byCategory: {}, byType: {}, valid: 0, categories: [] };
@@ -96,7 +116,7 @@ const RedirectsManager: React.FC = () => {
           </div>
 
           {/* Executive Summary Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
             <Card>
               <CardHeader className="pb-3">
                 <CardTitle className="text-sm font-medium flex items-center gap-2">
@@ -148,6 +168,29 @@ const RedirectsManager: React.FC = () => {
               <CardContent>
                 <div className="text-2xl font-bold">Oct 2025</div>
                 <p className="text-xs text-muted-foreground mt-1">357 redirects activos</p>
+              </CardContent>
+            </Card>
+
+            <Card className={gtmStatus.loaded ? 'border-green-500/50 bg-green-50/50 dark:bg-green-950/30' : 'border-orange-500/50 bg-orange-50/50 dark:bg-orange-950/30'}>
+              <CardHeader className="pb-3">
+                <CardTitle className="text-sm font-medium flex items-center gap-2">
+                  <Radio className={`h-4 w-4 ${gtmStatus.loaded ? 'text-green-600 animate-pulse' : 'text-orange-600'}`} />
+                  GTM Status
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="flex items-center gap-2 mb-2">
+                  <div className={`w-3 h-3 rounded-full ${gtmStatus.loaded ? 'bg-green-500 animate-pulse' : 'bg-orange-500'}`} />
+                  <span className="text-lg font-bold">
+                    {gtmStatus.loaded ? 'Activo' : 'Inactivo'}
+                  </span>
+                </div>
+                <p className="text-xs text-muted-foreground">
+                  {gtmStatus.eventsCount} eventos enviados
+                </p>
+                <p className="text-xs text-muted-foreground mt-1">
+                  ID: GTM-WKMHQ2PM
+                </p>
               </CardContent>
             </Card>
           </div>
