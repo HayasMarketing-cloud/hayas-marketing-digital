@@ -1,17 +1,15 @@
-import React, { Suspense, lazy } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { Calendar, User, Clock, ArrowLeft, Share2, BookOpen, Brain, Target, TrendingUp } from 'lucide-react';
 import Navigation from '@/components/Navigation';
-import LoadingSpinner from '@/components/LoadingSpinner';
+import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
 import EnhancedSEO from '@/components/EnhancedSEO';
+import ArticleUtilitySection from '@/components/BlogPost/ArticleUtilitySection';
 import teamMarketingCollaboration from '@/assets/team-marketing-collaboration.jpg';
-
-const Footer = lazy(() => import('@/components/Footer'));
-const ArticleUtilitySection = lazy(() => import('@/components/BlogPost/ArticleUtilitySection'));
 
 const BlogIAMarketing = () => {
   // Extract article content for SEO analysis
@@ -570,12 +568,10 @@ const BlogIAMarketing = () => {
 
             <Separator className="my-12" />
 
-            <Suspense fallback={<LoadingSpinner />}>
-              <ArticleUtilitySection 
-                title="La Inteligencia Artificial (IA) y su aplicación en Marketing"
-                url="https://hayasmarketing.com/es/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing"
-              />
-            </Suspense>
+            <ArticleUtilitySection 
+              title="La Inteligencia Artificial (IA) y su aplicación en Marketing"
+              url="https://hayasmarketing.com/es/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing"
+            />
 
             {/* Navigation */}
             <div className="flex justify-between items-center mt-12 pt-8 border-t">
@@ -594,9 +590,7 @@ const BlogIAMarketing = () => {
         </div>
       </main>
       
-      <Suspense fallback={<LoadingSpinner />}>
-        <Footer />
-      </Suspense>
+      <Footer />
       <ScrollToTop />
     </div>
   );
