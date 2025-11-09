@@ -36,12 +36,7 @@ export default defineConfig(({ mode }) => ({
             './src/pages/CasoExitoIVirgenExtra.tsx',
           ],
           
-          // Chunk para blog posts (lazy load group)
-          'blog-posts': [
-            './src/pages/BlogIAMarketing.tsx',
-            './src/pages/BlogPerfilClienteIdeal.tsx',
-            './src/pages/BlogCalculoInversionMarketing.tsx',
-          ],
+          // Blog posts - removed to allow automatic route-based splitting
           
           // Chunk para servicios (lazy load group)
           'servicios': [

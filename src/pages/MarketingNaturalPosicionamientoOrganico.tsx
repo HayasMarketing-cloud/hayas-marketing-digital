@@ -80,7 +80,18 @@ const MarketingNaturalPosicionamientoOrganico: React.FC = () => {
     icon: <Heart className="h-6 w-6" />,
     tools: ["Social Listening", "Brand Monitoring", "Feedback Analysis"]
   }];
-  return <BlogPostTemplate metadata={metadata}>
+  return <BlogPostTemplate 
+    metadata={metadata}
+    heroImage={{
+      src: heroImage,
+      alt: "Marketing natural y posicionamiento orgánico - Estrategia de atracción auténtica",
+      width: 1200,
+      height: 675,
+      loading: "eager",
+      fetchPriority: "high"
+    }}
+    faqs={faqs}
+  >
       {/* Introducción */}
       <div className="mb-8">
         <p className="text-lg text-muted-foreground leading-relaxed mb-6">

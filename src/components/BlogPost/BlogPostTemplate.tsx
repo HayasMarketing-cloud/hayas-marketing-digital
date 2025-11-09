@@ -36,6 +36,8 @@ interface BlogPostTemplateProps {
     alt: string;
     width?: number;
     height?: number;
+    loading?: "eager" | "lazy";
+    fetchPriority?: "high" | "low" | "auto";
   };
   children: React.ReactNode;
   faqs?: Array<{

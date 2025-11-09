@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { Calendar, User, Clock, ArrowLeft, Share2, BookOpen, Brain, Target, TrendingUp } from 'lucide-react';
 import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
+import LoadingSpinner from '@/components/LoadingSpinner';
 import ScrollToTop from '@/components/ScrollToTop';
 import EnhancedSEO from '@/components/EnhancedSEO';
-import ArticleUtilitySection from '@/components/BlogPost/ArticleUtilitySection';
 import teamMarketingCollaboration from '@/assets/team-marketing-collaboration.jpg';
+
+const Footer = lazy(() => import('@/components/Footer'));
+const ArticleUtilitySection = lazy(() => import('@/components/BlogPost/ArticleUtilitySection'));
 
 const BlogIAMarketing = () => {
   // Extract article content for SEO analysis
@@ -87,7 +89,17 @@ const BlogIAMarketing = () => {
               </Button>
             </div>
 
-            <img src={teamMarketingCollaboration} alt="Equipo de marketing colaborando en estrategias digitales" width={1920} height={1080} className="w-full h-64 md:h-80 object-cover rounded-lg mt-8 shadow-lg" style={{ aspectRatio: '16/9' }} />
+            <img 
+              src={teamMarketingCollaboration} 
+              alt="Equipo de marketing colaborando en estrategias digitales" 
+              width={1200} 
+              height={675}
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+              className="w-full h-64 md:h-80 object-cover rounded-lg mt-8 shadow-lg" 
+              style={{ aspectRatio: '16/9' }} 
+            />
           </header>
 
           {/* Content */}
@@ -558,10 +570,12 @@ const BlogIAMarketing = () => {
 
             <Separator className="my-12" />
 
-            <ArticleUtilitySection 
-              title="La Inteligencia Artificial (IA) y su aplicación en Marketing"
-              url="https://hayasmarketing.com/es/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing"
-            />
+            <Suspense fallback={<LoadingSpinner />}>
+              <ArticleUtilitySection 
+                title="La Inteligencia Artificial (IA) y su aplicación en Marketing"
+                url="https://hayasmarketing.com/es/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing"
+              />
+            </Suspense>
 
             {/* Navigation */}
             <div className="flex justify-between items-center mt-12 pt-8 border-t">
@@ -580,7 +594,9 @@ const BlogIAMarketing = () => {
         </div>
       </main>
       
-      <Footer />
+      <Suspense fallback={<LoadingSpinner />}>
+        <Footer />
+      </Suspense>
       <ScrollToTop />
     </div>
   );

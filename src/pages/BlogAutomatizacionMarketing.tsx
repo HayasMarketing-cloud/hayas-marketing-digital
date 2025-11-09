@@ -45,7 +45,9 @@ const BlogAutomatizacionMarketing = () => {
     src: "/automatizacion-marketing-hero.jpg",
     alt: "Dashboard de automatización de marketing mostrando workflows y campañas automatizadas",
     width: 1200,
-    height: 675
+    height: 675,
+    loading: "eager" as const,
+    fetchPriority: "high" as const
   };
   const faqs = [{
     question: "¿Qué es exactamente la automatización de marketing?",

@@ -89,7 +89,9 @@ const BlogCalculoInversionMarketing = () => {
         src: calculoInversionHero,
         alt: "Cálculo de inversión en plan de marketing digital - estrategia y presupuesto",
         width: 1200,
-        height: 675
+        height: 675,
+        loading: "eager",
+        fetchPriority: "high"
       }}
       faqs={faqs}
       relatedServices={relatedServices}

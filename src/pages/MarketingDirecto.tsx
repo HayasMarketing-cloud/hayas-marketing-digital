@@ -1,15 +1,17 @@
-import React, { useEffect } from 'react';
+import React, { Suspense, lazy } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import KitDigitalBanner from '@/components/KitDigitalBanner';
-
-import FAQSection from '@/components/FAQSection';
+import LoadingSpinner from '@/components/LoadingSpinner';
 import { Package, Send, Mail, Palette, CalendarCheck2, Truck, BarChart3, Users, Sparkles, Target, Settings, CheckCircle } from 'lucide-react';
 import Seo from '@/components/Seo';
+
+const Footer = lazy(() => import('@/components/Footer'));
+const FAQSection = lazy(() => import('@/components/FAQSection'));
+const KitDigitalBanner = lazy(() => import('@/components/KitDigitalBanner'));
 const mdServices = [
   {
     icon: <Target className="h-8 w-8 text-primary" />,
@@ -230,10 +232,12 @@ const MarketingDirecto: React.FC = () => {
       </section>
 
       {/* FAQ + Contacto */}
-      <FAQSection faqs={faqItems} />
-      
-      <KitDigitalBanner />
-      <Footer />
+      <Suspense fallback={<LoadingSpinner />}>
+        <FAQSection faqs={faqItems} />
+        
+        <KitDigitalBanner />
+        <Footer />
+      </Suspense>
     </div>
   );
 };

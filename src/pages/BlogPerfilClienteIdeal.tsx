@@ -81,7 +81,11 @@ const BlogPerfilClienteIdeal = () => {
       metadata={metadata}
       heroImage={{
         src: "/perfil-cliente-ideal-hero.jpg",
-        alt: "Profesionales analizando datos de buyer personas en una oficina moderna"
+        alt: "Profesionales analizando datos de buyer personas en una oficina moderna",
+        width: 1200,
+        height: 675,
+        loading: "eager",
+        fetchPriority: "high"
       }}
       faqs={faqs}
       relatedServices={relatedServices}
@@ -166,6 +170,10 @@ const BlogPerfilClienteIdeal = () => {
               <img 
                 src="/lovable-uploads/9b4c2a8f-f75f-451e-9bb6-d3e25aae34e8.png" 
                 alt="Ejemplo de infografía de buyer persona - Marta Jiménez Marketing Manager con información sobre trabajo, problemas, desafíos y comportamiento digital"
+                width={1200}
+                height={800}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-auto"
               />
             </div>

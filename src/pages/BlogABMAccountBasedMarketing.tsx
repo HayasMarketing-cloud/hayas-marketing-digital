@@ -40,7 +40,9 @@ const BlogABMAccountBasedMarketing = () => {
     src: "/abm-account-based-marketing-hero.jpg",
     alt: "Estrategia Account-Based Marketing ABM para empresas B2B",
     width: 1200,
-    height: 630
+    height: 675,
+    loading: "eager" as const,
+    fetchPriority: "high" as const
   };
 
   const relatedServices = [
