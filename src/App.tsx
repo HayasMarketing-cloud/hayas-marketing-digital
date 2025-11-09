@@ -461,6 +461,9 @@ const App = () => (
            <Route path="/soluciones/activa-tu-estrategia-digital" element={<Navigate to="/es/soluciones/consultoria-estrategica" replace />} />
            <Route path="/ampliacion-de-las-ayudas-del-kit-digital-en-2024/" element={<Navigate to="/es/blog" replace />} />
           
+           {/* REDIRECTS MANAGER - Legacy URL */}
+           <Route path="/redirects-manager" element={<Navigate to="/admin/seo/redirects" replace />} />
+           
            {/* ADMIN - SEO Control Center */}
            <Route path="/admin/seo" element={<PageSuspense><Pages.SEODashboard /></PageSuspense>} />
            <Route path="/admin/seo/gsc" element={<PageSuspense><Pages.GSCFullReport /></PageSuspense>} />
