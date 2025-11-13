@@ -57,6 +57,7 @@ export const KitDigitalPresenciaAvanzada = lazy(() => import("@/pages/KitDigital
 // CRM y Herramientas
 export const HayasCRM = lazy(() => import("@/pages/HayasCRM"));
 export const ComparativaHubSpotGoHighLevel = lazy(() => import("@/pages/ComparativaHubSpotGoHighLevel"));
+export const HerramientaGeneradorWhatsApp = lazy(() => import("@/pages/HerramientaGeneradorWhatsApp"));
 
 // Blog
 export const Blog = lazy(() => import("@/pages/Blog"));

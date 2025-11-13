@@ -79,5 +79,27 @@ export const FreelancerFormSchema = z.object({
   website: z.string().max(0).optional(), // Honeypot field for bot protection
 });
 
+// WhatsApp link generator validation schema
+export const WhatsAppLinkSchema = z.object({
+  countryCode: z
+    .string()
+    .trim()
+    .min(1, "El código de país es requerido")
+    .regex(/^\+\d{1,4}$/, "Código de país inválido"),
+  phoneNumber: z
+    .string()
+    .trim()
+    .min(6, "El número debe tener al menos 6 dígitos")
+    .max(15, "El número debe tener menos de 15 dígitos")
+    .regex(/^[0-9]+$/, "Solo se permiten números"),
+  messageText: z
+    .string()
+    .trim()
+    .max(1000, "El mensaje debe tener menos de 1000 caracteres")
+    .optional()
+    .or(z.literal("")),
+});
+
 export type ContactFormData = z.infer<typeof ContactFormSchema>;
 export type FreelancerFormData = z.infer<typeof FreelancerFormSchema>;
+export type WhatsAppLinkData = z.infer<typeof WhatsAppLinkSchema>;
