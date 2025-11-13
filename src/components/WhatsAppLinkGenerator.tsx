@@ -212,58 +212,125 @@ const WhatsAppLinkGenerator = () => {
 
       {/* Right Column - Preview */}
       <div className="space-y-6">
-        {/* WhatsApp Preview */}
-        <Card className="shadow-lg border-2">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-lg">
-              <Smartphone className="h-5 w-5" />
-              Vista Previa
-            </CardTitle>
-            <CardDescription>
-              Así lo verán tus clientes al hacer clic
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            {/* WhatsApp-style preview */}
-            <div className="bg-[#ECE5DD] rounded-lg p-4 min-h-[200px] relative overflow-hidden">
-              {/* WhatsApp background pattern */}
-              <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDAgTSAwIDIwIEwgNDAgMjAgTSAyMCAwIEwgMjAgNDAgTSAwIDMwIEwgNDAgMzAgTSAzMCAwIEwgMzAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwMCIgb3BhY2l0eT0iMC4xIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')]" />
-              
-              <div className="relative space-y-3">
-                {/* Contact header */}
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-[#25D366] flex items-center justify-center text-white text-xl font-semibold">
-                    {selectedCountry?.flag || '👤'}
-                  </div>
-                  <div>
-                    <p className="font-semibold text-sm">
-                      {phoneNumber ? `${countryCode} ${phoneNumber}` : 'Tu número de WhatsApp'}
-                    </p>
-                    <p className="text-xs text-muted-foreground">
-                      {selectedCountry?.name || 'País'}
-                    </p>
-                  </div>
+        {/* Mobile Phone Mockup */}
+        <div className="relative">
+          <div className="text-center mb-4">
+            <p className="text-sm font-medium text-muted-foreground flex items-center justify-center gap-2">
+              <Smartphone className="h-4 w-4" />
+              Así lo verán en su móvil
+            </p>
+          </div>
+          
+          {/* Phone Frame */}
+          <div className="mx-auto max-w-[360px] bg-gray-900 rounded-[3rem] p-3 shadow-2xl ring-8 ring-gray-800">
+            {/* Phone Notch */}
+            <div className="bg-gray-900 h-6 w-32 mx-auto rounded-b-2xl absolute top-3 left-1/2 -translate-x-1/2 z-10" />
+            
+            {/* Screen */}
+            <div className="bg-white rounded-[2.5rem] overflow-hidden shadow-lg">
+              {/* Status Bar */}
+              <div className="bg-gray-100 px-6 py-2 flex justify-between items-center text-xs">
+                <span className="font-semibold">
+                  {new Date().toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' })}
+                </span>
+                <div className="flex gap-1 items-center">
+                  <svg className="w-4 h-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
+                  </svg>
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M17.778 8.222c-4.296-4.296-11.26-4.296-15.556 0A1 1 0 01.808 6.808c5.076-5.077 13.308-5.077 18.384 0a1 1 0 01-1.414 1.414zM14.95 11.05a7 7 0 00-9.9 0 1 1 0 01-1.414-1.414 9 9 0 0112.728 0 1 1 0 01-1.414 1.414zM12.12 13.88a3 3 0 00-4.242 0 1 1 0 01-1.415-1.415 5 5 0 017.072 0 1 1 0 01-1.415 1.415zM9 16a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clipRule="evenodd" />
+                  </svg>
+                  <span className="font-semibold">100%</span>
+                  <svg className="w-6 h-3" fill="currentColor" viewBox="0 0 24 24">
+                    <rect x="1" y="6" width="18" height="12" rx="2" ry="2" fill="currentColor" />
+                    <rect x="20" y="9" width="3" height="6" rx="1" ry="1" fill="currentColor" />
+                  </svg>
                 </div>
+              </div>
 
-                {/* Message bubble */}
-                {messageText ? (
-                  <div className="bg-white rounded-lg rounded-tl-none p-3 shadow-sm max-w-[85%] ml-auto">
-                    <p className="text-sm text-foreground whitespace-pre-wrap break-words">
-                      {messageText}
-                    </p>
-                    <p className="text-[10px] text-muted-foreground text-right mt-1">
-                      {new Date().toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' })}
-                    </p>
+              {/* WhatsApp Header */}
+              <div className="bg-[#075E54] text-white px-4 py-3 flex items-center gap-3">
+                <button className="text-white">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+                <div className="w-10 h-10 rounded-full bg-[#25D366] flex items-center justify-center text-xl font-semibold">
+                  {selectedCountry?.flag || '👤'}
+                </div>
+                <div className="flex-1">
+                  <p className="font-semibold text-sm">
+                    {phoneNumber ? `${countryCode} ${phoneNumber}` : 'Tu Número'}
+                  </p>
+                  <p className="text-xs text-gray-200">
+                    {selectedCountry?.name || 'WhatsApp Business'}
+                  </p>
+                </div>
+                <button className="text-white">
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z" />
+                  </svg>
+                </button>
+              </div>
+
+              {/* Chat Area */}
+              <div className="bg-[#ECE5DD] min-h-[400px] p-4 relative">
+                {/* WhatsApp background pattern */}
+                <div className="absolute inset-0 opacity-[0.03]" style={{
+                  backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+                }} />
+                
+                <div className="relative space-y-3">
+                  {/* Date label */}
+                  <div className="text-center">
+                    <span className="bg-white/90 px-3 py-1 rounded-lg text-xs text-gray-600 shadow-sm">
+                      Hoy
+                    </span>
                   </div>
-                ) : (
-                  <div className="text-center text-sm text-muted-foreground py-8">
-                    El mensaje pre-rellenado aparecerá aquí
-                  </div>
-                )}
+
+                  {/* Message bubble */}
+                  {messageText ? (
+                    <div className="flex justify-start">
+                      <div className="bg-white rounded-lg rounded-tl-none p-3 shadow-sm max-w-[85%] relative">
+                        <p className="text-sm text-gray-800 whitespace-pre-wrap break-words">
+                          {messageText}
+                        </p>
+                        <p className="text-[10px] text-gray-500 text-right mt-1">
+                          {new Date().toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' })}
+                        </p>
+                        {/* Tail */}
+                        <div className="absolute -left-2 top-0 w-0 h-0 border-t-[10px] border-t-white border-r-[10px] border-r-transparent" />
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="text-center py-12">
+                      <p className="text-sm text-gray-500 bg-white/60 px-4 py-2 rounded-lg inline-block">
+                        El mensaje pre-rellenado aparecerá aquí
+                      </p>
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              {/* Input Area */}
+              <div className="bg-[#F0F0F0] px-2 py-2 flex items-center gap-2">
+                <button className="text-gray-600 p-2">
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-.464 5.535a1 1 0 10-1.415-1.414 3 3 0 01-4.242 0 1 1 0 00-1.415 1.414 5 5 0 007.072 0z" clipRule="evenodd" />
+                  </svg>
+                </button>
+                <div className="flex-1 bg-white rounded-full px-4 py-2 text-sm text-gray-400">
+                  Escribe un mensaje...
+                </div>
+                <button className="text-gray-600 p-2">
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
+                  </svg>
+                </button>
               </div>
             </div>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
 
         {/* Generated Link */}
         {generatedLink && (
