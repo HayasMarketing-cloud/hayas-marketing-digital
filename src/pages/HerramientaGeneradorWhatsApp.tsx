@@ -229,16 +229,11 @@ const HerramientaGeneradorWhatsApp = () => {
                 y flujos de conversación personalizados integrados con tu CRM
               </CardDescription>
             </CardHeader>
-            <CardContent className="flex flex-col sm:flex-row gap-4 justify-center">
+            <CardContent className="flex justify-center">
               <Button asChild size="lg" className="group">
                 <Link to="/es/servicios/asistente-ia">
-                  Ver Chatbots IA para WhatsApp
+                  Creamos tu Asistente IA para Marketing
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </Button>
-              <Button asChild size="lg" variant="outline">
-                <Link to="/es/servicios/administracion-crm">
-                  Integración con CRM
                 </Link>
               </Button>
             </CardContent>
