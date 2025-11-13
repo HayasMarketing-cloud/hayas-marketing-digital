@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate, useParams } from "react-router-dom";
+import { HelmetProvider } from 'react-helmet-async';
 import { AuthProvider } from '@/contexts/AuthContext';
 import SofiaWidget from "./components/SofiaSection";
 import ScrollToTop from './components/ScrollToTop';
@@ -25,19 +26,20 @@ function LegacyRedirect({ section }: { section: string }) {
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <AuthProvider>
-        <BrowserRouter>
-          <ScrollToTop />
-          <RoutePreloader />
-          <SofiaWidget />
-          <DraftProtection>
-            {/* Gestor de redirecciones React Router nativo */}
-            <RedirectManager />
-            
-            <Routes>
+    <HelmetProvider>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <AuthProvider>
+          <BrowserRouter>
+            <ScrollToTop />
+            <RoutePreloader />
+            <SofiaWidget />
+            <DraftProtection>
+              {/* Gestor de redirecciones React Router nativo */}
+              <RedirectManager />
+              
+              <Routes>
            {/* REDIRECCIÓN ROOT A ESPAÑOL */}
            <Route path="/" element={<Navigate to="/es" replace />} />
            <Route path="/e" element={<Navigate to="/es" replace />} />
@@ -488,6 +490,9 @@ const App = () => (
           <Route path="/es/legal/terminos-servicio" element={<PageSuspense><Pages.TerminosServicio /></PageSuspense>} />
           <Route path="/es/legal/politica-cookies" element={<PageSuspense><Pages.PoliticaCookies /></PageSuspense>} />
           
+          {/* HERRAMIENTAS GRATUITAS */}
+          <Route path="/es/herramientas/generador-whatsapp-link" element={<PageSuspense><Pages.HerramientaGeneradorWhatsApp /></PageSuspense>} />
+          
           {/* 404 - DEBE IR SIEMPRE AL FINAL */}
           <Route path="*" element={<PageSuspense><Pages.NotFound /></PageSuspense>} />
         </Routes>
@@ -495,6 +500,7 @@ const App = () => (
       </BrowserRouter>
       </AuthProvider>
     </TooltipProvider>
+    </HelmetProvider>
   </QueryClientProvider>
 );
 
