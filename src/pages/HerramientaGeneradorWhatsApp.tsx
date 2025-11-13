@@ -249,14 +249,6 @@ const HerramientaGeneradorWhatsApp = () => {
       {/* FAQ Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-4xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Preguntas Frecuentes
-            </h2>
-            <p className="text-muted-foreground text-lg">
-              Todo lo que necesitas saber sobre la creación de enlaces de WhatsApp
-            </p>
-          </div>
           <FAQSection faqs={faqItems} />
         </div>
       </section>
