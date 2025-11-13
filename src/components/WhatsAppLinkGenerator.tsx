@@ -222,12 +222,9 @@ const WhatsAppLinkGenerator = () => {
           </div>
           
           {/* Phone Frame */}
-          <div className="mx-auto max-w-[360px] bg-gray-900 rounded-[3rem] p-3 shadow-2xl ring-8 ring-gray-800">
-            {/* Phone Notch */}
-            <div className="bg-gray-900 h-6 w-32 mx-auto rounded-b-2xl absolute top-3 left-1/2 -translate-x-1/2 z-10" />
-            
+          <div className="mx-auto max-w-[360px] rounded-[3rem] p-2 shadow-2xl relative" style={{ backgroundColor: '#3C4249' }}>
             {/* Screen */}
-            <div className="bg-white rounded-[2.5rem] overflow-hidden shadow-lg">
+            <div className="bg-white rounded-[2.5rem] overflow-hidden shadow-inner">
               {/* Status Bar */}
               <div className="bg-gray-100 px-6 py-2 flex justify-between items-center text-xs">
                 <span className="font-semibold">
