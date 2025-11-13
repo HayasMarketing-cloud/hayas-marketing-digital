@@ -207,6 +207,66 @@ const WhatsAppLinkGenerator = () => {
               </Button>
             )}
           </div>
+
+          {/* Generated Link Section */}
+          {generatedLink && (
+            <div className="mt-8 pt-8 border-t border-border animate-fade-in">
+              <div className="space-y-4">
+                <div className="flex items-center gap-2 mb-4">
+                  <CheckCircle2 className="h-5 w-5 text-primary" />
+                  <h3 className="text-lg font-semibold">¡Tu enlace está listo!</h3>
+                </div>
+                
+                <div className="relative">
+                  <Input
+                    value={generatedLink}
+                    readOnly
+                    className="pr-20 font-mono text-xs bg-background"
+                  />
+                  <Button
+                    onClick={copyToClipboard}
+                    size="sm"
+                    variant={copied ? "default" : "secondary"}
+                    className="absolute right-1 top-1 h-8"
+                  >
+                    {copied ? (
+                      <>
+                        <CheckCircle2 className="h-4 w-4 mr-1" />
+                        Copiado
+                      </>
+                    ) : (
+                      <>
+                        <Copy className="h-4 w-4 mr-1" />
+                        Copiar
+                      </>
+                    )}
+                  </Button>
+                </div>
+
+                <div className="flex gap-2">
+                  <Button
+                    onClick={testLink}
+                    variant="outline"
+                    className="flex-1"
+                    size="sm"
+                  >
+                    <MessageCircle className="h-4 w-4 mr-2" />
+                    Probar enlace
+                  </Button>
+                </div>
+
+                <div className="bg-muted/50 rounded-md p-3 text-xs text-muted-foreground">
+                  <p className="font-semibold mb-1">💡 Cómo usar tu enlace:</p>
+                  <ul className="space-y-1 list-disc list-inside">
+                    <li>Compártelo en redes sociales</li>
+                    <li>Agrégalo a tu email signature</li>
+                    <li>Úsalo en tarjetas de visita digitales</li>
+                    <li>Incorpóralo en tu sitio web</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          )}
         </CardContent>
       </Card>
 
@@ -329,66 +389,6 @@ const WhatsAppLinkGenerator = () => {
           </div>
         </div>
 
-        {/* Generated Link */}
-        {generatedLink && (
-          <Card className="shadow-lg border-2 border-primary/20 bg-primary/5">
-            <CardHeader>
-              <CardTitle className="text-lg flex items-center gap-2">
-                <CheckCircle2 className="h-5 w-5 text-primary" />
-                ¡Tu enlace está listo!
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="relative">
-                <Input
-                  value={generatedLink}
-                  readOnly
-                  className="pr-20 font-mono text-xs"
-                />
-                <Button
-                  onClick={copyToClipboard}
-                  size="sm"
-                  variant={copied ? "default" : "secondary"}
-                  className="absolute right-1 top-1 h-8"
-                >
-                  {copied ? (
-                    <>
-                      <CheckCircle2 className="h-4 w-4 mr-1" />
-                      Copiado
-                    </>
-                  ) : (
-                    <>
-                      <Copy className="h-4 w-4 mr-1" />
-                      Copiar
-                    </>
-                  )}
-                </Button>
-              </div>
-
-              <div className="flex gap-2">
-                <Button
-                  onClick={testLink}
-                  variant="outline"
-                  className="flex-1"
-                  size="sm"
-                >
-                  <MessageCircle className="h-4 w-4 mr-2" />
-                  Probar enlace
-                </Button>
-              </div>
-
-              <div className="bg-background/50 rounded-md p-3 text-xs text-muted-foreground">
-                <p className="font-semibold mb-1">💡 Cómo usar tu enlace:</p>
-                <ul className="space-y-1 list-disc list-inside">
-                  <li>Compártelo en redes sociales</li>
-                  <li>Agrégalo a tu email signature</li>
-                  <li>Úsalo en tarjetas de visita digitales</li>
-                  <li>Incorpóralo en tu sitio web</li>
-                </ul>
-              </div>
-            </CardContent>
-          </Card>
-        )}
       </div>
     </div>
   );
