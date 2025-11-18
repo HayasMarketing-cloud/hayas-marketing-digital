@@ -6,10 +6,12 @@ import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Badge } from '@/components/ui/badge';
-import { X, Save, RotateCcw, AlertCircle, ChevronDown, ChevronUp } from 'lucide-react';
+import { X, Save, RotateCcw, AlertCircle, ChevronDown, ChevronUp, Sparkles } from 'lucide-react';
 import { useSEOPage, useUpdateSEOPage, useDeleteSEOPage } from '@/hooks/useSEOData';
 import { useToast } from '@/hooks/use-toast';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
+import { generateAutoSEO } from '@/utils/autoSEO';
+import { findRouteByPath } from '@/utils/routeRegistryData';
 
 interface SEOEditorProps {
   path: string;
@@ -57,6 +59,30 @@ export const SEOEditor: React.FC<SEOEditorProps> = ({ path, onClose }) => {
       });
     }
   }, [seoPage]);
+
+  const handleAutoComplete = () => {
+    const route = findRouteByPath(path);
+    const autoSEO = generateAutoSEO(path, route?.category);
+    
+    setFormData({
+      title: autoSEO.title || '',
+      description: autoSEO.description || '',
+      h1: autoSEO.h1 || '',
+      h2_primary: '',
+      keywords: autoSEO.keywords || [],
+      canonical: autoSEO.canonical || path,
+      robots: autoSEO.robots || 'index,follow',
+      og_image: autoSEO.ogImage || '',
+      og_type: autoSEO.ogType || 'website',
+      schema_type: autoSEO.schemaType || 'WebPage',
+      category: autoSEO.category || 'main'
+    });
+
+    toast({
+      title: 'Datos auto-completados',
+      description: 'Revisa y ajusta los datos antes de guardar',
+    });
+  };
 
   const handleSave = async () => {
     try {
@@ -118,13 +144,18 @@ export const SEOEditor: React.FC<SEOEditorProps> = ({ path, onClose }) => {
   }
 
   return (
-    <Card className="h-[600px] flex flex-col">
+    <Card className="h-[700px] flex flex-col">
       <CardHeader className="flex flex-row items-center justify-between">
         <div>
           <CardTitle>Editor SEO</CardTitle>
           <p className="text-sm text-muted-foreground mt-1">{path}</p>
-          {seoPage?.source === 'database' && (
+          {seoPage?.source === 'database' ? (
             <Badge variant="default" className="mt-2">Editado manualmente</Badge>
+          ) : (
+            <Badge variant="secondary" className="mt-2">
+              <Sparkles className="h-3 w-3 mr-1" />
+              Auto-generado
+            </Badge>
           )}
         </div>
         <Button variant="ghost" size="icon" onClick={onClose}>
@@ -305,10 +336,16 @@ export const SEOEditor: React.FC<SEOEditorProps> = ({ path, onClose }) => {
 
       {/* Botones de acción */}
       <div className="p-4 border-t flex justify-between">
-        <Button variant="destructive" onClick={handleReset}>
-          <RotateCcw className="h-4 w-4 mr-2" />
-          Resetear
-        </Button>
+        <div className="flex gap-2">
+          <Button variant="outline" onClick={handleAutoComplete}>
+            <Sparkles className="h-4 w-4 mr-2" />
+            Auto-completar
+          </Button>
+          <Button variant="destructive" onClick={handleReset}>
+            <RotateCcw className="h-4 w-4 mr-2" />
+            Resetear
+          </Button>
+        </div>
         <div className="flex gap-2">
           <Button variant="outline" onClick={onClose}>Cerrar</Button>
           <Button onClick={handleSave} disabled={updateSEOMutation.isPending}>
