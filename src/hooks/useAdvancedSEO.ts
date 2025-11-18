@@ -52,16 +52,21 @@ export const useAdvancedSEO = (options: UseAdvancedSEOOptions = {}): AdvancedSEO
       seoData = getSEOData(path); // Fallback a seoData.ts
     }
     
-    // Fallback SEO data if not found in central data
-    const fallbackSEO: EnhancedPageSEOData = {
-      title: `${path.split('/').pop()?.replace(/-/g, ' ') || 'Página'} | Hayas Marketing`,
-      h1: path.split('/').pop()?.replace(/-/g, ' ') || 'Página',
-      description: 'Descubre nuestros servicios de marketing digital, CRM e inteligencia artificial para hacer crecer tu negocio.',
-      canonical: path,
-      schemaType: 'WebPage',
-      inLanguage: 'es-ES',
-      category: 'main'
-    };
+    // Fallback SEO data if not found - use auto-generation
+    const fallbackSEO: EnhancedPageSEOData = seoData ? seoData : (() => {
+      const { generateAutoSEO } = require('@/utils/autoSEO');
+      const autoSEO = generateAutoSEO(path);
+      return {
+        ...autoSEO,
+        title: autoSEO.title || `${path.split('/').pop()?.replace(/-/g, ' ') || 'Página'} | Hayas Marketing`,
+        h1: autoSEO.h1 || path.split('/').pop()?.replace(/-/g, ' ') || 'Página',
+        description: autoSEO.description || 'Descubre nuestros servicios de marketing digital, CRM e inteligencia artificial.',
+        canonical: autoSEO.canonical || path,
+        schemaType: autoSEO.schemaType || 'WebPage',
+        inLanguage: autoSEO.inLanguage || 'es-ES',
+        category: autoSEO.category || 'main'
+      } as EnhancedPageSEOData;
+    })();
 
     const baseSEO = seoData || fallbackSEO;
     
