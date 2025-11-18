@@ -367,6 +367,107 @@
 /blog/guia-completa-kit-digital-2024-para-autonomos-y-pymes  /es/blog/guia-completa-kit-digital-2024-para-autonomos-y-pymes  301
 
 # ========================================
+# REDIRECCIONES COMPARATIVA CRM - VARIANTES HISTÓRICAS
+# ========================================
+/es/gohighlevel-vs-hubspot  /es/comparativa/hubspot-vs-go-high-level  301
+/es/gohighlevel-vs-hubspot/  /es/comparativa/hubspot-vs-go-high-level  301
+/gohighlevel-vs-hubspot  /es/comparativa/hubspot-vs-go-high-level  301
+/gohighlevel-vs-hubspot/  /es/comparativa/hubspot-vs-go-high-level  301
+/es/hubspot-vs-gohighlevel  /es/comparativa/hubspot-vs-go-high-level  301
+/es/hubspot-vs-gohighlevel/  /es/comparativa/hubspot-vs-go-high-level  301
+/hubspot-vs-gohighlevel  /es/comparativa/hubspot-vs-go-high-level  301
+/hubspot-vs-gohighlevel/  /es/comparativa/hubspot-vs-go-high-level  301
+/es/comparativa-hubspot-gohighlevel  /es/comparativa/hubspot-vs-go-high-level  301
+/es/comparativa-hubspot-gohighlevel/  /es/comparativa/hubspot-vs-go-high-level  301
+/comparativa/hubspot-vs-gohighlevel  /es/comparativa/hubspot-vs-go-high-level  301
+/comparativa/hubspot-vs-gohighlevel/  /es/comparativa/hubspot-vs-go-high-level  301
+/es/comparativa/gohighlevel-vs-hubspot  /es/comparativa/hubspot-vs-go-high-level  301
+/es/comparativa/gohighlevel-vs-hubspot/  /es/comparativa/hubspot-vs-go-high-level  301
+
+# ========================================
+# BLOG TAGS, CATEGORÍAS Y AUTHORS - REDIRIGIR AL BLOG PRINCIPAL
+# ========================================
+/es/blog/tag/economia-circular  /es/blog  301
+/es/blog/tag/economia-circular/  /es/blog  301
+/es/blog/tag/blockchain  /es/blog  301
+/es/blog/tag/blockchain/  /es/blog  301
+/blog/tag/blockchain  /es/blog  301
+/blog/tag/blockchain/  /es/blog  301
+/tag/growth-driven-design  /es/blog  301
+/tag/growth-driven-design/  /es/blog  301
+/blog/author/ruben-reyero  /es/blog  301
+/blog/author/ruben-reyero/  /es/blog  301
+/es/blog/tag/legal  /es/blog  301
+/es/blog/tag/legal/  /es/blog  301
+/es/blog/facebook-ads-pymes  /es/blog  301
+/es/blog/facebook-ads-pymes/  /es/blog  301
+
+# ========================================
+# HUBSPOT AMP URLS - ELIMINAR ?hs_amp=true
+# ========================================
+/blog/como-se-crea-una-estrategia-de-branding  /es/blog  301
+/blog/como-se-crea-una-estrategia-de-branding/  /es/blog  301
+/blog/identidad-corporativa-para-restaurantes  /es/blog  301
+/blog/identidad-corporativa-para-restaurantes/  /es/blog  301
+/es/llega-la-web-3-0/  /es/blog  301
+/es/llega-la-web-3-0  /es/blog  301
+
+# ========================================
+# IDIOMA INGLÉS INACTIVO - VARIANTES
+# ========================================
+/en/en/consulting-training-hubspot  /es  301
+/en/en/consulting-training-hubspot/  /es  301
+/en/homepage  /es  301
+/en/homepage/  /es  301
+/en/web-design-gdd  /es  301
+/en/web-design-gdd/  /es  301
+
+# ========================================
+# SERVICIOS INBOUND SIN /es/ PREFIX
+# ========================================
+/inbound-marketing-ventas-para-empresas-del-sector-educacion-y-formacion-online  /es/servicios/estrategia-de-marketing-digital-360  301
+/inbound-marketing-ventas-para-empresas-del-sector-educacion-y-formacion-online/  /es/servicios/estrategia-de-marketing-digital-360  301
+/es/inbound-marketing-y-ventas-para-empresas-del-sector-industrial  /es/servicios/estrategia-de-marketing-digital-360  301
+/es/inbound-marketing-y-ventas-para-empresas-del-sector-industrial/  /es/servicios/estrategia-de-marketing-digital-360  301
+/inbound-marketing-y-ventas-para-empresas-del-sector-industrial  /es/servicios/estrategia-de-marketing-digital-360  301
+/inbound-marketing-y-ventas-para-empresas-del-sector-industrial/  /es/servicios/estrategia-de-marketing-digital-360  301
+/inbound-marketing-y-ventas-para-empresas-del-sector-tecnologico  /es/servicios/estrategia-de-marketing-digital-360  301
+/inbound-marketing-y-ventas-para-empresas-del-sector-tecnologico/  /es/servicios/estrategia-de-marketing-digital-360  301
+/inbound-marketing-y-ventas-para-empresas-del-sector-fintech-insurtech  /es/servicios/estrategia-de-marketing-digital-360  301
+/inbound-marketing-y-ventas-para-empresas-del-sector-fintech-insurtech/  /es/servicios/estrategia-de-marketing-digital-360  301
+
+# ========================================
+# KIT DIGITAL - CORRECCIONES DE ESTRUCTURA
+# ========================================
+/es/kit-digital/sitio-web  /es/kit-digital/presencia-basica-web  301
+/es/kit-digital/sitio-web/  /es/kit-digital/presencia-basica-web  301
+/es/kit-digital-gestion-de-clientes  /es/kit-digital/gestion-clientes  301
+/es/kit-digital-gestion-de-clientes/  /es/kit-digital/gestion-clientes  301
+/es/kit-digital/agente-digitalizador  /es/kit-digital  301
+/es/kit-digital/agente-digitalizador/  /es/kit-digital  301
+/es/kit-digital/presencia-basica  /es/kit-digital/presencia-basica-web  301
+/es/kit-digital/presencia-basica/  /es/kit-digital/presencia-basica-web  301
+
+# ========================================
+# BLOG POSTS CON TRAILING SLASH
+# ========================================
+/es/marketing-natural-atrae-a-tus-clientes-de-forma-organica/  /es/blog  301
+/es/marketing-natural-atrae-a-tus-clientes-de-forma-organica  /es/blog  301
+/es/branding-proceso-y-tecnicas-de-naming/  /es/blog  301
+/es/branding-proceso-y-tecnicas-de-naming  /es/blog  301
+/blog/diseno-web-growth-driven-design  /es/blog  301
+/blog/diseno-web-growth-driven-design/  /es/blog  301
+
+# ========================================
+# URLS TRUNCADAS Y CONSULTORÍA
+# ========================================
+/es/que-es-y-para-que-sirve-el-  /es  301
+/es/consultoria-gratuita  /es/contacto  301
+/es/consultoria-gratuita/  /es/contacto  301
+/es/consultoria-formacion-hubspot  /es/servicios/implantacion-crm  301
+/es/consultoria-formacion-hubspot/  /es/servicios/implantacion-crm  301
+
+# ========================================
 # SPLAT RULE - REDIRECCIONES AUTOMÁTICAS PARA URLs SIN /es/
 # ========================================
 # Redirigir URLs principales que no empiecen con /es/ (debe ir al final)
