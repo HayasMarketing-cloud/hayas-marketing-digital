@@ -24,7 +24,6 @@ import { RouteDefinition } from '@/utils/routeRegistry';
 import { useToast } from '@/hooks/use-toast';
 import { useQueryClient } from '@tanstack/react-query';
 import { generateAutoSEO } from '@/utils/autoSEO';
-import { useUpdateSEOPage } from '@/hooks/useSEOData';
 import { supabase } from '@/integrations/supabase/client';
 
 export interface SyncReport {
@@ -53,7 +52,6 @@ export const SyncReportModal: React.FC<SyncReportModalProps> = ({
   const [isProcessing, setIsProcessing] = useState(false);
   const { toast } = useToast();
   const queryClient = useQueryClient();
-  const updateSEO = useUpdateSEOPage();
 
   const handleCreateAutoSEO = async () => {
     setIsProcessing(true);
