@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 import { getSEOData, EnhancedPageSEOData, extractConceptsFromContent, PageHeadings, getCanonicalUrl, getRobotsDirective } from '@/data/seoData';
 import { useSEOPage } from './useSEOData';
+import { generateAutoSEO } from '@/utils/autoSEO';
 
 interface UseAdvancedSEOOptions {
   pageContent?: string; // For automatic about/mentions extraction
@@ -54,17 +55,19 @@ export const useAdvancedSEO = (options: UseAdvancedSEOOptions = {}): AdvancedSEO
     
     // Fallback SEO data if not found - use auto-generation
     const fallbackSEO: EnhancedPageSEOData = seoData ? seoData : (() => {
-      const { generateAutoSEO } = require('@/utils/autoSEO');
       const autoSEO = generateAutoSEO(path);
       return {
-        ...autoSEO,
         title: autoSEO.title || `${path.split('/').pop()?.replace(/-/g, ' ') || 'Página'} | Hayas Marketing`,
         h1: autoSEO.h1 || path.split('/').pop()?.replace(/-/g, ' ') || 'Página',
         description: autoSEO.description || 'Descubre nuestros servicios de marketing digital, CRM e inteligencia artificial.',
         canonical: autoSEO.canonical || path,
         schemaType: autoSEO.schemaType || 'WebPage',
         inLanguage: autoSEO.inLanguage || 'es-ES',
-        category: autoSEO.category || 'main'
+        category: autoSEO.category || 'main',
+        keywords: autoSEO.keywords || [],
+        robots: autoSEO.robots || 'index, follow',
+        about: autoSEO.about || [],
+        mentions: autoSEO.mentions || []
       } as EnhancedPageSEOData;
     })();
 
