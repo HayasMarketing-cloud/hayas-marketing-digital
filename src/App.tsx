@@ -128,6 +128,8 @@ const App = () => (
            <Route path="/es/soluciones/marketing-visibilidad" element={<PageSuspense><Pages.MarketingVisibilidad /></PageSuspense>} />
            <Route path="/es/soluciones/gestion-marketing" element={<Navigate to="/es/servicios/administracion-crm" replace />} />
           <Route path="/es/soluciones/captacion-leads" element={<PageSuspense><Pages.CaptacionLeadsClientes /></PageSuspense>} />
+          <Route path="/es/soluciones/automatizacion-marketing" element={<PageSuspense><Pages.AutomatizacionMarketing /></PageSuspense>} />
+          <Route path="/es/soluciones/gestion-clientes-crm" element={<PageSuspense><Pages.GestionClientesCRM /></PageSuspense>} />
           <Route path="/es/kit-consulting" element={<PageSuspense><Pages.KitConsulting /></PageSuspense>} />
           <Route path="/es/kit-digital" element={<PageSuspense><Pages.KitDigital /></PageSuspense>} />
           <Route path="/es/kit-digital/presencia-basica-internet" element={<PageSuspense><Pages.KitDigitalPresenciaBasica /></PageSuspense>} />
