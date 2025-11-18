@@ -1,12 +1,13 @@
 import React from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import Seo from '@/components/Seo';
+import EnhancedSEO from '@/components/EnhancedSEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb';
 import { Link } from 'react-router-dom';
 import ServiceContactSection from '@/components/ServiceContactSection';
+import { DynamicH1 } from '@/components/DynamicH1';
 import { Filter, Megaphone, Mail, Bot, BarChart3, Magnet, Settings, MessageSquare, Zap } from 'lucide-react';
 
 const includes = [
@@ -31,23 +32,9 @@ const benefits = [
 ];
 
 const CaptacionLeadsClientes: React.FC = () => {
-  const title = 'Captación de Leads y Clientes | Hayas Marketing';
-  const description = 'Convierte el interés en oportunidades reales con estrategias multicanal: redes sociales, buscadores, email, ads y automatización.';
-  const canonical = '/es/servicios/captacion-leads-clientes';
-
-  const structuredData = {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    name: 'Captación de Leads y Clientes',
-    description,
-    provider: { '@type': 'Organization', name: 'Hayas Marketing' },
-    areaServed: 'ES',
-    serviceType: 'Lead Generation and Customer Acquisition',
-  };
-
   return (
     <>
-      <Seo title={title} description={description} canonical={canonical} structuredData={structuredData} />
+      <EnhancedSEO />
       <Navigation />
 
       <main className="pt-36">
@@ -80,9 +67,10 @@ const CaptacionLeadsClientes: React.FC = () => {
 
           {/* Hero Section */}
           <section className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Convierte visitantes en <span className="text-gradient-primary">clientes reales</span>
-            </h1>
+            <DynamicH1 
+              fallback="Convierte visitantes en clientes reales"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
+            />
             <p className="text-xl text-gray-700 mb-8 leading-relaxed max-w-4xl mx-auto">
               Sistemas automatizados de generación y conversión de prospectos que transforman 
               el tráfico de tu web en una fuente constante de oportunidades de negocio cualificadas.

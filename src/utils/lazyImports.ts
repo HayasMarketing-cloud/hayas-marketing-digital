@@ -45,6 +45,8 @@ export const CampanasInboundMarketing = lazy(() => import("@/pages/CampanasInbou
 export const CaptacionLeadsClientes = lazy(() => import("@/pages/CaptacionLeadsClientes"));
 export const AutomatizacionProcesosVentas = lazy(() => import("@/pages/AutomatizacionProcesosVentas"));
 export const ImplantacionCrm = lazy(() => import("@/pages/ImplantacionCrm"));
+export const AutomatizacionMarketing = lazy(() => import("@/pages/AutomatizacionMarketing"));
+export const GestionClientesCRM = lazy(() => import("@/pages/GestionClientesCRM"));
 
 // Kit Digital y Consulting
 export const KitConsulting = lazy(() => import("@/pages/KitConsulting"));
