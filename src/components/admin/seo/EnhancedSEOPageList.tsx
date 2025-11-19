@@ -32,6 +32,7 @@ export const EnhancedSEOPageList: React.FC<EnhancedSEOPageListProps> = ({ onEdit
   const [searchTerm, setSearchTerm] = useState('');
   const [categoryFilter, setCategoryFilter] = useState<string>('all');
   const [statusFilter, setStatusFilter] = useState<string>('all');
+  const [languageFilter, setLanguageFilter] = useState<string>('all');
 
   // Combinar rutas registradas con datos SEO
   const routesWithStatus: RouteWithStatus[] = useMemo(() => {
@@ -75,10 +76,13 @@ export const EnhancedSEOPageList: React.FC<EnhancedSEOPageListProps> = ({ onEdit
       
       const matchesCategory = categoryFilter === 'all' || route.category === categoryFilter;
       const matchesStatus = statusFilter === 'all' || route.status === statusFilter;
+      const matchesLanguage = languageFilter === 'all' || 
+        (languageFilter === 'es-ES' && route.path.startsWith('/es')) ||
+        (languageFilter === 'en-US' && route.path.startsWith('/en'));
 
-      return matchesSearch && matchesCategory && matchesStatus;
+      return matchesSearch && matchesCategory && matchesStatus && matchesLanguage;
     });
-  }, [routesWithStatus, searchTerm, categoryFilter, statusFilter]);
+  }, [routesWithStatus, searchTerm, categoryFilter, statusFilter, languageFilter]);
 
   if (isLoading) {
     return <div className="text-muted-foreground">Cargando rutas...</div>;
@@ -147,6 +151,16 @@ export const EnhancedSEOPageList: React.FC<EnhancedSEOPageListProps> = ({ onEdit
               <SelectItem value="optimized">Optimizadas</SelectItem>
               <SelectItem value="auto-generated">Auto-generadas</SelectItem>
               <SelectItem value="no-data">Sin datos</SelectItem>
+            </SelectContent>
+          </Select>
+          <Select value={languageFilter} onValueChange={setLanguageFilter}>
+            <SelectTrigger className="w-[180px]">
+              <SelectValue placeholder="Idioma" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="all">Todos los idiomas</SelectItem>
+              <SelectItem value="es-ES">🇪🇸 Español</SelectItem>
+              <SelectItem value="en-US">🇬🇧 English</SelectItem>
             </SelectContent>
           </Select>
         </div>

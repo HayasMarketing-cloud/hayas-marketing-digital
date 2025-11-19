@@ -6,12 +6,13 @@ import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Badge } from '@/components/ui/badge';
-import { X, Save, RotateCcw, AlertCircle, ChevronDown, ChevronUp, Sparkles } from 'lucide-react';
+import { X, Save, RotateCcw, AlertCircle, ChevronDown, ChevronUp, Sparkles, Globe } from 'lucide-react';
 import { useSEOPage, useUpdateSEOPage, useDeleteSEOPage } from '@/hooks/useSEOData';
 import { useToast } from '@/hooks/use-toast';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { generateAutoSEO } from '@/utils/autoSEO';
 import { findRouteByPath } from '@/utils/routeRegistryData';
+import { supabase } from '@/integrations/supabase/client';
 
 interface SEOEditorProps {
   path: string;
@@ -24,6 +25,7 @@ export const SEOEditor: React.FC<SEOEditorProps> = ({ path, onClose }) => {
   const deleteSEOMutation = useDeleteSEOPage();
   const { toast } = useToast();
   const [showGuide, setShowGuide] = useState(false);
+  const [isTranslating, setIsTranslating] = useState(false);
 
   // Form state
   const [formData, setFormData] = useState({
@@ -82,6 +84,55 @@ export const SEOEditor: React.FC<SEOEditorProps> = ({ path, onClose }) => {
       title: 'Datos auto-completados',
       description: 'Revisa y ajusta los datos antes de guardar',
     });
+  };
+
+  const handleCreateEnVersion = async () => {
+    if (!seoPage?.data || path.startsWith('/en')) return;
+    
+    setIsTranslating(true);
+    
+    try {
+      // Llamar a la Edge Function para traducir
+      const { data: translation, error } = await supabase.functions.invoke('translate-seo', {
+        body: { 
+          seoData: seoPage.data,
+          targetLanguage: 'en-US'
+        }
+      });
+      
+      if (error) throw error;
+      
+      // Crear el path EN
+      const enPath = path.replace('/es/', '/en/').replace('/es', '/en');
+      
+      // Actualizar form data con traducción
+      setFormData({
+        ...formData,
+        title: translation.title,
+        description: translation.description,
+        h1: translation.h1,
+        keywords: translation.keywords,
+        canonical: enPath
+      });
+      
+      toast({
+        title: 'Versión EN creada',
+        description: 'Revisa y ajusta la traducción antes de guardar',
+      });
+      
+      // Cambiar el path actual para que se guarde como EN
+      window.history.pushState({}, '', `/admin/seo/pages?path=${enPath}`);
+      
+    } catch (error) {
+      console.error('Translation error:', error);
+      toast({
+        title: 'Error',
+        description: 'No se pudo traducir automáticamente. Intenta manualmente.',
+        variant: 'destructive'
+      });
+    } finally {
+      setIsTranslating(false);
+    }
   };
 
   const handleSave = async () => {
@@ -147,7 +198,20 @@ export const SEOEditor: React.FC<SEOEditorProps> = ({ path, onClose }) => {
     <Card className="h-[700px] flex flex-col">
       <CardHeader className="flex flex-row items-center justify-between">
         <div>
-          <CardTitle>Editor SEO</CardTitle>
+          <CardTitle className="flex items-center gap-2">
+            Editor SEO
+            {path.startsWith('/es') && !isTranslating && (
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={handleCreateEnVersion}
+                className="gap-2 ml-4"
+              >
+                <Globe className="h-4 w-4" />
+                Crear versión EN
+              </Button>
+            )}
+          </CardTitle>
           <p className="text-sm text-muted-foreground mt-1">{path}</p>
           {seoPage?.source === 'database' ? (
             <Badge variant="default" className="mt-2">Editado manualmente</Badge>

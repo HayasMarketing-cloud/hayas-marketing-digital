@@ -255,6 +255,7 @@ export type Database = {
           robots: string | null
           schema_type: string | null
           title: string
+          translation_of: string | null
           updated_at: string | null
         }
         Insert: {
@@ -282,6 +283,7 @@ export type Database = {
           robots?: string | null
           schema_type?: string | null
           title: string
+          translation_of?: string | null
           updated_at?: string | null
         }
         Update: {
@@ -309,9 +311,18 @@ export type Database = {
           robots?: string | null
           schema_type?: string | null
           title?: string
+          translation_of?: string | null
           updated_at?: string | null
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "seo_pages_translation_of_fkey"
+            columns: ["translation_of"]
+            isOneToOne: false
+            referencedRelation: "seo_pages"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       user_roles: {
         Row: {

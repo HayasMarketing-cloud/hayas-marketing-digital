@@ -4,15 +4,16 @@ import { getSEOData } from '@/data/seoData';
 import type { EnhancedPageSEOData } from '@/data/seoData';
 
 // Obtener datos SEO de una página específica
-export const useSEOPage = (path: string) => {
+export const useSEOPage = (path: string, language: string = 'es-ES') => {
   return useQuery({
-    queryKey: ['seo-page', path],
+    queryKey: ['seo-page', path, language],
     queryFn: async () => {
       // 1. Intentar obtener de DB
       const { data, error } = await supabase
         .from('seo_pages')
         .select('*')
         .eq('path', path)
+        .eq('in_language', language)
         .maybeSingle();
 
       if (error) {
@@ -27,8 +28,8 @@ export const useSEOPage = (path: string) => {
         };
       }
 
-      // 3. Fallback a seoData.ts
-      const fallbackData = getSEOData(path);
+      // 3. Fallback a seoData.ts con idioma
+      const fallbackData = getSEOData(path, language);
       if (fallbackData) {
         return {
           source: 'fallback' as const,

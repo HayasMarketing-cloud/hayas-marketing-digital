@@ -1866,22 +1866,39 @@ export const seoData: Record<string, EnhancedPageSEOData> = {
 };
 
 // Helper function to get SEO data with canonical strategy
-export const getSEOData = (path: string): EnhancedPageSEOData | null => {
+export const getSEOData = (path: string, language: string = 'es-ES'): EnhancedPageSEOData | null => {
+  // Normalizar path (quitar /es/ o /en/)
+  const normalizedPath = path.replace(/^\/(es|en)/, '');
+  
   // Direct match
-  if (seoData[path]) {
-    return seoData[path];
+  if (seoData[normalizedPath]) {
+    const data = seoData[normalizedPath];
+    // Si es inglés y no existe traducción en BD, retornar null
+    // Esto fuerza la creación manual de SEO en inglés
+    if (language === 'en-US' && data.inLanguage === 'es-ES') {
+      return null;
+    }
+    return data;
   }
   
   // Try without trailing slash
-  const pathWithoutSlash = path.replace(/\/$/, '');
+  const pathWithoutSlash = normalizedPath.replace(/\/$/, '');
   if (seoData[pathWithoutSlash]) {
-    return seoData[pathWithoutSlash];
+    const data = seoData[pathWithoutSlash];
+    if (language === 'en-US' && data.inLanguage === 'es-ES') {
+      return null;
+    }
+    return data;
   }
   
   // Try with trailing slash
-  const pathWithSlash = `${path}/`;
+  const pathWithSlash = `${normalizedPath}/`;
   if (seoData[pathWithSlash]) {
-    return seoData[pathWithSlash];
+    const data = seoData[pathWithSlash];
+    if (language === 'en-US' && data.inLanguage === 'es-ES') {
+      return null;
+    }
+    return data;
   }
   
   return null;
