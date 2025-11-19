@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate, useParams } from "react-router-dom";
 import { HelmetProvider } from 'react-helmet-async';
 import { AuthProvider } from '@/contexts/AuthContext';
+import { LanguageProvider } from '@/contexts/LanguageContext';
 import SofiaWidget from "./components/SofiaSection";
 import ScrollToTop from './components/ScrollToTop';
 import DraftProtection from './components/DraftProtection';
@@ -32,12 +33,13 @@ const App = () => (
         <Sonner />
         <AuthProvider>
           <BrowserRouter>
-            <ScrollToTop />
-            <RoutePreloader />
-            <SofiaWidget />
-            <DraftProtection>
-              {/* Gestor de redirecciones React Router nativo */}
-              <RedirectManager />
+            <LanguageProvider>
+              <ScrollToTop />
+              <RoutePreloader />
+              <SofiaWidget />
+              <DraftProtection>
+                {/* Gestor de redirecciones React Router nativo */}
+                <RedirectManager />
               
               <Routes>
            {/* REDIRECCIÓN ROOT A ESPAÑOL */}
@@ -499,6 +501,7 @@ const App = () => (
           <Route path="*" element={<PageSuspense><Pages.NotFound /></PageSuspense>} />
         </Routes>
         </DraftProtection>
+      </LanguageProvider>
       </BrowserRouter>
       </AuthProvider>
     </TooltipProvider>

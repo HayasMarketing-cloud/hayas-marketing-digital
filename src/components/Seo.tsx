@@ -92,6 +92,34 @@ const Seo = ({
     }
     linkCanonical.href = href;
 
+    // Hreflang tags for multilingual support
+    // Remove existing hreflang tags first
+    document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(el => el.remove());
+    
+    // Determine the base path (without language prefix)
+    const pathWithoutLang = currentPath.replace(/^\/(es|en)/, '');
+    
+    // Add Spanish version
+    const hreflangEs = document.createElement('link');
+    hreflangEs.rel = 'alternate';
+    hreflangEs.hreflang = 'es';
+    hreflangEs.href = `${window.location.origin}/es${pathWithoutLang}`;
+    document.head.appendChild(hreflangEs);
+    
+    // Add English version
+    const hreflangEn = document.createElement('link');
+    hreflangEn.rel = 'alternate';
+    hreflangEn.hreflang = 'en';
+    hreflangEn.href = `${window.location.origin}/en${pathWithoutLang}`;
+    document.head.appendChild(hreflangEn);
+    
+    // Add x-default (default to Spanish)
+    const hreflangDefault = document.createElement('link');
+    hreflangDefault.rel = 'alternate';
+    hreflangDefault.hreflang = 'x-default';
+    hreflangDefault.href = `${window.location.origin}/es${pathWithoutLang}`;
+    document.head.appendChild(hreflangDefault);
+
     // Sitemap reference
     let linkSitemap = document.querySelector('link[rel="sitemap"]') as HTMLLinkElement | null;
     if (!linkSitemap) {
