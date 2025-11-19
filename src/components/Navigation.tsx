@@ -3,11 +3,13 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
 import { ChevronDown, ArrowRight, ArrowLeft, Zap, Users, Wrench } from 'lucide-react';
+import { useLanguageNavigation } from '@/hooks/useLanguageNavigation';
 
 import { servicesByPillar, pillarMeta } from '@/data/services';
 import type { PillarKey } from '@/data/services';
 
 const Navigation = () => {
+  const { language, isEnglish, toggleLanguage } = useLanguageNavigation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeMegaMenu, setActiveMegaMenu] = useState<string | null>(null);
@@ -135,7 +137,7 @@ const Navigation = () => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center">
-              <Link to="/es" className="flex items-center overflow-visible" onClick={() => window.scrollTo(0, 0)}>
+              <Link to={`/${language}`} className="flex items-center overflow-visible" onClick={() => window.scrollTo(0, 0)}>
                 <div className="logo-container relative inline-flex items-center origin-left overflow-visible -ml-2 md:-ml-3 scale-[2.2] md:scale-[2.8]">
                   <img
                     src="/lovable-uploads/7ec653d8-b796-48ee-9657-8f0301af6e55.png"
@@ -202,7 +204,19 @@ const Navigation = () => {
               </Link>
             </nav>
 
-            <div className="hidden lg:block">
+            <div className="hidden lg:flex items-center gap-3">
+              {/* Language Selector */}
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={toggleLanguage}
+                className="hover:bg-muted transition-colors"
+                aria-label={`Switch to ${isEnglish ? 'Spanish' : 'English'}`}
+              >
+                <span className="text-lg">{isEnglish ? '🇪🇸' : '🇬🇧'}</span>
+                <span className="ml-2 text-sm font-medium">{isEnglish ? 'ES' : 'EN'}</span>
+              </Button>
+              
               <Button asChild className="gradient-primary text-white hover-scale">
                 <Link to="/es/agendar-reunion">Solicitar Consulta</Link>
               </Button>
