@@ -1,5 +1,5 @@
-import React, { createContext, useContext, useMemo } from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { createContext, useContext, useMemo, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 type Language = 'es' | 'en';
 
@@ -14,6 +14,18 @@ const LanguageContext = createContext<LanguageContextValue | undefined>(undefine
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const location = useLocation();
+  const navigate = useNavigate();
+  
+  // Detect browser language on first load
+  useEffect(() => {
+    // Only redirect if on root path
+    if (location.pathname === '/') {
+      const browserLang = navigator.language.toLowerCase();
+      const isEnglishBrowser = browserLang.startsWith('en');
+      const defaultLang = isEnglishBrowser ? 'en' : 'es';
+      navigate(`/${defaultLang}`, { replace: true });
+    }
+  }, [location.pathname, navigate]);
   
   const value = useMemo(() => {
     const isEnglish = location.pathname.startsWith('/en');
