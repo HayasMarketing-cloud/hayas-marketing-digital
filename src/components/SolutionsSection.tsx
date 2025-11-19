@@ -4,44 +4,53 @@ import { Link } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Rocket, Heart, TrendingUp } from 'lucide-react';
-
-const solutions = [
-  {
-    id: 1,
-    icon: <Rocket className="h-8 w-8 text-primary" />,
-    title: "Impulsa tu marca",
-    description: "Construye una marca atractiva, adaptada a tu audiencia, reconocible y consistente. Una identidad sólida no solo genera confianza, sino que convierte al tráfico directo en uno de los principales activos estratégicos de tu empresa.",
-    includes: "Creación de Marca • Diseño Web • SEO y Posicionamiento • Creación Tienda Online • Gestión de Redes Sociales • Estrategia de Contenidos",
-    href: "/es/soluciones/impulsa-tu-marca"
-  },
-  {
-    id: 2,
-    icon: <Heart className="h-8 w-8 text-primary" />,
-    title: "Conecta con tus clientes",
-      description: "La clave para crecer está en conocer a fondo a tus clientes actuales y potenciales. Comprender sus necesidades, comportamientos y expectativas nos permite ayudarte a mejorar tu desempeño, optimizar la experiencia de usuario y, si es necesario, adaptar tus productos o servicios a nuevas demandas del mercado.",
-    includes: "Implantación CRM • Captación de Leads y Clientes • Implementación de Funnel • Campañas Inbound Marketing • Marketing Directo • Administración de CRM",
-    href: "/es/soluciones/conecta-con-tus-clientes"
-  },
-  {
-    id: 3,
-    icon: <TrendingUp className="h-8 w-8 text-primary" />,
-    title: "Activa tus Ventas",
-      description: "Convierte el tráfico en clientes y escala tus ventas con estrategias probadas de conversión y automatización. Implementamos sistemas que transforman leads en ventas recurrentes y optimizan cada punto de contacto del customer journey.",
-    includes: "Publicidad Google Ads • Publicidad Redes Sociales • Consultoría Estratégica Ventas • Automatización Procesos de Ventas • Email Marketing y Automatizaciones",
-    href: "/es/soluciones/activa-tus-ventas"
-  }
-];
+import { useLanguageNavigation } from '@/hooks/useLanguageNavigation';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const SolutionsSection = () => {
+  const { language } = useLanguageNavigation();
+  const { t } = useTranslation();
+
+  const solutions = [
+    {
+      id: 1,
+      icon: <Rocket className="h-8 w-8 text-primary" />,
+      title: t('solutions.impulsa.title'),
+      description: t('solutions.impulsa.description'),
+      includes: t('solutions.impulsa.includes'),
+      href: `/${language}/soluciones/impulsa-tu-marca`
+    },
+    {
+      id: 2,
+      icon: <Heart className="h-8 w-8 text-primary" />,
+      title: t('solutions.conecta.title'),
+      description: t('solutions.conecta.description'),
+      includes: t('solutions.conecta.includes'),
+      href: `/${language}/soluciones/conecta-con-tus-clientes`
+    },
+    {
+      id: 3,
+      icon: <TrendingUp className="h-8 w-8 text-primary" />,
+      title: t('solutions.activa.title'),
+      description: t('solutions.activa.description'),
+      includes: t('solutions.activa.includes'),
+      href: `/${language}/soluciones/activa-tus-ventas`
+    }
+  ];
+
   return (
     <section id="soluciones" className="section-normal bg-gradient-to-br from-white to-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Nuestras <span className="text-gradient-primary">Soluciones</span>
+            {language === 'es' ? (
+              <>Nuestras <span className="text-gradient-primary">Soluciones</span></>
+            ) : (
+              <>Our <span className="text-gradient-primary">Solutions</span></>
+            )}
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Tres enfoques estratégicos para transformar tu negocio desde la base hasta el crecimiento sostenible.
+            {t('solutions.subtitle')}
           </p>
         </div>
         
@@ -62,7 +71,7 @@ const SolutionsSection = () => {
                     {solution.description}
                   </p>
                   <div className="text-sm text-gray-500 border-t pt-3">
-                    <span className="font-medium">Servicios relacionados:</span>
+                    <span className="font-medium">{t('solutions.relatedServices')}</span>
                     <ul className="mt-2 list-disc pl-5 space-y-1 text-gray-600">
                       {solution.includes.split('•').map((item, idx) => (
                         <li key={idx} className="text-sm">{item.trim()}</li>
@@ -77,7 +86,7 @@ const SolutionsSection = () => {
                   asChild
                 >
                   <Link to={`${solution.href}#top`}>
-                    Conocer más
+                    {t('solutions.learnMore')}
                   </Link>
                 </Button>
               </CardFooter>

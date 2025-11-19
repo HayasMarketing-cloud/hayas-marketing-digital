@@ -96,6 +96,56 @@ export const translations = {
       activaTitle: 'Activa tus ventas',
       activaDesc: 'Optimiza procesos comerciales y cierra más ventas'
     },
+    hero: {
+      title: 'Agencia de marketing digital y gestión de clientes',
+      subtitle: 'Te ayudamos a crecer con una estrategia personalizada que combina creatividad, tecnología y datos, siempre adaptada a tus recursos y objetivos.',
+      cta: 'Descubre cómo lo hacemos',
+      ctaAriaLabel: 'Descubrir cómo trabajamos en Hayas Marketing'
+    },
+    solutions: {
+      title: 'Nuestras Soluciones',
+      subtitle: 'Tres enfoques estratégicos para transformar tu negocio desde la base hasta el crecimiento sostenible.',
+      impulsa: {
+        title: 'Impulsa tu marca',
+        description: 'Construye una marca atractiva, adaptada a tu audiencia, reconocible y consistente. Una identidad sólida no solo genera confianza, sino que convierte al tráfico directo en uno de los principales activos estratégicos de tu empresa.',
+        includes: 'Creación de Marca • Diseño Web • SEO y Posicionamiento • Creación Tienda Online • Gestión de Redes Sociales • Estrategia de Contenidos'
+      },
+      conecta: {
+        title: 'Conecta con tus clientes',
+        description: 'La clave para crecer está en conocer a fondo a tus clientes actuales y potenciales. Comprender sus necesidades, comportamientos y expectativas nos permite ayudarte a mejorar tu desempeño, optimizar la experiencia de usuario y, si es necesario, adaptar tus productos o servicios a nuevas demandas del mercado.',
+        includes: 'Implantación CRM • Captación de Leads y Clientes • Implementación de Funnel • Campañas Inbound Marketing • Marketing Directo • Administración de CRM'
+      },
+      activa: {
+        title: 'Activa tus Ventas',
+        description: 'Convierte el tráfico en clientes y escala tus ventas con estrategias probadas de conversión y automatización. Implementamos sistemas que transforman leads en ventas recurrentes y optimizan cada punto de contacto del customer journey.',
+        includes: 'Publicidad Google Ads • Publicidad Redes Sociales • Consultoría Estratégica Ventas • Automatización Procesos de Ventas • Email Marketing y Automatizaciones'
+      },
+      relatedServices: 'Servicios relacionados:',
+      learnMore: 'Conoce más',
+      viewAllSolutions: 'Ver todas las soluciones'
+    },
+    cta: {
+      defaultTitle: 'Descubre cómo puede ayudarte un diseño web profesional',
+      defaultSubtitle: 'Solicita una consulta gratuita y te mostraremos cómo transformar tu presencia digital',
+      defaultButton: 'Hablar con un especialista'
+    },
+    contact: {
+      title: '¿Listo para potenciar tu negocio?',
+      subtitle: 'Contáctanos hoy mismo para una consulta personalizada sobre cómo nuestras soluciones pueden adaptarse a tus necesidades específicas.',
+      sendMessage: 'Envíanos un mensaje',
+      contactInfo: 'Información de contacto',
+      contactDescription: 'Estamos listos para responder a todas tus preguntas y ayudarte a implementar las mejores soluciones para tu negocio.',
+      form: {
+        sendRequest: 'Enviar Solicitud',
+        placeholder: {
+          name: 'Tu nombre',
+          email: 'tu@email.com',
+          company: 'Nombre de tu empresa',
+          message: '¿En qué podemos ayudarte?'
+        }
+      },
+      privacy: 'En Hayas, protegemos tu privacidad y datos. Estamos adheridos al Pacto Digital para un uso ético de la información. Más info:'
+    },
     seo: {
       defaultTitle: 'Hayas Marketing - Estrategias de Marketing con IA',
       defaultDescription: 'Ayudamos a empresas y emprendedores a prosperar con estrategias de marketing que integran inteligencia artificial y automatización.'
@@ -197,6 +247,56 @@ export const translations = {
       conectaDesc: 'Manage and automate customer relationships',
       activaTitle: 'Activate your sales',
       activaDesc: 'Optimize commercial processes and close more deals'
+    },
+    hero: {
+      title: 'Digital marketing agency and customer management',
+      subtitle: 'We help you grow with a personalized strategy that combines creativity, technology and data, always adapted to your resources and goals.',
+      cta: 'Discover how we do it',
+      ctaAriaLabel: 'Discover how we work at Hayas Marketing'
+    },
+    solutions: {
+      title: 'Our Solutions',
+      subtitle: 'Three strategic approaches to transform your business from the ground up to sustainable growth.',
+      impulsa: {
+        title: 'Boost your brand',
+        description: 'Build an attractive brand, adapted to your audience, recognizable and consistent. A strong identity not only generates trust, but also turns direct traffic into one of your company\'s main strategic assets.',
+        includes: 'Brand Creation • Web Design • SEO & Positioning • Online Store Creation • Social Media Management • Content Strategy'
+      },
+      conecta: {
+        title: 'Connect with your customers',
+        description: 'The key to growth lies in deeply understanding your current and potential customers. Understanding their needs, behaviors and expectations allows us to help you improve your performance, optimize user experience and, if necessary, adapt your products or services to new market demands.',
+        includes: 'CRM Implementation • Lead & Customer Acquisition • Funnel Implementation • Inbound Marketing Campaigns • Direct Marketing • CRM Administration'
+      },
+      activa: {
+        title: 'Activate your Sales',
+        description: 'Turn traffic into customers and scale your sales with proven conversion and automation strategies. We implement systems that transform leads into recurring sales and optimize every touchpoint in the customer journey.',
+        includes: 'Google Ads Advertising • Social Media Advertising • Strategic Sales Consulting • Sales Process Automation • Email Marketing & Automation'
+      },
+      relatedServices: 'Related services:',
+      learnMore: 'Learn more',
+      viewAllSolutions: 'View all solutions'
+    },
+    cta: {
+      defaultTitle: 'Discover how professional web design can help you',
+      defaultSubtitle: 'Request a free consultation and we\'ll show you how to transform your digital presence',
+      defaultButton: 'Talk to a specialist'
+    },
+    contact: {
+      title: 'Ready to boost your business?',
+      subtitle: 'Contact us today for a personalized consultation on how our solutions can adapt to your specific needs.',
+      sendMessage: 'Send us a message',
+      contactInfo: 'Contact information',
+      contactDescription: 'We are ready to answer all your questions and help you implement the best solutions for your business.',
+      form: {
+        sendRequest: 'Send Request',
+        placeholder: {
+          name: 'Your name',
+          email: 'your@email.com',
+          company: 'Your company name',
+          message: 'How can we help you?'
+        }
+      },
+      privacy: 'At Hayas, we protect your privacy and data. We are committed to the Digital Pact for ethical use of information. More info:'
     },
     seo: {
       defaultTitle: 'Hayas Marketing - AI-Powered Marketing Strategies',

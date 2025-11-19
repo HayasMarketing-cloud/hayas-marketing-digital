@@ -253,45 +253,55 @@ const Navigation = () => {
                       onClick={() => navigateToLevel('soluciones')}
                       className="w-full flex items-center justify-between text-foreground hover:text-primary font-medium transition-colors px-4 py-3 hover:bg-muted/50 rounded text-left"
                     >
-                      <span>Soluciones</span>
+                      <span>{t('nav.solutions')}</span>
                       <ArrowRight className="h-4 w-4" />
                     </button>
                     
                     <Link
-                      to="/es/casos-exito"
+                      to={`/${language}/casos-exito`}
                       className="block text-foreground hover:text-primary font-medium transition-colors px-4 py-3 hover:bg-muted/50 rounded"
                       onClick={closeMobileMenu}
                     >
-                      Casos de Éxito
+                      {t('nav.caseStudies')}
                     </Link>
                     
                     <Link
-                      to="/es/nosotros"
+                      to={`/${language}/nosotros`}
                       className="block text-foreground hover:text-primary font-medium transition-colors px-4 py-3 hover:bg-muted/50 rounded"
                       onClick={closeMobileMenu}
                     >
-                      La Agencia
+                      {t('nav.theAgency')}
                     </Link>
                     
                     <Link
-                      to="/es/blog"
+                      to={`/${language}/blog`}
                       className="block text-foreground hover:text-primary font-medium transition-colors px-4 py-3 hover:bg-muted/50 rounded"
                       onClick={closeMobileMenu}
                     >
-                      Blog
+                      {t('nav.blog')}
                     </Link>
                     
                     <Link
-                      to="/es/contacto"
+                      to={`/${language}/contacto`}
                       className="block text-foreground hover:text-primary font-medium transition-colors px-4 py-3 hover:bg-muted/50 rounded"
                       onClick={closeMobileMenu}
                     >
-                      Contacto
+                      {t('nav.contact')}
                     </Link>
                     
-                    <div className="mt-4 px-4">
+                    <div className="mt-4 px-4 space-y-2">
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={toggleLanguage}
+                        className="w-full justify-start"
+                      >
+                        <span className="text-lg mr-2">{isEnglish ? '🇪🇸' : '🇬🇧'}</span>
+                        <span className="text-sm font-medium">{isEnglish ? 'Cambiar a Español' : 'Switch to English'}</span>
+                      </Button>
+                      
                       <Button asChild className="gradient-primary text-white w-full hover-scale">
-                        <Link to="/es/agendar-reunion" onClick={closeMobileMenu}>Solicitar Consulta</Link>
+                        <Link to={`/${language}/agendar-reunion`} onClick={closeMobileMenu}>{t('footer.scheduleConsultation')}</Link>
                       </Button>
                     </div>
                   </div>
@@ -308,7 +318,7 @@ const Navigation = () => {
                         <ArrowLeft className="h-4 w-4 mr-2" />
                         Volver
                       </button>
-                      <span className="ml-4 font-medium text-foreground">Soluciones</span>
+                      <span className="ml-4 font-medium text-foreground">{t('nav.solutions')}</span>
                     </div>
                     
                     <div className="px-4 space-y-3">
