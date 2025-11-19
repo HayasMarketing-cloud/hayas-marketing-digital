@@ -22,19 +22,19 @@ serve(async (req) => {
     
     const prompt = `Translate the following SEO metadata from Spanish to English for a marketing agency website. 
     Maintain SEO best practices, keyword relevance, professional marketing tone, and cultural appropriateness for English-speaking markets.
+    Adapt cultural references and examples for English-speaking audiences (US/UK markets).
     
-    Title: ${seoData.title}
-    Description: ${seoData.description}
-    H1: ${seoData.h1}
-    Keywords: ${seoData.keywords?.join(', ') || 'N/A'}
+    Original Spanish content:
+    - Title: ${seoData.title}
+    - Description: ${seoData.description}
+    - H1: ${seoData.h1}
+    - Keywords: ${seoData.keywords?.join(', ') || 'N/A'}
     
-    Return ONLY a JSON object with this exact structure:
-    {
-      "title": "translated title (max 60 chars)",
-      "description": "translated description (max 160 chars)",
-      "h1": "translated h1",
-      "keywords": ["keyword1", "keyword2", "keyword3"]
-    }`;
+    Requirements:
+    - Title must be under 60 characters
+    - Description must be under 160 characters
+    - Maintain keyword density and SEO structure
+    - Use natural English marketing language`;
     
     const response = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
       method: "POST",
@@ -47,21 +47,59 @@ serve(async (req) => {
         messages: [
           { 
             role: "system", 
-            content: "You are an SEO expert translator specializing in marketing content. Always return valid JSON." 
+            content: "You are an SEO expert translator specializing in marketing content for digital agencies." 
           },
           { role: "user", content: prompt }
         ],
-        temperature: 0.3,
-        response_format: { type: "json_object" }
+        tools: [{
+          type: "function",
+          function: {
+            name: "translate_seo_metadata",
+            description: "Translate SEO metadata maintaining best practices and character limits",
+            parameters: {
+              type: "object",
+              properties: {
+                title: { 
+                  type: "string",
+                  description: "Translated title (max 60 chars)"
+                },
+                description: { 
+                  type: "string",
+                  description: "Translated meta description (max 160 chars)"
+                },
+                h1: { 
+                  type: "string",
+                  description: "Translated H1 heading"
+                },
+                keywords: { 
+                  type: "array",
+                  items: { type: "string" },
+                  description: "Array of translated keywords"
+                }
+              },
+              required: ["title", "description", "h1", "keywords"],
+              additionalProperties: false
+            }
+          }
+        }],
+        tool_choice: { type: "function", function: { name: "translate_seo_metadata" } }
       })
     });
     
     if (!response.ok) {
-      throw new Error(`AI Gateway error: ${response.statusText}`);
+      const errorText = await response.text();
+      console.error('AI Gateway error:', response.status, errorText);
+      throw new Error(`AI Gateway error: ${response.status} - ${errorText}`);
     }
     
     const result = await response.json();
-    const translatedData = JSON.parse(result.choices[0].message.content);
+    const toolCall = result.choices[0].message.tool_calls?.[0];
+    
+    if (!toolCall) {
+      throw new Error('No translation returned from AI');
+    }
+    
+    const translatedData = JSON.parse(toolCall.function.arguments);
     
     return new Response(JSON.stringify(translatedData), {
       headers: { ...corsHeaders, "Content-Type": "application/json" }
