@@ -34,27 +34,148 @@ Se han agregado eventos de tracking GTM para medir todas las interacciones con e
 
 ## 🔧 Configuración en Google Tag Manager
 
-### 1. Verificar que el evento se está enviando
+### ⚠️ IMPORTANTE: Sin esta configuración, los eventos NO aparecerán en GA4
+
+El código ya está enviando eventos al dataLayer, pero **debes configurar GTM manualmente** para que esos eventos lleguen a Google Analytics 4.
+
+---
+
+### PASO 1: Verificar que el evento se está enviando al DataLayer
 
 1. Abre GTM Preview Mode:
    - Ve a tu contenedor GTM: https://tagmanager.google.com/
-   - Click en "Preview"
+   - Click en "Preview" (botón naranja arriba a la derecha)
    - Ingresa la URL de tu sitio: `https://hayasmarketing.com`
 
-2. En tu sitio, haz clic en el botón de SofÍA
+2. En tu sitio, haz clic en el botón flotante de SofÍA
 
-3. En GTM Preview, verás el evento `sofia_interaction` en el panel izquierdo
+3. En GTM Preview (panel izquierdo), verás el evento **`sofia_interaction`** aparecer en la lista
 
-4. Verifica que tenga estas variables:
+4. Haz clic en el evento y verifica que tenga estas variables en el "Data Layer":
+   ```javascript
+   {
+     event: "sofia_interaction",
+     sofia_action: "chat_opened",
+     sofia_label: "floating_button",
+     page_path: "/es"
+   }
    ```
-   sofia_action: "chat_opened"
-   sofia_label: "floating_button"
-   page_path: "/es"
-   ```
 
-### 2. Crear Tag en GTM (si no existe)
+✅ Si ves esto, el código está funcionando correctamente.
 
-Si los eventos no se están enviando automáticamente a GA4:
+---
+
+### PASO 2: Crear Variables de Data Layer en GTM
+
+Antes de crear el Tag, necesitas crear 3 variables:
+
+1. **Variable 1: sofia_action**
+   - Ve a GTM → Variables (menú izquierdo)
+   - Click en "Nueva" en la sección "Variables definidas por el usuario"
+   - Nombre: `DLV - sofia_action`
+   - Tipo de variable: **Data Layer Variable**
+   - Nombre de variable de capa de datos: `sofia_action`
+   - Guardar
+
+2. **Variable 2: sofia_label**
+   - Nueva variable
+   - Nombre: `DLV - sofia_label`
+   - Tipo: **Data Layer Variable**
+   - Nombre de variable: `sofia_label`
+   - Guardar
+
+3. **Variable 3: page_path**
+   - Nueva variable
+   - Nombre: `DLV - page_path`
+   - Tipo: **Data Layer Variable**
+   - Nombre de variable: `page_path`
+   - Guardar
+
+---
+
+### PASO 3: Crear Trigger (Activador) en GTM
+
+1. Ve a GTM → **Activadores** (menú izquierdo)
+2. Click en **"Nuevo"**
+3. Configuración:
+   - **Nombre**: `Trigger - sofia_interaction`
+   - **Tipo de activador**: `Evento personalizado`
+   - **Nombre del evento**: `sofia_interaction` (debe coincidir EXACTAMENTE)
+   - **Este activador se activa en**: `Todos los eventos personalizados`
+4. Click en **"Guardar"**
+
+---
+
+### PASO 4: Crear Tag GA4 en GTM (CRÍTICO)
+
+Este es el paso que hace que el evento aparezca en GA4:
+
+1. Ve a GTM → **Etiquetas** (menú izquierdo)
+2. Click en **"Nueva"**
+3. Configuración de la etiqueta:
+   - **Nombre**: `GA4 - sofia_interaction`
+   - **Tipo de etiqueta**: `Google Analytics: Evento de GA4`
+   - **Etiqueta de configuración**: Selecciona tu etiqueta de configuración de GA4 existente
+   - **Nombre del evento**: `sofia_interaction` (debe ser EXACTAMENTE este nombre)
+   
+4. **Parámetros del evento** (click en "Agregar parámetro"):
+   
+   | Nombre del parámetro | Valor |
+   |---------------------|-------|
+   | `action` | `{{DLV - sofia_action}}` |
+   | `label` | `{{DLV - sofia_label}}` |
+   | `page_path` | `{{DLV - page_path}}` |
+
+5. **Activación**:
+   - Selecciona el trigger: `Trigger - sofia_interaction`
+
+6. Click en **"Guardar"**
+
+---
+
+### PASO 5: Publicar los cambios en GTM
+
+1. En GTM, click en **"Enviar"** (botón azul arriba a la derecha)
+2. Agrega un nombre de versión: `"Tracking SofÍA Chatbot"`
+3. Click en **"Publicar"**
+
+✅ **Ahora los eventos SÍ aparecerán en GA4**
+
+---
+
+### PASO 6: Verificar en GA4 (Tiempo Real)
+
+1. Ve a **Google Analytics 4**: https://analytics.google.com/
+2. Selecciona tu propiedad de Hayas Marketing
+3. Ve a **Informes → Tiempo real**
+4. En tu sitio, haz clic en el botón de SofÍA
+5. En GA4 Tiempo Real, verás el evento **`sofia_interaction`** aparecer inmediatamente
+
+⏱️ **IMPORTANTE**: Los eventos aparecen en Tiempo Real de forma inmediata, pero en informes históricos pueden tardar 24-48 horas.
+
+---
+
+## ❓ Troubleshooting: "No veo el evento en GA4"
+
+### Problema 1: El evento NO aparece en GTM Preview
+**Solución**: El problema está en el código del sitio
+- Abre la consola del navegador (F12)
+- Busca: `📊 SofÍA Event:`
+- Si NO aparece, contacta al equipo técnico
+
+### Problema 2: El evento SÍ aparece en GTM Preview, pero NO en GA4
+**Solución**: El problema está en la configuración de GTM
+- Verifica que el **Tag GA4** esté activándose en GTM Preview (debe aparecer en verde)
+- Verifica que el **Measurement ID** de GA4 sea el correcto en el Tag de Configuración
+- Verifica que las **variables** estén creadas correctamente (nombres EXACTOS)
+
+### Problema 3: El evento aparece en GA4 pero SIN parámetros (action, label, page_path)
+**Solución**: Las variables del Data Layer no están configuradas
+- Verifica que las 3 variables (`DLV - sofia_action`, `DLV - sofia_label`, `DLV - page_path`) existan en GTM
+- Verifica que los nombres de las variables coincidan EXACTAMENTE con el código
+- En GTM Preview, haz clic en el Tag y verifica que las variables tengan valores
+
+---
 
 1. **Crear un Trigger**:
    - Tipo: `Custom Event`
