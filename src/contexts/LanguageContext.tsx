@@ -23,6 +23,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       const browserLang = navigator.language.toLowerCase();
       const isEnglishBrowser = browserLang.startsWith('en');
       const defaultLang = isEnglishBrowser ? 'en' : 'es';
+      console.log(`[LanguageContext] Redirecting from / to /${defaultLang} (browser: ${browserLang})`);
       navigate(`/${defaultLang}`, { replace: true });
     }
   }, [location.pathname, navigate]);

@@ -8,10 +8,18 @@ export const translations = {
       contact: 'Contacto',
       blog: 'Blog',
       caseStudies: 'Casos de Éxito',
+      casestudies: 'Casos de Éxito',
+      agency: 'Agencia',
       theAgency: 'La Agencia',
+      cta: 'Agenda tu reunión',
       impulsa: 'Impulsa tu marca',
       conecta: 'Conecta con tus clientes',
-      activa: 'Activa tus ventas'
+      activa: 'Activa tus ventas',
+      mainMenu: 'Menú principal',
+      backToMain: 'Volver al menú principal',
+      impulsaHref: 'soluciones/impulsa-tu-marca',
+      conectaHref: 'soluciones/conecta-con-tus-clientes',
+      activaHref: 'soluciones/activa-tus-ventas'
     },
     common: {
       learnMore: 'Más información',
@@ -84,17 +92,17 @@ export const translations = {
       officeLocation: 'Madrid, España'
     },
     megaMenu: {
-      solutionsTitle: 'Elige tu solución ideal',
-      solutionsSubtitle: 'Soluciones completas adaptadas a tu momento empresarial',
-      servicesTitle: 'Servicios especializados',
-      servicesSubtitle: 'Servicios profesionales para cada necesidad',
+      solutionsTitle: 'Nuestras Soluciones',
+      solutionsSubtitle: 'Estrategias integrales para cada etapa de tu negocio',
+      servicesTitle: 'Servicios',
+      servicesSubtitle: 'Servicios especializados para potenciar tu estrategia digital',
       viewAllServices: 'Ver todos los servicios',
       impulsaTitle: 'Impulsa tu marca',
-      impulsaDesc: 'Crea una identidad sólida y gana visibilidad online',
+      impulsaDesc: 'Construye una identidad potente',
       conectaTitle: 'Conecta con tus clientes',
-      conectaDesc: 'Gestiona y automatiza la relación con tus clientes',
+      conectaDesc: 'Capta y fideliza audiencias',
       activaTitle: 'Activa tus ventas',
-      activaDesc: 'Optimiza procesos comerciales y cierra más ventas'
+      activaDesc: 'Automatiza y escala resultados'
     },
     hero: {
       title: 'Agencia de marketing digital y gestión de clientes',
@@ -160,10 +168,18 @@ export const translations = {
       contact: 'Contact',
       blog: 'Blog',
       caseStudies: 'Case Studies',
+      casestudies: 'Case Studies',
+      agency: 'Agency',
       theAgency: 'The Agency',
+      cta: 'Schedule Your Meeting',
       impulsa: 'Boost Your Brand',
       conecta: 'Connect with Customers',
-      activa: 'Activate Sales'
+      activa: 'Activate Sales',
+      mainMenu: 'Main Menu',
+      backToMain: 'Back to Main Menu',
+      impulsaHref: 'solutions/boost-your-brand',
+      conectaHref: 'solutions/connect-with-customers',
+      activaHref: 'solutions/activate-your-sales'
     },
     common: {
       learnMore: 'Learn more',
@@ -236,17 +252,17 @@ export const translations = {
       officeLocation: 'Madrid, Spain'
     },
     megaMenu: {
-      solutionsTitle: 'Choose your ideal solution',
-      solutionsSubtitle: 'Complete solutions tailored to your business stage',
-      servicesTitle: 'Specialized services',
-      servicesSubtitle: 'Professional services for every need',
+      solutionsTitle: 'Our Solutions',
+      solutionsSubtitle: 'Comprehensive strategies for every stage of your business',
+      servicesTitle: 'Services',
+      servicesSubtitle: 'Specialized services to boost your digital strategy',
       viewAllServices: 'View all services',
-      impulsaTitle: 'Boost your brand',
-      impulsaDesc: 'Build a strong identity and gain online visibility',
-      conectaTitle: 'Connect with your customers',
-      conectaDesc: 'Manage and automate customer relationships',
-      activaTitle: 'Activate your sales',
-      activaDesc: 'Optimize commercial processes and close more deals'
+      impulsaTitle: 'Boost Your Brand',
+      impulsaDesc: 'Build a powerful identity',
+      conectaTitle: 'Connect with Your Customers',
+      conectaDesc: 'Capture and retain audiences',
+      activaTitle: 'Activate Your Sales',
+      activaDesc: 'Automate and scale results'
     },
     hero: {
       title: 'Digital marketing agency and customer management',
