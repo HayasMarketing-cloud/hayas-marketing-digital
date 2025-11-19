@@ -8,6 +8,13 @@ export const useLanguageNavigation = () => {
 
   const toggleLanguage = () => {
     const currentPath = location.pathname;
+    
+    // Handle root path
+    if (currentPath === '/') {
+      navigate(isEnglish ? '/es' : '/en');
+      return;
+    }
+    
     const newPath = isEnglish 
       ? currentPath.replace('/en', '/es')
       : currentPath.replace('/es', '/en');

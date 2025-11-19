@@ -97,18 +97,18 @@ const Navigation = () => {
   };
 
   const pillars = [
-    { title: 'Impulsa tu marca', href: '/es/soluciones/impulsa-tu-marca' },
-    { title: 'Conecta con tus clientes', href: '/es/soluciones/conecta-con-tus-clientes' },
-    { title: 'Activa tus ventas', href: '/es/soluciones/activa-tus-ventas' },
+    { title: t('nav.impulsa'), href: `/${language}/${t('nav.impulsaHref')}` },
+    { title: t('nav.conecta'), href: `/${language}/${t('nav.conectaHref')}` },
+    { title: t('nav.activa'), href: `/${language}/${t('nav.activaHref')}` },
   ];
 
   const pillarKeys: PillarKey[] = ['impulsa', 'conecta', 'activa'];
 
-  // Icons and colors for each pillar
+  // Icons and colors for each pillar - dynamic based on translation
   const pillarConfig = {
-    'Impulsa tu marca': { icon: Zap, color: 'text-purple-600', bgColor: 'bg-purple-50 hover:bg-purple-100' },
-    'Conecta con tus clientes': { icon: Users, color: 'text-blue-600', bgColor: 'bg-blue-50 hover:bg-blue-100' },
-    'Activa tus ventas': { icon: Wrench, color: 'text-green-600', bgColor: 'bg-green-50 hover:bg-green-100' },
+    [t('nav.impulsa')]: { icon: Zap, color: 'text-purple-600', bgColor: 'bg-purple-50 hover:bg-purple-100' },
+    [t('nav.conecta')]: { icon: Users, color: 'text-blue-600', bgColor: 'bg-blue-50 hover:bg-blue-100' },
+    [t('nav.activa')]: { icon: Wrench, color: 'text-green-600', bgColor: 'bg-green-50 hover:bg-green-100' },
   };
 
   const closeMobileMenu = () => {
@@ -316,7 +316,7 @@ const Navigation = () => {
                         className="flex items-center text-muted-foreground hover:text-primary transition-colors"
                       >
                         <ArrowLeft className="h-4 w-4 mr-2" />
-                        Volver
+                        {t('nav.backToMain')}
                       </button>
                       <span className="ml-4 font-medium text-foreground">{t('nav.solutions')}</span>
                     </div>
@@ -400,7 +400,7 @@ const Navigation = () => {
         >
           <div className="container mx-auto px-4">
             <div className="p-6">
-              <h4 className="font-semibold text-foreground mb-6 text-center">Nuestros Servicios</h4>
+              <h4 className="font-semibold text-foreground mb-6 text-center">{t('megaMenu.servicesTitle')}</h4>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {pillarKeys.map((key) => {
                   const Icon = pillarIcons[key];
