@@ -48,6 +48,19 @@ const SofiaWidget = () => {
   const [hasScrolled, setHasScrolled] = useState(false);
   const [isReady, setIsReady] = useState(false);
   
+  // GTM tracking functions
+  const trackSofiaEvent = (action: string, label?: string) => {
+    if (window.dataLayer) {
+      window.dataLayer.push({
+        event: 'sofia_interaction',
+        sofia_action: action,
+        sofia_label: label || '',
+        page_path: location.pathname
+      });
+      console.log('📊 SofÍA Event:', action, label);
+    }
+  };
+  
   // Determine if component should render AFTER state initialization
   const allowedPages = [
     '/es',
@@ -206,6 +219,7 @@ const SofiaWidget = () => {
       setIsOpen(true);
       setIsMinimized(false);
       setShowHelpMessage(false);
+      trackSofiaEvent('chat_opened', 'custom_event');
     };
 
     window.addEventListener('openSofiaChat', handleOpenSofiaChat);
@@ -242,19 +256,23 @@ const SofiaWidget = () => {
   }
 
   const handleToggleChat = () => {
-    setIsOpen(!isOpen);
+    const willOpen = !isOpen;
+    setIsOpen(willOpen);
     setIsMinimized(false);
     setShowHelpMessage(false);
+    trackSofiaEvent(willOpen ? 'chat_opened' : 'chat_closed', 'floating_button');
   };
 
   const handleMinimize = () => {
     setIsMinimized(true);
+    trackSofiaEvent('chat_minimized', 'minimize_button');
   };
 
   const handleClose = () => {
     setIsOpen(false);
     setIsMinimized(false);
     setShowHelpMessage(false);
+    trackSofiaEvent('chat_closed', 'close_button');
   };
 
   return (
