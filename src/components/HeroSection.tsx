@@ -3,7 +3,13 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { DynamicH1 } from '@/components/DynamicH1';
 import OptimizedImage from './OptimizedImage';
+import { useLanguageNavigation } from '@/hooks/useLanguageNavigation';
+import { useTranslation } from '@/hooks/useTranslation';
+
 const HeroSection = () => {
+  const { language } = useLanguageNavigation();
+  const { t } = useTranslation();
+
   return <main id="main-content" className="relative section-loose bg-header-gradient overflow-hidden">
       {/* Círculos decorativos de fondo con colores corporativos */}
       <div className="absolute -bottom-24 -left-24 w-64 h-64 rounded-full bg-hayas-primary/10 opacity-20" aria-hidden="true"></div>
@@ -14,16 +20,20 @@ const HeroSection = () => {
           <div className="lg:w-1/2 lg:pr-12 mb-10 lg:mb-0 stack-md">
             <div>
               <DynamicH1 
-                fallback="Agencia de Marketing Digital y Gestión de Clientes"
+                fallback={t('hero.title')}
                 className="title-hero leading-tight animate-fade-in"
               >
-                Agencia de <span className="text-gradient-primary">marketing digital</span> y <span className="text-gradient-primary">gestión de clientes</span>
+                {language === 'es' ? (
+                  <>Agencia de <span className="text-gradient-primary">marketing digital</span> y <span className="text-gradient-primary">gestión de clientes</span></>
+                ) : (
+                  <><span className="text-gradient-primary">Digital marketing</span> agency and <span className="text-gradient-primary">customer management</span></>
+                )}
               </DynamicH1>
-              <p className="text-hero text-gray-700 animate-slide-up">Te ayudamos a crecer con una estrategia personalizada que combina creatividad, tecnología y datos, siempre adaptada a tus recursos y objetivos.</p>
+              <p className="text-hero text-gray-700 animate-slide-up">{t('hero.subtitle')}</p>
             </div>
             <div className="flex justify-start animate-slide-up">
-              <Button asChild variant="outline" className="py-6 px-8 text-lg font-medium hover-scale focus-ring border-primary text-primary hover:bg-primary hover:text-white" aria-label="Descubrir cómo trabajamos en Hayas Marketing">
-                <Link to="/es?scrollTo=metodologia">Descubre cómo lo hacemos</Link>
+              <Button asChild variant="outline" className="py-6 px-8 text-lg font-medium hover-scale focus-ring border-primary text-primary hover:bg-primary hover:text-white" aria-label={t('hero.ctaAriaLabel')}>
+                <Link to={`/${language}?scrollTo=metodologia`}>{t('hero.cta')}</Link>
               </Button>
             </div>
           </div>
@@ -46,4 +56,5 @@ const HeroSection = () => {
       </div>
     </main>;
 };
+
 export default HeroSection;

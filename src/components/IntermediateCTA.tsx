@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Sparkles } from 'lucide-react';
+import { useLanguageNavigation } from '@/hooks/useLanguageNavigation';
+import { useTranslation } from '@/hooks/useTranslation';
 
 interface IntermediateCTAProps {
   title?: string;
@@ -12,12 +14,20 @@ interface IntermediateCTAProps {
 }
 
 const IntermediateCTA: React.FC<IntermediateCTAProps> = ({
-  title = "Descubre cómo puede ayudarte un diseño web profesional",
-  subtitle = "Solicita una consulta gratuita y te mostraremos cómo transformar tu presencia digital",
-  buttonText = "Hablar con un especialista",
-  buttonLink = "/es/agendar-reunion",
+  title,
+  subtitle,
+  buttonText,
+  buttonLink,
   className = ""
 }) => {
+  const { language } = useLanguageNavigation();
+  const { t } = useTranslation();
+
+  const finalTitle = title || t('cta.defaultTitle');
+  const finalSubtitle = subtitle || t('cta.defaultSubtitle');
+  const finalButtonText = buttonText || t('cta.defaultButton');
+  const finalButtonLink = buttonLink || `/${language}/agendar-reunion`;
+
   return (
     <section className={`py-16 md:py-20 bg-gradient-to-r from-primary via-primary/90 to-accent ${className}`}>
       <div className="container mx-auto px-4">
@@ -29,11 +39,11 @@ const IntermediateCTA: React.FC<IntermediateCTAProps> = ({
           </div>
           
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            {title}
+            {finalTitle}
           </h2>
           
           <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
-            {subtitle}
+            {finalSubtitle}
           </p>
           
           <Button 
@@ -41,8 +51,8 @@ const IntermediateCTA: React.FC<IntermediateCTAProps> = ({
             className="bg-white text-primary hover:bg-white/90 font-semibold" 
             asChild
           >
-            <Link to={buttonLink}>
-              {buttonText}
+            <Link to={finalButtonLink}>
+              {finalButtonText}
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
