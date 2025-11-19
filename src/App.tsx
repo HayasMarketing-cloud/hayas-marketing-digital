@@ -497,7 +497,104 @@ const App = () => (
           {/* HERRAMIENTAS GRATUITAS */}
           <Route path="/es/herramientas/generador-whatsapp-link" element={<PageSuspense><Pages.HerramientaGeneradorWhatsApp /></PageSuspense>} />
           
-          {/* 404 - DEBE IR SIEMPRE AL FINAL */}
+          {/* ============================================
+              ENGLISH ROUTES (/en/*)
+              ============================================ */}
+          
+          {/* HOMEPAGE */}
+          <Route path="/en" element={<PageSuspense><Pages.Index /></PageSuspense>} />
+          
+          {/* ABOUT US */}
+          <Route path="/en/about-us" element={<PageSuspense><Pages.Nosotros /></PageSuspense>} />
+          
+          {/* SOLUTIONS - Main Strategic Categories */}
+          <Route path="/en/solutions/boost-your-brand" element={<PageSuspense><Pages.ImpulsaTuMarca /></PageSuspense>} />
+          <Route path="/en/solutions/connect-with-customers" element={<PageSuspense><Pages.ConectaConTusClientes /></PageSuspense>} />
+          <Route path="/en/solutions/activate-sales" element={<PageSuspense><Pages.ActivaTusVentas /></PageSuspense>} />
+          <Route path="/en/solutions/activate-digital-strategy" element={<PageSuspense><Pages.ActivaTuEstrategiaDigital /></PageSuspense>} />
+          <Route path="/en/solutions/ai-marketing" element={<PageSuspense><Pages.SolucionesIA /></PageSuspense>} />
+          <Route path="/en/solutions/marketing-visibility" element={<PageSuspense><Pages.MarketingVisibilidad /></PageSuspense>} />
+          <Route path="/en/solutions/lead-generation" element={<PageSuspense><Pages.CaptacionLeadsClientes /></PageSuspense>} />
+          <Route path="/en/solutions/marketing-automation" element={<PageSuspense><Pages.AutomatizacionMarketing /></PageSuspense>} />
+          <Route path="/en/solutions/crm-client-management" element={<PageSuspense><Pages.GestionClientesCRM /></PageSuspense>} />
+          
+          {/* SERVICES - Core Services */}
+          <Route path="/en/services/online-store" element={<PageSuspense><Pages.TiendaOnline /></PageSuspense>} />
+          <Route path="/en/services/web-design" element={<PageSuspense><Pages.DisenoWeb /></PageSuspense>} />
+          <Route path="/en/services/web-design/hosting-maintenance" element={<PageSuspense><Pages.AlojamientoMantenimiento /></PageSuspense>} />
+          <Route path="/en/services/seo-positioning" element={<PageSuspense><Pages.SeoPositioning /></PageSuspense>} />
+          <Route path="/en/services/brand-creation" element={<PageSuspense><Pages.CreacionMarca /></PageSuspense>} />
+          <Route path="/en/services/social-media-management" element={<PageSuspense><Pages.GestionRedesSociales /></PageSuspense>} />
+          <Route path="/en/services/social-media-advertising" element={<PageSuspense><Pages.PublicidadRedesSociales /></PageSuspense>} />
+          <Route path="/en/services/google-ads-advertising" element={<PageSuspense><Pages.PublicidadGoogleAds /></PageSuspense>} />
+          <Route path="/en/services/email-marketing-automation" element={<PageSuspense><Pages.EmailMarketingAutomatizaciones /></PageSuspense>} />
+          <Route path="/en/services/strategic-consulting-analytics" element={<PageSuspense><Pages.ConsultoriaEstrategicaAnalitica /></PageSuspense>} />
+          <Route path="/en/services/ai-training" element={<PageSuspense><Pages.FormacionIA /></PageSuspense>} />
+          <Route path="/en/services/ai-process-integration" element={<PageSuspense><Pages.IntegracionesIAProcesos /></PageSuspense>} />
+          <Route path="/en/services/content-strategy" element={<PageSuspense><Pages.EstrategiaContenidos /></PageSuspense>} />
+          <Route path="/en/services/content-localization" element={<PageSuspense><Pages.LocalizacionContenidos /></PageSuspense>} />
+          <Route path="/en/services/inbound-marketing-campaigns" element={<PageSuspense><Pages.CampanasInboundMarketing /></PageSuspense>} />
+          <Route path="/en/services/ai-assistant" element={<PageSuspense><Pages.AsistenteIA /></PageSuspense>} />
+          <Route path="/en/services/direct-marketing" element={<PageSuspense><Pages.MarketingDirecto /></PageSuspense>} />
+          <Route path="/en/services/crm-implementation" element={<PageSuspense><Pages.ImplantacionCrm /></PageSuspense>} />
+          <Route path="/en/services/crm-administration" element={<PageSuspense><Pages.AdministracionCrm /></PageSuspense>} />
+          <Route path="/en/services/sales-process-automation" element={<PageSuspense><Pages.AutomatizacionProcesosVentas /></PageSuspense>} />
+          <Route path="/en/services/lead-generation-clients" element={<PageSuspense><Pages.CaptacionLeadsClientes /></PageSuspense>} />
+          
+          {/* KIT DIGITAL (English version - keep Spanish name as it's a Spanish government program) */}
+          <Route path="/en/kit-digital" element={<PageSuspense><Pages.KitDigital /></PageSuspense>} />
+          <Route path="/en/kit-digital/basic-internet-presence" element={<PageSuspense><Pages.KitDigitalPresenciaBasica /></PageSuspense>} />
+          <Route path="/en/kit-digital/crm-client-management" element={<PageSuspense><Pages.KitDigitalGestionClientes /></PageSuspense>} />
+          <Route path="/en/kit-digital/social-media-management" element={<PageSuspense><Pages.KitDigitalRedesSociales /></PageSuspense>} />
+          <Route path="/en/kit-digital/advanced-presence-seo" element={<PageSuspense><Pages.KitDigitalPresenciaAvanzada /></PageSuspense>} />
+          <Route path="/en/kit-consulting" element={<PageSuspense><Pages.KitConsulting /></PageSuspense>} />
+          
+          {/* CASE STUDIES - Main page */}
+          <Route path="/en/case-studies" element={<PageSuspense><Pages.CasosExito /></PageSuspense>} />
+          
+          {/* CASE STUDIES - Individual cases (Top 10 for Phase 1) */}
+          <Route path="/en/case-studies/asendia" element={<PageSuspense><Pages.CasoExitoAsendia /></PageSuspense>} />
+          <Route path="/en/case-studies/nexo-vital" element={<PageSuspense><Pages.CasoExitoNexoVital /></PageSuspense>} />
+          <Route path="/en/case-studies/i-virgen-extra" element={<PageSuspense><Pages.CasoExitoIVirgenExtra /></PageSuspense>} />
+          <Route path="/en/case-studies/inbound-students" element={<PageSuspense><Pages.CasoExitoInboundStudents /></PageSuspense>} />
+          <Route path="/en/case-studies/calisthenics-online" element={<PageSuspense><Pages.CalistheniaOnlinePage /></PageSuspense>} />
+          <Route path="/en/case-studies/centro-roraima" element={<PageSuspense><Pages.CasoExitoCentroRoraima /></PageSuspense>} />
+          <Route path="/en/case-studies/joints-up" element={<PageSuspense><Pages.CasoExitoJointsUp /></PageSuspense>} />
+          <Route path="/en/case-studies/dr-parron" element={<PageSuspense><Pages.CasoExitoDrParron /></PageSuspense>} />
+          <Route path="/en/case-studies/translate-with-style" element={<PageSuspense><Pages.CasoExitoTranslateWithStyle /></PageSuspense>} />
+          <Route path="/en/case-studies/formato-educativo" element={<PageSuspense><Pages.CasoExitoFormatoEducativo /></PageSuspense>} />
+          
+          {/* BLOG */}
+          <Route path="/en/blog" element={<PageSuspense><Pages.Blog /></PageSuspense>} />
+          <Route path="/en/blog/:id" element={<PageSuspense><Pages.BlogPost /></PageSuspense>} />
+          
+          {/* COMPARISONS */}
+          <Route path="/en/comparison/hubspot-vs-go-high-level" element={<PageSuspense><Pages.ComparativaHubSpotGoHighLevel /></PageSuspense>} />
+          
+          {/* CONTACT & CONSULTATIONS */}
+          <Route path="/en/schedule-meeting" element={<PageSuspense><Pages.AgendarReunion /></PageSuspense>} />
+          <Route path="/en/request-consultation" element={<PageSuspense><Pages.SolicitarConsulta /></PageSuspense>} />
+          <Route path="/en/contact" element={<PageSuspense><Pages.Contacto /></PageSuspense>} />
+          <Route path="/en/thank-you" element={<PageSuspense><Pages.Gracias /></PageSuspense>} />
+          <Route path="/en/thank-you-meeting" element={<PageSuspense><Pages.GraciasPorAgendarReunion /></PageSuspense>} />
+          
+          {/* ADMIN PAGES */}
+          <Route path="/en/admin/seo/pages" element={<PageSuspense><Pages.SEOPagesManager /></PageSuspense>} />
+          <Route path="/en/admin/seo/sitemap" element={<PageSuspense><Pages.SitemapManager /></PageSuspense>} />
+          <Route path="/en/admin/redirects" element={<PageSuspense><Pages.RedirectsManager /></PageSuspense>} />
+          
+          {/* LEGAL PAGES */}
+          <Route path="/en/legal/privacy-policy" element={<PageSuspense><Pages.PoliticaPrivacidad /></PageSuspense>} />
+          <Route path="/en/legal/cookie-policy" element={<PageSuspense><Pages.PoliticaCookies /></PageSuspense>} />
+          
+          {/* FREE TOOLS */}
+          <Route path="/en/tools/whatsapp-link-generator" element={<PageSuspense><Pages.HerramientaGeneradorWhatsApp /></PageSuspense>} />
+          
+          {/* ============================================
+              END OF ENGLISH ROUTES
+              ============================================ */}
+          
+          {/* 404 - MUST BE AT THE END */}
           <Route path="*" element={<PageSuspense><Pages.NotFound /></PageSuspense>} />
         </Routes>
         </DraftProtection>

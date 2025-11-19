@@ -60,6 +60,17 @@ export const registeredRoutes: RouteDefinition[] = [
   { path: '/es/admin/dashboard', category: 'admin', isIndexable: false, priority: 0, changefreq: 'monthly', isDynamic: false, isLegacy: false },
   { path: '/es/admin/seo-pages', category: 'admin', isIndexable: false, priority: 0, changefreq: 'monthly', isDynamic: false, isLegacy: false },
   { path: '/es/admin/sitemap-manager', category: 'admin', isIndexable: false, priority: 0, changefreq: 'monthly', isDynamic: false, isLegacy: false },
+  
+  // ENGLISH ROUTES
+  { path: '/en', category: 'main', isIndexable: true, priority: 1.0, changefreq: 'daily', isDynamic: false, isLegacy: false },
+  { path: '/en/about-us', category: 'main', isIndexable: true, priority: 0.9, changefreq: 'weekly', isDynamic: false, isLegacy: false },
+  { path: '/en/contact', category: 'main', isIndexable: true, priority: 0.9, changefreq: 'weekly', isDynamic: false, isLegacy: false },
+  { path: '/en/solutions/boost-your-brand', category: 'solution', isIndexable: true, priority: 0.8, changefreq: 'weekly', isDynamic: false, isLegacy: false },
+  { path: '/en/solutions/connect-with-customers', category: 'solution', isIndexable: true, priority: 0.8, changefreq: 'weekly', isDynamic: false, isLegacy: false },
+  { path: '/en/services/seo-positioning', category: 'service', isIndexable: true, priority: 0.7, changefreq: 'monthly', isDynamic: false, isLegacy: false },
+  { path: '/en/services/brand-creation', category: 'service', isIndexable: true, priority: 0.7, changefreq: 'monthly', isDynamic: false, isLegacy: false },
+  { path: '/en/blog', category: 'blog', isIndexable: true, priority: 0.7, changefreq: 'weekly', isDynamic: false, isLegacy: false },
+  { path: '/en/case-studies', category: 'case-study', isIndexable: true, priority: 0.6, changefreq: 'monthly', isDynamic: false, isLegacy: false },
 ];
 
 /**
