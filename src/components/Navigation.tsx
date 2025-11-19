@@ -4,12 +4,14 @@ import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
 import { ChevronDown, ArrowRight, ArrowLeft, Zap, Users, Wrench } from 'lucide-react';
 import { useLanguageNavigation } from '@/hooks/useLanguageNavigation';
+import { useTranslation } from '@/hooks/useTranslation';
 
 import { servicesByPillar, pillarMeta } from '@/data/services';
 import type { PillarKey } from '@/data/services';
 
 const Navigation = () => {
   const { language, isEnglish, toggleLanguage } = useLanguageNavigation();
+  const { t } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeMegaMenu, setActiveMegaMenu] = useState<string | null>(null);
@@ -157,7 +159,7 @@ const Navigation = () => {
                 onMouseLeave={handleMouseLeave}
               >
                 <button className="text-foreground hover:text-primary font-medium transition-colors flex items-center gap-1 py-2">
-                  Soluciones
+                  {t('nav.solutions')}
                   <ChevronDown
                     className="h-4 w-4 transition-transform duration-200"
                     style={{ transform: activeMegaMenu === 'soluciones' ? 'rotate(180deg)' : 'rotate(0deg)' }}
@@ -167,11 +169,11 @@ const Navigation = () => {
 
               {/* Casos de Éxito: solo enlace */}
               <Link
-                to="/es/casos-exito"
+                to={`/${language}/casos-exito`}
                 className="text-foreground hover:text-primary font-medium transition-colors py-2"
                 onClick={() => window.scrollTo(0, 0)}
               >
-                Casos de Éxito
+                {t('nav.caseStudies')}
               </Link>
 
               {/* Servicios Mega Menu */}
@@ -181,11 +183,11 @@ const Navigation = () => {
                 onMouseLeave={handleMouseLeave}
               >
                 <Link
-                  to="/es/servicios"
+                  to={`/${language}/servicios`}
                   className="text-foreground hover:text-primary font-medium transition-colors flex items-center gap-1 py-2"
                   onClick={() => window.scrollTo(0, 0)}
                 >
-                  Servicios
+                  {t('nav.services')}
                   <ChevronDown
                     className="h-4 w-4 transition-transform duration-200"
                     style={{ transform: activeMegaMenu === 'servicios' ? 'rotate(180deg)' : 'rotate(0deg)' }}
@@ -193,14 +195,14 @@ const Navigation = () => {
                 </Link>
               </div>
 
-              <Link to="/es/nosotros" className="text-foreground hover:text-primary font-medium transition-colors">
-                La Agencia
+              <Link to={`/${language}/nosotros`} className="text-foreground hover:text-primary font-medium transition-colors">
+                {t('nav.theAgency')}
               </Link>
-              <Link to="/es/blog" className="text-foreground hover:text-primary font-medium transition-colors">
-                Blog
+              <Link to={`/${language}/blog`} className="text-foreground hover:text-primary font-medium transition-colors">
+                {t('nav.blog')}
               </Link>
-              <Link to="/es/contacto" className="text-foreground hover:text-primary font-medium transition-colors">
-                Contacto
+              <Link to={`/${language}/contacto`} className="text-foreground hover:text-primary font-medium transition-colors">
+                {t('nav.contact')}
               </Link>
             </nav>
 
@@ -218,7 +220,7 @@ const Navigation = () => {
               </Button>
               
               <Button asChild className="gradient-primary text-white hover-scale">
-                <Link to="/es/agendar-reunion">Solicitar Consulta</Link>
+                <Link to={`/${language}/agendar-reunion`}>{t('footer.scheduleConsultation')}</Link>
               </Button>
             </div>
 

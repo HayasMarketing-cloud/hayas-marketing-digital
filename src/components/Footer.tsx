@@ -3,19 +3,25 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight, Building2, Users, Linkedin, Youtube, MessageSquare, Mail, MapPin } from 'lucide-react';
+import { useLanguageNavigation } from '@/hooks/useLanguageNavigation';
+import { useTranslation } from '@/hooks/useTranslation';
+
 interface FooterProps {
   showKitSection?: boolean;
 }
+
 const Footer: React.FC<FooterProps> = ({
   showKitSection = false
 }) => {
+  const { language } = useLanguageNavigation();
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
   return <footer className="bg-gray-900 text-gray-300">
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           <div>
             <h3 className="text-xl font-bold text-white mb-4">Hayas Marketing</h3>
-            <p className="mb-4">En Hayas, ayudamos a empresas y emprendedores a prosperar con estrategias de marketing esenciales que integran inteligencia artificial y automatización, totalmente alineadas a propósito y visión estratégica. </p>
+            <p className="mb-4">{t('footer.tagline')}</p>
             <div className="flex space-x-4">
               <a href="https://www.facebook.com/hayasmarketing" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -47,38 +53,38 @@ const Footer: React.FC<FooterProps> = ({
           </div>
           
           <div>
-            <h3 className="text-xl font-bold text-white mb-4">Descubre tu solución</h3>
+            <h3 className="text-xl font-bold text-white mb-4">{t('footer.discoverSolution')}</h3>
             <ul className="space-y-3">
-            <li><Link to="/es/soluciones/impulsa-tu-marca" className="hover:text-secondary transition-colors">Impulsa tu marca</Link></li>
-            <li><Link to="/es/soluciones/conecta-con-tus-clientes" className="hover:text-secondary transition-colors">Conecta con tus clientes</Link></li>
-            <li><Link to="/es/soluciones/activa-tus-ventas" className="hover:text-secondary transition-colors">Activa tus ventas</Link></li>
-            <li><Link to="/es/soluciones/ia-marketing" className="hover:text-secondary transition-colors">Soluciones IA aplicada a Marketing</Link></li>
+            <li><Link to={`/${language}/soluciones/impulsa-tu-marca`} className="hover:text-secondary transition-colors">{t('footer.impulsa-tu-marca')}</Link></li>
+            <li><Link to={`/${language}/soluciones/conecta-con-tus-clientes`} className="hover:text-secondary transition-colors">{t('footer.conecta-con-tus-clientes')}</Link></li>
+            <li><Link to={`/${language}/soluciones/activa-tus-ventas`} className="hover:text-secondary transition-colors">{t('footer.activa-tus-ventas')}</Link></li>
+            <li><Link to={`/${language}/soluciones/ia-marketing`} className="hover:text-secondary transition-colors">{t('footer.ia-marketing')}</Link></li>
             </ul>
           </div>
           
           <div>
-            <h3 className="text-xl font-bold text-white mb-4">Servicios destacados</h3>
+            <h3 className="text-xl font-bold text-white mb-4">{t('footer.featuredServices')}</h3>
             <ul className="space-y-2">
-            <li><Link to="/es/servicios/creacion-marca" className="hover:text-secondary transition-colors text-sm">Creación de Marca</Link></li>
-            <li><Link to="/es/servicios/diseno-web" className="hover:text-secondary transition-colors text-sm">Diseño web profesional</Link></li>
-            <li><Link to="/es/servicios/implantacion-crm" className="hover:text-secondary transition-colors text-sm">Implantación CRM</Link></li>
-            <li><Link to="/es/servicios/automatizacion-procesos-ventas" className="hover:text-secondary transition-colors text-sm">Automatización comercial</Link></li>
-            <li><Link to="/es/servicios/seo-posicionamiento" className="hover:text-secondary transition-colors text-sm">SEO y posicionamiento</Link></li>
-            <li><Link to="/es/servicios/captacion-leads-clientes" className="hover:text-secondary transition-colors text-sm">Captación de leads</Link></li>
-            <li><Link to="/es/servicios/email-marketing-automatizaciones" className="hover:text-secondary transition-colors text-sm">Email marketing</Link></li>
-            <li><Link to="/es/servicios/consultoria-estrategica-analitica" className="hover:text-secondary transition-colors text-sm">Consultoría estratégica</Link></li>
+            <li><Link to={`/${language}/servicios/creacion-marca`} className="hover:text-secondary transition-colors text-sm">{t('footer.creacion-marca')}</Link></li>
+            <li><Link to={`/${language}/servicios/diseno-web`} className="hover:text-secondary transition-colors text-sm">{t('footer.diseno-web')}</Link></li>
+            <li><Link to={`/${language}/servicios/implantacion-crm`} className="hover:text-secondary transition-colors text-sm">{t('footer.implantacion-crm')}</Link></li>
+            <li><Link to={`/${language}/servicios/automatizacion-procesos-ventas`} className="hover:text-secondary transition-colors text-sm">{t('footer.automatizacion-comercial')}</Link></li>
+            <li><Link to={`/${language}/servicios/seo-posicionamiento`} className="hover:text-secondary transition-colors text-sm">{t('footer.seo-posicionamiento')}</Link></li>
+            <li><Link to={`/${language}/servicios/captacion-leads-clientes`} className="hover:text-secondary transition-colors text-sm">{t('footer.captacion-leads')}</Link></li>
+            <li><Link to={`/${language}/servicios/email-marketing-automatizaciones`} className="hover:text-secondary transition-colors text-sm">{t('footer.email-marketing')}</Link></li>
+            <li><Link to={`/${language}/servicios/consultoria-estrategica-analitica`} className="hover:text-secondary transition-colors text-sm">{t('footer.consultoria-estrategica')}</Link></li>
             </ul>
           </div>
           
           <div>
-            <h3 className="text-xl font-bold text-white mb-4">Recursos</h3>
+            <h3 className="text-xl font-bold text-white mb-4">{t('footer.resources')}</h3>
             <ul className="space-y-2">
-              <li><Link to="/es/casos-exito" className="hover:text-secondary transition-colors text-sm">Casos de éxito</Link></li>
-              <li><Link to="/es/blog" className="hover:text-secondary transition-colors text-sm">Blog y guías</Link></li>
-              <li><Link to="/es/servicios" className="hover:text-secondary transition-colors text-sm">Todos los servicios</Link></li>
-              <li><Link to="/es/nosotros" className="hover:text-secondary transition-colors text-sm">Sobre nosotros</Link></li>
-              <li><Link to="/es/contacto" className="hover:text-secondary transition-colors text-sm">Contacto</Link></li>
-              <li><Link to="/es/agendar-reunion" className="hover:text-secondary transition-colors text-sm">Agendar consulta</Link></li>
+              <li><Link to={`/${language}/casos-exito`} className="hover:text-secondary transition-colors text-sm">{t('footer.caseStudies')}</Link></li>
+              <li><Link to={`/${language}/blog`} className="hover:text-secondary transition-colors text-sm">{t('footer.blogGuides')}</Link></li>
+              <li><Link to={`/${language}/servicios`} className="hover:text-secondary transition-colors text-sm">{t('footer.allServices')}</Link></li>
+              <li><Link to={`/${language}/nosotros`} className="hover:text-secondary transition-colors text-sm">{t('footer.aboutUs')}</Link></li>
+              <li><Link to={`/${language}/contacto`} className="hover:text-secondary transition-colors text-sm">{t('footer.contact')}</Link></li>
+              <li><Link to={`/${language}/agendar-reunion`} className="hover:text-secondary transition-colors text-sm">{t('footer.scheduleConsultation')}</Link></li>
             </ul>
           </div>
         </div>
@@ -96,7 +102,7 @@ const Footer: React.FC<FooterProps> = ({
             </div>
             <div className="flex items-center gap-2">
               <MapPin className="h-4 w-4 text-secondary" />
-              <span className="text-sm">Madrid, España</span>
+              <span className="text-sm">{t('footer.officeLocation')}</span>
             </div>
           </div>
         </div>
@@ -190,13 +196,13 @@ const Footer: React.FC<FooterProps> = ({
         
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between">
           <div className="mb-4 md:mb-0">
-            <p>&copy; {currentYear} Hayas Marketing. Todos los derechos reservados.</p>
+            <p>{t('footer.rights')}</p>
           </div>
           <div className="flex space-x-6">
-            <Link to="/es/legal/aviso-legal" className="hover:text-secondary transition-colors">Aviso Legal</Link>
-            <Link to="/es/legal/politica-privacidad" className="hover:text-secondary transition-colors">Política de Privacidad</Link>
-            <Link to="/es/legal/terminos-servicio" className="hover:text-secondary transition-colors">Términos de Servicio</Link>
-            <Link to="/es/legal/politica-cookies" className="hover:text-secondary transition-colors">Cookies</Link>
+            <Link to={`/${language}/legal/aviso-legal`} className="hover:text-secondary transition-colors">{t('footer.legal')}</Link>
+            <Link to={`/${language}/legal/politica-privacidad`} className="hover:text-secondary transition-colors">{t('footer.privacy')}</Link>
+            <Link to={`/${language}/legal/terminos-servicio`} className="hover:text-secondary transition-colors">{t('footer.terms')}</Link>
+            <Link to={`/${language}/legal/politica-cookies`} className="hover:text-secondary transition-colors">{t('footer.cookies')}</Link>
           </div>
         </div>
       </div>
