@@ -5,6 +5,7 @@ import { TranslationStats } from '@/components/admin/translation/TranslationStat
 import { TranslationTable } from '@/components/admin/translation/TranslationTable';
 import { RouteInconsistenciesPanel } from '@/components/admin/translation/RouteInconsistenciesPanel';
 import { SEONavigation } from '@/components/admin/seo/SEONavigation';
+import { AdminBreadcrumbs } from '@/components/admin/AdminBreadcrumbs';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useTranslation } from '@/hooks/useTranslation';
 
@@ -19,6 +20,7 @@ const TranslationManager = () => {
       <SEONavigation />
       
       <div className="container mx-auto px-4 py-8">
+        <AdminBreadcrumbs currentPage="Traducciones" className="mb-6" />
         <div className="mb-8">
           <h1 className="text-4xl font-bold mb-2">{admin.title}</h1>
           <p className="text-muted-foreground">

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import SEONavigation from '@/components/seo-dashboard/SEONavigation';
+import { AdminBreadcrumbs } from '@/components/admin/AdminBreadcrumbs';
 import { MetricsCard } from '@/components/seo-dashboard/MetricsCard';
 import { SEOHealthIndicator } from '@/components/seo-dashboard/SEOHealthIndicator';
 import { FileText, Globe, ArrowRight, Map, AlertTriangle } from 'lucide-react';
@@ -54,6 +55,7 @@ const SEODashboard: React.FC = () => {
       
       <main className="flex-1 container mx-auto px-4 py-8">
         <div className="max-w-7xl mx-auto space-y-8">
+          <AdminBreadcrumbs currentPage="SEO Control Center" />
           <div>
             <h1 className="text-4xl font-bold mb-2">SEO Control Center</h1>
             <p className="text-muted-foreground">Monitoreo y gestión de la estrategia SEO completa</p>
