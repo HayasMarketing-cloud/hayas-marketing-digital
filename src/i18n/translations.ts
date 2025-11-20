@@ -244,6 +244,228 @@ export const translations = {
           subtitle: 'Agenda una consulta gratuita y descubre cómo la automatización puede transformar tu estrategia de marketing digital.',
           button: 'Solicitar consulta gratuita'
         }
+      },
+      leadGeneration: {
+        breadcrumbs: {
+          home: 'Inicio',
+          connectCustomers: 'Conecta con tus clientes',
+          services: 'Servicios',
+          current: 'Captación de Leads y Clientes'
+        },
+        hero: {
+          title: 'Convierte visitantes en clientes reales',
+          subtitle: 'Sistemas automatizados de generación y conversión de prospectos que transforman el tráfico de tu web en una fuente constante de oportunidades de negocio cualificadas.',
+          ctaPrimary: 'Generar más leads',
+          ctaSecondary: 'Ver solución: Conecta con tus clientes'
+        },
+        valueProposition: {
+          title: 'Sistemas de captación de leads que transforman tu presencia digital en una máquina de adquisición de clientes',
+          description: 'Desde captar la atención hasta calificar oportunidades, diseñamos funnels completos que multiplican tus oportunidades de conversión y aceleran tu ciclo de ventas.'
+        },
+        includes: {
+          title: '¿Qué incluye la solución de generación de leads?',
+          items: [
+            'Lead magnets estratégicos y ofertas irresistibles.',
+            'Landing pages optimizadas para máxima conversión.',
+            'Diseño de funnels de conversión personalizados.',
+            'Campañas de Google Ads y Meta Ads segmentadas.',
+            'Lead nurturing automatizado con secuencias personalizadas.',
+            'Sistema de lead scoring y calificación inteligente.',
+            'Asistentes conversacionales con IA para captación 24/7.',
+            'Analytics de conversión y medición detallada.'
+          ]
+        },
+        benefits: {
+          title: 'Beneficios que obtendrás',
+          items: [
+            'Convierte visitantes pasivos en leads cualificados.',
+            'Más leads cualificados en menos tiempo.',
+            'Reducción del coste de adquisición de clientes.',
+            'Sistema automatizado que trabaja 24/7.',
+            'Calificación inteligente para priorizar esfuerzos comerciales.',
+            'Mejora en la tasa de conversión gracias a la personalización.',
+            'Medición detallada del ROI de cada canal.'
+          ]
+        },
+        howItWorks: {
+          title: '¿Cómo funciona?',
+          steps: [
+            {
+              number: '01',
+              title: 'Atracción',
+              description: 'Contenido estratégico y campañas segmentadas atraen tráfico cualificado a tus lead magnets.'
+            },
+            {
+              number: '02',
+              title: 'Conversión',
+              description: 'Formularios y landing pages optimizadas transforman visitantes en prospectos.'
+            },
+            {
+              number: '03',
+              title: 'Calificación',
+              description: 'Lead scoring identifica automáticamente las oportunidades más valiosas.'
+            },
+            {
+              number: '04',
+              title: 'Nurturing',
+              description: 'Secuencias educativas automatizadas guían prospectos por el recorrido de compra.'
+            }
+          ]
+        },
+        features: {
+          title: 'Funcionalidades avanzadas para rendimiento óptimo',
+          items: [
+            {
+              title: 'Segmentación Inteligente',
+              description: 'Targeting comportamental y demográfico para captar a tu cliente ideal.'
+            },
+            {
+              title: 'Campañas de Retargeting',
+              description: 'Recupera visitantes que no convirtieron en su primera visita.'
+            },
+            {
+              title: 'Formularios Inteligentes',
+              description: 'Forms progresivos que optimizan la experiencia sin sacrificar información.'
+            },
+            {
+              title: 'Testing A/B',
+              description: 'Experimentación continua para maximizar tasas de conversión.'
+            },
+            {
+              title: 'Alertas en Tiempo Real',
+              description: 'Notificaciones instantáneas de leads de alta calidad para seguimiento inmediato.'
+            },
+            {
+              title: 'Integración CRM',
+              description: 'Sincronización directa con tu proceso de ventas para seguimiento sin fisuras.'
+            }
+          ]
+        },
+        cta: {
+          title: '¿Quieres multiplicar tu generación de leads?',
+          subtitle: 'Agenda una consulta gratuita y descubre cómo nuestros sistemas de conversión pueden transformar tu embudo de ventas.',
+          button: 'Solicitar consulta gratuita'
+        }
+      },
+      crmManagement: {
+        breadcrumbs: {
+          home: 'Inicio',
+          activateSales: 'Activa tus ventas',
+          current: 'Gestión de Clientes CRM'
+        },
+        hero: {
+          title: 'Centraliza tu gestión comercial con un CRM profesional',
+          subtitle: 'Implementamos y optimizamos sistemas CRM que organizan tu embudo comercial, automatizan el seguimiento y te dan visibilidad total sobre tus oportunidades de negocio.',
+          ctaPrimary: 'Solicitar demo personalizada',
+          ctaSecondary: 'Comparar CRMs'
+        },
+        valueProposition: {
+          title: 'Un CRM que',
+          titleHighlight: 'impulsa tus ventas',
+          cards: [
+            {
+              title: 'Visibilidad Total',
+              description: 'Conoce de un vistazo el estado de todas tus oportunidades.'
+            },
+            {
+              title: 'Automatización Inteligente',
+              description: 'Libera a tu equipo de tareas administrativas y céntrate en vender.'
+            },
+            {
+              title: 'Crecimiento Acelerado',
+              description: 'Escala tu negocio sin aumentar proporcionalmente tu equipo de ventas.'
+            }
+          ]
+        },
+        includes: {
+          title: '¿Qué incluye la solución de CRM?',
+          items: [
+            'Implementación completa de CRM (HubSpot o GoHighLevel).',
+            'Configuración de pipelines de ventas personalizados.',
+            'Automatización de seguimiento de leads y clientes.',
+            'Integración con herramientas existentes (email, calendarios, etc.).',
+            'Dashboards personalizados de rendimiento comercial.',
+            'Sistema de lead scoring y calificación automática.',
+            'Formación del equipo en el uso del CRM.',
+            'Soporte técnico y optimización continua.'
+          ]
+        },
+        benefits: {
+          title: 'Beneficios que obtendrás',
+          items: [
+            'Visión 360° de cada cliente en un solo lugar.',
+            'Aumento de hasta 29% en productividad de ventas.',
+            'Mejora en la tasa de cierre de oportunidades.',
+            'Automatización de tareas administrativas repetitivas.',
+            'Reducción de leads perdidos por falta de seguimiento.',
+            'Datos centralizados y accesibles para todo el equipo.',
+            'Escalabilidad sin perder control ni visibilidad.'
+          ]
+        },
+        howItWorks: {
+          title: '¿Cómo funciona un CRM profesional?',
+          steps: [
+            {
+              number: '01',
+              title: 'Diagnóstico',
+              description: 'Análisis de tu proceso actual y necesidades específicas.'
+            },
+            {
+              number: '02',
+              title: 'Configuración',
+              description: 'Setup de la plataforma personalizada a tu flujo de ventas.'
+            },
+            {
+              number: '03',
+              title: 'Migración',
+              description: 'Transferencia de datos existentes e integración con tus herramientas.'
+            },
+            {
+              number: '04',
+              title: 'Formación',
+              description: 'Capacitación del equipo y acompañamiento en la adopción.'
+            },
+            {
+              number: '05',
+              title: 'Optimización',
+              description: 'Ajustes continuos para maximizar resultados.'
+            }
+          ]
+        },
+        features: {
+          title: 'Funcionalidades clave para crecer',
+          items: [
+            {
+              title: 'Pipelines Visuales',
+              description: 'Vista kanban para gestionar todo tu embudo de ventas.'
+            },
+            {
+              title: 'Automatización de Ventas',
+              description: 'Secuencias automáticas de emails, tareas y recordatorios.'
+            },
+            {
+              title: 'Informes Avanzados',
+              description: 'Analytics y KPIs para tomar decisiones basadas en datos.'
+            },
+            {
+              title: 'Comunicación Multicanal',
+              description: 'Email, SMS, WhatsApp y llamadas desde la misma plataforma.'
+            },
+            {
+              title: 'Lead Scoring',
+              description: 'Calificación automática para priorizar tus esfuerzos.'
+            },
+            {
+              title: 'Acceso Móvil',
+              description: 'Gestiona tus ventas desde cualquier lugar, en cualquier momento.'
+            }
+          ]
+        },
+        cta: {
+          title: '¿Listo para transformar tu gestión de ventas?',
+          subtitle: 'Agenda una demo gratuita y descubre cómo un CRM profesional puede revolucionar tus resultados.',
+          button: 'Agendar demo'
+        }
       }
     }
   },
@@ -491,6 +713,228 @@ export const translations = {
           title: 'Ready to automate your marketing?',
           subtitle: 'Schedule a free consultation and discover how automation can transform your digital marketing strategy.',
           button: 'Request free consultation'
+        }
+      },
+      leadGeneration: {
+        breadcrumbs: {
+          home: 'Home',
+          connectCustomers: 'Connect with your customers',
+          services: 'Services',
+          current: 'Lead Generation and Clients'
+        },
+        hero: {
+          title: 'Convert visitors into real customers',
+          subtitle: 'Automated lead generation and conversion systems that transform your website traffic into a constant source of qualified business opportunities.',
+          ctaPrimary: 'Generate more leads',
+          ctaSecondary: 'View solution: Connect with your customers'
+        },
+        valueProposition: {
+          title: 'Lead generation systems that transform your digital presence into a client acquisition machine',
+          description: 'From capturing attention to qualifying opportunities, we design complete funnels that multiply your conversion opportunities and accelerate your sales cycle.'
+        },
+        includes: {
+          title: 'What does the lead generation solution include?',
+          items: [
+            'Strategic lead magnets and irresistible offers.',
+            'Landing pages optimized for maximum conversion.',
+            'Custom conversion funnel design.',
+            'Targeted Google Ads and Meta Ads campaigns.',
+            'Automated lead nurturing with personalized sequences.',
+            'Intelligent lead scoring and qualification system.',
+            'AI conversational assistants for 24/7 lead capture.',
+            'Conversion analytics and detailed measurement.'
+          ]
+        },
+        benefits: {
+          title: 'Benefits you will obtain',
+          items: [
+            'Convert passive visitors into qualified leads.',
+            'More qualified leads in less time.',
+            'Reduction in customer acquisition cost.',
+            'Automated system that works 24/7.',
+            'Intelligent qualification to prioritize commercial efforts.',
+            'Improved conversion rate thanks to personalization.',
+            'Detailed measurement of ROI for each channel.'
+          ]
+        },
+        howItWorks: {
+          title: 'How does it work?',
+          steps: [
+            {
+              number: '01',
+              title: 'Attraction',
+              description: 'Strategic content and targeted campaigns bring qualified traffic to your lead magnets.'
+            },
+            {
+              number: '02',
+              title: 'Conversion',
+              description: 'Optimized forms and landing pages transform visitors into prospects.'
+            },
+            {
+              number: '03',
+              title: 'Qualification',
+              description: 'Lead scoring automatically identifies the most valuable opportunities.'
+            },
+            {
+              number: '04',
+              title: 'Nurturing',
+              description: 'Automated educational sequences guide prospects through the buying journey.'
+            }
+          ]
+        },
+        features: {
+          title: 'Advanced features for optimal performance',
+          items: [
+            {
+              title: 'Intelligent Segmentation',
+              description: 'Behavioral and demographic targeting to capture your ideal customer.'
+            },
+            {
+              title: 'Retargeting Campaigns',
+              description: 'Recapture visitors who didn\'t convert on their first visit.'
+            },
+            {
+              title: 'Smart Forms',
+              description: 'Progressive forms that optimize user experience without sacrificing information.'
+            },
+            {
+              title: 'A/B Testing',
+              description: 'Continuous experimentation to maximize conversion rates.'
+            },
+            {
+              title: 'Real-Time Alerts',
+              description: 'Instant notifications of high-quality leads for immediate follow-up.'
+            },
+            {
+              title: 'CRM Integration',
+              description: 'Direct synchronization with your sales process for seamless tracking.'
+            }
+          ]
+        },
+        cta: {
+          title: 'Want to multiply your lead generation?',
+          subtitle: 'Schedule a free consultation and discover how our conversion systems can transform your sales funnel.',
+          button: 'Request free consultation'
+        }
+      },
+      crmManagement: {
+        breadcrumbs: {
+          home: 'Home',
+          activateSales: 'Activate your sales',
+          current: 'CRM Client Management'
+        },
+        hero: {
+          title: 'Centralize your commercial management with a professional CRM',
+          subtitle: 'We implement and optimize CRM systems that organize your sales funnel, automate tracking, and give you total visibility of your business opportunities.',
+          ctaPrimary: 'Request personalized demo',
+          ctaSecondary: 'Compare CRMs'
+        },
+        valueProposition: {
+          title: 'A CRM that',
+          titleHighlight: 'drives your sales',
+          cards: [
+            {
+              title: 'Total Visibility',
+              description: 'Know at a glance the status of all your opportunities.'
+            },
+            {
+              title: 'Intelligent Automation',
+              description: 'Free your team from administrative tasks and focus on selling.'
+            },
+            {
+              title: 'Accelerated Growth',
+              description: 'Scale your business without increasing your sales team proportionally.'
+            }
+          ]
+        },
+        includes: {
+          title: 'What does the CRM solution include?',
+          items: [
+            'Complete CRM implementation (HubSpot or GoHighLevel).',
+            'Configuration of personalized sales pipelines.',
+            'Automation of lead and customer tracking.',
+            'Integration with existing tools (email, calendars, etc.).',
+            'Customized commercial performance dashboards.',
+            'Automatic lead scoring and qualification system.',
+            'Team training in CRM use.',
+            'Technical support and continuous optimization.'
+          ]
+        },
+        benefits: {
+          title: 'Benefits you will obtain',
+          items: [
+            '360° view of each customer in one place.',
+            'Up to 29% increase in sales productivity.',
+            'Improvement in opportunity close rate.',
+            'Automation of repetitive administrative tasks.',
+            'Reduction of lost leads due to lack of follow-up.',
+            'Centralized and accessible data for the entire team.',
+            'Scalability without losing control or visibility.'
+          ]
+        },
+        howItWorks: {
+          title: 'How does a professional CRM work?',
+          steps: [
+            {
+              number: '01',
+              title: 'Diagnosis',
+              description: 'Analysis of your current process and specific needs.'
+            },
+            {
+              number: '02',
+              title: 'Configuration',
+              description: 'Platform setup customized to your sales workflow.'
+            },
+            {
+              number: '03',
+              title: 'Migration',
+              description: 'Transfer of existing data and integration with your tools.'
+            },
+            {
+              number: '04',
+              title: 'Training',
+              description: 'Team training and adoption support.'
+            },
+            {
+              number: '05',
+              title: 'Optimization',
+              description: 'Continuous adjustments to maximize results.'
+            }
+          ]
+        },
+        features: {
+          title: 'Key features to grow',
+          items: [
+            {
+              title: 'Visual Pipelines',
+              description: 'Kanban view to manage your entire sales funnel.'
+            },
+            {
+              title: 'Sales Automation',
+              description: 'Automatic sequences of emails, tasks, and reminders.'
+            },
+            {
+              title: 'Advanced Reports',
+              description: 'Analytics and KPIs to make data-driven decisions.'
+            },
+            {
+              title: 'Multi-channel Communication',
+              description: 'Email, SMS, WhatsApp and calls from the same platform.'
+            },
+            {
+              title: 'Lead Scoring',
+              description: 'Automatic qualification to prioritize your efforts.'
+            },
+            {
+              title: 'Mobile Access',
+              description: 'Manage your sales from anywhere, at any time.'
+            }
+          ]
+        },
+        cta: {
+          title: 'Ready to transform your sales management?',
+          subtitle: 'Schedule a free demo and discover how a professional CRM can revolutionize your results.',
+          button: 'Schedule demo'
         }
       }
     },

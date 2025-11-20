@@ -9,29 +9,13 @@ import { Link } from 'react-router-dom';
 import ServiceContactSection from '@/components/ServiceContactSection';
 import { DynamicH1 } from '@/components/DynamicH1';
 import { Database, Users, TrendingUp, BarChart3, Zap, Shield, Workflow, ArrowRight } from 'lucide-react';
-
-const includes = [
-  'Implementación completa de CRM (HubSpot o GoHighLevel).',
-  'Configuración de pipelines de ventas personalizados.',
-  'Automatización de seguimiento de leads y clientes.',
-  'Integración con herramientas existentes (email, calendarios, etc.).',
-  'Dashboards personalizados de rendimiento comercial.',
-  'Sistema de lead scoring y calificación automática.',
-  'Formación del equipo en el uso del CRM.',
-  'Soporte técnico y optimización continua.',
-];
-
-const benefits = [
-  'Visión 360° de cada cliente en un solo lugar.',
-  'Aumento de hasta 29% en productividad de ventas.',
-  'Mejora en la tasa de cierre de oportunidades.',
-  'Automatización de tareas administrativas repetitivas.',
-  'Reducción de leads perdidos por falta de seguimiento.',
-  'Datos centralizados y accesibles para todo el equipo.',
-  'Escalabilidad sin perder control ni visibilidad.',
-];
+import { useTranslation } from '@/hooks/useTranslation';
+import { useLanguageNavigation } from '@/hooks/useLanguageNavigation';
 
 const GestionClientesCRM: React.FC = () => {
+  const { t } = useTranslation();
+  const { getLocalizedPath } = useLanguageNavigation();
+  const page = t('pages.crmManagement') as any;
   return (
     <>
       <EnhancedSEO />

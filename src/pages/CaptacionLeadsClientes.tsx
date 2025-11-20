@@ -9,29 +9,13 @@ import { Link } from 'react-router-dom';
 import ServiceContactSection from '@/components/ServiceContactSection';
 import { DynamicH1 } from '@/components/DynamicH1';
 import { Filter, Megaphone, Mail, Bot, BarChart3, Magnet, Settings, MessageSquare, Zap } from 'lucide-react';
-
-const includes = [
-  'Lead magnets estratégicos y ofertas irresistibles.',
-  'Landing pages optimizadas para máxima conversión.',
-  'Diseño de funnels de conversión personalizados.',
-  'Campañas de Google Ads y Meta Ads segmentadas.',
-  'Lead nurturing automatizado con secuencias personalizadas.',
-  'Sistema de lead scoring y calificación inteligente.',
-  'Asistentes conversacionales con IA para captación 24/7.',
-  'Analytics de conversión y medición detallada.',
-];
-
-const benefits = [
-  'Convierte visitantes pasivos en leads cualificados.',
-  'Más leads cualificados en menos tiempo.',
-  'Reducción del coste de adquisición de clientes.',
-  'Sistema automatizado que trabaja 24/7.',
-  'Calificación inteligente para priorizar esfuerzos comerciales.',
-  'Mejora en la tasa de conversión gracias a la personalización.',
-  'Medición detallada del ROI de cada canal.',
-];
+import { useTranslation } from '@/hooks/useTranslation';
+import { useLanguageNavigation } from '@/hooks/useLanguageNavigation';
 
 const CaptacionLeadsClientes: React.FC = () => {
+  const { t } = useTranslation();
+  const { getLocalizedPath } = useLanguageNavigation();
+  const page = t('pages.leadGeneration') as any;
   return (
     <>
       <EnhancedSEO />
