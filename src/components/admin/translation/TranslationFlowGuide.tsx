@@ -22,7 +22,7 @@ export const TranslationFlowGuide: React.FC = () => {
         
         <div className="flex items-center gap-2 flex-wrap">
           {steps.map((step, index) => (
-            <React.Fragment key={step.number}>
+            <div key={step.number} className="contents">
               <div className="flex items-center gap-3 bg-background/60 backdrop-blur-sm rounded-lg p-3 border border-border/50 flex-1 min-w-[180px]">
                 <div className={`${step.color} text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm shrink-0`}>
                   {step.number}
@@ -35,7 +35,7 @@ export const TranslationFlowGuide: React.FC = () => {
               {index < steps.length - 1 && (
                 <ArrowRight className="h-5 w-5 text-muted-foreground shrink-0 hidden lg:block" />
               )}
-            </React.Fragment>
+            </div>
           ))}
         </div>
       </div>
