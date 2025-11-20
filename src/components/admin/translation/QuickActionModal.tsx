@@ -33,6 +33,7 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({ route, isOpe
     keywords: '',
     schema_type: 'WebPage',
     og_type: 'website',
+    og_image: '',
   });
 
   const validation = validateSEOFields({
@@ -40,12 +41,35 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({ route, isOpe
     keywords: formData.keywords.split(',').map(k => k.trim()).filter(Boolean),
   });
 
-  // Log only when route changes
+  // Load existing SEO data when modal opens
   React.useEffect(() => {
+    const loadExistingSEOData = async () => {
+      if (isOpen && route?.dbId) {
+        const { data, error } = await supabase
+          .from('seo_pages')
+          .select('*')
+          .eq('id', route.dbId)
+          .single();
+
+        if (data && !error) {
+          setFormData({
+            title: data.title || '',
+            description: data.description || '',
+            h1: data.h1 || '',
+            keywords: Array.isArray(data.keywords) ? data.keywords.join(', ') : '',
+            schema_type: data.schema_type || 'WebPage',
+            og_type: data.og_type || 'website',
+            og_image: data.og_image || '',
+          });
+        }
+      }
+    };
+
     if (isOpen) {
       console.log('🟣 [QuickActionModal] Opened with route:', route?.path);
+      loadExistingSEOData();
     }
-  }, [isOpen, route?.path]);
+  }, [isOpen, route?.path, route?.dbId]);
 
   if (!route) return null;
 
@@ -57,11 +81,59 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({ route, isOpe
       keywords: template.fields.keywords.join(', '),
       schema_type: template.fields.schema_type,
       og_type: template.fields.og_type,
+      og_image: formData.og_image, // Keep existing og_image
     });
     toast({
       title: '✅ Template aplicado',
       description: 'Personaliza los campos según tu página',
     });
+  };
+
+  const handleUpdateSEO = async () => {
+    if (!route.dbId) {
+      toast({
+        variant: 'destructive',
+        title: 'Error',
+        description: 'No se encontró el ID de la página en la base de datos',
+      });
+      return;
+    }
+
+    setIsLoading(true);
+    try {
+      const updateData: any = {};
+      
+      // Only update fields that have values
+      if (formData.og_image) updateData.og_image = formData.og_image;
+      if (formData.title) updateData.title = formData.title;
+      if (formData.description) updateData.description = formData.description;
+      if (formData.h1) updateData.h1 = formData.h1;
+      if (formData.keywords) {
+        updateData.keywords = formData.keywords.split(',').map(k => k.trim()).filter(Boolean);
+      }
+
+      const { error } = await supabase
+        .from('seo_pages')
+        .update(updateData)
+        .eq('id', route.dbId);
+
+      if (error) throw error;
+
+      toast({
+        title: '✅ SEO actualizado correctamente',
+        description: 'Los cambios se han guardado en la base de datos',
+      });
+      onSuccess();
+      onClose();
+    } catch (error: any) {
+      toast({
+        variant: 'destructive',
+        title: '❌ Error al actualizar',
+        description: error.message,
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleAddToDB = async () => {
@@ -289,39 +361,36 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({ route, isOpe
       );
     }
 
-    // Revisar SEO: Show validation
+    // Revisar SEO: Show validation and allow editing
     return (
       <div className="space-y-4 py-6">
         <div className="bg-yellow-500/10 p-4 rounded-lg mb-4">
           <h4 className="font-semibold text-yellow-700 mb-2">Paso 3: Optimizar SEO</h4>
           <p className="text-sm text-muted-foreground">
-            Revisa y completa los campos SEO para máxima visibilidad en Google
+            {route.seoOptimized 
+              ? 'Esta página está completamente optimizada para SEO'
+              : 'Completa los campos faltantes para mejorar tu posicionamiento en Google'
+            }
           </p>
         </div>
         
-        <div className="text-center space-y-4">
-          <div className="flex justify-center">
-            <div className="p-4 bg-yellow-500/10 rounded-full">
-              {route.seoOptimized ? (
+        {route.seoOptimized ? (
+          <div className="text-center space-y-4">
+            <div className="flex justify-center">
+              <div className="p-4 bg-green-500/10 rounded-full">
                 <CheckCircle2 className="h-12 w-12 text-green-500" />
-              ) : (
-                <Zap className="h-12 w-12 text-yellow-500" />
-              )}
+              </div>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">✅ SEO Completo</h3>
+              <p className="text-sm text-muted-foreground">
+                Esta página está completamente optimizada para SEO
+              </p>
             </div>
           </div>
-          <div>
-            <h3 className="text-lg font-semibold mb-2">
-              {route.seoOptimized ? '✅ SEO Completo' : '⚡ Optimización Pendiente'}
-            </h3>
-            <p className="text-sm text-muted-foreground">
-              {route.seoOptimized 
-                ? 'Esta página está completamente optimizada para SEO'
-                : `Completa ${route.missingFields.length} campos para mejorar tu posicionamiento`
-              }
-            </p>
-          </div>
-          {!route.seoOptimized && route.missingFields.length > 0 && (
-            <div className="bg-muted p-4 rounded-lg text-left">
+        ) : (
+          <div className="space-y-4">
+            <div className="bg-muted p-4 rounded-lg">
               <p className="text-sm font-semibold mb-2">📋 Campos por completar:</p>
               <ul className="text-sm space-y-1">
                 {route.missingFields.map((field) => (
@@ -332,8 +401,100 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({ route, isOpe
                 ))}
               </ul>
             </div>
-          )}
-        </div>
+
+            {/* Editable fields for missing data */}
+            <div className="space-y-4 pt-4">
+              {route.missingFields.includes('og_image') && (
+                <div className="space-y-2">
+                  <Label htmlFor="og_image">Open Graph Image (URL)</Label>
+                  <Input
+                    id="og_image"
+                    value={formData.og_image}
+                    onChange={(e) => setFormData({ ...formData, og_image: e.target.value })}
+                    placeholder="https://example.com/image.jpg"
+                  />
+                  <p className="text-xs text-muted-foreground">
+                    URL de la imagen que se mostrará en redes sociales
+                  </p>
+                </div>
+              )}
+
+              {route.missingFields.includes('title') && (
+                <div className="space-y-2">
+                  <Label htmlFor="title">Título SEO *</Label>
+                  <Input
+                    id="title"
+                    value={formData.title}
+                    onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+                    placeholder="Título optimizado (30-60 caracteres)"
+                  />
+                  <p className="text-xs text-muted-foreground">
+                    {formData.title.length}/60 caracteres
+                  </p>
+                </div>
+              )}
+
+              {route.missingFields.includes('description') && (
+                <div className="space-y-2">
+                  <Label htmlFor="description">Meta Description *</Label>
+                  <Textarea
+                    id="description"
+                    value={formData.description}
+                    onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+                    placeholder="Descripción atractiva (120-160 caracteres)"
+                    rows={3}
+                  />
+                  <p className="text-xs text-muted-foreground">
+                    {formData.description.length}/160 caracteres
+                  </p>
+                </div>
+              )}
+
+              {route.missingFields.includes('h1') && (
+                <div className="space-y-2">
+                  <Label htmlFor="h1">H1 Principal *</Label>
+                  <Input
+                    id="h1"
+                    value={formData.h1}
+                    onChange={(e) => setFormData({ ...formData, h1: e.target.value })}
+                    placeholder="Encabezado principal de la página"
+                  />
+                </div>
+              )}
+
+              {route.missingFields.includes('keywords') && (
+                <div className="space-y-2">
+                  <Label htmlFor="keywords">Keywords (separadas por comas)</Label>
+                  <Input
+                    id="keywords"
+                    value={formData.keywords}
+                    onChange={(e) => setFormData({ ...formData, keywords: e.target.value })}
+                    placeholder="keyword1, keyword2, keyword3"
+                  />
+                </div>
+              )}
+
+              <Button 
+                onClick={handleUpdateSEO} 
+                disabled={isLoading}
+                className="w-full bg-yellow-500 hover:bg-yellow-600"
+                size="lg"
+              >
+                {isLoading ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Guardando...
+                  </>
+                ) : (
+                  <>
+                    <CheckCircle2 className="mr-2 h-4 w-4" />
+                    Guardar Cambios
+                  </>
+                )}
+              </Button>
+            </div>
+          </div>
+        )}
       </div>
     );
   };
