@@ -111,6 +111,10 @@ export const TranslationTable: React.FC<TranslationTableProps> = ({ selectedCate
 
   const filteredRoutes = useMemo(() => {
     return routes.filter(route => {
+      // 🔒 Ocultar páginas orphan (sistema) y páginas EN (solo mostrar ES)
+      if (route.status === 'orphan') return false;
+      if (route.language === 'en') return false;
+      
       const matchesSearch = 
         route.path.toLowerCase().includes(searchTerm.toLowerCase()) ||
         route.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -140,8 +144,11 @@ export const TranslationTable: React.FC<TranslationTableProps> = ({ selectedCate
   };
 
   const handleQuickAction = (route: RouteInventoryItem) => {
+    console.log('🔵 [TranslationTable] handleQuickAction called with route:', route);
+    console.log('🔵 [TranslationTable] Setting quickActionRoute and opening modal');
     setQuickActionRoute(route);
     setShowQuickAction(true);
+    console.log('🟢 [TranslationTable] Modal state updated - should open now');
   };
 
   const handleBatchProcess = () => {
@@ -377,6 +384,27 @@ export const TranslationTable: React.FC<TranslationTableProps> = ({ selectedCate
           onClose={() => setSelectedRoute(null)}
         />
       )}
+
+      <QuickActionModal
+        route={quickActionRoute}
+        isOpen={showQuickAction}
+        onClose={() => setShowQuickAction(false)}
+        onSuccess={handleRefresh}
+      />
+
+      {showBatchProcessor && selectedRoutesData.length > 0 && (
+        <BatchProcessor
+          selectedRoutes={selectedRoutesData}
+          onComplete={handleRefresh}
+          onCancel={() => setShowBatchProcessor(false)}
+        />
+      )}
+
+      <TranslationWizard
+        isOpen={showWizard}
+        onClose={() => setShowWizard(false)}
+        routes={selectedRoutesData}
+      />
     </div>
   );
 };
