@@ -115,20 +115,20 @@ export const RouteInconsistenciesPanel = () => {
                   <div className="flex items-center gap-4 ml-6 text-xs">
                     <div className="flex items-center gap-1">
                       <FileCode className="h-3 w-3" />
-                      <span className={item.in_app ? 'text-green-600' : 'text-muted-foreground'}>
-                        {incons.sources.app} {item.in_app ? '✓' : '✗'}
+                      <span className={item.inApp ? 'text-green-600' : 'text-muted-foreground'}>
+                        {incons.sources.app} {item.inApp ? '✓' : '✗'}
                       </span>
                     </div>
                     <div className="flex items-center gap-1">
                       <Globe className="h-3 w-3" />
-                      <span className={item.in_registry ? 'text-green-600' : 'text-muted-foreground'}>
-                        {incons.sources.registry} {item.in_registry ? '✓' : '✗'}
+                      <span className={item.inRegistry ? 'text-green-600' : 'text-muted-foreground'}>
+                        {incons.sources.registry} {item.inRegistry ? '✓' : '✗'}
                       </span>
                     </div>
                     <div className="flex items-center gap-1">
                       <Database className="h-3 w-3" />
-                      <span className={item.in_db ? 'text-green-600' : 'text-muted-foreground'}>
-                        {incons.sources.database} {item.in_db ? '✓' : '✗'}
+                      <span className={item.inDatabase ? 'text-green-600' : 'text-muted-foreground'}>
+                        {incons.sources.database} {item.inDatabase ? '✓' : '✗'}
                       </span>
                     </div>
                   </div>
@@ -171,20 +171,20 @@ export const RouteInconsistenciesPanel = () => {
                   <div className="flex items-center gap-4 ml-6 text-xs">
                     <div className="flex items-center gap-1">
                       <FileCode className="h-3 w-3" />
-                      <span className={item.in_app ? 'text-green-600' : 'text-muted-foreground'}>
-                        {incons.sources.app} {item.in_app ? '✓' : '✗'}
+                      <span className={item.inApp ? 'text-green-600' : 'text-muted-foreground'}>
+                        {incons.sources.app} {item.inApp ? '✓' : '✗'}
                       </span>
                     </div>
                     <div className="flex items-center gap-1">
                       <Globe className="h-3 w-3" />
-                      <span className={item.in_registry ? 'text-green-600' : 'text-muted-foreground'}>
-                        {incons.sources.registry} {item.in_registry ? '✓' : '✗'}
+                      <span className={item.inRegistry ? 'text-green-600' : 'text-muted-foreground'}>
+                        {incons.sources.registry} {item.inRegistry ? '✓' : '✗'}
                       </span>
                     </div>
                     <div className="flex items-center gap-1">
                       <Database className="h-3 w-3" />
-                      <span className={item.in_db ? 'text-green-600' : 'text-muted-foreground'}>
-                        {incons.sources.database} {item.in_db ? '✓' : '✗'}
+                      <span className={item.inDatabase ? 'text-green-600' : 'text-muted-foreground'}>
+                        {incons.sources.database} {item.inDatabase ? '✓' : '✗'}
                       </span>
                     </div>
                   </div>
