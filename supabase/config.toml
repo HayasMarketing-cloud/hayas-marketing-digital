@@ -1,5 +1,8 @@
 project_id = "pmldrjkmkjwbvaudjjye"
 
+[functions.generate-seo-suggestions]
+verify_jwt = true
+
 [functions.webhook-handler]
 verify_jwt = false
 
