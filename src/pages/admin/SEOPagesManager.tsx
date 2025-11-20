@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import SEONavigation from '@/components/seo-dashboard/SEONavigation';
+import { AdminBreadcrumbs } from '@/components/admin/AdminBreadcrumbs';
 import { EnhancedSEOMetrics } from '@/components/admin/seo/EnhancedSEOMetrics';
 import { EnhancedSEOPageList } from '@/components/admin/seo/EnhancedSEOPageList';
 import { SEOEditor } from '@/components/admin/seo/SEOEditor';
@@ -16,6 +17,7 @@ const SEOPagesManager: React.FC = () => {
       
       <main className="flex-1 container mx-auto px-4 py-8">
         <div className="max-w-7xl mx-auto space-y-6">
+          <AdminBreadcrumbs currentPage="Páginas SEO" />
           <div>
             <h1 className="text-4xl font-bold mb-2">Gestión de Páginas SEO</h1>
             <p className="text-muted-foreground">

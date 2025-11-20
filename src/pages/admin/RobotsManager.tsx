@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import SEONavigation from '@/components/seo-dashboard/SEONavigation';
+import { AdminBreadcrumbs } from '@/components/admin/AdminBreadcrumbs';
 import { RobotsViewer } from '@/components/seo-dashboard/RobotsViewer';
 import { parseRobotsTxt } from '@/utils/seo-analytics/robotsTxtParser';
 import { Button } from '@/components/ui/button';
@@ -64,6 +65,7 @@ Disallow: /es/contenido-eliminado`;
       
       <main className="flex-1 container mx-auto px-4 py-8">
         <div className="max-w-7xl mx-auto space-y-6">
+          <AdminBreadcrumbs currentPage="Robots.txt" />
           <div className="flex justify-between items-center">
             <div>
               <h1 className="text-3xl font-bold">Gestión de Robots.txt</h1>

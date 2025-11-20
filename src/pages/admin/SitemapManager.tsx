@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import SEONavigation from '@/components/seo-dashboard/SEONavigation';
+import { AdminBreadcrumbs } from '@/components/admin/AdminBreadcrumbs';
 import { SitemapTree } from '@/components/seo-dashboard/SitemapTree';
 import { analyzeSitemap } from '@/utils/seo-analytics/sitemapAnalyzer';
 import { Button } from '@/components/ui/button';
@@ -46,6 +47,7 @@ const SitemapManager: React.FC = () => {
       <SEONavigation />
       <main className="flex-1 container mx-auto px-4 py-8">
         <div className="max-w-7xl mx-auto space-y-6">
+          <AdminBreadcrumbs currentPage="Sitemap Bilingüe" />
           <div className="flex justify-between items-center">
             <div>
               <h1 className="text-3xl font-bold">Gestión de Sitemap Bilingüe</h1>

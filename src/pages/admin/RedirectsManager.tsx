@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import SEONavigation from '@/components/seo-dashboard/SEONavigation';
+import { AdminBreadcrumbs } from '@/components/admin/AdminBreadcrumbs';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -73,6 +74,7 @@ const RedirectsManager: React.FC = () => {
         <SEONavigation />
         
         <main className="flex-1 container mx-auto px-4 py-8">
+          <AdminBreadcrumbs currentPage="Redirecciones" className="mb-6" />
           <div className="flex items-center justify-center h-[50vh]">
             <div className="flex flex-col items-center gap-4">
               <Loader2 className="h-8 w-8 animate-spin text-primary" />
@@ -93,6 +95,7 @@ const RedirectsManager: React.FC = () => {
       
       <main className="flex-1 container mx-auto px-4 py-8">
         <div className="max-w-7xl mx-auto space-y-8">
+          <AdminBreadcrumbs currentPage="Redirecciones" />
           {/* Header */}
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">

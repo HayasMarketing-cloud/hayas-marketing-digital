@@ -4,6 +4,7 @@ import { supabase } from '@/integrations/supabase/client';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import SEONavigation from '@/components/seo-dashboard/SEONavigation';
+import { AdminBreadcrumbs } from '@/components/admin/AdminBreadcrumbs';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -130,6 +131,7 @@ const GSCFullReport: React.FC = () => {
       
       <main className="flex-1 container mx-auto px-4 py-8">
         <div className="max-w-7xl mx-auto space-y-6">
+          <AdminBreadcrumbs currentPage="Google Search Console" />
           {/* Header */}
           <div className="flex justify-between items-start">
             <div>

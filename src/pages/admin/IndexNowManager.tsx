@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import SEONavigation from '@/components/seo-dashboard/SEONavigation';
+import { AdminBreadcrumbs } from '@/components/admin/AdminBreadcrumbs';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -91,6 +92,7 @@ const IndexNowManager: React.FC = () => {
       <SEONavigation />
       <main className="flex-1 container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto space-y-6">
+          <AdminBreadcrumbs currentPage="IndexNow" />
           <div>
             <h1 className="text-3xl font-bold">Gestión de IndexNow</h1>
             <p className="text-muted-foreground mt-2">
