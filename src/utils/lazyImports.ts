@@ -161,6 +161,7 @@ export const IndexNowManager = lazy(() => import("@/pages/admin/IndexNowManager"
 export const FAQValidator = lazy(() => import("@/pages/admin/FAQValidator"));
 export const TranslationManager = lazy(() => import("@/pages/admin/TranslationManager"));
 export const MediaLibrary = lazy(() => import("@/pages/admin/MediaLibrary"));
+export const BrandBook = lazy(() => import("@/pages/admin/BrandBook"));
 
 // Páginas legales
 export const AvisoLegal = lazy(() => import("@/pages/AvisoLegal"));
