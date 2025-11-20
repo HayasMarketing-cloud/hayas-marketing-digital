@@ -23,6 +23,8 @@ interface QuickActionModalProps {
 }
 
 export const QuickActionModal: React.FC<QuickActionModalProps> = ({ route, isOpen, onClose, onSuccess }) => {
+  console.log('🟣 [QuickActionModal] Render - route:', route?.path, 'isOpen:', isOpen);
+  
   const { toast } = useToast();
   const { translatePage, isTranslating } = useTranslatePage();
   const [isLoading, setIsLoading] = useState(false);
@@ -40,7 +42,10 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({ route, isOpe
     keywords: formData.keywords.split(',').map(k => k.trim()).filter(Boolean),
   });
 
-  if (!route) return null;
+  if (!route) {
+    console.log('🔴 [QuickActionModal] No route provided, returning null');
+    return null;
+  }
 
   const handleTemplateSelect = (template: SEOTemplate) => {
     setFormData({
