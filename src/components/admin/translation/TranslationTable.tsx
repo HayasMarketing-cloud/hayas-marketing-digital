@@ -15,6 +15,7 @@ import { BatchProcessor } from './BatchProcessor';
 import { TranslationWizard } from './TranslationWizard';
 import { TranslationFlowGuide } from './TranslationFlowGuide';
 import { BatchSEOGenerator } from '../seo/BatchSEOGenerator';
+import { SEOStatsDashboard } from '../seo/SEOStatsDashboard';
 import { useQueryClient } from '@tanstack/react-query';
 
 interface TranslationTableProps {
@@ -182,6 +183,8 @@ export const TranslationTable: React.FC<TranslationTableProps> = ({ selectedCate
 
   return (
     <div className="space-y-4">
+      <SEOStatsDashboard />
+      
       <TranslationFlowGuide />
       
       <Card>
