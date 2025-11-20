@@ -6,7 +6,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import KitDigitalBanner from '@/components/KitDigitalBanner';
-
+import { useServiceSEO } from '@/hooks/useServiceSEO';
+import Seo from '@/components/Seo';
 import FAQSection from '@/components/FAQSection';
 import ServiceContactSection from '@/components/ServiceContactSection';
 import { 
@@ -14,7 +15,6 @@ import {
   ArrowRight, CheckCircle, Star, Wrench, Database, Monitor,
   Sparkles, Timer, Lock, CloudRain, TrendingUp, AlertTriangle
 } from 'lucide-react';
-import Seo from '@/components/Seo';
 
 const hostingMaintenanceServices = [
   {
@@ -188,12 +188,34 @@ const faqItems = [
 ];
 
 const AlojamientoMantenimiento: React.FC = () => {
+  const { title, description, canonical, ogImage, structuredData } = useServiceSEO({
+    serviceName: "Alojamiento y Mantenimiento Web",
+    serviceDescription: "Hosting premium y mantenimiento técnico para WordPress. Seguridad, velocidad, copias de seguridad y soporte 24/7 para que tu web funcione siempre perfecta.",
+    canonical: "/es/servicios/diseno-web/alojamiento-mantenimiento",
+    serviceType: "Servicios Web",
+    priceRange: "€-€€",
+    features: [
+      "Alojamiento Premium",
+      "Seguridad Avanzada",
+      "Optimización de Rendimiento",
+      "Copias de Seguridad Automáticas",
+      "Actualizaciones Continuas",
+      "Monitorización 24/7"
+    ],
+    aggregateRating: {
+      ratingValue: "4.8",
+      reviewCount: "42"
+    }
+  });
+  
   return (
     <div className="min-h-screen bg-background">
       <Seo 
-        title="Alojamiento y Mantenimiento Web | Diseño Web"
-        description="Hosting premium y mantenimiento técnico para tu web WordPress. Seguridad, velocidad y soporte 24/7."
-        canonical="https://lovable.hayasmarketing.com/servicios/diseno-web/alojamiento-mantenimiento"
+        title={title}
+        description={description}
+        canonical={canonical}
+        ogImage={ogImage}
+        structuredData={structuredData}
       />
       <Navigation />
       
