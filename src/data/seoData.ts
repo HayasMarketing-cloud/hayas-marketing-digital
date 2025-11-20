@@ -406,6 +406,26 @@ export const generateArticleSchema = (params: {
   return schema;
 };
 
+// Helper function to generate FAQ Schema (FASE 7)
+export const generateFAQSchema = (
+  faqs: Array<{ question: string; answer: string }>,
+  pageUrl: string
+) => {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": `https://hayasmarketing.com${pageUrl}#faq`,
+    mainEntity: faqs.map(faq => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer
+      }
+    }))
+  };
+};
+
 // Strategic canonical mapping to avoid cannibalization
 export const canonicalStrategy = {
   // Main pillar pages that should receive canonical links from related pages
