@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import FAQSection from '@/components/FAQSection';
-import KitConsultingBanner from '@/components/KitConsultingBanner';
 import DynamicH1 from '@/components/DynamicH1';
 import { useAdvancedSEO } from '@/hooks/useAdvancedSEO';
 import {
@@ -337,8 +336,6 @@ const ActivaTuEstrategiaDigital = () => {
           title="Preguntas frecuentes sobre Estrategia Digital"
           faqs={faqData}
         />
-
-        <KitConsultingBanner />
       </main>
       
       <Footer />

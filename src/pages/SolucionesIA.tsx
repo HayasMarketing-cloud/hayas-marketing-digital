@@ -9,7 +9,6 @@ import { Link } from 'react-router-dom';
 import AIServicesSection from '@/components/AIServicesSection';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import KitConsultingBanner from '@/components/KitConsultingBanner';
 
 import {
   Breadcrumb,
@@ -262,8 +261,6 @@ const SolucionesIA = () => {
             </Button>
           </div>
         </section>
-
-        <KitConsultingBanner />
       </main>
       
       <Footer />

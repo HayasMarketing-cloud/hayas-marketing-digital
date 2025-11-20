@@ -14,7 +14,6 @@ import SuccessCasesSection from '@/components/SuccessCasesSection';
 import Seo from '@/components/Seo';
 import FAQSection from '@/components/FAQSection';
 import IntermediateCTA from '@/components/IntermediateCTA';
-import KitConsultingBanner from '@/components/KitConsultingBanner';
 import { successCaseImages } from '@/data/successCaseImages';
 import {
   Breadcrumb,
@@ -455,9 +454,6 @@ const ActivaTusVentas = () => {
             </div>
           </div>
         </section>
-
-        {/* Kit Consulting Banner */}
-        <KitConsultingBanner />
 
         {/* Intermediate CTA */}
         <IntermediateCTA 
