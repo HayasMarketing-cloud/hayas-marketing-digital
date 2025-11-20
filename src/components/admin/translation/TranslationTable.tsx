@@ -144,11 +144,8 @@ export const TranslationTable: React.FC<TranslationTableProps> = ({ selectedCate
   };
 
   const handleQuickAction = (route: RouteInventoryItem) => {
-    console.log('🔵 [TranslationTable] handleQuickAction called with route:', route);
-    console.log('🔵 [TranslationTable] Setting quickActionRoute and opening modal');
     setQuickActionRoute(route);
     setShowQuickAction(true);
-    console.log('🟢 [TranslationTable] Modal state updated - should open now');
   };
 
   const handleBatchProcess = () => {
