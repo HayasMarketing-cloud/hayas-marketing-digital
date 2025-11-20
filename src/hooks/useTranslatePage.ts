@@ -26,8 +26,9 @@ export const useTranslatePage = () => {
         throw new Error('No se encontró la página ES original');
       }
 
-      // 2. Call edge function to translate content
-      const { data: translatedData, error: translateError } = await supabase.functions.invoke(
+      // 2. Call edge function to translate content AND create EN page
+      // The edge function uses service role to bypass RLS policies
+      const { data: result, error: translateError } = await supabase.functions.invoke(
         'translate-seo',
         {
           body: {
@@ -36,8 +37,13 @@ export const useTranslatePage = () => {
               description: esPage.description,
               h1: esPage.h1,
               keywords: esPage.keywords,
+              schema_type: esPage.schema_type,
+              og_type: esPage.og_type,
             },
             targetLanguage: 'en-US',
+            esPageId: esPage.id,
+            enPath: enPath,
+            category: category,
           },
         }
       );
@@ -47,34 +53,11 @@ export const useTranslatePage = () => {
         throw new Error('Error al traducir el contenido');
       }
 
-      // 3. Create the EN page in database
-      const { data: newEnPage, error: insertError } = await supabase
-        .from('seo_pages')
-        .insert({
-          path: enPath,
-          title: translatedData.title,
-          description: translatedData.description,
-          h1: translatedData.h1,
-          h2_primary: translatedData.h1, // Use H1 as H2 primary for now
-          keywords: translatedData.keywords,
-          canonical: `https://hayasmarketing.com${enPath}`,
-          in_language: 'en-US',
-          translation_of: esPage.id,
-          schema_type: esPage.schema_type,
-          category: category,
-          is_indexable: true,
-          og_type: esPage.og_type || 'website',
-          robots: 'index,follow',
-        })
-        .select()
-        .single();
-
-      if (insertError) {
-        console.error('Insert error:', insertError);
-        throw new Error('Error al crear la página EN en la base de datos');
-      }
-
-      return { esPage, newEnPage, translatedData };
+      return { 
+        esPage, 
+        newEnPage: result.newEnPage, 
+        translatedData: result.translatedData 
+      };
     },
     onSuccess: (data) => {
       // Invalidate queries to refresh the UI

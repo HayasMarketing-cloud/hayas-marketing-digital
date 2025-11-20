@@ -12,7 +12,13 @@ serve(async (req) => {
   }
 
   try {
-    const { seoData, targetLanguage } = await req.json();
+    const { seoData, targetLanguage, esPageId, enPath, category } = await req.json();
+    
+    // Create Supabase client with service role for admin operations
+    const supabaseAdmin = createClient(
+      Deno.env.get('SUPABASE_URL') ?? '',
+      Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
+    );
     
     const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
     
@@ -101,7 +107,37 @@ serve(async (req) => {
     
     const translatedData = JSON.parse(toolCall.function.arguments);
     
-    return new Response(JSON.stringify(translatedData), {
+    // Insert the translated page into database using service role
+    const { data: newEnPage, error: insertError } = await supabaseAdmin
+      .from('seo_pages')
+      .insert({
+        path: enPath,
+        title: translatedData.title,
+        description: translatedData.description,
+        h1: translatedData.h1,
+        h2_primary: translatedData.h1,
+        keywords: translatedData.keywords,
+        canonical: `https://hayasmarketing.com${enPath}`,
+        in_language: 'en-US',
+        translation_of: esPageId,
+        schema_type: seoData.schema_type || 'WebPage',
+        category: category,
+        is_indexable: true,
+        og_type: seoData.og_type || 'website',
+        robots: 'index,follow',
+      })
+      .select()
+      .single();
+
+    if (insertError) {
+      console.error('Database insert error:', insertError);
+      throw new Error(`Failed to create EN page: ${insertError.message}`);
+    }
+    
+    return new Response(JSON.stringify({ 
+      translatedData,
+      newEnPage 
+    }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" }
     });
     
