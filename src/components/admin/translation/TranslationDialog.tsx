@@ -12,10 +12,12 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Badge } from '@/components/ui/badge';
 import { Alert, AlertDescription } from '@/components/ui/alert';
+import { Separator } from '@/components/ui/separator';
 import { useTranslatePage } from '@/hooks/useTranslatePage';
 import { generateEnglishSlug } from '@/utils/slugTranslation';
+import { findRouteInApp } from '@/utils/routeExtractor';
 import { getRegisteredRoutes } from '@/utils/routeRegistryData';
-import { Loader2, ArrowRight, Languages, CheckCircle, AlertTriangle } from 'lucide-react';
+import { Loader2, ArrowRight, Languages, CheckCircle, AlertTriangle, FileCode, Database, Globe, ListChecks } from 'lucide-react';
 
 interface TranslationDialogProps {
   pair: any;
@@ -25,16 +27,20 @@ interface TranslationDialogProps {
 export const TranslationDialog: React.FC<TranslationDialogProps> = ({ pair, onClose }) => {
   const { translatePage, isTranslating } = useTranslatePage();
   const [customSlug, setCustomSlug] = useState('');
-  const [routeExists, setRouteExists] = useState(false);
+  const [routeExistsInApp, setRouteExistsInApp] = useState(false);
+  const [routeExistsInRegistry, setRouteExistsInRegistry] = useState(false);
   
   const suggestedEnSlug = generateEnglishSlug(pair.esPath);
   const finalEnSlug = customSlug || suggestedEnSlug;
 
-  // Validate if route exists in App.tsx / routeRegistryData.ts
+  // Validate if route exists in App.tsx and routeRegistryData.ts
   useEffect(() => {
+    const inApp = findRouteInApp(finalEnSlug);
     const registeredRoutes = getRegisteredRoutes();
-    const exists = registeredRoutes.some(route => route.path === finalEnSlug);
-    setRouteExists(exists);
+    const inRegistry = registeredRoutes.some(route => route.path === finalEnSlug);
+    
+    setRouteExistsInApp(inApp);
+    setRouteExistsInRegistry(inRegistry);
   }, [finalEnSlug]);
 
   const handleTranslate = async () => {
@@ -111,30 +117,104 @@ export const TranslationDialog: React.FC<TranslationDialogProps> = ({ pair, onCl
             </div>
           )}
 
-          {/* Route validation alert */}
-          <Alert className={`${routeExists ? 'border-green-500 bg-green-50' : 'border-yellow-500 bg-yellow-50'}`}>
-            {routeExists ? (
-              <>
-                <CheckCircle className="h-4 w-4 text-green-600" />
-                <AlertDescription>
-                  <strong className="text-green-700">✓ Ruta registrada en sistema</strong>
-                  <p className="text-sm text-muted-foreground mt-1">
-                    Esta ruta existe en App.tsx y routeRegistryData.ts
-                  </p>
-                </AlertDescription>
-              </>
-            ) : (
-              <>
-                <AlertTriangle className="h-4 w-4 text-yellow-600" />
-                <AlertDescription>
-                  <strong className="text-yellow-700">⚠ Ruta nueva - Se auto-registrará</strong>
-                  <p className="text-sm text-muted-foreground mt-1">
-                    Esta ruta se registrará automáticamente tras la traducción. Asegúrate de que existe en App.tsx.
-                  </p>
-                </AlertDescription>
-              </>
-            )}
-          </Alert>
+          {/* Route validation status */}
+          <div className="space-y-3">
+            <div className="flex items-center gap-2">
+              <ListChecks className="h-4 w-4" />
+              <span className="text-sm font-medium">Estado de sincronización</span>
+            </div>
+            
+            <div className="space-y-2">
+              {/* App.tsx status */}
+              <div className="flex items-center justify-between p-3 bg-muted rounded-lg">
+                <div className="flex items-center gap-2">
+                  <FileCode className="h-4 w-4" />
+                  <span className="text-sm">App.tsx</span>
+                </div>
+                <Badge variant={routeExistsInApp ? 'default' : 'destructive'}>
+                  {routeExistsInApp ? (
+                    <><CheckCircle className="h-3 w-3 mr-1" /> Existe</>
+                  ) : (
+                    <><AlertTriangle className="h-3 w-3 mr-1" /> Falta</>
+                  )}
+                </Badge>
+              </div>
+
+              {/* routeRegistryData.ts status */}
+              <div className="flex items-center justify-between p-3 bg-muted rounded-lg">
+                <div className="flex items-center gap-2">
+                  <Globe className="h-4 w-4" />
+                  <span className="text-sm">routeRegistryData.ts</span>
+                </div>
+                <Badge variant={routeExistsInRegistry ? 'default' : 'secondary'}>
+                  {routeExistsInRegistry ? (
+                    <><CheckCircle className="h-3 w-3 mr-1" /> Existe</>
+                  ) : (
+                    <><AlertTriangle className="h-3 w-3 mr-1" /> Falta</>
+                  )}
+                </Badge>
+              </div>
+
+              {/* Database status - will be created */}
+              <div className="flex items-center justify-between p-3 bg-muted rounded-lg">
+                <div className="flex items-center gap-2">
+                  <Database className="h-4 w-4" />
+                  <span className="text-sm">seo_pages (DB)</span>
+                </div>
+                <Badge variant="outline">
+                  Se creará automáticamente
+                </Badge>
+              </div>
+            </div>
+          </div>
+
+          {/* Warning if route doesn't exist in App.tsx */}
+          {!routeExistsInApp && (
+            <Alert className="border-yellow-500 bg-yellow-50">
+              <AlertTriangle className="h-4 w-4 text-yellow-600" />
+              <AlertDescription>
+                <strong className="text-yellow-700">⚠ Acción requerida antes de traducir</strong>
+                <p className="text-sm text-muted-foreground mt-2">
+                  Esta ruta no existe en <code className="bg-yellow-100 px-1 rounded">App.tsx</code>. 
+                  Añádela primero para que la traducción funcione correctamente.
+                </p>
+                <div className="mt-3 p-2 bg-white rounded text-xs font-mono">
+                  {`<Route path="${finalEnSlug}" element={<PageSuspense><Pages.YourComponent /></PageSuspense>} />`}
+                </div>
+              </AlertDescription>
+            </Alert>
+          )}
+
+          {/* Info if route doesn't exist in registry */}
+          {routeExistsInApp && !routeExistsInRegistry && (
+            <Alert className="border-blue-500 bg-blue-50">
+              <CheckCircle className="h-4 w-4 text-blue-600" />
+              <AlertDescription>
+                <strong className="text-blue-700">ℹ Recordatorio post-traducción</strong>
+                <p className="text-sm text-muted-foreground mt-2">
+                  Después de traducir, añade esta entrada a <code className="bg-blue-100 px-1 rounded">routeRegistryData.ts</code>:
+                </p>
+                <div className="mt-3 p-2 bg-white rounded text-xs font-mono">
+                  {`{ path: '${finalEnSlug}', category: '${pair.category}', isIndexable: true, priority: 0.8, changefreq: 'weekly', isDynamic: false, isLegacy: false },`}
+                </div>
+              </AlertDescription>
+            </Alert>
+          )}
+
+          {/* Success if everything is in place */}
+          {routeExistsInApp && routeExistsInRegistry && (
+            <Alert className="border-green-500 bg-green-50">
+              <CheckCircle className="h-4 w-4 text-green-600" />
+              <AlertDescription>
+                <strong className="text-green-700">✓ Listo para traducir</strong>
+                <p className="text-sm text-muted-foreground mt-1">
+                  La ruta existe en App.tsx y routeRegistryData.ts. La traducción creará automáticamente los datos SEO en la DB.
+                </p>
+              </AlertDescription>
+            </Alert>
+          )}
+
+          <Separator />
 
           {/* Info Box */}
           <div className="p-4 bg-blue-500/5 border border-blue-500/20 rounded-lg">
