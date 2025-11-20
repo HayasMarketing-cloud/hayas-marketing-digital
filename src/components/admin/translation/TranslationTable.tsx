@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
-import { Search, Languages, ExternalLink, AlertCircle, CheckCircle2, Clock, Code, FileText, AlertTriangle, Database, Zap, ListChecks, Sparkles, FileEdit, Rocket } from 'lucide-react';
+import { Search, Languages, ExternalLink, AlertCircle, CheckCircle2, Clock, Code, FileText, AlertTriangle, Database, Zap, ListChecks, Sparkles, FileEdit, Rocket, TrendingUp, Settings } from 'lucide-react';
 import { useAllRoutes, RouteInventoryItem } from '@/hooks/useAllRoutes';
 import { SEOValidationBadge } from './SEOValidationBadge';
 import { SEOValidationPanel } from './SEOValidationPanel';
@@ -15,6 +15,8 @@ import { BatchProcessor } from './BatchProcessor';
 import { TranslationWizard } from './TranslationWizard';
 import { BatchTranslationGenerator } from './BatchTranslationGenerator';
 import { ComparisonViewModal } from './ComparisonViewModal';
+import { PriorityBadge } from './PriorityBadge';
+import { PriorityEditor } from './PriorityEditor';
 import { TranslationFlowGuide } from './TranslationFlowGuide';
 import { BatchSEOGenerator } from '../seo/BatchSEOGenerator';
 import { SEOStatsDashboard } from '../seo/SEOStatsDashboard';
@@ -28,6 +30,7 @@ interface TranslationTableProps {
 export const TranslationTable: React.FC<TranslationTableProps> = ({ selectedCategory }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState<string>('all');
+  const [sortBy, setSortBy] = useState<'default' | 'priority'>('default');
   const [categoryFilter, setCategoryFilter] = useState<string>(selectedCategory || 'all');
   const [selectedRoute, setSelectedRoute] = useState<RouteInventoryItem | null>(null);
   const [selectedRoutes, setSelectedRoutes] = useState<string[]>([]);
@@ -38,6 +41,7 @@ export const TranslationTable: React.FC<TranslationTableProps> = ({ selectedCate
   const [showWizard, setShowWizard] = useState(false);
   const [showBatchTranslation, setShowBatchTranslation] = useState(false);
   const [showComparison, setShowComparison] = useState(false);
+  const [priorityEditorRoute, setPriorityEditorRoute] = useState<RouteInventoryItem | null>(null);
   const { routes, isLoading } = useAllRoutes();
   const queryClient = useQueryClient();
 
@@ -118,7 +122,7 @@ export const TranslationTable: React.FC<TranslationTableProps> = ({ selectedCate
   };
 
   const filteredRoutes = useMemo(() => {
-    return routes.filter(route => {
+    let filtered = routes.filter(route => {
       // 🔒 Ocultar páginas orphan (sistema) y páginas EN (solo mostrar ES)
       if (route.status === 'orphan') return false;
       if (route.language === 'en') return false;
@@ -133,7 +137,18 @@ export const TranslationTable: React.FC<TranslationTableProps> = ({ selectedCate
 
       return matchesSearch && matchesStatus && matchesCategory;
     });
-  }, [routes, searchTerm, statusFilter, categoryFilter]);
+
+    // Sort by priority if selected
+    if (sortBy === 'priority') {
+      filtered = [...filtered].sort((a, b) => {
+        const scoreA = a.priorityScore || 0;
+        const scoreB = b.priorityScore || 0;
+        return scoreB - scoreA; // Higher priority first
+      });
+    }
+
+    return filtered;
+  }, [routes, searchTerm, statusFilter, categoryFilter, sortBy]);
 
   const handleSelectAll = () => {
     if (selectedRoutes.length === filteredRoutes.length) {
@@ -240,6 +255,21 @@ export const TranslationTable: React.FC<TranslationTableProps> = ({ selectedCate
                 <SelectItem value="tool">Herramientas</SelectItem>
                 <SelectItem value="blog">Blog</SelectItem>
                 <SelectItem value="case-study">Casos de Estudio</SelectItem>
+              </SelectContent>
+            </Select>
+
+            <Select value={sortBy} onValueChange={(val) => setSortBy(val as 'default' | 'priority')}>
+              <SelectTrigger className="w-[180px]">
+                <SelectValue placeholder="Ordenar" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="default">Orden predeterminado</SelectItem>
+                <SelectItem value="priority">
+                  <div className="flex items-center gap-2">
+                    <TrendingUp className="w-4 h-4" />
+                    Por prioridad
+                  </div>
+                </SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -350,6 +380,12 @@ export const TranslationTable: React.FC<TranslationTableProps> = ({ selectedCate
                                 Publicada
                               </Badge>
                             )}
+                            {route.priorityScore !== undefined && route.priorityScore > 0 && (
+                              <PriorityBadge 
+                                score={route.priorityScore} 
+                                strategicImportance={route.strategicImportance}
+                              />
+                            )}
                           </div>
                           {route.title && (
                             <p className="text-sm text-muted-foreground">{route.title}</p>
@@ -358,6 +394,15 @@ export const TranslationTable: React.FC<TranslationTableProps> = ({ selectedCate
                         <div className="flex items-center gap-2">
                           {getStatusBadge(route.status)}
                           {getCategoryBadge(route.category)}
+                          {route.inDatabase && (
+                            <Button
+                              size="sm"
+                              variant="ghost"
+                              onClick={() => setPriorityEditorRoute(route)}
+                            >
+                              <Settings className="h-4 w-4" />
+                            </Button>
+                          )}
                         </div>
                       </div>
 
@@ -503,6 +548,17 @@ export const TranslationTable: React.FC<TranslationTableProps> = ({ selectedCate
         onClose={() => setShowComparison(false)}
         selectedPaths={selectedRoutes}
       />
+
+      {priorityEditorRoute && (
+        <PriorityEditor
+          isOpen={!!priorityEditorRoute}
+          onClose={() => setPriorityEditorRoute(null)}
+          pagePath={priorityEditorRoute.path}
+          currentImportance={priorityEditorRoute.strategicImportance}
+          currentTraffic={priorityEditorRoute.estimatedTraffic}
+          onSuccess={handleRefresh}
+        />
+      )}
     </div>
   );
 };

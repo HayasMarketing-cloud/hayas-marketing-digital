@@ -21,6 +21,11 @@ export interface RouteInventoryItem {
   keywords?: any;
   h1?: string;
   is_indexable?: boolean;
+  // Priority fields
+  priorityScore?: number;
+  strategicImportance?: string;
+  estimatedTraffic?: number;
+  lastOptimizedAt?: string;
 }
 
 export const useAllRoutes = () => {
@@ -92,6 +97,10 @@ export const useAllRoutes = () => {
           keywords: dbPage?.keywords,
           h1: dbPage?.h1,
           is_indexable: dbPage?.is_indexable,
+          priorityScore: dbPage?.priority_score || 0,
+          strategicImportance: dbPage?.strategic_importance || 'medium',
+          estimatedTraffic: dbPage?.estimated_traffic || 0,
+          lastOptimizedAt: dbPage?.last_optimized_at || undefined,
         });
       }
 
