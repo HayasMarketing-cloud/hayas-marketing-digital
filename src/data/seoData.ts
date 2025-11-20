@@ -252,7 +252,7 @@ export const generateServiceSchema = (params: {
   return schema;
 };
 
-// Helper function to generate ItemList Schema (FASE 3)
+// Helper function to generate ItemList Schema (FASE 4)
 export const generateItemListSchema = (params: {
   items: Array<{ name: string; url: string; description?: string }>;
   listName: string;
@@ -279,6 +279,131 @@ export const generateItemListSchema = (params: {
       }
     }))
   };
+};
+
+// Helper function to generate HowTo Schema (FASE 5)
+export const generateHowToSchema = (params: {
+  howToName: string;
+  howToDescription: string;
+  canonical: string;
+  steps: Array<{
+    name: string;
+    text: string;
+    image?: string;
+    url?: string;
+  }>;
+  totalTime?: string; // ISO 8601 duration format
+  estimatedCost?: {
+    currency: string;
+    value: string;
+  };
+  supply?: string[];
+}) => {
+  const { howToName, howToDescription, canonical, steps, totalTime, estimatedCost, supply } = params;
+  
+  const schema: Record<string, any> = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "@id": `https://hayasmarketing.com${canonical}#howto`,
+    name: howToName,
+    description: howToDescription,
+    step: steps.map((step, index) => ({
+      "@type": "HowToStep",
+      position: index + 1,
+      name: step.name,
+      text: step.text,
+      ...(step.image && {
+        image: step.image.startsWith('http') 
+          ? step.image 
+          : `https://hayasmarketing.com${step.image}`
+      }),
+      ...(step.url && {
+        url: `https://hayasmarketing.com${step.url}`
+      })
+    })),
+    inLanguage: "es-ES"
+  };
+  
+  if (totalTime) {
+    schema.totalTime = totalTime;
+  }
+  
+  if (estimatedCost) {
+    schema.estimatedCost = {
+      "@type": "MonetaryAmount",
+      currency: estimatedCost.currency,
+      value: estimatedCost.value
+    };
+  }
+  
+  if (supply && supply.length > 0) {
+    schema.supply = supply.map(item => ({
+      "@type": "HowToSupply",
+      name: item
+    }));
+  }
+  
+  return schema;
+};
+
+// Helper function to generate Article Schema (FASE 6)
+export const generateArticleSchema = (params: {
+  headline: string;
+  description: string;
+  canonical: string;
+  author: {
+    name: string;
+    url?: string;
+  };
+  datePublished: string;
+  dateModified: string;
+  articleSection?: string;
+  keywords?: string[];
+  wordCount?: number;
+  articleBody?: string;
+}) => {
+  const { headline, description, canonical, author, datePublished, dateModified, articleSection, keywords, wordCount, articleBody } = params;
+  
+  const schema: Record<string, any> = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": `https://hayasmarketing.com${canonical}#article`,
+    headline: headline,
+    description: description,
+    author: {
+      "@type": "Person",
+      name: author.name,
+      ...(author.url && { url: `https://hayasmarketing.com${author.url}` })
+    },
+    publisher: {
+      "@id": "https://hayasmarketing.com/#organization"
+    },
+    datePublished: datePublished,
+    dateModified: dateModified,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://hayasmarketing.com${canonical}`
+    },
+    inLanguage: "es-ES"
+  };
+  
+  if (articleSection) {
+    schema.articleSection = articleSection;
+  }
+  
+  if (keywords && keywords.length > 0) {
+    schema.keywords = keywords.join(', ');
+  }
+  
+  if (wordCount) {
+    schema.wordCount = wordCount;
+  }
+  
+  if (articleBody) {
+    schema.articleBody = articleBody;
+  }
+  
+  return schema;
 };
 
 // Strategic canonical mapping to avoid cannibalization

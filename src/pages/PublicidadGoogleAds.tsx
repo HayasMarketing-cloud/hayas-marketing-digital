@@ -9,6 +9,8 @@ import FAQSection from '@/components/FAQSection';
 import ServiceContactSection from '@/components/ServiceContactSection';
 import SuccessCasesSection from '@/components/SuccessCasesSection';
 import { getServiceSuccessCasesConfig } from '@/data/serviceSuccessCasesMapping';
+import { useServiceSEO } from '@/hooks/useServiceSEO';
+import Seo from '@/components/Seo';
 import { 
   Search, Target, TrendingUp, BarChart3, Zap, DollarSign, MousePointer,
   ArrowRight, CheckCircle, Star, Eye, Users, Sparkles, Globe,
@@ -161,8 +163,35 @@ const faqItems = [
 const PublicidadGoogleAds: React.FC = () => {
   const successCasesConfig = getServiceSuccessCasesConfig('publicidad-google-ads');
   
+  const { title, description, canonical, ogImage, structuredData } = useServiceSEO({
+    serviceName: "Publicidad en Google Ads",
+    serviceDescription: "Campañas de publicidad SEM en Google Ads optimizadas para generar conversiones. Gestión profesional de campañas con análisis continuo y optimización del ROI.",
+    canonical: "/es/servicios/marketing-visibilidad/publicidad-google-ads",
+    serviceType: "Publicidad Digital",
+    priceRange: "€€€",
+    features: [
+      "Red de Búsqueda",
+      "Red de Display",
+      "Campañas de Shopping",
+      "Campañas de Video",
+      "Campañas Locales",
+      "Remarketing"
+    ],
+    aggregateRating: {
+      ratingValue: "4.8",
+      reviewCount: "37"
+    }
+  });
+  
   return (
     <div className="min-h-screen bg-background">
+      <Seo 
+        title={title}
+        description={description}
+        canonical={canonical}
+        ogImage={ogImage}
+        structuredData={structuredData}
+      />
       <Navigation />
       
       {/* Breadcrumb */}

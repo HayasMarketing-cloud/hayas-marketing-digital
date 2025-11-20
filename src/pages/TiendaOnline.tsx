@@ -6,8 +6,8 @@ import ProcessSection from '@/components/ProcessSection';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-
-
+import { useServiceSEO } from '@/hooks/useServiceSEO';
+import Seo from '@/components/Seo';
 import FAQSection from '@/components/FAQSection';
 import ServiceContactSection from '@/components/ServiceContactSection';
 import { 
@@ -180,8 +180,37 @@ const faqItems = [
 ];
 
 const TiendaOnline = () => {
+  const { title, description, canonical, ogImage, structuredData } = useServiceSEO({
+    serviceName: "Tienda Online - Ecommerce Profesional",
+    serviceDescription: "Desarrollo de tiendas online y ecommerce profesionales. Diseño responsive, pasarelas de pago, gestión de inventario y optimización para conversiones.",
+    canonical: "/es/servicios/diseno-web/tienda-online",
+    serviceType: "Desarrollo Web",
+    priceRange: "€€€",
+    features: [
+      "Alojamiento Web Especializado",
+      "Diseño UX/UI Profesional",
+      "Pasarelas de Pago",
+      "SEO para Ecommerce",
+      "Gestión de Inventario",
+      "CRM Integrado",
+      "Analítica de Ventas",
+      "Seguridad Avanzada"
+    ],
+    aggregateRating: {
+      ratingValue: "4.9",
+      reviewCount: "28"
+    }
+  });
+  
   return (
     <div className="min-h-screen bg-white">
+      <Seo 
+        title={title}
+        description={description}
+        canonical={canonical}
+        ogImage={ogImage}
+        structuredData={structuredData}
+      />
       <Navigation />
       
       {/* Breadcrumb */}
