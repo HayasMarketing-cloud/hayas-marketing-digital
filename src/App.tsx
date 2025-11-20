@@ -13,9 +13,6 @@ import PageSuspense from './components/PageSuspense';
 import RoutePreloader from './components/RoutePreloader';
 import { RedirectManager } from './components/RedirectManager';
 
-// Traducción automática de home (una sola vez)
-import '@/utils/translateHomeNow';
-
 // Lazy imports organizados por categoría
 import * as Pages from './utils/lazyImports';
 
@@ -485,11 +482,9 @@ const App = () => (
             <Route path="/admin/seo/robots" element={<PageSuspense><Pages.RobotsManager /></PageSuspense>} />
             <Route path="/admin/seo/redirects" element={<PageSuspense><Pages.RedirectsManager /></PageSuspense>} />
             <Route path="/admin/seo/indexnow" element={<PageSuspense><Pages.IndexNowManager /></PageSuspense>} />
-            
              {/* ADMIN - Content & Branding */}
              <Route path="/admin/faq-validator" element={<PageSuspense><Pages.FAQValidator /></PageSuspense>} />
              <Route path="/admin/translations" element={<PageSuspense><Pages.TranslationManager /></PageSuspense>} />
-             <Route path="/admin/translate-home-test" element={<PageSuspense><Pages.TranslateHomeTest /></PageSuspense>} />
              <Route path="/admin/media-library" element={<PageSuspense><Pages.MediaLibrary /></PageSuspense>} />
              <Route path="/admin/brandbook" element={<PageSuspense><Pages.BrandBook /></PageSuspense>} />
            
