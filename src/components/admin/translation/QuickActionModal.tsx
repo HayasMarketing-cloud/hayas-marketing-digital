@@ -12,7 +12,7 @@ import { SEOTemplate, validateSEOFields } from '@/utils/seoTemplates';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import { useTranslatePage } from '@/hooks/useTranslatePage';
-import { Loader2, CheckCircle2, AlertCircle, Sparkles, Languages, Database } from 'lucide-react';
+import { Loader2, CheckCircle2, AlertCircle, Sparkles, Languages, Database, Zap } from 'lucide-react';
 import { Progress } from '@/components/ui/progress';
 
 interface QuickActionModalProps {
@@ -128,19 +128,26 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({ route, isOpe
   };
 
   const renderContent = () => {
-    // Code-only: Need to add to DB
+    // Nueva: Need to add to DB
     if (route.status === 'code-only') {
       return (
         <Tabs defaultValue="form" className="w-full">
           <TabsList className="grid w-full grid-cols-2">
-            <TabsTrigger value="form">Formulario</TabsTrigger>
-            <TabsTrigger value="templates">Templates</TabsTrigger>
+            <TabsTrigger value="form">Datos SEO</TabsTrigger>
+            <TabsTrigger value="templates">Usar Plantilla</TabsTrigger>
           </TabsList>
           
           <TabsContent value="form" className="space-y-4">
             <div className="space-y-4">
+              <div className="bg-blue-500/10 p-4 rounded-lg mb-4">
+                <h4 className="font-semibold text-blue-700 mb-2">Paso 1: Preparar Página</h4>
+                <p className="text-sm text-muted-foreground">
+                  Completa los datos SEO básicos para que tu página sea visible en Google
+                </p>
+              </div>
+              
               <div className="flex items-center justify-between">
-                <Label>Optimización SEO</Label>
+                <Label>Progreso de Optimización</Label>
                 <Badge variant={validation.isOptimized ? "default" : "secondary"}>
                   {validation.percentage}%
                 </Badge>
@@ -197,7 +204,8 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({ route, isOpe
               <Button 
                 onClick={handleAddToDB} 
                 disabled={isLoading}
-                className="w-full"
+                className="w-full bg-blue-500 hover:bg-blue-600"
+                size="lg"
               >
                 {isLoading ? (
                   <>
@@ -206,8 +214,8 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({ route, isOpe
                   </>
                 ) : (
                   <>
-                    <Database className="mr-2 h-4 w-4" />
-                    Añadir a Base de Datos
+                    <CheckCircle2 className="mr-2 h-4 w-4" />
+                    Guardar y Preparar Página
                   </>
                 )}
               </Button>
@@ -224,47 +232,48 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({ route, isOpe
       );
     }
 
-    // Pending: Need translation
+    // Lista para traducir: Need translation
     if (route.status === 'pending') {
       return (
         <div className="space-y-4 py-6">
+          <div className="bg-green-500/10 p-4 rounded-lg mb-4">
+            <h4 className="font-semibold text-green-700 mb-2">Paso 2: Traducir al Inglés</h4>
+            <p className="text-sm text-muted-foreground">
+              Crearemos automáticamente la versión en inglés de esta página con IA
+            </p>
+          </div>
+          
           <div className="text-center space-y-4">
             <div className="flex justify-center">
-              <div className="p-4 bg-blue-500/10 rounded-full">
-                <Languages className="h-12 w-12 text-blue-500" />
+              <div className="p-4 bg-green-500/10 rounded-full">
+                <Languages className="h-12 w-12 text-green-500" />
               </div>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-2">Traducción Automática con IA</h3>
-              <p className="text-sm text-muted-foreground">
-                Traduciremos automáticamente el contenido SEO de esta página al inglés
-              </p>
             </div>
             <div className="bg-muted p-4 rounded-lg text-left space-y-2">
               <div className="flex items-center justify-between text-sm">
-                <span>Origen:</span>
+                <span className="font-medium">Página en Español:</span>
                 <Badge variant="outline">{route.path}</Badge>
               </div>
               <div className="flex items-center justify-between text-sm">
-                <span>Destino:</span>
-                <Badge variant="outline">{route.translationPath}</Badge>
+                <span className="font-medium">Se creará en Inglés:</span>
+                <Badge variant="outline" className="bg-green-500/10">{route.translationPath}</Badge>
               </div>
             </div>
             <Button 
               onClick={handleTranslate}
               disabled={isTranslating}
               size="lg"
-              className="w-full"
+              className="w-full bg-green-500 hover:bg-green-600"
             >
               {isTranslating ? (
                 <>
                   <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                  Traduciendo...
+                  Traduciendo con IA...
                 </>
               ) : (
                 <>
                   <Sparkles className="mr-2 h-5 w-5" />
-                  Traducir Ahora
+                  TRADUCIR AHORA
                 </>
               )}
             </Button>
@@ -273,37 +282,44 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({ route, isOpe
       );
     }
 
-    // Translated or Complete: Show validation
+    // Revisar SEO: Show validation
     return (
       <div className="space-y-4 py-6">
+        <div className="bg-yellow-500/10 p-4 rounded-lg mb-4">
+          <h4 className="font-semibold text-yellow-700 mb-2">Paso 3: Optimizar SEO</h4>
+          <p className="text-sm text-muted-foreground">
+            Revisa y completa los campos SEO para máxima visibilidad en Google
+          </p>
+        </div>
+        
         <div className="text-center space-y-4">
           <div className="flex justify-center">
-            <div className="p-4 bg-green-500/10 rounded-full">
+            <div className="p-4 bg-yellow-500/10 rounded-full">
               {route.seoOptimized ? (
                 <CheckCircle2 className="h-12 w-12 text-green-500" />
               ) : (
-                <AlertCircle className="h-12 w-12 text-orange-500" />
+                <Zap className="h-12 w-12 text-yellow-500" />
               )}
             </div>
           </div>
           <div>
             <h3 className="text-lg font-semibold mb-2">
-              {route.seoOptimized ? 'SEO Optimizado' : 'Mejorable'}
+              {route.seoOptimized ? '✅ SEO Completo' : '⚡ Optimización Pendiente'}
             </h3>
             <p className="text-sm text-muted-foreground">
               {route.seoOptimized 
-                ? 'Esta página cumple con todos los requisitos SEO'
-                : `Faltan ${route.missingFields.length} campos por optimizar`
+                ? 'Esta página está completamente optimizada para SEO'
+                : `Completa ${route.missingFields.length} campos para mejorar tu posicionamiento`
               }
             </p>
           </div>
           {!route.seoOptimized && route.missingFields.length > 0 && (
             <div className="bg-muted p-4 rounded-lg text-left">
-              <p className="text-sm font-semibold mb-2">Campos faltantes:</p>
+              <p className="text-sm font-semibold mb-2">📋 Campos por completar:</p>
               <ul className="text-sm space-y-1">
                 {route.missingFields.map((field) => (
                   <li key={field} className="flex items-center gap-2">
-                    <AlertCircle className="h-3 w-3 text-orange-500" />
+                    <AlertCircle className="h-3 w-3 text-yellow-500" />
                     {field}
                   </li>
                 ))}

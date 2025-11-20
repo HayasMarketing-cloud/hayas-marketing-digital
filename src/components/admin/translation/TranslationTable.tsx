@@ -5,13 +5,15 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Checkbox } from '@/components/ui/checkbox';
-import { Search, Languages, ExternalLink, AlertCircle, CheckCircle2, Clock, Code, FileText, AlertTriangle, Database, Zap, ListChecks, Sparkles } from 'lucide-react';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+import { Search, Languages, ExternalLink, AlertCircle, CheckCircle2, Clock, Code, FileText, AlertTriangle, Database, Zap, ListChecks, Sparkles, FileEdit, Rocket } from 'lucide-react';
 import { useAllRoutes, RouteInventoryItem } from '@/hooks/useAllRoutes';
 import { SEOValidationBadge } from './SEOValidationBadge';
 import { SEOValidationPanel } from './SEOValidationPanel';
 import { QuickActionModal } from './QuickActionModal';
 import { BatchProcessor } from './BatchProcessor';
 import { TranslationWizard } from './TranslationWizard';
+import { TranslationFlowGuide } from './TranslationFlowGuide';
 import { useQueryClient } from '@tanstack/react-query';
 
 interface TranslationTableProps {
@@ -40,29 +42,34 @@ export const TranslationTable: React.FC<TranslationTableProps> = ({ selectedCate
   const getStatusBadge = (status: RouteInventoryItem['status']) => {
     const statusConfig = {
       complete: { 
-        label: 'Completa', 
+        label: '✅ Publicada', 
+        tooltip: 'Página completa: traducida y con SEO optimizado',
         icon: CheckCircle2,
-        className: 'bg-green-500/10 text-green-600 hover:bg-green-500/20' 
+        className: 'bg-emerald-500/10 text-emerald-600 hover:bg-emerald-500/20' 
       },
       translated: { 
-        label: 'Traducida', 
-        icon: Languages,
-        className: 'bg-blue-500/10 text-blue-600 hover:bg-blue-500/20' 
+        label: '⚡ Revisar SEO', 
+        tooltip: 'Ya está traducida, pero falta optimizar algunos campos SEO',
+        icon: Zap,
+        className: 'bg-yellow-500/10 text-yellow-600 hover:bg-yellow-500/20' 
       },
       pending: { 
-        label: 'Pendiente', 
-        icon: Clock,
-        className: 'bg-orange-500/10 text-orange-600 hover:bg-orange-500/20' 
+        label: '🚀 Lista para traducir', 
+        tooltip: 'Tiene datos SEO en español, lista para crear la versión en inglés',
+        icon: Rocket,
+        className: 'bg-green-500/10 text-green-600 hover:bg-green-500/20' 
       },
       'code-only': { 
-        label: 'Solo en Código', 
-        icon: Code,
-        className: 'bg-purple-500/10 text-purple-600 hover:bg-purple-500/20' 
+        label: '📝 Nueva', 
+        tooltip: 'Página detectada en tu web que necesita datos SEO básicos',
+        icon: FileEdit,
+        className: 'bg-blue-500/10 text-blue-600 hover:bg-blue-500/20' 
       },
       orphan: { 
-        label: 'Huérfana', 
+        label: '🔒 Sistema', 
+        tooltip: 'Página técnica del sistema (oculta del listado principal)',
         icon: AlertTriangle,
-        className: 'bg-red-500/10 text-red-600 hover:bg-red-500/20' 
+        className: 'bg-gray-500/10 text-gray-600 hover:bg-gray-500/20' 
       },
     };
 
@@ -70,10 +77,18 @@ export const TranslationTable: React.FC<TranslationTableProps> = ({ selectedCate
     const Icon = config.icon;
     
     return (
-      <Badge className={config.className}>
-        <Icon className="h-3 w-3 mr-1" />
-        {config.label}
-      </Badge>
+      <TooltipProvider>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Badge className={config.className}>
+              {config.label}
+            </Badge>
+          </TooltipTrigger>
+          <TooltipContent>
+            <p className="max-w-xs">{config.tooltip}</p>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
     );
   };
 
@@ -159,12 +174,14 @@ export const TranslationTable: React.FC<TranslationTableProps> = ({ selectedCate
   }
 
   return (
-    <>
+    <div className="space-y-4">
+      <TranslationFlowGuide />
+      
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Languages className="h-5 w-5" />
-            Páginas y Traducciones ({filteredRoutes.length})
+            Páginas en Español ({filteredRoutes.length})
           </CardTitle>
         </CardHeader>
 
@@ -187,11 +204,10 @@ export const TranslationTable: React.FC<TranslationTableProps> = ({ selectedCate
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">Todos los estados</SelectItem>
-                <SelectItem value="complete">Completas</SelectItem>
-                <SelectItem value="translated">Traducidas</SelectItem>
-                <SelectItem value="pending">Pendientes</SelectItem>
-                <SelectItem value="code-only">Solo en Código</SelectItem>
-                <SelectItem value="orphan">Huérfanas</SelectItem>
+                <SelectItem value="code-only">📝 Nuevas</SelectItem>
+                <SelectItem value="pending">🚀 Listas para traducir</SelectItem>
+                <SelectItem value="translated">⚡ Revisar SEO</SelectItem>
+                <SelectItem value="complete">✅ Publicadas</SelectItem>
               </SelectContent>
             </Select>
 
@@ -299,46 +315,42 @@ export const TranslationTable: React.FC<TranslationTableProps> = ({ selectedCate
                     <div className="flex items-center gap-2 flex-shrink-0">
                       {route.status === 'code-only' && (
                         <Button
-                          size="sm"
-                          variant="outline"
-                          onClick={() => setSelectedRoute(route)}
+                          size="lg"
+                          className="bg-blue-500 hover:bg-blue-600 text-white"
+                          onClick={() => handleQuickAction(route)}
                         >
-                          <Database className="h-4 w-4 mr-1" />
-                          Añadir a DB
+                          <FileEdit className="h-4 w-4 mr-2" />
+                          Preparar Página
                         </Button>
                       )}
                       
                       {route.status === 'pending' && (
                         <Button
-                          size="sm"
-                          variant="outline"
-                          onClick={() => setSelectedRoute(route)}
+                          size="lg"
+                          className="bg-green-500 hover:bg-green-600 text-white"
+                          onClick={() => handleQuickAction(route)}
                         >
-                          <Languages className="h-4 w-4 mr-1" />
-                          Traducir
+                          <Languages className="h-4 w-4 mr-2" />
+                          TRADUCIR AHORA
                         </Button>
                       )}
                       
-                      {(route.status === 'translated' || route.status === 'complete') && !route.seoOptimized && (
+                      {route.status === 'translated' && !route.seoOptimized && (
                         <Button
-                          size="sm"
-                          variant="outline"
-                          onClick={() => setSelectedRoute(route)}
+                          size="lg"
+                          className="bg-yellow-500 hover:bg-yellow-600 text-white"
+                          onClick={() => handleQuickAction(route)}
                         >
-                          <AlertCircle className="h-4 w-4 mr-1" />
+                          <Zap className="h-4 w-4 mr-2" />
                           Optimizar SEO
                         </Button>
                       )}
-
-                      {route.inDatabase && (
-                        <Button
-                          size="sm"
-                          variant="ghost"
-                          onClick={() => setSelectedRoute(route)}
-                        >
-                          <FileText className="h-4 w-4 mr-1" />
-                          Ver Detalles
-                        </Button>
+                      
+                      {route.status === 'complete' && route.seoOptimized && (
+                        <Badge className="bg-emerald-500/20 text-emerald-700 px-4 py-2 text-sm">
+                          <CheckCircle2 className="h-4 w-4 mr-2" />
+                          Completa
+                        </Badge>
                       )}
                       
                       <Button
@@ -365,6 +377,6 @@ export const TranslationTable: React.FC<TranslationTableProps> = ({ selectedCate
           onClose={() => setSelectedRoute(null)}
         />
       )}
-    </>
+    </div>
   );
 };
