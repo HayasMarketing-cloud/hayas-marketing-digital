@@ -472,6 +472,8 @@ const SeoPositioning = () => {
       <ServiceContactSection title="¿Hablamos sobre tu estrategia SEO?" subtitle="Cuéntanos tu proyecto y objetivos de posicionamiento. Te responderemos con una propuesta personalizada." />
       
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default SeoPositioning;
