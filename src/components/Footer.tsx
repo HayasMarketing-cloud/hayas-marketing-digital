@@ -120,43 +120,6 @@ const Footer: React.FC<FooterProps> = ({
                 Programa de subvenciones para autónomos y empresas españolas. <span className="text-white font-bold text-xl">Disponible hasta el próximo 31 de octubre de 2025</span>
               </p>
             </div>
-            
-            <div className="grid grid-cols-1 gap-6 mb-12">
-              {/* Kit Digital CTA */}
-              <div className="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-xl p-6 text-white relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full transform translate-x-16 -translate-y-16"></div>
-                <div className="relative z-10">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-24 h-24 bg-white/90 rounded-lg p-3 flex items-center justify-center">
-                      <img src="/lovable-uploads/f9d2b651-7c92-42b3-86ce-64e3add924c6.png" alt="Kit Digital Logo" width={96} height={96} className="w-full" style={{ aspectRatio: '1/1' }} />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-lg">Kit Digital</h4>
-                      <p className="text-white/80 text-sm">Autónomos y pymes hasta 2 empleados</p>
-                      <p className="text-white/60 text-xs mt-1">Con Hayas, tú solo eliges. Nosotros nos ocupamos de todo.</p>
-                    </div>
-                  </div>
-                  <p className="text-white/90 mb-4 text-sm">
-                    Soluciones de <span className="font-semibold">branding y marketing digital</span> (no incluye publicidad en buscadores)
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <div className="w-5 h-5 bg-white/20 rounded-full flex items-center justify-center">
-                        <span className="text-xs">✓</span>
-                      </div>
-                      <Badge className="bg-white/20 text-white border-white/30 font-bold">
-                        Hasta 3.000€
-                      </Badge>
-                    </div>
-                    <Button asChild variant="secondary" size="sm" className="bg-white text-blue-700 hover:bg-gray-100 font-semibold">
-                      <Link to="/es/kit-digital">
-                        Solicítalo ahora <ArrowRight className="ml-1 h-4 w-4" />
-                      </Link>
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>}
         
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between">
