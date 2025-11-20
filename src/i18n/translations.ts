@@ -157,6 +157,94 @@ export const translations = {
     seo: {
       defaultTitle: 'Hayas Marketing - Estrategias de Marketing con IA',
       defaultDescription: 'Ayudamos a empresas y emprendedores a prosperar con estrategias de marketing que integran inteligencia artificial y automatización.'
+    },
+    pages: {
+      marketingAutomation: {
+        breadcrumbs: {
+          home: 'Inicio',
+          solution: 'Activa tus ventas',
+          current: 'Automatización de Marketing'
+        },
+        hero: {
+          title: 'Automatiza tu marketing y gana tiempo para lo importante',
+          subtitle: 'Implementamos sistemas automatizados que gestionan tus campañas, nutren leads y convierten prospectos mientras tú te centras en crecer tu negocio.',
+          cta1: 'Solicitar consulta gratuita',
+          cta2: 'Conocer más'
+        },
+        valueProposition: {
+          title: 'Marketing que trabaja',
+          titleHighlight: 'mientras duermes',
+          cards: [
+            {
+              title: 'Automatización Inteligente',
+              description: 'Workflows personalizados que responden al comportamiento de tus clientes en tiempo real.'
+            },
+            {
+              title: 'Eficiencia Extrema',
+              description: 'Automatiza tareas repetitivas y libera tiempo para estrategia y creatividad.'
+            },
+            {
+              title: 'Optimización Continua',
+              description: 'Análisis y mejora constante basada en datos reales de rendimiento.'
+            }
+          ]
+        },
+        detailedService: {
+          title: 'Cómo transformamos tu marketing en un',
+          titleHighlight: 'motor automatizado',
+          subtitle: 'Diseñamos e implementamos sistemas de automatización que se adaptan a tu negocio y escalan contigo, desde la captación hasta la conversión.',
+          features: [
+            {
+              title: 'Workflows personalizados',
+              description: 'Creamos secuencias automatizadas que responden al comportamiento de cada usuario, enviando el mensaje correcto en el momento perfecto.'
+            },
+            {
+              title: 'Email marketing automatizado',
+              description: 'Secuencias de nurturing que educan a tus leads y los guían hacia la compra sin intervención manual.'
+            },
+            {
+              title: 'Asistentes conversacionales IA',
+              description: 'Chatbots inteligentes que responden consultas, califican leads y programan reuniones automáticamente 24/7.'
+            },
+            {
+              title: 'Analytics y optimización',
+              description: 'Medimos cada interacción y optimizamos continuamente tus automatizaciones para maximizar resultados.'
+            }
+          ]
+        },
+        includes: {
+          title: '¿Qué incluye la',
+          titleHighlight: 'automatización',
+          items: [
+            'Workflows automatizados de email marketing y nurturing.',
+            'Secuencias de respuesta automática personalizadas.',
+            'Automatización de publicación en redes sociales.',
+            'Lead scoring automático y calificación inteligente.',
+            'Integración con CRM para gestión automatizada.',
+            'Chatbots y asistentes conversacionales con IA.',
+            'Automatización de seguimiento y recordatorios.',
+            'Dashboards de rendimiento en tiempo real.'
+          ]
+        },
+        benefits: {
+          title: 'Beneficios de',
+          titleHighlight: 'automatizar tu marketing',
+          items: [
+            'Ahorra hasta 20 horas semanales en tareas repetitivas.',
+            'Respuestas instantáneas a tus clientes 24/7.',
+            'Mayor consistencia en la comunicación de marca.',
+            'Mejora en la tasa de conversión gracias a la personalización.',
+            'Reducción de errores humanos en procesos.',
+            'Escalabilidad sin aumentar costes de personal.',
+            'Optimización continua con datos en tiempo real.'
+          ]
+        },
+        cta: {
+          title: '¿Listo para automatizar tu marketing?',
+          subtitle: 'Agenda una consulta gratuita y descubre cómo la automatización puede transformar tu estrategia de marketing digital.',
+          button: 'Solicitar consulta gratuita'
+        }
+      }
     }
   },
   en: {
@@ -317,6 +405,94 @@ export const translations = {
     seo: {
       defaultTitle: 'Hayas Marketing - AI-Powered Marketing Strategies',
       defaultDescription: 'We help businesses and entrepreneurs thrive with marketing strategies that integrate artificial intelligence and automation.'
+    },
+    pages: {
+      marketingAutomation: {
+        breadcrumbs: {
+          home: 'Home',
+          solution: 'Activate your sales',
+          current: 'Marketing Automation'
+        },
+        hero: {
+          title: 'Automate your marketing and gain time for what matters',
+          subtitle: 'We implement automated systems that manage your campaigns, nurture leads, and convert prospects while you focus on growing your business.',
+          cta1: 'Request free consultation',
+          cta2: 'Learn more'
+        },
+        valueProposition: {
+          title: 'Marketing that works',
+          titleHighlight: 'while you sleep',
+          cards: [
+            {
+              title: 'Intelligent Automation',
+              description: 'Personalized workflows that respond to your customers\' behavior in real-time.'
+            },
+            {
+              title: 'Extreme Efficiency',
+              description: 'Automate repetitive tasks and free up time for strategy and creativity.'
+            },
+            {
+              title: 'Continuous Optimization',
+              description: 'Analysis and constant improvement based on real performance data.'
+            }
+          ]
+        },
+        detailedService: {
+          title: 'How we transform your marketing into an',
+          titleHighlight: 'automated engine',
+          subtitle: 'We design and implement automation systems that adapt to your business and scale with you, from lead capture to conversion.',
+          features: [
+            {
+              title: 'Personalized workflows',
+              description: 'We create automated sequences that respond to each user\'s behavior, sending the right message at the perfect time.'
+            },
+            {
+              title: 'Automated email marketing',
+              description: 'Nurturing sequences that educate your leads and guide them toward purchase without manual intervention.'
+            },
+            {
+              title: 'AI conversational assistants',
+              description: 'Intelligent chatbots that answer queries, qualify leads, and schedule meetings automatically 24/7.'
+            },
+            {
+              title: 'Analytics and optimization',
+              description: 'We measure every interaction and continuously optimize your automations to maximize results.'
+            }
+          ]
+        },
+        includes: {
+          title: 'What does',
+          titleHighlight: 'automation',
+          items: [
+            'Automated email marketing and nurturing workflows.',
+            'Personalized automated response sequences.',
+            'Social media publishing automation.',
+            'Automatic lead scoring and intelligent qualification.',
+            'CRM integration for automated management.',
+            'AI chatbots and conversational assistants.',
+            'Follow-up and reminder automation.',
+            'Real-time performance dashboards.'
+          ]
+        },
+        benefits: {
+          title: 'Benefits of',
+          titleHighlight: 'automating your marketing',
+          items: [
+            'Save up to 20 hours per week on repetitive tasks.',
+            'Instant responses to your customers 24/7.',
+            'Greater consistency in brand communication.',
+            'Improved conversion rate through personalization.',
+            'Reduction of human errors in processes.',
+            'Scalability without increasing personnel costs.',
+            'Continuous optimization with real-time data.'
+          ]
+        },
+        cta: {
+          title: 'Ready to automate your marketing?',
+          subtitle: 'Schedule a free consultation and discover how automation can transform your digital marketing strategy.',
+          button: 'Request free consultation'
+        }
+      }
     }
   }
 };
