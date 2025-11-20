@@ -45,22 +45,26 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({ route, isOpe
   React.useEffect(() => {
     const loadExistingSEOData = async () => {
       if (isOpen && route?.dbId) {
-        const { data, error } = await supabase
-          .from('seo_pages')
-          .select('*')
-          .eq('id', route.dbId)
-          .single();
+        try {
+          const { data, error } = await supabase
+            .from('seo_pages')
+            .select('*')
+            .eq('id', route.dbId)
+            .maybeSingle();
 
-        if (data && !error) {
-          setFormData({
-            title: data.title || '',
-            description: data.description || '',
-            h1: data.h1 || '',
-            keywords: Array.isArray(data.keywords) ? data.keywords.join(', ') : '',
-            schema_type: data.schema_type || 'WebPage',
-            og_type: data.og_type || 'website',
-            og_image: data.og_image || '',
-          });
+          if (data && !error) {
+            setFormData({
+              title: data.title || '',
+              description: data.description || '',
+              h1: data.h1 || '',
+              keywords: Array.isArray(data.keywords) ? data.keywords.join(', ') : '',
+              schema_type: data.schema_type || 'WebPage',
+              og_type: data.og_type || 'website',
+              og_image: data.og_image || '',
+            });
+          }
+        } catch (err) {
+          console.error('Error loading SEO data:', err);
         }
       }
     };
