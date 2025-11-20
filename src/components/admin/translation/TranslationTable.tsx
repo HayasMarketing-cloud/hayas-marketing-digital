@@ -158,7 +158,7 @@ export const TranslationTable: React.FC<TranslationTableProps> = ({ selectedCate
     setShowQuickAction(false);
     setShowBatchProcessor(false);
     setShowWizard(false);
-    queryClient.invalidateQueries({ queryKey: ['all-routes'] });
+    queryClient.invalidateQueries({ queryKey: ['all-routes-inventory'] });
   };
 
   const selectedRoutesData = routes.filter(r => selectedRoutes.includes(r.path));
