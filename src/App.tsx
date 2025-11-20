@@ -470,13 +470,14 @@ const App = () => (
            {/* REDIRECTS MANAGER - Legacy URL */}
            <Route path="/redirects-manager" element={<Navigate to="/admin/seo/redirects" replace />} />
            
-           {/* ADMIN - SEO Control Center */}
-           <Route path="/admin/seo" element={<PageSuspense><Pages.SEODashboard /></PageSuspense>} />
-           <Route path="/admin/seo/gsc" element={<PageSuspense><Pages.GSCFullReport /></PageSuspense>} />
-           <Route path="/admin/seo/pages" element={<PageSuspense><Pages.SEOPagesManager /></PageSuspense>} />
-           <Route path="/admin/seo/sitemap" element={<PageSuspense><Pages.SitemapManager /></PageSuspense>} />
-           <Route path="/admin/seo/robots" element={<PageSuspense><Pages.RobotsManager /></PageSuspense>} />
-           <Route path="/admin/seo/redirects" element={<PageSuspense><Pages.RedirectsManager /></PageSuspense>} />
+            {/* ADMIN - SEO Control Center */}
+            <Route path="/admin/seo" element={<PageSuspense><Pages.SEODashboard /></PageSuspense>} />
+            <Route path="/admin/seo/gsc" element={<PageSuspense><Pages.GSCFullReport /></PageSuspense>} />
+            <Route path="/admin/seo/pages" element={<PageSuspense><Pages.SEOPagesManager /></PageSuspense>} />
+            <Route path="/admin/seo/sitemap" element={<PageSuspense><Pages.SitemapManager /></PageSuspense>} />
+            <Route path="/admin/seo/robots" element={<PageSuspense><Pages.RobotsManager /></PageSuspense>} />
+            <Route path="/admin/seo/redirects" element={<PageSuspense><Pages.RedirectsManager /></PageSuspense>} />
+            <Route path="/admin/translations" element={<PageSuspense><Pages.TranslationManager /></PageSuspense>} />
            
            {/* Página 404 dedicada */}
            <Route path="/es/404" element={<PageSuspense><Pages.Error404 /></PageSuspense>} />
