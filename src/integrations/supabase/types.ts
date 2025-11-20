@@ -229,6 +229,72 @@ export type Database = {
         }
         Relationships: []
       }
+      seo_alerts: {
+        Row: {
+          alert_type: string
+          created_at: string | null
+          details: Json | null
+          id: string
+          is_read: boolean | null
+          message: string
+          page_path: string
+          resolved_at: string | null
+          severity: string
+        }
+        Insert: {
+          alert_type: string
+          created_at?: string | null
+          details?: Json | null
+          id?: string
+          is_read?: boolean | null
+          message: string
+          page_path: string
+          resolved_at?: string | null
+          severity?: string
+        }
+        Update: {
+          alert_type?: string
+          created_at?: string | null
+          details?: Json | null
+          id?: string
+          is_read?: boolean | null
+          message?: string
+          page_path?: string
+          resolved_at?: string | null
+          severity?: string
+        }
+        Relationships: []
+      }
+      seo_history: {
+        Row: {
+          id: string
+          missing_fields: Json | null
+          missing_fields_count: number | null
+          page_path: string
+          seo_optimized: boolean | null
+          snapshot_at: string | null
+          status: string | null
+        }
+        Insert: {
+          id?: string
+          missing_fields?: Json | null
+          missing_fields_count?: number | null
+          page_path: string
+          seo_optimized?: boolean | null
+          snapshot_at?: string | null
+          status?: string | null
+        }
+        Update: {
+          id?: string
+          missing_fields?: Json | null
+          missing_fields_count?: number | null
+          page_path?: string
+          seo_optimized?: boolean | null
+          snapshot_at?: string | null
+          status?: string | null
+        }
+        Relationships: []
+      }
       seo_pages: {
         Row: {
           about: Json | null
@@ -350,6 +416,7 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      cleanup_old_seo_history: { Args: never; Returns: undefined }
       cleanup_rate_limit_logs: { Args: never; Returns: undefined }
       has_role: {
         Args: {
