@@ -1,6 +1,8 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
+import { createRouteFromTranslation } from '@/utils/routeRegistryWriter';
+import { useRouteRegistrySync } from './useRouteRegistrySync';
 
 interface TranslatePageParams {
   esPath: string;
@@ -11,6 +13,7 @@ interface TranslatePageParams {
 export const useTranslatePage = () => {
   const queryClient = useQueryClient();
   const { toast } = useToast();
+  const { syncRoute } = useRouteRegistrySync();
 
   const mutation = useMutation({
     mutationFn: async ({ esPath, enPath, category }: TranslatePageParams) => {
@@ -59,11 +62,24 @@ export const useTranslatePage = () => {
         translatedData: result.translatedData 
       };
     },
-    onSuccess: (data) => {
+    onSuccess: async (data, variables) => {
       // Invalidate queries to refresh the UI
       queryClient.invalidateQueries({ queryKey: ['translation-status'] });
       queryClient.invalidateQueries({ queryKey: ['translation-pairs'] });
       queryClient.invalidateQueries({ queryKey: ['seo-pages'] });
+
+      // Auto-register the new route in routeRegistryData.ts
+      const newRoute = createRouteFromTranslation(
+        variables.enPath,
+        variables.category
+      );
+      
+      try {
+        await syncRoute({ newRoute });
+      } catch (error) {
+        console.error('Failed to sync route to registry:', error);
+        // Don't fail the translation if registry sync fails
+      }
 
       toast({
         title: '✅ Página traducida con éxito',

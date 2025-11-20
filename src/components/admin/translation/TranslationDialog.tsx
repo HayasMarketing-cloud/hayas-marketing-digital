@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Dialog,
   DialogContent,
@@ -11,9 +11,11 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Badge } from '@/components/ui/badge';
+import { Alert, AlertDescription } from '@/components/ui/alert';
 import { useTranslatePage } from '@/hooks/useTranslatePage';
 import { generateEnglishSlug } from '@/utils/slugTranslation';
-import { Loader2, ArrowRight, Languages } from 'lucide-react';
+import { getRegisteredRoutes } from '@/utils/routeRegistryData';
+import { Loader2, ArrowRight, Languages, CheckCircle, AlertTriangle } from 'lucide-react';
 
 interface TranslationDialogProps {
   pair: any;
@@ -23,9 +25,17 @@ interface TranslationDialogProps {
 export const TranslationDialog: React.FC<TranslationDialogProps> = ({ pair, onClose }) => {
   const { translatePage, isTranslating } = useTranslatePage();
   const [customSlug, setCustomSlug] = useState('');
+  const [routeExists, setRouteExists] = useState(false);
   
   const suggestedEnSlug = generateEnglishSlug(pair.esPath);
   const finalEnSlug = customSlug || suggestedEnSlug;
+
+  // Validate if route exists in App.tsx / routeRegistryData.ts
+  useEffect(() => {
+    const registeredRoutes = getRegisteredRoutes();
+    const exists = registeredRoutes.some(route => route.path === finalEnSlug);
+    setRouteExists(exists);
+  }, [finalEnSlug]);
 
   const handleTranslate = async () => {
     await translatePage({
@@ -100,6 +110,31 @@ export const TranslationDialog: React.FC<TranslationDialogProps> = ({ pair, onCl
               <p className="font-mono text-sm text-blue-600">{finalEnSlug}</p>
             </div>
           )}
+
+          {/* Route validation alert */}
+          <Alert className={`${routeExists ? 'border-green-500 bg-green-50' : 'border-yellow-500 bg-yellow-50'}`}>
+            {routeExists ? (
+              <>
+                <CheckCircle className="h-4 w-4 text-green-600" />
+                <AlertDescription>
+                  <strong className="text-green-700">✓ Ruta registrada en sistema</strong>
+                  <p className="text-sm text-muted-foreground mt-1">
+                    Esta ruta existe en App.tsx y routeRegistryData.ts
+                  </p>
+                </AlertDescription>
+              </>
+            ) : (
+              <>
+                <AlertTriangle className="h-4 w-4 text-yellow-600" />
+                <AlertDescription>
+                  <strong className="text-yellow-700">⚠ Ruta nueva - Se auto-registrará</strong>
+                  <p className="text-sm text-muted-foreground mt-1">
+                    Esta ruta se registrará automáticamente tras la traducción. Asegúrate de que existe en App.tsx.
+                  </p>
+                </AlertDescription>
+              </>
+            )}
+          </Alert>
 
           {/* Info Box */}
           <div className="p-4 bg-blue-500/5 border border-blue-500/20 rounded-lg">

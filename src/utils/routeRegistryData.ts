@@ -71,6 +71,11 @@ export const registeredRoutes: RouteDefinition[] = [
   { path: '/en/services/brand-creation', category: 'service', isIndexable: true, priority: 0.7, changefreq: 'monthly', isDynamic: false, isLegacy: false },
   { path: '/en/blog', category: 'blog', isIndexable: true, priority: 0.7, changefreq: 'weekly', isDynamic: false, isLegacy: false },
   { path: '/en/case-studies', category: 'case-study', isIndexable: true, priority: 0.6, changefreq: 'monthly', isDynamic: false, isLegacy: false },
+  
+  // Translated Solutions
+  { path: '/en/solutions/lead-generation', category: 'solution', isIndexable: true, priority: 0.8, changefreq: 'weekly', isDynamic: false, isLegacy: false },
+  { path: '/en/solutions/marketing-automation', category: 'solution', isIndexable: true, priority: 0.8, changefreq: 'weekly', isDynamic: false, isLegacy: false },
+  { path: '/en/solutions/crm-client-management', category: 'solution', isIndexable: true, priority: 0.8, changefreq: 'weekly', isDynamic: false, isLegacy: false },
 ];
 
 /**
