@@ -205,7 +205,7 @@ const CaptacionLeadsClientes: React.FC = () => {
               <div>
                 <h2 className="text-2xl font-semibold mb-3">Qué incluye</h2>
                 <ul className="space-y-2 text-muted-foreground">
-                  {page.includes.map((item: string) => (
+                  {page.includes.items.map((item: string) => (
                     <li key={item}>• {item}</li>
                   ))}
                 </ul>
@@ -213,7 +213,7 @@ const CaptacionLeadsClientes: React.FC = () => {
               <div>
                 <h2 className="text-2xl font-semibold mb-3">Beneficios</h2>
                 <ul className="space-y-2 text-muted-foreground">
-                  {page.benefits.map((item: string) => (
+                  {page.benefits.items.map((item: string) => (
                     <li key={item}>• {item}</li>
                   ))}
                 </ul>

@@ -192,7 +192,7 @@ const GestionClientesCRM: React.FC = () => {
                 ¿Qué incluye la <span className="text-gradient-primary">implementación</span>?
               </h2>
               <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                {page.includes.map((item: string, index: number) => (
+                {page.includes.items.map((item: string, index: number) => (
                   <div key={index} className="flex items-start gap-3 bg-background p-4 rounded-lg">
                     <ArrowRight className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
                     <p className="text-foreground">{item}</p>
@@ -209,7 +209,7 @@ const GestionClientesCRM: React.FC = () => {
                 Beneficios de tener un <span className="text-gradient-primary">CRM bien implementado</span>
               </h2>
               <div className="grid md:grid-cols-2 gap-6">
-                {page.benefits.map((benefit: string, index: number) => (
+                {page.benefits.items.map((benefit: string, index: number) => (
                   <Card key={index} className="border-primary/10">
                     <CardContent className="pt-6">
                       <div className="flex items-start gap-3">
