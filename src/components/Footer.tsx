@@ -5,20 +5,20 @@ import { Badge } from '@/components/ui/badge';
 import { ArrowRight, Building2, Users, Linkedin, Youtube, MessageSquare, Mail, MapPin } from 'lucide-react';
 import { useLanguageNavigation } from '@/hooks/useLanguageNavigation';
 import { useTranslation } from '@/hooks/useTranslation';
-
 interface FooterProps {
   showKitSection?: boolean;
 }
-
 const Footer: React.FC<FooterProps> = ({
   showKitSection = false
 }) => {
-  const { language } = useLanguageNavigation();
-  const { t } = useTranslation();
+  const {
+    language
+  } = useLanguageNavigation();
+  const {
+    t
+  } = useTranslation();
   const currentYear = new Date().getFullYear();
-  
-  return (
-    <footer className="bg-gray-900 text-gray-300">
+  return <footer className="bg-gray-900 text-gray-300">
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           <div>
@@ -115,11 +115,13 @@ const Footer: React.FC<FooterProps> = ({
               <h3 className="text-2xl font-bold text-white mb-6">Agentes de transformación digital a través de los Fondos Next Generation de la Unión Europea</h3>
               <div className="flex justify-center mb-6">
                 <div className="bg-white rounded-lg p-4 shadow-lg">
-                  <img src="/lovable-uploads/e3910419-c73c-4448-a631-ed5f0eff61fe.png" alt="Agentes oficiales - Gobierno de España, Red.es, Kit Digital, Financiado por la Unión Europea" width={400} height={48} className="h-12 max-w-full" style={{ aspectRatio: '400/48' }} />
+                  <img src="/lovable-uploads/e3910419-c73c-4448-a631-ed5f0eff61fe.png" alt="Agentes oficiales - Gobierno de España, Red.es, Kit Digital, Financiado por la Unión Europea" width={400} height={48} className="h-12 max-w-full" style={{
+                aspectRatio: '400/48'
+              }} />
                 </div>
               </div>
               <p className="text-gray-400 max-w-2xl mx-auto text-xl">
-                Programa de subvenciones para autónomos y empresas españolas. <span className="text-white font-bold text-xl">Disponible hasta el próximo 31 de octubre de 2025</span>
+                Programa de subvenciones para autónomos y empresas españolas. <span className="text-white font-bold text-xl">Convocatorias cerradas el 31 de octubre de 2025</span>
               </p>
             </div>
           </div>}
@@ -136,8 +138,6 @@ const Footer: React.FC<FooterProps> = ({
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
