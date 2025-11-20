@@ -19,7 +19,7 @@ export const SEONavigation = () => {
           <div className="flex gap-2">
             <Button
               variant="ghost"
-              onClick={() => navigate('/admin/dashboard')}
+              onClick={() => navigate('/admin')}
               size="sm"
             >
               <Home className="h-4 w-4 mr-2" />
