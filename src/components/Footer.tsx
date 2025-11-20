@@ -16,7 +16,9 @@ const Footer: React.FC<FooterProps> = ({
   const { language } = useLanguageNavigation();
   const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
-  return <footer className="bg-gray-900 text-gray-300">
+  
+  return (
+    <footer className="bg-gray-900 text-gray-300">
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           <div>
@@ -134,6 +136,8 @@ const Footer: React.FC<FooterProps> = ({
           </div>
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 };
+
 export default Footer;
