@@ -13,6 +13,9 @@ import PageSuspense from './components/PageSuspense';
 import RoutePreloader from './components/RoutePreloader';
 import { RedirectManager } from './components/RedirectManager';
 
+// Traducción automática de home (una sola vez)
+import '@/utils/translateHomeNow';
+
 // Lazy imports organizados por categoría
 import * as Pages from './utils/lazyImports';
 
