@@ -65,7 +65,7 @@ const SEODashboard: React.FC = () => {
           <SEOHealthIndicator health={dashboardData.health} />
           
           {/* Quick Metrics */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
             <MetricsCard
               title="Sitemap Health"
               value={`${dashboardData.sitemapAnalysis.stats.indexableUrls}`}
@@ -99,6 +99,15 @@ const SEODashboard: React.FC = () => {
               subtitle="Optimización"
               icon={FileText}
               color={dashboardData.crawlBudget.optimizationScore >= 70 ? 'green' : 'yellow'}
+            />
+
+            <MetricsCard
+              title="FAQ Schema"
+              value="3"
+              subtitle="Páginas optimizadas"
+              icon={AlertTriangle}
+              color="blue"
+              onClick={() => navigate('/admin/faq-validator')}
             />
           </div>
         </div>

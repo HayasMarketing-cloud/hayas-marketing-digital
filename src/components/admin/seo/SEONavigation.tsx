@@ -1,6 +1,6 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { FileText, Home, Languages } from 'lucide-react';
+import { FileText, Home, Languages, HelpCircle } from 'lucide-react';
 
 export const SEONavigation = () => {
   const location = useLocation();
@@ -32,6 +32,14 @@ export const SEONavigation = () => {
             >
               <FileText className="h-4 w-4 mr-2" />
               Páginas SEO
+            </Button>
+            <Button
+              variant={isActive('/admin/faq-validator') ? 'default' : 'outline'}
+              onClick={() => navigate('/admin/faq-validator')}
+              size="sm"
+            >
+              <HelpCircle className="h-4 w-4 mr-2" />
+              FAQ Validator
             </Button>
             <Button
               variant={isActive('/admin/translations') ? 'default' : 'outline'}

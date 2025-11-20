@@ -158,6 +158,7 @@ export const RobotsManager = lazy(() => import("@/pages/admin/RobotsManager"));
 export const RedirectsManager = lazy(() => import("@/pages/admin/RedirectsManager"));
 export const GSCFullReport = lazy(() => import("@/pages/admin/GSCFullReport"));
 export const IndexNowManager = lazy(() => import("@/pages/admin/IndexNowManager"));
+export const FAQValidator = lazy(() => import("@/pages/admin/FAQValidator"));
 export const TranslationManager = lazy(() => import("@/pages/admin/TranslationManager"));
 
 // Páginas legales
