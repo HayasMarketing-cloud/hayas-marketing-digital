@@ -481,8 +481,9 @@ const App = () => (
             <Route path="/admin/seo/sitemap" element={<PageSuspense><Pages.SitemapManager /></PageSuspense>} />
             <Route path="/admin/seo/robots" element={<PageSuspense><Pages.RobotsManager /></PageSuspense>} />
             <Route path="/admin/seo/redirects" element={<PageSuspense><Pages.RedirectsManager /></PageSuspense>} />
-            <Route path="/admin/faq-validator" element={<PageSuspense><Pages.FAQValidator /></PageSuspense>} />
-            <Route path="/admin/translations" element={<PageSuspense><Pages.TranslationManager /></PageSuspense>} />
+             <Route path="/admin/faq-validator" element={<PageSuspense><Pages.FAQValidator /></PageSuspense>} />
+             <Route path="/admin/translations" element={<PageSuspense><Pages.TranslationManager /></PageSuspense>} />
+             <Route path="/admin/media-library" element={<PageSuspense><Pages.MediaLibrary /></PageSuspense>} />
            
            {/* Página 404 dedicada */}
            <Route path="/es/404" element={<PageSuspense><Pages.Error404 /></PageSuspense>} />
