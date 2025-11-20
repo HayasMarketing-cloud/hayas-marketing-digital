@@ -14,7 +14,8 @@ import {
   Languages,
   Users,
   Settings,
-  TrendingUp
+  TrendingUp,
+  Palette
 } from 'lucide-react';
 
 const AdminDashboard = () => {
@@ -85,6 +86,14 @@ const AdminDashboard = () => {
       description: 'Gestiona traducciones y contenido multiidioma',
       icon: Languages,
       path: '/admin/translations',
+      status: 'active' as const,
+      category: 'Contenido & Traducciones'
+    },
+    {
+      title: 'Brand Book',
+      description: 'Guía de identidad visual: colores, tipografías y logos corporativos',
+      icon: Palette,
+      path: '/admin/brandbook',
       status: 'active' as const,
       category: 'Contenido & Traducciones'
     }
