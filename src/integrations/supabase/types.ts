@@ -303,6 +303,7 @@ export type Database = {
           category: string | null
           created_at: string | null
           description: string
+          estimated_traffic: number | null
           faqs: Json | null
           h1: string
           h2_primary: string | null
@@ -312,14 +313,18 @@ export type Database = {
           in_language: string | null
           is_indexable: boolean | null
           keywords: Json | null
+          last_optimized_at: string | null
           mentions: Json | null
           og_image: string | null
           og_type: string | null
+          optimization_priority: number | null
           path: string
           pillar_page: string | null
+          priority_score: number | null
           related_pages: Json | null
           robots: string | null
           schema_type: string | null
+          strategic_importance: string | null
           title: string
           translation_of: string | null
           updated_at: string | null
@@ -331,6 +336,7 @@ export type Database = {
           category?: string | null
           created_at?: string | null
           description: string
+          estimated_traffic?: number | null
           faqs?: Json | null
           h1: string
           h2_primary?: string | null
@@ -340,14 +346,18 @@ export type Database = {
           in_language?: string | null
           is_indexable?: boolean | null
           keywords?: Json | null
+          last_optimized_at?: string | null
           mentions?: Json | null
           og_image?: string | null
           og_type?: string | null
+          optimization_priority?: number | null
           path: string
           pillar_page?: string | null
+          priority_score?: number | null
           related_pages?: Json | null
           robots?: string | null
           schema_type?: string | null
+          strategic_importance?: string | null
           title: string
           translation_of?: string | null
           updated_at?: string | null
@@ -359,6 +369,7 @@ export type Database = {
           category?: string | null
           created_at?: string | null
           description?: string
+          estimated_traffic?: number | null
           faqs?: Json | null
           h1?: string
           h2_primary?: string | null
@@ -368,14 +379,18 @@ export type Database = {
           in_language?: string | null
           is_indexable?: boolean | null
           keywords?: Json | null
+          last_optimized_at?: string | null
           mentions?: Json | null
           og_image?: string | null
           og_type?: string | null
+          optimization_priority?: number | null
           path?: string
           pillar_page?: string | null
+          priority_score?: number | null
           related_pages?: Json | null
           robots?: string | null
           schema_type?: string | null
+          strategic_importance?: string | null
           title?: string
           translation_of?: string | null
           updated_at?: string | null
@@ -416,6 +431,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      calculate_seo_priority: {
+        Args: { page_row: Database["public"]["Tables"]["seo_pages"]["Row"] }
+        Returns: number
+      }
       cleanup_old_seo_history: { Args: never; Returns: undefined }
       cleanup_rate_limit_logs: { Args: never; Returns: undefined }
       has_role: {
