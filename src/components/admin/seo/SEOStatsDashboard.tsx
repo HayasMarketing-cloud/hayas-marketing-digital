@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
 import { useAllRoutes } from '@/hooks/useAllRoutes';
-import { BarChart3, CheckCircle2, AlertCircle, Clock, Sparkles, TrendingUp, Target } from 'lucide-react';
+import { BarChart3, CheckCircle2, AlertCircle, Clock, Sparkles, TrendingUp, Target, Globe } from 'lucide-react';
 import { useMemo } from 'react';
 
 interface CategoryStats {
@@ -20,8 +20,9 @@ export const SEOStatsDashboard = () => {
   const stats = useMemo(() => {
     if (!routes) return null;
 
-    // Filter Spanish pages only
+    // Filter Spanish and English pages
     const spanishPages = routes.filter(r => r.language === 'es' && r.status !== 'orphan');
+    const englishPages = routes.filter(r => r.language === 'en' && r.status !== 'orphan');
 
     // Overall stats
     const total = spanishPages.length;
@@ -66,6 +67,11 @@ export const SEOStatsDashboard = () => {
       .slice(0, 5)
       .map(([field, count]) => ({ field, count }));
 
+    // English translation stats
+    const enTotal = englishPages.length;
+    const enOptimized = englishPages.filter(r => r.seoOptimized).length;
+    const enPercentage = total > 0 ? Math.round((enOptimized / total) * 100) : 0;
+
     return {
       total,
       optimized,
@@ -75,6 +81,9 @@ export const SEOStatsDashboard = () => {
       overallPercentage,
       categoryStats,
       topMissingFields,
+      enTotal,
+      enOptimized,
+      enPercentage,
     };
   }, [routes]);
 
@@ -114,6 +123,51 @@ export const SEOStatsDashboard = () => {
 
   return (
     <div className="space-y-6">
+      {/* Bilingual Progress */}
+      <Card className="bg-gradient-to-r from-primary/10 to-purple-500/10 border-primary/20">
+        <CardContent className="p-6">
+          <div className="flex items-center justify-between mb-4">
+            <h3 className="text-lg font-semibold flex items-center gap-2">
+              <Globe className="w-5 h-5" />
+              Progreso Bilingüe (ES + EN)
+            </h3>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-sm font-medium">🇪🇸 Español</span>
+                <span className="text-sm text-muted-foreground">
+                  {stats.optimized} / {stats.total}
+                </span>
+              </div>
+              <Progress value={stats.overallPercentage} className="h-3 mb-1" />
+              <span className="text-xs text-muted-foreground">
+                {stats.overallPercentage}% optimizado
+              </span>
+            </div>
+            <div>
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-sm font-medium">🇬🇧 English</span>
+                <span className="text-sm text-muted-foreground">
+                  {stats.enOptimized} / {stats.total}
+                </span>
+              </div>
+              <Progress value={stats.enPercentage} className="h-3 mb-1" />
+              <span className="text-xs text-muted-foreground">
+                {stats.enPercentage}% traducido
+              </span>
+            </div>
+          </div>
+          {stats.enPercentage < 100 && stats.optimized > 0 && (
+            <div className="mt-4 p-3 bg-blue-500/10 rounded-lg border border-blue-500/20">
+              <p className="text-sm text-blue-700 dark:text-blue-300">
+                💡 {stats.optimized - stats.enOptimized} páginas ES optimizadas listas para traducir al inglés
+              </p>
+            </div>
+          )}
+        </CardContent>
+      </Card>
+
       {/* Header Stats */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         <Card className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-950 dark:to-green-900 border-green-200 dark:border-green-800">

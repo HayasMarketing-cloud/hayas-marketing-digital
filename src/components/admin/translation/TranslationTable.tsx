@@ -13,6 +13,7 @@ import { SEOValidationPanel } from './SEOValidationPanel';
 import { QuickActionModal } from './QuickActionModal';
 import { BatchProcessor } from './BatchProcessor';
 import { TranslationWizard } from './TranslationWizard';
+import { BatchTranslationGenerator } from './BatchTranslationGenerator';
 import { TranslationFlowGuide } from './TranslationFlowGuide';
 import { BatchSEOGenerator } from '../seo/BatchSEOGenerator';
 import { SEOStatsDashboard } from '../seo/SEOStatsDashboard';
@@ -34,6 +35,7 @@ export const TranslationTable: React.FC<TranslationTableProps> = ({ selectedCate
   const [showBatchProcessor, setShowBatchProcessor] = useState(false);
   const [showBatchSEO, setShowBatchSEO] = useState(false);
   const [showWizard, setShowWizard] = useState(false);
+  const [showBatchTranslation, setShowBatchTranslation] = useState(false);
   const { routes, isLoading } = useAllRoutes();
   const queryClient = useQueryClient();
 
@@ -253,14 +255,30 @@ export const TranslationTable: React.FC<TranslationTableProps> = ({ selectedCate
                 </span>
               </div>
               <div className="flex gap-2">
-                <Button
-                  onClick={() => setShowBatchSEO(true)}
-                  variant="default"
-                  size="sm"
-                >
-                  <Sparkles className="w-4 h-4 mr-2" />
-                  Generar SEO con IA
-                </Button>
+                {/* Show SEO generation only for pages without SEO */}
+                {selectedRoutesData.every(r => !r.seoOptimized) && (
+                  <Button
+                    onClick={() => setShowBatchSEO(true)}
+                    variant="default"
+                    size="sm"
+                  >
+                    <Sparkles className="w-4 h-4 mr-2" />
+                    Generar SEO con IA
+                  </Button>
+                )}
+                
+                {/* Show translation only for pages with SEO */}
+                {selectedRoutesData.every(r => r.seoOptimized) && (
+                  <Button
+                    onClick={() => setShowBatchTranslation(true)}
+                    variant="default"
+                    size="sm"
+                  >
+                    <Languages className="w-4 h-4 mr-2" />
+                    Traducir Seleccionadas
+                  </Button>
+                )}
+                
                 <Button
                   onClick={() => setSelectedRoutes([])}
                   variant="outline"
@@ -459,6 +477,13 @@ export const TranslationTable: React.FC<TranslationTableProps> = ({ selectedCate
         isOpen={showWizard}
         onClose={() => setShowWizard(false)}
         routes={selectedRoutesData}
+      />
+
+      <BatchTranslationGenerator
+        isOpen={showBatchTranslation}
+        onClose={() => setShowBatchTranslation(false)}
+        routes={selectedRoutesData}
+        onSuccess={handleRefresh}
       />
     </div>
   );
