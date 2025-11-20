@@ -18,8 +18,9 @@ import SolutionPreviewSection from '@/components/SolutionPreviewSection';
 import IntermediateCTA from '@/components/IntermediateCTA';
 import BenefitsGridSection from '@/components/BenefitsGridSection';
 import { useServiceSEO } from '@/hooks/useServiceSEO';
+import { useFAQSEO } from '@/hooks/useFAQSEO';
 import { 
-  Globe, Palette, Code, Smartphone, Search, BarChart3, 
+  Globe, Palette, Code, Smartphone, Search, BarChart3,
   ArrowRight, CheckCircle, Star, Zap, Users, TrendingUp,
   Monitor, Layout, Sparkles, Shield, Timer, FileText,
   Settings, Lightbulb, Target, Calendar, Bot, Gauge
@@ -78,12 +79,20 @@ const faqItems = [
     answer: "Incluimos SEO técnico completo: estructura optimizada, velocidad de carga, meta tags, schema markup, sitemap XML, optimización de imágenes, URLs amigables y configuración de Google Analytics y Search Console."
   },
   {
+    question: "¿Cuánto cuesta una web profesional en España en 2025?",
+    answer: "El precio de una web profesional en España varía según la complejidad: desde 2.500€ para webs corporativas básicas hasta 15.000€+ para plataformas complejas. Factores que influyen: diseño personalizado, funcionalidades, integración con CRM, número de páginas y desarrollo a medida. Nuestros proyectos incluyen todo: diseño, desarrollo, contenido, SEO, hosting y soporte."
+  },
+  {
     question: "¿Ofrecen soporte después del lanzamiento?",
     answer: "Sí, ofrecemos soporte técnico continuo, actualizaciones de seguridad, backups automáticos, monitorización 24/7 y consultoría estratégica para ayudarte a hacer crecer tu presencia digital."
   },
   {
     question: "¿Pueden migrar mi web actual sin perder el SEO?",
     answer: "Sí, realizamos migraciones completas preservando el SEO, urls, contenido y posicionamiento. Usamos técnicas avanzadas de redirección y mantenemos toda la autoridad de tu dominio actual."
+  },
+  {
+    question: "¿Qué es el diseño UX/UI y por qué es importante?",
+    answer: "UX (User Experience) se centra en la experiencia del usuario y cómo interactúa con tu web. UI (User Interface) es el diseño visual y estético. Un buen diseño UX/UI mejora la satisfacción del usuario, aumenta conversiones hasta un 400%, reduce tasa de rebote y mejora el posicionamiento SEO. Diseñamos pensando en el comportamiento del usuario y los objetivos de negocio."
   }
 ];
 
@@ -102,6 +111,15 @@ const DisenoWeb = () => {
     aggregateRating: { ratingValue: '4.9', reviewCount: '42' }
   });
 
+  // FAQ Schema para Featured Snippets (FASE 7)
+  const faqSchema = useFAQSEO({
+    faqs: faqItems,
+    pageUrl: '/es/servicios/diseno-web'
+  });
+
+  // Combine schemas
+  const combinedStructuredData = [structuredData, faqSchema.structuredData];
+
   return (
     <div className="min-h-screen bg-white">
       <Seo 
@@ -109,7 +127,7 @@ const DisenoWeb = () => {
         description={description}
         canonical={canonical}
         ogImage={ogImage}
-        structuredData={structuredData}
+        structuredData={combinedStructuredData}
       />
       <Navigation />
       

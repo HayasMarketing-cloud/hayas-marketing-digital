@@ -13,6 +13,7 @@ import SuccessCasesSection from '@/components/SuccessCasesSection';
 import { getServiceSuccessCasesConfig } from '@/data/serviceSuccessCasesMapping';
 import Seo from '@/components/Seo';
 import { useServiceSEO } from '@/hooks/useServiceSEO';
+import { useFAQSEO } from '@/hooks/useFAQSEO';
 import { Search, BarChart3, FileText, Link as LinkIcon, Target, ArrowRight, CheckCircle, Star, TrendingUp, Eye, Users, Globe, Lightbulb, Award, Calendar, Bot, Gauge, MessageSquare, Settings, Zap, PieChart, Clock } from 'lucide-react';
 const seoServices = [{
   icon: <Search className="h-8 w-8 text-primary" />,
@@ -153,28 +154,36 @@ const SeoPositioning = () => {
     serviceType: "SEO y Posicionamiento Web",
     priceRange: "€€€",
     features: [
-      "Análisis de Palabras Clave",
-      "SEO On-Page",
-      "Link Building",
-      "SEO Local",
-      "Auditoría SEO",
-      "SEO con IA"
+      "Auditoría SEO completa",
+      "Optimización on-page y técnica",
+      "Estrategia de contenidos SEO",
+      "Link building de calidad",
+      "SEO local y Google My Business",
+      "Monitoreo y reportes mensuales"
     ],
     aggregateRating: {
       ratingValue: "4.9",
-      reviewCount: "28"
+      reviewCount: "67"
     }
   });
-  
-  return <div className="min-h-screen bg-white">
-      <Seo
+
+  // FAQ Schema para Featured Snippets (FASE 7)
+  const faqSchema = useFAQSEO({
+    faqs: faqItems,
+    pageUrl: '/es/servicios/seo-positioning'
+  });
+
+  // Combine schemas
+  const combinedStructuredData = [seoData.structuredData, faqSchema.structuredData];
+
+  return (
+    <div className="min-h-screen bg-white">
+      <Seo 
         title={seoData.title}
         description={seoData.description}
         canonical={seoData.canonical}
         ogImage={seoData.ogImage}
-        structuredData={seoData.structuredData}
-        keywords={["SEO", "posicionamiento web", "posicionamiento Google", "optimización SEO", "marketing digital", "SEO Madrid"]}
-        faqs={faqItems}
+        structuredData={combinedStructuredData}
       />
       <Navigation />
       

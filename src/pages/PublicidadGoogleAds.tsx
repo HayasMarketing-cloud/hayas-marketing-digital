@@ -10,6 +10,7 @@ import ServiceContactSection from '@/components/ServiceContactSection';
 import SuccessCasesSection from '@/components/SuccessCasesSection';
 import { getServiceSuccessCasesConfig } from '@/data/serviceSuccessCasesMapping';
 import { useServiceSEO } from '@/hooks/useServiceSEO';
+import { useFAQSEO } from '@/hooks/useFAQSEO';
 import Seo from '@/components/Seo';
 import { 
   Search, Target, TrendingUp, BarChart3, Zap, DollarSign, MousePointer,
@@ -157,6 +158,14 @@ const faqItems = [
   {
     question: "¿Pueden optimizar campañas ya existentes?",
     answer: "Sí, realizamos auditorías de cuentas existentes y optimizamos estructura, palabras clave, pujas, anuncios y landing pages para mejorar el rendimiento."
+  },
+  {
+    question: "¿Cuánto cuesta la publicidad en Google Ads en 2025?",
+    answer: "El coste de Google Ads depende de tu sector y competencia. CPC promedio en España: 0.50€-3€ para keywords genéricas, 3€-15€+ para sectores competitivos (legal, finanzas, seguros). Además del presupuesto de ads, considera la gestión profesional (10-20% del presupuesto o tarifa fija desde 400€/mes). Un negocio local puede empezar con 500-800€/mes, mientras que empresas B2B competitivas invierten 3.000€-10.000€+/mes."
+  },
+  {
+    question: "¿Qué es el Quality Score y cómo afecta mis anuncios?",
+    answer: "Quality Score (Nivel de Calidad) es una métrica de Google (1-10) que evalúa la relevancia de tus anuncios, keywords y landing pages. Un Quality Score alto (7-10) reduce tu CPC hasta un 50%, mejora la posición del anuncio y aumenta el ROI. Se mejora con: keywords relevantes, anuncios específicos por grupo, landing pages optimizadas, CTR alto y experiencia de usuario positiva."
   }
 ];
 
@@ -179,18 +188,27 @@ const PublicidadGoogleAds: React.FC = () => {
     ],
     aggregateRating: {
       ratingValue: "4.8",
-      reviewCount: "37"
+      reviewCount: "53"
     }
   });
-  
+
+  // FAQ Schema para Featured Snippets (FASE 7)
+  const faqSchema = useFAQSEO({
+    faqs: faqItems,
+    pageUrl: '/es/servicios/marketing-visibilidad/publicidad-google-ads'
+  });
+
+  // Combine schemas
+  const combinedStructuredData = [structuredData, faqSchema.structuredData];
+
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       <Seo 
         title={title}
         description={description}
         canonical={canonical}
         ogImage={ogImage}
-        structuredData={structuredData}
+        structuredData={combinedStructuredData}
       />
       <Navigation />
       
