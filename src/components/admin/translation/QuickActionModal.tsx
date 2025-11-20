@@ -44,8 +44,24 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({ route, isOpe
   // Load existing SEO data when modal opens
   React.useEffect(() => {
     const loadExistingSEOData = async () => {
+      // PASO 1: Siempre resetear primero para evitar datos cruzados
+      const emptyForm = {
+        title: '',
+        description: '',
+        h1: '',
+        keywords: '',
+        schema_type: 'WebPage',
+        og_type: 'website',
+        og_image: '',
+      };
+      
+      setFormData(emptyForm);
+
+      // PASO 2: Solo cargar datos si existe dbId
       if (isOpen && route?.dbId) {
         try {
+          console.log('🔍 [QuickActionModal] Loading SEO data for:', route.path, 'dbId:', route.dbId);
+          
           const { data, error } = await supabase
             .from('seo_pages')
             .select('*')
@@ -53,6 +69,7 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({ route, isOpe
             .maybeSingle();
 
           if (data && !error) {
+            console.log('✅ [QuickActionModal] Data loaded successfully');
             setFormData({
               title: data.title || '',
               description: data.description || '',
@@ -62,18 +79,39 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({ route, isOpe
               og_type: data.og_type || 'website',
               og_image: data.og_image || '',
             });
+          } else if (error) {
+            console.error('❌ [QuickActionModal] Error loading:', error);
+          } else {
+            console.log('⚠️ [QuickActionModal] No data found for dbId:', route.dbId);
           }
         } catch (err) {
-          console.error('Error loading SEO data:', err);
+          console.error('❌ [QuickActionModal] Exception:', err);
         }
+      } else if (isOpen) {
+        console.log('📝 [QuickActionModal] Empty form for code-only page:', route?.path);
       }
     };
 
     if (isOpen) {
-      console.log('🟣 [QuickActionModal] Opened with route:', route?.path);
+      console.log('🟣 [QuickActionModal] Opened with route:', route?.path, 'status:', route?.status);
       loadExistingSEOData();
     }
-  }, [isOpen, route?.path, route?.dbId]);
+  }, [isOpen, route?.path, route?.dbId, route?.status]);
+
+  // Limpiar formulario al cerrar el modal
+  React.useEffect(() => {
+    if (!isOpen) {
+      setFormData({
+        title: '',
+        description: '',
+        h1: '',
+        keywords: '',
+        schema_type: 'WebPage',
+        og_type: 'website',
+        og_image: '',
+      });
+    }
+  }, [isOpen]);
 
   if (!route) return null;
 
