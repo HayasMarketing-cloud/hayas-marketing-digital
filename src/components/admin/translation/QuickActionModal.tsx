@@ -14,6 +14,8 @@ import { useToast } from '@/hooks/use-toast';
 import { useTranslatePage } from '@/hooks/useTranslatePage';
 import { Loader2, CheckCircle2, AlertCircle, Sparkles, Languages, Database, Zap } from 'lucide-react';
 import { Progress } from '@/components/ui/progress';
+import { useGenerateSEO } from '@/hooks/useGenerateSEO';
+import { AIGenerationModal } from '../seo/AIGenerationModal';
 
 interface QuickActionModalProps {
   route: RouteInventoryItem | null;
@@ -25,6 +27,8 @@ interface QuickActionModalProps {
 export const QuickActionModal: React.FC<QuickActionModalProps> = ({ route, isOpen, onClose, onSuccess }) => {
   const { toast } = useToast();
   const { translatePage, isTranslating } = useTranslatePage();
+  const { generateSEO, isGenerating, suggestions } = useGenerateSEO();
+  const [showAIModal, setShowAIModal] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     title: '',
@@ -114,6 +118,39 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({ route, isOpe
   }, [isOpen]);
 
   if (!route) return null;
+
+  const handleGenerateWithAI = async () => {
+    try {
+      const result = await generateSEO({
+        path: route.path,
+        category: route.category || 'general',
+        pageContent: `Ruta: ${route.path}\nCategoría: ${route.category}\nTítulo actual: ${route.title || 'Sin título'}`,
+      });
+      
+      if (result) {
+        setShowAIModal(true);
+      }
+    } catch (error) {
+      console.error('Error generating SEO:', error);
+    }
+  };
+
+  const handleApplyAISuggestions = (data: {
+    title: string;
+    description: string;
+    h1: string;
+    keywords: string;
+  }) => {
+    setFormData(prev => ({
+      ...prev,
+      ...data,
+    }));
+    setShowAIModal(false);
+    toast({
+      title: "✨ Sugerencias aplicadas",
+      description: "Los campos se han actualizado con las sugerencias de la IA. Revísalos y guarda cuando estés listo.",
+    });
+  };
 
   const handleTemplateSelect = (template: SEOTemplate) => {
     setFormData({
@@ -266,6 +303,17 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({ route, isOpe
                   Completa los datos SEO básicos para que tu página sea visible en Google
                 </p>
               </div>
+
+              <Button
+                type="button"
+                onClick={handleGenerateWithAI}
+                disabled={isGenerating}
+                className="w-full"
+                variant="default"
+              >
+                <Sparkles className="w-4 h-4 mr-2" />
+                {isGenerating ? 'Generando con IA...' : '🤖 Generar SEO con Inteligencia Artificial'}
+              </Button>
               
               <div className="flex items-center justify-between">
                 <Label>Progreso de Optimización</Label>
@@ -506,7 +554,7 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({ route, isOpe
 
               {route.missingFields.includes('keywords') && (
                 <div className="space-y-2">
-                  <Label htmlFor="keywords">Keywords (separadas por comas)</Label>
+                  <Label htmlFor="keywords">Keywords</Label>
                   <Input
                     id="keywords"
                     value={formData.keywords}
@@ -517,7 +565,7 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({ route, isOpe
               )}
 
               <Button 
-                onClick={handleUpdateSEO} 
+                onClick={handleUpdateSEO}
                 disabled={isLoading}
                 className="w-full bg-yellow-500 hover:bg-yellow-600"
                 size="lg"
@@ -529,8 +577,8 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({ route, isOpe
                   </>
                 ) : (
                   <>
-                    <CheckCircle2 className="mr-2 h-4 w-4" />
-                    Guardar Cambios
+                    <Zap className="mr-2 h-4 w-4" />
+                    Actualizar SEO
                   </>
                 )}
               </Button>
@@ -543,21 +591,36 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({ route, isOpe
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+      <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
-            <Sparkles className="h-5 w-5 text-primary" />
-            Acción Rápida
+            <Database className="w-5 h-5" />
+            Gestión SEO: {route.path}
           </DialogTitle>
           <DialogDescription>
-            {route.path}
-            <Badge className="ml-2" variant="outline">
-              {route.status}
+            <Badge variant={
+              route.status === 'complete' ? 'default' : 
+              route.status === 'pending' ? 'secondary' : 
+              'outline'
+            }>
+              {route.status === 'code-only' && '📝 Por preparar'}
+              {route.status === 'pending' && '🔄 Por traducir'}
+              {route.status === 'translated' && '⚠️ SEO incompleto'}
+              {route.status === 'complete' && '✅ Completo'}
             </Badge>
           </DialogDescription>
         </DialogHeader>
+
         {renderContent()}
       </DialogContent>
+
+      <AIGenerationModal
+        isOpen={showAIModal}
+        onClose={() => setShowAIModal(false)}
+        suggestions={suggestions}
+        path={route.path}
+        onApply={handleApplyAISuggestions}
+      />
     </Dialog>
   );
 };
