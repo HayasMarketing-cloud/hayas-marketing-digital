@@ -6,9 +6,12 @@ import { TranslationTable } from '@/components/admin/translation/TranslationTabl
 import { RouteInconsistenciesPanel } from '@/components/admin/translation/RouteInconsistenciesPanel';
 import { SEONavigation } from '@/components/admin/seo/SEONavigation';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const TranslationManager = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const { t } = useTranslation();
+  const admin = t('admin.translationManager') as any;
 
   return (
     <div className="min-h-screen bg-background">
@@ -17,16 +20,16 @@ const TranslationManager = () => {
       
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8">
-          <h1 className="text-4xl font-bold mb-2">Panel de Traducción</h1>
+          <h1 className="text-4xl font-bold mb-2">{admin.title}</h1>
           <p className="text-muted-foreground">
-            Gestiona las traducciones de contenido y monitorea el progreso
+            {admin.subtitle}
           </p>
         </div>
 
         <Tabs defaultValue="translations" className="space-y-6">
           <TabsList>
-            <TabsTrigger value="translations">Traducciones</TabsTrigger>
-            <TabsTrigger value="inconsistencies">Detector de Inconsistencias</TabsTrigger>
+            <TabsTrigger value="translations">{admin.tabs.translations}</TabsTrigger>
+            <TabsTrigger value="inconsistencies">{admin.tabs.inconsistencies}</TabsTrigger>
           </TabsList>
 
           <TabsContent value="translations" className="space-y-6">
