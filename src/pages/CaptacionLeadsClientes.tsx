@@ -1,6 +1,8 @@
 import React from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import { useServiceSEO } from '@/hooks/useServiceSEO';
+import Seo from '@/components/Seo';
 import EnhancedSEO from '@/components/EnhancedSEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -16,8 +18,36 @@ const CaptacionLeadsClientes: React.FC = () => {
   const { t } = useTranslation();
   const { getLocalizedPath } = useLanguageNavigation();
   const page = t('pages.leadGeneration') as any;
+  
+  const { title, description, canonical, ogImage, structuredData } = useServiceSEO({
+    serviceName: "Captación de Leads y Clientes",
+    serviceDescription: "Sistemas automatizados de generación y conversión de leads. Transforma el tráfico web en oportunidades cualificadas con automatización y optimización continua.",
+    canonical: "/es/servicios/captacion-leads-clientes",
+    serviceType: "Lead Generation",
+    priceRange: "€€€",
+    features: [
+      "Landing Pages Optimizadas",
+      "Lead Magnets",
+      "Formularios Inteligentes",
+      "Email Marketing Automation",
+      "Lead Scoring",
+      "Integración CRM"
+    ],
+    aggregateRating: {
+      ratingValue: "4.8",
+      reviewCount: "36"
+    }
+  });
+  
   return (
     <>
+      <Seo 
+        title={title}
+        description={description}
+        canonical={canonical}
+        ogImage={ogImage}
+        structuredData={structuredData}
+      />
       <EnhancedSEO />
       <Navigation />
 

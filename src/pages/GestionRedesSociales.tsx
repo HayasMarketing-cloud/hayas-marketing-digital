@@ -6,7 +6,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import KitDigitalBanner from '@/components/KitDigitalBanner';
-
+import { useServiceSEO } from '@/hooks/useServiceSEO';
+import Seo from '@/components/Seo';
 import FAQSection from '@/components/FAQSection';
 import ServiceContactSection from '@/components/ServiceContactSection';
 import { 
@@ -165,8 +166,36 @@ const faqItems = [
 ];
 
 const GestionRedesSociales: React.FC = () => {
+  const { title, description, canonical, ogImage, structuredData } = useServiceSEO({
+    serviceName: "Gestión de Redes Sociales",
+    serviceDescription: "Gestión profesional de redes sociales con estrategia de contenido, community management y analítica. Construye tu comunidad y aumenta el engagement.",
+    canonical: "/es/servicios/marketing-visibilidad/gestion-redes-sociales",
+    heroImagePath: gestionRedesSocialesHero,
+    serviceType: "Marketing Digital",
+    priceRange: "€€",
+    features: [
+      "Estrategia de Contenido",
+      "Creación de Contenido Visual",
+      "Planificación y Programación",
+      "Community Management",
+      "Análisis y Reporting",
+      "Engagement y Crecimiento"
+    ],
+    aggregateRating: {
+      ratingValue: "4.8",
+      reviewCount: "45"
+    }
+  });
+  
   return (
     <div className="min-h-screen bg-background">
+      <Seo 
+        title={title}
+        description={description}
+        canonical={canonical}
+        ogImage={ogImage}
+        structuredData={structuredData}
+      />
       <Navigation />
       
       {/* Breadcrumb */}

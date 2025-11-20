@@ -8,8 +8,9 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import KitDigitalBanner from '@/components/KitDigitalBanner';
 import FAQSection from '@/components/FAQSection';
-import { Package, Send, Mail, Palette, CalendarCheck2, Truck, BarChart3, Users, Sparkles, Target, Settings, CheckCircle } from 'lucide-react';
+import { useServiceSEO } from '@/hooks/useServiceSEO';
 import Seo from '@/components/Seo';
+import { Package, Send, Mail, Palette, CalendarCheck2, Truck, BarChart3, Users, Sparkles, Target, Settings, CheckCircle } from 'lucide-react';
 const mdServices = [
   {
     icon: <Target className="h-8 w-8 text-primary" />,
@@ -83,23 +84,34 @@ const faqItems = [
 ];
 
 const MarketingDirecto: React.FC = () => {
+  const { title, description, canonical, ogImage, structuredData } = useServiceSEO({
+    serviceName: "Marketing Directo",
+    serviceDescription: "Campañas de marketing directo para grandes empresas: concepto creativo, diseño, producción, logística y envío + email marketing personalizado.",
+    canonical: "/es/servicios/marketing-directo",
+    serviceType: "Marketing Directo",
+    priceRange: "€€€",
+    features: [
+      "Estrategia y Conceptualización",
+      "Diseño y Dirección de Arte",
+      "Producción e Impresión",
+      "Logística y Envío",
+      "Email Marketing Complementario",
+      "Medición y Optimización"
+    ],
+    aggregateRating: {
+      ratingValue: "4.7",
+      reviewCount: "24"
+    }
+  });
 
   return (
     <div className="min-h-screen bg-background">
       <Seo 
-        title="Marketing Directo | Campañas y Envíos Personalizados"
-        description="Campañas de marketing directo para grandes empresas: concepto, diseño, producción y envío + email marketing personalizado."
-        canonical="/es/servicios/marketing-directo"
-        structuredData={{
-          '@context': 'https://schema.org',
-          '@type': 'Service',
-          name: 'Marketing Directo',
-          serviceType: 'Campañas de Marketing Directo',
-          areaServed: 'ES',
-          provider: { '@type': 'Organization', name: 'Hayas Marketing' },
-          description: 'Campañas de marketing directo para grandes empresas: concepto, diseño, producción y envío + email marketing personalizado.',
-          offers: { '@type': 'Offer', availability: 'https://schema.org/InStock' }
-        }}
+        title={title}
+        description={description}
+        canonical={canonical}
+        ogImage={ogImage}
+        structuredData={structuredData}
       />
       <Navigation />
 

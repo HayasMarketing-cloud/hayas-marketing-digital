@@ -12,6 +12,8 @@ import FAQSection from '@/components/FAQSection';
 import SuccessCasesSection from '@/components/SuccessCasesSection';
 import ServiceContactSection from '@/components/ServiceContactSection';
 import IntermediateCTA from '@/components/IntermediateCTA';
+import { useServiceSEO } from '@/hooks/useServiceSEO';
+import Seo from '@/components/Seo';
 import { 
   Globe, Languages, Search, Target, Sparkles, Users, TrendingUp, 
   ArrowRight, CheckCircle, Star, Zap, Monitor, Layout,
@@ -362,8 +364,35 @@ const LocalizacionBenefitsGridSection = () => {
 };
 
 const LocalizacionContenidos = () => {
+  const { title, description, canonical, ogImage, structuredData } = useServiceSEO({
+    serviceName: "Localización de Contenidos",
+    serviceDescription: "Adaptación profesional de contenido para mercados internacionales. Más que traducción: localización cultural, SEO multilingüe y estrategia de expansión global.",
+    canonical: "/es/servicios/localizacion-contenidos",
+    serviceType: "Localización y Traducción",
+    priceRange: "€€€",
+    features: [
+      "Análisis cultural y de mercado",
+      "Adaptación lingüística especializada",
+      "SEO internacional",
+      "Implementación técnica multiidioma",
+      "Optimización y medición",
+      "Soporte continuo"
+    ],
+    aggregateRating: {
+      ratingValue: "4.9",
+      reviewCount: "27"
+    }
+  });
+  
   return (
     <div className="min-h-screen bg-white">
+      <Seo 
+        title={title}
+        description={description}
+        canonical={canonical}
+        ogImage={ogImage}
+        structuredData={structuredData}
+      />
       <Navigation />
       
       {/* Breadcrumb */}
