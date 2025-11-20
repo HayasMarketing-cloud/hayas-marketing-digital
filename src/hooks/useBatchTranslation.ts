@@ -32,6 +32,10 @@ interface BatchTranslationProgress {
 
 const BATCH_SIZE = 3; // Process 3 translations in parallel
 const BATCH_DELAY = 2000; // 2 seconds between batches
+const MAX_RETRIES = 3;
+const INITIAL_RETRY_DELAY = 2000; // 2 seconds
+
+const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
 export const useBatchTranslation = () => {
   const [isProcessing, setIsProcessing] = useState(false);
@@ -81,51 +85,87 @@ export const useBatchTranslation = () => {
             items[itemIndex].status = 'processing';
             updateProgress();
 
-            try {
-              // Fetch the original Spanish SEO data
-              const { data: esPage, error: fetchError } = await supabase
-                .from('seo_pages')
-                .select('*')
-                .eq('path', page.esPath)
-                .single();
+            let retryCount = 0;
+            let success = false;
 
-              if (fetchError) throw new Error(`No se encontró la página ES: ${fetchError.message}`);
-              if (!esPage) throw new Error('Página ES no encontrada');
+            while (retryCount <= MAX_RETRIES && !success) {
+              try {
+                // Fetch the original Spanish SEO data
+                const { data: esPage, error: fetchError } = await supabase
+                  .from('seo_pages')
+                  .select('*')
+                  .eq('path', page.esPath)
+                  .single();
 
-              // Call translation edge function
-              const { data: translationData, error: translationError } = await supabase.functions.invoke(
-                'translate-seo',
-                {
-                  body: {
-                    seoData: {
-                      title: esPage.title,
-                      description: esPage.description,
-                      h1: esPage.h1,
-                      keywords: esPage.keywords,
+                if (fetchError) throw new Error(`No se encontró la página ES: ${fetchError.message}`);
+                if (!esPage) throw new Error('Página ES no encontrada');
+
+                // Call translation edge function
+                const { data: translationData, error: translationError } = await supabase.functions.invoke(
+                  'translate-seo',
+                  {
+                    body: {
+                      seoData: {
+                        title: esPage.title,
+                        description: esPage.description,
+                        h1: esPage.h1,
+                        keywords: esPage.keywords,
+                      },
+                      targetLanguage: 'en',
+                      esPageId: esPage.id,
+                      enPath: page.enPath,
+                      category: page.category || esPage.category,
                     },
-                    targetLanguage: 'en',
-                    esPageId: esPage.id,
-                    enPath: page.enPath,
-                    category: page.category || esPage.category,
-                  },
+                  }
+                );
+
+                if (translationError) throw translationError;
+                if (translationData?.error) {
+                  // Check for rate limit or payment errors
+                  const errorMsg = translationData.error.toLowerCase();
+                  if (errorMsg.includes('429') || errorMsg.includes('rate limit')) {
+                    throw new Error('RATE_LIMIT');
+                  }
+                  if (errorMsg.includes('402') || errorMsg.includes('payment') || errorMsg.includes('credits')) {
+                    throw new Error('PAYMENT_REQUIRED');
+                  }
+                  throw new Error(translationData.error);
                 }
-              );
+                if (!translationData?.success) {
+                  throw new Error('Traducción fallida sin datos');
+                }
 
-              if (translationError) throw translationError;
-              if (translationData?.error) throw new Error(translationData.error);
-              if (!translationData?.success) {
-                throw new Error('Traducción fallida sin datos');
+                items[itemIndex].status = 'success';
+                items[itemIndex].translatedData = translationData.translated;
+                console.log(`✅ Translated ${page.esPath} → ${page.enPath}`);
+                success = true;
+
+              } catch (err) {
+                const errorMessage = err instanceof Error ? err.message : 'Error desconocido';
+                
+                // Check if we should retry
+                const shouldRetry = (
+                  errorMessage === 'RATE_LIMIT' || 
+                  errorMessage === 'PAYMENT_REQUIRED'
+                ) && retryCount < MAX_RETRIES;
+
+                if (shouldRetry) {
+                  retryCount++;
+                  const delay = INITIAL_RETRY_DELAY * Math.pow(2, retryCount - 1); // Exponential backoff: 2s, 4s, 8s
+                  console.log(`⚠️ ${errorMessage} - Retry ${retryCount}/${MAX_RETRIES} for ${page.esPath} in ${delay}ms`);
+                  await sleep(delay);
+                } else {
+                  // Final error after all retries
+                  items[itemIndex].status = 'error';
+                  items[itemIndex].error = errorMessage === 'RATE_LIMIT' 
+                    ? 'Rate limit excedido (max reintentos)'
+                    : errorMessage === 'PAYMENT_REQUIRED'
+                    ? 'Sin créditos disponibles'
+                    : errorMessage;
+                  console.error(`❌ Failed to translate ${page.esPath} after ${retryCount} retries:`, errorMessage);
+                  break;
+                }
               }
-
-              items[itemIndex].status = 'success';
-              items[itemIndex].translatedData = translationData.translated;
-              console.log(`✅ Translated ${page.esPath} → ${page.enPath}`);
-
-            } catch (err) {
-              const errorMessage = err instanceof Error ? err.message : 'Error desconocido';
-              items[itemIndex].status = 'error';
-              items[itemIndex].error = errorMessage;
-              console.error(`❌ Failed to translate ${page.esPath}:`, errorMessage);
             }
 
             updateProgress();

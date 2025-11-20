@@ -10,6 +10,7 @@ import { batchGenerateEnglishRoutes } from '@/utils/generateEnglishRoute';
 import { Loader2, CheckCircle2, XCircle, Languages, AlertTriangle, Globe } from 'lucide-react';
 import { useState, useEffect, useMemo } from 'react';
 import type { RouteInventoryItem } from '@/hooks/useAllRoutes';
+import { supabase } from '@/integrations/supabase/client';
 
 interface BatchTranslationGeneratorProps {
   isOpen: boolean;
@@ -36,8 +37,10 @@ export const BatchTranslationGenerator = ({
   const { batchTranslate, isProcessing, progress, reset } = useBatchTranslation();
   const [hasStarted, setHasStarted] = useState(false);
   const [routeMappings, setRouteMappings] = useState<RouteMapping[]>([]);
+  const [duplicateRoutes, setDuplicateRoutes] = useState<string[]>([]);
+  const [isCheckingDuplicates, setIsCheckingDuplicates] = useState(false);
 
-  // Generate initial mappings when dialog opens
+  // Generate initial mappings and check for duplicates when dialog opens
   useEffect(() => {
     if (isOpen && routes.length > 0) {
       const generated = batchGenerateEnglishRoutes(routes.map(r => r.path));
@@ -50,8 +53,31 @@ export const BatchTranslationGenerator = ({
         warnings: gen.warnings,
       }));
       setRouteMappings(mappings);
+      
+      // Check for duplicate EN routes
+      checkForDuplicates(mappings.map(m => m.enPath));
     }
   }, [isOpen, routes]);
+
+  const checkForDuplicates = async (enPaths: string[]) => {
+    setIsCheckingDuplicates(true);
+    try {
+      const { data: existingPages } = await supabase
+        .from('seo_pages')
+        .select('path')
+        .in('path', enPaths);
+      
+      if (existingPages && existingPages.length > 0) {
+        setDuplicateRoutes(existingPages.map(p => p.path));
+      } else {
+        setDuplicateRoutes([]);
+      }
+    } catch (error) {
+      console.error('Error checking duplicates:', error);
+    } finally {
+      setIsCheckingDuplicates(false);
+    }
+  };
 
   useEffect(() => {
     if (!isOpen) {
@@ -75,10 +101,13 @@ export const BatchTranslationGenerator = ({
     onSuccess();
   };
 
-  const handleEditEnPath = (index: number, newEnPath: string) => {
+  const handleEditEnPath = async (index: number, newEnPath: string) => {
     const updated = [...routeMappings];
     updated[index].enPath = newEnPath;
     setRouteMappings(updated);
+    
+    // Re-check duplicates after edit
+    await checkForDuplicates(updated.map(m => m.enPath));
   };
 
   const percentageComplete = progress 
@@ -182,7 +211,26 @@ export const BatchTranslationGenerator = ({
           <div className="flex-1 overflow-hidden">
             <ScrollArea className="h-full pr-4">
               <div className="space-y-2">
-                {!hasStarted && invalidMappings > 0 && (
+                {!hasStarted && duplicateRoutes.length > 0 && (
+                  <div className="bg-red-500/10 p-4 rounded-lg mb-4 border-2 border-red-500/30">
+                    <div className="flex items-start gap-3">
+                      <XCircle className="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
+                      <div className="text-sm">
+                        <p className="font-semibold text-red-700 mb-1">⛔ Rutas EN Duplicadas Detectadas:</p>
+                        <p className="text-muted-foreground mb-2">
+                          Las siguientes rutas EN ya existen en la base de datos. Debes editarlas antes de continuar:
+                        </p>
+                        <ul className="list-disc list-inside text-red-600 space-y-1">
+                          {duplicateRoutes.map(route => (
+                            <li key={route}>{route}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {!hasStarted && invalidMappings > 0 && duplicateRoutes.length === 0 && (
                   <div className="bg-yellow-500/10 p-4 rounded-lg mb-4">
                     <div className="flex items-start gap-3">
                       <AlertTriangle className="w-5 h-5 text-yellow-600 shrink-0 mt-0.5" />
@@ -279,12 +327,21 @@ export const BatchTranslationGenerator = ({
                 <>
                   <Button
                     onClick={handleStart}
-                    disabled={isProcessing || invalidMappings > 0}
+                    disabled={isProcessing || invalidMappings > 0 || duplicateRoutes.length > 0 || isCheckingDuplicates}
                     className="flex-1"
                     size="lg"
                   >
-                    <Languages className="w-4 h-4 mr-2" />
-                    Iniciar Traducción
+                    {isCheckingDuplicates ? (
+                      <>
+                        <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                        Verificando rutas...
+                      </>
+                    ) : (
+                      <>
+                        <Languages className="w-4 h-4 mr-2" />
+                        Iniciar Traducción
+                      </>
+                    )}
                   </Button>
                   <Button
                     onClick={onClose}

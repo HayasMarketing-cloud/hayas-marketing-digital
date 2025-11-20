@@ -14,6 +14,7 @@ import { QuickActionModal } from './QuickActionModal';
 import { BatchProcessor } from './BatchProcessor';
 import { TranslationWizard } from './TranslationWizard';
 import { BatchTranslationGenerator } from './BatchTranslationGenerator';
+import { ComparisonViewModal } from './ComparisonViewModal';
 import { TranslationFlowGuide } from './TranslationFlowGuide';
 import { BatchSEOGenerator } from '../seo/BatchSEOGenerator';
 import { SEOStatsDashboard } from '../seo/SEOStatsDashboard';
@@ -36,6 +37,7 @@ export const TranslationTable: React.FC<TranslationTableProps> = ({ selectedCate
   const [showBatchSEO, setShowBatchSEO] = useState(false);
   const [showWizard, setShowWizard] = useState(false);
   const [showBatchTranslation, setShowBatchTranslation] = useState(false);
+  const [showComparison, setShowComparison] = useState(false);
   const { routes, isLoading } = useAllRoutes();
   const queryClient = useQueryClient();
 
@@ -269,14 +271,24 @@ export const TranslationTable: React.FC<TranslationTableProps> = ({ selectedCate
                 
                 {/* Show translation only for pages with SEO */}
                 {selectedRoutesData.every(r => r.seoOptimized) && (
-                  <Button
-                    onClick={() => setShowBatchTranslation(true)}
-                    variant="default"
-                    size="sm"
-                  >
-                    <Languages className="w-4 h-4 mr-2" />
-                    Traducir Seleccionadas
-                  </Button>
+                  <>
+                    <Button
+                      onClick={() => setShowBatchTranslation(true)}
+                      variant="default"
+                      size="sm"
+                    >
+                      <Languages className="w-4 h-4 mr-2" />
+                      Traducir Seleccionadas
+                    </Button>
+                    <Button
+                      onClick={() => setShowComparison(true)}
+                      variant="outline"
+                      size="sm"
+                    >
+                      <FileText className="w-4 h-4 mr-2" />
+                      Comparar ES vs EN
+                    </Button>
+                  </>
                 )}
                 
                 <Button
@@ -484,6 +496,12 @@ export const TranslationTable: React.FC<TranslationTableProps> = ({ selectedCate
         onClose={() => setShowBatchTranslation(false)}
         routes={selectedRoutesData}
         onSuccess={handleRefresh}
+      />
+
+      <ComparisonViewModal
+        isOpen={showComparison}
+        onClose={() => setShowComparison(false)}
+        selectedPaths={selectedRoutes}
       />
     </div>
   );
