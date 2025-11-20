@@ -1,7 +1,10 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Skeleton } from '@/components/ui/skeleton';
 import { useTranslationStatus } from '@/hooks/useTranslationStatus';
-import { Globe, CheckCircle, AlertCircle, Clock } from 'lucide-react';
+import { FileText, CheckCircle2, Clock, FileEdit } from 'lucide-react';
+import { useTranslation } from '@/hooks/useTranslation';
 
 interface TranslationStatsProps {
   onCategorySelect?: (category: string) => void;
@@ -9,6 +12,8 @@ interface TranslationStatsProps {
 
 export const TranslationStats: React.FC<TranslationStatsProps> = ({ onCategorySelect }) => {
   const { stats, isLoading } = useTranslationStatus();
+  const { t } = useTranslation();
+  const adminStats = t('admin.stats') as any;
 
   if (isLoading) {
     return (
@@ -26,32 +31,32 @@ export const TranslationStats: React.FC<TranslationStatsProps> = ({ onCategorySe
 
   const statCards = [
     {
-      title: 'Total de Páginas',
+      title: adminStats.totalPages,
       value: stats.total,
-      icon: Globe,
+      icon: FileText,
       color: 'text-blue-500',
       bgColor: 'bg-blue-500/10',
     },
     {
-      title: 'Traducidas',
+      title: adminStats.translated,
       value: stats.translated,
-      icon: CheckCircle,
+      icon: CheckCircle2,
       color: 'text-green-500',
       bgColor: 'bg-green-500/10',
       percentage: stats.total > 0 ? Math.round((stats.translated / stats.total) * 100) : 0,
     },
     {
-      title: 'Pendientes',
+      title: adminStats.pending,
       value: stats.pending,
-      icon: AlertCircle,
-      color: 'text-red-500',
-      bgColor: 'bg-red-500/10',
+      icon: Clock,
+      color: 'text-orange-500',
+      bgColor: 'bg-orange-500/10',
       percentage: stats.total > 0 ? Math.round((stats.pending / stats.total) * 100) : 0,
     },
     {
-      title: 'Borradores',
+      title: adminStats.drafts,
       value: stats.drafts,
-      icon: Clock,
+      icon: FileEdit,
       color: 'text-yellow-500',
       bgColor: 'bg-yellow-500/10',
     },
@@ -70,12 +75,14 @@ export const TranslationStats: React.FC<TranslationStatsProps> = ({ onCategorySe
               </div>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">{stat.value}</div>
-              {stat.percentage !== undefined && (
-                <p className="text-xs text-muted-foreground">
-                  {stat.percentage}% del total
-                </p>
-              )}
+              <div className="flex items-center justify-between">
+                <div className="text-2xl font-bold">{stat.value}</div>
+                {stat.percentage !== undefined && (
+                  <Badge variant="outline" className="ml-2">
+                    {stat.percentage}% {adminStats.ofTotal}
+                  </Badge>
+                )}
+              </div>
             </CardContent>
           </Card>
         );

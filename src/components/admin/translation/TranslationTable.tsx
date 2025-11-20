@@ -8,6 +8,7 @@ import { Search, Edit, Eye, Plus, Languages, ExternalLink } from 'lucide-react';
 import { useTranslationPairs } from '@/hooks/useTranslationPairs';
 import { TranslationDialog } from './TranslationDialog';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from '@/hooks/useTranslation';
 
 interface TranslationTableProps {
   selectedCategory?: string;
@@ -20,6 +21,8 @@ export const TranslationTable: React.FC<TranslationTableProps> = ({ selectedCate
   const [categoryFilter, setCategoryFilter] = useState<string>(selectedCategory || 'all');
   const [selectedPair, setSelectedPair] = useState<any>(null);
   const navigate = useNavigate();
+  const { t } = useTranslation();
+  const table = t('admin.table') as any;
 
   const filteredPairs = useMemo(() => {
     if (!pairs) return [];
@@ -47,15 +50,18 @@ export const TranslationTable: React.FC<TranslationTableProps> = ({ selectedCate
   }, [selectedCategory]);
 
   const getStatusBadge = (status: string) => {
+    const statusKey = status as keyof typeof table.status;
+    const label = table.status[statusKey] || table.status.unknown;
+    
     switch (status) {
       case 'translated':
-        return <Badge className="bg-green-500/10 text-green-500 hover:bg-green-500/20">✅ Traducida</Badge>;
+        return <Badge className="bg-green-500/10 text-green-500 hover:bg-green-500/20">✅ {label}</Badge>;
       case 'draft':
-        return <Badge className="bg-yellow-500/10 text-yellow-500 hover:bg-yellow-500/20">⚠️ Borrador</Badge>;
+        return <Badge className="bg-yellow-500/10 text-yellow-500 hover:bg-yellow-500/20">⚠️ {label}</Badge>;
       case 'pending':
-        return <Badge className="bg-red-500/10 text-red-500 hover:bg-red-500/20">❌ Pendiente</Badge>;
+        return <Badge className="bg-red-500/10 text-red-500 hover:bg-red-500/20">❌ {label}</Badge>;
       default:
-        return <Badge variant="outline">Desconocido</Badge>;
+        return <Badge variant="outline">{label}</Badge>;
     }
   };
 
