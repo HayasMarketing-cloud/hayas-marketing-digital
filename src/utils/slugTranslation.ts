@@ -35,7 +35,7 @@ const slugMapping: Record<string, string> = {
   'conecta-con-tus-clientes': 'connect-with-customers',
   'activa-tus-ventas': 'activate-sales',
   'captacion-leads': 'lead-generation',
-  'gestion-clientes-crm': 'crm-management',
+  'gestion-clientes-crm': 'crm-client-management',
   'automatizacion-marketing': 'marketing-automation',
   
   // Common terms
