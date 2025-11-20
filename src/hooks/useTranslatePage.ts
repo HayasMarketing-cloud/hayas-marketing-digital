@@ -8,6 +8,10 @@ interface TranslatePageParams {
   category: string;
 }
 
+interface BatchTranslateParams {
+  pages: TranslatePageParams[];
+}
+
 export const useTranslatePage = () => {
   const queryClient = useQueryClient();
   const { toast } = useToast();
@@ -80,9 +84,106 @@ export const useTranslatePage = () => {
     },
   });
 
+  const batchMutation = useMutation({
+    mutationFn: async ({ pages }: BatchTranslateParams) => {
+      const results = [];
+      
+      for (const page of pages) {
+        try {
+          // Get the original ES page data
+          const { data: esPage, error: esError } = await supabase
+            .from('seo_pages')
+            .select('*')
+            .eq('path', page.esPath)
+            .eq('in_language', 'es-ES')
+            .single();
+
+          if (esError || !esPage) {
+            results.push({ 
+              path: page.esPath, 
+              success: false, 
+              error: 'No se encontró la página ES original' 
+            });
+            continue;
+          }
+
+          // Call edge function to translate
+          const { data: result, error: translateError } = await supabase.functions.invoke(
+            'translate-seo',
+            {
+              body: {
+                seoData: {
+                  title: esPage.title,
+                  description: esPage.description,
+                  h1: esPage.h1,
+                  keywords: esPage.keywords,
+                  schema_type: esPage.schema_type,
+                  og_type: esPage.og_type,
+                },
+                targetLanguage: 'en-US',
+                esPageId: esPage.id,
+                enPath: page.enPath,
+                category: page.category,
+              },
+            }
+          );
+
+          if (translateError) {
+            results.push({ 
+              path: page.esPath, 
+              success: false, 
+              error: 'Error al traducir el contenido' 
+            });
+            continue;
+          }
+
+          results.push({ 
+            path: page.esPath, 
+            success: true, 
+            data: result 
+          });
+
+          // Wait a bit between requests to avoid rate limits
+          await new Promise(resolve => setTimeout(resolve, 1000));
+
+        } catch (error: any) {
+          results.push({ 
+            path: page.esPath, 
+            success: false, 
+            error: error.message 
+          });
+        }
+      }
+
+      return results;
+    },
+    onSuccess: (results) => {
+      queryClient.invalidateQueries({ queryKey: ['translation-status'] });
+      queryClient.invalidateQueries({ queryKey: ['translation-pairs'] });
+      queryClient.invalidateQueries({ queryKey: ['seo-pages'] });
+
+      const successCount = results.filter(r => r.success).length;
+      const errorCount = results.filter(r => !r.success).length;
+
+      toast({
+        title: `✅ Procesamiento completado`,
+        description: `${successCount} páginas traducidas, ${errorCount} errores`,
+      });
+    },
+    onError: (error: Error) => {
+      toast({
+        variant: 'destructive',
+        title: '❌ Error en el procesamiento por lotes',
+        description: error.message,
+      });
+    },
+  });
+
   return {
     translatePage: mutation.mutate,
     isTranslating: mutation.isPending,
     error: mutation.error,
+    batchTranslate: batchMutation.mutate,
+    isBatchTranslating: batchMutation.isPending,
   };
 };

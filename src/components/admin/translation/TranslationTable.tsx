@@ -4,10 +4,15 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Search, Languages, ExternalLink, AlertCircle, CheckCircle2, Clock, Code, FileText, AlertTriangle, Database } from 'lucide-react';
+import { Checkbox } from '@/components/ui/checkbox';
+import { Search, Languages, ExternalLink, AlertCircle, CheckCircle2, Clock, Code, FileText, AlertTriangle, Database, Zap, ListChecks, Sparkles } from 'lucide-react';
 import { useAllRoutes, RouteInventoryItem } from '@/hooks/useAllRoutes';
 import { SEOValidationBadge } from './SEOValidationBadge';
 import { SEOValidationPanel } from './SEOValidationPanel';
+import { QuickActionModal } from './QuickActionModal';
+import { BatchProcessor } from './BatchProcessor';
+import { TranslationWizard } from './TranslationWizard';
+import { useQueryClient } from '@tanstack/react-query';
 
 interface TranslationTableProps {
   selectedCategory?: string;
@@ -18,7 +23,13 @@ export const TranslationTable: React.FC<TranslationTableProps> = ({ selectedCate
   const [statusFilter, setStatusFilter] = useState<string>('all');
   const [categoryFilter, setCategoryFilter] = useState<string>(selectedCategory || 'all');
   const [selectedRoute, setSelectedRoute] = useState<RouteInventoryItem | null>(null);
+  const [selectedRoutes, setSelectedRoutes] = useState<string[]>([]);
+  const [showQuickAction, setShowQuickAction] = useState(false);
+  const [quickActionRoute, setQuickActionRoute] = useState<RouteInventoryItem | null>(null);
+  const [showBatchProcessor, setShowBatchProcessor] = useState(false);
+  const [showWizard, setShowWizard] = useState(false);
   const { routes, isLoading } = useAllRoutes();
+  const queryClient = useQueryClient();
 
   React.useEffect(() => {
     if (selectedCategory && selectedCategory !== categoryFilter) {
@@ -96,6 +107,42 @@ export const TranslationTable: React.FC<TranslationTableProps> = ({ selectedCate
       return matchesSearch && matchesStatus && matchesCategory;
     });
   }, [routes, searchTerm, statusFilter, categoryFilter]);
+
+  const handleSelectAll = () => {
+    if (selectedRoutes.length === filteredRoutes.length) {
+      setSelectedRoutes([]);
+    } else {
+      setSelectedRoutes(filteredRoutes.map(r => r.path));
+    }
+  };
+
+  const handleSelectRoute = (path: string) => {
+    if (selectedRoutes.includes(path)) {
+      setSelectedRoutes(selectedRoutes.filter(p => p !== path));
+    } else {
+      setSelectedRoutes([...selectedRoutes, path]);
+    }
+  };
+
+  const handleQuickAction = (route: RouteInventoryItem) => {
+    setQuickActionRoute(route);
+    setShowQuickAction(true);
+  };
+
+  const handleBatchProcess = () => {
+    if (selectedRoutes.length === 0) return;
+    setShowBatchProcessor(true);
+  };
+
+  const handleRefresh = () => {
+    setSelectedRoutes([]);
+    setShowQuickAction(false);
+    setShowBatchProcessor(false);
+    setShowWizard(false);
+    queryClient.invalidateQueries({ queryKey: ['all-routes'] });
+  };
+
+  const selectedRoutesData = routes.filter(r => selectedRoutes.includes(r.path));
 
   if (isLoading) {
     return (

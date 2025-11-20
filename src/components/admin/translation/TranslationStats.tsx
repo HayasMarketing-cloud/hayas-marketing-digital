@@ -5,6 +5,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { useTranslationStatus } from '@/hooks/useTranslationStatus';
 import { FileText, CheckCircle2, Clock, FileEdit, Code, Shield, AlertTriangle } from 'lucide-react';
 import { useTranslation } from '@/hooks/useTranslation';
+import { ProgressDashboard } from './ProgressDashboard';
 
 interface TranslationStatsProps {
   onCategorySelect?: (category: string) => void;
@@ -92,8 +93,11 @@ export const TranslationStats: React.FC<TranslationStatsProps> = ({ onCategorySe
   ];
 
   return (
-    <div className="grid gap-4 md:grid-cols-4 lg:grid-cols-7">
-      {statCards.map((stat) => {
+    <div className="space-y-6">
+      <ProgressDashboard />
+      
+      <div className="grid gap-4 md:grid-cols-4 lg:grid-cols-7">
+        {statCards.map((stat) => {
         const Icon = stat.icon;
         return (
           <Card key={stat.title} className="hover:shadow-lg transition-shadow">
@@ -121,6 +125,7 @@ export const TranslationStats: React.FC<TranslationStatsProps> = ({ onCategorySe
           </Card>
         );
       })}
+      </div>
     </div>
   );
 };
