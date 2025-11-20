@@ -1,22 +1,27 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { ArrowRight, Building2, Users, Linkedin, Youtube, MessageSquare, Mail, MapPin } from 'lucide-react';
+import { ArrowRight, Building2, Users, Linkedin, Youtube, MessageSquare, Mail, MapPin, Settings } from 'lucide-react';
 import { useLanguageNavigation } from '@/hooks/useLanguageNavigation';
 import { useTranslation } from '@/hooks/useTranslation';
+
 interface FooterProps {
   showKitSection?: boolean;
 }
+
 const Footer: React.FC<FooterProps> = ({
   showKitSection = false
 }) => {
   const {
-    language
+    language,
+    getLocalizedPath
   } = useLanguageNavigation();
   const {
     t
   } = useTranslation();
+  const [searchParams] = useSearchParams();
+  const showDevAccess = searchParams.get('dev') === 'true';
   const currentYear = new Date().getFullYear();
   return <footer className="bg-gray-900 text-gray-300">
       <div className="container mx-auto px-4 py-8">
@@ -87,6 +92,17 @@ const Footer: React.FC<FooterProps> = ({
               <li><Link to={`/${language}/nosotros`} className="hover:text-secondary transition-colors text-sm">{t('footer.aboutUs')}</Link></li>
               <li><Link to={`/${language}/contacto`} className="hover:text-secondary transition-colors text-sm">{t('footer.contact')}</Link></li>
               <li><Link to={`/${language}/agendar-reunion`} className="hover:text-secondary transition-colors text-sm">{t('footer.scheduleConsultation')}</Link></li>
+              {showDevAccess && (
+                <li>
+                  <Link 
+                    to={getLocalizedPath('/admin')} 
+                    className="hover:text-secondary transition-colors text-sm flex items-center gap-1 text-gray-600"
+                  >
+                    <Settings className="h-3 w-3" />
+                    Admin
+                  </Link>
+                </li>
+              )}
             </ul>
           </div>
         </div>
