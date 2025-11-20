@@ -14,6 +14,7 @@ import { QuickActionModal } from './QuickActionModal';
 import { BatchProcessor } from './BatchProcessor';
 import { TranslationWizard } from './TranslationWizard';
 import { TranslationFlowGuide } from './TranslationFlowGuide';
+import { BatchSEOGenerator } from '../seo/BatchSEOGenerator';
 import { useQueryClient } from '@tanstack/react-query';
 
 interface TranslationTableProps {
@@ -29,6 +30,7 @@ export const TranslationTable: React.FC<TranslationTableProps> = ({ selectedCate
   const [showQuickAction, setShowQuickAction] = useState(false);
   const [quickActionRoute, setQuickActionRoute] = useState<RouteInventoryItem | null>(null);
   const [showBatchProcessor, setShowBatchProcessor] = useState(false);
+  const [showBatchSEO, setShowBatchSEO] = useState(false);
   const [showWizard, setShowWizard] = useState(false);
   const { routes, isLoading } = useAllRoutes();
   const queryClient = useQueryClient();
@@ -157,6 +159,7 @@ export const TranslationTable: React.FC<TranslationTableProps> = ({ selectedCate
     setSelectedRoutes([]);
     setShowQuickAction(false);
     setShowBatchProcessor(false);
+    setShowBatchSEO(false);
     setShowWizard(false);
     queryClient.invalidateQueries({ queryKey: ['all-routes-inventory'] });
   };
@@ -231,6 +234,38 @@ export const TranslationTable: React.FC<TranslationTableProps> = ({ selectedCate
             </Select>
           </div>
 
+          {/* Acciones batch */}
+          {selectedRoutes.length > 0 && (
+            <div className="bg-primary/10 p-4 rounded-lg flex items-center justify-between gap-4">
+              <div className="flex items-center gap-3">
+                <Checkbox
+                  checked={selectedRoutes.length === filteredRoutes.length}
+                  onCheckedChange={handleSelectAll}
+                />
+                <span className="font-medium">
+                  {selectedRoutes.length} página{selectedRoutes.length !== 1 ? 's' : ''} seleccionada{selectedRoutes.length !== 1 ? 's' : ''}
+                </span>
+              </div>
+              <div className="flex gap-2">
+                <Button
+                  onClick={() => setShowBatchSEO(true)}
+                  variant="default"
+                  size="sm"
+                >
+                  <Sparkles className="w-4 h-4 mr-2" />
+                  Generar SEO con IA
+                </Button>
+                <Button
+                  onClick={() => setSelectedRoutes([])}
+                  variant="outline"
+                  size="sm"
+                >
+                  Limpiar
+                </Button>
+              </div>
+            </div>
+          )}
+
           {/* Lista de páginas */}
           {filteredRoutes.length === 0 ? (
             <div className="text-center py-12 text-muted-foreground">
@@ -245,6 +280,14 @@ export const TranslationTable: React.FC<TranslationTableProps> = ({ selectedCate
                   className="border rounded-lg p-4 hover:bg-accent/50 transition-colors"
                 >
                   <div className="flex items-start justify-between gap-4">
+                    {/* Checkbox para selección */}
+                    <div className="pt-1">
+                      <Checkbox
+                        checked={selectedRoutes.includes(route.path)}
+                        onCheckedChange={() => handleSelectRoute(route.path)}
+                      />
+                    </div>
+
                     <div className="flex-1 space-y-3">
                       {/* Header con Path y Estado */}
                       <div className="flex items-start justify-between gap-3">
@@ -394,6 +437,15 @@ export const TranslationTable: React.FC<TranslationTableProps> = ({ selectedCate
           selectedRoutes={selectedRoutesData}
           onComplete={handleRefresh}
           onCancel={() => setShowBatchProcessor(false)}
+        />
+      )}
+
+      {showBatchSEO && selectedRoutesData.length > 0 && (
+        <BatchSEOGenerator
+          isOpen={showBatchSEO}
+          onClose={() => setShowBatchSEO(false)}
+          routes={selectedRoutesData}
+          onSuccess={handleRefresh}
         />
       )}
 
