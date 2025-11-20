@@ -1,6 +1,8 @@
 import React from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import { useServiceSEO } from '@/hooks/useServiceSEO';
+import Seo from '@/components/Seo';
 import EnhancedSEO from '@/components/EnhancedSEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -16,8 +18,36 @@ const GestionClientesCRM: React.FC = () => {
   const { t } = useTranslation();
   const { getLocalizedPath } = useLanguageNavigation();
   const page = t('pages.crmManagement') as any;
+  
+  const { title, description, canonical, ogImage, structuredData } = useServiceSEO({
+    serviceName: "Gestión de Clientes CRM",
+    serviceDescription: "Implementación y optimización de CRM profesional. Organiza tu embudo comercial, automatiza seguimiento y obtén visibilidad total de oportunidades.",
+    canonical: "/es/servicios/gestion-clientes-crm",
+    serviceType: "CRM",
+    priceRange: "€€€",
+    features: [
+      "Datos Centralizados",
+      "Automatización de Procesos",
+      "Visibilidad en Tiempo Real",
+      "Integración Email/WhatsApp",
+      "Reporting Avanzado",
+      "Workflows Personalizados"
+    ],
+    aggregateRating: {
+      ratingValue: "4.9",
+      reviewCount: "41"
+    }
+  });
+  
   return (
     <>
+      <Seo 
+        title={title}
+        description={description}
+        canonical={canonical}
+        ogImage={ogImage}
+        structuredData={structuredData}
+      />
       <EnhancedSEO />
       <Navigation />
 

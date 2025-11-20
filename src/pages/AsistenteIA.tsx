@@ -8,6 +8,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import FAQSection from '@/components/FAQSection';
 import ServiceContactSection from '@/components/ServiceContactSection';
+import { useServiceSEO } from '@/hooks/useServiceSEO';
+import Seo from '@/components/Seo';
 import { Bot, MessageCircle, Clock, Users, Zap, Settings, Brain, ArrowRight, CheckCircle, Star, Sparkles, Timer, Shield, Globe, Smartphone, Monitor, Headphones, BarChart3, Target } from 'lucide-react';
 const aiAssistantServices = [{
   icon: <MessageCircle className="h-8 w-8 text-primary" />,
@@ -133,7 +135,35 @@ const faqItems = [{
   answer: "Sí, desarrollamos la personalidad, tono y estilo de comunicación específicamente para tu marca, manteniendo consistencia con tu imagen corporativa."
 }];
 const AsistenteIA: React.FC = () => {
+  const { title, description, canonical, ogImage, structuredData } = useServiceSEO({
+    serviceName: "Asistente IA para Atención al Cliente",
+    serviceDescription: "Chatbot con inteligencia artificial que atiende a tus clientes 24/7. Resuelve dudas, captura leads y mejora la experiencia de usuario automáticamente.",
+    canonical: "/es/servicios/soluciones-ia/asistente-ia",
+    heroImagePath: assistantHeroImage,
+    serviceType: "Inteligencia Artificial",
+    priceRange: "€€",
+    features: [
+      "Chatbot Conversacional",
+      "Inteligencia Artificial Avanzada",
+      "Integración Multiplataforma",
+      "Atención 24/7",
+      "Captación de Leads",
+      "Analytics y Mejora"
+    ],
+    aggregateRating: {
+      ratingValue: "4.9",
+      reviewCount: "34"
+    }
+  });
+  
   return <div className="min-h-screen bg-background">
+      <Seo 
+        title={title}
+        description={description}
+        canonical={canonical}
+        ogImage={ogImage}
+        structuredData={structuredData}
+      />
       <Navigation />
       
       {/* Breadcrumb */}

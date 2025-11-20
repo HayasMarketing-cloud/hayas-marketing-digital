@@ -10,6 +10,8 @@ import FAQSection from '@/components/FAQSection';
 import ServiceContactSection from '@/components/ServiceContactSection';
 import SuccessCasesSection from '@/components/SuccessCasesSection';
 import { getServiceSuccessCasesConfig } from '@/data/serviceSuccessCasesMapping';
+import { useServiceSEO } from '@/hooks/useServiceSEO';
+import Seo from '@/components/Seo';
 import { 
   Target, TrendingUp, BarChart3, Zap, Users, DollarSign,
   ArrowRight, CheckCircle, Star, Eye, MousePointer, Sparkles,
@@ -190,8 +192,36 @@ const faqItems = [
 const PublicidadRedesSociales: React.FC = () => {
   const successCasesConfig = getServiceSuccessCasesConfig('publicidad-redes-sociales');
   
+  const { title, description, canonical, ogImage, structuredData } = useServiceSEO({
+    serviceName: "Publicidad en Redes Sociales",
+    serviceDescription: "Campañas publicitarias en Facebook, Instagram, LinkedIn y TikTok. Segmentación avanzada, creatividades efectivas y optimización continua del ROI.",
+    canonical: "/es/servicios/marketing-visibilidad/publicidad-redes-sociales",
+    heroImagePath: socialMediaHeroImage,
+    serviceType: "Publicidad Digital",
+    priceRange: "€€€",
+    features: [
+      "Estrategia Publicitaria",
+      "Segmentación Avanzada",
+      "Creatividades Efectivas",
+      "Optimización Continua",
+      "Gestión de Presupuesto",
+      "Reporting Detallado"
+    ],
+    aggregateRating: {
+      ratingValue: "4.9",
+      reviewCount: "39"
+    }
+  });
+  
   return (
     <div className="min-h-screen bg-background">
+      <Seo 
+        title={title}
+        description={description}
+        canonical={canonical}
+        ogImage={ogImage}
+        structuredData={structuredData}
+      />
       <Navigation />
       
       {/* Breadcrumb */}

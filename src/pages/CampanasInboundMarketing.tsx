@@ -1,6 +1,7 @@
 import React from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import { useServiceSEO } from '@/hooks/useServiceSEO';
 import Seo from '@/components/Seo';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -24,23 +25,34 @@ const benefits = [
 ];
 
 const CampanasInboundMarketing: React.FC = () => {
-  const title = 'Campañas Inbound Marketing | Hayas Marketing';
-  const description = 'Atrae a tus clientes de forma orgánica con campañas que educan, informan y generan confianza. Contenido premium + automatización.';
-  const canonical = '/es/servicios/campanas-inbound-marketing';
-
-  const structuredData = {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    name: 'Campañas Inbound Marketing',
-    description,
-    provider: { '@type': 'Organization', name: 'Hayas Marketing' },
-    areaServed: 'ES',
-    serviceType: 'Inbound Marketing Campaigns',
-  };
+  const { title, description, canonical, ogImage, structuredData } = useServiceSEO({
+    serviceName: "Campañas Inbound Marketing",
+    serviceDescription: "Atrae a tus clientes de forma orgánica con campañas que educan, informan y generan confianza. Contenido premium + automatización para leads cualificados.",
+    canonical: "/es/servicios/campanas-inbound-marketing",
+    serviceType: "Inbound Marketing",
+    priceRange: "€€€",
+    features: [
+      "Creación de ebooks y guías premium",
+      "Landing pages optimizadas",
+      "Flujos de nurturing automatizados",
+      "Integración con CRM",
+      "Dashboards de seguimiento"
+    ],
+    aggregateRating: {
+      ratingValue: "4.7",
+      reviewCount: "31"
+    }
+  });
 
   return (
     <>
-      <Seo title={title} description={description} canonical={canonical} structuredData={structuredData} />
+      <Seo 
+        title={title}
+        description={description}
+        canonical={canonical}
+        ogImage={ogImage}
+        structuredData={structuredData}
+      />
       <Navigation />
 
       <main className="pt-36">
