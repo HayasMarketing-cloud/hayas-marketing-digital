@@ -5,6 +5,7 @@ import { useRouteInconsistencies } from '@/hooks/useRouteInconsistencies';
 import { AlertCircle, CheckCircle2, AlertTriangle, FileCode, Database, Globe } from 'lucide-react';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useTranslation } from '@/hooks/useTranslation';
+import { InconsistencyActionGuide } from './InconsistencyActionGuide';
 
 
 const getSeverityColor = (severity: string) => {
@@ -134,8 +135,13 @@ export const RouteInconsistenciesPanel = () => {
                   </div>
 
                   {item.issue !== 'complete' && (
-                    <div className="ml-6 mt-2 p-2 bg-muted rounded text-xs">
-                      <strong>{incons.solution}:</strong> {incons.descriptions[item.issue as keyof typeof incons.descriptions]}
+                    <div className="ml-6 mt-3">
+                      <InconsistencyActionGuide
+                        issue={item.issue}
+                        path={item.path}
+                        inApp={item.inApp}
+                        inDatabase={item.inDatabase}
+                      />
                     </div>
                   )}
                 </div>
@@ -190,8 +196,13 @@ export const RouteInconsistenciesPanel = () => {
                   </div>
 
                   {item.issue !== 'complete' && (
-                    <div className="ml-6 mt-2 p-2 bg-muted rounded text-xs">
-                      <strong>{incons.solution}:</strong> {incons.descriptions[item.issue as keyof typeof incons.descriptions]}
+                    <div className="ml-6 mt-3">
+                      <InconsistencyActionGuide
+                        issue={item.issue}
+                        path={item.path}
+                        inApp={item.inApp}
+                        inDatabase={item.inDatabase}
+                      />
                     </div>
                   )}
                 </div>
