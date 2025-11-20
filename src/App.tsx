@@ -470,6 +470,10 @@ const App = () => (
            {/* REDIRECTS MANAGER - Legacy URL */}
            <Route path="/redirects-manager" element={<Navigate to="/admin/seo/redirects" replace />} />
            
+            {/* ADMIN - Dashboard & Tools */}
+            <Route path="/admin" element={<PageSuspense><Pages.AdminDashboard /></PageSuspense>} />
+            <Route path="/admin/dashboard" element={<Navigate to="/admin" replace />} />
+            
             {/* ADMIN - SEO Control Center */}
             <Route path="/admin/seo" element={<PageSuspense><Pages.SEODashboard /></PageSuspense>} />
             <Route path="/admin/seo/gsc" element={<PageSuspense><Pages.GSCFullReport /></PageSuspense>} />
