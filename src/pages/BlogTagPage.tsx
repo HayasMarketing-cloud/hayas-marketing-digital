@@ -123,6 +123,7 @@ const BlogTagPage: React.FC = () => {
         title={`${tagData.name} - Blog de Marketing Digital | Hayas Marketing`}
         description={tagData.description || `Todos los artículos sobre ${tagData.name.toLowerCase()} en nuestro blog de marketing digital.`}
         canonical={`/es/blog/tag/${tag}`}
+        robots="noindex, follow"
       />
       
       <Navigation />
