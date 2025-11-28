@@ -7,24 +7,24 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Loader2, ShieldCheck, AlertCircle } from 'lucide-react';
+import { Loader2, ShieldCheck, AlertCircle, UserPlus, LogIn } from 'lucide-react';
 import { toast } from 'sonner';
 
 const AdminLogin = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [isSignUp, setIsSignUp] = useState(false);
 
-  const { signIn } = useAuth();
+  const { signIn, signUp } = useAuth();
   const { isAdmin, isAuthenticated, isLoading: adminLoading, authLoading } = useAdminAuth();
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Get the redirect path from location state or default to /admin
   const from = (location.state as any)?.from?.pathname || '/admin';
 
-  // Redirect if already authenticated as admin
   useEffect(() => {
     if (!authLoading && !adminLoading && isAuthenticated && isAdmin) {
       navigate(from, { replace: true });
@@ -37,38 +37,65 @@ const AdminLogin = () => {
     setIsLoading(true);
 
     try {
-      // Basic validation
       if (!email || !password) {
         setError('Por favor, completa todos los campos');
         setIsLoading(false);
         return;
       }
 
-      const { error: signInError } = await signIn(email, password);
-
-      if (signInError) {
-        // Handle specific error messages
-        if (signInError.message?.includes('Invalid login credentials')) {
-          setError('Credenciales incorrectas. Verifica tu email y contraseña.');
-        } else if (signInError.message?.includes('Email not confirmed')) {
-          setError('Email no confirmado. Revisa tu bandeja de entrada.');
-        } else {
-          setError(signInError.message || 'Error al iniciar sesión');
+      if (isSignUp) {
+        if (password !== confirmPassword) {
+          setError('Las contraseñas no coinciden');
+          setIsLoading(false);
+          return;
         }
-        setIsLoading(false);
-        return;
-      }
 
-      toast.success('Sesión iniciada correctamente');
-      // The useEffect will handle the redirect once admin status is confirmed
+        if (password.length < 6) {
+          setError('La contraseña debe tener al menos 6 caracteres');
+          setIsLoading(false);
+          return;
+        }
+
+        const { error: signUpError } = await signUp(email, password);
+
+        if (signUpError) {
+          if (signUpError.message?.includes('User already registered')) {
+            setError('Este email ya está registrado. Intenta iniciar sesión.');
+          } else {
+            setError(signUpError.message || 'Error al crear la cuenta');
+          }
+          setIsLoading(false);
+          return;
+        }
+
+        toast.success('Cuenta creada correctamente. Contacta al administrador para obtener permisos.');
+        setIsSignUp(false);
+        setConfirmPassword('');
+      } else {
+        const { error: signInError } = await signIn(email, password);
+
+        if (signInError) {
+          if (signInError.message?.includes('Invalid login credentials')) {
+            setError('Credenciales incorrectas. Verifica tu email y contraseña.');
+          } else if (signInError.message?.includes('Email not confirmed')) {
+            setError('Email no confirmado. Revisa tu bandeja de entrada.');
+          } else {
+            setError(signInError.message || 'Error al iniciar sesión');
+          }
+          setIsLoading(false);
+          return;
+        }
+
+        toast.success('Sesión iniciada correctamente');
+      }
     } catch (err) {
-      console.error('Login error:', err);
+      console.error('Auth error:', err);
       setError('Error inesperado. Por favor, intenta de nuevo.');
+    } finally {
       setIsLoading(false);
     }
   };
 
-  // Show loading while checking auth state
   if (authLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background">
@@ -82,12 +109,21 @@ const AdminLogin = () => {
       <Card className="w-full max-w-md shadow-xl border-border/50">
         <CardHeader className="text-center space-y-4">
           <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
-            <ShieldCheck className="h-8 w-8 text-primary" />
+            {isSignUp ? (
+              <UserPlus className="h-8 w-8 text-primary" />
+            ) : (
+              <ShieldCheck className="h-8 w-8 text-primary" />
+            )}
           </div>
           <div>
-            <CardTitle className="text-2xl font-bold">Panel de Administración</CardTitle>
+            <CardTitle className="text-2xl font-bold">
+              {isSignUp ? 'Crear Cuenta' : 'Panel de Administración'}
+            </CardTitle>
             <CardDescription className="mt-2">
-              Accede con tus credenciales de administrador
+              {isSignUp 
+                ? 'Crea una cuenta para solicitar acceso de administrador'
+                : 'Accede con tus credenciales de administrador'
+              }
             </CardDescription>
           </div>
         </CardHeader>
@@ -101,8 +137,7 @@ const AdminLogin = () => {
               </Alert>
             )}
 
-            {/* Show message if authenticated but not admin */}
-            {isAuthenticated && !isAdmin && !adminLoading && (
+            {!isSignUp && isAuthenticated && !isAdmin && !adminLoading && (
               <Alert variant="destructive">
                 <AlertCircle className="h-4 w-4" />
                 <AlertDescription>
@@ -134,10 +169,26 @@ const AdminLogin = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 disabled={isLoading}
-                autoComplete="current-password"
+                autoComplete={isSignUp ? 'new-password' : 'current-password'}
                 required
               />
             </div>
+
+            {isSignUp && (
+              <div className="space-y-2">
+                <Label htmlFor="confirmPassword">Confirmar Contraseña</Label>
+                <Input
+                  id="confirmPassword"
+                  type="password"
+                  placeholder="••••••••"
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  disabled={isLoading}
+                  autoComplete="new-password"
+                  required
+                />
+              </div>
+            )}
 
             <Button 
               type="submit" 
@@ -147,21 +198,41 @@ const AdminLogin = () => {
               {isLoading || adminLoading ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  Verificando...
+                  {isSignUp ? 'Creando cuenta...' : 'Verificando...'}
                 </>
               ) : (
-                'Iniciar Sesión'
+                <>
+                  {isSignUp ? <UserPlus className="mr-2 h-4 w-4" /> : <LogIn className="mr-2 h-4 w-4" />}
+                  {isSignUp ? 'Crear Cuenta' : 'Iniciar Sesión'}
+                </>
               )}
             </Button>
           </form>
 
-          <div className="mt-6 text-center">
-            <a 
-              href="/es" 
-              className="text-sm text-muted-foreground hover:text-primary transition-colors"
+          <div className="mt-6 text-center space-y-3">
+            <button
+              type="button"
+              onClick={() => {
+                setIsSignUp(!isSignUp);
+                setError(null);
+                setConfirmPassword('');
+              }}
+              className="text-sm text-primary hover:underline transition-colors"
             >
-              ← Volver al sitio web
-            </a>
+              {isSignUp 
+                ? '¿Ya tienes cuenta? Inicia sesión'
+                : '¿No tienes cuenta? Regístrate'
+              }
+            </button>
+            
+            <div>
+              <a 
+                href="/es" 
+                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                ← Volver al sitio web
+              </a>
+            </div>
           </div>
         </CardContent>
       </Card>
