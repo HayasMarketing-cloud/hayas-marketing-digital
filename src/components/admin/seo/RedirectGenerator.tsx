@@ -56,6 +56,7 @@ export const RedirectGenerator: React.FC = () => {
   const [notes, setNotes] = useState('');
   const [generatedCode, setGeneratedCode] = useState('');
   const [copied, setCopied] = useState(false);
+  const [copiedRequest, setCopiedRequest] = useState(false);
 
   // Validación en tiempo real
   const validation = useMemo((): ValidationResult => {
@@ -160,6 +161,30 @@ export const RedirectGenerator: React.FC = () => {
     }
   };
 
+  // Copiar código + mensaje de solicitud
+  const handleCopyRequest = async () => {
+    const requestMessage = `Añade esta redirección a public/_redirects en la sección correspondiente:
+
+\`\`\`
+${generatedCode}\`\`\``;
+
+    try {
+      await navigator.clipboard.writeText(requestMessage);
+      setCopiedRequest(true);
+      toast({
+        title: "Mensaje copiado",
+        description: "Pégalo en el chat para añadir la redirección automáticamente",
+      });
+      setTimeout(() => setCopiedRequest(false), 3000);
+    } catch (err) {
+      toast({
+        title: "Error al copiar",
+        description: "No se pudo copiar el mensaje al portapapeles",
+        variant: "destructive"
+      });
+    }
+  };
+
   // Limpiar formulario
   const handleReset = () => {
     setSourceUrl('');
@@ -182,8 +207,8 @@ export const RedirectGenerator: React.FC = () => {
             <li><strong>Rellena el formulario</strong> con la URL origen, destino y categoría</li>
             <li><strong>Revisa las validaciones</strong> - el sistema verificará automáticamente</li>
             <li><strong>Genera el código</strong> para <code className="bg-muted px-1 rounded">public/_redirects</code></li>
-            <li><strong>Copia y pega</strong> el código en el archivo <code className="bg-muted px-1 rounded">public/_redirects</code></li>
-            <li><strong>Guarda el archivo</strong> en Lovable - el deploy automático activará la redirección</li>
+            <li><strong>Pulsa "Copiar y solicitar"</strong> y pega el mensaje en el chat de Lovable</li>
+            <li><strong>Lovable añadirá la redirección</strong> automáticamente al archivo</li>
           </ol>
         </AlertDescription>
       </Alert>
@@ -361,15 +386,33 @@ export const RedirectGenerator: React.FC = () => {
                   </Button>
                 </div>
 
+                {/* Botón principal: Copiar y solicitar */}
+                <Button
+                  size="lg"
+                  className="w-full"
+                  onClick={handleCopyRequest}
+                >
+                  {copiedRequest ? (
+                    <>
+                      <Check className="h-4 w-4 mr-2" />
+                      Copiado - Pégalo en el chat
+                    </>
+                  ) : (
+                    <>
+                      <Copy className="h-4 w-4 mr-2" />
+                      Copiar y solicitar
+                    </>
+                  )}
+                </Button>
+
                 <Alert className="border-green-500/50 bg-green-50/50 dark:bg-green-950/30">
                   <CheckCircle2 className="h-4 w-4 text-green-600" />
-                  <AlertTitle>Próximos pasos</AlertTitle>
-                  <AlertDescription className="text-sm mt-2 space-y-2">
+                  <AlertTitle>Solo tienes que pegar</AlertTitle>
+                  <AlertDescription className="text-sm mt-2">
                     <ol className="list-decimal list-inside space-y-1">
-                      <li>Abre el archivo <code className="bg-muted px-1 rounded">public/_redirects</code> en Lovable</li>
-                      <li>Busca la sección correspondiente a la categoría <strong>{category || 'seleccionada'}</strong></li>
-                      <li>Pega el código copiado en la ubicación correcta</li>
-                      <li>Guarda el archivo - Lovable hará deploy automático</li>
+                      <li>Pulsa <strong>"Copiar y solicitar"</strong> arriba</li>
+                      <li><strong>Pega el mensaje</strong> (Ctrl+V) en el chat de Lovable</li>
+                      <li>Lovable añadirá la redirección automáticamente</li>
                       <li>La redirección estará activa en ~1-2 minutos</li>
                     </ol>
                   </AlertDescription>
