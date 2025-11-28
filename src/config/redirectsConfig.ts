@@ -440,6 +440,74 @@ export const redirectsConfig: RedirectRule[] = [
   { id: 'csv-404-partners', source: '/es/partners', destination: '/es/404', type: '404', category: 'CSV GSC - Páginas Eliminadas', dateAdded: '2025-01-27', notes: 'Página de partners eliminada' },
   { id: 'csv-404-eventos', source: '/es/eventos', destination: '/es/404', type: '404', category: 'CSV GSC - Páginas Eliminadas', dateAdded: '2025-01-27', notes: 'Página de eventos eliminada' },
   { id: 'csv-404-recursos', source: '/es/recursos', destination: '/es/404', type: '404', category: 'CSV GSC - Páginas Eliminadas', dateAdded: '2025-01-27', notes: 'Página de recursos eliminada' },
+
+  // ============================================================
+  // FASE 8: URLs "RASTREADAS SIN INDEXAR" (GSC Enero 2025)
+  // ============================================================
+
+  // --- CATEGORÍA 1: Casos de Éxito adicionales sin /es/ ---
+  { id: 'gsc-caso-alma', source: '/casos-exito/alma-cruceros', destination: '/es/casos-exito', type: '301', category: 'GSC Rastreadas - Casos Éxito', dateAdded: '2025-01-28' },
+  { id: 'gsc-caso-flap', source: '/casos-exito/flap-articulos-peluqueria', destination: '/es/casos-exito', type: '301', category: 'GSC Rastreadas - Casos Éxito', dateAdded: '2025-01-28' },
+  { id: 'gsc-caso-peixos', source: '/casos-exito/peixos-emilio', destination: '/es/casos-exito', type: '301', category: 'GSC Rastreadas - Casos Éxito', dateAdded: '2025-01-28' },
+  { id: 'gsc-caso-panda', source: '/casos-exito/pamdamedia', destination: '/es/casos-exito', type: '301', category: 'GSC Rastreadas - Casos Éxito', dateAdded: '2025-01-28' },
+  { id: 'gsc-caso-hotteo-legacy', source: '/casos-exito/hotteo-travel', destination: '/es/casos-exito', type: '301', category: 'GSC Rastreadas - Casos Éxito', dateAdded: '2025-01-28', notes: 'Caso ya no existe' },
+
+  // --- CATEGORÍA 2: Blog legacy sin /es/ ---
+  { id: 'gsc-blog-funnel', source: '/blog/como-crear-un-funnel-de-conversion-para-empresas-b2b', destination: '/es/blog', type: '301', category: 'GSC Rastreadas - Blog Legacy', dateAdded: '2025-01-28' },
+  { id: 'gsc-blog-smarketing', source: '/blog/que-es-smarketing', destination: '/es/blog', type: '301', category: 'GSC Rastreadas - Blog Legacy', dateAdded: '2025-01-28' },
+  { id: 'gsc-blog-page-3', source: '/blog/page/3', destination: '/es/blog', type: '301', category: 'GSC Rastreadas - Blog Paginación', dateAdded: '2025-01-28' },
+  { id: 'gsc-blog-page-4', source: '/blog/page/4', destination: '/es/blog', type: '301', category: 'GSC Rastreadas - Blog Paginación', dateAdded: '2025-01-28' },
+  { id: 'gsc-blog-page-5', source: '/blog/page/5', destination: '/es/blog', type: '301', category: 'GSC Rastreadas - Blog Paginación', dateAdded: '2025-01-28' },
+  { id: 'gsc-blog-page-6', source: '/blog/page/6', destination: '/es/blog', type: '301', category: 'GSC Rastreadas - Blog Paginación', dateAdded: '2025-01-28' },
+
+  // --- CATEGORÍA 3: Kit Digital legacy ---
+  { id: 'gsc-kit-gestion-procesos', source: '/kit-digital-gestion-de-procesos/', destination: '/es/kit-digital', type: '301', category: 'GSC Rastreadas - Kit Digital', dateAdded: '2025-01-28' },
+  { id: 'gsc-kit-presencia-avanzada', source: '/es/kit-digital/presencia-avanzada', destination: '/es/kit-digital', type: '301', category: 'GSC Rastreadas - Kit Digital', dateAdded: '2025-01-28' },
+  { id: 'gsc-kit-redes', source: '/es/kit-digital-gestion-redes-sociales', destination: '/es/kit-digital', type: '301', category: 'GSC Rastreadas - Kit Digital', dateAdded: '2025-01-28' },
+  { id: 'gsc-kit-consulting-estrategia', source: '/es/kitconsulting/asesoramiento-estrategia-rendimiento-de-negocio-ia-kit-consulting/', destination: '/es/contenido-eliminado', type: '301', category: 'GSC Rastreadas - Kit Consulting', dateAdded: '2025-01-28' },
+
+  // --- CATEGORÍA 4: URLs truncadas adicionales ---
+  { id: 'gsc-trunc-inversion-plan', source: '/blog/como-calcular-la-inversion-de-tu-plan-de-', destination: '/es/blog/claves-para-invertir-en-tu-estrategia-de-marketing-digital', type: '301', category: 'GSC Rastreadas - Truncadas', dateAdded: '2025-01-28' },
+  { id: 'gsc-trunc-ia-short', source: '/blog/la-inteligencia-', destination: '/es/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing', type: '301', category: 'GSC Rastreadas - Truncadas', dateAdded: '2025-01-28' },
+  { id: 'gsc-trunc-ia-very-short', source: '/blog/la-inteli-', destination: '/es/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing', type: '301', category: 'GSC Rastreadas - Truncadas', dateAdded: '2025-01-28' },
+  { id: 'gsc-trunc-es-la', source: '/es/la-', destination: '/es', type: '301', category: 'GSC Rastreadas - Truncadas', dateAdded: '2025-01-28' },
+
+  // --- CATEGORÍA 5: Servicios legacy ---
+  { id: 'gsc-srv-servicios', source: '/servicios', destination: '/es/servicios', type: '301', category: 'GSC Rastreadas - Servicios', dateAdded: '2025-01-28' },
+  { id: 'gsc-srv-captacion', source: '/servicios/captacion-leads-clientes', destination: '/es/servicios/estrategia-de-marketing-digital-360', type: '301', category: 'GSC Rastreadas - Servicios', dateAdded: '2025-01-28' },
+  { id: 'gsc-srv-funnel', source: '/servicios/implementacion-funnel', destination: '/es/servicios/estrategia-de-marketing-digital-360', type: '301', category: 'GSC Rastreadas - Servicios', dateAdded: '2025-01-28' },
+  { id: 'gsc-srv-contenidos', source: '/servicios/estrategia-contenidos', destination: '/es/servicios/estrategia-de-marketing-digital-360', type: '301', category: 'GSC Rastreadas - Servicios', dateAdded: '2025-01-28' },
+  { id: 'gsc-srv-inbound-contenidos', source: '/servicios-inbound-marketing-b2b/estrategia-contenidos', destination: '/es/servicios/estrategia-de-marketing-digital-360', type: '301', category: 'GSC Rastreadas - Servicios', dateAdded: '2025-01-28' },
+
+  // --- CATEGORÍA 6: Páginas institucionales legacy ---
+  { id: 'gsc-inst-gdd', source: '/diseno-web-gdd', destination: '/es/servicios/diseno-y-desarrollo-paginas-web', type: '301', category: 'GSC Rastreadas - Institucional', dateAdded: '2025-01-28' },
+  { id: 'gsc-inst-seo-contenidos', source: '/es/contenidos-y-seo', destination: '/es/servicios/posicionamiento-web-seo', type: '301', category: 'GSC Rastreadas - Institucional', dateAdded: '2025-01-28' },
+  { id: 'gsc-inst-agencia-madrid', source: '/agencia-marketingdigital-madrid', destination: '/es/nosotros', type: '301', category: 'GSC Rastreadas - Institucional', dateAdded: '2025-01-28' },
+  { id: 'gsc-inst-gestion-ia', source: '/es/gestion-de-clientes-con-ia-asociada/', destination: '/es/servicios/crm-y-automatizacion-de-marketing', type: '301', category: 'GSC Rastreadas - Institucional', dateAdded: '2025-01-28' },
+  { id: 'gsc-inst-asesoria', source: '/es/asesoria-en-marketing-digital/', destination: '/es/servicios/estrategia-de-marketing-digital-360', type: '301', category: 'GSC Rastreadas - Institucional', dateAdded: '2025-01-28' },
+
+  // --- CATEGORÍA 7: URL malformada crítica ---
+  { id: 'gsc-malform-https', source: '/https:/hayasmarketing.com', destination: '/es', type: '301', category: 'GSC Rastreadas - Malformadas', dateAdded: '2025-01-28' },
+  { id: 'gsc-malform-https-slash', source: '/https:/hayasmarketing.com/', destination: '/es', type: '301', category: 'GSC Rastreadas - Malformadas', dateAdded: '2025-01-28' },
+
+  // --- CATEGORÍA 8: URLs inglés legacy ---
+  { id: 'gsc-en-inbound', source: '/en/inbound-marketing-lead-capture-and-nurturing', destination: '/es/servicios/estrategia-de-marketing-digital-360', type: '301', category: 'GSC Rastreadas - Inglés', dateAdded: '2025-01-28' },
+  { id: 'gsc-en-author-admin', source: '/en/author/admin/', destination: '/es', type: '301', category: 'GSC Rastreadas - Inglés', dateAdded: '2025-01-28' },
+  { id: 'gsc-en-author-admin-noslash', source: '/en/author/admin', destination: '/es', type: '301', category: 'GSC Rastreadas - Inglés', dateAdded: '2025-01-28' },
+  { id: 'gsc-en-blog', source: '/en/blog', destination: '/es/blog', type: '301', category: 'GSC Rastreadas - Inglés', dateAdded: '2025-01-28' },
+  { id: 'gsc-en-servicios', source: '/en/services', destination: '/es/servicios', type: '301', category: 'GSC Rastreadas - Inglés', dateAdded: '2025-01-28' },
+
+  // --- CATEGORÍA 9: Feeds RSS detectados ---
+  { id: 'gsc-feed-blog', source: '/blog/feed/', destination: '/es/blog', type: '301', category: 'GSC Rastreadas - Feeds', dateAdded: '2025-01-28' },
+  { id: 'gsc-feed-blog-noslash', source: '/blog/feed', destination: '/es/blog', type: '301', category: 'GSC Rastreadas - Feeds', dateAdded: '2025-01-28' },
+  { id: 'gsc-feed-es-blog', source: '/es/blog/feed/', destination: '/es/blog', type: '301', category: 'GSC Rastreadas - Feeds', dateAdded: '2025-01-28' },
+
+  // --- CATEGORÍA 10: Autores y categorías WordPress ---
+  { id: 'gsc-author-admin', source: '/author/admin', destination: '/es', type: '301', category: 'GSC Rastreadas - Authors', dateAdded: '2025-01-28' },
+  { id: 'gsc-author-admin-slash', source: '/author/admin/', destination: '/es', type: '301', category: 'GSC Rastreadas - Authors', dateAdded: '2025-01-28' },
+  { id: 'gsc-category-marketing', source: '/category/marketing-digital', destination: '/es/blog', type: '301', category: 'GSC Rastreadas - Categorías', dateAdded: '2025-01-28' },
+  { id: 'gsc-category-ia', source: '/category/inteligencia-artificial', destination: '/es/blog', type: '301', category: 'GSC Rastreadas - Categorías', dateAdded: '2025-01-28' },
+  { id: 'gsc-category-seo', source: '/category/seo', destination: '/es/blog', type: '301', category: 'GSC Rastreadas - Categorías', dateAdded: '2025-01-28' },
 ];
 
 // ============================================================

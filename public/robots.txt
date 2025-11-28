@@ -1,4 +1,5 @@
 # Robots.txt para Hayas Marketing - Producción
+# Actualizado: 2025-01-28
 
 User-agent: *
 Allow: /
@@ -13,10 +14,40 @@ Crawl-delay: 1
 Disallow: /tmp/
 Disallow: /*.json$
 Disallow: /api/
+
+# Bloquear parámetros de tracking
 Disallow: /*?*utm_*
 Disallow: /*?*fbclid*
 Disallow: /*?*hsLang*
 Disallow: /*?*cta_guid*
+Disallow: /*?*hs_amp*
+Disallow: /*?*trk=*
+Disallow: /*?*signature*
+Disallow: /*?*pageId*
+Disallow: /*?*placement_guid*
+Disallow: /*?*portal_id*
+Disallow: /*?*canon*
+
+# Bloquear feeds RSS (legacy WordPress)
+Disallow: /*/feed/
+Disallow: /*/feed$
+Disallow: /*feed/
+
+# Bloquear búsquedas
+Disallow: /*?s=*
+Disallow: /*/search/*
+Disallow: /*search_term*
+
+# Bloquear autores legacy (WordPress)
+Disallow: /*/author/*
+Disallow: /author/*
+
+# Bloquear categorías legacy (WordPress)
+Disallow: /*/category/*
+Disallow: /category/*
+
+# Bloquear paginación legacy del blog
+Disallow: /blog/page/*
 
 # Bloquear páginas de admin y dashboard
 Disallow: /admin/
@@ -30,3 +61,6 @@ Disallow: /es/gracias_por_agendar_reunión
 
 # Bloquear contenido eliminado
 Disallow: /es/contenido-eliminado
+
+# Bloquear HubSpot click trackers
+Disallow: /cs/c/
