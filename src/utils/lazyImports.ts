@@ -150,6 +150,7 @@ export const CasoExitoAIPClinic = lazy(() => import("@/pages/CasoExitoAIPClinic"
 export const CasoExitoHotteoTravel = lazy(() => import("@/pages/CasoExitoHotteoTravel"));
 
 // Admin - SEO Control Center
+export const AdminLogin = lazy(() => import("@/pages/admin/AdminLogin"));
 export const AdminDashboard = lazy(() => import("@/pages/admin/AdminDashboard"));
 export const SEODashboard = lazy(() => import("@/pages/admin/SEODashboard"));
 export const SEOPagesManager = lazy(() => import("@/pages/admin/SEOPagesManager"));
