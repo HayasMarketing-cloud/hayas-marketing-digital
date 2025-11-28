@@ -14,7 +14,7 @@ export const redirectsConfig: RedirectRule[] = [
   // ============================================================
   { id: 'home-root', source: '/', destination: '/es', type: '301', category: 'Home y Raíz' },
   { id: 'home-root-e', source: '/e', destination: '/es', type: '301', category: 'Home y Raíz' },
-  { id: 'lang-en', source: '/en', destination: '/es', type: '301', category: 'Idiomas Legacy' },
+  // NOTA: /en NO redirige a /es - es el idioma inglés activo
   { id: 'lang-zh', source: '/zh', destination: '/es', type: '301', category: 'Idiomas Legacy' },
   { id: 'lang-zh-slash', source: '/zh/', destination: '/es', type: '301', category: 'Idiomas Legacy' },
 
