@@ -4,7 +4,7 @@ project_id = "pmldrjkmkjwbvaudjjye"
 verify_jwt = false
 
 [functions.generate-seo-suggestions]
-verify_jwt = true
+verify_jwt = false
 
 [functions.webhook-handler]
 verify_jwt = false
