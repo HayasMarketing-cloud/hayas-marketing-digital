@@ -12,6 +12,7 @@ import DraftProtection from './components/DraftProtection';
 import PageSuspense from './components/PageSuspense';
 import RoutePreloader from './components/RoutePreloader';
 import { RedirectManager } from './components/RedirectManager';
+import { AdminProtectedRoute } from './components/admin/AdminProtectedRoute';
 
 // Lazy imports organizados por categoría
 import * as Pages from './utils/lazyImports';
@@ -470,23 +471,26 @@ const App = () => (
            {/* REDIRECTS MANAGER - Legacy URL */}
            <Route path="/redirects-manager" element={<Navigate to="/admin/seo/redirects" replace />} />
            
-            {/* ADMIN - Dashboard & Tools */}
-            <Route path="/admin" element={<PageSuspense><Pages.AdminDashboard /></PageSuspense>} />
-            <Route path="/admin/dashboard" element={<Navigate to="/admin" replace />} />
-            
-            {/* ADMIN - SEO Control Center */}
-            <Route path="/admin/seo" element={<PageSuspense><Pages.SEODashboard /></PageSuspense>} />
-            <Route path="/admin/seo/gsc" element={<PageSuspense><Pages.GSCFullReport /></PageSuspense>} />
-            <Route path="/admin/seo/pages" element={<PageSuspense><Pages.SEOPagesManager /></PageSuspense>} />
-            <Route path="/admin/seo/sitemap" element={<PageSuspense><Pages.SitemapManager /></PageSuspense>} />
-            <Route path="/admin/seo/robots" element={<PageSuspense><Pages.RobotsManager /></PageSuspense>} />
-            <Route path="/admin/seo/redirects" element={<PageSuspense><Pages.RedirectsManager /></PageSuspense>} />
-            <Route path="/admin/seo/indexnow" element={<PageSuspense><Pages.IndexNowManager /></PageSuspense>} />
-             {/* ADMIN - Content & Branding */}
-             <Route path="/admin/faq-validator" element={<PageSuspense><Pages.FAQValidator /></PageSuspense>} />
-             <Route path="/admin/translations" element={<PageSuspense><Pages.TranslationManager /></PageSuspense>} />
-             <Route path="/admin/media-library" element={<PageSuspense><Pages.MediaLibrary /></PageSuspense>} />
-             <Route path="/admin/brandbook" element={<PageSuspense><Pages.BrandBook /></PageSuspense>} />
+{/* ADMIN - Login (public) */}
+             <Route path="/admin/login" element={<PageSuspense><Pages.AdminLogin /></PageSuspense>} />
+             
+             {/* ADMIN - Dashboard & Tools (protected) */}
+             <Route path="/admin" element={<AdminProtectedRoute><PageSuspense><Pages.AdminDashboard /></PageSuspense></AdminProtectedRoute>} />
+             <Route path="/admin/dashboard" element={<Navigate to="/admin" replace />} />
+             
+             {/* ADMIN - SEO Control Center (protected) */}
+             <Route path="/admin/seo" element={<AdminProtectedRoute><PageSuspense><Pages.SEODashboard /></PageSuspense></AdminProtectedRoute>} />
+             <Route path="/admin/seo/gsc" element={<AdminProtectedRoute><PageSuspense><Pages.GSCFullReport /></PageSuspense></AdminProtectedRoute>} />
+             <Route path="/admin/seo/pages" element={<AdminProtectedRoute><PageSuspense><Pages.SEOPagesManager /></PageSuspense></AdminProtectedRoute>} />
+             <Route path="/admin/seo/sitemap" element={<AdminProtectedRoute><PageSuspense><Pages.SitemapManager /></PageSuspense></AdminProtectedRoute>} />
+             <Route path="/admin/seo/robots" element={<AdminProtectedRoute><PageSuspense><Pages.RobotsManager /></PageSuspense></AdminProtectedRoute>} />
+             <Route path="/admin/seo/redirects" element={<AdminProtectedRoute><PageSuspense><Pages.RedirectsManager /></PageSuspense></AdminProtectedRoute>} />
+             <Route path="/admin/seo/indexnow" element={<AdminProtectedRoute><PageSuspense><Pages.IndexNowManager /></PageSuspense></AdminProtectedRoute>} />
+              {/* ADMIN - Content & Branding (protected) */}
+              <Route path="/admin/faq-validator" element={<AdminProtectedRoute><PageSuspense><Pages.FAQValidator /></PageSuspense></AdminProtectedRoute>} />
+              <Route path="/admin/translations" element={<AdminProtectedRoute><PageSuspense><Pages.TranslationManager /></PageSuspense></AdminProtectedRoute>} />
+              <Route path="/admin/media-library" element={<AdminProtectedRoute><PageSuspense><Pages.MediaLibrary /></PageSuspense></AdminProtectedRoute>} />
+              <Route path="/admin/brandbook" element={<AdminProtectedRoute><PageSuspense><Pages.BrandBook /></PageSuspense></AdminProtectedRoute>} />
            
            {/* Página 404 dedicada */}
            <Route path="/es/404" element={<PageSuspense><Pages.Error404 /></PageSuspense>} />
