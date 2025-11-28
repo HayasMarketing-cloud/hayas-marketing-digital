@@ -485,6 +485,12 @@
 /kit-digital  /es/kit-digital  301
 
 # ========================================
+# SERVICIOS LEGACY - NUEVAS REDIRECCIONES
+# ========================================
+/es/servicios/asistente-ia-atencion-cliente  /es/servicios/asistente-ia  301
+/es/servicios/asistente-ia-atencion-cliente/  /es/servicios/asistente-ia  301
+
+# ========================================
 # SPA FALLBACK - DEBE IR AL FINAL
 # ========================================
 # Para React Router: todas las rutas no capturadas anteriormente

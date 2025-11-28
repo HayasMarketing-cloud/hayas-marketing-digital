@@ -508,6 +508,10 @@ export const redirectsConfig: RedirectRule[] = [
   { id: 'gsc-category-marketing', source: '/category/marketing-digital', destination: '/es/blog', type: '301', category: 'GSC Rastreadas - Categorías', dateAdded: '2025-01-28' },
   { id: 'gsc-category-ia', source: '/category/inteligencia-artificial', destination: '/es/blog', type: '301', category: 'GSC Rastreadas - Categorías', dateAdded: '2025-01-28' },
   { id: 'gsc-category-seo', source: '/category/seo', destination: '/es/blog', type: '301', category: 'GSC Rastreadas - Categorías', dateAdded: '2025-01-28' },
+
+  // --- CATEGORÍA 11: Servicios Legacy ---
+  { id: 'srv-asistente-ia-1', source: '/es/servicios/asistente-ia-atencion-cliente', destination: '/es/servicios/asistente-ia', type: '301', category: 'Servicios Legacy', dateAdded: '2025-11-28' },
+  { id: 'srv-asistente-ia-2', source: '/es/servicios/asistente-ia-atencion-cliente/', destination: '/es/servicios/asistente-ia', type: '301', category: 'Servicios Legacy', dateAdded: '2025-11-28' },
 ];
 
 // ============================================================
