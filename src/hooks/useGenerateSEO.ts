@@ -12,10 +12,13 @@ export interface SEOSuggestions {
   reasoning?: string;
 }
 
+export type TargetLanguage = 'es' | 'en';
+
 interface GenerateSEOParams {
   path: string;
   pageContent?: string;
   category?: string;
+  targetLanguage?: TargetLanguage;
   existingSEO?: {
     title?: string;
     description?: string;
@@ -24,24 +27,42 @@ interface GenerateSEOParams {
   };
 }
 
+/**
+ * Detecta el idioma de destino basado en la ruta
+ * - /en/... → inglés
+ * - /es/... o cualquier otra → español
+ */
+const detectLanguageFromPath = (path: string): TargetLanguage => {
+  if (path.startsWith('/en/') || path === '/en') {
+    return 'en';
+  }
+  return 'es';
+};
+
 export const useGenerateSEO = () => {
   const [isGenerating, setIsGenerating] = useState(false);
   const [suggestions, setSuggestions] = useState<SEOSuggestions | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [detectedLanguage, setDetectedLanguage] = useState<TargetLanguage>('es');
 
   const generateSEO = async (params: GenerateSEOParams) => {
     setIsGenerating(true);
     setError(null);
     setSuggestions(null);
 
+    // Auto-detectar idioma si no se especifica
+    const targetLanguage = params.targetLanguage || detectLanguageFromPath(params.path);
+    setDetectedLanguage(targetLanguage);
+
     try {
-      console.log('🤖 Generating SEO for:', params.path);
+      console.log('🤖 Generating SEO for:', params.path, '| Language:', targetLanguage);
 
       const { data, error: functionError } = await supabase.functions.invoke('generate-seo-suggestions', {
         body: {
           path: params.path,
           pageContent: params.pageContent || `Página: ${params.path}`,
           category: params.category || 'general',
+          targetLanguage,
           existingSEO: params.existingSEO,
         },
       });
@@ -59,12 +80,13 @@ export const useGenerateSEO = () => {
         throw new Error('No se recibieron sugerencias de la IA');
       }
 
-      console.log('✅ SEO generated successfully');
+      console.log('✅ SEO generated successfully in', targetLanguage);
       setSuggestions(data.suggestions);
 
+      const langLabel = targetLanguage === 'en' ? 'English' : 'Español';
       toast({
         title: '✨ Sugerencias generadas',
-        description: 'La IA ha analizado la página y generado metadatos SEO optimizados.',
+        description: `La IA ha generado metadatos SEO optimizados en ${langLabel}.`,
       });
 
       return data.suggestions;
@@ -89,6 +111,7 @@ export const useGenerateSEO = () => {
   const reset = () => {
     setSuggestions(null);
     setError(null);
+    setDetectedLanguage('es');
   };
 
   return {
@@ -96,6 +119,7 @@ export const useGenerateSEO = () => {
     isGenerating,
     suggestions,
     error,
+    detectedLanguage,
     reset,
   };
 };
