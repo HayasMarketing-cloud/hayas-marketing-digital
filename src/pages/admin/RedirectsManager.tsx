@@ -20,8 +20,10 @@ import {
   TrendingUp,
   Shield,
   Loader2,
-  Radio
+  Radio,
+  PlusCircle
 } from 'lucide-react';
+import { RedirectGenerator } from '@/components/admin/seo/RedirectGenerator';
 
 const RedirectsManager: React.FC = () => {
   const navigate = useNavigate();
@@ -199,12 +201,21 @@ const RedirectsManager: React.FC = () => {
           </div>
 
           {/* Main Content Tabs */}
-          <Tabs defaultValue="table" className="space-y-6">
+          <Tabs defaultValue="generator" className="space-y-6">
             <TabsList>
+              <TabsTrigger value="generator" className="flex items-center gap-2">
+                <PlusCircle className="h-4 w-4" />
+                Crear Redirección
+              </TabsTrigger>
               <TabsTrigger value="table">Tabla de Redirecciones</TabsTrigger>
               <TabsTrigger value="documentation">Documentación</TabsTrigger>
               <TabsTrigger value="analytics">Análisis</TabsTrigger>
             </TabsList>
+
+            {/* Generator View */}
+            <TabsContent value="generator">
+              <RedirectGenerator />
+            </TabsContent>
 
             {/* Table View */}
             <TabsContent value="table" className="space-y-4">
