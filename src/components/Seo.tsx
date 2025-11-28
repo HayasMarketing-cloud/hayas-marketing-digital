@@ -59,26 +59,6 @@ const Seo = ({
     // Language
     document.documentElement.lang = inLanguage.split('-')[0];
 
-    // Robots meta tag for indexing control
-    if (robots) {
-      let robotsMeta = document.querySelector('meta[name="robots"]') as HTMLMetaElement | null;
-      if (!robotsMeta) {
-        robotsMeta = document.createElement('meta');
-        robotsMeta.name = 'robots';
-        document.head.appendChild(robotsMeta);
-      }
-      robotsMeta.content = robots;
-    } else {
-      // Default to index, follow if no robots specified
-      let robotsMeta = document.querySelector('meta[name="robots"]') as HTMLMetaElement | null;
-      if (!robotsMeta) {
-        robotsMeta = document.createElement('meta');
-        robotsMeta.name = 'robots';
-        document.head.appendChild(robotsMeta);
-      }
-      robotsMeta.content = 'index, follow';
-    }
-
     // Canonical - always add canonical tag
     const currentPath = window.location.pathname;
     const canonicalUrl = canonical || currentPath;
@@ -91,6 +71,21 @@ const Seo = ({
       document.head.appendChild(linkCanonical);
     }
     linkCanonical.href = href;
+
+    // Robots meta tag for indexing control
+    // IMPORTANTE: Todas las páginas en inglés son noindex hasta que estén completas
+    const isEnglishRoute = currentPath.startsWith('/en');
+    const effectiveRobots = isEnglishRoute 
+      ? 'noindex, follow' 
+      : (robots || 'index, follow');
+    
+    let robotsMeta = document.querySelector('meta[name="robots"]') as HTMLMetaElement | null;
+    if (!robotsMeta) {
+      robotsMeta = document.createElement('meta');
+      robotsMeta.name = 'robots';
+      document.head.appendChild(robotsMeta);
+    }
+    robotsMeta.content = effectiveRobots;
 
     // Hreflang tags for multilingual support
     // Remove existing hreflang tags first
