@@ -67,7 +67,7 @@ const HostingPlansTable: React.FC = () => {
   return (
     <div className="w-full">
       {/* Desktop Table */}
-      <div className="hidden lg:block overflow-x-auto">
+      <div className="hidden lg:block overflow-x-auto pt-4">
         <table className="w-full border-collapse">
           <thead>
             <tr>
