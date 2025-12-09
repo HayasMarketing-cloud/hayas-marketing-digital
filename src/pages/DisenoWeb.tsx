@@ -8,7 +8,7 @@ import ReviewsSection from '@/components/ReviewsSection';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import KitDigitalBanner from '@/components/KitDigitalBanner';
+
 import Seo from '@/components/Seo';
 import FAQSection from '@/components/FAQSection';
 import SuccessCasesSection from '@/components/SuccessCasesSection';
@@ -185,8 +185,6 @@ const DisenoWeb = () => {
       {/* Posts Relacionados */}
       <ServiceRelatedPosts serviceSlug="diseno-web" />
 
-      {/* Kit Digital Banner */}
-      <KitDigitalBanner />
 
       {/* Sección final: CTA fuerte (footer extendido) */}
       <ServiceContactSection
