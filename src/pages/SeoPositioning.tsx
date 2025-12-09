@@ -6,7 +6,7 @@ import ProcessSection from '@/components/ProcessSection';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import KitDigitalBanner from '@/components/KitDigitalBanner';
+
 import FAQSection from '@/components/FAQSection';
 import ServiceContactSection from '@/components/ServiceContactSection';
 import SuccessCasesSection from '@/components/SuccessCasesSection';
@@ -433,8 +433,6 @@ const SeoPositioning = () => {
       {/* Success Cases Section - Using standardized component */}
       {successCasesConfig && <SuccessCasesSection id="casos-exito" title="Casos de <span className='text-gradient-primary'>éxito</span>" subtitle={successCasesConfig.subtitle} filterTags={successCasesConfig.filterTags} specificCases={successCasesConfig.specificCases} maxCases={4} showAllLink={true} />}
 
-      {/* Kit Digital Banner */}
-      <KitDigitalBanner />
 
       {/* CTA Section */}
       <section className="py-16 md:py-20 bg-gradient-to-r from-primary to-accent text-white">

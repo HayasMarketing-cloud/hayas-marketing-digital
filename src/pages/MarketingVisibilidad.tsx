@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import KitDigitalBanner from '@/components/KitDigitalBanner';
+
 import Seo from '@/components/Seo';
 import { getSEOData } from '@/data/seoData';
 
@@ -258,7 +258,7 @@ const MarketingVisibilidad = () => {
           </div>
         </section>
 
-        <KitDigitalBanner />
+        
 
         {/* FAQ Section */}
         <FAQSection 

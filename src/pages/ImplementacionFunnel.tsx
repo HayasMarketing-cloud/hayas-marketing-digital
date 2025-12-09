@@ -5,7 +5,7 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import KitDigitalBanner from '@/components/KitDigitalBanner';
+
 import Seo from '@/components/Seo';
 import { useServiceSEO } from '@/hooks/useServiceSEO';
 import FAQSection from '@/components/FAQSection';
@@ -184,7 +184,7 @@ const ImplementacionFunnel: React.FC = () => {
       {/* FAQ + Contacto */}
       <FAQSection faqs={faqs} />
       
-      <KitDigitalBanner />
+      
       <Footer />
     </div>
   );

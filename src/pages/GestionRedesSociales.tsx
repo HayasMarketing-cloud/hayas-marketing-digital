@@ -5,7 +5,7 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import KitDigitalBanner from '@/components/KitDigitalBanner';
+
 import { useServiceSEO } from '@/hooks/useServiceSEO';
 import Seo from '@/components/Seo';
 import FAQSection from '@/components/FAQSection';
@@ -451,8 +451,6 @@ const GestionRedesSociales: React.FC = () => {
         </div>
       </section>
 
-      {/* Kit Digital */}
-      <KitDigitalBanner />
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground">
