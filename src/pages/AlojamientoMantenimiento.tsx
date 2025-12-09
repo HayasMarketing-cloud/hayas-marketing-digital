@@ -15,6 +15,7 @@ import {
   ArrowRight, CheckCircle, Star, Wrench, Database, Monitor,
   Sparkles, Timer, Lock, CloudRain, TrendingUp, AlertTriangle
 } from 'lucide-react';
+import HostingPlansTable from '@/components/hosting/HostingPlansTable';
 
 const hostingMaintenanceServices = [
   {
@@ -76,26 +77,7 @@ const maintenancePillars = [
   }
 ];
 
-const hostingPlans = [
-  {
-    title: "Básico",
-    description: "Perfecto para blogs y webs corporativas pequeñas",
-    features: ["1 sitio web", "10GB SSD", "SSL gratuito", "Copias diarias", "Soporte email"],
-    price: "Desde €9.99/mes"
-  },
-  {
-    title: "Profesional",
-    description: "Ideal para empresas y e-commerce medianos",
-    features: ["5 sitios web", "50GB SSD", "CDN incluido", "Backup premium", "Soporte prioritario"],
-    price: "Desde €19.99/mes"
-  },
-  {
-    title: "Empresarial",
-    description: "Para sitios de alto tráfico y misión crítica",
-    features: ["Sitios ilimitados", "200GB SSD", "Servidor dedicado", "Monitoreo 24/7", "Soporte telefónico"],
-    price: "Desde €49.99/mes"
-  }
-];
+// Los planes ahora están definidos en el componente HostingPlansTable
 
 const processSteps = [
   {
@@ -399,47 +381,15 @@ const AlojamientoMantenimiento: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-              Planes de hosting con mantenimiento incluido
+              Planes de hosting y mantenimiento web
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Elige el plan que mejor se adapte a tu proyecto. Todos incluyen 
-              mantenimiento técnico completo y soporte especializado.
+              Elige el plan que mejor se adapte a tu proyecto. Desde alojamiento básico 
+              hasta mantenimiento completo con servidor dedicado.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {hostingPlans.map((plan, index) => (
-              <Card key={index} className={`h-full ${index === 1 ? 'border-primary shadow-lg' : ''}`}>
-                {index === 1 && (
-                  <div className="bg-primary text-primary-foreground text-center py-2 rounded-t-lg">
-                    <span className="font-semibold">Más Popular</span>
-                  </div>
-                )}
-                <CardHeader>
-                  <CardTitle className="text-2xl text-primary">{plan.title}</CardTitle>
-                  <p className="text-muted-foreground">{plan.description}</p>
-                  <div className="text-3xl font-bold">{plan.price}</div>
-                </CardHeader>
-                <CardContent className="flex-1">
-                  <ul className="space-y-3 mb-6">
-                    {plan.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center">
-                        <CheckCircle className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Button 
-                    className="w-full" 
-                    variant={index === 1 ? "default" : "outline"}
-                    asChild
-                  >
-                    <Link to="/es/contacto">Contratar Plan</Link>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          <HostingPlansTable />
         </div>
       </section>
 
