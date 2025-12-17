@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { useTranslation } from '@/hooks/useTranslation';
+import sofiaEnImage from '@/assets/ia_assistant_hayas_marketing_en.png';
 
 const ChatbotPromoSection = () => {
   const { t, language } = useTranslation();
@@ -10,6 +11,11 @@ const ChatbotPromoSection = () => {
   const assistantUrl = language === 'en' 
     ? '/en/services/ai-assistant' 
     : '/es/servicios/asistente-ia';
+  
+  // Dynamic image based on language
+  const sofiaImage = language === 'en'
+    ? sofiaEnImage
+    : '/lovable-uploads/5c73c4e8-b9be-4541-b0dc-043162701fc7.png';
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-primary to-hayas-tertiary py-16 sm:py-20 lg:py-24">
@@ -50,7 +56,7 @@ const ChatbotPromoSection = () => {
           <div className="relative">
             <div className="relative">
               <img
-                src="/lovable-uploads/5c73c4e8-b9be-4541-b0dc-043162701fc7.png"
+                src={sofiaImage}
                 alt={t('chatbot.imageAlt')}
                 className="w-full h-auto rounded-lg shadow-2xl"
               />
