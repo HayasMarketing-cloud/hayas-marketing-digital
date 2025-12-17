@@ -22,7 +22,7 @@ export const SlideLayoutCentered: React.FC<SlideLayoutCenteredProps> = ({
   HeadingComponent,
 }) => {
   return (
-    <div className={`relative min-h-[600px] md:min-h-[700px] flex items-center justify-center bg-gradient-to-br ${gradient}`}>
+    <div className={`relative min-h-[400px] md:min-h-[450px] flex items-center justify-center bg-gradient-to-br ${gradient}`}>
       {/* Decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
