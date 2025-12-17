@@ -68,7 +68,14 @@ const SofiaWidget = () => {
     '/es/soluciones/conecta-con-tus-clientes', 
     '/es/soluciones/activa-tus-ventas',
     '/es/agendar-reunion',
-    '/es/contacto'
+    '/es/contacto',
+    // English pages
+    '/en',
+    '/en/solutions/boost-your-brand',
+    '/en/solutions/connect-with-customers',
+    '/en/solutions/activate-sales',
+    '/en/schedule-meeting',
+    '/en/contact'
   ];
   
   const shouldRender = isReady && !isMobile && allowedPages.includes(location.pathname);
