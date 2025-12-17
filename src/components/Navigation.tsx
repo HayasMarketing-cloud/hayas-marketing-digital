@@ -96,10 +96,14 @@ const Navigation = () => {
     activa: 'bg-green-100 text-green-800 border-green-200',
   };
 
-  const pillars = [
-    { title: t('nav.impulsa'), href: `/${language}/${t('nav.impulsaHref')}` },
-    { title: t('nav.conecta'), href: `/${language}/${t('nav.conectaHref')}` },
-    { title: t('nav.activa'), href: `/${language}/${t('nav.activaHref')}` },
+  const pillars = language === 'en' ? [
+    { title: t('nav.impulsa'), href: '/en/solutions/boost-your-brand' },
+    { title: t('nav.conecta'), href: '/en/solutions/connect-with-customers' },
+    { title: t('nav.activa'), href: '/en/solutions/activate-sales' },
+  ] : [
+    { title: t('nav.impulsa'), href: '/es/soluciones/impulsa-tu-marca' },
+    { title: t('nav.conecta'), href: '/es/soluciones/conecta-con-tus-clientes' },
+    { title: t('nav.activa'), href: '/es/soluciones/activa-tus-ventas' },
   ];
 
   const pillarKeys: PillarKey[] = ['impulsa', 'conecta', 'activa'];
@@ -169,7 +173,7 @@ const Navigation = () => {
 
               {/* Casos de Éxito: solo enlace */}
               <Link
-                to={`/${language}/casos-exito`}
+                to={language === 'en' ? '/en/case-studies' : '/es/casos-exito'}
                 className="text-foreground hover:text-primary font-medium transition-colors py-2"
                 onClick={() => window.scrollTo(0, 0)}
               >
@@ -183,7 +187,7 @@ const Navigation = () => {
                 onMouseLeave={handleMouseLeave}
               >
                 <Link
-                  to={`/${language}/servicios`}
+                  to={language === 'en' ? '/en/services' : '/es/servicios'}
                   className="text-foreground hover:text-primary font-medium transition-colors flex items-center gap-1 py-2"
                   onClick={() => window.scrollTo(0, 0)}
                 >
@@ -195,13 +199,13 @@ const Navigation = () => {
                 </Link>
               </div>
 
-              <Link to={`/${language}/nosotros`} className="text-foreground hover:text-primary font-medium transition-colors">
+              <Link to={language === 'en' ? '/en/about-us' : '/es/nosotros'} className="text-foreground hover:text-primary font-medium transition-colors">
                 {t('nav.theAgency')}
               </Link>
-              <Link to={`/${language}/blog`} className="text-foreground hover:text-primary font-medium transition-colors">
+              <Link to={language === 'en' ? '/en/blog' : '/es/blog'} className="text-foreground hover:text-primary font-medium transition-colors">
                 {t('nav.blog')}
               </Link>
-              <Link to={`/${language}/contacto`} className="text-foreground hover:text-primary font-medium transition-colors">
+              <Link to={language === 'en' ? '/en/contact' : '/es/contacto'} className="text-foreground hover:text-primary font-medium transition-colors">
                 {t('nav.contact')}
               </Link>
             </nav>
@@ -220,7 +224,7 @@ const Navigation = () => {
               </Button>
               
               <Button asChild className="gradient-primary text-white hover-scale">
-                <Link to={`/${language}/agendar-reunion`}>{t('footer.scheduleConsultation')}</Link>
+                <Link to={language === 'en' ? '/en/schedule-meeting' : '/es/agendar-reunion'}>{t('footer.scheduleConsultation')}</Link>
               </Button>
             </div>
 
@@ -258,7 +262,7 @@ const Navigation = () => {
                     </button>
                     
                     <Link
-                      to={`/${language}/casos-exito`}
+                      to={language === 'en' ? '/en/case-studies' : '/es/casos-exito'}
                       className="block text-foreground hover:text-primary font-medium transition-colors px-4 py-3 hover:bg-muted/50 rounded"
                       onClick={closeMobileMenu}
                     >
@@ -266,7 +270,7 @@ const Navigation = () => {
                     </Link>
                     
                     <Link
-                      to={`/${language}/nosotros`}
+                      to={language === 'en' ? '/en/about-us' : '/es/nosotros'}
                       className="block text-foreground hover:text-primary font-medium transition-colors px-4 py-3 hover:bg-muted/50 rounded"
                       onClick={closeMobileMenu}
                     >
@@ -274,7 +278,7 @@ const Navigation = () => {
                     </Link>
                     
                     <Link
-                      to={`/${language}/blog`}
+                      to={language === 'en' ? '/en/blog' : '/es/blog'}
                       className="block text-foreground hover:text-primary font-medium transition-colors px-4 py-3 hover:bg-muted/50 rounded"
                       onClick={closeMobileMenu}
                     >
@@ -282,7 +286,7 @@ const Navigation = () => {
                     </Link>
                     
                     <Link
-                      to={`/${language}/contacto`}
+                      to={language === 'en' ? '/en/contact' : '/es/contacto'}
                       className="block text-foreground hover:text-primary font-medium transition-colors px-4 py-3 hover:bg-muted/50 rounded"
                       onClick={closeMobileMenu}
                     >
@@ -301,7 +305,7 @@ const Navigation = () => {
                       </Button>
                       
                       <Button asChild className="gradient-primary text-white w-full hover-scale">
-                        <Link to={`/${language}/agendar-reunion`} onClick={closeMobileMenu}>{t('footer.scheduleConsultation')}</Link>
+                        <Link to={language === 'en' ? '/en/schedule-meeting' : '/es/agendar-reunion'} onClick={closeMobileMenu}>{t('footer.scheduleConsultation')}</Link>
                       </Button>
                     </div>
                   </div>
