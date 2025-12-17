@@ -154,63 +154,8 @@ const Navigation = () => {
               </Link>
             </div>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-8">
-              {/* Soluciones Mega Menu */}
-              <div
-                className="relative"
-                onMouseEnter={() => handleMouseEnter('soluciones')}
-                onMouseLeave={handleMouseLeave}
-              >
-                <button className="text-foreground hover:text-primary font-medium transition-colors flex items-center gap-1 py-2">
-                  {t('nav.solutions')}
-                  <ChevronDown
-                    className="h-4 w-4 transition-transform duration-200"
-                    style={{ transform: activeMegaMenu === 'soluciones' ? 'rotate(180deg)' : 'rotate(0deg)' }}
-                  />
-                </button>
-              </div>
-
-              {/* Casos de Éxito: solo enlace */}
-              <Link
-                to={language === 'en' ? '/en/case-studies' : '/es/casos-exito'}
-                className="text-foreground hover:text-primary font-medium transition-colors py-2"
-                onClick={() => window.scrollTo(0, 0)}
-              >
-                {t('nav.caseStudies')}
-              </Link>
-
-              {/* Servicios Mega Menu */}
-              <div
-                className="relative"
-                onMouseEnter={() => handleMouseEnter('servicios')}
-                onMouseLeave={handleMouseLeave}
-              >
-                <Link
-                  to={language === 'en' ? '/en/services' : '/es/servicios'}
-                  className="text-foreground hover:text-primary font-medium transition-colors flex items-center gap-1 py-2"
-                  onClick={() => window.scrollTo(0, 0)}
-                >
-                  {t('nav.services')}
-                  <ChevronDown
-                    className="h-4 w-4 transition-transform duration-200"
-                    style={{ transform: activeMegaMenu === 'servicios' ? 'rotate(180deg)' : 'rotate(0deg)' }}
-                  />
-                </Link>
-              </div>
-
-              <Link to={language === 'en' ? '/en/about-us' : '/es/nosotros'} className="text-foreground hover:text-primary font-medium transition-colors">
-                {t('nav.theAgency')}
-              </Link>
-              <Link to={language === 'en' ? '/en/blog' : '/es/blog'} className="text-foreground hover:text-primary font-medium transition-colors">
-                {t('nav.blog')}
-              </Link>
-              <Link to={language === 'en' ? '/en/contact' : '/es/contacto'} className="text-foreground hover:text-primary font-medium transition-colors">
-                {t('nav.contact')}
-              </Link>
-            </nav>
-
-            <div className="hidden lg:flex items-center gap-3">
+            {/* Desktop CTA + Language + Hamburger */}
+            <div className="flex items-center gap-3">
               {/* Language Selector */}
               <Button
                 variant="ghost"
@@ -220,137 +165,213 @@ const Navigation = () => {
                 aria-label={`Switch to ${isEnglish ? 'Spanish' : 'English'}`}
               >
                 <span className="text-lg">{isEnglish ? '🇪🇸' : '🇬🇧'}</span>
-                <span className="ml-2 text-sm font-medium">{isEnglish ? 'ES' : 'EN'}</span>
+                <span className="ml-2 text-sm font-medium hidden sm:inline">{isEnglish ? 'ES' : 'EN'}</span>
               </Button>
               
-              <Button asChild className="gradient-primary text-white hover-scale">
+              <Button asChild className="gradient-primary text-white hover-scale hidden sm:flex">
                 <Link to={language === 'en' ? '/en/schedule-meeting' : '/es/agendar-reunion'}>{t('footer.scheduleConsultation')}</Link>
               </Button>
-            </div>
 
-            {/* Mobile Menu Button */}
-            <button 
-              className="lg:hidden p-2 focus-ring" 
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label={mobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
-              aria-expanded={mobileMenuOpen}
-            >
-              <svg className="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                {mobileMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
-            </button>
+              {/* Hamburger Menu Button - Always visible */}
+              <button 
+                className="p-2 focus-ring" 
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                aria-label={mobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
+                aria-expanded={mobileMenuOpen}
+              >
+                <svg className="h-6 w-6 text-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  {mobileMenuOpen ? (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  ) : (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  )}
+                </svg>
+              </button>
+            </div>
           </div>
 
-          {/* Mobile Navigation Menu */}
-          {mobileMenuOpen && (
-            <div className="lg:hidden bg-background border border-border mt-4 py-4 px-2 rounded-lg shadow-corporate animate-slideUp max-h-[80vh] overflow-y-auto">
-              <nav className="flex flex-col">
-                
-                {/* Main Level */}
-                {mobileMenuLevel === 'main' && (
-                  <div className="space-y-2">
+        </div>
+      </header>
+
+      {/* Full-screen Slide Panel Menu */}
+      {mobileMenuOpen && (
+        <>
+          {/* Backdrop */}
+          <div 
+            className="fixed inset-0 bg-black/50 z-40 animate-fade-in"
+            onClick={closeMobileMenu}
+          />
+          
+          {/* Slide Panel */}
+          <div className="fixed top-0 right-0 h-full w-full sm:w-96 bg-background z-50 shadow-2xl animate-slide-in-right overflow-y-auto">
+            {/* Header */}
+            <div className="flex items-center justify-between p-4 border-b border-border sticky top-0 bg-background z-10">
+              <span className="font-semibold text-foreground">{t('nav.menu') || 'Menú'}</span>
+              <button 
+                onClick={closeMobileMenu}
+                className="p-2 hover:bg-muted rounded-lg transition-colors"
+                aria-label="Cerrar menú"
+              >
+                <svg className="h-5 w-5 text-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            
+            <nav className="p-4 space-y-6">
+              {/* Main Navigation Level */}
+              {mobileMenuLevel === 'main' && (
+                <>
+                  {/* Primary Navigation */}
+                  <div className="space-y-1">
                     <button
                       onClick={() => navigateToLevel('soluciones')}
-                      className="w-full flex items-center justify-between text-foreground hover:text-primary font-medium transition-colors px-4 py-3 hover:bg-muted/50 rounded text-left"
+                      className="w-full flex items-center justify-between text-foreground hover:text-primary font-medium transition-colors px-3 py-3 hover:bg-muted/50 rounded-lg text-left"
                     >
                       <span>{t('nav.solutions')}</span>
                       <ArrowRight className="h-4 w-4" />
                     </button>
                     
                     <Link
+                      to={language === 'en' ? '/en/services' : '/es/servicios'}
+                      className="block text-foreground hover:text-primary font-medium transition-colors px-3 py-3 hover:bg-muted/50 rounded-lg"
+                      onClick={closeMobileMenu}
+                    >
+                      {t('nav.services')}
+                    </Link>
+                    
+                    <Link
                       to={language === 'en' ? '/en/case-studies' : '/es/casos-exito'}
-                      className="block text-foreground hover:text-primary font-medium transition-colors px-4 py-3 hover:bg-muted/50 rounded"
+                      className="block text-foreground hover:text-primary font-medium transition-colors px-3 py-3 hover:bg-muted/50 rounded-lg"
                       onClick={closeMobileMenu}
                     >
                       {t('nav.caseStudies')}
                     </Link>
                     
                     <Link
-                      to={language === 'en' ? '/en/about-us' : '/es/nosotros'}
-                      className="block text-foreground hover:text-primary font-medium transition-colors px-4 py-3 hover:bg-muted/50 rounded"
-                      onClick={closeMobileMenu}
-                    >
-                      {t('nav.theAgency')}
-                    </Link>
-                    
-                    <Link
                       to={language === 'en' ? '/en/blog' : '/es/blog'}
-                      className="block text-foreground hover:text-primary font-medium transition-colors px-4 py-3 hover:bg-muted/50 rounded"
+                      className="block text-foreground hover:text-primary font-medium transition-colors px-3 py-3 hover:bg-muted/50 rounded-lg"
                       onClick={closeMobileMenu}
                     >
                       {t('nav.blog')}
                     </Link>
                     
                     <Link
+                      to={language === 'en' ? '/en/about-us' : '/es/nosotros'}
+                      className="block text-foreground hover:text-primary font-medium transition-colors px-3 py-3 hover:bg-muted/50 rounded-lg"
+                      onClick={closeMobileMenu}
+                    >
+                      {t('nav.theAgency')}
+                    </Link>
+                    
+                    <Link
                       to={language === 'en' ? '/en/contact' : '/es/contacto'}
-                      className="block text-foreground hover:text-primary font-medium transition-colors px-4 py-3 hover:bg-muted/50 rounded"
+                      className="block text-foreground hover:text-primary font-medium transition-colors px-3 py-3 hover:bg-muted/50 rounded-lg"
                       onClick={closeMobileMenu}
                     >
                       {t('nav.contact')}
                     </Link>
-                    
-                    <div className="mt-4 px-4 space-y-2">
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        onClick={toggleLanguage}
-                        className="w-full justify-start"
-                      >
-                        <span className="text-lg mr-2">{isEnglish ? '🇪🇸' : '🇬🇧'}</span>
-                        <span className="text-sm font-medium">{isEnglish ? 'Cambiar a Español' : 'Switch to English'}</span>
-                      </Button>
-                      
-                      <Button asChild className="gradient-primary text-white w-full hover-scale">
-                        <Link to={language === 'en' ? '/en/schedule-meeting' : '/es/agendar-reunion'} onClick={closeMobileMenu}>{t('footer.scheduleConsultation')}</Link>
-                      </Button>
+                  </div>
+
+                  {/* Featured Services Section */}
+                  <div className="border-t border-border pt-4">
+                    <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider px-3 mb-3">
+                      {t('footer.featuredServices')}
+                    </h4>
+                    <div className="grid grid-cols-2 gap-1">
+                      <Link to={`/${language}/servicios/creacion-marca`} className="text-sm text-muted-foreground hover:text-primary transition-colors px-3 py-2 hover:bg-muted/50 rounded" onClick={closeMobileMenu}>{t('footer.creacion-marca')}</Link>
+                      <Link to={`/${language}/servicios/diseno-web`} className="text-sm text-muted-foreground hover:text-primary transition-colors px-3 py-2 hover:bg-muted/50 rounded" onClick={closeMobileMenu}>{t('footer.diseno-web')}</Link>
+                      <Link to={`/${language}/servicios/implantacion-crm`} className="text-sm text-muted-foreground hover:text-primary transition-colors px-3 py-2 hover:bg-muted/50 rounded" onClick={closeMobileMenu}>{t('footer.implantacion-crm')}</Link>
+                      <Link to={`/${language}/servicios/seo-posicionamiento`} className="text-sm text-muted-foreground hover:text-primary transition-colors px-3 py-2 hover:bg-muted/50 rounded" onClick={closeMobileMenu}>{t('footer.seo-posicionamiento')}</Link>
+                      <Link to={`/${language}/servicios/automatizacion-procesos-ventas`} className="text-sm text-muted-foreground hover:text-primary transition-colors px-3 py-2 hover:bg-muted/50 rounded" onClick={closeMobileMenu}>{t('footer.automatizacion-comercial')}</Link>
+                      <Link to={`/${language}/servicios/captacion-leads-clientes`} className="text-sm text-muted-foreground hover:text-primary transition-colors px-3 py-2 hover:bg-muted/50 rounded" onClick={closeMobileMenu}>{t('footer.captacion-leads')}</Link>
                     </div>
                   </div>
-                )}
 
-                {/* Soluciones Level */}
-                {mobileMenuLevel === 'soluciones' && (
-                  <div className="space-y-2">
-                    <div className="flex items-center px-4 py-3 border-b border-border mb-4">
-                      <button
-                        onClick={() => navigateToLevel('main')}
-                        className="flex items-center text-muted-foreground hover:text-primary transition-colors"
-                      >
-                        <ArrowLeft className="h-4 w-4 mr-2" />
-                        {t('nav.backToMain')}
-                      </button>
-                      <span className="ml-4 font-medium text-foreground">{t('nav.solutions')}</span>
-                    </div>
-                    
-                    <div className="px-4 space-y-3">
-                      <div className="space-y-2">
-                        {pillars.map((p) => (
-                          <Link
-                            key={p.href}
-                            to={p.href}
-                            className="block text-foreground hover:text-primary transition-colors py-3 px-3 hover:bg-muted/50 rounded-lg border border-border/50"
-                            onClick={closeMobileMenu}
-                          >
-                            <div className="flex items-center justify-between">
-                              <span className="font-medium">{p.title}</span>
-                              <ArrowRight className="h-4 w-4 text-muted-foreground" />
-                            </div>
-                          </Link>
-                        ))}
-                      </div>
+                  {/* Resources Section */}
+                  <div className="border-t border-border pt-4">
+                    <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider px-3 mb-3">
+                      {t('footer.resources')}
+                    </h4>
+                    <div className="space-y-1">
+                      <Link to={`/${language}/casos-exito`} className="block text-sm text-muted-foreground hover:text-primary transition-colors px-3 py-2 hover:bg-muted/50 rounded" onClick={closeMobileMenu}>{t('footer.caseStudies')}</Link>
+                      <Link to={`/${language}/blog`} className="block text-sm text-muted-foreground hover:text-primary transition-colors px-3 py-2 hover:bg-muted/50 rounded" onClick={closeMobileMenu}>{t('footer.blogGuides')}</Link>
+                      <Link to={`/${language}/nosotros`} className="block text-sm text-muted-foreground hover:text-primary transition-colors px-3 py-2 hover:bg-muted/50 rounded" onClick={closeMobileMenu}>{t('footer.aboutUs')}</Link>
                     </div>
                   </div>
-                )}
+                  
+                  {/* Actions */}
+                  <div className="border-t border-border pt-4 space-y-3">
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={toggleLanguage}
+                      className="w-full justify-start"
+                    >
+                      <span className="text-lg mr-2">{isEnglish ? '🇪🇸' : '🇬🇧'}</span>
+                      <span className="text-sm font-medium">{isEnglish ? 'Cambiar a Español' : 'Switch to English'}</span>
+                    </Button>
+                    
+                    <Button asChild className="gradient-primary text-white w-full hover-scale">
+                      <Link to={language === 'en' ? '/en/schedule-meeting' : '/es/agendar-reunion'} onClick={closeMobileMenu}>{t('footer.scheduleConsultation')}</Link>
+                    </Button>
+                  </div>
+                </>
+              )}
 
-                
-              </nav>
-            </div>
-          )}
-        </div>
-      </header>
+              {/* Soluciones Level */}
+              {mobileMenuLevel === 'soluciones' && (
+                <div className="space-y-4">
+                  <div className="flex items-center pb-3 border-b border-border">
+                    <button
+                      onClick={() => navigateToLevel('main')}
+                      className="flex items-center text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      <ArrowLeft className="h-4 w-4 mr-2" />
+                      {t('nav.backToMain')}
+                    </button>
+                    <span className="ml-4 font-medium text-foreground">{t('nav.solutions')}</span>
+                  </div>
+                  
+                  <div className="space-y-3">
+                    {pillars.map((p) => {
+                      const config = pillarConfig[p.title as keyof typeof pillarConfig];
+                      const Icon = config?.icon || Zap;
+                      return (
+                        <Link
+                          key={p.href}
+                          to={p.href}
+                          className={`flex items-center gap-3 p-4 rounded-xl border border-border/50 hover:border-primary/30 transition-all ${config?.bgColor || 'hover:bg-muted/50'}`}
+                          onClick={closeMobileMenu}
+                        >
+                          <div className={`p-2 rounded-lg bg-background shadow-sm ${config?.color || 'text-primary'}`}>
+                            <Icon className="h-5 w-5" />
+                          </div>
+                          <span className="font-medium text-foreground">{p.title}</span>
+                          <ArrowRight className="h-4 w-4 text-muted-foreground ml-auto" />
+                        </Link>
+                      );
+                    })}
+                  </div>
+                  
+                  {/* IA Marketing Link */}
+                  <Link
+                    to={`/${language}/soluciones/ia-marketing`}
+                    className="flex items-center gap-3 p-4 rounded-xl border border-border/50 hover:border-primary/30 transition-all hover:bg-muted/50"
+                    onClick={closeMobileMenu}
+                  >
+                    <div className="p-2 rounded-lg bg-background shadow-sm text-primary">
+                      <Zap className="h-5 w-5" />
+                    </div>
+                    <span className="font-medium text-foreground">{t('footer.ia-marketing')}</span>
+                    <ArrowRight className="h-4 w-4 text-muted-foreground ml-auto" />
+                  </Link>
+                </div>
+              )}
+            </nav>
+          </div>
+        </>
+      )}
 
       {/* Spacer to offset fixed header so breadcrumbs and hero aren't hidden */}
       <div aria-hidden style={{ height: headerHeight }}></div>
