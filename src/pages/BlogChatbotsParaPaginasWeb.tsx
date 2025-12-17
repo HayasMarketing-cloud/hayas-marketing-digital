@@ -30,7 +30,7 @@ const BlogChatbotsParaPaginasWeb = () => {
     metaTitle: 'Chatbots para Web: Guía completa para elegir el mejor | Hayas Marketing',
     description: 'Descubre los tipos de chatbots para páginas web, sus ventajas y limitaciones. Guía práctica para elegir la solución que mejor encaje con tu negocio.',
     metaDescription: 'Guía completa sobre chatbots para páginas web: plugins WordPress, soluciones a medida, SaaS y CRM integrado. Descubre cuál encaja mejor con tu negocio.',
-    date: '2025-01-22',
+    date: '2025-11-18',
     readTime: '10 min',
     category: 'Automatización',
     author: 'Equipo Hayas Marketing',
@@ -53,8 +53,8 @@ const BlogChatbotsParaPaginasWeb = () => {
           "url": "https://hayasmarketing.com/logo.png"
         }
       },
-      "datePublished": "2025-01-22",
-      "dateModified": "2025-01-22",
+      "datePublished": "2025-11-18",
+      "dateModified": "2025-11-18",
       "image": "/chatbots-web-hero.jpg",
       "mainEntityOfPage": "https://hayasmarketing.com/es/blog/chatbots-para-paginas-web"
     },
