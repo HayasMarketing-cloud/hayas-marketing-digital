@@ -3,6 +3,7 @@ import BlogPostTemplate from '@/components/BlogPost/BlogPostTemplate';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
+import chatbotsHeroImage from '@/assets/chatbots-web-hero.jpg';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { 
@@ -35,7 +36,7 @@ const BlogChatbotsParaPaginasWeb = () => {
     author: 'Equipo Hayas Marketing',
     tags: ['Chatbots', 'Automatización', 'CRM', 'IA', 'WordPress', 'GoHighLevel', 'HubSpot'],
     canonical: '/es/blog/chatbots-para-paginas-web',
-    ogImage: '/chatbots-web-hero.jpg',
+    ogImage: chatbotsHeroImage,
     structuredData: {
       "@context": "https://schema.org",
       "@type": "Article",
