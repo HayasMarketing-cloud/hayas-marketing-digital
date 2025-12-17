@@ -585,6 +585,7 @@ const App = () => (
           
           {/* BLOG */}
           <Route path="/en/blog" element={<PageSuspense><Pages.Blog /></PageSuspense>} />
+          <Route path="/en/blog/chatbots-for-websites" element={<PageSuspense><Pages.BlogChatbotsForWebsites /></PageSuspense>} />
           <Route path="/en/blog/:id" element={<PageSuspense><Pages.BlogPost /></PageSuspense>} />
           
           {/* COMPARISONS */}
