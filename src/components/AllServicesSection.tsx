@@ -5,10 +5,11 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Grid, List } from 'lucide-react';
 import { useTranslation } from '@/hooks/useTranslation';
+import GoogleGIcon from '@/components/icons/GoogleGIcon';
 
 const AllServicesSection = () => {
   const { t } = useTranslation();
-  const { services, servicesByPillar } = useServices();
+  const { services, servicesByPillar } = useServices(GoogleGIcon);
   const [active, setActive] = useState<'all' | PillarKey>('all');
   const [expanded, setExpanded] = useState(false);
   const [view, setView] = useState<'grid' | 'list'>('grid');
@@ -77,7 +78,7 @@ const AllServicesSection = () => {
             return (
               <Card key={service.id} className={`${visible ? '' : 'hidden'} border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full`}>
                 <CardHeader className={view === 'list' ? 'pb-2' : 'pb-2'}>
-                  <div className="mb-4">{service.icon}</div>
+                  <div className="mb-4"><service.Icon className="h-10 w-10 text-hayas-primary" /></div>
                   <CardTitle className="title-card">{service.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
