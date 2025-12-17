@@ -589,6 +589,56 @@ export const translations = {
         noIssues: 'No se detectaron inconsistencias',
         loading: 'Analizando rutas...'
       }
+    },
+    // Secciones de la home
+    servicesSection: {
+      title: 'Nuestros Servicios',
+      subtitle: 'Descubre el catálogo completo de servicios profesionales que ofrecemos para hacer crecer tu negocio de forma estratégica y sostenible.',
+      all: 'Todos los servicios',
+      viewAll: 'Ver todos los servicios',
+      viewLess: 'Ver menos',
+      viewService: 'Ver',
+      viewSelector: 'Selector de vista',
+      gridView: 'Vista de cuadrícula',
+      listView: 'Vista de lista',
+      pillars: {
+        impulsa: 'Impulsa tu marca',
+        conecta: 'Conecta con tus clientes',
+        activa: 'Activa tus Ventas'
+      }
+    },
+    chatbot: {
+      title: 'Asistentes IA que atienden y convierten visitas en clientes',
+      paragraph1: '¿Te imaginas tener un asistente como SofÍA que atienda a tus clientes actuales y potenciales, de forma personalizada y en cualquier idioma? Lo integramos en tu sitio web y/o en tu WhatsApp Business?',
+      paragraph2: 'En Hayas te ayudamos a crear asistentes personalizados con inteligencia artificial para automatizar tu atención al cliente, captar leads y mejorar la experiencia digital de tu marca.',
+      button: 'Descubre cómo tener tu propio asistente inteligente',
+      imageAlt: 'Mockup del chatbot SofÍA de Hayas Marketing mostrando conversación de bienvenida y servicios disponibles'
+    },
+    reviews: {
+      title: '📍 Conectamos desde Madrid con marcas de todo el mundo',
+      subtitle: 'Nuestra oficina está en el corazón de Madrid, a pocos pasos de Madrid Río y La Latina. Desde aquí ayudamos a empresas de toda España a crecer con estrategias digitales auténticas.',
+      googleRating: '5.0 en Google',
+      verifiedReviews: 'Reseñas verificadas de Google Maps',
+      directions: 'Cómo llegar a la oficina',
+      bookOnline: '💻 Reservar reunión online',
+      seeAll: 'Ver todas las reseñas'
+    },
+    faq: {
+      title: 'Preguntas Frecuentes',
+      home: {
+        q1: '¿Qué diferencia a Hayas Marketing de otras agencias?',
+        a1: 'Nos especializamos en soluciones integrales que combinan estrategia, tecnología e inteligencia artificial. No solo creamos campañas, sino que implementamos sistemas completos de gestión comercial con CRM, automatizaciones y herramientas de IA como nuestro chatbot SofÍA.',
+        q2: '¿Trabajan con empresas B2B y B2C?',
+        a2: 'Sí, tenemos experiencia y soluciones específicas para ambos modelos. Para B2B utilizamos plataformas como HubSpot enfocadas en procesos de venta complejos, mientras que para B2C implementamos Go High Level optimizado para conversión rápida y gestión masiva de leads.',
+        q3: '¿Cuánto tiempo toma ver resultados?',
+        a3: 'Los primeros resultados en campañas publicitarias pueden verse en 2-4 semanas. Para SEO y estrategias de contenido, los resultados sólidos aparecen entre 3-6 meses. La implementación de CRM y automatizaciones genera eficiencias inmediatas desde el primer mes.',
+        q4: '¿Ofrecen servicios de forma individual o solo paquetes completos?',
+        a4: 'Ofrecemos tanto servicios individuales como soluciones integrales. Puedes contratar desde un servicio específico como creación de marca o SEO, hasta un plan completo de transformación digital con CRM, automatizaciones y estrategia de marketing.',
+        q5: '¿Qué incluye el soporte y mantenimiento?',
+        a5: 'Todos nuestros servicios incluyen soporte técnico, formación del equipo, actualizaciones regulares y reuniones de seguimiento. Para CRM y automatizaciones ofrecemos soporte prioritario y optimizaciones continuas basadas en el rendimiento.',
+        q6: '¿Pueden trabajar con nuestro equipo interno?',
+        a6: 'Absolutamente. Nos adaptamos a tu estructura organizacional. Podemos trabajar como departamento de marketing externo, colaborar con tu equipo interno existente, o proporcionar consultoría y formación para que gestionen las herramientas internamente.'
+      }
     }
   },
   en: {
@@ -1180,6 +1230,56 @@ export const translations = {
         solution: 'Solution',
         noIssues: 'No inconsistencies detected',
         loading: 'Analyzing routes...'
+      }
+    },
+    // Home page sections
+    servicesSection: {
+      title: 'Our Services',
+      subtitle: 'Discover the complete catalog of professional services we offer to grow your business strategically and sustainably.',
+      all: 'All services',
+      viewAll: 'View all services',
+      viewLess: 'View less',
+      viewService: 'View',
+      viewSelector: 'View selector',
+      gridView: 'Grid view',
+      listView: 'List view',
+      pillars: {
+        impulsa: 'Boost your brand',
+        conecta: 'Connect with your customers',
+        activa: 'Activate your Sales'
+      }
+    },
+    chatbot: {
+      title: 'AI Assistants that serve visitors and convert them into customers',
+      paragraph1: 'Imagine having an assistant like SofÍA that serves your current and potential customers, in a personalized way and in any language? We integrate it into your website and/or WhatsApp Business.',
+      paragraph2: 'At Hayas we help you create personalized AI assistants to automate your customer service, capture leads and improve your brand\'s digital experience.',
+      button: 'Discover how to get your own intelligent assistant',
+      imageAlt: 'Mockup of SofÍA chatbot from Hayas Marketing showing welcome conversation and available services'
+    },
+    reviews: {
+      title: '📍 Connecting from Madrid with brands worldwide',
+      subtitle: 'Our office is in the heart of Madrid, just steps from Madrid Río and La Latina. From here we help companies across Spain grow with authentic digital strategies.',
+      googleRating: '5.0 on Google',
+      verifiedReviews: 'Verified Google Maps Reviews',
+      directions: 'How to get to the office',
+      bookOnline: '💻 Book online meeting',
+      seeAll: 'See all reviews'
+    },
+    faq: {
+      title: 'Frequently Asked Questions',
+      home: {
+        q1: 'What makes Hayas Marketing different from other agencies?',
+        a1: 'We specialize in comprehensive solutions that combine strategy, technology, and artificial intelligence. We don\'t just create campaigns; we implement complete commercial management systems with CRM, automations, and AI tools like our chatbot SofÍA.',
+        q2: 'Do you work with B2B and B2C companies?',
+        a2: 'Yes, we have experience and specific solutions for both models. For B2B we use platforms like HubSpot focused on complex sales processes, while for B2C we implement Go High Level optimized for rapid conversion and massive lead management.',
+        q3: 'How long does it take to see results?',
+        a3: 'First results in advertising campaigns can be seen in 2-4 weeks. For SEO and content strategies, solid results appear between 3-6 months. CRM implementation and automations generate immediate efficiencies from the first month.',
+        q4: 'Do you offer individual services or only complete packages?',
+        a4: 'We offer both individual services and comprehensive solutions. You can hire anything from a specific service like brand creation or SEO, to a complete digital transformation plan with CRM, automations, and marketing strategy.',
+        q5: 'What does support and maintenance include?',
+        a5: 'All our services include technical support, team training, regular updates, and follow-up meetings. For CRM and automations we offer priority support and continuous optimizations based on performance.',
+        q6: 'Can you work with our internal team?',
+        a6: 'Absolutely. We adapt to your organizational structure. We can work as an external marketing department, collaborate with your existing internal team, or provide consulting and training so they can manage the tools internally.'
       }
     }
   }
