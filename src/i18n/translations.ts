@@ -607,6 +607,88 @@ export const translations = {
         activa: 'Activa tus Ventas'
       }
     },
+    serviceItems: {
+      brandCreation: {
+        title: 'Creación de Marca',
+        description: 'Identidad visual y branding completo para diferenciarte de la competencia.'
+      },
+      socialMediaManagement: {
+        title: 'Gestión de Redes Sociales',
+        description: 'Community management profesional que construye comunidad y engagement.'
+      },
+      socialMediaAds: {
+        title: 'Publicidad en Redes Sociales',
+        description: 'Campañas publicitarias rentables en Facebook, Instagram y LinkedIn.'
+      },
+      googleAds: {
+        title: 'Publicidad en Google Ads',
+        description: 'SEM y campañas en Google para generar leads cualificados.'
+      },
+      crmImplementation: {
+        title: 'Implantación CRM',
+        description: 'Setup completo de CRM personalizado para automatizar tu proceso comercial.'
+      },
+      aiAssistant: {
+        title: 'Asistente IA para Atención al Cliente',
+        description: 'Chatbots inteligentes 24/7 que mejoran la experiencia del cliente.'
+      },
+      webDesign: {
+        title: 'Diseño Web',
+        description: 'Webs que convierten visitantes en clientes con diseño profesional.'
+      },
+      seo: {
+        title: 'SEO y Posicionamiento',
+        description: 'Aparece primero en Google con nuestras estrategias de SEO.'
+      },
+      onlineStore: {
+        title: 'Creación Tienda Online',
+        description: 'E-commerce que vende 24/7 con integración completa de sistemas.'
+      },
+      directMarketing: {
+        title: 'Marketing Directo',
+        description: 'Campañas físicas (catálogos, invitaciones, merchandising) + email marketing.'
+      },
+      funnelImplementation: {
+        title: 'Implementación de Funnel',
+        description: 'Diseño, automatización y optimización de embudos de conversión.'
+      },
+      contentStrategy: {
+        title: 'Estrategia de contenidos',
+        description: 'Plan editorial y distribución multicanal para impulsar tu marca.'
+      },
+      emailMarketing: {
+        title: 'Email marketing y automatizaciones',
+        description: 'Workflows y personalización conectados a tu CRM.'
+      },
+      strategicConsulting: {
+        title: 'Consultoría estratégica y analítica',
+        description: 'Decisiones con datos y reporting fiable.'
+      },
+      aiIntegrations: {
+        title: 'Integraciones y optimización con IA',
+        description: 'Conecta sistemas y automatiza procesos.'
+      },
+      contentLocalization: {
+        title: 'Localización de contenidos',
+        description: 'Adapta tu comunicación a cada mercado: idioma, cultura y SEO.'
+      },
+      inboundCampaigns: {
+        title: 'Campañas Inbound Marketing',
+        description: 'Contenido premium + automatización para atraer y convertir.'
+      },
+      leadCapture: {
+        title: 'Captación de Leads y Clientes',
+        description: 'Estrategias multicanal para atraer leads cualificados y convertirlos en clientes.'
+      },
+      salesAutomation: {
+        title: 'Automatización de procesos de ventas',
+        description: 'Automatiza tu pipeline, lead scoring y atribución para acelerar el crecimiento.'
+      },
+      crmAdministration: {
+        title: 'Administración CRM y gestión de Marketing',
+        description: 'Gestión completa de tu sistema CRM y estrategias de marketing para máximo rendimiento.'
+      }
+    },
     chatbot: {
       title: 'Asistentes IA que atienden y convierten visitas en clientes',
       paragraph1: '¿Te imaginas tener un asistente como SofÍA que atienda a tus clientes actuales y potenciales, de forma personalizada y en cualquier idioma? Lo integramos en tu sitio web y/o en tu WhatsApp Business?',
@@ -1247,6 +1329,88 @@ export const translations = {
         impulsa: 'Boost your brand',
         conecta: 'Connect with your customers',
         activa: 'Activate your Sales'
+      }
+    },
+    serviceItems: {
+      brandCreation: {
+        title: 'Brand Creation',
+        description: 'Complete visual identity and branding to differentiate you from the competition.'
+      },
+      socialMediaManagement: {
+        title: 'Social Media Management',
+        description: 'Professional community management that builds community and engagement.'
+      },
+      socialMediaAds: {
+        title: 'Social Media Advertising',
+        description: 'Profitable advertising campaigns on Facebook, Instagram, and LinkedIn.'
+      },
+      googleAds: {
+        title: 'Google Ads Advertising',
+        description: 'SEM and Google campaigns to generate qualified leads.'
+      },
+      crmImplementation: {
+        title: 'CRM Implementation',
+        description: 'Complete customized CRM setup to automate your sales process.'
+      },
+      aiAssistant: {
+        title: 'AI Assistant for Customer Service',
+        description: '24/7 intelligent chatbots that improve customer experience.'
+      },
+      webDesign: {
+        title: 'Web Design',
+        description: 'Websites that convert visitors into customers with professional design.'
+      },
+      seo: {
+        title: 'SEO & Positioning',
+        description: 'Appear first on Google with our SEO strategies.'
+      },
+      onlineStore: {
+        title: 'Online Store Creation',
+        description: 'E-commerce that sells 24/7 with complete system integration.'
+      },
+      directMarketing: {
+        title: 'Direct Marketing',
+        description: 'Physical campaigns (catalogs, invitations, merchandising) + email marketing.'
+      },
+      funnelImplementation: {
+        title: 'Funnel Implementation',
+        description: 'Design, automation and optimization of conversion funnels.'
+      },
+      contentStrategy: {
+        title: 'Content Strategy',
+        description: 'Editorial plan and multichannel distribution to boost your brand.'
+      },
+      emailMarketing: {
+        title: 'Email Marketing & Automation',
+        description: 'Workflows and personalization connected to your CRM.'
+      },
+      strategicConsulting: {
+        title: 'Strategic Consulting & Analytics',
+        description: 'Data-driven decisions and reliable reporting.'
+      },
+      aiIntegrations: {
+        title: 'AI Integrations & Optimization',
+        description: 'Connect systems and automate processes.'
+      },
+      contentLocalization: {
+        title: 'Content Localization',
+        description: 'Adapt your communication to each market: language, culture and SEO.'
+      },
+      inboundCampaigns: {
+        title: 'Inbound Marketing Campaigns',
+        description: 'Premium content + automation to attract and convert.'
+      },
+      leadCapture: {
+        title: 'Lead & Customer Acquisition',
+        description: 'Multichannel strategies to attract qualified leads and convert them into customers.'
+      },
+      salesAutomation: {
+        title: 'Sales Process Automation',
+        description: 'Automate your pipeline, lead scoring and attribution to accelerate growth.'
+      },
+      crmAdministration: {
+        title: 'CRM Administration & Marketing Management',
+        description: 'Complete management of your CRM system and marketing strategies for maximum performance.'
       }
     },
     chatbot: {

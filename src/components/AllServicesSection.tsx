@@ -1,26 +1,23 @@
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
-import { servicesByPillar, pillarMeta, PillarKey } from '@/data/services';
+import { useServices, PillarKey } from '@/hooks/useServices';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Grid, List } from 'lucide-react';
 import { useTranslation } from '@/hooks/useTranslation';
-import { useLanguageNavigation } from '@/hooks/useLanguageNavigation';
 
 const AllServicesSection = () => {
-  const { t, language } = useTranslation();
-  const { getLocalizedPath } = useLanguageNavigation();
+  const { t } = useTranslation();
+  const { services, servicesByPillar } = useServices();
   const [active, setActive] = useState<'all' | PillarKey>('all');
   const [expanded, setExpanded] = useState(false);
   const [view, setView] = useState<'grid' | 'list'>('grid');
   
-  // Recalcular siempre para reflejar cambios en la arquitectura sin depender de memoization del bundler
-  const all = Object.values(servicesByPillar).flat();
-  const filtered = active === 'all' ? all : servicesByPillar[active] ?? [];
+  const filtered = active === 'all' ? services : servicesByPillar[active] ?? [];
 
   // Normaliza strings para búsquedas por slug/título (quita tildes y minúsculas)
   const normalize = (s: string) => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-  // Palabras clave para los 6 servicios iniciales: diseño web, implantación CRM, creación de marca, asistente IA, SEO y localización de contenidos
+  // Palabras clave para los 6 servicios iniciales
   const preferredMatchers = ['diseno-web', 'implantacion-crm', 'creacion-marca', 'asistente-ia', 'seo', 'localizacion'];
   const isPreferred = (title: string, href: string) => {
     const t = normalize(title);
@@ -28,7 +25,6 @@ const AllServicesSection = () => {
     return preferredMatchers.some(m => h.includes(m) || t.includes(m));
   };
 
-  // Pillar titles based on language
   const pillarTitles = {
     impulsa: t('servicesSection.pillars.impulsa'),
     conecta: t('servicesSection.pillars.conecta'),
@@ -73,7 +69,7 @@ const AllServicesSection = () => {
           </Button>
         </div>
 
-        {/* Lista/Cuadrícula de servicios - todo el contenido está en el DOM para SEO */}
+        {/* Lista/Cuadrícula de servicios */}
         <div className={`grid ${view === 'grid' ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8' : 'grid-cols-1 gap-6'} animate-fade-in`}>
           {filtered.map((service, idx) => {
             const initiallyVisible = active === 'all' ? isPreferred(service.title, service.href) : idx < 6;
