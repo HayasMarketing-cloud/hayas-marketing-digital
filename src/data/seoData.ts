@@ -516,7 +516,7 @@ export const seoData: Record<string, EnhancedPageSEOData> = {
     faqs: [
       {
         question: "¿Qué diferencia a Hayas Marketing de otras agencias?",
-        answer: "Nos especializamos en soluciones integrales que combinan estrategia, tecnología e inteligencia artificial. No solo creamos campañas, sino que implementamos sistemas completos de gestión comercial con CRM, automatizaciones y herramientas de IA como nuestro chatbot SofÍA."
+        answer: "No trabajamos desde un catálogo de servicios ni desde herramientas concretas. Nuestro enfoque parte de entender el momento del negocio, ordenar el marketing y definir qué decisiones tienen más impacto antes de ejecutar. Mientras muchas agencias se centran en campañas o acciones aisladas, en Hayas trabajamos el marketing como un sistema: conectando estrategia, ejecución y tecnología con criterio para que el crecimiento sea sostenible y gobernable. Eso nos permite adaptarnos a cada empresa, reducir la complejidad y ayudar a tomar mejores decisiones a largo plazo."
       },
       {
         question: "¿Trabajan con empresas B2B y B2C?",
