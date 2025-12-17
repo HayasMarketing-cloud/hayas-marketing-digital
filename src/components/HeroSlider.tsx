@@ -85,9 +85,9 @@ const slides: Slide[] = [
     badgeEs: 'Marketing + IA',
     badgeEn: 'Marketing + AI',
     ctaEs: 'Descubre nuestro método',
-    ctaEn: 'Discover our method',
+    ctaEn: undefined,
     hrefEs: '/es#metodologia',
-    hrefEn: '/en#metodologia',
+    hrefEn: undefined,
     gradient: 'from-background via-background to-primary/5',
   },
 ];
