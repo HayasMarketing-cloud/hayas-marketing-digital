@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
-import HeroSection from '@/components/HeroSection';
+import HeroSlider from '@/components/HeroSlider';
 import SolutionsSection from '@/components/SolutionsSection';
 import AllServicesSection from '@/components/AllServicesSection';
 import ChatbotPromoSection from '@/components/ChatbotPromoSection';
@@ -96,7 +96,7 @@ const IndexEN = () => {
       <Navigation />
       
       <main className="flex-grow mt-4 md:mt-6" role="main">
-        <HeroSection />
+        <HeroSlider />
         <SolutionsSection />
         
         {/* No MethodologySection for English version */}
