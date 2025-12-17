@@ -711,7 +711,7 @@ export const translations = {
         q1: '¿Qué diferencia a Hayas Marketing de otras agencias?',
         a1: 'Nos especializamos en soluciones integrales que combinan estrategia, tecnología e inteligencia artificial. No solo creamos campañas, sino que implementamos sistemas completos de gestión comercial con CRM, automatizaciones y herramientas de IA como nuestro chatbot SofÍA.',
         q2: '¿Trabajan con empresas B2B y B2C?',
-        a2: 'Sí, tenemos experiencia y soluciones específicas para ambos modelos. Para B2B utilizamos plataformas como HubSpot enfocadas en procesos de venta complejos, mientras que para B2C implementamos Go High Level optimizado para conversión rápida y gestión masiva de leads.',
+        a2: 'Sí. Trabajamos tanto con empresas B2B como B2C, adaptando siempre el enfoque al tipo de negocio, al proceso de decisión y al momento en el que se encuentra la empresa.\n\nEn B2B solemos trabajar con ciclos de venta más largos y procesos complejos, donde la estrategia, el contenido y la gestión de clientes son clave.\nEn B2C, el foco suele estar en la captación, la conversión y la eficiencia operativa.\n\nEn ambos casos, no aplicamos soluciones estándar: analizamos primero la situación y definimos el sistema más adecuado antes de elegir herramientas o plataformas.',
         q3: '¿Cuánto tiempo toma ver resultados?',
         a3: 'Los primeros resultados en campañas publicitarias pueden verse en 2-4 semanas. Para SEO y estrategias de contenido, los resultados sólidos aparecen entre 3-6 meses. La implementación de CRM y automatizaciones genera eficiencias inmediatas desde el primer mes.',
         q4: '¿Ofrecen servicios de forma individual o solo paquetes completos?',

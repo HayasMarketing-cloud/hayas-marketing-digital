@@ -520,7 +520,7 @@ export const seoData: Record<string, EnhancedPageSEOData> = {
       },
       {
         question: "¿Trabajan con empresas B2B y B2C?",
-        answer: "Sí, tenemos experiencia y soluciones específicas para ambos modelos. Para B2B utilizamos plataformas como HubSpot enfocadas en procesos de venta complejos, mientras que para B2C implementamos Go High Level optimizado para conversión rápida y gestión masiva de leads."
+        answer: "Sí. Trabajamos tanto con empresas B2B como B2C, adaptando siempre el enfoque al tipo de negocio, al proceso de decisión y al momento en el que se encuentra la empresa. En B2B solemos trabajar con ciclos de venta más largos y procesos complejos, donde la estrategia, el contenido y la gestión de clientes son clave. En B2C, el foco suele estar en la captación, la conversión y la eficiencia operativa. En ambos casos, no aplicamos soluciones estándar: analizamos primero la situación y definimos el sistema más adecuado antes de elegir herramientas o plataformas."
       },
       {
         question: "¿Cuánto tiempo toma ver resultados?",
