@@ -32,7 +32,7 @@ const allPosts: Post[] = [
     image: "/chatbots-web-hero.jpg",
     category: "Automatización",
     readTime: "10 min",
-    date: "2025-01-22",
+    date: "2025-11-18",
     tags: ["integraciones-ia-procesos", "implantacion-crm", "automatizacion-procesos-ventas", "asistente-ia"]
   },
   {

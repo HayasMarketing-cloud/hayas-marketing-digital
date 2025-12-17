@@ -43,7 +43,7 @@ const Blog = () => {
       excerpt: 'Plugins WordPress, soluciones a medida, SaaS y CRM integrado: analiza cuál es el chatbot ideal para tu estrategia de marketing y ventas.',
       category: 'Automatización',
       readTime: '10 min',
-      date: '22 Ene 2025',
+      date: '18 Nov 2025',
       image: chatbotsWebHero,
       slug: '/es/blog/chatbots-para-paginas-web',
       tags: ['Chatbots', 'Automatización', 'CRM', 'IA', 'WordPress', 'GoHighLevel'],
