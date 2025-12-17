@@ -137,11 +137,12 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 			},
-			fontFamily: {
-				sans: ['Helvetica', 'Arial', 'sans-serif'],
-				helvetica: ['Helvetica', 'Arial', 'sans-serif'],
-				arimo: ['Arimo', 'sans-serif'],
-			},
+		fontFamily: {
+			sans: ['Inter', 'Helvetica', 'Arial', 'sans-serif'],
+			inter: ['Inter', 'sans-serif'],
+			helvetica: ['Helvetica', 'Arial', 'sans-serif'],
+			arimo: ['Arimo', 'sans-serif'],
+		},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
