@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
-import HeroSection from '@/components/HeroSection';
+import HeroSlider from '@/components/HeroSlider';
 import SolutionsSection from '@/components/SolutionsSection';
 import ServicesSection from '@/components/ServicesSection';
 import AllServicesSection from '@/components/AllServicesSection';
@@ -99,7 +99,7 @@ const Index = () => {
       <Navigation />
       
       <main className="flex-grow mt-4 md:mt-6" role="main">
-        <HeroSection />
+        <HeroSlider />
         <SolutionsSection />
         
         
