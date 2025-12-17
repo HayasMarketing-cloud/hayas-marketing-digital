@@ -42,7 +42,7 @@ export const SlideLayoutCentered: React.FC<SlideLayoutCenteredProps> = ({
         </HeadingComponent>
         
         {subtitle && (
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl lg:text-2xl text-foreground/80 mb-8 max-w-2xl mx-auto leading-relaxed font-light tracking-wide animate-fade-in">
             {subtitle}
           </p>
         )}
