@@ -92,6 +92,7 @@ export const BlogFunnelConversionB2B = lazy(() => import("@/pages/BlogFunnelConv
 export const BlogEmailMarketingHubSpot = lazy(() => import("@/pages/BlogEmailMarketingHubSpot"));
 export const BlogConfiguracionEmailMarketingCumplimiento = lazy(() => import("@/pages/BlogConfiguracionEmailMarketingCumplimiento"));
 export const BlogMarketingGlobalInternacionalizacion = lazy(() => import("@/pages/BlogMarketingGlobalInternacionalizacion"));
+export const BlogChatbotsParaPaginasWeb = lazy(() => import("@/pages/BlogChatbotsParaPaginasWeb"));
 
 // Casos de éxito (lazy loading)
 export const CasosExito = lazy(() => import("@/pages/CasosExito"));

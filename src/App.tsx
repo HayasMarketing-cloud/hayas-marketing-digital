@@ -399,6 +399,7 @@ const App = () => (
         <Route path="/es/blog/funnel-conversion-b2B" element={<PageSuspense><Pages.BlogFunnelConversionB2B /></PageSuspense>} />
         <Route path="/es/blog/marketing-global-internacionalizacion" element={<PageSuspense><Pages.BlogMarketingGlobalInternacionalizacion /></PageSuspense>} />
           <Route path="/es/blog/kit-digital-marketing-guia-completa-2025" element={<PageSuspense><Pages.BlogKitDigitalMarketing /></PageSuspense>} />
+          <Route path="/es/blog/chatbots-para-paginas-web" element={<PageSuspense><Pages.BlogChatbotsParaPaginasWeb /></PageSuspense>} />
            <Route path="/es/blog/:id" element={<PageSuspense><Pages.BlogPost /></PageSuspense>} />
           
           {/* COMPARATIVAS */}
