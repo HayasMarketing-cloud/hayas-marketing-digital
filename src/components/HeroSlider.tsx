@@ -1,6 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
-import useEmblaCarousel from 'embla-carousel-react';
-import Autoplay from 'embla-carousel-autoplay';
+import React from 'react';
 import { useLanguageNavigation } from '@/hooks/useLanguageNavigation';
 import { DynamicH1 } from '@/components/DynamicH1';
 import {
@@ -73,15 +71,15 @@ interface VideoSlide extends BaseSlide {
 
 type Slide = CenteredSlide | FullImageSlide | SplitSlide | VideoSlide;
 
-// Slides Configuration
+// Slides Configuration - Solo primer slide activo
 const slides: Slide[] = [
   {
     id: 'main',
     type: 'centered',
     isH1: true,
     useDynamicH1: true,
-    titleEs: 'Agencia de Marketing Digital en Valencia',
-    titleEn: 'Digital Marketing Agency in Valencia',
+    titleEs: 'Agencia de Marketing Digital en Madrid',
+    titleEn: 'Digital Marketing Agency in Madrid',
     subtitleEs: 'Soluciones estratégicas de marketing digital potenciadas con inteligencia artificial para hacer crecer tu negocio',
     subtitleEn: 'Strategic digital marketing solutions powered by artificial intelligence to grow your business',
     badgeEs: 'Marketing + IA',
@@ -91,56 +89,6 @@ const slides: Slide[] = [
     hrefEs: '/es#metodologia',
     hrefEn: '/en#metodologia',
     gradient: 'from-background via-background to-primary/5',
-  },
-  {
-    id: 'branding',
-    type: 'fullImage',
-    image: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=1920&q=80',
-    overlayMessageEs: 'Creamos marcas que conectan y permanecen',
-    overlayMessageEn: 'We create brands that connect and last',
-    messagePosition: 'center',
-    overlayOpacity: 0.5,
-  },
-  {
-    id: 'impulsa',
-    type: 'split',
-    titleEs: 'Impulsa tu visibilidad digital',
-    titleEn: 'Boost your digital visibility',
-    subtitleEs: 'SEO, contenidos y estrategias de posicionamiento que te hacen destacar frente a tu competencia',
-    subtitleEn: 'SEO, content and positioning strategies that make you stand out from your competition',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
-    imageAltEs: 'Análisis de marketing digital',
-    imageAltEn: 'Digital marketing analysis',
-    ctaEs: 'Ver soluciones',
-    ctaEn: 'View solutions',
-    hrefEs: '/es/soluciones/marketing-visibilidad',
-    hrefEn: '/en/solutions/marketing-visibility',
-    imagePosition: 'right',
-  },
-  {
-    id: 'conecta',
-    type: 'split',
-    titleEs: 'Conecta y convierte con CRM',
-    titleEn: 'Connect and convert with CRM',
-    subtitleEs: 'Automatiza tu captación de clientes y multiplica tus conversiones con sistemas inteligentes',
-    subtitleEn: 'Automate your customer acquisition and multiply conversions with smart systems',
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80',
-    imageAltEs: 'Equipo trabajando en CRM',
-    imageAltEn: 'Team working on CRM',
-    ctaEs: 'Descubrir CRM',
-    ctaEn: 'Discover CRM',
-    hrefEs: '/es/soluciones/gestion-clientes',
-    hrefEn: '/en/solutions/customer-management',
-    imagePosition: 'left',
-  },
-  {
-    id: 'ia',
-    type: 'video',
-    posterImage: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1920&q=80',
-    titleEs: 'Inteligencia Artificial aplicada a tu negocio',
-    titleEn: 'Artificial Intelligence applied to your business',
-    subtitleEs: 'Chatbots, automatización y análisis predictivo',
-    subtitleEn: 'Chatbots, automation and predictive analytics',
   },
 ];
 
@@ -172,77 +120,8 @@ const SlideHeading: React.FC<{
 // Main Component
 export const HeroSlider: React.FC = () => {
   const { isEnglish } = useLanguageNavigation();
-  const [selectedIndex, setSelectedIndex] = useState(0);
 
-  const autoplayPlugin = React.useMemo(
-    () =>
-      Autoplay({
-        delay: 6000,
-        stopOnInteraction: true,
-        stopOnMouseEnter: true,
-      }),
-    []
-  );
-
-  const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: true, skipSnaps: false },
-    [autoplayPlugin]
-  );
-
-  const onSelect = useCallback(() => {
-    if (!emblaApi) return;
-    setSelectedIndex(emblaApi.selectedScrollSnap());
-  }, [emblaApi]);
-
-  const scrollTo = useCallback(
-    (index: number) => {
-      if (!emblaApi) return;
-      emblaApi.scrollTo(index);
-    },
-    [emblaApi]
-  );
-
-  useEffect(() => {
-    if (!emblaApi) return;
-    onSelect();
-    emblaApi.on('select', onSelect);
-    emblaApi.on('reInit', onSelect);
-    return () => {
-      emblaApi.off('select', onSelect);
-    };
-  }, [emblaApi, onSelect]);
-
-  // Preload next slide image
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      const nextIndex = (selectedIndex + 1) % slides.length;
-      const nextSlide = slides[nextIndex];
-      let imageUrl = '';
-
-      if (nextSlide.type === 'fullImage') {
-        imageUrl = nextSlide.image;
-      } else if (nextSlide.type === 'split') {
-        imageUrl = nextSlide.image;
-      } else if (nextSlide.type === 'video') {
-        imageUrl = nextSlide.posterImage;
-      }
-
-      if (imageUrl) {
-        const link = document.createElement('link');
-        link.rel = 'preload';
-        link.as = 'image';
-        link.href = imageUrl;
-        document.head.appendChild(link);
-      }
-    }, 2000);
-
-    return () => clearTimeout(timeout);
-  }, [selectedIndex]);
-
-  const renderSlide = (slide: Slide, index: number) => {
-    const isFirst = index === 0;
-    const isActive = index === selectedIndex;
-
+  const renderSlide = (slide: Slide) => {
     const HeadingComponent: React.FC<{ className?: string; children: React.ReactNode }> = ({
       className,
       children,
@@ -273,7 +152,7 @@ export const HeroSlider: React.FC = () => {
             overlayMessage={isEnglish ? slide.overlayMessageEn : slide.overlayMessageEs}
             messagePosition={slide.messagePosition}
             overlayOpacity={slide.overlayOpacity}
-            priority={isFirst}
+            priority={true}
           />
         );
 
@@ -288,7 +167,7 @@ export const HeroSlider: React.FC = () => {
             href={isEnglish ? slide.hrefEn : slide.hrefEs}
             gradient={slide.gradient}
             imagePosition={slide.imagePosition}
-            priority={isFirst}
+            priority={true}
             HeadingComponent={HeadingComponent}
           />
         );
@@ -300,8 +179,8 @@ export const HeroSlider: React.FC = () => {
             posterImage={slide.posterImage}
             title={isEnglish ? slide.titleEn : slide.titleEs}
             subtitle={isEnglish ? slide.subtitleEn : slide.subtitleEs}
-            isActive={isActive}
-            priority={isFirst}
+            isActive={true}
+            priority={true}
           />
         );
 
@@ -312,38 +191,24 @@ export const HeroSlider: React.FC = () => {
 
   return (
     <section className="relative" aria-label="Hero slider">
-      <div className="overflow-hidden" ref={emblaRef}>
-        <div className="flex">
+      {slides.map((slide) => (
+        <div key={slide.id}>
+          {renderSlide(slide)}
+        </div>
+      ))}
+
+      {/* Dots Navigation - Solo visible con múltiples slides */}
+      {slides.length > 1 && (
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
           {slides.map((slide, index) => (
-            <div
+            <button
               key={slide.id}
-              className="flex-[0_0_100%] min-w-0"
-              style={{
-                contentVisibility: index === selectedIndex ? 'visible' : 'auto',
-              }}
-            >
-              {renderSlide(slide, index)}
-            </div>
+              className="w-3 h-3 rounded-full bg-primary"
+              aria-label={`Go to slide ${index + 1}`}
+            />
           ))}
         </div>
-      </div>
-
-      {/* Dots Navigation */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
-        {slides.map((slide, index) => (
-          <button
-            key={slide.id}
-            onClick={() => scrollTo(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              index === selectedIndex
-                ? 'bg-primary w-8'
-                : 'bg-foreground/30 hover:bg-foreground/50'
-            }`}
-            aria-label={`Go to slide ${index + 1}`}
-            aria-current={index === selectedIndex ? 'true' : undefined}
-          />
-        ))}
-      </div>
+      )}
     </section>
   );
 };
