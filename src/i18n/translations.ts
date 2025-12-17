@@ -721,6 +721,32 @@ export const translations = {
         q6: '¿Pueden trabajar con nuestro equipo interno?',
         a6: 'Absolutamente. Nos adaptamos a tu estructura organizacional. Podemos trabajar como departamento de marketing externo, colaborar con tu equipo interno existente, o proporcionar consultoría y formación para que gestionen las herramientas internamente.'
       }
+    },
+    marketingChanged: {
+      title: 'El marketing ',
+      titleHighlight: 'ha cambiado.',
+      titleEnd: 'Cómo se gestiona también.',
+      intro: {
+        p1: 'Hoy las empresas cuentan con más canales, más datos y más herramientas que nunca.',
+        p2: 'Pero eso no siempre se traduce en mejores decisiones ni en crecimiento sostenible.',
+        p3: 'A menudo el marketing deja de ser un apoyo claro al negocio y pasa a sentirse fragmentado, difícil de priorizar y costoso de mantener.'
+      },
+      transition: 'En ese punto, las empresas suelen estar en uno —o varios— de estos momentos:',
+      moments: {
+        base: {
+          title: 'Cuando la base no acompaña',
+          description: 'La marca, la web o los contenidos existen, pero no reflejan bien el valor real del negocio ni ayudan a diferenciarse.'
+        },
+        vision: {
+          title: 'Cuando hay actividad, pero falta visión y control',
+          description: 'Hay contactos, datos y oportunidades, pero cuesta entender qué funciona, qué priorizar o dónde se pierden oportunidades.'
+        },
+        growth: {
+          title: 'Cuando el negocio quiere crecer sin añadir complejidad',
+          description: 'Crecer exige cada vez más coordinación y decisiones, sin que siempre haya un sistema claro detrás.'
+        }
+      },
+      closing: 'Cada uno de estos momentos requiere un enfoque distinto, pero todos comparten una misma necesidad: ordenar, priorizar y convertir el esfuerzo en resultados reales.'
     }
   },
   en: {
@@ -1445,6 +1471,32 @@ export const translations = {
         q6: 'Can you work with our internal team?',
         a6: 'Absolutely. We adapt to your organizational structure. We can work as an external marketing department, collaborate with your existing internal team, or provide consulting and training so they can manage the tools internally.'
       }
+    },
+    marketingChanged: {
+      title: 'Marketing ',
+      titleHighlight: 'has changed.',
+      titleEnd: 'The way it\'s managed should too.',
+      intro: {
+        p1: 'Today, businesses have more channels, more data, and more tools than ever.',
+        p2: 'But that doesn\'t always translate into better decisions or sustainable growth.',
+        p3: 'Often, marketing stops being a clear support for the business and starts feeling fragmented, hard to prioritize, and costly to maintain.'
+      },
+      transition: 'At that point, businesses typically find themselves in one—or several—of these moments:',
+      moments: {
+        base: {
+          title: 'When the foundation doesn\'t support growth',
+          description: 'The brand, website, or content exists, but doesn\'t reflect the real value of the business or help differentiate it.'
+        },
+        vision: {
+          title: 'When there\'s activity, but no vision or control',
+          description: 'There are contacts, data, and opportunities, but it\'s hard to understand what works, what to prioritize, or where opportunities are being lost.'
+        },
+        growth: {
+          title: 'When the business wants to grow without adding complexity',
+          description: 'Growth demands more coordination and decisions, without always having a clear system behind it.'
+        }
+      },
+      closing: 'Each of these moments requires a different approach, but they all share the same need: to organize, prioritize, and turn effort into real results.'
     }
   }
 };

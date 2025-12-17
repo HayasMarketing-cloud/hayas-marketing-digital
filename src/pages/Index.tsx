@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import HeroSlider from '@/components/HeroSlider';
+import MarketingChangedSection from '@/components/MarketingChangedSection';
 import SolutionsSection from '@/components/SolutionsSection';
 import ServicesSection from '@/components/ServicesSection';
 import AllServicesSection from '@/components/AllServicesSection';
@@ -100,6 +101,7 @@ const Index = () => {
       
       <main className="flex-grow mt-4 md:mt-6" role="main">
         <HeroSlider />
+        <MarketingChangedSection />
         <SolutionsSection />
         
         
