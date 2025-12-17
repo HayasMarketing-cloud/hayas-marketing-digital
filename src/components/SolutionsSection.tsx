@@ -18,7 +18,7 @@ const SolutionsSection = () => {
       title: t('solutions.impulsa.title'),
       description: t('solutions.impulsa.description'),
       includes: t('solutions.impulsa.includes'),
-      href: `/${language}/soluciones/impulsa-tu-marca`
+      href: language === 'en' ? '/en/solutions/boost-your-brand' : '/es/soluciones/impulsa-tu-marca'
     },
     {
       id: 2,
@@ -26,7 +26,7 @@ const SolutionsSection = () => {
       title: t('solutions.conecta.title'),
       description: t('solutions.conecta.description'),
       includes: t('solutions.conecta.includes'),
-      href: `/${language}/soluciones/conecta-con-tus-clientes`
+      href: language === 'en' ? '/en/solutions/connect-with-customers' : '/es/soluciones/conecta-con-tus-clientes'
     },
     {
       id: 3,
@@ -34,7 +34,7 @@ const SolutionsSection = () => {
       title: t('solutions.activa.title'),
       description: t('solutions.activa.description'),
       includes: t('solutions.activa.includes'),
-      href: `/${language}/soluciones/activa-tus-ventas`
+      href: language === 'en' ? '/en/solutions/activate-sales' : '/es/soluciones/activa-tus-ventas'
     }
   ];
 

@@ -18,8 +18,15 @@ const AllServicesSection = () => {
 
   // Normaliza strings para búsquedas por slug/título (quita tildes y minúsculas)
   const normalize = (s: string) => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-  // Palabras clave para los 6 servicios iniciales
-  const preferredMatchers = ['diseno-web', 'implantacion-crm', 'creacion-marca', 'asistente-ia', 'seo', 'localizacion'];
+  // Palabras clave para los 6 servicios iniciales (ES y EN)
+  const preferredMatchers = [
+    'diseno-web', 'web-design',
+    'implantacion-crm', 'crm-implementation',
+    'creacion-marca', 'brand-creation',
+    'asistente-ia', 'ai-assistant',
+    'seo', 'seo-positioning',
+    'localizacion', 'localization'
+  ];
   const isPreferred = (title: string, href: string) => {
     const t = normalize(title);
     const h = normalize(href);

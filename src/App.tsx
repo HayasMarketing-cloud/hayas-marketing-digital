@@ -532,6 +532,9 @@ const App = () => (
           <Route path="/en/solutions/marketing-automation" element={<PageSuspense><Pages.AutomatizacionMarketing /></PageSuspense>} />
           <Route path="/en/solutions/crm-client-management" element={<PageSuspense><Pages.GestionClientesCRM /></PageSuspense>} />
           
+          {/* SERVICES - Main page */}
+          <Route path="/en/services" element={<PageSuspense><Pages.Servicios /></PageSuspense>} />
+          
           {/* SERVICES - Core Services */}
           <Route path="/en/services/online-store" element={<PageSuspense><Pages.TiendaOnline /></PageSuspense>} />
           <Route path="/en/services/web-design" element={<PageSuspense><Pages.DisenoWeb /></PageSuspense>} />
@@ -554,6 +557,7 @@ const App = () => (
           <Route path="/en/services/crm-administration" element={<PageSuspense><Pages.AdministracionCrm /></PageSuspense>} />
           <Route path="/en/services/sales-process-automation" element={<PageSuspense><Pages.AutomatizacionProcesosVentas /></PageSuspense>} />
           <Route path="/en/services/lead-generation-clients" element={<PageSuspense><Pages.CaptacionLeadsClientes /></PageSuspense>} />
+          <Route path="/en/services/funnel-implementation" element={<PageSuspense><Pages.ImplementacionFunnel /></PageSuspense>} />
           
           {/* KIT DIGITAL (English version - keep Spanish name as it's a Spanish government program) */}
           <Route path="/en/kit-digital" element={<PageSuspense><Pages.KitDigital /></PageSuspense>} />
