@@ -1,9 +1,13 @@
 import React from 'react';
 import { Rocket, Heart, TrendingUp } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useTranslation } from '@/hooks/useTranslation';
+import { useLanguageNavigation } from '@/hooks/useLanguageNavigation';
+import { Button } from '@/components/ui/button';
 
 const MarketingChangedSection = () => {
   const { t } = useTranslation();
+  const { isEnglish } = useLanguageNavigation();
 
   const moments = [
     {
@@ -12,6 +16,9 @@ const MarketingChangedSection = () => {
       borderColor: 'border-impulsa/30',
       iconColor: 'text-impulsa',
       bgHover: 'hover:bg-impulsa/5',
+      buttonVariant: 'impulsa' as const,
+      solutionKey: 'impulsa',
+      link: isEnglish ? '/en/solutions/boost-your-brand' : '/es/soluciones/impulsa-tu-marca',
     },
     {
       key: 'vision',
@@ -19,6 +26,9 @@ const MarketingChangedSection = () => {
       borderColor: 'border-conecta/30',
       iconColor: 'text-conecta',
       bgHover: 'hover:bg-conecta/5',
+      buttonVariant: 'conecta' as const,
+      solutionKey: 'conecta',
+      link: isEnglish ? '/en/solutions/connect-with-customers' : '/es/soluciones/conecta-con-tus-clientes',
     },
     {
       key: 'growth',
@@ -26,6 +36,9 @@ const MarketingChangedSection = () => {
       borderColor: 'border-activa/30',
       iconColor: 'text-activa',
       bgHover: 'hover:bg-activa/5',
+      buttonVariant: 'activa' as const,
+      solutionKey: 'activa',
+      link: isEnglish ? '/en/solutions/activate-your-sales' : '/es/soluciones/activa-tus-ventas',
     },
   ];
 
@@ -83,9 +96,19 @@ const MarketingChangedSection = () => {
                 <h3 className="text-lg font-semibold text-foreground mb-3">
                   {t(`marketingChanged.moments.${moment.key}.title`)}
                 </h3>
-                <p className="text-elegant-muted text-sm leading-relaxed">
+                <p className="text-elegant-muted text-sm leading-relaxed mb-4">
                   {t(`marketingChanged.moments.${moment.key}.description`)}
                 </p>
+                <Button
+                  variant={moment.buttonVariant}
+                  size="sm"
+                  asChild
+                  className="w-full mt-auto"
+                >
+                  <Link to={moment.link}>
+                    {t(`solutions.${moment.solutionKey}.title`)}
+                  </Link>
+                </Button>
               </div>
             );
           })}
