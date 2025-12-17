@@ -5,7 +5,9 @@ import { useIsMobile } from '@/hooks/use-mobile';
 
 const getPageMessage = (pathname: string) => {
   const messages: { [key: string]: string } = {
+    // Spanish pages
     '/': '¡Hola! Soy SofÍA, tu asistente de IA de Hayas Marketing. ¿En qué puedo ayudarte hoy?',
+    '/es': '¡Hola! Soy SofÍA, tu asistente de IA de Hayas Marketing. ¿En qué puedo ayudarte hoy?',
     '/creacion-marca': '¡Hola! ¿Dudas sobre creación de marca? Estoy aquí para ayudarte con identidad corporativa, branding y posicionamiento.',
     '/marketing-visibilidad': '¡Hola! ¿Necesitas mejorar tu visibilidad online? Te ayudo con SEO, contenidos y estrategias de marketing.',
     '/crm-automatizaciones': '¡Hola! ¿Preguntas sobre CRM y automatización? Te explico cómo optimizar tus procesos de ventas y marketing.',
@@ -14,15 +16,32 @@ const getPageMessage = (pathname: string) => {
     '/soluciones-ia': '¡Hola! ¿Interesado en IA para marketing? Te explico cómo implementar chatbots, automatización inteligente y más.',
     '/servicios/implantacion-crm': '¡Hola! ¿Necesitas ayuda con la implantación de CRM? Te guío en el proceso de configuración y optimización.',
     '/es/agendar-reunion': '¡Hola! Perfecto que quieras agendar una reunión. Te ayudo con cualquier duda sobre nuestros servicios o el proceso de consultoría.',
-    '/es/contacto': '¡Hola! ¿Necesitas contactar con nosotros? Te ayudo con cualquier consulta sobre nuestros servicios o el proceso de trabajo.'
+    '/es/contacto': '¡Hola! ¿Necesitas contactar con nosotros? Te ayudo con cualquier consulta sobre nuestros servicios o el proceso de trabajo.',
+    '/es/soluciones/impulsa-tu-marca': '¡Hola! ¿Interesado en impulsar tu marca? Te ayudo con estrategias de branding y posicionamiento.',
+    '/es/soluciones/conecta-con-tus-clientes': '¡Hola! ¿Quieres conectar mejor con tus clientes? Te explico nuestras soluciones de comunicación y engagement.',
+    '/es/soluciones/activa-tus-ventas': '¡Hola! ¿Buscas activar tus ventas? Te cuento cómo podemos ayudarte a generar más conversiones.',
+    // English pages
+    '/en': 'Hi! I\'m SofIA, your AI assistant from Hayas Marketing. How can I help you today?',
+    '/en/solutions/boost-your-brand': 'Hi! Interested in boosting your brand? I can help you with branding and positioning strategies.',
+    '/en/solutions/connect-with-customers': 'Hi! Want to connect better with your customers? Let me explain our communication and engagement solutions.',
+    '/en/solutions/activate-sales': 'Hi! Looking to activate your sales? I\'ll tell you how we can help you generate more conversions.',
+    '/en/schedule-meeting': 'Hi! Great that you want to schedule a meeting. I can help with any questions about our services or the consulting process.',
+    '/en/contact': 'Hi! Need to contact us? I can help with any questions about our services or how we work.'
   };
   
-  return messages[pathname] || '¡Hola! Soy SofÍA, tu asistente de IA de Hayas Marketing. ¿En qué puedo ayudarte?';
+  const isEnglish = pathname.startsWith('/en');
+  const defaultMessage = isEnglish 
+    ? 'Hi! I\'m SofIA, your AI assistant from Hayas Marketing. How can I help you?'
+    : '¡Hola! Soy SofÍA, tu asistente de IA de Hayas Marketing. ¿En qué puedo ayudarte?';
+  
+  return messages[pathname] || defaultMessage;
 };
 
 const getPageHelpMessage = (pathname: string) => {
   const helpMessages: { [key: string]: string } = {
+    // Spanish pages
     '/': '¿Te ayudo a encontrar la solución perfecta para tu negocio?',
+    '/es': '¿Te ayudo a encontrar la solución perfecta para tu negocio?',
     '/creacion-marca': '¿Necesitas ayuda para crear una marca que conecte con tu audiencia?',
     '/marketing-visibilidad': '¿Quieres descubrir cómo aumentar tu visibilidad online?',
     '/crm-automatizaciones': '¿Te gustaría automatizar tu proceso de ventas?',
@@ -31,10 +50,25 @@ const getPageHelpMessage = (pathname: string) => {
     '/soluciones-ia': '¿Quieres implementar IA en tu estrategia de marketing?',
     '/servicios/implantacion-crm': '¿Te ayudo con la configuración de tu CRM?',
     '/es/agendar-reunion': '¿Tienes dudas antes de agendar? ¿Te ayudo a elegir el mejor horario o servicio?',
-    '/es/contacto': '¿Necesitas información personalizada sobre nuestros servicios?'
+    '/es/contacto': '¿Necesitas información personalizada sobre nuestros servicios?',
+    '/es/soluciones/impulsa-tu-marca': '¿Necesitas ayuda para crear una marca que conecte con tu audiencia?',
+    '/es/soluciones/conecta-con-tus-clientes': '¿Quieres mejorar la comunicación con tus clientes?',
+    '/es/soluciones/activa-tus-ventas': '¿Buscas generar más conversiones en tu negocio?',
+    // English pages
+    '/en': 'Can I help you find the perfect solution for your business?',
+    '/en/solutions/boost-your-brand': 'Need help creating a brand that connects with your audience?',
+    '/en/solutions/connect-with-customers': 'Want to improve communication with your customers?',
+    '/en/solutions/activate-sales': 'Looking to generate more conversions for your business?',
+    '/en/schedule-meeting': 'Any questions before scheduling? Need help choosing the best time or service?',
+    '/en/contact': 'Need personalized information about our services?'
   };
   
-  return helpMessages[pathname] || '¿Te ayudo con alguna información sobre nuestros servicios?';
+  const isEnglish = pathname.startsWith('/en');
+  const defaultMessage = isEnglish 
+    ? 'Can I help you with information about our services?'
+    : '¿Te ayudo con alguna información sobre nuestros servicios?';
+  
+  return helpMessages[pathname] || defaultMessage;
 };
 
 const SofiaWidget = () => {
@@ -262,6 +296,9 @@ const SofiaWidget = () => {
     return null;
   }
 
+  // Determine language for UI texts
+  const isEnglish = location.pathname.startsWith('/en');
+
   const handleToggleChat = () => {
     const willOpen = !isOpen;
     setIsOpen(willOpen);
@@ -300,7 +337,7 @@ const SofiaWidget = () => {
                 onClick={handleToggleChat}
                 className="mt-2 text-xs bg-gradient-to-r from-hayas-600 to-turquesa text-white px-3 py-1 rounded-full hover:opacity-90 transition-opacity"
               >
-                Hablemos
+                {isEnglish ? "Let's talk" : 'Hablemos'}
               </button>
             </div>
             <button
@@ -319,7 +356,7 @@ const SofiaWidget = () => {
         <button
           onClick={handleToggleChat}
           className="fixed bottom-6 right-6 z-50 bg-gradient-to-r from-lime-500 to-lime-600 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group overflow-hidden px-4 py-3 flex items-center gap-3 min-w-[200px]"
-          aria-label="Abrir chat con SofÍA"
+          aria-label={isEnglish ? 'Open chat with SofIA' : 'Abrir chat con SofÍA'}
         >
           <div className="relative">
             <img 
@@ -334,7 +371,7 @@ const SofiaWidget = () => {
           
           <div className="text-left text-white">
             <div className="font-semibold text-sm">SofÍA</div>
-            <div className="text-xs opacity-90">Asistente de IA • En línea</div>
+            <div className="text-xs opacity-90">{isEnglish ? 'AI Assistant • Online' : 'Asistente de IA • En línea'}</div>
           </div>
         </button>
       )}
@@ -355,7 +392,7 @@ const SofiaWidget = () => {
                 />
                 <div>
                   <h3 className="font-semibold text-sm">SofÍA</h3>
-                  <p className="text-xs opacity-90">Asistente de IA • En línea</p>
+                  <p className="text-xs opacity-90">{isEnglish ? 'AI Assistant • Online' : 'Asistente de IA • En línea'}</p>
                 </div>
               </div>
               
@@ -363,14 +400,14 @@ const SofiaWidget = () => {
                 <button
                   onClick={handleMinimize}
                   className="w-6 h-6 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors"
-                  aria-label="Minimizar chat"
+                  aria-label={isEnglish ? 'Minimize chat' : 'Minimizar chat'}
                 >
                   <Minimize2 className="w-4 h-4" />
                 </button>
                 <button
                   onClick={handleClose}
                   className="w-6 h-6 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors"
-                  aria-label="Cerrar chat"
+                  aria-label={isEnglish ? 'Close chat' : 'Cerrar chat'}
                 >
                   <X className="w-4 h-4" />
                 </button>
