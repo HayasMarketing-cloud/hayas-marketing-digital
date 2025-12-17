@@ -516,7 +516,7 @@ const App = () => (
               ============================================ */}
           
           {/* HOMEPAGE */}
-          <Route path="/en" element={<PageSuspense><Pages.Index /></PageSuspense>} />
+          <Route path="/en" element={<PageSuspense><Pages.IndexEN /></PageSuspense>} />
           
           {/* ABOUT US */}
           <Route path="/en/about-us" element={<PageSuspense><Pages.Nosotros /></PageSuspense>} />

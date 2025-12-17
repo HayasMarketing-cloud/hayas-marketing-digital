@@ -1,21 +1,18 @@
-
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import SolutionsSection from '@/components/SolutionsSection';
-import ServicesSection from '@/components/ServicesSection';
 import AllServicesSection from '@/components/AllServicesSection';
 import ChatbotPromoSection from '@/components/ChatbotPromoSection';
 import ReviewsSection from '@/components/ReviewsSection';
 import Footer from '@/components/Footer';
 import Seo from '@/components/Seo';
 import FAQSection from '@/components/FAQSection';
-import MethodologySection from '@/components/MethodologySection';
 import { hayasOrganizationSchema } from '@/data/seoData';
 import { useTranslation } from '@/hooks/useTranslation';
 
-const Index = () => {
+const IndexEN = () => {
   const [searchParams] = useSearchParams();
   const [origin, setOrigin] = useState('');
   const { t } = useTranslation();
@@ -35,7 +32,7 @@ const Index = () => {
     }
   }, [searchParams]);
   
-  // SEO schemas and FAQs using translations
+  // SEO schemas and FAQs in English
   const homeFaqs = [
     {
       question: t('faq.home.q1'),
@@ -84,14 +81,14 @@ const Index = () => {
   return (
     <div id="top" className="min-h-screen flex flex-col">
       <Seo
-        title="Hayas Marketing | Estrategia, CRM, IA y Marketing Digital"
-        description="Soluciones de marketing y ventas: branding, captación de leads, CRM, automatización e IA para hacer crecer tu negocio."
-        canonical="/"
-        keywords={['marketing digital', 'CRM', 'automatización', 'inteligencia artificial', 'leads', 'ventas']}
+        title="Hayas Marketing | Strategy, CRM, AI & Digital Marketing"
+        description="Marketing and sales solutions: branding, lead generation, CRM, automation and AI to grow your business."
+        canonical="/en"
+        keywords={['digital marketing', 'CRM', 'automation', 'artificial intelligence', 'leads', 'sales']}
         ogImage="/og-home.jpg"
         ogType="website"
-        inLanguage="es-ES"
-        about={['Marketing Digital', 'CRM', 'Automatización de Ventas', 'Inteligencia Artificial']}
+        inLanguage="en-US"
+        about={['Digital Marketing', 'CRM', 'Sales Automation', 'Artificial Intelligence']}
         mentions={['HubSpot', 'GoHighLevel', 'SofÍA', 'Google Ads', 'Meta Ads']}
         faqs={homeFaqs}
         structuredData={[hayasOrganizationSchema, website, faqSchema].filter(Boolean)}
@@ -102,10 +99,11 @@ const Index = () => {
         <HeroSection />
         <SolutionsSection />
         
+        {/* No MethodologySection for English version */}
         
-        <MethodologySection />
         <AllServicesSection />
         <ChatbotPromoSection />
+        
         {/* FAQ Section */}
         <section className="py-16 md:py-20 bg-white">
           <div className="container mx-auto px-4">
@@ -131,4 +129,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default IndexEN;

@@ -1,8 +1,16 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const ChatbotPromoSection = () => {
+  const { t, language } = useTranslation();
+  
+  // Dynamic URL based on language
+  const assistantUrl = language === 'en' 
+    ? '/en/services/ai-assistant' 
+    : '/es/servicios/asistente-ia';
+
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-primary to-hayas-tertiary py-16 sm:py-20 lg:py-24">
       {/* Decorative elements */}
@@ -16,17 +24,15 @@ const ChatbotPromoSection = () => {
           {/* Content */}
           <div className="space-y-6">
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-              Asistentes IA que atienden y convierten visitas en clientes
+              {t('chatbot.title')}
             </h2>
             
             <p className="text-lg text-white/90 sm:text-xl">
-              ¿Te imaginas tener un asistente como SofÍA que atienda a tus clientes actuales y potenciales, 
-              de forma personalizada y en cualquier idioma? Lo integramos en tu sitio web y/o en tu WhatsApp Business?
+              {t('chatbot.paragraph1')}
             </p>
             
             <p className="text-base text-white/80">
-              En Hayas te ayudamos a crear asistentes personalizados con inteligencia artificial para automatizar 
-              tu atención al cliente, captar leads y mejorar la experiencia digital de tu marca.
+              {t('chatbot.paragraph2')}
             </p>
             
             <Button
@@ -34,9 +40,9 @@ const ChatbotPromoSection = () => {
               size="lg"
               className="inline-flex bg-white text-primary hover:bg-white/90 hover:text-primary/90"
             >
-              <a href="https://hayasmarketing.com/es/servicios/asistente-ia" target="_blank" rel="noopener noreferrer">
-                Descubre cómo tener tu propio asistente inteligente
-              </a>
+              <Link to={assistantUrl}>
+                {t('chatbot.button')}
+              </Link>
             </Button>
           </div>
           
@@ -45,7 +51,7 @@ const ChatbotPromoSection = () => {
             <div className="relative">
               <img
                 src="/lovable-uploads/5c73c4e8-b9be-4541-b0dc-043162701fc7.png"
-                alt="Mockup del chatbot SofÍA de Hayas Marketing mostrando conversación de bienvenida y servicios disponibles"
+                alt={t('chatbot.imageAlt')}
                 className="w-full h-auto rounded-lg shadow-2xl"
               />
               {/* Image glow effects */}

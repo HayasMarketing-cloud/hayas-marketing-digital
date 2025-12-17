@@ -2,62 +2,23 @@ import React from 'react';
 import { Star, ExternalLink, MapPin } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Avatar, AvatarFallback } from '@/components/ui/avatar';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const ReviewsSection = () => {
-  // Reseñas de ejemplo (en producción se obtendrían de la API de Google Places)
-  const sampleReviews = [
-    {
-      id: 1,
-      name: "María González",
-      initials: "MG",
-      rating: 5,
-      text: "Excelente trabajo en el rediseño de nuestra web y estrategia SEO. Los resultados se vieron en pocas semanas.",
-      date: "hace 2 semanas"
-    },
-    {
-      id: 2,
-      name: "Carlos Ruiz",
-      initials: "CR",
-      rating: 5,
-      text: "Profesionales increíbles. Nos ayudaron a automatizar todo nuestro CRM y las ventas se han disparado.",
-      date: "hace 1 mes"
-    },
-    {
-      id: 3,
-      name: "Ana Martín",
-      initials: "AM",
-      rating: 5,
-      text: "La implementación de HubSpot fue perfecta. Soporte técnico excepcional y resultados inmediatos.",
-      date: "hace 3 semanas"
-    },
-    {
-      id: 4,
-      name: "Roberto Silva",
-      initials: "RS",
-      rating: 5,
-      text: "Crearon nuestra marca desde cero con un enfoque muy profesional. Recomiendo totalmente sus servicios.",
-      date: "hace 1 semana"
-    },
-    {
-      id: 5,
-      name: "Laura Jiménez",
-      initials: "LJ",
-      rating: 5,
-      text: "El chatbot SofÍA ha revolucionado nuestra atención al cliente. Tecnología de vanguardia.",
-      date: "hace 4 días"
-    }
-  ];
+  const { t, language } = useTranslation();
+  
+  // Dynamic URL for booking meeting based on language
+  const bookingUrl = language === 'en' ? '/en/schedule-meeting' : '/es/agendar-reunion';
+
   return (
     <section className="section-normal bg-gradient-to-br from-background to-muted/20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gradient">
-            📍 Conectamos desde Madrid con marcas de todo el mundo
+            {t('reviews.title')}
           </h2>
           <p className="text-muted-foreground text-lg max-w-3xl mx-auto leading-relaxed">
-            Nuestra oficina está en el corazón de Madrid, a pocos pasos de Madrid Río y La Latina. 
-            Desde aquí ayudamos a empresas de toda España a crecer con estrategias digitales auténticas.
+            {t('reviews.subtitle')}
           </p>
           
           {/* Rating preview */}
@@ -67,7 +28,7 @@ const ReviewsSection = () => {
                 <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
               ))}
             </div>
-            <span className="text-sm font-medium">5.0 en Google</span>
+            <span className="text-sm font-medium">{t('reviews.googleRating')}</span>
           </div>
         </div>
 
@@ -75,7 +36,7 @@ const ReviewsSection = () => {
           <Card className="p-8 shadow-lg border-primary/10">
             <div className="text-center mb-6">
               <h3 className="text-xl font-semibold mb-4">
-                Reseñas verificadas de Google Maps
+                {t('reviews.verifiedReviews')}
               </h3>
               
               {/* Google Maps Widget */}
@@ -89,6 +50,7 @@ const ReviewsSection = () => {
                   allowFullScreen={true} 
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
+                  title="Hayas Marketing Office Location"
                 ></iframe>
               </div>
             </div>
@@ -101,14 +63,12 @@ const ReviewsSection = () => {
                   rel="noopener noreferrer"
                 >
                   <MapPin className="w-4 h-4" />
-                  Cómo llegar a la oficina
+                  {t('reviews.directions')}
                 </a>
               </Button>
               <Button asChild variant="outline" className="gap-2 border-hayas-primary text-hayas-primary hover:bg-hayas-primary hover:text-white">
-                <a 
-                  href="/es/agendar-reunion"
-                >
-                  💻 Reservar reunión online
+                <a href={bookingUrl}>
+                  {t('reviews.bookOnline')}
                 </a>
               </Button>
             </div>
@@ -122,7 +82,7 @@ const ReviewsSection = () => {
                   rel="noopener noreferrer"
                 >
                   <ExternalLink className="w-3 h-3" />
-                  Ver todas las reseñas
+                  {t('reviews.seeAll')}
                 </a>
               </Button>
             </div>

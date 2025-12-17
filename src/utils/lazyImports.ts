@@ -2,6 +2,7 @@ import { lazy } from "react";
 
 // Páginas principales (carga inmediata)
 export const Index = lazy(() => import("@/pages/Index"));
+export const IndexEN = lazy(() => import("@/pages/IndexEN"));
 export const NotFound = lazy(() => import("@/pages/NotFound"));
 export const Error404 = lazy(() => import("@/pages/Error404"));
 
