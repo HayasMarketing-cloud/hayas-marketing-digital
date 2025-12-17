@@ -25,6 +25,17 @@ interface ServiceRelatedPostsProps {
 // Posts data - en una app real esto vendría de una API o base de datos
 const allPosts: Post[] = [
   {
+    id: "chatbots-para-paginas-web",
+    title: "Chatbots para páginas web: qué opciones existen y cuál tiene sentido para tu negocio",
+    description: "Descubre los tipos de chatbots para páginas web, sus ventajas y limitaciones. Guía práctica para elegir la solución que mejor encaje con tu negocio.",
+    slug: "/es/blog/chatbots-para-paginas-web",
+    image: "/chatbots-web-hero.jpg",
+    category: "Automatización",
+    readTime: "10 min",
+    date: "2025-01-22",
+    tags: ["integraciones-ia-procesos", "implantacion-crm", "automatizacion-procesos-ventas", "asistente-ia"]
+  },
+  {
     id: "guia-tecnica-email-marketing-hubspot-configuracion",
     title: "Guía técnica de Email Marketing: Configuración y cumplimiento con HubSpot",
     description: "Aprende a configurar SPF, DKIM y DMARC en HubSpot para cumplir con las nuevas políticas de Google y Yahoo.",

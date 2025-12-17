@@ -21,7 +21,7 @@ import businessModelCanvasHero from '@/assets/business-model-canvas-estrategia-m
 import marketingNaturalHero from '@/assets/marketing-natural-posicionamiento-organico-hero.jpg';
 import googleConsentModeHero from '@/assets/google-consent-mode-cookieyes-hero.jpg';
 import kitDigitalHero from '@/assets/kit-digital-hero-updated.jpg';
-
+import chatbotsWebHero from '@/assets/chatbots-web-hero.jpg';
 const Blog = () => {
   const featuredPost = {
     id: 'la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing',
@@ -36,6 +36,19 @@ const Blog = () => {
   };
 
   const allPosts = [
+    {
+      id: 'chatbots-para-paginas-web',
+      title: 'Chatbots para páginas web: qué opciones existen y cuál tiene sentido para tu negocio',
+      description: 'Descubre los tipos de chatbots para páginas web, sus ventajas y limitaciones. Guía práctica para elegir la solución que mejor encaje con tu negocio.',
+      excerpt: 'Plugins WordPress, soluciones a medida, SaaS y CRM integrado: analiza cuál es el chatbot ideal para tu estrategia de marketing y ventas.',
+      category: 'Automatización',
+      readTime: '10 min',
+      date: '22 Ene 2025',
+      image: chatbotsWebHero,
+      slug: '/es/blog/chatbots-para-paginas-web',
+      tags: ['Chatbots', 'Automatización', 'CRM', 'IA', 'WordPress', 'GoHighLevel'],
+      featured: true
+    },
     {
       id: 'configuracion-email-marketing-cumplimiento-normativo',
       title: 'Guía técnica para configurar tu email marketing con cumplimiento normativo (en cualquier plataforma)',
