@@ -189,6 +189,19 @@
     @apply space-y-6 md:space-y-8;
   }
 
+  /* Tipografía elegante reutilizable */
+  .text-elegant {
+    @apply font-light tracking-wide leading-relaxed;
+  }
+
+  .text-elegant-sm {
+    @apply font-light tracking-wide leading-relaxed text-foreground/80;
+  }
+
+  .text-elegant-muted {
+    @apply font-light tracking-wide leading-relaxed text-muted-foreground;
+  }
+
   /* Colores corporativos como utilidades */
   .bg-hayas-primary {
     background-color: hsl(var(--hayas-primary));
