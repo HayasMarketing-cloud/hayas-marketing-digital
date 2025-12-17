@@ -1459,7 +1459,7 @@ export const translations = {
       title: 'Frequently Asked Questions',
       home: {
         q1: 'What makes Hayas Marketing different from other agencies?',
-        a1: 'We specialize in comprehensive solutions that combine strategy, technology, and artificial intelligence. We don\'t just create campaigns; we implement complete commercial management systems with CRM, automations, and AI tools like our chatbot SofÍA.',
+        a1: 'We don\'t work from a service catalog or specific tools. Our approach starts with understanding where the business is at, organizing marketing, and defining which decisions have the most impact before executing.\n\nWhile many agencies focus on isolated campaigns or actions, at Hayas we treat marketing as a system: connecting strategy, execution, and technology with purpose so that growth is sustainable and manageable.\n\nThis allows us to adapt to each company, reduce complexity, and help make better decisions in the long run.',
         q2: 'Do you work with B2B and B2C companies?',
         a2: 'Yes. We work with both B2B and B2C companies, always adapting our approach to the type of business, the decision-making process, and the stage the company is at.\n\nIn B2B, we typically work with longer sales cycles and complex processes, where strategy, content, and customer management are key.\nIn B2C, the focus is usually on acquisition, conversion, and operational efficiency.\n\nIn both cases, we don\'t apply standard solutions: we first analyze the situation and define the most suitable system before choosing tools or platforms.',
         q3: 'How long does it take to see results?',
