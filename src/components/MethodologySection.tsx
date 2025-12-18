@@ -12,7 +12,7 @@ const MethodologySection: React.FC = () => {
           <p className="mb-2 text-xs font-medium tracking-widest text-muted-foreground uppercase">
             Modelos de colaboración y metodología de trabajo
           </p>
-          <h2 className="text-3xl md:text-4xl font-semibold text-foreground">
+          <h2 className="text-3xl md:text-4xl font-semibold font-dm-sans text-foreground">
             Diseñamos contigo la mejor forma de avanzar
           </h2>
           <p className="mt-3 text-base md:text-lg text-muted-foreground">
@@ -115,7 +115,7 @@ const MethodologySection: React.FC = () => {
         {/* Metodología de trabajo */}
         <div className="bg-gradient-to-r from-primary/5 to-accent/5 rounded-2xl p-8 mb-12">
           <header className="text-center mb-8">
-            <h3 className="text-2xl font-semibold text-foreground mb-2 flex items-center justify-center gap-2">
+            <h3 className="text-2xl font-semibold font-dm-sans text-foreground mb-2 flex items-center justify-center gap-2">
               <Zap className="h-6 w-6 text-primary" />
               Nuestra metodología de trabajo
             </h3>
@@ -149,7 +149,7 @@ const MethodologySection: React.FC = () => {
         <div className="text-center">
           <div className="inline-flex items-center gap-2 mb-4">
             <Star className="h-6 w-6 text-accent fill-accent" />
-            <h3 className="text-xl font-semibold text-foreground">Lo que nos diferencia</h3>
+            <h3 className="text-xl font-semibold font-dm-sans text-foreground">Lo que nos diferencia</h3>
             <Star className="h-6 w-6 text-accent fill-accent" />
           </div>
           <p className="text-lg text-muted-foreground max-w-4xl mx-auto mb-8">

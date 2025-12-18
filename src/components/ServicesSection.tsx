@@ -32,7 +32,7 @@ const ServicesSection = () => {
 
         {pillarOrder.map((key) => (
           <section key={key} id={`home-${pillarMeta[key].anchorId}`} className="mb-12">
-            <h3 className="text-2xl font-bold mb-6">
+            <h3 className="text-2xl font-bold font-dm-sans mb-6">
               {key === 'impulsa' && 'Servicios de branding y posicionamiento web'}
               {key === 'conecta' && 'Automatización CRM y gestión de clientes'}
               {key === 'activa' && 'Estrategias de captación y conversión de leads'}

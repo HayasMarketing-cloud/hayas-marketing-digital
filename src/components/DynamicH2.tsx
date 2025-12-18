@@ -33,7 +33,7 @@ export const DynamicH2: React.FC<DynamicH2Props> = ({
   }
   
   return (
-    <h2 className={className}>
+    <h2 className={`font-dm-sans ${className}`}>
       {content}
     </h2>
   );

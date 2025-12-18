@@ -26,7 +26,7 @@ const ProcessSection: React.FC<ProcessSectionProps> = ({
     <section className={`py-16 md:py-20 ${backgroundColor}`}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold font-dm-sans mb-4">
             {title}
           </h2>
           {subtitle && (
@@ -48,7 +48,7 @@ const ProcessSection: React.FC<ProcessSectionProps> = ({
                     {step.icon}
                   </div>
                 )}
-                <h3 className="text-lg font-bold mb-3">{step.title}</h3>
+                <h3 className="text-lg font-bold font-dm-sans mb-3">{step.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{step.description}</p>
               </div>
               {index < steps.length - 1 && (
