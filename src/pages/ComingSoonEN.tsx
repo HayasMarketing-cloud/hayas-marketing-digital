@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link, useLocation } from 'react-router-dom';
-import { Construction, Home, Globe, Mail, ArrowRight } from 'lucide-react';
+import { Construction, Home, Globe, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -72,42 +72,6 @@ const ComingSoonEN: React.FC = () => {
               </Button>
             </div>
             
-            {/* Available English sections */}
-            <div className="bg-card border border-border rounded-xl p-6">
-              <h2 className="text-lg font-semibold text-foreground mb-4">
-                Explore our English content
-              </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <Link 
-                  to="/en/solutions/ai-marketing" 
-                  className="flex items-center gap-2 p-3 rounded-lg hover:bg-muted transition-colors text-left"
-                >
-                  <ArrowRight className="w-4 h-4 text-hayas-purple" />
-                  <span className="text-sm text-foreground">AI Marketing Solutions</span>
-                </Link>
-                <Link 
-                  to="/en/case-studies" 
-                  className="flex items-center gap-2 p-3 rounded-lg hover:bg-muted transition-colors text-left"
-                >
-                  <ArrowRight className="w-4 h-4 text-hayas-purple" />
-                  <span className="text-sm text-foreground">Case Studies</span>
-                </Link>
-                <Link 
-                  to="/en/blog" 
-                  className="flex items-center gap-2 p-3 rounded-lg hover:bg-muted transition-colors text-left"
-                >
-                  <ArrowRight className="w-4 h-4 text-hayas-purple" />
-                  <span className="text-sm text-foreground">Blog</span>
-                </Link>
-                <Link 
-                  to="/en/about" 
-                  className="flex items-center gap-2 p-3 rounded-lg hover:bg-muted transition-colors text-left"
-                >
-                  <ArrowRight className="w-4 h-4 text-hayas-purple" />
-                  <span className="text-sm text-foreground">About Us</span>
-                </Link>
-              </div>
-            </div>
           </div>
         </div>
       </main>
