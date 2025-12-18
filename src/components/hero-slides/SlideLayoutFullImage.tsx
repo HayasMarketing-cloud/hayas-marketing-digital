@@ -45,7 +45,7 @@ export const SlideLayoutFullImage: React.FC<SlideLayoutFullImageProps> = ({
       {/* Message */}
       <div className={`absolute ${positionClasses[messagePosition]} z-10 px-4`}>
         <span 
-          className="block text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center max-w-3xl hero-slide-content drop-shadow-lg"
+          className="block text-3xl md:text-4xl lg:text-5xl font-bold font-dm-sans text-white text-center max-w-3xl hero-slide-content drop-shadow-lg"
           role="heading"
           aria-level={2}
         >
