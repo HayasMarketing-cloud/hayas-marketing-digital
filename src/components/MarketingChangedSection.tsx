@@ -47,7 +47,7 @@ const MarketingChangedSection = () => {
       <div className="container mx-auto px-4 max-w-5xl">
         {/* Title */}
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground leading-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold font-dm-sans text-foreground leading-tight">
             {t('marketingChanged.title')}
             <span className="text-gradient-primary">{t('marketingChanged.titleHighlight')}</span>
             <br className="hidden md:block" />
@@ -70,7 +70,7 @@ const MarketingChangedSection = () => {
 
         {/* Transition */}
         <div className="text-center mb-10">
-          <p className="text-lg md:text-xl font-medium text-foreground">
+          <p className="text-lg md:text-xl font-medium font-dm-sans text-foreground">
             {t('marketingChanged.transition')}
           </p>
         </div>
@@ -93,7 +93,7 @@ const MarketingChangedSection = () => {
                 <div className={`mb-4 ${moment.iconColor}`}>
                   <Icon size={32} strokeWidth={1.5} />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-3">
+                <h3 className="text-lg font-semibold font-dm-sans text-foreground mb-3">
                   {t(`marketingChanged.moments.${moment.key}.title`)}
                 </h3>
                 <p className="text-elegant-muted text-sm leading-relaxed mb-4">
