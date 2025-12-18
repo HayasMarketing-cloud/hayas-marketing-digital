@@ -614,6 +614,9 @@ const App = () => (
               END OF ENGLISH ROUTES
               ============================================ */}
           
+          {/* ENGLISH COMING SOON - Catches all undefined /en/* routes */}
+          <Route path="/en/*" element={<PageSuspense><Pages.ComingSoonEN /></PageSuspense>} />
+          
           {/* 404 - MUST BE AT THE END */}
           <Route path="*" element={<PageSuspense><Pages.NotFound /></PageSuspense>} />
         </Routes>
