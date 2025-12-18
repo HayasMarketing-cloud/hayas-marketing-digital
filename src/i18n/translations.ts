@@ -89,7 +89,13 @@ export const translations = {
       contact: 'Contacto',
       scheduleConsultation: 'Agendar consulta',
       contactInfo: 'Información de contacto',
-      officeLocation: 'Madrid, España'
+      officeLocation: 'Madrid, España',
+      kitDigital: {
+        title: 'Agentes de transformación digital a través de los Fondos Next Generation de la Unión Europea',
+        description: 'Programa de subvenciones para autónomos y empresas españolas.',
+        deadline: 'Convocatorias cerradas el 31 de octubre de 2025',
+        imageAlt: 'Agentes oficiales - Gobierno de España, Red.es, Kit Digital, Financiado por la Unión Europea'
+      }
     },
     megaMenu: {
       solutionsTitle: 'Nuestras Soluciones',
@@ -839,7 +845,13 @@ export const translations = {
       contact: 'Contact',
       scheduleConsultation: 'Schedule consultation',
       contactInfo: 'Contact information',
-      officeLocation: 'Madrid, Spain'
+      officeLocation: 'Madrid, Spain',
+      kitDigital: {
+        title: 'Digital transformation agents through the European Union Next Generation Funds',
+        description: 'Grant program for Spanish freelancers and businesses.',
+        deadline: 'Applications closed on October 31, 2025',
+        imageAlt: 'Official Agents - Spanish Government, Red.es, Kit Digital, Funded by the European Union'
+      }
     },
     megaMenu: {
       solutionsTitle: 'Our Solutions',
