@@ -617,6 +617,9 @@ const App = () => (
           {/* ENGLISH COMING SOON - Catches all undefined /en/* routes */}
           <Route path="/en/*" element={<PageSuspense><Pages.ComingSoonEN /></PageSuspense>} />
           
+          {/* TYPOGRAPHY PLAYGROUND - Página de prueba tipográfica */}
+          <Route path="/typography-playground" element={<PageSuspense><Pages.TypographyPlayground /></PageSuspense>} />
+          
           {/* 404 - MUST BE AT THE END */}
           <Route path="*" element={<PageSuspense><Pages.NotFound /></PageSuspense>} />
         </Routes>

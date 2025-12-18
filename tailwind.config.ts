@@ -142,6 +142,9 @@ export default {
 			inter: ['Inter', 'sans-serif'],
 			helvetica: ['Helvetica', 'Arial', 'sans-serif'],
 			arimo: ['Arimo', 'sans-serif'],
+			// Fuentes editoriales (propuesta tipográfica)
+			fraunces: ['Fraunces', 'serif'],
+			'dm-sans': ['DM Sans', 'sans-serif'],
 		},
 			borderRadius: {
 				lg: 'var(--radius)',
