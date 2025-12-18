@@ -145,12 +145,18 @@ const Servicios: React.FC = () => {
                     className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 h-full group"
                   >
                     <CardHeader className="text-center pb-4">
-                      <div className={`mb-4 mx-auto p-4 rounded-full w-fit bg-${getPillarColor(service.pillar)}-100 group-hover:bg-${getPillarColor(service.pillar)}-200 transition-colors duration-300`}>
+                      <div className={`mb-4 mx-auto p-4 rounded-full w-fit transition-colors duration-300 ${
+                        service.pillar === 'impulsa' ? 'bg-impulsa-100 group-hover:bg-impulsa-200' :
+                        service.pillar === 'conecta' ? 'bg-conecta-100 group-hover:bg-conecta-200' :
+                        'bg-activa-100 group-hover:bg-activa-200'
+                      }`}>
                         {service.icon}
                       </div>
-                      <Badge variant="outline" className={`mb-2 text-${getPillarColor(service.pillar)}-600 border-${getPillarColor(service.pillar)}-200`}>
-                        {pillarMeta[service.pillar].title}
-                      </Badge>
+                      <div className="flex justify-center mb-2">
+                        <Badge variant={service.pillar} className="text-xs px-3 py-1">
+                          {pillarMeta[service.pillar].title}
+                        </Badge>
+                      </div>
                       <CardTitle className="text-xl font-bold">
                         {service.title}
                       </CardTitle>
