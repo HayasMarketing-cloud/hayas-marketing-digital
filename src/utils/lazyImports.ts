@@ -6,6 +6,7 @@ export const IndexEN = lazy(() => import("@/pages/IndexEN"));
 export const NotFound = lazy(() => import("@/pages/NotFound"));
 export const Error404 = lazy(() => import("@/pages/Error404"));
 export const ComingSoonEN = lazy(() => import("@/pages/ComingSoonEN"));
+export const TypographyPlayground = lazy(() => import("@/pages/TypographyPlayground"));
 
 // Nosotros y contacto
 export const Nosotros = lazy(() => import("@/pages/Nosotros"));
