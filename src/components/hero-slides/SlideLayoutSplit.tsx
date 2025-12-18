@@ -36,7 +36,7 @@ export const SlideLayoutSplit: React.FC<SlideLayoutSplitProps> = ({
         <div className={`flex flex-col ${isImageLeft ? 'md:flex-row-reverse' : 'md:flex-row'} items-center justify-between h-full min-h-[600px] md:min-h-[700px] gap-8 py-12`}>
           {/* Text Content */}
           <div className="flex-1 flex flex-col justify-center hero-slide-content">
-            <HeadingComponent className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
+            <HeadingComponent className="text-3xl md:text-4xl lg:text-5xl font-bold font-dm-sans text-foreground mb-4 leading-tight">
               {title}
             </HeadingComponent>
             

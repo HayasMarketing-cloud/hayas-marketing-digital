@@ -37,7 +37,7 @@ export const SlideLayoutCentered: React.FC<SlideLayoutCenteredProps> = ({
           </span>
         )}
         
-        <HeadingComponent className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
+        <HeadingComponent className="text-4xl md:text-5xl lg:text-6xl font-bold font-dm-sans text-foreground mb-6 leading-tight">
           {title}
         </HeadingComponent>
         
