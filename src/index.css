@@ -143,21 +143,21 @@
     padding-top: 0.5rem;
   }
 
-  /* Typography hierarchy utilities */
+  /* Typography hierarchy utilities - DM Sans para títulos */
   .title-hero {
-    @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-6;
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-6 font-dm-sans;
   }
 
   .title-section {
-    @apply text-3xl md:text-4xl font-bold mb-4;
+    @apply text-3xl md:text-4xl font-bold mb-4 font-dm-sans;
   }
 
   .title-subsection {
-    @apply text-2xl font-bold mb-3;
+    @apply text-2xl font-bold mb-3 font-dm-sans;
   }
 
   .title-card {
-    @apply text-xl font-bold;
+    @apply text-xl font-bold font-dm-sans;
   }
 
   .text-hero {
@@ -227,15 +227,15 @@
     color: hsl(var(--hayas-tertiary));
   }
 
-  /* Typography utilities */
-  .title-section { @apply text-3xl md:text-4xl font-bold mb-4; }
-  .title-subsection { @apply text-2xl font-bold mb-3; }
+  /* Typography utilities - DM Sans para títulos */
+  .title-section { @apply text-3xl md:text-4xl font-bold mb-4 font-dm-sans; }
+  .title-subsection { @apply text-2xl font-bold mb-3 font-dm-sans; }
   
   /* Hero image standardization */
   .hero-image { 
     @apply w-full h-64 md:h-80 lg:h-96 object-cover rounded-xl shadow-corporate; 
   }
-  .title-card { @apply text-xl font-bold; }
+  .title-card { @apply text-xl font-bold font-dm-sans; }
   .text-hero { @apply text-xl text-gray-600 mb-8; }
   .text-description { @apply text-lg text-gray-600; }
 
