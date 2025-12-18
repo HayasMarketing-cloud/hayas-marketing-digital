@@ -206,7 +206,7 @@ const Navigation = () => {
           <div className="fixed top-0 right-0 h-full w-full sm:w-96 bg-background z-50 shadow-2xl animate-slide-in-right overflow-y-auto">
             {/* Header */}
             <div className="flex items-center justify-between p-4 border-b border-border sticky top-0 bg-background z-10">
-              <span className="font-semibold text-foreground">{t('nav.menu') || 'Menú'}</span>
+              <span className="font-semibold font-dm-sans text-foreground">{t('nav.menu') || 'Menú'}</span>
               <button 
                 onClick={closeMobileMenu}
                 className="p-2 hover:bg-muted rounded-lg transition-colors"
@@ -330,7 +330,7 @@ const Navigation = () => {
                       <ArrowLeft className="h-4 w-4 mr-2" />
                       {t('nav.backToMain')}
                     </button>
-                    <span className="ml-4 font-medium text-foreground">{t('nav.solutions')}</span>
+                    <span className="ml-4 font-medium font-dm-sans text-foreground">{t('nav.solutions')}</span>
                   </div>
                   
                   <div className="space-y-3">
