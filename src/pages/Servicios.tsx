@@ -6,7 +6,7 @@ import Seo from '@/components/Seo';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ArrowRight, Search } from 'lucide-react';
+import { ArrowRight, Search, LayoutGrid, Rocket, Users, TrendingUp } from 'lucide-react';
 import { allServices, pillarMeta, PillarKey } from '@/data/services';
 import { generateItemListSchema } from '@/data/seoData';
 import DynamicH1 from '@/components/DynamicH1';
@@ -74,52 +74,53 @@ const Servicios: React.FC = () => {
         </section>
 
         {/* Filters Section */}
-        <section className="py-8 bg-muted/30 border-b">
+        <section className="py-10 bg-muted/30 border-b">
           <div className="container mx-auto px-4">
-            <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
-              {/* Search */}
-              <div className="relative w-full md:w-96">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+            <div className="flex flex-col items-center gap-6">
+              {/* Search - Centered */}
+              <div className="relative w-full max-w-md">
+                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
                 <input
                   type="text"
                   placeholder="Buscar servicios..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                  className="w-full pl-12 pr-4 py-3 border border-border rounded-full bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary shadow-sm transition-all"
                 />
               </div>
 
-              {/* Pillar filters */}
-              <div className="flex gap-2 flex-wrap">
+              {/* Pillar filters - Centered */}
+              <div className="flex gap-3 flex-wrap justify-center">
                 <Button
                   variant={selectedPillar === 'all' ? 'default' : 'outline'}
-                  size="sm"
                   onClick={() => setSelectedPillar('all')}
+                  className="rounded-full px-6"
                 >
+                  <LayoutGrid className="h-4 w-4" />
                   Todos
                 </Button>
                 <Button
-                  variant={selectedPillar === 'impulsa' ? 'default' : 'outline'}
-                  size="sm"
+                  variant={selectedPillar === 'impulsa' ? 'impulsa' : 'impulsa-outline'}
                   onClick={() => setSelectedPillar('impulsa')}
-                  className={selectedPillar === 'impulsa' ? 'bg-impulsa-500 hover:bg-impulsa-600' : ''}
+                  className="rounded-full px-6"
                 >
+                  <Rocket className="h-4 w-4" />
                   Impulsa tu marca
                 </Button>
                 <Button
-                  variant={selectedPillar === 'conecta' ? 'default' : 'outline'}
-                  size="sm"
+                  variant={selectedPillar === 'conecta' ? 'conecta' : 'conecta-outline'}
                   onClick={() => setSelectedPillar('conecta')}
-                  className={selectedPillar === 'conecta' ? 'bg-conecta-500 hover:bg-conecta-600' : ''}
+                  className="rounded-full px-6"
                 >
+                  <Users className="h-4 w-4" />
                   Conecta con tus clientes
                 </Button>
                 <Button
-                  variant={selectedPillar === 'activa' ? 'default' : 'outline'}
-                  size="sm"
+                  variant={selectedPillar === 'activa' ? 'activa' : 'activa-outline'}
                   onClick={() => setSelectedPillar('activa')}
-                  className={selectedPillar === 'activa' ? 'bg-activa-500 hover:bg-activa-600' : ''}
+                  className="rounded-full px-6"
                 >
+                  <TrendingUp className="h-4 w-4" />
                   Activa tus ventas
                 </Button>
               </div>
