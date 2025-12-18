@@ -592,8 +592,8 @@ export const translations = {
     },
     // Secciones de la home
     servicesSection: {
-      title: 'Nuestros Servicios',
-      subtitle: 'Descubre el catálogo completo de servicios profesionales que ofrecemos para hacer crecer tu negocio de forma estratégica y sostenible.',
+      title: 'Nuestras Capacidades',
+      subtitle: 'Que activamos dentro de nuestras soluciones en función del momento, los objetivos y la realidad de cada negocio.',
       all: 'Todos los servicios',
       viewAll: 'Ver todos los servicios',
       viewLess: 'Ver menos',
@@ -1342,8 +1342,8 @@ export const translations = {
     },
     // Home page sections
     servicesSection: {
-      title: 'Our Services',
-      subtitle: 'Discover the complete catalog of professional services we offer to grow your business strategically and sustainably.',
+      title: 'Our Capabilities',
+      subtitle: 'That we activate within our solutions based on the timing, objectives, and reality of each business.',
       all: 'All services',
       viewAll: 'View all services',
       viewLess: 'View less',
