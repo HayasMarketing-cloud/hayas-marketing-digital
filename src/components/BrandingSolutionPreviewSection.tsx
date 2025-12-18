@@ -30,7 +30,7 @@ const BrandingSolutionPreviewSection = () => {
               Branding Estratégico
             </Badge>
             
-            <h2 className="text-3xl lg:text-4xl font-bold mb-6">
+            <h2 className="text-3xl lg:text-4xl font-bold font-dm-sans mb-6">
               Creamos marcas que <span className="text-gradient-primary">conectan y convierten</span>
             </h2>
             

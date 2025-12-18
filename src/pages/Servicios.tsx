@@ -185,7 +185,7 @@ const Servicios: React.FC = () => {
         <section className="py-16 md:py-20 bg-gradient-to-br from-primary/10 via-white to-accent/10">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold font-dm-sans mb-6">
                 ¿No sabes qué servicio necesitas?
               </h2>
               <p className="text-xl text-muted-foreground mb-8">

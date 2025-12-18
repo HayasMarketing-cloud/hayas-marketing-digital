@@ -22,7 +22,7 @@ export const DynamicH1: React.FC<DynamicH1Props> = ({
   const content = children || (optimizedH1 !== fallback ? optimizedH1 : fallback);
   
   return (
-    <h1 className={className}>
+    <h1 className={`font-dm-sans ${className}`}>
       {content}
     </h1>
   );

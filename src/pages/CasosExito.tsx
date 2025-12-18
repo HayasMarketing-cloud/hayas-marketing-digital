@@ -191,7 +191,7 @@ const CasosExito = () => {
                   <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-muted flex items-center justify-center">
                     <div className="text-2xl">🔍</div>
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">No hay resultados</h3>
+                  <h3 className="text-xl font-semibold font-dm-sans mb-2">No hay resultados</h3>
                   <p className="text-muted-foreground">
                     No se encontraron casos de éxito para el filtro seleccionado.
                   </p>
@@ -220,7 +220,7 @@ const CasosExito = () => {
                       />
                     </div>
                     <CardContent className={`p-4 ${viewMode === 'list' ? 'flex-1' : ''}`}>
-                      <h3 className="text-lg font-bold mb-2 group-hover:text-primary transition-colors">
+                      <h3 className="text-lg font-bold font-dm-sans mb-2 group-hover:text-primary transition-colors">
                         {project.name}
                       </h3>
                       <p className="text-sm text-muted-foreground mb-3">

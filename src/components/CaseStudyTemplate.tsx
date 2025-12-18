@@ -137,7 +137,7 @@ const CaseStudyTemplate: React.FC<CaseStudyProps> = ({
                     </Badge>
                   ))}
                 </div>
-                <h1 className="text-4xl lg:text-5xl font-bold mb-6">{companyName}</h1>
+                <h1 className="text-4xl lg:text-5xl font-bold font-dm-sans mb-6">{companyName}</h1>
                 <p className="text-xl text-muted-foreground mb-8">
                   {subtitle}
                 </p>
@@ -171,7 +171,7 @@ const CaseStudyTemplate: React.FC<CaseStudyProps> = ({
             
             {/* Sobre la empresa */}
             <section className="mb-16">
-              <h2 className="text-2xl font-semibold mb-4">Sobre {companyName}</h2>
+              <h2 className="text-2xl font-semibold font-dm-sans mb-4">Sobre {companyName}</h2>
               <p className="text-muted-foreground leading-relaxed">
                 {aboutCompany}
               </p>
@@ -179,7 +179,7 @@ const CaseStudyTemplate: React.FC<CaseStudyProps> = ({
 
             {/* El Reto */}
             <section className="mb-16">
-              <h2 className="text-2xl font-semibold mb-4">El Reto</h2>
+              <h2 className="text-2xl font-semibold font-dm-sans mb-4">El Reto</h2>
               <p className="text-muted-foreground leading-relaxed">
                 {challenge}
               </p>
@@ -187,7 +187,7 @@ const CaseStudyTemplate: React.FC<CaseStudyProps> = ({
 
             {/* Solución aplicada */}
             <section className="mb-16">
-              <h2 className="text-2xl font-semibold mb-6">Solución aplicada</h2>
+              <h2 className="text-2xl font-semibold font-dm-sans mb-6">Solución aplicada</h2>
               <div className={`grid gap-6 ${
                 solutions.length === 1 ? 'md:grid-cols-1' :
                 solutions.length === 2 ? 'md:grid-cols-2' : 
@@ -214,7 +214,7 @@ const CaseStudyTemplate: React.FC<CaseStudyProps> = ({
             {/* Resultados obtenidos */}
             {results.length > 0 && (
               <section className="mb-16">
-                <h2 className="text-2xl font-semibold mb-4">Resultados obtenidos</h2>
+                <h2 className="text-2xl font-semibold font-dm-sans mb-4">Resultados obtenidos</h2>
                 <div className="grid gap-4">
                   {results.map((resultado, index) => (
                     <div key={index} className="flex items-center gap-3 p-4 bg-muted/30 rounded-lg">
@@ -252,7 +252,7 @@ const CaseStudyTemplate: React.FC<CaseStudyProps> = ({
             {/* Lo que aprendimos */}
             {learnings && (
               <section className="mb-16">
-                <h2 className="text-2xl font-semibold mb-4">Lo que aprendimos</h2>
+                <h2 className="text-2xl font-semibold font-dm-sans mb-4">Lo que aprendimos</h2>
                 <p className="text-muted-foreground leading-relaxed">
                   {learnings}
                 </p>
@@ -262,7 +262,7 @@ const CaseStudyTemplate: React.FC<CaseStudyProps> = ({
             {/* Strategic Internal Linking */}
             <section className="mb-16">
               <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-8">
-                <h3 className="text-xl font-semibold mb-6 text-center">
+                <h3 className="text-xl font-semibold font-dm-sans mb-6 text-center">
                   Servicios relacionados con este caso de éxito
                 </h3>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -341,7 +341,7 @@ const CaseStudyTemplate: React.FC<CaseStudyProps> = ({
 
             {/* CTA with Internal Links */}
             <section className="text-center py-12 bg-gradient-to-r from-primary/10 to-accent/10 rounded-xl">
-              <h3 className="text-2xl font-bold mb-4">{ctaTitle}</h3>
+              <h3 className="text-2xl font-bold font-dm-sans mb-4">{ctaTitle}</h3>
               <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
                 {ctaDescription}
               </p>

@@ -14,7 +14,7 @@ const ReviewsSection = () => {
     <section className="section-normal bg-gradient-to-br from-background to-muted/20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gradient">
+          <h2 className="text-3xl md:text-4xl font-bold font-dm-sans mb-4 text-gradient">
             {t('reviews.title')}
           </h2>
           <p className="text-muted-foreground text-lg max-w-3xl mx-auto leading-relaxed">
@@ -35,7 +35,7 @@ const ReviewsSection = () => {
         <div className="max-w-4xl mx-auto">
           <Card className="p-8 shadow-lg border-primary/10">
             <div className="text-center mb-6">
-              <h3 className="text-xl font-semibold mb-4">
+              <h3 className="text-xl font-semibold font-dm-sans mb-4">
                 {t('reviews.verifiedReviews')}
               </h3>
               

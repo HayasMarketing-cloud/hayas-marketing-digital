@@ -42,7 +42,7 @@ const SolutionsSection = () => {
     <section id="soluciones" className="section-normal bg-gradient-to-br from-white to-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold font-dm-sans mb-4">
             {language === 'es' ? (
               <>Nuestras <span className="text-gradient-primary">Soluciones</span></>
             ) : (

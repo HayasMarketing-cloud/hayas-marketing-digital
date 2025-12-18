@@ -62,7 +62,7 @@ const SuccessCasesSection: React.FC<SuccessCasesSectionProps> = ({
     <section id={id} className={`py-12 md:py-16 bg-white ${className}`}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold font-dm-sans mb-6">
             {title.split(' ').map((word, index) => 
               word.toLowerCase() === 'éxito' ? (
                 <span key={index} className="text-gradient-primary">{word}</span>
@@ -94,7 +94,7 @@ const SuccessCasesSection: React.FC<SuccessCasesSectionProps> = ({
                   />
                 </div>
                 <CardContent className="p-4">
-                  <h3 className="text-lg font-bold mb-2">{project.name}</h3>
+                  <h3 className="text-lg font-bold font-dm-sans mb-2">{project.name}</h3>
                   <p className="text-sm text-gray-500 mb-3">{project.industry}</p>
                   <p className="text-sm text-gray-600 mb-3">{project.service}</p>
                   
