@@ -593,7 +593,7 @@ export const translations = {
     // Secciones de la home
     servicesSection: {
       title: 'Nuestras Capacidades',
-      subtitle: 'Que activamos dentro de nuestras soluciones en función del momento, los objetivos y la realidad de cada negocio.',
+      subtitle: 'Que activamos dentro de soluciones en función del momento, los objetivos y la realidad de cada negocio.',
       all: 'Todos los servicios',
       viewAll: 'Ver todos los servicios',
       viewLess: 'Ver menos',
