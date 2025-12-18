@@ -2,8 +2,8 @@ import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 
 interface TypographyExampleProps {
-  level: 'h1' | 'h2' | 'h3' | 'h4' | 'body' | 'small';
-  font: 'helvetica' | 'arimo';
+  level: 'h1' | 'h2' | 'h3' | 'h4' | 'body' | 'small' | 'ui';
+  font: 'dm-sans' | 'inter';
   text?: string;
 }
 
@@ -12,7 +12,7 @@ export const TypographyExample: React.FC<TypographyExampleProps> = ({
   font,
   text
 }) => {
-  const fontClass = font === 'helvetica' ? 'font-helvetica' : 'font-arimo';
+  const fontClass = font === 'dm-sans' ? 'font-dm-sans' : 'font-sans';
   
   const config = {
     h1: {
@@ -50,6 +50,12 @@ export const TypographyExample: React.FC<TypographyExampleProps> = ({
       class: 'text-sm',
       defaultText: 'Información complementaria y notas al pie',
       usage: 'Metadatos, fechas, disclaimers, texto auxiliar'
+    },
+    ui: {
+      label: 'UI - Elementos de Interfaz',
+      class: 'text-sm font-medium',
+      defaultText: 'Botones • Navegación • Links • Labels',
+      usage: 'Botones, menús, formularios, badges pequeños'
     }
   };
 
@@ -70,6 +76,8 @@ export const TypographyExample: React.FC<TypographyExampleProps> = ({
         return <p className={`${currentConfig.class} ${fontClass}`}>{displayText}</p>;
       case 'small':
         return <p className={`${currentConfig.class} ${fontClass} text-muted-foreground`}>{displayText}</p>;
+      case 'ui':
+        return <p className={`${currentConfig.class} ${fontClass}`}>{displayText}</p>;
       default:
         return <p className={fontClass}>{displayText}</p>;
     }
@@ -81,7 +89,7 @@ export const TypographyExample: React.FC<TypographyExampleProps> = ({
         <div className="mb-4">
           <div className="flex items-center justify-between mb-2">
             <h4 className="text-sm font-semibold text-muted-foreground">{currentConfig.label}</h4>
-            <code className="text-xs bg-muted px-2 py-1 rounded">{currentConfig.class}</code>
+            <code className="text-xs bg-muted px-2 py-1 rounded">{fontClass} {currentConfig.class}</code>
           </div>
           <p className="text-xs text-muted-foreground mb-4">
             <strong>Uso:</strong> {currentConfig.usage}
@@ -93,7 +101,7 @@ export const TypographyExample: React.FC<TypographyExampleProps> = ({
         </div>
         
         <div className="mt-3 text-xs text-muted-foreground">
-          <strong>Fuente:</strong> {font === 'helvetica' ? 'Helvetica' : 'Arimo'}
+          <strong>Fuente:</strong> {font === 'dm-sans' ? 'DM Sans' : 'Inter'}
         </div>
       </CardContent>
     </Card>
