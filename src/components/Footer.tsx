@@ -29,7 +29,7 @@ const Footer: React.FC<FooterProps> = ({
         <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-8">
           {/* Logo + Tagline */}
           <div className="text-center md:text-left">
-            <h3 className="text-xl font-bold text-white mb-2">Hayas Marketing</h3>
+            <h3 className="text-xl font-bold font-dm-sans text-white mb-2">Hayas Marketing</h3>
             <p className="text-sm max-w-xs">{t('footer.tagline')}</p>
           </div>
           
@@ -85,7 +85,7 @@ const Footer: React.FC<FooterProps> = ({
         {/* Priority CTAs Section - Solo en Home */}
         {showKitSection && <div className="border-t border-gray-800 mt-12 pt-8">
             <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold text-white mb-6">Agentes de transformación digital a través de los Fondos Next Generation de la Unión Europea</h3>
+              <h3 className="text-2xl font-bold font-dm-sans text-white mb-6">Agentes de transformación digital a través de los Fondos Next Generation de la Unión Europea</h3>
               <div className="flex justify-center mb-6">
                 <div className="bg-white rounded-lg p-4 shadow-lg">
                   <img src="/lovable-uploads/e3910419-c73c-4448-a631-ed5f0eff61fe.png" alt="Agentes oficiales - Gobierno de España, Red.es, Kit Digital, Financiado por la Unión Europea" width={400} height={48} className="h-12 max-w-full" style={{
