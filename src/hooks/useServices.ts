@@ -71,7 +71,7 @@ export const useServices = (GoogleGIcon?: React.ComponentType<{ className?: stri
     Icon: def.translationKey === 'googleAds' && GoogleGIcon ? GoogleGIcon : def.Icon,
     title: t(`serviceItems.${def.translationKey}.title`),
     description: t(`serviceItems.${def.translationKey}.description`),
-    href: language === 'en' ? def.hrefEn : def.hrefEs,
+    href: language === 'en' ? '/en/coming-soon' : def.hrefEs,
     pillar: def.pillar,
   }));
 
