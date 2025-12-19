@@ -733,9 +733,9 @@ export const translations = {
       titleHighlight: 'ha cambiado.',
       titleEnd: 'Cómo se gestiona también.',
       intro: {
-        p1: 'Hoy las empresas cuentan con más canales, más datos y más herramientas que nunca.',
-        p2: 'Pero eso no siempre se traduce en mejores decisiones ni en crecimiento sostenible.',
-        p3: 'A menudo el marketing deja de ser un apoyo claro al negocio y pasa a sentirse fragmentado, difícil de priorizar y costoso de mantener.'
+        p1: 'Hoy todos tenemos más canales, más datos y más herramientas que nunca.',
+        p2: 'Pero eso no siempre lleva a mejores decisiones ni a un crecimiento sostenible.',
+        p3: 'Porque el crecimiento a largo plazo empieza por las decisiones que tomamos hoy.'
       },
       transition: 'En ese punto, las empresas suelen estar en uno —o varios— de estos momentos:',
       moments: {
@@ -1487,11 +1487,11 @@ export const translations = {
     marketingChanged: {
       title: 'Marketing ',
       titleHighlight: 'has changed.',
-      titleEnd: 'The way it\'s managed should too.',
+      titleEnd: 'So has the way it should be managed.',
       intro: {
-        p1: 'Today, businesses have more channels, more data, and more tools than ever.',
-        p2: 'But that doesn\'t always translate into better decisions or sustainable growth.',
-        p3: 'Often, marketing stops being a clear support for the business and starts feeling fragmented, hard to prioritize, and costly to maintain.'
+        p1: 'Today, we all have more channels, data, and tools than ever.',
+        p2: "But that doesn't always lead to better decisions or sustainable growth.",
+        p3: 'Because long-term growth starts with the decisions we make today.'
       },
       transition: 'At that point, businesses typically find themselves in one—or several—of these moments:',
       moments: {
