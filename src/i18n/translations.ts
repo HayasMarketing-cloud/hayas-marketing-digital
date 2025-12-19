@@ -1356,7 +1356,7 @@ export const translations = {
     servicesSection: {
       title: 'Our Capabilities',
       subtitle: 'That we activate within our solutions based on the timing, objectives, and reality of each business.',
-      all: 'All services',
+      all: 'All',
       viewAll: 'View all services',
       viewLess: 'View less',
       viewService: 'View',
