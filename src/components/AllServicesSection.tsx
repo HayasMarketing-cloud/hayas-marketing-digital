@@ -80,7 +80,7 @@ const AllServicesSection = () => {
         {/* Lista/Cuadrícula de servicios */}
         <div className={`grid ${view === 'grid' ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8' : 'grid-cols-1 gap-6'} animate-fade-in`}>
           {filtered.map((service, idx) => {
-            const initiallyVisible = active === 'all' ? isPreferred(service.title, service.href) : idx < 6;
+            const initiallyVisible = idx < 6;
             const visible = expanded ? true : initiallyVisible;
             return (
               <Card key={service.id} className={`${visible ? '' : 'hidden'} border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full`}>
