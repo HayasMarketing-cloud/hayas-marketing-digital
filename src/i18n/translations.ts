@@ -1493,7 +1493,7 @@ export const translations = {
         p2: "But that doesn't always lead to better decisions or sustainable growth.",
         p3: 'Because long-term growth starts with the decisions we make today.'
       },
-      transition: 'At that point, businesses typically find themselves in one—or several—of these moments:',
+      transition: 'At that point, we usually find ourselves in one—or several—of these moments:',
       moments: {
         base: {
           title: 'When the foundation doesn\'t support growth',
