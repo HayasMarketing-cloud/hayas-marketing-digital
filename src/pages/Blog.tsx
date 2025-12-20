@@ -43,7 +43,7 @@ const Blog = () => {
       excerpt: 'La digitalización deja rastro. Analizamos el marco legal del derecho al olvido en España y Europa, y la importancia de una digitalización consciente.',
       category: 'Privacidad Digital',
       readTime: '9 min',
-      date: '20 Dic 2025',
+      date: '25 Nov 2025',
       image: '/huella-digital-hero.jpg',
       slug: '/es/blog/huella-digital-derecho-olvido',
       tags: ['Privacidad', 'RGPD', 'Derecho al Olvido', 'Huella Digital', 'LOPDGDD', 'Digitalización Consciente'],
