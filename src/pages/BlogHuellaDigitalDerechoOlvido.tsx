@@ -32,7 +32,7 @@ const BlogHuellaDigitalDerechoOlvido = () => {
     metaTitle: 'Huella Digital y Derecho al Olvido: Privacidad en la Era Digital | Hayas Marketing',
     description: 'Exploramos qué es la huella digital, el derecho al olvido según el RGPD y la LOPDGDD, y cómo gestionar la privacidad digital con responsabilidad.',
     metaDescription: 'Guía completa sobre huella digital, derecho al olvido y privacidad online. RGPD, LOPDGDD y gestión de datos personales tras el fallecimiento.',
-    date: '2025-12-20',
+    date: '2025-11-25',
     readTime: '9 min',
     category: 'Privacidad Digital',
     author: 'Equipo Hayas Marketing',
@@ -55,8 +55,8 @@ const BlogHuellaDigitalDerechoOlvido = () => {
           "url": "https://hayasmarketing.com/logo.png"
         }
       },
-      "datePublished": "2025-12-20",
-      "dateModified": "2025-12-20",
+      "datePublished": "2025-11-25",
+      "dateModified": "2025-11-25",
       "image": "/huella-digital-hero.jpg",
       "mainEntityOfPage": "https://hayasmarketing.com/es/blog/huella-digital-derecho-olvido"
     },
