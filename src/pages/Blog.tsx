@@ -37,6 +37,19 @@ const Blog = () => {
 
   const allPosts = [
     {
+      id: 'huella-digital-derecho-olvido',
+      title: 'Huella digital y derecho al olvido: privacidad y conciencia en la era digital',
+      description: 'Exploramos qué es la huella digital, el derecho al olvido según el RGPD y la LOPDGDD, y cómo gestionar la privacidad digital con responsabilidad.',
+      excerpt: 'La digitalización deja rastro. Analizamos el marco legal del derecho al olvido en España y Europa, y la importancia de una digitalización consciente.',
+      category: 'Privacidad Digital',
+      readTime: '9 min',
+      date: '20 Dic 2025',
+      image: '/huella-digital-hero.jpg',
+      slug: '/es/blog/huella-digital-derecho-olvido',
+      tags: ['Privacidad', 'RGPD', 'Derecho al Olvido', 'Huella Digital', 'LOPDGDD', 'Digitalización Consciente'],
+      featured: true
+    },
+    {
       id: 'chatbots-para-paginas-web',
       title: 'Chatbots para páginas web: qué opciones existen y cuál tiene sentido para tu negocio',
       description: 'Descubre los tipos de chatbots para páginas web, sus ventajas y limitaciones. Guía práctica para elegir la solución que mejor encaje con tu negocio.',
