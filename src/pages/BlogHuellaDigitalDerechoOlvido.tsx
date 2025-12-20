@@ -485,9 +485,12 @@ const BlogHuellaDigitalDerechoOlvido = () => {
             Pero la realidad demuestra que <strong>prevenir en vida es clave para evitar problemas después</strong>.
           </p>
 
-          <Card className="bg-muted/30 border-border/50 mb-6">
+          <Card className="bg-gradient-to-br from-primary/5 to-secondary/5 border-primary/20 mb-6">
             <CardContent className="p-6">
-              <p className="font-semibold text-lg mb-4">En un próximo artículo abordaremos la parte práctica:</p>
+              <p className="font-semibold text-lg mb-2">Ya está disponible la guía práctica:</p>
+              <Link to="/es/blog/guia-privacidad-huella-digital" className="text-xl font-bold text-primary hover:underline block mb-4">
+                Guía práctica para proteger tu privacidad y tu identidad digital
+              </Link>
               <ul className="space-y-2">
                 {[
                   'Cómo gestionar la huella digital en vida',
