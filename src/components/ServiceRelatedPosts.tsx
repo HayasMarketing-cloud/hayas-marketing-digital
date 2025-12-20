@@ -25,6 +25,17 @@ interface ServiceRelatedPostsProps {
 // Posts data - en una app real esto vendría de una API o base de datos
 const allPosts: Post[] = [
   {
+    id: "guia-privacidad-huella-digital",
+    title: "Guía práctica para proteger tu privacidad y tu identidad digital",
+    description: "Guía completa para gestionar tu huella digital en vida: identifica perfiles, ajusta privacidad, ejerce el derecho al olvido y protege tu identidad online.",
+    slug: "/es/blog/guia-privacidad-huella-digital",
+    image: "/guia-privacidad-huella-digital-hero.jpg",
+    category: "Privacidad Digital",
+    readTime: "12 min",
+    date: "2025-12-20",
+    tags: ["consultoria-estrategica-analitica", "implantacion-crm"]
+  },
+  {
     id: "huella-digital-derecho-olvido",
     title: "Huella digital y derecho al olvido: privacidad y conciencia en la era digital",
     description: "Exploramos qué es la huella digital, el derecho al olvido según el RGPD y la LOPDGDD, y cómo gestionar la privacidad digital con responsabilidad.",
@@ -32,7 +43,7 @@ const allPosts: Post[] = [
     image: "/huella-digital-hero.jpg",
     category: "Privacidad Digital",
     readTime: "9 min",
-    date: "2025-12-20",
+    date: "2025-11-25",
     tags: ["consultoria-estrategica-analitica", "implantacion-crm"]
   },
   {

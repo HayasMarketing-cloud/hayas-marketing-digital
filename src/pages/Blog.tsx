@@ -22,6 +22,8 @@ import marketingNaturalHero from '@/assets/marketing-natural-posicionamiento-org
 import googleConsentModeHero from '@/assets/google-consent-mode-cookieyes-hero.jpg';
 import kitDigitalHero from '@/assets/kit-digital-hero-updated.jpg';
 import chatbotsWebHero from '@/assets/chatbots-web-hero.jpg';
+import guiaPrivacidadHeroImage from '@/assets/guia-privacidad-huella-digital-hero.jpg';
+
 const Blog = () => {
   const featuredPost = {
     id: 'la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing',
@@ -37,6 +39,19 @@ const Blog = () => {
 
   const allPosts = [
     {
+      id: 'guia-privacidad-huella-digital',
+      title: 'Guía práctica para proteger tu privacidad y tu identidad digital',
+      description: 'Guía completa para gestionar tu huella digital en vida: identifica perfiles, ajusta privacidad, ejerce el derecho al olvido y protege tu identidad online.',
+      excerpt: 'Pasos prácticos para gestionar tu huella digital: inventario de perfiles, configuración de privacidad, albacea digital y protección de identidad.',
+      category: 'Privacidad Digital',
+      readTime: '12 min',
+      date: '20 Dic 2025',
+      image: guiaPrivacidadHeroImage,
+      slug: '/es/blog/guia-privacidad-huella-digital',
+      tags: ['Privacidad', 'Huella Digital', 'Identidad Digital', 'Derecho al Olvido', 'RGPD', 'Digitalización Consciente', 'Seguridad Online'],
+      featured: true
+    },
+    {
       id: 'huella-digital-derecho-olvido',
       title: 'Huella digital y derecho al olvido: privacidad y conciencia en la era digital',
       description: 'Exploramos qué es la huella digital, el derecho al olvido según el RGPD y la LOPDGDD, y cómo gestionar la privacidad digital con responsabilidad.',
@@ -47,7 +62,7 @@ const Blog = () => {
       image: '/huella-digital-hero.jpg',
       slug: '/es/blog/huella-digital-derecho-olvido',
       tags: ['Privacidad', 'RGPD', 'Derecho al Olvido', 'Huella Digital', 'LOPDGDD', 'Digitalización Consciente'],
-      featured: true
+      featured: false
     },
     {
       id: 'chatbots-para-paginas-web',
