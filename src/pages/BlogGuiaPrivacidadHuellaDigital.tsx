@@ -41,7 +41,7 @@ const BlogGuiaPrivacidadHuellaDigital = () => {
     metaTitle: 'Guía Práctica: Protege tu Privacidad y Huella Digital | Hayas Marketing',
     description: 'Guía completa para gestionar tu huella digital en vida: identifica perfiles, ajusta privacidad, ejerce el derecho al olvido y protege tu identidad online.',
     metaDescription: 'Aprende a gestionar tu huella digital: inventario de perfiles, configuración de privacidad, derecho al olvido, albacea digital y protección de la identidad online.',
-    date: '2025-12-20',
+    date: '2025-12-03',
     readTime: '12 min',
     category: 'Privacidad Digital',
     author: 'Equipo Hayas Marketing',
@@ -64,8 +64,8 @@ const BlogGuiaPrivacidadHuellaDigital = () => {
           "url": "https://hayasmarketing.com/logo.png"
         }
       },
-      "datePublished": "2025-12-20",
-      "dateModified": "2025-12-20",
+      "datePublished": "2025-12-03",
+      "dateModified": "2025-12-03",
       "image": "/guia-privacidad-huella-digital-hero.jpg",
       "mainEntityOfPage": "https://hayasmarketing.com/es/blog/guia-privacidad-huella-digital"
     },

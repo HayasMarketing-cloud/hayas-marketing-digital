@@ -45,7 +45,7 @@ const Blog = () => {
       excerpt: 'Pasos prácticos para gestionar tu huella digital: inventario de perfiles, configuración de privacidad, albacea digital y protección de identidad.',
       category: 'Privacidad Digital',
       readTime: '12 min',
-      date: '20 Dic 2025',
+      date: '3 Dic 2025',
       image: guiaPrivacidadHeroImage,
       slug: '/es/blog/guia-privacidad-huella-digital',
       tags: ['Privacidad', 'Huella Digital', 'Identidad Digital', 'Derecho al Olvido', 'RGPD', 'Digitalización Consciente', 'Seguridad Online'],

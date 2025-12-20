@@ -32,7 +32,7 @@ const allPosts: Post[] = [
     image: "/guia-privacidad-huella-digital-hero.jpg",
     category: "Privacidad Digital",
     readTime: "12 min",
-    date: "2025-12-20",
+    date: "2025-12-03",
     tags: ["consultoria-estrategica-analitica", "implantacion-crm"]
   },
   {
