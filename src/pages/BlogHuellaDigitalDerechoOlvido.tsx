@@ -360,7 +360,7 @@ const BlogHuellaDigitalDerechoOlvido = () => {
               <div className="flex items-start gap-4">
                 <Building2 className="h-8 w-8 text-blue-600 flex-shrink-0 mt-1" />
                 <div>
-                  <p className="font-semibold text-lg mb-4">Para cerrar la cuenta de una persona fallecida, LinkedIn exige:</p>
+                  <p className="font-semibold text-lg mb-4">Para cerrar la cuenta de una persona fallecida, <a href="https://www.linkedin.com/help/linkedin/answer/a1380121?lang=es" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">LinkedIn exige</a>:</p>
                   <ul className="space-y-3">
                     <li className="flex items-start gap-2">
                       <FileText className="h-5 w-5 text-blue-600 flex-shrink-0 mt-0.5" />
