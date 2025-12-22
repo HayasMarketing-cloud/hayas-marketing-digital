@@ -40,7 +40,14 @@ const ArticleUtilitySection: React.FC<ArticleUtilitySectionProps> = ({ title, ur
     }
     
     if (shareUrl) {
-      window.open(shareUrl, '_blank', 'width=600,height=400');
+      const newWindow = window.open(shareUrl, '_blank');
+
+      if (!newWindow) {
+        toast({
+          title: "Ventana bloqueada",
+          description: "Tu navegador bloqueó la apertura. Permite pop-ups para compartir.",
+        });
+      }
     }
   };
 
