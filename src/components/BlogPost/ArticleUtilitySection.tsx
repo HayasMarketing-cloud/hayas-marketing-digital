@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Share2, Hash, Users, Briefcase, Link2 } from 'lucide-react';
+import { Share2, Hash, Users, Briefcase, Link2, MessageCircle } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 interface ArticleUtilitySectionProps {
@@ -26,6 +26,9 @@ const ArticleUtilitySection: React.FC<ArticleUtilitySectionProps> = ({ title, ur
         break;
       case 'linkedin':
         shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
+        break;
+      case 'whatsapp':
+        shareUrl = `https://api.whatsapp.com/send?text=${encodedTitle}%20${encodedUrl}`;
         break;
       case 'copy':
         navigator.clipboard.writeText(url);
@@ -90,6 +93,16 @@ const ArticleUtilitySection: React.FC<ArticleUtilitySectionProps> = ({ title, ur
               
               <Button 
                 variant="outline" 
+                size="sm"
+                onClick={() => handleShare('whatsapp')}
+                className="group hover:bg-green-50 hover:border-green-600 hover:text-green-700"
+              >
+                <MessageCircle className="w-4 h-4 mr-2 text-green-600 group-hover:scale-110 transition-transform" />
+                WhatsApp
+              </Button>
+              
+              <Button 
+                variant="outline"
                 size="sm"
                 onClick={() => handleShare('copy')}
                 className="group hover:bg-gray-50 hover:border-gray-400 hover:text-gray-700"
