@@ -23,6 +23,7 @@ import googleConsentModeHero from '@/assets/google-consent-mode-cookieyes-hero.j
 import kitDigitalHero from '@/assets/kit-digital-hero-updated.jpg';
 import chatbotsWebHero from '@/assets/chatbots-web-hero.jpg';
 import guiaPrivacidadHeroImage from '@/assets/guia-privacidad-huella-digital-hero.jpg';
+import gobernanzaIAHero from '@/assets/gobernanza-ia-empresas-hero.jpg';
 
 const Blog = () => {
   const featuredPost = {
@@ -38,6 +39,19 @@ const Blog = () => {
   };
 
   const allPosts = [
+    {
+      id: 'gobernanza-ia-empresas',
+      title: 'La gobernanza de la inteligencia artificial: una nueva responsabilidad estratégica para las empresas',
+      description: 'La inteligencia artificial requiere gobernanza. Descubre por qué es una responsabilidad estratégica para las empresas y cómo implementarla correctamente.',
+      excerpt: 'La IA multiplica nuestra capacidad de generar contenidos, pero sin gobernanza el riesgo es evidente. Descubre cómo gobernar la IA en tu empresa.',
+      category: 'Inteligencia Artificial',
+      readTime: '10 min',
+      date: '2025-12-10',
+      image: gobernanzaIAHero,
+      slug: '/es/blog/gobernanza-ia-empresas',
+      tags: ['IA', 'Gobernanza', 'Estrategia', 'Regulación', 'Marketing Digital', 'Automatización', 'Ética IA'],
+      featured: true
+    },
     {
       id: 'guia-privacidad-huella-digital',
       title: 'Guía práctica para proteger tu privacidad y tu identidad digital',

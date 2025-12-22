@@ -402,6 +402,7 @@ const App = () => (
           <Route path="/es/blog/chatbots-para-paginas-web" element={<PageSuspense><Pages.BlogChatbotsParaPaginasWeb /></PageSuspense>} />
           <Route path="/es/blog/huella-digital-derecho-olvido" element={<PageSuspense><Pages.BlogHuellaDigitalDerechoOlvido /></PageSuspense>} />
           <Route path="/es/blog/guia-privacidad-huella-digital" element={<PageSuspense><Pages.BlogGuiaPrivacidadHuellaDigital /></PageSuspense>} />
+          <Route path="/es/blog/gobernanza-ia-empresas" element={<PageSuspense><Pages.BlogGobernanzaIAEmpresas /></PageSuspense>} />
            <Route path="/es/blog/:id" element={<PageSuspense><Pages.BlogPost /></PageSuspense>} />
           
           {/* COMPARATIVAS */}
