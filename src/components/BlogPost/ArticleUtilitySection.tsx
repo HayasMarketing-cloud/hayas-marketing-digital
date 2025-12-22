@@ -22,7 +22,7 @@ const ArticleUtilitySection: React.FC<ArticleUtilitySectionProps> = ({ title, ur
         shareUrl = `https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}&via=hayasmarketing`;
         break;
       case 'facebook':
-        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
+        shareUrl = `https://www.facebook.com/share.php?u=${encodedUrl}`;
         break;
       case 'linkedin':
         shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
