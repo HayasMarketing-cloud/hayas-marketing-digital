@@ -105,11 +105,11 @@ const BlogGobernanzaIAEmpresas = () => {
   ];
 
   const iniciativasEspana = [
-    { nombre: 'ENIA', descripcion: 'Estrategia Nacional de Inteligencia Artificial', detalle: 'Hoja de ruta a medio y largo plazo para el despliegue de la IA' },
-    { nombre: 'AESIA', descripcion: 'Agencia Española de Supervisión de la IA', detalle: 'Capacidad para supervisar, regular y sancionar usos indebidos' },
-    { nombre: 'Ley IA 2025', descripcion: 'Anteproyecto de Ley para el Buen Uso de la IA', detalle: 'Adapta el Reglamento Europeo al marco nacional' },
-    { nombre: 'Sandbox IA', descripcion: 'Entorno regulatorio controlado', detalle: 'Permite a empresas innovar cumpliendo requisitos europeos' },
-    { nombre: 'ALIA', descripcion: 'Modelo fundacional público', detalle: 'Infraestructura de IA entrenada en español y lenguas cooficiales' }
+    { nombre: 'ENIA', descripcion: 'Estrategia Nacional de Inteligencia Artificial', detalle: 'Hoja de ruta a medio y largo plazo para el despliegue de la IA', url: 'https://avance.digital.gob.es/es-es/paginas/inteligencia-artificial.aspx' },
+    { nombre: 'AESIA', descripcion: 'Agencia Española de Supervisión de la IA', detalle: 'Capacidad para supervisar, regular y sancionar usos indebidos', url: 'https://aesia.digital.gob.es/es' },
+    { nombre: 'Ley IA 2025', descripcion: 'Anteproyecto de Ley para el Buen Uso de la IA', detalle: 'Adapta el Reglamento Europeo al marco nacional. En la fecha de publicación de este post, en fase de tramitación en las Cortes Generales, pero aún debe completar todos los pasos legislativos (debate, enmiendas y votaciones en el Congreso y Senado) antes de convertirse en ley.', url: 'https://digital.gob.es/comunicacion/notas-prensa/mtdfp/2025/03/2025-03-11' },
+    { nombre: 'Sandbox IA', descripcion: 'Entorno regulatorio controlado', detalle: 'Permite a empresas innovar cumpliendo requisitos europeos', url: 'https://avance.digital.gob.es/sandbox-IA/Paginas/sandbox-IA.aspx' },
+    { nombre: 'ALIA', descripcion: 'Modelo fundacional público', detalle: 'Infraestructura de IA entrenada en español y lenguas cooficiales', url: 'https://alia.gob.es/' }
   ];
 
   const empresasEjemplo = [
@@ -253,11 +253,25 @@ const BlogGobernanzaIAEmpresas = () => {
               <Card key={index} className="hover:shadow-md transition-shadow">
                 <CardContent className="p-4">
                   <div className="flex items-start gap-4">
-                    <Badge className="bg-primary/10 text-primary border-primary/20 flex-shrink-0">
-                      {iniciativa.nombre}
-                    </Badge>
+                    <a 
+                      href={iniciativa.url} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex-shrink-0"
+                    >
+                      <Badge className="bg-primary/10 text-primary border-primary/20 hover:bg-primary/20 transition-colors cursor-pointer">
+                        {iniciativa.nombre}
+                      </Badge>
+                    </a>
                     <div>
-                      <p className="font-semibold text-elegant">{iniciativa.descripcion}</p>
+                      <a 
+                        href={iniciativa.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="font-semibold text-elegant hover:text-primary transition-colors"
+                      >
+                        {iniciativa.descripcion}
+                      </a>
                       <p className="text-sm text-elegant-muted mt-1">{iniciativa.detalle}</p>
                     </div>
                   </div>
