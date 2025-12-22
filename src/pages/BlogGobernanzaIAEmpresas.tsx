@@ -198,6 +198,73 @@ const BlogGobernanzaIAEmpresas = () => {
 
         <Separator />
 
+        {/* Un riesgo creciente: fraude organizado con apariencia legítima */}
+        <section>
+          <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
+            <AlertTriangle className="h-8 w-8 text-primary" />
+            Un riesgo creciente: fraude organizado con apariencia legítima
+          </h2>
+          
+          <p className="text-elegant mb-4">
+            La inteligencia artificial ha elevado el nivel de sofisticación del fraude digital.
+          </p>
+          <p className="text-elegant mb-6">
+            Hoy, grupos organizados pueden utilizar IA para replicar con gran precisión la imagen, el tono y los mensajes de empresas reales, haciendo que las estafas sean mucho más creíbles y difíciles de detectar para los usuarios.
+          </p>
+
+          <Card className="bg-muted/50 mb-6">
+            <CardContent className="p-6">
+              <h3 className="text-xl font-semibold mb-4">En el ámbito del marketing y la comunicación, esto se traduce en riesgos como:</h3>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3 text-elegant">
+                  <AlertTriangle className="h-5 w-5 text-destructive flex-shrink-0 mt-0.5" />
+                  <div>
+                    <strong>Mensajes fraudulentos que imitan campañas reales</strong><br />
+                    <span className="text-elegant-muted">Emails, mensajes de WhatsApp o anuncios que copian diseño, lenguaje y estructura de comunicaciones oficiales de marcas conocidas.</span>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3 text-elegant">
+                  <AlertTriangle className="h-5 w-5 text-destructive flex-shrink-0 mt-0.5" />
+                  <div>
+                    <strong>Uso de IA para personalizar el engaño</strong><br />
+                    <span className="text-elegant-muted">Adaptación automática de mensajes según el perfil del usuario, aumentando la tasa de éxito del fraude.</span>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3 text-elegant">
+                  <AlertTriangle className="h-5 w-5 text-destructive flex-shrink-0 mt-0.5" />
+                  <div>
+                    <strong>Suplantación de identidades corporativas</strong><br />
+                    <span className="text-elegant-muted">Webs falsas, perfiles sociales clonados o asistentes conversacionales que aparentan ser canales oficiales de atención al cliente.</span>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3 text-elegant">
+                  <AlertTriangle className="h-5 w-5 text-destructive flex-shrink-0 mt-0.5" />
+                  <div>
+                    <strong>Mayor credibilidad, mayor impacto</strong><br />
+                    <span className="text-elegant-muted">Cuanto más profesional y coherente es el mensaje generado por IA, mayor es la confianza del usuario… y mayor el daño potencial para la marca y para las personas afectadas.</span>
+                  </div>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
+
+          <p className="text-elegant mb-4">
+            La IA no solo automatiza contenidos.<br />
+            <strong>También puede automatizar la credibilidad del engaño cuando se usa sin límites ni control.</strong>
+          </p>
+
+          <Card className="mt-6 bg-primary/5 border-primary/20">
+            <CardContent className="p-6">
+              <p className="text-elegant text-lg italic">
+                "Por eso, la gobernanza de la IA no es solo una cuestión tecnológica o legal.<br />
+                <strong>Es una capa esencial de protección de marca, clientes y reputación.</strong>"
+              </p>
+            </CardContent>
+          </Card>
+        </section>
+
+        <Separator />
+
         {/* Gobernar la IA no es frenar la innovación */}
         <section>
           <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
