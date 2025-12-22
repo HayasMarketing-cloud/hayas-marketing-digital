@@ -1,7 +1,24 @@
 import React, { useEffect, useState } from 'react';
+import { createRoot } from 'react-dom/client';
 import { useLocation } from 'react-router-dom';
 import { X, Minimize2 } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
+
+// Fallback component for when Voiceflow fails to load
+const SofiaFallbackMessage = () => (
+  <div className="flex items-center justify-center h-full p-4">
+    <div className="text-center">
+      <p className="text-gray-600 mb-2">¡Hola! Soy SofÍA</p>
+      <p className="text-sm text-gray-500">El asistente no está disponible temporalmente</p>
+      <a 
+        href="/es/contacto" 
+        className="inline-block mt-3 px-4 py-2 bg-lime-500 text-white rounded-lg text-sm hover:bg-lime-600 transition-colors"
+      >
+        Contactar directamente
+      </a>
+    </div>
+  </div>
+);
 
 const getPageMessage = (pathname: string) => {
   const messages: { [key: string]: string } = {
@@ -226,19 +243,12 @@ const SofiaWidget = () => {
             }
           } catch (error) {
             console.warn('Error reinitializing Voiceflow widget:', error);
-            // Show fallback message if Voiceflow fails
+            // Show fallback message if Voiceflow fails using React rendering
             if (targetElement) {
-              targetElement.innerHTML = `
-                <div class="flex items-center justify-center h-full p-4">
-                  <div class="text-center">
-                    <p class="text-gray-600 mb-2">¡Hola! Soy SofÍA</p>
-                    <p class="text-sm text-gray-500">El asistente no está disponible temporalmente</p>
-                    <a href="/es/contacto" class="inline-block mt-3 px-4 py-2 bg-lime-500 text-white rounded-lg text-sm hover:bg-lime-600 transition-colors">
-                      Contactar directamente
-                    </a>
-                  </div>
-                </div>
-              `;
+              // Clear any existing content
+              targetElement.innerHTML = '';
+              const root = createRoot(targetElement);
+              root.render(<SofiaFallbackMessage />);
             }
           }
         }
