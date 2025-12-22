@@ -182,6 +182,24 @@ const BlogGobernanzaIAEmpresas = () => {
               </p>
             </CardContent>
           </Card>
+
+          <Card className="mt-4 bg-destructive/5 border-destructive/20">
+            <CardContent className="p-6">
+              <p className="text-elegant mb-4">
+                Otro ejemplo reciente refuerza esta tendencia.
+              </p>
+              <p className="text-elegant">
+                <a 
+                  href="https://ipadizate.com/tecnologia/lanzar-un-podcast-generado-con-ia-parecia-una-buena-idea-pero-ha-sido-un-completo-desastre-para-el-washington-post" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="font-semibold text-primary hover:underline"
+                >
+                  Lanzar un podcast generado con IA parecía una buena idea, pero ha sido un completo desastre para el Washington Post
+                </a>. Un caso que demuestra cómo incluso medios de comunicación de referencia pueden sufrir consecuencias reputacionales graves cuando implementan IA sin una estrategia de gobernanza adecuada.
+              </p>
+            </CardContent>
+          </Card>
           
           <Card className="mt-6 bg-amber-50 dark:bg-amber-900/20 border-amber-200 dark:border-amber-700">
             <CardContent className="p-6">
