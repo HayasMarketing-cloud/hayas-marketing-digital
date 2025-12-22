@@ -167,7 +167,14 @@ const BlogGobernanzaIAEmpresas = () => {
                 Un ejemplo reciente lo ilustra con claridad.
               </p>
               <p className="text-elegant mb-4">
-                <strong>YouTube cerró varios canales que acumulaban millones de visualizaciones</strong> por publicar tráilers de películas falsos, generados íntegramente con inteligencia artificial y presentados como contenidos legítimos.
+                <a 
+                  href="https://www.actualidadiphone.com/youtube-cierra-dos-grandes-canales-por-trailers-falsos-generados-con-ia/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="font-semibold text-primary hover:underline"
+                >
+                  YouTube cierra dos grandes canales por tráilers falsos generados con IA
+                </a>. Un caso que evidencia las consecuencias de publicar contenidos generados íntegramente con inteligencia artificial y presentados como legítimos.
               </p>
               <p className="text-elegant mb-4">
                 No se trataba de un error técnico ni de un fallo puntual del algoritmo.
