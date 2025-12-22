@@ -28,7 +28,7 @@ const ArticleUtilitySection: React.FC<ArticleUtilitySectionProps> = ({ title, ur
         shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
         break;
       case 'whatsapp':
-        shareUrl = `https://api.whatsapp.com/send?text=${encodedTitle}%20${encodedUrl}`;
+        shareUrl = `https://wa.me/?text=${encodedTitle}%20${encodedUrl}`;
         break;
       case 'copy':
         navigator.clipboard.writeText(url);
