@@ -113,7 +113,7 @@ const BlogDecisionMarketing = () => {
       {/* Introducción */}
       <section className="mb-12">
         <p className="text-xl text-muted-foreground italic mb-8 border-l-4 border-primary pl-6">
-          "Una forma más consciente de acompañar cómo las personas eligen."
+          "Una forma más consciente de ayudar a tomar mejores decisiones."
         </p>
 
         <p className="text-elegant mb-6">
