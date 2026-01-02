@@ -24,6 +24,7 @@ import kitDigitalHero from '@/assets/kit-digital-hero-updated.jpg';
 import chatbotsWebHero from '@/assets/chatbots-web-hero.jpg';
 import guiaPrivacidadHeroImage from '@/assets/guia-privacidad-huella-digital-hero.jpg';
 import gobernanzaIAHero from '@/assets/gobernanza-ia-empresas-hero.jpg';
+import decisionMarketingHero from '@/assets/decision-marketing-hero.jpg';
 
 const Blog = () => {
   const featuredPost = {
@@ -39,6 +40,19 @@ const Blog = () => {
   };
 
   const allPosts = [
+    {
+      id: 'decision-marketing-confianza',
+      title: 'Decision Marketing: cuando el marketing deja de provocar y empieza a generar confianza',
+      description: 'Decision Marketing es un enfoque estratégico que prioriza la calidad de las elecciones sobre el volumen de conversiones. Descubre cómo acompañar decisiones conscientes.',
+      excerpt: 'Un enfoque que ayuda a las personas a elegir bien, no a decidir rápido. Más confianza, mejores relaciones, resultados sostenibles.',
+      category: 'Estrategias Marketing',
+      readTime: '12 min',
+      date: '2026-01-02',
+      image: decisionMarketingHero,
+      slug: '/es/blog/decision-marketing-confianza',
+      tags: ['Decision Marketing', 'Estrategia', 'Marketing Consciente', 'Confianza', 'Customer Journey', 'Marketing B2B'],
+      featured: true
+    },
     {
       id: 'gobernanza-ia-empresas',
       title: 'La gobernanza de la inteligencia artificial: una nueva responsabilidad estratégica para las empresas',
