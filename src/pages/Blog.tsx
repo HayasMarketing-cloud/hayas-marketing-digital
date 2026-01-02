@@ -457,7 +457,7 @@ const Blog = () => {
       {/* Featured Post */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-center">Estrategias de marketing digital y CRM destacadas</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center">Artículo destacado</h2>
           <div className="max-w-4xl mx-auto">
             <Card className="overflow-hidden hover:shadow-xl transition-shadow">
               <div className="md:flex">
