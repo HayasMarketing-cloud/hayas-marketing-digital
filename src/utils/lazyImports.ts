@@ -99,6 +99,7 @@ export const BlogChatbotsForWebsites = lazy(() => import("@/pages/BlogChatbotsFo
 export const BlogHuellaDigitalDerechoOlvido = lazy(() => import("@/pages/BlogHuellaDigitalDerechoOlvido"));
 export const BlogGuiaPrivacidadHuellaDigital = lazy(() => import("@/pages/BlogGuiaPrivacidadHuellaDigital"));
 export const BlogGobernanzaIAEmpresas = lazy(() => import("@/pages/BlogGobernanzaIAEmpresas"));
+export const BlogDecisionMarketing = lazy(() => import("@/pages/BlogDecisionMarketing"));
 
 // Casos de éxito (lazy loading)
 export const CasosExito = lazy(() => import("@/pages/CasosExito"));
