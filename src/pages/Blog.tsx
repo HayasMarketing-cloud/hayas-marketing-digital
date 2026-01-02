@@ -445,8 +445,7 @@ const Blog = () => {
                 Blog Hayas Marketing
               </h1>
               <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Descubre insights, estrategias y tendencias en marketing digital, IA y automatización 
-                que están transformando los negocios.
+                Ideas, criterio y análisis para entender mejor el marketing, la tecnología y cómo influyen en las decisiones reales de negocio.
               </p>
             </div>
           </div>
