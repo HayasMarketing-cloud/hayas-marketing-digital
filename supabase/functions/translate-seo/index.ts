@@ -12,13 +12,93 @@ serve(async (req) => {
   }
 
   try {
-    const { seoData, targetLanguage, esPageId, enPath, category } = await req.json();
-    
-    // Create Supabase client with service role for admin operations
+    // Authentication check
+    const authHeader = req.headers.get('Authorization');
+    if (!authHeader) {
+      console.log('❌ No authorization header provided');
+      return new Response(JSON.stringify({ error: 'Authentication required' }), {
+        status: 401,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+      });
+    }
+
+    // Create Supabase client with user context to verify auth
+    const supabaseUser = createClient(
+      Deno.env.get('SUPABASE_URL') ?? '',
+      Deno.env.get('SUPABASE_ANON_KEY') ?? '',
+      { global: { headers: { Authorization: authHeader } } }
+    );
+
+    // Verify user authentication
+    const { data: { user }, error: userError } = await supabaseUser.auth.getUser();
+    if (userError || !user) {
+      console.log('❌ Invalid authentication:', userError?.message);
+      return new Response(JSON.stringify({ error: 'Invalid authentication' }), {
+        status: 401,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+      });
+    }
+
+    // Verify admin role
+    const { data: isAdmin, error: roleError } = await supabaseUser
+      .rpc('has_role', { _user_id: user.id, _role: 'admin' });
+
+    if (roleError || !isAdmin) {
+      console.log('❌ Admin access required for user:', user.id.substring(0, 8) + '...');
+      return new Response(JSON.stringify({ error: 'Admin access required' }), {
+        status: 403,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+      });
+    }
+
+    console.log('✅ Admin authenticated:', user.id.substring(0, 8) + '...');
+
+    // Create Supabase admin client for database operations (after auth verification)
     const supabaseAdmin = createClient(
       Deno.env.get('SUPABASE_URL') ?? '',
       Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
     );
+
+    // Rate limiting check
+    const { data: rateLimitData, error: rateLimitError } = await supabaseAdmin
+      .from('rate_limit_log')
+      .select('*')
+      .eq('identifier', user.id)
+      .eq('endpoint', 'translate-seo')
+      .gte('window_start', new Date(Date.now() - 60 * 60 * 1000).toISOString())
+      .single();
+
+    if (!rateLimitError && rateLimitData && rateLimitData.request_count >= 20) {
+      console.log('❌ Rate limit exceeded for user:', user.id.substring(0, 8) + '...');
+      return new Response(JSON.stringify({ 
+        error: 'Rate limit exceeded. Please try again later.',
+        resetAt: new Date(new Date(rateLimitData.window_start).getTime() + 60 * 60 * 1000).toISOString()
+      }), {
+        status: 429,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+      });
+    }
+
+    // Update rate limit counter
+    if (rateLimitData) {
+      await supabaseAdmin
+        .from('rate_limit_log')
+        .update({ request_count: rateLimitData.request_count + 1 })
+        .eq('id', rateLimitData.id);
+    } else {
+      await supabaseAdmin
+        .from('rate_limit_log')
+        .insert({
+          identifier: user.id,
+          endpoint: 'translate-seo',
+          request_count: 1,
+          window_start: new Date().toISOString()
+        });
+    }
+
+    const { seoData, targetLanguage, esPageId, enPath, category } = await req.json();
+    
+    console.log('🔄 Translating SEO for:', esPageId, '-> ', enPath);
     
     const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
     
@@ -133,6 +213,8 @@ serve(async (req) => {
       console.error('Database insert error:', insertError);
       throw new Error(`Failed to create EN page: ${insertError.message}`);
     }
+
+    console.log('✅ Translation completed for:', enPath);
     
     return new Response(JSON.stringify({ 
       translatedData,
