@@ -517,7 +517,7 @@ const Blog = () => {
       {/* Recent Posts */}
       <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-center">Últimas tendencias en marketing y automatización</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center">Marketing e Inteligencia aplicada para tomar mejores decisiones</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {recentPosts.map((post) => (
               <Card key={post.id} className="overflow-hidden hover:shadow-lg transition-shadow group">
