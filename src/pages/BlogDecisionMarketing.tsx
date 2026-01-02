@@ -32,7 +32,7 @@ const BlogDecisionMarketing = () => {
     readTime: '12 min',
     category: 'Estrategias Marketing',
     author: 'Equipo Hayas Marketing',
-    tags: ['Decision Marketing', 'Estrategia', 'Marketing Consciente', 'Confianza', 'Customer Journey', 'Marketing B2B'],
+    tags: ['Decision Marketing', 'Estrategia', 'Marketing Consciente', 'Confianza', 'Customer Journey'],
     canonical: '/es/blog/decision-marketing-confianza',
     ogImage: decisionMarketingHero,
     structuredData: {
