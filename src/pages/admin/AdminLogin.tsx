@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
 import { useAdminAuth } from '@/hooks/useAdminAuth';
+import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Loader2, ShieldCheck, AlertCircle, UserPlus, LogIn } from 'lucide-react';
+import { Loader2, ShieldCheck, AlertCircle, UserPlus, LogIn, KeyRound } from 'lucide-react';
 import { toast } from 'sonner';
 
 const AdminLogin = () => {
@@ -17,6 +18,8 @@ const AdminLogin = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isSignUp, setIsSignUp] = useState(false);
+  const [isResetPassword, setIsResetPassword] = useState(false);
+  const [resetEmailSent, setResetEmailSent] = useState(false);
 
   const { signIn, signUp } = useAuth();
   const { isAdmin, isAuthenticated, isLoading: adminLoading, authLoading } = useAdminAuth();
@@ -30,6 +33,38 @@ const AdminLogin = () => {
       navigate(from, { replace: true });
     }
   }, [isAuthenticated, isAdmin, authLoading, adminLoading, navigate, from]);
+
+  const handleResetPassword = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError(null);
+    setIsLoading(true);
+
+    try {
+      if (!email) {
+        setError('Por favor, introduce tu email');
+        setIsLoading(false);
+        return;
+      }
+
+      const { error } = await supabase.auth.resetPasswordForEmail(email, {
+        redirectTo: `${window.location.origin}/admin/login`,
+      });
+
+      if (error) {
+        setError(error.message || 'Error al enviar el email de recuperación');
+        setIsLoading(false);
+        return;
+      }
+
+      setResetEmailSent(true);
+      toast.success('Email de recuperación enviado. Revisa tu bandeja de entrada.');
+    } catch (err) {
+      console.error('Reset password error:', err);
+      setError('Error inesperado. Por favor, intenta de nuevo.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -100,6 +135,106 @@ const AdminLogin = () => {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background">
         <Loader2 className="h-8 w-8 animate-spin text-primary" />
+      </div>
+    );
+  }
+
+  // Reset Password View
+  if (isResetPassword) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-background to-muted/30 px-4">
+        <Card className="w-full max-w-md shadow-xl border-border/50">
+          <CardHeader className="text-center space-y-4">
+            <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
+              <KeyRound className="h-8 w-8 text-primary" />
+            </div>
+            <div>
+              <CardTitle className="text-2xl font-bold">Recuperar Contraseña</CardTitle>
+              <CardDescription className="mt-2">
+                {resetEmailSent 
+                  ? 'Revisa tu bandeja de entrada'
+                  : 'Introduce tu email para recibir un enlace de recuperación'
+                }
+              </CardDescription>
+            </div>
+          </CardHeader>
+
+          <CardContent>
+            {resetEmailSent ? (
+              <div className="space-y-4 text-center">
+                <Alert>
+                  <AlertDescription>
+                    Hemos enviado un email a <strong>{email}</strong> con instrucciones para restablecer tu contraseña.
+                  </AlertDescription>
+                </Alert>
+                <Button 
+                  variant="outline" 
+                  className="w-full"
+                  onClick={() => {
+                    setIsResetPassword(false);
+                    setResetEmailSent(false);
+                    setEmail('');
+                  }}
+                >
+                  Volver al inicio de sesión
+                </Button>
+              </div>
+            ) : (
+              <form onSubmit={handleResetPassword} className="space-y-4">
+                {error && (
+                  <Alert variant="destructive">
+                    <AlertCircle className="h-4 w-4" />
+                    <AlertDescription>{error}</AlertDescription>
+                  </Alert>
+                )}
+
+                <div className="space-y-2">
+                  <Label htmlFor="reset-email">Email</Label>
+                  <Input
+                    id="reset-email"
+                    type="email"
+                    placeholder="tu@email.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    disabled={isLoading}
+                    autoComplete="email"
+                    required
+                  />
+                </div>
+
+                <Button 
+                  type="submit" 
+                  className="w-full" 
+                  disabled={isLoading}
+                >
+                  {isLoading ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Enviando...
+                    </>
+                  ) : (
+                    'Enviar enlace de recuperación'
+                  )}
+                </Button>
+              </form>
+            )}
+
+            {!resetEmailSent && (
+              <div className="mt-6 text-center">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setIsResetPassword(false);
+                    setError(null);
+                  }}
+                  className="text-sm text-primary hover:underline transition-colors"
+                >
+                  ← Volver al inicio de sesión
+                </button>
+              </div>
+            )}
+          </CardContent>
+        </Card>
       </div>
     );
   }
@@ -210,6 +345,19 @@ const AdminLogin = () => {
           </form>
 
           <div className="mt-6 text-center space-y-3">
+            {!isSignUp && (
+              <button
+                type="button"
+                onClick={() => {
+                  setIsResetPassword(true);
+                  setError(null);
+                }}
+                className="text-sm text-muted-foreground hover:text-primary transition-colors block w-full"
+              >
+                ¿Olvidaste tu contraseña?
+              </button>
+            )}
+            
             <button
               type="button"
               onClick={() => {
