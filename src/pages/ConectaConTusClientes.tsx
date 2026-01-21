@@ -18,6 +18,7 @@ import { ArrowRight, MessageSquare, Calendar } from 'lucide-react';
 import DynamicH1 from '@/components/DynamicH1';
 import { useAdvancedSEO } from '@/hooks/useAdvancedSEO';
 import { generateItemListSchema } from '@/data/seoData';
+import { useTranslation } from '@/hooks/useTranslation';
 
 // DATOS GUARDADOS TEMPORALMENTE - Sección de tecnologías para uso futuro
 const crmPlatforms = [
@@ -32,7 +33,8 @@ const crmPlatforms = [
   { name: "Claude", logo: "/lovable-uploads/523cad5a-116d-41e6-b169-599c84a7f8cf.png" }
 ];
 
-const faqItems = [
+// FAQ data - Spanish
+const faqItemsES = [
   {
     question: "¿Cuál es la diferencia entre HubSpot y HighLevel?",
     answer: "HubSpot es ideal para empresas B2B con procesos de venta complejos, ofertas de alto valor y ciclos largos. HighLevel (GHL) está optimizado para PYMEs y emprendedores, con automatización multicanal, landing pages integradas y un precio más competitivo."
@@ -59,11 +61,43 @@ const faqItems = [
   }
 ];
 
+// FAQ data - English
+const faqItemsEN = [
+  {
+    question: "What's the difference between HubSpot and HighLevel?",
+    answer: "HubSpot is ideal for B2B companies with complex sales processes, high-value offerings, and long cycles. HighLevel (GHL) is optimized for SMEs and entrepreneurs, with multichannel automation, integrated landing pages, and more competitive pricing."
+  },
+  {
+    question: "How long does it take to implement a complete CRM?",
+    answer: "Basic implementation takes 2-4 weeks, including configuration, data migration, and team training. Advanced automations and customizations can extend the timeline to 6-8 weeks depending on complexity."
+  },
+  {
+    question: "Can you migrate our current data without losing it?",
+    answer: "Yes, we perform complete and secure migrations from any system: Excel, legacy CRMs, email marketing, etc. We guarantee that no critical information is lost during the transition process."
+  },
+  {
+    question: "What kind of support do you offer after implementation?",
+    answer: "We include priority technical support, regular updates, optimizations based on real usage, monthly follow-up meetings, and access to new features. Your success is our long-term commitment."
+  },
+  {
+    question: "Does it integrate with our current tools?",
+    answer: "We configure integrations with your existing tools: email marketing, accounting, calendars, social media, billing systems, and any industry-specific software."
+  },
+  {
+    question: "Do you include training for our team?",
+    answer: "We include complete training: group sessions for the entire team, role-specific training, personalized documentation, tutorial videos, and support during the first weeks of use."
+  }
+];
+
 const ConectaConTusClientes = () => {
+  const { t, language } = useTranslation();
+  const isEnglish = language === 'en';
   const conectaServices = servicesByPillar.conecta || [];
   
   const seoData = useAdvancedSEO({
-    pageContent: "Soluciones CRM profesionales con HubSpot y GoHighLevel. Implementación, configuración y gestión de clientes para empresas que buscan crecimiento sostenible."
+    pageContent: isEnglish 
+      ? "Professional CRM solutions with HubSpot and GoHighLevel. Implementation, configuration and customer management for companies seeking sustainable growth."
+      : "Soluciones CRM profesionales con HubSpot y GoHighLevel. Implementación, configuración y gestión de clientes para empresas que buscan crecimiento sostenible."
   });
 
   // Generate ItemList schema for services
@@ -73,11 +107,73 @@ const ConectaConTusClientes = () => {
       url: `https://hayasmarketing.com${s.href}`,
       description: s.description
     })),
-    listName: 'Servicios Conecta con tus clientes - Hayas Marketing',
-    listDescription: 'Soluciones CRM, automatización de marketing, email marketing y funnels de conversión para conectar con tus clientes.'
+    listName: isEnglish ? 'Connect with Customers Services - Hayas Marketing' : 'Servicios Conecta con tus clientes - Hayas Marketing',
+    listDescription: isEnglish 
+      ? 'CRM solutions, marketing automation, email marketing and conversion funnels to connect with your customers.'
+      : 'Soluciones CRM, automatización de marketing, email marketing y funnels de conversión para conectar con tus clientes.'
   });
 
   const combinedStructuredData = [seoData.structuredData, itemListSchema].filter(Boolean);
+
+  // FAQ data based on language
+  const faqData = isEnglish ? faqItemsEN : faqItemsES;
+
+  // Language-specific content
+  const content = {
+    breadcrumbHome: isEnglish ? 'Home' : 'Inicio',
+    breadcrumbSolutions: isEnglish ? 'Solutions' : 'Soluciones',
+    breadcrumbCurrent: isEnglish ? 'Connect with Customers' : 'Conecta con tus clientes',
+    heroTitle: isEnglish 
+      ? 'Connect with your customers, current and potential'
+      : 'Conecta con tus clientes, actuales y potenciales',
+    heroTitleHighlight: isEnglish ? 'current and potential' : 'actuales y potenciales',
+    heroDescription: isEnglish 
+      ? 'True connection starts with a CRM that allows you to know, segment, and accompany your customers at every stage of the journey. At Hayas, we help you choose and implement the most suitable solution between HubSpot and HighLevel (GHL) to multiply your opportunities and strengthen your relationships.'
+      : 'La verdadera conexión empieza con un CRM que te permite conocer, segmentar y acompañar a tus clientes en cada etapa del camino. En Hayas te ayudamos a elegir e implantar la solución más adecuada entre HubSpot y HighLevel (GHL) para que multipliques tus oportunidades y fortalezcas tus relaciones.',
+    ctaPrimary: isEnglish ? '👉 Request your free consultation' : '👉 Solicita tu asesoría gratuita',
+    homeLink: isEnglish ? '/en' : '/es',
+    solutionsLink: isEnglish ? '/en#solutions' : '/es#soluciones',
+    consultaLink: isEnglish ? '/en/request-consultation' : '/es/solicitar-consulta',
+    reunionLink: isEnglish ? '/en/schedule-meeting' : '/es/agendar-reunion',
+    // Integral Service Section
+    integralTitle: isEnglish ? 'Integral' : 'Integral',
+    integralSubtitle: isEnglish ? 'CRM Administration and Marketing Management' : 'Administración CRM y Gestión Marketing',
+    integralDescription1: isEnglish 
+      ? 'Our on-demand administration model without monthly fee allows you to access a complete team of specialists who manage your CRM and digital marketing strategy comprehensively.'
+      : 'Nuestro modelo de administración bajo demanda sin fee mensual te permite acceder a un equipo completo de especialistas que gestionan tu CRM y estrategia de marketing digital de forma integral.',
+    integralDescription2: isEnglish 
+      ? 'You only pay for effective working hours, getting maximum value without compromising your budget.'
+      : 'Solo pagas por las horas de trabajo efectivo, obteniendo el máximo valor sin comprometer tu presupuesto.',
+    integralCards: isEnglish ? [
+      { title: 'Complete Implementation', description: 'Configuration and launch of your CRM, data migration, automations and team training.' },
+      { title: 'Inbound Marketing', description: 'Content strategy, lead nurturing, email marketing and workflows that attract and educate your prospects.' },
+      { title: 'Advanced Acquisition', description: 'Optimized landing pages, smart forms, lead scoring and automatic contact segmentation.' },
+      { title: 'Marketing Management', description: 'Metrics analysis, continuous optimization, personalized reporting and data-driven strategic adjustments.' }
+    ] : [
+      { title: 'Implantación Completa', description: 'Configuración y puesta en marcha de tu CRM, migración de datos, automatizaciones y formación del equipo.' },
+      { title: 'Inbound Marketing', description: 'Estrategia de contenidos, lead nurturing, email marketing y workflows que atraen y educan a tus prospectos.' },
+      { title: 'Captación Avanzada', description: 'Landing pages optimizadas, formularios inteligentes, lead scoring y segmentación automática de contactos.' },
+      { title: 'Gestión Marketing', description: 'Análisis de métricas, optimización continua, reporting personalizado y ajustes estratégicos basados en datos.' }
+    ],
+    ctaConsultoria: isEnglish ? 'Request free consultation' : 'Solicitar consultoría gratuita',
+    ctaVerServicio: isEnglish ? 'View full service' : 'Ver servicio completo',
+    // CTA Section
+    ctaIntermediate: {
+      title: isEnglish ? 'Discover how a CRM can transform your business' : 'Descubre cómo un CRM puede transformar tu negocio',
+      subtitle: isEnglish ? 'Request a free consultation and we\'ll show you how to optimize your customer relationships' : 'Solicita una asesoría gratuita y te mostraremos cómo optimizar la relación con tus clientes',
+      buttonText: isEnglish ? 'Request free consultation' : 'Solicitar asesoría gratuita'
+    },
+    // FAQ Section
+    faqTitle: isEnglish ? 'Frequently Asked Questions' : 'Preguntas frecuentes',
+    faqSubtitle: isEnglish ? 'We answer the most common questions about CRM, automation and customer management' : 'Resolvemos las dudas más comunes sobre CRM, automatización y gestión de clientes',
+    // Final CTA
+    finalCtaTitle: isEnglish ? 'Ready to take the' : '¿Listo para dar el',
+    finalCtaHighlight: isEnglish ? 'next step' : 'siguiente paso',
+    finalCtaDescription: isEnglish 
+      ? 'A CRM is not just technology, it\'s the way to grow with your customers. Start with a free consultation and, if you wish, request a personalized demo to see the tool in action.'
+      : 'Un CRM no es solo tecnología, es la forma de crecer con tus clientes. Empieza con una asesoría gratuita y, si lo deseas, solicita una demo personalizada para ver la herramienta en acción.',
+    ctaDemo: isEnglish ? '👉 Schedule your personalized demo' : '👉 Agenda tu demo personalizada',
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -98,11 +194,11 @@ const ConectaConTusClientes = () => {
       <div className="bg-muted/30 py-4 mt-20">
         <div className="container mx-auto px-4">
           <nav className="text-sm text-gray-600">
-            <Link to="/es" className="hover:text-primary">Inicio</Link>
+            <Link to={content.homeLink} className="hover:text-primary">{content.breadcrumbHome}</Link>
             <span className="mx-2">/</span>
-            <Link to="/es#soluciones" className="hover:text-primary">Soluciones</Link>
+            <Link to={content.solutionsLink} className="hover:text-primary">{content.breadcrumbSolutions}</Link>
             <span className="mx-2">/</span>
-            <span className="text-gray-900">Conecta con tus clientes</span>
+            <span className="text-gray-900">{content.breadcrumbCurrent}</span>
           </nav>
         </div>
       </div>
@@ -112,18 +208,18 @@ const ConectaConTusClientes = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <DynamicH1 
-              fallback="Conecta con tus clientes, actuales y potenciales"
+              fallback={content.heroTitle}
               className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
             >
-              Conecta con tus clientes, <span className="text-gradient-primary">actuales y potenciales</span>
+              {isEnglish ? 'Connect with your customers, ' : 'Conecta con tus clientes, '}<span className="text-gradient-primary">{content.heroTitleHighlight}</span>
             </DynamicH1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
-              La verdadera conexión empieza con un CRM que te permite conocer, segmentar y acompañar a tus clientes en cada etapa del camino. En Hayas te ayudamos a elegir e implantar la solución más adecuada entre HubSpot y HighLevel (GHL) para que multipliques tus oportunidades y fortalezcas tus relaciones.
+              {content.heroDescription}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="group">
-                <Link to="/es/solicitar-consulta" className="flex items-center gap-2">
-                  👉 Solicita tu asesoría gratuita
+                <Link to={content.consultaLink} className="flex items-center gap-2">
+                  {content.ctaPrimary}
                   <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
@@ -244,8 +340,14 @@ const ConectaConTusClientes = () => {
       {/* Sección 6: Casos de éxito */}
       <SuccessCasesSection
         id="casos-exito"
-        title="Historias reales, <span className='text-gradient-primary'>resultados tangibles</span>"
-        subtitle="Empresas que han transformado su relación con clientes gracias a nuestras soluciones CRM."
+        title={isEnglish 
+          ? "Real stories, <span className='text-gradient-primary'>tangible results</span>"
+          : "Historias reales, <span className='text-gradient-primary'>resultados tangibles</span>"
+        }
+        subtitle={isEnglish 
+          ? "Companies that have transformed their customer relationships with our CRM solutions."
+          : "Empresas que han transformado su relación con clientes gracias a nuestras soluciones CRM."
+        }
         specificCases={["Asendia", "Formato Educativo", "ASP ASEPSIA", "Nova Praxis"]}
         maxCases={4}
         showAllLink={true}
@@ -256,17 +358,17 @@ const ConectaConTusClientes = () => {
 
       {/* Intermediate CTA */}
       <IntermediateCTA 
-        title="Descubre cómo un CRM puede transformar tu negocio"
-        subtitle="Solicita una asesoría gratuita y te mostraremos cómo optimizar la relación con tus clientes"
-        buttonText="Solicitar asesoría gratuita"
-        buttonLink="/es/solicitar-consulta"
+        title={content.ctaIntermediate.title}
+        subtitle={content.ctaIntermediate.subtitle}
+        buttonText={content.ctaIntermediate.buttonText}
+        buttonLink={content.consultaLink}
       />
 
       {/* FAQ Section */}
       <FAQSection 
-        title="Preguntas frecuentes"
-        subtitle="Resolvemos las dudas más comunes sobre CRM, automatización y gestión de clientes"
-        faqs={faqItems} 
+        title={content.faqTitle}
+        subtitle={content.faqSubtitle}
+        faqs={faqData} 
       />
 
       {/* Service Related Posts */}
@@ -277,21 +379,21 @@ const ConectaConTusClientes = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              ¿Listo para dar el <span className="text-gradient-primary">siguiente paso</span>?
+              {content.finalCtaTitle} <span className="text-gradient-primary">{content.finalCtaHighlight}</span>?
             </h2>
             <p className="text-xl text-muted-foreground mb-8">
-              Un CRM no es solo tecnología, es la forma de crecer con tus clientes. Empieza con una asesoría gratuita y, si lo deseas, solicita una demo personalizada para ver la herramienta en acción.
+              {content.finalCtaDescription}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="group">
-                <Link to="/es/solicitar-consulta" className="flex items-center gap-2">
-                  👉 Solicita tu asesoría gratuita
+                <Link to={content.consultaLink} className="flex items-center gap-2">
+                  {content.ctaPrimary}
                   <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="group">
-                <Link to="/es/agendar-reunion" className="flex items-center gap-2">
-                  👉 Agenda tu demo personalizada
+                <Link to={content.reunionLink} className="flex items-center gap-2">
+                  {content.ctaDemo}
                   <MessageSquare className="h-4 w-4 group-hover:scale-110 transition-transform" />
                 </Link>
               </Button>

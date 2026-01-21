@@ -15,6 +15,7 @@ import Seo from '@/components/Seo';
 import FAQSection from '@/components/FAQSection';
 import IntermediateCTA from '@/components/IntermediateCTA';
 import { successCaseImages } from '@/data/successCaseImages';
+import { useTranslation } from '@/hooks/useTranslation';
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -154,8 +155,8 @@ const successCases = [
   }
 ];
 
-// FAQ data
-const faqItems = [
+// FAQ data - Spanish
+const faqItemsES = [
   {
     question: "¿Cuánto tiempo se tarda en ver resultados en las campañas?",
     answer: "Los primeros resultados suelen aparecer en 2-4 semanas. Sin embargo, la optimización completa de campañas requiere 2-3 meses para alcanzar su máximo potencial de conversión."
@@ -174,11 +175,35 @@ const faqItems = [
   }
 ];
 
+// FAQ data - English
+const faqItemsEN = [
+  {
+    question: "How long does it take to see results in campaigns?",
+    answer: "First results usually appear in 2-4 weeks. However, complete campaign optimization requires 2-3 months to reach maximum conversion potential."
+  },
+  {
+    question: "Do you include complete management of advertising campaigns?",
+    answer: "Yes, we handle everything: keyword research, ad creation, audience configuration, continuous optimization and detailed results reporting."
+  },
+  {
+    question: "What advertising platforms do you manage?",
+    answer: "We work with Google Ads (Search, Display, Shopping, YouTube), Meta (Facebook and Instagram), LinkedIn Ads, and other platforms according to your sector and specific objectives."
+  },
+  {
+    question: "How do you integrate AI in the sales process?",
+    answer: "We implement intelligent chatbots, automated lead scoring, content personalization, predictive conversion analysis and nurturing workflow automation."
+  }
+];
+
 const ActivaTusVentas = () => {
+  const { t, language } = useTranslation();
+  const isEnglish = language === 'en';
   const activaServices = servicesByPillar.activa || [];
   
   const seoData = useAdvancedSEO({
-    pageContent: "Campañas digitales y IA para activar ventas, generar leads y multiplicar resultados comerciales. Especialistas en publicidad online y automatización de procesos de ventas."
+    pageContent: isEnglish 
+      ? "Digital campaigns and AI to activate sales, generate leads and multiply commercial results. Specialists in online advertising and sales process automation."
+      : "Campañas digitales y IA para activar ventas, generar leads y multiplicar resultados comerciales. Especialistas en publicidad online y automatización de procesos de ventas."
   });
 
   // Generate ItemList schema for services
@@ -188,11 +213,126 @@ const ActivaTusVentas = () => {
       url: `https://hayasmarketing.com${s.href}`,
       description: s.description
     })),
-    listName: 'Servicios Activa tus ventas - Hayas Marketing',
-    listDescription: 'Campañas publicitarias, consultoría estratégica, inteligencia artificial y automatización para activar y multiplicar tus ventas.'
+    listName: isEnglish ? 'Activate Sales Services - Hayas Marketing' : 'Servicios Activa tus ventas - Hayas Marketing',
+    listDescription: isEnglish 
+      ? 'Advertising campaigns, strategic consulting, artificial intelligence and automation to activate and multiply your sales.'
+      : 'Campañas publicitarias, consultoría estratégica, inteligencia artificial y automatización para activar y multiplicar tus ventas.'
   });
 
   const combinedStructuredData = [seoData.structuredData, itemListSchema].filter(Boolean);
+  
+  // FAQ data based on language
+  const faqData = isEnglish ? faqItemsEN : faqItemsES;
+
+  // Language-specific content
+  const content = {
+    breadcrumbHome: isEnglish ? 'Home' : 'Inicio',
+    breadcrumbCurrent: isEnglish ? 'Activate Sales' : 'Activa tus ventas',
+    badge: isEnglish ? 'Activate Sales Solution' : 'Solución Activa tus ventas',
+    heroTitle: isEnglish ? 'Activate your sales and multiply your results' : 'Activa tus ventas y multiplica tus resultados',
+    heroDescription: isEnglish 
+      ? 'Digital campaigns and artificial intelligence are the key to attracting more customers and closing more sales. At Hayas we combine advertising, analytics and automation so your marketing actions generate a real impact on your business.'
+      : 'Las campañas digitales y la inteligencia artificial son la clave para atraer más clientes y cerrar más ventas. En Hayas combinamos publicidad, analítica y automatización para que tus acciones de marketing generen un impacto real en tu negocio.',
+    ctaPrimary: isEnglish ? '👉 Request your free consultation' : '👉 Solicita tu asesoría gratuita',
+    ctaSecondary: isEnglish ? 'View success stories' : 'Ver casos de éxito',
+    homeLink: isEnglish ? '/en' : '/es',
+    consultaLink: isEnglish ? '/en/schedule-meeting' : '/es/agendar-reunion',
+    casosLink: isEnglish ? '/en/case-studies?pillar=activa' : '/es/casos-exito?pillar=activa',
+    // Pain Points
+    painPointsTitle: isEnglish ? 'Why do you need to activate your sales?' : '¿Por qué necesitas activar tus ventas?',
+    painPointsCta: isEnglish 
+      ? '👉 With the right strategy, every euro invested in marketing becomes tangible growth.'
+      : '👉 Con la estrategia adecuada, cada euro invertido en marketing se convierte en crecimiento tangible.',
+    // Solution
+    solutionTitle: isEnglish ? 'Our approach' : 'Nuestra propuesta',
+    // Benefits
+    benefitsTitle: isEnglish ? 'What you\'ll gain with us' : 'Qué ganarás con nosotros',
+    // Services
+    servicesTitle: isEnglish ? 'Services that activate your sales' : 'Servicios que activan tus ventas',
+    viewService: isEnglish ? 'View service' : 'Ver servicio',
+    // Success Cases
+    successCasesTitle: isEnglish ? 'Real stories, tangible results' : 'Historias reales, resultados tangibles',
+    viewAllCases: isEnglish ? 'View Activate Sales success stories' : 'Ver casos de éxito de Activa tus ventas',
+    // CTA
+    ctaTitle: isEnglish ? 'Ready to activate your sales?' : '¿Listo para activar tus ventas?',
+    ctaSubtitle: isEnglish 
+      ? 'Sales are the engine of your business. Start with a free consultation and discover how we can help you design more effective campaigns, integrate AI and multiply your conversions.'
+      : 'Las ventas son el motor de tu negocio. Empieza con una asesoría gratuita y descubre cómo podemos ayudarte a diseñar campañas más efectivas, integrar IA y multiplicar tus conversiones.',
+    // FAQ
+    faqTitle: isEnglish ? 'Frequently Asked Questions' : 'Preguntas Frecuentes',
+    faqSubtitle: isEnglish 
+      ? 'We answer the most common questions about sales activation and digital campaigns'
+      : 'Resolvemos las dudas más comunes sobre activación de ventas y campañas digitales',
+  };
+
+  // Pain points with translations
+  const painPointsData = isEnglish ? [
+    {
+      icon: <AlertTriangle className="h-8 w-8 text-red-500" />,
+      title: "You invest in advertising but don't get a clear return",
+      description: "Without a clear measurement strategy, your advertising investment becomes spending without visible results."
+    },
+    {
+      icon: <Users className="h-8 w-8 text-orange-500" />,
+      title: "Your potential customers get lost along the way",
+      description: "Lack of follow-up and automation causes you to lose valuable sales opportunities."
+    },
+    {
+      icon: <Settings className="h-8 w-8 text-red-500" />,
+      title: "You don't have the necessary technology",
+      description: "Without the right tools to optimize campaigns and automate sales, your growth is limited."
+    }
+  ] : painPoints;
+
+  // Solution points with translations
+  const solutionPointsData = isEnglish ? [
+    {
+      icon: <Target className="h-8 w-8 text-activa-500" />,
+      title: "Profitable digital campaigns",
+      description: "We design and manage campaigns on social media and Google that generate qualified leads with measurable ROI."
+    },
+    {
+      icon: <Bot className="h-8 w-8 text-activa-500" />,
+      title: "AI applied to marketing and sales",
+      description: "We implement artificial intelligence to improve conversions, reduce costs and automate processes."
+    },
+    {
+      icon: <Eye className="h-8 w-8 text-activa-500" />,
+      title: "Personalized experiences",
+      description: "We create unique experiences that convert more visitors into customers and build better loyalty."
+    },
+    {
+      icon: <BarChart3 className="h-8 w-8 text-activa-500" />,
+      title: "Strategic consulting and analytics",
+      description: "We offer continuous consulting to evolve your results with real data analysis."
+    }
+  ] : solutionPoints;
+
+  // Benefits with translations
+  const benefitsData = isEnglish ? [
+    { icon: <Rocket className="h-8 w-8 text-activa-500" />, title: "More customers", description: "Optimized advertising campaigns that generate quality leads" },
+    { icon: <BarChart3 className="h-8 w-8 text-activa-500" />, title: "Measurable results", description: "Clear analytics to know what works and what doesn't" },
+    { icon: <Bot className="h-8 w-8 text-activa-500" />, title: "Improved service", description: "AI assistants to provide support and capture leads 24/7" },
+    { icon: <Target className="h-8 w-8 text-activa-500" />, title: "Constant optimization", description: "Processes that evolve with your objectives" },
+    { icon: <TrendingUp className="h-8 w-8 text-activa-500" />, title: "Scalability", description: "Solutions that grow at the pace of your business" }
+  ] : benefits;
+
+  // Services with translations  
+  const servicesData = isEnglish ? [
+    { icon: <Target className="h-8 w-8 text-activa-500" />, title: "Social Media Advertising", description: "Campaigns on Meta, LinkedIn and more to capture customers.", href: "/en/services/social-media-advertising" },
+    { icon: <Settings className="h-8 w-8 text-activa-500" />, title: "Google Ads Advertising", description: "SEM strategies to generate leads and sales.", href: "/en/services/google-ads-advertising" },
+    { icon: <Bot className="h-8 w-8 text-activa-500" />, title: "AI Customer Service Assistant", description: "Intelligent chatbots to improve conversion and support.", href: "/en/services/ai-assistant" },
+    { icon: <BarChart3 className="h-8 w-8 text-activa-500" />, title: "Strategic Consulting & Analytics", description: "KPI definition, tracking and continuous improvement.", href: "/en/services/strategic-consulting-analytics" },
+    { icon: <Zap className="h-8 w-8 text-activa-500" />, title: "AI Integrations & Optimization", description: "System connection and predictive optimization.", href: "/en/services/ai-process-integration" }
+  ] : services;
+
+  // Success cases with translations
+  const successCasesData = isEnglish ? [
+    { title: "Nexo Vital", description: "Patient acquisition with Google Ads and social media campaigns", image: successCaseImages.nexoVital },
+    { title: "Beka Finance", description: "Conversion strategy and digital advertising for financial services", image: successCaseImages.bekaFinance },
+    { title: "La Oriental Sin Gluten", description: "Optimized e-commerce with digital campaigns", image: successCaseImages.laOrientalSinGluten },
+    { title: "Nova Praxis", description: "B2B acquisition with Google Ads and LinkedIn campaigns", image: successCaseImages.novaPraxis }
+  ] : successCases;
 
   return (
     <div id="top" className="min-h-screen bg-white">
@@ -217,12 +357,12 @@ const ActivaTusVentas = () => {
               <BreadcrumbList>
                 <BreadcrumbItem>
                   <BreadcrumbLink asChild>
-                    <Link to="/es">Inicio</Link>
+                    <Link to={content.homeLink}>{content.breadcrumbHome}</Link>
                   </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
-                  <BreadcrumbPage>Activa tus ventas</BreadcrumbPage>
+                  <BreadcrumbPage>{content.breadcrumbCurrent}</BreadcrumbPage>
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
@@ -235,26 +375,26 @@ const ActivaTusVentas = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <Badge variant="outline" className="mb-6 text-activa-500 border-activa-200 bg-white/50">
-                  Solución Activa tus ventas
+                  {content.badge}
                 </Badge>
                 <DynamicH1 
-                  fallback="Activa tus ventas y multiplica tus resultados"
+                  fallback={content.heroTitle}
                   className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
                 >
-                  Activa tus ventas y multiplica tus resultados
+                  {content.heroTitle}
                 </DynamicH1>
                 <p className="text-xl text-gray-700 mb-8 leading-relaxed">
-                  Las campañas digitales y la inteligencia artificial son la clave para atraer más clientes y cerrar más ventas. En Hayas combinamos publicidad, analítica y automatización para que tus acciones de marketing generen un impacto real en tu negocio.
+                  {content.heroDescription}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button size="lg" className="bg-activa-500 hover:bg-activa-600 text-white" asChild>
-                    <Link to="/es/agendar-reunion">
-                      👉 Solicita tu asesoría gratuita
+                    <Link to={content.consultaLink}>
+                      {content.ctaPrimary}
                       <ArrowRight className="ml-2 h-5 w-5" />
                     </Link>
                   </Button>
                   <Button variant="activa-outline" size="lg" asChild>
-                    <a href="#casos-exito">Ver casos de éxito</a>
+                    <a href="#casos-exito">{content.ctaSecondary}</a>
                   </Button>
                 </div>
               </div>
@@ -416,12 +556,12 @@ const ActivaTusVentas = () => {
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Historias reales, resultados tangibles
+                {content.successCasesTitle}
               </h2>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-              {successCases.map((case_study, index) => (
+              {successCasesData.map((case_study, index) => (
                 <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 h-full">
                   <CardHeader className="pb-4">
                     <div className="mb-4">
@@ -446,8 +586,8 @@ const ActivaTusVentas = () => {
 
             <div className="text-center">
               <Button variant="outline" size="lg" asChild>
-                <Link to="/es/casos-exito?pillar=activa">
-                  Ver casos de éxito de Activa tus ventas
+                <Link to={content.casosLink}>
+                  {content.viewAllCases}
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
@@ -457,17 +597,17 @@ const ActivaTusVentas = () => {
 
         {/* Intermediate CTA */}
         <IntermediateCTA 
-          title="¿Listo para activar tus ventas?"
-          subtitle="Las ventas son el motor de tu negocio. Empieza con una asesoría gratuita y descubre cómo podemos ayudarte a diseñar campañas más efectivas, integrar IA y multiplicar tus conversiones."
-          buttonText="👉 Solicita tu asesoría gratuita"
-          buttonLink="/es/solicitar-consulta"
+          title={content.ctaTitle}
+          subtitle={content.ctaSubtitle}
+          buttonText={content.ctaPrimary}
+          buttonLink={content.consultaLink}
         />
 
         {/* FAQ Section */}
         <FAQSection 
-          title="Preguntas Frecuentes"
-          subtitle="Resolvemos las dudas más comunes sobre activación de ventas y campañas digitales"
-          faqs={faqItems} 
+          title={content.faqTitle}
+          subtitle={content.faqSubtitle}
+          faqs={faqData} 
         />
       </main>
 
