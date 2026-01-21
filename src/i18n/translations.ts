@@ -1491,7 +1491,7 @@ export const translations = {
       intro: {
         p1: 'Today, we all have more channels, data, and tools than ever.',
         p2: "But that doesn't always lead to better decisions or sustainable growth.",
-        p3: 'Because long-term growth starts with the decisions we make today.'
+        p3: "The difference isn't in doing more, but in making better decisions from the start."
       },
       transition: 'At that point, we usually find ourselves in one—or several—of these moments:',
       moments: {
