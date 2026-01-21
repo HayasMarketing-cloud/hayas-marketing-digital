@@ -44,9 +44,9 @@ All 3 solution pages are now fully bilingual with useTranslation hook:
 #### Main Services (10 pages - Top Priority)
 | Spanish Path | English Path | Status |
 |-------------|-------------|--------|
-| `/es/servicios/creacion-marca` | `/en/services/brand-creation` | ⏳ Pending |
-| `/es/servicios/diseno-web` | `/en/services/web-design` | ⏳ Pending |
-| `/es/servicios/seo-posicionamiento` | `/en/services/seo-positioning` | ⏳ Pending |
+| `/es/servicios/creacion-marca` | `/en/services/brand-creation` | ✅ Done |
+| `/es/servicios/diseno-web` | `/en/services/web-design` | ✅ Done |
+| `/es/servicios/seo-posicionamiento` | `/en/services/seo-positioning` | ✅ Done |
 | `/es/servicios/implantacion-crm` | `/en/services/crm-implementation` | ⏳ Pending |
 | `/es/servicios/email-marketing-automatizaciones` | `/en/services/email-marketing-automation` | ⏳ Pending |
 | `/es/servicios/gestion-redes-sociales` | `/en/services/social-media-management` | ⏳ Pending |
