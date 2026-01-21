@@ -453,38 +453,8 @@ export const canonicalStrategy = {
         '/es/casos-exito/unitrips', '/es/casos-exito/wideum', '/es/casos-exito/wooptix'
       ]
     },
-    '/es/servicios': {
-      satellites: [
-        '/es/servicios/creacion-marca',
-        '/es/servicios/diseno-web', 
-        '/es/servicios/seo-positioning',
-        '/es/servicios/publicidad-google-ads',
-        '/es/servicios/publicidad-redes-sociales',
-        '/es/servicios/gestion-redes-sociales',
-        '/es/servicios/estrategia-contenidos',
-        '/es/servicios/tienda-online',
-        '/es/servicios/email-marketing-automatizaciones',
-        '/es/servicios/campanas-inbound-marketing',
-        '/es/servicios/implantacion-crm',
-        '/es/servicios/administracion-crm',
-        '/es/servicios/automatizacion-procesos-ventas',
-        '/es/servicios/captacion-leads-clientes',
-        '/es/servicios/consultoria-estrategica-analitica',
-        '/es/servicios/integraciones-ia-procesos',
-        '/es/servicios/formacion-ia',
-        '/es/servicios/asistente-ia',
-        '/es/servicios/marketing-directo',
-        '/es/servicios/localizacion-contenidos'
-      ]
-    },
-     '/es/soluciones': {
-      satellites: [
-        '/es/soluciones/activa-tus-ventas',
-        '/es/soluciones/conecta-con-tus-clientes', 
-        '/es/soluciones/impulsa-tu-marca',
-        '/es/soluciones/marketing-visibilidad'
-      ]
-    }
+    // Services and Solutions pages are now indexable (removed from satellites)
+    // Each service/solution page should be indexed individually for better SEO
   },
   
   // Pages that should not be indexed for SEO but need canonical
