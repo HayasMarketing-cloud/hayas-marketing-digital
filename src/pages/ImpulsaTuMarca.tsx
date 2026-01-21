@@ -16,6 +16,7 @@ import { useAdvancedSEO } from '@/hooks/useAdvancedSEO';
 import { servicesByPillar } from '@/data/services';
 import { successCaseImages } from '@/data/successCaseImages';
 import { generateItemListSchema } from '@/data/seoData';
+import { useTranslation } from '@/hooks/useTranslation';
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -118,11 +119,19 @@ const faqItems = [
 ];
 
 const ImpulsaTuMarca = () => {
+  const { t, language } = useTranslation();
+  const isEnglish = language === 'en';
+  
+  // Get translations for this page
+  const pageT = (key: string) => t(`solutionPages.boostYourBrand.${key}`);
+  
   // Get impulsa services
   const impulsaServices = servicesByPillar.impulsa || [];
   
   const seoData = useAdvancedSEO({
-    pageContent: "Branding estratégico, diseño de identidad y manual de marca para diferenciar tu negocio. Servicios profesionales de creación y desarrollo de marca."
+    pageContent: isEnglish 
+      ? "Strategic branding, identity design and brand manual to differentiate your business. Professional brand creation and development services."
+      : "Branding estratégico, diseño de identidad y manual de marca para diferenciar tu negocio. Servicios profesionales de creación y desarrollo de marca."
   });
 
   // Generate ItemList schema for services
@@ -132,11 +141,88 @@ const ImpulsaTuMarca = () => {
       url: `https://hayasmarketing.com${s.href}`,
       description: s.description
     })),
-    listName: 'Servicios Impulsa tu marca - Hayas Marketing',
-    listDescription: 'Servicios de branding, diseño web, SEO y contenidos para impulsar y diferenciar tu marca en el mercado.'
+    listName: isEnglish ? 'Boost Your Brand Services - Hayas Marketing' : 'Servicios Impulsa tu marca - Hayas Marketing',
+    listDescription: isEnglish 
+      ? 'Branding, web design, SEO and content services to boost and differentiate your brand in the market.'
+      : 'Servicios de branding, diseño web, SEO y contenidos para impulsar y diferenciar tu marca en el mercado.'
   });
 
   const combinedStructuredData = [seoData.structuredData, itemListSchema].filter(Boolean);
+  
+  // Language-specific content
+  const content = {
+    breadcrumbHome: isEnglish ? 'Home' : 'Inicio',
+    breadcrumbCurrent: isEnglish ? 'Boost Your Brand' : 'Impulsa tu marca',
+    badge: isEnglish ? 'Boost Your Brand Solution' : 'Solución Impulsa tu marca',
+    heroTitle: isEnglish ? 'Boost your brand and stand out in a competitive market' : 'Impulsa tu marca y destaca en un mercado competitivo',
+    heroDescription: isEnglish 
+      ? 'Your brand identity is your greatest asset. At Hayas we help you create an authentic, differentiated and memorable presence, combining branding, design and strategic marketing so your business grows with purpose.'
+      : 'La identidad de tu marca es tu mayor activo. En Hayas te ayudamos a crear una presencia auténtica, diferenciada y memorable, combinando branding, diseño y marketing estratégico para que tu negocio crezca con propósito.',
+    ctaPrimary: isEnglish ? '👉 Request your free consultation' : '👉 Solicita tu asesoría gratuita',
+    ctaSecondary: isEnglish ? 'View success stories' : 'Ver casos de éxito',
+    painPointsTitle: isEnglish ? 'Why does your brand need a boost?' : '¿Por qué tu marca necesita un impulso?',
+    painPointsCta: isEnglish 
+      ? '👉 A strong brand not only attracts customers, it also builds loyalty and multiplies your business value.'
+      : '👉 Una marca fuerte no solo atrae clientes, también fideliza y multiplica el valor de tu negocio.',
+    solutionTitle: isEnglish ? 'Our approach' : 'Nuestra propuesta',
+    benefitsTitle: isEnglish ? 'What you\'ll gain with us' : 'Qué ganarás con nosotros',
+    servicesTitle: isEnglish ? 'Services that boost your brand' : 'Servicios que impulsan tu marca',
+    viewService: isEnglish ? 'View service' : 'Ver servicio',
+    successCasesTitle: isEnglish ? 'Real stories, tangible results' : 'Historias reales, resultados tangibles',
+    ctaScheduleLink: isEnglish ? '/en/schedule-meeting' : '/es/agendar-reunion',
+    homeLink: isEnglish ? '/en' : '/es',
+    heroImageAlt: isEnglish 
+      ? 'Brand strategy and creative design - Boost your brand with Hayas Marketing'
+      : 'Estrategia de marca y diseño creativo - Impulsa tu marca con Hayas Marketing',
+  };
+
+  // Pain points with translations
+  const painPointsData = isEnglish ? [
+    {
+      icon: <AlertTriangle className="h-8 w-8 text-red-500" />,
+      title: "Invisible brands in saturated markets",
+      description: "Without clear differentiation, your business gets lost among the competition and fails to stand out."
+    },
+    {
+      icon: <Eye className="h-8 w-8 text-orange-500" />,
+      title: "Lack of visual and message coherence",
+      description: "Inconsistency generates distrust and confuses your potential customers."
+    },
+    {
+      icon: <TrendingUp className="h-8 w-8 text-red-500" />,
+      title: "Marketing without branding strategy",
+      description: "Without a solid brand, your marketing actions lose impact and ROI."
+    }
+  ] : painPoints;
+
+  // Benefits with translations  
+  const benefitsData = isEnglish ? [
+    { icon: <Shield className="h-8 w-8 text-impulsa-500" />, title: "Solid identity", description: "Consistent and recognizable across all channels" },
+    { icon: <Target className="h-8 w-8 text-impulsa-500" />, title: "Real differentiation", description: "Stand out with a unique message" },
+    { icon: <Heart className="h-8 w-8 text-impulsa-500" />, title: "Trust", description: "Convey professionalism and build loyalty" },
+    { icon: <Eye className="h-8 w-8 text-impulsa-500" />, title: "Visibility", description: "Recognition in search engines, social media and touchpoints" },
+    { icon: <Zap className="h-8 w-8 text-impulsa-500" />, title: "Sustainable growth", description: "A brand designed to evolve long-term" }
+  ] : benefits;
+
+  // FAQ items with translations
+  const faqData = isEnglish ? [
+    {
+      question: "How long does it take to create a complete brand?",
+      answer: "The complete brand creation process usually takes 4-8 weeks, depending on project complexity and feedback times. It includes naming, visual identity, brand manual and applications."
+    },
+    {
+      question: "What does the brand manual include?",
+      answer: "Our brand manual includes: brand story and values, logo specifications, color palette, typography, applications in different media, and correct/incorrect usage guidelines."
+    },
+    {
+      question: "Do you help with brand and domain registration?",
+      answer: "Yes, we advise on name and domain availability, and guide you through the trademark registration process. Although we don't directly handle legal procedures, we connect you with the right specialists."
+    },
+    {
+      question: "Can an existing brand be updated?",
+      answer: "Absolutely. We offer rebranding and brand evolution services. We analyze your current identity and develop a strategy to modernize it while maintaining existing recognition."
+    }
+  ] : faqItems;
 
   return (
     <div id="top" className="min-h-screen bg-white">
@@ -161,12 +247,12 @@ const ImpulsaTuMarca = () => {
               <BreadcrumbList>
                 <BreadcrumbItem>
                   <BreadcrumbLink asChild>
-                    <Link to="/">Inicio</Link>
+                    <Link to={content.homeLink}>{content.breadcrumbHome}</Link>
                   </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
-                  <BreadcrumbPage>Impulsa tu marca</BreadcrumbPage>
+                  <BreadcrumbPage>{content.breadcrumbCurrent}</BreadcrumbPage>
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
@@ -179,26 +265,26 @@ const ImpulsaTuMarca = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <Badge variant="outline" className="mb-6 text-impulsa-500 border-impulsa-200 bg-white/50">
-                  Solución Impulsa tu marca
+                  {content.badge}
                 </Badge>
                 <DynamicH1 
-                  fallback="Impulsa tu marca y destaca en un mercado competitivo"
+                  fallback={content.heroTitle}
                   className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
                 >
-                  Impulsa tu marca y destaca en un mercado competitivo
+                  {content.heroTitle}
                 </DynamicH1>
                 <p className="text-xl text-gray-700 mb-8 leading-relaxed">
-                  La identidad de tu marca es tu mayor activo. En Hayas te ayudamos a crear una presencia auténtica, diferenciada y memorable, combinando branding, diseño y marketing estratégico para que tu negocio crezca con propósito.
+                  {content.heroDescription}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button size="lg" className="bg-impulsa-500 hover:bg-impulsa-600 text-white" asChild>
-                    <Link to="/es/agendar-reunion">
-                      👉 Solicita tu asesoría gratuita
+                    <Link to={content.ctaScheduleLink}>
+                      {content.ctaPrimary}
                       <ArrowRight className="ml-2 h-5 w-5" />
                     </Link>
                   </Button>
                   <Button variant="impulsa-outline" size="lg" asChild>
-                    <a href="#casos-exito">Ver casos de éxito</a>
+                    <a href="#casos-exito">{content.ctaSecondary}</a>
                   </Button>
                 </div>
               </div>
@@ -206,7 +292,7 @@ const ImpulsaTuMarca = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-impulsa-200 to-impulsa-300 rounded-3xl transform rotate-6 scale-105 opacity-20"></div>
                 <img 
                   src={brandingHeroImage}
-                  alt="Estrategia de marca y diseño creativo - Impulsa tu marca con Hayas Marketing"
+                  alt={content.heroImageAlt}
                   className="relative z-10 w-full h-auto rounded-3xl shadow-2xl"
                 />
               </div>
@@ -219,12 +305,12 @@ const ImpulsaTuMarca = () => {
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                ¿Por qué tu marca necesita un impulso?
+                {content.painPointsTitle}
               </h2>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-              {painPoints.map((point, index) => (
+              {painPointsData.map((point, index) => (
                 <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-shadow h-full">
                   <CardHeader className="text-center pb-4">
                     <div className="mb-4 mx-auto p-4 rounded-full w-fit bg-gray-100">
@@ -250,7 +336,7 @@ const ImpulsaTuMarca = () => {
                 </div>
               </div>
               <p className="text-lg font-semibold text-gray-800">
-                👉 Una marca fuerte no solo atrae clientes, también fideliza y multiplica el valor de tu negocio.
+                {content.painPointsCta}
               </p>
             </div>
           </div>

@@ -1509,6 +1509,347 @@ export const translations = {
         }
       },
       closing: 'Each of these moments requires a different approach, but they all share the same need: to organize, prioritize, and turn effort into real results.'
+    },
+    // ============================================
+    // SOLUTION PAGES TRANSLATIONS
+    // ============================================
+    solutionPages: {
+      // Boost Your Brand Page
+      boostYourBrand: {
+        badge: 'Boost Your Brand Solution',
+        heroTitle: 'Boost your brand and stand out in a competitive market',
+        heroDescription: 'Your brand identity is your greatest asset. At Hayas we help you create an authentic, differentiated and memorable presence, combining branding, design and strategic marketing so your business grows with purpose.',
+        ctaPrimary: '👉 Request your free consultation',
+        ctaSecondary: 'View success stories',
+        // Pain Points
+        painPointsTitle: 'Why does your brand need a boost?',
+        painPoints: [
+          {
+            title: 'Invisible brands in saturated markets',
+            description: 'Without clear differentiation, your business gets lost among the competition and fails to stand out.'
+          },
+          {
+            title: 'Lack of visual and message coherence',
+            description: 'Inconsistency generates distrust and confuses your potential customers.'
+          },
+          {
+            title: 'Marketing without branding strategy',
+            description: 'Without a solid brand, your marketing actions lose impact and ROI.'
+          }
+        ],
+        painPointsCta: '👉 A strong brand not only attracts customers, it also builds loyalty and multiplies your business value.',
+        // Solution
+        solutionTitle: 'Our approach',
+        solutionItems: [
+          {
+            title: 'Complete brand strategies',
+            description: 'We design complete brand strategies, from visual identity, website or online store, content strategy and SEO optimization.'
+          },
+          {
+            title: 'Authentic branding',
+            description: 'We create authentic and differentiated branding that connects with your audience\'s emotions and values.'
+          },
+          {
+            title: 'Complete integration',
+            description: 'We integrate your brand into all your marketing actions, online and offline.'
+          },
+          {
+            title: 'Continuous support',
+            description: 'We offer continuous support and improvement so your identity evolves with your company and the market.'
+          }
+        ],
+        // Benefits
+        benefitsTitle: 'What you\'ll gain with us',
+        benefits: [
+          { title: 'Solid identity', description: 'Consistent and recognizable across all channels' },
+          { title: 'Real differentiation', description: 'Stand out with a unique message' },
+          { title: 'Trust', description: 'Convey professionalism and build loyalty' },
+          { title: 'Visibility', description: 'Recognition in search engines, social media and touchpoints' },
+          { title: 'Sustainable growth', description: 'A brand designed to evolve long-term' }
+        ],
+        // Services
+        servicesTitle: 'Services that boost your brand',
+        viewService: 'View service',
+        // Success Cases
+        successCasesTitle: 'Real stories, tangible results',
+        viewCaseStudy: 'View case study',
+        viewAllCases: 'View all success stories',
+        // FAQ
+        faqTitle: 'Frequently Asked Questions',
+        faq: [
+          {
+            question: 'How long does it take to create a complete brand?',
+            answer: 'The complete brand creation process usually takes 4-8 weeks, depending on project complexity and feedback times. It includes naming, visual identity, brand manual and applications.'
+          },
+          {
+            question: 'What does the brand manual include?',
+            answer: 'Our brand manual includes: brand story and values, logo specifications, color palette, typography, applications in different media, and correct/incorrect usage guidelines.'
+          },
+          {
+            question: 'Do you help with brand and domain registration?',
+            answer: 'Yes, we advise on name and domain availability, and guide you through the trademark registration process. Although we don\'t directly handle legal procedures, we connect you with the right specialists.'
+          },
+          {
+            question: 'Can an existing brand be updated?',
+            answer: 'Absolutely. We offer rebranding and brand evolution services. We analyze your current identity and develop a strategy to modernize it while maintaining existing recognition.'
+          }
+        ],
+        // CTA Section
+        ctaTitle: 'Ready to boost your brand?',
+        ctaDescription: 'Schedule a free consultation and discover how we can help you create a brand that truly differentiates you.',
+        ctaButton: 'Schedule free consultation'
+      },
+      // Connect with Customers Page
+      connectWithCustomers: {
+        badge: 'Connect with Customers Solution',
+        heroTitle: 'Connect with your customers and build lasting relationships',
+        heroDescription: 'In a saturated digital world, the difference is made by brands that truly connect. We help you create meaningful relationships that convert and build loyalty, through strategic content, automation and personalized communication.',
+        ctaPrimary: '👉 Request your free consultation',
+        ctaSecondary: 'View success stories',
+        // Pain Points
+        painPointsTitle: 'Why are you disconnected from your customers?',
+        painPoints: [
+          {
+            title: 'Digital noise',
+            description: 'Too many channels, messages and competition. It\'s hard to stand out and be heard by the audience that matters.'
+          },
+          {
+            title: 'Lack of customer knowledge',
+            description: 'Without clear data, campaigns become generic and fail to resonate with your target audience.'
+          },
+          {
+            title: 'Manual and disconnected processes',
+            description: 'Spending more time managing tools than connecting with customers.'
+          }
+        ],
+        painPointsCta: '👉 Relevant, personalized communication is key to standing out and building loyal relationships.',
+        // Solution
+        solutionTitle: 'Our approach',
+        solutionItems: [
+          {
+            title: 'Strategic content',
+            description: 'We create content that educates, inspires and guides your customers through the buying process.'
+          },
+          {
+            title: 'Marketing automation',
+            description: 'Workflows that nurture relationships automatically while you focus on growing.'
+          },
+          {
+            title: 'Personalized experience',
+            description: 'Segmented and relevant communications based on each customer\'s behavior and moment.'
+          },
+          {
+            title: 'Integrated CRM',
+            description: 'We centralize all your customer information for more effective management.'
+          }
+        ],
+        // Benefits
+        benefitsTitle: 'What you\'ll gain with us',
+        benefits: [
+          { title: 'Deeper relationships', description: 'Authentic connection with your audience' },
+          { title: 'Higher conversion', description: 'More leads become customers' },
+          { title: 'Automated loyalty', description: 'Workflows that nurture customers' },
+          { title: 'Real-time insights', description: 'Data to optimize your strategy' },
+          { title: 'Less effort, more impact', description: 'Automated efficiency' }
+        ],
+        // Services
+        servicesTitle: 'Services that connect you with your customers',
+        viewService: 'View service',
+        // Success Cases
+        successCasesTitle: 'Real stories, tangible results',
+        viewCaseStudy: 'View case study',
+        viewAllCases: 'View all success stories',
+        // FAQ
+        faqTitle: 'Frequently Asked Questions',
+        faq: [
+          {
+            question: 'What CRM platforms do you work with?',
+            answer: 'We primarily work with HubSpot for medium and large companies, and GoHighLevel for SMEs and entrepreneurs. Both platforms allow complete automation and comprehensive customer management.'
+          },
+          {
+            question: 'How long does it take to implement marketing automation?',
+            answer: 'A basic automation implementation can be ready in 2-4 weeks. More complex projects with multiple integrations and advanced workflows may take 6-8 weeks.'
+          },
+          {
+            question: 'What type of content do you create?',
+            answer: 'We create strategic content for all funnel stages: educational blogs, technical guides, email sequences, social posts, landing pages and premium content like ebooks or webinars.'
+          },
+          {
+            question: 'How do you measure results?',
+            answer: 'We implement dashboards with key KPIs: open rates, clicks, conversions, cost per lead, and customer lifetime value. We provide regular reports with actionable insights.'
+          }
+        ],
+        // CTA Section
+        ctaTitle: 'Ready to connect with your customers?',
+        ctaDescription: 'Schedule a free consultation and discover how automation and strategic content can transform your customer relationships.',
+        ctaButton: 'Schedule free consultation'
+      },
+      // Activate Sales Page
+      activateSales: {
+        badge: 'Activate Sales Solution',
+        heroTitle: 'Activate your sales and accelerate your business growth',
+        heroDescription: 'Converting leads into customers requires more than a good product. We help you build sales systems that work: from lead capture to closing, with automation, tracking and continuous optimization.',
+        ctaPrimary: '👉 Request your free consultation',
+        ctaSecondary: 'View success stories',
+        // Pain Points
+        painPointsTitle: 'Why aren\'t you closing sales?',
+        painPoints: [
+          {
+            title: 'Leads that don\'t convert',
+            description: 'You\'re attracting traffic but few leads become real customers.'
+          },
+          {
+            title: 'Disorganized sales process',
+            description: 'Without a clear system, opportunities slip through and the team wastes time.'
+          },
+          {
+            title: 'Lack of visibility',
+            description: 'You don\'t know what works, what doesn\'t, or where leads are lost.'
+          }
+        ],
+        painPointsCta: '👉 A structured and measurable sales system is the difference between growing and stagnating.',
+        // Solution
+        solutionTitle: 'Our approach',
+        solutionItems: [
+          {
+            title: 'Optimized funnels',
+            description: 'We design conversion funnels that guide leads from first contact to closing.'
+          },
+          {
+            title: 'Sales automation',
+            description: 'CRM and workflows that nurture leads and free up your team\'s time.'
+          },
+          {
+            title: 'Lead Scoring',
+            description: 'We prioritize the most qualified leads so you focus on what matters.'
+          },
+          {
+            title: 'Tracking and optimization',
+            description: 'Dashboards and KPIs to constantly improve your sales process.'
+          }
+        ],
+        // Benefits
+        benefitsTitle: 'What you\'ll gain with us',
+        benefits: [
+          { title: 'More qualified leads', description: 'Traffic that converts' },
+          { title: 'Higher conversion', description: 'Optimized funnels' },
+          { title: 'Operational efficiency', description: 'Automated processes' },
+          { title: 'Clear visibility', description: 'Real-time data and KPIs' },
+          { title: 'Scalable growth', description: 'Systems that grow with you' }
+        ],
+        // Services
+        servicesTitle: 'Services that activate your sales',
+        viewService: 'View service',
+        // Success Cases
+        successCasesTitle: 'Real stories, tangible results',
+        viewCaseStudy: 'View case study',
+        viewAllCases: 'View all success stories',
+        // FAQ
+        faqTitle: 'Frequently Asked Questions',
+        faq: [
+          {
+            question: 'How does lead scoring work?',
+            answer: 'Lead scoring assigns points to each contact based on their behavior (page visits, downloads, emails opened) and characteristics (company size, industry). This allows prioritizing the most qualified leads for sales.'
+          },
+          {
+            question: 'What\'s the difference between a funnel and a pipeline?',
+            answer: 'The funnel describes the customer journey from acquisition to conversion. The pipeline is the visual representation of opportunities in your CRM, showing each lead\'s state in the sales process.'
+          },
+          {
+            question: 'How long does it take to see results?',
+            answer: 'In advertising campaigns you can see initial results in 2-4 weeks. For SEO and content strategies, solid results appear between 3-6 months. CRM implementations generate immediate efficiencies from the first month.'
+          },
+          {
+            question: 'Do you integrate with existing tools?',
+            answer: 'Yes, we integrate with the most common tools: Google Analytics, Meta Ads, LinkedIn Ads, WordPress, Shopify, and custom APIs. We always seek to maximize the value of your existing investments.'
+          }
+        ],
+        // CTA Section
+        ctaTitle: 'Ready to activate your sales?',
+        ctaDescription: 'Schedule a free consultation and discover how we can help you build a sales system that truly converts.',
+        ctaButton: 'Schedule free consultation'
+      }
+    },
+    // ============================================
+    // CASE STUDIES PAGE TRANSLATIONS
+    // ============================================
+    caseStudies: {
+      pageTitle: 'Success Stories',
+      pageSubtitle: 'Discover how we\'ve helped companies like yours grow with authentic digital strategies.',
+      filterAll: 'All',
+      filterByIndustry: 'Filter by industry',
+      viewCaseStudy: 'View case study',
+      resultsLabel: 'Results',
+      challengeLabel: 'Challenge',
+      solutionLabel: 'Solution',
+      learnMoreLabel: 'Learn more',
+      ctaTitle: 'Ready to be our next success story?',
+      ctaDescription: 'Schedule a free consultation and discover how we can help you achieve similar results.',
+      ctaButton: 'Schedule consultation'
+    },
+    // ============================================
+    // BLOG PAGE TRANSLATIONS
+    // ============================================
+    blog: {
+      pageTitle: 'Blog & Resources',
+      pageSubtitle: 'Insights, guides and strategies to grow your business with intelligent digital marketing.',
+      searchPlaceholder: 'Search articles...',
+      filterAll: 'All',
+      filterByCategory: 'Filter by category',
+      readMore: 'Read more',
+      minRead: 'min read',
+      publishedOn: 'Published on',
+      byAuthor: 'by',
+      relatedPosts: 'Related Posts',
+      categories: {
+        strategy: 'Strategy',
+        seo: 'SEO',
+        crm: 'CRM',
+        automation: 'Automation',
+        branding: 'Branding',
+        advertising: 'Advertising',
+        ai: 'Artificial Intelligence',
+        content: 'Content'
+      }
+    },
+    // ============================================
+    // ABOUT US PAGE TRANSLATIONS
+    // ============================================
+    aboutUs: {
+      pageTitle: 'About Us',
+      heroTitle: 'A different way to do marketing',
+      heroDescription: 'At Hayas, we believe marketing should be strategic, measurable and sustainable. We help companies organize their digital efforts to grow with purpose.',
+      missionTitle: 'Our Mission',
+      missionDescription: 'To help businesses make better marketing decisions by combining strategy, technology and data-driven insights.',
+      valuesTitle: 'Our Values',
+      values: [
+        { title: 'Strategy First', description: 'We think before we act. Every action has a purpose.' },
+        { title: 'Transparency', description: 'Clear communication and honest reporting always.' },
+        { title: 'Continuous Learning', description: 'The digital world evolves, so do we.' },
+        { title: 'Long-term Thinking', description: 'We build sustainable growth, not quick fixes.' }
+      ],
+      teamTitle: 'The Team',
+      teamDescription: 'A multidisciplinary team of strategists, designers, developers and marketing specialists working together to deliver exceptional results.',
+      ctaTitle: 'Ready to work together?',
+      ctaDescription: 'Let\'s discuss how we can help your business grow.',
+      ctaButton: 'Schedule a meeting'
+    },
+    // ============================================
+    // CONTACT PAGE TRANSLATIONS
+    // ============================================
+    contactPage: {
+      pageTitle: 'Contact Us',
+      heroTitle: 'Let\'s talk about your project',
+      heroDescription: 'Schedule a meeting or send us a message. We\'ll respond within 24 business hours.',
+      formTitle: 'Send us a message',
+      scheduleTitle: 'Schedule a meeting',
+      scheduleDescription: 'Book a 30-minute call to discuss your needs and how we can help.',
+      scheduleButton: 'Schedule meeting',
+      whatsappTitle: 'WhatsApp',
+      whatsappDescription: 'Prefer chatting? Send us a message directly on WhatsApp.',
+      whatsappButton: 'Open WhatsApp',
+      officeTitle: 'Our Office',
+      officeAddress: 'Madrid, Spain'
     }
   }
 };
