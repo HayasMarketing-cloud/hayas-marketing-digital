@@ -735,7 +735,7 @@ export const translations = {
       intro: {
         p1: 'Hoy todos tenemos más canales, más datos y más herramientas que nunca.',
         p2: 'Pero eso no siempre lleva a mejores decisiones ni a un crecimiento sostenible.',
-        p3: 'Porque el crecimiento a largo plazo empieza por las decisiones que tomamos hoy.'
+        p3: 'La diferencia no está en hacer más, sino en decidir mejor desde el principio.'
       },
       transition: 'En ese punto, las empresas suelen estar en uno —o varios— de estos momentos:',
       moments: {
