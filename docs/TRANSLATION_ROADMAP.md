@@ -51,9 +51,9 @@ All 3 solution pages are now fully bilingual with useTranslation hook:
 | `/es/servicios/email-marketing-automatizaciones` | `/en/services/email-marketing-automation` | ✅ Done |
 | `/es/servicios/gestion-redes-sociales` | `/en/services/social-media-management` | ✅ Done |
 | `/es/servicios/publicidad-google-ads` | `/en/services/google-ads-advertising` | ✅ Done |
-| `/es/servicios/estrategia-contenidos` | `/en/services/content-strategy` | ⏳ Pending |
-| `/es/servicios/consultoria-estrategica-analitica` | `/en/services/strategic-consulting-analytics` | ⏳ Pending |
-| `/es/servicios/integraciones-ia-procesos` | `/en/services/ai-process-integration` | ⏳ Pending |
+| `/es/servicios/estrategia-contenidos` | `/en/services/content-strategy` | ✅ Done |
+| `/es/servicios/consultoria-estrategica-analitica` | `/en/services/strategic-consulting-analytics` | ✅ Done |
+| `/es/servicios/integraciones-ia-procesos` | `/en/services/ai-process-integration` | ✅ Done |
 
 ### 📋 Phase 2: Case Studies (Top 10)
 | Spanish Path | English Path | Status |
