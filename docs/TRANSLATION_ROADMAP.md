@@ -47,10 +47,10 @@ All 3 solution pages are now fully bilingual with useTranslation hook:
 | `/es/servicios/creacion-marca` | `/en/services/brand-creation` | ✅ Done |
 | `/es/servicios/diseno-web` | `/en/services/web-design` | ✅ Done |
 | `/es/servicios/seo-posicionamiento` | `/en/services/seo-positioning` | ✅ Done |
-| `/es/servicios/implantacion-crm` | `/en/services/crm-implementation` | ⏳ Pending |
-| `/es/servicios/email-marketing-automatizaciones` | `/en/services/email-marketing-automation` | ⏳ Pending |
-| `/es/servicios/gestion-redes-sociales` | `/en/services/social-media-management` | ⏳ Pending |
-| `/es/servicios/publicidad-google-ads` | `/en/services/google-ads-advertising` | ⏳ Pending |
+| `/es/servicios/implantacion-crm` | `/en/services/crm-implementation` | ✅ Done |
+| `/es/servicios/email-marketing-automatizaciones` | `/en/services/email-marketing-automation` | ✅ Done |
+| `/es/servicios/gestion-redes-sociales` | `/en/services/social-media-management` | ✅ Done |
+| `/es/servicios/publicidad-google-ads` | `/en/services/google-ads-advertising` | ✅ Done |
 | `/es/servicios/estrategia-contenidos` | `/en/services/content-strategy` | ⏳ Pending |
 | `/es/servicios/consultoria-estrategica-analitica` | `/en/services/strategic-consulting-analytics` | ⏳ Pending |
 | `/es/servicios/integraciones-ia-procesos` | `/en/services/ai-process-integration` | ⏳ Pending |
