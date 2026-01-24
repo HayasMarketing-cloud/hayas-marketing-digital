@@ -142,4 +142,10 @@ translations.en.contactPage.*
 
 ---
 
-Last updated: 2026-01-21
+Last updated: 2026-01-24
+
+### ✅ Completed - Secondary Service Pages
+| Spanish Path | English Path | Status |
+|-------------|-------------|--------|
+| `/es/servicios/publicidad-redes-sociales` | `/en/services/social-media-advertising` | ✅ Done |
+| `/es/servicios/gestion-clientes-crm` | `/en/services/crm-customer-management` | ✅ Done |
