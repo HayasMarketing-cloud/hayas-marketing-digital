@@ -563,6 +563,7 @@ const App = () => (
           <Route path="/en/services/sales-process-automation" element={<PageSuspense><Pages.AutomatizacionProcesosVentas /></PageSuspense>} />
           <Route path="/en/services/lead-generation-clients" element={<PageSuspense><Pages.CaptacionLeadsClientes /></PageSuspense>} />
           <Route path="/en/services/funnel-implementation" element={<PageSuspense><Pages.ImplementacionFunnel /></PageSuspense>} />
+          <Route path="/en/services/crm-customer-management" element={<PageSuspense><Pages.GestionClientesCRM /></PageSuspense>} />
           
           {/* KIT DIGITAL (English version - keep Spanish name as it's a Spanish government program) */}
           <Route path="/en/kit-digital" element={<PageSuspense><Pages.KitDigital /></PageSuspense>} />
