@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, Home } from 'lucide-react';
+import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
 
 interface ArticleBreadcrumbsProps {
   position?: 'top' | 'bottom';
@@ -11,6 +12,7 @@ const ArticleBreadcrumbs: React.FC<ArticleBreadcrumbsProps> = ({
   position = 'top', 
   showHome = false 
 }) => {
+  const { getRoute } = useLocalizedRoutes();
   const topClasses = "container mx-auto px-4 pt-4 md:pt-6 pb-8";
   const bottomClasses = "container mx-auto px-4 py-8 border-t border-border bg-muted/30";
 
@@ -20,7 +22,7 @@ const ArticleBreadcrumbs: React.FC<ArticleBreadcrumbsProps> = ({
         {showHome && (
           <>
         <Link 
-          to="/es" 
+          to={getRoute('home')} 
           className="flex items-center text-muted-foreground hover:text-primary transition-colors"
         >
               <Home className="h-4 w-4 mr-1" />
@@ -31,7 +33,7 @@ const ArticleBreadcrumbs: React.FC<ArticleBreadcrumbsProps> = ({
         )}
         
         <Link 
-          to="/es/blog" 
+          to={getRoute('blog')} 
           className="flex items-center text-muted-foreground hover:text-primary transition-colors group"
         >
           <ChevronLeft className="h-4 w-4 mr-1 group-hover:-translate-x-1 transition-transform" />

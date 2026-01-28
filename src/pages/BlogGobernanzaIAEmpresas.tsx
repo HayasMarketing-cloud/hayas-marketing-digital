@@ -6,6 +6,7 @@ import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import gobernanzaIAHero from '@/assets/gobernanza-ia-empresas-hero.jpg';
+import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
 import { 
   Scale, 
   AlertCircle, 
@@ -31,6 +32,7 @@ import {
 } from 'lucide-react';
 
 const BlogGobernanzaIAEmpresas = () => {
+  const { getRoute } = useLocalizedRoutes();
   const metadata = {
     title: 'La gobernanza de la inteligencia artificial: una nueva responsabilidad estratégica para las empresas',
     metaTitle: 'Gobernanza de la IA: Responsabilidad Estratégica para Empresas | Hayas Marketing',

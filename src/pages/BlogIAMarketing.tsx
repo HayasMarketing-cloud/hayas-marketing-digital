@@ -10,8 +10,11 @@ import ScrollToTop from '@/components/ScrollToTop';
 import EnhancedSEO from '@/components/EnhancedSEO';
 import ArticleUtilitySection from '@/components/BlogPost/ArticleUtilitySection';
 import teamMarketingCollaboration from '@/assets/team-marketing-collaboration.jpg';
+import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
 
 const BlogIAMarketing = () => {
+  const { getRoute } = useLocalizedRoutes();
+  
   // Extract article content for SEO analysis
   const articleContent = `
     La Inteligencia Artificial (IA) y su aplicación en Marketing Digital
@@ -50,7 +53,7 @@ const BlogIAMarketing = () => {
         <div className="container mx-auto px-4 py-24 max-w-4xl">
           {/* Breadcrumb */}
           <div className="mb-8">
-            <Link to="/es/blog" className="flex items-center text-muted-foreground hover:text-primary transition-colors">
+            <Link to={getRoute('blog')} className="flex items-center text-muted-foreground hover:text-primary transition-colors">
               <ArrowLeft className="h-4 w-4 mr-2" />
               Volver al Blog
             </Link>
@@ -552,13 +555,13 @@ const BlogIAMarketing = () => {
                 En Hayas diseñamos soluciones con IA que no solo suenan bien, <strong>funcionan de verdad</strong>. Desde automatización comercial hasta dashboards predictivos, ya estamos ayudando a marcas a trabajar mejor, vender más y conectar de forma más humana.
               </p>
               <div className="text-center">
-                <Link to="/es/servicios">
+                <Link to={getRoute('services')}>
                   <Button size="lg" className="gradient-primary mr-4">
                     <BookOpen className="mr-2 h-4 w-4" />
                     Ver Servicios de IA
                   </Button>
                 </Link>
-                <Link to="/es/agendar-reunion">
+                <Link to={getRoute('scheduleMeeting')}>
                   <Button size="lg" variant="outline">
                     Solicitar Consulta
                   </Button>
@@ -575,7 +578,7 @@ const BlogIAMarketing = () => {
 
             {/* Navigation */}
             <div className="flex justify-between items-center mt-12 pt-8 border-t">
-              <Link to="/es/blog" className="flex items-center text-muted-foreground hover:text-primary transition-colors">
+              <Link to={getRoute('blog')} className="flex items-center text-muted-foreground hover:text-primary transition-colors">
                 <ArrowLeft className="h-4 w-4 mr-2" />
                 Volver al Blog
               </Link>

@@ -12,6 +12,7 @@ import { Clock, Calendar, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { getTagBySlug, getParentTag } from '@/data/blogTags';
 import Seo from '@/components/Seo';
+import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
 
 // Posts data actualizados con la nueva taxonomía
 const allPosts = [
@@ -96,7 +97,7 @@ const allPosts = [
 
 const BlogTagPage: React.FC = () => {
   const { tag } = useParams<{ tag: string }>();
-  
+  const { getRoute } = useLocalizedRoutes();
   if (!tag) {
     return <div>Tag no encontrado</div>;
   }
@@ -246,7 +247,7 @@ const BlogTagPage: React.FC = () => {
                     <p className="text-muted-foreground mb-6">
                       Aún no tenemos artículos para esta categoría, pero estamos trabajando en ello.
                     </p>
-                    <Link to="/es/blog">
+                    <Link to={getRoute('blog')}>
                       <Button>Ver todos los artículos</Button>
                     </Link>
                   </div>

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import BlogPostTemplate from '@/components/BlogPost/BlogPostTemplate';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
 import { 
   Users, 
   Target, 
@@ -20,6 +21,7 @@ import {
 } from 'lucide-react';
 
 const BlogCrmQueEsBeneficios = () => {
+  const { getRoute } = useLocalizedRoutes();
   const metadata = {
     title: "CRM: Qué es, Beneficios y Cómo Elegir el Mejor para tu Empresa",
     metaTitle: "CRM: Qué es, Beneficios y Cómo Elegir el Mejor para tu Empresa | Hayas Marketing",
@@ -366,7 +368,7 @@ const BlogCrmQueEsBeneficios = () => {
             Un CRM bien configurado puede transformar tu marketing y ventas en semanas. En Hayas, nos encargamos de todo: elección, configuración, automatización e integración.
           </p>
           <Link 
-            to="/es/servicios/implantacion-crm"
+            to={getRoute('crmImplementation')}
             className="inline-flex items-center justify-center px-8 py-3 bg-primary text-primary-foreground font-semibold rounded-lg hover:bg-primary/90 transition-colors"
           >
             Descubre nuestro servicio de Implantación de CRM

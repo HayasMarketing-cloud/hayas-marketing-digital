@@ -6,6 +6,7 @@ import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import huellaDigitalHeroImage from '@/assets/huella-digital-hero.jpg';
+import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
 import { 
   Fingerprint, 
   Shield, 
@@ -27,6 +28,7 @@ import {
 } from 'lucide-react';
 
 const BlogHuellaDigitalDerechoOlvido = () => {
+  const { getRoute } = useLocalizedRoutes();
   const metadata = {
     title: 'Huella digital y derecho al olvido: privacidad y conciencia en la era digital',
     metaTitle: 'Huella Digital y Derecho al Olvido: Privacidad en la Era Digital | Hayas Marketing',
@@ -524,7 +526,7 @@ const BlogHuellaDigitalDerechoOlvido = () => {
               ¿Quieres diseñar una estrategia digital consciente y responsable?
             </p>
             <Button asChild size="lg" className="group">
-              <Link to="/es/contacto">
+              <Link to={getRoute('contact')}>
                 Contáctanos
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Link>

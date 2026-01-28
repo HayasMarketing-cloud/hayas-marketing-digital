@@ -6,6 +6,7 @@ import { Separator } from '@/components/ui/separator';
 import chatbotsHeroImage from '@/assets/chatbots-web-hero.jpg';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
 import { 
   Bot, 
   AlertCircle, 
@@ -25,6 +26,7 @@ import {
 } from 'lucide-react';
 
 const BlogChatbotsParaPaginasWeb = () => {
+  const { getRoute } = useLocalizedRoutes();
   const metadata = {
     title: 'Chatbots para páginas web: qué opciones existen y cuál tiene sentido para tu negocio',
     metaTitle: 'Chatbots para Web: Guía completa para elegir el mejor | Hayas Marketing',
@@ -473,7 +475,7 @@ const BlogChatbotsParaPaginasWeb = () => {
               ¿Buscas una herramienta que impulse resultados reales? Hablemos de tu estrategia.
             </p>
             <Button asChild size="lg" className="group">
-              <Link to="/es/contacto">
+              <Link to={getRoute('contact')}>
                 Contáctanos
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Link>

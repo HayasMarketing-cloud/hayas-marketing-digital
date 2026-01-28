@@ -4,6 +4,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { Link } from 'react-router-dom';
 import decisionMarketingHero from '@/assets/decision-marketing-hero.jpg';
+import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
 import { 
   Target, 
   Users, 
@@ -23,6 +24,7 @@ import {
 } from 'lucide-react';
 
 const BlogDecisionMarketing = () => {
+  const { getRoute } = useLocalizedRoutes();
   const metadata = {
     title: 'Decision Marketing: cuando el marketing deja de provocar y empieza a generar confianza',
     metaTitle: 'Decision Marketing: Marketing que Genera Confianza | Hayas Marketing',
@@ -659,7 +661,7 @@ const BlogDecisionMarketing = () => {
                 </p>
                 <p className="text-lg font-medium text-foreground">
                   ¿Quieres profundizar más en este modelo de trabajo?{' '}
-                  <Link to="/es/contacto" className="text-primary hover:underline font-bold">
+                  <Link to={getRoute('contact')} className="text-primary hover:underline font-bold">
                     Contáctanos
                   </Link>{' '}
                   para analizar posibles sinergias.
