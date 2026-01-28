@@ -6,6 +6,7 @@ import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import guiaPrivacidadHeroImage from '@/assets/guia-privacidad-huella-digital-hero.jpg';
+import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
 import { 
   Fingerprint, 
   Shield, 
@@ -36,6 +37,7 @@ import {
 } from 'lucide-react';
 
 const BlogGuiaPrivacidadHuellaDigital = () => {
+  const { getRoute } = useLocalizedRoutes();
   const metadata = {
     title: 'Guía práctica para proteger tu privacidad y tu identidad digital',
     metaTitle: 'Guía Práctica: Protege tu Privacidad y Huella Digital | Hayas Marketing',

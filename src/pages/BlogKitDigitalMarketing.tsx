@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import kitDigitalHero from '../assets/kit-digital-hero-updated.jpg';
 import { Link } from 'react-router-dom';
 import { AlertTriangle, Calendar, CheckCircle, DollarSign, FileText, Globe, Shield, Users } from 'lucide-react';
+import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
 
 const metadata = {
   title: "Guía del Kit Digital: qué es, para quién y cómo aprovecharlo (antes del 31 de octubre de 2025)",
@@ -83,6 +84,8 @@ const relatedServices = [
 ];
 
 const BlogKitDigitalMarketing: React.FC = () => {
+  const { getRoute } = useLocalizedRoutes();
+  
   return (
     <BlogPostTemplate 
       metadata={metadata}
@@ -340,7 +343,7 @@ const BlogKitDigitalMarketing: React.FC = () => {
       </div>
 
       <div className="text-center mt-12">
-        <Link to="/es/contacto">
+        <Link to={getRoute('contact')}>
           <Button size="lg" className="text-lg px-8 py-4">
             Solicitar Consulta Gratuita
           </Button>

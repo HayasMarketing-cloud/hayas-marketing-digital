@@ -5,7 +5,10 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Brain, TrendingUp, Shield, Wand2, Zap, Users, BarChart3, AlertTriangle, CheckCircle2, Target, Palette, MessageSquare, Calendar, Settings, Eye, Lock } from 'lucide-react';
 import iaRedesSocialesHero from '@/assets/ia-redes-sociales-hero-updated.jpg';
+import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
+
 const BlogIARedesSociales = () => {
+  const { getRoute } = useLocalizedRoutes();
   const metadata = {
     title: "IA en Redes Sociales: Herramientas, Beneficios y Riesgos | Guía 2025",
     metaTitle: "Inteligencia Artificial en Redes Sociales: Guía Completa 2025",
@@ -549,10 +552,10 @@ const BlogIARedesSociales = () => {
         <p className="text-sm mb-4">¿Qué medidas tomas para protegerte de los riesgos? ¡Comparte tu experiencia con nosotros!</p>
         <div className="text-center space-y-4">
           <Button asChild size="lg" variant="secondary" className="mr-4">
-            <Link to="/es/soluciones-ia">Ver Soluciones de IA</Link>
+            <Link to={getRoute('aiSolutions')}>Ver Soluciones de IA</Link>
           </Button>
           <Button asChild variant="outline" size="lg" className="bg-white/10 text-white border-white/20 hover:bg-white/20">
-            <Link to="/es/contacto">Consulta Gratuita</Link>
+            <Link to={getRoute('contact')}>Consulta Gratuita</Link>
           </Button>
         </div>
       </div>
