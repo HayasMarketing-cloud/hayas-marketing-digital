@@ -134,7 +134,7 @@ const MiCuenta = () => {
           <h1 className="text-2xl font-bold mb-4">Acceso requerido</h1>
           <p className="text-gray-600 mb-8">Debes iniciar sesión para acceder a tu cuenta.</p>
           <Button asChild>
-            <Link to="/auth">Iniciar sesión</Link>
+            <Link to="/es/auth">Iniciar sesión</Link>
           </Button>
         </div>
         <Footer />

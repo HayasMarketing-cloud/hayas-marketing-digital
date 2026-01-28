@@ -124,7 +124,7 @@ const CasosExito = () => {
             <BreadcrumbList>
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
-                  <Link to="/">Inicio</Link>
+                  <Link to="/es">Inicio</Link>
                 </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator />

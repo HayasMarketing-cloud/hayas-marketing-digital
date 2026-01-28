@@ -76,7 +76,7 @@ const KitConsulting = () => {
               <BreadcrumbList>
                 <BreadcrumbItem>
                   <BreadcrumbLink asChild>
-                    <Link to="/">Inicio</Link>
+                    <Link to="/es">Inicio</Link>
                   </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
@@ -91,7 +91,7 @@ const KitConsulting = () => {
         {/* Header Navigation */}
         <section className="py-6 bg-gray-50">
           <div className="container mx-auto px-4">
-            <Link to="/#top" className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors">
+            <Link to="/es#top" className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors">
               <ArrowLeft className="h-4 w-4 mr-2" />
               Volver al Inicio
             </Link>

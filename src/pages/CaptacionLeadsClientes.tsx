@@ -57,19 +57,19 @@ const CaptacionLeadsClientes: React.FC = () => {
             <BreadcrumbList>
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
-                  <Link to="/">Inicio</Link>
+                  <Link to="/es">Inicio</Link>
                 </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
-                  <Link to="/soluciones/conecta-con-tus-clientes">Conecta con tus clientes</Link>
+                  <Link to="/es/soluciones/conecta-con-tus-clientes">Conecta con tus clientes</Link>
                 </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
-                  <Link to="/servicios">Servicios</Link>
+                  <Link to="/es/servicios">Servicios</Link>
                 </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator />
@@ -94,7 +94,7 @@ const CaptacionLeadsClientes: React.FC = () => {
                 <Link to="/es/solicitar-consulta">Generar más leads</Link>
               </Button>
               <Button variant="outline" asChild className="px-8 py-6 text-lg">
-                <Link to="/soluciones/conecta-con-tus-clientes">Ver solución: Conecta con tus clientes</Link>
+                <Link to="/es/soluciones/conecta-con-tus-clientes">Ver solución: Conecta con tus clientes</Link>
               </Button>
             </div>
           </section>
