@@ -20,7 +20,7 @@ const IntegracionesIAProcesos: React.FC = () => {
       heroTitle: 'Integraciones y optimización de procesos con IA',
       heroSubtitle: 'Integramos tus sistemas y aplicamos IA para que marketing y ventas trabajen con eficiencia y datos fiables.',
       primaryCTA: 'Explorar integraciones',
-      primaryCTALink: '/agendar-reunion',
+      primaryCTALink: '/es/agendar-reunion',
       secondaryCTA: 'Cuéntanos tu caso',
       secondaryCTALink: '/contacto',
       servicesTitle: 'Conectamos tus herramientas',
@@ -77,7 +77,7 @@ const IntegracionesIAProcesos: React.FC = () => {
       heroTitle: 'AI Integrations & Process Optimization',
       heroSubtitle: 'We integrate your systems and apply AI so marketing and sales work efficiently with reliable data.',
       primaryCTA: 'Explore integrations',
-      primaryCTALink: '/agendar-reunion',
+      primaryCTALink: '/en/schedule-meeting',
       secondaryCTA: 'Tell us your case',
       secondaryCTALink: '/contacto',
       servicesTitle: 'We connect your tools',
@@ -189,7 +189,7 @@ const IntegracionesIAProcesos: React.FC = () => {
           <h3 className="text-2xl font-semibold mb-3">{t.ctaTitle}</h3>
           <p className="text-muted-foreground mb-4">{t.ctaDescription}</p>
           <Button asChild>
-            <Link to="/es/solicitar-consulta">{t.ctaButton}</Link>
+            <Link to={isEnglish ? '/en/request-consultation' : '/es/solicitar-consulta'}>{t.ctaButton}</Link>
           </Button>
         </div>
       </section>
