@@ -9,6 +9,7 @@ import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
 import Seo from '@/components/Seo';
 import OptimizedImage from '@/components/OptimizedImage';
+import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
 import teamMarketingCollaboration from '@/assets/team-marketing-collaboration.jpg';
 import avisosLegalesHero from '@/assets/avisos-legales-hero.jpg';
 import mantenimientoWordpressHero from '@/assets/mantenimiento-wordpress-hero.jpg';
@@ -19,20 +20,22 @@ import tiktokMarketingHero from '@/assets/tiktok-marketing-hero.jpg';
 const BlogPost = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { getRoute, withLanguagePrefix } = useLocalizedRoutes();
 
   // Mapeo de URLs legacy a URLs canónicas (redirecciones temporales client-side)
+  const blogPath = getRoute('blog');
   const LEGACY_REDIRECTS: Record<string, string> = {
     // URLs truncadas
-    'la-inteligencia-': '/es/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing',
-    'la-inteligencia-artificial-ia-y-su-aplicacion-en-': '/es/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing',
-    'la-inteligencia-artificial-ia-y-su': '/es/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing',
+    'la-inteligencia-': `${blogPath}/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing`,
+    'la-inteligencia-artificial-ia-y-su-aplicacion-en-': `${blogPath}/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing`,
+    'la-inteligencia-artificial-ia-y-su': `${blogPath}/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing`,
     
     // Buyer persona
-    'como-crear-tu-buyer-persona-para-b2b-infografia': '/es/blog/como-crear-buyer-persona-b2b-b2c-guia-completa',
-    'como-crear-tu-buyer-persona-para-b2b-': '/es/blog/como-crear-buyer-persona-b2b-b2c-guia-completa',
+    'como-crear-tu-buyer-persona-para-b2b-infografia': `${blogPath}/como-crear-buyer-persona-b2b-b2c-guia-completa`,
+    'como-crear-tu-buyer-persona-para-b2b-': `${blogPath}/como-crear-buyer-persona-b2b-b2c-guia-completa`,
     
     // Re-commerce
-    're-commerce-la-economia-circular-del-e-': '/es/blog/re-commerce-economia-circular-ecommerce-partnership-sharpei',
+    're-commerce-la-economia-circular-del-e-': `${blogPath}/re-commerce-economia-circular-ecommerce-partnership-sharpei`,
   };
 
   // Redirigir automáticamente si es una URL legacy
@@ -48,7 +51,7 @@ const BlogPost = () => {
         <div className="container mx-auto px-4 py-24 max-w-4xl">
           {/* Breadcrumb */}
           <div className="mb-8">
-             <Link to="/es/blog" className="flex items-center text-muted-foreground hover:text-primary transition-colors">
+             <Link to={getRoute('blog')} className="flex items-center text-muted-foreground hover:text-primary transition-colors">
               <ArrowLeft className="h-4 w-4 mr-2" />
               Volver al Blog
             </Link>
@@ -427,14 +430,14 @@ const BlogPost = () => {
             <div className="bg-gradient-to-r from-primary/5 to-accent/5 p-6 rounded-lg mt-12">
               <h3 className="text-2xl font-bold mb-4 text-center">¿Necesitas ayuda para desarrollar tu estrategia de contenidos?</h3>
               <p className="text-center mb-6">
-                En <strong>Hayas Marketing</strong> creamos <Link to="/es/servicios/estrategia-contenidos" className="text-primary hover:underline">estrategias de contenido personalizadas</Link> que conectan con tu audiencia y generan resultados medibles. Desde la conceptualización hasta la medición, te acompañamos en cada paso.
+                En <strong>Hayas Marketing</strong> creamos <Link to={getRoute('contentStrategy')} className="text-primary hover:underline">estrategias de contenido personalizadas</Link> que conectan con tu audiencia y generan resultados medibles. Desde la conceptualización hasta la medición, te acompañamos en cada paso.
               </p>
               <div className="text-center space-y-4">
                 <Button asChild size="lg" className="mr-4">
-                  <Link to="/es/servicios/estrategia-contenidos">Ver Servicios de Contenido</Link>
+                  <Link to={getRoute('contentStrategy')}>Ver Servicios de Contenido</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <Link to="/es/agendar-reunion">Solicitar Asesoría Gratuita</Link>
+                  <Link to={getRoute('scheduleMeeting')}>Solicitar Asesoría Gratuita</Link>
                 </Button>
               </div>
             </div>
@@ -442,15 +445,15 @@ const BlogPost = () => {
             <div className="mt-12 pt-8 border-t">
               <h3 className="text-xl font-bold mb-4">📚 Artículos relacionados que te pueden interesar:</h3>
               <div className="grid md:grid-cols-3 gap-4">
-                <Link to="/es/blog/mantenimiento-wordpress-emprendedores-2025" className="block p-4 border rounded-lg hover:bg-muted/50 transition-colors">
+                <Link to={withLanguagePrefix('/blog/mantenimiento-wordpress-emprendedores-2025')} className="block p-4 border rounded-lg hover:bg-muted/50 transition-colors">
                   <h4 className="font-semibold mb-2">Mantenimiento WordPress para Emprendedores</h4>
                   <p className="text-sm text-muted-foreground">Mantén tu WordPress seguro y optimizado</p>
                 </Link>
-                 <Link to="/es/seo-positioning" className="block p-4 border rounded-lg hover:bg-muted/50 transition-colors">
+                 <Link to={getRoute('seo')} className="block p-4 border rounded-lg hover:bg-muted/50 transition-colors">
                   <h4 className="font-semibold mb-2">SEO y Posicionamiento Web</h4>
                   <p className="text-sm text-muted-foreground">Estrategias SEO que realmente funcionan</p>
                 </Link>
-                <Link to="/es/gestion-marketing" className="block p-4 border rounded-lg hover:bg-muted/50 transition-colors">
+                <Link to={getRoute('services')} className="block p-4 border rounded-lg hover:bg-muted/50 transition-colors">
                   <h4 className="font-semibold mb-2">Gestión Integral de Marketing</h4>
                   <p className="text-sm text-muted-foreground">Servicios completos de marketing digital</p>
                 </Link>
@@ -460,7 +463,7 @@ const BlogPost = () => {
 
           {/* Navigation */}
           <div className="flex justify-between items-center mt-12 pt-8 border-t">
-             <Link to="/es/blog" className="flex items-center text-muted-foreground hover:text-primary transition-colors">
+             <Link to={getRoute('blog')} className="flex items-center text-muted-foreground hover:text-primary transition-colors">
               <ArrowLeft className="h-4 w-4 mr-2" />
               Volver al Blog
             </Link>
@@ -512,7 +515,7 @@ const BlogPost = () => {
         <div className="container mx-auto px-4 py-24 max-w-4xl">
           {/* Breadcrumb */}
           <div className="mb-8">
-             <Link to="/es/blog" className="flex items-center text-muted-foreground hover:text-primary transition-colors">
+             <Link to={getRoute('blog')} className="flex items-center text-muted-foreground hover:text-primary transition-colors">
               <ArrowLeft className="h-4 w-4 mr-2" />
               Volver al Blog
             </Link>
@@ -915,10 +918,10 @@ const BlogPost = () => {
               </p>
               <div className="text-center space-y-4">
                 <Button asChild size="lg" className="mr-4">
-                  <Link to="/es/alojamiento-mantenimiento">Ver Servicio de Mantenimiento</Link>
+                  <Link to={withLanguagePrefix('/alojamiento-mantenimiento')}>Ver Servicio de Mantenimiento</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <Link to="/es/contacto">Consulta Gratuita</Link>
+                  <Link to={getRoute('contact')}>Consulta Gratuita</Link>
                 </Button>
               </div>
             </div>
@@ -926,15 +929,15 @@ const BlogPost = () => {
             <div className="mt-12 pt-8 border-t">
               <h3 className="text-xl font-bold mb-4">📚 Artículos relacionados que te pueden interesar:</h3>
               <div className="grid md:grid-cols-3 gap-4">
-                <Link to="/es/blog/avisos-legales-paginas-web" className="block p-4 border rounded-lg hover:bg-muted/50 transition-colors">
+                <Link to={withLanguagePrefix('/blog/avisos-legales-paginas-web')} className="block p-4 border rounded-lg hover:bg-muted/50 transition-colors">
                   <h4 className="font-semibold mb-2">Avisos Legales para tu WordPress</h4>
                   <p className="text-sm text-muted-foreground">Cumple con la normativa legal en tu web</p>
                 </Link>
-                <Link to="/es/servicios/diseno-web" className="block p-4 border rounded-lg hover:bg-muted/50 transition-colors">
+                <Link to={getRoute('webDesign')} className="block p-4 border rounded-lg hover:bg-muted/50 transition-colors">
                   <h4 className="font-semibold mb-2">Diseño Web para Emprendedores</h4>
                   <p className="text-sm text-muted-foreground">Crea una web que convierta visitantes en clientes</p>
                 </Link>
-                <Link to="/es/servicios/seo-positioning" className="block p-4 border rounded-lg hover:bg-muted/50 transition-colors">
+                <Link to={getRoute('seo')} className="block p-4 border rounded-lg hover:bg-muted/50 transition-colors">
                   <h4 className="font-semibold mb-2">SEO para WordPress</h4>
                   <p className="text-sm text-muted-foreground">Posiciona tu web en Google</p>
                 </Link>
@@ -944,7 +947,7 @@ const BlogPost = () => {
 
           {/* Navigation */}
           <div className="flex justify-between items-center mt-12 pt-8 border-t">
-             <Link to="/es/blog" className="flex items-center text-muted-foreground hover:text-primary transition-colors">
+             <Link to={getRoute('blog')} className="flex items-center text-muted-foreground hover:text-primary transition-colors">
               <ArrowLeft className="h-4 w-4 mr-2" />
               Volver al Blog
             </Link>
@@ -996,7 +999,7 @@ const BlogPost = () => {
         <div className="container mx-auto px-4 py-24 max-w-4xl">
           {/* Breadcrumb */}
           <div className="mb-8">
-             <Link to="/es/blog" className="flex items-center text-muted-foreground hover:text-primary transition-colors">
+             <Link to={getRoute('blog')} className="flex items-center text-muted-foreground hover:text-primary transition-colors">
               <ArrowLeft className="h-4 w-4 mr-2" />
               Volver al Blog
             </Link>
@@ -1228,7 +1231,7 @@ const BlogPost = () => {
                 consultoría para ayudarte con la estrategia, contenidos y diseño de tu sitio web.
               </p>
               <div className="text-center">
-                 <Link to="/es/servicios/agendar-reunion">
+                 <Link to={getRoute('scheduleMeeting')}>
                   <Button size="lg" className="gradient-primary">
                     Solicitar consulta gratuita
                   </Button>
@@ -1239,7 +1242,7 @@ const BlogPost = () => {
 
           {/* Navigation */}
           <div className="flex justify-between items-center mt-12 pt-8 border-t">
-             <Link to="/es/blog" className="flex items-center text-muted-foreground hover:text-primary transition-colors">
+             <Link to={getRoute('blog')} className="flex items-center text-muted-foreground hover:text-primary transition-colors">
               <ArrowLeft className="h-4 w-4 mr-2" />
               Volver al Blog
             </Link>
@@ -1262,7 +1265,7 @@ const BlogPost = () => {
             <Seo title="Cómo aprovechar la inteligencia artificial en redes sociales | Guía 2025" description="Descubre las mejores herramientas de IA para redes sociales, sus beneficios y riesgos. Guía completa para profesionales del social media marketing en 2025." ogImage="/src/assets/ia-redes-sociales-hero.jpg" />
             
             <div className="text-center mb-8">
-               <Link to="/es/blog" className="text-sm text-muted-foreground hover:text-primary">
+               <Link to={getRoute('blog')} className="text-sm text-muted-foreground hover:text-primary">
                 ← Volver al Blog
               </Link>
             </div>
@@ -1297,14 +1300,14 @@ const BlogPost = () => {
               <div className="bg-gradient-to-r from-primary/5 to-accent/5 p-6 rounded-lg mt-12">
                 <h3 className="text-2xl font-bold mb-4 text-center">¿Necesitas implementar IA en tu estrategia de redes sociales?</h3>
                 <p className="text-center mb-6">
-                  En <strong>Hayas Marketing</strong> te ayudamos a integrar <Link to="/es/servicios/soluciones-ia" className="text-primary hover:underline">soluciones de inteligencia artificial</Link> en tu estrategia de redes sociales de forma ética y eficaz.
+                  En <strong>Hayas Marketing</strong> te ayudamos a integrar <Link to={getRoute('aiIntegrations')} className="text-primary hover:underline">soluciones de inteligencia artificial</Link> en tu estrategia de redes sociales de forma ética y eficaz.
                 </p>
                 <div className="text-center space-y-4">
                   <Button asChild size="lg" className="mr-4">
-                    <Link to="/es/servicios/soluciones-ia">Ver Soluciones de IA</Link>
+                    <Link to={getRoute('aiIntegrations')}>Ver Soluciones de IA</Link>
                   </Button>
                   <Button asChild variant="outline" size="lg">
-                    <Link to="/es/servicios/agendar-reunion">Consulta Gratuita</Link>
+                    <Link to={getRoute('scheduleMeeting')}>Consulta Gratuita</Link>
                   </Button>
                 </div>
               </div>
@@ -1323,7 +1326,7 @@ const BlogPost = () => {
             <Seo title="TikTok marketing: cómo integrar TikTok en tu estrategia digital 2025" description="Descubre cómo usar TikTok marketing para conectar con tu audiencia. Estrategias, tipos de campañas y consejos para promocionar tu marca en TikTok efectivamente." ogImage="/src/assets/tiktok-marketing-hero.jpg" />
             
             <div className="text-center mb-8">
-              <Link to="/es/blog" className="text-sm text-muted-foreground hover:text-primary">
+              <Link to={getRoute('blog')} className="text-sm text-muted-foreground hover:text-primary">
                 ← Volver al Blog
               </Link>
             </div>
@@ -1575,14 +1578,14 @@ const BlogPost = () => {
               <div className="bg-gradient-to-r from-primary/5 to-accent/5 p-6 rounded-lg mt-12">
                 <h3 className="text-2xl font-bold mb-4 text-center">¿Necesitas ayuda con tu estrategia de TikTok marketing?</h3>
                 <p className="text-center mb-6">
-                  En <strong>Hayas Marketing</strong> te ayudamos a desarrollar e implementar estrategias de <Link to="/es/servicios/gestion-redes-sociales" className="text-primary hover:underline">gestión de redes sociales</Link> efectivas. Desde la creación de contenido hasta la gestión de campañas publicitarias, optimizamos tu presencia en TikTok para conectar auténticamente con tu audiencia.
+                  En <strong>Hayas Marketing</strong> te ayudamos a desarrollar e implementar estrategias de <Link to={getRoute('socialMedia')} className="text-primary hover:underline">gestión de redes sociales</Link> efectivas. Desde la creación de contenido hasta la gestión de campañas publicitarias, optimizamos tu presencia en TikTok para conectar auténticamente con tu audiencia.
                 </p>
                 <div className="text-center space-y-4">
                   <Button asChild size="lg" className="mr-4">
-                    <Link to="/es/servicios/gestion-redes-sociales">Ver Servicios de Redes Sociales</Link>
+                    <Link to={getRoute('socialMedia')}>Ver Servicios de Redes Sociales</Link>
                   </Button>
                   <Button asChild variant="outline" size="lg">
-                    <Link to="/es/servicios/agendar-reunion">Consulta Gratuita</Link>
+                    <Link to={getRoute('scheduleMeeting')}>Consulta Gratuita</Link>
                   </Button>
                 </div>
               </div>
@@ -1592,7 +1595,7 @@ const BlogPost = () => {
                 <div className="grid md:grid-cols-3 gap-6">
                   <div className="border rounded-lg p-4 hover:shadow-lg transition-shadow">
                     <h4 className="font-semibold mb-2">
-                      <Link to="/es/blog/ia-redes-sociales-herramientas-riesgos" className="text-primary hover:underline">
+                      <Link to={withLanguagePrefix('/blog/ia-redes-sociales-herramientas-riesgos')} className="text-primary hover:underline">
                         Cómo aprovechar la inteligencia artificial en redes sociales
                       </Link>
                     </h4>
@@ -1601,7 +1604,7 @@ const BlogPost = () => {
                   
                   <div className="border rounded-lg p-4 hover:shadow-lg transition-shadow">
                     <h4 className="font-semibold mb-2">
-                      <Link to="/es/blog/estrategia-marketing-contenidos-eficaz-2025" className="text-primary hover:underline">
+                      <Link to={withLanguagePrefix('/blog/estrategia-marketing-contenidos-eficaz-2025')} className="text-primary hover:underline">
                         Estrategia de marketing de contenidos eficaz: Guía 2025
                       </Link>
                     </h4>
@@ -1610,7 +1613,7 @@ const BlogPost = () => {
                   
                   <div className="border rounded-lg p-4 hover:shadow-lg transition-shadow">
                     <h4 className="font-semibold mb-2">
-                      <Link to="/es/servicios/publicidad-redes-sociales" className="text-primary hover:underline">
+                      <Link to={getRoute('socialMediaAds')} className="text-primary hover:underline">
                         Publicidad en redes sociales
                       </Link>
                     </h4>
@@ -1661,7 +1664,7 @@ const BlogPost = () => {
       <div className="text-center">
         <h1 className="text-4xl font-bold mb-4">Artículo no encontrado</h1>
         <p className="text-muted-foreground mb-8">Lo sentimos, el artículo que buscas no existe.</p>
-        <Link to="/es/blog">
+        <Link to={getRoute('blog')}>
           <Button>
             <ArrowLeft className="h-4 w-4 mr-2" />
             Volver al Blog
