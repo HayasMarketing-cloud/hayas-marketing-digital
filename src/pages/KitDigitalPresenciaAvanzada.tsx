@@ -447,7 +447,7 @@ const KitDigitalPresenciaAvanzada = () => {
                 </Link>
               </Button>
               <Button size="lg" className="bg-white/20 text-white border border-white/30 hover:bg-white hover:text-gray-900 font-semibold" asChild>
-                <Link to="/agendar-reunion">Agenda tu reunión</Link>
+                <Link to="/es/agendar-reunion">Agenda tu reunión</Link>
               </Button>
             </div>
           </div>

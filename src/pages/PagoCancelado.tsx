@@ -83,7 +83,7 @@ const PagoCancelado = () => {
             </Button>
             
             <Button variant="outline" size="lg" asChild>
-              <Link to="/contacto">
+              <Link to="/es/contacto">
                 <MessageCircle className="mr-2 h-4 w-4" />
                 Contactar soporte
               </Link>

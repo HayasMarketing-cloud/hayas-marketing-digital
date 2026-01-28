@@ -134,9 +134,9 @@ const EmailMarketingAutomatizaciones: React.FC = () => {
       ? 'Email marketing dashboard with automations and CRM workflows'
       : 'Dashboard de email marketing con automatizaciones y workflows de CRM',
     primaryCTA: isEnglish ? 'Schedule Consultation' : 'Agendar Consulta',
-    primaryCTALink: isEnglish ? '/en/schedule-meeting' : '/agendar-reunion',
+    primaryCTALink: isEnglish ? '/en/schedule-meeting' : '/es/agendar-reunion',
     secondaryCTA: isEnglish ? "Let's Talk" : 'Hablemos',
-    secondaryCTALink: isEnglish ? '/en/contact' : '/contacto',
+    secondaryCTALink: isEnglish ? '/en/contact' : '/es/contacto',
     
     // Services Section
     servicesTitle: isEnglish 
