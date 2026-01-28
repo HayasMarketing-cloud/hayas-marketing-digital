@@ -3,9 +3,11 @@ import ServicePageTemplate from '@/components/ServicePageTemplate';
 import { Target, Search, CalendarDays, Share2, Recycle, BarChart3, BookOpenText } from 'lucide-react';
 import { useServiceSEO } from '@/hooks/useServiceSEO';
 import { useTranslation } from '@/hooks/useTranslation';
+import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
 
 const EstrategiaContenidos: React.FC = () => {
   const { language } = useTranslation();
+  const { getRoute } = useLocalizedRoutes();
   const isEnglish = language === 'en';
 
   const content = {
@@ -220,7 +222,7 @@ const EstrategiaContenidos: React.FC = () => {
             </div>
             <h3 className="text-2xl font-semibold mb-3">{t.ctaTitle}</h3>
             <p className="text-muted-foreground mb-4">{t.ctaDescription}</p>
-            <a href="/es/solicitar-consulta" className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary/90 transition-colors">
+            <a href={getRoute('requestConsultation')} className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary/90 transition-colors">
               {t.ctaButton}
             </a>
           </div>

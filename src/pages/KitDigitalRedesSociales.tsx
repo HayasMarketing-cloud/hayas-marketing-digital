@@ -8,6 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import Seo from '@/components/Seo';
 import FAQSection from '@/components/FAQSection';
+import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
 import { 
   Share2, Camera, Target, BarChart3, 
   Users, Calendar, Megaphone, Shield,
@@ -146,6 +147,7 @@ const faqItems = [
 ];
 
 const KitDigitalRedesSociales = () => {
+  const { getRoute } = useLocalizedRoutes();
   const seoData = {
     title: "Kit Digital Gestión de Red Social - Ayuda hasta 12.000€ | Hayas Marketing",
     description: "Gestiona tus redes sociales profesionalmente con el Kit Digital 2025. Ayudas hasta 3.000€ para Segmento III y hasta 12.000€ para comunidades de bienes. Aumenta tu presencia digital.",
@@ -162,9 +164,9 @@ const KitDigitalRedesSociales = () => {
       <div className="bg-muted/30 py-4 mt-20">
         <div className="container mx-auto px-4">
           <nav className="text-sm text-gray-600">
-            <Link to="/es" className="hover:text-primary">Inicio</Link>
+            <Link to={getRoute('home')} className="hover:text-primary">Inicio</Link>
             <span className="mx-2">/</span>
-            <Link to="/es/kit-digital" className="hover:text-primary">Kit Digital</Link>
+            <Link to={getRoute('kitDigital')} className="hover:text-primary">Kit Digital</Link>
             <span className="mx-2">/</span>
             <span className="text-gray-900">Gestión de Red Social</span>
           </nav>
@@ -194,7 +196,7 @@ const KitDigitalRedesSociales = () => {
                   </Link>
                 </Button>
                 <Button size="lg" variant="outline" className="border-hayas-200 text-hayas-700 hover:bg-hayas-50" asChild>
-                  <Link to="/es/agendar-reunion">Agenda tu reunión</Link>
+                  <Link to={getRoute('scheduleMeeting')}>Agenda tu reunión</Link>
                 </Button>
               </div>
               
@@ -462,7 +464,7 @@ const KitDigitalRedesSociales = () => {
                 </Link>
               </Button>
               <Button size="lg" className="bg-white/20 text-white border border-white/30 hover:bg-white hover:text-gray-900 font-semibold" asChild>
-                <Link to="/es/agendar-reunion">Agenda tu reunión</Link>
+                <Link to={getRoute('scheduleMeeting')}>Agenda tu reunión</Link>
               </Button>
             </div>
           </div>
