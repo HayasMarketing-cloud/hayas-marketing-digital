@@ -112,12 +112,12 @@ const BusinessModelCanvasEstrategiaMarketing = () => {
     {
       title: "Consultoría Estratégica y Analítica",
       description: "Te ayudamos a diseñar y validar tu modelo de negocio con metodologías probadas",
-      link: "/consultoria-estrategica-analitica"
+      link: "/es/servicios/consultoria-estrategica-analitica"
     },
     {
       title: "Estrategia de Marketing Digital",
       description: "Desarrollamos estrategias de marketing alineadas con tu modelo de negocio",
-      link: "/estrategia-contenidos"
+      link: "/es/servicios/estrategia-contenidos"
     }
   ];
 
@@ -149,7 +149,7 @@ const BusinessModelCanvasEstrategiaMarketing = () => {
       </p>
 
       <p className="mb-8">
-        Para profesionales del marketing digital, el Business Model Canvas se convierte en una brújula estratégica que conecta directamente con la <Link to="/estrategia-contenidos" className="text-primary hover:underline">estrategia de contenidos</Link> y la <Link to="/captacion-leads-clientes" className="text-primary hover:underline">captación de leads</Link>, permitiendo alinear todos los esfuerzos de marketing con el propósito y la propuesta de valor del negocio.
+        Para profesionales del marketing digital, el Business Model Canvas se convierte en una brújula estratégica que conecta directamente con la <Link to="/es/servicios/estrategia-contenidos" className="text-primary hover:underline">estrategia de contenidos</Link> y la <Link to="/es/servicios/captacion-leads-clientes" className="text-primary hover:underline">captación de leads</Link>, permitiendo alinear todos los esfuerzos de marketing con el propósito y la propuesta de valor del negocio.
       </p>
 
       <div className="bg-accent/10 border-l-4 border-accent p-6 my-8">
@@ -163,7 +163,7 @@ const BusinessModelCanvasEstrategiaMarketing = () => {
       </h2>
 
       <p className="mb-8">
-        Cada bloque del Business Model Canvas tiene implicaciones directas en tu estrategia de marketing. Te explicamos cómo cada componente se conecta con tus actividades de marketing y <Link to="/gestion-marketing" className="text-primary hover:underline">gestión de clientes</Link>:
+        Cada bloque del Business Model Canvas tiene implicaciones directas en tu estrategia de marketing. Te explicamos cómo cada componente se conecta con tus actividades de marketing y <Link to="/es/servicios/administracion-crm" className="text-primary hover:underline">gestión de clientes</Link>:
       </p>
 
       <div className="grid md:grid-cols-3 gap-6 mb-8">
@@ -235,7 +235,7 @@ const BusinessModelCanvasEstrategiaMarketing = () => {
       </h2>
 
       <p className="mb-8">
-        La implementación del Business Model Canvas en marketing requiere un enfoque sistemático que conecte la visión estratégica con las tácticas operativas. Te presentamos una metodología probada en más de 200 proyectos de <Link to="/nosotros" className="text-primary hover:underline">consultoría estratégica</Link>:
+        La implementación del Business Model Canvas en marketing requiere un enfoque sistemático que conecte la visión estratégica con las tácticas operativas. Te presentamos una metodología probada en más de 200 proyectos de <Link to="/es/nosotros" className="text-primary hover:underline">consultoría estratégica</Link>:
       </p>
 
       <div className="space-y-8 mb-12">
@@ -279,8 +279,8 @@ const BusinessModelCanvasEstrategiaMarketing = () => {
           <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
             <h4 className="font-semibold text-purple-800 mb-2">🚀 Ejemplos de traducción:</h4>
             <ul className="text-purple-700 text-sm space-y-1">
-              <li>• Segmento identificado → Campaña de <Link to="/publicidad-google-ads" className="text-primary hover:underline">Google Ads</Link> específica</li>
-              <li>• Canal validado → Inversión en <Link to="/gestion-redes-sociales" className="text-primary hover:underline">social media</Link></li>
+              <li>• Segmento identificado → Campaña de <Link to="/es/servicios/publicidad-google-ads" className="text-primary hover:underline">Google Ads</Link> específica</li>
+              <li>• Canal validado → Inversión en <Link to="/es/servicios/gestion-redes-sociales" className="text-primary hover:underline">social media</Link></li>
               <li>• Propuesta de valor → Contenido diferenciado</li>
               <li>• Relación definida → Flujo de automatización</li>
             </ul>

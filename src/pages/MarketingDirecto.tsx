@@ -119,9 +119,9 @@ const MarketingDirecto: React.FC = () => {
       <div className="bg-muted/30 py-4 mt-20">
         <div className="container mx-auto px-4">
           <nav className="text-sm text-muted-foreground">
-            <Link to="/" className="hover:text-primary">Inicio</Link>
+            <Link to="/es" className="hover:text-primary">Inicio</Link>
             <span className="mx-2">/</span>
-            <Link to="/servicios" className="hover:text-primary">Servicios</Link>
+            <Link to="/es/servicios" className="hover:text-primary">Servicios</Link>
             <span className="mx-2">/</span>
             <span className="text-foreground">Marketing Directo</span>
           </nav>

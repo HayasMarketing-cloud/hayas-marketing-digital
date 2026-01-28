@@ -20,13 +20,13 @@ const IntermediateCTA: React.FC<IntermediateCTAProps> = ({
   buttonLink,
   className = ""
 }) => {
-  const { language } = useLanguageNavigation();
+  const { language, isEnglish } = useLanguageNavigation();
   const { t } = useTranslation();
 
   const finalTitle = title || t('cta.defaultTitle');
   const finalSubtitle = subtitle || t('cta.defaultSubtitle');
   const finalButtonText = buttonText || t('cta.defaultButton');
-  const finalButtonLink = buttonLink || `/${language}/agendar-reunion`;
+  const finalButtonLink = buttonLink || (isEnglish ? '/en/schedule-meeting' : '/es/agendar-reunion');
 
   return (
     <section className={`py-16 md:py-20 bg-gradient-to-r from-primary via-primary/90 to-accent ${className}`}>
