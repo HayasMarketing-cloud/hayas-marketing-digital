@@ -8,23 +8,36 @@ import { RouteDefinition } from './routeRegistry';
 
 const SITE_NAME = 'Hayas Marketing';
 const SITE_URL = 'https://hayasmarketing.com';
-const DEFAULT_LOCALE = 'es-ES';
+
+/**
+ * Detecta el idioma desde el path de la ruta
+ */
+function getLocaleFromPath(path: string): string {
+  if (path.startsWith('/en')) {
+    return 'en-US';
+  }
+  return 'es-ES';
+}
 
 /**
  * Genera SEO automáticamente desde una ruta
  */
 export function generateAutoSEO(path: string, category?: RouteDefinition['category']): Partial<EnhancedPageSEOData> {
-  const cleanPath = path.replace(/^\/es\/?/, '').replace(/\/$/, '');
+  const isEnglish = path.startsWith('/en');
+  const cleanPath = path.replace(/^\/(es|en)\/?/, '').replace(/\/$/, '');
   const segments = cleanPath.split('/').filter(Boolean);
+  
+  // Detectar idioma desde el path
+  const inLanguage = getLocaleFromPath(path);
   
   // Mapear categorías extendidas a categorías SEO válidas
   const seoCategory = mapToSEOCategory(category);
   
   // Generar título desde el path
-  const title = generateTitle(segments, category);
-  const h1 = generateH1(segments, category);
-  const description = generateDescription(segments, category);
-  const keywords = generateKeywords(segments, category);
+  const title = generateTitle(segments, category, isEnglish);
+  const h1 = generateH1(segments, category, isEnglish);
+  const description = generateDescription(segments, category, isEnglish);
+  const keywords = generateKeywords(segments, category, isEnglish);
   const schemaType = getSchemaType(category);
   const ogType = getOgType(category);
   
@@ -36,12 +49,12 @@ export function generateAutoSEO(path: string, category?: RouteDefinition['catego
     canonical: `${SITE_URL}${path}`,
     schemaType,
     ogType,
-    inLanguage: DEFAULT_LOCALE,
+    inLanguage,
     category: seoCategory,
-    robots: 'index, follow',
-    isIndexable: true,
-    about: generateAbout(segments, category),
-    mentions: generateMentions(category),
+    robots: isEnglish ? 'noindex, follow' : 'index, follow', // EN pages noindex until complete
+    isIndexable: !isEnglish,
+    about: generateAbout(segments, category, isEnglish),
+    mentions: generateMentions(category, isEnglish),
   };
 }
 
@@ -67,17 +80,19 @@ function mapToSEOCategory(category?: RouteDefinition['category']): EnhancedPageS
 /**
  * Genera título optimizado desde los segmentos del path
  */
-function generateTitle(segments: string[], category?: RouteDefinition['category']): string {
+function generateTitle(segments: string[], category?: RouteDefinition['category'], isEnglish: boolean = false): string {
   if (segments.length === 0) {
-    return `${SITE_NAME} | Agencia de Marketing Digital y CRM`;
+    return isEnglish 
+      ? `${SITE_NAME} | Digital Marketing & CRM Agency`
+      : `${SITE_NAME} | Agencia de Marketing Digital y CRM`;
   }
   
   // Convertir slug a texto legible
   const mainSegment = segments[segments.length - 1];
-  const readable = slugToReadable(mainSegment);
+  const readable = slugToReadable(mainSegment, isEnglish);
   
   // Añadir contexto según categoría
-  const suffix = getTitleSuffix(category);
+  const suffix = getTitleSuffix(category, isEnglish);
   
   return `${readable}${suffix} | ${SITE_NAME}`;
 }
@@ -85,20 +100,22 @@ function generateTitle(segments: string[], category?: RouteDefinition['category'
 /**
  * Genera H1 desde los segmentos
  */
-function generateH1(segments: string[], category?: RouteDefinition['category']): string {
+function generateH1(segments: string[], category?: RouteDefinition['category'], isEnglish: boolean = false): string {
   if (segments.length === 0) {
-    return 'Agencia de Marketing Digital y CRM con IA';
+    return isEnglish 
+      ? 'Digital Marketing & CRM Agency with AI'
+      : 'Agencia de Marketing Digital y CRM con IA';
   }
   
   const mainSegment = segments[segments.length - 1];
-  const readable = slugToReadable(mainSegment);
+  const readable = slugToReadable(mainSegment, isEnglish);
   
   // Añadir contexto según categoría
   if (category === 'service') {
-    return `Servicio de ${readable}`;
+    return isEnglish ? `${readable} Service` : `Servicio de ${readable}`;
   }
   if (category === 'solution') {
-    return `Solución de ${readable}`;
+    return isEnglish ? `${readable} Solution` : `Solución de ${readable}`;
   }
   if (category === 'blog') {
     return readable;
@@ -110,15 +127,17 @@ function generateH1(segments: string[], category?: RouteDefinition['category']):
 /**
  * Genera descripción desde los segmentos
  */
-function generateDescription(segments: string[], category?: RouteDefinition['category']): string {
+function generateDescription(segments: string[], category?: RouteDefinition['category'], isEnglish: boolean = false): string {
   if (segments.length === 0) {
-    return 'Agencia de marketing digital especializada en CRM, automatización e inteligencia artificial. Transformamos tu estrategia comercial con tecnología de vanguardia.';
+    return isEnglish
+      ? 'Digital marketing agency specializing in CRM, automation and artificial intelligence. We transform your business strategy with cutting-edge technology.'
+      : 'Agencia de marketing digital especializada en CRM, automatización e inteligencia artificial. Transformamos tu estrategia comercial con tecnología de vanguardia.';
   }
   
   const mainSegment = segments[segments.length - 1];
-  const readable = slugToReadable(mainSegment);
+  const readable = slugToReadable(mainSegment, isEnglish);
   
-  const templates: Record<RouteDefinition['category'], string> = {
+  const templatesES: Record<RouteDefinition['category'], string> = {
     main: `Descubre ${readable} en Hayas Marketing. Soluciones profesionales de marketing digital y CRM para tu empresa.`,
     service: `Servicio de ${readable} con Hayas Marketing. Potencia tu negocio con estrategias profesionales de marketing digital y automatización.`,
     solution: `Solución completa de ${readable} para empresas. Implementación, estrategia y resultados medibles con Hayas Marketing.`,
@@ -130,17 +149,32 @@ function generateDescription(segments: string[], category?: RouteDefinition['cat
     auth: ''
   };
   
+  const templatesEN: Record<RouteDefinition['category'], string> = {
+    main: `Discover ${readable} at Hayas Marketing. Professional digital marketing and CRM solutions for your business.`,
+    service: `${readable} service by Hayas Marketing. Boost your business with professional digital marketing and automation strategies.`,
+    solution: `Complete ${readable} solution for businesses. Implementation, strategy and measurable results with Hayas Marketing.`,
+    blog: `${readable} - Complete guide and practical tips on digital marketing, CRM and AI by Hayas Marketing.`,
+    'case-study': `Success story: ${readable}. Discover how we help businesses grow with digital marketing and automation.`,
+    'kit-digital': `${readable} with Kit Digital. Digitize your business with Spain's Kit Digital program.`,
+    tool: `${readable} - Free tool by Hayas Marketing to optimize your digital marketing strategy.`,
+    admin: '',
+    auth: ''
+  };
+  
+  const templates = isEnglish ? templatesEN : templatesES;
   return templates[category || 'main'] || templates.main;
 }
 
 /**
  * Genera keywords desde los segmentos
  */
-function generateKeywords(segments: string[], category?: RouteDefinition['category']): string[] {
-  const baseKeywords = ['marketing digital', 'hayas marketing'];
+function generateKeywords(segments: string[], category?: RouteDefinition['category'], isEnglish: boolean = false): string[] {
+  const baseKeywords = isEnglish 
+    ? ['digital marketing', 'hayas marketing', 'marketing agency spain']
+    : ['marketing digital', 'hayas marketing'];
   
   // Añadir keywords del path
-  const pathKeywords = segments.map(seg => slugToReadable(seg).toLowerCase());
+  const pathKeywords = segments.map(seg => slugToReadable(seg, isEnglish).toLowerCase());
   
   // Keywords según categoría
   const categoryKeywords: Record<RouteDefinition['category'], string[]> = {
@@ -165,10 +199,24 @@ function generateKeywords(segments: string[], category?: RouteDefinition['catego
 /**
  * Convierte slug a texto legible
  */
-function slugToReadable(slug: string): string {
-  return slug
+function slugToReadable(slug: string, isEnglish: boolean = false): string {
+  const base = slug
     .replace(/-/g, ' ')
-    .replace(/\b\w/g, l => l.toUpperCase())
+    .replace(/\b\w/g, l => l.toUpperCase());
+  
+  if (isEnglish) {
+    // English: lowercase common prepositions/articles
+    return base
+      .replace(/\bAnd\b/g, 'and')
+      .replace(/\bThe\b/g, 'the')
+      .replace(/\bOf\b/g, 'of')
+      .replace(/\bIn\b/g, 'in')
+      .replace(/\bFor\b/g, 'for')
+      .replace(/\bWith\b/g, 'with');
+  }
+  
+  // Spanish: lowercase common prepositions/articles
+  return base
     .replace(/\bY\b/g, 'y')
     .replace(/\bDe\b/g, 'de')
     .replace(/\bLa\b/g, 'la')
@@ -181,8 +229,8 @@ function slugToReadable(slug: string): string {
 /**
  * Obtiene sufijo del título según categoría
  */
-function getTitleSuffix(category?: RouteDefinition['category']): string {
-  const suffixes: Partial<Record<RouteDefinition['category'], string>> = {
+function getTitleSuffix(category?: RouteDefinition['category'], isEnglish: boolean = false): string {
+  const suffixesES: Partial<Record<RouteDefinition['category'], string>> = {
     service: ' - Servicio Profesional',
     solution: ' - Solución Completa',
     blog: ' - Blog',
@@ -191,6 +239,16 @@ function getTitleSuffix(category?: RouteDefinition['category']): string {
     tool: ' - Herramienta Gratuita'
   };
   
+  const suffixesEN: Partial<Record<RouteDefinition['category'], string>> = {
+    service: ' - Professional Service',
+    solution: ' - Complete Solution',
+    blog: ' - Blog',
+    'case-study': ' - Success Story',
+    'kit-digital': ' - Kit Digital',
+    tool: ' - Free Tool'
+  };
+  
+  const suffixes = isEnglish ? suffixesEN : suffixesES;
   return suffixes[category || 'main'] || '';
 }
 
@@ -225,19 +283,27 @@ function getOgType(category?: RouteDefinition['category']): EnhancedPageSEOData[
 /**
  * Genera conceptos "about" según categoría
  */
-function generateAbout(segments: string[], category?: RouteDefinition['category']): string[] {
-  const about = ['Marketing Digital', 'CRM'];
+function generateAbout(segments: string[], category?: RouteDefinition['category'], isEnglish: boolean = false): string[] {
+  const about = isEnglish 
+    ? ['Digital Marketing', 'CRM']
+    : ['Marketing Digital', 'CRM'];
   
   if (category === 'service' || category === 'solution') {
-    about.push('Servicios Profesionales', 'Automatización');
+    about.push(
+      isEnglish ? 'Professional Services' : 'Servicios Profesionales', 
+      isEnglish ? 'Automation' : 'Automatización'
+    );
   }
   if (category === 'blog') {
-    about.push('Contenido Educativo', 'Guías y Tutoriales');
+    about.push(
+      isEnglish ? 'Educational Content' : 'Contenido Educativo', 
+      isEnglish ? 'Guides & Tutorials' : 'Guías y Tutoriales'
+    );
   }
   
   // Añadir conceptos del path
   const pathConcepts = segments
-    .map(seg => slugToReadable(seg))
+    .map(seg => slugToReadable(seg, isEnglish))
     .filter(concept => concept.length > 3);
   
   return [...about, ...pathConcepts].slice(0, 5);
@@ -246,16 +312,26 @@ function generateAbout(segments: string[], category?: RouteDefinition['category'
 /**
  * Genera menciones según categoría
  */
-function generateMentions(category?: RouteDefinition['category']): string[] {
-  const baseMentions = ['Hayas Marketing', 'España'];
+function generateMentions(category?: RouteDefinition['category'], isEnglish: boolean = false): string[] {
+  const baseMentions = isEnglish 
+    ? ['Hayas Marketing', 'Spain']
+    : ['Hayas Marketing', 'España'];
   
-  const categoryMentions: Partial<Record<RouteDefinition['category'], string[]>> = {
+  const categoryMentionsES: Partial<Record<RouteDefinition['category'], string[]>> = {
     service: ['HubSpot', 'GoHighLevel', 'Inteligencia Artificial'],
     solution: ['CRM', 'Automatización', 'Marketing Automation'],
     blog: ['Marketing Digital', 'SEO', 'Contenido'],
     'kit-digital': ['Kit Digital', 'Ayudas Digitales', 'PYME']
   };
   
+  const categoryMentionsEN: Partial<Record<RouteDefinition['category'], string[]>> = {
+    service: ['HubSpot', 'GoHighLevel', 'Artificial Intelligence'],
+    solution: ['CRM', 'Automation', 'Marketing Automation'],
+    blog: ['Digital Marketing', 'SEO', 'Content'],
+    'kit-digital': ['Kit Digital', 'Digital Grants', 'SME']
+  };
+  
+  const categoryMentions = isEnglish ? categoryMentionsEN : categoryMentionsES;
   return [...baseMentions, ...(categoryMentions[category || 'main'] || [])];
 }
 

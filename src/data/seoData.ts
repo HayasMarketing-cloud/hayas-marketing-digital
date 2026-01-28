@@ -194,8 +194,13 @@ export const generateServiceSchema = (params: {
     ratingValue: string;
     reviewCount: string;
   };
+  inLanguage?: string; // Now supports dynamic language
 }) => {
-  const { serviceName, serviceDescription, serviceType, canonical, priceRange, features, aggregateRating } = params;
+  const { serviceName, serviceDescription, serviceType, canonical, priceRange, features, aggregateRating, inLanguage } = params;
+  
+  // Detect language from canonical or explicit param
+  const isEnglish = inLanguage?.startsWith('en') || canonical.startsWith('/en');
+  const effectiveLanguage = inLanguage || (isEnglish ? 'en-US' : 'es-ES');
   
   const schema: Record<string, any> = {
     "@context": "https://schema.org",
@@ -213,12 +218,12 @@ export const generateServiceSchema = (params: {
       },
       {
         "@type": "Country",
-        name: "España"
+        name: isEnglish ? "Spain" : "España"
       }
     ],
     serviceType: serviceType,
     url: `https://hayasmarketing.com${canonical}`,
-    inLanguage: "es-ES"
+    inLanguage: effectiveLanguage
   };
   
   if (priceRange) {
@@ -226,9 +231,10 @@ export const generateServiceSchema = (params: {
   }
   
   if (features && features.length > 0) {
+    const catalogName = isEnglish ? `${serviceName} Services` : `Servicios de ${serviceName}`;
     schema.hasOfferCatalog = {
       "@type": "OfferCatalog",
-      name: `Servicios de ${serviceName}`,
+      name: catalogName,
       itemListElement: features.map((feature, index) => ({
         "@type": "Offer",
         itemOffered: {

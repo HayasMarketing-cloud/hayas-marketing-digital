@@ -174,6 +174,10 @@ const Seo = ({
     // Add breadcrumb schema if applicable
     if (canonical && canonical !== '/') {
       const pathSegments = canonical.split('/').filter(Boolean);
+      // Detect language from path or inLanguage prop
+      const isEnglish = inLanguage.startsWith('en') || currentPath.startsWith('/en');
+      const homeLabel = isEnglish ? 'Home' : 'Inicio';
+      
       if (pathSegments.length > 0) {
         const breadcrumbSchema = {
           "@context": "https://schema.org",
@@ -182,15 +186,17 @@ const Seo = ({
             {
               "@type": "ListItem",
               position: 1,
-              name: "Inicio",
-              item: `${window.location.origin}/`
+              name: homeLabel,
+              item: `${window.location.origin}/${isEnglish ? 'en' : 'es'}`
             },
-            ...pathSegments.map((segment, index) => ({
-              "@type": "ListItem",
-              position: index + 2,
-              name: segment.charAt(0).toUpperCase() + segment.slice(1).replace(/-/g, ' '),
-              item: `${window.location.origin}/${pathSegments.slice(0, index + 1).join('/')}`
-            }))
+            ...pathSegments
+              .filter(segment => segment !== 'es' && segment !== 'en') // Exclude language prefix
+              .map((segment, index) => ({
+                "@type": "ListItem",
+                position: index + 2,
+                name: segment.charAt(0).toUpperCase() + segment.slice(1).replace(/-/g, ' '),
+                item: `${window.location.origin}/${pathSegments.slice(0, pathSegments.indexOf(segment) + 1).join('/')}`
+              }))
           ]
         };
         
