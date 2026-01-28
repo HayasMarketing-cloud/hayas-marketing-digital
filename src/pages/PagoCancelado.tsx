@@ -5,8 +5,10 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { XCircle, ArrowLeft, MessageCircle, RefreshCw } from 'lucide-react';
+import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
 
 const PagoCancelado = () => {
+  const { getRoute } = useLocalizedRoutes();
   return (
     <div className="min-h-screen bg-gradient-to-br from-red-50 to-white">
       <Navigation />
@@ -76,21 +78,21 @@ const PagoCancelado = () => {
           {/* Botones de acción */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" asChild>
-              <Link to="/es/servicios">
+              <Link to={getRoute('services')}>
                 <RefreshCw className="mr-2 h-4 w-4" />
                 Intentar de nuevo
               </Link>
             </Button>
             
             <Button variant="outline" size="lg" asChild>
-              <Link to="/es/contacto">
+              <Link to={getRoute('contact')}>
                 <MessageCircle className="mr-2 h-4 w-4" />
                 Contactar soporte
               </Link>
             </Button>
             
             <Button variant="ghost" size="lg" asChild>
-              <Link to="/es">
+              <Link to={getRoute('home')}>
                 <ArrowLeft className="mr-2 h-4 w-4" />
                 Volver al inicio
               </Link>

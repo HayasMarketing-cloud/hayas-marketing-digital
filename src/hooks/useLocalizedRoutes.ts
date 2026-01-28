@@ -29,6 +29,7 @@ const ROUTE_MAPPINGS: Record<string, RouteMap> = {
   solutionsBoostBrand: { es: '/es/soluciones/impulsa-tu-marca', en: '/en/solutions/boost-your-brand' },
   solutionsConnectCustomers: { es: '/es/soluciones/conecta-con-tus-clientes', en: '/en/solutions/connect-with-customers' },
   solutionsActivateSales: { es: '/es/soluciones/activa-tus-ventas', en: '/en/solutions/activate-sales' },
+  solutionsAIMarketing: { es: '/es/soluciones/ia-marketing', en: '/en/solutions/ai-marketing' },
   
   // Servicios específicos
   serviceContentStrategy: { es: '/es/servicios/estrategia-contenidos', en: '/en/services/content-strategy' },
@@ -36,9 +37,11 @@ const ROUTE_MAPPINGS: Record<string, RouteMap> = {
   serviceGoogleAds: { es: '/es/servicios/publicidad-google-ads', en: '/en/services/google-ads-advertising' },
   serviceSocialMedia: { es: '/es/servicios/gestion-redes-sociales', en: '/en/services/social-media-management' },
   serviceCRMAdmin: { es: '/es/servicios/administracion-crm', en: '/en/services/crm-administration' },
+  serviceCRMImplantation: { es: '/es/servicios/implantacion-crm', en: '/en/services/crm-implementation' },
   serviceBrandCreation: { es: '/es/servicios/creacion-marca', en: '/en/services/brand-creation' },
   serviceWebDesign: { es: '/es/servicios/diseno-web', en: '/en/services/web-design' },
   serviceSEO: { es: '/es/servicios/posicionamiento-seo', en: '/en/services/seo-positioning' },
+  serviceSEOPositioning: { es: '/es/servicios/seo-posicionamiento', en: '/en/services/seo-positioning' },
   serviceEmailMarketing: { es: '/es/servicios/email-marketing-automatizaciones', en: '/en/services/email-marketing-automation' },
   serviceStrategicConsulting: { es: '/es/servicios/consultoria-estrategica-analitica', en: '/en/services/strategic-consulting' },
   serviceAIIntegrations: { es: '/es/servicios/integraciones-ia-procesos', en: '/en/services/ai-integrations' },
@@ -55,9 +58,10 @@ const ROUTE_MAPPINGS: Record<string, RouteMap> = {
   hubspotVsGHL: { es: '/es/hubspot-vs-gohighlevel', en: '/en/hubspot-vs-gohighlevel' },
   
   // Páginas legales
-  privacyPolicy: { es: '/es/politica-de-privacidad', en: '/en/privacy-policy' },
-  legalNotice: { es: '/es/aviso-legal', en: '/en/legal-notice' },
-  cookiePolicy: { es: '/es/politica-de-cookies', en: '/en/cookie-policy' },
+  privacyPolicy: { es: '/es/legal/politica-privacidad', en: '/en/legal/privacy-policy' },
+  legalNotice: { es: '/es/legal/aviso-legal', en: '/en/legal/legal-notice' },
+  cookiePolicy: { es: '/es/legal/politica-cookies', en: '/en/legal/cookie-policy' },
+  termsOfService: { es: '/es/legal/terminos-servicio', en: '/en/legal/terms-of-service' },
 };
 
 /**

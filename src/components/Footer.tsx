@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { ArrowRight, Building2, Users, Linkedin, Youtube, MessageSquare, Mail, MapPin, Settings } from 'lucide-react';
 import { useLanguageNavigation } from '@/hooks/useLanguageNavigation';
 import { useTranslation } from '@/hooks/useTranslation';
+import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
 
 interface FooterProps {
   showKitSection?: boolean;
@@ -13,13 +14,9 @@ interface FooterProps {
 const Footer: React.FC<FooterProps> = ({
   showKitSection = false
 }) => {
-  const {
-    language,
-    getLocalizedPath
-  } = useLanguageNavigation();
-  const {
-    t
-  } = useTranslation();
+  const { language } = useLanguageNavigation();
+  const { t } = useTranslation();
+  const { getRoute } = useLocalizedRoutes();
   const [searchParams] = useSearchParams();
   const showDevAccess = searchParams.get('dev') === 'true';
   const currentYear = new Date().getFullYear();
@@ -104,10 +101,10 @@ const Footer: React.FC<FooterProps> = ({
             <p>{t('footer.rights')}</p>
           </div>
           <div className="flex space-x-6">
-            <Link to={`/${language}/legal/aviso-legal`} className="hover:text-secondary transition-colors">{t('footer.legal')}</Link>
-            <Link to={`/${language}/legal/politica-privacidad`} className="hover:text-secondary transition-colors">{t('footer.privacy')}</Link>
-            <Link to={`/${language}/legal/terminos-servicio`} className="hover:text-secondary transition-colors">{t('footer.terms')}</Link>
-            <Link to={`/${language}/legal/politica-cookies`} className="hover:text-secondary transition-colors">{t('footer.cookies')}</Link>
+            <Link to={getRoute('legalNotice')} className="hover:text-secondary transition-colors">{t('footer.legal')}</Link>
+            <Link to={getRoute('privacyPolicy')} className="hover:text-secondary transition-colors">{t('footer.privacy')}</Link>
+            <Link to={getRoute('termsOfService')} className="hover:text-secondary transition-colors">{t('footer.terms')}</Link>
+            <Link to={getRoute('cookiePolicy')} className="hover:text-secondary transition-colors">{t('footer.cookies')}</Link>
           </div>
         </div>
       </div>
