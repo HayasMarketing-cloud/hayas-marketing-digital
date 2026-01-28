@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -11,6 +12,7 @@ import { CheckCircle, Users, Target, Zap } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
 import { supabase } from "@/integrations/supabase/client";
+import { useLocalizedRoutes } from "@/hooks/useLocalizedRoutes";
 
 // Validation schema
 const URLSchema = z
@@ -35,6 +37,7 @@ const FreelancerFormSchema = z.object({
 });
 
 const JoinFreelancersSection: React.FC = () => {
+  const { getRoute } = useLocalizedRoutes();
   const [formData, setFormData] = useState({
     firstName: '',
     email: '',
@@ -387,9 +390,9 @@ const JoinFreelancersSection: React.FC = () => {
                         <p className="text-xs text-muted-foreground">
                           Puedes darte de baja en cualquier momento. Para más información sobre 
                           nuestra gestión de datos y tu privacidad, consulta nuestra{' '}
-                           <a href="/es/politica-privacidad" className="text-primary hover:underline">
+                          <Link to={getRoute('privacyPolicy')} className="text-primary hover:underline">
                             Política de Privacidad
-                          </a>.
+                          </Link>.
                         </p>
                       </div>
                     </div>

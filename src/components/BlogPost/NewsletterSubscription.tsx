@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Mail, CheckCircle } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
 
 const NewsletterSubscription: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -36,6 +38,8 @@ const NewsletterSubscription: React.FC = () => {
     }, 1000);
   };
 
+  const { getRoute } = useLocalizedRoutes();
+
   if (isSubscribed) {
     return (
       <section className="section-normal bg-gradient-to-r from-primary/10 to-accent/10">
@@ -59,17 +63,17 @@ const NewsletterSubscription: React.FC = () => {
                   <p>
                     En Hayas, protegemos tu privacidad y datos. Estamos adheridos al Pacto Digital 
                     para un uso ético de la información. Más info:{' '}
-                     <a href="/es/aviso-legal" className="text-primary hover:underline">AEPD</a>.
+                    <Link to={getRoute('legalNotice')} className="text-primary hover:underline">AEPD</Link>.
                   </p>
                   
                   <div className="flex justify-center space-x-4 pt-2">
-                     <a href="/es/politica-privacidad" className="text-primary hover:underline">
+                    <Link to={getRoute('privacyPolicy')} className="text-primary hover:underline">
                       Política de Privacidad
-                    </a>
+                    </Link>
                     <span className="text-muted-foreground">|</span>
-                     <a href="/es/aviso-legal" className="text-primary hover:underline">
+                    <Link to={getRoute('legalNotice')} className="text-primary hover:underline">
                       Aviso Legal
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </CardContent>
@@ -122,9 +126,9 @@ const NewsletterSubscription: React.FC = () => {
                 
                 <p className="text-xs text-muted-foreground text-center">
                   No spam. Cancela cuando quieras. Revisa nuestra{' '}
-                   <a href="/es/politica-privacidad" className="text-primary hover:underline">
+                  <Link to={getRoute('privacyPolicy')} className="text-primary hover:underline">
                     política de privacidad
-                  </a>.
+                  </Link>.
                 </p>
               </form>
               
@@ -133,17 +137,17 @@ const NewsletterSubscription: React.FC = () => {
                 <p>
                   En Hayas, protegemos tu privacidad y datos. Estamos adheridos al Pacto Digital 
                   para un uso ético de la información. Más info:{' '}
-                  <a href="/es/aviso-legal" className="text-primary hover:underline">AEPD</a>.
+                  <Link to={getRoute('legalNotice')} className="text-primary hover:underline">AEPD</Link>.
                 </p>
                 
                 <div className="flex justify-center space-x-4 pt-2">
-                  <a href="/es/politica-privacidad" className="text-primary hover:underline">
+                  <Link to={getRoute('privacyPolicy')} className="text-primary hover:underline">
                     Política de Privacidad
-                  </a>
+                  </Link>
                   <span className="text-muted-foreground">|</span>
-                  <a href="/es/aviso-legal" className="text-primary hover:underline">
+                  <Link to={getRoute('legalNotice')} className="text-primary hover:underline">
                     Aviso Legal
-                  </a>
+                  </Link>
                 </div>
               </div>
             </CardContent>

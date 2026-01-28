@@ -1,8 +1,8 @@
-
 import React from 'react';
 import { Check, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
 
 const reasons = [
   {
@@ -33,6 +33,8 @@ const reasons = [
 ];
 
 const WhyChooseUsSection = () => {
+  const { getRoute } = useLocalizedRoutes();
+  
   return (
     <section className="section-normal bg-white">
       <div className="container mx-auto px-4">
@@ -58,7 +60,7 @@ const WhyChooseUsSection = () => {
             </div>
             
             <Button asChild className="gradient-primary text-white hover-scale">
-              <Link to="/es/agendar-reunion">Solicitar Consulta</Link>
+              <Link to={getRoute('scheduleMeeting')}>Solicitar Consulta</Link>
             </Button>
           </div>
           
