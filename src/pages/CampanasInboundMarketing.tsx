@@ -8,6 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb';
 import { Link } from 'react-router-dom';
 import ServiceContactSection from '@/components/ServiceContactSection';
+import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
 import { BookOpenText, Filter, FileText, Mail, BarChart3 } from 'lucide-react';
 
 const includes = [
@@ -25,6 +26,7 @@ const benefits = [
 ];
 
 const CampanasInboundMarketing: React.FC = () => {
+  const { getRoute } = useLocalizedRoutes();
   const { title, description, canonical, ogImage, structuredData } = useServiceSEO({
     serviceName: "Campañas Inbound Marketing",
     serviceDescription: "Atrae a tus clientes de forma orgánica con campañas que educan, informan y generan confianza. Contenido premium + automatización para leads cualificados.",
@@ -90,10 +92,10 @@ const CampanasInboundMarketing: React.FC = () => {
             </p>
             <div className="mt-6 flex justify-center gap-3">
               <Button asChild className="gradient-primary text-white">
-                <Link to="/es/solicitar-consulta">Solicitar estrategia Inbound</Link>
+                <Link to={getRoute('requestConsultation')}>Solicitar estrategia Inbound</Link>
               </Button>
               <Button variant="outline" asChild>
-                <Link to="/soluciones/conecta-con-tus-clientes">Ver solución: Conecta con tus clientes</Link>
+                <Link to={getRoute('solutionsConnectCustomers')}>Ver solución: Conecta con tus clientes</Link>
               </Button>
             </div>
           </section>
@@ -143,7 +145,7 @@ const CampanasInboundMarketing: React.FC = () => {
               <h3 className="text-2xl font-semibold mb-3">Un sistema continuo de atracción y conversión</h3>
               <p className="text-muted-foreground mb-4">Diseño, ejecución y medición para que el Inbound impacte en ventas.</p>
               <Button asChild>
-                <Link to="/es/solicitar-consulta">Comienza tu campaña Inbound</Link>
+                <Link to={getRoute('requestConsultation')}>Comienza tu campaña Inbound</Link>
               </Button>
             </div>
           </section>

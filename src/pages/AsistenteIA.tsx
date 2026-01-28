@@ -10,6 +10,7 @@ import FAQSection from '@/components/FAQSection';
 import ServiceContactSection from '@/components/ServiceContactSection';
 import { useServiceSEO } from '@/hooks/useServiceSEO';
 import Seo from '@/components/Seo';
+import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
 import { Bot, MessageCircle, Clock, Users, Zap, Settings, Brain, ArrowRight, CheckCircle, Star, Sparkles, Timer, Shield, Globe, Smartphone, Monitor, Headphones, BarChart3, Target } from 'lucide-react';
 const aiAssistantServices = [{
   icon: <MessageCircle className="h-8 w-8 text-primary" />,
@@ -135,6 +136,7 @@ const faqItems = [{
   answer: "Sí, desarrollamos la personalidad, tono y estilo de comunicación específicamente para tu marca, manteniendo consistencia con tu imagen corporativa."
 }];
 const AsistenteIA: React.FC = () => {
+  const { getRoute } = useLocalizedRoutes();
   const { title, description, canonical, ogImage, structuredData } = useServiceSEO({
     serviceName: "Asistente IA para Atención al Cliente",
     serviceDescription: "Chatbot con inteligencia artificial que atiende a tus clientes 24/7. Resuelve dudas, captura leads y mejora la experiencia de usuario automáticamente.",
@@ -170,9 +172,9 @@ const AsistenteIA: React.FC = () => {
       <div className="bg-muted/30 py-6 mt-4 md:mt-6">
         <div className="container mx-auto px-4">
           <nav className="text-sm text-muted-foreground">
-            <Link to="/es" className="hover:text-primary">Inicio</Link>
+            <Link to={getRoute('home')} className="hover:text-primary">Inicio</Link>
             <span className="mx-2">/</span>
-            <Link to="/es/servicios" className="hover:text-primary">Servicios</Link>
+            <Link to={getRoute('services')} className="hover:text-primary">Servicios</Link>
             <span className="mx-2">/</span>
             <span className="text-foreground">Asistente IA para Atención al Cliente</span>
           </nav>
@@ -197,13 +199,13 @@ const AsistenteIA: React.FC = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" variant="green" className="group" asChild>
-                  <Link to="/es/agendar-reunion">
+                  <Link to={getRoute('scheduleMeeting')}>
                     Crear mi Asistente IA
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </Button>
                 <Button size="lg" variant="outline" asChild>
-                  <Link to="/es/soluciones/activa-tu-estrategia-digital">Ver solución: Activa tu estrategia digital</Link>
+                  <Link to={getRoute('solutionsActivateSales')}>Ver solución: Activa tus ventas</Link>
                 </Button>
               </div>
             </div>
@@ -406,13 +408,13 @@ const AsistenteIA: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" className="group" asChild>
-              <Link to="/es/contacto">
+              <Link to={getRoute('contact')}>
                 Crear mi Asistente IA
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
             <Button size="lg" variant="secondary" asChild>
-              <Link to="/es/casos-exito">Ver Más Casos</Link>
+              <Link to={getRoute('caseStudies')}>Ver Más Casos</Link>
             </Button>
           </div>
         </div>

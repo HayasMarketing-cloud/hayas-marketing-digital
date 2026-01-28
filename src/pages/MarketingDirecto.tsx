@@ -10,6 +10,7 @@ import { Badge } from '@/components/ui/badge';
 import FAQSection from '@/components/FAQSection';
 import { useServiceSEO } from '@/hooks/useServiceSEO';
 import Seo from '@/components/Seo';
+import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
 import { Package, Send, Mail, Palette, CalendarCheck2, Truck, BarChart3, Users, Sparkles, Target, Settings, CheckCircle } from 'lucide-react';
 const mdServices = [
   {
@@ -84,6 +85,7 @@ const faqItems = [
 ];
 
 const MarketingDirecto: React.FC = () => {
+  const { getRoute } = useLocalizedRoutes();
   const { title, description, canonical, ogImage, structuredData } = useServiceSEO({
     serviceName: "Marketing Directo",
     serviceDescription: "Campañas de marketing directo para grandes empresas: concepto creativo, diseño, producción, logística y envío + email marketing personalizado.",
@@ -119,9 +121,9 @@ const MarketingDirecto: React.FC = () => {
       <div className="bg-muted/30 py-4 mt-20">
         <div className="container mx-auto px-4">
           <nav className="text-sm text-muted-foreground">
-            <Link to="/es" className="hover:text-primary">Inicio</Link>
+            <Link to={getRoute('home')} className="hover:text-primary">Inicio</Link>
             <span className="mx-2">/</span>
-            <Link to="/es/servicios" className="hover:text-primary">Servicios</Link>
+            <Link to={getRoute('services')} className="hover:text-primary">Servicios</Link>
             <span className="mx-2">/</span>
             <span className="text-foreground">Marketing Directo</span>
           </nav>
@@ -143,7 +145,7 @@ const MarketingDirecto: React.FC = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="group" asChild>
-                  <Link to="/es/agendar-reunion">
+                  <Link to={getRoute('scheduleMeeting')}>
                     Solicitar Propuesta
                     <CalendarCheck2 className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
@@ -233,7 +235,7 @@ const MarketingDirecto: React.FC = () => {
               </div>
               <div className="text-right">
                 <Button size="lg" asChild>
-                  <Link to="/es/solicitar-consulta">Solicitar Consulta</Link>
+                  <Link to={getRoute('requestConsultation')}>Solicitar Consulta</Link>
                 </Button>
               </div>
             </div>
