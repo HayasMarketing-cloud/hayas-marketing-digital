@@ -10,6 +10,7 @@ import { useServiceSEO } from '@/hooks/useServiceSEO';
 import Seo from '@/components/Seo';
 import FAQSection from '@/components/FAQSection';
 import ServiceContactSection from '@/components/ServiceContactSection';
+import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
 import { 
   ShoppingCart, Globe, Server, Palette, Settings, Smartphone, 
   CreditCard, Search, GraduationCap, Shield, BarChart3, 
@@ -180,6 +181,7 @@ const faqItems = [
 ];
 
 const TiendaOnline = () => {
+  const { getRoute } = useLocalizedRoutes();
   const { title, description, canonical, ogImage, structuredData } = useServiceSEO({
     serviceName: "Tienda Online - Ecommerce Profesional",
     serviceDescription: "Desarrollo de tiendas online y ecommerce profesionales. Diseño responsive, pasarelas de pago, gestión de inventario y optimización para conversiones.",
@@ -217,9 +219,9 @@ const TiendaOnline = () => {
       <div className="bg-muted/30 py-4 mt-20">
         <div className="container mx-auto px-4">
           <nav className="text-sm text-gray-600">
-            <Link to="/es" className="hover:text-primary">Inicio</Link>
+            <Link to={getRoute('home')} className="hover:text-primary">Inicio</Link>
             <span className="mx-2">/</span>
-            <Link to="/es#soluciones" className="hover:text-primary">Soluciones</Link>
+            <Link to={`${getRoute('home')}#soluciones`} className="hover:text-primary">Soluciones</Link>
             <span className="mx-2">/</span>
             <span className="text-gray-900">Tienda Online</span>
           </nav>
@@ -243,7 +245,7 @@ const TiendaOnline = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Button size="lg" className="gradient-primary text-white" asChild>
-                  <Link to="/es/agendar-reunion">
+                  <Link to={getRoute('scheduleMeeting')}>
                     Solicitar Propuesta
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
@@ -467,7 +469,7 @@ const TiendaOnline = () => {
           
           <div className="text-center mt-12">
             <Button variant="outline" size="lg" asChild>
-              <Link to="/casos-de-exito">
+              <Link to={getRoute('caseStudies')}>
                 Ver Todos los Casos de Éxito
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
@@ -488,13 +490,13 @@ const TiendaOnline = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" className="bg-white text-primary hover:bg-gray-100" asChild>
-              <Link to="/es/agendar-reunion">
+              <Link to={getRoute('scheduleMeeting')}>
                 Agenda Reunión Gratuita
                 <Calendar className="ml-2 h-5 w-5" />
               </Link>
             </Button>
             <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10" asChild>
-              <Link to="/es/contacto">Solicitar Información</Link>
+              <Link to={getRoute('contact')}>Solicitar Información</Link>
             </Button>
           </div>
         </div>
