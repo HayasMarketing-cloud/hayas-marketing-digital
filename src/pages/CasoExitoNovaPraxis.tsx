@@ -17,6 +17,7 @@ import {
 import Seo from '@/components/Seo';
 import { CheckCircle, ExternalLink, Target, Zap, Linkedin, Search, Megaphone } from 'lucide-react';
 import { successCaseImages } from '@/data/successCaseImages';
+import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
 
 const CasoExitoNovaPraxis = () => {
   const caseStudyData = {
@@ -98,6 +99,8 @@ const CasoExitoNovaPraxis = () => {
     }
   ];
 
+  const { getRoute } = useLocalizedRoutes();
+
   return (
     <div className="min-h-screen bg-background">
       <Seo
@@ -117,13 +120,13 @@ const CasoExitoNovaPraxis = () => {
               <BreadcrumbList>
                 <BreadcrumbItem>
                   <BreadcrumbLink asChild>
-                    <Link to="/es">Inicio</Link>
+                    <Link to={getRoute('home')}>Inicio</Link>
                   </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
                   <BreadcrumbLink asChild>
-                    <Link to="/es/casos-exito">Casos de Éxito</Link>
+                    <Link to={getRoute('caseStudies')}>Casos de Éxito</Link>
                   </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />

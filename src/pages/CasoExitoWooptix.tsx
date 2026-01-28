@@ -6,8 +6,10 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import Seo from '@/components/Seo';
 import { CheckCircle } from 'lucide-react';
+import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
 
 const CasoExitoWooptix: React.FC = () => {
+  const { getRoute } = useLocalizedRoutes();
   const pageTitle = 'Caso de Éxito Wooptix | IA y CRM para crecer';
   const pageDescription = 'IA aplicada y CRM HubSpot para optimizar marketing y ventas en una startup deep tech.';
   const canonical = '/es/casos-exito/wooptix';
@@ -31,9 +33,9 @@ const CasoExitoWooptix: React.FC = () => {
         <section className="py-4 bg-muted/30 border-b">
           <div className="container mx-auto px-4">
             <div className="text-sm">
-              <Link to="/es" className="text-muted-foreground hover:text-foreground">Inicio</Link>
+              <Link to={getRoute('home')} className="text-muted-foreground hover:text-foreground">Inicio</Link>
               <span className="mx-2">/</span>
-              <Link to="/es/casos-exito" className="text-muted-foreground hover:text-foreground">Casos de Éxito</Link>
+              <Link to={getRoute('caseStudies')} className="text-muted-foreground hover:text-foreground">Casos de Éxito</Link>
               <span className="mx-2">/</span>
               <span className="text-foreground">Wooptix</span>
             </div>
@@ -43,7 +45,7 @@ const CasoExitoWooptix: React.FC = () => {
         {/* Header Navigation */}
         <section className="py-6 bg-muted/30">
           <div className="container mx-auto px-4">
-            <Link to="/es/casos-exito" className="inline-flex items-center text-primary hover:underline">
+            <Link to={getRoute('caseStudies')} className="inline-flex items-center text-primary hover:underline">
               ← Volver a Casos de Éxito
             </Link>
           </div>

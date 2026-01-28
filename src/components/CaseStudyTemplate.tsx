@@ -15,6 +15,7 @@ import {
 } from '@/components/ui/breadcrumb';
 import EnhancedSEO from '@/components/EnhancedSEO';
 import { CheckCircle, ExternalLink, LucideIcon } from 'lucide-react';
+import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
 
 interface Solution {
   icon: LucideIcon;
@@ -81,8 +82,10 @@ const CaseStudyTemplate: React.FC<CaseStudyProps> = ({
   ctaTitle,
   ctaDescription,
   ctaButtonText,
-  ctaButtonLink = "/es/agendar-reunion"
+  ctaButtonLink
 }) => {
+  const { getRoute } = useLocalizedRoutes();
+  const defaultCtaLink = ctaButtonLink || getRoute('scheduleMeeting');
   return (
     <div className="min-h-screen bg-background">
       <EnhancedSEO
@@ -104,13 +107,13 @@ const CaseStudyTemplate: React.FC<CaseStudyProps> = ({
               <BreadcrumbList>
                   <BreadcrumbItem>
                     <BreadcrumbLink asChild>
-                      <Link to="/es">Inicio</Link>
+                      <Link to={getRoute('home')}>Inicio</Link>
                     </BreadcrumbLink>
                   </BreadcrumbItem>
                   <BreadcrumbSeparator />
                   <BreadcrumbItem>
                     <BreadcrumbLink asChild>
-                      <Link to="/es/casos-exito">Casos de Éxito</Link>
+                      <Link to={getRoute('caseStudies')}>Casos de Éxito</Link>
                     </BreadcrumbLink>
                   </BreadcrumbItem>
                 <BreadcrumbSeparator />
@@ -267,7 +270,7 @@ const CaseStudyTemplate: React.FC<CaseStudyProps> = ({
                 </h3>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
                   <Link 
-                    to="/es/servicios/implantacion-crm"
+                    to={getRoute('crmImplementation')}
                     className="flex items-center gap-3 p-4 bg-white rounded-lg hover:shadow-md transition-all duration-200 group"
                   >
                     <CheckCircle className="w-5 h-5 text-green-600" />
@@ -280,7 +283,7 @@ const CaseStudyTemplate: React.FC<CaseStudyProps> = ({
                   </Link>
                   
                   <Link 
-                    to="/es/servicios/automatizacion-procesos-ventas"
+                    to={getRoute('salesAutomation')}
                     className="flex items-center gap-3 p-4 bg-white rounded-lg hover:shadow-md transition-all duration-200 group"
                   >
                     <CheckCircle className="w-5 h-5 text-green-600" />
@@ -293,7 +296,7 @@ const CaseStudyTemplate: React.FC<CaseStudyProps> = ({
                   </Link>
                   
                   <Link 
-                    to="/es/servicios/consultoria-estrategica-analitica"
+                    to={getRoute('strategicConsulting')}
                     className="flex items-center gap-3 p-4 bg-white rounded-lg hover:shadow-md transition-all duration-200 group"
                   >
                     <CheckCircle className="w-5 h-5 text-green-600" />
@@ -306,7 +309,7 @@ const CaseStudyTemplate: React.FC<CaseStudyProps> = ({
                   </Link>
                   
                   <Link 
-                    to="/es/servicios/captacion-leads-clientes"
+                    to={getRoute('leadGeneration')}
                     className="flex items-center gap-3 p-4 bg-white rounded-lg hover:shadow-md transition-all duration-200 group"
                   >
                     <CheckCircle className="w-5 h-5 text-green-600" />
@@ -325,12 +328,12 @@ const CaseStudyTemplate: React.FC<CaseStudyProps> = ({
                   </p>
                   <div className="flex flex-wrap justify-center gap-2">
                     <Button asChild variant="outline" size="sm">
-                      <Link to="/es/soluciones/conecta-con-tus-clientes">
+                      <Link to={getRoute('connectWithClients')}>
                         Ver solución completa
                       </Link>
                     </Button>
                   <Button asChild variant="ghost" size="sm">
-                    <Link to="/es/casos-exito">
+                    <Link to={getRoute('caseStudies')}>
                       Más casos de éxito
                     </Link>
                   </Button>
@@ -347,10 +350,10 @@ const CaseStudyTemplate: React.FC<CaseStudyProps> = ({
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
                 <Button asChild size="lg">
-                  <Link to={ctaButtonLink}>{ctaButtonText}</Link>
+                  <Link to={defaultCtaLink}>{ctaButtonText}</Link>
                 </Button>
                 <Button asChild size="lg" variant="outline">
-                  <Link to="/es/casos-exito">Ver más casos de éxito</Link>
+                  <Link to={getRoute('caseStudies')}>Ver más casos de éxito</Link>
                 </Button>
               </div>
               
@@ -361,22 +364,22 @@ const CaseStudyTemplate: React.FC<CaseStudyProps> = ({
                 </p>
                 <div className="flex flex-wrap justify-center gap-2">
                   <Button asChild variant="ghost" size="sm">
-                    <Link to="/es/servicios/implantacion-crm">
+                    <Link to={getRoute('crmImplementation')}>
                       Implantación CRM
                     </Link>
                   </Button>
                   <Button asChild variant="ghost" size="sm">
-                    <Link to="/es/servicios/automatizacion-procesos-ventas">
+                    <Link to={getRoute('salesAutomation')}>
                       Automatización de Ventas
                     </Link>
                   </Button>
                   <Button asChild variant="ghost" size="sm">
-                    <Link to="/es/servicios/consultoria-estrategica-analitica">
+                    <Link to={getRoute('strategicConsulting')}>
                       Consultoría Estratégica
                     </Link>
                   </Button>
                   <Button asChild variant="ghost" size="sm">
-                    <Link to="/es/soluciones/conecta-con-tus-clientes">
+                    <Link to={getRoute('connectWithClients')}>
                       Conecta con tus Clientes
                     </Link>
                   </Button>
