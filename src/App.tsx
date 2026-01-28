@@ -13,6 +13,7 @@ import PageSuspense from './components/PageSuspense';
 import RoutePreloader from './components/RoutePreloader';
 import { RedirectManager } from './components/RedirectManager';
 import { AdminProtectedRoute } from './components/admin/AdminProtectedRoute';
+import RouteValidator from './components/dev/RouteValidator';
 
 // Lazy imports organizados por categoría
 import * as Pages from './utils/lazyImports';
@@ -37,6 +38,7 @@ const App = () => (
             <LanguageProvider>
               <ScrollToTop />
               <RoutePreloader />
+              <RouteValidator />
               <SofiaWidget />
               <DraftProtection>
                 {/* Gestor de redirecciones React Router nativo */}
