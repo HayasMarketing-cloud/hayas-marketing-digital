@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { Badge } from '@/components/ui/badge';
 import { tagsLevel1 } from '@/data/blogTags';
 import { cn } from '@/lib/utils';
+import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
 
 interface BlogTagFilterProps {
   className?: string;
@@ -10,12 +11,13 @@ interface BlogTagFilterProps {
 
 const BlogTagFilter: React.FC<BlogTagFilterProps> = ({ className }) => {
   const { tag } = useParams();
+  const { getRoute, withLanguagePrefix } = useLocalizedRoutes();
   
   return (
     <div className={cn("bg-muted/30 border-y border-border", className)}>
       <div className="container mx-auto px-4 py-6">
         <div className="flex flex-wrap gap-3 justify-center">
-          <Link to="/es/blog">
+          <Link to={getRoute('blog')}>
             <Badge 
               variant={!tag ? "default" : "secondary"}
               className={cn(
@@ -30,7 +32,7 @@ const BlogTagFilter: React.FC<BlogTagFilterProps> = ({ className }) => {
           </Link>
           
           {tagsLevel1.map((tagData) => (
-            <Link key={tagData.slug} to={`/es/blog/tag/${tagData.slug}`}>
+            <Link key={tagData.slug} to={withLanguagePrefix(`/blog/tag/${tagData.slug}`)}>
               <Badge 
                 variant={tag === tagData.slug ? "default" : "secondary"}
                 className={cn(

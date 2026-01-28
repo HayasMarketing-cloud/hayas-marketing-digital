@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Calendar, Clock, ArrowRight, BookOpen } from 'lucide-react';
+import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
 
 interface Post {
   id: string;
@@ -28,7 +29,7 @@ const allPosts: Post[] = [
     id: "guia-privacidad-huella-digital",
     title: "Guía práctica para proteger tu privacidad y tu identidad digital",
     description: "Guía completa para gestionar tu huella digital en vida: identifica perfiles, ajusta privacidad, ejerce el derecho al olvido y protege tu identidad online.",
-    slug: "/es/blog/guia-privacidad-huella-digital",
+    slug: "guia-privacidad-huella-digital",
     image: "/guia-privacidad-huella-digital-hero.jpg",
     category: "Privacidad Digital",
     readTime: "12 min",
@@ -39,7 +40,7 @@ const allPosts: Post[] = [
     id: "huella-digital-derecho-olvido",
     title: "Huella digital y derecho al olvido: privacidad y conciencia en la era digital",
     description: "Exploramos qué es la huella digital, el derecho al olvido según el RGPD y la LOPDGDD, y cómo gestionar la privacidad digital con responsabilidad.",
-    slug: "/es/blog/huella-digital-derecho-olvido",
+    slug: "huella-digital-derecho-olvido",
     image: "/huella-digital-hero.jpg",
     category: "Privacidad Digital",
     readTime: "9 min",
@@ -50,7 +51,7 @@ const allPosts: Post[] = [
     id: "chatbots-para-paginas-web",
     title: "Chatbots para páginas web: qué opciones existen y cuál tiene sentido para tu negocio",
     description: "Descubre los tipos de chatbots para páginas web, sus ventajas y limitaciones. Guía práctica para elegir la solución que mejor encaje con tu negocio.",
-    slug: "/es/blog/chatbots-para-paginas-web",
+    slug: "chatbots-para-paginas-web",
     image: "/chatbots-web-hero.jpg",
     category: "Automatización",
     readTime: "10 min",
@@ -61,7 +62,7 @@ const allPosts: Post[] = [
     id: "guia-tecnica-email-marketing-hubspot-configuracion",
     title: "Guía técnica de Email Marketing: Configuración y cumplimiento con HubSpot",
     description: "Aprende a configurar SPF, DKIM y DMARC en HubSpot para cumplir con las nuevas políticas de Google y Yahoo.",
-    slug: "/es/blog/guia-tecnica-email-marketing-hubspot-configuracion",
+    slug: "guia-tecnica-email-marketing-hubspot-configuracion",
     image: "/email-marketing-automatizaciones-hero.jpg",
     category: "Email Marketing",
     readTime: "15 min",
@@ -72,7 +73,7 @@ const allPosts: Post[] = [
     id: "perfil-cliente-ideal",
     title: "Perfil de cliente ideal: qué es y cómo definirlo para tu negocio",
     description: "Descubre cómo crear el perfil de cliente ideal (ICP) perfecto para optimizar tu estrategia de marketing.",
-    slug: "/es/blog/perfil-cliente-ideal",
+    slug: "perfil-cliente-ideal",
     image: "/perfil-cliente-ideal-hero.jpg",
     category: "Estrategia de Marketing",
     readTime: "10 min",
@@ -83,7 +84,7 @@ const allPosts: Post[] = [
     id: "como-crear-buyer-persona-b2b-b2c-guia-completa",
     title: "Cómo crear tu buyer persona para B2B y B2C [GUÍA COMPLETA + TEMPLATE]",
     description: "Aprende a crear buyer personas efectivos para B2B y B2C con nuestra guía completa. Incluye template descargable y cuestionario.",
-    slug: "/es/blog/como-crear-buyer-persona-b2b-b2c-guia-completa",
+    slug: "como-crear-buyer-persona-b2b-b2c-guia-completa",
     image: "/perfil-cliente-ideal-hero.jpg",
     category: "Estrategia de Marketing",
     readTime: "12 min",
@@ -94,7 +95,7 @@ const allPosts: Post[] = [
     id: "seo-inteligencia-artificial",
     title: "SEO e Inteligencia Artificial: Cómo optimizar tu estrategia en 2025",
     description: "Descubre cómo la IA está revolucionando el SEO y las mejores herramientas para optimizar tu posicionamiento web.",
-    slug: "/es/blog/seo-inteligencia-artificial",
+    slug: "seo-inteligencia-artificial",
     image: "/seo-inteligencia-artificial-hero.jpg",
     category: "SEO",
     readTime: "10 min",
@@ -105,7 +106,7 @@ const allPosts: Post[] = [
     id: "automatizacion-marketing",
     title: "Automatización de Marketing Digital: Guía completa 2025",
     description: "Todo lo que necesitas saber sobre automatización de marketing: herramientas, estrategias y casos de éxito.",
-    slug: "/es/blog/automatizacion-marketing-digital-guia-completa",
+    slug: "automatizacion-marketing-digital-guia-completa",
     image: "/automatizacion-marketing-hero.jpg",
     category: "Marketing Digital",
     readTime: "15 min",
@@ -116,7 +117,7 @@ const allPosts: Post[] = [
     id: "crm-beneficios",
     title: "CRM: Qué es, beneficios y cómo elegir el mejor para tu empresa",
     description: "Guía completa sobre sistemas CRM: definición, ventajas, tipos y recomendaciones para elegir la mejor opción.",
-    slug: "/es/blog/crm-que-es-beneficios",
+    slug: "crm-que-es-beneficios",
     image: "/crm-sistema-gestion-clientes-hero.jpg",
     category: "CRM",
     readTime: "8 min",
@@ -127,7 +128,7 @@ const allPosts: Post[] = [
     id: "marketing-global",
     title: "Marketing Global e Internacionalización: Estrategias de localización",
     description: "Aprende las claves del marketing internacional y cómo adaptar tu estrategia para expandirte globalmente.",
-    slug: "/es/blog/marketing-global-internacionalizacion",
+    slug: "marketing-global-internacionalizacion",
     image: "/marketing-global-hero.jpg",
     category: "Marketing Digital",
     readTime: "14 min",
@@ -140,6 +141,8 @@ const ServiceRelatedPosts: React.FC<ServiceRelatedPostsProps> = ({
   serviceSlug, 
   className = "" 
 }) => {
+  const { getRoute, withLanguagePrefix } = useLocalizedRoutes();
+  
   // Filtrar posts relacionados con el servicio
   const relatedPosts = allPosts
     .filter(post => post.tags.includes(serviceSlug))
@@ -199,7 +202,7 @@ const ServiceRelatedPosts: React.FC<ServiceRelatedPostsProps> = ({
                     {post.description}
                   </p>
                   
-                  <Link to={post.slug}>
+                  <Link to={withLanguagePrefix(`/blog/${post.slug}`)}>
                     <Button variant="ghost" size="sm" className="group/btn p-0 h-auto">
                       Leer artículo
                       <ArrowRight className="h-4 w-4 ml-1 group-hover/btn:translate-x-1 transition-transform" />
@@ -212,7 +215,7 @@ const ServiceRelatedPosts: React.FC<ServiceRelatedPostsProps> = ({
 
           {relatedPosts.length > 0 && (
             <div className="text-center mt-8">
-              <Link to="/es/blog">
+              <Link to={getRoute('blog')}>
                 <Button variant="outline" size="lg">
                   Ver todos los artículos
                   <ArrowRight className="h-4 w-4 ml-2" />

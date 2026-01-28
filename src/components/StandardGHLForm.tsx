@@ -1,5 +1,7 @@
 import React, { useEffect, useId } from 'react';
+import { Link } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
 
 interface StandardGHLFormProps {
   formId: string;
@@ -22,6 +24,7 @@ const StandardGHLForm: React.FC<StandardGHLFormProps> = ({
 }) => {
   const autoId = useId();
   const iframeId = `inline-${formId}`;
+  const { getRoute } = useLocalizedRoutes();
 
   useEffect(() => {
     const src = 'https://links.hayasmarketing.com/js/form_embed.js';
@@ -200,17 +203,17 @@ const StandardGHLForm: React.FC<StandardGHLFormProps> = ({
             <p className="leading-relaxed">
               En Hayas, protegemos tu privacidad y datos. Estamos adheridos al Pacto Digital 
               para un uso ético de la información. Más info:{' '}
-              <a href="/es/aviso-legal" className="text-primary hover:underline font-medium">AEPD</a>.
+              <Link to={getRoute('legalNotice')} className="text-primary hover:underline font-medium">AEPD</Link>.
             </p>
             
             <div className="flex justify-center items-center space-x-4 pt-2">
-              <a href="/es/politica-privacidad" className="text-primary hover:underline font-medium transition-colors">
+              <Link to={getRoute('privacyPolicy')} className="text-primary hover:underline font-medium transition-colors">
                 Política de Privacidad
-              </a>
+              </Link>
               <span className="text-muted-foreground/60">|</span>
-              <a href="/es/aviso-legal" className="text-primary hover:underline font-medium transition-colors">
+              <Link to={getRoute('legalNotice')} className="text-primary hover:underline font-medium transition-colors">
                 Aviso Legal
-              </a>
+              </Link>
             </div>
           </div>
         </div>

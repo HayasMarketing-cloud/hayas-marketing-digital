@@ -4,90 +4,13 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight, Target, Users, Zap, Sparkles } from 'lucide-react';
+import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
 
 interface ServiceHubSectionProps {
   currentService?: string;
   showAllServices?: boolean;
   className?: string;
 }
-
-const serviceCategories = [
-  {
-    id: 'impulsa',
-    title: 'Impulsa tu Marca',
-    description: 'Construye una identidad sólida y aumenta tu visibilidad',
-    icon: <Sparkles className="h-6 w-6" />,
-    href: '/es/soluciones/impulsa-tu-marca',
-    color: 'from-purple-600 to-pink-600',
-    services: [
-      {
-        title: 'Creación de Marca',
-        href: '/es/servicios/creacion-marca',
-        description: 'Identidad visual y estrategia de marca'
-      },
-      {
-        title: 'Diseño Web',
-        href: '/es/servicios/diseno-web',
-        description: 'Websites que convierten visitantes en clientes'
-      },
-      {
-        title: 'SEO Posicionamiento',
-        href: '/es/servicios/seo-posicionamiento',
-        description: 'Posicionamiento en buscadores'
-      }
-    ]
-  },
-  {
-    id: 'conecta',
-    title: 'Conecta con tus Clientes',
-    description: 'Gestiona y automatiza las relaciones con tus clientes',
-    icon: <Users className="h-6 w-6" />,
-    href: '/es/soluciones/conecta-con-tus-clientes',
-    color: 'from-blue-600 to-cyan-600',
-    services: [
-      {
-        title: 'Implantación CRM',
-        href: '/es/servicios/implantacion-crm',
-        description: 'Sistema de gestión de clientes'
-      },
-      {
-        title: 'Email Marketing',
-        href: '/es/servicios/email-marketing-automatizaciones',
-        description: 'Campañas automatizadas de email'
-      },
-      {
-        title: 'Consultoría Estratégica',
-        href: '/es/servicios/consultoria-estrategica-analitica',
-        description: 'Análisis y estrategia personalizada'
-      }
-    ]
-  },
-  {
-    id: 'activa',
-    title: 'Activa tus Ventas',
-    description: 'Optimiza tu embudo de conversión y aumenta las ventas',
-    icon: <Zap className="h-6 w-6" />,
-    href: '/es/soluciones/activa-tus-ventas',
-    color: 'from-green-600 to-emerald-600',
-    services: [
-      {
-        title: 'Captación de Leads',
-        href: '/es/servicios/captacion-leads-clientes',
-        description: 'Genera leads cualificados constantemente'
-      },
-      {
-        title: 'Automatización de Ventas',
-        href: '/es/servicios/automatizacion-procesos-ventas',
-        description: 'Automatiza tu proceso comercial'
-      },
-      {
-        title: 'Asistente IA',
-        href: '/es/servicios/asistente-ia',
-        description: 'Chatbot inteligente para ventas'
-      }
-    ]
-  }
-];
 
 /**
  * Service Hub Section - Creates a central linking hub that connects all services
@@ -98,6 +21,85 @@ export const ServiceHubSection: React.FC<ServiceHubSectionProps> = ({
   showAllServices = false,
   className = ''
 }) => {
+  const { getRoute, getLocalizedPath } = useLocalizedRoutes();
+
+  const serviceCategories = [
+    {
+      id: 'impulsa',
+      title: 'Impulsa tu Marca',
+      description: 'Construye una identidad sólida y aumenta tu visibilidad',
+      icon: <Sparkles className="h-6 w-6" />,
+      href: getRoute('solutionsBoostBrand'),
+      color: 'from-purple-600 to-pink-600',
+      services: [
+        {
+          title: 'Creación de Marca',
+          href: getRoute('serviceBrandCreation'),
+          description: 'Identidad visual y estrategia de marca'
+        },
+        {
+          title: 'Diseño Web',
+          href: getRoute('serviceWebDesign'),
+          description: 'Websites que convierten visitantes en clientes'
+        },
+        {
+          title: 'SEO Posicionamiento',
+          href: getRoute('serviceSEOPositioning'),
+          description: 'Posicionamiento en buscadores'
+        }
+      ]
+    },
+    {
+      id: 'conecta',
+      title: 'Conecta con tus Clientes',
+      description: 'Gestiona y automatiza las relaciones con tus clientes',
+      icon: <Users className="h-6 w-6" />,
+      href: getRoute('solutionsConnectCustomers'),
+      color: 'from-blue-600 to-cyan-600',
+      services: [
+        {
+          title: 'Implantación CRM',
+          href: getRoute('serviceCRMImplantation'),
+          description: 'Sistema de gestión de clientes'
+        },
+        {
+          title: 'Email Marketing',
+          href: getRoute('serviceEmailMarketing'),
+          description: 'Campañas automatizadas de email'
+        },
+        {
+          title: 'Consultoría Estratégica',
+          href: getRoute('serviceStrategicConsulting'),
+          description: 'Análisis y estrategia personalizada'
+        }
+      ]
+    },
+    {
+      id: 'activa',
+      title: 'Activa tus Ventas',
+      description: 'Optimiza tu embudo de conversión y aumenta las ventas',
+      icon: <Zap className="h-6 w-6" />,
+      href: getRoute('solutionsActivateSales'),
+      color: 'from-green-600 to-emerald-600',
+      services: [
+        {
+          title: 'Captación de Leads',
+          href: getRoute('serviceLeadGeneration'),
+          description: 'Genera leads cualificados constantemente'
+        },
+        {
+          title: 'Automatización de Ventas',
+          href: getRoute('serviceSalesAutomation'),
+          description: 'Automatiza tu proceso comercial'
+        },
+        {
+          title: 'Asistente IA',
+          href: getLocalizedPath('/es/servicios/asistente-ia', '/en/services/ai-assistant'),
+          description: 'Chatbot inteligente para ventas'
+        }
+      ]
+    }
+  ];
 
   const getRelevantCategories = () => {
     if (showAllServices) {
@@ -208,12 +210,12 @@ export const ServiceHubSection: React.FC<ServiceHubSectionProps> = ({
               </div>
               <div className="flex gap-3">
                 <Button asChild variant="outline">
-                  <Link to="/es/servicios">
+                  <Link to={getRoute('services')}>
                     Ver todos los servicios
                   </Link>
                 </Button>
                 <Button asChild className="bg-gradient-to-r from-purple-600 to-blue-600">
-                  <Link to="/es/contacto">
+                  <Link to={getRoute('contact')}>
                     Hablar con un experto
                   </Link>
                 </Button>
