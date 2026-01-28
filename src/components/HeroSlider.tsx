@@ -81,7 +81,7 @@ const slides: Slide[] = [
     titleEs: 'Agencia de Marketing Digital en Madrid',
     titleEn: 'Digital Marketing Agency in Madrid',
     subtitleEs: 'Marketing estratégico para empresas que quieren crecer con eficiencia, criterio y menos improvisación.',
-    subtitleEn: 'Your most competitive global solution, and a trusted bridge for deploying your marketing in Spanish.',
+    subtitleEn: 'We help you grow globally — with expert guidance in the Spanish-speaking world.',
     badgeEs: 'Marketing + IA',
     badgeEn: 'Marketing + AI',
     ctaEs: undefined,
