@@ -28,9 +28,9 @@ const servicePageData: ServicePageData = {
   heroImage: '/administracion-crm-hero.jpg',
   heroImageAlt: 'Dashboard de administración CRM con métricas de marketing y ventas',
   primaryCTA: 'Solicitar consultoría gratuita',
-  primaryCTALink: '/agendar-reunion',
+  primaryCTALink: '/es/agendar-reunion',
   secondaryCTA: 'Ver solución Conecta con tus clientes',
-  secondaryCTALink: '/soluciones/conecta-con-tus-clientes',
+  secondaryCTALink: '/es/soluciones/conecta-con-tus-clientes',
   
   // Breadcrumb
   breadcrumbItems: [
@@ -168,7 +168,7 @@ const servicePageData: ServicePageData = {
         title="¿Quieres delegar tu CRM con garantías?"
         subtitle="Agenda una consultoría gratuita y diseñamos juntos el plan de acción para optimizar tu CRM y canales digitales"
         buttonText="Solicitar consultoría gratuita"
-        buttonLink="/agendar-reunion"
+        buttonLink="/es/agendar-reunion"
       />
       
       <ReviewsSection />
