@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { ChevronDown, ArrowRight, ArrowLeft, Zap, Users, Wrench } from 'lucide-react';
 import { useLanguageNavigation } from '@/hooks/useLanguageNavigation';
 import { useTranslation } from '@/hooks/useTranslation';
+import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
 
 import { servicesByPillar, pillarMeta } from '@/data/services';
 import type { PillarKey } from '@/data/services';
@@ -12,6 +13,7 @@ import type { PillarKey } from '@/data/services';
 const Navigation = () => {
   const { language, isEnglish, toggleLanguage } = useLanguageNavigation();
   const { t } = useTranslation();
+  const { getRoute } = useLocalizedRoutes();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeMegaMenu, setActiveMegaMenu] = useState<string | null>(null);
@@ -96,14 +98,10 @@ const Navigation = () => {
     activa: 'bg-green-100 text-green-800 border-green-200',
   };
 
-  const pillars = language === 'en' ? [
-    { title: t('nav.impulsa'), href: '/en/solutions/boost-your-brand' },
-    { title: t('nav.conecta'), href: '/en/solutions/connect-with-customers' },
-    { title: t('nav.activa'), href: '/en/solutions/activate-sales' },
-  ] : [
-    { title: t('nav.impulsa'), href: '/es/soluciones/impulsa-tu-marca' },
-    { title: t('nav.conecta'), href: '/es/soluciones/conecta-con-tus-clientes' },
-    { title: t('nav.activa'), href: '/es/soluciones/activa-tus-ventas' },
+  const pillars = [
+    { title: t('nav.impulsa'), href: getRoute('solutionsBoostBrand') },
+    { title: t('nav.conecta'), href: getRoute('solutionsConnectCustomers') },
+    { title: t('nav.activa'), href: getRoute('solutionsActivateSales') },
   ];
 
   const pillarKeys: PillarKey[] = ['impulsa', 'conecta', 'activa'];
@@ -169,7 +167,7 @@ const Navigation = () => {
               </Button>
               
               <Button asChild className="gradient-primary text-white hover-scale hidden sm:flex">
-                <Link to={language === 'en' ? '/en/schedule-meeting' : '/es/agendar-reunion'}>{t('footer.scheduleConsultation')}</Link>
+                <Link to={getRoute('scheduleMeeting')}>{t('footer.scheduleConsultation')}</Link>
               </Button>
 
               {/* Hamburger Menu Button - Always visible */}
@@ -233,7 +231,7 @@ const Navigation = () => {
                     </button>
                     
                     <Link
-                      to={language === 'en' ? '/en/services' : '/es/servicios'}
+                      to={getRoute('services')}
                       className="block text-foreground hover:text-primary font-medium transition-colors px-3 py-3 hover:bg-muted/50 rounded-lg"
                       onClick={closeMobileMenu}
                     >
@@ -241,7 +239,7 @@ const Navigation = () => {
                     </Link>
                     
                     <Link
-                      to={language === 'en' ? '/en/case-studies' : '/es/casos-exito'}
+                      to={getRoute('caseStudies')}
                       className="block text-foreground hover:text-primary font-medium transition-colors px-3 py-3 hover:bg-muted/50 rounded-lg"
                       onClick={closeMobileMenu}
                     >
@@ -249,7 +247,7 @@ const Navigation = () => {
                     </Link>
                     
                     <Link
-                      to={language === 'en' ? '/en/blog' : '/es/blog'}
+                      to={getRoute('blog')}
                       className="block text-foreground hover:text-primary font-medium transition-colors px-3 py-3 hover:bg-muted/50 rounded-lg"
                       onClick={closeMobileMenu}
                     >
@@ -257,7 +255,7 @@ const Navigation = () => {
                     </Link>
                     
                     <Link
-                      to={language === 'en' ? '/en/about-us' : '/es/nosotros'}
+                      to={getRoute('aboutUs')}
                       className="block text-foreground hover:text-primary font-medium transition-colors px-3 py-3 hover:bg-muted/50 rounded-lg"
                       onClick={closeMobileMenu}
                     >
@@ -265,7 +263,7 @@ const Navigation = () => {
                     </Link>
                     
                     <Link
-                      to={language === 'en' ? '/en/contact' : '/es/contacto'}
+                      to={getRoute('contact')}
                       className="block text-foreground hover:text-primary font-medium transition-colors px-3 py-3 hover:bg-muted/50 rounded-lg"
                       onClick={closeMobileMenu}
                     >
@@ -313,7 +311,7 @@ const Navigation = () => {
                     </Button>
                     
                     <Button asChild className="gradient-primary text-white w-full hover-scale">
-                      <Link to={language === 'en' ? '/en/schedule-meeting' : '/es/agendar-reunion'} onClick={closeMobileMenu}>{t('footer.scheduleConsultation')}</Link>
+                      <Link to={getRoute('scheduleMeeting')} onClick={closeMobileMenu}>{t('footer.scheduleConsultation')}</Link>
                     </Button>
                   </div>
                 </>
