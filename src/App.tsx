@@ -408,6 +408,9 @@ const App = () => (
           <Route path="/es/blog/decision-marketing-confianza" element={<PageSuspense><Pages.BlogDecisionMarketing /></PageSuspense>} />
            <Route path="/es/blog/:id" element={<PageSuspense><Pages.BlogPost /></PageSuspense>} />
           
+          {/* AUTORES */}
+          <Route path="/es/autor/ruben-reyero" element={<PageSuspense><Pages.AuthorRubenReyero /></PageSuspense>} />
+          
           {/* COMPARATIVAS */}
           <Route path="/es/comparativa/hubspot-vs-go-high-level" element={<PageSuspense><Pages.ComparativaHubSpotGoHighLevel /></PageSuspense>} />
           

@@ -12,6 +12,19 @@ import RelatedServiceSection from './RelatedServiceSection';
 import { Badge } from '@/components/ui/badge';
 import { Calendar, Clock, User } from 'lucide-react';
 
+/**
+ * Mapeo de autores a sus páginas de perfil
+ * Devuelve null si el autor no tiene página dedicada
+ */
+const getAuthorRoute = (author: string): string | null => {
+  const authorRoutes: Record<string, string> = {
+    'Rubén Reyero': '/es/autor/ruben-reyero',
+    'Ruben Reyero': '/es/autor/ruben-reyero', // Sin tilde
+    // Añadir futuros autores aquí
+  };
+  return authorRoutes[author] || null;
+};
+
 interface BlogPostMetadata {
   title: string;
   description: string;
@@ -120,7 +133,16 @@ const BlogPostTemplate: React.FC<BlogPostTemplateProps> = ({
                 <span>•</span>
                 <span className="flex items-center gap-1">
                   <User className="h-4 w-4" />
-                  {metadata.author}
+                  {getAuthorRoute(metadata.author) ? (
+                    <Link 
+                      to={getAuthorRoute(metadata.author)!} 
+                      className="hover:text-primary hover:underline transition-colors"
+                    >
+                      {metadata.author}
+                    </Link>
+                  ) : (
+                    metadata.author
+                  )}
                 </span>
               </div>
 

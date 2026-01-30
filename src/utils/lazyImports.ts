@@ -69,6 +69,9 @@ export const Blog = lazyWithRetry(() => import("@/pages/Blog"));
 export const BlogPost = lazyWithRetry(() => import("@/pages/BlogPost"));
 export const BlogTagPage = lazyWithRetry(() => import("@/pages/BlogTagPage"));
 
+// Autores
+export const AuthorRubenReyero = lazyWithRetry(() => import("@/pages/AuthorRubenReyero"));
+
 // Blog posts específicos
 export const BlogIAMarketing = lazyWithRetry(() => import("@/pages/BlogIAMarketing"));
 export const BlogPerfilClienteIdeal = lazyWithRetry(() => import("@/pages/BlogPerfilClienteIdeal"));
