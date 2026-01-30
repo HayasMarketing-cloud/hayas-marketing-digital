@@ -57,6 +57,9 @@ const ROUTE_MAPPINGS: Record<string, RouteMap> = {
   // Comparativas y páginas especiales
   hubspotVsGHL: { es: '/es/hubspot-vs-gohighlevel', en: '/en/hubspot-vs-gohighlevel' },
   
+  // Autores
+  authorRubenReyero: { es: '/es/autor/ruben-reyero', en: '/en/author/ruben-reyero' },
+  
   // Páginas legales
   privacyPolicy: { es: '/es/legal/politica-privacidad', en: '/en/legal/privacy-policy' },
   legalNotice: { es: '/es/legal/aviso-legal', en: '/en/legal/legal-notice' },
