@@ -13,7 +13,7 @@ const BlogLeadScoringCalificacionLeads = () => {
     date: "2024-12-17",
     readTime: "8 min de lectura",
     category: "CRM y Automatización",
-    author: "Equipo Hayas Marketing",
+    author: "Rubén Reyero",
     tags: ["Lead Scoring", "CRM", "Automatización", "Ventas", "Marketing Digital"],
     canonical: "/es/blog/lead-scoring-calificacion-leads",
     ogImage: "/assets/sistema-prevision-ventas.jpg",
@@ -27,8 +27,9 @@ const BlogLeadScoringCalificacionLeads = () => {
       "headline": "Cómo crear un sistema de Lead Scoring y calificación de leads",
       "description": "Descubre cómo implementar un sistema eficaz de lead scoring para optimizar tu proceso comercial, priorizar oportunidades y aumentar las conversiones de tu equipo de ventas.",
       "author": {
-        "@type": "Organization",
-        "name": "Hayas Marketing"
+        "@type": "Person",
+        "name": "Rubén Reyero",
+        "url": "https://hayasmarketing.com/es/autor/ruben-reyero"
       },
       "publisher": {
         "@type": "Organization",

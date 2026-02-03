@@ -13,7 +13,7 @@ const BlogBrandingProcesoTecnicasNaming = () => {
     date: "2025-01-14",
     readTime: "12 min",
     category: "Branding",
-    author: "Equipo Hayas Marketing",
+    author: "Rubén Reyero",
     tags: ["Branding", "Naming", "Identidad de Marca", "Estrategia", "Creatividad"],
     canonical: "/es/blog/branding-proceso-tecnicas-naming",
     ogImage: brandingHeroImage,
@@ -25,8 +25,9 @@ const BlogBrandingProcesoTecnicasNaming = () => {
       "headline": "Branding: proceso y técnicas de naming para crear marcas exitosas",
       "description": "Descubre las mejores técnicas de naming y procesos de branding para crear nombres únicos que posicionen tu marca. Guía completa con metodologías probadas y casos prácticos.",
       "author": {
-        "@type": "Organization",
-        "name": "Hayas Marketing"
+        "@type": "Person",
+        "name": "Rubén Reyero",
+        "url": "https://hayasmarketing.com/es/autor/ruben-reyero"
       },
       "publisher": {
         "@type": "Organization",

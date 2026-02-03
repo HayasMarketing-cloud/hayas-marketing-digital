@@ -12,7 +12,7 @@ const BlogWeb30 = () => {
     date: "2025-01-17",
     readTime: "10 min",
     category: "Tecnología",
-    author: "Equipo Hayas Marketing",
+    author: "Rubén Reyero",
     tags: ["Web 3.0", "Blockchain", "Descentralización", "Tecnología", "Internet", "Metaverso"],
     canonical: "/es/blog/web-3-0-futuro-internet-descentralizado",
     ogImage: "/web-3-0-hero.jpg",
@@ -27,8 +27,9 @@ const BlogWeb30 = () => {
       "description": "Descubre qué es la Web 3.0, sus características principales, tecnologías como blockchain y cómo transformará la experiencia digital.",
       "image": "https://hayasmarketing.com/web-3-0-hero.jpg",
       "author": {
-        "@type": "Organization",
-        "name": "Hayas Marketing"
+        "@type": "Person",
+        "name": "Rubén Reyero",
+        "url": "https://hayasmarketing.com/es/autor/ruben-reyero"
       },
       "publisher": {
         "@type": "Organization",

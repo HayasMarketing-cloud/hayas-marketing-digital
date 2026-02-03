@@ -12,7 +12,7 @@ const BlogSeoOnPage = () => {
     date: "2025-01-17",
     readTime: "12 min",
     category: "SEO",
-    author: "Equipo Hayas Marketing",
+    author: "Rubén Reyero",
     tags: ["SEO", "SEO On-Page", "Optimización Web", "Marketing Digital", "Google"],
     canonical: "/es/blog/seo-on-page-guia-completa",
     ogImage: "/seo-on-page-hero.jpg",
@@ -27,8 +27,9 @@ const BlogSeoOnPage = () => {
       "description": "Aprende paso a paso cómo optimizar tu web con SEO on-page. Guía completa con técnicas, herramientas y ejemplos prácticos para mejorar tu posicionamiento.",
       "image": "https://hayasmarketing.com/seo-on-page-hero.jpg",
       "author": {
-        "@type": "Organization",
-        "name": "Hayas Marketing"
+        "@type": "Person",
+        "name": "Rubén Reyero",
+        "url": "https://hayasmarketing.com/es/autor/ruben-reyero"
       },
       "publisher": {
         "@type": "Organization",

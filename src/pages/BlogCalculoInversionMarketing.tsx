@@ -13,7 +13,7 @@ const BlogCalculoInversionMarketing = () => {
     date: "2025-01-14",
     readTime: "8 min",
     category: "Marketing Digital",
-    author: "Equipo Hayas Marketing",
+    author: "Rubén Reyero",
     tags: ["ROI Marketing", "Presupuesto", "KPIs", "Marketing Digital", "Inversión"],
     canonical: "/es/blog/calculo-inversion-plan-marketing-digital",
     ogImage: calculoInversionHero,
@@ -25,8 +25,9 @@ const BlogCalculoInversionMarketing = () => {
       "headline": "Cómo hacer el cálculo de inversión en un plan de marketing digital",
       "description": "Descubre el método definitivo para calcular la inversión necesaria en tu plan de marketing digital. Guía con KPIs, herramientas de previsión y casos prácticos reales.",
       "author": {
-        "@type": "Organization",
-        "name": "Hayas Marketing"
+        "@type": "Person",
+        "name": "Rubén Reyero",
+        "url": "https://hayasmarketing.com/es/autor/ruben-reyero"
       },
       "publisher": {
         "@type": "Organization",

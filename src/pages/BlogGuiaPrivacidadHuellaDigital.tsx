@@ -46,7 +46,7 @@ const BlogGuiaPrivacidadHuellaDigital = () => {
     date: '2025-12-03',
     readTime: '12 min',
     category: 'Privacidad Digital',
-    author: 'Equipo Hayas Marketing',
+    author: 'Rubén Reyero',
     tags: ['Privacidad', 'Huella Digital', 'Identidad Digital', 'Derecho al Olvido', 'RGPD', 'Digitalización Consciente', 'Seguridad Online'],
     canonical: '/es/blog/guia-privacidad-huella-digital',
     ogImage: guiaPrivacidadHeroImage,
@@ -55,8 +55,9 @@ const BlogGuiaPrivacidadHuellaDigital = () => {
       "@type": "Article",
       "headline": "Guía práctica para proteger tu privacidad y tu identidad digital",
       "author": {
-        "@type": "Organization",
-        "name": "Hayas Marketing"
+        "@type": "Person",
+        "name": "Rubén Reyero",
+        "url": "https://hayasmarketing.com/es/autor/ruben-reyero"
       },
       "publisher": {
         "@type": "Organization",

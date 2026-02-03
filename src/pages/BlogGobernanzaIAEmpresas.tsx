@@ -41,7 +41,7 @@ const BlogGobernanzaIAEmpresas = () => {
     date: '2025-12-10',
     readTime: '10 min',
     category: 'Inteligencia Artificial',
-    author: 'Equipo Hayas Marketing',
+    author: 'Rubén Reyero',
     tags: ['IA', 'Gobernanza', 'Estrategia', 'Regulación', 'Marketing Digital', 'Automatización', 'Ética IA'],
     canonical: '/es/blog/gobernanza-ia-empresas',
     ogImage: gobernanzaIAHero,
@@ -50,8 +50,9 @@ const BlogGobernanzaIAEmpresas = () => {
       "@type": "Article",
       "headline": "La gobernanza de la inteligencia artificial: una nueva responsabilidad estratégica para las empresas",
       "author": {
-        "@type": "Organization",
-        "name": "Hayas Marketing"
+        "@type": "Person",
+        "name": "Rubén Reyero",
+        "url": "https://hayasmarketing.com/es/autor/ruben-reyero"
       },
       "publisher": {
         "@type": "Organization",
