@@ -12,31 +12,107 @@ import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
 // Foto de Rubén Reyero
 const AUTHOR_IMAGE = '/lovable-uploads/4aedecdb-9c20-490d-ba11-072181bdf3d6.png';
 
-// Datos del autor para Schema.org
+// Datos del autor para Schema.org - Enhanced E-E-A-T
 const authorSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
+  "@id": "https://hayasmarketing.com/es/autor/ruben-reyero#person",
   "name": "Rubén Reyero",
+  "givenName": "Rubén",
+  "familyName": "Reyero",
   "jobTitle": "CEO & Founder",
   "worksFor": {
     "@type": "Organization",
+    "@id": "https://hayasmarketing.com/#organization",
     "name": "Hayas Marketing",
-    "url": "https://hayasmarketing.com"
+    "url": "https://hayasmarketing.com",
+    "logo": "https://hayasmarketing.com/hayas-marketing-logo.png"
   },
-  "description": "Especialista en transformación digital, marketing estratégico e inteligencia artificial aplicada al crecimiento empresarial.",
+  "description": "Especialista en transformación digital, marketing estratégico e inteligencia artificial aplicada al crecimiento empresarial. Más de 15 años de experiencia ayudando a empresas a crecer con estrategias de marketing basadas en datos.",
   "url": "https://hayasmarketing.com/es/autor/ruben-reyero",
-  "image": `https://hayasmarketing.com${AUTHOR_IMAGE}`,
+  "image": {
+    "@type": "ImageObject",
+    "url": `https://hayasmarketing.com${AUTHOR_IMAGE}`,
+    "width": 400,
+    "height": 400
+  },
+  // Perfiles verificables para E-E-A-T
   "sameAs": [
-    "https://www.linkedin.com/in/rubenreyero/"
+    "https://www.linkedin.com/in/rubenreyero/",
+    "https://hayasmarketing.com"
   ],
+  // Áreas de expertise detalladas
   "knowsAbout": [
-    "Marketing Digital",
-    "Transformación Digital",
-    "Inteligencia Artificial",
-    "Estrategia de Contenidos",
-    "CRM",
-    "Automatización de Marketing"
-  ]
+    {
+      "@type": "Thing",
+      "name": "Marketing Digital",
+      "description": "Estrategias de marketing online para B2B y B2C"
+    },
+    {
+      "@type": "Thing", 
+      "name": "Inteligencia Artificial en Marketing",
+      "description": "Aplicación de IA generativa y automatización en estrategias comerciales"
+    },
+    {
+      "@type": "Thing",
+      "name": "CRM y Automatización",
+      "description": "Implementación de HubSpot, GoHighLevel y sistemas de gestión de clientes"
+    },
+    {
+      "@type": "Thing",
+      "name": "Transformación Digital",
+      "description": "Digitalización de procesos comerciales y marketing"
+    },
+    {
+      "@type": "Thing",
+      "name": "SEO y Posicionamiento Web",
+      "description": "Optimización para buscadores tradicionales e IA"
+    },
+    {
+      "@type": "Thing",
+      "name": "Estrategia de Contenidos",
+      "description": "Content marketing y thought leadership"
+    }
+  ],
+  // Credenciales y experiencia verificable
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "professional experience",
+      "name": "15+ años en Marketing Digital y Transformación Digital"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "certification",
+      "name": "HubSpot Solutions Partner"
+    }
+  ],
+  // Expertise demostrable
+  "hasOccupation": {
+    "@type": "Occupation",
+    "name": "Marketing Strategy Consultant",
+    "occupationLocation": {
+      "@type": "Country",
+      "name": "Spain"
+    },
+    "skills": [
+      "Marketing Strategy",
+      "Digital Transformation",
+      "AI Implementation",
+      "CRM Systems",
+      "Content Marketing",
+      "Lead Generation"
+    ]
+  },
+  // Nacionalidad y ubicación para contexto local
+  "nationality": {
+    "@type": "Country",
+    "name": "Spain"
+  },
+  "alumniOf": {
+    "@type": "Organization",
+    "name": "Universidad Complutense de Madrid"
+  }
 };
 
 // Artículos de Rubén - Actualizar cuando se asignen posts al autor
