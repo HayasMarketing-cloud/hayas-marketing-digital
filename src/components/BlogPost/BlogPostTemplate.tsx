@@ -87,10 +87,34 @@ const BlogPostTemplate: React.FC<BlogPostTemplateProps> = ({
     }))
   } : null;
 
-  // Combinar structured data con FAQ schema
-  const combinedStructuredData = faqSchema 
-    ? [metadata.structuredData, faqSchema]
-    : metadata.structuredData;
+  // SpeakableSpecification para asistentes de voz (Alexa, Google Assistant, Siri)
+  // Marca título, descripción y primera pregunta FAQ como contenido "leíble"
+  const speakableSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [
+        "article h1",           // Título del artículo
+        "article .lead",        // Párrafo introductorio
+        ".faq-section h3:first-of-type", // Primera pregunta FAQ
+        ".faq-section p:first-of-type"   // Primera respuesta FAQ
+      ],
+      "xpath": [
+        "/html/body//article//h1",
+        "/html/body//article//p[1]"
+      ]
+    },
+    "url": currentUrl,
+    "name": metadata.title,
+    "description": metadata.description,
+    "inLanguage": "es-ES"
+  };
+
+  // Combinar structured data con FAQ schema y Speakable
+  const allSchemas = [metadata.structuredData, speakableSchema];
+  if (faqSchema) allSchemas.push(faqSchema);
+  const combinedStructuredData = allSchemas;
 
   return (
     <>
