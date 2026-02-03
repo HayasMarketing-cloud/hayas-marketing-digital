@@ -1,11 +1,16 @@
 # Robots.txt para Hayas Marketing - Producción
-# Actualizado: 2025-01-28
+# Actualizado: 2025-02-03
 
 User-agent: *
 Allow: /
 
 # Sitemap
 Sitemap: https://hayasmarketing.com/sitemap.xml
+
+# LLM Context Files - Para citabilidad en buscadores IA
+# Más info: https://llmstxt.org/
+LLMs-full.txt: https://hayasmarketing.com/llms-full.txt
+LLMs.txt: https://hayasmarketing.com/llms.txt
 
 # Directrices específicas
 Crawl-delay: 1
