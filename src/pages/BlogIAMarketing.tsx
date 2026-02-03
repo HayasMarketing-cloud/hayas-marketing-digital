@@ -82,7 +82,9 @@ const BlogIAMarketing = () => {
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2 text-muted-foreground">
                 <User className="h-4 w-4" />
-                <span>Equipo Hayas Marketing</span>
+                <Link to="/es/autor/ruben-reyero" className="hover:text-primary hover:underline transition-colors">
+                  Rubén Reyero
+                </Link>
               </div>
               <Button variant="outline" size="sm">
                 <Share2 className="h-4 w-4 mr-2" />
