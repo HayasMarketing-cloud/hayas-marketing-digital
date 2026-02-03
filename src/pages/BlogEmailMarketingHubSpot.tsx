@@ -9,7 +9,7 @@ const BlogEmailMarketingHubSpot = () => {
     date: "2025-01-18",
     readTime: "15 min de lectura",
     category: "Email Marketing",
-    author: "Equipo Hayas Marketing",
+    author: "Rubén Reyero",
     tags: ["email marketing", "hubspot", "spf", "dkim", "dmarc", "cumplimiento", "rgpd"],
     canonical: "/es/blog/guia-tecnica-email-marketing-hubspot-configuracion",
     ogImage: "/email-marketing-automatizaciones-hero.jpg",
@@ -24,8 +24,9 @@ const BlogEmailMarketingHubSpot = () => {
       "description": "Aprende a configurar SPF, DKIM y DMARC en HubSpot para cumplir con las nuevas políticas de Google y Yahoo. Guía técnica completa para 2025.",
       "image": "https://hayasmarketing.com/email-marketing-automatizaciones-hero.jpg",
       "author": {
-        "@type": "Organization",
-        "name": "Hayas Marketing"
+        "@type": "Person",
+        "name": "Rubén Reyero",
+        "url": "https://hayasmarketing.com/es/autor/ruben-reyero"
       },
       "publisher": {
         "@type": "Organization",

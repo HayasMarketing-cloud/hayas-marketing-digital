@@ -35,7 +35,7 @@ const BlogChatbotsParaPaginasWeb = () => {
     date: '2025-11-18',
     readTime: '10 min',
     category: 'Automatización',
-    author: 'Equipo Hayas Marketing',
+    author: 'Rubén Reyero',
     tags: ['Chatbots', 'Automatización', 'CRM', 'IA', 'WordPress', 'GoHighLevel', 'HubSpot'],
     canonical: '/es/blog/chatbots-para-paginas-web',
     ogImage: chatbotsHeroImage,
@@ -44,8 +44,9 @@ const BlogChatbotsParaPaginasWeb = () => {
       "@type": "Article",
       "headline": "Chatbots para páginas web: qué opciones existen y cuál tiene sentido para tu negocio",
       "author": {
-        "@type": "Organization",
-        "name": "Hayas Marketing"
+        "@type": "Person",
+        "name": "Rubén Reyero",
+        "url": "https://hayasmarketing.com/es/autor/ruben-reyero"
       },
       "publisher": {
         "@type": "Organization",

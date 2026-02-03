@@ -11,7 +11,7 @@ const BlogAutomatizacionMarketing = () => {
     date: "2025-01-17",
     readTime: "12 min",
     category: "Marketing Automation",
-    author: "Equipo Hayas Marketing",
+    author: "Rubén Reyero",
     tags: ["Automatización de Marketing", "Marketing Digital", "Email Marketing", "Lead Nurturing", "CRM", "Workflows"],
     canonical: "/es/blog/automatizacion-marketing-digital-guia-completa",
     ogImage: "/automatizacion-marketing-hero.jpg",
@@ -26,8 +26,9 @@ const BlogAutomatizacionMarketing = () => {
       "description": "Descubre cómo la automatización de marketing puede transformar tu negocio. Estrategias, herramientas y casos prácticos para automatizar tus campañas digitales.",
       "image": "https://hayasmarketing.com/automatizacion-marketing-hero.jpg",
       "author": {
-        "@type": "Organization",
-        "name": "Hayas Marketing"
+        "@type": "Person",
+        "name": "Rubén Reyero",
+        "url": "https://hayasmarketing.com/es/autor/ruben-reyero"
       },
       "publisher": {
         "@type": "Organization",

@@ -10,7 +10,7 @@ const BlogComoElegirMejorCRM = () => {
     date: '2025-01-21',
     readTime: '16 min',
     category: 'CRM',
-    author: 'Equipo Hayas Marketing',
+    author: 'Rubén Reyero',
     tags: ['CRM', 'Selección CRM', 'Marketing Digital', 'Automatización', 'ROI', 'Implementación'],
     canonical: '/blog/como-elegir-mejor-crm-empresa-organizacion',
     ogImage: '/crm-sistema-gestion-clientes-hero.jpg',
@@ -19,8 +19,9 @@ const BlogComoElegirMejorCRM = () => {
       "@type": "Article",
       "headline": "Cómo elegir el mejor CRM para tu Empresa u Organización",
       "author": {
-        "@type": "Organization",
-        "name": "Hayas Marketing"
+        "@type": "Person",
+        "name": "Rubén Reyero",
+        "url": "https://hayasmarketing.com/es/autor/ruben-reyero"
       },
       "publisher": {
         "@type": "Organization",

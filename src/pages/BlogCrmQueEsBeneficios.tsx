@@ -30,7 +30,7 @@ const BlogCrmQueEsBeneficios = () => {
     date: "2025-01-15",
     readTime: "8 min de lectura",
     category: "CRM y Automatización",
-    author: "Hayas Marketing",
+    author: "Rubén Reyero",
     tags: ["CRM", "Marketing", "Ventas", "Automatización", "Gestión de Clientes"],
     canonical: "/es/blog/crm-que-es-beneficios-como-elegir",
     ogImage: "/lovable-uploads/marketing-kpis-dashboard.jpg",
@@ -43,8 +43,9 @@ const BlogCrmQueEsBeneficios = () => {
       "description": "Descubre qué es un CRM, sus beneficios para marketing y ventas, y cómo elegir el más adecuado para tu negocio. Guía práctica con ejemplos reales y pasos de implantación.",
       "image": "/lovable-uploads/marketing-kpis-dashboard.jpg",
       "author": {
-        "@type": "Organization",
-        "name": "Hayas Marketing"
+        "@type": "Person",
+        "name": "Rubén Reyero",
+        "url": "https://hayasmarketing.com/es/autor/ruben-reyero"
       },
       "publisher": {
         "@type": "Organization",

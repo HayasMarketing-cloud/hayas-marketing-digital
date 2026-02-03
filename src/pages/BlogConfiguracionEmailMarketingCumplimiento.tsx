@@ -9,7 +9,7 @@ const BlogConfiguracionEmailMarketingCumplimiento = () => {
     date: "2025-09-12",
     readTime: "18 min de lectura",
     category: "Email Marketing",
-    author: "Equipo Hayas Marketing",
+    author: "Rubén Reyero",
     tags: ["email marketing", "spf", "dkim", "dmarc", "cumplimiento", "rgpd", "hubspot", "go high level", "mailchimp"],
     canonical: "/es/blog/configuracion-email-marketing-cumplimiento-normativo",
     ogImage: "/email-marketing-automatizaciones-hero.jpg",
@@ -24,8 +24,9 @@ const BlogConfiguracionEmailMarketingCumplimiento = () => {
       "description": "Aprende a configurar SPF, DKIM y DMARC en HubSpot, Go High Level, Mailchimp y otras plataformas. Guía completa de email marketing con cumplimiento RGPD 2025.",
       "image": "https://hayasmarketing.com/email-marketing-automatizaciones-hero.jpg",
       "author": {
-        "@type": "Organization",
-        "name": "Hayas Marketing"
+        "@type": "Person",
+        "name": "Rubén Reyero",
+        "url": "https://hayasmarketing.com/es/autor/ruben-reyero"
       },
       "publisher": {
         "@type": "Organization",

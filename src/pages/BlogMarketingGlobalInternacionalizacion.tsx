@@ -11,7 +11,7 @@ const BlogMarketingGlobalInternacionalizacion = () => {
     date: "2024-12-18",
     readTime: "8 min de lectura",
     category: "Estrategias Marketing",
-    author: "Equipo Hayas Marketing",
+    author: "Rubén Reyero",
     tags: ["Marketing Global", "Internacionalización", "Localización", "i18n", "l10n", "Contenidos"],
     canonical: "/es/blog/marketing-global-internacionalizacion",
     ogImage: "/marketing-global-hero.jpg",
@@ -25,8 +25,9 @@ const BlogMarketingGlobalInternacionalizacion = () => {
       "headline": "Marketing Global: Internacionalización i18n y Localización l10n",
       "description": "Descubre cómo desarrollar una estrategia de marketing global efectiva mediante la internacionalización (i18n) y localización (l10n) de contenidos para diferentes mercados.",
       "author": {
-        "@type": "Organization",
-        "name": "Hayas Marketing"
+        "@type": "Person",
+        "name": "Rubén Reyero",
+        "url": "https://hayasmarketing.com/es/autor/ruben-reyero"
       },
       "publisher": {
         "@type": "Organization",

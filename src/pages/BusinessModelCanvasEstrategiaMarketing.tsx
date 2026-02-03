@@ -15,7 +15,7 @@ const BusinessModelCanvasEstrategiaMarketing = () => {
     date: "2025-01-17",
     readTime: "16 min",
     category: "Marketing Digital",
-    author: "Equipo Hayas Marketing",
+    author: "Rubén Reyero",
     tags: ["Business Model Canvas", "Marketing Digital", "Estrategia", "Modelo de Negocio", "Canvas"],
     canonical: "/es/blog/business-model-canvas-para-crear-tu-estrategia-de-marketing",
     ogImage: heroImage,
@@ -27,8 +27,9 @@ const BusinessModelCanvasEstrategiaMarketing = () => {
       "headline": "Business Model Canvas para crear tu estrategia de marketing",
       "description": "Aprende a usar el Business Model Canvas para crear una estrategia de marketing efectiva. Guía práctica con ejemplos, herramientas y casos de uso reales para optimizar tu propuesta de valor.",
       "author": {
-        "@type": "Organization",
-        "name": "Hayas Marketing"
+        "@type": "Person",
+        "name": "Rubén Reyero",
+        "url": "https://hayasmarketing.com/es/autor/ruben-reyero"
       },
       "publisher": {
         "@type": "Organization",

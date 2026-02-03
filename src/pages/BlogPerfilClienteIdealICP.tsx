@@ -9,7 +9,7 @@ const BlogPerfilClienteIdealICP = () => {
     date: "2025-01-10",
     readTime: "10 min de lectura",
     category: "Estrategia de Marketing",
-    author: "Equipo Hayas Marketing",
+    author: "Rubén Reyero",
     tags: ["perfil cliente ideal", "ICP", "estrategia marketing", "segmentación", "ventas"],
     canonical: "/es/blog/perfil-cliente-ideal",
     ogImage: "/perfil-cliente-ideal-hero.jpg",
@@ -24,8 +24,9 @@ const BlogPerfilClienteIdealICP = () => {
       "description": "Descubre cómo crear el perfil de cliente ideal (ICP) perfecto para optimizar tu estrategia de marketing, mejorar las ventas y maximizar la rentabilidad de tu negocio.",
       "image": "https://hayasmarketing.com/perfil-cliente-ideal-hero.jpg",
       "author": {
-        "@type": "Organization",
-        "name": "Hayas Marketing"
+        "@type": "Person",
+        "name": "Rubén Reyero",
+        "url": "https://hayasmarketing.com/es/autor/ruben-reyero"
       },
       "publisher": {
         "@type": "Organization",

@@ -37,7 +37,7 @@ const BlogHuellaDigitalDerechoOlvido = () => {
     date: '2025-11-25',
     readTime: '9 min',
     category: 'Privacidad Digital',
-    author: 'Equipo Hayas Marketing',
+    author: 'Rubén Reyero',
     tags: ['Privacidad', 'RGPD', 'Derecho al Olvido', 'Huella Digital', 'LOPDGDD', 'Digitalización Consciente'],
     canonical: '/es/blog/huella-digital-derecho-olvido',
     ogImage: huellaDigitalHeroImage,
@@ -46,8 +46,9 @@ const BlogHuellaDigitalDerechoOlvido = () => {
       "@type": "Article",
       "headline": "Huella digital y derecho al olvido: privacidad y conciencia en la era digital",
       "author": {
-        "@type": "Organization",
-        "name": "Hayas Marketing"
+        "@type": "Person",
+        "name": "Rubén Reyero",
+        "url": "https://hayasmarketing.com/es/autor/ruben-reyero"
       },
       "publisher": {
         "@type": "Organization",

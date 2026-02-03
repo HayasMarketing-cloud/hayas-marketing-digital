@@ -33,7 +33,7 @@ const BlogDecisionMarketing = () => {
     date: '2026-01-02',
     readTime: '12 min',
     category: 'Estrategias Marketing',
-    author: 'Equipo Hayas Marketing',
+    author: 'Rubén Reyero',
     tags: ['Decision Marketing', 'Estrategia', 'Marketing Consciente', 'Confianza', 'Customer Journey'],
     canonical: '/es/blog/decision-marketing-confianza',
     ogImage: decisionMarketingHero,
@@ -42,8 +42,9 @@ const BlogDecisionMarketing = () => {
       "@type": "Article",
       "headline": "Decision Marketing: cuando el marketing deja de provocar y empieza a generar confianza",
       "author": {
-        "@type": "Organization",
-        "name": "Hayas Marketing"
+        "@type": "Person",
+        "name": "Rubén Reyero",
+        "url": "https://hayasmarketing.com/es/autor/ruben-reyero"
       },
       "publisher": {
         "@type": "Organization",

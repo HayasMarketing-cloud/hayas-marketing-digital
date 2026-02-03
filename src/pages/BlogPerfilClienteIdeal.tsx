@@ -9,7 +9,7 @@ const BlogPerfilClienteIdeal = () => {
     date: "2025-01-15",
     readTime: "12 min de lectura",
     category: "Estrategia de Marketing",
-    author: "Equipo Hayas Marketing",
+    author: "Rubén Reyero",
     tags: ["buyer persona", "perfil cliente ideal", "estrategia marketing", "B2B", "B2C"],
     canonical: "/es/blog/como-crear-buyer-persona-b2b-b2c-guia-completa",
     ogImage: "/perfil-cliente-ideal-hero.jpg",
@@ -24,8 +24,9 @@ const BlogPerfilClienteIdeal = () => {
       "description": "Aprende a crear buyer personas efectivos para B2B y B2C con nuestra guía completa. Incluye template descargable y cuestionario para definir el perfil de cliente ideal.",
       "image": "https://hayasmarketing.com/perfil-cliente-ideal-hero.jpg",
       "author": {
-        "@type": "Organization",
-        "name": "Hayas Marketing"
+        "@type": "Person",
+        "name": "Rubén Reyero",
+        "url": "https://hayasmarketing.com/es/autor/ruben-reyero"
       },
       "publisher": {
         "@type": "Organization",

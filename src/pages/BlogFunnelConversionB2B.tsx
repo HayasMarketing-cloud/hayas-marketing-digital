@@ -11,7 +11,7 @@ const BlogFunnelConversionB2B = () => {
     date: "2025-01-18",
     readTime: "8 min de lectura",
     category: "Estrategias Marketing",
-    author: "Equipo Hayas Marketing",
+    author: "Rubén Reyero",
     tags: ["Funnel de Conversión", "B2B", "Automatización", "HubSpot", "Marketing Digital", "Lead Generation"],
     canonical: "/es/blog/funnel-conversion-b2b",
     ogImage: "/public/automatizacion-marketing-hero.jpg",
@@ -25,8 +25,9 @@ const BlogFunnelConversionB2B = () => {
       "headline": "Cómo crear un funnel de conversión para empresas B2B",
       "description": "Descubre cómo diseñar un funnel de conversión eficaz para empresas B2B. Aprende las etapas TOFU, MOFU y BOFU, técnicas de automatización y cómo resolver problemas comunes.",
       "author": {
-        "@type": "Organization",
-        "name": "Hayas Marketing"
+        "@type": "Person",
+        "name": "Rubén Reyero",
+        "url": "https://hayasmarketing.com/es/autor/ruben-reyero"
       },
       "publisher": {
         "@type": "Organization",

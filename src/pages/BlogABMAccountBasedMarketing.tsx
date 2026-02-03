@@ -12,7 +12,7 @@ const BlogABMAccountBasedMarketing = () => {
     date: "2025-01-19",
     readTime: "18 min",
     category: "Marketing Digital",
-    author: "Equipo Hayas Marketing",
+    author: "Rubén Reyero",
     tags: ["ABM", "Marketing ABM", "Account-Based Marketing", "B2B", "Grandes Cuentas"],
     canonical: "/es/blog/abm-account-based-marketing",
     ogImage: "/src/assets/business-model-canvas-estrategia-marketing-hero.jpg",
@@ -24,8 +24,9 @@ const BlogABMAccountBasedMarketing = () => {
       "headline": "ABM: Estrategia Account-Based Marketing para Captar Grandes Cuentas",
       "description": "Descubre cómo implementar una estrategia ABM exitosa. Guía completa de Account-Based Marketing para captar y fidelizar grandes cuentas B2B con herramientas y métricas clave.",
       "author": {
-        "@type": "Organization",
-        "name": "Hayas Marketing"
+        "@type": "Person",
+        "name": "Rubén Reyero",
+        "url": "https://hayasmarketing.com/es/autor/ruben-reyero"
       },
       "publisher": {
         "@type": "Organization",
