@@ -7,10 +7,8 @@ import '@/utils/gtmDebugger';
 
 // Listeners globales para capturar errores fuera de React
 window.addEventListener('error', (event) => {
-  // Filtrar "Script error." de scripts cross-origin (GTM, cdn.gpteng.co, etc.)
+  // Filtrar "Script error." de scripts cross-origin (GTM, CookieYes, cdn.gpteng.co, etc.)
   // Estos errores son normales y no afectan la funcionalidad.
-  // Importante: en addEventListener, hay que prevenir el default para evitar que
-  // otras capas (o el propio navegador) lo traten como error fatal.
   const anyEvent = event as unknown as {
     message?: string;
     filename?: string;
@@ -22,11 +20,28 @@ window.addEventListener('error', (event) => {
   const lineno = anyEvent?.lineno;
   const colno = anyEvent?.colno;
 
-  if (message === 'Script error.' && !filename && lineno === 0 && colno === 0) {
+  // Detectar errores genéricos de scripts cross-origin
+  const isCrossOriginScriptError = (
+    (message === 'Script error.' && !filename && lineno === 0 && colno === 0) ||
+    (message === 'Script error.' && lineno === 0) ||
+    (typeof message === 'string' && message.includes('Script error'))
+  );
+
+  // Detectar errores de scripts externos conocidos que no deben bloquear la app
+  const isExternalScriptError = filename && (
+    filename.includes('cdn-cookieyes.com') ||
+    filename.includes('googletagmanager.com') ||
+    filename.includes('cdn.gpteng.co') ||
+    filename.includes('google-analytics.com') ||
+    filename.includes('doubleclick.net') ||
+    filename.includes('facebook.net')
+  );
+
+  if (isCrossOriginScriptError || isExternalScriptError) {
     // Solo loguear como info, no como error
     // eslint-disable-next-line no-console
-    console.info('[Cross-Origin Script] Script externo ejecutándose correctamente (GTM, etc.)');
-    // Cancelar el manejo por defecto para evitar “blank screen”/capturas genéricas
+    console.info('[Cross-Origin Script] Script externo ejecutándose (GTM, CookieYes, etc.) - ignorado');
+    // Cancelar el manejo por defecto para evitar "blank screen"/capturas genéricas
     event.preventDefault?.();
     event.stopImmediatePropagation?.();
     return; // No propagar el error
@@ -41,11 +56,31 @@ window.addEventListener('error', (event) => {
     colno,
     error: (event as ErrorEvent).error,
   });
-});
+}, true); // useCapture: true para capturar antes que otros handlers
 
 window.addEventListener('unhandledrejection', (event) => {
+  const reason = event.reason;
+  
+  // Ignorar rechazos de promesas de scripts externos
+  const reasonStr = reason?.message || String(reason);
+  const isExternalScriptRejection = (
+    reasonStr.includes('cdn-cookieyes.com') ||
+    reasonStr.includes('googletagmanager.com') ||
+    reasonStr.includes('Script error') ||
+    reasonStr.includes('cross-origin')
+  );
+  
+  if (isExternalScriptRejection) {
+    // eslint-disable-next-line no-console
+    console.info('[External Script] Promise rejection de script externo - ignorado');
+    event.preventDefault();
+    return;
+  }
+  
   // eslint-disable-next-line no-console
-  console.error('UnhandledPromiseRejection', { reason: event.reason });
+  console.error('UnhandledPromiseRejection', { reason });
+  // Prevenir que cause crash de la app
+  event.preventDefault();
 });
 
 createRoot(document.getElementById('root')!).render(
