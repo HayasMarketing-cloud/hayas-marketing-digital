@@ -483,25 +483,28 @@ const BlogPost = () => {
           "@type": "Article",
           "headline": "Estrategia de Marketing de Contenidos Eficaz: Guía 2025",
           "description": "Guía completa para crear una estrategia de marketing de contenidos efectiva en 2025. Incluye storytelling, framework de creación, herramientas IA y casos de éxito actualizados.",
-          "image": estrategiaMarketingContenidosHero,
+          "image": "https://hayasmarketing.com/estrategia-marketing-contenidos-hero.jpg",
           "author": {
-            "@type": "Organization",
-            "name": "Hayas Marketing",
-            "url": "https://hayasmarketing.com"
+            "@type": "Person",
+            "name": "Rubén Reyero",
+            "url": "https://hayasmarketing.com/es/autor/ruben-reyero"
           },
           "publisher": {
             "@type": "Organization",
             "name": "Hayas Marketing",
+            "@id": "https://hayasmarketing.com/#organization",
             "logo": {
               "@type": "ImageObject",
-              "url": "https://hayasmarketing.com/logo.png"
+              "url": "https://hayasmarketing.com/lovable-uploads/hayas-logo.webp",
+              "width": 300,
+              "height": 100
             }
           },
-          "datePublished": "2025-01-10",
-          "dateModified": "2025-01-10",
+          "datePublished": "2025-01-10T00:00:00+01:00",
+          "dateModified": "2025-01-10T00:00:00+01:00",
           "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://hayasmarketing.com/blog/estrategia-marketing-contenidos-eficaz-2025"
+            "@id": "https://hayasmarketing.com/es/blog/estrategia-marketing-contenidos-eficaz-2025"
           },
           "keywords": "marketing de contenidos, estrategia de contenidos, storytelling, content marketing, SEO, marketing digital, contenido viral, UGC, IA marketing"
         })}
@@ -967,25 +970,28 @@ const BlogPost = () => {
           "@type": "Article",
           "headline": "Mantenimiento WordPress para Emprendedores: Guía Completa 2025",
           "description": "Descubre cómo mantener tu WordPress seguro y rápido sin conocimientos técnicos. Guía práctica para emprendedores con checklist y herramientas 2025.",
-          "image": mantenimientoWordpressHero,
+          "image": "https://hayasmarketing.com/mantenimiento-wordpress-hero.jpg",
           "author": {
-            "@type": "Organization",
-            "name": "Hayas Marketing",
-            "url": "https://hayasmarketing.com"
+            "@type": "Person",
+            "name": "Rubén Reyero",
+            "url": "https://hayasmarketing.com/es/autor/ruben-reyero"
           },
           "publisher": {
             "@type": "Organization",
             "name": "Hayas Marketing",
+            "@id": "https://hayasmarketing.com/#organization",
             "logo": {
               "@type": "ImageObject",
-              "url": "https://hayasmarketing.com/logo.png"
+              "url": "https://hayasmarketing.com/lovable-uploads/hayas-logo.webp",
+              "width": 300,
+              "height": 100
             }
           },
-          "datePublished": "2025-01-08",
-          "dateModified": "2025-01-08",
+          "datePublished": "2025-01-08T00:00:00+01:00",
+          "dateModified": "2025-01-08T00:00:00+01:00",
           "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://hayasmarketing.com/blog/mantenimiento-wordpress-emprendedores-2025"
+            "@id": "https://hayasmarketing.com/es/blog/mantenimiento-wordpress-emprendedores-2025"
           },
           "keywords": "mantenimiento wordpress, wordpress emprendedores, seguridad wordpress, backup wordpress, actualizar wordpress, optimización wordpress"
         })}
@@ -1630,24 +1636,28 @@ const BlogPost = () => {
               "@type": "Article",
               "headline": "TikTok marketing: cómo integrar TikTok en tu estrategia digital",
               "description": "Descubre cómo usar TikTok marketing para conectar con tu audiencia. Estrategias, tipos de campañas y consejos para promocionar tu marca en TikTok efectivamente.",
-              "image": "https://preview--hayas-marketing-digital.lovable.app/src/assets/tiktok-marketing-hero.jpg",
+              "image": "https://hayasmarketing.com/tiktok-marketing-hero.jpg",
               "author": {
-                "@type": "Organization",
-                "name": "Hayas Marketing"
+                "@type": "Person",
+                "name": "Rubén Reyero",
+                "url": "https://hayasmarketing.com/es/autor/ruben-reyero"
               },
               "publisher": {
                 "@type": "Organization",
                 "name": "Hayas Marketing",
+                "@id": "https://hayasmarketing.com/#organization",
                 "logo": {
                   "@type": "ImageObject",
-                  "url": "https://preview--hayas-marketing-digital.lovable.app/favicon.ico"
+                  "url": "https://hayasmarketing.com/lovable-uploads/hayas-logo.webp",
+                  "width": 300,
+                  "height": 100
                 }
               },
-              "datePublished": "2025-01-13",
-              "dateModified": "2025-01-13",
+              "datePublished": "2025-01-13T00:00:00+01:00",
+              "dateModified": "2025-01-13T00:00:00+01:00",
               "mainEntityOfPage": {
                 "@type": "WebPage",
-                "@id": "https://preview--hayas-marketing-digital.lovable.app/blog/tiktok-marketing-estrategia-digital"
+                "@id": "https://hayasmarketing.com/es/blog/tiktok-marketing-estrategia-digital"
               },
               "keywords": ["TikTok marketing", "marketing digital", "redes sociales", "TikTok Ads", "estrategia digital", "generación Z"]
             })}
