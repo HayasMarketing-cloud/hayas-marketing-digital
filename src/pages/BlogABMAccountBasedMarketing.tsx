@@ -30,10 +30,17 @@ const BlogABMAccountBasedMarketing = () => {
       },
       "publisher": {
         "@type": "Organization",
-        "name": "Hayas Marketing"
+        "name": "Hayas Marketing",
+        "@id": "https://hayasmarketing.com/#organization",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://hayasmarketing.com/lovable-uploads/hayas-logo.webp",
+          "width": 300,
+          "height": 100
+        }
       },
-      "datePublished": "2025-01-19",
-      "dateModified": "2025-01-19"
+      "datePublished": "2025-01-19T00:00:00+01:00",
+      "dateModified": "2025-01-19T00:00:00+01:00"
     }
   };
 

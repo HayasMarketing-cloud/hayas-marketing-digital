@@ -14,7 +14,7 @@ const BlogReCommerceEconomiaCircular = () => {
     date: "2025-01-17",
     readTime: "8 min de lectura",
     category: "E-commerce",
-    author: "Hayas Marketing",
+    author: "Rubén Reyero",
     tags: ["Economía Circular", "E-commerce", "Partnership", "Sostenibilidad", "Re-commerce", "Sharpei"],
     canonical: "/es/blog/re-commerce-economia-circular-ecommerce-partnership-sharpei",
     ogImage: "/re-commerce-economia-circular-hero.jpg",
@@ -27,22 +27,26 @@ const BlogReCommerceEconomiaCircular = () => {
       "description": "Descubre cómo la economía circular está transformando el e-commerce. Conoce nuestro partnership con Sharpei para impulsar la sostenibilidad en el comercio electrónico.",
       "image": "https://hayasmarketing.com/re-commerce-economia-circular-hero.jpg",
       "author": {
-        "@type": "Organization",
-        "name": "Hayas Marketing"
+        "@type": "Person",
+        "name": "Rubén Reyero",
+        "url": "https://hayasmarketing.com/es/autor/ruben-reyero"
       },
       "publisher": {
         "@type": "Organization",
         "name": "Hayas Marketing",
+        "@id": "https://hayasmarketing.com/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://hayasmarketing.com/logo.png"
+          "url": "https://hayasmarketing.com/lovable-uploads/hayas-logo.webp",
+          "width": 300,
+          "height": 100
         }
       },
-      "datePublished": "2025-01-17",
-      "dateModified": "2025-01-17",
+      "datePublished": "2025-01-17T00:00:00+01:00",
+      "dateModified": "2025-01-17T00:00:00+01:00",
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://hayasmarketing.com/blog/re-commerce-economia-circular-ecommerce-partnership-sharpei"
+        "@id": "https://hayasmarketing.com/es/blog/re-commerce-economia-circular-ecommerce-partnership-sharpei"
       }
     }
   };

@@ -62,13 +62,16 @@ const BlogGuiaPrivacidadHuellaDigital = () => {
       "publisher": {
         "@type": "Organization",
         "name": "Hayas Marketing",
+        "@id": "https://hayasmarketing.com/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://hayasmarketing.com/logo.png"
+          "url": "https://hayasmarketing.com/lovable-uploads/hayas-logo.webp",
+          "width": 300,
+          "height": 100
         }
       },
-      "datePublished": "2025-12-03",
-      "dateModified": "2025-12-03",
+      "datePublished": "2025-12-03T00:00:00+01:00",
+      "dateModified": "2025-12-03T00:00:00+01:00",
       "image": "/guia-privacidad-huella-digital-hero.jpg",
       "mainEntityOfPage": "https://hayasmarketing.com/es/blog/guia-privacidad-huella-digital"
     },

@@ -10,7 +10,7 @@ const BlogSeoOffPage = () => {
     date: "2025-01-17",
     readTime: "12 min de lectura",
     category: "SEO",
-    author: "Hayas Marketing",
+    author: "Rubén Reyero",
     tags: ["SEO", "Link Building", "Posicionamiento Web", "Marketing Digital", "Backlinks"],
     canonical: "/es/blog/seo-off-page-estrategias-practicas-posicionamiento",
     ogImage: "/seo-off-page-hero.jpg",
@@ -23,22 +23,26 @@ const BlogSeoOffPage = () => {
       "description": "Descubre las mejores estrategias de SEO Off Page para mejorar tu posicionamiento web. Link building, redes sociales, marketing de contenidos y más técnicas efectivas.",
       "image": "https://hayasmarketing.com/seo-off-page-hero.jpg",
       "author": {
-        "@type": "Organization",
-        "name": "Hayas Marketing"
+        "@type": "Person",
+        "name": "Rubén Reyero",
+        "url": "https://hayasmarketing.com/es/autor/ruben-reyero"
       },
       "publisher": {
         "@type": "Organization",
         "name": "Hayas Marketing",
+        "@id": "https://hayasmarketing.com/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://hayasmarketing.com/logo.png"
+          "url": "https://hayasmarketing.com/lovable-uploads/hayas-logo.webp",
+          "width": 300,
+          "height": 100
         }
       },
-      "datePublished": "2025-01-17",
-      "dateModified": "2025-01-17",
+      "datePublished": "2025-01-17T00:00:00+01:00",
+      "dateModified": "2025-01-17T00:00:00+01:00",
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://hayasmarketing.com/blog/seo-off-page-estrategias-practicas-posicionamiento"
+        "@id": "https://hayasmarketing.com/es/blog/seo-off-page-estrategias-practicas-posicionamiento"
       }
     }
   };

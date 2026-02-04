@@ -32,17 +32,21 @@ const BlogBrandingProcesoTecnicasNaming = () => {
       "publisher": {
         "@type": "Organization",
         "name": "Hayas Marketing",
+        "@id": "https://hayasmarketing.com/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://hayasmarketing.com/logo.png"
+          "url": "https://hayasmarketing.com/lovable-uploads/hayas-logo.webp",
+          "width": 300,
+          "height": 100
         }
       },
-      "datePublished": "2025-01-14",
+      "datePublished": "2025-01-14T00:00:00+01:00",
+      "dateModified": "2025-01-14T00:00:00+01:00",
       "image": brandingHeroImage,
       "keywords": "técnicas de naming, branding proceso, naming empresas, identidad corporativa, arquetipos Jung, ADN marca",
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://hayasmarketing.com/blog/branding-proceso-tecnicas-naming"
+        "@id": "https://hayasmarketing.com/es/blog/branding-proceso-tecnicas-naming"
       }
     }
   };
