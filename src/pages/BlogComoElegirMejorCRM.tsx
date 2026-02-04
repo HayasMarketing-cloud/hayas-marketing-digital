@@ -26,15 +26,18 @@ const BlogComoElegirMejorCRM = () => {
       "publisher": {
         "@type": "Organization",
         "name": "Hayas Marketing",
+        "@id": "https://hayasmarketing.com/#organization",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://hayasmarketing.com/logo.png"
+          "url": "https://hayasmarketing.com/lovable-uploads/hayas-logo.webp",
+          "width": 300,
+          "height": 100
         }
       },
-      "datePublished": "2025-01-21",
-      "dateModified": "2025-01-21",
+      "datePublished": "2025-01-21T00:00:00+01:00",
+      "dateModified": "2025-01-21T00:00:00+01:00",
       "image": "/crm-sistema-gestion-clientes-hero.jpg",
-      "mainEntityOfPage": "https://hayasmarketing.com/blog/como-elegir-mejor-crm-empresa-organizacion"
+      "mainEntityOfPage": "https://hayasmarketing.com/es/blog/como-elegir-mejor-crm-empresa-organizacion"
     },
     mainKeyword: 'cómo elegir CRM',
     secondaryKeywords: ['selección CRM', 'mejor CRM empresa', 'implementación CRM', 'ROI CRM']

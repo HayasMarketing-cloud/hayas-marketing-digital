@@ -5,8 +5,8 @@ const BlogSeoInteligenciaArtificial = () => {
   const metadata = {
     title: "SEO e inteligencia artificial: cómo la IA está revolucionando el posicionamiento web",
     description: "Descubre cómo la inteligencia artificial está transformando el SEO y conoce las mejores herramientas de IA para optimizar tu posicionamiento web en 2025.",
-    date: "15 de enero de 2025",
-    author: "Hayas Marketing",
+    date: "2025-01-15",
+    author: "Rubén Reyero",
     category: "SEO y Marketing Digital",
     readTime: "8 min",
     tags: ["SEO", "Inteligencia Artificial", "Herramientas IA", "Posicionamiento Web", "Marketing Digital"],
@@ -18,15 +18,23 @@ const BlogSeoInteligenciaArtificial = () => {
       "headline": "SEO e inteligencia artificial: cómo la IA está revolucionando el posicionamiento web",
       "description": "Descubre cómo la inteligencia artificial está transformando el SEO y conoce las mejores herramientas de IA para optimizar tu posicionamiento web en 2025.",
       "author": {
-        "@type": "Organization",
-        "name": "Hayas Marketing"
+        "@type": "Person",
+        "name": "Rubén Reyero",
+        "url": "https://hayasmarketing.com/es/autor/ruben-reyero"
       },
       "publisher": {
-        "@type": "Organization", 
-        "name": "Hayas Marketing"
+        "@type": "Organization",
+        "name": "Hayas Marketing",
+        "@id": "https://hayasmarketing.com/#organization",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://hayasmarketing.com/lovable-uploads/hayas-logo.webp",
+          "width": 300,
+          "height": 100
+        }
       },
-      "datePublished": "2025-01-15",
-      "dateModified": "2025-01-15"
+      "datePublished": "2025-01-15T00:00:00+01:00",
+      "dateModified": "2025-01-15T00:00:00+01:00"
     }
   };
 

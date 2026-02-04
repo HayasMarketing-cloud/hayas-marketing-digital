@@ -352,7 +352,70 @@ export const generateHowToSchema = (params: {
   return schema;
 };
 
-// Helper function to generate Article Schema (FASE 6)
+// Helper function to format date to ISO 8601 with timezone
+export const formatDateISO8601 = (date: string): string => {
+  // Europa/Madrid timezone offset (+01:00 for standard time, +02:00 for daylight saving)
+  // Using +01:00 as default for consistency
+  return `${date}T00:00:00+01:00`;
+};
+
+// Author URL mapping for known authors
+const authorUrls: Record<string, string | undefined> = {
+  'Rubén Reyero': '/es/autor/ruben-reyero',
+  'Ruben Reyero': '/es/autor/ruben-reyero',
+  'Equipo Hayas Marketing': undefined,
+  'Hayas Marketing': undefined,
+};
+
+// Helper function to create blog article schema with proper formatting
+// Fixes: author as Person with URL, ISO 8601 dates, absolute logo URL
+export const createBlogArticleSchema = (params: {
+  headline: string;
+  description: string;
+  canonical: string;
+  authorName: string;
+  datePublished: string; // Format: YYYY-MM-DD
+  dateModified?: string; // Format: YYYY-MM-DD (defaults to datePublished)
+  image?: string;
+}) => {
+  const { headline, description, canonical, authorName, datePublished, dateModified, image } = params;
+  
+  const authorUrl = authorUrls[authorName];
+  const formattedDatePublished = formatDateISO8601(datePublished);
+  const formattedDateModified = formatDateISO8601(dateModified || datePublished);
+  
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": headline,
+    "description": description,
+    "image": image?.startsWith('http') ? image : (image ? `https://hayasmarketing.com${image}` : undefined),
+    "author": {
+      "@type": "Person",
+      "name": authorName,
+      ...(authorUrl && { "url": `https://hayasmarketing.com${authorUrl}` })
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Hayas Marketing",
+      "@id": "https://hayasmarketing.com/#organization",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://hayasmarketing.com/lovable-uploads/hayas-logo.webp",
+        "width": 300,
+        "height": 100
+      }
+    },
+    "datePublished": formattedDatePublished,
+    "dateModified": formattedDateModified,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://hayasmarketing.com${canonical}`
+    }
+  };
+};
+
+// Helper function to generate Article Schema (FASE 6) - Legacy version
 export const generateArticleSchema = (params: {
   headline: string;
   description: string;
@@ -382,10 +445,18 @@ export const generateArticleSchema = (params: {
       ...(author.url && { url: `https://hayasmarketing.com${author.url}` })
     },
     publisher: {
-      "@id": "https://hayasmarketing.com/#organization"
+      "@type": "Organization",
+      "name": "Hayas Marketing",
+      "@id": "https://hayasmarketing.com/#organization",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://hayasmarketing.com/lovable-uploads/hayas-logo.webp",
+        "width": 300,
+        "height": 100
+      }
     },
-    datePublished: datePublished,
-    dateModified: dateModified,
+    datePublished: formatDateISO8601(datePublished),
+    dateModified: formatDateISO8601(dateModified),
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": `https://hayasmarketing.com${canonical}`
