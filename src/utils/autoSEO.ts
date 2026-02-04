@@ -71,7 +71,12 @@ function mapToSEOCategory(category?: RouteDefinition['category']): EnhancedPageS
     'kit-digital': 'kit-digital',
     'tool': 'main', // Tools se mapean a main
     'admin': 'main', // Admin se mapea a main
-    'auth': 'main' // Auth se mapea a main
+    'auth': 'main', // Auth se mapea a main
+    'legal': 'main', // Legal se mapea a main
+    'comparison': 'main', // Comparison se mapea a main
+    'author': 'main', // Author se mapea a main
+    'contact': 'main', // Contact se mapea a main
+    'conversion': 'main' // Conversion se mapea a main
   };
   
   return mapping[category || 'main'];
@@ -146,7 +151,12 @@ function generateDescription(segments: string[], category?: RouteDefinition['cat
     'kit-digital': `${readable} con el Kit Digital. Digitaliza tu empresa con las ayudas del programa Kit Digital de España.`,
     tool: `${readable} - Herramienta gratuita de Hayas Marketing para optimizar tu estrategia de marketing digital.`,
     admin: '',
-    auth: ''
+    auth: '',
+    legal: `${readable} - Información legal de Hayas Marketing.`,
+    comparison: `${readable} - Comparativa detallada para elegir la mejor opción para tu negocio.`,
+    author: `${readable} - Autor y experto en marketing digital de Hayas Marketing.`,
+    contact: `${readable} - Contacta con Hayas Marketing para resolver tus dudas.`,
+    conversion: ''
   };
   
   const templatesEN: Record<RouteDefinition['category'], string> = {
@@ -158,7 +168,12 @@ function generateDescription(segments: string[], category?: RouteDefinition['cat
     'kit-digital': `${readable} with Kit Digital. Digitize your business with Spain's Kit Digital program.`,
     tool: `${readable} - Free tool by Hayas Marketing to optimize your digital marketing strategy.`,
     admin: '',
-    auth: ''
+    auth: '',
+    legal: `${readable} - Legal information by Hayas Marketing.`,
+    comparison: `${readable} - Detailed comparison to choose the best option for your business.`,
+    author: `${readable} - Author and digital marketing expert at Hayas Marketing.`,
+    contact: `${readable} - Contact Hayas Marketing to resolve your questions.`,
+    conversion: ''
   };
   
   const templates = isEnglish ? templatesEN : templatesES;
@@ -186,7 +201,12 @@ function generateKeywords(segments: string[], category?: RouteDefinition['catego
     'kit-digital': ['kit digital', 'ayudas digitales', 'subvención'],
     tool: ['herramienta gratuita', 'calculadora', 'generador'],
     admin: [],
-    auth: []
+    auth: [],
+    legal: ['política privacidad', 'aviso legal', 'cookies'],
+    comparison: ['comparativa', 'vs', 'mejor opción'],
+    author: ['autor', 'experto', 'equipo'],
+    contact: ['contacto', 'formulario', 'consulta'],
+    conversion: []
   };
   
   return [
@@ -265,7 +285,12 @@ function getSchemaType(category?: RouteDefinition['category']): EnhancedPageSEOD
     'kit-digital': 'WebPage',
     tool: 'WebPage',
     admin: 'WebPage',
-    auth: 'WebPage'
+    auth: 'WebPage',
+    legal: 'WebPage',
+    comparison: 'WebPage',
+    author: 'AboutPage',
+    contact: 'WebPage',
+    conversion: 'WebPage'
   };
   
   return schemaTypes[category || 'main'];

@@ -5,7 +5,7 @@
 
 export interface RouteDefinition {
   path: string;
-  category: 'main' | 'service' | 'solution' | 'blog' | 'case-study' | 'kit-digital' | 'tool' | 'admin' | 'auth';
+  category: 'main' | 'service' | 'solution' | 'blog' | 'case-study' | 'kit-digital' | 'tool' | 'admin' | 'auth' | 'legal' | 'comparison' | 'author' | 'contact' | 'conversion';
   isIndexable: boolean;
   priority: number;
   changefreq: 'daily' | 'weekly' | 'monthly' | 'yearly';

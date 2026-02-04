@@ -1,10 +1,10 @@
 # Robots.txt para Hayas Marketing - Producción
-# Actualizado: 2025-02-03
+# Actualizado: 2026-02-04
 
 User-agent: *
 Allow: /
 
-# Sitemap
+# Sitemap Index (bilingüe)
 Sitemap: https://hayasmarketing.com/sitemap.xml
 
 # LLM Context Files - Para citabilidad en buscadores IA
@@ -63,6 +63,8 @@ Disallow: /admin/seo/sitemap
 Disallow: /es/gracias
 Disallow: /es/gracias_por_agendar_reunion
 Disallow: /es/gracias_por_agendar_reunión
+Disallow: /en/thank-you
+Disallow: /en/thank-you-meeting
 
 # Bloquear contenido eliminado
 Disallow: /es/contenido-eliminado

@@ -1,7 +1,7 @@
 # Hayas Marketing - Full Content for AI Citation
 # Este archivo contiene resúmenes completos de artículos para mejorar citabilidad en LLMs
 
-> Última actualización: 2025-02-03
+> Última actualización: 2026-02-04
 > Website: https://hayasmarketing.com
 > Autor principal: Rubén Reyero, CEO & Founder
 

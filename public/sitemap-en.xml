@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- MAIN PAGES -->
+  <url>
+    <loc>https://hayasmarketing.com/en</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hayasmarketing.com/es"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/en/about-us</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/nosotros"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/about-us"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/en/contact</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/contacto"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/contact"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/en/services</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/servicios"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/services"/>
+  </url>
+
+  <!-- SOLUTIONS -->
+  <url>
+    <loc>https://hayasmarketing.com/en/solutions/boost-your-brand</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/soluciones/impulsa-tu-marca"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/solutions/boost-your-brand"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/en/solutions/connect-with-customers</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/soluciones/conecta-con-tus-clientes"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/solutions/connect-with-customers"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/en/solutions/activate-sales</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/soluciones/activa-tus-ventas"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/solutions/activate-sales"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/en/solutions/activate-digital-strategy</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/soluciones/activa-tu-estrategia-digital"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/solutions/activate-digital-strategy"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/en/solutions/ai-marketing</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/soluciones/ia-marketing"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/solutions/ai-marketing"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/en/solutions/marketing-visibility</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/soluciones/marketing-visibilidad"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/solutions/marketing-visibility"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/en/solutions/lead-generation</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/soluciones/captacion-leads"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/solutions/lead-generation"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/en/solutions/marketing-automation</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/soluciones/automatizacion-marketing"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/solutions/marketing-automation"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/en/solutions/crm-client-management</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/soluciones/gestion-clientes-crm"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/solutions/crm-client-management"/>
+  </url>
+
+  <!-- SERVICES -->
+  <url>
+    <loc>https://hayasmarketing.com/en/services/online-store</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/servicios/tienda-online"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/services/online-store"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/en/services/web-design</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/servicios/diseno-web"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/services/web-design"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/en/services/web-design/hosting-maintenance</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/servicios/diseno-web/alojamiento-mantenimiento"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/services/web-design/hosting-maintenance"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/en/services/seo-positioning</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/servicios/seo-posicionamiento"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/services/seo-positioning"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/en/services/brand-creation</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/servicios/creacion-marca"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/services/brand-creation"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/en/services/social-media-management</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/servicios/gestion-redes-sociales"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/services/social-media-management"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/en/services/social-media-advertising</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/servicios/publicidad-redes-sociales"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/services/social-media-advertising"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/en/services/google-ads-advertising</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/servicios/publicidad-google-ads"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/services/google-ads-advertising"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/en/services/email-marketing-automation</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/servicios/email-marketing-automatizaciones"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/services/email-marketing-automation"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/en/services/strategic-consulting-analytics</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/servicios/consultoria-estrategica-analitica"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/services/strategic-consulting-analytics"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/en/services/ai-training</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/servicios/formacion-ia"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/services/ai-training"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/en/services/ai-process-integration</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/servicios/integraciones-ia-procesos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/services/ai-process-integration"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/en/services/content-strategy</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/servicios/estrategia-contenidos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/services/content-strategy"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/en/services/content-localization</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/servicios/localizacion-contenidos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/services/content-localization"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/en/services/inbound-marketing-campaigns</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/servicios/campanas-inbound-marketing"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/services/inbound-marketing-campaigns"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/en/services/ai-assistant</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/servicios/asistente-ia"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/services/ai-assistant"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/en/services/direct-marketing</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/servicios/marketing-directo"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/services/direct-marketing"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/en/services/crm-implementation</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/servicios/implantacion-crm"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/services/crm-implementation"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/en/services/crm-administration</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/servicios/administracion-crm"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/services/crm-administration"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/en/services/sales-process-automation</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/servicios/automatizacion-procesos-ventas"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/services/sales-process-automation"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/en/services/lead-generation-clients</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/servicios/captacion-leads-clientes"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/services/lead-generation-clients"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/en/services/funnel-implementation</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/servicios/implementacion-funnel"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/services/funnel-implementation"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/en/services/crm-customer-management</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/soluciones/gestion-clientes-crm"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/services/crm-customer-management"/>
+  </url>
+
+  <!-- KIT DIGITAL -->
+  <url>
+    <loc>https://hayasmarketing.com/en/kit-digital</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/kit-digital"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/kit-digital"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/en/kit-digital/basic-internet-presence</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/kit-digital/presencia-basica-internet"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/kit-digital/basic-internet-presence"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/en/kit-digital/crm-client-management</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/kit-digital/gestion-clientes-crm"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/kit-digital/crm-client-management"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/en/kit-digital/social-media-management</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/kit-digital/gestion-red-social"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/kit-digital/social-media-management"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/en/kit-digital/advanced-presence-seo</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/kit-digital/presencia-avanzada-seo"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/kit-digital/advanced-presence-seo"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/en/kit-consulting</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/kit-consulting"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/kit-consulting"/>
+  </url>
+
+  <!-- CASE STUDIES HUB -->
+  <url>
+    <loc>https://hayasmarketing.com/en/case-studies</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/casos-exito"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/case-studies"/>
+  </url>
+
+  <!-- BLOG -->
+  <url>
+    <loc>https://hayasmarketing.com/en/blog</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/blog"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/blog"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/en/blog/chatbots-for-websites</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/blog/chatbots-para-paginas-web"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/blog/chatbots-for-websites"/>
+  </url>
+
+  <!-- COMPARISONS -->
+  <url>
+    <loc>https://hayasmarketing.com/en/comparison/hubspot-vs-go-high-level</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/comparativa/hubspot-vs-go-high-level"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/comparison/hubspot-vs-go-high-level"/>
+  </url>
+
+  <!-- CONTACT PAGES -->
+  <url>
+    <loc>https://hayasmarketing.com/en/schedule-meeting</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/en/request-consultation</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- TOOLS -->
+  <url>
+    <loc>https://hayasmarketing.com/en/tools/whatsapp-link-generator</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/herramientas/generador-whatsapp-link"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/tools/whatsapp-link-generator"/>
+  </url>
+
+  <!-- LEGAL -->
+  <url>
+    <loc>https://hayasmarketing.com/en/legal/privacy-policy</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/legal/politica-privacidad"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/legal/privacy-policy"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/en/legal/cookie-policy</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/legal/politica-cookies"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/legal/cookie-policy"/>
+  </url>
+</urlset>
