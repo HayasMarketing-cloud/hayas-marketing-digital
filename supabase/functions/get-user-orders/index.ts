@@ -42,7 +42,8 @@ serve(async (req) => {
       logStep("ERROR: No user found");
       throw new Error("Authentication failed");
     }
-    logStep("User authenticated", { userId: user.id });
+    const maskedUserId = user.id.substring(0, 8) + '...';
+    logStep("User authenticated", { userId: maskedUserId });
 
     // Buscar customer
     const { data: customer } = await supabaseClient

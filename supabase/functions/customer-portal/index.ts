@@ -54,7 +54,8 @@ serve(async (req) => {
       logStep("ERROR: User has no email");
       throw new Error("Authentication failed");
     }
-    logStep("User authenticated", { userId: user.id });
+    const maskedUserId = user.id.substring(0, 8) + '...';
+    logStep("User authenticated", { userId: maskedUserId });
 
     // Buscar customer en la base de datos
     const { data: customer, error: customerError } = await supabaseClient
