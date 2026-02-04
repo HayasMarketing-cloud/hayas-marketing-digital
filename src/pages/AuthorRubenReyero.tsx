@@ -115,8 +115,15 @@ const authorSchema = {
   }
 };
 
-// Artículos de Rubén - Actualizar cuando se asignen posts al autor
 const authorArticles = [
+  {
+    slug: 'la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing',
+    title: 'La Inteligencia Artificial (IA) y su aplicación en Marketing',
+    excerpt: 'En un mundo donde la tecnología avanza a pasos agigantados, la IA ha emergido como una herramienta transformadora en el marketing digital.',
+    date: '2024-12-15',
+    readTime: '15 min',
+    category: 'Inteligencia Artificial'
+  },
   {
     slug: 'decision-marketing-confianza',
     title: 'La decisión de confiar en una agencia de marketing',
@@ -133,7 +140,6 @@ const authorArticles = [
     readTime: '12 min',
     category: 'Inteligencia Artificial'
   },
-  // Añadir más artículos según se asignen
 ];
 
 const AuthorRubenReyero: React.FC = () => {
