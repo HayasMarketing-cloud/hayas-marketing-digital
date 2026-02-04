@@ -1,105 +1,173 @@
 
-# Plan: Actualizar Autoría de Posts del Blog a Rubén Reyero
+# Plan: Corregir Schemas JSON-LD para Rich Results Test
 
-## Resumen Ejecutivo
+## Resumen del Problema
 
-Actualizar los 22 posts del blog existentes para que aparezcan firmados por **Rubén Reyero**, activando el enlace clickeable hacia la página de autor y mejorando el E-E-A-T del contenido.
+El analisis de Google Rich Results Test muestra tres warnings en los schemas JSON-LD de los articulos:
+
+1. **author** - Tipo Organization sin URL en lugar de Person con URL
+2. **datePublished/dateModified** - Formato `2025-01-15` sin timezone (deberia ser ISO 8601 completo)
+3. **publisher.logo** - URLs relativas en lugar de absolutas
+
+## Archivos Afectados
+
+### Articulos con author como Organization (requieren migracion a Person):
+- `BlogIARedesSociales.tsx`
+- `BlogSeoInteligenciaArtificial.tsx`
+- `BlogReCommerceEconomiaCircular.tsx`
+- `BlogSeoOffPage.tsx`
+- `BlogKitDigitalMarketing.tsx`
+- `BlogPost.tsx` (3 posts internos: estrategia-marketing-contenidos, mantenimiento-wordpress, tiktok-marketing)
+
+### Todos los archivos Blog*.tsx (27 archivos):
+Necesitan correccion de formato de fechas.
 
 ---
 
-## Cambios a Realizar
+## Solucion Propuesta
 
-### Por cada archivo de blog (22 archivos)
+### Fase 1: Crear Helper Centralizado para Schemas de Articulos
 
-**Cambio 1: Campo `author` en metadata**
-```tsx
-// ANTES
-author: "Equipo Hayas Marketing",
+Crear una funcion `createBlogArticleSchema()` en `src/data/seoData.ts` que:
 
-// DESPUÉS  
-author: "Rubén Reyero",
+- Genere author como Person con URL automatica para autores conocidos
+- Formatee fechas en ISO 8601 completo con timezone Europa/Madrid
+- Use URL absoluta para logo del publisher
+- Reference correctamente la Organization con @id
+
+```text
++----------------------------------+
+|  createBlogArticleSchema()       |
++----------------------------------+
+| - headline                       |
+| - description                    |
+| - canonical                      |
+| - author (name)                  |
+| - datePublished (YYYY-MM-DD)     |
+| - dateModified (YYYY-MM-DD)      |
++----------------------------------+
+           |
+           v
++----------------------------------+
+|  Output: Schema con              |
++----------------------------------+
+| - author.@type: Person           |
+| - author.url: /autor/...         |
+| - datePublished: ISO 8601+TZ     |
+| - publisher: @id reference       |
+| - logo: URL absoluta             |
++----------------------------------+
 ```
 
-**Cambio 2: Schema.org `structuredData.author`**
-```tsx
-// ANTES
-"author": {
-  "@type": "Organization",
-  "name": "Hayas Marketing"
-}
+### Fase 2: Actualizar Articulos Prioritarios
 
-// DESPUÉS
-"author": {
-  "@type": "Person",
-  "name": "Rubén Reyero",
-  "url": "https://hayasmarketing.com/es/autor/ruben-reyero"
+Corregir los 8 archivos mas criticos con author Organization:
+
+1. **BlogIARedesSociales.tsx** - Cambiar author a Person + Rubén Reyero
+2. **BlogSeoInteligenciaArtificial.tsx** - Cambiar author a Person + Rubén Reyero
+3. **BlogReCommerceEconomiaCircular.tsx** - Cambiar author a Person + Rubén Reyero
+4. **BlogSeoOffPage.tsx** - Cambiar author a Person + Rubén Reyero
+5. **BlogKitDigitalMarketing.tsx** - Cambiar author a Person + Rubén Reyero
+6. **BlogPost.tsx** - Actualizar los 3 schemas internos
+
+### Fase 3: Corregir Formato de Fechas en Todos los Articulos
+
+Actualizar el formato de `datePublished` y `dateModified`:
+
+**Antes:**
+```javascript
+"datePublished": "2025-01-15"
+```
+
+**Despues:**
+```javascript
+"datePublished": "2025-01-15T00:00:00+01:00"
+```
+
+### Fase 4: Corregir URLs del Publisher
+
+Actualizar logo URL en todos los schemas:
+
+**Antes:**
+```javascript
+"logo": {
+  "@type": "ImageObject",
+  "url": "/logo.png"
 }
+```
+
+**Despues:**
+```javascript
+"logo": {
+  "@type": "ImageObject",
+  "url": "https://hayasmarketing.com/lovable-uploads/hayas-logo.webp"
+}
+```
+
+---
+
+## Detalles Tecnicos
+
+### Helper para Formato de Fechas ISO 8601
+
+```typescript
+// Convierte "2025-01-15" a "2025-01-15T00:00:00+01:00"
+const formatDateISO8601 = (date: string): string => {
+  // Europa/Madrid timezone offset
+  return `${date}T00:00:00+01:00`;
+};
+```
+
+### Mapeo de Autores a URLs
+
+```typescript
+const authorUrls: Record<string, string> = {
+  'Rubén Reyero': '/es/autor/ruben-reyero',
+  'Ruben Reyero': '/es/autor/ruben-reyero',
+  'Equipo Hayas Marketing': undefined, // Sin pagina de autor
+  'Hayas Marketing': undefined,
+};
+```
+
+### Schema de Publisher Correcto
+
+```typescript
+const publisherSchema = {
+  "@type": "Organization",
+  "name": "Hayas Marketing",
+  "@id": "https://hayasmarketing.com/#organization",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://hayasmarketing.com/lovable-uploads/hayas-logo.webp",
+    "width": 300,
+    "height": 100
+  }
+};
 ```
 
 ---
 
 ## Archivos a Modificar
 
-| # | Archivo | Tema |
-|---|---------|------|
-| 1 | `BlogABMAccountBasedMarketing.tsx` | Account-Based Marketing |
-| 2 | `BlogAutomatizacionMarketing.tsx` | Automatización de Marketing |
-| 3 | `BlogBrandingProcesoTecnicasNaming.tsx` | Branding y Naming |
-| 4 | `BlogCalculoInversionMarketing.tsx` | Cálculo de inversión |
-| 5 | `BlogChatbotsParaPaginasWeb.tsx` | Chatbots para webs |
-| 6 | `BlogComoElegirMejorCRM.tsx` | Cómo elegir un CRM |
-| 7 | `BlogConfiguracionEmailMarketingCumplimiento.tsx` | Email Marketing |
-| 8 | `BlogCrmQueEsBeneficios.tsx` | CRM: Qué es |
-| 9 | `BlogDecisionMarketing.tsx` | Decision Marketing |
-| 10 | `BlogEmailMarketingHubSpot.tsx` | Email con HubSpot |
-| 11 | `BlogFunnelConversionB2B.tsx` | Funnel B2B |
-| 12 | `BlogGobernanzaIAEmpresas.tsx` | Gobernanza IA |
-| 13 | `BlogGuiaPrivacidadHuellaDigital.tsx` | Privacidad digital |
-| 14 | `BlogHuellaDigitalDerechoOlvido.tsx` | Derecho al olvido |
-| 15 | `BlogLeadScoringCalificacionLeads.tsx` | Lead Scoring |
-| 16 | `BlogMarketingGlobalInternacionalizacion.tsx` | Marketing Global |
-| 17 | `BlogPerfilClienteIdeal.tsx` | Buyer Persona |
-| 18 | `BlogPerfilClienteIdealICP.tsx` | ICP |
-| 19 | `BlogSeoOnPage.tsx` | SEO On-Page |
-| 20 | `BlogWeb30.tsx` | Web 3.0 |
-| 21 | `BusinessModelCanvasEstrategiaMarketing.tsx` | Business Model Canvas |
-| 22 | `BlogInteligenciaArtificialMarketing.tsx` | IA en Marketing |
+| Archivo | Cambios |
+|---------|---------|
+| `src/data/seoData.ts` | Agregar `createBlogArticleSchema()` y `formatDateISO8601()` |
+| `src/pages/BlogIARedesSociales.tsx` | Author Person + fecha ISO |
+| `src/pages/BlogSeoInteligenciaArtificial.tsx` | Author Person + fecha ISO |
+| `src/pages/BlogReCommerceEconomiaCircular.tsx` | Author Person + fecha ISO |
+| `src/pages/BlogSeoOffPage.tsx` | Author Person + fecha ISO |
+| `src/pages/BlogKitDigitalMarketing.tsx` | Author Person + fecha ISO |
+| `src/pages/BlogPost.tsx` | 3 schemas internos |
+| Otros 20+ Blog*.tsx | Formato fechas ISO |
 
 ---
 
 ## Resultado Esperado
 
-1. Nombre del autor clickeable en cada post, redirigiendo a `/es/autor/ruben-reyero`
-2. Schema.org identifica correctamente a una Persona como autora (mejor E-E-A-T)
-3. Google asocia el contenido con el perfil de autor establecido
+Tras implementar estos cambios:
 
----
-
-## Siguiente Fase: Optimizaciones GEO para Blog
-
-Una vez completada la actualización de autoría, las optimizaciones priorizadas serán:
-
-1. **Mejorar Schema Person del autor** con `sameAs`, `knowsAbout`, `hasCredential`
-2. **Implementar SpeakableSpecification** en artículos para búsquedas por voz
-3. **Crear llms-full.txt** con contenido completo de artículos para citabilidad IA
-4. **Entity linking** con URLs de Wikidata en campos `mentions`
-
----
-
-## Sección Técnica
-
-### Lógica existente en BlogPostTemplate.tsx
-
-```tsx
-const getAuthorRoute = (author: string): string | null => {
-  const authorRoutes: Record<string, string> = {
-    'Rubén Reyero': '/es/autor/ruben-reyero',
-    'Ruben Reyero': '/es/autor/ruben-reyero',
-  };
-  return authorRoutes[author] || null;
-};
-```
-
-### Ejecución
-
-Los 22 archivos se modificarán en paralelo para eficiencia máxima, aplicando exactamente 2 cambios por archivo (campo author + structuredData.author).
+1. Google Rich Results Test validara sin warnings
+2. Author aparecera como Person con URL al perfil
+3. Fechas cumpliran formato ISO 8601 con timezone
+4. Publisher logo con URL absoluta valida
+5. Mejora en elegibilidad para rich snippets de articulos
