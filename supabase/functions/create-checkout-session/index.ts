@@ -103,7 +103,8 @@ serve(async (req) => {
       
       if (!userError && userData.user) {
         user = userData.user;
-        logStep("User authenticated", { userId: user.id });
+        const maskedUserId = user.id.substring(0, 8) + '...';
+        logStep("User authenticated", { userId: maskedUserId });
 
         // Buscar o crear customer en la base de datos
         const { data: existingCustomer } = await supabaseClient
