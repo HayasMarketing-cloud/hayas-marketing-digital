@@ -264,21 +264,21 @@ const AuthorRubenReyero: React.FC = () => {
               <h2 className="text-2xl font-bold text-foreground mb-6">Sobre mí</h2>
               <div className="text-muted-foreground space-y-4 author-bio">
                 <p>
-                  Soy fundador y CEO de <strong className="text-foreground">Hayas Marketing</strong>, 
-                  una agencia especializada en transformación digital y marketing estratégico. 
-                  Con más de 15 años de experiencia en el sector, ayudo a empresas a crecer 
-                  implementando soluciones de marketing que generan resultados medibles.
+                  Soy fundador y CEO de <strong className="text-foreground">Hayas Marketing</strong>. 
+                  Desde hace más de 15 años trabajo en marketing digital y estrategia ayudando a empresas 
+                  a crecer con menos ruido, más criterio y mejores decisiones.
                 </p>
                 <p>
-                  Mi enfoque combina la <strong className="text-foreground">estrategia tradicional de marketing</strong> con 
-                  las últimas innovaciones en <strong className="text-foreground">inteligencia artificial</strong> y 
-                  automatización. Creo firmemente que la tecnología debe estar al servicio de 
-                  los objetivos de negocio, no al revés.
+                  A lo largo de mi trayectoria he visto cómo el marketing se ha llenado de herramientas, 
+                  canales y automatizaciones, sin que eso garantice mejores resultados. Por eso mi trabajo 
+                  se centra en diseñar <strong className="text-foreground">sistemas de marketing claros</strong>, 
+                  donde la tecnología —incluida la <strong className="text-foreground">inteligencia artificial</strong>— 
+                  refuerza la estrategia en lugar de sustituirla.
                 </p>
                 <p>
-                  En este blog comparto reflexiones, guías prácticas y análisis sobre temas 
-                  que considero relevantes para cualquier profesional del marketing o empresario 
-                  que quiera mantenerse al día en un sector en constante evolución.
+                  Este blog es un espacio donde comparto reflexiones, aprendizajes y análisis sobre marketing, 
+                  IA y negocio, orientados a profesionales y equipos que quieren construir relaciones sólidas, 
+                  marcas coherentes y crecimiento sostenible.
                 </p>
               </div>
             </div>
