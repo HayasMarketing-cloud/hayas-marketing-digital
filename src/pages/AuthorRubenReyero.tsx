@@ -112,9 +112,56 @@ const authorSchema = {
   "alumniOf": {
     "@type": "Organization",
     "name": "Universidad Complutense de Madrid"
+  },
+  // Speakable para búsqueda por voz (Google Assistant, Siri, Alexa)
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".author-bio", ".author-expertise"]
   }
 };
 
+// FAQs sobre el autor para SEO y featured snippets
+const authorFaqs = [
+  {
+    question: "¿Quién es Rubén Reyero?",
+    answer: "Rubén Reyero es el CEO y fundador de Hayas Marketing, una agencia especializada en transformación digital y marketing estratégico. Con más de 15 años de experiencia, ayuda a empresas a crecer mediante estrategias de marketing basadas en datos e inteligencia artificial."
+  },
+  {
+    question: "¿Cuál es la especialidad de Rubén Reyero en marketing?",
+    answer: "Su especialidad combina marketing digital estratégico con inteligencia artificial aplicada. Es experto en implementación de CRM (HubSpot, GoHighLevel), automatización de marketing, SEO, estrategia de contenidos y transformación digital de procesos comerciales."
+  },
+  {
+    question: "¿Dónde puedo leer artículos de Rubén Reyero?",
+    answer: "Rubén publica regularmente en el blog de Hayas Marketing sobre temas de marketing digital, inteligencia artificial, CRM, SEO y estrategia empresarial. También comparte contenido en su perfil de LinkedIn."
+  }
+];
+
+// Keywords SEO para la página de autor
+const authorKeywords = [
+  "Rubén Reyero",
+  "CEO Hayas Marketing",
+  "experto marketing digital España",
+  "consultor transformación digital",
+  "especialista inteligencia artificial marketing",
+  "estratega CRM HubSpot",
+  "autor blog marketing"
+];
+
+// Entidades semánticas (Wikidata) para about/mentions
+const aboutEntities = [
+  "https://www.wikidata.org/wiki/Q11660", // Inteligencia Artificial
+  "https://www.wikidata.org/wiki/Q180711", // Marketing Digital
+  "https://www.wikidata.org/wiki/Q131723", // CRM
+  "https://www.wikidata.org/wiki/Q180165"  // SEO
+];
+
+const mentionEntities = [
+  "https://www.wikidata.org/wiki/Q51789805", // HubSpot
+  "https://www.wikidata.org/wiki/Q29",       // España
+  "https://www.wikidata.org/wiki/Q7889"      // Videojuego (para contexto de chatbots/IA)
+];
+
+// Artículos de Rubén
 const authorArticles = [
   {
     slug: 'la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing',
@@ -149,10 +196,15 @@ const AuthorRubenReyero: React.FC = () => {
     <>
       <Seo
         title="Rubén Reyero | CEO & Founder de Hayas Marketing"
-        description="Rubén Reyero es especialista en transformación digital, marketing estratégico e inteligencia artificial. CEO y fundador de Hayas Marketing."
+        description="Rubén Reyero es especialista en transformación digital, marketing estratégico e inteligencia artificial aplicada al crecimiento empresarial. CEO y fundador de Hayas Marketing con más de 15 años de experiencia."
         canonical="/es/autor/ruben-reyero"
         structuredData={authorSchema}
         ogImage={AUTHOR_IMAGE}
+        keywords={authorKeywords}
+        inLanguage="es-ES"
+        about={aboutEntities}
+        mentions={mentionEntities}
+        faqs={authorFaqs}
       />
 
       <div className="min-h-screen bg-background">
@@ -196,7 +248,7 @@ const AuthorRubenReyero: React.FC = () => {
                 </div>
 
                 {/* Tags de expertise */}
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 author-expertise">
                   <Badge variant="secondary">Marketing Digital</Badge>
                   <Badge variant="secondary">Transformación Digital</Badge>
                   <Badge variant="secondary">Inteligencia Artificial</Badge>
@@ -210,7 +262,7 @@ const AuthorRubenReyero: React.FC = () => {
           <section className="max-w-4xl mx-auto mb-16">
             <div className="prose prose-lg max-w-none">
               <h2 className="text-2xl font-bold text-foreground mb-6">Sobre mí</h2>
-              <div className="text-muted-foreground space-y-4">
+              <div className="text-muted-foreground space-y-4 author-bio">
                 <p>
                   Soy fundador y CEO de <strong className="text-foreground">Hayas Marketing</strong>, 
                   una agencia especializada en transformación digital y marketing estratégico. 
