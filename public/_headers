@@ -83,6 +83,15 @@
 /robots.txt
   Cache-Control: public, max-age=3600, must-revalidate
   Content-Type: text/plain
+
+# LLM Context Files - Para citabilidad IA
+/llms.txt
+  Cache-Control: public, max-age=3600, must-revalidate
+  Content-Type: text/plain; charset=utf-8
+  
+/llms-full.txt
+  Cache-Control: public, max-age=3600, must-revalidate
+  Content-Type: text/plain; charset=utf-8
   
 /manifest.json
   Cache-Control: public, max-age=86400, must-revalidate
