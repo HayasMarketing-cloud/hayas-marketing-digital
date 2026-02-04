@@ -162,14 +162,21 @@ const Seo = ({
     }
 
     // Enhanced structured data with automatic additions
-    const created: HTMLScriptElement[] = [];
+    // Clear existing JSON-LD scripts first to prevent duplicates
+    const existingScripts = document.querySelectorAll('script[type="application/ld+json"][data-seo-managed]');
+    existingScripts.forEach(script => script.remove());
+    
+    const addJsonLdScript = (data: Record<string, any>, label?: string) => {
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.setAttribute('data-seo-managed', 'true');
+      if (label) script.setAttribute('data-schema-type', label);
+      script.textContent = JSON.stringify(data);
+      document.head.appendChild(script);
+    };
     
     // Always include organization schema
-    const orgScript = document.createElement('script');
-    orgScript.type = 'application/ld+json';
-    orgScript.text = JSON.stringify(hayasOrganizationSchema);
-    document.head.appendChild(orgScript);
-    created.push(orgScript);
+    addJsonLdScript(hayasOrganizationSchema, 'Organization');
 
     // Add breadcrumb schema if applicable
     if (canonical && canonical !== '/') {
@@ -200,11 +207,7 @@ const Seo = ({
           ]
         };
         
-        const breadcrumbScript = document.createElement('script');
-        breadcrumbScript.type = 'application/ld+json';
-        breadcrumbScript.text = JSON.stringify(breadcrumbSchema);
-        document.head.appendChild(breadcrumbScript);
-        created.push(breadcrumbScript);
+        addJsonLdScript(breadcrumbSchema, 'BreadcrumbList');
       }
     }
 
@@ -223,11 +226,7 @@ const Seo = ({
         }))
       };
       
-      const faqScript = document.createElement('script');
-      faqScript.type = 'application/ld+json';
-      faqScript.text = JSON.stringify(faqSchema);
-      document.head.appendChild(faqScript);
-      created.push(faqScript);
+      addJsonLdScript(faqSchema, 'FAQPage');
     }
 
     // Enhanced structured data with about and mentions
@@ -242,18 +241,13 @@ const Seo = ({
           ...(mentions && mentions.length > 0 && { mentions })
         };
         
-        const s = document.createElement('script');
-        s.type = 'application/ld+json';
-        s.text = JSON.stringify(enhancedData);
-        document.head.appendChild(s);
-        created.push(s);
+        addJsonLdScript(enhancedData, data['@type'] || 'StructuredData');
       });
     }
 
     return () => {
-      created.forEach((s) => {
-        if (document.head.contains(s)) document.head.removeChild(s);
-      });
+      // Only remove scripts if component is truly unmounting (not just re-rendering)
+      // This prevents React.StrictMode double-render from removing scripts prematurely
     };
   }, [title, description, keywords, canonical, structuredData, ogImage, ogType, inLanguage, about, mentions, faqs, robots]);
 

@@ -89,20 +89,16 @@ const BlogPostTemplate: React.FC<BlogPostTemplateProps> = ({
 
   // SpeakableSpecification para asistentes de voz (Alexa, Google Assistant, Siri)
   // Marca título, descripción y primera pregunta FAQ como contenido "leíble"
+  // Usamos selectores que realmente existen en el DOM
   const speakableSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "speakable": {
       "@type": "SpeakableSpecification",
       "cssSelector": [
-        "article h1",           // Título del artículo
-        "article .lead",        // Párrafo introductorio
-        ".faq-section h3:first-of-type", // Primera pregunta FAQ
-        ".faq-section p:first-of-type"   // Primera respuesta FAQ
-      ],
-      "xpath": [
-        "/html/body//article//h1",
-        "/html/body//article//p[1]"
+        "article header h1",                    // Título del artículo
+        "article .article-lead",                // Párrafo introductorio con clase
+        "[data-faq-section] h3:first-of-type"  // Primera pregunta FAQ
       ]
     },
     "url": currentUrl,
