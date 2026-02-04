@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Children, cloneElement, isValidElement } from 'react';
 import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -12,6 +12,40 @@ import RelatedServiceSection from './RelatedServiceSection';
 import { Badge } from '@/components/ui/badge';
 import { Calendar, Clock, User } from 'lucide-react';
 
+/**
+ * Añade la clase 'article-lead' al primer elemento <p> encontrado en el children
+ * para que el SpeakableSpecification pueda identificar el párrafo introductorio.
+ */
+function addArticleLeadClass(children: React.ReactNode): React.ReactNode {
+  let foundFirst = false;
+  
+  const processNode = (node: React.ReactNode): React.ReactNode => {
+    if (foundFirst || !isValidElement(node)) return node;
+    
+    // Si es un <p> directamente
+    if (node.type === 'p') {
+      foundFirst = true;
+      const existingClassName = (node.props as { className?: string }).className || '';
+      return cloneElement(node, {
+        ...node.props,
+        className: `${existingClassName} article-lead`.trim()
+      });
+    }
+    
+    // Si tiene children, buscar recursivamente
+    if (node.props && (node.props as { children?: React.ReactNode }).children) {
+      const processedChildren = Children.map(
+        (node.props as { children: React.ReactNode }).children,
+        processNode
+      );
+      return cloneElement(node, node.props, processedChildren);
+    }
+    
+    return node;
+  };
+  
+  return Children.map(children, processNode);
+}
 /**
  * Mapeo de autores a sus páginas de perfil
  * Devuelve null si el autor no tiene página dedicada
@@ -178,9 +212,9 @@ const BlogPostTemplate: React.FC<BlogPostTemplateProps> = ({
               {/* Hero image disabled - no images inside posts */}
             </header>
 
-            {/* Contenido del artículo */}
+            {/* Contenido del artículo - article-lead se añade automáticamente al primer <p> */}
             <article className="prose prose-lg max-w-none prose-headings:text-foreground prose-p:text-muted-foreground prose-a:text-primary prose-strong:text-foreground prose-ul:text-muted-foreground prose-ol:text-muted-foreground prose-li:text-muted-foreground">
-              {children}
+              {addArticleLeadClass(children)}
             </article>
 
             {/* Related Service Section */}
