@@ -12,7 +12,7 @@ const metadata = {
   date: "2025-01-19",
   readTime: "8 min de lectura",
   category: "Digitalización",
-  author: "Rubén Reyero",
+  author: "Hayas Marketing",
   tags: ["Kit Digital", "Digitalización", "Ayudas Públicas", "Marketing Digital", "Transformación Digital"],
   canonical: "/es/blog/kit-digital-marketing-guia-completa-2025",
   ogImage: "/kit-digital-marketing-hero.jpg",
@@ -27,9 +27,9 @@ const metadata = {
     "description": "Descubre todo sobre el Kit Digital: qué es, quién puede solicitarlo, cuánto dinero puedes conseguir y cómo aprovecharlo para digitalizar tu negocio antes del 31 de octubre de 2025.",
     "image": "https://hayasmarketing.com/kit-digital-marketing-hero.jpg",
     "author": {
-      "@type": "Person",
-      "name": "Rubén Reyero",
-      "url": "https://hayasmarketing.com/es/autor/ruben-reyero"
+      "@type": "Organization",
+      "name": "Hayas Marketing",
+      "@id": "https://hayasmarketing.com/#organization"
     },
     "publisher": {
       "@type": "Organization",
