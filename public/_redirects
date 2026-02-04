@@ -491,6 +491,14 @@
 /es/servicios/asistente-ia-atencion-cliente/  /es/servicios/asistente-ia  301
 
 # ========================================
+# ========================================
+# ARCHIVOS ESTÁTICOS - SERVIR DIRECTAMENTE
+# ========================================
+# Estos archivos deben servirse como están, sin pasar por la SPA
+/llms.txt  /llms.txt  200
+/llms-full.txt  /llms-full.txt  200
+
+# ========================================
 # SPA FALLBACK - DEBE IR AL FINAL
 # ========================================
 # Para React Router: todas las rutas no capturadas anteriormente
