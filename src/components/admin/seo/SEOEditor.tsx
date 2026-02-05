@@ -96,6 +96,14 @@ export const SEOEditor: React.FC<SEOEditorProps> = ({ path, onClose }) => {
 
   const handleCreateEnVersion = async () => {
     if (!seoPage?.data || path.startsWith('/en')) return;
+    if (!('dbId' in seoPage) || !seoPage.dbId) {
+      toast({
+        variant: 'destructive',
+        title: 'No disponible',
+        description: 'Para crear la versión EN, primero guarda la página ES en la base de datos.',
+      });
+      return;
+    }
     
     setIsTranslating(true);
     
@@ -206,7 +214,7 @@ export const SEOEditor: React.FC<SEOEditorProps> = ({ path, onClose }) => {
         <div>
           <CardTitle className="flex items-center gap-2">
             Editor SEO
-            {path.startsWith('/es') && !isTranslating && (
+            {path.startsWith('/es') && !isTranslating && seoPage?.source === 'database' && 'dbId' in seoPage && !!seoPage.dbId && (
               <Button
                 variant="outline"
                 size="sm"

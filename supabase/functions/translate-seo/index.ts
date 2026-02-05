@@ -1,12 +1,11 @@
-import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
-import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+import { createClient } from "npm:@supabase/supabase-js@2";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version',
 };
 
-serve(async (req) => {
+Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
   }
@@ -187,10 +186,11 @@ serve(async (req) => {
     
     const translatedData = JSON.parse(toolCall.function.arguments);
     
-    // Insert the translated page into database using service role
-    const { data: newEnPage, error: insertError } = await supabaseAdmin
+    // Create or update the translated page in database using service role
+    // If the EN page already exists for (path, in_language), we update it instead of failing with a duplicate key error.
+    const { data: newEnPage, error: upsertError } = await supabaseAdmin
       .from('seo_pages')
-      .insert({
+      .upsert({
         path: enPath,
         title: translatedData.title,
         description: translatedData.description,
@@ -205,13 +205,13 @@ serve(async (req) => {
         is_indexable: true,
         og_type: seoData.og_type || 'website',
         robots: 'index,follow',
-      })
+      }, { onConflict: 'path,in_language' })
       .select()
       .single();
 
-    if (insertError) {
-      console.error('Database insert error:', insertError);
-      throw new Error(`Failed to create EN page: ${insertError.message}`);
+    if (upsertError) {
+      console.error('Database upsert error:', upsertError);
+      throw new Error(`Failed to create/update EN page: ${upsertError.message}`);
     }
 
     console.log('✅ Translation completed for:', enPath);
