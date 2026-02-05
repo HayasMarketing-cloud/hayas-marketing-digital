@@ -14,6 +14,228 @@ export type Database = {
   }
   public: {
     Tables: {
+      briefing_templates: {
+        Row: {
+          audience_id: string | null
+          content_type: string
+          created_at: string
+          guidelines: string | null
+          id: string
+          is_active: boolean | null
+          name: string
+          structure: Json | null
+          updated_at: string
+        }
+        Insert: {
+          audience_id?: string | null
+          content_type: string
+          created_at?: string
+          guidelines?: string | null
+          id?: string
+          is_active?: boolean | null
+          name: string
+          structure?: Json | null
+          updated_at?: string
+        }
+        Update: {
+          audience_id?: string | null
+          content_type?: string
+          created_at?: string
+          guidelines?: string | null
+          id?: string
+          is_active?: boolean | null
+          name?: string
+          structure?: Json | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "briefing_templates_audience_id_fkey"
+            columns: ["audience_id"]
+            isOneToOne: false
+            referencedRelation: "content_audiences"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      content_audiences: {
+        Row: {
+          created_at: string
+          demographics: Json | null
+          description: string | null
+          goals: Json | null
+          id: string
+          is_active: boolean | null
+          name: string
+          pain_points: Json | null
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          demographics?: Json | null
+          description?: string | null
+          goals?: Json | null
+          id?: string
+          is_active?: boolean | null
+          name: string
+          pain_points?: Json | null
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          demographics?: Json | null
+          description?: string | null
+          goals?: Json | null
+          id?: string
+          is_active?: boolean | null
+          name?: string
+          pain_points?: Json | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      content_categories: {
+        Row: {
+          color: string | null
+          created_at: string
+          description: string | null
+          id: string
+          is_active: boolean | null
+          name: string
+          parent_id: string | null
+          slug: string
+          updated_at: string
+        }
+        Insert: {
+          color?: string | null
+          created_at?: string
+          description?: string | null
+          id?: string
+          is_active?: boolean | null
+          name: string
+          parent_id?: string | null
+          slug: string
+          updated_at?: string
+        }
+        Update: {
+          color?: string | null
+          created_at?: string
+          description?: string | null
+          id?: string
+          is_active?: boolean | null
+          name?: string
+          parent_id?: string | null
+          slug?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "content_categories_parent_id_fkey"
+            columns: ["parent_id"]
+            isOneToOne: false
+            referencedRelation: "content_categories"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      content_ideas: {
+        Row: {
+          content_type: string | null
+          created_at: string
+          description: string | null
+          estimated_traffic: number | null
+          id: string
+          keyword_id: string | null
+          notes: string | null
+          priority: string | null
+          published_url: string | null
+          status: string | null
+          target_audience: string | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          content_type?: string | null
+          created_at?: string
+          description?: string | null
+          estimated_traffic?: number | null
+          id?: string
+          keyword_id?: string | null
+          notes?: string | null
+          priority?: string | null
+          published_url?: string | null
+          status?: string | null
+          target_audience?: string | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          content_type?: string | null
+          created_at?: string
+          description?: string | null
+          estimated_traffic?: number | null
+          id?: string
+          keyword_id?: string | null
+          notes?: string | null
+          priority?: string | null
+          published_url?: string | null
+          status?: string | null
+          target_audience?: string | null
+          title?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "content_ideas_keyword_id_fkey"
+            columns: ["keyword_id"]
+            isOneToOne: false
+            referencedRelation: "keywords"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      content_sources: {
+        Row: {
+          category: string | null
+          created_at: string
+          id: string
+          is_active: boolean | null
+          last_checked_at: string | null
+          name: string
+          notes: string | null
+          reliability_score: number | null
+          source_type: string | null
+          updated_at: string
+          url: string | null
+        }
+        Insert: {
+          category?: string | null
+          created_at?: string
+          id?: string
+          is_active?: boolean | null
+          last_checked_at?: string | null
+          name: string
+          notes?: string | null
+          reliability_score?: number | null
+          source_type?: string | null
+          updated_at?: string
+          url?: string | null
+        }
+        Update: {
+          category?: string | null
+          created_at?: string
+          id?: string
+          is_active?: boolean | null
+          last_checked_at?: string | null
+          name?: string
+          notes?: string | null
+          reliability_score?: number | null
+          source_type?: string | null
+          updated_at?: string
+          url?: string | null
+        }
+        Relationships: []
+      }
       customers: {
         Row: {
           company: string | null
@@ -49,6 +271,165 @@ export type Database = {
           user_id?: string
         }
         Relationships: []
+      }
+      keyword_groups: {
+        Row: {
+          color: string | null
+          created_at: string
+          description: string | null
+          id: string
+          name: string
+          parent_id: string | null
+          updated_at: string
+        }
+        Insert: {
+          color?: string | null
+          created_at?: string
+          description?: string | null
+          id?: string
+          name: string
+          parent_id?: string | null
+          updated_at?: string
+        }
+        Update: {
+          color?: string | null
+          created_at?: string
+          description?: string | null
+          id?: string
+          name?: string
+          parent_id?: string | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "keyword_groups_parent_id_fkey"
+            columns: ["parent_id"]
+            isOneToOne: false
+            referencedRelation: "keyword_groups"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      keyword_search_results: {
+        Row: {
+          id: string
+          is_ai_overview: boolean | null
+          is_featured: boolean | null
+          keyword_id: string
+          position: number | null
+          search_engine: string
+          snippet: string | null
+          title: string | null
+          tracked_at: string
+          url: string | null
+        }
+        Insert: {
+          id?: string
+          is_ai_overview?: boolean | null
+          is_featured?: boolean | null
+          keyword_id: string
+          position?: number | null
+          search_engine: string
+          snippet?: string | null
+          title?: string | null
+          tracked_at?: string
+          url?: string | null
+        }
+        Update: {
+          id?: string
+          is_ai_overview?: boolean | null
+          is_featured?: boolean | null
+          keyword_id?: string
+          position?: number | null
+          search_engine?: string
+          snippet?: string | null
+          title?: string | null
+          tracked_at?: string
+          url?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "keyword_search_results_keyword_id_fkey"
+            columns: ["keyword_id"]
+            isOneToOne: false
+            referencedRelation: "keywords"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      keywords: {
+        Row: {
+          bing_position: number | null
+          chatgpt_mentions: number | null
+          cpc: number | null
+          created_at: string
+          difficulty: number | null
+          google_position: number | null
+          group_id: string | null
+          id: string
+          is_favorite: boolean | null
+          is_objective: boolean | null
+          keyword: string
+          last_tracked_at: string | null
+          notes: string | null
+          perplexity_mentions: number | null
+          search_volume: number | null
+          status: Database["public"]["Enums"]["keyword_status"]
+          strategy_type: Database["public"]["Enums"]["seo_strategy_type"]
+          trend: string | null
+          updated_at: string
+        }
+        Insert: {
+          bing_position?: number | null
+          chatgpt_mentions?: number | null
+          cpc?: number | null
+          created_at?: string
+          difficulty?: number | null
+          google_position?: number | null
+          group_id?: string | null
+          id?: string
+          is_favorite?: boolean | null
+          is_objective?: boolean | null
+          keyword: string
+          last_tracked_at?: string | null
+          notes?: string | null
+          perplexity_mentions?: number | null
+          search_volume?: number | null
+          status?: Database["public"]["Enums"]["keyword_status"]
+          strategy_type?: Database["public"]["Enums"]["seo_strategy_type"]
+          trend?: string | null
+          updated_at?: string
+        }
+        Update: {
+          bing_position?: number | null
+          chatgpt_mentions?: number | null
+          cpc?: number | null
+          created_at?: string
+          difficulty?: number | null
+          google_position?: number | null
+          group_id?: string | null
+          id?: string
+          is_favorite?: boolean | null
+          is_objective?: boolean | null
+          keyword?: string
+          last_tracked_at?: string | null
+          notes?: string | null
+          perplexity_mentions?: number | null
+          search_volume?: number | null
+          status?: Database["public"]["Enums"]["keyword_status"]
+          strategy_type?: Database["public"]["Enums"]["seo_strategy_type"]
+          trend?: string | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "keywords_group_id_fkey"
+            columns: ["group_id"]
+            isOneToOne: false
+            referencedRelation: "keyword_groups"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       orders: {
         Row: {
@@ -447,6 +828,8 @@ export type Database = {
     }
     Enums: {
       app_role: "admin" | "moderator" | "user"
+      keyword_status: "active" | "paused" | "archived"
+      seo_strategy_type: "seo_clasico" | "aeo" | "geo" | "hibrido"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -575,6 +958,8 @@ export const Constants = {
   public: {
     Enums: {
       app_role: ["admin", "moderator", "user"],
+      keyword_status: ["active", "paused", "archived"],
+      seo_strategy_type: ["seo_clasico", "aeo", "geo", "hibrido"],
     },
   },
 } as const
