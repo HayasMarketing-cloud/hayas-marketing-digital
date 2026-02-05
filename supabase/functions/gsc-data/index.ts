@@ -60,75 +60,92 @@ serve(async (req) => {
 
     console.log('Using GSC property:', gscProperty);
 
-    // Generar JWT para autenticación con Google
-    const header = {
-      alg: 'RS256',
-      typ: 'JWT',
-    };
+     // Limpiar y preparar la clave privada
+     // Soporta tanto formato con \n literal como con saltos de línea reales
+     let cleanKey = privateKey;
+     
+     // Reemplazar \n literal por saltos de línea reales
+     cleanKey = cleanKey.replace(/\\n/g, '\n');
+     
+     // Extraer solo el contenido base64 (sin headers)
+     const keyContent = cleanKey
+       .replace(/-----BEGIN PRIVATE KEY-----/g, '')
+       .replace(/-----END PRIVATE KEY-----/g, '')
+       .replace(/[\r\n\s]/g, '');
+     
+     console.log('Private key length (base64):', keyContent.length);
+     
+     if (keyContent.length < 100) {
+       throw new Error('Private key appears to be invalid or too short');
+     }
 
-    const now = Math.floor(Date.now() / 1000);
-    const claim = {
-      iss: serviceEmail,
-      scope: 'https://www.googleapis.com/auth/webmasters.readonly',
-      aud: 'https://oauth2.googleapis.com/token',
-      exp: now + 3600,
-      iat: now,
-    };
+     try {
+       // Decodificar base64 a bytes
+       const binaryKey = Uint8Array.from(atob(keyContent), c => c.charCodeAt(0));
 
-    // Importar la clave privada
-    const pemKey = privateKey.replace(/\\n/g, '\n');
-    const keyData = pemKey
-      .replace('-----BEGIN PRIVATE KEY-----', '')
-      .replace('-----END PRIVATE KEY-----', '')
-      .replace(/\s/g, '');
-    
-    const binaryKey = Uint8Array.from(atob(keyData), c => c.charCodeAt(0));
+       // Importar la clave como PKCS#8
+       const cryptoKey = await crypto.subtle.importKey(
+         'pkcs8',
+         binaryKey,
+         {
+           name: 'RSASSA-PKCS1-v1_5',
+           hash: 'SHA-256',
+         },
+         false,
+         ['sign']
+       );
 
-    const cryptoKey = await crypto.subtle.importKey(
-      'pkcs8',
-      binaryKey,
-      {
-        name: 'RSASSA-PKCS1-v1_5',
-        hash: 'SHA-256',
-      },
-      false,
-      ['sign']
-    );
+       console.log('Private key imported successfully');
 
-    // Crear JWT
-    const encoder = new TextEncoder();
-    const headerB64 = btoa(JSON.stringify(header)).replace(/=/g, '').replace(/\+/g, '-').replace(/\//g, '_');
-    const claimB64 = btoa(JSON.stringify(claim)).replace(/=/g, '').replace(/\+/g, '-').replace(/\//g, '_');
-    const signatureInput = `${headerB64}.${claimB64}`;
+       // Generar JWT para autenticación con Google
+       const header = {
+         alg: 'RS256',
+         typ: 'JWT',
+       };
 
-    const signature = await crypto.subtle.sign(
-      'RSASSA-PKCS1-v1_5',
-      cryptoKey,
-      encoder.encode(signatureInput)
-    );
+       const now = Math.floor(Date.now() / 1000);
+       const claim = {
+         iss: serviceEmail,
+         scope: 'https://www.googleapis.com/auth/webmasters.readonly',
+         aud: 'https://oauth2.googleapis.com/token',
+         exp: now + 3600,
+         iat: now,
+       };
 
-    const signatureB64 = btoa(String.fromCharCode(...new Uint8Array(signature)))
-      .replace(/=/g, '')
-      .replace(/\+/g, '-')
-      .replace(/\//g, '_');
+       // Crear JWT
+       const encoder = new TextEncoder();
+       const headerB64 = btoa(JSON.stringify(header)).replace(/=/g, '').replace(/\+/g, '-').replace(/\//g, '_');
+       const claimB64 = btoa(JSON.stringify(claim)).replace(/=/g, '').replace(/\+/g, '-').replace(/\//g, '_');
+       const signatureInput = `${headerB64}.${claimB64}`;
 
-    const jwt = `${signatureInput}.${signatureB64}`;
+       const signature = await crypto.subtle.sign(
+         'RSASSA-PKCS1-v1_5',
+         cryptoKey,
+         encoder.encode(signatureInput)
+       );
 
-    // Obtener access token
-    const tokenResponse = await fetch('https://oauth2.googleapis.com/token', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: `grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer&assertion=${jwt}`,
-    });
+       const signatureB64 = btoa(String.fromCharCode(...new Uint8Array(signature)))
+         .replace(/=/g, '')
+         .replace(/\+/g, '-')
+         .replace(/\//g, '_');
 
-    if (!tokenResponse.ok) {
-      const errorText = await tokenResponse.text();
-      console.error('Token error:', errorText);
-      throw new Error(`Failed to get access token: ${errorText}`);
-    }
+       const jwt = `${signatureInput}.${signatureB64}`;
 
-    const { access_token } = await tokenResponse.json();
-    console.log('Access token obtained successfully');
+       // Obtener access token
+       const tokenResponse = await fetch('https://oauth2.googleapis.com/token', {
+         method: 'POST',
+         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+         body: `grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer&assertion=${jwt}`,
+       });
+
+       if (!tokenResponse.ok) {
+         const errorText = await tokenResponse.text();
+         console.error('Token error:', errorText);
+         throw new Error(`Failed to get access token: ${errorText}`);
+       }
+
+       const { access_token } = await tokenResponse.json();
+       console.log('Access token obtained successfully');
 
     // Consultar Google Search Console API
     const gscResponse = await fetch(
@@ -160,6 +177,10 @@ serve(async (req) => {
     return new Response(JSON.stringify(gscData), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });
+     } catch (keyError) {
+       console.error('Error importing private key:', keyError);
+       throw new Error(`Private key format error: ${keyError.message}. Please ensure the key is in PEM format with proper line breaks.`);
+     }
 
   } catch (error) {
     console.error('Error in gsc-data function:', error);
