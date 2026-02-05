@@ -96,6 +96,7 @@ export const useUpdateSEOPage = () => {
   return useMutation({
     mutationFn: async (seoData: {
       path: string;
+      in_language?: string;
       title: string;
       description: string;
       h1: string;
@@ -112,10 +113,13 @@ export const useUpdateSEOPage = () => {
       faqs?: Array<{ question: string; answer: string }>;
       is_indexable?: boolean;
     }) => {
+      const language = seoData.in_language || (seoData.path.startsWith('/en') ? 'en-US' : 'es-ES');
+      
       const { data, error } = await supabase
         .from('seo_pages')
         .upsert({
           path: seoData.path,
+          in_language: language,
           title: seoData.title,
           description: seoData.description,
           h1: seoData.h1,
@@ -131,7 +135,7 @@ export const useUpdateSEOPage = () => {
           category: seoData.category || 'main',
           faqs: seoData.faqs || [],
           is_indexable: seoData.is_indexable ?? true
-        }, { onConflict: 'path' })
+        }, { onConflict: 'path,in_language' })
         .select()
         .single();
 

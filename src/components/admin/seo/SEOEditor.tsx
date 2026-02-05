@@ -19,8 +19,15 @@ interface SEOEditorProps {
   onClose: () => void;
 }
 
+// Helper para detectar idioma desde el path
+const detectLanguageFromPath = (path: string): string => {
+  if (path.startsWith('/en')) return 'en-US';
+  return 'es-ES';
+};
+
 export const SEOEditor: React.FC<SEOEditorProps> = ({ path, onClose }) => {
-  const { data: seoPage, isLoading } = useSEOPage(path);
+  const language = detectLanguageFromPath(path);
+  const { data: seoPage, isLoading } = useSEOPage(path, language);
   const updateSEOMutation = useUpdateSEOPage();
   const deleteSEOMutation = useDeleteSEOPage();
   const { toast } = useToast();
@@ -139,6 +146,7 @@ export const SEOEditor: React.FC<SEOEditorProps> = ({ path, onClose }) => {
     try {
       await updateSEOMutation.mutateAsync({
         path,
+        in_language: language,
         title: formData.title,
         description: formData.description,
         h1: formData.h1,
