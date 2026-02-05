@@ -175,6 +175,7 @@ export const FAQValidator = lazyWithRetry(() => import("@/pages/admin/FAQValidat
 export const TranslationManager = lazyWithRetry(() => import("@/pages/admin/TranslationManager"));
 export const MediaLibrary = lazyWithRetry(() => import("@/pages/admin/MediaLibrary"));
 export const BrandBook = lazyWithRetry(() => import("@/pages/admin/BrandBook"));
+export const ContentHub = lazyWithRetry(() => import("@/pages/admin/ContentHub"));
 
 // Páginas legales
 export const AvisoLegal = lazyWithRetry(() => import("@/pages/AvisoLegal"));
