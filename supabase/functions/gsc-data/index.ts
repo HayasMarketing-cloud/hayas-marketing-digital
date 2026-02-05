@@ -3,7 +3,7 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2.39.3";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version',
 };
 
 interface GSCRequest {
@@ -20,16 +20,30 @@ serve(async (req) => {
   }
 
   try {
+     // Get authorization header and validate
+     const authHeader = req.headers.get('Authorization');
+     if (!authHeader) {
+       console.error('Missing Authorization header');
+       throw new Error('Unauthorized: Missing authorization header');
+     }
+
+     const token = authHeader.replace('Bearer ', '');
+
     const supabaseClient = createClient(
       Deno.env.get('SUPABASE_URL') ?? '',
       Deno.env.get('SUPABASE_ANON_KEY') ?? '',
-      { global: { headers: { Authorization: req.headers.get('Authorization')! } } }
+       { global: { headers: { Authorization: authHeader } } }
     );
 
-    const { data: { user }, error: userError } = await supabaseClient.auth.getUser();
+     // CRITICAL: Must pass token explicitly for Lovable Cloud
+     const { data: { user }, error: userError } = await supabaseClient.auth.getUser(token);
+     
     if (userError || !user) {
+       console.error('Auth error:', userError?.message || 'No user found');
       throw new Error('Unauthorized');
     }
+
+     console.log('Authenticated user:', user.id);
 
     const { property, startDate, endDate, dimensions = ['page', 'query'], rowLimit = 1000 }: GSCRequest = await req.json();
 
