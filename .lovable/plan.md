@@ -1,73 +1,128 @@
 
-# Plan: Corregir Edición de Páginas SEO
+# Plan: Corregir "Crear versión EN" en Editor SEO
 
 ## Problema Identificado
 
-El editor SEO no funciona correctamente porque:
+El botón "Crear versión EN" falla porque la llamada a la Edge Function `translate-seo` no envía todos los parámetros requeridos:
 
-1. **Idioma no detectado**: El hook `useSEOPage(path)` usa `language = 'es-ES'` por defecto, pero las rutas `/en/*` tienen `in_language = 'en-US'` en la base de datos
-2. **Query incorrecta**: Busca páginas con `in_language = 'es-ES'` cuando debería detectar el idioma automáticamente desde el path
-3. **Upsert incompleto**: Al guardar, no se está pasando el campo `in_language`, lo que puede causar conflictos
-
-## Solución
-
-### Cambio 1: Detectar idioma automáticamente desde el path
-
-Crear función helper que detecte el idioma basándose en el prefijo del path:
-- `/es/*` -> `es-ES`
-- `/en/*` -> `en-US`
-
-### Cambio 2: Actualizar SEOEditor.tsx
-
-Pasar el idioma detectado al hook `useSEOPage`:
-
-```typescript
-const language = path.startsWith('/en') ? 'en-US' : 'es-ES';
-const { data: seoPage, isLoading } = useSEOPage(path, language);
+**Frontend envía:**
+```javascript
+body: { seoData, targetLanguage: 'en-US' }
 ```
 
-### Cambio 3: Actualizar useUpdateSEOPage
+**Edge Function espera:**
+```javascript
+const { seoData, targetLanguage, esPageId, enPath, category } = await req.json();
+```
 
-Añadir el campo `in_language` al upsert para que se guarde correctamente el idioma de la página.
-
-### Cambio 4: Corregir constraint de conflicto
-
-El upsert actual usa `onConflict: 'path'`, pero la tabla tiene una restricción compuesta `(path, in_language)`. Hay que actualizar para que el upsert funcione correctamente.
+**Resultado en logs:**
+- `🔄 Translating SEO for: undefined -> undefined`
+- `path: null` → Error de constraint NOT NULL
 
 ---
 
-## Detalles Tecnicos
+## Solución
 
-### Archivos a modificar
+### Cambio en SEOEditor.tsx
 
-| Archivo | Cambio |
-|---------|--------|
-| `src/components/admin/seo/SEOEditor.tsx` | Detectar idioma del path y pasarlo a useSEOPage |
-| `src/hooks/useSEOData.ts` | Añadir `in_language` al upsert y corregir onConflict |
+Actualizar la función `handleCreateEnVersion` para enviar todos los parámetros requeridos:
 
-### Flujo corregido
-
-```text
-Usuario hace click en /es/contacto
-    │
-    ▼
-SEOEditor recibe path="/es/contacto"
-    │
-    ▼
-Detecta language="es-ES" (por prefijo /es)
-    │
-    ▼
-useSEOPage("/es/contacto", "es-ES")
-    │
-    ▼
-Query: SELECT * FROM seo_pages WHERE path='/es/contacto' AND in_language='es-ES'
-    │
-    ▼
-Datos cargados correctamente en el formulario
+```typescript
+const handleCreateEnVersion = async () => {
+  if (!seoPage?.data || path.startsWith('/en')) return;
+  
+  setIsTranslating(true);
+  
+  try {
+    // Generar el path EN correctamente
+    // /es -> /en
+    // /es/contacto -> /en/contact
+    let enPath = path;
+    if (path === '/es') {
+      enPath = '/en';
+    } else if (path.startsWith('/es/')) {
+      enPath = path.replace('/es/', '/en/');
+    } else if (path.startsWith('/es')) {
+      enPath = path.replace('/es', '/en');
+    }
+    
+    // Llamar a la Edge Function con todos los parámetros
+    const { data: result, error } = await supabase.functions.invoke('translate-seo', {
+      body: { 
+        seoData: seoPage.data,
+        targetLanguage: 'en-US',
+        esPageId: seoPage.data.id,  // ID de la página ES
+        enPath: enPath,              // Path de destino EN
+        category: seoPage.data.category || 'main'
+      }
+    });
+    
+    if (error) throw error;
+    
+    // Mostrar resultado y cerrar/recargar
+    toast({
+      title: 'Versión EN creada',
+      description: `Página traducida guardada en ${enPath}`,
+    });
+    
+    // Opcional: cambiar al editor de la nueva página EN
+    
+  } catch (error) {
+    console.error('Translation error:', error);
+    toast({
+      title: 'Error',
+      description: error.message || 'No se pudo traducir. Intenta manualmente.',
+      variant: 'destructive'
+    });
+  } finally {
+    setIsTranslating(false);
+  }
+};
 ```
 
-### Impacto
+---
 
-- El editor cargará los datos correctos para rutas ES y EN
-- Al guardar, se preservará el idioma correcto
-- Las páginas con status "Sin datos" podrán crearse con el idioma adecuado
+## Detalle Técnico
+
+| Parámetro | Fuente | Valor de ejemplo |
+|-----------|--------|------------------|
+| `seoData` | `seoPage.data` | Objeto con title, description, h1, keywords, etc. |
+| `targetLanguage` | Constante | `'en-US'` |
+| `esPageId` | `seoPage.data.id` | UUID de la página ES en BD |
+| `enPath` | Calculado | `/es` → `/en`, `/es/contacto` → `/en/contact` |
+| `category` | `seoPage.data.category` | `'main'`, `'service'`, etc. |
+
+---
+
+## Flujo Corregido
+
+```text
+Usuario click "Crear versión EN" en /es
+    │
+    ▼
+handleCreateEnVersion() calcula:
+  - esPageId = seoPage.data.id
+  - enPath = "/en" 
+  - category = "main"
+    │
+    ▼
+Edge Function recibe todos los parámetros
+    │
+    ▼
+Traduce con IA y guarda en seo_pages
+  - path: "/en"
+  - in_language: "en-US"
+  - translation_of: esPageId
+    │
+    ▼
+Toast de éxito
+```
+
+---
+
+## Archivo a Modificar
+
+| Archivo | Líneas | Cambio |
+|---------|--------|--------|
+| `src/components/admin/seo/SEOEditor.tsx` | 96-135 | Añadir `esPageId`, `enPath`, `category` al body de la llamada |
+
