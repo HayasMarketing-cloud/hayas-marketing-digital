@@ -13,6 +13,7 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/component
 import { generateAutoSEO } from '@/utils/autoSEO';
 import { findRouteByPath } from '@/utils/routeRegistryData';
 import { supabase } from '@/integrations/supabase/client';
+import { generateEnglishRoute } from '@/utils/generateEnglishRoute';
 
 interface SEOEditorProps {
   path: string;
@@ -99,42 +100,39 @@ export const SEOEditor: React.FC<SEOEditorProps> = ({ path, onClose }) => {
     setIsTranslating(true);
     
     try {
-      // Llamar a la Edge Function para traducir
-      const { data: translation, error } = await supabase.functions.invoke('translate-seo', {
+      // Generar el path EN usando la utilidad de traducción de rutas
+      const { enPath, warnings } = generateEnglishRoute(path);
+      
+      if (warnings.length > 0) {
+        console.warn('Route translation warnings:', warnings);
+      }
+      
+      // Llamar a la Edge Function con TODOS los parámetros requeridos
+      const { data: result, error } = await supabase.functions.invoke('translate-seo', {
         body: { 
           seoData: seoPage.data,
-          targetLanguage: 'en-US'
+          targetLanguage: 'en-US',
+          esPageId: seoPage.dbId, // Usar el ID de la base de datos
+          enPath: enPath,
+          category: seoPage.data.category || 'main'
         }
       });
       
       if (error) throw error;
       
-      // Crear el path EN
-      const enPath = path.replace('/es/', '/en/').replace('/es', '/en');
-      
-      // Actualizar form data con traducción
-      setFormData({
-        ...formData,
-        title: translation.title,
-        description: translation.description,
-        h1: translation.h1,
-        keywords: translation.keywords,
-        canonical: enPath
-      });
-      
       toast({
         title: 'Versión EN creada',
-        description: 'Revisa y ajusta la traducción antes de guardar',
+        description: `Página traducida guardada en ${enPath}`,
       });
       
-      // Cambiar el path actual para que se guarde como EN
-      window.history.pushState({}, '', `/admin/seo/pages?path=${enPath}`);
+      // Refrescar la lista de páginas SEO
+      window.location.reload();
       
-    } catch (error) {
+    } catch (error: any) {
       console.error('Translation error:', error);
       toast({
         title: 'Error',
-        description: 'No se pudo traducir automáticamente. Intenta manualmente.',
+        description: error.message || 'No se pudo traducir automáticamente. Intenta manualmente.',
         variant: 'destructive'
       });
     } finally {

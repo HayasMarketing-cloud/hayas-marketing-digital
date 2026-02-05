@@ -24,7 +24,8 @@ export const useSEOPage = (path: string, language: string = 'es-ES') => {
       if (data) {
         return {
           source: 'database' as const,
-          data: convertDBToSEOData(data)
+          data: convertDBToSEOData(data),
+          dbId: data.id // ID de la fila en la base de datos
         };
       }
 
