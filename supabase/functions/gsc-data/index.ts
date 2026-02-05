@@ -59,6 +59,8 @@ serve(async (req) => {
     }
 
     console.log('Using GSC property:', gscProperty);
+     console.log('Raw private key length:', privateKey.length);
+     console.log('Private key starts with:', privateKey.substring(0, 50));
 
      // Limpiar y preparar la clave privada
      // Soporta tanto formato con \n literal como con saltos de línea reales
@@ -66,6 +68,7 @@ serve(async (req) => {
      
      // Reemplazar \n literal por saltos de línea reales
      cleanKey = cleanKey.replace(/\\n/g, '\n');
+     console.log('After replacing \\n, length:', cleanKey.length);
      
      // Extraer solo el contenido base64 (sin headers)
      const keyContent = cleanKey
