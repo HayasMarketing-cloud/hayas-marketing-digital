@@ -3,12 +3,13 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
 import { useAdminAuth } from '@/hooks/useAdminAuth';
 import { supabase } from '@/integrations/supabase/client';
+import { lovable } from '@/integrations/lovable';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Loader2, ShieldCheck, AlertCircle, UserPlus, LogIn, KeyRound } from 'lucide-react';
+import { Loader2, ShieldCheck, AlertCircle, UserPlus, LogIn, KeyRound, Chrome } from 'lucide-react';
 import { toast } from 'sonner';
 
 const AdminLogin = () => {
@@ -20,6 +21,7 @@ const AdminLogin = () => {
   const [isSignUp, setIsSignUp] = useState(false);
   const [isResetPassword, setIsResetPassword] = useState(false);
   const [resetEmailSent, setResetEmailSent] = useState(false);
+  const [isGoogleLoading, setIsGoogleLoading] = useState(false);
 
   const { signIn, signUp } = useAuth();
   const { isAdmin, isAuthenticated, isLoading: adminLoading, authLoading } = useAdminAuth();
@@ -27,6 +29,27 @@ const AdminLogin = () => {
   const location = useLocation();
 
   const from = (location.state as any)?.from?.pathname || '/admin';
+
+  const handleGoogleSignIn = async () => {
+    setIsGoogleLoading(true);
+    setError(null);
+    
+    try {
+      const { error } = await lovable.auth.signInWithOAuth("google", {
+        redirect_uri: window.location.origin + "/admin",
+      });
+      
+      if (error) {
+        setError('Error al iniciar sesión con Google');
+        console.error('Google auth error:', error);
+      }
+    } catch (err) {
+      console.error('Google auth error:', err);
+      setError('Error inesperado al iniciar sesión con Google');
+    } finally {
+      setIsGoogleLoading(false);
+    }
+  };
 
   useEffect(() => {
     if (!authLoading && !adminLoading && isAuthenticated && isAdmin) {
@@ -343,6 +366,30 @@ const AdminLogin = () => {
               )}
             </Button>
           </form>
+
+          <div className="relative my-6">
+            <div className="absolute inset-0 flex items-center">
+              <span className="w-full border-t border-border" />
+            </div>
+            <div className="relative flex justify-center text-xs uppercase">
+              <span className="bg-card px-2 text-muted-foreground">O continúa con</span>
+            </div>
+          </div>
+
+          <Button
+            type="button"
+            variant="outline"
+            className="w-full"
+            onClick={handleGoogleSignIn}
+            disabled={isGoogleLoading || isLoading}
+          >
+            {isGoogleLoading ? (
+              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+            ) : (
+              <Chrome className="mr-2 h-4 w-4" />
+            )}
+            Iniciar sesión con Google
+          </Button>
 
           <div className="mt-6 text-center space-y-3">
             {!isSignUp && (
