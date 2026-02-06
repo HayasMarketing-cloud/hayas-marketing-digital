@@ -502,6 +502,7 @@ const App = () => (
               <Route path="/admin/media-library" element={<AdminProtectedRoute><PageSuspense><Pages.MediaLibrary /></PageSuspense></AdminProtectedRoute>} />
               <Route path="/admin/brandbook" element={<AdminProtectedRoute><PageSuspense><Pages.BrandBook /></PageSuspense></AdminProtectedRoute>} />
               <Route path="/admin/content-hub" element={<AdminProtectedRoute><PageSuspense><Pages.ContentHub /></PageSuspense></AdminProtectedRoute>} />
+              <Route path="/admin/sofia" element={<AdminProtectedRoute><PageSuspense><Pages.SofiaChatbotAdmin /></PageSuspense></AdminProtectedRoute>} />
            
            {/* Página 404 dedicada */}
            <Route path="/es/404" element={<PageSuspense><Pages.Error404 /></PageSuspense>} />
