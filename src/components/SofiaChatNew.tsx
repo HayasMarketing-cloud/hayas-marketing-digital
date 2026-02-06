@@ -56,12 +56,22 @@ const SofiaChatNew = () => {
     '/es/soluciones/activa-tus-ventas',
     '/es/agendar-reunion',
     '/es/contacto',
+    // Servicios ES (para contexto GEO/AEO desde ficheros .md)
+    '/es/servicios/creacion-marca',
+    '/es/servicios/diseno-web',
+    '/es/servicios/seo-posicionamiento',
+    '/es/servicios/implantacion-crm',
+    '/es/servicios/publicidad-google-ads',
+    '/es/servicios/asistente-ia',
     '/en',
     '/en/solutions/boost-your-brand',
     '/en/solutions/connect-with-customers',
     '/en/solutions/activate-sales',
     '/en/schedule-meeting',
-    '/en/contact'
+    '/en/contact',
+    // Services EN
+    '/en/services/branding',
+    '/en/services/web-design'
   ];
 
   const shouldRender = allowedPages.includes(location.pathname);
