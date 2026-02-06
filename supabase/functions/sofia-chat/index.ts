@@ -46,6 +46,22 @@ const ROUTE_TO_CONTENT: Record<string, string> = {
   // ES - General
   '/es/nosotros': '/es/general/empresa.md',
   '/es': '/es/general/empresa.md',
+  // ES - Casos de Éxito
+  '/es/casos-exito/nexo-vital': '/es/casos-exito/nexo-vital.md',
+  '/es/casos-exito/joints-up': '/es/casos-exito/joints-up.md',
+  '/es/casos-exito/asendia': '/es/casos-exito/asendia.md',
+  '/es/casos-exito/owo-game': '/es/casos-exito/owo-game.md',
+  '/es/casos-exito/wooptix': '/es/casos-exito/wooptix.md',
+  '/es/casos-exito/beluga-linguistics': '/es/casos-exito/beluga-linguistics.md',
+  '/es/casos-exito/alma-cruceros': '/es/casos-exito/alma-cruceros.md',
+  '/es/casos-exito/buhobike': '/es/casos-exito/buhobike.md',
+  '/es/casos-exito/peixos-emilio': '/es/casos-exito/peixos-emilio.md',
+  '/es/casos-exito/nova-praxis': '/es/casos-exito/nova-praxis.md',
+  '/es/casos-exito/hubspot-for-startups': '/es/casos-exito/hubspot-for-startups.md',
+  '/es/casos-exito/pasteleria-la-oriental-sin-gluten': '/es/casos-exito/pasteleria-la-oriental.md',
+  '/es/casos-exito/finect': '/es/casos-exito/finect.md',
+  '/es/casos-exito/peris-electricidad': '/es/casos-exito/peris-electricidad.md',
+  '/es/casos-exito/inbound-students': '/es/casos-exito/inbound-students.md',
   // EN - Services
   '/en/services/branding': '/en/services/branding.md',
   '/en/services/web-design': '/en/services/web-design.md',

@@ -73,9 +73,25 @@ IA_SUMMARY:
 | Nosotros | `/content/es/general/empresa.md` | `/content/en/general/company.md` |
 | Metodología | `/content/es/general/metodologia.md` | `/content/en/general/methodology.md` |
 
-## Checklist de Actualización
+## Casos de Éxito - Mapping
 
-Cuando modifiques contenido en un componente React:
+| Caso | Fichero .md ES | Estado |
+|------|----------------|--------|
+| Nexo Vital | `/content/es/casos-exito/nexo-vital.md` | ✅ |
+| Joints'Up | `/content/es/casos-exito/joints-up.md` | ✅ |
+| Asendia | `/content/es/casos-exito/asendia.md` | ✅ |
+| OWO Game | `/content/es/casos-exito/owo-game.md` | ✅ |
+| Wooptix | `/content/es/casos-exito/wooptix.md` | ✅ |
+| Beluga Linguistics | `/content/es/casos-exito/beluga-linguistics.md` | ✅ |
+| Alma Cruceros | `/content/es/casos-exito/alma-cruceros.md` | ✅ |
+| Buhobike | `/content/es/casos-exito/buhobike.md` | ✅ |
+| Peixos Emilio | `/content/es/casos-exito/peixos-emilio.md` | ✅ |
+| Nova Praxis | `/content/es/casos-exito/nova-praxis.md` | ✅ |
+| HubSpot for Startups | `/content/es/casos-exito/hubspot-for-startups.md` | ✅ |
+| Pastelería La Oriental | `/content/es/casos-exito/pasteleria-la-oriental.md` | ✅ |
+| FINECT | `/content/es/casos-exito/finect.md` | ✅ |
+| Peris Electricidad | `/content/es/casos-exito/peris-electricidad.md` | ✅ |
+| Inbound Students | `/content/es/casos-exito/inbound-students.md` | ✅ |
 
 - [ ] Identificar fichero .md correspondiente (usar tabla arriba)
 - [ ] Actualizar contenido manteniendo estructura E-E-A-T
