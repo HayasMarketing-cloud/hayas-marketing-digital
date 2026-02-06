@@ -9,6 +9,9 @@ const corsHeaders = {
 // Fallback system prompt in case database is unavailable
 const FALLBACK_SYSTEM_PROMPT = `Eres "Sofía", el asistente IA de Hayas Marketing. Ayuda a los usuarios con información sobre servicios de diseño web, marketing digital, SEO y automatización. Guía a los usuarios a agendar una reunión en https://hayasmarketing.com/es/agendar-reunion o contactar en https://hayasmarketing.com/es/contacto`;
 
+// Base URL for content files
+const CONTENT_BASE_URL = 'https://hayasmarketing.com/content';
+
 interface ChatMessage {
   role: 'user' | 'assistant' | 'system';
   content: string;
@@ -22,67 +25,133 @@ interface LeadInfo {
   interest?: string;
 }
 
-// Page context mapping for personalized responses
-const getPageContext = (sourcePage: string): string => {
-  const pageContexts: Record<string, { es: string; en: string }> = {
-    '/es': {
-      es: 'El usuario está en la página principal. Puede estar explorando opciones generales.',
-      en: 'User is on the main page. May be exploring general options.'
-    },
-    '/es/soluciones/impulsa-tu-marca': {
-      es: 'El usuario está interesado en BRANDING e identidad de marca. Enfócate en: diseño de logos, naming, manual de marca, web corporativa. Destaca casos de éxito de creación de marca.',
-      en: 'User is interested in BRANDING and brand identity.'
-    },
-    '/es/soluciones/conecta-con-tus-clientes': {
-      es: 'El usuario busca mejorar su MARKETING y captación de leads. Enfócate en: SEO, contenidos, redes sociales, publicidad digital. Menciona la importancia de una estrategia integrada.',
-      en: 'User wants to improve MARKETING and lead generation.'
-    },
-    '/es/soluciones/activa-tus-ventas': {
-      es: 'El usuario quiere AUTOMATIZAR ventas y gestionar clientes. Enfócate en: CRM (GoHighLevel para pequeños, HubSpot para medianos), automatización de emails, funnels de venta, integración IA.',
-      en: 'User wants to AUTOMATE sales and manage clients.'
-    },
-    '/es/agendar-reunion': {
-      es: 'El usuario está listo para AGENDAR UNA REUNIÓN. Está en fase avanzada del funnel. Resuelve dudas rápidas y facilita que complete la reserva.',
-      en: 'User is ready to SCHEDULE A MEETING.'
-    },
-    '/es/contacto': {
-      es: 'El usuario quiere CONTACTAR. Puede tener preguntas específicas o querer más información antes de decidir.',
-      en: 'User wants to CONTACT. May have specific questions.'
-    },
-    '/en': {
-      es: 'User on English homepage.',
-      en: 'User is on the English main page. May be exploring general options.'
-    },
-    '/en/solutions/boost-your-brand': {
-      es: 'User interested in branding.',
-      en: 'User is interested in BRANDING and brand identity. Focus on: logo design, naming, brand manual, corporate website.'
-    },
-    '/en/solutions/connect-with-customers': {
-      es: 'User interested in marketing.',
-      en: 'User wants to improve MARKETING and lead generation. Focus on: SEO, content, social media, digital advertising.'
-    },
-    '/en/solutions/activate-sales': {
-      es: 'User interested in sales automation.',
-      en: 'User wants to AUTOMATE sales and manage clients. Focus on: CRM, email automation, sales funnels, AI integration.'
-    },
-    '/en/schedule-meeting': {
-      es: 'User ready to schedule.',
-      en: 'User is ready to SCHEDULE A MEETING. Resolve quick questions and help them complete the booking.'
-    },
-    '/en/contact': {
-      es: 'User wants to contact.',
-      en: 'User wants to CONTACT. May have specific questions before deciding.'
-    }
-  };
+// Route to content file mapping
+const ROUTE_TO_CONTENT: Record<string, string> = {
+  // ES - Servicios
+  '/es/servicios/creacion-marca': '/es/servicios/creacion-marca.md',
+  '/es/servicios/diseno-desarrollo-web': '/es/servicios/diseno-web.md',
+  '/es/servicios/seo-posicionamiento-web': '/es/servicios/seo-posicionamiento.md',
+  '/es/servicios/implantacion-crm': '/es/servicios/implantacion-crm.md',
+  '/es/servicios/publicidad-google-ads': '/es/servicios/publicidad-google-ads.md',
+  '/es/servicios/asistente-ia': '/es/servicios/asistente-ia.md',
+  // ES - Soluciones
+  '/es/soluciones/impulsa-tu-marca': '/es/soluciones/impulsa-tu-marca.md',
+  '/es/soluciones/conecta-con-tus-clientes': '/es/soluciones/conecta-con-tus-clientes.md',
+  '/es/soluciones/activa-tus-ventas': '/es/soluciones/activa-tus-ventas.md',
+  // ES - General
+  '/es/nosotros': '/es/general/empresa.md',
+  '/es': '/es/general/empresa.md',
+  // EN - Services (futuro)
+  '/en/services/branding': '/en/services/branding.md',
+  '/en/services/web-design': '/en/services/web-design.md',
+  // EN - Solutions (futuro)
+  '/en/solutions/boost-your-brand': '/en/solutions/boost-your-brand.md',
+  '/en': '/en/general/company.md',
+};
 
-  const isEnglish = sourcePage?.startsWith('/en');
-  const context = pageContexts[sourcePage];
+// Extract IA_SUMMARY from markdown content (60-80 words block for quick context)
+const extractIASummary = (markdown: string): string | null => {
+  const match = markdown.match(/<!--\s*IA_SUMMARY:\s*([\s\S]*?)-->/);
+  if (match && match[1]) {
+    return match[1].trim();
+  }
+  return null;
+};
+
+// Extract AEO summary (the blockquote at the top)
+const extractAEOSummary = (markdown: string): string | null => {
+  const match = markdown.match(/^#[^\n]+\n\n<!--[\s\S]*?-->\n\n>\s*(.+?)(?:\n\n|$)/m);
+  if (match && match[1]) {
+    return match[1].trim();
+  }
+  return null;
+};
+
+// Fetch content file for a route
+const fetchContentForRoute = async (sourcePage: string): Promise<string | null> => {
+  const contentPath = ROUTE_TO_CONTENT[sourcePage];
+  if (!contentPath) {
+    console.log(`📄 No content mapping for: ${sourcePage}`);
+    return null;
+  }
+
+  try {
+    const url = `${CONTENT_BASE_URL}${contentPath}`;
+    console.log(`📄 Fetching content from: ${url}`);
+    
+    const response = await fetch(url, {
+      headers: { 'Accept': 'text/markdown, text/plain' }
+    });
+    
+    if (!response.ok) {
+      console.log(`⚠️ Content fetch failed: ${response.status}`);
+      return null;
+    }
+    
+    const content = await response.text();
+    console.log(`✅ Content loaded: ${content.length} chars`);
+    return content;
+  } catch (error) {
+    console.error(`❌ Error fetching content:`, error);
+    return null;
+  }
+};
+
+// Get enriched context from content file
+const getEnrichedContext = async (sourcePage: string, conversationLength: number): Promise<string> => {
+  const content = await fetchContentForRoute(sourcePage);
   
-  if (context) {
-    return isEnglish ? context.en : context.es;
+  if (!content) {
+    return getBasicPageContext(sourcePage);
+  }
+
+  // For short conversations, use full IA_SUMMARY + AEO
+  // For long conversations, use only IA_SUMMARY to save tokens
+  const iaSummary = extractIASummary(content);
+  const aeoSummary = extractAEOSummary(content);
+  
+  if (conversationLength > 6 && iaSummary) {
+    // Long conversation: use compact IA_SUMMARY only
+    return `BASE DE CONOCIMIENTO (resumen):\n${iaSummary}`;
   }
   
-  // Default context for unknown pages
+  // Short conversation: use both summaries
+  let enrichedContext = 'BASE DE CONOCIMIENTO:\n';
+  if (iaSummary) {
+    enrichedContext += `${iaSummary}\n\n`;
+  }
+  if (aeoSummary) {
+    enrichedContext += `Resumen del servicio: ${aeoSummary}`;
+  }
+  
+  return enrichedContext || getBasicPageContext(sourcePage);
+};
+
+// Basic page context fallback
+const getBasicPageContext = (sourcePage: string): string => {
+  const isEnglish = sourcePage?.startsWith('/en');
+  
+  if (sourcePage?.includes('/servicios/') || sourcePage?.includes('/services/')) {
+    return isEnglish 
+      ? 'User is viewing a service page. Help them understand what we offer.'
+      : 'El usuario está viendo una página de servicio. Ayúdale a entender qué ofrecemos.';
+  }
+  if (sourcePage?.includes('/soluciones/') || sourcePage?.includes('/solutions/')) {
+    return isEnglish
+      ? 'User is viewing a solution page. Help them find the right solution for their needs.'
+      : 'El usuario está viendo una página de solución. Ayúdale a encontrar la solución adecuada.';
+  }
+  if (sourcePage?.includes('/agendar') || sourcePage?.includes('/schedule')) {
+    return isEnglish
+      ? 'User is ready to schedule a meeting. Help them complete the booking.'
+      : 'El usuario está listo para agendar. Facilita que complete la reserva.';
+  }
+  if (sourcePage?.includes('/contacto') || sourcePage?.includes('/contact')) {
+    return isEnglish
+      ? 'User wants to contact us. Answer their questions.'
+      : 'El usuario quiere contactar. Responde sus preguntas.';
+  }
+  
   return isEnglish 
     ? 'User is browsing the website. Help them find what they need.'
     : 'El usuario está navegando por la web. Ayúdale a encontrar lo que necesita.';
@@ -130,8 +199,10 @@ serve(async (req) => {
       console.error('❌ Error fetching system prompt:', fetchError);
     }
 
-    // Add page-specific context and navigation history to system prompt
-    const pageContext = getPageContext(sourcePage);
+    // Get enriched context from content files (async)
+    const conversationLength = messages?.length || 0;
+    const enrichedContext = await getEnrichedContext(sourcePage, conversationLength);
+    console.log('📚 Enriched context loaded, length:', enrichedContext.length);
     
     // Build navigation context
     let navigationContext = '';
@@ -144,12 +215,13 @@ serve(async (req) => {
     
     const enhancedPrompt = `${systemPrompt}
 
+## ${enrichedContext}
+
 ## CONTEXTO ACTUAL DE LA CONVERSACIÓN
 Página donde está el usuario: ${sourcePage}
-${pageContext}
 ${navigationContext}
 
-Adapta tu respuesta a este contexto específico del usuario.`;
+Adapta tu respuesta a este contexto específico del usuario. Usa la información de la BASE DE CONOCIMIENTO para dar respuestas precisas y citables.`;
 
     // Build messages array with enhanced system prompt
     const systemMessage: ChatMessage = {
