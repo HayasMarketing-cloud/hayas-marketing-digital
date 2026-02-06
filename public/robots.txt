@@ -11,6 +11,7 @@ Sitemap: https://hayasmarketing.com/sitemap.xml
 # Más info: https://llmstxt.org/
 LLMs-full.txt: https://hayasmarketing.com/llms-full.txt
 LLMs.txt: https://hayasmarketing.com/llms.txt
+LLMs-en.txt: https://hayasmarketing.com/llms-en.txt
 
 # Directrices específicas
 Crawl-delay: 1
