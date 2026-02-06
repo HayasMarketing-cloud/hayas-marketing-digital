@@ -35,6 +35,10 @@ const ROUTE_TO_CONTENT: Record<string, string> = {
   '/es/servicios/implantacion-crm': '/es/servicios/implantacion-crm.md',
   '/es/servicios/publicidad-google-ads': '/es/servicios/publicidad-google-ads.md',
   '/es/servicios/asistente-ia': '/es/servicios/asistente-ia.md',
+  '/es/servicios/estrategia-contenidos': '/es/servicios/estrategia-contenidos.md',
+  '/es/servicios/gestion-redes-sociales': '/es/servicios/gestion-redes-sociales.md',
+  '/es/servicios/tienda-online': '/es/servicios/tienda-online.md',
+  '/es/servicios/email-marketing': '/es/servicios/email-marketing.md',
   // ES - Soluciones
   '/es/soluciones/impulsa-tu-marca': '/es/soluciones/impulsa-tu-marca.md',
   '/es/soluciones/conecta-con-tus-clientes': '/es/soluciones/conecta-con-tus-clientes.md',
@@ -49,6 +53,10 @@ const ROUTE_TO_CONTENT: Record<string, string> = {
   '/en/services/crm-implementation': '/en/services/crm-implementation.md',
   '/en/services/google-ads': '/en/services/google-ads.md',
   '/en/services/ai-assistant': '/en/services/ai-assistant.md',
+  '/en/services/content-strategy': '/en/services/content-strategy.md',
+  '/en/services/social-media': '/en/services/social-media.md',
+  '/en/services/ecommerce': '/en/services/ecommerce.md',
+  '/en/services/email-marketing': '/en/services/email-marketing.md',
   // EN - Solutions
   '/en/solutions/boost-your-brand': '/en/solutions/boost-your-brand.md',
   '/en/solutions/connect-with-customers': '/en/solutions/connect-with-customers.md',
