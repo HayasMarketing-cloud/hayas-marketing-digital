@@ -596,6 +596,10 @@ const App = () => (
           {/* BLOG */}
           <Route path="/en/blog" element={<PageSuspense><Pages.Blog /></PageSuspense>} />
           <Route path="/en/blog/chatbots-for-websites" element={<PageSuspense><Pages.BlogChatbotsForWebsites /></PageSuspense>} />
+          <Route path="/en/blog/decision-marketing" element={<PageSuspense><Pages.BlogDecisionMarketingEN /></PageSuspense>} />
+          <Route path="/en/blog/ai-governance-business" element={<PageSuspense><Pages.BlogAIGovernanceBusiness /></PageSuspense>} />
+          <Route path="/en/blog/ai-seo-tools" element={<PageSuspense><Pages.BlogAISEOTools /></PageSuspense>} />
+          <Route path="/en/blog/crm-what-is-benefits" element={<PageSuspense><Pages.BlogCRMWhatIsBenefits /></PageSuspense>} />
           <Route path="/en/blog/:id" element={<PageSuspense><Pages.BlogPost /></PageSuspense>} />
           
           {/* COMPARISONS */}
