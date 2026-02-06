@@ -73,11 +73,12 @@ const Seo = ({
     linkCanonical.href = href;
 
     // Robots meta tag for indexing control
-    // IMPORTANTE: Todas las páginas en inglés son noindex hasta que estén completas
+    // Si la página tiene robots definido explícitamente en BD, respetarlo
+    // Solo aplicar noindex por defecto a páginas EN sin configuración
     const isEnglishRoute = currentPath.startsWith('/en');
-    const effectiveRobots = isEnglishRoute 
-      ? 'noindex, follow' 
-      : (robots || 'index, follow');
+    const effectiveRobots = robots 
+      ? robots 
+      : (isEnglishRoute ? 'noindex, follow' : 'index, follow');
     
     let robotsMeta = document.querySelector('meta[name="robots"]') as HTMLMetaElement | null;
     if (!robotsMeta) {
