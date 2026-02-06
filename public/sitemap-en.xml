@@ -372,6 +372,38 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/blog/chatbots-para-paginas-web"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/blog/chatbots-for-websites"/>
   </url>
+  <url>
+    <loc>https://hayasmarketing.com/en/blog/decision-marketing</loc>
+    <lastmod>2026-02-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/blog/decision-marketing"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/blog/decision-marketing"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/en/blog/ai-governance-business</loc>
+    <lastmod>2026-02-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/blog/gobernanza-ia-empresas"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/blog/ai-governance-business"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/en/blog/ai-seo-tools</loc>
+    <lastmod>2026-02-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/blog/herramientas-seo-ia"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/blog/ai-seo-tools"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/en/blog/crm-what-is-benefits</loc>
+    <lastmod>2026-02-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/blog/crm-que-es-beneficios"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/blog/crm-what-is-benefits"/>
+  </url>
 
   <!-- COMPARISONS -->
   <url>
