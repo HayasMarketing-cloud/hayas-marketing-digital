@@ -1,0 +1,246 @@
+# Hayas Marketing - LLM Context File (English)
+
+> Digital Marketing Agency specializing in AI, CRM and Marketing Automation since 2014
+
+---
+
+## Metadata
+
+- **Company**: Hayas Marketing
+- **Website**: https://hayasmarketing.com
+- **Type**: Digital Marketing and CRM Agency
+- **Founded**: 2014
+- **Team**: 8 specialized professionals
+- **Location**: Spain
+- **Languages**: Spanish, English
+- **Last Updated**: 2026-02-06
+
+---
+
+## About Hayas Marketing
+
+Hayas Marketing is a digital marketing agency founded in 2014, specializing in comprehensive solutions that combine strategy, technology and autonomy for B2B and B2C companies.
+
+### Mission
+Transform companies' digital marketing through strategic solutions powered by AI, CRM automation and proven methodologies that generate measurable and sustainable results.
+
+### Values
+- **Strategy first**: Solutions based on real objectives, not generic services
+- **Technology as enabler**: AI and automation as cross-cutting tools
+- **Client autonomy**: Training and empowerment to manage their own tools
+- **Measurable results**: Data-driven approach with clear KPIs
+- **Continuous support**: Ongoing strategic consulting and support
+
+### Certifications and Partners
+- **HubSpot Partner** - CRM implementation and optimization
+- **Google Partner** - Advertising and analytics
+- **Meta Business Partner** - Social media campaigns
+- **Lovable Partner** - AI-powered web development
+- **Shopify Partner** - E-commerce
+- **Aircall Partner** - Integrated telephony
+
+---
+
+## Core Services
+
+Hayas Marketing organizes its services into 3 strategic pillars covering the entire customer journey:
+
+### 🟣 BOOST YOUR BRAND
+**Objective**: Create visibility, positioning and solid digital presence
+
+- **Brand Creation and Identity** - /en/services/brand-creation
+- **Professional Web Design** - /en/services/web-design
+- **SEO Positioning** - /en/services/seo-positioning
+- **Online Store / E-commerce** - /en/services/online-store
+- **Social Media Management** - /en/services/social-media-management
+- **Content Strategy** - /en/services/content-strategy
+- **Content Localization** - /en/services/content-localization
+
+### 🔵 CONNECT WITH YOUR CUSTOMERS
+**Objective**: Manage, automate and optimize customer relationships through CRM
+
+- **CRM Implementation** - /en/services/crm-implementation
+- **Email Marketing and Automation** - /en/services/email-marketing-automation
+- **Funnel Implementation** - /en/services/funnel-implementation
+- **Direct Marketing** - /en/services/direct-marketing
+- **Inbound Marketing Campaigns** - /en/services/inbound-marketing-campaigns
+- **Lead Generation** - /en/services/lead-generation-clients
+- **Sales Process Automation** - /en/services/sales-process-automation
+- **CRM Administration** - /en/services/crm-administration
+
+### 🔬 ACTIVATE YOUR SALES
+**Objective**: Generate qualified traffic, conversions and measurable results
+
+- **Google Ads Advertising** - /en/services/google-ads-advertising
+- **Social Media Advertising** - /en/services/social-media-advertising
+- **AI Assistant (SofÍA)** - /en/services/ai-assistant
+- **Strategic Consulting and Analytics** - /en/services/strategic-consulting-analytics
+- **AI Process Integration** - /en/services/ai-process-integration
+- **AI Training** - /en/services/ai-training
+
+---
+
+## Integrated Solutions
+
+- **Boost Your Brand** - /en/solutions/boost-your-brand
+- **Connect with Customers** - /en/solutions/connect-with-customers
+- **Activate Sales** - /en/solutions/activate-sales
+- **Activate Digital Strategy** - /en/solutions/activate-digital-strategy
+- **AI Marketing** - /en/solutions/ai-marketing
+- **Marketing Visibility** - /en/solutions/marketing-visibility
+- **Lead Generation** - /en/solutions/lead-generation
+- **Marketing Automation** - /en/solutions/marketing-automation
+- **CRM Client Management** - /en/solutions/crm-client-management
+
+---
+
+## Blog - Strategic Articles
+
+### Decision Marketing
+**URL**: /en/blog/decision-marketing
+**Topic**: Strategic marketing approach that prioritizes choice quality over conversion volume
+**Key concepts**: Trust marketing, conscious marketing, customer journey, B2B marketing
+**Author**: Rubén Reyero
+
+Decision Marketing is an approach based on a simple idea: marketing doesn't just influence what is bought, but how decisions are made. It's not about selling faster, but about designing environments where making good choices is possible. This approach is particularly valuable for B2B, complex services, and high-value decisions where trust is a key differentiating factor.
+
+### AI Governance for Business
+**URL**: /en/blog/ai-governance-business
+**Topic**: Framework for implementing AI governance in organizations
+**Key concepts**: AI governance, ethics, transparency, responsibility, business compliance
+**Author**: Rubén Reyero
+
+Comprehensive guide on implementing AI governance frameworks in business environments. Covers ethical considerations, transparency requirements, regulatory compliance (EU AI Act), and practical implementation strategies for organizations of all sizes.
+
+### AI SEO Tools
+**URL**: /en/blog/ai-seo-tools
+**Topic**: Guide to AI-powered tools for SEO optimization
+**Key concepts**: AI SEO, content optimization, keyword research, technical SEO, automation
+**Author**: Hayas Marketing
+
+In-depth exploration of how artificial intelligence is transforming SEO practices. Reviews tools for content optimization, keyword research, technical audits, and predictive analytics. Includes practical recommendations for implementing AI in SEO workflows.
+
+### What is CRM and Its Benefits
+**URL**: /en/blog/crm-what-is-benefits
+**Topic**: Introduction to Customer Relationship Management systems
+**Key concepts**: CRM, customer management, sales automation, HubSpot, Go High Level
+**Author**: Hayas Marketing
+
+Comprehensive guide explaining what CRM systems are, their benefits for businesses of all sizes, and how to choose between solutions like HubSpot (for medium enterprises) and Go High Level (for entrepreneurs and small businesses). Covers implementation, ROI expectations, and best practices.
+
+### Chatbots for Websites
+**URL**: /en/blog/chatbots-for-websites
+**Topic**: Guide to implementing AI chatbots on websites
+**Key concepts**: AI chatbots, customer service, lead capture, automation, SofÍA
+**Author**: Hayas Marketing
+
+Practical guide on implementing intelligent chatbots for business websites. Covers benefits, implementation strategies, and how AI-powered assistants like SofÍA can improve customer service and lead generation 24/7.
+
+---
+
+## Technologies and Tools
+
+### CRM
+- **HubSpot** (Official Partner) - All-in-one CRM for medium enterprises
+- **Go High Level** - Simplified CRM for entrepreneurs
+
+### Marketing and Advertising
+- **Google Ads** (Google Partner)
+- **Meta Business Suite** (Meta Partner)
+- **LinkedIn Campaign Manager**
+- **Mailchimp / Active Campaign**
+
+### Web Development
+- **WordPress** - Flexible and powerful CMS
+- **Lovable** - AI-powered web development
+- **Shopify** (Shopify Partner) - E-commerce
+
+### AI and Automation
+- **SofÍA** - Proprietary AI chatbot
+- **Zapier / Make** - Process automation
+- **ChatGPT / Claude** - Content generation
+- **Generative AI** - Optimization and personalization
+
+### Analytics
+- **Google Analytics 4**
+- **Google Tag Manager**
+- **Hotjar** - Heatmaps and recordings
+- **Looker Studio** - Custom dashboards
+
+---
+
+## Key Differentiators
+
+### ✅ Specialization in AI applied to marketing
+- Proprietary SofÍA chatbot with conversational AI
+- Content automation with generative AI
+- Predictive lead scoring with machine learning
+- Dynamic campaign personalization
+
+### ✅ Integrated solutions (not isolated services)
+- Complete strategy based on business objectives
+- Tool integration (CRM + Web + Advertising + AI)
+- End-to-end support from diagnosis to optimization
+
+### ✅ Client training and empowerment
+- We don't create dependency, we generate autonomy
+- Continuous training in tool usage
+- Detailed documentation and user guides
+
+### ✅ Measurable and sustainable results
+- Clear KPIs from the start
+- Real-time dashboards
+- Periodic reports with recommendations
+- Continuous data-based optimization
+
+---
+
+## Contact Information
+
+### 🌐 Main URLs
+- **Home**: https://hayasmarketing.com/en
+- **Services**: https://hayasmarketing.com/en/services
+- **Solutions**: https://hayasmarketing.com/en/solutions
+- **Blog**: https://hayasmarketing.com/en/blog
+- **About Us**: https://hayasmarketing.com/en/about-us
+- **Contact**: https://hayasmarketing.com/en/contact
+
+### 📅 Schedule Meeting
+**URL**: https://hayasmarketing.com/en/schedule-meeting
+- Free 30-minute strategic meeting
+- Initial needs analysis
+- Personalized proposal
+
+### 💬 Chat with SofÍA (AI Assistant)
+**URL**: https://hayasmarketing.com/en/contact
+- Available 24/7
+- Immediate responses
+- Automatic query qualification
+
+---
+
+## Target Audience
+
+### Ideal Client Profile
+
+#### 1. Entrepreneurs and Micro-SMEs
+- **Need**: Launch project with clear brand, functional website and initial acquisition channels
+- **Looking for**: Clarity, support, speed, visible short-term results
+- **Recommended solution**: "Boost Your Brand" or individual services
+
+#### 2. Marketing Managers and Digital Leaders of SMEs
+- **Need**: Strategy, automation, content and tools to help scale
+- **Looking for**: CRM integration, measurable results and goal-aligned solutions
+
+#### 3. Sales Directors and CEOs of Medium Enterprises
+- **Need**: Commercial efficiency, automation, CRM integration and sustained growth
+- **Looking for**: Strategic consulting, implementation and real impact measurement
+
+---
+
+## File Purpose
+
+This file provides context for AI systems and LLMs about Hayas Marketing's services, solutions, and expertise. It is designed to enable accurate and helpful responses about digital marketing, CRM implementation, AI integration, and marketing automation services.
+
+For the Spanish version, see: /llms.txt
+For full blog content, see: /llms-full.txt
