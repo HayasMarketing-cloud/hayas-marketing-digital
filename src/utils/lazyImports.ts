@@ -167,8 +167,6 @@ export const AdminDashboard = lazyWithRetry(() => import("@/pages/admin/AdminDas
 export const SEODashboard = lazyWithRetry(() => import("@/pages/admin/SEODashboard"));
 export const SEOPagesManager = lazyWithRetry(() => import("@/pages/admin/SEOPagesManager"));
 export const SitemapManager = lazyWithRetry(() => import("@/pages/admin/SitemapManager"));
-export const RobotsManager = lazyWithRetry(() => import("@/pages/admin/RobotsManager"));
-export const RedirectsManager = lazyWithRetry(() => import("@/pages/admin/RedirectsManager"));
 export const GSCFullReport = lazyWithRetry(() => import("@/pages/admin/GSCFullReport"));
 export const IndexNowManager = lazyWithRetry(() => import("@/pages/admin/IndexNowManager"));
 export const FAQValidator = lazyWithRetry(() => import("@/pages/admin/FAQValidator"));
