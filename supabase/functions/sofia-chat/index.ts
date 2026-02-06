@@ -22,6 +22,72 @@ interface LeadInfo {
   interest?: string;
 }
 
+// Page context mapping for personalized responses
+const getPageContext = (sourcePage: string): string => {
+  const pageContexts: Record<string, { es: string; en: string }> = {
+    '/es': {
+      es: 'El usuario está en la página principal. Puede estar explorando opciones generales.',
+      en: 'User is on the main page. May be exploring general options.'
+    },
+    '/es/soluciones/impulsa-tu-marca': {
+      es: 'El usuario está interesado en BRANDING e identidad de marca. Enfócate en: diseño de logos, naming, manual de marca, web corporativa. Destaca casos de éxito de creación de marca.',
+      en: 'User is interested in BRANDING and brand identity.'
+    },
+    '/es/soluciones/conecta-con-tus-clientes': {
+      es: 'El usuario busca mejorar su MARKETING y captación de leads. Enfócate en: SEO, contenidos, redes sociales, publicidad digital. Menciona la importancia de una estrategia integrada.',
+      en: 'User wants to improve MARKETING and lead generation.'
+    },
+    '/es/soluciones/activa-tus-ventas': {
+      es: 'El usuario quiere AUTOMATIZAR ventas y gestionar clientes. Enfócate en: CRM (GoHighLevel para pequeños, HubSpot para medianos), automatización de emails, funnels de venta, integración IA.',
+      en: 'User wants to AUTOMATE sales and manage clients.'
+    },
+    '/es/agendar-reunion': {
+      es: 'El usuario está listo para AGENDAR UNA REUNIÓN. Está en fase avanzada del funnel. Resuelve dudas rápidas y facilita que complete la reserva.',
+      en: 'User is ready to SCHEDULE A MEETING.'
+    },
+    '/es/contacto': {
+      es: 'El usuario quiere CONTACTAR. Puede tener preguntas específicas o querer más información antes de decidir.',
+      en: 'User wants to CONTACT. May have specific questions.'
+    },
+    '/en': {
+      es: 'User on English homepage.',
+      en: 'User is on the English main page. May be exploring general options.'
+    },
+    '/en/solutions/boost-your-brand': {
+      es: 'User interested in branding.',
+      en: 'User is interested in BRANDING and brand identity. Focus on: logo design, naming, brand manual, corporate website.'
+    },
+    '/en/solutions/connect-with-customers': {
+      es: 'User interested in marketing.',
+      en: 'User wants to improve MARKETING and lead generation. Focus on: SEO, content, social media, digital advertising.'
+    },
+    '/en/solutions/activate-sales': {
+      es: 'User interested in sales automation.',
+      en: 'User wants to AUTOMATE sales and manage clients. Focus on: CRM, email automation, sales funnels, AI integration.'
+    },
+    '/en/schedule-meeting': {
+      es: 'User ready to schedule.',
+      en: 'User is ready to SCHEDULE A MEETING. Resolve quick questions and help them complete the booking.'
+    },
+    '/en/contact': {
+      es: 'User wants to contact.',
+      en: 'User wants to CONTACT. May have specific questions before deciding.'
+    }
+  };
+
+  const isEnglish = sourcePage?.startsWith('/en');
+  const context = pageContexts[sourcePage];
+  
+  if (context) {
+    return isEnglish ? context.en : context.es;
+  }
+  
+  // Default context for unknown pages
+  return isEnglish 
+    ? 'User is browsing the website. Help them find what they need.'
+    : 'El usuario está navegando por la web. Ayúdale a encontrar lo que necesita.';
+};
+
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
@@ -63,10 +129,20 @@ serve(async (req) => {
       console.error('❌ Error fetching system prompt:', fetchError);
     }
 
-    // Build messages array with system prompt
+    // Add page-specific context to system prompt
+    const pageContext = getPageContext(sourcePage);
+    const enhancedPrompt = `${systemPrompt}
+
+## CONTEXTO ACTUAL DE LA CONVERSACIÓN
+Página donde está el usuario: ${sourcePage}
+${pageContext}
+
+Adapta tu respuesta a este contexto específico del usuario.`;
+
+    // Build messages array with enhanced system prompt
     const systemMessage: ChatMessage = {
       role: 'system',
-      content: systemPrompt
+      content: enhancedPrompt
     };
 
     const chatMessages: ChatMessage[] = [

@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { X, Send, Loader2, MessageCircle, Minimize2, Calendar, Mail } from 'lucide-react';
+import { X, Send, Loader2, MessageCircle, Minimize2, Calendar, Mail, Palette, TrendingUp, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
@@ -21,6 +21,13 @@ interface LeadInfo {
   phone?: string;
   company?: string;
   interest?: string;
+}
+
+interface QuickAction {
+  icon: React.ElementType;
+  label: string;
+  href?: string;
+  message?: string;
 }
 
 const SofiaChatNew = () => {
@@ -55,19 +62,64 @@ const SofiaChatNew = () => {
   const shouldRender = allowedPages.includes(location.pathname);
   const isEnglish = location.pathname.startsWith('/en');
 
+  // Get page-specific quick actions
+  const getQuickActions = (): QuickAction[] => {
+    const baseActions: QuickAction[] = [
+      {
+        icon: Calendar,
+        label: isEnglish ? 'Schedule meeting' : 'Agendar reunión',
+        href: isEnglish ? '/en/schedule-meeting' : '/es/agendar-reunion'
+      },
+      {
+        icon: Mail,
+        label: isEnglish ? 'Contact' : 'Contactar',
+        href: isEnglish ? '/en/contact' : '/es/contacto'
+      }
+    ];
+
+    const pageActions: Record<string, QuickAction[]> = {
+      '/es/soluciones/impulsa-tu-marca': [
+        { icon: Palette, label: '¿Qué incluye el branding?', message: '¿Qué incluye vuestro servicio de branding e identidad de marca?' },
+        ...baseActions
+      ],
+      '/es/soluciones/conecta-con-tus-clientes': [
+        { icon: TrendingUp, label: '¿Cómo funciona el SEO?', message: '¿Cómo funciona vuestro servicio de SEO y posicionamiento?' },
+        ...baseActions
+      ],
+      '/es/soluciones/activa-tus-ventas': [
+        { icon: Zap, label: '¿Qué CRM recomendáis?', message: '¿Qué CRM me recomendáis para mi negocio?' },
+        ...baseActions
+      ],
+      '/en/solutions/boost-your-brand': [
+        { icon: Palette, label: 'What does branding include?', message: 'What does your branding service include?' },
+        ...baseActions
+      ],
+      '/en/solutions/connect-with-customers': [
+        { icon: TrendingUp, label: 'How does SEO work?', message: 'How does your SEO service work?' },
+        ...baseActions
+      ],
+      '/en/solutions/activate-sales': [
+        { icon: Zap, label: 'Which CRM do you recommend?', message: 'Which CRM do you recommend for my business?' },
+        ...baseActions
+      ]
+    };
+
+    return pageActions[location.pathname] || baseActions;
+  };
+
   // Initial greeting based on page
   const getInitialMessage = (): string => {
     const greetings: Record<string, string> = {
       '/es': '¡Hola! 👋 Soy SofÍA, tu asistente de IA. ¿En qué puedo ayudarte hoy?',
-      '/es/soluciones/impulsa-tu-marca': '¡Hola! 👋 Veo que estás explorando cómo impulsar tu marca. ¿Te cuento cómo podemos ayudarte?',
-      '/es/soluciones/conecta-con-tus-clientes': '¡Hola! 👋 ¿Interesado en mejorar tu conexión con clientes? Te explico nuestras soluciones.',
-      '/es/soluciones/activa-tus-ventas': '¡Hola! 👋 ¿Quieres activar tus ventas? Te cuento cómo nuestro CRM y automatización pueden ayudarte.',
+      '/es/soluciones/impulsa-tu-marca': '¡Hola! 👋 Veo que estás explorando cómo impulsar tu marca. ¿Te cuento cómo podemos ayudarte con branding, diseño web o identidad corporativa?',
+      '/es/soluciones/conecta-con-tus-clientes': '¡Hola! 👋 ¿Buscas mejorar tu visibilidad online y captar más clientes? Te explico nuestras soluciones de SEO, contenidos y marketing digital.',
+      '/es/soluciones/activa-tus-ventas': '¡Hola! 👋 ¿Quieres automatizar tu gestión comercial? Te cuento cómo nuestro CRM y automatizaciones pueden multiplicar tus ventas.',
       '/es/agendar-reunion': '¡Hola! 👋 Perfecto que quieras agendar una reunión. ¿Tienes alguna duda antes de reservar?',
       '/es/contacto': '¡Hola! 👋 ¿Necesitas contactar con nosotros? Te ayudo con cualquier consulta.',
       '/en': 'Hi! 👋 I\'m SofIA, your AI assistant. How can I help you today?',
-      '/en/solutions/boost-your-brand': 'Hi! 👋 I see you\'re exploring how to boost your brand. Want me to explain how we can help?',
-      '/en/solutions/connect-with-customers': 'Hi! 👋 Interested in improving your customer connection? Let me explain our solutions.',
-      '/en/solutions/activate-sales': 'Hi! 👋 Want to activate your sales? Let me tell you about our CRM and automation.',
+      '/en/solutions/boost-your-brand': 'Hi! 👋 I see you\'re exploring how to boost your brand. Want me to explain our branding, web design, or corporate identity services?',
+      '/en/solutions/connect-with-customers': 'Hi! 👋 Looking to improve your online visibility and attract more clients? Let me explain our SEO, content, and digital marketing solutions.',
+      '/en/solutions/activate-sales': 'Hi! 👋 Want to automate your sales management? Let me tell you how our CRM and automations can multiply your sales.',
       '/en/schedule-meeting': 'Hi! 👋 Great that you want to schedule a meeting. Any questions before booking?',
       '/en/contact': 'Hi! 👋 Need to contact us? I can help with any questions.',
     };
@@ -343,22 +395,38 @@ const SofiaChatNew = () => {
                 </div>
               </ScrollArea>
 
-              {/* Quick Actions */}
+              {/* Quick Actions - Dynamic based on page */}
               <div className="px-4 pb-2 flex gap-2 flex-wrap">
-                <a
-                  href={isEnglish ? '/en/schedule-meeting' : '/es/agendar-reunion'}
-                  className="flex items-center gap-1 text-xs bg-gray-100 hover:bg-gray-200 px-3 py-1.5 rounded-full transition-colors"
-                >
-                  <Calendar className="w-3 h-3" />
-                  {isEnglish ? 'Schedule meeting' : 'Agendar reunión'}
-                </a>
-                <a
-                  href={isEnglish ? '/en/contact' : '/es/contacto'}
-                  className="flex items-center gap-1 text-xs bg-gray-100 hover:bg-gray-200 px-3 py-1.5 rounded-full transition-colors"
-                >
-                  <Mail className="w-3 h-3" />
-                  {isEnglish ? 'Contact' : 'Contactar'}
-                </a>
+                {getQuickActions().map((action, index) => {
+                  const Icon = action.icon;
+                  if (action.href) {
+                    return (
+                      <a
+                        key={index}
+                        href={action.href}
+                        className="flex items-center gap-1 text-xs bg-gray-100 hover:bg-gray-200 px-3 py-1.5 rounded-full transition-colors"
+                      >
+                        <Icon className="w-3 h-3" />
+                        {action.label}
+                      </a>
+                    );
+                  }
+                  return (
+                    <button
+                      key={index}
+                      onClick={() => {
+                        if (action.message) {
+                          setInputValue(action.message);
+                          inputRef.current?.focus();
+                        }
+                      }}
+                      className="flex items-center gap-1 text-xs bg-gray-100 hover:bg-gray-200 px-3 py-1.5 rounded-full transition-colors"
+                    >
+                      <Icon className="w-3 h-3" />
+                      {action.label}
+                    </button>
+                  );
+                })}
               </div>
 
               {/* Input Area */}
