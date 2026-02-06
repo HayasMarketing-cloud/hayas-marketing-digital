@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { useNavigationHistory, getNavigationSummary } from '@/hooks/useNavigationHistory';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 
@@ -33,6 +34,10 @@ interface QuickAction {
 const SofiaChatNew = () => {
   const location = useLocation();
   const isMobile = useIsMobile();
+  
+  // Track navigation history
+  useNavigationHistory();
+  
   const [isOpen, setIsOpen] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
@@ -202,6 +207,8 @@ const SofiaChatNew = () => {
     setIsLoading(true);
 
     try {
+      const navigationHistory = getNavigationSummary();
+      
       const { data, error } = await supabase.functions.invoke('sofia-chat', {
         body: {
           messages: [...messages, userMessage].map(m => ({
@@ -209,6 +216,7 @@ const SofiaChatNew = () => {
             content: m.content
           })),
           sourcePage: location.pathname,
+          navigationHistory,
           capturedLead: Object.keys(updatedLead).length > 0 ? updatedLead : null
         }
       });
