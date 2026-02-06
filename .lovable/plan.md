@@ -1,78 +1,61 @@
-
-# Plan: Hacer indexable la home EN (/en)
-
-## Problema Detectado
-
-La herramienta SEO detecta correctamente que `https://hayasmarketing.com/en` tiene:
-- **Robots Tag:** `noindex, follow`
-
-Esto ocurre aunque en la base de datos (`seo_pages`) la página `/en` **sí** está configurada como `index, follow`.
-
-**Causa raíz:** Existe un override forzado en `src/components/Seo.tsx` (líneas 77-80):
-
-```typescript
-const isEnglishRoute = currentPath.startsWith('/en');
-const effectiveRobots = isEnglishRoute 
-  ? 'noindex, follow'   // <-- FUERZA noindex en TODAS las rutas EN
-  : (robots || 'index, follow');
-```
-
-Este override ignora completamente el valor de `robots` que viene de la base de datos para páginas EN.
+# Plan de Proyecto: Hayas Marketing Web
 
 ---
 
-## Solución Propuesta
+## Flujo de Sincronización Bilingüe
 
-Modificar la lógica para que **respete la configuración de la BD** cuando existe, y solo aplique `noindex` por defecto a páginas EN que no tengan configuración explícita.
+### Política Establecida: "Avísame siempre"
 
-### Cambio en `src/components/Seo.tsx`
+Cuando se solicite un cambio de contenido en un artículo o página traducida (ES/EN), **siempre preguntar al usuario** si desea aplicar el cambio también a la versión en el otro idioma antes de proceder.
 
-**Antes:**
+### Estructura Actual de Componentes Bilingües
+
+Los artículos del blog utilizan **componentes React separados por idioma**:
+
+| Español | Inglés |
+|---------|--------|
+| `BlogDecisionMarketing.tsx` | `BlogDecisionMarketingEN.tsx` |
+| `BlogGobernanzaIA.tsx` | `BlogAIGovernanceBusiness.tsx` |
+| `BlogHerramientasSEOIA.tsx` | `BlogAISEOTools.tsx` |
+| `BlogQueEsCRMBeneficios.tsx` | `BlogCRMWhatIsBenefits.tsx` |
+| `BlogChatbotsParaWebs.tsx` | `BlogChatbotsForWebsites.tsx` |
+
+### Proceso de Sincronización
+
+1. **Usuario solicita cambio** en una versión (ej: ES)
+2. **Agente pregunta**: "¿Quieres que aplique este cambio también a la versión EN?"
+3. **Si confirma**: Aplicar cambio adaptado (no traducción literal) a ambas versiones
+4. **Si rechaza**: Aplicar solo a la versión solicitada
+
+### Archivos de Contexto IA Relacionados
+
+| Archivo | Propósito |
+|---------|-----------|
+| `public/llms.txt` | Contexto ES para crawlers IA |
+| `public/llms-en.txt` | Contexto EN para crawlers IA |
+| `public/content/es/*.md` | Base de conocimiento ES para SofÍA |
+| `public/content/en/*.md` | Base de conocimiento EN para SofÍA |
+
+**Nota**: Los cambios de contenido en artículos también pueden requerir actualización de los archivos `.md` y `llms*.txt` correspondientes.
+
+---
+
+## Estrategia de Indexación EN
+
+### Política de Robots para Rutas EN
+
+El sistema respeta la configuración individual de `seo_pages`. Solo aplica `noindex, follow` como fallback para rutas EN sin configuración explícita en la BD.
+
 ```typescript
-const isEnglishRoute = currentPath.startsWith('/en');
-const effectiveRobots = isEnglishRoute 
-  ? 'noindex, follow' 
-  : (robots || 'index, follow');
-```
-
-**Después:**
-```typescript
-const isEnglishRoute = currentPath.startsWith('/en');
-// Si la página tiene robots definido explícitamente, respetarlo
-// Solo aplicar noindex por defecto a páginas EN sin configuración
+// src/components/Seo.tsx
 const effectiveRobots = robots 
   ? robots 
   : (isEnglishRoute ? 'noindex, follow' : 'index, follow');
 ```
 
----
+### Páginas EN Indexables (configuradas en BD)
 
-## Cambio Similar en `src/utils/autoSEO.ts`
-
-Línea 54 tiene la misma lógica. Se puede mantener como fallback, pero la prioridad debe ser el valor de la BD.
-
----
-
-## Impacto
-
-| Página | Antes | Después |
-|--------|-------|---------|
-| `/en` (con `robots: 'index,follow'` en BD) | `noindex, follow` | `index, follow` |
-| `/en/solutions/...` (con BD) | `noindex, follow` | `index, follow` |
-| `/en/nueva-pagina` (sin BD) | `noindex, follow` | `noindex, follow` (mantiene fallback) |
-
----
-
-## Archivos a Modificar
-
-| Archivo | Líneas | Cambio |
-|---------|--------|--------|
-| `src/components/Seo.tsx` | 77-80 | Priorizar `robots` prop sobre el fallback EN |
-
----
-
-## Verificación Post-Cambio
-
-1. Visitar `https://hayasmarketing.com/en`
-2. Inspeccionar el HTML y buscar `<meta name="robots">`
-3. Debe mostrar `content="index, follow"`
+- `/en` (Home EN)
+- `/en/services/*` (Servicios)
+- `/en/solutions/*` (Soluciones)
+- `/en/blog/*` (Artículos traducidos)
