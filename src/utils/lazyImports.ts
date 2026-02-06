@@ -176,6 +176,7 @@ export const TranslationManager = lazyWithRetry(() => import("@/pages/admin/Tran
 export const MediaLibrary = lazyWithRetry(() => import("@/pages/admin/MediaLibrary"));
 export const BrandBook = lazyWithRetry(() => import("@/pages/admin/BrandBook"));
 export const ContentHub = lazyWithRetry(() => import("@/pages/admin/ContentHub"));
+export const SofiaChatbotAdmin = lazyWithRetry(() => import("@/pages/admin/SofiaChatbotAdmin"));
 
 // Páginas legales
 export const AvisoLegal = lazyWithRetry(() => import("@/pages/AvisoLegal"));

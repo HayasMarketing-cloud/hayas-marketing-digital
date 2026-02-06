@@ -82,6 +82,14 @@ const AdminDashboard = () => {
 
   const contentTools = [
     {
+      title: 'Chatbot SofÍA',
+      description: 'Configura el prompt y comportamiento del asistente IA',
+      icon: Bot,
+      path: '/admin/sofia',
+      status: 'active' as const,
+      category: 'Contenido & Traducciones'
+    },
+    {
       title: 'Translation Manager',
       description: 'Gestiona traducciones y contenido multiidioma',
       icon: Languages,
