@@ -493,8 +493,6 @@ const App = () => (
              <Route path="/admin/seo/gsc" element={<AdminProtectedRoute><PageSuspense><Pages.GSCFullReport /></PageSuspense></AdminProtectedRoute>} />
              <Route path="/admin/seo/pages" element={<AdminProtectedRoute><PageSuspense><Pages.SEOPagesManager /></PageSuspense></AdminProtectedRoute>} />
              <Route path="/admin/seo/sitemap" element={<AdminProtectedRoute><PageSuspense><Pages.SitemapManager /></PageSuspense></AdminProtectedRoute>} />
-             <Route path="/admin/seo/robots" element={<AdminProtectedRoute><PageSuspense><Pages.RobotsManager /></PageSuspense></AdminProtectedRoute>} />
-             <Route path="/admin/seo/redirects" element={<AdminProtectedRoute><PageSuspense><Pages.RedirectsManager /></PageSuspense></AdminProtectedRoute>} />
              <Route path="/admin/seo/indexnow" element={<AdminProtectedRoute><PageSuspense><Pages.IndexNowManager /></PageSuspense></AdminProtectedRoute>} />
               {/* ADMIN - Content & Branding (protected) */}
               <Route path="/admin/faq-validator" element={<AdminProtectedRoute><PageSuspense><Pages.FAQValidator /></PageSuspense></AdminProtectedRoute>} />
@@ -613,7 +611,6 @@ const App = () => (
           {/* ADMIN PAGES */}
           <Route path="/en/admin/seo/pages" element={<PageSuspense><Pages.SEOPagesManager /></PageSuspense>} />
           <Route path="/en/admin/seo/sitemap" element={<PageSuspense><Pages.SitemapManager /></PageSuspense>} />
-          <Route path="/en/admin/redirects" element={<PageSuspense><Pages.RedirectsManager /></PageSuspense>} />
           
           {/* LEGAL PAGES */}
           <Route path="/en/legal/privacy-policy" element={<PageSuspense><Pages.PoliticaPrivacidad /></PageSuspense>} />
