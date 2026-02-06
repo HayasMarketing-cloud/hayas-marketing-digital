@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route, Navigate, useParams } from "react-router-
 import { HelmetProvider } from 'react-helmet-async';
 import { AuthProvider } from '@/contexts/AuthContext';
 import { LanguageProvider } from '@/contexts/LanguageContext';
-import SofiaWidget from "./components/SofiaSection";
+import SofiaChatNew from "./components/SofiaChatNew";
 import ScrollToTop from './components/ScrollToTop';
 import DraftProtection from './components/DraftProtection';
 import PageSuspense from './components/PageSuspense';
@@ -39,7 +39,7 @@ const App = () => (
               <ScrollToTop />
               <RoutePreloader />
               <RouteValidator />
-              <SofiaWidget />
+              <SofiaChatNew />
               <DraftProtection>
                 {/* Gestor de redirecciones React Router nativo */}
                 <RedirectManager />

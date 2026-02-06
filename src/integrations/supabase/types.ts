@@ -786,6 +786,48 @@ export type Database = {
           },
         ]
       }
+      sofia_leads: {
+        Row: {
+          company: string | null
+          conversation_summary: string | null
+          created_at: string
+          email: string | null
+          id: string
+          interest: string | null
+          name: string | null
+          phone: string | null
+          source_page: string | null
+          status: string | null
+          updated_at: string
+        }
+        Insert: {
+          company?: string | null
+          conversation_summary?: string | null
+          created_at?: string
+          email?: string | null
+          id?: string
+          interest?: string | null
+          name?: string | null
+          phone?: string | null
+          source_page?: string | null
+          status?: string | null
+          updated_at?: string
+        }
+        Update: {
+          company?: string | null
+          conversation_summary?: string | null
+          created_at?: string
+          email?: string | null
+          id?: string
+          interest?: string | null
+          name?: string | null
+          phone?: string | null
+          source_page?: string | null
+          status?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           created_at: string | null
