@@ -42,12 +42,20 @@ const ROUTE_TO_CONTENT: Record<string, string> = {
   // ES - General
   '/es/nosotros': '/es/general/empresa.md',
   '/es': '/es/general/empresa.md',
-  // EN - Services (futuro)
+  // EN - Services
   '/en/services/branding': '/en/services/branding.md',
   '/en/services/web-design': '/en/services/web-design.md',
-  // EN - Solutions (futuro)
+  '/en/services/seo-positioning': '/en/services/seo-positioning.md',
+  '/en/services/crm-implementation': '/en/services/crm-implementation.md',
+  '/en/services/google-ads': '/en/services/google-ads.md',
+  '/en/services/ai-assistant': '/en/services/ai-assistant.md',
+  // EN - Solutions
   '/en/solutions/boost-your-brand': '/en/solutions/boost-your-brand.md',
+  '/en/solutions/connect-with-customers': '/en/solutions/connect-with-customers.md',
+  '/en/solutions/activate-sales': '/en/solutions/activate-sales.md',
+  // EN - General
   '/en': '/en/general/company.md',
+  '/en/about': '/en/general/company.md',
 };
 
 // Extract IA_SUMMARY from markdown content (60-80 words block for quick context)
