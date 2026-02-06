@@ -100,9 +100,10 @@ serve(async (req) => {
       throw new Error('OPENAI_API_KEY not configured');
     }
 
-    const { messages, sourcePage, capturedLead } = await req.json();
+    const { messages, sourcePage, navigationHistory, capturedLead } = await req.json();
     
     console.log('🤖 SofÍA chat request from:', sourcePage);
+    console.log('📍 Navigation history:', navigationHistory);
 
     // Create Supabase client for data access
     const supabase = createClient(
@@ -129,13 +130,24 @@ serve(async (req) => {
       console.error('❌ Error fetching system prompt:', fetchError);
     }
 
-    // Add page-specific context to system prompt
+    // Add page-specific context and navigation history to system prompt
     const pageContext = getPageContext(sourcePage);
+    
+    // Build navigation context
+    let navigationContext = '';
+    if (navigationHistory && navigationHistory.length > 0) {
+      const isEnglish = sourcePage?.startsWith('/en');
+      navigationContext = isEnglish 
+        ? `\nUser navigation history this session: ${navigationHistory}\nUse this to understand their interests and suggest relevant solutions.`
+        : `\nHistorial de navegación del usuario en esta sesión: ${navigationHistory}\nUsa esto para entender sus intereses y sugerir soluciones relevantes.`;
+    }
+    
     const enhancedPrompt = `${systemPrompt}
 
 ## CONTEXTO ACTUAL DE LA CONVERSACIÓN
 Página donde está el usuario: ${sourcePage}
 ${pageContext}
+${navigationContext}
 
 Adapta tu respuesta a este contexto específico del usuario.`;
 
