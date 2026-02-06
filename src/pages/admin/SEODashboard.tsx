@@ -16,6 +16,7 @@ import {
   TrendingUp, Target, Layers, Activity
 } from 'lucide-react';
 import { getIndexableUrls } from '@/utils/sitemap';
+import { GSCQuickMetrics } from '@/components/admin/seo/GSCQuickMetrics';
 
 const SEODashboard: React.FC = () => {
   const navigate = useNavigate();
@@ -236,6 +237,9 @@ const SEODashboard: React.FC = () => {
                   </CardContent>
                 </Card>
               </div>
+
+              {/* Widget de métricas GSC en tiempo real */}
+              <GSCQuickMetrics />
 
               {/* Estado de los 3 sistemas */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
