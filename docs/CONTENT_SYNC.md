@@ -45,21 +45,23 @@ IA_SUMMARY:
 
 ## Servicios - Mapping Componentes → .md
 
-| Componente React | Fichero .md ES | Fichero .md EN | Estado EN |
-|------------------|----------------|----------------|-----------|
+| Componente React | Fichero .md ES | Fichero .md EN | Estado |
+|------------------|----------------|----------------|--------|
 | `CreacionMarca.tsx` | `/content/es/servicios/creacion-marca.md` | `/content/en/services/branding.md` | ✅ |
 | `DisenoWeb.tsx` | `/content/es/servicios/diseno-web.md` | `/content/en/services/web-design.md` | ✅ |
 | `SeoPosicionamiento.tsx` | `/content/es/servicios/seo-posicionamiento.md` | `/content/en/services/seo-positioning.md` | ✅ |
-| `TiendaOnline.tsx` | `/content/es/servicios/tienda-online.md` | `/content/en/services/ecommerce.md` | ❌ |
+| `TiendaOnline.tsx` | `/content/es/servicios/tienda-online.md` | `/content/en/services/ecommerce.md` | ✅ |
 | `ImplantacionCRM.tsx` | `/content/es/servicios/implantacion-crm.md` | `/content/en/services/crm-implementation.md` | ✅ |
 | `PublicidadGoogleAds.tsx` | `/content/es/servicios/publicidad-google-ads.md` | `/content/en/services/google-ads.md` | ✅ |
 | `AsistenteIA.tsx` | `/content/es/servicios/asistente-ia.md` | `/content/en/services/ai-assistant.md` | ✅ |
-| `EstrategiaContenidos.tsx` | `/content/es/servicios/estrategia-contenidos.md` | `/content/en/services/content-strategy.md` | ❌ |
+| `EstrategiaContenidos.tsx` | `/content/es/servicios/estrategia-contenidos.md` | `/content/en/services/content-strategy.md` | ✅ |
+| `GestionRedesSociales.tsx` | `/content/es/servicios/gestion-redes-sociales.md` | `/content/en/services/social-media.md` | ✅ |
+| `EmailMarketing.tsx` | `/content/es/servicios/email-marketing.md` | `/content/en/services/email-marketing.md` | ✅ |
 
 ## Soluciones - Mapping
 
-| Componente React | Fichero .md ES | Fichero .md EN | Estado EN |
-|------------------|----------------|----------------|-----------|
+| Componente React | Fichero .md ES | Fichero .md EN | Estado |
+|------------------|----------------|----------------|--------|
 | `ImpulsaTuMarca.tsx` | `/content/es/soluciones/impulsa-tu-marca.md` | `/content/en/solutions/boost-your-brand.md` | ✅ |
 | `ConectaConTusClientes.tsx` | `/content/es/soluciones/conecta-con-tus-clientes.md` | `/content/en/solutions/connect-with-customers.md` | ✅ |
 | `ActivaTusVentas.tsx` | `/content/es/soluciones/activa-tus-ventas.md` | `/content/en/solutions/activate-sales.md` | ✅ |
