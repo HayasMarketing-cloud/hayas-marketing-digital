@@ -72,11 +72,11 @@ All 3 solution pages are now fully bilingual with useTranslation hook:
 ### 📋 Phase 3: Strategic Blog Posts
 | Spanish Path | English Path | Status |
 |-------------|-------------|--------|
-| `/es/blog/decision-marketing` | `/en/blog/decision-marketing` | ⏳ Pending |
-| `/es/blog/gobernanza-ia-empresas` | `/en/blog/ai-governance-business` | ⏳ Pending |
-| `/es/blog/ia-seo-herramientas` | `/en/blog/ai-seo-tools` | ⏳ Pending |
+| `/es/blog/decision-marketing` | `/en/blog/decision-marketing` | ✅ Done |
+| `/es/blog/gobernanza-ia-empresas` | `/en/blog/ai-governance-business` | ✅ Done |
+| `/es/blog/ia-seo-herramientas` | `/en/blog/ai-seo-tools` | ✅ Done |
 | `/es/blog/chatbots-para-paginas-web` | `/en/blog/chatbots-for-websites` | ✅ Done |
-| `/es/blog/crm-que-es-beneficios` | `/en/blog/crm-what-is-benefits` | ⏳ Pending |
+| `/es/blog/crm-que-es-beneficios` | `/en/blog/crm-what-is-benefits` | ✅ Done |
 
 ### 📋 Phase 4: Support Pages
 | Spanish Path | English Path | Status |

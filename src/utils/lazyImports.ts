@@ -104,6 +104,12 @@ export const BlogGuiaPrivacidadHuellaDigital = lazyWithRetry(() => import("@/pag
 export const BlogGobernanzaIAEmpresas = lazyWithRetry(() => import("@/pages/BlogGobernanzaIAEmpresas"));
 export const BlogDecisionMarketing = lazyWithRetry(() => import("@/pages/BlogDecisionMarketing"));
 
+// Blog posts EN
+export const BlogDecisionMarketingEN = lazyWithRetry(() => import("@/pages/BlogDecisionMarketingEN"));
+export const BlogAIGovernanceBusiness = lazyWithRetry(() => import("@/pages/BlogAIGovernanceBusiness"));
+export const BlogAISEOTools = lazyWithRetry(() => import("@/pages/BlogAISEOTools"));
+export const BlogCRMWhatIsBenefits = lazyWithRetry(() => import("@/pages/BlogCRMWhatIsBenefits"));
+
 // Casos de éxito (lazy loading)
 export const CasosExito = lazyWithRetry(() => import("@/pages/CasosExito"));
 export const CasoExitoAsendia = lazyWithRetry(() => import("@/pages/CasoExitoAsendia"));
