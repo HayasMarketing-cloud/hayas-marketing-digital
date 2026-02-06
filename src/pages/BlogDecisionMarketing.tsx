@@ -5,26 +5,11 @@ import { Separator } from '@/components/ui/separator';
 import { Link } from 'react-router-dom';
 import decisionMarketingHero from '@/assets/decision-marketing-hero.jpg';
 import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
-import { 
-  Target, 
-  Users, 
-  Brain,
-  ArrowRight,
-  CheckCircle,
-  TrendingUp,
-  Lightbulb,
-  Heart,
-  Scale,
-  Clock,
-  BarChart3,
-  Handshake,
-  Eye,
-  MessageCircle,
-  Shield
-} from 'lucide-react';
-
+import { Target, Users, Brain, ArrowRight, CheckCircle, TrendingUp, Lightbulb, Heart, Scale, Clock, BarChart3, Handshake, Eye, MessageCircle, Shield } from 'lucide-react';
 const BlogDecisionMarketing = () => {
-  const { getRoute } = useLocalizedRoutes();
+  const {
+    getRoute
+  } = useLocalizedRoutes();
   const metadata = {
     title: 'Decision Marketing: cuando el marketing deja de provocar y empieza a generar confianza',
     metaTitle: 'Decision Marketing: Marketing que Genera Confianza | Hayas Marketing',
@@ -62,57 +47,39 @@ const BlogDecisionMarketing = () => {
     mainKeyword: 'decision marketing',
     secondaryKeywords: ['marketing consciente', 'calidad de elección', 'marketing de confianza', 'customer journey', 'marketing B2B']
   };
-
-  const faqs = [
-    {
-      question: "¿Qué es Decision Marketing?",
-      answer: "Decision Marketing es un enfoque estratégico que parte de una idea sencilla: el marketing no solo influye en lo que se compra, sino en cómo se decide. No se trata de vender más rápido, sino de diseñar entornos donde decidir bien sea posible."
-    },
-    {
-      question: "¿Cuál es la diferencia entre Decision Marketing y marketing tradicional?",
-      answer: "El marketing tradicional suele optimizarse para empujar decisiones rápidas (push) o atraer (pull). Decision Marketing añade una tercera dimensión: acompañar el proceso de elección, respetando el ritmo de la persona y priorizando que la decisión sea correcta para ambas partes."
-    },
-    {
-      question: "¿Para qué tipo de empresas tiene sentido Decision Marketing?",
-      answer: "Tiene especial sentido para empresas con propuestas de valor reales, que confían en su producto o servicio y apuestan por relaciones a largo plazo. Es particularmente útil en B2B, servicios complejos y decisiones de alto valor."
-    },
-    {
-      question: "¿Decision Marketing ignora los resultados comerciales?",
-      answer: "No. Decision Marketing no ignora los resultados, pero prioriza la calidad de las elecciones sobre la cantidad de impactos. Relaciones mejor elegidas generan resultados más estables y sostenibles en el tiempo."
-    },
-    {
-      question: "¿Cómo se mide el éxito en Decision Marketing?",
-      answer: "Además de las conversiones tradicionales, se miden: la satisfacción posterior a la compra, la tasa de recompra, la duración de la relación con el cliente y el valor real del cliente en el tiempo (LTV)."
-    }
-  ];
-
-  const relatedServices = [
-    {
-      title: "Consultoría Estratégica",
-      description: "Te ayudamos a diseñar estrategias de marketing que prioricen la calidad de las relaciones y generen confianza.",
-      link: "/es/servicios/consultoria-estrategica-analitica"
-    },
-    {
-      title: "Campañas Inbound Marketing",
-      description: "Implementamos campañas que acompañan al cliente en su proceso de decisión, sin presiones artificiales.",
-      link: "/es/servicios/campanas-inbound-marketing"
-    }
-  ];
-
-  return (
-    <BlogPostTemplate
-      metadata={metadata}
-      heroImage={{
-        src: decisionMarketingHero,
-        alt: 'Decision Marketing: enfoque estratégico para generar confianza',
-        width: 1920,
-        height: 1080,
-        loading: "eager",
-        fetchPriority: "high"
-      }}
-      faqs={faqs}
-      relatedServices={relatedServices}
-    >
+  const faqs = [{
+    question: "¿Qué es Decision Marketing?",
+    answer: "Decision Marketing es un enfoque estratégico que parte de una idea sencilla: el marketing no solo influye en lo que se compra, sino en cómo se decide. No se trata de vender más rápido, sino de diseñar entornos donde decidir bien sea posible."
+  }, {
+    question: "¿Cuál es la diferencia entre Decision Marketing y marketing tradicional?",
+    answer: "El marketing tradicional suele optimizarse para empujar decisiones rápidas (push) o atraer (pull). Decision Marketing añade una tercera dimensión: acompañar el proceso de elección, respetando el ritmo de la persona y priorizando que la decisión sea correcta para ambas partes."
+  }, {
+    question: "¿Para qué tipo de empresas tiene sentido Decision Marketing?",
+    answer: "Tiene especial sentido para empresas con propuestas de valor reales, que confían en su producto o servicio y apuestan por relaciones a largo plazo. Es particularmente útil en B2B, servicios complejos y decisiones de alto valor."
+  }, {
+    question: "¿Decision Marketing ignora los resultados comerciales?",
+    answer: "No. Decision Marketing no ignora los resultados, pero prioriza la calidad de las elecciones sobre la cantidad de impactos. Relaciones mejor elegidas generan resultados más estables y sostenibles en el tiempo."
+  }, {
+    question: "¿Cómo se mide el éxito en Decision Marketing?",
+    answer: "Además de las conversiones tradicionales, se miden: la satisfacción posterior a la compra, la tasa de recompra, la duración de la relación con el cliente y el valor real del cliente en el tiempo (LTV)."
+  }];
+  const relatedServices = [{
+    title: "Consultoría Estratégica",
+    description: "Te ayudamos a diseñar estrategias de marketing que prioricen la calidad de las relaciones y generen confianza.",
+    link: "/es/servicios/consultoria-estrategica-analitica"
+  }, {
+    title: "Campañas Inbound Marketing",
+    description: "Implementamos campañas que acompañan al cliente en su proceso de decisión, sin presiones artificiales.",
+    link: "/es/servicios/campanas-inbound-marketing"
+  }];
+  return <BlogPostTemplate metadata={metadata} heroImage={{
+    src: decisionMarketingHero,
+    alt: 'Decision Marketing: enfoque estratégico para generar confianza',
+    width: 1920,
+    height: 1080,
+    loading: "eager",
+    fetchPriority: "high"
+  }} faqs={faqs} relatedServices={relatedServices}>
       {/* Introducción */}
       <section className="mb-12">
         <p className="text-xl text-muted-foreground italic mb-8 border-l-4 border-primary pl-6">
@@ -124,13 +91,12 @@ const BlogDecisionMarketing = () => {
           Más impacto, más urgencia, más estímulos.
         </p>
 
-        <p className="text-elegant mb-6">
-          Este enfoque ha sido eficaz en determinados contextos, pero a medida que los mercados maduran y las personas están más informadas —y también más saturadas—, sus límites empiezan a ser evidentes:
-          decisiones impulsivas, expectativas poco realistas y relaciones frágiles.
-        </p>
+        
 
-        <p className="text-elegant">
-          En este escenario emerge un cambio silencioso pero profundo en la forma de entender el marketing: <strong>Decision Marketing</strong>.
+        <p className="text-elegant text-base"> Decision Marketing nace de esa tensión. 
+
+
+No como una técnica para vender más rápido, sino como un enfoque para ayudar a las personas a tomar mejores decisiones, en el momento adecuado y con la información adecuada.  En este artículo exploro qué significa realmente aplicar el Decision Marketing, por qué está ganando relevancia en mercados maduros y cómo cambia la forma en la que diseñamos estrategias, mensajes y experiencias a lo largo del Customer Journey.<strong>Decision Marketing</strong>.
         </p>
       </section>
 
@@ -672,8 +638,6 @@ const BlogDecisionMarketing = () => {
           </CardContent>
         </Card>
       </section>
-    </BlogPostTemplate>
-  );
+    </BlogPostTemplate>;
 };
-
 export default BlogDecisionMarketing;
