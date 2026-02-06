@@ -10,7 +10,8 @@ const corsHeaders = {
 const FALLBACK_SYSTEM_PROMPT = `Eres "Sofía", el asistente IA de Hayas Marketing. Ayuda a los usuarios con información sobre servicios de diseño web, marketing digital, SEO y automatización. Guía a los usuarios a agendar una reunión en https://hayasmarketing.com/es/agendar-reunion o contactar en https://hayasmarketing.com/es/contacto`;
 
 // Base URL for content files
-const CONTENT_BASE_URL = 'https://hayasmarketing.com/content';
+// Production: Uses published domain. For custom domains, set CONTENT_BASE_URL secret
+const CONTENT_BASE_URL = Deno.env.get('CONTENT_BASE_URL') || 'https://hayas-marketing-digital.lovable.app/content';
 
 interface ChatMessage {
   role: 'user' | 'assistant' | 'system';
@@ -67,6 +68,36 @@ const extractAEOSummary = (markdown: string): string | null => {
   return null;
 };
 
+// Extract Casos de Éxito section for rich context
+const extractCasosExito = (markdown: string): string | null => {
+  const match = markdown.match(/## Casos de Éxito Relacionados\n\n([\s\S]*?)(?=\n## |$)/);
+  if (match && match[1]) {
+    // Extract just the case names and results (compact version)
+    const cases = match[1].match(/### ([^\n]+)\n[^#]*?- \*\*Resultado principal\*\*: ([^\n]+)/g);
+    if (cases && cases.length > 0) {
+      return cases.map(c => {
+        const nameMatch = c.match(/### ([^\n]+)/);
+        const resultMatch = c.match(/\*\*Resultado principal\*\*: ([^\n]+)/);
+        return `- ${nameMatch?.[1]}: ${resultMatch?.[1] || 'éxito demostrado'}`;
+      }).join('\n');
+    }
+  }
+  return null;
+};
+
+// Extract FAQ section for common questions
+const extractFAQs = (markdown: string): string | null => {
+  const match = markdown.match(/## Preguntas Frecuentes\n\n([\s\S]*?)(?=\n## |$)/);
+  if (match && match[1]) {
+    // Extract just questions (not answers) for context awareness
+    const questions = match[1].match(/### ([^\n?]+\?)/g);
+    if (questions && questions.length > 0) {
+      return questions.map(q => q.replace('### ', '- ')).join('\n');
+    }
+  }
+  return null;
+};
+
 // Fetch content file for a route
 const fetchContentForRoute = async (sourcePage: string): Promise<string | null> => {
   const contentPath = ROUTE_TO_CONTENT[sourcePage];
@@ -105,23 +136,37 @@ const getEnrichedContext = async (sourcePage: string, conversationLength: number
     return getBasicPageContext(sourcePage);
   }
 
-  // For short conversations, use full IA_SUMMARY + AEO
-  // For long conversations, use only IA_SUMMARY to save tokens
   const iaSummary = extractIASummary(content);
   const aeoSummary = extractAEOSummary(content);
+  const casosExito = extractCasosExito(content);
+  const faqs = extractFAQs(content);
   
+  // For long conversations (>6 messages), use compact version to save tokens
   if (conversationLength > 6 && iaSummary) {
-    // Long conversation: use compact IA_SUMMARY only
-    return `BASE DE CONOCIMIENTO (resumen):\n${iaSummary}`;
+    let compactContext = `BASE DE CONOCIMIENTO (resumen):\n${iaSummary}`;
+    if (casosExito) {
+      compactContext += `\n\nCasos de éxito reales:\n${casosExito}`;
+    }
+    return compactContext;
   }
   
-  // Short conversation: use both summaries
+  // Short conversation: use full context with all sections
   let enrichedContext = 'BASE DE CONOCIMIENTO:\n';
+  
   if (iaSummary) {
     enrichedContext += `${iaSummary}\n\n`;
   }
+  
   if (aeoSummary) {
-    enrichedContext += `Resumen del servicio: ${aeoSummary}`;
+    enrichedContext += `Resumen del servicio: ${aeoSummary}\n\n`;
+  }
+  
+  if (casosExito) {
+    enrichedContext += `Casos de éxito reales (CITA ESTOS NOMBRES):\n${casosExito}\n\n`;
+  }
+  
+  if (faqs) {
+    enrichedContext += `Preguntas frecuentes que puedes responder:\n${faqs}`;
   }
   
   return enrichedContext || getBasicPageContext(sourcePage);
