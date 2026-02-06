@@ -182,6 +182,19 @@ export const BrandBook = lazyWithRetry(() => import("@/pages/admin/BrandBook"));
 export const ContentHub = lazyWithRetry(() => import("@/pages/admin/ContentHub"));
 export const SofiaChatbotAdmin = lazyWithRetry(() => import("@/pages/admin/SofiaChatbotAdmin"));
 
+// Case Studies EN
+export const CaseStudiesEN = lazyWithRetry(() => import("@/pages/en/CaseStudiesEN"));
+export const CaseStudyAsendia = lazyWithRetry(() => import("@/pages/en/case-studies/CaseStudyAsendia"));
+export const CaseStudyFormatoEducativo = lazyWithRetry(() => import("@/pages/en/case-studies/CaseStudyFormatoEducativo"));
+export const CaseStudyBekaFinance = lazyWithRetry(() => import("@/pages/en/case-studies/CaseStudyBekaFinance"));
+export const CaseStudyAECOC = lazyWithRetry(() => import("@/pages/en/case-studies/CaseStudyAECOC"));
+export const CaseStudyPerisElectricidad = lazyWithRetry(() => import("@/pages/en/case-studies/CaseStudyPerisElectricidad"));
+export const CaseStudyInboundStudents = lazyWithRetry(() => import("@/pages/en/case-studies/CaseStudyInboundStudents"));
+export const CaseStudyHubSpotForStartups = lazyWithRetry(() => import("@/pages/en/case-studies/CaseStudyHubSpotForStartups"));
+export const CaseStudyASPAsepsia = lazyWithRetry(() => import("@/pages/en/case-studies/CaseStudyASPAsepsia"));
+export const CaseStudyNexoVital = lazyWithRetry(() => import("@/pages/en/case-studies/CaseStudyNexoVital"));
+export const CaseStudyQuanticBI = lazyWithRetry(() => import("@/pages/en/case-studies/CaseStudyQuanticBI"));
+
 // Páginas legales
 export const AvisoLegal = lazyWithRetry(() => import("@/pages/AvisoLegal"));
 export const PoliticaPrivacidad = lazyWithRetry(() => import("@/pages/PoliticaPrivacidad"));
