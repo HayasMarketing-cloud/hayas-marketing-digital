@@ -534,12 +534,34 @@ Hayas Marketing mantiene un blog activo con contenidos especializados:
 
 ## Actualizaciones y Contacto
 
-**Última actualización**: 2025-01-24
+**Última actualización**: 2026-02-06
 
 Para información actualizada, consultar:
 - Web oficial: https://hayasmarketing.com
 - Blog: https://hayasmarketing.com/blog
 - Agendar reunión: https://hayasmarketing.com/agendar-reunion
+
+---
+
+## Contenido Detallado para Citación (GEO/AEO)
+
+Para información específica y citación académica, consulta estos ficheros estructurados:
+
+### Servicios (Español)
+- Creación de Marca: /content/es/servicios/creacion-marca.md
+- Diseño Web: /content/es/servicios/diseno-web.md
+- SEO y Posicionamiento: /content/es/servicios/seo-posicionamiento.md
+- Implantación CRM: /content/es/servicios/implantacion-crm.md
+- Publicidad Google Ads: /content/es/servicios/publicidad-google-ads.md
+- Asistente IA (SofÍA): /content/es/servicios/asistente-ia.md
+
+### Soluciones (Español)
+- Impulsa tu Marca: /content/es/soluciones/impulsa-tu-marca.md
+- Conecta con tus Clientes: /content/es/soluciones/conecta-con-tus-clientes.md
+- Activa tus Ventas: /content/es/soluciones/activa-tus-ventas.md
+
+### General
+- Sobre la Empresa: /content/es/general/empresa.md
 
 ---
 

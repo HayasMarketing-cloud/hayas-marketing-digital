@@ -92,6 +92,26 @@
 /llms-full.txt
   Cache-Control: public, max-age=3600, must-revalidate
   Content-Type: text/plain; charset=utf-8
+
+/llms-en.txt
+  Cache-Control: public, max-age=3600, must-revalidate
+  Content-Type: text/plain; charset=utf-8
+
+# Content Knowledge Base - GEO/AEO files
+/content/*.md
+  Cache-Control: public, max-age=3600, must-revalidate
+  Content-Type: text/markdown; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/content/es/*/*.md
+  Cache-Control: public, max-age=3600, must-revalidate
+  Content-Type: text/markdown; charset=utf-8
+  X-Content-Type-Options: nosniff
+
+/content/en/*/*.md
+  Cache-Control: public, max-age=3600, must-revalidate
+  Content-Type: text/markdown; charset=utf-8
+  X-Content-Type-Options: nosniff
   
 /manifest.json
   Cache-Control: public, max-age=86400, must-revalidate
