@@ -1,128 +1,78 @@
 
-# Plan: Corregir "Crear versión EN" en Editor SEO
+# Plan: Hacer indexable la home EN (/en)
 
-## Problema Identificado
+## Problema Detectado
 
-El botón "Crear versión EN" falla porque la llamada a la Edge Function `translate-seo` no envía todos los parámetros requeridos:
+La herramienta SEO detecta correctamente que `https://hayasmarketing.com/en` tiene:
+- **Robots Tag:** `noindex, follow`
 
-**Frontend envía:**
-```javascript
-body: { seoData, targetLanguage: 'en-US' }
-```
+Esto ocurre aunque en la base de datos (`seo_pages`) la página `/en` **sí** está configurada como `index, follow`.
 
-**Edge Function espera:**
-```javascript
-const { seoData, targetLanguage, esPageId, enPath, category } = await req.json();
-```
-
-**Resultado en logs:**
-- `🔄 Translating SEO for: undefined -> undefined`
-- `path: null` → Error de constraint NOT NULL
-
----
-
-## Solución
-
-### Cambio en SEOEditor.tsx
-
-Actualizar la función `handleCreateEnVersion` para enviar todos los parámetros requeridos:
+**Causa raíz:** Existe un override forzado en `src/components/Seo.tsx` (líneas 77-80):
 
 ```typescript
-const handleCreateEnVersion = async () => {
-  if (!seoPage?.data || path.startsWith('/en')) return;
-  
-  setIsTranslating(true);
-  
-  try {
-    // Generar el path EN correctamente
-    // /es -> /en
-    // /es/contacto -> /en/contact
-    let enPath = path;
-    if (path === '/es') {
-      enPath = '/en';
-    } else if (path.startsWith('/es/')) {
-      enPath = path.replace('/es/', '/en/');
-    } else if (path.startsWith('/es')) {
-      enPath = path.replace('/es', '/en');
-    }
-    
-    // Llamar a la Edge Function con todos los parámetros
-    const { data: result, error } = await supabase.functions.invoke('translate-seo', {
-      body: { 
-        seoData: seoPage.data,
-        targetLanguage: 'en-US',
-        esPageId: seoPage.data.id,  // ID de la página ES
-        enPath: enPath,              // Path de destino EN
-        category: seoPage.data.category || 'main'
-      }
-    });
-    
-    if (error) throw error;
-    
-    // Mostrar resultado y cerrar/recargar
-    toast({
-      title: 'Versión EN creada',
-      description: `Página traducida guardada en ${enPath}`,
-    });
-    
-    // Opcional: cambiar al editor de la nueva página EN
-    
-  } catch (error) {
-    console.error('Translation error:', error);
-    toast({
-      title: 'Error',
-      description: error.message || 'No se pudo traducir. Intenta manualmente.',
-      variant: 'destructive'
-    });
-  } finally {
-    setIsTranslating(false);
-  }
-};
+const isEnglishRoute = currentPath.startsWith('/en');
+const effectiveRobots = isEnglishRoute 
+  ? 'noindex, follow'   // <-- FUERZA noindex en TODAS las rutas EN
+  : (robots || 'index, follow');
+```
+
+Este override ignora completamente el valor de `robots` que viene de la base de datos para páginas EN.
+
+---
+
+## Solución Propuesta
+
+Modificar la lógica para que **respete la configuración de la BD** cuando existe, y solo aplique `noindex` por defecto a páginas EN que no tengan configuración explícita.
+
+### Cambio en `src/components/Seo.tsx`
+
+**Antes:**
+```typescript
+const isEnglishRoute = currentPath.startsWith('/en');
+const effectiveRobots = isEnglishRoute 
+  ? 'noindex, follow' 
+  : (robots || 'index, follow');
+```
+
+**Después:**
+```typescript
+const isEnglishRoute = currentPath.startsWith('/en');
+// Si la página tiene robots definido explícitamente, respetarlo
+// Solo aplicar noindex por defecto a páginas EN sin configuración
+const effectiveRobots = robots 
+  ? robots 
+  : (isEnglishRoute ? 'noindex, follow' : 'index, follow');
 ```
 
 ---
 
-## Detalle Técnico
+## Cambio Similar en `src/utils/autoSEO.ts`
 
-| Parámetro | Fuente | Valor de ejemplo |
-|-----------|--------|------------------|
-| `seoData` | `seoPage.data` | Objeto con title, description, h1, keywords, etc. |
-| `targetLanguage` | Constante | `'en-US'` |
-| `esPageId` | `seoPage.data.id` | UUID de la página ES en BD |
-| `enPath` | Calculado | `/es` → `/en`, `/es/contacto` → `/en/contact` |
-| `category` | `seoPage.data.category` | `'main'`, `'service'`, etc. |
+Línea 54 tiene la misma lógica. Se puede mantener como fallback, pero la prioridad debe ser el valor de la BD.
 
 ---
 
-## Flujo Corregido
+## Impacto
 
-```text
-Usuario click "Crear versión EN" en /es
-    │
-    ▼
-handleCreateEnVersion() calcula:
-  - esPageId = seoPage.data.id
-  - enPath = "/en" 
-  - category = "main"
-    │
-    ▼
-Edge Function recibe todos los parámetros
-    │
-    ▼
-Traduce con IA y guarda en seo_pages
-  - path: "/en"
-  - in_language: "en-US"
-  - translation_of: esPageId
-    │
-    ▼
-Toast de éxito
-```
+| Página | Antes | Después |
+|--------|-------|---------|
+| `/en` (con `robots: 'index,follow'` en BD) | `noindex, follow` | `index, follow` |
+| `/en/solutions/...` (con BD) | `noindex, follow` | `index, follow` |
+| `/en/nueva-pagina` (sin BD) | `noindex, follow` | `noindex, follow` (mantiene fallback) |
 
 ---
 
-## Archivo a Modificar
+## Archivos a Modificar
 
 | Archivo | Líneas | Cambio |
 |---------|--------|--------|
-| `src/components/admin/seo/SEOEditor.tsx` | 96-135 | Añadir `esPageId`, `enPath`, `category` al body de la llamada |
+| `src/components/Seo.tsx` | 77-80 | Priorizar `robots` prop sobre el fallback EN |
 
+---
+
+## Verificación Post-Cambio
+
+1. Visitar `https://hayasmarketing.com/en`
+2. Inspeccionar el HTML y buscar `<meta name="robots">`
+3. Debe mostrar `content="index, follow"`
