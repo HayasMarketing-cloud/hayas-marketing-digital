@@ -578,20 +578,20 @@ const App = () => (
           <Route path="/en/kit-digital/advanced-presence-seo" element={<PageSuspense><Pages.KitDigitalPresenciaAvanzada /></PageSuspense>} />
           <Route path="/en/kit-consulting" element={<PageSuspense><Pages.KitConsulting /></PageSuspense>} />
           
-          {/* CASE STUDIES - Main page */}
-          <Route path="/en/case-studies" element={<PageSuspense><Pages.CasosExito /></PageSuspense>} />
+{/* CASE STUDIES - Main page */}
+          <Route path="/en/case-studies" element={<PageSuspense><Pages.CaseStudiesEN /></PageSuspense>} />
           
-          {/* CASE STUDIES - Individual cases (Top 10 for Phase 1) */}
-          <Route path="/en/case-studies/asendia" element={<PageSuspense><Pages.CasoExitoAsendia /></PageSuspense>} />
-          <Route path="/en/case-studies/nexo-vital" element={<PageSuspense><Pages.CasoExitoNexoVital /></PageSuspense>} />
-          <Route path="/en/case-studies/i-virgen-extra" element={<PageSuspense><Pages.CasoExitoIVirgenExtra /></PageSuspense>} />
-          <Route path="/en/case-studies/inbound-students" element={<PageSuspense><Pages.CasoExitoInboundStudents /></PageSuspense>} />
-          <Route path="/en/case-studies/calisthenics-online" element={<PageSuspense><Pages.CalistheniaOnlinePage /></PageSuspense>} />
-          <Route path="/en/case-studies/centro-roraima" element={<PageSuspense><Pages.CasoExitoCentroRoraima /></PageSuspense>} />
-          <Route path="/en/case-studies/joints-up" element={<PageSuspense><Pages.CasoExitoJointsUp /></PageSuspense>} />
-          <Route path="/en/case-studies/dr-parron" element={<PageSuspense><Pages.CasoExitoDrParron /></PageSuspense>} />
-          <Route path="/en/case-studies/translate-with-style" element={<PageSuspense><Pages.CasoExitoTranslateWithStyle /></PageSuspense>} />
-          <Route path="/en/case-studies/formato-educativo" element={<PageSuspense><Pages.CasoExitoFormatoEducativo /></PageSuspense>} />
+          {/* CASE STUDIES - Individual cases (Top 10 translated) */}
+          <Route path="/en/case-studies/asendia" element={<PageSuspense><Pages.CaseStudyAsendia /></PageSuspense>} />
+          <Route path="/en/case-studies/formato-educativo" element={<PageSuspense><Pages.CaseStudyFormatoEducativo /></PageSuspense>} />
+          <Route path="/en/case-studies/beka-finance" element={<PageSuspense><Pages.CaseStudyBekaFinance /></PageSuspense>} />
+          <Route path="/en/case-studies/aecoc" element={<PageSuspense><Pages.CaseStudyAECOC /></PageSuspense>} />
+          <Route path="/en/case-studies/peris-electricidad" element={<PageSuspense><Pages.CaseStudyPerisElectricidad /></PageSuspense>} />
+          <Route path="/en/case-studies/inbound-students" element={<PageSuspense><Pages.CaseStudyInboundStudents /></PageSuspense>} />
+          <Route path="/en/case-studies/hubspot-for-startups" element={<PageSuspense><Pages.CaseStudyHubSpotForStartups /></PageSuspense>} />
+          <Route path="/en/case-studies/asp-asepsia" element={<PageSuspense><Pages.CaseStudyASPAsepsia /></PageSuspense>} />
+          <Route path="/en/case-studies/nexo-vital" element={<PageSuspense><Pages.CaseStudyNexoVital /></PageSuspense>} />
+          <Route path="/en/case-studies/quanticbi" element={<PageSuspense><Pages.CaseStudyQuanticBI /></PageSuspense>} />
           
           {/* BLOG */}
           <Route path="/en/blog" element={<PageSuspense><Pages.Blog /></PageSuspense>} />
