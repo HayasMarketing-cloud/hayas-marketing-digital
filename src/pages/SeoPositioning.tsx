@@ -26,7 +26,7 @@ const SeoPositioning = () => {
   const content = {
     // SEO metadata
     serviceName: isEnglish ? 'SEO, AEO & GEO: AI Search Optimization' : 'SEO, AEO y GEO: Posicionamiento para IA',
-    serviceDescription: isEnglish ? 'We optimize your website to appear in Google and to be understood, cited and recommended by AI assistants like ChatGPT, Copilot, Gemini and Perplexity.' : 'Optimizamos tu web para que aparezca en Google y para que los asistentes de IA entiendan tu propuesta, confíen en tu marca y te recomienden cuando los usuarios toman decisiones.',
+    serviceDescription: isEnglish ? 'We optimize your website to appear in Google and Bing and to be understood, cited and recommended by AI assistants like ChatGPT, Copilot, Gemini and Perplexity.' : 'Optimizamos tu web para que aparezca en Google y Bing y para que los asistentes de IA entiendan tu propuesta, confíen en tu marca y te recomienden cuando los usuarios toman decisiones.',
     canonical: isEnglish ? '/en/services/seo-positioning' : '/es/servicios/seo-positioning',
     serviceType: isEnglish ? 'SEO, AEO and GEO Services' : 'Servicios SEO, AEO y GEO',
     features: isEnglish ? ['Classic SEO & Technical Optimization', 'Answer Engine Optimization (AEO)', 'Generative Engine Optimization (GEO)', 'AI-citable content structure', 'E-E-A-T authority building', 'AI citation monitoring'] : ['SEO clásico y optimización técnica', 'Answer Engine Optimization (AEO)', 'Generative Engine Optimization (GEO)', 'Estructura de contenido citable por IA', 'Construcción de autoridad E-E-A-T', 'Monitorización de citaciones IA'],
@@ -39,16 +39,16 @@ const SeoPositioning = () => {
     // Hero - NEW positioning
     badge: isEnglish ? '🤖 AI-Era Visibility' : '🤖 Visibilidad en la era de la IA',
     heroTitle: isEnglish ? 'SEO, AEO & GEO: <span class="text-gradient-primary">Positioning for Search Engines and AI Assistants</span>' : 'SEO, AEO y GEO: <span class="text-gradient-primary">Posicionamiento para Buscadores y Asistentes de IA</span>',
-    heroDescription: isEnglish ? 'We optimize your website not just to appear in Google, but so that AI assistants understand your value proposition, trust your brand, and recommend you when users make decisions.' : 'Optimizamos tu web para que no solo aparezca en Google, sino para que los asistentes de IA entiendan tu propuesta, confíen en tu marca y te recomienden cuando los usuarios toman decisiones.',
+    heroDescription: isEnglish ? 'We optimize your website not just to appear in Google and Bing, but so that AI assistants understand your value proposition, trust your brand, and recommend you when users make decisions.' : 'Optimizamos tu web para que no solo aparezca en Google y Bing, sino para que los asistentes de IA entiendan tu propuesta, confíen en tu marca y te recomienden cuando los usuarios toman decisiones.',
     heroCTA: isEnglish ? 'Evaluate my SEO + AI visibility' : 'Evaluar mi visibilidad SEO + IA',
     heroSecondaryCTA: isEnglish ? 'View success stories' : 'Ver casos de éxito',
     heroStats: isEnglish ? {
       stat1Label: 'Cited in ChatGPT',
-      stat2Label: 'TOP 3 in Google',
+      stat2Label: 'TOP 3 in Google & Bing',
       stat3Label: 'Results timeline'
     } : {
       stat1Label: 'Citado en ChatGPT',
-      stat2Label: 'TOP 3 en Google',
+      stat2Label: 'TOP 3 en Google y Bing',
       stat3Label: 'Tiempo de resultados'
     },
     // Paradigm shift section
@@ -61,7 +61,7 @@ const SeoPositioning = () => {
     }, {
       icon: <Brain className="h-6 w-6" />,
       title: 'Research happens in AI',
-      description: 'Much of the research occurs inside ChatGPT, Copilot or Perplexity, not just Google.'
+      description: 'Much of the research occurs inside ChatGPT, Copilot or Perplexity, not just Google and Bing.'
     }, {
       icon: <Zap className="h-6 w-6" />,
       title: 'Decisions before the click',
@@ -73,7 +73,7 @@ const SeoPositioning = () => {
     }, {
       icon: <Brain className="h-6 w-6" />,
       title: 'La investigación ocurre en IA',
-      description: 'Mucha investigación ocurre dentro de ChatGPT, Copilot o Perplexity, no solo en Google.'
+      description: 'Mucha investigación ocurre dentro de ChatGPT, Copilot o Perplexity, no solo en Google y Bing.'
     }, {
       icon: <Zap className="h-6 w-6" />,
       title: 'Decisiones antes del clic',
@@ -178,7 +178,7 @@ const SeoPositioning = () => {
     }, {
       icon: <Search className="h-8 w-8 text-primary" />,
       title: "Semantic & Conversational Research",
-      description: "Identifying questions and topics your audience is asking, in Google and AI assistants.",
+      description: "Identifying questions and topics your audience is asking, in Google, Bing and AI assistants.",
       features: ["Intent research", "Conversational keywords", "Long-tail FAQs", "AI query patterns"]
     }, {
       icon: <FileText className="h-8 w-8 text-primary" />,
@@ -199,7 +199,7 @@ const SeoPositioning = () => {
       icon: <TrendingUp className="h-8 w-8 text-primary" />,
       title: "Continuous Tracking & Evolution",
       description: "Monitoring rankings, AI citations, and continuous adaptation to algorithm changes.",
-      features: ["Google rankings", "AI citations tracking", "Competition analysis", "Algorithmic adaptation"]
+      features: ["Google & Bing rankings", "AI citations tracking", "Competition analysis", "Algorithmic adaptation"]
     }] : [{
       icon: <BarChart3 className="h-8 w-8 text-primary" />,
       title: "Auditoría SEO + AEO",
@@ -208,7 +208,7 @@ const SeoPositioning = () => {
     }, {
       icon: <Search className="h-8 w-8 text-primary" />,
       title: "Investigación Semántica y Conversacional",
-      description: "Identificamos las preguntas y temas que tu audiencia está preguntando en Google y asistentes IA.",
+      description: "Identificamos las preguntas y temas que tu audiencia está preguntando en Google, Bing y asistentes IA.",
       features: ["Research de intención", "Keywords conversacionales", "FAQs long-tail", "Patrones de consulta IA"]
     }, {
       icon: <FileText className="h-8 w-8 text-primary" />,
@@ -229,7 +229,7 @@ const SeoPositioning = () => {
       icon: <TrendingUp className="h-8 w-8 text-primary" />,
       title: "Seguimiento y Evolución Continua",
       description: "Monitoreo de rankings, citaciones IA y adaptación continua a cambios algorítmicos.",
-      features: ["Rankings Google", "Tracking citaciones IA", "Análisis competencia", "Adaptación algorítmica"]
+      features: ["Rankings Google y Bing", "Tracking citaciones IA", "Análisis competencia", "Adaptación algorítmica"]
     }],
     // Process - 4 phases reformulated
     processTitle: isEnglish ? 'Our <span class="text-gradient-primary">SEO + AEO + GEO</span> Methodology' : 'Nuestra Metodología <span class="text-gradient-primary">SEO + AEO + GEO</span>',
@@ -242,7 +242,7 @@ const SeoPositioning = () => {
     scheduleMeeting: isEnglish ? '/en/schedule-meeting' : '/agendar-reunion',
     contactLink: isEnglish ? '/en/contact' : '/es/contacto',
     // Contact
-    contactTitle: isEnglish ? 'Ready to be visible in Google and AI?' : '¿Preparado para ser visible en Google e IA?',
+    contactTitle: isEnglish ? 'Ready to be visible in Google, Bing and AI?' : '¿Preparado para ser visible en Google, Bing e IA?',
     contactSubtitle: isEnglish ? 'Tell us about your project and positioning goals. We\'ll respond with a personalized proposal.' : 'Cuéntanos tu proyecto y objetivos de posicionamiento. Te responderemos con una propuesta personalizada.'
   };
 
@@ -297,8 +297,8 @@ const SeoPositioning = () => {
     question: "Can my website appear in ChatGPT or Copilot?",
     answer: "Yes, if your content is properly structured, citable, and has authority signals (identified author, real cases, clear entities). This is what we call GEO (Generative Engine Optimization) - building trust so AI cites you."
   }, {
-    question: "Is Google still important?",
-    answer: "Absolutely. Classic SEO is the foundation on which AEO and GEO are built. Without a technically solid and well-indexed website, AI assistants cannot access your content. Google remains essential."
+    question: "Are Google and Bing still important?",
+    answer: "Absolutely. Classic SEO is the foundation on which AEO and GEO are built. Without a technically solid and well-indexed website, AI assistants cannot access your content. Google and Bing remain essential."
   }, {
     question: "Does this replace traditional SEO?",
     answer: "No. SEO, AEO, and GEO are complementary. SEO is the base for discovery, AEO provides response clarity, and GEO builds authority for generative environments. The three work together."
@@ -315,8 +315,8 @@ const SeoPositioning = () => {
     question: "¿Mi web puede aparecer en ChatGPT o Copilot?",
     answer: "Sí, si tu contenido está estructurado correctamente, es citable y tiene señales de autoridad (autor identificado, casos reales, entidades claras). Esto es lo que llamamos GEO (Generative Engine Optimization) - construir confianza para que la IA te cite."
   }, {
-    question: "¿Google sigue siendo importante?",
-    answer: "Absolutamente. El SEO clásico es la base sobre la que se construye AEO y GEO. Sin una web técnicamente sólida y bien indexada, los asistentes IA no pueden acceder a tu contenido. Google sigue siendo esencial."
+    question: "¿Google y Bing siguen siendo importantes?",
+    answer: "Absolutamente. El SEO clásico es la base sobre la que se construye AEO y GEO. Sin una web técnicamente sólida y bien indexada, los asistentes IA no pueden acceder a tu contenido. Google y Bing siguen siendo esenciales."
   }, {
     question: "¿Esto sustituye al SEO tradicional?",
     answer: "No. SEO, AEO y GEO son complementarios. SEO es la base de descubrimiento, AEO aporta claridad de respuesta, y GEO construye autoridad para entornos generativos. Los tres trabajan juntos."
