@@ -457,6 +457,14 @@ Hayas Marketing mantiene un blog activo con contenidos especializados:
 - **Publicidad Digital**: Google Ads, Meta Ads, optimización
 - **E-commerce**: Shopify, conversión, optimización
 
+### El Nuevo Paradigma SEO (AEO y GEO)
+**URL**: /es/blog/nuevo-paradigma-seo-aeo-geo
+**Tema**: Guía estratégica sobre AEO y GEO para visibilidad en buscadores potenciados por IA
+**Conceptos clave**: AEO, GEO, Google SGE, Bing Copilot, ChatGPT, E-E-A-T
+**Autor**: Rubén Reyero
+
+La búsqueda ha evolucionado de un modelo centrado en el clic a uno dominado por respuestas de IA generativa. Esta guía explica cómo optimizar para Answer Engine Optimization (AEO) y Generative Engine Optimization (GEO) en plataformas de Google, Microsoft y OpenAI, asegurando que las marcas se conviertan en fuentes citadas en las respuestas generadas por IA.
+
 **URL**: https://hayasmarketing.com/blog
 
 ---
