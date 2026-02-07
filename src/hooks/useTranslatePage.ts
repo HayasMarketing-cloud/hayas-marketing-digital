@@ -32,35 +32,65 @@ export const useTranslatePage = () => {
 
       // 2. Call edge function to translate content AND create EN page
       // The edge function uses service role to bypass RLS policies
-      const { data: result, error: translateError } = await supabase.functions.invoke(
-        'translate-seo',
-        {
-          body: {
-            seoData: {
-              title: esPage.title,
-              description: esPage.description,
-              h1: esPage.h1,
-              keywords: esPage.keywords,
-              schema_type: esPage.schema_type,
-              og_type: esPage.og_type,
-            },
-            targetLanguage: 'en-US',
-            esPageId: esPage.id,
-            enPath: enPath,
-            category: category,
-          },
-        }
-      );
-
-      if (translateError) {
-        console.error('Translation error:', translateError);
-        throw new Error('Error al traducir el contenido');
+      const { data: sessionData } = await supabase.auth.getSession();
+      const accessToken = sessionData.session?.access_token;
+      if (!accessToken) {
+        throw new Error('Sesión no válida (401). Vuelve a iniciar sesión en /admin/login y reintenta.');
       }
 
-      return { 
-        esPage, 
-        newEnPage: result.newEnPage, 
-        translatedData: result.translatedData 
+      const { data: result, error: translateError } = await supabase.functions.invoke('translate-seo', {
+        body: {
+          seoData: {
+            title: esPage.title,
+            description: esPage.description,
+            h1: esPage.h1,
+            keywords: esPage.keywords,
+            schema_type: esPage.schema_type,
+            og_type: esPage.og_type,
+          },
+          targetLanguage: 'en-US',
+          esPageId: esPage.id,
+          enPath: enPath,
+          category: category,
+        },
+      });
+
+      if (translateError) {
+        const ctx = (translateError as any)?.context;
+        const status = ctx?.status as number | undefined;
+        const rawBody = ctx?.body;
+        const bodyText = rawBody
+          ? (typeof rawBody === 'string' ? rawBody : JSON.stringify(rawBody))
+          : undefined;
+
+        console.error('Translation invoke error:', {
+          message: translateError.message,
+          status,
+          body: rawBody,
+        });
+
+        if (status === 401) {
+          throw new Error('No autorizado (401). Tu sesión puede haber caducado: vuelve a iniciar sesión en /admin/login.');
+        }
+        if (status === 403) {
+          throw new Error('Acceso denegado (403). Tu usuario no tiene permisos de administrador.');
+        }
+        if (status === 429) {
+          throw new Error('Límite de uso alcanzado (429). Espera unos minutos y reintenta.');
+        }
+
+        const compactBody = bodyText && bodyText.length > 300 ? `${bodyText.slice(0, 300)}…` : bodyText;
+        const details = [`HTTP ${status ?? '???'}`, translateError.message, compactBody]
+          .filter(Boolean)
+          .join(' — ');
+
+        throw new Error(details || 'Error al traducir el contenido');
+      }
+
+      return {
+        esPage,
+        newEnPage: (result as any)?.newEnPage,
+        translatedData: (result as any)?.translatedData,
       };
     },
     onSuccess: (data) => {
