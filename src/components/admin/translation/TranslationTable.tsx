@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
-import { Search, Languages, ExternalLink, AlertCircle, CheckCircle2, Clock, Code, FileText, AlertTriangle, Database, Zap, ListChecks, Sparkles, FileEdit, Rocket, TrendingUp, Settings } from 'lucide-react';
+import { Search, Languages, ExternalLink, AlertCircle, CheckCircle2, Clock, Code, FileText, AlertTriangle, Database, Zap, ListChecks, Sparkles, FileEdit, Rocket, TrendingUp, Settings, Image } from 'lucide-react';
 import { useAllRoutes, RouteInventoryItem } from '@/hooks/useAllRoutes';
 import { SEOValidationBadge } from './SEOValidationBadge';
 import { SEOValidationPanel } from './SEOValidationPanel';
@@ -425,16 +425,24 @@ export const TranslationTable: React.FC<TranslationTableProps> = ({ selectedCate
                         
                         {route.inDatabase && (
                           <SEOValidationBadge 
-                            missingFields={route.missingFields} 
-                            isOptimized={route.seoOptimized} 
+                            missingFields={route.missingFields}
+                            missingCriticalFields={route.missingCriticalFields}
+                            missingRecommendedFields={route.missingRecommendedFields}
+                            isOptimized={route.seoOptimized}
+                            isFullyOptimized={route.seoFullyOptimized}
                           />
                         )}
                       </div>
 
-                      {/* Campos SEO faltantes */}
-                      {route.missingFields.length > 0 && route.inDatabase && (
-                        <div className="text-xs text-muted-foreground">
-                          Faltan: {route.missingFields.join(', ')}
+                      {/* Campos SEO faltantes - Distinguir críticos de recomendados */}
+                      {route.inDatabase && route.missingCriticalFields && route.missingCriticalFields.length > 0 && (
+                        <div className="text-xs text-red-600">
+                          Faltan (básicos): {route.missingCriticalFields.join(', ')}
+                        </div>
+                      )}
+                      {route.inDatabase && route.seoOptimized && route.missingRecommendedFields && route.missingRecommendedFields.length > 0 && (
+                        <div className="text-xs text-yellow-600">
+                          Mejoras recomendadas: {route.missingRecommendedFields.join(', ')}
                         </div>
                       )}
                     </div>
@@ -474,7 +482,19 @@ export const TranslationTable: React.FC<TranslationTableProps> = ({ selectedCate
                         </Button>
                       )}
                       
-                      {route.status === 'complete' && route.seoOptimized && (
+                      {route.status === 'complete' && route.seoOptimized && !route.seoFullyOptimized && route.missingRecommendedFields && route.missingRecommendedFields.length > 0 && (
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          className="border-yellow-500 text-yellow-600 hover:bg-yellow-500/10"
+                          onClick={() => handleQuickAction(route)}
+                        >
+                          <Sparkles className="h-4 w-4 mr-2" />
+                          Añadir OG Image
+                        </Button>
+                      )}
+                      
+                      {route.status === 'complete' && route.seoFullyOptimized && (
                         <Badge className="bg-emerald-500/20 text-emerald-700 px-4 py-2 text-sm">
                           <CheckCircle2 className="h-4 w-4 mr-2" />
                           Completa
