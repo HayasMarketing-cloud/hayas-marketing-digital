@@ -1,117 +1,104 @@
 
-# Plan: Banner de Transición Kit Digital/Kit Consulting
+# Plan: Chips Interactivos para CTAs en Respuestas de SofÍA
 
-## Contexto y Objetivo
+## Problema Identificado
 
-El programa de subvenciones Kit Digital ha finalizado tras **3 años y medio** de funcionamiento. Necesitamos crear una sección prominente que aparezca al inicio de todas las páginas relacionadas (6 páginas en total) para:
+Actualmente, cuando SofÍA sugiere acciones como agendar una reunión, el texto se muestra con formato markdown sin procesar:
 
-1. Informar a los usuarios que el programa de subvenciones ha terminado
-2. Destacar que durante este tiempo Hayas ha desarrollado una solución eficiente de Marketing 360 con IA Esencial
-3. Dirigir a los usuarios hacia una consulta personalizada
+```
+[aquí](https://hayasmarketing.com/es/agendar-reunion)
+```
 
-## Páginas Afectadas (Solo Español)
+Esto resulta en una experiencia pobre para el usuario.
 
-| Página | Ruta |
-|--------|------|
-| Kit Digital (Landing) | `/es/kit-digital` |
-| Presencia Básica | `/es/kit-digital/presencia-basica-internet` |
-| Gestión Clientes CRM | `/es/kit-digital/gestion-clientes-crm` |
-| Gestión Red Social | `/es/kit-digital/gestion-red-social` |
-| Presencia Avanzada SEO | `/es/kit-digital/presencia-avanzada-seo` |
-| Kit Consulting | `/es/kit-consulting` |
+## Solución Propuesta
 
-Nota: Estas páginas NO se traducirán al inglés.
-
-## Propuesta de Diseño Visual
-
-### Componente: `ProgramTransitionBanner`
+Implementar un sistema de **detección y renderizado de CTAs** que convierta automáticamente los enlaces relevantes en chips/botones interactivos, similar a los Quick Actions que ya existen en el chat.
 
 ```text
 +------------------------------------------------------------------+
-|  [Icono Info]                                              [X]   |
+|  Si te interesa, podemos conversar más sobre cómo podemos        |
+|  ayudarte. ¿Te gustaría agendar una reunión para discutirlo?     |
 |                                                                  |
-|  EL PROGRAMA KIT DIGITAL HA FINALIZADO                          |
-|  ---------------------------------------------------             |
-|  Pero tu transformación digital no tiene por qué esperar.        |
-|                                                                  |
-|  Durante estos 3 años y medio que ha durado el programa,         |
-|  en Hayas Marketing hemos creado una solución eficiente de       |
-|  MARKETING 360 con IA ESENCIAL que te ofrece todo                |
-|  lo que necesitas para digitalizar tu negocio:                   |
-|                                                                  |
-|  [check] Web profesional   [check] SEO y visibilidad             |
-|  [check] CRM y automatización   [check] IA aplicada              |
-|                                                                  |
-|  +---------------------------+  +---------------------------+    |
-|  |    Agendar Reunión       |  | Hablar con SofÍA (IA)     |    |
-|  +---------------------------+  +---------------------------+    |
-|                                                                  |
+|  +------------------------+  +------------------+                |
+|  | [📅] Agendar reunión  |  | [✉️] Contactar   |                |
+|  +------------------------+  +------------------+                |
 +------------------------------------------------------------------+
 ```
 
-### Especificaciones de Diseño
+## Estrategia de Implementación
 
-**Estilo Visual:**
-- Fondo: Gradiente suave de `amber-50` a `orange-50`
-- Borde izquierdo grueso en `hayas-600`
-- Iconos: `Info` para la alerta, `CheckCircle` para los beneficios
-- Tipografía: DM Sans para títulos, Inter para cuerpo
+### Opcion A: Parsing en Frontend (Recomendada)
 
-**Elementos del Banner:**
+Detectar patrones de URL en el mensaje y convertirlos en chips:
 
-1. **Cabecera**
-   - Icono de información
-   - Título: "El programa Kit Digital ha finalizado"
-   - Botón opcional para cerrar (guarda estado en localStorage)
+1. **Crear función `parseMessageWithActions`** que analiza el contenido del mensaje
+2. **Detectar URLs conocidas** (agendar-reunion, contacto, schedule-meeting, contact)
+3. **Separar texto de acciones** y renderizar los chips al final del mensaje
+4. **Mantener el texto limpio** removiendo los enlaces markdown del cuerpo
 
-2. **Mensaje Principal**
-   - Subtítulo: "Pero tu transformación digital no tiene por qué esperar"
-   - Texto: "Durante estos **3 años y medio** que ha durado el programa, en Hayas Marketing hemos creado una solución eficiente de Marketing 360 con IA Esencial que te ofrece todo lo que necesitas para digitalizar tu negocio:"
+### Flujo Visual
 
-3. **Beneficios en Grid (2x2)**
-   - Web profesional
-   - SEO y visibilidad
-   - CRM y automatización
-   - IA aplicada al marketing
+```text
+Mensaje original de la IA:
+"Si te interesa, puedes agendar una reunión [aquí](https://hayasmarketing.com/es/agendar-reunion)."
 
-4. **CTAs**
-   - CTA Primario: "Agendar Reunión" → enlaza a `/es/agendar-reunion`
-   - CTA Secundario: "Hablar con SofÍA" → dispara evento `openSofiaChat`
-
-### Variante para Kit Consulting
-
-Mismo componente con:
-- Título: "El programa Kit Consulting ha finalizado"
-- Resto del mensaje idéntico
-
-## Flujo de Implementación
-
-### Fase 1: Crear Componente
-1. Crear `src/components/ProgramTransitionBanner.tsx`
-2. Textos hardcodeados en español (sin sistema i18n)
-3. Implementar diseño responsive
-4. Integrar con evento `openSofiaChat`
-5. Persistencia de cierre en localStorage
-
-### Fase 2: Integrar en las 6 Páginas
-1. Importar en cada página Kit Digital/Consulting
-2. Insertar justo después de breadcrumbs, antes del hero
-3. Pasar prop `programName` correspondiente
+Se transforma en:
+┌─────────────────────────────────────────────────────────────┐
+│  Si te interesa, puedes agendar una reunión.                │
+│                                                             │
+│  ┌──────────────────┐                                       │
+│  │ 📅 Agendar reunión │                                     │
+│  └──────────────────┘                                       │
+└─────────────────────────────────────────────────────────────┘
+```
 
 ## Detalles Técnicos
 
-### Archivos a Crear
-- `src/components/ProgramTransitionBanner.tsx`
-
 ### Archivos a Modificar
-- `src/pages/KitDigital.tsx`
-- `src/pages/KitDigitalPresenciaBasica.tsx`
-- `src/pages/KitDigitalGestionClientes.tsx`
-- `src/pages/KitDigitalRedesSociales.tsx`
-- `src/pages/KitDigitalPresenciaAvanzada.tsx`
-- `src/pages/KitConsulting.tsx`
 
-### Dependencias
-- Lucide React (iconos: Info, CheckCircle, X, Calendar, MessageCircle)
-- Tailwind CSS
-- React Router (Link)
+| Archivo | Cambio |
+|---------|--------|
+| `src/components/SofiaChatNew.tsx` | Agregar función de parsing y componente de renderizado de mensajes con acciones |
+
+### Patrones de URL a Detectar
+
+```text
+Español:
+- /es/agendar-reunion → "Agendar reunión" + icono Calendar
+- /es/contacto → "Contactar" + icono Mail
+
+Inglés:
+- /en/schedule-meeting → "Schedule meeting" + icono Calendar
+- /en/contact → "Contact" + icono Mail
+```
+
+### Componente MessageWithActions
+
+Nuevo subcomponente dentro de SofiaChatNew que:
+
+1. Recibe el contenido del mensaje
+2. Usa regex para detectar enlaces markdown: `\[([^\]]+)\]\(([^)]+)\)`
+3. Mapea URLs conocidas a acciones con iconos
+4. Renderiza el texto limpio + chips de accion debajo
+
+### Estilos de los Chips
+
+Se reutilizará el estilo actual de Quick Actions:
+- Fondo `bg-gray-100` → `hover:bg-gray-200`
+- Bordes redondeados `rounded-full`
+- Texto pequeño `text-xs`
+- Iconos de Lucide (`Calendar`, `Mail`)
+
+## Beneficios
+
+1. **Mejor UX**: Botones claros y clickables en lugar de URLs en texto
+2. **Consistencia visual**: Mismo estilo que los Quick Actions existentes
+3. **Sin cambios en backend**: El edge function sigue respondiendo igual
+4. **Flexibilidad**: Fácil añadir nuevos tipos de acciones en el futuro
+
+## Consideraciones
+
+- Los chips se muestran solo en mensajes del asistente
+- Se mantiene compatibilidad con mensajes que no contengan URLs
+- Las URLs no reconocidas se pueden mostrar como enlaces normales o texto
