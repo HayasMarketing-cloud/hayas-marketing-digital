@@ -151,13 +151,13 @@ const BlogNewSeoParadigmAeoGeo = () => {
           </h2>
 
           <div className="grid md:grid-cols-2 gap-6 mt-8">
-            <Card className="bg-gradient-to-br from-blue-50 to-blue-100/50 dark:from-blue-900/20 dark:to-blue-800/10 border-blue-200 dark:border-blue-700">
+            <Card className="bg-gradient-to-br from-conecta-50 to-conecta-100/50 dark:from-conecta-900/20 dark:to-conecta-800/10 border-conecta-200 dark:border-conecta-700">
               <CardContent className="p-6">
                 <div className="flex items-center gap-3 mb-4">
-                  <MessageSquare className="h-8 w-8 text-blue-600" />
-                  <h3 className="text-xl font-bold text-blue-900 dark:text-blue-100">AEO</h3>
+                  <MessageSquare className="h-8 w-8 text-conecta-500" />
+                  <h3 className="text-xl font-bold text-conecta-900 dark:text-conecta-100">AEO</h3>
                 </div>
-                <p className="text-sm font-medium text-blue-700 dark:text-blue-300 mb-3">Answer/Agentic Engine Optimization</p>
+                <p className="text-sm font-medium text-conecta-600 dark:text-conecta-300 mb-3">Answer/Agentic Engine Optimization</p>
                 <p className="text-elegant">
                   Focuses on making your content and data <strong>easily retrievable and interpretable</strong> by AI assistants that answer questions and perform actions.
                 </p>
@@ -165,13 +165,13 @@ const BlogNewSeoParadigmAeoGeo = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-gradient-to-br from-purple-50 to-purple-100/50 dark:from-purple-900/20 dark:to-purple-800/10 border-purple-200 dark:border-purple-700">
+            <Card className="bg-gradient-to-br from-impulsa-50 to-impulsa-100/50 dark:from-impulsa-900/20 dark:to-impulsa-800/10 border-impulsa-200 dark:border-impulsa-700">
               <CardContent className="p-6">
                 <div className="flex items-center gap-3 mb-4">
-                  <Brain className="h-8 w-8 text-purple-600" />
-                  <h3 className="text-xl font-bold text-purple-900 dark:text-purple-100">GEO</h3>
+                  <Brain className="h-8 w-8 text-impulsa-500" />
+                  <h3 className="text-xl font-bold text-impulsa-900 dark:text-impulsa-100">GEO</h3>
                 </div>
-                <p className="text-sm font-medium text-purple-700 dark:text-purple-300 mb-3">Generative Engine Optimization</p>
+                <p className="text-sm font-medium text-impulsa-600 dark:text-impulsa-300 mb-3">Generative Engine Optimization</p>
                 <p className="text-elegant">
                   Aims for your brand to be <strong>discovered and convincing</strong> within generative AI systems, building credibility and trust so that AI recommends your products or services.
                 </p>
@@ -241,33 +241,33 @@ const BlogNewSeoParadigmAeoGeo = () => {
           </p>
 
           <div className="grid md:grid-cols-3 gap-4 mb-8">
-            <Card className="bg-gradient-to-br from-cyan-50 to-cyan-100/50 dark:from-cyan-900/20 dark:to-cyan-800/10 border-cyan-200 dark:border-cyan-700">
+            <Card className="bg-gradient-to-br from-turquesa-50 to-turquesa-100/50 dark:from-turquesa-900/20 dark:to-turquesa-800/10 border-turquesa-200 dark:border-turquesa-700">
               <CardContent className="p-5">
                 <div className="flex items-center gap-2 mb-3">
-                  <Search className="h-6 w-6 text-cyan-600" />
-                  <span className="font-bold text-cyan-800 dark:text-cyan-200">Channel 1</span>
+                  <Search className="h-6 w-6 text-turquesa-600" />
+                  <span className="font-bold text-turquesa-800 dark:text-turquesa-200">Channel 1</span>
                 </div>
                 <h4 className="font-semibold mb-2">Crawled Data</h4>
                 <p className="text-sm text-elegant">Web content indexed by Bing crawlers.</p>
               </CardContent>
             </Card>
 
-            <Card className="bg-gradient-to-br from-orange-50 to-orange-100/50 dark:from-orange-900/20 dark:to-orange-800/10 border-orange-200 dark:border-orange-700">
+            <Card className="bg-gradient-to-br from-hayas-50 to-hayas-100/50 dark:from-hayas-900/20 dark:to-hayas-800/10 border-hayas-200 dark:border-hayas-700">
               <CardContent className="p-5">
                 <div className="flex items-center gap-2 mb-3">
-                  <Database className="h-6 w-6 text-orange-600" />
-                  <span className="font-bold text-orange-800 dark:text-orange-200">Channel 2</span>
+                  <Database className="h-6 w-6 text-hayas-600" />
+                  <span className="font-bold text-hayas-800 dark:text-hayas-200">Channel 2</span>
                 </div>
                 <h4 className="font-semibold mb-2">Feed Data</h4>
                 <p className="text-sm text-elegant">Catalogs, prices, and stock provided directly to the platform.</p>
               </CardContent>
             </Card>
 
-            <Card className="bg-gradient-to-br from-green-50 to-green-100/50 dark:from-green-900/20 dark:to-green-800/10 border-green-200 dark:border-green-700">
+            <Card className="bg-gradient-to-br from-activa-50 to-activa-100/50 dark:from-activa-900/20 dark:to-activa-800/10 border-activa-200 dark:border-activa-700">
               <CardContent className="p-5">
                 <div className="flex items-center gap-2 mb-3">
-                  <Eye className="h-6 w-6 text-green-600" />
-                  <span className="font-bold text-green-800 dark:text-green-200">Channel 3</span>
+                  <Eye className="h-6 w-6 text-activa-600" />
+                  <span className="font-bold text-activa-800 dark:text-activa-200">Channel 3</span>
                 </div>
                 <h4 className="font-semibold mb-2">Live Data</h4>
                 <p className="text-sm text-elegant">Reviews, user experience, and on-site behavior.</p>
