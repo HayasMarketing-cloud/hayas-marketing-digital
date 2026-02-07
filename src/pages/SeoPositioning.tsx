@@ -463,7 +463,7 @@ const SeoPositioning = () => {
                   </Link>
                 </Button>
                 <Button size="lg" variant="outline" asChild>
-                  <Link to="#casos-exito">{content.heroSecondaryCTA}</Link>
+                  <a href="#casos-exito">{content.heroSecondaryCTA}</a>
                 </Button>
               </div>
               
