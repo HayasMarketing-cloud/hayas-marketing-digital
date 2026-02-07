@@ -56,6 +56,7 @@ const SofiaChatNew = () => {
     '/es/soluciones/activa-tus-ventas',
     '/es/agendar-reunion',
     '/es/contacto',
+    '/es/kit-digital',
     // Servicios ES (para contexto GEO/AEO desde ficheros .md)
     '/es/servicios/creacion-marca',
     '/es/servicios/diseno-web',
@@ -153,6 +154,18 @@ const SofiaChatNew = () => {
 
     return () => clearTimeout(timer);
   }, [shouldRender, isOpen, location.pathname]);
+
+  // Listen for openSofiaChat event from external buttons (e.g., "Chatea con SofÍA" sections)
+  useEffect(() => {
+    const handleOpenSofiaChat = () => {
+      setIsOpen(true);
+      setIsMinimized(false);
+      setShowHelpBubble(false);
+    };
+
+    window.addEventListener('openSofiaChat', handleOpenSofiaChat);
+    return () => window.removeEventListener('openSofiaChat', handleOpenSofiaChat);
+  }, []);
 
   // Initialize chat with greeting
   useEffect(() => {
