@@ -304,6 +304,24 @@ La IA transforma todas las áreas del marketing:
 
 ---
 
+### 23. The New SEO Paradigm in the AI Era (AEO and GEO)
+**URL**: https://hayasmarketing.com/en/blog/new-seo-paradigm-aeo-geo
+**Autor**: Rubén Reyero
+**Fecha**: 2026-02-07
+**Categoría**: SEO
+**Idioma**: English
+
+The new SEO paradigm represents a fundamental shift in digital visibility:
+- From click optimization to becoming cited sources for AI
+- AEO: Making content retrievable and interpretable by AI assistants
+- GEO: Building credibility for proactive AI recommendations
+- Google SGE: E-E-A-T visibility, structured content, neutral depth
+- Bing Copilot: Three data channels (crawled, feeds, live)
+- ChatGPT: GPTBot access, corporate blog as training source, Digital PR
+- Strategic focus: AEO-readiness audit, trust-based content, influence strategy
+
+---
+
 ## SERVICIOS PRINCIPALES
 
 ### Soluciones de Marketing y Visibilidad

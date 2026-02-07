@@ -601,6 +601,7 @@ const App = () => (
           <Route path="/en/blog/ai-governance-business" element={<PageSuspense><Pages.BlogAIGovernanceBusiness /></PageSuspense>} />
           <Route path="/en/blog/ai-seo-tools" element={<PageSuspense><Pages.BlogAISEOTools /></PageSuspense>} />
           <Route path="/en/blog/crm-what-is-benefits" element={<PageSuspense><Pages.BlogCRMWhatIsBenefits /></PageSuspense>} />
+          <Route path="/en/blog/new-seo-paradigm-aeo-geo" element={<PageSuspense><Pages.BlogNewSeoParadigmAeoGeo /></PageSuspense>} />
           <Route path="/en/blog/:id" element={<PageSuspense><Pages.BlogPost /></PageSuspense>} />
           
           {/* COMPARISONS */}
