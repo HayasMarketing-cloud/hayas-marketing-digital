@@ -304,21 +304,63 @@ La IA transforma todas las áreas del marketing:
 
 ---
 
-### 23. The New SEO Paradigm in the AI Era (AEO and GEO)
-**URL**: https://hayasmarketing.com/en/blog/new-seo-paradigm-aeo-geo
+### 23. El Nuevo Paradigma SEO en la Era de la IA (AEO y GEO)
+**URL**: https://hayasmarketing.com/es/blog/nuevo-paradigma-seo-aeo-geo
 **Autor**: Rubén Reyero
 **Fecha**: 2026-02-07
 **Categoría**: SEO
-**Idioma**: English
+**Idioma**: Español
 
-The new SEO paradigm represents a fundamental shift in digital visibility:
-- From click optimization to becoming cited sources for AI
-- AEO: Making content retrievable and interpretable by AI assistants
-- GEO: Building credibility for proactive AI recommendations
-- Google SGE: E-E-A-T visibility, structured content, neutral depth
-- Bing Copilot: Three data channels (crawled, feeds, live)
-- ChatGPT: GPTBot access, corporate blog as training source, Digital PR
-- Strategic focus: AEO-readiness audit, trust-based content, influence strategy
+La forma en que los usuarios encuentran información en internet está cambiando radicalmente. La búsqueda ha evolucionado de un modelo centrado en el clic a uno dominado por respuestas generativas y Agentes de IA. El foco ya no es solo aparecer en la posición #1 de los resultados orgánicos tradicionales, sino ser la fuente elegida y citada por los motores de inteligencia artificial.
+
+**Conceptos Clave:**
+
+**AEO (Answer/Agentic Engine Optimization):** Optimiza el contenido para que sea fácilmente recuperable e interpretable por asistentes de IA que responden preguntas. Elementos clave: contenido estructurado con formato pregunta-respuesta, marcado Schema.org, enfoque de pirámide invertida (respuesta primero), y señales E-E-A-T visibles.
+
+**GEO (Generative Engine Optimization):** Busca que las marcas sean descubiertas y recomendadas dentro de sistemas de IA generativa como ChatGPT, Copilot o Perplexity. Elementos clave: contenido profundo y autorizado, presencia en listicles de terceros, estrategia de Digital PR, y señales de confianza (reseñas, menciones en prensa).
+
+**Estrategias por Plataforma:**
+
+- **Google SGE:** E-E-A-T visible, estructura legible (párrafos cortos, bullets), contenido neutral sin lenguaje promocional, marcado Schema.org (Article, FAQPage, HowTo).
+
+- **Microsoft Bing Copilot:** Tres canales de datos (rastreados, feeds, en vivo). Datos estructurados impecables (Product, Offer, Organization), señales de autoridad, preparación para "Agentic Commerce".
+
+- **ChatGPT/OpenAI:** Permitir acceso a GPTBot, contenido profundo en blog corporativo, presencia en listicles influyentes, contenido neutral y bien documentado.
+
+**Recomendaciones Estratégicas:**
+1. Auditar la "AEO-Readiness" técnica y de contenido
+2. Producir contenido de "Confianza Intransferible" con datos originales
+3. Combinar SEO, datos estructurados y Digital PR para presencia en todas las plataformas de IA
+
+---
+
+### 24. The New SEO Paradigm in the AI Era (AEO and GEO) [English]
+**URL**: https://hayasmarketing.com/en/blog/new-seo-paradigm-aeo-geo
+**Author**: Rubén Reyero
+**Date**: 2026-02-07
+**Category**: SEO
+**Language**: English
+
+The way users find information on the internet is changing radically. Search has evolved from a click-centric model to one dominated by generative responses and AI Agents. The focus is no longer just appearing in position #1 of traditional organic results, but being the chosen and cited source by artificial intelligence engines.
+
+**Key Concepts:**
+
+**AEO (Answer/Agentic Engine Optimization):** Optimizes content to be easily retrievable and interpretable by AI assistants that answer questions. Key elements: structured Q&A format, Schema.org markup, inverted pyramid approach (answer first), visible E-E-A-T signals.
+
+**GEO (Generative Engine Optimization):** Aims for brands to be discovered and recommended within generative AI systems like ChatGPT, Copilot, or Perplexity. Key elements: deep authoritative content, presence in third-party listicles, Digital PR strategy, trust signals (reviews, press mentions).
+
+**Platform-Specific Strategies:**
+
+- **Google SGE:** Visible E-E-A-T, readable structure (short paragraphs, bullets), neutral content without promotional language, Schema.org markup (Article, FAQPage, HowTo).
+
+- **Microsoft Bing Copilot:** Three data channels (crawled, feeds, live). Impeccable structured data (Product, Offer, Organization), authority signals, preparation for "Agentic Commerce".
+
+- **ChatGPT/OpenAI:** Allow GPTBot access, deep corporate blog content, presence in influential listicles, neutral well-documented content.
+
+**Strategic Recommendations:**
+1. Audit technical and content "AEO-Readiness"
+2. Produce "Non-Transferable Trust" content with original data
+3. Combine SEO, structured data, and Digital PR for presence across all AI platforms
 
 ---
 
