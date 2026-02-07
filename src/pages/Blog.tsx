@@ -41,6 +41,19 @@ const Blog = () => {
 
   const allPosts = [
     {
+      id: 'nuevo-paradigma-seo-aeo-geo',
+      title: 'El Nuevo Paradigma SEO en la Era de la IA (AEO y GEO)',
+      description: 'Descubre las estrategias AEO (Answer Engine Optimization) y GEO (Generative Engine Optimization) para posicionar tu marca en Google, Bing Copilot y ChatGPT.',
+      excerpt: 'El SEO ha evolucionado de optimizar para el clic a ser la fuente citada por las IA. Aprende AEO y GEO para Google SGE, Bing Copilot y ChatGPT.',
+      category: 'SEO',
+      readTime: '14 min',
+      date: '2026-02-07',
+      image: '/seo-aeo-geo-paradigma-hero.jpg',
+      slug: '/es/blog/nuevo-paradigma-seo-aeo-geo',
+      tags: ['SEO', 'AEO', 'GEO', 'IA', 'ChatGPT', 'Google SGE', 'Bing Copilot', 'Marketing Digital'],
+      featured: true
+    },
+    {
       id: 'decision-marketing-confianza',
       title: 'Decision Marketing: cuando el marketing deja de provocar y empieza a generar confianza',
       description: 'Decision Marketing es un enfoque estratégico que prioriza la calidad de las elecciones sobre el volumen de conversiones. Descubre cómo acompañar decisiones conscientes.',
