@@ -406,6 +406,7 @@ const App = () => (
           <Route path="/es/blog/guia-privacidad-huella-digital" element={<PageSuspense><Pages.BlogGuiaPrivacidadHuellaDigital /></PageSuspense>} />
           <Route path="/es/blog/gobernanza-ia-empresas" element={<PageSuspense><Pages.BlogGobernanzaIAEmpresas /></PageSuspense>} />
           <Route path="/es/blog/decision-marketing-confianza" element={<PageSuspense><Pages.BlogDecisionMarketing /></PageSuspense>} />
+          <Route path="/es/blog/nuevo-paradigma-seo-aeo-geo" element={<PageSuspense><Pages.BlogNuevoParadigmaSeoAeoGeo /></PageSuspense>} />
            <Route path="/es/blog/:id" element={<PageSuspense><Pages.BlogPost /></PageSuspense>} />
           
           {/* AUTORES */}
