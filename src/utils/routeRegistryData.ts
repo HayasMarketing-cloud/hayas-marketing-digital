@@ -186,6 +186,7 @@ export const registeredRoutes: RouteDefinition[] = [
   // BLOG (EN)
   { path: '/en/blog', category: 'blog', isIndexable: true, priority: 0.8, changefreq: 'weekly', isDynamic: false, isLegacy: false },
   { path: '/en/blog/chatbots-for-websites', category: 'blog', isIndexable: true, priority: 0.7, changefreq: 'monthly', isDynamic: false, isLegacy: false },
+  { path: '/en/blog/new-seo-paradigm-aeo-geo', category: 'blog', isIndexable: true, priority: 0.7, changefreq: 'monthly', isDynamic: false, isLegacy: false },
   
   // COMPARISONS (EN)
   { path: '/en/comparison/hubspot-vs-go-high-level', category: 'comparison', isIndexable: true, priority: 0.7, changefreq: 'monthly', isDynamic: false, isLegacy: false },

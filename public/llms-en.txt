@@ -136,6 +136,14 @@ Comprehensive guide explaining what CRM systems are, their benefits for business
 
 Practical guide on implementing intelligent chatbots for business websites. Covers benefits, implementation strategies, and how AI-powered assistants like SofÍA can improve customer service and lead generation 24/7.
 
+### The New SEO Paradigm (AEO and GEO)
+**URL**: /en/blog/new-seo-paradigm-aeo-geo
+**Topic**: Strategic guide to AEO and GEO for AI-powered search visibility
+**Key concepts**: AEO, GEO, Google SGE, Bing Copilot, ChatGPT, E-E-A-T
+**Author**: Rubén Reyero
+
+Search has evolved from a click-centric model to one dominated by generative AI responses. This guide explains how to optimize for Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) across Google, Microsoft, and OpenAI platforms, ensuring brands become cited sources in AI-generated answers.
+
 ---
 
 ## Technologies and Tools
