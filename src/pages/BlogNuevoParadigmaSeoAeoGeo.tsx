@@ -64,7 +64,15 @@ const BlogNuevoParadigmaSeoAeoGeo = () => {
       "datePublished": "2026-02-07T00:00:00+01:00",
       "dateModified": "2026-02-07T00:00:00+01:00",
       "image": "/seo-aeo-geo-paradigma-hero.jpg",
-      "mainEntityOfPage": "https://hayasmarketing.com/es/blog/nuevo-paradigma-seo-aeo-geo"
+      "mainEntityOfPage": "https://hayasmarketing.com/es/blog/nuevo-paradigma-seo-aeo-geo",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "article header h1",
+          ".article-lead",
+          "[data-faq-section] h3:first-of-type"
+        ]
+      }
     },
     mainKeyword: 'nuevo paradigma SEO IA',
     secondaryKeywords: ['AEO', 'GEO', 'Answer Engine Optimization', 'Generative Engine Optimization', 'SEO para IA', 'Google SGE', 'Bing Copilot']
