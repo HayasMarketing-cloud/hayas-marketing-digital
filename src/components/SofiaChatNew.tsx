@@ -70,6 +70,7 @@ const SofiaChatNew = () => {
     '/en/solutions/activate-sales',
     '/en/schedule-meeting',
     '/en/contact',
+    '/en/kit-digital',
     // Services EN
     '/en/services/branding',
     '/en/services/web-design'
