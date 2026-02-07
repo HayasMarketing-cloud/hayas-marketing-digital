@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { X, Send, Loader2, MessageCircle, Minimize2, Calendar, Mail, Palette, TrendingUp, Zap } from 'lucide-react';
+import { X, Send, Loader2, Minimize2, Calendar, Mail, Palette, TrendingUp, Zap } from 'lucide-react';
+import MessageWithActions from '@/components/sofia/MessageWithActions';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
@@ -408,7 +409,10 @@ const SofiaChatNew = () => {
                             : 'bg-gray-100 text-gray-800 rounded-bl-md'
                         }`}
                       >
-                        <p className="text-sm whitespace-pre-wrap">{message.content}</p>
+                        <MessageWithActions 
+                          content={message.content} 
+                          isAssistant={message.role === 'assistant'} 
+                        />
                       </div>
                     </div>
                   ))}
