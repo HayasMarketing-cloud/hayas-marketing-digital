@@ -427,7 +427,7 @@ const SeoPositioning = () => {
                     <div className="p-4 bg-green-50 border-l-4 border-green-500 rounded-r-lg">
                       <div className="flex items-center gap-2 mb-1">
                         <Globe className="h-4 w-4 text-green-600" />
-                        <span className="text-sm text-green-700 font-medium">Google - {isEnglish ? 'Position #1' : 'Posición #1'}</span>
+                        <span className="text-sm text-green-700 font-medium">Google {isEnglish ? '& Bing - TOP 3 Position' : 'y Bing - Posición TOP 3'}</span>
                       </div>
                       <div className="text-xs text-green-600">{isEnglish ? 'Your Business • Top organic result' : 'Tu Negocio • Resultado orgánico top'}</div>
                     </div>
