@@ -8,6 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import Seo from '@/components/Seo';
 import FAQSection from '@/components/FAQSection';
+import ProgramTransitionBanner from '@/components/ProgramTransitionBanner';
 import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
 import { 
   Database, Users, Mail, Settings, 
@@ -172,6 +173,9 @@ const KitDigitalGestionClientes = () => {
           </nav>
         </div>
       </div>
+
+      {/* Program Transition Banner */}
+      <ProgramTransitionBanner programName="Kit Digital" />
 
       {/* Hero Section */}
       <section className="py-16 md:py-24 bg-gradient-to-br from-hayas-50 via-white to-turquesa-50">

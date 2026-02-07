@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import ProgramTransitionBanner from '@/components/ProgramTransitionBanner';
 
 import {
   Breadcrumb,
@@ -87,6 +88,9 @@ const KitConsulting = () => {
             </Breadcrumb>
           </div>
         </section>
+
+        {/* Program Transition Banner */}
+        <ProgramTransitionBanner programName="Kit Consulting" />
 
         {/* Header Navigation */}
         <section className="py-6 bg-gray-50">
