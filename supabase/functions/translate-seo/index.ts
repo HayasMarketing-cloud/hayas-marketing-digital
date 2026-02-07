@@ -99,6 +99,21 @@ Deno.serve(async (req) => {
     
     console.log('🔄 Translating SEO for:', esPageId, '-> ', enPath);
     
+    // Obtener og_image de la página ES para copiarlo a EN
+    let esOgImage: string | null = null;
+    if (esPageId) {
+      const { data: esPage } = await supabaseAdmin
+        .from('seo_pages')
+        .select('og_image')
+        .eq('id', esPageId)
+        .single();
+      
+      if (esPage?.og_image) {
+        esOgImage = esPage.og_image;
+        console.log('📷 Found og_image in ES page, will copy to EN:', esOgImage);
+      }
+    }
+    
     const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
     
     if (!LOVABLE_API_KEY) {
@@ -188,24 +203,31 @@ Deno.serve(async (req) => {
     
     // Create or update the translated page in database using service role
     // If the EN page already exists for (path, in_language), we update it instead of failing with a duplicate key error.
+    const upsertData: any = {
+      path: enPath,
+      title: translatedData.title,
+      description: translatedData.description,
+      h1: translatedData.h1,
+      h2_primary: translatedData.h1,
+      keywords: translatedData.keywords,
+      canonical: `https://hayasmarketing.com${enPath}`,
+      in_language: 'en-US',
+      translation_of: esPageId,
+      schema_type: seoData.schema_type || 'WebPage',
+      category: category,
+      is_indexable: true,
+      og_type: seoData.og_type || 'website',
+      robots: 'index,follow',
+    };
+    
+    // Copiar og_image de ES a EN si existe
+    if (esOgImage) {
+      upsertData.og_image = esOgImage;
+    }
+    
     const { data: newEnPage, error: upsertError } = await supabaseAdmin
       .from('seo_pages')
-      .upsert({
-        path: enPath,
-        title: translatedData.title,
-        description: translatedData.description,
-        h1: translatedData.h1,
-        h2_primary: translatedData.h1,
-        keywords: translatedData.keywords,
-        canonical: `https://hayasmarketing.com${enPath}`,
-        in_language: 'en-US',
-        translation_of: esPageId,
-        schema_type: seoData.schema_type || 'WebPage',
-        category: category,
-        is_indexable: true,
-        og_type: seoData.og_type || 'website',
-        robots: 'index,follow',
-      }, { onConflict: 'path,in_language' })
+      .upsert(upsertData, { onConflict: 'path,in_language' })
       .select()
       .single();
 

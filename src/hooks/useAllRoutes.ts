@@ -15,7 +15,10 @@ export interface RouteInventoryItem {
   hasTranslation: boolean;
   // SEO Optimization Status
   seoOptimized: boolean;
+  seoFullyOptimized: boolean;
   missingFields: string[];
+  missingCriticalFields: string[];
+  missingRecommendedFields: string[];
   title?: string;
   description?: string;
   keywords?: any;
@@ -58,23 +61,35 @@ export const useAllRoutes = () => {
         const enPath = getEnglishEquivalent(esPath);
         const enDbPage = enPath ? dbPagesMap.get(enPath) : null;
 
-        // Verificar optimización SEO
-        const missingFields: string[] = [];
+        // Verificar optimización SEO - Separar críticos de recomendados
+        const missingCriticalFields: string[] = [];
+        const missingRecommendedFields: string[] = [];
+        
         if (dbPage) {
-          if (!dbPage.title || dbPage.title.length < 30) missingFields.push('title');
-          if (!dbPage.description || dbPage.description.length < 120) missingFields.push('description');
-          if (!dbPage.keywords || (Array.isArray(dbPage.keywords) && dbPage.keywords.length === 0)) missingFields.push('keywords');
-          if (!dbPage.h1) missingFields.push('h1');
-          if (!dbPage.og_image) missingFields.push('og_image');
+          // Campos críticos (bloqueantes)
+          if (!dbPage.title || dbPage.title.length < 30) missingCriticalFields.push('title');
+          if (!dbPage.description || dbPage.description.length < 120) missingCriticalFields.push('description');
+          if (!dbPage.keywords || (Array.isArray(dbPage.keywords) && dbPage.keywords.length === 0)) missingCriticalFields.push('keywords');
+          if (!dbPage.h1) missingCriticalFields.push('h1');
+          
+          // Campos recomendados (no bloqueantes)
+          if (!dbPage.og_image) missingRecommendedFields.push('og_image');
         }
+
+        // seoOptimized = críticos OK (puede faltar og_image)
+        const seoOptimized = missingCriticalFields.length === 0 && !!dbPage;
+        const seoFullyOptimized = seoOptimized && missingRecommendedFields.length === 0;
 
         let status: RouteInventoryItem['status'] = 'code-only';
         if (dbPage) {
           if (enDbPage?.is_indexable) {
-            status = missingFields.length === 0 ? 'complete' : 'translated';
+            // Tiene traducción EN indexable: complete si SEO básico OK, translated si no
+            status = seoOptimized ? 'complete' : 'translated';
           } else if (enDbPage) {
-            status = 'translated'; // Existe pero no está indexable
+            // Existe EN pero no está indexable
+            status = 'translated';
           } else {
+            // No existe EN
             status = 'pending';
           }
         }
@@ -90,8 +105,11 @@ export const useAllRoutes = () => {
           translationPath: enPath || undefined,
           translationId: enDbPage?.id,
           hasTranslation: !!enDbPage,
-          seoOptimized: missingFields.length === 0 && !!dbPage,
-          missingFields,
+          seoOptimized,
+          seoFullyOptimized,
+          missingFields: [...missingCriticalFields, ...missingRecommendedFields],
+          missingCriticalFields,
+          missingRecommendedFields,
           title: dbPage?.title,
           description: dbPage?.description,
           keywords: dbPage?.keywords,
@@ -120,7 +138,10 @@ export const useAllRoutes = () => {
             dbId: dbPage?.id,
             hasTranslation: false,
             seoOptimized: false,
+            seoFullyOptimized: false,
             missingFields: ['spanish_original'],
+            missingCriticalFields: ['spanish_original'],
+            missingRecommendedFields: [],
             title: dbPage?.title,
             description: dbPage?.description,
             is_indexable: dbPage?.is_indexable,
@@ -144,7 +165,10 @@ export const useAllRoutes = () => {
             dbId: dbPage.id,
             hasTranslation: false,
             seoOptimized: false,
+            seoFullyOptimized: false,
             missingFields: ['app_route'],
+            missingCriticalFields: ['app_route'],
+            missingRecommendedFields: [],
             title: dbPage.title,
             description: dbPage.description,
             is_indexable: dbPage.is_indexable,

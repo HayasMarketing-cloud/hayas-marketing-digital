@@ -227,6 +227,9 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({ route, isOpe
 
     setIsLoading(true);
     try {
+      // Fix crítico: usar formato correcto de in_language ('es-ES' o 'en-US')
+      const inLanguage = route.path.startsWith('/en') ? 'en-US' : 'es-ES';
+      
       const { error } = await supabase.from('seo_pages').insert({
         path: route.path,
         title: formData.title,
@@ -237,7 +240,7 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({ route, isOpe
         og_type: formData.og_type,
         canonical: route.path,
         category: route.category,
-        in_language: route.language,
+        in_language: inLanguage,
         is_indexable: true,
       });
 
@@ -452,19 +455,27 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({ route, isOpe
     }
 
     // Revisar SEO: Show validation and allow editing
+    // Distinguir entre campos críticos y recomendados
+    const hasCriticalMissing = route.missingCriticalFields && route.missingCriticalFields.length > 0;
+    const hasRecommendedMissing = route.missingRecommendedFields && route.missingRecommendedFields.length > 0;
+    
     return (
       <div className="space-y-4 py-6">
-        <div className="bg-yellow-500/10 p-4 rounded-lg mb-4">
-          <h4 className="font-semibold text-yellow-700 mb-2">Paso 3: Optimizar SEO</h4>
+        <div className={`p-4 rounded-lg mb-4 ${route.seoOptimized ? 'bg-green-500/10' : 'bg-yellow-500/10'}`}>
+          <h4 className={`font-semibold mb-2 ${route.seoOptimized ? 'text-green-700' : 'text-yellow-700'}`}>
+            {route.seoOptimized ? '✅ SEO Básico Completo' : 'Paso 3: Optimizar SEO'}
+          </h4>
           <p className="text-sm text-muted-foreground">
             {route.seoOptimized 
-              ? 'Esta página está completamente optimizada para SEO'
+              ? hasRecommendedMissing 
+                ? 'Los campos SEO básicos están completos. Puedes añadir mejoras opcionales.'
+                : 'Esta página está completamente optimizada para SEO'
               : 'Completa los campos faltantes para mejorar tu posicionamiento en Google'
             }
           </p>
         </div>
         
-        {route.seoOptimized ? (
+        {route.seoOptimized && !hasRecommendedMissing ? (
           <div className="text-center space-y-4">
             <div className="flex justify-center">
               <div className="p-4 bg-green-500/10 rounded-full">
@@ -472,7 +483,7 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({ route, isOpe
               </div>
             </div>
             <div>
-              <h3 className="text-lg font-semibold mb-2">✅ SEO Completo</h3>
+              <h3 className="text-lg font-semibold mb-2">✅ SEO 100% Completo</h3>
               <p className="text-sm text-muted-foreground">
                 Esta página está completamente optimizada para SEO
               </p>
@@ -480,36 +491,40 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({ route, isOpe
           </div>
         ) : (
           <div className="space-y-4">
-            <div className="bg-muted p-4 rounded-lg">
-              <p className="text-sm font-semibold mb-2">📋 Campos por completar:</p>
-              <ul className="text-sm space-y-1">
-                {route.missingFields.map((field) => (
-                  <li key={field} className="flex items-center gap-2">
-                    <AlertCircle className="h-3 w-3 text-yellow-500" />
-                    {field}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {/* Campos críticos faltantes */}
+            {hasCriticalMissing && (
+              <div className="bg-red-500/10 p-4 rounded-lg">
+                <p className="text-sm font-semibold mb-2 text-red-700">⚠️ Campos SEO básicos por completar:</p>
+                <ul className="text-sm space-y-1">
+                  {route.missingCriticalFields!.map((field) => (
+                    <li key={field} className="flex items-center gap-2 text-red-600">
+                      <AlertCircle className="h-3 w-3" />
+                      {field}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* Campos recomendados faltantes */}
+            {hasRecommendedMissing && (
+              <div className="bg-yellow-500/10 p-4 rounded-lg">
+                <p className="text-sm font-semibold mb-2 text-yellow-700">💡 Mejoras recomendadas (opcionales):</p>
+                <ul className="text-sm space-y-1">
+                  {route.missingRecommendedFields!.map((field) => (
+                    <li key={field} className="flex items-center gap-2 text-yellow-600">
+                      <Sparkles className="h-3 w-3" />
+                      {field}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
             {/* Editable fields for missing data */}
             <div className="space-y-4 pt-4">
-              {route.missingFields.includes('og_image') && (
-                <div className="space-y-2">
-                  <Label htmlFor="og_image">Open Graph Image (URL)</Label>
-                  <Input
-                    id="og_image"
-                    value={formData.og_image}
-                    onChange={(e) => setFormData({ ...formData, og_image: e.target.value })}
-                    placeholder="https://example.com/image.jpg"
-                  />
-                  <p className="text-xs text-muted-foreground">
-                    URL de la imagen que se mostrará en redes sociales
-                  </p>
-                </div>
-              )}
-
-              {route.missingFields.includes('title') && (
+              {/* Campos críticos */}
+              {route.missingCriticalFields?.includes('title') && (
                 <div className="space-y-2">
                   <Label htmlFor="title">Título SEO *</Label>
                   <Input
@@ -524,7 +539,7 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({ route, isOpe
                 </div>
               )}
 
-              {route.missingFields.includes('description') && (
+              {route.missingCriticalFields?.includes('description') && (
                 <div className="space-y-2">
                   <Label htmlFor="description">Meta Description *</Label>
                   <Textarea
@@ -540,7 +555,7 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({ route, isOpe
                 </div>
               )}
 
-              {route.missingFields.includes('h1') && (
+              {route.missingCriticalFields?.includes('h1') && (
                 <div className="space-y-2">
                   <Label htmlFor="h1">H1 Principal *</Label>
                   <Input
@@ -552,9 +567,9 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({ route, isOpe
                 </div>
               )}
 
-              {route.missingFields.includes('keywords') && (
+              {route.missingCriticalFields?.includes('keywords') && (
                 <div className="space-y-2">
-                  <Label htmlFor="keywords">Keywords</Label>
+                  <Label htmlFor="keywords">Keywords *</Label>
                   <Input
                     id="keywords"
                     value={formData.keywords}
@@ -564,10 +579,29 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({ route, isOpe
                 </div>
               )}
 
+              {/* Campos recomendados */}
+              {route.missingRecommendedFields?.includes('og_image') && (
+                <div className="space-y-2 border-t pt-4">
+                  <Label htmlFor="og_image" className="flex items-center gap-2">
+                    Open Graph Image (URL) 
+                    <Badge variant="outline" className="text-xs">Opcional</Badge>
+                  </Label>
+                  <Input
+                    id="og_image"
+                    value={formData.og_image}
+                    onChange={(e) => setFormData({ ...formData, og_image: e.target.value })}
+                    placeholder="https://example.com/image.jpg"
+                  />
+                  <p className="text-xs text-muted-foreground">
+                    URL de la imagen que se mostrará en redes sociales
+                  </p>
+                </div>
+              )}
+
               <Button 
                 onClick={handleUpdateSEO}
                 disabled={isLoading}
-                className="w-full bg-yellow-500 hover:bg-yellow-600"
+                className={`w-full ${route.seoOptimized ? 'bg-green-500 hover:bg-green-600' : 'bg-yellow-500 hover:bg-yellow-600'}`}
                 size="lg"
               >
                 {isLoading ? (
@@ -578,7 +612,7 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({ route, isOpe
                 ) : (
                   <>
                     <Zap className="mr-2 h-4 w-4" />
-                    Actualizar SEO
+                    {route.seoOptimized ? 'Guardar Mejoras' : 'Actualizar SEO'}
                   </>
                 )}
               </Button>

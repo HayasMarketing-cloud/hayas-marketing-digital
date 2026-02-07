@@ -67,15 +67,14 @@ export const useTranslationStatus = () => {
         }
         byCategory[category].total++;
 
-        // Check SEO optimization
-        const missingFields = [];
-        if (!esPage.title || esPage.title.length < 30) missingFields.push('title');
-        if (!esPage.description || esPage.description.length < 120) missingFields.push('description');
-        if (!esPage.keywords || (Array.isArray(esPage.keywords) && esPage.keywords.length === 0)) missingFields.push('keywords');
-        if (!esPage.h1) missingFields.push('h1');
-        if (!esPage.og_image) missingFields.push('og_image');
+        // Check SEO optimization - Solo campos críticos (no og_image)
+        const missingCriticalFields = [];
+        if (!esPage.title || esPage.title.length < 30) missingCriticalFields.push('title');
+        if (!esPage.description || esPage.description.length < 120) missingCriticalFields.push('description');
+        if (!esPage.keywords || (Array.isArray(esPage.keywords) && esPage.keywords.length === 0)) missingCriticalFields.push('keywords');
+        if (!esPage.h1) missingCriticalFields.push('h1');
 
-        if (missingFields.length === 0) {
+        if (missingCriticalFields.length === 0) {
           seoOptimized++;
         } else {
           seoIncomplete++;
