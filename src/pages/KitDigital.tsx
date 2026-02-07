@@ -9,6 +9,7 @@ import Footer from '@/components/Footer';
 import StandardGHLForm from '@/components/StandardGHLForm';
 import FAQSection from '@/components/FAQSection';
 import EnhancedSEO from '@/components/EnhancedSEO';
+import ProgramTransitionBanner from '@/components/ProgramTransitionBanner';
 
 import {
   Breadcrumb,
@@ -133,6 +134,9 @@ const KitDigital = () => {
             </Breadcrumb>
           </div>
         </section>
+
+        {/* Program Transition Banner */}
+        <ProgramTransitionBanner programName="Kit Digital" />
 
         {/* Header Navigation */}
         <section className="py-6 bg-gray-50">
