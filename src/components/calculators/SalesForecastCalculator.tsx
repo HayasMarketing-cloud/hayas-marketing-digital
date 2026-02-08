@@ -89,6 +89,13 @@ const SalesForecastCalculator: React.FC<SalesForecastCalculatorProps> = ({
       : (clients: number, revenue: number) => `Con esta configuración, podrías adquirir ${clients} clientes y generar ${revenue.toLocaleString()} € de ingresos en 12 meses.`,
     mqlInfo: isEnglish ? 'Marketing Qualified Lead' : 'Lead Cualificado de Marketing',
     sqlInfo: isEnglish ? 'Sales Qualified Lead' : 'Lead Cualificado de Ventas',
+    mqlSqlTitle: isEnglish ? 'What are MQL and SQL?' : '¿Qué son MQL y SQL?',
+    mqlDefinition: isEnglish 
+      ? 'MQL: Lead who has shown interest through marketing (downloads, forms, visits).'
+      : 'MQL: Lead que ha mostrado interés mediante marketing (descargas, formularios, visitas).',
+    sqlDefinition: isEnglish 
+      ? 'SQL: Lead qualified by sales as ready for direct commercial contact.'
+      : 'SQL: Lead cualificado por ventas como listo para contacto comercial directo.',
     interactiveTool: isEnglish ? 'Interactive Tool' : 'Herramienta Interactiva',
     noRegistration: isEnglish ? 'No Registration' : 'Sin Registro',
     customizePrompt: isEnglish 
@@ -404,8 +411,22 @@ const SalesForecastCalculator: React.FC<SalesForecastCalculatorProps> = ({
                   min={1}
                   max={100}
                   step={1}
-                  className="py-2"
+                className="py-2"
                 />
+              </div>
+              
+              {/* MQL/SQL Info Note */}
+              <div className="mt-4 p-3 bg-muted/50 rounded-lg border border-muted text-xs space-y-1.5">
+                <p className="font-medium flex items-center gap-1.5 text-foreground">
+                  <Info className="h-3.5 w-3.5 text-primary flex-shrink-0" />
+                  {content.mqlSqlTitle}
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  <span className="font-medium text-foreground">MQL:</span> {content.mqlDefinition.replace('MQL: ', '')}
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  <span className="font-medium text-foreground">SQL:</span> {content.sqlDefinition.replace('SQL: ', '')}
+                </p>
               </div>
             </CardContent>
           </Card>
