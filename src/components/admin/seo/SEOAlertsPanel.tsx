@@ -2,13 +2,14 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { useSEOAlerts } from '@/hooks/useSEOAlerts';
-import { Bell, BellOff, CheckCheck, Trash2, AlertTriangle, Info, XCircle, RefreshCw, ExternalLink } from 'lucide-react';
+import { useSEOAlerts, SEOAlert } from '@/hooks/useSEOAlerts';
+import { Bell, BellOff, CheckCheck, Trash2, AlertTriangle, Info, XCircle, RefreshCw, ExternalLink, Wrench } from 'lucide-react';
 import { formatDistanceToNow } from 'date-fns';
 import { es } from 'date-fns/locale';
-import { Separator } from '@/components/ui/separator';
+import { useNavigate } from 'react-router-dom';
 
 export const SEOAlertsPanel = () => {
+  const navigate = useNavigate();
   const { 
     alerts, 
     isLoading, 
@@ -19,18 +20,23 @@ export const SEOAlertsPanel = () => {
     runMonitoring 
   } = useSEOAlerts();
 
+  const handleResolveAlert = async (alert: SEOAlert) => {
+    await markAsRead(alert.id);
+    navigate(`/admin/seo/pages?edit=${encodeURIComponent(alert.page_path)}`);
+  };
+
   const getAlertIcon = (type: string, severity: string) => {
     if (severity === 'critical') {
-      return <XCircle className="w-5 h-5 text-red-500" />;
+      return <XCircle className="w-5 h-5 text-destructive" />;
     }
     if (severity === 'warning') {
-      return <AlertTriangle className="w-5 h-5 text-yellow-500" />;
+      return <AlertTriangle className="w-5 h-5 text-warning" />;
     }
-    return <Info className="w-5 h-5 text-blue-500" />;
+    return <Info className="w-5 h-5 text-primary" />;
   };
 
   const getAlertBadge = (severity: string) => {
-    const variants: Record<string, any> = {
+    const variants: Record<string, "destructive" | "secondary" | "outline"> = {
       critical: 'destructive',
       warning: 'secondary',
       info: 'outline',
@@ -54,6 +60,15 @@ export const SEOAlertsPanel = () => {
       missing_fields_increased: 'Campos faltantes aumentaron',
     };
     return labels[type] || type;
+  };
+
+  const getResolveButtonText = (type: string) => {
+    const texts: Record<string, string> = {
+      new_page_no_seo: 'Generar SEO',
+      optimization_lost: 'Restaurar',
+      missing_fields_increased: 'Completar',
+    };
+    return texts[type] || 'Solucionar';
   };
 
   if (isLoading) {
@@ -156,13 +171,13 @@ export const SEOAlertsPanel = () => {
                               </p>
                             )}
                             {alert.details.fields_lost && alert.details.fields_lost.length > 0 && (
-                              <p className="text-red-600">
+                              <p className="text-destructive">
                                 <strong>Campos perdidos:</strong>{' '}
                                 {alert.details.fields_lost.join(', ')}
                               </p>
                             )}
                             {alert.details.new_missing && alert.details.new_missing.length > 0 && (
-                              <p className="text-yellow-600">
+                              <p className="text-warning">
                                 <strong>Nuevos faltantes:</strong>{' '}
                                 {alert.details.new_missing.join(', ')}
                               </p>
@@ -180,31 +195,47 @@ export const SEOAlertsPanel = () => {
                     </div>
 
                     <div className="flex flex-col gap-2">
-                      {!alert.is_read && (
+                      {/* Resolve Button - Primary Action */}
+                      <Button
+                        onClick={() => handleResolveAlert(alert)}
+                        variant="default"
+                        size="sm"
+                        className="w-full"
+                      >
+                        <Wrench className="w-4 h-4 mr-1" />
+                        {getResolveButtonText(alert.alert_type)}
+                      </Button>
+                      
+                      <div className="flex gap-1">
+                        {!alert.is_read && (
+                          <Button
+                            onClick={() => markAsRead(alert.id)}
+                            variant="ghost"
+                            size="sm"
+                            title="Marcar como leída"
+                          >
+                            <CheckCheck className="w-4 h-4" />
+                          </Button>
+                        )}
                         <Button
-                          onClick={() => markAsRead(alert.id)}
+                          onClick={() => deleteAlert(alert.id)}
                           variant="ghost"
                           size="sm"
+                          title="Eliminar alerta"
                         >
-                          <CheckCheck className="w-4 h-4" />
+                          <Trash2 className="w-4 h-4" />
                         </Button>
-                      )}
-                      <Button
-                        onClick={() => deleteAlert(alert.id)}
-                        variant="ghost"
-                        size="sm"
-                      >
-                        <Trash2 className="w-4 h-4" />
-                      </Button>
-                      <Button
-                        asChild
-                        variant="ghost"
-                        size="sm"
-                      >
-                        <a href={`/admin/translations?search=${alert.page_path}`} target="_blank">
-                          <ExternalLink className="w-4 h-4" />
-                        </a>
-                      </Button>
+                        <Button
+                          asChild
+                          variant="ghost"
+                          size="sm"
+                          title="Ver en panel"
+                        >
+                          <a href={`/admin/translations?search=${alert.page_path}`} target="_blank">
+                            <ExternalLink className="w-4 h-4" />
+                          </a>
+                        </Button>
+                      </div>
                     </div>
                   </div>
                 </div>
