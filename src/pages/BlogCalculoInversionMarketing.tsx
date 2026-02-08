@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import BlogPostTemplate from '@/components/BlogPost/BlogPostTemplate';
+import SalesForecastCalculatorWidget from '@/components/calculators/SalesForecastCalculatorWidget';
 import calculoInversionHero from '@/assets/calculo-inversion-marketing-hero.jpg';
 
 const BlogCalculoInversionMarketing = () => {
@@ -189,15 +190,11 @@ const BlogCalculoInversionMarketing = () => {
         "Un sistema de previsión bien estructurado te permite anticipar ingresos y calcular la inversión óptima en marketing para alcanzar tus metas comerciales."
       </blockquote>
 
-      <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8">
-        <h3 className="text-xl font-semibold mb-4 text-blue-800">🛠️ Herramienta gratuita de cálculo</h3>
-        <p className="text-blue-700 mb-4">
-          Utiliza <a href="https://docs.google.com/spreadsheets/d/1T7qAPwM4iLVlLBBlFi0SAE0dO723nMKwjhthI3bnZYg/edit?usp=sharing" className="text-blue-600 underline hover:text-blue-800" target="_blank" rel="noopener noreferrer">nuestra plantilla gratuita</a> en Google Sheets para crear tu sistema de previsión de ventas basado en objetivos y ratios de conversión.
-        </p>
-        <p className="text-sm text-blue-600">
-          <strong>Importante:</strong> Haz una copia antes de editar (Archivo → Hacer una copia)
-        </p>
-      </div>
+      {/* Interactive Sales Forecast Calculator Widget */}
+      <SalesForecastCalculatorWidget 
+        defaultOpen={false}
+        showFullPageLink={true}
+      />
 
       <h2 className="text-3xl font-bold mb-6 mt-12 text-foreground">
         Rendimiento por canales: optimiza tu inversión marketing
