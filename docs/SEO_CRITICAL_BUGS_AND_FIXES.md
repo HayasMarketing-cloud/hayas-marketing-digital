@@ -11,8 +11,9 @@ Este documento registra los errores SEO críticos encontrados en el proyecto y s
 1. [Bug #1: Homepage no indexable por detección de idioma](#bug-1-homepage-no-indexable-por-detección-de-idioma)
 2. [Bug #2: Páginas EN con noindex automático](#bug-2-páginas-en-con-noindex-automático)
 3. [Bug #3: FAQPage Schema duplicado](#bug-3-faqpage-schema-duplicado)
-4. [Checklist Pre-Deploy](#checklist-pre-deploy)
-5. [Reglas de Oro SEO](#reglas-de-oro-seo)
+4. [Bug #4: Fragmentos de reseñas no válidos](#bug-4-fragmentos-de-reseñas-no-válidos-review-snippets)
+5. [Checklist Pre-Deploy](#checklist-pre-deploy)
+6. [Reglas de Oro SEO](#reglas-de-oro-seo)
 
 ---
 
@@ -166,6 +167,67 @@ faqs={homeFaqs}
 - ⛔ **NUNCA** pasar FAQs por ambas vías (`faqs` prop Y `structuredData`)
 - ✅ Usar **SOLO** la prop `faqs` para que `Seo.tsx` genere el schema automáticamente
 - ✅ Verificar con [Rich Results Test](https://search.google.com/test/rich-results) antes de publicar
+
+---
+
+## Bug #4: Fragmentos de reseñas no válidos (Review Snippets)
+
+### Síntoma
+
+Google Search Console mostraba "10 elementos no válidos" en "Fragmentos de reseñas" para múltiples páginas del sitio.
+
+### Causa Raíz
+
+El archivo `src/data/seoData.ts` incluía `aggregateRating` y `review` dentro de `hayasOrganizationSchema`:
+
+```typescript
+// ❌ CÓDIGO PROBLEMÁTICO (eliminado)
+aggregateRating: {
+  "@type": "AggregateRating",
+  ratingValue: "4.9",
+  bestRating: "5",
+  worstRating: "1",
+  ratingCount: "47"
+},
+review: [
+  { "@type": "Review", author: {...}, reviewBody: "..." },
+  // ... más reseñas
+]
+```
+
+**Problema**: Desde 2019, Google **no muestra rich results de reseñas** para schemas tipo `LocalBusiness` y `Organization` cuando las reseñas están en el sitio web de la propia empresa. Esto se considera "self-serving" y viola las directrices.
+
+**Cita oficial de Google**: *"Reviews that can be perceived as 'self-serving' aren't in the best interest of users... we're not going to display review-rich results anymore for the schema types LocalBusiness and Organization."*
+
+### Solución Aplicada
+
+Eliminar completamente `aggregateRating` y `review` del schema de Organization:
+
+```typescript
+// ✅ CÓDIGO CORRECTO (actual)
+areaServed: {
+  "@type": "Country",
+  name: "España"
+}
+// NOTA: aggregateRating y review eliminados
+// Google no muestra rich results de reseñas para Organization/LocalBusiness
+```
+
+### Archivo Modificado
+
+- `src/data/seoData.ts`
+
+### Alternativas para Mostrar Reseñas
+
+1. **En páginas de servicios individuales**: Usar schema `Product` o `Service` con reseñas específicas
+2. **Reseñas de terceros**: Embeber widgets de Google Reviews, Trustpilot, etc.
+3. **Testimonios sin schema**: Mostrar testimonios visualmente sin structured data
+
+### Prevención
+
+- ⛔ **NUNCA** añadir reseñas propias a schemas `Organization` o `LocalBusiness`
+- ✅ Para rich results de reseñas, usar schema `Product` o `Service` en páginas específicas
+- ✅ Las reseñas de terceros (Google Reviews, Trustpilot) sí son válidas
 
 ---
 
