@@ -34,6 +34,7 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({ route, isOpe
     title: '',
     description: '',
     h1: '',
+    h2_primary: '',
     keywords: '',
     schema_type: 'WebPage',
     og_type: 'website',
@@ -53,6 +54,7 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({ route, isOpe
         title: '',
         description: '',
         h1: '',
+        h2_primary: '',
         keywords: '',
         schema_type: 'WebPage',
         og_type: 'website',
@@ -78,6 +80,7 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({ route, isOpe
               title: data.title || '',
               description: data.description || '',
               h1: data.h1 || '',
+              h2_primary: data.h2_primary || '',
               keywords: Array.isArray(data.keywords) ? data.keywords.join(', ') : '',
               schema_type: data.schema_type || 'WebPage',
               og_type: data.og_type || 'website',
@@ -109,6 +112,7 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({ route, isOpe
         title: '',
         description: '',
         h1: '',
+        h2_primary: '',
         keywords: '',
         schema_type: 'WebPage',
         og_type: 'website',
@@ -139,6 +143,7 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({ route, isOpe
     title: string;
     description: string;
     h1: string;
+    h2_primary: string;
     keywords: string;
   }) => {
     setFormData(prev => ({
@@ -157,6 +162,7 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({ route, isOpe
       title: template.fields.title,
       description: template.fields.description,
       h1: template.fields.h1,
+      h2_primary: formData.h2_primary, // Keep existing h2_primary
       keywords: template.fields.keywords.join(', '),
       schema_type: template.fields.schema_type,
       og_type: template.fields.og_type,
@@ -187,6 +193,7 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({ route, isOpe
       if (formData.title) updateData.title = formData.title;
       if (formData.description) updateData.description = formData.description;
       if (formData.h1) updateData.h1 = formData.h1;
+      if (formData.h2_primary) updateData.h2_primary = formData.h2_primary;
       if (formData.keywords) {
         updateData.keywords = formData.keywords.split(',').map(k => k.trim()).filter(Boolean);
       }
@@ -235,6 +242,7 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({ route, isOpe
         title: formData.title,
         description: formData.description,
         h1: formData.h1,
+        h2_primary: formData.h2_primary || null,
         keywords: formData.keywords.split(',').map(k => k.trim()).filter(Boolean),
         schema_type: formData.schema_type,
         og_type: formData.og_type,
