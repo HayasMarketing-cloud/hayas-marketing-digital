@@ -25,6 +25,255 @@
 
 ---
 
+## 📊 Diagramas de Arquitectura (Exportables)
+
+> **Cómo exportar**: Copia el código Mermaid y pégalo en [mermaid.live](https://mermaid.live) para exportar como PNG/SVG.
+
+### Diagrama 1: Flujo de Datos SEO Principal
+
+```mermaid
+flowchart TD
+    subgraph FRONTEND["🖥️ FRONTEND (React)"]
+        PAGE[📄 Page.tsx]
+        HOOKS{{"🪝 Hooks SEO<br/>useAdvancedSEO()<br/>useServiceSEO()<br/>useFAQSEO()"}}
+        SEO["⚡ &lt;Seo /&gt;<br/>Meta Tags + JSON-LD"]
+    end
+
+    subgraph DATA["💾 DATA LAYER"]
+        DB[(🗄️ Supabase<br/>seo_pages)]
+        FALLBACK[📋 seoData.ts<br/>Fallback]
+        AUTO[🤖 autoSEO.ts<br/>Auto-generación]
+        
+        PRIORITY{{"📊 Prioridad:<br/>1. DB → 2. Fallback → 3. Auto"}}
+    end
+
+    subgraph OUTPUT["📤 OUTPUT"]
+        META[🏷️ Meta Tags<br/>title, description, robots]
+        OG[📱 Open Graph<br/>og:title, og:image]
+        JSONLD[📝 JSON-LD<br/>Schema.org]
+        HREFLANG[🌐 Hreflang<br/>es/en alternates]
+    end
+
+    PAGE --> HOOKS
+    HOOKS --> SEO
+    HOOKS --> DATA
+    
+    DB --> PRIORITY
+    FALLBACK --> PRIORITY
+    AUTO --> PRIORITY
+    PRIORITY --> HOOKS
+
+    SEO --> META
+    SEO --> OG
+    SEO --> JSONLD
+    SEO --> HREFLANG
+
+    style FRONTEND fill:#e1f5fe,stroke:#01579b
+    style DATA fill:#fff3e0,stroke:#e65100
+    style OUTPUT fill:#e8f5e9,stroke:#2e7d32
+```
+
+### Diagrama 2: Sistema Multilingüe SEO
+
+```mermaid
+flowchart LR
+    subgraph SPANISH["🇪🇸 Español"]
+        ES_PAGE["/es/servicios/crm"]
+        ES_DB[("seo_pages<br/>in_language: 'es-ES'")]
+        ES_MD["📄 /public/content/es/<br/>servicios-crm.md"]
+    end
+
+    subgraph ENGLISH["🇬🇧 English"]
+        EN_PAGE["/en/services/crm"]
+        EN_DB[("seo_pages<br/>in_language: 'en-US'")]
+        EN_MD["📄 /public/content/en/<br/>services-crm.md"]
+    end
+
+    subgraph LINKING["🔗 Vinculación"]
+        TRANS["translation_of<br/>(FK reference)"]
+        HREFLANG2["Hreflang Tags<br/>hreflang='es'<br/>hreflang='en'<br/>hreflang='x-default'"]
+    end
+
+    subgraph EDGE["⚡ Edge Function"]
+        TRANSLATE["translate-seo<br/>Gemini AI Translation"]
+    end
+
+    ES_PAGE --> ES_DB
+    EN_PAGE --> EN_DB
+    ES_DB <--> TRANS
+    EN_DB <--> TRANS
+    
+    ES_PAGE --> HREFLANG2
+    EN_PAGE --> HREFLANG2
+
+    ES_DB --> TRANSLATE
+    TRANSLATE --> EN_DB
+    ES_MD --> EN_MD
+
+    style SPANISH fill:#ffebee,stroke:#c62828
+    style ENGLISH fill:#e3f2fd,stroke:#1565c0
+    style LINKING fill:#f3e5f5,stroke:#7b1fa2
+    style EDGE fill:#fff8e1,stroke:#ff8f00
+```
+
+### Diagrama 3: GEO/AEO Stack
+
+```mermaid
+flowchart TB
+    subgraph SOURCES["📚 Fuentes de Contenido"]
+        WEB["🌐 Web Pages<br/>(React SPA)"]
+        MD["📝 .md Files<br/>/public/content/"]
+        LLMS["📋 llms.txt<br/>llms-en.txt<br/>llms-full.txt"]
+    end
+
+    subgraph DISCOVERY["🔍 Descubrimiento"]
+        GOOGLE["🔍 Google<br/>Crawl + Index"]
+        BING["🔎 Bing<br/>IndexNow"]
+        AI_CRAWL["🤖 AI Crawlers<br/>GPTBot, ClaudeBot"]
+    end
+
+    subgraph OPTIMIZATION["⚙️ Optimización"]
+        subgraph GEO["GEO"]
+            SPEAKABLE["🎙️ SpeakableSpecification"]
+            WIKIDATA["🔗 Wikidata Entities"]
+            SCHEMA["📊 Rich Schema.org"]
+        end
+        
+        subgraph AEO["AEO"]
+            FAQ["❓ FAQPage Schema"]
+            HOWTO["📋 HowTo Schema"]
+            SUMMARY["📝 Citable Summaries"]
+        end
+    end
+
+    subgraph RESULTS["📈 Resultados"]
+        SERP["🏆 Featured Snippets"]
+        VOICE["🎤 Voice Search"]
+        AI_ANSWER["🤖 AI Answers<br/>(ChatGPT, Copilot, Perplexity)"]
+    end
+
+    WEB --> GOOGLE
+    WEB --> BING
+    MD --> AI_CRAWL
+    LLMS --> AI_CRAWL
+    
+    GOOGLE --> GEO
+    GOOGLE --> AEO
+    BING --> GEO
+    AI_CRAWL --> GEO
+    
+    GEO --> RESULTS
+    AEO --> SERP
+    AEO --> VOICE
+
+    style SOURCES fill:#e8eaf6,stroke:#3f51b5
+    style DISCOVERY fill:#fce4ec,stroke:#c2185b
+    style GEO fill:#e0f2f1,stroke:#00796b
+    style AEO fill:#fff3e0,stroke:#ef6c00
+    style RESULTS fill:#f1f8e9,stroke:#558b2f
+```
+
+### Diagrama 4: Árbol de Decisión de Schemas
+
+```mermaid
+flowchart TD
+    START((🚀 Inicio)) --> Q1{¿Tipo de página?}
+    
+    Q1 -->|Homepage| ORG["✅ Organization<br/>+ LocalBusiness"]
+    Q1 -->|Servicio| Q2{¿Página individual<br/>o listado?}
+    Q1 -->|Blog| ARTICLE["✅ BlogPosting<br/>+ Person (autor)"]
+    Q1 -->|FAQ| FAQPAGE["✅ FAQPage"]
+    Q1 -->|Caso de éxito| Q3{¿Con pasos?}
+    
+    Q2 -->|Individual| SERVICE["✅ ProfessionalService"]
+    Q2 -->|Listado| ITEMLIST["✅ ItemList<br/>+ Service items"]
+    
+    Q3 -->|Sí| HOWTO["✅ HowTo"]
+    Q3 -->|No| CASESTUDY["✅ Article<br/>+ CreativeWork"]
+    
+    SERVICE --> Q4{¿Tiene FAQs?}
+    Q4 -->|Sí| COMBINE["✅ Service + FAQPage<br/>⚠️ FAQs solo en prop faqs"]
+    Q4 -->|No| SERVICE_ONLY["✅ Solo Service"]
+    
+    subgraph FORBIDDEN["🚫 NUNCA"]
+        REVIEW_ORG["❌ Review en Organization"]
+        REVIEW_LOCAL["❌ Review en LocalBusiness"]
+        DUP_FAQ["❌ FAQPage duplicado"]
+    end
+
+    style START fill:#4caf50,stroke:#2e7d32
+    style ORG fill:#e3f2fd,stroke:#1565c0
+    style SERVICE fill:#e8f5e9,stroke:#388e3c
+    style ARTICLE fill:#fff3e0,stroke:#f57c00
+    style FAQPAGE fill:#f3e5f5,stroke:#8e24aa
+    style FORBIDDEN fill:#ffebee,stroke:#c62828
+```
+
+### Diagrama 5: Sistema de Alertas y Monitoreo
+
+```mermaid
+flowchart LR
+    subgraph TRIGGER["⏰ Triggers"]
+        CRON["🕐 Cron Job<br/>Cada 24h"]
+        MANUAL["👆 Manual<br/>Admin Panel"]
+        DEPLOY["🚀 Deploy<br/>Post-publish"]
+    end
+
+    subgraph SCAN["🔍 Escaneo"]
+        CHECK["check-seo-status<br/>Edge Function"]
+        VALIDATE["Validaciones:<br/>- Title length<br/>- Description<br/>- H1 único<br/>- Robots<br/>- Schema válido"]
+    end
+
+    subgraph ALERTS["⚠️ Alertas"]
+        DB_ALERT[("seo_alerts<br/>table")]
+        TYPES["Tipos:<br/>- missing_meta<br/>- duplicate_h1<br/>- schema_error<br/>- noindex_change"]
+    end
+
+    subgraph NOTIFY["📬 Notificación"]
+        ADMIN["👤 Admin Panel<br/>/admin/seo"]
+        EMAIL["📧 Email<br/>(opcional)"]
+    end
+
+    TRIGGER --> SCAN
+    CHECK --> VALIDATE
+    VALIDATE --> DB_ALERT
+    DB_ALERT --> TYPES
+    TYPES --> ADMIN
+    TYPES -.->|futuro| EMAIL
+
+    style TRIGGER fill:#e1f5fe,stroke:#0277bd
+    style SCAN fill:#fff8e1,stroke:#f9a825
+    style ALERTS fill:#ffebee,stroke:#c62828
+    style NOTIFY fill:#e8f5e9,stroke:#2e7d32
+```
+
+### Diagrama 6: Flujo de Traducción SEO
+
+```mermaid
+sequenceDiagram
+    participant Admin as 👤 Admin
+    participant Editor as 📝 SEO Editor
+    participant DB as 🗄️ seo_pages
+    participant Edge as ⚡ translate-seo
+    participant AI as 🤖 Gemini AI
+
+    Admin->>Editor: Abre página ES
+    Editor->>DB: Carga datos (path, 'es-ES')
+    DB-->>Editor: Datos SEO español
+    
+    Admin->>Editor: Click "Traducir a EN"
+    Editor->>Edge: POST { path, targetLang: 'en' }
+    Edge->>DB: Obtiene datos ES
+    Edge->>AI: Traduce (title, description, h1...)
+    AI-->>Edge: Contenido traducido
+    Edge->>DB: UPSERT con in_language='en-US'
+    Edge->>DB: Actualiza translation_of
+    Edge-->>Editor: { success: true, path: '/en/...' }
+    Editor-->>Admin: ✅ "Traducción creada"
+```
+
+---
+
 ## 1. Visión General
 
 ### Objetivo del Sistema SEO
