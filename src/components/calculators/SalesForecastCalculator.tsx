@@ -241,12 +241,12 @@ const SalesForecastCalculator: React.FC<SalesForecastCalculatorProps> = ({
           
           {/* Badges */}
           <div className="flex flex-wrap justify-center gap-3 mt-6">
-            <Badge variant="secondary" className="px-4 py-1.5 text-sm bg-background/80 backdrop-blur-sm border border-primary/20">
+            <Badge variant="secondary" className="px-4 py-1.5 text-sm bg-primary text-primary-foreground border-0">
               <BarChart3 className="h-3.5 w-3.5 mr-1.5" />
               {content.interactiveTool}
             </Badge>
-            <Badge variant="secondary" className="px-4 py-1.5 text-sm bg-background/80 backdrop-blur-sm border border-accent/20">
-              <CheckCircle2 className="h-3.5 w-3.5 mr-1.5 text-green-500" />
+            <Badge variant="outline" className="px-4 py-1.5 text-sm bg-background border-primary/30 text-foreground">
+              <CheckCircle2 className="h-3.5 w-3.5 mr-1.5 text-primary" />
               {content.noRegistration}
             </Badge>
           </div>
