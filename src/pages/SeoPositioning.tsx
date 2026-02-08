@@ -10,7 +10,7 @@ import FAQSection from '@/components/FAQSection';
 import ServiceContactSection from '@/components/ServiceContactSection';
 import SuccessCasesSection from '@/components/SuccessCasesSection';
 import { getServiceSuccessCasesConfig } from '@/data/serviceSuccessCasesMapping';
-import Seo from '@/components/Seo';
+import EnhancedSEO from '@/components/EnhancedSEO';
 import { useServiceSEO } from '@/hooks/useServiceSEO';
 import { useFAQSEO } from '@/hooks/useFAQSEO';
 import { useTranslation } from '@/hooks/useTranslation';
@@ -351,7 +351,7 @@ const SeoPositioning = () => {
   // Combine schemas
   const combinedStructuredData = [seoData.structuredData, faqSchema.structuredData];
   return <div className="min-h-screen bg-white">
-      <Seo title={seoData.title} description={seoData.description} canonical={seoData.canonical} ogImage={seoData.ogImage} structuredData={combinedStructuredData} />
+      <EnhancedSEO />
       <Navigation />
       
       {/* Breadcrumb */}

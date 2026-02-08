@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import Seo from '@/components/Seo';
+import EnhancedSEO from '@/components/EnhancedSEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -45,13 +45,7 @@ const Servicios: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <Seo
-        title="Servicios de Marketing Digital | Hayas Marketing"
-        description="Descubre nuestros servicios de marketing digital: branding, diseño web, SEO, publicidad online, CRM, automatización e inteligencia artificial para impulsar tu negocio."
-        canonical="/es/servicios"
-        structuredData={[itemListSchema]}
-        keywords={["servicios marketing digital", "agencia marketing", "branding", "diseño web", "SEO", "publicidad online", "CRM", "automatización", "inteligencia artificial"]}
-      />
+      <EnhancedSEO />
       <Navigation />
 
       <main className="pt-20">

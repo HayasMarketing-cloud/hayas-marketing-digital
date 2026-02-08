@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import SuccessCasesSection from '@/components/SuccessCasesSection';
-import Seo from '@/components/Seo';
+import EnhancedSEO from '@/components/EnhancedSEO';
 import FAQSection from '@/components/FAQSection';
 import IntermediateCTA from '@/components/IntermediateCTA';
 import { successCaseImages } from '@/data/successCaseImages';
@@ -336,17 +336,7 @@ const ActivaTusVentas = () => {
 
   return (
     <div id="top" className="min-h-screen bg-white">
-      <head>
-        <title>{seoData.title}</title>
-        <meta name="description" content={seoData.description} />
-        <link rel="canonical" href={`https://hayasmarketing.com${seoData.canonical}`} />
-        <meta name="robots" content={seoData.robots} />
-        {combinedStructuredData && (
-          <script type="application/ld+json">
-            {JSON.stringify(combinedStructuredData)}
-          </script>
-        )}
-      </head>
+      <EnhancedSEO />
       <Navigation />
       
       <main>

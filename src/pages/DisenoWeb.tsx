@@ -7,7 +7,7 @@ import ServiceRelatedPosts from '@/components/ServiceRelatedPosts';
 import ReviewsSection from '@/components/ReviewsSection';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
-import Seo from '@/components/Seo';
+import EnhancedSEO from '@/components/EnhancedSEO';
 import FAQSection from '@/components/FAQSection';
 import SuccessCasesSection from '@/components/SuccessCasesSection';
 import ServiceContactSection from '@/components/ServiceContactSection';
@@ -243,13 +243,7 @@ const DisenoWeb = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <Seo 
-        title={title}
-        description={description}
-        canonical={canonical}
-        ogImage={ogImage}
-        structuredData={combinedStructuredData}
-      />
+      <EnhancedSEO />
       <Navigation />
       
       {/* Breadcrumb */}

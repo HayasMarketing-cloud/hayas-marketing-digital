@@ -14,7 +14,7 @@ import {
   BreadcrumbSeparator,
   BreadcrumbPage,
 } from '@/components/ui/breadcrumb';
-import Seo from '@/components/Seo';
+import EnhancedSEO from '@/components/EnhancedSEO';
 import { CheckCircle, ExternalLink, Target, Zap, Linkedin, Search, Megaphone } from 'lucide-react';
 import { successCaseImages } from '@/data/successCaseImages';
 import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
@@ -103,13 +103,7 @@ const CasoExitoNovaPraxis = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Seo
-        title={caseStudyData.pageTitle}
-        description={caseStudyData.pageDescription}
-        canonical={caseStudyData.canonical}
-        ogImage={caseStudyData.ogImage}
-        structuredData={caseStudyData.structuredData}
-      />
+      <EnhancedSEO />
       <Navigation />
       
       <main>

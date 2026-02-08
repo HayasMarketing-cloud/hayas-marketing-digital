@@ -11,7 +11,7 @@ import { Button } from '@/components/ui/button';
 import { Clock, Calendar, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { getTagBySlug, getParentTag } from '@/data/blogTags';
-import Seo from '@/components/Seo';
+import EnhancedSEO from '@/components/EnhancedSEO';
 import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
 
 // Posts data actualizados con la nueva taxonomía
@@ -120,11 +120,13 @@ const BlogTagPage: React.FC = () => {
 
   return (
     <>
-      <Seo 
-        title={`${tagData.name} - Blog de Marketing Digital | Hayas Marketing`}
-        description={tagData.description || `Todos los artículos sobre ${tagData.name.toLowerCase()} en nuestro blog de marketing digital.`}
-        canonical={`/es/blog/tag/${tag}`}
-        robots="noindex, follow"
+      <EnhancedSEO 
+        customSEO={{
+          title: `${tagData.name} - Blog de Marketing Digital | Hayas Marketing`,
+          description: tagData.description || `Todos los artículos sobre ${tagData.name.toLowerCase()} en nuestro blog de marketing digital.`,
+          canonical: `/es/blog/tag/${tag}`,
+          robots: 'noindex, follow'
+        }}
       />
       
       <Navigation />

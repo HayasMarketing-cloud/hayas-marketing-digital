@@ -8,7 +8,7 @@ import ReviewsSection from '@/components/ReviewsSection';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import Seo from '@/components/Seo';
+import EnhancedSEO from '@/components/EnhancedSEO';
 import { useServiceSEO } from '@/hooks/useServiceSEO';
 import FAQSection from '@/components/FAQSection';
 import SuccessCasesSection from '@/components/SuccessCasesSection';
@@ -328,13 +328,7 @@ const CreacionMarca = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <Seo 
-        title={title}
-        description={description}
-        canonical={canonical}
-        ogImage={ogImage}
-        structuredData={structuredData}
-      />
+      <EnhancedSEO />
       <Navigation />
       
       {/* Breadcrumb */}

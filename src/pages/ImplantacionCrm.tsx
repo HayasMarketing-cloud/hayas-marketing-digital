@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import ProcessSection from '@/components/ProcessSection';
-import Seo from '@/components/Seo';
+import EnhancedSEO from '@/components/EnhancedSEO';
 import ReviewsSection from '@/components/ReviewsSection';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -269,13 +269,7 @@ const ImplantacionCrm = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <Seo 
-        title={title}
-        description={description}
-        canonical={canonical}
-        ogImage={ogImage}
-        structuredData={structuredData}
-      />
+      <EnhancedSEO />
       <Navigation />
       
       {/* Breadcrumb */}

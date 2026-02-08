@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
-import Seo from '@/components/Seo';
+import EnhancedSEO from '@/components/EnhancedSEO';
 import { useServiceSEO } from '@/hooks/useServiceSEO';
 import FAQSection from '@/components/FAQSection';
 import { Target, FileText, Layout, Workflow, SplitSquareVertical, BarChart3, PlugZap, CalendarCheck2, CheckCircle2 } from 'lucide-react';
@@ -53,13 +53,7 @@ const ImplementacionFunnel: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Seo 
-        title={title}
-        description={description}
-        canonical={canonical}
-        ogImage={ogImage}
-        structuredData={structuredData}
-      />
+      <EnhancedSEO />
       <Navigation />
 
       {/* Breadcrumb */}

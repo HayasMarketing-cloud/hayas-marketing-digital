@@ -9,7 +9,7 @@ import { Badge } from '@/components/ui/badge';
 
 import FAQSection from '@/components/FAQSection';
 import { useServiceSEO } from '@/hooks/useServiceSEO';
-import Seo from '@/components/Seo';
+import EnhancedSEO from '@/components/EnhancedSEO';
 import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
 import { Package, Send, Mail, Palette, CalendarCheck2, Truck, BarChart3, Users, Sparkles, Target, Settings, CheckCircle } from 'lucide-react';
 const mdServices = [
@@ -108,13 +108,7 @@ const MarketingDirecto: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Seo 
-        title={title}
-        description={description}
-        canonical={canonical}
-        ogImage={ogImage}
-        structuredData={structuredData}
-      />
+      <EnhancedSEO />
       <Navigation />
 
       {/* Breadcrumb */}

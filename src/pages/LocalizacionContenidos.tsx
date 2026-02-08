@@ -13,7 +13,7 @@ import SuccessCasesSection from '@/components/SuccessCasesSection';
 import ServiceContactSection from '@/components/ServiceContactSection';
 import IntermediateCTA from '@/components/IntermediateCTA';
 import { useServiceSEO } from '@/hooks/useServiceSEO';
-import Seo from '@/components/Seo';
+import EnhancedSEO from '@/components/EnhancedSEO';
 import { 
   Globe, Languages, Search, Target, Sparkles, Users, TrendingUp, 
   ArrowRight, CheckCircle, Star, Zap, Monitor, Layout,
@@ -386,13 +386,7 @@ const LocalizacionContenidos = () => {
   
   return (
     <div className="min-h-screen bg-white">
-      <Seo 
-        title={title}
-        description={description}
-        canonical={canonical}
-        ogImage={ogImage}
-        structuredData={structuredData}
-      />
+      <EnhancedSEO />
       <Navigation />
       
       {/* Breadcrumb */}

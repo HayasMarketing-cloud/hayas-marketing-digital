@@ -9,7 +9,7 @@ import { Badge } from '@/components/ui/badge';
 import FAQSection from '@/components/FAQSection';
 import ServiceContactSection from '@/components/ServiceContactSection';
 import { useServiceSEO } from '@/hooks/useServiceSEO';
-import Seo from '@/components/Seo';
+import EnhancedSEO from '@/components/EnhancedSEO';
 import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
 import { Bot, MessageCircle, Clock, Users, Zap, Settings, Brain, ArrowRight, CheckCircle, Star, Sparkles, Timer, Shield, Globe, Smartphone, Monitor, Headphones, BarChart3, Target } from 'lucide-react';
 const aiAssistantServices = [{
@@ -159,13 +159,7 @@ const AsistenteIA: React.FC = () => {
   });
   
   return <div className="min-h-screen bg-background">
-      <Seo 
-        title={title}
-        description={description}
-        canonical={canonical}
-        ogImage={ogImage}
-        structuredData={structuredData}
-      />
+      <EnhancedSEO />
       <Navigation />
       
       {/* Breadcrumb */}

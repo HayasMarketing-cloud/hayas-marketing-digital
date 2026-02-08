@@ -2,7 +2,6 @@ import React from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { useServiceSEO } from '@/hooks/useServiceSEO';
-import Seo from '@/components/Seo';
 import EnhancedSEO from '@/components/EnhancedSEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -41,13 +40,6 @@ const CaptacionLeadsClientes: React.FC = () => {
   
   return (
     <>
-      <Seo 
-        title={title}
-        description={description}
-        canonical={canonical}
-        ogImage={ogImage}
-        structuredData={structuredData}
-      />
       <EnhancedSEO />
       <Navigation />
 

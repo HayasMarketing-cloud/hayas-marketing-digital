@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { UniversalBreadcrumbs } from '@/components/UniversalBreadcrumbs';
 import { analyzeCrawlBudget, generateInternalLinkingPlan, validateSitemap } from '@/utils/crawlBudgetOptimizer';
 import { getIndexableUrls, getCrawlBudgetStats } from '@/utils/sitemap';
-import Seo from '@/components/Seo';
+import EnhancedSEO from '@/components/EnhancedSEO';
 import { CheckCircle, AlertTriangle, Info, TrendingUp, Link as LinkIcon, Search } from 'lucide-react';
 
 /**
@@ -34,11 +34,7 @@ const CrawlBudgetReport = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Seo
-        title="Reporte de Optimización Crawl Budget - Hayas Marketing"
-        description="Análisis técnico de optimización SEO para el presupuesto de rastreo de Google. Páginas indexables, estrategia de canonicals y enlaces internos."
-        robots="noindex, follow"
-      />
+      <EnhancedSEO customSEO={{ robots: 'noindex, follow' }} />
       <Navigation />
       
       <UniversalBreadcrumbs customItems={[

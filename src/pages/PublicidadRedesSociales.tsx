@@ -12,7 +12,7 @@ import SuccessCasesSection from '@/components/SuccessCasesSection';
 import { getServiceSuccessCasesConfig } from '@/data/serviceSuccessCasesMapping';
 import { useServiceSEO } from '@/hooks/useServiceSEO';
 import { useTranslation } from '@/hooks/useTranslation';
-import Seo from '@/components/Seo';
+import EnhancedSEO from '@/components/EnhancedSEO';
 import { 
   Target, TrendingUp, BarChart3, Zap, DollarSign,
   ArrowRight, CheckCircle, Eye, Sparkles,
@@ -200,13 +200,7 @@ const PublicidadRedesSociales: React.FC = () => {
   
   return (
     <div className="min-h-screen bg-background">
-      <Seo 
-        title={title}
-        description={description}
-        canonical={canonical}
-        ogImage={ogImage}
-        structuredData={structuredData}
-      />
+      <EnhancedSEO />
       <Navigation />
       
       {/* Breadcrumb */}
