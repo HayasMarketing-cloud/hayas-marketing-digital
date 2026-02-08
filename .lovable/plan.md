@@ -83,14 +83,14 @@ Template: `CaseStudyTemplateEN.tsx`
 
 ---
 
-## 🔄 Decisión Pendiente: Kit Digital
+## ❌ Excluido del Soporte Bilingüe
 
-| Ruta EN | Estado |
+| Páginas | Motivo |
 |---------|--------|
-| `/en/kit-digital` | ⏸️ Pendiente |
-| `/en/kit-consulting` | ⏸️ Pendiente |
+| `/es/kit-digital/*` (6 páginas) | Programa exclusivo España - Solo español |
+| `/es/kit-consulting` | Programa exclusivo España - Solo español |
 
-**Recomendación**: Redirigir a versiones ES (programa exclusivo España)
+**Decisión final**: Estas páginas permanecen exclusivamente en español por estrategia de negocio.
 
 ---
 
