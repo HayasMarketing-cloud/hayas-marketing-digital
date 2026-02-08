@@ -1,251 +1,107 @@
 
 
-## Plan: Widget Embebible y Colapsable de la Calculadora ROI
+## Plan: Añadir "(LTV)*" al Label y Nota Explicativa
 
 ### Objetivo
 
-Crear un nuevo componente `SalesForecastCalculatorWidget` que funcione como versión compacta y colapsable de la calculadora, permitiendo su integración en artículos de blog y otras páginas sin ocupar demasiado espacio.
+Modificar el campo "Ingreso por Cliente" para que el label indique claramente que se refiere al LTV, y añadir una nota explicativa debajo con la fórmula de cálculo.
 
 ---
 
-### Comportamiento del Widget
+### Cambios Visuales
 
 ```text
-ESTADO COLAPSADO (Vista por defecto)
-┌─────────────────────────────────────────────────────────────────┐
-│  ╔═══════════════════════════════════════════════════════════╗  │
-│  ║  [Icon]  Calculadora de Previsión de Ventas               ║  │
-│  ║                                                           ║  │
-│  ║  Simula el crecimiento de tu embudo de marketing a 12     ║  │
-│  ║  meses y descubre cuántos clientes puedes conseguir.      ║  │
-│  ║                                                           ║  │
-│  ║  [✓ Gratis]  [✓ Sin registro]  [✓ Resultados inmediatos]  ║  │
-│  ║                                                           ║  │
-│  ║         [ ▼ Abrir Calculadora ]                          ║  │
-│  ╚═══════════════════════════════════════════════════════════╝  │
-└─────────────────────────────────────────────────────────────────┘
-
-ESTADO EXPANDIDO (Al hacer clic)
-┌─────────────────────────────────────────────────────────────────┐
-│  ╔═══════════════════════════════════════════════════════════╗  │
-│  ║  [Icon]  Calculadora de Previsión de Ventas    [ ▲ Cerrar]║  │
-│  ╠═══════════════════════════════════════════════════════════╣  │
-│  ║                                                           ║  │
-│  ║  [Calculadora Completa con todos los inputs y tabla]      ║  │
-│  ║                                                           ║  │
-│  ║  - Inputs: Visitas, Crecimiento, Ratios de conversión    ║  │
-│  ║  - Tabla de proyección 12 meses                          ║  │
-│  ║  - Cards de resumen                                      ║  │
-│  ║  - Indicador de rendimiento                              ║  │
-│  ║  - Botones: Descargar CSV, Reiniciar                     ║  │
-│  ║                                                           ║  │
-│  ╚═══════════════════════════════════════════════════════════╝  │
-└─────────────────────────────────────────────────────────────────┘
+ANTES                                 DESPUÉS
+─────────────────────────────        ─────────────────────────────
+Ingreso por Cliente (€)              Ingreso por Cliente € (LTV)*
+┌─────────────────────────┐          ┌─────────────────────────┐
+│ 100                     │          │ 100                     │
+└─────────────────────────┘          └─────────────────────────┘
+                                     ┌─────────────────────────────┐
+                                     │ ℹ️ LTV (Lifetime Value):    │
+                                     │ Ingreso total estimado que  │
+                                     │ genera un cliente durante   │
+                                     │ su relación comercial.      │
+                                     │                             │
+                                     │ LTV = Ticket medio ×        │
+                                     │ Frecuencia anual × Años     │
+                                     └─────────────────────────────┘
 ```
 
 ---
 
-### Arquitectura de Componentes
-
-La estrategia es **reutilizar** el componente existente, no duplicar código:
-
-```text
-SalesForecastCalculatorWidget.tsx (NUEVO)
-    │
-    ├── Header colapsable con preview
-    │
-    └── <Collapsible>
-            └── <SalesForecastCalculator />  (componente existente)
-```
-
----
-
-### Props del Widget
-
-| Prop | Tipo | Default | Descripcion |
-|------|------|---------|-------------|
-| `defaultOpen` | boolean | false | Si inicia expandido o colapsado |
-| `showFullPageLink` | boolean | true | Mostrar enlace a la pagina completa |
-| `variant` | 'default' \| 'compact' | 'default' | Variante de estilo |
-| `className` | string | - | Clases CSS adicionales |
-
----
-
-### Diseño del Header Colapsado
-
-El header colapsado sera atractivo y llamara a la accion:
-
-```text
-┌─────────────────────────────────────────────────────────────────┐
-│ ┌─────────────────────────────────────────────────────────────┐ │
-│ │  [Gradiente de fondo sutil]                                 │ │
-│ │                                                             │ │
-│ │  ┌──────┐                                                   │ │
-│ │  │ 📊  │  Calculadora de Prevision de Ventas              │ │
-│ │  │ Icon │                                                   │ │
-│ │  └──────┘  Simula tu embudo de marketing a 12 meses        │ │
-│ │                                                             │ │
-│ │  ┌─────────┐  ┌───────────┐  ┌────────────────────┐        │ │
-│ │  │ ✓ Gratis│  │✓ Sin Reg. │  │✓ Resultados al inst│        │ │
-│ │  └─────────┘  └───────────┘  └────────────────────┘        │ │
-│ │                                                             │ │
-│ │  ┌───────────────────────────────────────────────────────┐ │ │
-│ │  │         ▼  Abrir Calculadora Interactiva             │ │ │
-│ │  └───────────────────────────────────────────────────────┘ │ │
-│ │                                                             │ │
-│ │  [Enlace: Ver herramienta en pagina completa →]            │ │
-│ └─────────────────────────────────────────────────────────────┘ │
-└─────────────────────────────────────────────────────────────────┘
-```
-
----
-
-### Refactorizacion del Componente Original
-
-Para permitir la reutilizacion, se haran pequenos ajustes:
-
-1. **Extraer el contenido interno** en una subcomponente renderizable
-2. **Añadir prop `hideHeader`** para usar solo el contenido sin el hero
-3. **Añadir prop `compact`** para reducir padding en contexto embebido
-
----
-
-### Archivos a Crear
-
-| Archivo | Descripcion |
-|---------|-------------|
-| `src/components/calculators/SalesForecastCalculatorWidget.tsx` | Widget colapsable para embeber |
-
----
-
-### Archivos a Modificar
+### Archivo a Modificar
 
 | Archivo | Cambio |
 |---------|--------|
-| `src/components/calculators/SalesForecastCalculator.tsx` | Añadir props `hideHeader` y `compact` para reutilizacion |
+| `src/components/calculators/SalesForecastCalculator.tsx` | Actualizar label y añadir nota LTV |
 
 ---
 
-### Seccion Tecnica
+### Sección Técnica
 
-**Nuevo componente Widget:**
-
-```typescript
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
-
-interface WidgetProps {
-  defaultOpen?: boolean;
-  showFullPageLink?: boolean;
-  variant?: 'default' | 'compact';
-  className?: string;
-}
-
-const SalesForecastCalculatorWidget: React.FC<WidgetProps> = ({
-  defaultOpen = false,
-  showFullPageLink = true,
-  variant = 'default',
-  className
-}) => {
-  const [isOpen, setIsOpen] = useState(defaultOpen);
-  
-  return (
-    <Card className={cn("overflow-hidden border-primary/20", className)}>
-      <Collapsible open={isOpen} onOpenChange={setIsOpen}>
-        {/* Header siempre visible */}
-        <CollapsibleTrigger asChild>
-          <div className="cursor-pointer">
-            {/* Preview content con gradiente */}
-            <WidgetPreviewHeader isOpen={isOpen} />
-          </div>
-        </CollapsibleTrigger>
-        
-        {/* Contenido expandible */}
-        <CollapsibleContent className="animate-accordion-down">
-          <SalesForecastCalculator hideHeader compact />
-        </CollapsibleContent>
-      </Collapsible>
-      
-      {/* Enlace opcional a pagina completa */}
-      {showFullPageLink && (
-        <div className="p-4 border-t text-center">
-          <Link to="/es/herramientas/calculadora-roi">
-            Ver en pantalla completa →
-          </Link>
-        </div>
-      )}
-    </Card>
-  );
-};
-```
-
-**Modificacion del componente original:**
+**1. Actualizar el label (línea 66):**
 
 ```typescript
-interface SalesForecastCalculatorProps {
-  hideHeader?: boolean;  // Oculta el hero header
-  compact?: boolean;     // Reduce padding/espaciado
-}
+// ANTES
+revenuePerClient: isEnglish ? 'Revenue per Client' : 'Ingreso por Cliente',
 
-const SalesForecastCalculator: React.FC<SalesForecastCalculatorProps> = ({
-  hideHeader = false,
-  compact = false
-}) => {
-  // ... logica existente ...
-  
-  return (
-    <Card className={cn(
-      "w-full max-w-6xl mx-auto shadow-2xl border-primary/20 overflow-hidden",
-      compact && "shadow-none border-0"
-    )}>
-      {/* Renderizar hero solo si no esta oculto */}
-      {!hideHeader && (
-        <CardHeader className="...">
-          {/* Hero content existente */}
-        </CardHeader>
-      )}
-      
-      <CardContent className={cn(
-        "space-y-8 p-6 md:p-8",
-        compact && "p-4 md:p-6 space-y-6"
-      )}>
-        {/* Contenido existente */}
-      </CardContent>
-    </Card>
-  );
-};
+// DESPUÉS  
+revenuePerClient: isEnglish ? 'Revenue per Client € (LTV)*' : 'Ingreso por Cliente € (LTV)*',
 ```
 
-**Animacion de expansion:**
+**2. Añadir claves de contenido para la nota LTV:**
 
-Se utilizara la animacion `animate-accordion-down` ya existente en el proyecto para una transicion suave.
+```typescript
+ltvTitle: isEnglish ? 'LTV (Lifetime Value)' : 'LTV (Lifetime Value)',
+ltvDescription: isEnglish 
+  ? 'Total estimated revenue a customer generates throughout their business relationship.'
+  : 'Ingreso total estimado que genera un cliente durante toda su relación comercial.',
+ltvFormula: isEnglish 
+  ? 'LTV = Avg. Ticket × Annual Frequency × Years of Relationship'
+  : 'LTV = Ticket medio × Frecuencia anual × Años de relación',
+```
 
----
-
-### Uso en el Blog Post
-
-Una vez creado, la integracion sera simple:
+**3. Actualizar el renderizado del campo (líneas 299-311):**
 
 ```tsx
-// En BlogCalculoInversionMarketing.tsx
-import SalesForecastCalculatorWidget from '@/components/calculators/SalesForecastCalculatorWidget';
-
-// Donde antes estaba el enlace a Google Sheets:
-<SalesForecastCalculatorWidget 
-  defaultOpen={false}
-  showFullPageLink={true}
-/>
+{/* Revenue per Client */}
+<div className="space-y-2">
+  <Label htmlFor="revenuePerClient" className="text-sm font-medium">
+    {content.revenuePerClient}
+  </Label>
+  <Input
+    id="revenuePerClient"
+    type="number"
+    value={inputs.revenuePerClient}
+    onChange={(e) => handleInputChange('revenuePerClient', parseInt(e.target.value) || 0)}
+    min={1}
+    max={1000000}
+    className="text-right font-mono text-lg border-primary/20 focus:border-primary/50 transition-colors"
+  />
+  
+  {/* LTV Info Note - NUEVO */}
+  <div className="mt-2 p-3 bg-muted/50 rounded-lg border border-muted text-xs space-y-1.5">
+    <p className="font-medium flex items-center gap-1.5 text-foreground">
+      <Info className="h-3.5 w-3.5 text-primary flex-shrink-0" />
+      {content.ltvTitle}
+    </p>
+    <p className="text-muted-foreground leading-relaxed">
+      {content.ltvDescription}
+    </p>
+    <p className="font-mono text-primary/80 pt-1.5 border-t border-muted text-[11px]">
+      {content.ltvFormula}
+    </p>
+  </div>
+</div>
 ```
 
 ---
 
 ### Resultado Esperado
 
-Un widget que:
-
-1. Se muestra colapsado por defecto con un preview atractivo
-2. Al hacer clic, se expande mostrando la calculadora completa
-3. Puede cerrarse de nuevo para no ocupar espacio
-4. Incluye enlace opcional a la version de pagina completa
-5. Reutiliza el 100% del codigo existente sin duplicacion
-6. Tiene animaciones suaves de apertura/cierre
+- El label del campo mostrará "Ingreso por Cliente € (LTV)*"
+- Debajo del input aparecerá una nota compacta que explica qué es el LTV
+- La nota incluirá la fórmula de cálculo simplificada
+- Todo el contenido será bilingüe (español/inglés)
 
