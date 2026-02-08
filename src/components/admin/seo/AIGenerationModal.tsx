@@ -19,6 +19,7 @@ interface AIGenerationModalProps {
     title: string;
     description: string;
     h1: string;
+    h2_primary: string;
     keywords: string;
   }) => void;
 }
@@ -40,6 +41,7 @@ export const AIGenerationModal = ({
     title: '',
     description: '',
     h1: '',
+    h2_primary: '',
     keywords: '',
   });
 
@@ -49,6 +51,7 @@ export const AIGenerationModal = ({
         title: suggestions.title,
         description: suggestions.description,
         h1: suggestions.h1,
+        h2_primary: suggestions.h2_primary || '',
         keywords: Array.isArray(suggestions.keywords) 
           ? suggestions.keywords.join(', ') 
           : suggestions.keywords,
@@ -172,12 +175,15 @@ export const AIGenerationModal = ({
               </p>
             </div>
 
-            {suggestions.h2_primary && (
-              <div className="bg-muted/30 p-3 rounded-lg">
-                <Label className="text-sm">{targetLanguage === 'en' ? 'Suggested H2' : 'H2 Sugerido'}</Label>
-                <p className="text-sm text-foreground mt-1">{suggestions.h2_primary}</p>
-              </div>
-            )}
+            <div>
+              <Label htmlFor="h2_primary">{targetLanguage === 'en' ? 'Suggested H2' : 'H2 Sugerido'}</Label>
+              <Input
+                id="h2_primary"
+                value={editedData.h2_primary}
+                onChange={(e) => setEditedData(prev => ({ ...prev, h2_primary: e.target.value }))}
+                placeholder={targetLanguage === 'en' ? 'Main secondary heading' : 'Encabezado secundario principal'}
+              />
+            </div>
 
             {suggestions.og_image_suggestion && (
               <div className="bg-muted/30 p-3 rounded-lg">
