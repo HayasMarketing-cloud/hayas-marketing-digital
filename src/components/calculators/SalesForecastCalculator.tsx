@@ -59,7 +59,7 @@ const SalesForecastCalculator: React.FC<SalesForecastCalculatorProps> = ({
     initialData: isEnglish ? 'Initial Data' : 'Datos Iniciales',
     conversionRates: isEnglish ? 'Conversion Rates' : 'Ratios de Conversión',
     initialVisits: isEnglish ? 'Initial Monthly Visits' : 'Visitas Mensuales Iniciales',
-    monthlyGrowth: isEnglish ? 'Monthly Growth' : 'Crecimiento Mensual',
+    monthlyGrowth: isEnglish ? 'Average Monthly Growth' : 'Crecimiento Mensual Medio',
     visitsToMQL: isEnglish ? 'Visits → MQL' : 'Visitas → MQL',
     mqlToSQL: isEnglish ? 'MQL → SQL' : 'MQL → SQL',
     sqlToClient: isEnglish ? 'SQL → Client' : 'SQL → Cliente',
