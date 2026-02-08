@@ -1,151 +1,176 @@
 
+## Plan: Optimizar Dashboard de Traducciones y Alertas SEO
 
-## Plan: Corregir Sincronización de Estadísticas de Traducción
+### Problema Identificado
 
-### Problema Raíz
-
-El componente `ProgressDashboard` muestra "0/18 English - 0% traducido" aunque las traducciones **sí se completaron** en la base de datos (hay 37 páginas EN indexables).
-
-**Causa**: El hook `useTranslationStatus` usa `getAllSpanishRoutes()` de `routeScanner.ts` que:
-1. Tiene rutas hardcodeadas con barra final (`/es/`) mientras la BD usa sin barra (`/es`)
-2. Solo lista 18 rutas cuando hay 32 páginas ES en la base de datos
-
-### Solución
-
-Reemplazar el enfoque de rutas hardcodeadas por consulta directa a la base de datos, eliminando la dependencia de `routeScanner.ts` para los conteos.
+El dashboard actual tiene demasiada redundancia visual:
+- **11 cards de estadísticas** (7 en TranslationStats + 4 en SEOStatsDashboard)
+- **2 barras de progreso bilingüe duplicadas** (ProgressDashboard + SEOStatsDashboard)
+- **Métricas repetidas**: "Pendientes", "Traducidas", "SEO OK" aparecen en múltiples lugares
+- **Alertas SEO sin acción**: Solo muestran el problema, no ayudan a solucionarlo
 
 ---
 
-### Cambios a Implementar
-
-#### 1. Modificar `useTranslationStatus.ts`
-
-Cambiar la lógica para usar directamente los datos de la BD en lugar de comparar con rutas hardcodeadas:
-
-```typescript
-// ANTES: Compara con lista hardcodeada
-const allEsRoutesInCode = getAllSpanishRoutes();
-allEsRoutesInCode.forEach(routePath => {
-  const esPage = esPagesMap.get(routePath); // Falla por /es/ vs /es
-  // ...
-});
-
-// DESPUÉS: Usar directamente las páginas ES de la BD
-(esPages || []).forEach(esPage => {
-  const enPage = enPagesByTranslationId.get(esPage.id);
-  if (enPage && enPage.is_indexable) {
-    translated++;
-  } else {
-    pending++;
-  }
-});
-```
-
-#### 2. Actualizar `routeScanner.ts`
-
-Corregir las rutas para usar formato sin barra final consistente con la BD:
-
-```typescript
-const mainRoutes = [
-  '/es',      // Sin barra final
-  '/es/nosotros',
-  '/es/contacto',
-  // ...
-];
-```
-
-#### 3. Opcional: Sincronizar con `routeRegistryData.ts`
-
-Considerar usar `registeredRoutes` como fuente de verdad para las rutas del código, ya que tiene más de 200 rutas correctamente formateadas.
-
----
-
-### Flujo Corregido
+### Arquitectura Propuesta
 
 ```text
-┌────────────────────────────────────────────────────┐
-│  useTranslationStatus                              │
-│  ┌──────────────────────────────────────────────┐  │
-│  │  1. Consulta seo_pages (ES + EN)             │  │
-│  │  2. Cuenta EN pages con translation_of       │  │
-│  │  3. No depende de rutas hardcodeadas         │  │
-│  └──────────────────────────────────────────────┘  │
-└────────────────────────────────────────────────────┘
-                        │
-                        ▼
-┌────────────────────────────────────────────────────┐
-│  Resultado Esperado:                               │
-│  - ES Optimizado: 17/18 → 32 (total real)         │
-│  - EN Traducido: 0/18 → 37 de 32 (vinculos ok)    │
-└────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                       TranslationManager Page                                │
+│  ┌───────────────────────────────────────────────────────────────────────┐  │
+│  │  UnifiedProgressCard (NUEVO - Reemplaza ProgressDashboard +          │  │
+│  │                       parte de SEOStatsDashboard)                     │  │
+│  │  • Progreso ES + EN en una sola card                                  │  │
+│  │  • 3 mini-stats: Pendientes | Traducidas | SEO OK                    │  │
+│  │  • Tiempo estimado (si aplica)                                        │  │
+│  └───────────────────────────────────────────────────────────────────────┘  │
+│                                                                              │
+│  ┌───────────────────────────────────────────────────────────────────────┐  │
+│  │  SEOAlertsPanel (MEJORADO)                                            │  │
+│  │  • Nuevo botón "Solucionar" que navega al editor de la página        │  │
+│  │  • Acción inteligente según tipo de alerta                            │  │
+│  └───────────────────────────────────────────────────────────────────────┘  │
+│                                                                              │
+│  ┌───────────────────────────────────────────────────────────────────────┐  │
+│  │  CategoryProgress (Simplificado de SEOStatsDashboard)                 │  │
+│  │  • Solo el progreso por categoría colapsable                         │  │
+│  └───────────────────────────────────────────────────────────────────────┘  │
+│                                                                              │
+│  ┌───────────────────────────────────────────────────────────────────────┐  │
+│  │  TranslationTable (sin SEOStatsDashboard ni ProgressDashboard)        │  │
+│  └───────────────────────────────────────────────────────────────────────┘  │
+└─────────────────────────────────────────────────────────────────────────────┘
 ```
+
+---
+
+### Cambios Específicos
+
+#### 1. Eliminar Componentes Redundantes
+
+**Eliminar de `TranslationStats.tsx`:**
+- Quitar las 7 cards individuales (información redundante)
+- Mantener solo la llamada a un nuevo componente unificado
+
+**Eliminar de `TranslationTable.tsx`:**
+- Quitar `<SEOStatsDashboard />` (se integra en el nuevo componente)
+- Mantener `<SEOAlertsPanel />` (mejorado)
+- Mantener `<TranslationFlowGuide />`
+
+---
+
+#### 2. Crear `UnifiedProgressCard` (Nueva)
+
+Un único componente que consolida la información esencial:
+
+```text
+┌────────────────────────────────────────────────────────────────┐
+│  📊 Progreso del Proyecto                                      │
+│                                                                 │
+│  Español 🇪🇸 ━━━━━━━━━━━━━━━━━━━━━━━ 85%   32/38 páginas       │
+│  English 🇬🇧 ━━━━━━━━━━━━━━━━━━━━━━ 97%   37/38 páginas       │
+│                                                                 │
+│  ┌──────────┐  ┌──────────┐  ┌──────────┐                      │
+│  │  🕐 6    │  │  ✅ 32   │  │  🛡️ 30   │                      │
+│  │Pendientes│  │Traducidas│  │ SEO OK   │                      │
+│  └──────────┘  └──────────┘  └──────────┘                      │
+│                                                                 │
+│  💡 6 páginas ES listas para traducir • ~1 día estimado        │
+└────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+#### 3. Mejorar `SEOAlertsPanel` con Botón "Solucionar"
+
+Para cada tipo de alerta, añadir una acción contextual:
+
+| Tipo de Alerta | Acción del Botón |
+|----------------|------------------|
+| `new_page_no_seo` | Abrir editor SEO para generar metadatos |
+| `optimization_lost` | Abrir editor SEO para restaurar campos |
+| `missing_fields_increased` | Abrir editor SEO con campos faltantes resaltados |
+
+**Nuevo código en cada card de alerta:**
+```typescript
+<Button
+  onClick={() => handleResolveAlert(alert)}
+  variant="default"
+  size="sm"
+  className="bg-primary hover:bg-primary/90"
+>
+  <Wrench className="w-4 h-4 mr-1" />
+  Solucionar
+</Button>
+```
+
+**Función `handleResolveAlert`:**
+```typescript
+const handleResolveAlert = async (alert: SEOAlert) => {
+  // Marcar como leída
+  await markAsRead(alert.id);
+  
+  // Navegar al editor con la página preseleccionada
+  navigate(`/admin/seo/pages?edit=${encodeURIComponent(alert.page_path)}`);
+};
+```
+
+---
+
+#### 4. Simplificar `SEOStatsDashboard`
+
+Transformar en un acordeón colapsable con solo:
+- Progreso por categoría (útil para ver detalles)
+- Campos más comúnmente faltantes (útil para priorizar)
+
+Eliminar:
+- Las 4 cards de header (ya están en UnifiedProgressCard)
+- El "Progreso Bilingüe" card (ya está en UnifiedProgressCard)
+- Los "Próximos Pasos" (redundante con las alertas)
 
 ---
 
 ### Sección Técnica
 
 **Archivos a modificar:**
-- `src/hooks/useTranslationStatus.ts` - Cambiar lógica de conteo
-- `src/utils/routeScanner.ts` - Normalizar rutas sin barra final
+- `src/components/admin/translation/TranslationStats.tsx` - Simplificar a solo UnifiedProgressCard
+- `src/components/admin/translation/ProgressDashboard.tsx` - Renombrar a UnifiedProgressCard y consolidar
+- `src/components/admin/seo/SEOAlertsPanel.tsx` - Añadir botón "Solucionar" + navegación
+- `src/components/admin/translation/TranslationTable.tsx` - Quitar SEOStatsDashboard redundante
+- `src/hooks/useSEOAlerts.ts` - Añadir función `resolveAlert`
 
-**Lógica propuesta para el hook:**
+**Nueva interfaz del hook de alertas:**
 ```typescript
-export const useTranslationStatus = () => {
-  return useQuery({
-    queryKey: ['translation-status'],
-    queryFn: async (): Promise<TranslationStats> => {
-      // Obtener páginas ES indexables
-      const { data: esPages } = await supabase
-        .from('seo_pages')
-        .select('id, path, category, is_indexable, title, description, keywords, h1')
-        .eq('in_language', 'es-ES')
-        .eq('is_indexable', true);
-
-      // Obtener páginas EN con vínculo
-      const { data: enPages } = await supabase
-        .from('seo_pages')
-        .select('id, translation_of, is_indexable')
-        .eq('in_language', 'en-US');
-
-      const enByTranslationOf = new Map(
-        (enPages || []).map(p => [p.translation_of, p])
-      );
-
-      let translated = 0;
-      let pending = 0;
-      let seoOptimized = 0;
-
-      (esPages || []).forEach(esPage => {
-        const enPage = enByTranslationOf.get(esPage.id);
-        
-        if (enPage?.is_indexable) {
-          translated++;
-        } else {
-          pending++;
-        }
-
-        // Check SEO completeness
-        const hasSEO = esPage.title?.length >= 30 
-          && esPage.description?.length >= 120
-          && esPage.h1;
-        if (hasSEO) seoOptimized++;
-      });
-
-      return {
-        total: esPages?.length || 0,
-        totalInCode: esPages?.length || 0, // Usar BD como fuente
-        translated,
-        pending,
-        seoOptimized,
-        // ...
-      };
-    },
-  });
+return {
+  // ... existing
+  resolveAlert: (alert: SEOAlert) => Promise<void>, // Nuevo
 };
 ```
 
-**Impacto:**
-- El dashboard mostrará inmediatamente las 37 páginas EN traducidas
-- Las estadísticas reflejarán el estado real de la base de datos
-- No más dependencia de listas hardcodeadas
+**Lógica del botón "Solucionar":**
+```typescript
+const resolveAlert = async (alert: SEOAlert) => {
+  // 1. Marcar como leída automáticamente
+  await markAsRead(alert.id);
+  
+  // 2. Devolver la URL de navegación según el tipo
+  const targetUrl = `/admin/seo/pages?edit=${encodeURIComponent(alert.page_path)}`;
+  return targetUrl;
+};
+```
 
+---
+
+### Resultado Final
+
+| Antes | Después |
+|-------|---------|
+| 11 cards de estadísticas | 1 card unificada + 3 mini-stats |
+| 2 barras de progreso duplicadas | 1 barra dual ES/EN |
+| Alertas sin acción | Botón "Solucionar" contextual |
+| SEOStatsDashboard completo | Acordeón colapsable con detalles |
+
+**Beneficios:**
+- Interfaz más limpia y enfocada
+- Menos scroll para ver la tabla de páginas
+- Alertas accionables que guían al usuario
+- Información consolidada sin repetición
