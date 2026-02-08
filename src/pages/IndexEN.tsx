@@ -69,16 +69,6 @@ const IndexEN = () => {
     url: origin,
   } as const : null;
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: homeFaqs.map((f) => ({
-      "@type": "Question",
-      name: f.question,
-      acceptedAnswer: { "@type": "Answer", text: f.answer },
-    })),
-  };
-
   return (
     <div id="top" className="min-h-screen flex flex-col">
       <Seo
@@ -92,7 +82,7 @@ const IndexEN = () => {
         about={['Digital Marketing', 'CRM', 'Sales Automation', 'Artificial Intelligence']}
         mentions={['HubSpot', 'GoHighLevel', 'SofÍA', 'Google Ads', 'Meta Ads']}
         faqs={homeFaqs}
-        structuredData={[hayasOrganizationSchema, website, faqSchema].filter(Boolean)}
+        structuredData={[hayasOrganizationSchema, website].filter(Boolean)}
       />
       <Navigation />
       
