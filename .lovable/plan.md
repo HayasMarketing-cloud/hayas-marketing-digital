@@ -1,107 +1,113 @@
 
+# Plan: Corregir contexto de la generación SEO con IA
 
-## Plan: Añadir "(LTV)*" al Label y Nota Explicativa
+## Problema Identificado
 
-### Objetivo
+La función de IA que sugiere metadatos SEO no recibe contenido contextual de la página específica. Actualmente solo recibe datos muy básicos:
+- Ruta: `/es/servicios/estrategia-contenidos`  
+- Categoría: `service`
+- Título actual: (vacío)
 
-Modificar el campo "Ingreso por Cliente" para que el label indique claramente que se refiere al LTV, y añadir una nota explicativa debajo con la fórmula de cálculo.
+Sin contenido real, la IA "improvisa" o usa patrones recientes, generando metadatos que no corresponden a la página que se está editando.
 
----
+## Solución Propuesta
 
-### Cambios Visuales
+Integrar la carga de archivos `.md` de la base de conocimiento (`/public/content/`) en el flujo de generación SEO, de forma similar a como lo hace el chatbot SofÍA.
+
+## Cambios Técnicos
+
+### 1. Edge Function `generate-seo-suggestions`
+
+Añadir capacidad de cargar contenido contextual:
 
 ```text
-ANTES                                 DESPUÉS
-─────────────────────────────        ─────────────────────────────
-Ingreso por Cliente (€)              Ingreso por Cliente € (LTV)*
-┌─────────────────────────┐          ┌─────────────────────────┐
-│ 100                     │          │ 100                     │
-└─────────────────────────┘          └─────────────────────────┘
-                                     ┌─────────────────────────────┐
-                                     │ ℹ️ LTV (Lifetime Value):    │
-                                     │ Ingreso total estimado que  │
-                                     │ genera un cliente durante   │
-                                     │ su relación comercial.      │
-                                     │                             │
-                                     │ LTV = Ticket medio ×        │
-                                     │ Frecuencia anual × Años     │
-                                     └─────────────────────────────┘
+┌─────────────────────────────────────────────────────┐
+│  generate-seo-suggestions (Edge Function)           │
+├─────────────────────────────────────────────────────┤
+│  NUEVO: Mapeo rutas → archivos .md                  │
+│  NUEVO: Función fetchContentForPath()               │
+│  NUEVO: Funciones extractIASummary(), extractFAQs() │
+│  MODIFICAR: Enriquecer prompt con contenido real    │
+└─────────────────────────────────────────────────────┘
 ```
 
----
+**Cambios específicos:**
+- Añadir constante `ROUTE_TO_CONTENT` con mapeo de rutas a archivos `.md`
+- Añadir constante `CONTENT_BASE_URL` para la URL base del contenido
+- Crear función `fetchContentForPath(path)` para cargar el archivo `.md`
+- Crear funciones de extracción: `extractIASummary()`, `extractDescription()`, `extractFAQs()`
+- Modificar el prompt para incluir el contenido real de la página
 
-### Archivo a Modificar
+### 2. Modificar el prompt de la IA
 
-| Archivo | Cambio |
-|---------|--------|
-| `src/components/calculators/SalesForecastCalculator.tsx` | Actualizar label y añadir nota LTV |
-
----
-
-### Sección Técnica
-
-**1. Actualizar el label (línea 66):**
-
-```typescript
-// ANTES
-revenuePerClient: isEnglish ? 'Revenue per Client' : 'Ingreso por Cliente',
-
-// DESPUÉS  
-revenuePerClient: isEnglish ? 'Revenue per Client € (LTV)*' : 'Ingreso por Cliente € (LTV)*',
+Antes (genérico):
+```
+CONTENIDO DE LA PÁGINA:
+No se proporcionó contenido específico. Infiere basándote en la ruta y categoría.
 ```
 
-**2. Añadir claves de contenido para la nota LTV:**
-
-```typescript
-ltvTitle: isEnglish ? 'LTV (Lifetime Value)' : 'LTV (Lifetime Value)',
-ltvDescription: isEnglish 
-  ? 'Total estimated revenue a customer generates throughout their business relationship.'
-  : 'Ingreso total estimado que genera un cliente durante toda su relación comercial.',
-ltvFormula: isEnglish 
-  ? 'LTV = Avg. Ticket × Annual Frequency × Years of Relationship'
-  : 'LTV = Ticket medio × Frecuencia anual × Años de relación',
+Después (contextual):
+```
+CONTENIDO DE LA PÁGINA:
+[Resumen IA]: Servicio de planificación y creación de contenidos...
+[Descripción]: En Hayas Marketing creamos estrategias de contenidos...
+[Incluye]: Auditoría, calendario editorial, creación de contenidos...
+[FAQs]: ¿Con qué frecuencia debo publicar contenido? ...
 ```
 
-**3. Actualizar el renderizado del campo (líneas 299-311):**
+### 3. Fallback inteligente
 
-```tsx
-{/* Revenue per Client */}
-<div className="space-y-2">
-  <Label htmlFor="revenuePerClient" className="text-sm font-medium">
-    {content.revenuePerClient}
-  </Label>
-  <Input
-    id="revenuePerClient"
-    type="number"
-    value={inputs.revenuePerClient}
-    onChange={(e) => handleInputChange('revenuePerClient', parseInt(e.target.value) || 0)}
-    min={1}
-    max={1000000}
-    className="text-right font-mono text-lg border-primary/20 focus:border-primary/50 transition-colors"
-  />
-  
-  {/* LTV Info Note - NUEVO */}
-  <div className="mt-2 p-3 bg-muted/50 rounded-lg border border-muted text-xs space-y-1.5">
-    <p className="font-medium flex items-center gap-1.5 text-foreground">
-      <Info className="h-3.5 w-3.5 text-primary flex-shrink-0" />
-      {content.ltvTitle}
-    </p>
-    <p className="text-muted-foreground leading-relaxed">
-      {content.ltvDescription}
-    </p>
-    <p className="font-mono text-primary/80 pt-1.5 border-t border-muted text-[11px]">
-      {content.ltvFormula}
-    </p>
-  </div>
-</div>
+Si no existe archivo `.md` para la ruta:
+1. Intentar cargar contenido del archivo más cercano en la jerarquía
+2. Si no existe, usar el contenido genérico actual como fallback
+3. Añadir log de advertencia para detectar rutas sin contenido
+
+## Flujo Actualizado
+
+```text
+Usuario hace clic en "Generar SEO con IA"
+           │
+           ▼
+    ┌──────────────┐
+    │ Frontend     │ Envía: path, category
+    │ (hook)       │
+    └──────────────┘
+           │
+           ▼
+    ┌──────────────────────────────┐
+    │ Edge Function                │
+    │ generate-seo-suggestions     │
+    ├──────────────────────────────┤
+    │ 1. Recibe path               │
+    │ 2. NUEVO: Busca archivo .md  │
+    │ 3. NUEVO: Carga contenido    │
+    │ 4. NUEVO: Extrae resumen IA  │
+    │ 5. Envía a Lovable AI        │
+    │    con contexto real         │
+    └──────────────────────────────┘
+           │
+           ▼
+    ┌──────────────────────────────┐
+    │ IA genera metadatos          │
+    │ basados en contenido REAL    │
+    └──────────────────────────────┘
 ```
 
----
+## Archivos a Modificar
 
-### Resultado Esperado
+| Archivo | Tipo de cambio |
+|---------|----------------|
+| `supabase/functions/generate-seo-suggestions/index.ts` | Añadir carga de contenido y enriquecimiento de prompt |
 
-- El label del campo mostrará "Ingreso por Cliente € (LTV)*"
-- Debajo del input aparecerá una nota compacta que explica qué es el LTV
-- La nota incluirá la fórmula de cálculo simplificada
-- Todo el contenido será bilingüe (español/inglés)
+## Verificación del Resultado
 
+Una vez implementado, al generar SEO para `/es/servicios/estrategia-contenidos`:
+- **Antes**: "Hayas Marketing - Servicios profesionales de marketing"
+- **Después**: "Estrategia de Contenidos SEO | Hayas Marketing - Atrae tráfico cualificado"
+
+## Beneficios
+
+1. **Precisión**: Metadatos alineados con el contenido real de cada página
+2. **Consistencia**: Misma fuente de verdad que usa el chatbot SofÍA
+3. **Mantenibilidad**: Un solo punto de actualización (archivos `.md`)
+4. **Sin cambios en UI**: El flujo del usuario permanece igual
