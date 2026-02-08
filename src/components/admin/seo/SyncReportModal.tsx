@@ -22,7 +22,8 @@ import {
   Sparkles,
   Brain,
   Zap,
-  Edit
+  Edit,
+  ArrowRight
 } from 'lucide-react';
 import { RouteDefinition } from '@/utils/routeRegistry';
 import { useToast } from '@/hooks/use-toast';
@@ -32,7 +33,7 @@ import { supabase } from '@/integrations/supabase/client';
 
 export interface SyncReport {
   newRoutes: RouteDefinition[];
-  orphanedSEO: Array<{ path: string; title: string }>;
+  orphanedSEO: Array<{ path: string; title: string; suggestedPath?: string | null }>;
   inconsistencies: Array<{
     path: string;
     issue: string;
@@ -457,27 +458,38 @@ export const SyncReportModal: React.FC<SyncReportModalProps> = ({
                       {displayedOrphaned.map((seo) => (
                         <div
                           key={seo.path}
-                          className="p-3 rounded-lg bg-orange-500/5 border border-orange-500/20 text-sm flex items-center justify-between gap-2"
+                          className="p-3 rounded-lg bg-orange-500/5 border border-orange-500/20 text-sm"
                         >
-                          <div className="flex-1 min-w-0">
-                            <div className="font-mono text-xs text-muted-foreground">
-                              {seo.path}
+                          <div className="flex items-center justify-between gap-2">
+                            <div className="flex-1 min-w-0">
+                              <div className="font-mono text-xs text-muted-foreground">
+                                {seo.path}
+                              </div>
+                              <div className="text-xs mt-1 truncate">
+                                {seo.title}
+                              </div>
+                              {seo.suggestedPath && (
+                                <div className="mt-2 flex items-center gap-1 text-xs">
+                                  <ArrowRight className="h-3 w-3 text-primary" />
+                                  <span className="text-muted-foreground">Sugerido:</span>
+                                  <span className="font-mono text-primary font-medium">
+                                    {seo.suggestedPath}
+                                  </span>
+                                </div>
+                              )}
                             </div>
-                            <div className="text-xs mt-1 truncate">
-                              {seo.title}
-                            </div>
+                            {onEditPage && (
+                              <Button
+                                size="sm"
+                                variant="ghost"
+                                onClick={() => handleEditPage(seo.path)}
+                                title="Revisar en editor"
+                                className="shrink-0"
+                              >
+                                <Edit className="h-4 w-4" />
+                              </Button>
+                            )}
                           </div>
-                          {onEditPage && (
-                            <Button
-                              size="sm"
-                              variant="ghost"
-                              onClick={() => handleEditPage(seo.path)}
-                              title="Revisar en editor"
-                              className="shrink-0"
-                            >
-                              <Edit className="h-4 w-4" />
-                            </Button>
-                          )}
                         </div>
                       ))}
                       {report.orphanedSEO.length > 10 && !showAllOrphaned && (
