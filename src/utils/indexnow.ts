@@ -6,7 +6,14 @@
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
 const INDEXNOW_PROXY_ENDPOINT = `${SUPABASE_URL}/functions/v1/indexnow-proxy`;
-const SITE_HOST = window.location.host;
+
+// Dominios permitidos para notificar
+const PRODUCTION_HOST = 'hayasmarketing.com';
+const ALLOWED_HOSTS = [
+  PRODUCTION_HOST,
+  `www.${PRODUCTION_HOST}`,
+  window.location.host // También el dominio actual (preview)
+];
 
 export interface IndexNowResponse {
   success: boolean;
@@ -15,14 +22,25 @@ export interface IndexNowResponse {
 }
 
 /**
- * Valida que una URL sea válida y pertenezca al dominio actual
+ * Valida que una URL sea válida y pertenezca a un dominio permitido
  */
 function validateUrl(url: string): boolean {
   try {
     const urlObj = new URL(url);
-    return urlObj.host === SITE_HOST;
+    return ALLOWED_HOSTS.includes(urlObj.host);
   } catch {
     return false;
+  }
+}
+
+/**
+ * Obtiene el host de una URL
+ */
+function getUrlHost(url: string): string {
+  try {
+    return new URL(url).host;
+  } catch {
+    return PRODUCTION_HOST;
   }
 }
 
@@ -34,9 +52,11 @@ export async function notifyIndexNow(url: string): Promise<IndexNowResponse> {
   if (!validateUrl(url)) {
     return {
       success: false,
-      message: `URL inválida o no pertenece al dominio ${SITE_HOST}`
+      message: `URL inválida o no pertenece a un dominio permitido (${ALLOWED_HOSTS.join(', ')})`
     };
   }
+
+  const host = getUrlHost(url);
 
   try {
     const response = await fetch(INDEXNOW_PROXY_ENDPOINT, {
@@ -46,7 +66,7 @@ export async function notifyIndexNow(url: string): Promise<IndexNowResponse> {
       },
       body: JSON.stringify({
         urls: [url],
-        host: SITE_HOST
+        host: host
       })
     });
 
@@ -82,6 +102,9 @@ export async function notifyBulkIndexNow(urls: string[]): Promise<IndexNowRespon
     };
   }
 
+  // Usar el host de la primera URL válida (asumimos todas son del mismo dominio)
+  const host = getUrlHost(validUrls[0]);
+
   try {
     const response = await fetch(INDEXNOW_PROXY_ENDPOINT, {
       method: 'POST',
@@ -90,7 +113,7 @@ export async function notifyBulkIndexNow(urls: string[]): Promise<IndexNowRespon
       },
       body: JSON.stringify({
         urls: validUrls,
-        host: SITE_HOST
+        host: host
       })
     });
 
@@ -105,10 +128,19 @@ export async function notifyBulkIndexNow(urls: string[]): Promise<IndexNowRespon
 }
 
 /**
- * Construye URL completa desde path relativo
+ * Construye URL completa desde path relativo usando dominio de producción
  * @param path - Path relativo (ej: /es/blog/nuevo-post)
  */
 export function buildFullUrl(path: string): string {
+  return `https://${PRODUCTION_HOST}${path.startsWith('/') ? path : '/' + path}`;
+}
+
+/**
+ * Construye URL completa desde path relativo usando dominio actual
+ * @param path - Path relativo (ej: /es/blog/nuevo-post)
+ */
+export function buildCurrentUrl(path: string): string {
   const protocol = window.location.protocol;
-  return `${protocol}//${SITE_HOST}${path.startsWith('/') ? path : '/' + path}`;
+  const host = window.location.host;
+  return `${protocol}//${host}${path.startsWith('/') ? path : '/' + path}`;
 }

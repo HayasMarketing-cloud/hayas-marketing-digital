@@ -26,7 +26,11 @@ interface IndexNowResponse {
 function validateUrl(url: string, allowedHost: string): boolean {
   try {
     const urlObj = new URL(url);
-    return urlObj.host === allowedHost || urlObj.host === `www.${allowedHost}`;
+    // Aceptar el host proporcionado, hayasmarketing.com, o cualquier dominio de preview/staging
+    const isProductionHost = urlObj.host === PRODUCTION_HOST || urlObj.host === `www.${PRODUCTION_HOST}`;
+    const isProvidedHost = urlObj.host === allowedHost || urlObj.host === `www.${allowedHost}`;
+    const isLovablePreview = urlObj.host.includes('lovableproject.com') || urlObj.host.includes('lovable.app');
+    return isProductionHost || isProvidedHost || isLovablePreview;
   } catch {
     return false;
   }
