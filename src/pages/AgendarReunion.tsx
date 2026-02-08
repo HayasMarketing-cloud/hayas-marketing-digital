@@ -2,8 +2,57 @@ import { useEffect } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Phone, MessageCircle } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function AgendarReunion() {
+  const { isEnglish } = useLanguage();
+
+  const content = {
+    // Hero
+    heroTitle: isEnglish 
+      ? 'Schedule a meeting with our team' 
+      : 'Agenda tu reunión con nuestro equipo',
+    heroSubtitle: isEnglish 
+      ? 'Discover how we can boost your business with personalized digital marketing and AI strategies. Choose the time that best fits your schedule.'
+      : 'Descubre cómo podemos impulsar tu negocio con estrategias personalizadas de marketing digital e IA. Elige el momento que mejor se adapte a tu agenda.',
+    
+    // Scheduler card
+    schedulerTitle: isEnglish 
+      ? 'Select Your Preferred Time' 
+      : 'Selecciona tu Horario Preferido',
+    schedulerSubtitle: isEnglish 
+      ? 'Our team will be delighted to meet you and explore collaboration opportunities.'
+      : 'Nuestro equipo estará encantado de conocerte y explorar oportunidades de colaboración.',
+    
+    // Phone contact
+    phoneTitle: isEnglish ? 'Direct Contact' : 'Contacto Directo',
+    phoneSubtitle: isEnglish 
+      ? 'Speak directly with our team' 
+      : 'Habla directamente con nuestro equipo',
+    whatsappButton: 'WhatsApp',
+    
+    // Sofia
+    sofiaTitle: isEnglish ? 'Chat with SofIA' : 'Chatea con SofÍA',
+    sofiaDescription: isEnglish 
+      ? 'Our AI assistant is available 24/7 to answer your questions about our services'
+      : 'Nuestra asistente de IA está disponible 24/7 para resolver tus dudas sobre nuestros servicios',
+    sofiaButton: isEnglish ? 'Start Conversation' : 'Iniciar Conversación',
+    sofiaAvailability: isEnglish 
+      ? 'Immediate response • Always available' 
+      : 'Respuesta inmediata • Disponible siempre',
+    
+    // Benefits
+    benefitsTitle: isEnglish ? 'What does the meeting include?' : '¿Qué incluye la reunión?',
+    benefit1: isEnglish ? 'Free analysis of your current situation' : 'Análisis gratuito de tu situación actual',
+    benefit2: isEnglish ? 'Professional guidance' : 'Orientación profesional',
+    benefit3: isEnglish ? 'No commitment or sales pressure' : 'Sin compromiso ni presión comercial',
+    
+    // Trust indicators
+    trustProjects: isEnglish ? 'Successful Projects' : 'Proyectos Exitosos',
+    trustRating: isEnglish ? 'Average Rating' : 'Valoración Media',
+    trustResponse: isEnglish ? 'Response Time' : 'Tiempo de Respuesta',
+  };
+
   useEffect(() => {
     // Load Go High Level form embed script
     const script = document.createElement('script');
@@ -34,11 +83,10 @@ export default function AgendarReunion() {
           {/* Header Section */}
           <div className="text-center mb-12 max-w-4xl mx-auto">
             <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-              Agenda tu reunión con nuestro equipo
+              {content.heroTitle}
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Descubre cómo podemos impulsar tu negocio con estrategias personalizadas de marketing digital e IA. 
-              Elige el momento que mejor se adapte a tu agenda.
+              {content.heroSubtitle}
             </p>
           </div>
 
@@ -48,9 +96,9 @@ export default function AgendarReunion() {
             <div className="lg:col-span-8">
               <div className="bg-card rounded-2xl shadow-2xl border border-border/50 overflow-hidden">
                 <div className="p-8 border-b border-border/30">
-                  <h2 className="text-2xl font-semibold mb-3">Selecciona tu Horario Preferido</h2>
+                  <h2 className="text-2xl font-semibold mb-3">{content.schedulerTitle}</h2>
                   <p className="text-muted-foreground">
-                    Nuestro equipo estará encantado de conocerte y explorar oportunidades de colaboración.
+                    {content.schedulerSubtitle}
                   </p>
                 </div>
                 
@@ -68,7 +116,7 @@ export default function AgendarReunion() {
                       }}
                       scrolling="no" 
                       id="ZqA90LNiqw9xgwiLQfOB_booking_widget"
-                      title="Agendar Reunión - Hayas Marketing"
+                      title={isEnglish ? "Schedule Meeting - Hayas Marketing" : "Agendar Reunión - Hayas Marketing"}
                     />
                   </div>
                 </div>
@@ -83,14 +131,14 @@ export default function AgendarReunion() {
                   <div className="w-14 h-14 bg-gradient-to-r from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-4">
                     <Phone className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">Contacto Directo</h3>
+                  <h3 className="text-lg font-semibold mb-2">{content.phoneTitle}</h3>
                   <p className="text-muted-foreground text-sm mb-4">
-                    Habla directamente con nuestro equipo
+                    {content.phoneSubtitle}
                   </p>
                   <div>
                     <a href="https://wa.me/34656908615" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 hover:shadow-lg hover:scale-105 w-full">
                       <MessageCircle className="w-4 h-4" />
-                      WhatsApp
+                      {content.whatsappButton}
                     </a>
                   </div>
                 </div>
@@ -107,35 +155,35 @@ export default function AgendarReunion() {
                       </div>
                     </div>
                   </div>
-                  <h3 className="text-lg font-semibold mb-2 text-foreground">Chatea con SofÍA</h3>
+                  <h3 className="text-lg font-semibold mb-2 text-foreground">{content.sofiaTitle}</h3>
                   <p className="text-muted-foreground text-sm mb-4">
-                    Nuestra asistente de IA está disponible 24/7 para resolver tus dudas sobre nuestros servicios
+                    {content.sofiaDescription}
                   </p>
                   <button onClick={handleSofiaChat} className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-lime-500 to-lime-600 hover:from-lime-600 hover:to-lime-700 text-white px-6 py-3 rounded-xl text-sm font-medium transition-all duration-300 hover:shadow-lg hover:scale-105 w-full shadow-md">
                     <MessageCircle className="w-4 h-4" />
-                    Iniciar Conversación
+                    {content.sofiaButton}
                   </button>
                   <p className="text-xs text-muted-foreground mt-2">
-                    Respuesta inmediata • Disponible siempre
+                    {content.sofiaAvailability}
                   </p>
                 </div>
               </div>
 
               {/* Benefits */}
               <div className="bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl p-6 border border-primary/10">
-                <h3 className="text-lg font-semibold mb-4">¿Qué incluye la reunión?</h3>
+                <h3 className="text-lg font-semibold mb-4">{content.benefitsTitle}</h3>
                 <ul className="space-y-3 text-sm text-muted-foreground">
                   <li className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                    Análisis gratuito de tu situación actual
+                    {content.benefit1}
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                    Orientación profesional
+                    {content.benefit2}
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                    Sin compromiso ni presión comercial
+                    {content.benefit3}
                   </li>
                 </ul>
               </div>
@@ -147,15 +195,15 @@ export default function AgendarReunion() {
             <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               <div className="p-6">
                 <div className="text-3xl font-bold text-primary mb-2">+50</div>
-                <div className="text-muted-foreground">Proyectos Exitosos</div>
+                <div className="text-muted-foreground">{content.trustProjects}</div>
               </div>
               <div className="p-6">
                 <div className="text-3xl font-bold text-primary mb-2">5⭐</div>
-                <div className="text-muted-foreground">Valoración Media</div>
+                <div className="text-muted-foreground">{content.trustRating}</div>
               </div>
               <div className="p-6">
                 <div className="text-3xl font-bold text-primary mb-2">24h</div>
-                <div className="text-muted-foreground">Tiempo de Respuesta</div>
+                <div className="text-muted-foreground">{content.trustResponse}</div>
               </div>
             </div>
           </div>
