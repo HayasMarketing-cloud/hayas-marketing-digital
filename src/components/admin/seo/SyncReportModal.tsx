@@ -11,6 +11,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Separator } from '@/components/ui/separator';
+import { Progress } from '@/components/ui/progress';
 import { 
   AlertCircle, 
   Plus, 
@@ -18,7 +19,9 @@ import {
   AlertTriangle,
   CheckCircle2,
   Loader2,
-  Sparkles
+  Sparkles,
+  Brain,
+  Zap
 } from 'lucide-react';
 import { RouteDefinition } from '@/utils/routeRegistry';
 import { useToast } from '@/hooks/use-toast';
@@ -44,55 +47,195 @@ interface SyncReportModalProps {
   report: SyncReport;
 }
 
+interface GenerationProgress {
+  current: number;
+  total: number;
+  currentPath: string;
+  aiSuccess: number;
+  fallbackUsed: number;
+  errors: number;
+}
+
+// Detectar idioma de la ruta
+const detectLanguageFromPath = (path: string): 'es' | 'en' => {
+  return path.startsWith('/en/') || path === '/en' ? 'en' : 'es';
+};
+
 export const SyncReportModal: React.FC<SyncReportModalProps> = ({
   isOpen,
   onClose,
   report,
 }) => {
   const [isProcessing, setIsProcessing] = useState(false);
+  const [useAI, setUseAI] = useState(true);
+  const [progress, setProgress] = useState<GenerationProgress | null>(null);
   const { toast } = useToast();
   const queryClient = useQueryClient();
 
+  // Generar SEO con IA para una ruta específica
+  const generateWithAI = async (route: RouteDefinition): Promise<{
+    success: boolean;
+    data?: any;
+    usedAI: boolean;
+  }> => {
+    try {
+      const targetLanguage = detectLanguageFromPath(route.path);
+      
+      const { data, error } = await supabase.functions.invoke('generate-seo-suggestions', {
+        body: {
+          path: route.path,
+          category: route.category,
+          targetLanguage,
+        },
+      });
+
+      if (error) throw error;
+      if (!data?.success || !data?.suggestions) {
+        throw new Error('No suggestions received');
+      }
+
+      return {
+        success: true,
+        data: data.suggestions,
+        usedAI: true,
+      };
+    } catch (error) {
+      console.warn(`⚠️ AI generation failed for ${route.path}, using fallback:`, error);
+      return {
+        success: true,
+        data: null,
+        usedAI: false,
+      };
+    }
+  };
+
+  // Crear entrada SEO en la base de datos
+  const createSEOEntry = async (
+    route: RouteDefinition,
+    aiSuggestions: any | null
+  ): Promise<boolean> => {
+    try {
+      const targetLanguage = detectLanguageFromPath(route.path);
+      const inLanguage = targetLanguage === 'en' ? 'en-US' : 'es-ES';
+      
+      // Si tenemos sugerencias de IA, usarlas; si no, usar autoSEO básico
+      if (aiSuggestions) {
+        await supabase.from('seo_pages').insert({
+          path: route.path,
+          title: aiSuggestions.title || 'Sin título',
+          h1: aiSuggestions.h1 || aiSuggestions.title || 'Sin título',
+          description: aiSuggestions.description || '',
+          canonical: `https://hayasmarketing.com${route.path}`,
+          category: route.category || 'main',
+          keywords: aiSuggestions.keywords || [],
+          h2_primary: aiSuggestions.h2_primary || null,
+          schema_type: route.category === 'service' ? 'Service' : 'WebPage',
+          og_type: 'website',
+          in_language: inLanguage,
+          robots: 'index, follow',
+          is_indexable: route.isIndexable !== false,
+          about: [],
+          mentions: [],
+        });
+      } else {
+        // Fallback a generación básica
+        const autoSEO = generateAutoSEO(route.path, route.category);
+        
+        await supabase.from('seo_pages').insert({
+          path: route.path,
+          title: autoSEO.title || 'Sin título',
+          h1: autoSEO.h1 || 'Sin título',
+          description: autoSEO.description || '',
+          canonical: autoSEO.canonical || route.path,
+          category: autoSEO.category || 'main',
+          keywords: autoSEO.keywords || [],
+          schema_type: autoSEO.schemaType || 'WebPage',
+          og_type: autoSEO.ogType || 'website',
+          in_language: inLanguage,
+          robots: autoSEO.robots || 'index, follow',
+          is_indexable: route.isIndexable,
+          about: autoSEO.about || [],
+          mentions: autoSEO.mentions || [],
+        });
+      }
+      
+      return true;
+    } catch (error) {
+      console.error(`Error creando SEO para ${route.path}:`, error);
+      return false;
+    }
+  };
+
   const handleCreateAutoSEO = async () => {
     setIsProcessing(true);
-    try {
-      let successCount = 0;
-      let errorCount = 0;
+    setProgress({
+      current: 0,
+      total: report.newRoutes.length,
+      currentPath: '',
+      aiSuccess: 0,
+      fallbackUsed: 0,
+      errors: 0,
+    });
 
-      for (const route of report.newRoutes) {
-        try {
-          const autoSEO = generateAutoSEO(route.path, route.category);
+    try {
+      let aiSuccess = 0;
+      let fallbackUsed = 0;
+      let errors = 0;
+
+      for (let i = 0; i < report.newRoutes.length; i++) {
+        const route = report.newRoutes[i];
+        
+        setProgress(prev => prev ? {
+          ...prev,
+          current: i + 1,
+          currentPath: route.path,
+        } : null);
+
+        let aiData = null;
+        let usedAI = false;
+
+        // Intentar generación con IA si está habilitada
+        if (useAI) {
+          const result = await generateWithAI(route);
+          if (result.usedAI && result.data) {
+            aiData = result.data;
+            usedAI = true;
+          }
           
-          await supabase.from('seo_pages').insert({
-            path: route.path,
-            title: autoSEO.title || 'Sin título',
-            h1: autoSEO.h1 || 'Sin título',
-            description: autoSEO.description || '',
-            canonical: autoSEO.canonical || route.path,
-            category: autoSEO.category || 'main',
-            keywords: autoSEO.keywords || [],
-            schema_type: autoSEO.schemaType || 'WebPage',
-            og_type: autoSEO.ogType || 'website',
-            in_language: autoSEO.inLanguage || 'es-ES',
-            robots: autoSEO.robots || 'index, follow',
-            is_indexable: route.isIndexable,
-            about: autoSEO.about || [],
-            mentions: autoSEO.mentions || [],
-          });
-          
-          successCount++;
-        } catch (error) {
-          console.error(`Error creando SEO para ${route.path}:`, error);
-          errorCount++;
+          // Pequeña pausa para evitar rate limiting (300ms entre llamadas)
+          if (i < report.newRoutes.length - 1) {
+            await new Promise(resolve => setTimeout(resolve, 300));
+          }
         }
+
+        // Crear entrada en la base de datos
+        const success = await createSEOEntry(route, aiData);
+        
+        if (success) {
+          if (usedAI) {
+            aiSuccess++;
+          } else {
+            fallbackUsed++;
+          }
+        } else {
+          errors++;
+        }
+
+        setProgress(prev => prev ? {
+          ...prev,
+          aiSuccess,
+          fallbackUsed,
+          errors,
+        } : null);
       }
 
       await queryClient.invalidateQueries({ queryKey: ['seo-pages'] });
 
+      const totalSuccess = aiSuccess + fallbackUsed;
       toast({
-        title: 'SEO auto-generado creado',
-        description: `✅ ${successCount} rutas procesadas${errorCount > 0 ? ` | ⚠️ ${errorCount} errores` : ''}`,
-        duration: 4000,
+        title: '✨ SEO generado con IA',
+        description: `✅ ${totalSuccess} rutas creadas (${aiSuccess} con IA, ${fallbackUsed} básico)${errors > 0 ? ` | ⚠️ ${errors} errores` : ''}`,
+        duration: 5000,
       });
 
       onClose();
@@ -105,6 +248,7 @@ export const SyncReportModal: React.FC<SyncReportModalProps> = ({
       });
     } finally {
       setIsProcessing(false);
+      setProgress(null);
     }
   };
 
@@ -148,6 +292,10 @@ export const SyncReportModal: React.FC<SyncReportModalProps> = ({
     report.orphanedSEO.length + 
     report.inconsistencies.length;
 
+  const progressPercent = progress 
+    ? Math.round((progress.current / progress.total) * 100) 
+    : 0;
+
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-3xl max-h-[80vh]">
@@ -163,6 +311,38 @@ export const SyncReportModal: React.FC<SyncReportModalProps> = ({
 
         <ScrollArea className="max-h-[50vh] pr-4">
           <div className="space-y-6">
+            {/* Progress indicator during processing */}
+            {progress && (
+              <div className="p-4 rounded-lg bg-primary/5 border border-primary/20 space-y-3">
+                <div className="flex items-center justify-between text-sm">
+                  <span className="flex items-center gap-2">
+                    <Brain className="h-4 w-4 text-primary animate-pulse" />
+                    Generando con IA...
+                  </span>
+                  <span className="font-mono text-xs">
+                    {progress.current}/{progress.total}
+                  </span>
+                </div>
+                <Progress value={progressPercent} className="h-2" />
+                <div className="text-xs text-muted-foreground font-mono truncate">
+                  {progress.currentPath}
+                </div>
+                <div className="flex gap-4 text-xs">
+                  <span className="text-green-600">
+                    ✓ IA: {progress.aiSuccess}
+                  </span>
+                  <span className="text-yellow-600">
+                    ○ Básico: {progress.fallbackUsed}
+                  </span>
+                  {progress.errors > 0 && (
+                    <span className="text-red-600">
+                      ✕ Errores: {progress.errors}
+                    </span>
+                  )}
+                </div>
+              </div>
+            )}
+
             {/* Summary */}
             <div className="grid grid-cols-3 gap-4">
               <div className="text-center p-4 rounded-lg bg-blue-500/10 border border-blue-500/20">
@@ -342,7 +522,7 @@ export const SyncReportModal: React.FC<SyncReportModalProps> = ({
               disabled={isProcessing}
               className="border-orange-500 text-orange-500 hover:bg-orange-500/10"
             >
-              {isProcessing ? (
+              {isProcessing && !progress ? (
                 <Loader2 className="h-4 w-4 mr-2 animate-spin" />
               ) : (
                 <Trash2 className="h-4 w-4 mr-2" />
@@ -352,18 +532,38 @@ export const SyncReportModal: React.FC<SyncReportModalProps> = ({
           )}
           
           {report.newRoutes.length > 0 && (
-            <Button
-              onClick={handleCreateAutoSEO}
-              disabled={isProcessing}
-              className="bg-blue-500 hover:bg-blue-600"
-            >
-              {isProcessing ? (
-                <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-              ) : (
-                <Sparkles className="h-4 w-4 mr-2" />
-              )}
-              Crear SEO auto-generado ({report.newRoutes.length})
-            </Button>
+            <div className="flex gap-2">
+              {/* Toggle AI mode */}
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setUseAI(!useAI)}
+                disabled={isProcessing}
+                className={useAI ? 'border-primary text-primary' : 'text-muted-foreground'}
+                title={useAI ? 'IA activada - click para desactivar' : 'IA desactivada - click para activar'}
+              >
+                {useAI ? (
+                  <Brain className="h-4 w-4" />
+                ) : (
+                  <Zap className="h-4 w-4" />
+                )}
+              </Button>
+              
+              <Button
+                onClick={handleCreateAutoSEO}
+                disabled={isProcessing}
+                className="bg-primary hover:bg-primary/90"
+              >
+                {isProcessing ? (
+                  <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                ) : useAI ? (
+                  <Brain className="h-4 w-4 mr-2" />
+                ) : (
+                  <Sparkles className="h-4 w-4 mr-2" />
+                )}
+                {useAI ? 'Generar con IA' : 'Generar básico'} ({report.newRoutes.length})
+              </Button>
+            </div>
           )}
           
           <Button variant="outline" onClick={onClose} disabled={isProcessing}>
