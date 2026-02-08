@@ -100,7 +100,7 @@ export const EnhancedSEOPageList: React.FC<EnhancedSEOPageListProps> = ({ onEdit
       <CardHeader>
         <div className="flex items-center justify-between mb-4">
           <CardTitle>Todas las Rutas ({filteredRoutes.length})</CardTitle>
-          <SyncRoutesButton />
+          <SyncRoutesButton onEditPage={onEditPage} />
         </div>
 
         {/* Stats Bar */}
