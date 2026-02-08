@@ -21,7 +21,8 @@ import {
   Loader2,
   Sparkles,
   Brain,
-  Zap
+  Zap,
+  Edit
 } from 'lucide-react';
 import { RouteDefinition } from '@/utils/routeRegistry';
 import { useToast } from '@/hooks/use-toast';
@@ -45,6 +46,7 @@ interface SyncReportModalProps {
   isOpen: boolean;
   onClose: () => void;
   report: SyncReport;
+  onEditPage?: (path: string) => void;
 }
 
 interface GenerationProgress {
@@ -65,12 +67,30 @@ export const SyncReportModal: React.FC<SyncReportModalProps> = ({
   isOpen,
   onClose,
   report,
+  onEditPage,
 }) => {
   const [isProcessing, setIsProcessing] = useState(false);
   const [useAI, setUseAI] = useState(true);
   const [progress, setProgress] = useState<GenerationProgress | null>(null);
+  const [showAllOrphaned, setShowAllOrphaned] = useState(false);
+  const [showAllInconsistencies, setShowAllInconsistencies] = useState(false);
   const { toast } = useToast();
   const queryClient = useQueryClient();
+
+  // Handler para editar y cerrar modal
+  const handleEditPage = (path: string) => {
+    onClose();
+    onEditPage?.(path);
+  };
+
+  // Listas con límite expandible
+  const displayedOrphaned = showAllOrphaned 
+    ? report.orphanedSEO 
+    : report.orphanedSEO.slice(0, 10);
+  
+  const displayedInconsistencies = showAllInconsistencies 
+    ? report.inconsistencies 
+    : report.inconsistencies.slice(0, 10);
 
   // Generar SEO con IA para una ruta específica
   const generateWithAI = async (route: RouteDefinition): Promise<{
@@ -434,23 +454,49 @@ export const SyncReportModal: React.FC<SyncReportModalProps> = ({
                       </Badge>
                     </div>
                     <div className="space-y-2">
-                      {report.orphanedSEO.slice(0, 8).map((seo) => (
+                      {displayedOrphaned.map((seo) => (
                         <div
                           key={seo.path}
-                          className="p-3 rounded-lg bg-orange-500/5 border border-orange-500/20 text-sm"
+                          className="p-3 rounded-lg bg-orange-500/5 border border-orange-500/20 text-sm flex items-center justify-between gap-2"
                         >
-                          <div className="font-mono text-xs text-muted-foreground">
-                            {seo.path}
+                          <div className="flex-1 min-w-0">
+                            <div className="font-mono text-xs text-muted-foreground">
+                              {seo.path}
+                            </div>
+                            <div className="text-xs mt-1 truncate">
+                              {seo.title}
+                            </div>
                           </div>
-                          <div className="text-xs mt-1 truncate">
-                            {seo.title}
-                          </div>
+                          {onEditPage && (
+                            <Button
+                              size="sm"
+                              variant="ghost"
+                              onClick={() => handleEditPage(seo.path)}
+                              title="Revisar en editor"
+                              className="shrink-0"
+                            >
+                              <Edit className="h-4 w-4" />
+                            </Button>
+                          )}
                         </div>
                       ))}
-                      {report.orphanedSEO.length > 8 && (
-                        <p className="text-xs text-muted-foreground text-center pt-2">
-                          ... y {report.orphanedSEO.length - 8} registros más
-                        </p>
+                      {report.orphanedSEO.length > 10 && !showAllOrphaned && (
+                        <Button 
+                          variant="link" 
+                          className="w-full text-xs"
+                          onClick={() => setShowAllOrphaned(true)}
+                        >
+                          Ver todos ({report.orphanedSEO.length})
+                        </Button>
+                      )}
+                      {showAllOrphaned && report.orphanedSEO.length > 10 && (
+                        <Button 
+                          variant="link" 
+                          className="w-full text-xs"
+                          onClick={() => setShowAllOrphaned(false)}
+                        >
+                          Mostrar menos
+                        </Button>
                       )}
                     </div>
                   </div>
@@ -462,16 +508,29 @@ export const SyncReportModal: React.FC<SyncReportModalProps> = ({
                     <div>
                       <div className="flex items-center gap-2 mb-3">
                         <AlertTriangle className="h-4 w-4 text-yellow-500" />
-                        <h3 className="font-semibold">Inconsistencias detectadas</h3>
+                        <h3 className="font-semibold">Inconsistencias detectadas ({report.inconsistencies.length})</h3>
                       </div>
                       <div className="space-y-2">
-                        {report.inconsistencies.slice(0, 5).map((issue, idx) => (
+                        {displayedInconsistencies.map((issue, idx) => (
                           <div
                             key={idx}
                             className="p-3 rounded-lg bg-yellow-500/5 border border-yellow-500/20 text-sm"
                           >
-                            <div className="font-mono text-xs text-muted-foreground mb-1">
-                              {issue.path}
+                            <div className="flex items-center justify-between mb-1">
+                              <div className="font-mono text-xs text-muted-foreground">
+                                {issue.path}
+                              </div>
+                              {onEditPage && (
+                                <Button
+                                  size="sm"
+                                  variant="ghost"
+                                  onClick={() => handleEditPage(issue.path)}
+                                  title="Editar en editor SEO"
+                                  className="shrink-0 h-7 w-7 p-0"
+                                >
+                                  <Edit className="h-4 w-4" />
+                                </Button>
+                              )}
                             </div>
                             <div className="text-xs">{issue.issue}</div>
                             <div className="flex gap-3 mt-2 text-xs">
@@ -484,6 +543,24 @@ export const SyncReportModal: React.FC<SyncReportModalProps> = ({
                             </div>
                           </div>
                         ))}
+                        {report.inconsistencies.length > 10 && !showAllInconsistencies && (
+                          <Button 
+                            variant="link" 
+                            className="w-full text-xs"
+                            onClick={() => setShowAllInconsistencies(true)}
+                          >
+                            Ver todas ({report.inconsistencies.length})
+                          </Button>
+                        )}
+                        {showAllInconsistencies && report.inconsistencies.length > 10 && (
+                          <Button 
+                            variant="link" 
+                            className="w-full text-xs"
+                            onClick={() => setShowAllInconsistencies(false)}
+                          >
+                            Mostrar menos
+                          </Button>
+                        )}
                       </div>
                     </div>
                   </>

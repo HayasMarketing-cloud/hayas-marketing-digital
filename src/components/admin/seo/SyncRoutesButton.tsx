@@ -7,7 +7,11 @@ import { getRegisteredRoutes } from '@/utils/routeRegistryData';
 import { useAllSEOPages } from '@/hooks/useSEOData';
 import { SyncReportModal, SyncReport } from './SyncReportModal';
 
-export const SyncRoutesButton: React.FC = () => {
+interface SyncRoutesButtonProps {
+  onEditPage?: (path: string) => void;
+}
+
+export const SyncRoutesButton: React.FC<SyncRoutesButtonProps> = ({ onEditPage }) => {
   const [isSyncing, setIsSyncing] = useState(false);
   const [showReport, setShowReport] = useState(false);
   const [syncReport, setSyncReport] = useState<SyncReport | null>(null);
@@ -166,6 +170,7 @@ export const SyncRoutesButton: React.FC = () => {
           isOpen={showReport}
           onClose={() => setShowReport(false)}
           report={syncReport}
+          onEditPage={onEditPage}
         />
       )}
     </>
