@@ -16,15 +16,12 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   const location = useLocation();
   const navigate = useNavigate();
   
-  // Detect browser language on first load
+  // SEO-friendly redirect: always redirect root to Spanish
+  // This ensures Googlebot (which has en-US locale) sees the canonical Spanish version
   useEffect(() => {
-    // Only redirect if on root path
     if (location.pathname === '/') {
-      const browserLang = navigator.language.toLowerCase();
-      const isEnglishBrowser = browserLang.startsWith('en');
-      const defaultLang = isEnglishBrowser ? 'en' : 'es';
-      console.log(`[LanguageContext] Redirecting from / to /${defaultLang} (browser: ${browserLang})`);
-      navigate(`/${defaultLang}`, { replace: true });
+      console.log('[LanguageContext] Redirecting from / to /es (SEO canonical)');
+      navigate('/es', { replace: true });
     }
   }, [location.pathname, navigate]);
   
