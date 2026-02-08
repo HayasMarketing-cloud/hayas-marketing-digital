@@ -102,6 +102,7 @@ export const registeredRoutes: RouteDefinition[] = [
   
   // TOOLS
   { path: '/es/herramientas/generador-whatsapp-link', category: 'tool', isIndexable: true, priority: 0.6, changefreq: 'monthly', isDynamic: false, isLegacy: false },
+  { path: '/es/herramientas/calculadora-roi', category: 'tool', isIndexable: true, priority: 0.6, changefreq: 'monthly', isDynamic: false, isLegacy: false },
   
   // AUTHOR
   { path: '/es/autor/ruben-reyero', category: 'author', isIndexable: true, priority: 0.6, changefreq: 'monthly', isDynamic: false, isLegacy: false },
@@ -205,6 +206,7 @@ export const registeredRoutes: RouteDefinition[] = [
   
   // TOOLS (EN)
   { path: '/en/tools/whatsapp-link-generator', category: 'tool', isIndexable: true, priority: 0.6, changefreq: 'monthly', isDynamic: false, isLegacy: false },
+  { path: '/en/tools/roi-calculator', category: 'tool', isIndexable: true, priority: 0.6, changefreq: 'monthly', isDynamic: false, isLegacy: false },
 ];
 
 /**
