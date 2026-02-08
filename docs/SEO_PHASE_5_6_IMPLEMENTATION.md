@@ -328,6 +328,17 @@ Analytics:
 
 ---
 
+## 📚 Documentación Relacionada
+
+| Documento | Descripción |
+|-----------|-------------|
+| [SEO_SYSTEM_OVERVIEW.md](./SEO_SYSTEM_OVERVIEW.md) | **Documento maestro** - Arquitectura completa del sistema SEO |
+| [SEO_PHASE_7_FAQ_SCHEMA.md](./SEO_PHASE_7_FAQ_SCHEMA.md) | Fase 7: FAQ Schema |
+| [SEO_RICH_SNIPPETS_GUIDE.md](./SEO_RICH_SNIPPETS_GUIDE.md) | Fases 1-4: Service, LocalBusiness, Review, ItemList |
+| [SEO_EXECUTIVE_SUMMARY.md](./SEO_EXECUTIVE_SUMMARY.md) | Resumen ejecutivo para stakeholders |
+
+---
+
 **Documentación creada:** Noviembre 2025  
-**Última actualización:** Noviembre 2025  
+**Última actualización:** 2026-02-08  
 **Responsable:** Equipo Hayas Marketing - Departamento SEO
