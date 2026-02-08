@@ -40,14 +40,7 @@ export const getAllSpanishRoutes = (): string[] => {
     '/es/soluciones/consultoria-estrategica',
   ];
 
-  // Tools
-  const toolRoutes = [
-    '/es/herramientas/calculadora-roi',
-    '/es/herramientas/generador-estrategia',
-    '/es/herramientas/audit-seo',
-  ];
-
-  return [...mainRoutes, ...serviceRoutes, ...solutionRoutes, ...toolRoutes];
+  return [...mainRoutes, ...serviceRoutes, ...solutionRoutes];
 };
 
 /**
@@ -94,9 +87,6 @@ export const getEnglishEquivalent = (esPath: string): string | null => {
     '/es/soluciones/automatizacion-marketing': '/en/solutions/marketing-automation',
     '/es/soluciones/ia-marketing': '/en/solutions/ai-marketing',
     '/es/soluciones/consultoria-estrategica': '/en/solutions/strategic-consulting',
-    '/es/herramientas/calculadora-roi': '/en/tools/roi-calculator',
-    '/es/herramientas/generador-estrategia': '/en/tools/strategy-generator',
-    '/es/herramientas/audit-seo': '/en/tools/seo-audit',
   };
 
   return pathMap[esPath] || null;
@@ -123,9 +113,6 @@ export const getSpanishEquivalent = (enPath: string): string | null => {
     '/en/solutions/marketing-automation': '/es/soluciones/automatizacion-marketing',
     '/en/solutions/ai-marketing': '/es/soluciones/ia-marketing',
     '/en/solutions/strategic-consulting': '/es/soluciones/consultoria-estrategica',
-    '/en/tools/roi-calculator': '/es/herramientas/calculadora-roi',
-    '/en/tools/strategy-generator': '/es/herramientas/generador-estrategia',
-    '/en/tools/seo-audit': '/es/herramientas/audit-seo',
   };
 
   return reverseMap[enPath] || null;
