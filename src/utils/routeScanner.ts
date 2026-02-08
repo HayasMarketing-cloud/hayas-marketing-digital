@@ -14,9 +14,8 @@ export interface ScannedRoute {
  * Basado en los patrones de rutas en App.tsx
  */
 export const getAllSpanishRoutes = (): string[] => {
-  // Rutas principales (sin barra final para consistencia con BD)
+  // Rutas principales (sin /es raíz que ya no existe)
   const mainRoutes = [
-    '/es',
     '/es/nosotros',
     '/es/contacto',
     '/es/blog',
