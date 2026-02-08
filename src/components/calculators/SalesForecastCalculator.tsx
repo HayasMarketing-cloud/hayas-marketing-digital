@@ -84,6 +84,9 @@ const SalesForecastCalculator: React.FC<SalesForecastCalculatorProps> = ({
     sqlInfo: isEnglish ? 'Sales Qualified Lead' : 'Lead Cualificado de Ventas',
     interactiveTool: isEnglish ? 'Interactive Tool' : 'Herramienta Interactiva',
     noRegistration: isEnglish ? 'No Registration' : 'Sin Registro',
+    customizePrompt: isEnglish 
+      ? 'Customize the values below with your own data to get personalized results'
+      : 'Personaliza los valores con tus propios datos para obtener resultados adaptados a tu negocio',
     estimatedROI: isEnglish ? 'Estimated ROI' : 'ROI Estimado',
     performanceLevels: {
       loss: isEnglish ? 'Loss' : 'Pérdida',
@@ -240,6 +243,14 @@ const SalesForecastCalculator: React.FC<SalesForecastCalculatorProps> = ({
         "space-y-8 p-6 md:p-8",
         compact && "space-y-6 p-4 md:p-6"
       )}>
+        {/* Instructional Prompt */}
+        <div className="text-center pb-2">
+          <p className="text-muted-foreground text-sm md:text-base flex items-center justify-center gap-2">
+            <Sparkles className="h-4 w-4 text-primary" />
+            {content.customizePrompt}
+          </p>
+        </div>
+
         {/* Input Section with Glassmorphism */}
         <div className="grid md:grid-cols-2 gap-6">
           {/* Initial Data Card */}
