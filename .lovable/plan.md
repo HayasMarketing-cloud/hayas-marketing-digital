@@ -1,153 +1,223 @@
 
-## Plan: Añadir Metadatos SEO para Páginas EN Verificadas
+## Plan: Generación Automática de Imágenes OG con IA
 
 ### Objetivo
-Insertar registros en la tabla `seo_pages` para las 3 páginas en inglés ya verificadas, vinculándolas correctamente con sus versiones españolas mediante el campo `translation_of`.
+Crear una Edge Function que genere imágenes OG personalizadas y contextualizadas al contenido de cada página, siguiendo la identidad corporativa de Hayas Marketing, y guardarlas en Supabase Storage.
 
 ---
 
-### Páginas a Añadir
+### Flujo del Sistema
 
-| Ruta EN | Ruta ES Equivalente | Estado ES en DB |
-|---------|---------------------|-----------------|
-| `/en/about-us` | `/es/nosotros` | Existe (id: b6cd0918-f908-489d-a2ad-a74ff49f3ca7) |
-| `/en/blog` | `/es/blog` | No existe |
-| `/en/comparison/hubspot-vs-go-high-level` | `/es/comparativa/hubspot-vs-go-high-level` | No existe |
-
----
-
-### Paso 1: Corregir entrada duplicada /en/about
-
-Existe una entrada `/en/about` que debería ser `/en/about-us` (la ruta real en App.tsx):
-
-```sql
-UPDATE seo_pages 
-SET path = '/en/about-us', canonical = 'https://hayasmarketing.com/en/about-us'
-WHERE path = '/en/about';
+```text
+┌─────────────────────────────────────────────────────────────────────────────┐
+│  Panel Admin (TranslationTable)                                              │
+│  ┌───────────────────────────────────────────────────────────────────────┐  │
+│  │  Página con "Añadir OG Image" → Click → Modal de generación           │  │
+│  └───────────────────────────────────────────────────────────────────────┘  │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                     │
+                                     ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│  Edge Function: generate-og-image                                            │
+│  ┌───────────────────────────────────────────────────────────────────────┐  │
+│  │  1. Recibe: path, title, category, description                        │  │
+│  │  2. Genera prompt contextual + identidad corporativa                  │  │
+│  │  3. Llama a Lovable AI (google/gemini-2.5-flash-image)               │  │
+│  │  4. Sube imagen base64 a Supabase Storage                            │  │
+│  │  5. Devuelve URL pública                                              │  │
+│  └───────────────────────────────────────────────────────────────────────┘  │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                     │
+                                     ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│  Base de Datos: seo_pages                                                    │
+│  ┌───────────────────────────────────────────────────────────────────────┐  │
+│  │  og_image = URL de Storage (ej: /storage/v1/object/public/og-images/...) │
+│  └───────────────────────────────────────────────────────────────────────┘  │
+└─────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-### Paso 2: Crear registro ES para /es/blog
+### Componentes a Crear/Modificar
 
-```sql
-INSERT INTO seo_pages (
-  path, in_language, title, description, h1, h2_primary, 
-  keywords, canonical, robots, og_type, schema_type, category
-) VALUES (
-  '/es/blog',
-  'es-ES',
-  'Blog de Marketing Digital | Hayas Marketing',
-  'Ideas, criterio y análisis para entender mejor el marketing, la tecnología y cómo influyen en las decisiones reales de negocio.',
-  'Blog Hayas Marketing',
-  'Marketing e Inteligencia aplicada para tomar mejores decisiones',
-  ARRAY['blog marketing', 'marketing digital', 'CRM', 'inteligencia artificial', 'automatización'],
-  'https://hayasmarketing.com/es/blog',
-  'index,follow',
-  'website',
-  'Blog',
-  'blog'
-);
+#### 1. Supabase Storage Bucket (og-images)
+
+Crear un bucket público para almacenar las imágenes OG generadas:
+
+- **Nombre**: `og-images`
+- **Acceso**: Público (las imágenes OG deben ser accesibles sin autenticación)
+- **Políticas RLS**: Lectura pública, escritura solo desde Edge Functions
+
+---
+
+#### 2. Edge Function: `generate-og-image`
+
+**Ubicación**: `supabase/functions/generate-og-image/index.ts`
+
+**Lógica principal**:
+
+1. **Autenticación**: Verificar usuario admin
+2. **Contexto de marca**:
+   - Colores: Verde Hayas (#4D9A00), Azul primario (#00467E), Turquesa (#04725A)
+   - Tipografía: DM Sans para títulos, Inter para cuerpo
+   - Elementos visuales: Logo Hayas, gradientes, formas geométricas limpias
+3. **Prompt dinámico** basado en:
+   - Título de la página
+   - Categoría (servicio, blog, solución, caso de éxito, etc.)
+   - Descripción
+   - Idioma (ES/EN)
+4. **Generación**: Llamar a `google/gemini-2.5-flash-image` con prompt específico
+5. **Almacenamiento**: Subir base64 a Storage y devolver URL pública
+
+**Prompt template corporativo**:
+```
+Create a professional OG image (1200x630px) for [CATEGORY]:
+- Title: "[TITLE]"
+- Brand: Hayas Marketing (digital marketing agency)
+- Style: Modern, clean, corporate
+- Colors: Use gradient from green (#4D9A00) to blue (#00467E)
+- Typography: Bold, sans-serif headings
+- Elements: Subtle geometric shapes, no photos, professional icons
+- Mood: Professional, trustworthy, innovative
 ```
 
 ---
 
-### Paso 3: Crear registro EN para /en/blog
+#### 3. Componente Frontend: `OGImageGenerator`
 
-```sql
-INSERT INTO seo_pages (
-  path, in_language, title, description, h1, h2_primary,
-  keywords, canonical, robots, og_type, schema_type, category, translation_of
-) VALUES (
-  '/en/blog',
-  'en-US',
-  'Digital Marketing Blog | Hayas Marketing',
-  'Ideas, insights and analysis to better understand marketing, technology and how they influence real business decisions.',
-  'Hayas Marketing Blog',
-  'Marketing and Applied Intelligence for better decisions',
-  ARRAY['marketing blog', 'digital marketing', 'CRM', 'artificial intelligence', 'automation'],
-  'https://hayasmarketing.com/en/blog',
-  'index,follow',
-  'website',
-  'Blog',
-  'blog',
-  (SELECT id FROM seo_pages WHERE path = '/es/blog')
-);
+**Ubicación**: `src/components/admin/seo/OGImageGenerator.tsx`
+
+**Funcionalidad**:
+- Modal con preview de la imagen generada
+- Botón "Regenerar" para intentar otra versión
+- Botón "Guardar" para persistir en BD
+- Estado de carga con skeleton
+- Manejo de errores (rate limit, créditos, etc.)
+
+---
+
+#### 4. Modificar `QuickActionModal.tsx`
+
+Añadir botón dedicado para generar imagen OG con IA en lugar de solo input manual:
+
+```tsx
+{route.missingRecommendedFields?.includes('og_image') && (
+  <div className="space-y-2 border-t pt-4">
+    <Label className="flex items-center gap-2">
+      Open Graph Image
+      <Badge variant="outline">Opcional</Badge>
+    </Label>
+    
+    {/* Opción 1: Generar con IA */}
+    <Button onClick={handleGenerateOGImage}>
+      <Sparkles className="h-4 w-4 mr-2" />
+      Generar con IA
+    </Button>
+    
+    {/* Opción 2: URL manual */}
+    <Input placeholder="O pegar URL existente..." />
+    
+    {/* Preview de imagen generada */}
+    {formData.og_image && (
+      <img src={formData.og_image} alt="OG Preview" />
+    )}
+  </div>
+)}
 ```
 
 ---
 
-### Paso 4: Crear registro ES para /es/comparativa/hubspot-vs-go-high-level
+#### 5. Hook: `useOGImageGeneration`
 
-```sql
-INSERT INTO seo_pages (
-  path, in_language, title, description, h1, h2_primary,
-  keywords, canonical, robots, og_type, schema_type, category
-) VALUES (
-  '/es/comparativa/hubspot-vs-go-high-level',
-  'es-ES',
-  'HubSpot vs Go High Level: Comparativa CRM 2025 | Hayas Marketing',
-  'Comparamos las dos plataformas CRM líderes para que descubras cuál encaja mejor con las necesidades de tu empresa.',
-  'HubSpot vs Go High Level: ¿qué CRM elegir para tu negocio?',
-  '¿Para quién es cada CRM?',
-  ARRAY['hubspot vs gohighlevel', 'comparativa CRM', 'mejor CRM', 'CRM para pymes', 'CRM empresas'],
-  'https://hayasmarketing.com/es/comparativa/hubspot-vs-go-high-level',
-  'index,follow',
-  'website',
-  'WebPage',
-  'comparison'
-);
+**Ubicación**: `src/hooks/useOGImageGeneration.ts`
+
+**API**:
+```typescript
+const { 
+  generateOGImage,  // Función para generar
+  isGenerating,     // Estado de carga
+  generatedImage,   // URL resultante
+  error             // Error si hay
+} = useOGImageGeneration();
+
+// Uso
+await generateOGImage({
+  path: '/es/contacto',
+  title: 'Contacto - Hayas Marketing',
+  description: 'Solicita tu consulta gratuita',
+  category: 'main',
+  language: 'es'
+});
 ```
 
 ---
 
-### Paso 5: Crear registro EN para /en/comparison/hubspot-vs-go-high-level
+### Especificaciones de Imagen OG
 
-```sql
-INSERT INTO seo_pages (
-  path, in_language, title, description, h1, h2_primary,
-  keywords, canonical, robots, og_type, schema_type, category, translation_of
-) VALUES (
-  '/en/comparison/hubspot-vs-go-high-level',
-  'en-US',
-  'HubSpot vs Go High Level: CRM Comparison 2025 | Hayas Marketing',
-  'We compare the two leading CRM platforms so you can discover which one best fits your company needs.',
-  'HubSpot vs Go High Level: which CRM to choose for your business?',
-  'Who is each CRM for?',
-  ARRAY['hubspot vs gohighlevel', 'CRM comparison', 'best CRM', 'CRM for SMBs', 'enterprise CRM'],
-  'https://hayasmarketing.com/en/comparison/hubspot-vs-go-high-level',
-  'index,follow',
-  'website',
-  'WebPage',
-  'comparison',
-  (SELECT id FROM seo_pages WHERE path = '/es/comparativa/hubspot-vs-go-high-level')
-);
-```
+| Propiedad | Valor |
+|-----------|-------|
+| Dimensiones | 1200 x 630 px (ratio 1.91:1) |
+| Formato | PNG o WebP |
+| Naming | `{path-slug}-{timestamp}.png` |
+| Almacenamiento | Supabase Storage bucket `og-images` |
 
 ---
 
-### Resultado Final
+### Prompts por Categoría
 
-| Ruta | Idioma | translation_of | Robots |
-|------|--------|----------------|--------|
-| `/es/nosotros` | es-ES | - | index,follow |
-| `/en/about-us` | en-US | → `/es/nosotros` | index,follow |
-| `/es/blog` | es-ES | - | index,follow |
-| `/en/blog` | en-US | → `/es/blog` | index,follow |
-| `/es/comparativa/hubspot-vs-go-high-level` | es-ES | - | index,follow |
-| `/en/comparison/hubspot-vs-go-high-level` | en-US | → `/es/comparativa/...` | index,follow |
+El sistema generará prompts específicos según la categoría:
+
+| Categoría | Estilo Visual |
+|-----------|--------------|
+| **main** | Gradiente verde→azul, logo prominente, texto centrado |
+| **service** | Iconografía del servicio, tonos azules, profesional |
+| **solution** | Formas conectadas, workflow visual, turquesa |
+| **blog** | Diseño editorial, título grande, acento verde |
+| **case-study** | Gráficos de crecimiento, resultados visuales |
+| **tool** | UI elements, dashboard, moderno |
+
+---
+
+### Gestión de Errores
+
+1. **Rate Limit (429)**: Mostrar toast y tiempo de espera
+2. **Sin créditos (402)**: Mostrar enlace a recarga
+3. **Error de generación**: Opción de reintentar o usar URL manual
+4. **Imagen muy grande**: Comprimir antes de subir
 
 ---
 
 ### Sección Técnica
 
-**Campos clave utilizados:**
-- `in_language`: `es-ES` o `en-US` según estándar
-- `translation_of`: UUID de la página ES equivalente (permite sincronización)
-- `robots`: `index,follow` (páginas verificadas y completas)
-- `schema_type`: `AboutPage`, `Blog` o `WebPage` según contenido
-- `category`: `main`, `blog` o `comparison` según tipo
+**Archivos a crear**:
+- `supabase/functions/generate-og-image/index.ts` - Edge Function principal
+- `src/hooks/useOGImageGeneration.ts` - Hook de React
+- `src/components/admin/seo/OGImageGenerator.tsx` - Componente de UI
 
-**Restricciones de la tabla:**
-- Unique constraint: `(path, in_language)`
-- Check constraint: `in_language IN ('es-ES', 'en-US')`
+**Archivos a modificar**:
+- `supabase/config.toml` - Añadir función a la configuración
+- `src/components/admin/translation/QuickActionModal.tsx` - Integrar generador
+
+**Dependencias necesarias**:
+- Supabase Storage bucket público
+- LOVABLE_API_KEY (ya configurado)
+
+**Modelo de IA a usar**:
+- `google/gemini-2.5-flash-image` (Nano banana) - Generación de imágenes
+- Alternativa premium: `google/gemini-3-pro-image-preview` para mayor calidad
+
+**Formato de respuesta del modelo**:
+```json
+{
+  "choices": [{
+    "message": {
+      "images": [{
+        "image_url": {
+          "url": "data:image/png;base64,..."
+        }
+      }]
+    }
+  }]
+}
+```
