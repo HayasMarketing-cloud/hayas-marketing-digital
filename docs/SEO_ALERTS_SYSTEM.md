@@ -1,5 +1,7 @@
 # Sistema de Alertas SEO Automáticas
 
+> **Última actualización:** 2026-02-08
+
 Este documento explica cómo funciona el sistema de monitoreo automático de SEO y cómo configurar las alertas programadas.
 
 ## 🔍 Componentes del Sistema

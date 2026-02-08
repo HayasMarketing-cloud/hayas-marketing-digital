@@ -1,6 +1,8 @@
 # 🎯 Guía de Implementación: Rich Snippets & Schema.org
 
-Esta guía documenta la implementación de las **Fases 1, 2 y 3** del plan de optimización SEO con datos estructurados para maximizar la aparición en búsquedas enriquecidas de Google, Bing y buscadores IA.
+> **Última actualización:** 2026-02-08
+
+Esta guía documenta la implementación de las **Fases 1, 2, 3 y 4** del plan de optimización SEO con datos estructurados para maximizar la aparición en búsquedas enriquecidas de Google, Bing y buscadores IA.
 
 ---
 
