@@ -512,6 +512,64 @@ export const redirectsConfig: RedirectRule[] = [
   // --- CATEGORÍA 11: Servicios Legacy ---
   { id: 'srv-asistente-ia-1', source: '/es/servicios/asistente-ia-atencion-cliente', destination: '/es/servicios/asistente-ia', type: '301', category: 'Servicios Legacy', dateAdded: '2025-11-28' },
   { id: 'srv-asistente-ia-2', source: '/es/servicios/asistente-ia-atencion-cliente/', destination: '/es/servicios/asistente-ia', type: '301', category: 'Servicios Legacy', dateAdded: '2025-11-28' },
+
+  // ============================================================
+  // SOFT 404 GSC - Febrero 2025 (40 URLs)
+  // ============================================================
+  // Redirecciones 301 para resolver errores Soft 404 detectados en GSC
+  // Estas URLs devolvían HTTP 200 con contenido de página 404
+
+  // --- Blog Posts Inexistentes (19 URLs) ---
+  { id: 'gsc-blog-campanas-google-ads', source: '/es/blog/campanas-google-ads', destination: '/es/blog', type: '301', category: 'Soft 404 GSC Feb 2025', dateAdded: '2025-02-08' },
+  { id: 'gsc-blog-facebook-ads-pymes', source: '/es/blog/facebook-ads-pymes', destination: '/es/blog', type: '301', category: 'Soft 404 GSC Feb 2025', dateAdded: '2025-02-08' },
+  { id: 'gsc-blog-generacion-leads-b2b', source: '/es/blog/generacion-leads-b2b', destination: '/es/blog', type: '301', category: 'Soft 404 GSC Feb 2025', dateAdded: '2025-02-08' },
+  { id: 'gsc-blog-crm-pymes', source: '/es/blog/crm-pymes', destination: '/es/blog', type: '301', category: 'Soft 404 GSC Feb 2025', dateAdded: '2025-02-08' },
+  { id: 'gsc-blog-buyer-persona', source: '/es/blog/buyer-persona', destination: '/es/blog/como-crear-buyer-persona-b2b-b2c-guia-completa', type: '301', category: 'Soft 404 GSC Feb 2025', dateAdded: '2025-02-08' },
+  { id: 'gsc-blog-landing-pages-conversion', source: '/es/blog/landing-pages-conversion', destination: '/es/blog', type: '301', category: 'Soft 404 GSC Feb 2025', dateAdded: '2025-02-08' },
+  { id: 'gsc-blog-estrategia-contenidos', source: '/es/blog/estrategia-contenidos', destination: '/es/blog/como-crear-una-estrategia-de-marketing-de-contenidos-eficaz', type: '301', category: 'Soft 404 GSC Feb 2025', dateAdded: '2025-02-08' },
+  { id: 'gsc-blog-estrategia-redes-sociales', source: '/es/blog/estrategia-redes-sociales', destination: '/es/blog', type: '301', category: 'Soft 404 GSC Feb 2025', dateAdded: '2025-02-08' },
+  { id: 'gsc-blog-linkedin-b2b', source: '/es/blog/linkedin-b2b', destination: '/es/blog', type: '301', category: 'Soft 404 GSC Feb 2025', dateAdded: '2025-02-08' },
+  { id: 'gsc-blog-video-marketing', source: '/es/blog/video-marketing', destination: '/es/blog', type: '301', category: 'Soft 404 GSC Feb 2025', dateAdded: '2025-02-08' },
+  { id: 'gsc-blog-automatizacion-marketing', source: '/es/blog/automatizacion-marketing', destination: '/es/blog/automatizacion-marketing-digital-guia-completa', type: '301', category: 'Soft 404 GSC Feb 2025', dateAdded: '2025-02-08' },
+  { id: 'gsc-blog-roi-marketing-digital', source: '/es/blog/roi-marketing-digital', destination: '/es/blog', type: '301', category: 'Soft 404 GSC Feb 2025', dateAdded: '2025-02-08' },
+  { id: 'gsc-blog-inbound-marketing', source: '/es/blog/inbound-marketing', destination: '/es/blog', type: '301', category: 'Soft 404 GSC Feb 2025', dateAdded: '2025-02-08' },
+  { id: 'gsc-blog-ia-marketing', source: '/es/blog/ia-marketing', destination: '/es/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing', type: '301', category: 'Soft 404 GSC Feb 2025', dateAdded: '2025-02-08' },
+  { id: 'gsc-blog-seo-local', source: '/es/blog/seo-local', destination: '/es/blog', type: '301', category: 'Soft 404 GSC Feb 2025', dateAdded: '2025-02-08' },
+  { id: 'gsc-blog-ab-testing', source: '/es/blog/ab-testing', destination: '/es/blog', type: '301', category: 'Soft 404 GSC Feb 2025', dateAdded: '2025-02-08' },
+  { id: 'gsc-blog-personalizacion-marketing', source: '/es/blog/personalizacion-marketing', destination: '/es/blog', type: '301', category: 'Soft 404 GSC Feb 2025', dateAdded: '2025-02-08' },
+  { id: 'gsc-blog-metricas-marketing', source: '/es/blog/metricas-marketing', destination: '/es/blog', type: '301', category: 'Soft 404 GSC Feb 2025', dateAdded: '2025-02-08' },
+  { id: 'gsc-blog-email-marketing-conversiones', source: '/es/blog/email-marketing-conversiones', destination: '/es/blog/guia-tecnica-email-marketing-hubspot-configuracion', type: '301', category: 'Soft 404 GSC Feb 2025', dateAdded: '2025-02-08' },
+
+  // --- Soluciones - Slugs Alternativos (5 URLs) ---
+  { id: 'gsc-sol-ganar-visibilidad', source: '/es/soluciones/ganar-visibilidad', destination: '/es/soluciones/marketing-visibilidad', type: '301', category: 'Soft 404 GSC Feb 2025', dateAdded: '2025-02-08' },
+  { id: 'gsc-sol-crear-marca', source: '/es/soluciones/crear-marca', destination: '/es/soluciones/impulsa-tu-marca', type: '301', category: 'Soft 404 GSC Feb 2025', dateAdded: '2025-02-08' },
+  { id: 'gsc-sol-potenciar-ia', source: '/es/soluciones/potenciar-ia', destination: '/es/soluciones/ia-marketing', type: '301', category: 'Soft 404 GSC Feb 2025', dateAdded: '2025-02-08' },
+  { id: 'gsc-sol-captar-leads', source: '/es/soluciones/captar-leads', destination: '/es/soluciones/captacion-leads', type: '301', category: 'Soft 404 GSC Feb 2025', dateAdded: '2025-02-08' },
+  { id: 'gsc-sol-automatizar-procesos', source: '/es/soluciones/automatizar-procesos', destination: '/es/soluciones/automatizacion-marketing', type: '301', category: 'Soft 404 GSC Feb 2025', dateAdded: '2025-02-08' },
+
+  // --- Servicios - Slugs Alternativos (5 URLs) ---
+  { id: 'gsc-srv-email-marketing', source: '/es/servicios/email-marketing', destination: '/es/servicios/email-marketing-automatizaciones', type: '301', category: 'Soft 404 GSC Feb 2025', dateAdded: '2025-02-08' },
+  { id: 'gsc-srv-consultoria-ia', source: '/es/servicios/consultoria-ia', destination: '/es/servicios/consultoria-estrategica-analitica', type: '301', category: 'Soft 404 GSC Feb 2025', dateAdded: '2025-02-08' },
+  { id: 'gsc-srv-branding', source: '/es/servicios/branding', destination: '/es/servicios/creacion-marca', type: '301', category: 'Soft 404 GSC Feb 2025', dateAdded: '2025-02-08' },
+  { id: 'gsc-srv-campanas-publicitarias', source: '/es/servicios/campanas-publicitarias', destination: '/es/servicios/publicidad-google-ads', type: '301', category: 'Soft 404 GSC Feb 2025', dateAdded: '2025-02-08' },
+  { id: 'gsc-srv-crm', source: '/es/servicios/crm', destination: '/es/servicios/implantacion-crm', type: '301', category: 'Soft 404 GSC Feb 2025', dateAdded: '2025-02-08' },
+
+  // --- Kit Digital - Slugs Alternativos (3 URLs) ---
+  { id: 'gsc-kit-sitio-web', source: '/es/kit-digital/sitio-web', destination: '/es/kit-digital/presencia-basica-internet', type: '301', category: 'Soft 404 GSC Feb 2025', dateAdded: '2025-02-08' },
+  { id: 'gsc-kit-agente-digitalizador', source: '/es/kit-digital/agente-digitalizador', destination: '/es/kit-digital', type: '301', category: 'Soft 404 GSC Feb 2025', dateAdded: '2025-02-08' },
+  { id: 'gsc-kit-gestion-rrss', source: '/es/kit-digital/gestion-rrss', destination: '/es/kit-digital/gestion-red-social', type: '301', category: 'Soft 404 GSC Feb 2025', dateAdded: '2025-02-08' },
+
+  // --- Páginas Legacy (6 URLs) ---
+  { id: 'gsc-legacy-gohighlevel-vs-hubspot', source: '/es/gohighlevel-vs-hubspot', destination: '/es/comparativa/hubspot-vs-go-high-level', type: '301', category: 'Soft 404 GSC Feb 2025', dateAdded: '2025-02-08' },
+  { id: 'gsc-legacy-consultoria-gratuita', source: '/es/consultoria-gratuita', destination: '/es/contacto', type: '301', category: 'Soft 404 GSC Feb 2025', dateAdded: '2025-02-08' },
+  { id: 'gsc-legacy-presupuesto', source: '/es/presupuesto', destination: '/es/contacto', type: '301', category: 'Soft 404 GSC Feb 2025', dateAdded: '2025-02-08' },
+  { id: 'gsc-legacy-demo', source: '/es/demo', destination: '/es/contacto', type: '301', category: 'Soft 404 GSC Feb 2025', dateAdded: '2025-02-08' },
+  { id: 'gsc-legacy-sobre-nosotros', source: '/es/sobre-nosotros', destination: '/es/nosotros', type: '301', category: 'Soft 404 GSC Feb 2025', dateAdded: '2025-02-08' },
+  { id: 'gsc-legacy-consultoria-estrategica', source: '/es/consultoria-estrategica', destination: '/es/servicios/consultoria-estrategica-analitica', type: '301', category: 'Soft 404 GSC Feb 2025', dateAdded: '2025-02-08' },
+
+  // --- Casos de Éxito Inexistentes (2 URLs) ---
+  { id: 'gsc-casos-servicios-profesionales', source: '/es/casos-exito/servicios-profesionales', destination: '/es/casos-exito', type: '301', category: 'Soft 404 GSC Feb 2025', dateAdded: '2025-02-08' },
+  { id: 'gsc-casos-comercio-electronico', source: '/es/casos-exito/comercio-electronico', destination: '/es/casos-exito', type: '301', category: 'Soft 404 GSC Feb 2025', dateAdded: '2025-02-08' },
 ];
 
 // ============================================================
