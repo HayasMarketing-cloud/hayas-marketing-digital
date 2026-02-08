@@ -75,6 +75,7 @@ export const SyncReportModal: React.FC<SyncReportModalProps> = ({
   const [progress, setProgress] = useState<GenerationProgress | null>(null);
   const [showAllOrphaned, setShowAllOrphaned] = useState(false);
   const [showAllInconsistencies, setShowAllInconsistencies] = useState(false);
+  const [renamingPath, setRenamingPath] = useState<string | null>(null);
   const { toast } = useToast();
   const queryClient = useQueryClient();
 
@@ -82,6 +83,44 @@ export const SyncReportModal: React.FC<SyncReportModalProps> = ({
   const handleEditPage = (path: string) => {
     onClose();
     onEditPage?.(path);
+  };
+
+  // Handler para renombrar path en la BD
+  const handleRenamePath = async (oldPath: string, newPath: string) => {
+    setRenamingPath(oldPath);
+    try {
+      const { error } = await supabase
+        .from('seo_pages')
+        .update({ 
+          path: newPath,
+          canonical: `https://hayasmarketing.com${newPath}`,
+          updated_at: new Date().toISOString()
+        })
+        .eq('path', oldPath);
+
+      if (error) throw error;
+
+      await queryClient.invalidateQueries({ queryKey: ['seo-pages'] });
+      await queryClient.invalidateQueries({ queryKey: ['seo-pages-all'] });
+
+      toast({
+        title: 'Path renombrado',
+        description: `${oldPath} → ${newPath}`,
+        duration: 3000,
+      });
+
+      // Actualizar el reporte localmente para reflejar el cambio
+      report.orphanedSEO = report.orphanedSEO.filter(o => o.path !== oldPath);
+    } catch (error) {
+      console.error('Error renombrando path:', error);
+      toast({
+        title: 'Error al renombrar',
+        description: 'No se pudo actualizar el path en la base de datos',
+        variant: 'destructive',
+      });
+    } finally {
+      setRenamingPath(null);
+    }
   };
 
   // Listas con límite expandible
@@ -478,17 +517,37 @@ export const SyncReportModal: React.FC<SyncReportModalProps> = ({
                                 </div>
                               )}
                             </div>
-                            {onEditPage && (
-                              <Button
-                                size="sm"
-                                variant="ghost"
-                                onClick={() => handleEditPage(seo.path)}
-                                title="Revisar en editor"
-                                className="shrink-0"
-                              >
-                                <Edit className="h-4 w-4" />
-                              </Button>
-                            )}
+                            <div className="flex items-center gap-1 shrink-0">
+                              {seo.suggestedPath && (
+                                <Button
+                                  size="sm"
+                                  variant="outline"
+                                  onClick={() => handleRenamePath(seo.path, seo.suggestedPath!)}
+                                  disabled={renamingPath === seo.path}
+                                  title={`Renombrar a ${seo.suggestedPath}`}
+                                  className="text-xs h-8 px-2"
+                                >
+                                  {renamingPath === seo.path ? (
+                                    <Loader2 className="h-3 w-3 animate-spin" />
+                                  ) : (
+                                    <>
+                                      <Zap className="h-3 w-3 mr-1" />
+                                      Renombrar
+                                    </>
+                                  )}
+                                </Button>
+                              )}
+                              {onEditPage && (
+                                <Button
+                                  size="sm"
+                                  variant="ghost"
+                                  onClick={() => handleEditPage(seo.path)}
+                                  title="Revisar en editor"
+                                >
+                                  <Edit className="h-4 w-4" />
+                                </Button>
+                              )}
+                            </div>
                           </div>
                         </div>
                       ))}
