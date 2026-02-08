@@ -7,7 +7,7 @@ import { Calendar, User, ArrowRight, Clock } from 'lucide-react';
 import Footer from '@/components/Footer';
 import Navigation from '@/components/Navigation';
 import BlogTagFilter from '@/components/BlogTagFilter';
-import Seo from '@/components/Seo';
+import EnhancedSEO from '@/components/EnhancedSEO';
 import teamMarketingCollaboration from '@/assets/team-marketing-collaboration.jpg';
 import avisosLegalesHero from '@/assets/avisos-legales-hero.jpg';
 import mantenimientoWordpressHero from '@/assets/mantenimiento-wordpress-hero.jpg';
@@ -442,11 +442,7 @@ const Blog = () => {
 
       return (
     <>
-      <Seo 
-        title="Blog de Marketing Digital | Hayas Marketing"
-        description="Descubre las últimas estrategias, herramientas y tendencias en marketing digital, CRM, automatización y más en nuestro blog especializado."
-        canonical="/es/blog"
-      />
+      <EnhancedSEO />
       
       <div className="min-h-screen bg-background">
         <Navigation />

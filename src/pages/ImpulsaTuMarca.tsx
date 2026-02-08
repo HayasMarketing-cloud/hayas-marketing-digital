@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import SuccessCasesSection from '@/components/SuccessCasesSection';
-import Seo from '@/components/Seo';
+import EnhancedSEO from '@/components/EnhancedSEO';
 import FAQSection from '@/components/FAQSection';
 import IntermediateCTA from '@/components/IntermediateCTA';
 import DynamicH1 from '@/components/DynamicH1';
@@ -226,17 +226,7 @@ const ImpulsaTuMarca = () => {
 
   return (
     <div id="top" className="min-h-screen bg-white">
-      <Seo 
-        title={seoData.title}
-        description={seoData.description}
-        keywords={seoData.keywords}
-        canonical={seoData.canonical}
-        structuredData={combinedStructuredData}
-        robots={seoData.robots}
-        ogImage={seoData.ogImage}
-        ogType={seoData.ogType}
-        inLanguage={seoData.inLanguage}
-      />
+      <EnhancedSEO />
       <Navigation />
       
       <main>

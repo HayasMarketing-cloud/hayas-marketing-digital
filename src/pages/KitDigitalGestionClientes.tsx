@@ -6,7 +6,7 @@ import ProcessSection from '@/components/ProcessSection';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import Seo from '@/components/Seo';
+import EnhancedSEO from '@/components/EnhancedSEO';
 import FAQSection from '@/components/FAQSection';
 import ProgramTransitionBanner from '@/components/ProgramTransitionBanner';
 import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
@@ -158,7 +158,7 @@ const KitDigitalGestionClientes = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <Seo {...seoData} />
+      <EnhancedSEO />
       <Navigation />
       
       {/* Breadcrumb */}

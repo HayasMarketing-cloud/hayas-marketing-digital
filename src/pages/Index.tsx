@@ -10,7 +10,7 @@ import AllServicesSection from '@/components/AllServicesSection';
 import ChatbotPromoSection from '@/components/ChatbotPromoSection';
 import ReviewsSection from '@/components/ReviewsSection';
 import Footer from '@/components/Footer';
-import Seo from '@/components/Seo';
+import EnhancedSEO from '@/components/EnhancedSEO';
 import FAQSection from '@/components/FAQSection';
 import MethodologySection from '@/components/MethodologySection';
 import { hayasOrganizationSchema } from '@/data/seoData';
@@ -74,19 +74,7 @@ const Index = () => {
 
   return (
     <div id="top" className="min-h-screen flex flex-col">
-      <Seo
-        title="Hayas Marketing | Estrategia, CRM, IA y Marketing Digital"
-        description="Soluciones de marketing y ventas: branding, captación de leads, CRM, automatización e IA para hacer crecer tu negocio."
-        canonical="/"
-        keywords={['marketing digital', 'CRM', 'automatización', 'inteligencia artificial', 'leads', 'ventas']}
-        ogImage="/og-home.jpg"
-        ogType="website"
-        inLanguage="es-ES"
-        about={['Marketing Digital', 'CRM', 'Automatización de Ventas', 'Inteligencia Artificial']}
-        mentions={['HubSpot', 'GoHighLevel', 'SofÍA', 'Google Ads', 'Meta Ads']}
-        faqs={homeFaqs}
-        structuredData={[hayasOrganizationSchema, website].filter(Boolean)}
-      />
+      <EnhancedSEO />
       <Navigation />
       
       <main className="flex-grow mt-4 md:mt-6" role="main">

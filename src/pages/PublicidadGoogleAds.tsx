@@ -12,7 +12,7 @@ import { getServiceSuccessCasesConfig } from '@/data/serviceSuccessCasesMapping'
 import { useServiceSEO } from '@/hooks/useServiceSEO';
 import { useFAQSEO } from '@/hooks/useFAQSEO';
 import { useTranslation } from '@/hooks/useTranslation';
-import Seo from '@/components/Seo';
+import EnhancedSEO from '@/components/EnhancedSEO';
 import { 
   Search, Target, TrendingUp, BarChart3, Zap, DollarSign, MousePointer,
   ArrowRight, CheckCircle, Star, Eye, Users, Sparkles, Globe,
@@ -425,13 +425,7 @@ const PublicidadGoogleAds: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <Seo 
-        title={title}
-        description={description}
-        canonical={canonical}
-        ogImage={ogImage}
-        structuredData={combinedStructuredData}
-      />
+      <EnhancedSEO />
       <Navigation />
       
       {/* Breadcrumb */}

@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 
-import Seo from '@/components/Seo';
+import EnhancedSEO from '@/components/EnhancedSEO';
 import { getSEOData } from '@/data/seoData';
 
 import FAQSection from '@/components/FAQSection';
@@ -23,13 +23,7 @@ import {
 const MarketingVisibilidad = () => {
   return (
     <div id="top" className="min-h-screen bg-white">
-      <Seo 
-        title="Marketing Digital y Visibilidad Online | Hayas Marketing"
-        description="Estrategias integrales de marketing digital para aumentar tu visibilidad online. SEO, contenidos, redes sociales y publicidad digital que generan resultados."
-        canonical="/soluciones/marketing-visibilidad"
-        keywords={['marketing digital', 'visibilidad online', 'SEO', 'contenidos', 'redes sociales', 'publicidad digital']}
-        robots="index, follow"
-      />
+      <EnhancedSEO />
       <Navigation />
       
       <main>

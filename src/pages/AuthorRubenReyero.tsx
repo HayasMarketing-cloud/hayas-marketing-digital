@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import Seo from '@/components/Seo';
+import EnhancedSEO from '@/components/EnhancedSEO';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
@@ -194,18 +194,7 @@ const AuthorRubenReyero: React.FC = () => {
 
   return (
     <>
-      <Seo
-        title="Rubén Reyero | CEO & Founder de Hayas Marketing"
-        description="Rubén Reyero es especialista en transformación digital, marketing estratégico e inteligencia artificial aplicada al crecimiento empresarial. CEO y fundador de Hayas Marketing con más de 15 años de experiencia."
-        canonical="/es/autor/ruben-reyero"
-        structuredData={authorSchema}
-        ogImage={AUTHOR_IMAGE}
-        keywords={authorKeywords}
-        inLanguage="es-ES"
-        about={aboutEntities}
-        mentions={mentionEntities}
-        faqs={authorFaqs}
-      />
+      <EnhancedSEO />
 
       <div className="min-h-screen bg-background">
         <Navigation />

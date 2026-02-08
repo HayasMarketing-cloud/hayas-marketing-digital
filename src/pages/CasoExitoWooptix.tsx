@@ -4,7 +4,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import Seo from '@/components/Seo';
+import EnhancedSEO from '@/components/EnhancedSEO';
 import { CheckCircle } from 'lucide-react';
 import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
 
@@ -25,7 +25,7 @@ const CasoExitoWooptix: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
-      <Seo title={pageTitle} description={pageDescription} canonical={canonical} structuredData={structuredData} />
+      <EnhancedSEO />
       <Navigation />
 
       <main className="flex-grow">

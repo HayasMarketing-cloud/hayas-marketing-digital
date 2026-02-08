@@ -1,7 +1,7 @@
 import React from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import Seo from '@/components/Seo';
+import EnhancedSEO from '@/components/EnhancedSEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -140,27 +140,7 @@ const HayasCRM = () => {
 
   return (
     <>
-      <Seo 
-        title="Hayas CRM | El CRM todo-en-uno en español con soporte cercano"
-        description="Organiza clientes, automatiza ventas y mejora resultados con Hayas CRM. Todo en español y con soporte cercano. Prueba gratis sin compromiso."
-        canonical="/hayas-crm"
-        structuredData={{
-          "@context": "https://schema.org",
-          "@type": "Product",
-          "name": "Hayas CRM",
-          "description": "CRM todo-en-uno en español con soporte cercano de Hayas Marketing",
-          "brand": {
-            "@type": "Brand",
-            "name": "Hayas Marketing"
-          },
-          "offers": {
-            "@type": "AggregateOffer",
-            "lowPrice": "39",
-            "highPrice": "149",
-            "priceCurrency": "EUR"
-          }
-        }}
-      />
+      <EnhancedSEO />
       
       <div className="min-h-screen bg-background">
         <Navigation />
