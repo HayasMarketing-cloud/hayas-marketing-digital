@@ -74,13 +74,8 @@ const Seo = ({
 
     // Robots meta tag for indexing control
     // Si la página tiene robots definido explícitamente en BD, respetarlo
-    // Root path siempre indexable para SEO
-    // Solo aplicar noindex por defecto a páginas EN sin configuración
-    const isEnglishRoute = currentPath.startsWith('/en');
-    const isRootPath = currentPath === '/' || currentPath === '';
-    const effectiveRobots = robots 
-      ? robots 
-      : (isRootPath ? 'index, follow' : (isEnglishRoute ? 'noindex, follow' : 'index, follow'));
+    // Por defecto todas las páginas son indexables (ES y EN)
+    const effectiveRobots = robots || 'index, follow';
     
     let robotsMeta = document.querySelector('meta[name="robots"]') as HTMLMetaElement | null;
     if (!robotsMeta) {
