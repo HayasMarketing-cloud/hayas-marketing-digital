@@ -63,7 +63,14 @@ const SalesForecastCalculator: React.FC<SalesForecastCalculatorProps> = ({
     visitsToMQL: isEnglish ? 'Visits → MQL' : 'Visitas → MQL',
     mqlToSQL: isEnglish ? 'MQL → SQL' : 'MQL → SQL',
     sqlToClient: isEnglish ? 'SQL → Client' : 'SQL → Cliente',
-    revenuePerClient: isEnglish ? 'Revenue per Client' : 'Ingreso por Cliente',
+    revenuePerClient: isEnglish ? 'Revenue per Client € (LTV)*' : 'Ingreso por Cliente € (LTV)*',
+    ltvTitle: isEnglish ? 'LTV (Lifetime Value)' : 'LTV (Lifetime Value)',
+    ltvDescription: isEnglish 
+      ? 'Total estimated revenue a customer generates throughout their business relationship.'
+      : 'Ingreso total estimado que genera un cliente durante toda su relación comercial.',
+    ltvFormula: isEnglish 
+      ? 'LTV = Avg. Ticket × Annual Frequency × Years of Relationship'
+      : 'LTV = Ticket medio × Frecuencia anual × Años de relación',
     projection: isEnglish ? 'Annual Projection' : 'Proyección Anual',
     summary: isEnglish ? 'Summary' : 'Resumen',
     visitors: isEnglish ? 'Visitors' : 'Visitantes',
@@ -298,7 +305,7 @@ const SalesForecastCalculator: React.FC<SalesForecastCalculatorProps> = ({
               
               {/* Revenue per Client */}
               <div className="space-y-2">
-                <Label htmlFor="revenuePerClient" className="text-sm font-medium">{content.revenuePerClient} (€)</Label>
+                <Label htmlFor="revenuePerClient" className="text-sm font-medium">{content.revenuePerClient}</Label>
                 <Input
                   id="revenuePerClient"
                   type="number"
@@ -308,6 +315,20 @@ const SalesForecastCalculator: React.FC<SalesForecastCalculatorProps> = ({
                   max={1000000}
                   className="text-right font-mono text-lg border-primary/20 focus:border-primary/50 transition-colors"
                 />
+                
+                {/* LTV Info Note */}
+                <div className="mt-2 p-3 bg-muted/50 rounded-lg border border-muted text-xs space-y-1.5">
+                  <p className="font-medium flex items-center gap-1.5 text-foreground">
+                    <Info className="h-3.5 w-3.5 text-primary flex-shrink-0" />
+                    {content.ltvTitle}
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {content.ltvDescription}
+                  </p>
+                  <p className="font-mono text-primary/80 pt-1.5 border-t border-muted text-[11px]">
+                    {content.ltvFormula}
+                  </p>
+                </div>
               </div>
             </CardContent>
           </Card>
