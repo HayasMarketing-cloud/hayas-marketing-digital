@@ -4,8 +4,57 @@ import { RefreshCw } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { useQueryClient } from '@tanstack/react-query';
 import { getRegisteredRoutes } from '@/utils/routeRegistryData';
+import { RouteDefinition } from '@/utils/routeRegistry';
 import { useAllSEOPages } from '@/hooks/useSEOData';
 import { SyncReportModal, SyncReport } from './SyncReportModal';
+
+// Helper para encontrar path similar en el registro
+const findSimilarPath = (orphanPath: string, registryPaths: RouteDefinition[]): string | null => {
+  // Extraer segmentos del path huérfano
+  const orphanSegments = orphanPath.split('/').filter(Boolean);
+  
+  // Calcular similitud para cada path del registro
+  const candidates = registryPaths.map(route => {
+    const regSegments = route.path.split('/').filter(Boolean);
+    
+    // Debe empezar con el mismo prefijo de idioma
+    if (orphanSegments[0] !== regSegments[0]) return { path: route.path, score: 0 };
+    
+    // Contar segmentos coincidentes
+    let matchCount = 0;
+    const minLen = Math.min(orphanSegments.length, regSegments.length);
+    
+    for (let i = 0; i < minLen; i++) {
+      if (orphanSegments[i] === regSegments[i]) {
+        matchCount++;
+      } else {
+        // Comprobar similitud parcial (ej: "about" vs "about-us")
+        const seg1 = orphanSegments[i].toLowerCase();
+        const seg2 = regSegments[i].toLowerCase();
+        if (seg1.includes(seg2) || seg2.includes(seg1)) {
+          matchCount += 0.7;
+        }
+      }
+    }
+    
+    // Penalizar diferencias de longitud
+    const lengthPenalty = Math.abs(orphanSegments.length - regSegments.length) * 0.3;
+    const score = matchCount - lengthPenalty;
+    
+    return { path: route.path, score };
+  });
+  
+  // Ordenar por score descendente y tomar el mejor
+  candidates.sort((a, b) => b.score - a.score);
+  
+  // Solo sugerir si hay suficiente similitud (al menos 1.5 segmentos coinciden)
+  const best = candidates[0];
+  if (best && best.score >= 1.5 && best.path !== orphanPath) {
+    return best.path;
+  }
+  
+  return null;
+};
 
 interface SyncRoutesButtonProps {
   onEditPage?: (path: string) => void;
@@ -33,10 +82,14 @@ export const SyncRoutesButton: React.FC<SyncRoutesButtonProps> = ({ onEditPage }
       route => !seoPagePaths.has(route.path) && route.isIndexable
     );
 
-    // 2. Detectar SEO sin ruta correspondiente (obsoletos)
+    // 2. Detectar SEO sin ruta correspondiente (obsoletos) + sugerir path similar
     const orphanedSEO = seoPages
       .filter(seo => !registryPaths.has(seo.path))
-      .map(seo => ({ path: seo.path, title: seo.data.title }));
+      .map(seo => ({ 
+        path: seo.path, 
+        title: seo.data.title,
+        suggestedPath: findSimilarPath(seo.path, registeredRoutes)
+      }));
 
     // 3. Detectar inconsistencias (rutas que existen en ambos pero con diferencias)
     const inconsistencies: SyncReport['inconsistencies'] = [];
