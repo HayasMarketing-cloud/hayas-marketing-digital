@@ -282,8 +282,17 @@ El componente `Seo.tsx` genera automáticamente estos schemas cuando se proporci
 
 ---
 
-## Referencias
+## 📚 Documentación Relacionada
 
-- [Documentación SEO Fases 5-6](./SEO_PHASE_5_6_IMPLEMENTATION.md)
+| Documento | Descripción |
+|-----------|-------------|
+| [SEO_SYSTEM_OVERVIEW.md](./SEO_SYSTEM_OVERVIEW.md) | **Documento maestro** - Arquitectura completa del sistema SEO |
+| [SEO_PHASE_5_6_IMPLEMENTATION.md](./SEO_PHASE_5_6_IMPLEMENTATION.md) | Implementación de HowTo y Article Schema |
+| [SEO_PHASE_7_FAQ_SCHEMA.md](./SEO_PHASE_7_FAQ_SCHEMA.md) | Implementación de FAQ Schema |
+| [SEO_EXECUTIVE_SUMMARY.md](./SEO_EXECUTIVE_SUMMARY.md) | Resumen ejecutivo para stakeholders |
+
+## Referencias Externas
+
 - [Google Search Console](https://search.google.com/search-console)
 - [Schema.org FAQPage](https://schema.org/FAQPage)
+- [Google Rich Results Test](https://search.google.com/test/rich-results)

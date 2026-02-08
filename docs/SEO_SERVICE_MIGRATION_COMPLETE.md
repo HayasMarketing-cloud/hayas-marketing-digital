@@ -325,10 +325,18 @@ Objetivos a 3 meses:
 
 ---
 
-## 📚 Recursos y Referencias
+## 📚 Documentación Relacionada
 
-- [Documentación Service Schema](./SEO_RICH_SNIPPETS_GUIDE.md)
-- [Documentación HowTo & Article](./SEO_PHASE_5_6_IMPLEMENTATION.md)
+| Documento | Descripción |
+|-----------|-------------|
+| [SEO_SYSTEM_OVERVIEW.md](./SEO_SYSTEM_OVERVIEW.md) | **Documento maestro** - Arquitectura completa del sistema SEO |
+| [SEO_RICH_SNIPPETS_GUIDE.md](./SEO_RICH_SNIPPETS_GUIDE.md) | Fases 1-4: Service, LocalBusiness, Review, ItemList |
+| [SEO_PHASE_5_6_IMPLEMENTATION.md](./SEO_PHASE_5_6_IMPLEMENTATION.md) | Fases 5-6: HowTo y Article Schema |
+| [SEO_CRITICAL_BUGS_AND_FIXES.md](./SEO_CRITICAL_BUGS_AND_FIXES.md) | Errores críticos y soluciones |
+| [SEO_EXECUTIVE_SUMMARY.md](./SEO_EXECUTIVE_SUMMARY.md) | Resumen ejecutivo para stakeholders |
+
+## Referencias Externas
+
 - [Google Rich Results Test](https://search.google.com/test/rich-results)
 - [Schema.org Service](https://schema.org/Service)
 - [Google Search Central - Services](https://developers.google.com/search/docs/appearance/structured-data/service)
@@ -336,6 +344,6 @@ Objetivos a 3 meses:
 ---
 
 **Estado:** ✅ Completado  
-**Última actualización:** Noviembre 2025  
+**Última actualización:** 2026-02-08  
 **Responsable:** Equipo Hayas Marketing - Departamento SEO  
-**Próxima revisión:** Diciembre 2025
+**Próxima revisión:** Febrero 2026

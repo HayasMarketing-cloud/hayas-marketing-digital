@@ -163,3 +163,13 @@ El sistema usa Supabase Realtime para mostrar alertas instantáneamente:
 ### No se muestran notificaciones en tiempo real
 - Verifica que Realtime esté habilitado en Supabase
 - Revisa la consola del navegador para errores de WebSocket
+
+---
+
+## 📚 Documentación Relacionada
+
+| Documento | Descripción |
+|-----------|-------------|
+| [SEO_SYSTEM_OVERVIEW.md](./SEO_SYSTEM_OVERVIEW.md) | **Documento maestro** - Arquitectura completa del sistema SEO |
+| [SEO_CRITICAL_BUGS_AND_FIXES.md](./SEO_CRITICAL_BUGS_AND_FIXES.md) | Registro de errores críticos y soluciones |
+| [SEO_EXECUTIVE_SUMMARY.md](./SEO_EXECUTIVE_SUMMARY.md) | Resumen ejecutivo para stakeholders |
