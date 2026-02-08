@@ -521,6 +521,7 @@ const App = () => (
           
           {/* HERRAMIENTAS GRATUITAS */}
           <Route path="/es/herramientas/generador-whatsapp-link" element={<PageSuspense><Pages.HerramientaGeneradorWhatsApp /></PageSuspense>} />
+          <Route path="/es/herramientas/calculadora-roi" element={<PageSuspense><Pages.HerramientaCalculadoraROI /></PageSuspense>} />
           
           {/* ============================================
               ENGLISH ROUTES (/en/*)
@@ -624,6 +625,7 @@ const App = () => (
           
           {/* FREE TOOLS */}
           <Route path="/en/tools/whatsapp-link-generator" element={<PageSuspense><Pages.HerramientaGeneradorWhatsApp /></PageSuspense>} />
+          <Route path="/en/tools/roi-calculator" element={<PageSuspense><Pages.HerramientaCalculadoraROI /></PageSuspense>} />
           
           {/* ============================================
               END OF ENGLISH ROUTES

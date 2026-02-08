@@ -63,6 +63,7 @@ export const KitDigitalPresenciaAvanzada = lazyWithRetry(() => import("@/pages/K
 export const HayasCRM = lazyWithRetry(() => import("@/pages/HayasCRM"));
 export const ComparativaHubSpotGoHighLevel = lazyWithRetry(() => import("@/pages/ComparativaHubSpotGoHighLevel"));
 export const HerramientaGeneradorWhatsApp = lazyWithRetry(() => import("@/pages/HerramientaGeneradorWhatsApp"));
+export const HerramientaCalculadoraROI = lazyWithRetry(() => import("@/pages/HerramientaCalculadoraROI"));
 
 // Blog
 export const Blog = lazyWithRetry(() => import("@/pages/Blog"));
