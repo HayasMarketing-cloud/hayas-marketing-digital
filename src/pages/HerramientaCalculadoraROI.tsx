@@ -29,7 +29,7 @@ const HerramientaCalculadoraROI = () => {
   // Bilingual content
   const content = {
     heroTitle1: isEnglish ? 'Sales Forecast Calculator' : 'Calculadora de Previsión de Ventas',
-    heroTitle2: isEnglish ? 'Simulate Your Funnel Growth' : 'Simula el Crecimiento de tu Embudo',
+    heroTitle2: isEnglish ? 'Simulate Your Funnel Growth' : 'Simula el crecimiento de tu embudo',
     heroSubtitle: isEnglish 
       ? 'Project your monthly revenue based on traffic, conversion rates, and average ticket.'
       : 'Proyecta tus ingresos mensuales basándote en tráfico, conversiones y ticket medio.',
