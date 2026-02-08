@@ -112,74 +112,10 @@ export const hayasOrganizationSchema = {
   areaServed: {
     "@type": "Country",
     name: "España"
-  },
-  
-  // Aggregate Rating & Reviews (FASE 3)
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    bestRating: "5",
-    worstRating: "1",
-    ratingCount: "47"
-  },
-  review: [
-    {
-      "@type": "Review",
-      author: {
-        "@type": "Person",
-        name: "María García"
-      },
-      datePublished: "2025-01-15",
-      reviewRating: {
-        "@type": "Rating",
-        ratingValue: "5",
-        bestRating: "5"
-      },
-      reviewBody: "Excelente servicio de implementación CRM. Aumentamos nuestras conversiones en un 40% en tres meses. El equipo es muy profesional y siempre disponible."
-    },
-    {
-      "@type": "Review",
-      author: {
-        "@type": "Person",
-        name: "Carlos Rodríguez"
-      },
-      datePublished: "2025-01-08",
-      reviewRating: {
-        "@type": "Rating",
-        ratingValue: "5",
-        bestRating: "5"
-      },
-      reviewBody: "La automatización de marketing que implementaron nos ha ahorrado más de 20 horas semanales. Resultados visibles desde el primer mes."
-    },
-    {
-      "@type": "Review",
-      author: {
-        "@type": "Person",
-        name: "Laura Fernández"
-      },
-      datePublished: "2024-12-20",
-      reviewRating: {
-        "@type": "Rating",
-        ratingValue: "5",
-        bestRating: "5"
-      },
-      reviewBody: "Rediseñaron nuestra web y crearon toda la estrategia SEO. En 4 meses pasamos de la página 3 a primera posición en nuestras palabras clave principales."
-    },
-    {
-      "@type": "Review",
-      author: {
-        "@type": "Person",
-        name: "Javier Martínez"
-      },
-      datePublished: "2024-12-10",
-      reviewRating: {
-        "@type": "Rating",
-        ratingValue: "5",
-        bestRating: "5"
-      },
-      reviewBody: "El chatbot IA que desarrollaron para nosotros atiende el 70% de las consultas automáticamente. Increíble ROI."
-    }
-  ]
+  }
+  // NOTA: aggregateRating y review eliminados
+  // Google no muestra rich results de reseñas para Organization/LocalBusiness (política 2019)
+  // Ver: https://developers.google.com/search/docs/appearance/structured-data/review-snippet
 };
 
 // Helper function to generate Service Schema (FASE 1)
