@@ -499,6 +499,104 @@
 /llms-full.txt  /llms-full.txt  200
 
 # ========================================
+# SOFT 404 GSC - Febrero 2025 (40 URLs)
+# ========================================
+# Redirecciones 301 para resolver errores Soft 404 detectados en GSC
+# Estas URLs devolvían HTTP 200 con contenido de página 404
+
+# === BLOG POSTS INEXISTENTES (19 URLs) ===
+/es/blog/campanas-google-ads  /es/blog  301
+/es/blog/campanas-google-ads/  /es/blog  301
+/es/blog/facebook-ads-pymes  /es/blog  301
+/es/blog/facebook-ads-pymes/  /es/blog  301
+/es/blog/generacion-leads-b2b  /es/blog  301
+/es/blog/generacion-leads-b2b/  /es/blog  301
+/es/blog/crm-pymes  /es/blog  301
+/es/blog/crm-pymes/  /es/blog  301
+/es/blog/buyer-persona  /es/blog/como-crear-buyer-persona-b2b-b2c-guia-completa  301
+/es/blog/buyer-persona/  /es/blog/como-crear-buyer-persona-b2b-b2c-guia-completa  301
+/es/blog/landing-pages-conversion  /es/blog  301
+/es/blog/landing-pages-conversion/  /es/blog  301
+/es/blog/estrategia-contenidos  /es/blog/como-crear-una-estrategia-de-marketing-de-contenidos-eficaz  301
+/es/blog/estrategia-contenidos/  /es/blog/como-crear-una-estrategia-de-marketing-de-contenidos-eficaz  301
+/es/blog/estrategia-redes-sociales  /es/blog  301
+/es/blog/estrategia-redes-sociales/  /es/blog  301
+/es/blog/linkedin-b2b  /es/blog  301
+/es/blog/linkedin-b2b/  /es/blog  301
+/es/blog/video-marketing  /es/blog  301
+/es/blog/video-marketing/  /es/blog  301
+/es/blog/automatizacion-marketing  /es/blog/automatizacion-marketing-digital-guia-completa  301
+/es/blog/automatizacion-marketing/  /es/blog/automatizacion-marketing-digital-guia-completa  301
+/es/blog/roi-marketing-digital  /es/blog  301
+/es/blog/roi-marketing-digital/  /es/blog  301
+/es/blog/inbound-marketing  /es/blog  301
+/es/blog/inbound-marketing/  /es/blog  301
+/es/blog/ia-marketing  /es/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing  301
+/es/blog/ia-marketing/  /es/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing  301
+/es/blog/seo-local  /es/blog  301
+/es/blog/seo-local/  /es/blog  301
+/es/blog/ab-testing  /es/blog  301
+/es/blog/ab-testing/  /es/blog  301
+/es/blog/personalizacion-marketing  /es/blog  301
+/es/blog/personalizacion-marketing/  /es/blog  301
+/es/blog/metricas-marketing  /es/blog  301
+/es/blog/metricas-marketing/  /es/blog  301
+/es/blog/email-marketing-conversiones  /es/blog/guia-tecnica-email-marketing-hubspot-configuracion  301
+/es/blog/email-marketing-conversiones/  /es/blog/guia-tecnica-email-marketing-hubspot-configuracion  301
+
+# === SOLUCIONES - SLUGS ALTERNATIVOS (5 URLs) ===
+/es/soluciones/ganar-visibilidad  /es/soluciones/marketing-visibilidad  301
+/es/soluciones/ganar-visibilidad/  /es/soluciones/marketing-visibilidad  301
+/es/soluciones/crear-marca  /es/soluciones/impulsa-tu-marca  301
+/es/soluciones/crear-marca/  /es/soluciones/impulsa-tu-marca  301
+/es/soluciones/potenciar-ia  /es/soluciones/ia-marketing  301
+/es/soluciones/potenciar-ia/  /es/soluciones/ia-marketing  301
+/es/soluciones/captar-leads  /es/soluciones/captacion-leads  301
+/es/soluciones/captar-leads/  /es/soluciones/captacion-leads  301
+/es/soluciones/automatizar-procesos  /es/soluciones/automatizacion-marketing  301
+/es/soluciones/automatizar-procesos/  /es/soluciones/automatizacion-marketing  301
+
+# === SERVICIOS - SLUGS ALTERNATIVOS (5 URLs) ===
+/es/servicios/email-marketing  /es/servicios/email-marketing-automatizaciones  301
+/es/servicios/email-marketing/  /es/servicios/email-marketing-automatizaciones  301
+/es/servicios/consultoria-ia  /es/servicios/consultoria-estrategica-analitica  301
+/es/servicios/consultoria-ia/  /es/servicios/consultoria-estrategica-analitica  301
+/es/servicios/branding  /es/servicios/creacion-marca  301
+/es/servicios/branding/  /es/servicios/creacion-marca  301
+/es/servicios/campanas-publicitarias  /es/servicios/publicidad-google-ads  301
+/es/servicios/campanas-publicitarias/  /es/servicios/publicidad-google-ads  301
+/es/servicios/crm  /es/servicios/implantacion-crm  301
+/es/servicios/crm/  /es/servicios/implantacion-crm  301
+
+# === KIT DIGITAL - SLUGS ALTERNATIVOS (3 URLs) ===
+/es/kit-digital/sitio-web  /es/kit-digital/presencia-basica-internet  301
+/es/kit-digital/sitio-web/  /es/kit-digital/presencia-basica-internet  301
+/es/kit-digital/agente-digitalizador  /es/kit-digital  301
+/es/kit-digital/agente-digitalizador/  /es/kit-digital  301
+/es/kit-digital/gestion-rrss  /es/kit-digital/gestion-red-social  301
+/es/kit-digital/gestion-rrss/  /es/kit-digital/gestion-red-social  301
+
+# === PÁGINAS LEGACY (6 URLs) ===
+/es/gohighlevel-vs-hubspot  /es/comparativa/hubspot-vs-go-high-level  301
+/es/gohighlevel-vs-hubspot/  /es/comparativa/hubspot-vs-go-high-level  301
+/es/consultoria-gratuita  /es/contacto  301
+/es/consultoria-gratuita/  /es/contacto  301
+/es/presupuesto  /es/contacto  301
+/es/presupuesto/  /es/contacto  301
+/es/demo  /es/contacto  301
+/es/demo/  /es/contacto  301
+/es/sobre-nosotros  /es/nosotros  301
+/es/sobre-nosotros/  /es/nosotros  301
+/es/consultoria-estrategica  /es/servicios/consultoria-estrategica-analitica  301
+/es/consultoria-estrategica/  /es/servicios/consultoria-estrategica-analitica  301
+
+# === CASOS DE ÉXITO INEXISTENTES (2 URLs) ===
+/es/casos-exito/servicios-profesionales  /es/casos-exito  301
+/es/casos-exito/servicios-profesionales/  /es/casos-exito  301
+/es/casos-exito/comercio-electronico  /es/casos-exito  301
+/es/casos-exito/comercio-electronico/  /es/casos-exito  301
+
+# ========================================
 # SPA FALLBACK - DEBE IR AL FINAL
 # ========================================
 # Para React Router: todas las rutas no capturadas anteriormente
@@ -511,10 +609,11 @@
 # NOTA IMPORTANTE
 # ========================================
 # Redirecciones migradas desde redirects.htaccess (Apache) a formato Netlify/Cloudflare Pages
-# Total de ~155 redirecciones implementadas:
+# Total de ~195 redirecciones implementadas:
 # - Incluye todas las redirecciones del .htaccess original
 # - Añadidas variaciones con/sin barra final
 # - Splat rules para capturar patrones dinámicos
+# - 40 nuevas redirecciones SOFT 404 GSC (Feb 2025)
 # Formato: /source /destination 301
 # 
 # SOLUCIÓN SOFT 404:
