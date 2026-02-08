@@ -246,20 +246,25 @@ serve(async (req) => {
       Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
     );
 
-    // Rate limiting check
+    // Rate limiting check - 300 requests/hour for admin bulk operations
+    const RATE_LIMIT_MAX = 300;
+    const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000; // 1 hour
+    
     const { data: rateLimitData, error: rateLimitError } = await supabaseAdmin
       .from('rate_limit_log')
       .select('*')
       .eq('identifier', user.id)
       .eq('endpoint', 'generate-seo-suggestions')
-      .gte('window_start', new Date(Date.now() - 60 * 60 * 1000).toISOString())
+      .gte('window_start', new Date(Date.now() - RATE_LIMIT_WINDOW_MS).toISOString())
       .single();
 
-    if (!rateLimitError && rateLimitData && rateLimitData.request_count >= 30) {
-      console.log('❌ Rate limit exceeded for user:', user.id.substring(0, 8) + '...');
+    if (!rateLimitError && rateLimitData && rateLimitData.request_count >= RATE_LIMIT_MAX) {
+      console.log('❌ Rate limit exceeded for user:', user.id.substring(0, 8) + '...', `(${rateLimitData.request_count}/${RATE_LIMIT_MAX})`);
       return new Response(JSON.stringify({ 
         error: 'Rate limit exceeded. Please try again later.',
-        resetAt: new Date(new Date(rateLimitData.window_start).getTime() + 60 * 60 * 1000).toISOString()
+        resetAt: new Date(new Date(rateLimitData.window_start).getTime() + RATE_LIMIT_WINDOW_MS).toISOString(),
+        current: rateLimitData.request_count,
+        limit: RATE_LIMIT_MAX
       }), {
         status: 429,
         headers: { ...corsHeaders, 'Content-Type': 'application/json' }
@@ -282,6 +287,8 @@ serve(async (req) => {
           window_start: new Date().toISOString()
         });
     }
+    
+    console.log('📊 Rate limit:', (rateLimitData?.request_count || 0) + 1, '/', RATE_LIMIT_MAX);
 
     const { path, pageContent, category, targetLanguage = 'es', existingSEO } = await req.json();
     
