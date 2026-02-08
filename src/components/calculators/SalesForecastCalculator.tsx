@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { cn } from '@/lib/utils';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -30,7 +31,15 @@ import {
   SalesForecastInputs
 } from '@/lib/validations/salesForecast';
 
-const SalesForecastCalculator: React.FC = () => {
+interface SalesForecastCalculatorProps {
+  hideHeader?: boolean;
+  compact?: boolean;
+}
+
+const SalesForecastCalculator: React.FC<SalesForecastCalculatorProps> = ({
+  hideHeader = false,
+  compact = false
+}) => {
   const { isEnglish } = useLanguage();
   
   // State for inputs
@@ -182,46 +191,55 @@ const SalesForecastCalculator: React.FC = () => {
   const formatCurrency = (value: number) => `€${value.toLocaleString()}`;
 
   return (
-    <Card className="w-full max-w-6xl mx-auto shadow-2xl border-primary/20 overflow-hidden">
-      {/* Hero Header with Gradient */}
-      <CardHeader className="text-center pb-8 bg-gradient-to-br from-primary/10 via-accent/5 to-primary/10 relative">
-        {/* Decorative elements */}
-        <div className="absolute top-4 right-4 opacity-20">
-          <Sparkles className="h-8 w-8 text-primary animate-pulse" />
-        </div>
-        <div className="absolute bottom-4 left-4 opacity-20">
-          <Zap className="h-6 w-6 text-accent" />
-        </div>
-        
-        {/* Animated Icon */}
-        <div className="flex justify-center mb-6">
-          <div className="h-20 w-20 rounded-2xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shadow-xl relative">
-            <div className="absolute inset-0 rounded-2xl bg-primary/50 animate-ping opacity-20" />
-            <Calculator className="h-10 w-10 text-primary-foreground relative z-10" />
+    <Card className={cn(
+      "w-full max-w-6xl mx-auto overflow-hidden",
+      !compact && "shadow-2xl border-primary/20",
+      compact && "shadow-none border-0 rounded-none"
+    )}>
+      {/* Hero Header with Gradient - Only show if not hidden */}
+      {!hideHeader && (
+        <CardHeader className="text-center pb-8 bg-gradient-to-br from-primary/10 via-accent/5 to-primary/10 relative">
+          {/* Decorative elements */}
+          <div className="absolute top-4 right-4 opacity-20">
+            <Sparkles className="h-8 w-8 text-primary animate-pulse" />
           </div>
-        </div>
-        
-        <CardTitle className="text-2xl md:text-4xl font-bold bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text">
-          {content.title}
-        </CardTitle>
-        <CardDescription className="text-base md:text-lg mt-2 max-w-2xl mx-auto">
-          {content.description}
-        </CardDescription>
-        
-        {/* Badges */}
-        <div className="flex flex-wrap justify-center gap-3 mt-6">
-          <Badge variant="secondary" className="px-4 py-1.5 text-sm bg-background/80 backdrop-blur-sm border border-primary/20">
-            <BarChart3 className="h-3.5 w-3.5 mr-1.5" />
-            {content.interactiveTool}
-          </Badge>
-          <Badge variant="secondary" className="px-4 py-1.5 text-sm bg-background/80 backdrop-blur-sm border border-accent/20">
-            <CheckCircle2 className="h-3.5 w-3.5 mr-1.5 text-green-500" />
-            {content.noRegistration}
-          </Badge>
-        </div>
-      </CardHeader>
+          <div className="absolute bottom-4 left-4 opacity-20">
+            <Zap className="h-6 w-6 text-accent" />
+          </div>
+          
+          {/* Animated Icon */}
+          <div className="flex justify-center mb-6">
+            <div className="h-20 w-20 rounded-2xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shadow-xl relative">
+              <div className="absolute inset-0 rounded-2xl bg-primary/50 animate-ping opacity-20" />
+              <Calculator className="h-10 w-10 text-primary-foreground relative z-10" />
+            </div>
+          </div>
+          
+          <CardTitle className="text-2xl md:text-4xl font-bold bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text">
+            {content.title}
+          </CardTitle>
+          <CardDescription className="text-base md:text-lg mt-2 max-w-2xl mx-auto">
+            {content.description}
+          </CardDescription>
+          
+          {/* Badges */}
+          <div className="flex flex-wrap justify-center gap-3 mt-6">
+            <Badge variant="secondary" className="px-4 py-1.5 text-sm bg-background/80 backdrop-blur-sm border border-primary/20">
+              <BarChart3 className="h-3.5 w-3.5 mr-1.5" />
+              {content.interactiveTool}
+            </Badge>
+            <Badge variant="secondary" className="px-4 py-1.5 text-sm bg-background/80 backdrop-blur-sm border border-accent/20">
+              <CheckCircle2 className="h-3.5 w-3.5 mr-1.5 text-green-500" />
+              {content.noRegistration}
+            </Badge>
+          </div>
+        </CardHeader>
+      )}
       
-      <CardContent className="space-y-8 p-6 md:p-8">
+      <CardContent className={cn(
+        "space-y-8 p-6 md:p-8",
+        compact && "space-y-6 p-4 md:p-6"
+      )}>
         {/* Input Section with Glassmorphism */}
         <div className="grid md:grid-cols-2 gap-6">
           {/* Initial Data Card */}
