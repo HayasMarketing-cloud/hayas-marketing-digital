@@ -1,44 +1,101 @@
 
 
-## Diagnóstico del Error
+## Diagnóstico Completo
 
-El error "violates check constraint 'valid_language_format'" indica que se está intentando insertar un valor de `in_language` que no es `'es-ES'` ni `'en-US'`.
+### Problema Principal
+Google Search Console indica que `https://hayasmarketing.com/` tiene `noindex` porque:
 
-### Estado Actual del Código
+1. **Redirección JS basada en idioma del navegador**: El `LanguageContext.tsx` (líneas 21-28) detecta `navigator.language` y redirige a `/en` si el navegador es inglés
+2. **Googlebot usa inglés**: El crawler de Google tiene `navigator.language = 'en'`, por lo que se redirige a `/en`
+3. **Las páginas EN tienen `noindex` por defecto**: En `Seo.tsx` (líneas 78-81), las rutas `/en/*` tienen `noindex, follow` si no tienen configuración explícita en la base de datos
+4. **La redirección 301 no se aplica correctamente**: Aunque existe `/  /es  301` en `_redirects`, parece que el servidor está sirviendo `index.html` en lugar de hacer la redirección
 
-He verificado que el archivo `QuickActionModal.tsx` **ya tiene el fix aplicado** en las líneas 230-231:
+### Evidencia
+- Al hacer fetch de `https://hayasmarketing.com/`, se recibe contenido EN (`lang="en"`) con texto en inglés
+- El HTML muestra la página home en inglés, no español
+- GSC confirma que ve `noindex` en la URL raíz
+
+---
+
+## Plan de Solución
+
+### 1. Forzar redirección a `/es` en `LanguageContext.tsx` (Prioridad Alta)
+**Archivo**: `src/contexts/LanguageContext.tsx`
+
+**Cambio**: Modificar la lógica para que la raíz (`/`) siempre redirija a `/es`, ignorando el idioma del navegador:
 
 ```typescript
-// Fix crítico: usar formato correcto de in_language ('es-ES' o 'en-US')
-const inLanguage = route.path.startsWith('/en') ? 'en-US' : 'es-ES';
+// Antes (problemático)
+if (location.pathname === '/') {
+  const browserLang = navigator.language.toLowerCase();
+  const isEnglishBrowser = browserLang.startsWith('en');
+  const defaultLang = isEnglishBrowser ? 'en' : 'es';
+  navigate(`/${defaultLang}`, { replace: true });
+}
+
+// Después (solución SEO-friendly)
+if (location.pathname === '/') {
+  // Siempre redirigir a español para consistencia SEO
+  // Los usuarios EN pueden navegar a /en desde el selector de idioma
+  navigate('/es', { replace: true });
+}
 ```
 
-Y en la línea 243:
+**Razón**: Esto garantiza consistencia con la redirección 301 de `_redirects` y evita que crawlers con navegador en inglés reciban contenido EN en la raíz.
+
+---
+
+### 2. Añadir robots `index, follow` explícito para la HOME en español
+**Archivo**: Base de datos `seo_pages` (o código)
+
+**Acción**: Asegurar que `/es` tenga configuración SEO explícita con `robots: 'index, follow'` para que la homepage principal esté claramente indexable.
+
+---
+
+### 3. (Opcional pero recomendado) Añadir fallback de robots para la raíz
+**Archivo**: `src/components/Seo.tsx`
+
+**Cambio**: Añadir lógica para que la raíz (`/`) siempre use `index, follow`:
+
 ```typescript
-in_language: inLanguage,
+const isEnglishRoute = currentPath.startsWith('/en');
+const isRootPath = currentPath === '/' || currentPath === '';
+const effectiveRobots = robots 
+  ? robots 
+  : (isRootPath ? 'index, follow' : (isEnglishRoute ? 'noindex, follow' : 'index, follow'));
 ```
 
-### Causa Probable
+**Razón**: Si por alguna razón se renderiza contenido en `/` antes de la redirección, será indexable.
 
-El error persiste porque **el navegador aún está ejecutando la versión anterior del código** (antes del fix). Esto puede ocurrir porque:
+---
 
-1. El build de Vite no se ha completado todavía
-2. El navegador tiene la versión anterior en cache
+### 4. Verificar que la redirección 301 funciona
+**Acción manual**: Después del despliegue, verificar con `curl -I https://hayasmarketing.com/` que devuelve:
+```
+HTTP/1.1 301 Moved Permanently
+Location: https://hayasmarketing.com/es
+```
 
-### Solución Inmediata
+---
 
-**Acción requerida del usuario:**
+## Resumen de Cambios Técnicos
 
-1. **Recargar la página** con `Ctrl+Shift+R` (o `Cmd+Shift+R` en Mac) para forzar una recarga sin cache
-2. Si el problema persiste, abrir DevTools (`F12`), ir a la pestaña "Network", marcar "Disable cache" y recargar
+| Archivo | Cambio |
+|---------|--------|
+| `src/contexts/LanguageContext.tsx` | Forzar redirección a `/es` en lugar de detectar idioma del navegador |
+| `src/components/Seo.tsx` | Añadir excepción para `/` que siempre sea `index, follow` |
+| Base de datos | Verificar que `/es` tiene SEO completo con `robots: 'index, follow'` |
 
-### Verificación Técnica
+## Resultado Esperado
+1. Googlebot visita `https://hayasmarketing.com/`
+2. Recibe redirección 301 a `/es` (servidor) o redirección JS a `/es` (cliente)
+3. La página `/es` tiene `robots: 'index, follow'`
+4. GSC indexa correctamente la homepage
 
-Una vez recargada la página, al intentar "Preparar Página" para `/es/servicios/marketing-contenidos`:
-- El código nuevo calculará `inLanguage = 'es-ES'` (porque el path NO empieza con `/en`)
-- La inserción pasará el constraint de la base de datos
-
-### Prevención Futura (Mejora Opcional)
-
-Para evitar confusiones similares en el futuro, recomiendo añadir un console.log de debugging temporal que muestre qué valor de `in_language` se está usando antes de insertar.
+## Plan de Pruebas
+1. Desplegar los cambios
+2. Verificar con `curl -I https://hayasmarketing.com/` la redirección 301
+3. En GSC, hacer clic en "PROBAR URL PUBLICADA" para `https://hayasmarketing.com/`
+4. Hacer clic en "SOLICITAR INDEXACIÓN" para forzar un re-crawl
+5. Esperar 24-48h y verificar que el estado cambia a "indexable"
 
