@@ -1,99 +1,148 @@
 
+# Plan: Documentación Técnica del Chatbot SofÍA
 
-# Plan: Conectar páginas con SEO dinámico de base de datos
+## Objetivo
 
-## Diagnóstico
-
-Las páginas **Contacto** y **Nosotros** no están consumiendo los metadatos SEO de la base de datos porque tienen valores hardcodeados en el código.
-
-### Estado actual
-
-| Archivo | Problema | Metadatos visibles |
-|---------|----------|--------------------|
-| `Contacto.tsx` | Usa `<Seo title="Contacto \| Hayas Marketing">` hardcodeado | Los de código (antiguos) |
-| `Nosotros.tsx` | No tiene componente SEO | Sin metadatos |
-
-### Lo que hay en la base de datos (correcto)
-
-| Path | Title optimizado |
-|------|------------------|
-| `/es/contacto` | Contacto - Hayas Marketing \| Solicita tu Consulta Gratuita |
-| `/es/nosotros` | Nosotros - Hayas Marketing \| Equipo de Marketing Digital |
+Crear un documento exhaustivo que sirva como referencia técnica para desarrolladores y administradores que necesiten entender, mantener, actualizar o evolucionar el chatbot SofÍA.
 
 ---
 
-## Solución
+## Alcance del Documento
 
-Reemplazar el componente `<Seo>` hardcodeado por `<EnhancedSEO />` dinámico, que automáticamente:
-1. Detecta la ruta actual
-2. Consulta la tabla `seo_pages` en Supabase
-3. Aplica los metadatos optimizados
+El documento cubrirá todos los aspectos del sistema:
 
----
+### 1. Arquitectura General
+- Diagrama de componentes y flujo de datos
+- Stack tecnológico (React + Edge Functions + Supabase + OpenAI)
+- Decisiones de diseño y por qué se tomaron
 
-## Cambios a realizar
+### 2. Componentes Frontend
 
-### 1. Contacto.tsx
+| Archivo | Función |
+|---------|---------|
+| `SofiaChatNew.tsx` | Widget principal del chat (UI, estado, lógica de mensajes) |
+| `MessageWithActions.tsx` | Parser de respuestas → chips interactivos |
+| `useNavigationHistory.ts` | Hook de tracking del historial de navegación |
+| `SofiaSection.tsx` | Widget legacy de Voiceflow (deprecado, solo fallback) |
 
-```tsx
-// ANTES (líneas 6-16)
-import Seo from '@/components/Seo';
-...
-<Seo
-  title="Contacto | Hayas Marketing"
-  description="Contacto y consultoría de marketing estratégico..."
-  canonical="/contacto"
-/>
+### 3. Backend (Edge Function)
 
-// DESPUÉS
-import EnhancedSEO from '@/components/EnhancedSEO';
-...
-<EnhancedSEO />
+| Aspecto | Detalle |
+|---------|---------|
+| Archivo | `supabase/functions/sofia-chat/index.ts` |
+| Modelo IA | OpenAI GPT-4o-mini |
+| Contexto dinámico | Extrae `IA_SUMMARY`, FAQs y casos de éxito de ficheros `.md` |
+| Captura de leads | Guarda automáticamente email/teléfono en `sofia_leads` |
+| Prompt | Configurable desde base de datos (`sofia_config`) |
+
+### 4. Base de Datos
+
+| Tabla | Propósito | RLS |
+|-------|-----------|-----|
+| `sofia_config` | Almacena system prompt editable | Solo admins |
+| `sofia_leads` | Leads capturados del chat | Insert público, read admin |
+
+### 5. Sistema de Contenido (Base de Conocimiento)
+
+Estructura de rutas mapeadas:
+```
+/es/servicios/creacion-marca → /public/content/es/servicios/creacion-marca.md
+/en/services/branding → /public/content/en/services/branding.md
 ```
 
-### 2. Nosotros.tsx
+Extracción automática:
+- `IA_SUMMARY` (60-80 palabras) → Contexto compacto para conversaciones largas
+- `AEO Summary` → Resumen del servicio
+- `Casos de Éxito` → Nombres reales para citar
+- `FAQs` → Preguntas frecuentes que puede responder
 
-```tsx
-// ANTES (líneas 1-20)
-import React from 'react';
-import Navigation from '@/components/Navigation';
-...
-return <div className="min-h-screen flex flex-col">
-  <Navigation />
+### 6. Panel de Administración
 
-// DESPUÉS
-import React from 'react';
-import Navigation from '@/components/Navigation';
-import EnhancedSEO from '@/components/EnhancedSEO';  // Añadir
-...
-return <div className="min-h-screen flex flex-col">
-  <EnhancedSEO />  // Añadir
-  <Navigation />
+| Ruta | Funcionalidad |
+|------|---------------|
+| `/admin/chatbot-sofia` | Editar system prompt en tiempo real |
+| Dashboard | Contador de leads, modelo activo, estado |
+
+### 7. Tracking y Analytics
+
+- Eventos GTM: `sofia_interaction` con acciones (opened, closed, minimized)
+- Variables: `sofia_action`, `sofia_label`, `page_path`
+- Configuración completa en `docs/SOFIA_TRACKING.md`
+
+### 8. Guía de Mantenimiento
+
+- Cómo actualizar el prompt (sin deploy)
+- Cómo añadir nuevas páginas al chat
+- Cómo actualizar el mapeo de contenido
+- Cómo modificar las quick actions
+- Cómo cambiar el modelo de IA
+
+### 9. Guía de Evolución
+
+- Migrar de OpenAI a Lovable AI Gateway
+- Añadir streaming de respuestas
+- Implementar memoria de conversación persistente
+- Integrar con CRM externo (HubSpot/GHL)
+- Añadir widget de voz
+
+### 10. Troubleshooting
+
+Problemas comunes y soluciones:
+- Chat no aparece en una página
+- Respuestas sin contexto
+- Error de rate limit
+- Leads no se guardan
+
+---
+
+## Estructura del Documento Final
+
+```
+docs/SOFIA_CHATBOT_TECHNICAL.md
+
+1. Resumen Ejecutivo
+2. Arquitectura del Sistema
+   2.1 Diagrama de Componentes
+   2.2 Flujo de Datos
+   2.3 Stack Tecnológico
+3. Componentes Frontend
+   3.1 SofiaChatNew.tsx
+   3.2 MessageWithActions.tsx
+   3.3 useNavigationHistory.ts
+   3.4 Páginas Permitidas
+4. Backend (Edge Function)
+   4.1 Estructura del Código
+   4.2 Sistema de Contexto Dinámico
+   4.3 Captura de Leads
+   4.4 Manejo de Errores
+5. Base de Datos
+   5.1 Tablas
+   5.2 Políticas RLS
+   5.3 Consultas Útiles
+6. Sistema de Contenido
+   6.1 Mapeo de Rutas
+   6.2 Estructura de Archivos .md
+   6.3 Bloques IA_SUMMARY
+7. Panel de Administración
+8. Analytics y Tracking
+9. Guía de Mantenimiento
+10. Guía de Evolución
+11. Troubleshooting
+12. Documentación Relacionada
 ```
 
 ---
 
-## Resultado esperado
-
-Tras el cambio:
-- El componente `<EnhancedSEO />` consultará automáticamente la base de datos
-- Los títulos y descripciones optimizados que guardaste se aplicarán en el HTML
-- Google verá los metadatos correctos en el próximo crawl
+## Tiempo Estimado
+- Creación: 15-20 minutos
+- Sin riesgo de regresión (solo documentación)
 
 ---
 
-## Verificación post-implementación
+## Resultado Esperado
 
-1. Abrir `/es/contacto` y `/es/nosotros` en el navegador
-2. Ver código fuente (Ctrl+U) y buscar:
-   - `<title>Contacto - Hayas Marketing | Solicita tu Consulta Gratuita</title>`
-   - `<title>Nosotros - Hayas Marketing | Equipo de Marketing Digital</title>`
-3. Confirmar que `<meta name="description">` muestra el texto optimizado
-4. Usar IndexNow para notificar a Bing del cambio
-
----
-
-## Tiempo estimado
-- 5 minutos de implementación
-- Sin riesgo de regresión (el sistema ya funciona en otras páginas)
-
+Un documento completo que permita a cualquier desarrollador:
+1. Entender cómo funciona SofÍA de principio a fin
+2. Hacer cambios de configuración sin tocar código
+3. Evolucionar el sistema con nuevas funcionalidades
+4. Diagnosticar y resolver problemas rápidamente
