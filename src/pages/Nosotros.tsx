@@ -5,6 +5,7 @@ import ReviewsSection from '@/components/ReviewsSection';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Target, Users, TrendingUp, Award, CheckCircle, Lightbulb, Zap, Heart, ArrowRight, Bot, GraduationCap, BarChart3, Settings } from 'lucide-react';
+import EnhancedSEO from '@/components/EnhancedSEO';
 
 // Import logos
 import hubspotLogo from '@/assets/logos/hubspot-logo.png';
@@ -16,6 +17,7 @@ import lovableLogo from '@/assets/logos/lovable-logo.png';
 import aiLogo from '@/assets/logos/ai-logo.png';
 import JoinFreelancersSection from '@/components/JoinFreelancersSection';
 import FAQSection from '@/components/FAQSection';
+
 const Nosotros = () => {
   const teamMembers = [{
     name: "Rubén",
@@ -133,6 +135,7 @@ const Nosotros = () => {
     url: "https://connectif.ai"
   }];
   return <div className="min-h-screen flex flex-col">
+      <EnhancedSEO />
       <Navigation />
       
       <main className="flex-grow mt-4 md:mt-6">

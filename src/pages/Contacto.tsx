@@ -4,16 +4,12 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Phone, MessageCircle } from 'lucide-react';
 import StandardGHLForm from '@/components/StandardGHLForm';
-import Seo from '@/components/Seo';
+import EnhancedSEO from '@/components/EnhancedSEO';
 
 const Contacto = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background/95 to-primary/5">
-      <Seo
-        title="Contacto | Hayas Marketing"
-        description="Contacto y consultoría de marketing estratégico, IA y automatización. Hablemos para conectar, impactar y crecer."
-        canonical="/contacto"
-      />
+      <EnhancedSEO />
       <Navigation />
       <main>
         {/* Breadcrumb */}
