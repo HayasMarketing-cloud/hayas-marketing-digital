@@ -22,6 +22,177 @@ const languageConfig = {
   }
 };
 
+// URL base para cargar archivos de contenido
+const CONTENT_BASE_URL = 'https://hayas-marketing-digital.lovable.app';
+
+// Mapeo de rutas a archivos de contenido .md
+const ROUTE_TO_CONTENT: Record<string, string> = {
+  // Servicios ES
+  '/es/servicios/asistente-ia': '/content/es/servicios/asistente-ia.md',
+  '/es/servicios/creacion-marca': '/content/es/servicios/creacion-marca.md',
+  '/es/servicios/diseno-web': '/content/es/servicios/diseno-web.md',
+  '/es/servicios/email-marketing': '/content/es/servicios/email-marketing.md',
+  '/es/servicios/estrategia-contenidos': '/content/es/servicios/estrategia-contenidos.md',
+  '/es/servicios/gestion-redes-sociales': '/content/es/servicios/gestion-redes-sociales.md',
+  '/es/servicios/implantacion-crm': '/content/es/servicios/implantacion-crm.md',
+  '/es/servicios/publicidad-google-ads': '/content/es/servicios/publicidad-google-ads.md',
+  '/es/servicios/seo-posicionamiento': '/content/es/servicios/seo-posicionamiento.md',
+  '/es/servicios/tienda-online': '/content/es/servicios/tienda-online.md',
+  
+  // Soluciones ES
+  '/es/soluciones/activa-tus-ventas': '/content/es/soluciones/activa-tus-ventas.md',
+  '/es/soluciones/conecta-con-tus-clientes': '/content/es/soluciones/conecta-con-tus-clientes.md',
+  '/es/soluciones/impulsa-tu-marca': '/content/es/soluciones/impulsa-tu-marca.md',
+  
+  // General ES
+  '/es/empresa': '/content/es/general/empresa.md',
+  '/es/nuevo-paradigma-seo-aeo-geo': '/content/es/general/nuevo-paradigma-seo-aeo-geo.md',
+  
+  // Services EN
+  '/en/services/ai-assistant': '/content/en/services/ai-assistant.md',
+  '/en/services/branding': '/content/en/services/branding.md',
+  '/en/services/content-strategy': '/content/en/services/content-strategy.md',
+  '/en/services/crm-implementation': '/content/en/services/crm-implementation.md',
+  '/en/services/ecommerce': '/content/en/services/ecommerce.md',
+  '/en/services/email-marketing': '/content/en/services/email-marketing.md',
+  '/en/services/google-ads': '/content/en/services/google-ads.md',
+  '/en/services/seo-positioning': '/content/en/services/seo-positioning.md',
+  '/en/services/social-media': '/content/en/services/social-media.md',
+  '/en/services/web-design': '/content/en/services/web-design.md',
+  
+  // Solutions EN
+  '/en/solutions/activate-sales': '/content/en/solutions/activate-sales.md',
+  '/en/solutions/boost-your-brand': '/content/en/solutions/boost-your-brand.md',
+  '/en/solutions/connect-with-customers': '/content/en/solutions/connect-with-customers.md',
+};
+
+// Función para cargar contenido del archivo .md correspondiente a la ruta
+async function fetchContentForPath(path: string): Promise<string | null> {
+  const contentPath = ROUTE_TO_CONTENT[path];
+  
+  if (!contentPath) {
+    console.log(`⚠️ No content mapping found for path: ${path}`);
+    return null;
+  }
+  
+  try {
+    const url = `${CONTENT_BASE_URL}${contentPath}`;
+    console.log(`📄 Fetching content from: ${url}`);
+    
+    const response = await fetch(url);
+    
+    if (!response.ok) {
+      console.log(`⚠️ Failed to fetch content: ${response.status} ${response.statusText}`);
+      return null;
+    }
+    
+    const content = await response.text();
+    console.log(`✅ Content loaded: ${content.length} characters`);
+    return content;
+  } catch (error) {
+    console.error(`❌ Error fetching content for ${path}:`, error);
+    return null;
+  }
+}
+
+// Extrae el bloque IA_SUMMARY del contenido markdown
+function extractIASummary(content: string): string | null {
+  const match = content.match(/<!--\s*IA_SUMMARY:\s*([\s\S]*?)-->/);
+  if (match && match[1]) {
+    return match[1].trim();
+  }
+  return null;
+}
+
+// Extrae la descripción principal (blockquote después del título)
+function extractDescription(content: string): string | null {
+  const match = content.match(/^>\s*(.+)$/m);
+  if (match && match[1]) {
+    return match[1].trim();
+  }
+  return null;
+}
+
+// Extrae las FAQs del contenido
+function extractFAQs(content: string): string[] {
+  const faqs: string[] = [];
+  const faqSection = content.match(/## Preguntas Frecuentes[\s\S]*?(?=## |$)/i) ||
+                     content.match(/## Frequently Asked Questions[\s\S]*?(?=## |$)/i);
+  
+  if (faqSection) {
+    const questions = faqSection[0].match(/### (.+)/g);
+    if (questions) {
+      questions.forEach(q => {
+        faqs.push(q.replace('### ', ''));
+      });
+    }
+  }
+  
+  return faqs.slice(0, 5); // Limitar a 5 FAQs
+}
+
+// Extrae los servicios/características incluidos
+function extractIncludes(content: string): string[] {
+  const includes: string[] = [];
+  
+  // Buscar sección "Qué Incluye" o similares
+  const includesSection = content.match(/### Qué Incluye[\s\S]*?(?=### |## |$)/i) ||
+                          content.match(/### What's Included[\s\S]*?(?=### |## |$)/i);
+  
+  if (includesSection) {
+    const items = includesSection[0].match(/- \*\*([^*]+)\*\*/g);
+    if (items) {
+      items.forEach(item => {
+        includes.push(item.replace(/- \*\*|\*\*/g, ''));
+      });
+    }
+  }
+  
+  return includes.slice(0, 5);
+}
+
+// Formatea el contenido extraído para el prompt de IA
+function formatContextForPrompt(content: string, path: string): string {
+  const summary = extractIASummary(content);
+  const description = extractDescription(content);
+  const faqs = extractFAQs(content);
+  const includes = extractIncludes(content);
+  
+  let contextParts: string[] = [];
+  
+  if (summary) {
+    contextParts.push(`[Resumen IA]: ${summary}`);
+  }
+  
+  if (description) {
+    contextParts.push(`[Descripción]: ${description}`);
+  }
+  
+  if (includes.length > 0) {
+    contextParts.push(`[Incluye]: ${includes.join(', ')}`);
+  }
+  
+  if (faqs.length > 0) {
+    contextParts.push(`[FAQs]: ${faqs.join(' | ')}`);
+  }
+  
+  if (contextParts.length === 0) {
+    // Si no se pudo extraer contenido estructurado, usar los primeros 500 caracteres
+    const cleanContent = content
+      .replace(/<!--[\s\S]*?-->/g, '') // Eliminar comentarios
+      .replace(/^#+\s+.+$/gm, '') // Eliminar headers
+      .replace(/\n{2,}/g, '\n')
+      .trim()
+      .slice(0, 500);
+    
+    if (cleanContent) {
+      contextParts.push(`[Contenido]: ${cleanContent}...`);
+    }
+  }
+  
+  return contextParts.join('\n');
+}
+
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
@@ -116,6 +287,18 @@ serve(async (req) => {
     
     console.log('🤖 Generating SEO suggestions for:', path, '| Language:', targetLanguage);
 
+    // NUEVO: Cargar contenido contextual del archivo .md
+    let contextualContent = pageContent;
+    const mdContent = await fetchContentForPath(path);
+    
+    if (mdContent) {
+      contextualContent = formatContextForPrompt(mdContent, path);
+      console.log('📝 Using contextual content from .md file');
+    } else if (!pageContent) {
+      contextualContent = `Ruta: ${path}. Infiere el contenido basándote en la estructura de la URL.`;
+      console.log('⚠️ No contextual content available, using path-based inference');
+    }
+
     const LOVABLE_API_KEY = Deno.env.get('LOVABLE_API_KEY');
     if (!LOVABLE_API_KEY) {
       throw new Error('LOVABLE_API_KEY not configured');
@@ -133,7 +316,8 @@ IMPORTANT:
 - H1: 20-70 characters, descriptive with main keyword
 - Keywords: 5-10 relevant keywords extracted from the actual content
 - ALWAYS respond in valid JSON format
-- ALL content must be in ENGLISH`
+- ALL content must be in ENGLISH
+- Base your suggestions STRICTLY on the provided page content`
       : `Eres un experto en SEO técnico y marketing digital. Tu tarea es analizar el contenido de páginas web y generar metadatos SEO optimizados siguiendo las mejores prácticas.
 
 IMPORTANTE:
@@ -142,7 +326,8 @@ IMPORTANTE:
 - H1: 20-70 caracteres, descriptivo y con keyword principal
 - Keywords: 5-10 palabras clave relevantes extraídas del contenido real
 - Responder SIEMPRE en formato JSON válido
-- TODO el contenido debe estar en ESPAÑOL`;
+- TODO el contenido debe estar en ESPAÑOL
+- Basa tus sugerencias ESTRICTAMENTE en el contenido proporcionado de la página`;
 
     const userPrompt = targetLanguage === 'en'
       ? `CONTEXT:
@@ -153,7 +338,7 @@ IMPORTANTE:
 - Target market: ${langConfig.seoContext}
 
 PAGE CONTENT:
-${pageContent || 'No specific content provided. Infer based on path and category.'}
+${contextualContent || 'No specific content provided. Infer based on path and category.'}
 
 ${existingSEO ? `CURRENT SEO DATA:\n${JSON.stringify(existingSEO, null, 2)}` : ''}
 
@@ -205,7 +390,7 @@ Respond ONLY with the JSON, no additional text.`
 - Mercado objetivo: ${langConfig.seoContext}
 
 CONTENIDO DE LA PÁGINA:
-${pageContent || 'No se proporcionó contenido específico. Infiere basándote en la ruta y categoría.'}
+${contextualContent || 'No se proporcionó contenido específico. Infiere basándote en la ruta y categoría.'}
 
 ${existingSEO ? `DATOS SEO ACTUALES:\n${JSON.stringify(existingSEO, null, 2)}` : ''}
 
@@ -312,6 +497,7 @@ Responde ÚNICAMENTE con el JSON, sin texto adicional.`;
       suggestions,
       path,
       language: targetLanguage,
+      contentSource: mdContent ? 'markdown_file' : (pageContent ? 'provided' : 'inferred'),
     }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });
