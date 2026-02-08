@@ -1,113 +1,172 @@
 
-# Plan: Corregir contexto de la generación SEO con IA
+# Plan: Añadir Edicion desde Listas del Modal de Sincronizacion
 
-## Problema Identificado
+## Resumen
 
-La función de IA que sugiere metadatos SEO no recibe contenido contextual de la página específica. Actualmente solo recibe datos muy básicos:
-- Ruta: `/es/servicios/estrategia-contenidos`  
-- Categoría: `service`
-- Título actual: (vacío)
+Modificar el modal de sincronizacion para que cada pagina obsoleta y cada inconsistencia tenga un boton de edicion que cierre el modal y abra el editor SEO directamente en esa ruta.
 
-Sin contenido real, la IA "improvisa" o usa patrones recientes, generando metadatos que no corresponden a la página que se está editando.
+## Cambios Propuestos
 
-## Solución Propuesta
+### 1. Propagacion del Callback de Edicion
 
-Integrar la carga de archivos `.md` de la base de conocimiento (`/public/content/`) en el flujo de generación SEO, de forma similar a como lo hace el chatbot SofÍA.
-
-## Cambios Técnicos
-
-### 1. Edge Function `generate-seo-suggestions`
-
-Añadir capacidad de cargar contenido contextual:
+El callback `onEditPage` debe fluir desde la pagina principal hasta el modal:
 
 ```text
-┌─────────────────────────────────────────────────────┐
-│  generate-seo-suggestions (Edge Function)           │
-├─────────────────────────────────────────────────────┤
-│  NUEVO: Mapeo rutas → archivos .md                  │
-│  NUEVO: Función fetchContentForPath()               │
-│  NUEVO: Funciones extractIASummary(), extractFAQs() │
-│  MODIFICAR: Enriquecer prompt con contenido real    │
-└─────────────────────────────────────────────────────┘
+SEOPagesManager (setSelectedPage)
+    |
+    v
+EnhancedSEOPageList (onEditPage prop)
+    |
+    v
+SyncRoutesButton (nuevo prop: onEditPage)
+    |
+    v
+SyncReportModal (nuevo prop: onEditPage)
 ```
 
-**Cambios específicos:**
-- Añadir constante `ROUTE_TO_CONTENT` con mapeo de rutas a archivos `.md`
-- Añadir constante `CONTENT_BASE_URL` para la URL base del contenido
-- Crear función `fetchContentForPath(path)` para cargar el archivo `.md`
-- Crear funciones de extracción: `extractIASummary()`, `extractDescription()`, `extractFAQs()`
-- Modificar el prompt para incluir el contenido real de la página
+### 2. Modificar EnhancedSEOPageList
 
-### 2. Modificar el prompt de la IA
+Pasar el prop `onEditPage` al componente `SyncRoutesButton`:
 
-Antes (genérico):
-```
-CONTENIDO DE LA PÁGINA:
-No se proporcionó contenido específico. Infiere basándote en la ruta y categoría.
+```tsx
+<SyncRoutesButton onEditPage={onEditPage} />
 ```
 
-Después (contextual):
+### 3. Modificar SyncRoutesButton
+
+Recibir y propagar el prop al modal:
+
+```tsx
+interface SyncRoutesButtonProps {
+  onEditPage?: (path: string) => void;
+}
+
+export const SyncRoutesButton: React.FC<SyncRoutesButtonProps> = ({ onEditPage }) => {
+  // ...
+  <SyncReportModal
+    isOpen={showReport}
+    onClose={() => setShowReport(false)}
+    report={syncReport}
+    onEditPage={onEditPage}
+  />
+}
 ```
-CONTENIDO DE LA PÁGINA:
-[Resumen IA]: Servicio de planificación y creación de contenidos...
-[Descripción]: En Hayas Marketing creamos estrategias de contenidos...
-[Incluye]: Auditoría, calendario editorial, creación de contenidos...
-[FAQs]: ¿Con qué frecuencia debo publicar contenido? ...
+
+### 4. Modificar SyncReportModal
+
+Actualizar la interfaz de props y añadir botones de edicion:
+
+```tsx
+interface SyncReportModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  report: SyncReport;
+  onEditPage?: (path: string) => void;
+}
 ```
 
-### 3. Fallback inteligente
+Crear funcion para manejar la edicion (cierra el modal y abre el editor):
 
-Si no existe archivo `.md` para la ruta:
-1. Intentar cargar contenido del archivo más cercano en la jerarquía
-2. Si no existe, usar el contenido genérico actual como fallback
-3. Añadir log de advertencia para detectar rutas sin contenido
+```tsx
+const handleEditPage = (path: string) => {
+  onClose();
+  onEditPage?.(path);
+};
+```
 
-## Flujo Actualizado
+### 5. UI: Lista de Paginas Obsoletas con Edicion
 
-```text
-Usuario hace clic en "Generar SEO con IA"
-           │
-           ▼
-    ┌──────────────┐
-    │ Frontend     │ Envía: path, category
-    │ (hook)       │
-    └──────────────┘
-           │
-           ▼
-    ┌──────────────────────────────┐
-    │ Edge Function                │
-    │ generate-seo-suggestions     │
-    ├──────────────────────────────┤
-    │ 1. Recibe path               │
-    │ 2. NUEVO: Busca archivo .md  │
-    │ 3. NUEVO: Carga contenido    │
-    │ 4. NUEVO: Extrae resumen IA  │
-    │ 5. Envía a Lovable AI        │
-    │    con contexto real         │
-    └──────────────────────────────┘
-           │
-           ▼
-    ┌──────────────────────────────┐
-    │ IA genera metadatos          │
-    │ basados en contenido REAL    │
-    └──────────────────────────────┘
+Cada pagina obsoleta tendra un boton de edicion:
+
+```tsx
+{report.orphanedSEO.map((seo) => (
+  <div className="p-3 rounded-lg bg-orange-500/5 border border-orange-500/20 text-sm flex items-center justify-between">
+    <div className="flex-1 min-w-0">
+      <div className="font-mono text-xs text-muted-foreground">{seo.path}</div>
+      <div className="text-xs mt-1 truncate">{seo.title}</div>
+    </div>
+    {onEditPage && (
+      <Button
+        size="sm"
+        variant="ghost"
+        onClick={() => handleEditPage(seo.path)}
+        title="Revisar en editor"
+      >
+        <Edit className="h-4 w-4" />
+      </Button>
+    )}
+  </div>
+))}
+```
+
+Mostrar lista completa (eliminar limite de 8 elementos, o usar estado expandible).
+
+### 6. UI: Lista de Inconsistencias con Edicion
+
+Mostrar todas las inconsistencias (actualmente limitadas a 5) con boton de edicion:
+
+```tsx
+const [showAllInconsistencies, setShowAllInconsistencies] = useState(false);
+
+const displayedInconsistencies = showAllInconsistencies 
+  ? report.inconsistencies 
+  : report.inconsistencies.slice(0, 10);
+
+{displayedInconsistencies.map((issue, idx) => (
+  <div className="p-3 rounded-lg bg-yellow-500/5 border border-yellow-500/20 text-sm">
+    <div className="flex items-center justify-between mb-1">
+      <div className="font-mono text-xs text-muted-foreground">{issue.path}</div>
+      {onEditPage && (
+        <Button size="sm" variant="ghost" onClick={() => handleEditPage(issue.path)}>
+          <Edit className="h-4 w-4" />
+        </Button>
+      )}
+    </div>
+    <div className="text-xs">{issue.issue}</div>
+    <div className="flex gap-3 mt-2 text-xs">
+      <span className="text-muted-foreground">
+        Registry: <span className="font-medium">{issue.registryValue}</span>
+      </span>
+      <span className="text-muted-foreground">
+        DB: <span className="font-medium">{issue.dbValue}</span>
+      </span>
+    </div>
+  </div>
+))}
+
+{report.inconsistencies.length > 10 && !showAllInconsistencies && (
+  <Button variant="link" onClick={() => setShowAllInconsistencies(true)}>
+    Ver todas ({report.inconsistencies.length})
+  </Button>
+)}
+```
+
+### 7. Estados Expandibles para Listas Largas
+
+Añadir estados para controlar la expansion de listas:
+
+```tsx
+const [showAllOrphaned, setShowAllOrphaned] = useState(false);
+const [showAllInconsistencies, setShowAllInconsistencies] = useState(false);
+
+const displayedOrphaned = showAllOrphaned 
+  ? report.orphanedSEO 
+  : report.orphanedSEO.slice(0, 10);
 ```
 
 ## Archivos a Modificar
 
-| Archivo | Tipo de cambio |
-|---------|----------------|
-| `supabase/functions/generate-seo-suggestions/index.ts` | Añadir carga de contenido y enriquecimiento de prompt |
+| Archivo | Cambio |
+|---------|--------|
+| `src/components/admin/seo/SyncReportModal.tsx` | Añadir prop `onEditPage`, botones de edicion, estados expandibles |
+| `src/components/admin/seo/SyncRoutesButton.tsx` | Recibir y propagar prop `onEditPage` |
+| `src/components/admin/seo/EnhancedSEOPageList.tsx` | Pasar `onEditPage` a `SyncRoutesButton` |
 
-## Verificación del Resultado
+## Resultado Final
 
-Una vez implementado, al generar SEO para `/es/servicios/estrategia-contenidos`:
-- **Antes**: "Hayas Marketing - Servicios profesionales de marketing"
-- **Después**: "Estrategia de Contenidos SEO | Hayas Marketing - Atrae tráfico cualificado"
+El usuario podra:
+1. Ver las 31 paginas obsoletas con boton de edicion en cada una
+2. Ver las 17 inconsistencias con boton de edicion en cada una
+3. Hacer clic en cualquier boton de edicion para cerrar el modal y abrir directamente el editor SEO de esa ruta
+4. Expandir las listas para ver todos los elementos si hay muchos
 
-## Beneficios
-
-1. **Precisión**: Metadatos alineados con el contenido real de cada página
-2. **Consistencia**: Misma fuente de verdad que usa el chatbot SofÍA
-3. **Mantenibilidad**: Un solo punto de actualización (archivos `.md`)
-4. **Sin cambios en UI**: El flujo del usuario permanece igual
