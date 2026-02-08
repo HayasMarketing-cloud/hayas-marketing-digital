@@ -17,6 +17,8 @@ import { Progress } from '@/components/ui/progress';
 import { useGenerateSEO } from '@/hooks/useGenerateSEO';
 import { AIGenerationModal } from '../seo/AIGenerationModal';
 import { OGImageGenerator } from '../seo/OGImageGenerator';
+import { RouteCodeGeneratorModal } from './RouteCodeGeneratorModal';
+import { RouteCodeData } from '@/utils/routeCodeGenerator';
 
 interface QuickActionModalProps {
   route: RouteInventoryItem | null;
@@ -27,9 +29,11 @@ interface QuickActionModalProps {
 
 export const QuickActionModal: React.FC<QuickActionModalProps> = ({ route, isOpen, onClose, onSuccess }) => {
   const { toast } = useToast();
-  const { translatePage, isTranslating } = useTranslatePage();
+  const { translatePageAsync, isTranslating } = useTranslatePage();
   const { generateSEO, isGenerating, suggestions } = useGenerateSEO();
   const [showAIModal, setShowAIModal] = useState(false);
+  const [showCodeModal, setShowCodeModal] = useState(false);
+  const [codeData, setCodeData] = useState<RouteCodeData | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     title: '',
@@ -272,7 +276,7 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({ route, isOpe
     }
   };
 
-  const handleTranslate = () => {
+  const handleTranslate = async () => {
     if (!route.translationPath) {
       toast({
         variant: 'destructive',
@@ -282,19 +286,32 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({ route, isOpe
       return;
     }
 
-    translatePage(
-      {
+    try {
+      const result = await translatePageAsync({
         esPath: route.path,
         enPath: route.translationPath,
         category: route.category,
-      },
-      {
-        onSuccess: () => {
-          onSuccess();
-          onClose();
-        },
+      });
+
+      // If route doesn't exist in registry, show code modal
+      if (!result.routeExists && result.codeData) {
+        setCodeData(result.codeData);
+        setShowCodeModal(true);
+      } else {
+        onSuccess();
+        onClose();
       }
-    );
+    } catch (error) {
+      // Error is already handled by the hook
+      console.error('Translation error:', error);
+    }
+  };
+
+  const handleCodeModalClose = () => {
+    setShowCodeModal(false);
+    setCodeData(null);
+    onSuccess();
+    onClose();
   };
 
   const renderContent = () => {
@@ -658,6 +675,12 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({ route, isOpe
         suggestions={suggestions}
         path={route.path}
         onApply={handleApplyAISuggestions}
+      />
+
+      <RouteCodeGeneratorModal
+        isOpen={showCodeModal}
+        onClose={handleCodeModalClose}
+        codeData={codeData}
       />
     </Dialog>
   );

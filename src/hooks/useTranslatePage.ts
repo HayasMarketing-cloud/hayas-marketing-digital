@@ -1,6 +1,7 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
+import { routeExistsInRegistry, generateRouteCodeData, RouteCodeData } from '@/utils/routeCodeGenerator';
 
 interface TranslatePageParams {
   esPath: string;
@@ -12,12 +13,20 @@ interface BatchTranslateParams {
   pages: TranslatePageParams[];
 }
 
+interface TranslationResult {
+  esPage: any;
+  newEnPage: any;
+  translatedData: any;
+  routeExists: boolean;
+  codeData: RouteCodeData | null;
+}
+
 export const useTranslatePage = () => {
   const queryClient = useQueryClient();
   const { toast } = useToast();
 
   const mutation = useMutation({
-    mutationFn: async ({ esPath, enPath, category }: TranslatePageParams) => {
+    mutationFn: async ({ esPath, enPath, category }: TranslatePageParams): Promise<TranslationResult> => {
       // 1. Get the original ES page data
       const { data: esPage, error: esError } = await supabase
         .from('seo_pages')
@@ -87,10 +96,16 @@ export const useTranslatePage = () => {
         throw new Error(details || 'Error al traducir el contenido');
       }
 
+      // 3. Check if route exists in registry
+      const routeExists = routeExistsInRegistry(enPath);
+      const codeData = routeExists ? null : generateRouteCodeData(esPath, enPath);
+
       return {
         esPage,
         newEnPage: (result as any)?.newEnPage,
         translatedData: (result as any)?.translatedData,
+        routeExists,
+        codeData,
       };
     },
     onSuccess: (data) => {
@@ -99,10 +114,14 @@ export const useTranslatePage = () => {
       queryClient.invalidateQueries({ queryKey: ['translation-pairs'] });
       queryClient.invalidateQueries({ queryKey: ['seo-pages'] });
 
-      toast({
-        title: '✅ Página traducida con éxito',
-        description: `${data.newEnPage.path} - Recuerda añadir la ruta a App.tsx y routeRegistryData.ts`,
-      });
+      // Only show toast if route already exists (no code needed)
+      if (data.routeExists) {
+        toast({
+          title: '✅ Página traducida con éxito',
+          description: data.newEnPage.path,
+        });
+      }
+      // If !routeExists, the calling component will show the modal
     },
     onError: (error: Error) => {
       console.error('Translation mutation error:', error);
@@ -211,7 +230,9 @@ export const useTranslatePage = () => {
 
   return {
     translatePage: mutation.mutate,
+    translatePageAsync: mutation.mutateAsync,
     isTranslating: mutation.isPending,
+    translationData: mutation.data,
     error: mutation.error,
     batchTranslate: batchMutation.mutate,
     isBatchTranslating: batchMutation.isPending,
