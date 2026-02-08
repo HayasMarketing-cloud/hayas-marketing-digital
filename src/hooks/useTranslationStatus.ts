@@ -1,6 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
-import { getAllSpanishRoutes } from '@/utils/routeScanner';
 
 interface TranslationStats {
   total: number;
@@ -18,13 +17,10 @@ export const useTranslationStatus = () => {
   const { data: stats, isLoading, error } = useQuery({
     queryKey: ['translation-status'],
     queryFn: async (): Promise<TranslationStats> => {
-      // Get all routes from code
-      const allEsRoutesInCode = getAllSpanishRoutes();
-      
-      // Get all ES pages from DB
+      // Get all ES pages from DB (source of truth)
       const { data: esPages, error: esError } = await supabase
         .from('seo_pages')
-        .select('id, path, category, is_indexable, title, description, keywords, h1, og_image')
+        .select('id, path, category, is_indexable, title, description, keywords, h1')
         .eq('in_language', 'es-ES')
         .eq('is_indexable', true);
 
@@ -33,12 +29,11 @@ export const useTranslationStatus = () => {
       // Get all EN pages with their translation_of link
       const { data: enPages, error: enError } = await supabase
         .from('seo_pages')
-        .select('id, translation_of, path, is_indexable, title, description, keywords')
+        .select('id, translation_of, is_indexable')
         .eq('in_language', 'en-US');
 
       if (enError) throw enError;
 
-      const esPagesMap = new Map((esPages || []).map(page => [page.path, page]));
       const enPagesByTranslationId = new Map(
         (enPages || []).map(page => [page.translation_of, page])
       );
@@ -46,40 +41,32 @@ export const useTranslationStatus = () => {
       let translated = 0;
       let pending = 0;
       let drafts = 0;
-      let codeOnly = 0;
       let seoOptimized = 0;
       let seoIncomplete = 0;
-      const byCategory: Record<string, any> = {};
+      const byCategory: Record<string, { total: number; translated: number; pending: number }> = {};
 
-      // Process all routes from code
-      allEsRoutesInCode.forEach(routePath => {
-        const esPage = esPagesMap.get(routePath);
-        
-        if (!esPage) {
-          // Route exists in code but not in DB
-          codeOnly++;
-          return;
-        }
-
+      // Process all ES pages from DB (no more hardcoded routes)
+      (esPages || []).forEach(esPage => {
         const category = esPage.category || 'other';
         if (!byCategory[category]) {
           byCategory[category] = { total: 0, translated: 0, pending: 0 };
         }
         byCategory[category].total++;
 
-        // Check SEO optimization - Solo campos críticos (no og_image)
-        const missingCriticalFields = [];
-        if (!esPage.title || esPage.title.length < 30) missingCriticalFields.push('title');
-        if (!esPage.description || esPage.description.length < 120) missingCriticalFields.push('description');
-        if (!esPage.keywords || (Array.isArray(esPage.keywords) && esPage.keywords.length === 0)) missingCriticalFields.push('keywords');
-        if (!esPage.h1) missingCriticalFields.push('h1');
+        // Check SEO optimization - critical fields only
+        const hasSEO = 
+          esPage.title && esPage.title.length >= 30 &&
+          esPage.description && esPage.description.length >= 120 &&
+          esPage.keywords && Array.isArray(esPage.keywords) && esPage.keywords.length > 0 &&
+          esPage.h1;
 
-        if (missingCriticalFields.length === 0) {
+        if (hasSEO) {
           seoOptimized++;
         } else {
           seoIncomplete++;
         }
 
+        // Check translation status
         const enPage = enPagesByTranslationId.get(esPage.id);
         if (enPage) {
           if (enPage.is_indexable) {
@@ -94,13 +81,15 @@ export const useTranslationStatus = () => {
         }
       });
 
+      const total = esPages?.length || 0;
+
       return {
-        total: esPages?.length || 0,
-        totalInCode: allEsRoutesInCode.length,
+        total,
+        totalInCode: total, // Now using DB as source of truth
         translated,
         pending,
         drafts,
-        codeOnly,
+        codeOnly: 0, // No longer tracking code-only routes
         seoOptimized,
         seoIncomplete,
         byCategory,
