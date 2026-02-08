@@ -8,6 +8,7 @@ import Footer from '@/components/Footer';
 import Navigation from '@/components/Navigation';
 import BlogTagFilter from '@/components/BlogTagFilter';
 import EnhancedSEO from '@/components/EnhancedSEO';
+import { useLanguage } from '@/contexts/LanguageContext';
 import teamMarketingCollaboration from '@/assets/team-marketing-collaboration.jpg';
 import avisosLegalesHero from '@/assets/avisos-legales-hero.jpg';
 import mantenimientoWordpressHero from '@/assets/mantenimiento-wordpress-hero.jpg';
@@ -27,70 +28,157 @@ import gobernanzaIAHero from '@/assets/gobernanza-ia-empresas-hero.jpg';
 import decisionMarketingHero from '@/assets/decision-marketing-hero.jpg';
 
 const Blog = () => {
+  const { isEnglish, languageCode } = useLanguage();
+
+  // Bilingual UI content
+  const content = {
+    heroTitle: isEnglish ? 'Hayas Marketing Blog' : 'Blog Hayas Marketing',
+    heroSubtitle: isEnglish
+      ? 'Ideas, insights and analysis to better understand marketing, technology and how they influence real business decisions.'
+      : 'Ideas, criterio y análisis para entender mejor el marketing, la tecnología y cómo influyen en las decisiones reales de negocio.',
+    featuredTitle: isEnglish ? 'Featured Article' : 'Artículo destacado',
+    readFullArticle: isEnglish ? 'Read Full Article' : 'Leer Artículo Completo',
+    recentPostsTitle: isEnglish 
+      ? 'Marketing and Applied Intelligence for better decisions'
+      : 'Marketing e Inteligencia aplicada para tomar mejores decisiones',
+    allArticlesTitle: isEnglish ? 'Practical guides to implement CRM' : 'Guías prácticas para implementar CRM',
+    readMore: isEnglish ? 'Read more' : 'Leer más',
+    newsletterTitle: isEnglish ? 'Want to stay updated?' : '¿Quieres estar al día?',
+    newsletterSubtitle: isEnglish
+      ? 'Subscribe to our newsletter and receive the latest insights on digital marketing, AI and strategies that are transforming businesses.'
+      : 'Suscríbete a nuestro newsletter y recibe los últimos insights sobre marketing digital, IA y estrategias que están transformando los negocios.',
+    subscribeButton: isEnglish ? 'Subscribe to Newsletter' : 'Suscribirse al Newsletter',
+    blogBasePath: isEnglish ? '/en/blog' : '/es/blog',
+    tagBasePath: isEnglish ? '/en/blog/tag' : '/es/blog/tag',
+  };
+
   const featuredPost = {
     id: 'la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing',
-    title: 'La Inteligencia Artificial (IA) y su aplicación en Marketing',
-    description: 'En un mundo donde la tecnología avanza a pasos agigantados, la Inteligencia Artificial ha emergido como una herramienta transformadora en el marketing digital.',
+    title: isEnglish 
+      ? 'Artificial Intelligence (AI) and its Application in Marketing'
+      : 'La Inteligencia Artificial (IA) y su aplicación en Marketing',
+    description: isEnglish
+      ? 'In a world where technology advances by leaps and bounds, Artificial Intelligence has emerged as a transformative tool in digital marketing.'
+      : 'En un mundo donde la tecnología avanza a pasos agigantados, la Inteligencia Artificial ha emergido como una herramienta transformadora en el marketing digital.',
     date: '2024-12-15',
     readTime: '15 min',
-    author: 'Equipo Hayas Marketing',
+    author: isEnglish ? 'Hayas Marketing Team' : 'Equipo Hayas Marketing',
     image: teamMarketingCollaboration,
-    category: 'Inteligencia Artificial',
-    tags: ['IA', 'Marketing Digital', 'Automatización', 'Estrategia']
+    category: isEnglish ? 'Artificial Intelligence' : 'Inteligencia Artificial',
+    tags: isEnglish 
+      ? ['AI', 'Digital Marketing', 'Automation', 'Strategy']
+      : ['IA', 'Marketing Digital', 'Automatización', 'Estrategia']
   };
 
   const allPosts = [
     {
       id: 'nuevo-paradigma-seo-aeo-geo',
-      title: 'El Nuevo Paradigma SEO en la Era de la IA (AEO y GEO)',
-      description: 'Descubre las estrategias AEO (Answer Engine Optimization) y GEO (Generative Engine Optimization) para posicionar tu marca en Google, Bing Copilot y ChatGPT.',
-      excerpt: 'El SEO ha evolucionado de optimizar para el clic a ser la fuente citada por las IA. Aprende AEO y GEO para Google SGE, Bing Copilot y ChatGPT.',
+      title: isEnglish 
+        ? 'The New SEO Paradigm in the AI Era (AEO and GEO)'
+        : 'El Nuevo Paradigma SEO en la Era de la IA (AEO y GEO)',
+      description: isEnglish
+        ? 'Discover AEO (Answer Engine Optimization) and GEO (Generative Engine Optimization) strategies to position your brand on Google, Bing Copilot and ChatGPT.'
+        : 'Descubre las estrategias AEO (Answer Engine Optimization) y GEO (Generative Engine Optimization) para posicionar tu marca en Google, Bing Copilot y ChatGPT.',
+      excerpt: isEnglish
+        ? 'SEO has evolved from optimizing for clicks to being the source cited by AIs. Learn AEO and GEO for Google SGE, Bing Copilot and ChatGPT.'
+        : 'El SEO ha evolucionado de optimizar para el clic a ser la fuente citada por las IA. Aprende AEO y GEO para Google SGE, Bing Copilot y ChatGPT.',
       category: 'SEO',
       readTime: '14 min',
       date: '2026-02-07',
       image: '/seo-aeo-geo-paradigma-hero.jpg',
-      slug: '/es/blog/nuevo-paradigma-seo-aeo-geo',
+      slug: isEnglish ? '/en/blog/nuevo-paradigma-seo-aeo-geo' : '/es/blog/nuevo-paradigma-seo-aeo-geo',
       tags: ['SEO', 'AEO', 'GEO', 'IA', 'ChatGPT', 'Google SGE', 'Bing Copilot', 'Marketing Digital'],
       featured: true
     },
     {
       id: 'decision-marketing-confianza',
-      title: 'Decision Marketing: cuando el marketing deja de provocar y empieza a generar confianza',
-      description: 'Decision Marketing es un enfoque estratégico que prioriza la calidad de las elecciones sobre el volumen de conversiones. Descubre cómo acompañar decisiones conscientes.',
-      excerpt: 'Un enfoque que ayuda a las personas a elegir bien, no a decidir rápido. Más confianza, mejores relaciones, resultados sostenibles.',
-      category: 'Estrategias Marketing',
+      title: isEnglish
+        ? 'Decision Marketing: when marketing stops provoking and starts building trust'
+        : 'Decision Marketing: cuando el marketing deja de provocar y empieza a generar confianza',
+      description: isEnglish
+        ? 'Decision Marketing is a strategic approach that prioritizes the quality of choices over the volume of conversions. Discover how to support conscious decisions.'
+        : 'Decision Marketing es un enfoque estratégico que prioriza la calidad de las elecciones sobre el volumen de conversiones. Descubre cómo acompañar decisiones conscientes.',
+      excerpt: isEnglish
+        ? 'An approach that helps people choose well, not decide quickly. More trust, better relationships, sustainable results.'
+        : 'Un enfoque que ayuda a las personas a elegir bien, no a decidir rápido. Más confianza, mejores relaciones, resultados sostenibles.',
+      category: isEnglish ? 'Marketing Strategies' : 'Estrategias Marketing',
       readTime: '12 min',
       date: '2026-01-02',
       image: decisionMarketingHero,
-      slug: '/es/blog/decision-marketing-confianza',
-      tags: ['Decision Marketing', 'Estrategia', 'Marketing Consciente', 'Confianza', 'Customer Journey', 'Marketing B2B'],
+      slug: isEnglish ? '/en/blog/decision-marketing-confianza' : '/es/blog/decision-marketing-confianza',
+      tags: ['Decision Marketing', isEnglish ? 'Strategy' : 'Estrategia', isEnglish ? 'Conscious Marketing' : 'Marketing Consciente', isEnglish ? 'Trust' : 'Confianza', 'Customer Journey', 'Marketing B2B'],
       featured: true
     },
     {
       id: 'gobernanza-ia-empresas',
-      title: 'La gobernanza de la inteligencia artificial: una nueva responsabilidad estratégica para las empresas',
-      description: 'La inteligencia artificial requiere gobernanza. Descubre por qué es una responsabilidad estratégica para las empresas y cómo implementarla correctamente.',
-      excerpt: 'La IA multiplica nuestra capacidad de generar contenidos, pero sin gobernanza el riesgo es evidente. Descubre cómo gobernar la IA en tu empresa.',
-      category: 'Inteligencia Artificial',
+      title: isEnglish
+        ? 'AI Governance: a new strategic responsibility for businesses'
+        : 'La gobernanza de la inteligencia artificial: una nueva responsabilidad estratégica para las empresas',
+      description: isEnglish
+        ? 'Artificial intelligence requires governance. Discover why it is a strategic responsibility for companies and how to implement it correctly.'
+        : 'La inteligencia artificial requiere gobernanza. Descubre por qué es una responsabilidad estratégica para las empresas y cómo implementarla correctamente.',
+      excerpt: isEnglish
+        ? 'AI multiplies our ability to generate content, but without governance the risk is evident. Discover how to govern AI in your company.'
+        : 'La IA multiplica nuestra capacidad de generar contenidos, pero sin gobernanza el riesgo es evidente. Descubre cómo gobernar la IA en tu empresa.',
+      category: isEnglish ? 'Artificial Intelligence' : 'Inteligencia Artificial',
       readTime: '10 min',
       date: '2025-12-10',
       image: gobernanzaIAHero,
-      slug: '/es/blog/gobernanza-ia-empresas',
-      tags: ['IA', 'Gobernanza', 'Estrategia', 'Regulación', 'Marketing Digital', 'Automatización', 'Ética IA'],
+      slug: isEnglish ? '/en/blog/gobernanza-ia-empresas' : '/es/blog/gobernanza-ia-empresas',
+      tags: ['IA', isEnglish ? 'Governance' : 'Gobernanza', isEnglish ? 'Strategy' : 'Estrategia', isEnglish ? 'Regulation' : 'Regulación', 'Marketing Digital', isEnglish ? 'Automation' : 'Automatización', isEnglish ? 'AI Ethics' : 'Ética IA'],
       featured: true
     },
     {
       id: 'guia-privacidad-huella-digital',
-      title: 'Guía práctica para proteger tu privacidad y tu identidad digital',
-      description: 'Guía completa para gestionar tu huella digital en vida: identifica perfiles, ajusta privacidad, ejerce el derecho al olvido y protege tu identidad online.',
-      excerpt: 'Pasos prácticos para gestionar tu huella digital: inventario de perfiles, configuración de privacidad, albacea digital y protección de identidad.',
-      category: 'Privacidad Digital',
+      title: isEnglish
+        ? 'Practical guide to protect your privacy and digital identity'
+        : 'Guía práctica para proteger tu privacidad y tu identidad digital',
+      description: isEnglish
+        ? 'Complete guide to manage your digital footprint in life: identify profiles, adjust privacy, exercise the right to be forgotten and protect your online identity.'
+        : 'Guía completa para gestionar tu huella digital en vida: identifica perfiles, ajusta privacidad, ejerce el derecho al olvido y protege tu identidad online.',
+      excerpt: isEnglish
+        ? 'Practical steps to manage your digital footprint: profile inventory, privacy settings, digital executor and identity protection.'
+        : 'Pasos prácticos para gestionar tu huella digital: inventario de perfiles, configuración de privacidad, albacea digital y protección de identidad.',
+      category: isEnglish ? 'Digital Privacy' : 'Privacidad Digital',
       readTime: '12 min',
       date: '2025-12-03',
       image: guiaPrivacidadHeroImage,
-      slug: '/es/blog/guia-privacidad-huella-digital',
-      tags: ['Privacidad', 'Huella Digital', 'Identidad Digital', 'Derecho al Olvido', 'RGPD', 'Digitalización Consciente', 'Seguridad Online'],
+      slug: isEnglish ? '/en/blog/guia-privacidad-huella-digital' : '/es/blog/guia-privacidad-huella-digital',
+      tags: [isEnglish ? 'Privacy' : 'Privacidad', isEnglish ? 'Digital Footprint' : 'Huella Digital', isEnglish ? 'Digital Identity' : 'Identidad Digital', isEnglish ? 'Right to be Forgotten' : 'Derecho al Olvido', 'RGPD', isEnglish ? 'Conscious Digitization' : 'Digitalización Consciente', isEnglish ? 'Online Security' : 'Seguridad Online'],
       featured: true
+    },
+    {
+      id: 'chatbots-para-paginas-web',
+      title: isEnglish
+        ? 'Chatbots for websites: what options exist and which makes sense for your business'
+        : 'Chatbots para páginas web: qué opciones existen y cuál tiene sentido para tu negocio',
+      description: isEnglish
+        ? 'Discover the types of chatbots for websites, their advantages and limitations. Practical guide to choose the solution that best fits your business.'
+        : 'Descubre los tipos de chatbots para páginas web, sus ventajas y limitaciones. Guía práctica para elegir la solución que mejor encaje con tu negocio.',
+      excerpt: isEnglish
+        ? 'WordPress plugins, custom solutions, SaaS and integrated CRM: analyze which is the ideal chatbot for your marketing and sales strategy.'
+        : 'Plugins WordPress, soluciones a medida, SaaS y CRM integrado: analiza cuál es el chatbot ideal para tu estrategia de marketing y ventas.',
+      category: isEnglish ? 'Automation' : 'Automatización',
+      readTime: '10 min',
+      date: '18 Nov 2025',
+      image: chatbotsWebHero,
+      slug: isEnglish ? '/en/blog/chatbots-para-paginas-web' : '/es/blog/chatbots-para-paginas-web',
+      tags: ['Chatbots', isEnglish ? 'Automation' : 'Automatización', 'CRM', 'IA', 'WordPress', 'GoHighLevel'],
+      featured: true
+    },
+    {
+      id: 'crm-que-es-beneficios',
+      title: isEnglish
+        ? 'CRM: What it is, Benefits and How to Choose the Best for Your Company'
+        : 'CRM: Qué es, Beneficios y Cómo Elegir el Mejor para tu Empresa',
+      description: isEnglish
+        ? 'Discover what a CRM is, its benefits for marketing and sales, and how to choose the most suitable one for your business. Practical guide with real examples and implementation steps.'
+        : 'Descubre qué es un CRM, sus beneficios para marketing y ventas, y cómo elegir el más adecuado para tu negocio. Guía práctica con ejemplos reales y pasos de implantación.',
+      date: '2025-01-18',
+      readTime: '20 min',
+      category: 'CRM',
+      image: '/crm-dashboard-hero.jpg',
+      tags: ['CRM', 'Marketing Digital', isEnglish ? 'Sales' : 'Ventas', isEnglish ? 'Automation' : 'Automatización', isEnglish ? 'Customer Management' : 'Gestión Clientes']
     },
     {
       id: 'huella-digital-derecho-olvido',
@@ -104,19 +192,6 @@ const Blog = () => {
       slug: '/es/blog/huella-digital-derecho-olvido',
       tags: ['Privacidad', 'RGPD', 'Derecho al Olvido', 'Huella Digital', 'LOPDGDD', 'Digitalización Consciente'],
       featured: false
-    },
-    {
-      id: 'chatbots-para-paginas-web',
-      title: 'Chatbots para páginas web: qué opciones existen y cuál tiene sentido para tu negocio',
-      description: 'Descubre los tipos de chatbots para páginas web, sus ventajas y limitaciones. Guía práctica para elegir la solución que mejor encaje con tu negocio.',
-      excerpt: 'Plugins WordPress, soluciones a medida, SaaS y CRM integrado: analiza cuál es el chatbot ideal para tu estrategia de marketing y ventas.',
-      category: 'Automatización',
-      readTime: '10 min',
-      date: '18 Nov 2025',
-      image: chatbotsWebHero,
-      slug: '/es/blog/chatbots-para-paginas-web',
-      tags: ['Chatbots', 'Automatización', 'CRM', 'IA', 'WordPress', 'GoHighLevel'],
-      featured: true
     },
     {
       id: 'configuracion-email-marketing-cumplimiento-normativo',
@@ -294,16 +369,6 @@ const Blog = () => {
       tags: ['CRM', 'Selección CRM', 'Marketing Digital', 'Automatización', 'ROI', 'Implementación']
     },
     {
-      id: 'crm-que-es-beneficios',
-      title: 'CRM: Qué es, Beneficios y Cómo Elegir el Mejor para tu Empresa',
-      description: 'Descubre qué es un CRM, sus beneficios para marketing y ventas, y cómo elegir el más adecuado para tu negocio. Guía práctica con ejemplos reales y pasos de implantación.',
-      date: '2025-01-18',
-      readTime: '20 min',
-      category: 'CRM',
-      image: '/crm-dashboard-hero.jpg',
-      tags: ['CRM', 'Marketing Digital', 'Ventas', 'Automatización', 'Gestión Clientes']
-    },
-    {
       id: 'google-consent-mode-cookieyes',
       title: 'Cómo instalar Consent Mode en Google Tag Manager con CookieYes',
       description: 'Guía completa para configurar Google Consent Mode con CookieYes en Google Tag Manager. Cumple con GDPR y mejora la privacidad de tus usuarios.',
@@ -440,7 +505,7 @@ const Blog = () => {
     'Diseño Web'
   ];
 
-      return (
+  return (
     <>
       <EnhancedSEO />
       
@@ -451,10 +516,10 @@ const Blog = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl md:text-6xl font-bold mb-10 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent" style={{ lineHeight: 1.2 }}>
-                Blog Hayas Marketing
+                {content.heroTitle}
               </h1>
               <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Ideas, criterio y análisis para entender mejor el marketing, la tecnología y cómo influyen en las decisiones reales de negocio.
+                {content.heroSubtitle}
               </p>
             </div>
           </div>
@@ -466,7 +531,7 @@ const Blog = () => {
       {/* Featured Post */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-center">Artículo destacado</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center">{content.featuredTitle}</h2>
           <div className="max-w-4xl mx-auto">
             <Card className="overflow-hidden hover:shadow-xl transition-shadow">
               <div className="md:flex">
@@ -483,7 +548,7 @@ const Blog = () => {
                       <Badge variant="secondary">{featuredPost.category}</Badge>
                       <span className="text-sm text-muted-foreground flex items-center gap-1">
                         <Calendar className="h-4 w-4" />
-                        {new Date(featuredPost.date).toLocaleDateString('es-ES')}
+                        {new Date(featuredPost.date).toLocaleDateString(languageCode)}
                       </span>
                     </div>
                     <CardTitle className="text-2xl mb-2">{featuredPost.title}</CardTitle>
@@ -502,16 +567,16 @@ const Blog = () => {
                     </div>
                      <div className="flex flex-wrap gap-2 mb-4">
                        {featuredPost.tags.map((tag) => (
-                          <Link key={tag} to={`/es/blog/tag/${tag.replace(/\s+/g, '-').toLowerCase()}`}>
+                          <Link key={tag} to={`${content.tagBasePath}/${tag.replace(/\s+/g, '-').toLowerCase()}`}>
                             <Badge variant="outline" className="text-xs hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer">
                               {tag}
                             </Badge>
                           </Link>
                        ))}
                      </div>
-                    <Link to={`/es/blog/${featuredPost.id}`}>
+                    <Link to={`${content.blogBasePath}/${featuredPost.id}`}>
                       <Button className="w-full group">
-                        Leer Artículo Completo
+                        {content.readFullArticle}
                         <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                       </Button>
                     </Link>
@@ -526,7 +591,7 @@ const Blog = () => {
       {/* Recent Posts */}
       <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-center">Marketing e Inteligencia aplicada para tomar mejores decisiones</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center">{content.recentPostsTitle}</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {recentPosts.map((post) => (
               <Card key={post.id} className="overflow-hidden hover:shadow-lg transition-shadow group">
@@ -558,7 +623,7 @@ const Blog = () => {
                   {post.tags && (
                      <div className="flex flex-wrap gap-2 mb-4">
                        {post.tags.slice(0, 3).map((tag) => (
-                          <Link key={tag} to={`/es/blog/tag/${tag.replace(/\s+/g, '-').toLowerCase()}`}>
+                          <Link key={tag} to={`${content.tagBasePath}/${tag.replace(/\s+/g, '-').toLowerCase()}`}>
                             <Badge variant="outline" className="text-xs hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer">
                               {tag}
                             </Badge>
@@ -569,11 +634,11 @@ const Blog = () => {
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-muted-foreground flex items-center gap-1">
                       <Calendar className="h-4 w-4" />
-                      {new Date(post.date).toLocaleDateString('es-ES')}
+                      {new Date(post.date).toLocaleDateString(languageCode)}
                     </span>
-                      <Link to={post.slug || `/es/blog/${post.id}`}>
+                      <Link to={post.slug || `${content.blogBasePath}/${post.id}`}>
                         <Button variant="ghost" size="sm" className="group/btn">
-                          Leer más
+                          {content.readMore}
                           <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                         </Button>
                       </Link>
@@ -588,7 +653,7 @@ const Blog = () => {
       {/* All Articles */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-center">Guías prácticas para implementar CRM</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center">{content.allArticlesTitle}</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {allArticles.map((post) => (
               <Card key={post.id} className="overflow-hidden hover:shadow-lg transition-shadow group">
@@ -620,7 +685,7 @@ const Blog = () => {
                    {post.tags && (
                      <div className="flex flex-wrap gap-2 mb-4">
                        {post.tags.slice(0, 3).map((tag) => (
-                          <Link key={tag} to={`/es/blog/tag/${tag.replace(/\s+/g, '-').toLowerCase()}`}>
+                          <Link key={tag} to={`${content.tagBasePath}/${tag.replace(/\s+/g, '-').toLowerCase()}`}>
                             <Badge variant="outline" className="text-xs hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer">
                               {tag}
                             </Badge>
@@ -631,11 +696,11 @@ const Blog = () => {
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-muted-foreground flex items-center gap-1">
                       <Calendar className="h-4 w-4" />
-                      {new Date(post.date).toLocaleDateString('es-ES')}
+                      {new Date(post.date).toLocaleDateString(languageCode)}
                     </span>
-                      <Link to={post.slug || `/es/blog/${post.id}`}>
+                      <Link to={post.slug || `${content.blogBasePath}/${post.id}`}>
                         <Button variant="ghost" size="sm" className="group/btn">
-                          Leer más
+                          {content.readMore}
                           <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                         </Button>
                       </Link>
@@ -651,13 +716,12 @@ const Blog = () => {
       <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center bg-gradient-to-r from-primary/10 to-accent/10 rounded-lg p-8">
-            <h3 className="text-2xl font-bold mb-4">¿Quieres estar al día?</h3>
+            <h3 className="text-2xl font-bold mb-4">{content.newsletterTitle}</h3>
             <p className="text-muted-foreground mb-6">
-              Suscríbete a nuestro newsletter y recibe los últimos insights sobre marketing digital, 
-              IA y estrategias que están transformando los negocios.
+              {content.newsletterSubtitle}
             </p>
             <Button size="lg" className="gradient-primary">
-              Suscribirse al Newsletter
+              {content.subscribeButton}
             </Button>
           </div>
         </div>
