@@ -16,6 +16,7 @@ import { Loader2, CheckCircle2, AlertCircle, Sparkles, Languages, Database, Zap 
 import { Progress } from '@/components/ui/progress';
 import { useGenerateSEO } from '@/hooks/useGenerateSEO';
 import { AIGenerationModal } from '../seo/AIGenerationModal';
+import { OGImageGenerator } from '../seo/OGImageGenerator';
 
 interface QuickActionModalProps {
   route: RouteInventoryItem | null;
@@ -587,23 +588,18 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({ route, isOpe
                 </div>
               )}
 
-              {/* Campos recomendados */}
+              {/* Campos recomendados - OG Image con generador IA */}
               {route.missingRecommendedFields?.includes('og_image') && (
-                <div className="space-y-2 border-t pt-4">
-                  <Label htmlFor="og_image" className="flex items-center gap-2">
-                    Open Graph Image (URL) 
-                    <Badge variant="outline" className="text-xs">Opcional</Badge>
-                  </Label>
-                  <Input
-                    id="og_image"
-                    value={formData.og_image}
-                    onChange={(e) => setFormData({ ...formData, og_image: e.target.value })}
-                    placeholder="https://example.com/image.jpg"
-                  />
-                  <p className="text-xs text-muted-foreground">
-                    URL de la imagen que se mostrará en redes sociales
-                  </p>
-                </div>
+                <OGImageGenerator
+                  path={route.path}
+                  title={formData.title || route.title || ''}
+                  description={formData.description || ''}
+                  category={route.category}
+                  language={route.path.startsWith('/en') ? 'en' : 'es'}
+                  currentOgImage={formData.og_image}
+                  onImageGenerated={(url) => setFormData({ ...formData, og_image: url })}
+                  onManualUrlChange={(url) => setFormData({ ...formData, og_image: url })}
+                />
               )}
 
               <Button 
