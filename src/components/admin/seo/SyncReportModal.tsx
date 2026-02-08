@@ -202,9 +202,9 @@ export const SyncReportModal: React.FC<SyncReportModalProps> = ({
             usedAI = true;
           }
           
-          // Pequeña pausa para evitar rate limiting (300ms entre llamadas)
+          // Pausa entre llamadas para evitar rate limiting (800ms)
           if (i < report.newRoutes.length - 1) {
-            await new Promise(resolve => setTimeout(resolve, 300));
+            await new Promise(resolve => setTimeout(resolve, 800));
           }
         }
 
