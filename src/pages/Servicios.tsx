@@ -10,10 +10,45 @@ import { ArrowRight, Search, LayoutGrid, Rocket, Users, TrendingUp } from 'lucid
 import { allServices, pillarMeta, PillarKey } from '@/data/services';
 import { generateItemListSchema } from '@/data/seoData';
 import DynamicH1 from '@/components/DynamicH1';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Servicios: React.FC = () => {
+  const { isEnglish } = useLanguage();
   const [selectedPillar, setSelectedPillar] = useState<PillarKey | 'all'>('all');
   const [searchQuery, setSearchQuery] = useState('');
+
+  // Bilingual content
+  const content = {
+    heroTitle: isEnglish ? 'Digital Marketing' : 'Marketing Digital',
+    heroTitleHighlight: isEnglish ? 'Services' : 'Servicios de',
+    heroSubtitle: isEnglish 
+      ? 'Comprehensive solutions to boost your brand, connect with your customers, and activate your sales. From branding and web design to AI automation.'
+      : 'Soluciones integrales para impulsar tu marca, conectar con tus clientes y activar tus ventas. Desde branding y diseño web hasta automatización con IA.',
+    searchPlaceholder: isEnglish ? 'Search services...' : 'Buscar servicios...',
+    filterAll: isEnglish ? 'All' : 'Todos',
+    filterImpulsa: isEnglish ? 'Boost your brand' : 'Impulsa tu marca',
+    filterConecta: isEnglish ? 'Connect with customers' : 'Conecta con tus clientes',
+    filterActiva: isEnglish ? 'Activate your sales' : 'Activa tus ventas',
+    noResults: isEnglish 
+      ? 'No services found matching your search.'
+      : 'No se encontraron servicios que coincidan con tu búsqueda.',
+    viewService: isEnglish ? 'View service' : 'Ver servicio',
+    ctaTitle: isEnglish ? "Not sure which service you need?" : '¿No sabes qué servicio necesitas?',
+    ctaSubtitle: isEnglish 
+      ? 'Schedule a free consultation and we will help you design the perfect strategy for your business.'
+      : 'Agenda una consulta gratuita y te ayudaremos a diseñar la estrategia perfecta para tu negocio.',
+    ctaButton: isEnglish ? 'Request free consultation' : 'Solicitar consultoría gratuita',
+    ctaSecondary: isEnglish ? 'View success stories' : 'Ver casos de éxito',
+    consultaLink: isEnglish ? '/en/request-consultation' : '/es/solicitar-consulta',
+    casosLink: isEnglish ? '/en/success-stories' : '/es/casos-exito',
+  };
+
+  // Pillar titles for badges
+  const pillarTitles = {
+    impulsa: isEnglish ? 'Boost your brand' : pillarMeta.impulsa.title,
+    conecta: isEnglish ? 'Connect with customers' : pillarMeta.conecta.title,
+    activa: isEnglish ? 'Activate your sales' : pillarMeta.activa.title,
+  };
 
   // Generate ItemList schema for all services
   const itemListSchema = generateItemListSchema({
@@ -22,8 +57,12 @@ const Servicios: React.FC = () => {
       url: `https://hayasmarketing.com${s.href}`,
       description: s.description
     })),
-    listName: 'Servicios de Marketing Digital - Hayas Marketing',
-    listDescription: 'Catálogo completo de servicios: branding, web, SEO, publicidad, CRM, IA y automatización para hacer crecer tu negocio.'
+    listName: isEnglish 
+      ? 'Digital Marketing Services - Hayas Marketing'
+      : 'Servicios de Marketing Digital - Hayas Marketing',
+    listDescription: isEnglish
+      ? 'Complete service catalog: branding, web, SEO, advertising, CRM, AI and automation to grow your business.'
+      : 'Catálogo completo de servicios: branding, web, SEO, publicidad, CRM, IA y automatización para hacer crecer tu negocio.'
   });
 
   // Filter services
@@ -54,14 +93,13 @@ const Servicios: React.FC = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <DynamicH1 
-                fallback="Servicios de Marketing Digital"
+                fallback={isEnglish ? "Digital Marketing Services" : "Servicios de Marketing Digital"}
                 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
               >
-                Servicios de <span className="text-gradient-primary">Marketing Digital</span>
+                {content.heroTitleHighlight} <span className="text-gradient-primary">{content.heroTitle}</span>
               </DynamicH1>
               <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
-                Soluciones integrales para impulsar tu marca, conectar con tus clientes y activar tus ventas. 
-                Desde branding y diseño web hasta automatización con IA.
+                {content.heroSubtitle}
               </p>
             </div>
           </div>
@@ -76,7 +114,7 @@ const Servicios: React.FC = () => {
                 <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
                 <input
                   type="text"
-                  placeholder="Buscar servicios..."
+                  placeholder={content.searchPlaceholder}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full pl-12 pr-4 py-3 border border-border rounded-full bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary shadow-sm transition-all"
@@ -91,7 +129,7 @@ const Servicios: React.FC = () => {
                   className="rounded-full px-6"
                 >
                   <LayoutGrid className="h-4 w-4" />
-                  Todos
+                  {content.filterAll}
                 </Button>
                 <Button
                   variant={selectedPillar === 'impulsa' ? 'impulsa' : 'impulsa-outline'}
@@ -99,7 +137,7 @@ const Servicios: React.FC = () => {
                   className="rounded-full px-6"
                 >
                   <Rocket className="h-4 w-4" />
-                  Impulsa tu marca
+                  {content.filterImpulsa}
                 </Button>
                 <Button
                   variant={selectedPillar === 'conecta' ? 'conecta' : 'conecta-outline'}
@@ -107,7 +145,7 @@ const Servicios: React.FC = () => {
                   className="rounded-full px-6"
                 >
                   <Users className="h-4 w-4" />
-                  Conecta con tus clientes
+                  {content.filterConecta}
                 </Button>
                 <Button
                   variant={selectedPillar === 'activa' ? 'activa' : 'activa-outline'}
@@ -115,7 +153,7 @@ const Servicios: React.FC = () => {
                   className="rounded-full px-6"
                 >
                   <TrendingUp className="h-4 w-4" />
-                  Activa tus ventas
+                  {content.filterActiva}
                 </Button>
               </div>
             </div>
@@ -128,7 +166,7 @@ const Servicios: React.FC = () => {
             {filteredServices.length === 0 ? (
               <div className="text-center py-12">
                 <p className="text-xl text-muted-foreground">
-                  No se encontraron servicios que coincidan con tu búsqueda.
+                  {content.noResults}
                 </p>
               </div>
             ) : (
@@ -148,7 +186,7 @@ const Servicios: React.FC = () => {
                       </div>
                       <div className="flex justify-center mb-2">
                         <Badge variant={service.pillar} className="text-xs px-3 py-1">
-                          {pillarMeta[service.pillar].title}
+                          {pillarTitles[service.pillar]}
                         </Badge>
                       </div>
                       <CardTitle className="text-xl font-bold">
@@ -162,7 +200,7 @@ const Servicios: React.FC = () => {
                       <div className="text-center">
                         <Button variant="outline" size="sm" asChild className="group-hover:bg-primary group-hover:text-white transition-colors">
                           <Link to={service.href}>
-                            Ver servicio
+                            {content.viewService}
                             <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                           </Link>
                         </Button>
@@ -180,21 +218,21 @@ const Servicios: React.FC = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold font-dm-sans mb-6">
-                ¿No sabes qué servicio necesitas?
+                {content.ctaTitle}
               </h2>
               <p className="text-xl text-muted-foreground mb-8">
-                Agenda una consulta gratuita y te ayudaremos a diseñar la estrategia perfecta para tu negocio.
+                {content.ctaSubtitle}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" asChild>
-                  <Link to="/es/solicitar-consulta">
-                    Solicitar consultoría gratuita
+                  <Link to={content.consultaLink}>
+                    {content.ctaButton}
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
                 <Button variant="outline" size="lg" asChild>
-                  <Link to="/es/casos-exito">
-                    Ver casos de éxito
+                  <Link to={content.casosLink}>
+                    {content.ctaSecondary}
                   </Link>
                 </Button>
               </div>
