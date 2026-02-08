@@ -1,231 +1,251 @@
 
 
-## Plan: Rediseño Visual Destacado de la Calculadora ROI
+## Plan: Widget Embebible y Colapsable de la Calculadora ROI
 
 ### Objetivo
 
-Transformar la calculadora actual en una herramienta visualmente impactante que capte la atención inmediatamente, manteniendo la funcionalidad intacta pero mejorando significativamente su presencia visual.
+Crear un nuevo componente `SalesForecastCalculatorWidget` que funcione como versión compacta y colapsable de la calculadora, permitiendo su integración en artículos de blog y otras páginas sin ocupar demasiado espacio.
 
 ---
 
-### Mejoras de Diseño Propuestas
+### Comportamiento del Widget
 
 ```text
-ANTES (Diseño actual)                    DESPUES (Nuevo diseño)
-+---------------------------+            +---------------------------+
-| [Card simple blanca]      |            | [Gradiente hero + glassmorphism]
-| - Icono pequeño           |   -->      | - Icono animado grande    |
-| - Tabla básica            |            | - Header con brillo       |
-| - Cards de resumen planas |            | - Cards con hover 3D      |
-+---------------------------+            +---------------------------+
-```
-
----
-
-### Elementos de Diseño Nuevos
-
-#### 1. Header Hero con Gradiente Animado
-```text
-+---------------------------------------------------------------+
-|  ╔═════════════════════════════════════════════════════════╗  |
-|  ║  [Icono Calculator con pulse glow]                      ║  |
-|  ║                                                         ║  |
-|  ║  🧮 CALCULADORA DE PREVISION DE VENTAS                 ║  |
-|  ║  ─────────────────────────────────────                 ║  |
-|  ║  Simula el crecimiento de tu embudo de marketing       ║  |
-|  ║                                                         ║  |
-|  ║  [Badge: Herramienta Interactiva] [Badge: Sin registro] ║  |
-|  ╚═════════════════════════════════════════════════════════╝  |
-+---------------------------------------------------------------+
-```
-- Fondo: `bg-gradient-to-br from-primary/10 via-accent/5 to-primary/10`
-- Borde: `border-primary/20` con `shadow-2xl`
-- Icono: Animacion `animate-pulse` con glow effect
-
----
-
-#### 2. Inputs con Estilo Glassmorphism
-```text
-┌─────────────────────────────┐  ┌─────────────────────────────┐
-│  📊 DATOS INICIALES         │  │  🎯 RATIOS DE CONVERSION    │
-│  ─────────────────────────  │  │  ─────────────────────────  │
-│  ┌───────────────────────┐  │  │  ┌───────────────────────┐  │
-│  │ Backdrop blur + borde │  │  │  │ Hover: scale + shadow │  │
-│  │ subtle gradient       │  │  │  │ Focus: ring animation │  │
-│  └───────────────────────┘  │  └───────────────────────────┘  │
-└─────────────────────────────┘  └─────────────────────────────┘
-```
-- Cards de input: `bg-white/80 backdrop-blur-sm border-primary/10`
-- Hover: `hover:shadow-lg hover:border-primary/30 transition-all duration-300`
-- Iconos: Con colores de pilares (Impulsa purple, Conecta blue, Activa green)
-
----
-
-#### 3. Tabla de Proyeccion Mejorada
-```text
+ESTADO COLAPSADO (Vista por defecto)
 ┌─────────────────────────────────────────────────────────────────┐
-│  PROYECCION ANUAL                                [Sparkles]     │
-│  ═══════════════════════════════════════════════════════════   │
-│                                                                 │
-│  ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐ │
-│  │ Ene │ Feb │ Mar │ Abr │ ...                        │TOTAL │ │
-│  ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤ │
-│  │ ▲   │ ▲   │ ▲   │ ▲   │                           │ ★★★  │ │
-│  │10k  │10.3k│10.6k│10.9k│                           │144k  │ │  <-- Gradient bg row
-│  ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤ │
-│  │     │     │     │     │                           │      │ │
-│  └─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┘ │
-│                                                                 │
-│  Columna TOTAL: bg-gradient-to-r from-primary/20 to-accent/20  │
+│  ╔═══════════════════════════════════════════════════════════╗  │
+│  ║  [Icon]  Calculadora de Previsión de Ventas               ║  │
+│  ║                                                           ║  │
+│  ║  Simula el crecimiento de tu embudo de marketing a 12     ║  │
+│  ║  meses y descubre cuántos clientes puedes conseguir.      ║  │
+│  ║                                                           ║  │
+│  ║  [✓ Gratis]  [✓ Sin registro]  [✓ Resultados inmediatos]  ║  │
+│  ║                                                           ║  │
+│  ║         [ ▼ Abrir Calculadora ]                          ║  │
+│  ╚═══════════════════════════════════════════════════════════╝  │
+└─────────────────────────────────────────────────────────────────┘
+
+ESTADO EXPANDIDO (Al hacer clic)
+┌─────────────────────────────────────────────────────────────────┐
+│  ╔═══════════════════════════════════════════════════════════╗  │
+│  ║  [Icon]  Calculadora de Previsión de Ventas    [ ▲ Cerrar]║  │
+│  ╠═══════════════════════════════════════════════════════════╣  │
+│  ║                                                           ║  │
+│  ║  [Calculadora Completa con todos los inputs y tabla]      ║  │
+│  ║                                                           ║  │
+│  ║  - Inputs: Visitas, Crecimiento, Ratios de conversión    ║  │
+│  ║  - Tabla de proyección 12 meses                          ║  │
+│  ║  - Cards de resumen                                      ║  │
+│  ║  - Indicador de rendimiento                              ║  │
+│  ║  - Botones: Descargar CSV, Reiniciar                     ║  │
+│  ║                                                           ║  │
+│  ╚═══════════════════════════════════════════════════════════╝  │
 └─────────────────────────────────────────────────────────────────┘
 ```
-- Header de tabla: `bg-gradient-to-r from-primary/10 to-accent/10`
-- Fila de ingresos: `bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5`
-- Columna total: Destacada con gradiente y fuente bold
-- Hover en filas: `hover:bg-primary/5 transition-colors`
 
 ---
 
-#### 4. Cards de Resumen con Efecto 3D
-```text
-┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐
-│   ▲      │  │   ▲      │  │   ▲      │  │   ▲      │  │   ★      │
-│ 144,282  │  │  1,443   │  │   144    │  │   72     │  │ €7,214   │
-│Visitantes│  │  MQLs    │  │  SQLs    │  │ Clientes │  │ Ingresos │
-│   [📈]   │  │   [👥]   │  │   [🎯]   │  │   [✓]    │  │   [💰]   │
-└──────────┘  └──────────┘  └──────────┘  └──────────┘  └──────────┘
-     ↑             ↑             ↑             ↑             ↑
-  Hover:       Hover:       Hover:       Hover:       Hover:
-  -translate   -translate   -translate   -translate   scale-105
-  -y-2         -y-2         -y-2         -y-2         + shadow-xl
-```
-- Hover effect: `hover:-translate-y-2 hover:shadow-xl transition-all duration-300`
-- Icono dentro de cada card con color contextual
-- Card de ingresos: `bg-gradient-to-br from-primary/10 to-accent/10 border-primary/30`
+### Arquitectura de Componentes
 
----
-
-#### 5. Interpretacion con Efecto Destacado
-```text
-┌═══════════════════════════════════════════════════════════════════┐
-│ ║                                                               ║ │
-│ ║  [🚀 Icono grande con glow]                                  ║ │
-│ ║                                                               ║ │
-│ ║  "Con esta configuracion, podrias adquirir 72 clientes       ║ │
-│ ║   y generar €7,214 de ingresos en 12 meses"                  ║ │
-│ ║                                                               ║ │
-│ ║  ┌─────────────────────────────────────────────────────────┐ ║ │
-│ ║  │  [Barra de progreso visual del rendimiento]             │ ║ │
-│ ║  │  ████████████████████████████░░░░░  78% Excelente       │ ║ │
-│ ║  └─────────────────────────────────────────────────────────┘ ║ │
-│ ║                                                               ║ │
-│ ╚═══════════════════════════════════════════════════════════════╝ │
-└───────────────────────────────────────────────────────────────────┘
-```
-- Container: `bg-gradient-to-br from-primary/10 via-transparent to-accent/10`
-- Borde decorativo: `border-l-4 border-primary`
-- Nueva barra de rendimiento visual con niveles de color
-
----
-
-### Animaciones y Microinteracciones
-
-| Elemento | Animacion | Efecto |
-|----------|-----------|--------|
-| Icono header | `animate-pulse` | Brillo suave continuo |
-| Cards de input | `hover:scale-[1.02]` | Elevacion sutil |
-| Cards resumen | `hover:-translate-y-2` | Efecto "lift" |
-| Sliders | `transition-all duration-200` | Movimiento fluido |
-| Botones | `hover:shadow-lg` | Profundidad al hover |
-| Fila de tabla | `hover:bg-primary/5` | Highlight al pasar |
-
----
-
-### Indicador de Rendimiento Visual (Nuevo)
-
-Añadir una barra de progreso que muestre el nivel de rendimiento:
+La estrategia es **reutilizar** el componente existente, no duplicar código:
 
 ```text
-ROI Estimado: 144%
-
-[████████████████████░░░░░░░░░░] 72%
-
-   Bajo      Medio      Bueno      Excelente
-   (rojo)    (naranja)  (amarillo) (verde)
+SalesForecastCalculatorWidget.tsx (NUEVO)
+    │
+    ├── Header colapsable con preview
+    │
+    └── <Collapsible>
+            └── <SalesForecastCalculator />  (componente existente)
 ```
 
-Calculo:
-- ROI = (Ingresos Totales - Inversion Estimada) / Inversion Estimada * 100
-- Inversion Estimada = Visitantes Iniciales * CPC medio (0.50 EUR)
+---
+
+### Props del Widget
+
+| Prop | Tipo | Default | Descripcion |
+|------|------|---------|-------------|
+| `defaultOpen` | boolean | false | Si inicia expandido o colapsado |
+| `showFullPageLink` | boolean | true | Mostrar enlace a la pagina completa |
+| `variant` | 'default' \| 'compact' | 'default' | Variante de estilo |
+| `className` | string | - | Clases CSS adicionales |
+
+---
+
+### Diseño del Header Colapsado
+
+El header colapsado sera atractivo y llamara a la accion:
+
+```text
+┌─────────────────────────────────────────────────────────────────┐
+│ ┌─────────────────────────────────────────────────────────────┐ │
+│ │  [Gradiente de fondo sutil]                                 │ │
+│ │                                                             │ │
+│ │  ┌──────┐                                                   │ │
+│ │  │ 📊  │  Calculadora de Prevision de Ventas              │ │
+│ │  │ Icon │                                                   │ │
+│ │  └──────┘  Simula tu embudo de marketing a 12 meses        │ │
+│ │                                                             │ │
+│ │  ┌─────────┐  ┌───────────┐  ┌────────────────────┐        │ │
+│ │  │ ✓ Gratis│  │✓ Sin Reg. │  │✓ Resultados al inst│        │ │
+│ │  └─────────┘  └───────────┘  └────────────────────┘        │ │
+│ │                                                             │ │
+│ │  ┌───────────────────────────────────────────────────────┐ │ │
+│ │  │         ▼  Abrir Calculadora Interactiva             │ │ │
+│ │  └───────────────────────────────────────────────────────┘ │ │
+│ │                                                             │ │
+│ │  [Enlace: Ver herramienta en pagina completa →]            │ │
+│ └─────────────────────────────────────────────────────────────┘ │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+### Refactorizacion del Componente Original
+
+Para permitir la reutilizacion, se haran pequenos ajustes:
+
+1. **Extraer el contenido interno** en una subcomponente renderizable
+2. **Añadir prop `hideHeader`** para usar solo el contenido sin el hero
+3. **Añadir prop `compact`** para reducir padding en contexto embebido
+
+---
+
+### Archivos a Crear
+
+| Archivo | Descripcion |
+|---------|-------------|
+| `src/components/calculators/SalesForecastCalculatorWidget.tsx` | Widget colapsable para embeber |
 
 ---
 
 ### Archivos a Modificar
 
-| Archivo | Cambios |
-|---------|---------|
-| `src/components/calculators/SalesForecastCalculator.tsx` | Redesign completo del componente |
+| Archivo | Cambio |
+|---------|--------|
+| `src/components/calculators/SalesForecastCalculator.tsx` | Añadir props `hideHeader` y `compact` para reutilizacion |
 
 ---
 
 ### Seccion Tecnica
 
-**Nuevas clases CSS aplicadas:**
-
-```tsx
-// Header principal
-<Card className="w-full max-w-6xl mx-auto shadow-2xl border-primary/20 overflow-hidden">
-  <CardHeader className="text-center pb-6 bg-gradient-to-br from-primary/10 via-accent/5 to-primary/10">
-    <div className="flex justify-center mb-4">
-      <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shadow-lg animate-pulse">
-        <Calculator className="h-8 w-8 text-white" />
-      </div>
-    </div>
-    ...
-  </CardHeader>
-
-// Cards de input
-<Card className="bg-white/80 backdrop-blur-sm border-primary/10 hover:shadow-lg hover:border-primary/30 transition-all duration-300">
-
-// Cards de resumen
-<Card className="text-center p-4 hover:-translate-y-2 hover:shadow-xl transition-all duration-300 group">
-  <div className="text-2xl md:text-3xl font-bold text-primary group-hover:scale-110 transition-transform">
-    {formatNumber(summary.totalVisitors)}
-  </div>
-  ...
-</Card>
-
-// Card de ingresos destacada
-<Card className="text-center p-4 col-span-2 md:col-span-1 bg-gradient-to-br from-primary/10 to-accent/10 border-primary/30 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
-```
-
-**Nueva logica de indicador de rendimiento:**
+**Nuevo componente Widget:**
 
 ```typescript
-// Calcular nivel de rendimiento
-const performanceLevel = useMemo(() => {
-  // Estimar inversion basada en CPC medio
-  const estimatedInvestment = inputs.initialVisits * 0.5; // 0.50 EUR CPC
-  const roi = ((summary.totalRevenue - estimatedInvestment) / estimatedInvestment) * 100;
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
+
+interface WidgetProps {
+  defaultOpen?: boolean;
+  showFullPageLink?: boolean;
+  variant?: 'default' | 'compact';
+  className?: string;
+}
+
+const SalesForecastCalculatorWidget: React.FC<WidgetProps> = ({
+  defaultOpen = false,
+  showFullPageLink = true,
+  variant = 'default',
+  className
+}) => {
+  const [isOpen, setIsOpen] = useState(defaultOpen);
   
-  if (roi < 0) return { level: 'loss', label: 'Perdida', color: 'destructive', percent: 0 };
-  if (roi < 100) return { level: 'low', label: 'Bajo', color: 'orange', percent: 25 };
-  if (roi < 300) return { level: 'good', label: 'Bueno', color: 'yellow', percent: 50 };
-  if (roi < 500) return { level: 'great', label: 'Muy bueno', color: 'lime', percent: 75 };
-  return { level: 'excellent', label: 'Excelente', color: 'green', percent: 100 };
-}, [inputs.initialVisits, summary.totalRevenue]);
+  return (
+    <Card className={cn("overflow-hidden border-primary/20", className)}>
+      <Collapsible open={isOpen} onOpenChange={setIsOpen}>
+        {/* Header siempre visible */}
+        <CollapsibleTrigger asChild>
+          <div className="cursor-pointer">
+            {/* Preview content con gradiente */}
+            <WidgetPreviewHeader isOpen={isOpen} />
+          </div>
+        </CollapsibleTrigger>
+        
+        {/* Contenido expandible */}
+        <CollapsibleContent className="animate-accordion-down">
+          <SalesForecastCalculator hideHeader compact />
+        </CollapsibleContent>
+      </Collapsible>
+      
+      {/* Enlace opcional a pagina completa */}
+      {showFullPageLink && (
+        <div className="p-4 border-t text-center">
+          <Link to="/es/herramientas/calculadora-roi">
+            Ver en pantalla completa →
+          </Link>
+        </div>
+      )}
+    </Card>
+  );
+};
+```
+
+**Modificacion del componente original:**
+
+```typescript
+interface SalesForecastCalculatorProps {
+  hideHeader?: boolean;  // Oculta el hero header
+  compact?: boolean;     // Reduce padding/espaciado
+}
+
+const SalesForecastCalculator: React.FC<SalesForecastCalculatorProps> = ({
+  hideHeader = false,
+  compact = false
+}) => {
+  // ... logica existente ...
+  
+  return (
+    <Card className={cn(
+      "w-full max-w-6xl mx-auto shadow-2xl border-primary/20 overflow-hidden",
+      compact && "shadow-none border-0"
+    )}>
+      {/* Renderizar hero solo si no esta oculto */}
+      {!hideHeader && (
+        <CardHeader className="...">
+          {/* Hero content existente */}
+        </CardHeader>
+      )}
+      
+      <CardContent className={cn(
+        "space-y-8 p-6 md:p-8",
+        compact && "p-4 md:p-6 space-y-6"
+      )}>
+        {/* Contenido existente */}
+      </CardContent>
+    </Card>
+  );
+};
+```
+
+**Animacion de expansion:**
+
+Se utilizara la animacion `animate-accordion-down` ya existente en el proyecto para una transicion suave.
+
+---
+
+### Uso en el Blog Post
+
+Una vez creado, la integracion sera simple:
+
+```tsx
+// En BlogCalculoInversionMarketing.tsx
+import SalesForecastCalculatorWidget from '@/components/calculators/SalesForecastCalculatorWidget';
+
+// Donde antes estaba el enlace a Google Sheets:
+<SalesForecastCalculatorWidget 
+  defaultOpen={false}
+  showFullPageLink={true}
+/>
 ```
 
 ---
 
 ### Resultado Esperado
 
-Una calculadora visualmente impactante que:
+Un widget que:
 
-- Destaca inmediatamente por su diseño premium
-- Mantiene toda la funcionalidad original
-- Genera confianza y profesionalidad
-- Invita a la interaccion con microanimaciones
-- Se diferencia claramente del contenido del blog cuando se integre
-- Esta lista para ser la "joya" del articulo de inversion en marketing
+1. Se muestra colapsado por defecto con un preview atractivo
+2. Al hacer clic, se expande mostrando la calculadora completa
+3. Puede cerrarse de nuevo para no ocupar espacio
+4. Incluye enlace opcional a la version de pagina completa
+5. Reutiliza el 100% del codigo existente sin duplicacion
+6. Tiene animaciones suaves de apertura/cierre
 
