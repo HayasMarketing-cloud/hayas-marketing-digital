@@ -1,136 +1,99 @@
 
 
-## Diagnóstico del Error
+# Plan: Conectar páginas con SEO dinámico de base de datos
 
-Google Search Console muestra "10 elementos no válidos" en "Fragmentos de reseñas" porque el schema de Organization/LocalBusiness incluye reseñas "auto-servidas" (self-serving).
+## Diagnóstico
 
-### Política de Google (2019)
+Las páginas **Contacto** y **Nosotros** no están consumiendo los metadatos SEO de la base de datos porque tienen valores hardcodeados en el código.
 
-Google **no muestra rich results de reseñas** para schemas tipo `LocalBusiness` y `Organization` cuando las reseñas están en el sitio web de la propia empresa. Esto se considera "self-serving" y viola las directrices.
+### Estado actual
 
-**Cita oficial**: *"Reviews that can be perceived as 'self-serving' aren't in the best interest of users... we're not going to display review-rich results anymore for the schema types LocalBusiness and Organization."*
+| Archivo | Problema | Metadatos visibles |
+|---------|----------|--------------------|
+| `Contacto.tsx` | Usa `<Seo title="Contacto \| Hayas Marketing">` hardcodeado | Los de código (antiguos) |
+| `Nosotros.tsx` | No tiene componente SEO | Sin metadatos |
+
+### Lo que hay en la base de datos (correcto)
+
+| Path | Title optimizado |
+|------|------------------|
+| `/es/contacto` | Contacto - Hayas Marketing \| Solicita tu Consulta Gratuita |
+| `/es/nosotros` | Nosotros - Hayas Marketing \| Equipo de Marketing Digital |
 
 ---
 
-## Causa Raíz
+## Solución
 
-**Archivo**: `src/data/seoData.ts`
+Reemplazar el componente `<Seo>` hardcodeado por `<EnhancedSEO />` dinámico, que automáticamente:
+1. Detecta la ruta actual
+2. Consulta la tabla `seo_pages` en Supabase
+3. Aplica los metadatos optimizados
 
-**Líneas problemáticas**: 117-182
+---
 
-```typescript
-// aggregateRating (líneas 118-124)
-aggregateRating: {
-  "@type": "AggregateRating",
-  ratingValue: "4.9",
-  bestRating: "5",
-  worstRating: "1",
-  ratingCount: "47"
-},
+## Cambios a realizar
 
-// review array (líneas 125-182)
-review: [
-  { "@type": "Review", ... },
-  { "@type": "Review", ... },
-  // ... 4 reseñas individuales
-]
+### 1. Contacto.tsx
+
+```tsx
+// ANTES (líneas 6-16)
+import Seo from '@/components/Seo';
+...
+<Seo
+  title="Contacto | Hayas Marketing"
+  description="Contacto y consultoría de marketing estratégico..."
+  canonical="/contacto"
+/>
+
+// DESPUÉS
+import EnhancedSEO from '@/components/EnhancedSEO';
+...
+<EnhancedSEO />
+```
+
+### 2. Nosotros.tsx
+
+```tsx
+// ANTES (líneas 1-20)
+import React from 'react';
+import Navigation from '@/components/Navigation';
+...
+return <div className="min-h-screen flex flex-col">
+  <Navigation />
+
+// DESPUÉS
+import React from 'react';
+import Navigation from '@/components/Navigation';
+import EnhancedSEO from '@/components/EnhancedSEO';  // Añadir
+...
+return <div className="min-h-screen flex flex-col">
+  <EnhancedSEO />  // Añadir
+  <Navigation />
 ```
 
 ---
 
-## Solución Propuesta
+## Resultado esperado
 
-**Eliminar `aggregateRating` y `review` del schema de Organization/LocalBusiness**.
-
-Estos datos no generan rich results para este tipo de schema según las políticas de Google, y además causan errores de validación.
-
-### Código a modificar
-
-**Archivo**: `src/data/seoData.ts`
-
-**Líneas a eliminar**: 117-182 (completo bloque de `aggregateRating` y `review`)
-
-**Antes** (problemático):
-```typescript
-  areaServed: {
-    "@type": "Country",
-    name: "España"
-  },
-  
-  // Aggregate Rating & Reviews (FASE 3)
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    ...
-  },
-  review: [
-    { "@type": "Review", ... },
-    ...
-  ]
-};
-```
-
-**Después** (corregido):
-```typescript
-  areaServed: {
-    "@type": "Country",
-    name: "España"
-  }
-  // NOTA: aggregateRating y review eliminados
-  // Google no muestra rich results de reseñas para Organization/LocalBusiness
-  // Ver: https://developers.google.com/search/docs/appearance/structured-data/review-snippet
-};
-```
+Tras el cambio:
+- El componente `<EnhancedSEO />` consultará automáticamente la base de datos
+- Los títulos y descripciones optimizados que guardaste se aplicarán en el HTML
+- Google verá los metadatos correctos en el próximo crawl
 
 ---
 
-## Alternativas para Mostrar Reseñas
+## Verificación post-implementación
 
-Si deseas mostrar reseñas con rich results, las opciones son:
-
-1. **En páginas de servicios individuales**: Usar schema `Product` o `Service` con reseñas de ese servicio específico
-2. **Reseñas de terceros**: Embeber widgets de Google Reviews, Trustpilot, etc. (que no son "self-serving")
-3. **Testimonios sin schema**: Mostrar testimonios visualmente sin marcarlos como structured data
-
----
-
-## Documentación a Actualizar
-
-Añadir este bug al archivo `docs/SEO_CRITICAL_BUGS_AND_FIXES.md`:
-
-```markdown
-### 4. Error: Fragmentos de reseñas no válidos
-
-**Síntoma**: GSC muestra "10 elementos no válidos" en Fragmentos de reseñas
-
-**Causa Raíz**:
-- `hayasOrganizationSchema` incluía `aggregateRating` y `review`
-- Google considera esto "self-serving" para Organization/LocalBusiness
-- Desde 2019, Google no muestra rich results de reseñas para estos tipos
-
-**Solución Aplicada**:
-- Eliminar `aggregateRating` y `review` del schema de Organization
-- Las reseñas se muestran visualmente pero sin structured data
-
-**Regla para el Futuro**:
-- NUNCA añadir reseñas propias a schemas Organization o LocalBusiness
-- Para rich results de reseñas, usar schema Product en páginas de servicios
-```
+1. Abrir `/es/contacto` y `/es/nosotros` en el navegador
+2. Ver código fuente (Ctrl+U) y buscar:
+   - `<title>Contacto - Hayas Marketing | Solicita tu Consulta Gratuita</title>`
+   - `<title>Nosotros - Hayas Marketing | Equipo de Marketing Digital</title>`
+3. Confirmar que `<meta name="description">` muestra el texto optimizado
+4. Usar IndexNow para notificar a Bing del cambio
 
 ---
 
-## Resumen de Cambios
-
-| Archivo | Cambio |
-|---------|--------|
-| `src/data/seoData.ts` | Eliminar `aggregateRating` y `review` de `hayasOrganizationSchema` |
-| `docs/SEO_CRITICAL_BUGS_AND_FIXES.md` | Añadir documentación del bug #4 |
-
----
-
-## Resultado Esperado
-
-- GSC dejará de mostrar el error "Fragmentos de reseñas no válidos"
-- El schema de Organization seguirá siendo válido para rich results de negocio local
-- Los testimonios pueden seguir mostrándose visualmente en la web sin structured data
+## Tiempo estimado
+- 5 minutos de implementación
+- Sin riesgo de regresión (el sistema ya funciona en otras páginas)
 
