@@ -165,6 +165,7 @@ const StandardGHLForm: React.FC<StandardGHLFormProps> = ({
         <div
           className="relative overflow-hidden rounded-xl bg-white shadow-sm border border-gray-200"
           style={{ 
+            height: minHeight,
             minHeight,
             background: 'linear-gradient(to bottom, #ffffff, #fafbfc)'
           }}
@@ -174,9 +175,8 @@ const StandardGHLForm: React.FC<StandardGHLFormProps> = ({
             src={`https://links.hayasmarketing.com/widget/form/${formId}?theme=dark&button_color=%234D9A00&button_text_color=%23FFFFFF&field_bg=%23F8FAFC&field_border_color=%23E2E8F0&text_color=%23334155&placeholder_color=%239CA3AF&border_radius=12&font_family=Inter&field_padding=16&button_radius=8&form_bg=%23FFFFFF&header_bg=%23FAFBFC`}
             style={{ 
               width: '100%', 
-              height: '100%', 
+              height: minHeight, 
               border: 'none',
-              minHeight: minHeight,
               borderRadius: '12px',
               backgroundColor: '#FFFFFF'
             }}
