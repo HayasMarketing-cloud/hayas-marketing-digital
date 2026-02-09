@@ -334,7 +334,7 @@ const Blog = () => {
       date: '2024-12-17',
       readTime: '8 min',
       category: 'CRM y Automatización',
-      image: '/src/assets/sistema-prevision-ventas.jpg',
+      image: '/images/blog/sistema-prevision-ventas.jpg',
       tags: ['Lead Scoring', 'CRM', 'Automatización', 'Ventas', 'Marketing Digital']
     },
     {
