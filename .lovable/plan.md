@@ -1,90 +1,77 @@
 
-# Plan: Corregir formularios GHL en paginas de servicios
+# Plan: Corregir renderizado del iframe GHL en páginas de servicios
 
-## Diagnostico
+## Problema Identificado
 
-He identificado el problema exacto tras analizar el codigo:
+El formulario aparece en blanco en producción porque el iframe tiene `height: 100%` pero su contenedor padre solo define `minHeight`, no `height`. Esto hace que en algunos contextos de layout (como las páginas de servicios) el iframe colapse a altura 0.
 
-### Situacion actual
+**Funciona en `/es/contacto`**: El grid layout padre proporciona contexto de altura.
+**Falla en páginas de servicio**: El contenedor no tiene altura explícita.
 
-| Pagina | FormId Usado | Estado |
-|--------|--------------|--------|
-| `/es/contacto` | `7hfylnczt0dXbyUFFSEt` | Funciona |
-| `/es/solicitar-consulta` | `7hfylnczt0dXbyUFFSEt` | Funciona |
-| `/es/kit-digital` | `6XcKN5LKbIWM0JYth1SZ` | Verificar |
-| Paginas de servicios | `ZHNw4rjAzNdvFbFnIk1V` (default) | No funciona |
-| PublicidadGoogleAds | `google-ads` | Invalido |
-| GestionRedesSociales | `redes-sociales` | Invalido |
+## Solución
 
-### Causa raiz
+Modificar `StandardGHLForm.tsx` para que el iframe tenga altura explícita en píxeles en lugar de porcentaje.
 
-1. **FormId default incorrecto**: El componente `ServiceContactSection` usa `ZHNw4rjAzNdvFbFnIk1V` como default, que probablemente no existe o esta desactivado en GHL
-2. **FormIds invalidos**: Algunas paginas usan strings descriptivos (`google-ads`, `redes-sociales`) en lugar de IDs reales de GHL
-3. El formId que SI funciona es `7hfylnczt0dXbyUFFSEt` (el de contacto)
+## Archivo a Modificar
 
-## Solucion
+### src/components/StandardGHLForm.tsx
 
-### Paso 1: Actualizar el default en ServiceContactSection
-
-Cambiar el formId default de `ZHNw4rjAzNdvFbFnIk1V` a `7hfylnczt0dXbyUFFSEt` (el que funciona correctamente)
-
-**Archivo:** `src/components/ServiceContactSection.tsx`
+**Cambio 1**: Agregar `height` explícito al contenedor del iframe (línea 167-168)
 
 ```text
-Antes:  formId = 'ZHNw4rjAzNdvFbFnIk1V'
-Despues: formId = '7hfylnczt0dXbyUFFSEt'
+Antes:
+style={{ 
+  minHeight,
+  background: 'linear-gradient(to bottom, #ffffff, #fafbfc)'
+}}
+
+Después:
+style={{ 
+  height: minHeight,
+  minHeight,
+  background: 'linear-gradient(to bottom, #ffffff, #fafbfc)'
+}}
 ```
 
-### Paso 2: Corregir formIds invalidos
+**Cambio 2**: Cambiar `height: 100%` a altura explícita en el iframe (líneas 175-181)
 
-**Archivo:** `src/pages/PublicidadGoogleAds.tsx`
 ```text
-Antes:  formId="google-ads"
-Despues: formId="7hfylnczt0dXbyUFFSEt"
+Antes:
+style={{ 
+  width: '100%', 
+  height: '100%', 
+  border: 'none',
+  minHeight: minHeight,
+  borderRadius: '12px',
+  backgroundColor: '#FFFFFF'
+}}
+
+Después:
+style={{ 
+  width: '100%', 
+  height: minHeight, 
+  border: 'none',
+  borderRadius: '12px',
+  backgroundColor: '#FFFFFF'
+}}
 ```
 
-**Archivo:** `src/pages/GestionRedesSociales.tsx`
-```text
-Antes:  formId="redes-sociales"
-Despues: formId="7hfylnczt0dXbyUFFSEt"
-```
+## Resumen Técnico
 
-### Paso 3: Actualizar ServicePageTemplate
+| Línea | Elemento | Antes | Después |
+|-------|----------|-------|---------|
+| 167-170 | Contenedor div | `minHeight` solo | `height: minHeight, minHeight` |
+| 175-181 | iframe style | `height: '100%'` | `height: minHeight` |
 
-**Archivo:** `src/components/ServicePageTemplate.tsx`
-```text
-Antes:  formId="ZHNw4rjAzNdvFbFnIk1V"
-Despues: formId="7hfylnczt0dXbyUFFSEt"
-```
+## Por Qué Esto Resuelve el Problema
 
-### Paso 4: Actualizar paginas que especifican el formId incorrecto
+1. El iframe necesita altura explícita en píxeles (ej: 820px), no porcentaje
+2. `height: 100%` solo funciona si el padre tiene `height` definido, no solo `minHeight`
+3. Al pasar directamente `minHeight` (número en px) como valor de `height`, garantizamos que el iframe siempre tenga dimensiones correctas
 
-Las siguientes paginas explicitan `ZHNw4rjAzNdvFbFnIk1V` y deben actualizarse:
-- `src/pages/LocalizacionContenidos.tsx`
-- `src/pages/DisenoWeb.tsx`
-- `src/pages/CreacionMarca.tsx`
-- `src/pages/ImplantacionCrm.tsx`
+## Verificación Post-Implementación
 
-## Resumen de cambios
-
-| Archivo | Cambio |
-|---------|--------|
-| `ServiceContactSection.tsx` | Cambiar default formId |
-| `ServicePageTemplate.tsx` | Actualizar formId |
-| `PublicidadGoogleAds.tsx` | Corregir formId invalido |
-| `GestionRedesSociales.tsx` | Corregir formId invalido |
-| `LocalizacionContenidos.tsx` | Actualizar formId |
-| `DisenoWeb.tsx` | Actualizar formId |
-| `CreacionMarca.tsx` | Actualizar formId |
-| `ImplantacionCrm.tsx` | Actualizar formId |
-
-## Verificacion post-implementacion
-
-1. Probar el formulario en `/es/servicios/diseno-web`
-2. Probar en `/es/servicios/asistente-ia`
-3. Probar en otras paginas de servicios aleatorias
-4. Confirmar que el formulario carga y permite el envio exitoso
-
-## Nota importante
-
-Si deseas usar formularios diferentes por servicio (para segmentar leads por origen), necesitaras crear esos formularios en Go High Level y usar sus IDs reales. Por ahora, la solucion usa el formulario de contacto general que ya funciona.
+1. Publicar la aplicación
+2. Verificar en producción que el formulario se muestra en `/es/servicios/asistente-ia`
+3. Verificar en `/es/servicios/diseno-web` y otras páginas de servicio
+4. Confirmar que `/es/contacto` sigue funcionando correctamente
