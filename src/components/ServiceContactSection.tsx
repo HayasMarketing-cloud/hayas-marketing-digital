@@ -11,7 +11,7 @@ interface ServiceContactSectionProps {
 
 // Contact section for service pages using the standardized GHL form design
 const ServiceContactSection: React.FC<ServiceContactSectionProps> = ({
-  formId = 'ZHNw4rjAzNdvFbFnIk1V',
+  formId = '7hfylnczt0dXbyUFFSEt',
   title = '¿Hablamos? Solicita tu propuesta',
   subtitle = 'Cuéntanos tu contexto y objetivos. Te responderemos con una propuesta alineada a tus necesidades.',
   minHeight = 820,
