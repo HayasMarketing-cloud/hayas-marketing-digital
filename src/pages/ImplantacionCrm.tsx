@@ -389,7 +389,7 @@ const ImplantacionCrm = () => {
       <ServiceContactSection 
         title={content.contactTitle} 
         subtitle={content.contactSubtitle} 
-        formId="ZHNw4rjAzNdvFbFnIk1V" 
+        formId="7hfylnczt0dXbyUFFSEt" 
         className="bg-gradient-to-br from-accent/15 via-primary/10 to-secondary/10" 
       />
       

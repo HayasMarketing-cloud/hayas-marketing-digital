@@ -695,7 +695,7 @@ const GestionRedesSociales: React.FC = () => {
       <ServiceContactSection
         title={content.contactTitle}
         subtitle={content.contactSubtitle}
-        formId="redes-sociales"
+        formId="7hfylnczt0dXbyUFFSEt"
       />
 
       <Footer />
