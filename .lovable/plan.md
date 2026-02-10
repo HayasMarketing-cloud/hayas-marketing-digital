@@ -1,77 +1,111 @@
 
-# Plan: Corregir renderizado del iframe GHL en páginas de servicios
 
-## Problema Identificado
+# Integrar reseña de Google My Business en el caso de exito de La Banera KD
 
-El formulario aparece en blanco en producción porque el iframe tiene `height: 100%` pero su contenedor padre solo define `minHeight`, no `height`. Esto hace que en algunos contextos de layout (como las páginas de servicios) el iframe colapse a altura 0.
+## Que vamos a hacer
 
-**Funciona en `/es/contacto`**: El grid layout padre proporciona contexto de altura.
-**Falla en páginas de servicio**: El contenedor no tiene altura explícita.
+Ampliar el sistema de testimonios del template de casos de exito para que, cuando la resena provenga de Google My Business, se muestre con el aspecto visual de una resena verificada de Google: estrellas amarillas, icono de Google, foto del autor y un enlace "Ver en Google" que da credibilidad y confianza.
 
-## Solución
+## Datos de la resena
 
-Modificar `StandardGHLForm.tsx` para que el iframe tenga altura explícita en píxeles en lugar de porcentaje.
+- **Autor**: David Castillo
+- **Puntuacion**: 5 estrellas
+- **Texto**: "Mi estudio fotografico tiene un antes y un despues desde que el equipo de Hayas Marketing me entrego el sitio Web despues de un super estudio de posicionamiento. Ruben, Ebelyn y Daniela son personas que escuchan y saben ponen tu marca y tu persona al mismo nivel. Muchas gracias por todo chicos."
+- **Foto**: Se usara la misma imagen destacada del caso de exito (`successCaseImages.laBaneraKD`)
+- **Empresa**: La Banera KD
 
-## Archivo a Modificar
+## Cambios tecnicos
 
-### src/components/StandardGHLForm.tsx
+### 1. Ampliar la interfaz `Testimonial` en `CaseStudyTemplate.tsx`
 
-**Cambio 1**: Agregar `height` explícito al contenedor del iframe (línea 167-168)
+Anadir campos opcionales a la interfaz existente:
 
-```text
-Antes:
-style={{ 
-  minHeight,
-  background: 'linear-gradient(to bottom, #ffffff, #fafbfc)'
-}}
+```typescript
+interface Testimonial {
+  quote: string;
+  author: string;
+  position: string;
+  company: string;
+  // Nuevos campos opcionales
+  isGoogleReview?: boolean;
+  rating?: number;          // 1-5
+  reviewUrl?: string;       // Enlace a la resena en Google
+  authorImage?: string;     // Foto del autor
+}
+```
 
-Después:
-style={{ 
-  height: minHeight,
-  minHeight,
-  background: 'linear-gradient(to bottom, #ffffff, #fafbfc)'
+### 2. Redisenar la seccion de testimonial en `CaseStudyTemplate.tsx`
+
+Cuando `testimonial.isGoogleReview` sea `true`, renderizar un diseno especifico:
+
+- **Cabecera**: Foto circular del autor + nombre + "Resena en Google" con el icono `GoogleGIcon` (ya existe en `src/components/icons/GoogleGIcon.tsx`)
+- **Estrellas**: 5 estrellas amarillas usando el componente `Star` de lucide-react
+- **Cuerpo**: Texto de la resena en cursiva con comillas
+- **Pie**: Enlace "Ver resena original en Google" que abre la ficha de Google Maps en nueva pestana
+- **Badge**: Etiqueta "Resena verificada de Google" para reforzar credibilidad
+
+Cuando `isGoogleReview` sea `false` o no exista, se mantiene el diseno actual sin cambios.
+
+### 3. Aplicar lo mismo en `CaseStudyTemplateEN.tsx`
+
+Replicar los mismos cambios en el template en ingles para mantener la paridad entre ambos templates (siguiendo la arquitectura de templates separados documentada en la memoria del proyecto).
+
+### 4. Anadir el testimonial en `CasoExitoLaBaneraKD.tsx`
+
+```typescript
+testimonial={{
+  quote: "Mi estudio fotografico tiene un antes y un despues desde que el equipo de Hayas Marketing me entrego el sitio Web despues de un super estudio de posicionamiento. Ruben, Ebelyn y Daniela son personas que escuchan y saben ponen tu marca y tu persona al mismo nivel. Muchas gracias por todo chicos.",
+  author: "David Castillo",
+  position: "Fundador",
+  company: "La Banera KD",
+  isGoogleReview: true,
+  rating: 5,
+  authorImage: successCaseImages.laBaneraKD,
+  reviewUrl: "https://g.page/r/..." // URL de la resena en Google (te la pedire)
 }}
 ```
 
-**Cambio 2**: Cambiar `height: 100%` a altura explícita en el iframe (líneas 175-181)
+### 5. Enriquecer el JSON-LD (structured data)
 
-```text
-Antes:
-style={{ 
-  width: '100%', 
-  height: '100%', 
-  border: 'none',
-  minHeight: minHeight,
-  borderRadius: '12px',
-  backgroundColor: '#FFFFFF'
-}}
+Anadir un esquema `Review` dentro del `structuredData` del caso de exito para que Google pueda interpretar la resena como dato estructurado:
 
-Después:
-style={{ 
-  width: '100%', 
-  height: minHeight, 
-  border: 'none',
-  borderRadius: '12px',
-  backgroundColor: '#FFFFFF'
-}}
+```json
+{
+  "@type": "Review",
+  "author": { "@type": "Person", "name": "David Castillo" },
+  "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+  "reviewBody": "Mi estudio fotografico tiene un antes y un despues..."
+}
 ```
 
-## Resumen Técnico
+## Archivos a modificar
 
-| Línea | Elemento | Antes | Después |
-|-------|----------|-------|---------|
-| 167-170 | Contenedor div | `minHeight` solo | `height: minHeight, minHeight` |
-| 175-181 | iframe style | `height: '100%'` | `height: minHeight` |
+| Archivo | Cambio |
+|---------|--------|
+| `src/components/CaseStudyTemplate.tsx` | Ampliar interfaz Testimonial + renderizado condicional Google Review |
+| `src/components/CaseStudyTemplateEN.tsx` | Mismos cambios para version EN |
+| `src/pages/CasoExitoLaBaneraKD.tsx` | Anadir prop `testimonial` con los datos de David Castillo |
 
-## Por Qué Esto Resuelve el Problema
+## Aspecto visual esperado
 
-1. El iframe necesita altura explícita en píxeles (ej: 820px), no porcentaje
-2. `height: 100%` solo funciona si el padre tiene `height` definido, no solo `minHeight`
-3. Al pasar directamente `minHeight` (número en px) como valor de `height`, garantizamos que el iframe siempre tenga dimensiones correctas
+```text
+┌──────────────────────────────────────────────────┐
+│  ┌────┐                                          │
+│  │foto│  David Castillo                          │
+│  └────┘  Fundador - La Banera KD                 │
+│                                                  │
+│  [G] Resena verificada de Google                 │
+│  ★★★★★                                          │
+│                                                  │
+│  "Mi estudio fotografico tiene un antes y un     │
+│   despues desde que el equipo de Hayas           │
+│   Marketing me entrego el sitio Web..."          │
+│                                                  │
+│  [Ver resena original en Google ->]              │
+└──────────────────────────────────────────────────┘
+```
 
-## Verificación Post-Implementación
+## Informacion que necesito de ti
 
-1. Publicar la aplicación
-2. Verificar en producción que el formulario se muestra en `/es/servicios/asistente-ia`
-3. Verificar en `/es/servicios/diseno-web` y otras páginas de servicio
-4. Confirmar que `/es/contacto` sigue funcionando correctamente
+Para completar la implementacion necesito la **URL de tu ficha de Google My Business** o el enlace directo a la resena de David Castillo. Si no la tienes a mano, puedo dejar el enlace preparado para que lo anadamos despues.
+
