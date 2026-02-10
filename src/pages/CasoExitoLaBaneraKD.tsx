@@ -17,7 +17,13 @@ const CasoExitoLaBaneraKD = () => {
         about: 'Diseño web y posicionamiento SEO para productora audiovisual',
         url: "/es/casos-exito/la-banera-kd",
         inLanguage: 'es',
-        publisher: { '@type': 'Organization', name: 'Hayas Marketing' }
+        publisher: { '@type': 'Organization', name: 'Hayas Marketing' },
+        review: {
+          '@type': 'Review',
+          author: { '@type': 'Person', name: 'David Castillo' },
+          reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+          reviewBody: 'Mi estudio fotográfico tiene un antes y un después desde que el equipo de Hayas Marketing me entregó el sitio Web después de un súper estudio de posicionamiento. Rubén, Ebelyn y Daniela son personas que escuchan y saben poner tu marca y tu persona al mismo nivel. ¡Muchas gracias por todo chicos!'
+        }
       }}
       companyName="La Bañera KD"
       subtitle="Diseño web y posicionamiento SEO para productora audiovisual"
