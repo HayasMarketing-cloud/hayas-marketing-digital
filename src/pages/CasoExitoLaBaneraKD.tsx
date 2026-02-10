@@ -50,6 +50,15 @@ const CasoExitoLaBaneraKD = () => {
         'Incremento del 120% en consultas de presupuesto',
         'Posicionamiento top 5 en búsquedas locales'
       ]}
+      testimonial={{
+        quote: "Mi estudio fotográfico tiene un antes y un después desde que el equipo de Hayas Marketing me entregó el sitio Web después de un súper estudio de posicionamiento. Rubén, Ebelyn y Daniela son personas que escuchan y saben poner tu marca y tu persona al mismo nivel. ¡Muchas gracias por todo chicos!",
+        author: "David Castillo",
+        position: "Fundador",
+        company: "La Bañera KD",
+        isGoogleReview: true,
+        rating: 5,
+        authorImage: successCaseImages.laBaneraKD
+      }}
       learnings="En el sector audiovisual, la presencia digital debe ser tan creativa e impactante como las producciones que se ofrecen. Un diseño web que funciona como showcases del trabajo previo se convierte en la mejor herramienta de ventas, generando confianza inmediata en la calidad del servicio."
       ctaTitle="¿Necesitas destacar en el sector audiovisual?"
       ctaDescription="Creamos presencias digitales que reflejan la calidad creativa de tu trabajo audiovisual y atraen clientes que valoran la excelencia."

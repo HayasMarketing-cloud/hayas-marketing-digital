@@ -14,8 +14,9 @@ import {
   BreadcrumbPage,
 } from '@/components/ui/breadcrumb';
 import EnhancedSEO from '@/components/EnhancedSEO';
-import { CheckCircle, ExternalLink, LucideIcon } from 'lucide-react';
+import { CheckCircle, ExternalLink, LucideIcon, Star } from 'lucide-react';
 import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
+import GoogleGIcon from '@/components/icons/GoogleGIcon';
 
 interface Solution {
   icon: LucideIcon;
@@ -28,6 +29,10 @@ interface Testimonial {
   author: string;
   position: string;
   company: string;
+  isGoogleReview?: boolean;
+  rating?: number;
+  reviewUrl?: string;
+  authorImage?: string;
 }
 
 interface CaseStudyProps {
@@ -233,23 +238,64 @@ const CaseStudyTemplateEN: React.FC<CaseStudyProps> = ({
             {/* Testimonial */}
             {testimonial && (
               <section className="mb-16">
-                <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-xl p-8 md:p-12">
-                  <div className="text-center">
-                    <div className="mb-6">
-                      <svg className="w-12 h-12 text-primary/30 mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
-                      </svg>
+                {testimonial.isGoogleReview ? (
+                  <div className="bg-card border rounded-xl p-8 md:p-10 shadow-sm">
+                    <div className="flex items-start gap-4 mb-6">
+                      {testimonial.authorImage && (
+                        <img 
+                          src={testimonial.authorImage} 
+                          alt={testimonial.authorImage} 
+                          className="w-14 h-14 rounded-full object-cover flex-shrink-0"
+                        />
+                      )}
+                      <div>
+                        <p className="font-semibold text-foreground">{testimonial.author}</p>
+                        <p className="text-sm text-muted-foreground">{testimonial.position} — {testimonial.company}</p>
+                      </div>
                     </div>
-                    <blockquote className="text-lg md:text-xl font-medium text-gray-900 mb-6 leading-relaxed italic">
+                    <div className="flex items-center gap-2 mb-4">
+                      <GoogleGIcon className="w-5 h-5 text-muted-foreground" />
+                      <span className="text-sm font-medium text-muted-foreground">Verified Google Review</span>
+                    </div>
+                    <div className="flex gap-0.5 mb-5">
+                      {Array.from({ length: testimonial.rating || 5 }).map((_, i) => (
+                        <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                      ))}
+                    </div>
+                    <blockquote className="text-lg leading-relaxed text-foreground italic mb-6">
                       "{testimonial.quote}"
                     </blockquote>
-                    <div className="border-t border-border/20 pt-6">
-                      <p className="font-semibold text-gray-900">{testimonial.author}</p>
-                      <p className="text-sm text-muted-foreground">{testimonial.position}</p>
-                      <p className="text-sm text-muted-foreground font-medium">{testimonial.company}</p>
+                    {testimonial.reviewUrl && (
+                      <a 
+                        href={testimonial.reviewUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
+                      >
+                        View original review on Google
+                        <ExternalLink className="w-4 h-4" />
+                      </a>
+                    )}
+                  </div>
+                ) : (
+                  <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-xl p-8 md:p-12">
+                    <div className="text-center">
+                      <div className="mb-6">
+                        <svg className="w-12 h-12 text-primary/30 mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
+                        </svg>
+                      </div>
+                      <blockquote className="text-lg md:text-xl font-medium text-foreground mb-6 leading-relaxed italic">
+                        "{testimonial.quote}"
+                      </blockquote>
+                      <div className="border-t border-border/20 pt-6">
+                        <p className="font-semibold text-foreground">{testimonial.author}</p>
+                        <p className="text-sm text-muted-foreground">{testimonial.position}</p>
+                        <p className="text-sm text-muted-foreground font-medium">{testimonial.company}</p>
+                      </div>
                     </div>
                   </div>
-                </div>
+                )}
               </section>
             )}
 
