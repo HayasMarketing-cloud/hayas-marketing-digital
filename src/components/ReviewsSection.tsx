@@ -77,7 +77,7 @@ const ReviewsSection = () => {
             <div className="flex justify-center pt-4">
               <Button asChild variant="ghost" className="gap-2 text-sm">
                 <a 
-                  href="https://www.google.com/search?sca_esv=51f7e736cc3ae313&rlz=1C5CHFA_enES988ES988&sxsrf=ANbL-n5azrMQKJEii8KsU_tR1id2_V5zQA:1770830186528&q=Hayas+Marketing+Rese%C3%B1as&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxIxNDM3MjMyNTExN7QwNbGwMDEyMd3AyPiKUcIjsTKxWME3sSg7tSQzL10hKLU49fDGxOJFrDilAFCIE7BRAAAA&rldimm=16726254471854884245&tbm=lcl&hl=es-ES&sa=X&ved=2ahUKEwia1ubB-NGSAxXwTkEAHQxDH0MQ9fQKegQINBAG&biw=2560&bih=1318&dpr=2#lkt=LocalPoiReviews" 
+                  href="https://www.google.com/search?q=Hayas+Marketing+Rese%C3%B1as&rflfq=1&num=20&rldimm=16726254471854884245&tbm=lcl#lkt=LocalPoiReviews" 
                   target="_blank" 
                   rel="noopener noreferrer"
                 >
