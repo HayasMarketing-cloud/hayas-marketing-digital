@@ -6,14 +6,14 @@ import { Video, Palette, TrendingUp } from 'lucide-react';
 const CasoExitoLaBaneraKD = () => {
   return (
     <CaseStudyTemplate
-      pageTitle="Caso de Éxito: La Bañera KD - Diseño Web y SEO para Medios Audiovisuales"
-      pageDescription="Conoce cómo transformamos la presencia digital de La Bañera KD con un diseño web moderno y estrategia SEO efectiva."
+      pageTitle="Caso de Éxito: Estudio de Fotografía La Bañera - Diseño Web y SEO para Medios Audiovisuales"
+      pageDescription="Conoce cómo transformamos la presencia digital de Estudio de Fotografía La Bañera con un diseño web moderno y estrategia SEO efectiva."
       canonical="/es/casos-exito/la-banera-kd"
       ogImage={successCaseImages.laBaneraKD}
       structuredData={{
         '@context': 'https://schema.org',
         '@type': 'CaseStudy',
-        headline: 'Caso de Éxito: La Bañera KD - Diseño Web y SEO para Medios Audiovisuales',
+        headline: 'Caso de Éxito: Estudio de Fotografía La Bañera - Diseño Web y SEO para Medios Audiovisuales',
         about: 'Diseño web y posicionamiento SEO para productora audiovisual',
         url: "/es/casos-exito/la-banera-kd",
         inLanguage: 'es',
@@ -25,13 +25,13 @@ const CasoExitoLaBaneraKD = () => {
           reviewBody: 'Mi estudio fotográfico tiene un antes y un después desde que el equipo de Hayas Marketing me entregó el sitio Web después de un súper estudio de posicionamiento. Rubén, Ebelyn y Daniela son personas que escuchan y saben poner tu marca y tu persona al mismo nivel. ¡Muchas gracias por todo chicos!'
         }
       }}
-      companyName="La Bañera KD"
+      companyName="Estudio de Fotografía La Bañera"
       subtitle="Diseño web y posicionamiento SEO para productora audiovisual"
       badges={["Medios Audiovisuales", "Diseño Web", "SEO"]}
       websiteUrl=""
       featuredImage={successCaseImages.laBaneraKD}
-      featuredImageAlt="La Bañera KD - Productora audiovisual especializada en contenido creativo"
-      aboutCompany="La Bañera KD es una productora audiovisual especializada en contenido creativo y publicitario. Su enfoque combina creatividad visual con storytelling efectivo, ofreciendo servicios integrales de producción audiovisual para marcas y empresas que buscan comunicar con impacto."
+      featuredImageAlt="Estudio de Fotografía La Bañera - Productora audiovisual especializada en contenido creativo"
+      aboutCompany="Estudio de Fotografía La Bañera es una productora audiovisual especializada en contenido creativo y publicitario. Su enfoque combina creatividad visual con storytelling efectivo, ofreciendo servicios integrales de producción audiovisual para marcas y empresas que buscan comunicar con impacto."
       challenge="Necesitaba una presencia digital que reflejara su calidad creativa y atrajera nuevos clientes. Su identidad visual anterior no transmitía la profesionalidad y creatividad de sus producciones, limitando su capacidad de generar confianza en clientes potenciales del sector audiovisual."
       solutions={[
         {
@@ -60,7 +60,7 @@ const CasoExitoLaBaneraKD = () => {
         quote: "Mi estudio fotográfico tiene un antes y un después desde que el equipo de Hayas Marketing me entregó el sitio Web después de un súper estudio de posicionamiento. Rubén, Ebelyn y Daniela son personas que escuchan y saben poner tu marca y tu persona al mismo nivel. ¡Muchas gracias por todo chicos!",
         author: "David Castillo",
         position: "Fundador",
-        company: "La Bañera KD",
+        company: "Estudio de Fotografía La Bañera",
         isGoogleReview: true,
         rating: 5,
         reviewUrl: "https://www.google.com/search?q=Hayas+Marketing+Rese%C3%B1as&rflfq=1&num=20&rldimm=16726254471854884245&tbm=lcl#lkt=LocalPoiReviews",
