@@ -39,7 +39,7 @@ const CasoExitoNovaPraxis = () => {
       websiteUrl="https://nova-praxis.com"
       featuredImage={successCaseImages.novaPraxis}
       featuredImageAlt="Nova Praxis — consultoría estratégica B2B"
-      aboutCompany="Nova Praxis es una consultora estratégica que ayuda a empresas y organizaciones a diseñar e implementar planes de transformación, innovación y desarrollo organizativo. Su enfoque combina visión a largo plazo con soluciones prácticas adaptadas a cada cliente."
+      aboutCompany="Nova Praxis es una consultora tecnológica especializada en acompañar a las empresas en su transformación digital y gestión del rendimiento empresarial. Ofrece soluciones a medida de EPM (Enterprise Performance Management) y Data Analytics para optimizar procesos financieros, operativos y analíticos, ayudando a las organizaciones a mejorar la eficiencia, la planificación, el análisis de datos y la toma de decisiones basadas en información."
       challenge="Necesitaban centralizar la gestión de clientes, mejorar su posicionamiento online y reforzar su presencia en LinkedIn para llegar a decisores de alto nivel. Además, querían automatizar procesos de cualificación de leads y optimizar sus campañas de captación digital."
       solutions={[
         {
