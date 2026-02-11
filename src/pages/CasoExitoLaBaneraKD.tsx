@@ -63,6 +63,7 @@ const CasoExitoLaBaneraKD = () => {
         company: "La Bañera KD",
         isGoogleReview: true,
         rating: 5,
+        reviewUrl: "https://www.google.com/search?q=Hayas+Marketing+Rese%C3%B1as&rflfq=1&num=20&rldimm=16726254471854884245&tbm=lcl#lkt=LocalPoiReviews",
         authorImage: successCaseImages.laBaneraKD
       }}
       learnings="En el sector audiovisual, la presencia digital debe ser tan creativa e impactante como las producciones que se ofrecen. Un diseño web que funciona como showcases del trabajo previo se convierte en la mejor herramienta de ventas, generando confianza inmediata en la calidad del servicio."
