@@ -14,7 +14,7 @@ const CasoExitoLaBaneraKD = () => {
         '@context': 'https://schema.org',
         '@type': 'CaseStudy',
         headline: 'Caso de Éxito: Estudio de Fotografía La Bañera - Diseño Web y SEO para Medios Audiovisuales',
-        about: 'Diseño web y posicionamiento SEO para productora audiovisual',
+        about: 'Diseño web y posicionamiento SEO para Estudio de Fotografía en Madrid',
         url: "/es/casos-exito/la-banera-kd",
         inLanguage: 'es',
         publisher: { '@type': 'Organization', name: 'Hayas Marketing' },
@@ -26,7 +26,7 @@ const CasoExitoLaBaneraKD = () => {
         }
       }}
       companyName="Estudio de Fotografía La Bañera"
-      subtitle="Diseño web y posicionamiento SEO para productora audiovisual"
+      subtitle="Diseño web y posicionamiento SEO para Estudio de Fotografía en Madrid"
       badges={["Medios Audiovisuales", "Diseño Web", "SEO"]}
       websiteUrl=""
       featuredImage={successCaseImages.laBaneraKD}
