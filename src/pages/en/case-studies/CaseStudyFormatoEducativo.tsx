@@ -61,6 +61,10 @@ const CaseStudyFormatoEducativo = (): React.JSX.Element => {
       ctaDescription="We help you implement a CRM that transforms how you manage your students and educational processes."
       ctaButtonText="Request free consultation"
       ctaButtonLink="/en/schedule-meeting"
+      relatedSolutions={[
+        { label: 'CRM Implementation', route: 'serviceCRMImplantation' },
+        { label: 'CRM Administration', route: 'serviceCRMAdmin' },
+      ]}
     />
   );
 };

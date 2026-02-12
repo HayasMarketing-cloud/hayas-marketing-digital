@@ -55,6 +55,11 @@ const CaseStudyInboundStudents = () => {
       ctaDescription="We help you digitally transform your business with strategy, web design, and personalized automation."
       ctaButtonText="Digitize my business"
       ctaButtonLink="/en/schedule-meeting"
+      relatedSolutions={[
+        { label: 'Brand Creation', route: 'serviceBrandCreation' },
+        { label: 'Web Design', route: 'serviceWebDesign' },
+        { label: 'Content Strategy', route: 'serviceContentStrategy' },
+      ]}
     />
   );
 };

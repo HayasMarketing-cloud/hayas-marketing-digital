@@ -60,7 +60,12 @@ const CaseStudyASPAsepsia: React.FC = () => {
     ctaTitle: 'Need to optimize your commercial management?',
     ctaDescription: 'We help you implement a CRM that centralizes your information and automates your commercial processes as we did with ASP ASEPSIA.',
     ctaButtonText: 'Optimize my commercial management',
-    ctaButtonLink: '/en/schedule-meeting'
+    ctaButtonLink: '/en/schedule-meeting',
+    relatedSolutions: [
+      { label: 'CRM Implementation', route: 'serviceCRMImplantation' },
+      { label: 'Sales Automation', route: 'serviceSalesAutomation' },
+      { label: 'Strategic Consulting', route: 'serviceStrategicConsulting' },
+    ]
   };
 
   return <CaseStudyTemplateEN {...caseStudyData} />;

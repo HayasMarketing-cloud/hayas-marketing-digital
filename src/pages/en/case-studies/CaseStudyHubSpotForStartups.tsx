@@ -60,6 +60,10 @@ const CaseStudyHubSpotForStartups: React.FC = () => {
       ctaDescription="We help you develop an inbound marketing strategy that enhances your emerging company's growth."
       ctaButtonText="Boost my startup"
       ctaButtonLink="/en/schedule-meeting"
+      relatedSolutions={[
+        { label: 'Content Strategy', route: 'serviceContentStrategy' },
+        { label: 'SEO Positioning', route: 'serviceSEOPositioning' },
+      ]}
     />
   );
 };

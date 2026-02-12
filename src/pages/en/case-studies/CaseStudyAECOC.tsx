@@ -60,6 +60,11 @@ const CaseStudyAECOC = () => {
       ctaDescription="Discover how our digital solutions can help you achieve real impact in your sector."
       ctaButtonText="Request free consultation"
       ctaButtonLink="/en/contact"
+      relatedSolutions={[
+        { label: 'CRM Implementation', route: 'serviceCRMImplantation' },
+        { label: 'Social Media Management', route: 'serviceSocialMedia' },
+        { label: 'Google Ads Advertising', route: 'serviceGoogleAds' },
+      ]}
     />
   );
 };
