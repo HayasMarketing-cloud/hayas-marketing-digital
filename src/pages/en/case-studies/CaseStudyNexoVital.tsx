@@ -55,6 +55,11 @@ const CaseStudyNexoVital = () => {
       ctaDescription="We help you create a professional brand that generates trust and positions you as a reference in your specialty."
       ctaButtonText="Develop my professional brand"
       ctaButtonLink="/en/schedule-meeting"
+      relatedSolutions={[
+        { label: 'Brand Creation', route: 'serviceBrandCreation' },
+        { label: 'Web Design', route: 'serviceWebDesign' },
+        { label: 'Content Strategy', route: 'serviceContentStrategy' },
+      ]}
     />
   );
 };

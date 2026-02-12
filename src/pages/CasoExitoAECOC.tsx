@@ -60,6 +60,11 @@ const CasoExitoAECOC = () => {
       ctaDescription="Descubre cómo nuestras soluciones digitales pueden ayudarte a conseguir un impacto real en tu sector."
       ctaButtonText="Solicitar consulta gratuita"
       ctaButtonLink="/es/contacto"
+      relatedSolutions={[
+        { label: 'Implantación CRM', route: 'serviceCRMImplantation' },
+        { label: 'Gestión de Redes Sociales', route: 'serviceSocialMedia' },
+        { label: 'Publicidad en Redes Sociales', route: 'serviceGoogleAds' },
+      ]}
     />
   );
 };

@@ -57,7 +57,11 @@ const CaseStudyBekaFinance: React.FC = () => {
     ctaTitle: 'Want a solid brand for your sector?',
     ctaDescription: 'We help you create a brand identity that projects trust and leadership as we did with Beka Finance.',
     ctaButtonText: 'Create my solid brand',
-    ctaButtonLink: '/en/schedule-meeting'
+    ctaButtonLink: '/en/schedule-meeting',
+    relatedSolutions: [
+      { label: 'Brand Creation', route: 'serviceBrandCreation' },
+      { label: 'Strategic Consulting', route: 'serviceStrategicConsulting' },
+    ]
   };
 
   return <CaseStudyTemplateEN {...caseStudyData} />;

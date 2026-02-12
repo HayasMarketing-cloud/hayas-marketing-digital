@@ -60,6 +60,11 @@ const CaseStudyPerisElectricidad = () => {
       ctaDescription="We help you modernize your digital presence and optimize your commercial processes as we did with Peris Electricidad."
       ctaButtonText="Let's talk"
       ctaButtonLink="/en/schedule-meeting"
+      relatedSolutions={[
+        { label: 'Web Design', route: 'serviceWebDesign' },
+        { label: 'CRM Implementation', route: 'serviceCRMImplantation' },
+        { label: 'SEO Positioning', route: 'serviceSEOPositioning' },
+      ]}
     />
   );
 };

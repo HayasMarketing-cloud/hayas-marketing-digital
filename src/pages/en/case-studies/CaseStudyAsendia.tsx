@@ -78,6 +78,11 @@ const CaseStudyAsendia = () => {
       ctaDescription="Get the same results as Asendia. Schedule a free consultation and discover how we can help you attract and retain e-commerce managers with a CRM and automation designed for your industry."
       ctaButtonText="Schedule your free consultation"
       ctaButtonLink="/en/schedule-meeting"
+      relatedSolutions={[
+        { label: 'CRM Implementation', route: 'serviceCRMImplantation' },
+        { label: 'Sales Automation', route: 'serviceSalesAutomation' },
+        { label: 'Direct Marketing', route: 'serviceDirectMarketing' },
+      ]}
     />
   );
 };
