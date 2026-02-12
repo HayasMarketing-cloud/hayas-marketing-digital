@@ -1,111 +1,77 @@
 
 
-# Integrar reseña de Google My Business en el caso de exito de La Banera KD
+# Personalizar "Soluciones Relacionadas" en todos los casos de exito
 
-## Que vamos a hacer
+## Problema actual
 
-Ampliar el sistema de testimonios del template de casos de exito para que, cuando la resena provenga de Google My Business, se muestre con el aspecto visual de una resena verificada de Google: estrellas amarillas, icono de Google, foto del autor y un enlace "Ver en Google" que da credibilidad y confianza.
+La seccion "Descubre nuestras soluciones relacionadas" al final de cada caso de exito muestra siempre los mismos 4 enlaces (Implantacion CRM, Automatizacion de Ventas, Consultoria Estrategica, Conecta con tus Clientes), sin importar de que trata el caso. Esto no aporta valor contextual al usuario.
 
-## Datos de la resena
+## Solucion propuesta
 
-- **Autor**: David Castillo
-- **Puntuacion**: 5 estrellas
-- **Texto**: "Mi estudio fotografico tiene un antes y un despues desde que el equipo de Hayas Marketing me entrego el sitio Web despues de un super estudio de posicionamiento. Ruben, Ebelyn y Daniela son personas que escuchan y saben ponen tu marca y tu persona al mismo nivel. Muchas gracias por todo chicos."
-- **Foto**: Se usara la misma imagen destacada del caso de exito (`successCaseImages.laBaneraKD`)
-- **Empresa**: La Banera KD
+Convertir esa seccion en una prop configurable (`relatedSolutions`) para que cada caso de exito muestre las soluciones que realmente se usaron o son relevantes.
 
 ## Cambios tecnicos
 
-### 1. Ampliar la interfaz `Testimonial` en `CaseStudyTemplate.tsx`
+### 1. Modificar `CaseStudyTemplate.tsx` y `CaseStudyTemplateEN.tsx`
 
-Anadir campos opcionales a la interfaz existente:
-
-```typescript
-interface Testimonial {
-  quote: string;
-  author: string;
-  position: string;
-  company: string;
-  // Nuevos campos opcionales
-  isGoogleReview?: boolean;
-  rating?: number;          // 1-5
-  reviewUrl?: string;       // Enlace a la resena en Google
-  authorImage?: string;     // Foto del autor
-}
-```
-
-### 2. Redisenar la seccion de testimonial en `CaseStudyTemplate.tsx`
-
-Cuando `testimonial.isGoogleReview` sea `true`, renderizar un diseno especifico:
-
-- **Cabecera**: Foto circular del autor + nombre + "Resena en Google" con el icono `GoogleGIcon` (ya existe en `src/components/icons/GoogleGIcon.tsx`)
-- **Estrellas**: 5 estrellas amarillas usando el componente `Star` de lucide-react
-- **Cuerpo**: Texto de la resena en cursiva con comillas
-- **Pie**: Enlace "Ver resena original en Google" que abre la ficha de Google Maps en nueva pestana
-- **Badge**: Etiqueta "Resena verificada de Google" para reforzar credibilidad
-
-Cuando `isGoogleReview` sea `false` o no exista, se mantiene el diseno actual sin cambios.
-
-### 3. Aplicar lo mismo en `CaseStudyTemplateEN.tsx`
-
-Replicar los mismos cambios en el template en ingles para mantener la paridad entre ambos templates (siguiendo la arquitectura de templates separados documentada en la memoria del proyecto).
-
-### 4. Anadir el testimonial en `CasoExitoLaBaneraKD.tsx`
+Agregar una nueva prop opcional al interface:
 
 ```typescript
-testimonial={{
-  quote: "Mi estudio fotografico tiene un antes y un despues desde que el equipo de Hayas Marketing me entrego el sitio Web despues de un super estudio de posicionamiento. Ruben, Ebelyn y Daniela son personas que escuchan y saben ponen tu marca y tu persona al mismo nivel. Muchas gracias por todo chicos.",
-  author: "David Castillo",
-  position: "Fundador",
-  company: "La Banera KD",
-  isGoogleReview: true,
-  rating: 5,
-  authorImage: successCaseImages.laBaneraKD,
-  reviewUrl: "https://g.page/r/..." // URL de la resena en Google (te la pedire)
-}}
-```
-
-### 5. Enriquecer el JSON-LD (structured data)
-
-Anadir un esquema `Review` dentro del `structuredData` del caso de exito para que Google pueda interpretar la resena como dato estructurado:
-
-```json
-{
-  "@type": "Review",
-  "author": { "@type": "Person", "name": "David Castillo" },
-  "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-  "reviewBody": "Mi estudio fotografico tiene un antes y un despues..."
+interface RelatedSolution {
+  label: string;
+  route: string; // route key from useLocalizedRoutes
 }
+
+// En CaseStudyProps:
+relatedSolutions?: RelatedSolution[];
 ```
 
-## Archivos a modificar
+Si se pasa `relatedSolutions`, se renderiza esa lista. Si no se pasa, se mantienen los 4 enlaces por defecto como fallback para no romper nada.
 
-| Archivo | Cambio |
-|---------|--------|
-| `src/components/CaseStudyTemplate.tsx` | Ampliar interfaz Testimonial + renderizado condicional Google Review |
-| `src/components/CaseStudyTemplateEN.tsx` | Mismos cambios para version EN |
-| `src/pages/CasoExitoLaBaneraKD.tsx` | Anadir prop `testimonial` con los datos de David Castillo |
+### 2. Actualizar los 48 casos de exito en espanol
 
-## Aspecto visual esperado
+Cada pagina recibira un prop `relatedSolutions` contextualizado. Ejemplos:
 
-```text
-┌──────────────────────────────────────────────────┐
-│  ┌────┐                                          │
-│  │foto│  David Castillo                          │
-│  └────┘  Fundador - La Banera KD                 │
-│                                                  │
-│  [G] Resena verificada de Google                 │
-│  ★★★★★                                          │
-│                                                  │
-│  "Mi estudio fotografico tiene un antes y un     │
-│   despues desde que el equipo de Hayas           │
-│   Marketing me entrego el sitio Web..."          │
-│                                                  │
-│  [Ver resena original en Google ->]              │
-└──────────────────────────────────────────────────┘
-```
+| Caso de exito | Soluciones relacionadas |
+|---|---|
+| Estudio Fotografia La Banera | Diseno Web, SEO Posicionamiento |
+| Nova Praxis | Implantacion CRM, SEO Posicionamiento, Automatizacion de Ventas |
+| Alma Cruceros | Publicidad Google Ads |
+| Peixos Emilio | Tienda Online |
+| FINECT | Implantacion CRM, Consultoria Estrategica |
+| Wooptix | Implantacion CRM, Asistente IA |
+| Buhobike | Estrategia de Contenidos, Tienda Online |
+| Peris Electricidad | Diseno Web, Implantacion CRM, SEO Posicionamiento |
+| Inbound Students | Creacion de Marca, Diseno Web, Estrategia de Contenidos |
+| La Oriental Sin Gluten | Tienda Online, Implantacion CRM, Gestion Redes Sociales |
+| HubSpot for Startups | Estrategia de Contenidos, SEO Posicionamiento |
+| Asendia | Implantacion CRM, Automatizacion de Ventas |
+| (y asi para los 48...) | Basado en los servicios/badges de cada caso |
 
-## Informacion que necesito de ti
+### 3. Actualizar los 10 casos de exito en ingles
 
-Para completar la implementacion necesito la **URL de tu ficha de Google My Business** o el enlace directo a la resena de David Castillo. Si no la tienes a mano, puedo dejar el enlace preparado para que lo anadamos despues.
+Misma logica con las rutas y labels en ingles.
 
+### Rutas disponibles para usar
+
+Se usaran las claves de `useLocalizedRoutes`:
+- `serviceBrandCreation` - Creacion de Marca
+- `serviceWebDesign` - Diseno Web
+- `serviceSEOPositioning` - SEO Posicionamiento
+- `serviceCRMImplantation` - Implantacion CRM
+- `serviceSalesAutomation` - Automatizacion de Ventas
+- `serviceContentStrategy` - Estrategia de Contenidos
+- `serviceSocialMedia` - Gestion Redes Sociales
+- `serviceGoogleAds` - Publicidad Google Ads
+- `serviceOnlineStore` - Tienda Online
+- `serviceAIIntegrations` - Integraciones IA
+- `serviceEmailMarketing` - Email Marketing
+- `serviceStrategicConsulting` - Consultoria Estrategica
+- `serviceDirectMarketing` - Marketing Directo
+
+## Volumen de cambios
+
+- 2 templates (ES + EN)
+- 48 paginas de casos de exito en espanol
+- 10 paginas de casos de exito en ingles
+- Total: 60 archivos a modificar
