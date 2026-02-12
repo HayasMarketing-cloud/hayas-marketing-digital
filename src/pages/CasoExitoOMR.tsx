@@ -60,6 +60,9 @@ const CasoExitoOMR = (): React.JSX.Element => {
       ctaDescription="Diseñamos y mantenemos tu web para que puedas concentrarte en tus clientes. Rendimiento, seguridad y captación en una sola solución."
       ctaButtonText="Solicitar Consulta"
       ctaButtonLink="/es/solicitar-consulta"
+      relatedSolutions={[
+        { label: 'Diseño Web', route: 'serviceWebDesign' },
+      ]}
     />
   );
 };

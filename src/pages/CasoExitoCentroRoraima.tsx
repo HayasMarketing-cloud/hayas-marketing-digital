@@ -55,6 +55,10 @@ const CasoExitoCentroRoraima = () => {
       ctaDescription="Ayudamos a centros de salud mental y clínicas especializadas a posicionarse como referentes en su sector a través de estrategias de marca médicas auténticas y efectivas."
       ctaButtonText="Posicionar mi Centro de Salud"
       ctaButtonLink="/es/contacto"
+      relatedSolutions={[
+        { label: 'Creación de Marca', route: 'serviceBrandCreation' },
+        { label: 'Diseño Web', route: 'serviceWebDesign' },
+      ]}
     />
   );
 };

@@ -88,6 +88,10 @@ const CasoExitoDrParron: React.FC = () => {
       ctaDescription="Ayudamos a profesionales de la salud a crear una presencia digital que transmita confianza y expertise."
       ctaButtonText="Solicitar Consulta Gratuita"
       ctaButtonLink="/es/contacto"
+      relatedSolutions={[
+        { label: 'Creación de Marca', route: 'serviceBrandCreation' },
+        { label: 'Diseño Web', route: 'serviceWebDesign' },
+      ]}
     />
   );
 };

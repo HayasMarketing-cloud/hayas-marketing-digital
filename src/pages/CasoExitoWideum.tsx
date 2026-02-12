@@ -50,6 +50,9 @@ const CasoExitoWideum: React.FC = () => {
       ctaTitle="¿Necesitas expandir tu presencia digital a mercados internacionales?"
       ctaDescription="Ayudamos a empresas tecnológicas a crear presencias digitales que reflejen su liderazgo y faciliten la expansión internacional."
       ctaButtonText="Solicitar Consultoría"
+      relatedSolutions={[
+        { label: 'Diseño Web', route: 'serviceWebDesign' },
+      ]}
     />
   );
 };

@@ -54,6 +54,10 @@ const CasoExitoFLAP: React.FC = () => {
       ctaTitle="¿Quieres potenciar tu marca en Instagram?"
       ctaDescription="Te ayudamos a desarrollar una estrategia de contenidos efectiva que impulse tu marca de belleza en redes sociales."
       ctaButtonText="Potenciar mi marca en Instagram"
+      relatedSolutions={[
+        { label: 'Gestión de Redes Sociales', route: 'serviceSocialMedia' },
+        { label: 'Estrategia de Contenidos', route: 'serviceContentStrategy' },
+      ]}
     />
   );
 };

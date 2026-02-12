@@ -55,6 +55,10 @@ const CasoExitoEvaChampion: React.FC = () => {
       ctaDescription="Te ayudamos a construir una marca personal sólida y una estrategia de LinkedIn que impulse tu carrera profesional."
       ctaButtonText="Desarrollar mi marca personal"
       ctaButtonLink="/es/agendar-reunion"
+      relatedSolutions={[
+        { label: 'Creación de Marca', route: 'serviceBrandCreation' },
+        { label: 'Gestión de Redes Sociales', route: 'serviceSocialMedia' },
+      ]}
     />
   );
 };

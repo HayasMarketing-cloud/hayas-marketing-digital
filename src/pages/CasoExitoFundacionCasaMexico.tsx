@@ -73,6 +73,10 @@ const CasoExitoFundacionCasaMexico: React.FC = () => {
       ctaTitle="¿Quieres potenciar la visibilidad de tus eventos con estrategias digitales creativas?"
       ctaDescription="Descubre cómo podemos ayudarte a combinar tradición e innovación digital para amplificar el impacto de tus eventos culturales y conectar con nuevas audiencias."
       ctaButtonText="Solicitar Consulta Gratuita"
+      relatedSolutions={[
+        { label: 'Gestión de Redes Sociales', route: 'serviceSocialMedia' },
+        { label: 'Estrategia de Contenidos', route: 'serviceContentStrategy' },
+      ]}
     />
   );
 };

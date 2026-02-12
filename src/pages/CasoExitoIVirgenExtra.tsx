@@ -55,6 +55,10 @@ const CasoExitoIVirgenExtra = () => {
       ctaDescription="Creamos marcas que transmiten autoridad y expertise técnico. Tu consultoría especializada merece una identidad a su altura."
       ctaButtonText="Desarrollar mi Marca Profesional"
       ctaButtonLink="/es/agendar-reunion"
+      relatedSolutions={[
+        { label: 'Consultoría Estratégica', route: 'serviceStrategicConsulting' },
+        { label: 'Diseño Web', route: 'serviceWebDesign' },
+      ]}
     />
   );
 };

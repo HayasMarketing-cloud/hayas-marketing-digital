@@ -66,7 +66,11 @@ const CasoExitoAspAsepsia: React.FC = () => {
     ctaTitle: '¿Necesitas optimizar tu gestión comercial?',
     ctaDescription: 'Te ayudamos a implementar un CRM que centralice tu información y automatice tus procesos comerciales como lo hicimos con ASP ASEPSIA.',
     ctaButtonText: 'Optimizar mi gestión comercial',
-    ctaButtonLink: '/es/agendar-reunion'
+    ctaButtonLink: '/es/agendar-reunion',
+    relatedSolutions: [
+      { label: 'Implantación CRM', route: 'serviceCRMImplantation' },
+      { label: 'Automatización de Ventas', route: 'serviceSalesAutomation' },
+    ],
   };
 
   return <CaseStudyTemplate {...caseStudyData} />;

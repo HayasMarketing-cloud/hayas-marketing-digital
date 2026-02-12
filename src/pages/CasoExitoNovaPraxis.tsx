@@ -89,6 +89,11 @@ const CasoExitoNovaPraxis = () => {
       ctaDescription="Conoce su enfoque estratégico y las soluciones que implementan para empresas."
       ctaButtonText="Visita Nova Praxis"
       ctaButtonLink="https://nova-praxis.com"
+      relatedSolutions={[
+        { label: 'Implantación CRM', route: 'serviceCRMImplantation' },
+        { label: 'SEO y Posicionamiento', route: 'serviceSEOPositioning' },
+        { label: 'Automatización de Ventas', route: 'serviceSalesAutomation' },
+      ]}
     />
   );
 };

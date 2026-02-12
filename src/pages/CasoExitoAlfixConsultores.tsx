@@ -57,6 +57,10 @@ const CasoExitoAlfixConsultores = () => {
       ctaDescription="Hablemos de tu contexto y diseñemos una implantación de HubSpot alineada a tus servicios."
       ctaButtonText="Solicitar consulta gratuita"
       ctaButtonLink="/es/agendar-reunion"
+      relatedSolutions={[
+        { label: 'Implantación CRM', route: 'serviceCRMImplantation' },
+        { label: 'Automatización de Ventas', route: 'serviceSalesAutomation' },
+      ]}
     />
   );
 };

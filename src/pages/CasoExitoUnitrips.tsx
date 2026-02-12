@@ -75,6 +75,10 @@ const CasoExitoUnitrips: React.FC = () => {
       ctaTitle="¿Quieres transformar tu agencia de viajes con soluciones digitales adaptadas al turismo?"
       ctaDescription="Descubre cómo nuestras estrategias de CRM especializado y consultoría estratégica pueden ayudarte a crecer y optimizar tu gestión comercial."
       ctaButtonText="Solicitar Consulta Gratuita"
+      relatedSolutions={[
+        { label: 'Implantación CRM', route: 'serviceCRMImplantation' },
+        { label: 'Consultoría Estratégica', route: 'serviceStrategicConsulting' },
+      ]}
     />
   );
 };

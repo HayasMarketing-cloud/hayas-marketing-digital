@@ -75,6 +75,10 @@ const CasoExitoHotteoTravel: React.FC = () => {
       ctaTitle="¿Quieres que tu empresa aparezca en las primeras posiciones de Google?"
       ctaDescription="Descubre cómo nuestras estrategias de SEO especializadas en turismo pueden ayudarte a crecer y diferenciarte de la competencia."
       ctaButtonText="Solicitar Consulta Gratuita"
+      relatedSolutions={[
+        { label: 'SEO y Posicionamiento', route: 'serviceSEOPositioning' },
+        { label: 'Estrategia de Contenidos', route: 'serviceContentStrategy' },
+      ]}
     />
   );
 };

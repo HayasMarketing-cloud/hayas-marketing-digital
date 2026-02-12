@@ -74,7 +74,11 @@ const CasoExitoAistercel: React.FC = () => {
     ctaTitle: '¿Necesitas digitalizar tu empresa industrial?',
     ctaDescription: 'Te ayudamos a implementar CRM, optimizar tu web y reforzar tu estrategia digital para empresas del sector industrial.',
     ctaButtonText: 'Digitalizar mi empresa',
-    ctaButtonLink: '/es/agendar-reunion'
+    ctaButtonLink: '/es/agendar-reunion',
+    relatedSolutions: [
+      { label: 'Implantación CRM', route: 'serviceCRMImplantation' },
+      { label: 'Diseño Web', route: 'serviceWebDesign' },
+    ],
   };
 
   return <CaseStudyTemplate {...caseStudyData} />;

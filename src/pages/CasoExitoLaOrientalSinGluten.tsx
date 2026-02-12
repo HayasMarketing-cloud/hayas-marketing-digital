@@ -68,6 +68,11 @@ const CasoExitoLaOrientalSinGluten = () => {
       ctaDescription="Te ayudamos a modernizar tu ecommerce y desarrollar una estrategia integral como lo hicimos con La Oriental Sin Gluten."
       ctaButtonText="Conversemos"
       ctaButtonLink="/es/agendar-reunion"
+      relatedSolutions={[
+        { label: 'Tienda Online', route: 'serviceOnlineStore' },
+        { label: 'Implantación CRM', route: 'serviceCRMImplantation' },
+        { label: 'Gestión de Redes Sociales', route: 'serviceSocialMedia' },
+      ]}
     />
   );
 };

@@ -74,6 +74,9 @@ const CasoExitoLolaRoblesAbogada: React.FC = () => {
       ctaTitle="¿Quieres una web profesional que transmita confianza y sencillez y te ayude a captar clientes?"
       ctaDescription="Descubre cómo podemos crear una presencia digital sólida para tu despacho jurídico con diseño profesional, alojamiento seguro y mantenimiento integral."
       ctaButtonText="Solicitar Consulta Gratuita"
+      relatedSolutions={[
+        { label: 'Diseño Web', route: 'serviceWebDesign' },
+      ]}
     />
   );
 };

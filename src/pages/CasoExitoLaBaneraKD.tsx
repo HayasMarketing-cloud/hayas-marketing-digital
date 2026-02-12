@@ -71,6 +71,10 @@ const CasoExitoLaBaneraKD = () => {
       ctaDescription="Creamos presencias digitales que reflejan la calidad creativa de tu trabajo audiovisual y atraen clientes que valoran la excelencia."
       ctaButtonText="Transformar mi presencia digital"
       ctaButtonLink="/es/agendar-reunion"
+      relatedSolutions={[
+        { label: 'Diseño Web', route: 'serviceWebDesign' },
+        { label: 'SEO y Posicionamiento', route: 'serviceSEOPositioning' },
+      ]}
     />
   );
 };

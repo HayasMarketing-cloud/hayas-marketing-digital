@@ -88,6 +88,10 @@ const CasoExitoCOVEBO = () => {
       ctaTitle="¿Quieres potenciar tu marca empleadora?"
       ctaDescription="Descubre cómo nuestra estrategia de redes sociales y contenidos puede ayudarte a captar el mejor talento y construir una imagen de marca sólida en tu sector."
       ctaButtonText="Solicitar Consulta Gratuita"
+      relatedSolutions={[
+        { label: 'Gestión de Redes Sociales', route: 'serviceSocialMedia' },
+        { label: 'Estrategia de Contenidos', route: 'serviceContentStrategy' },
+      ]}
     />
   );
 };

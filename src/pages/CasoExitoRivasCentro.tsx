@@ -68,6 +68,11 @@ const CasoExitoRivasCentro: React.FC = () => {
       ctaDescription="Te ayudamos a crear una estrategia digital efectiva para conectar con tu comunidad local."
       ctaButtonText="Hablemos de tu proyecto"
       ctaButtonLink="/es/agendar-reunion"
+      relatedSolutions={[
+        { label: 'Gestión de Redes Sociales', route: 'serviceSocialMedia' },
+        { label: 'Estrategia de Contenidos', route: 'serviceContentStrategy' },
+        { label: 'Diseño Web', route: 'serviceWebDesign' },
+      ]}
     />
   );
 };

@@ -56,6 +56,10 @@ const CasoExitoBufeteMaseras: React.FC = () => {
         ctaTitle="¿Quieres un resultado similar?"
         ctaDescription="Hablemos de tu contexto y diseñemos una implantación de HubSpot y estrategia en LinkedIn a medida."
         ctaButtonText="Solicitar consulta gratuita"
+        relatedSolutions={[
+          { label: 'Implantación CRM', route: 'serviceCRMImplantation' },
+          { label: 'Consultoría Estratégica', route: 'serviceStrategicConsulting' },
+        ]}
       />
     </>
   );

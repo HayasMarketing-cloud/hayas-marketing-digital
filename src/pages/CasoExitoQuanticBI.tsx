@@ -68,6 +68,10 @@ const CasoExitoQuanticBI: React.FC = () => {
       ctaDescription="Descubre sus soluciones de Business Intelligence y análisis de datos."
       ctaButtonText="Visita QuanticBI"
       ctaButtonLink="https://quanticbi.com/"
+      relatedSolutions={[
+        { label: 'Implantación CRM', route: 'serviceCRMImplantation' },
+        { label: 'Automatización de Ventas', route: 'serviceSalesAutomation' },
+      ]}
     />
   );
 };

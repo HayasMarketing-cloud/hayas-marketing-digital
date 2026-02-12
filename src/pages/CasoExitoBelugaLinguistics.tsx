@@ -63,7 +63,11 @@ const CasoExitoBelugaLinguistics: React.FC = () => {
     ctaTitle: '¿Quieres escalar tu agencia internacionalmente?',
     ctaDescription: 'Te ayudamos a implementar una estrategia integral de CRM, SEO y LinkedIn que impulse tu crecimiento internacional como lo hicimos con Beluga Linguistics.',
     ctaButtonText: 'Escalar mi agencia',
-    ctaButtonLink: '/es/agendar-reunion'
+    ctaButtonLink: '/es/agendar-reunion',
+    relatedSolutions: [
+      { label: 'Implantación CRM', route: 'serviceCRMImplantation' },
+      { label: 'SEO y Posicionamiento', route: 'serviceSEOPositioning' },
+    ],
   };
 
   return <CaseStudyTemplate {...caseStudyData} />;

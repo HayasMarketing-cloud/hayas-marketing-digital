@@ -68,6 +68,11 @@ const CasoExitoPerisElectricidad = () => {
       ctaDescription="Te ayudamos a modernizar tu presencia digital y optimizar tus procesos comerciales como lo hicimos con Peris Electricidad."
       ctaButtonText="Hablemos"
       ctaButtonLink="/es/agendar-reunion"
+      relatedSolutions={[
+        { label: 'Diseño Web', route: 'serviceWebDesign' },
+        { label: 'Implantación CRM', route: 'serviceCRMImplantation' },
+        { label: 'SEO y Posicionamiento', route: 'serviceSEOPositioning' },
+      ]}
     />
   );
 };
