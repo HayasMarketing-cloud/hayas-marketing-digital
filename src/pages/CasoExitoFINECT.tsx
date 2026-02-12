@@ -88,6 +88,10 @@ const CasoExitoFINECT = () => {
       ctaTitle="¿Quieres impulsar tu proyecto educativo con impacto real?"
       ctaDescription="Descubre cómo nuestras soluciones de CRM y consultoría estratégica pueden ayudarte a optimizar la relación con tu comunidad y potenciar tu crecimiento."
       ctaButtonText="Solicitar Consulta Gratuita"
+      relatedSolutions={[
+        { label: 'Implantación CRM', route: 'serviceCRMImplantation' },
+        { label: 'Consultoría Estratégica', route: 'serviceStrategicConsulting' },
+      ]}
     />
   );
 };

@@ -55,6 +55,10 @@ const CasoExitoJointsUp = () => {
       ctaDescription="Creamos identidades médicas que transmiten autoridad profesional y generan confianza inmediata en pacientes. Tu especialización merece una marca a su altura."
       ctaButtonText="Crear mi Marca Médica"
       ctaButtonLink="/es/agendar-reunion"
+      relatedSolutions={[
+        { label: 'Creación de Marca', route: 'serviceBrandCreation' },
+        { label: 'Diseño Web', route: 'serviceWebDesign' },
+      ]}
     />
   );
 };

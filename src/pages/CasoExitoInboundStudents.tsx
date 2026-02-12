@@ -63,6 +63,11 @@ const CasoExitoInboundStudents = () => {
       ctaDescription="Te ayudamos a transformar digitalmente tu negocio con estrategia, diseño web y automatización personalizada."
       ctaButtonText="Digitalizar mi negocio"
       ctaButtonLink="/es/agendar-reunion"
+      relatedSolutions={[
+        { label: 'Creación de Marca', route: 'serviceBrandCreation' },
+        { label: 'Diseño Web', route: 'serviceWebDesign' },
+        { label: 'Estrategia de Contenidos', route: 'serviceContentStrategy' },
+      ]}
     />
   );
 };

@@ -68,6 +68,10 @@ const CasoExitoPlazaEstacion: React.FC = () => {
       ctaDescription="Descubre este centro comercial de referencia en Fuenlabrada."
       ctaButtonText="Visita la web del Centro Comercial"
       ctaButtonLink="https://plazadelaestacion.es/"
+      relatedSolutions={[
+        { label: 'Gestión de Redes Sociales', route: 'serviceSocialMedia' },
+        { label: 'Estrategia de Contenidos', route: 'serviceContentStrategy' },
+      ]}
     />
   );
 };

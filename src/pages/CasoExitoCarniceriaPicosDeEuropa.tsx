@@ -54,6 +54,9 @@ const CasoExitoCarniceriaPicosDeEuropa: React.FC = () => {
       ctaTitle="¿Quieres impulsar tu marca en Instagram?"
       ctaDescription="Te ayudamos a desarrollar una estrategia de contenidos efectiva para redes sociales que conecte con tu audiencia."
       ctaButtonText="Potenciar mi marca en Instagram"
+      relatedSolutions={[
+        { label: 'Gestión de Redes Sociales', route: 'serviceSocialMedia' },
+      ]}
     />
   );
 };

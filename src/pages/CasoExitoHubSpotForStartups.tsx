@@ -59,6 +59,10 @@ const CasoExitoHubSpotForStartups: React.FC = () => {
       ctaTitle="¿Necesitas impulsar tu startup?"
       ctaDescription="Te ayudamos a desarrollar una estrategia de inbound marketing que potencie el crecimiento de tu empresa emergente."
       ctaButtonText="Impulsar mi startup"
+      relatedSolutions={[
+        { label: 'Estrategia de Contenidos', route: 'serviceContentStrategy' },
+        { label: 'SEO y Posicionamiento', route: 'serviceSEOPositioning' },
+      ]}
     />
   );
 };

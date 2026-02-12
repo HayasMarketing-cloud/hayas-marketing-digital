@@ -63,6 +63,10 @@ const CasoExitoSuministrosXSKD = () => {
       ctaDescription="Te ayudamos a posicionar tu empresa en búsquedas industriales y aumentar tus consultas comerciales."
       ctaButtonText="Solicitar consulta SEO"
       ctaButtonLink="/es/agendar-reunion"
+      relatedSolutions={[
+        { label: 'SEO y Posicionamiento', route: 'serviceSEOPositioning' },
+        { label: 'Diseño Web', route: 'serviceWebDesign' },
+      ]}
     />
   );
 };

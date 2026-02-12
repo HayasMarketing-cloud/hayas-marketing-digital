@@ -54,6 +54,10 @@ const CasoExitoConversaConsultores: React.FC = () => {
       ctaDescription="Combinamos diseño web profesional con estrategias SEO efectivas para posicionar tu consultoría como referente en tu sector."
       ctaButtonText="Posicionar mi consultoría"
       ctaButtonLink="/es/agendar-reunion"
+      relatedSolutions={[
+        { label: 'Diseño Web', route: 'serviceWebDesign' },
+        { label: 'SEO y Posicionamiento', route: 'serviceSEOPositioning' },
+      ]}
     />
   );
 };

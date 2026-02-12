@@ -79,6 +79,10 @@ const CasoExitoAsendia = () => {
       ctaDescription="Obtén los mismos resultados que Asendia. Agenda una consulta gratuita y descubre cómo podemos ayudarte a atraer y retener managers de e-commerce con un CRM y automatización diseñados para tu sector."
       ctaButtonText="Agenda tu consulta gratuita"
       ctaButtonLink="/es/agendar-reunion"
+      relatedSolutions={[
+        { label: 'Implantación CRM', route: 'serviceCRMImplantation' },
+        { label: 'Automatización de Ventas', route: 'serviceSalesAutomation' },
+      ]}
     />
   );
 };

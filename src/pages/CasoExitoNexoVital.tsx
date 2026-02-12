@@ -63,6 +63,10 @@ const CasoExitoNexoVital = () => {
       ctaDescription="Te ayudamos a crear una marca profesional que genere confianza y te posicione como referente en tu especialidad."
       ctaButtonText="Desarrollar mi marca profesional"
       ctaButtonLink="/es/agendar-reunion"
+      relatedSolutions={[
+        { label: 'Creación de Marca', route: 'serviceBrandCreation' },
+        { label: 'Diseño Web', route: 'serviceWebDesign' },
+      ]}
     />
   );
 };

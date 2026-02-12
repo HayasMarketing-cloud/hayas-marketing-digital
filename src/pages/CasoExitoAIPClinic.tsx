@@ -75,6 +75,9 @@ const CasoExitoAIPClinic: React.FC = () => {
       ctaTitle="¿Quieres atraer más pacientes a tu clínica o consulta médica?"
       ctaDescription="Descubre cómo nuestras estrategias digitales especializadas en el sector salud pueden ayudarte a crecer y optimizar la captación de pacientes online."
       ctaButtonText="Solicitar Consulta Gratuita"
+      relatedSolutions={[
+        { label: 'Publicidad Google Ads', route: 'serviceGoogleAds' },
+      ]}
     />
   );
 };

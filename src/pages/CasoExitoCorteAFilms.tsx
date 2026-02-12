@@ -55,6 +55,9 @@ const CasoExitoCorteAFilms: React.FC = () => {
       ctaDescription="Hablemos de tu proyecto audiovisual y diseñemos una web que cuente tu historia."
       ctaButtonText="Solicitar consulta gratuita"
       ctaButtonLink="/es/agendar-reunion"
+      relatedSolutions={[
+        { label: 'Diseño Web', route: 'serviceWebDesign' },
+      ]}
     />
   );
 };

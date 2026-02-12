@@ -65,6 +65,10 @@ const CasoExitoFormatoEducativo = (): React.JSX.Element => {
       ctaDescription="Te ayudamos a implementar un CRM que transforme la manera en que gestionas tus estudiantes y procesos educativos."
       ctaButtonText="Solicitar consulta gratuita"
       ctaButtonLink="/es/agendar-reunion"
+      relatedSolutions={[
+        { label: 'Implantación CRM', route: 'serviceCRMImplantation' },
+        { label: 'Automatización de Ventas', route: 'serviceSalesAutomation' },
+      ]}
     />
   );
 };

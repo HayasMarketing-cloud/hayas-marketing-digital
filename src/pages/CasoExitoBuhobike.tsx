@@ -59,6 +59,10 @@ const CasoExitoBuhobike: React.FC = () => {
       ctaDescription="Descubre su catálogo, novedades y servicios para ciclistas."
       ctaButtonText="Visita Buhobike"
       ctaButtonLink="https://buhobike.com/"
+      relatedSolutions={[
+        { label: 'Estrategia de Contenidos', route: 'serviceContentStrategy' },
+        { label: 'Tienda Online', route: 'serviceOnlineStore' },
+      ]}
     />
   );
 };

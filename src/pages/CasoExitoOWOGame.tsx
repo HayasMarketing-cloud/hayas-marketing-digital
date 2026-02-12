@@ -68,6 +68,11 @@ const CasoExitoOWOGame = () => {
       ctaDescription="Descubre su tecnología háptica y su visión del gaming inmersivo."
       ctaButtonText="Visita OWO Game"
       ctaButtonLink="https://owogame.com"
+      relatedSolutions={[
+        { label: 'Implantación CRM', route: 'serviceCRMImplantation' },
+        { label: 'SEO y Posicionamiento', route: 'serviceSEOPositioning' },
+        { label: 'Gestión de Redes Sociales', route: 'serviceSocialMedia' },
+      ]}
     />
   );
 };

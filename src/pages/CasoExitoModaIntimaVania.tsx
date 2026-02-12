@@ -48,6 +48,10 @@ const CasoExitoModaIntimaVania: React.FC = () => {
       ctaDescription="Hablemos de tu contexto y diseñemos una implantación de HubSpot y estrategia en redes sociales a medida."
       ctaButtonText="Solicitar consulta gratuita"
       ctaButtonLink="/es/agendar-reunion"
+      relatedSolutions={[
+        { label: 'Implantación CRM', route: 'serviceCRMImplantation' },
+        { label: 'Gestión de Redes Sociales', route: 'serviceSocialMedia' },
+      ]}
     />
   );
 };

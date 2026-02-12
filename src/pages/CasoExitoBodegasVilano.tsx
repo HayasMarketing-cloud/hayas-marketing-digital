@@ -74,6 +74,10 @@ const CasoExitoBodegasVilano: React.FC = () => {
       ctaTitle="¿Quieres digitalizar tu negocio en retail y alimentación?"
       ctaDescription="Descubre cómo nuestras soluciones en CRM, eCommerce y SEO pueden ayudarte a crecer en el mercado internacional manteniendo la esencia de tu marca."
       ctaButtonText="Solicitar Consulta Gratuita"
+      relatedSolutions={[
+        { label: 'Tienda Online', route: 'serviceOnlineStore' },
+        { label: 'Estrategia de Contenidos', route: 'serviceContentStrategy' },
+      ]}
     />
   );
 };

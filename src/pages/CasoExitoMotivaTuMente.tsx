@@ -73,6 +73,9 @@ const CasoExitoMotivaTuMente: React.FC = () => {
       ctaTitle="¿Quieres dar el salto digital con un diseño web que refleje la esencia de tu proyecto?"
       ctaDescription="Hablemos y creemos juntos una presencia digital que conecte con tu audiencia y potencie tu marca personal o proyecto empresarial."
       ctaButtonText="Solicitar Consulta Gratuita"
+      relatedSolutions={[
+        { label: 'Diseño Web', route: 'serviceWebDesign' },
+      ]}
     />
   );
 };

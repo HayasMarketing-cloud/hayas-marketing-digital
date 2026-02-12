@@ -73,6 +73,10 @@ const CasoExitoEurobitsTechnologies: React.FC = () => {
       ctaTitle="¿Quieres proyectar tu empresa tecnológica a nivel internacional?"
       ctaDescription="Descubre cómo nuestras soluciones digitales pueden ayudarte a reforzar tu marca y conectar con audiencias globales en el sector tecnológico."
       ctaButtonText="Solicitar Consulta Gratuita"
+      relatedSolutions={[
+        { label: 'Diseño Web', route: 'serviceWebDesign' },
+        { label: 'SEO y Posicionamiento', route: 'serviceSEOPositioning' },
+      ]}
     />
   );
 };

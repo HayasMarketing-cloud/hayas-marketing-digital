@@ -54,6 +54,10 @@ const CasoExitoGiveAndGo: React.FC = () => {
       ctaDescription="Te ayudamos a crear una plataforma web con ecommerce integrado que optimice la gestión de tus eventos y mejore la experiencia de tus clientes."
       ctaButtonText="Digitalizar mi negocio"
       ctaButtonLink="/es/agendar-reunion"
+      relatedSolutions={[
+        { label: 'Diseño Web', route: 'serviceWebDesign' },
+        { label: 'Tienda Online', route: 'serviceOnlineStore' },
+      ]}
     />
   );
 };

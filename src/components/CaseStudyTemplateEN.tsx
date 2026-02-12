@@ -24,6 +24,11 @@ interface Solution {
   description: string;
 }
 
+interface RelatedSolution {
+  label: string;
+  route: string;
+}
+
 interface Testimonial {
   quote: string;
   author: string;
@@ -64,6 +69,7 @@ interface CaseStudyProps {
   ctaDescription: string;
   ctaButtonText: string;
   ctaButtonLink?: string;
+  relatedSolutions?: RelatedSolution[];
 }
 
 const CaseStudyTemplateEN: React.FC<CaseStudyProps> = ({
@@ -87,10 +93,20 @@ const CaseStudyTemplateEN: React.FC<CaseStudyProps> = ({
   ctaTitle,
   ctaDescription,
   ctaButtonText,
-  ctaButtonLink
+  ctaButtonLink,
+  relatedSolutions
 }) => {
   const { getRoute } = useLocalizedRoutes();
   const defaultCtaLink = ctaButtonLink || getRoute('scheduleMeeting');
+
+  const defaultRelatedSolutions: RelatedSolution[] = [
+    { label: 'CRM Implementation', route: 'serviceCRMImplantation' },
+    { label: 'Sales Automation', route: 'serviceSalesAutomation' },
+    { label: 'Strategic Consulting', route: 'serviceStrategicConsulting' },
+    { label: 'Lead Generation', route: 'serviceLeadGeneration' },
+  ];
+
+  const activeSolutions = relatedSolutions || defaultRelatedSolutions;
   
   return (
     <div className="min-h-screen bg-background">
@@ -315,58 +331,25 @@ const CaseStudyTemplateEN: React.FC<CaseStudyProps> = ({
                 <h3 className="text-xl font-semibold font-dm-sans mb-6 text-center">
                   Related Services
                 </h3>
-                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                  <Link 
-                    to="/en/services/crm-implementation"
-                    className="flex items-center gap-3 p-4 bg-white rounded-lg hover:shadow-md transition-all duration-200 group"
-                  >
-                    <CheckCircle className="w-5 h-5 text-green-600" />
-                    <div>
-                      <div className="font-medium text-sm group-hover:text-primary transition-colors">
-                        CRM Implementation
+                <div className={`grid gap-4 ${
+                  activeSolutions.length <= 2 ? 'sm:grid-cols-2' :
+                  activeSolutions.length === 3 ? 'sm:grid-cols-3' :
+                  'sm:grid-cols-2 lg:grid-cols-4'
+                }`}>
+                  {activeSolutions.map((solution, index) => (
+                    <Link
+                      key={index}
+                      to={getRoute(solution.route)}
+                      className="flex items-center gap-3 p-4 bg-white rounded-lg hover:shadow-md transition-all duration-200 group"
+                    >
+                      <CheckCircle className="w-5 h-5 text-green-600" />
+                      <div>
+                        <div className="font-medium text-sm group-hover:text-primary transition-colors">
+                          {solution.label}
+                        </div>
                       </div>
-                      <div className="text-xs text-primary font-medium">Popular</div>
-                    </div>
-                  </Link>
-                  
-                  <Link 
-                    to="/en/services/sales-process-automation"
-                    className="flex items-center gap-3 p-4 bg-white rounded-lg hover:shadow-md transition-all duration-200 group"
-                  >
-                    <CheckCircle className="w-5 h-5 text-green-600" />
-                    <div>
-                      <div className="font-medium text-sm group-hover:text-primary transition-colors">
-                        Sales Automation
-                      </div>
-                      <div className="text-xs text-primary font-medium">Strategic</div>
-                    </div>
-                  </Link>
-                  
-                  <Link 
-                    to="/en/services/strategic-consulting"
-                    className="flex items-center gap-3 p-4 bg-white rounded-lg hover:shadow-md transition-all duration-200 group"
-                  >
-                    <CheckCircle className="w-5 h-5 text-green-600" />
-                    <div>
-                      <div className="font-medium text-sm group-hover:text-primary transition-colors">
-                        Strategic Consulting
-                      </div>
-                      <div className="text-xs text-primary font-medium">Premium</div>
-                    </div>
-                  </Link>
-                  
-                  <Link 
-                    to="/en/services/lead-generation-clients"
-                    className="flex items-center gap-3 p-4 bg-white rounded-lg hover:shadow-md transition-all duration-200 group"
-                  >
-                    <CheckCircle className="w-5 h-5 text-green-600" />
-                    <div>
-                      <div className="font-medium text-sm group-hover:text-primary transition-colors">
-                        Lead Generation
-                      </div>
-                      <div className="text-xs text-primary font-medium">ROI</div>
-                    </div>
-                  </Link>
+                    </Link>
+                  ))}
                 </div>
                 
                 <div className="text-center mt-6">
@@ -375,7 +358,7 @@ const CaseStudyTemplateEN: React.FC<CaseStudyProps> = ({
                   </p>
                   <div className="flex flex-wrap justify-center gap-2">
                     <Button asChild variant="outline" size="sm">
-                      <Link to="/en/solutions/connect-with-customers">
+                      <Link to={getRoute('solutionsConnectCustomers')}>
                         View Complete Solution
                       </Link>
                     </Button>
@@ -410,26 +393,13 @@ const CaseStudyTemplateEN: React.FC<CaseStudyProps> = ({
                   Discover our related solutions:
                 </p>
                 <div className="flex flex-wrap justify-center gap-2">
-                  <Button asChild variant="ghost" size="sm">
-                    <Link to="/en/services/crm-implementation">
-                      CRM Implementation
-                    </Link>
-                  </Button>
-                  <Button asChild variant="ghost" size="sm">
-                    <Link to="/en/services/sales-process-automation">
-                      Sales Automation
-                    </Link>
-                  </Button>
-                  <Button asChild variant="ghost" size="sm">
-                    <Link to="/en/services/strategic-consulting">
-                      Strategic Consulting
-                    </Link>
-                  </Button>
-                  <Button asChild variant="ghost" size="sm">
-                    <Link to="/en/solutions/connect-with-customers">
-                      Connect With Customers
-                    </Link>
-                  </Button>
+                  {activeSolutions.map((solution, index) => (
+                    <Button key={index} asChild variant="ghost" size="sm">
+                      <Link to={getRoute(solution.route)}>
+                        {solution.label}
+                      </Link>
+                    </Button>
+                  ))}
                 </div>
               </div>
             </section>

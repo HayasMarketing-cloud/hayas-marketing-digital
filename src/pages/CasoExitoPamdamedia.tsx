@@ -59,6 +59,9 @@ const CasoExitoPamdamedia: React.FC = () => {
       ctaDescription="Modernizamos tu presencia digital con rediseños que no solo mejoran la estética, sino que incrementan las conversiones y fortalecen tu marca."
       ctaButtonText="Rediseñar mi web"
       ctaButtonLink="/es/agendar-reunion"
+      relatedSolutions={[
+        { label: 'Diseño Web', route: 'serviceWebDesign' },
+      ]}
     />
   );
 };
