@@ -646,7 +646,7 @@ const SeoPositioning = () => {
                 <Search className="ml-2 h-5 w-5" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10" asChild>
+            <Button size="lg" variant="outline" className="border-white text-white bg-white/20 hover:bg-white hover:text-primary backdrop-blur-sm" asChild>
               <Link to={content.contactLink}>
                 {content.ctaSecondary}
                 <Bot className="ml-2 h-5 w-5" />
