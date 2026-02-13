@@ -147,7 +147,7 @@ const CampanasInboundMarketing: React.FC = () => {
           <ServiceContactSection
             title="¿Hablamos de tu campaña Inbound?"
             subtitle="Cuéntanos tu público, propuesta de valor y objetivos. Te proponemos un plan realista y medible."
-            minHeight={900}
+            sourcePage="Inbound Marketing"
           />
         </div>
       </main>

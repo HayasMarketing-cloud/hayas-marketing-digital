@@ -295,10 +295,9 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ data }) => {
         {/* Contact Form Section */}
         {data.showContactForm && (
           <ServiceContactSection 
-            formId="7hfylnczt0dXbyUFFSEt"
             title={data.contactFormTitle || '¿Hablamos? Solicita tu propuesta'}
             subtitle={data.contactFormSubtitle || 'Cuéntanos tu contexto y objetivos. Te responderemos con una propuesta alineada a tus necesidades.'}
-            minHeight={820}
+            sourcePage={data.canonical || data.heroTitle}
           />
         )}
       </main>
