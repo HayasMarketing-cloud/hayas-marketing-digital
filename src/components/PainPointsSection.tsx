@@ -22,10 +22,10 @@ const PainPointsSection: React.FC = () => {
     },
     {
       icon: <Search className="h-12 w-12 text-blue-500" />,
-      title: isEnglish ? "Not ranking on Google" : "No aparece en Google",
+      title: isEnglish ? "Invisible on search and AI" : "Invisible en buscadores e IAs",
       description: isEnglish
-        ? "Without technical SEO your website is invisible on search engines, missing opportunities."
-        : "Sin SEO técnico tu web es invisible en los motores de búsqueda, perdiendo oportunidades."
+        ? "Without an SEO, AEO and GEO strategy, your website doesn't appear on Google or in AI answers from ChatGPT, Copilot or Perplexity."
+        : "Sin una estrategia SEO, AEO y GEO, tu web no aparece ni en Google ni en las respuestas de ChatGPT, Copilot o Perplexity."
     },
     {
       icon: <TrendingDown className="h-12 w-12 text-purple-500" />,
