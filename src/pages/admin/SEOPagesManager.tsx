@@ -19,16 +19,14 @@ const SEOPagesManager: React.FC = () => {
         <div className="max-w-7xl mx-auto space-y-6">
           <AdminBreadcrumbs currentPage="Páginas SEO" />
           <div>
-            <h1 className="text-4xl font-bold mb-2">Gestión de Páginas SEO</h1>
+            <h1 className="text-4xl font-bold mb-2">Editor de Páginas SEO</h1>
             <p className="text-muted-foreground">
-              Sistema automático de SEO con detección de rutas y auto-generación
+              Gestiona los metadatos SEO de todas las páginas de la web
             </p>
           </div>
 
-          {/* Métricas mejoradas */}
           <EnhancedSEOMetrics />
 
-          {/* Grid con lista mejorada y editor */}
           <div className="grid lg:grid-cols-2 gap-6">
             <EnhancedSEOPageList onEditPage={setSelectedPage} />
             
@@ -38,11 +36,10 @@ const SEOPagesManager: React.FC = () => {
               <div className="flex items-center justify-center h-[700px] border rounded-lg bg-muted/20">
                 <div className="text-center max-w-md">
                   <p className="text-muted-foreground mb-4">
-                    Selecciona una ruta para optimizar su SEO
+                    Selecciona una página para editar su SEO
                   </p>
                   <p className="text-sm text-muted-foreground">
-                    💡 Las rutas con estado "Auto-generado" usan SEO básico. 
-                    Edítalas para optimizar títulos, descripciones y keywords.
+                    💡 Haz clic en cualquier página de la lista para abrir el editor.
                   </p>
                 </div>
               </div>

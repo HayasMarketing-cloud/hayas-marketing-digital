@@ -1,67 +1,68 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { FileText, CheckCircle2, Sparkles, AlertCircle, TrendingUp } from 'lucide-react';
+import { FileText, AlertTriangle, Globe, TrendingUp } from 'lucide-react';
 import { useAllSEOPages } from '@/hooks/useSEOData';
-import { getRegisteredRoutes, getIndexableRoutes } from '@/utils/routeRegistryData';
 
 export const EnhancedSEOMetrics: React.FC = () => {
   const { data: pages, isLoading } = useAllSEOPages();
-  
+
   if (isLoading || !pages) {
     return <div className="text-muted-foreground">Cargando métricas...</div>;
   }
 
-  const allRoutes = getRegisteredRoutes();
-  const indexableRoutes = getIndexableRoutes();
-  const dbPaths = new Set(pages.filter(p => p.source === 'database').map(p => p.path));
-  
-  // Calcular métricas
-  const routesWithOptimizedSEO = indexableRoutes.filter(r => dbPaths.has(r.path)).length;
-  const routesWithAutoSEO = indexableRoutes.length - routesWithOptimizedSEO;
-  const healthScore = indexableRoutes.length > 0 
-    ? Math.round((routesWithOptimizedSEO / indexableRoutes.length) * 100)
+  const esPages = pages.filter(p => p.path.startsWith('/es'));
+  const enPages = pages.filter(p => p.path.startsWith('/en'));
+  const withWarnings = pages.filter(p => p.hasWarnings);
+
+  // Campos críticos: title, description, keywords, h1
+  const complete = pages.filter(p => {
+    const d = p.data;
+    return d.title && d.description && d.h1 && d.keywords && d.keywords.length > 0;
+  });
+
+  const healthScore = pages.length > 0
+    ? Math.round((complete.length / pages.length) * 100)
     : 100;
 
   const metrics = [
     {
-      title: 'Rutas Totales',
-      value: allRoutes.length,
-      subtitle: `${indexableRoutes.length} indexables`,
+      title: 'Total Páginas',
+      value: pages.length,
+      subtitle: `${esPages.length} ES · ${enPages.length} EN`,
       icon: FileText,
       color: 'blue'
     },
     {
-      title: 'SEO Optimizado',
-      value: routesWithOptimizedSEO,
-      subtitle: 'Editadas manualmente',
-      icon: CheckCircle2,
+      title: 'Campos Completos',
+      value: complete.length,
+      subtitle: `de ${pages.length} páginas`,
+      icon: TrendingUp,
       color: 'green'
     },
     {
-      title: 'Auto-generadas',
-      value: routesWithAutoSEO,
-      subtitle: 'Con SEO básico',
-      icon: Sparkles,
-      color: 'blue'
+      title: 'Con Warnings',
+      value: withWarnings.length,
+      subtitle: 'Título o descripción',
+      icon: AlertTriangle,
+      color: withWarnings.length > 0 ? 'yellow' : 'green'
     },
     {
       title: 'Score SEO',
       value: `${healthScore}%`,
-      subtitle: 'Nivel de optimización',
-      icon: TrendingUp,
+      subtitle: 'Campos críticos completos',
+      icon: Globe,
       color: healthScore >= 80 ? 'green' : healthScore >= 60 ? 'yellow' : 'red'
     }
   ];
 
   const getColorClass = (color: string) => {
-    const colors = {
+    const colors: Record<string, string> = {
       blue: 'text-blue-500',
       green: 'text-green-500',
       yellow: 'text-yellow-500',
       red: 'text-red-500',
-      purple: 'text-purple-500'
     };
-    return colors[color as keyof typeof colors] || 'text-muted-foreground';
+    return colors[color] || 'text-muted-foreground';
   };
 
   return (

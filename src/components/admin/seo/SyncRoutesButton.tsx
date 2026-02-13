@@ -10,49 +10,55 @@ import { SyncReportModal, SyncReport } from './SyncReportModal';
 
 // Helper para encontrar path similar en el registro
 const findSimilarPath = (orphanPath: string, registryPaths: RouteDefinition[]): string | null => {
-  // Extraer segmentos del path huérfano
   const orphanSegments = orphanPath.split('/').filter(Boolean);
-  
-  // Calcular similitud para cada path del registro
+  const orphanSlug = orphanSegments[orphanSegments.length - 1] || '';
+
   const candidates = registryPaths.map(route => {
     const regSegments = route.path.split('/').filter(Boolean);
-    
-    // Debe empezar con el mismo prefijo de idioma
+    const regSlug = regSegments[regSegments.length - 1] || '';
+
+    // Must share language prefix
     if (orphanSegments[0] !== regSegments[0]) return { path: route.path, score: 0 };
-    
-    // Contar segmentos coincidentes
-    let matchCount = 0;
+
+    let score = 0;
     const minLen = Math.min(orphanSegments.length, regSegments.length);
-    
+
     for (let i = 0; i < minLen; i++) {
       if (orphanSegments[i] === regSegments[i]) {
-        matchCount++;
+        score += 1;
       } else {
-        // Comprobar similitud parcial (ej: "about" vs "about-us")
         const seg1 = orphanSegments[i].toLowerCase();
         const seg2 = regSegments[i].toLowerCase();
         if (seg1.includes(seg2) || seg2.includes(seg1)) {
-          matchCount += 0.7;
+          score += 0.7;
         }
       }
     }
-    
-    // Penalizar diferencias de longitud
+
+    // Slug match bonus (most important segment)
+    if (orphanSlug && regSlug) {
+      if (orphanSlug === regSlug) {
+        score += 2;
+      } else if (orphanSlug.includes(regSlug) || regSlug.includes(orphanSlug)) {
+        score += 1.2;
+      }
+    }
+
+    // Length penalty
     const lengthPenalty = Math.abs(orphanSegments.length - regSegments.length) * 0.3;
-    const score = matchCount - lengthPenalty;
-    
+    score -= lengthPenalty;
+
     return { path: route.path, score };
   });
-  
-  // Ordenar por score descendente y tomar el mejor
+
   candidates.sort((a, b) => b.score - a.score);
-  
-  // Solo sugerir si hay suficiente similitud (al menos 1.5 segmentos coinciden)
+
   const best = candidates[0];
-  if (best && best.score >= 1.5 && best.path !== orphanPath) {
+  // Higher threshold (2.0) to avoid generic matches like /en/blog/X
+  if (best && best.score >= 2.0 && best.path !== orphanPath) {
     return best.path;
   }
-  
+
   return null;
 };
 
