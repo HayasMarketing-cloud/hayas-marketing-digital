@@ -1,26 +1,89 @@
 
-# Fix: Boton invisible en la seccion CTA de SEO Posicionamiento
 
-## Problema
+# Fix de verificacion de indexacion + Auditoria On-Page con DataForSEO
 
-En la seccion CTA de `/es/servicios/seo-posicionamiento`, el segundo boton ("Hablar con SofIA") tiene las clases `border-white text-white` sobre un fondo degradado oscuro-verde, lo que hace que el borde blanco sea muy tenue y el boton apenas se distinga sin hover.
+## Problema 1: La verificacion devuelve "No indexada" incorrectamente
 
-## Solucion
+La busqueda SERP usa `site:hayas.marketing/es` pero devuelve 0 resultados (`se_results_count: 0`). Posibles causas:
+- Google puede indexar la pagina bajo `www.hayas.marketing` u otra variante
+- El depth de 10 resultados es insuficiente
+- El formato de query necesita ajuste
 
-En `src/pages/SeoPositioning.tsx`, linea ~649, cambiar las clases del boton secundario de:
+### Solucion
 
-```
-border-white text-white hover:bg-white/10
-```
+Modificar `supabase/functions/dataforseo-check/index.ts`:
 
-a:
+1. **Cambiar la busqueda** para usar la URL completa: `site:hayas.marketing/es` pasa a buscar con la URL absoluta para mayor precision
+2. **Aumentar depth** de 10 a 100 resultados
+3. **Ampliar la deteccion**: buscar tambien variantes con/sin www
+4. **Guardar la raw_response completa** para poder depurar si vuelve a fallar
+5. **Anadir logs de debug** con `console.log` del query enviado y la respuesta recibida para diagnosticar en los logs de la funcion
 
-```
-border-white text-white bg-white/20 hover:bg-white hover:text-primary backdrop-blur-sm
-```
+## Problema 2: Anadir auditoria SEO on-page
 
-Esto le da un fondo semitransparente visible desde el inicio (igual que otros CTAs similares en la web, como el de Case Studies EN), y al hacer hover se vuelve solido blanco con texto oscuro.
+El usuario quiere que al verificar una pagina se descarguen datos de auditoria tecnica para optimizarla (errores, keywords, etc.).
 
-## Archivo afectado
+### Solucion
 
-- `src/pages/SeoPositioning.tsx` (1 linea)
+Usar el endpoint **Instant Pages** de DataForSEO (`/v3/on_page/instant_pages`) que audita una URL individual en tiempo real y devuelve:
+- On-page score (0-100)
+- Checks de meta tags (titulo, descripcion, h1, h2, canonical, hreflang)
+- Errores y warnings (imagenes sin alt, enlaces rotos, contenido duplicado, etc.)
+- Metricas de rendimiento (page load time, size)
+- Links internos y externos
+- Keyword density
+
+### Cambios en la Edge Function `dataforseo-check`
+
+Modificar para que haga **dos llamadas** por URL:
+
+1. **SERP check** (existente, corregido): verifica si esta indexada en Google
+2. **Instant Pages audit** (nuevo): obtiene auditoria on-page completa
+
+Ambos resultados se guardan en la tabla `indexation_checks` ampliando los campos.
+
+### Migracion de base de datos
+
+Anadir columnas a `indexation_checks`:
+- `onpage_score` (float) - puntuacion 0-100
+- `total_checks` (jsonb) - resumen de checks (errors, warnings, info counts)
+- `checks_detail` (jsonb) - detalle de cada check individual
+- `meta_info` (jsonb) - info de meta tags detectados
+- `page_timing` (jsonb) - metricas de velocidad
+- `links_info` (jsonb) - conteo de links internos/externos
+- `audit_raw_response` (jsonb) - respuesta completa para referencia
+
+### Cambios en el UI (`PageDetailPanel.tsx`)
+
+Ampliar la pestana **Index** para mostrar dos secciones:
+
+**Seccion 1 - Estado de Indexacion** (existente, corregida):
+- Badge indexada/no indexada
+- Titulo y snippet en Google
+- Posicion
+
+**Seccion 2 - Auditoria On-Page** (nueva):
+- Card con On-Page Score (0-100) con indicador visual de color
+- Lista de errores criticos (rojo)
+- Lista de warnings (amarillo)
+- Info de meta tags detectados vs configurados
+- Metricas de rendimiento (tiempo de carga, tamano)
+- Resumen de links internos/externos
+- Boton "Descargar informe completo" que exporta los datos en JSON
+
+El boton "Verificar indexacion" pasa a llamarse "Verificar indexacion y auditar" y ejecuta ambas comprobaciones.
+
+## Archivos afectados
+
+- `supabase/functions/dataforseo-check/index.ts` - Fix de busqueda + nueva llamada a Instant Pages
+- `src/components/admin/seo/PageDetailPanel.tsx` - UI ampliada con seccion de auditoria
+- `src/hooks/useSEOTrackerData.ts` - Incluir nuevos campos de auditoria en el tipo
+- 1 migracion SQL para anadir columnas a `indexation_checks`
+
+## Coste estimado
+
+Cada verificacion consume 2 llamadas API de DataForSEO:
+- SERP Live Advanced: ~$0.002 por busqueda
+- Instant Pages: ~$0.000125 por pagina
+- Total por pagina: ~$0.002125
+
