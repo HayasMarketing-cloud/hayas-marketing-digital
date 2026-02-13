@@ -351,23 +351,6 @@ const CaseStudyTemplate: React.FC<CaseStudyProps> = ({
                   ))}
                 </div>
                 
-                <div className="text-center mt-6">
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Descubre cómo estas soluciones pueden transformar tu negocio
-                  </p>
-                  <div className="flex flex-wrap justify-center gap-2">
-                    <Button asChild variant="outline" size="sm">
-                      <Link to={getRoute('connectWithClients')}>
-                        Ver solución completa
-                      </Link>
-                    </Button>
-                    <Button asChild variant="ghost" size="sm">
-                      <Link to={getRoute('caseStudies')}>
-                        Más casos de éxito
-                      </Link>
-                    </Button>
-                  </div>
-                </div>
               </div>
             </section>
 
