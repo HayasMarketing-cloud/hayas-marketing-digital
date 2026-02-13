@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import { getIndexableUrls } from '@/utils/sitemap';
 import { GSCQuickMetrics } from '@/components/admin/seo/GSCQuickMetrics';
+import { SyncRoutesButton } from '@/components/admin/seo/SyncRoutesButton';
 
 const SEODashboard: React.FC = () => {
   const navigate = useNavigate();
@@ -155,6 +156,7 @@ const SEODashboard: React.FC = () => {
               </p>
             </div>
             <div className="flex gap-2">
+              <SyncRoutesButton />
               <Badge variant="default" className="px-3 py-1">
                 <CheckCircle className="h-3 w-3 mr-1" />
                 3 sistemas activos
