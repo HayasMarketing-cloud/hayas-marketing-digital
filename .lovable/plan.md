@@ -1,180 +1,125 @@
 
-# SEO Tracker Unificado - Consolidar 4 herramientas en 1
+
+# SEO Tracker Unificado - Implementacion (Fase 1: sin DataForSEO)
 
 ## Resumen
 
-Fusionar las 4 secciones actuales (SEO Dashboard, Google Search Console, Gestion de Paginas SEO y Sitemap Manager) en una sola herramienta llamada **SEO Tracker** donde cada pagina del sitio es un "activo digital" con toda su informacion centralizada.
+Crear el SEO Tracker unificado fusionando las 4 secciones actuales en una sola vista en `/admin/seo`. La integracion con DataForSEO queda pendiente hasta que se disponga de las claves API.
 
-## Que tiene cada seccion actualmente
+## Paso 1: Crear la Edge Function `dataforseo-check` (placeholder)
 
-### 1. SEO Dashboard (`/admin/seo`)
-- Metricas globales: URLs indexables (ES/EN), ficheros .md
-- Widget GSC rapido (clicks, impresiones, CTR, posicion - ultimos 7 dias)
-- Estado de los 3 sistemas (SEO Clasico, GEO, AEO)
-- Documentacion tecnica (accordion extenso)
-- Accesos rapidos a las demas herramientas
-- Boton "Sincronizar Rutas" (detecta paginas huerfanas/nuevas)
+Crear `supabase/functions/dataforseo-check/index.ts` con la estructura completa pero que devuelva un mensaje de "API keys no configuradas" cuando no encuentre los secretos. Asi cuando se anadan las claves, funcionara automaticamente sin cambios de codigo.
 
-### 2. Google Search Console (`/admin/seo/gsc`)
-- Metricas globales (clicks, impresiones, CTR)
-- Tabla de TODAS las paginas con datos GSC
-- Tabla de TODAS las keywords con datos GSC
-- Filtro de busqueda
-- Exportar CSV
+- Recibe `{ urls: string[] }` en el body
+- Busca primero en la tabla `indexation_checks` (cache)
+- Si no hay cache o es antigua (>24h), consulta DataForSEO API
+- Si no hay claves API, devuelve `{ status: "unconfigured" }` para cada URL
+- Anadir `[functions.dataforseo-check] verify_jwt = true` en config.toml
 
-### 3. Gestion de Paginas SEO (`/admin/seo/pages`)
-- Metricas de completitud (total paginas, campos completos, warnings, score)
-- Lista de paginas SEO de la DB con filtros (busqueda, categoria, idioma)
-- Editor lateral para metadatos (title, description, H1, H2, keywords, canonical, robots, schema, category)
-- Auto-completar y traducir a EN
+## Paso 2: Crear componente `PageDetailPanel.tsx`
 
-### 4. Sitemap Manager (`/admin/seo/sitemap`)
-- Arbol visual del sitemap agrupado por categoria
-- Selector de idioma (index, ES, EN)
-- Descargar XML
+Nuevo componente en `src/components/admin/seo/PageDetailPanel.tsx` con 4 pestanas:
 
-## Nueva arquitectura: SEO Tracker
+**Pestana 1 - Metadatos SEO**: Reutiliza el `SEOEditor` existente embebido directamente (sin el wrapper Card/close button, adaptado para integrarse en el panel).
 
-### Vista principal: Lista de paginas como activos digitales
+**Pestana 2 - Search Console**: Muestra datos GSC filtrados para esa URL especifica:
+- Clicks, impresiones, CTR, posicion media
+- Top keywords que llevan trafico a esa pagina
+- Datos del mismo hook que ya usa `GSCFullReport` (filtrando por page path)
 
-Una sola pagina en `/admin/seo` que muestra TODAS las paginas del sitio como un listado enriquecido. Cada fila de la tabla muestra:
-
-```text
-+------------------------------------------------------------------+
-| /es/servicios/seo                                    [Editar]    |
-| Title: Posicionamiento SEO Profesional | Hayas Marketing         |
-| GSC: 45 clicks | 1.2K imp | 3.8% CTR | Pos 12.3                 |
-| SEO: Completo | Schema: Service | Robots: index,follow          |
-| Index: Indexada en Google (verificado DataForSEO)                |
-+------------------------------------------------------------------+
-```
-
-### Estructura de la nueva pagina
-
-```text
-/admin/seo (SEO Tracker)
-|
-+-- Header con metricas globales resumidas
-|   - Total paginas | Score SEO | Clicks GSC (7d) | Paginas indexadas
-|
-+-- Barra de filtros
-|   - Busqueda por path/titulo
-|   - Filtro por idioma (ES/EN/Todos)
-|   - Filtro por categoria
-|   - Filtro por estado (completa/incompleta/con errores)
-|   - Filtro por indexacion (indexada/no indexada/desconocida)
-|
-+-- Lista de paginas (tabla/cards)
-|   - Cada pagina muestra resumen inline
-|   - Click para expandir panel de detalle
-|
-+-- Panel de detalle (al seleccionar una pagina)
-|   - Pestana 1: Metadatos SEO (editor actual)
-|   - Pestana 2: Google Search Console (datos GSC de esa pagina)
-|   - Pestana 3: Indexacion (estado real via DataForSEO)
-|   - Pestana 4: Sitemap (presencia en sitemap, hreflang, prioridad)
-```
-
-### Integracion DataForSEO (nueva)
-
-Se creara una nueva Edge Function `dataforseo-check` que consulta la API de DataForSEO para verificar el estado real de indexacion de cada pagina en Google. Esto requiere:
-
-- Un secreto `DATAFORSEO_API_LOGIN` y `DATAFORSEO_API_PASSWORD`
-- Endpoint de la API: SERP > Google > Organic > Task POST + Task GET
-- Se puede usar el endpoint `https://api.dataforseo.com/v3/serp/google/organic/live/advanced` para buscar `site:hayasmarketing.com/es/ruta` y verificar si aparece
-
-La Edge Function devolvera:
-- Si la pagina esta indexada o no
-- Posicion actual para su keyword principal
+**Pestana 3 - Indexacion**: 
+- Boton "Verificar indexacion" que llama a `dataforseo-check`
+- Muestra estado: Indexada / No indexada / Sin verificar / API no configurada
 - Titulo y snippet que muestra Google
-- Fecha de ultima cache
+- Fecha de ultima verificacion
+- Datos de la tabla `indexation_checks`
 
-### Que se elimina
+**Pestana 4 - Sitemap**:
+- Muestra si la pagina esta en el sitemap XML
+- Prioridad, changefreq, hreflang configurados
+- Enlace para descargar el sitemap correspondiente
 
-- **Ruta `/admin/seo/gsc`** (GSCFullReport.tsx): Se integra dentro del panel de detalle de cada pagina + metricas globales en el header
-- **Ruta `/admin/seo/pages`** (SEOPagesManager.tsx): Se integra como la vista principal + editor
-- **Ruta `/admin/seo/sitemap`** (SitemapManager.tsx): Se integra como pestana de detalle + boton de descarga en el header
-- La documentacion tecnica (pestaña "Documentacion" del dashboard actual) se puede mover a un enlace/modal aparte o mantener como seccion colapsable
+## Paso 3: Crear pagina `SEOTracker.tsx`
 
-### Que se mantiene
+Nuevo archivo `src/pages/admin/SEOTracker.tsx` que reemplaza a `SEODashboard.tsx`:
 
-- `SyncRoutesButton` (deteccion de rutas huerfanas)
-- `SEOEditor` (editor de metadatos, reutilizado en la pestana de detalle)
-- `GSCQuickMetrics` (adaptado para el header)
+**Header**: 4 cards de metricas globales resumidas:
+- Total paginas (de `useAllSEOPages`)
+- Score SEO salud (de `EnhancedSEOMetrics` logic)
+- Clicks GSC 7d (de `GSCQuickMetrics` logic)
+- Paginas indexadas (de `indexation_checks` table count)
+
+**Barra de filtros unificada**:
+- Input busqueda por path/titulo
+- Select idioma (ES/EN/Todos)
+- Select categoria
+- Select estado (completa/incompleta/con warnings)
+- Select indexacion (indexada/no indexada/desconocida)
+
+**Lista de paginas enriquecida**: Cada fila muestra:
+- Path + titulo
+- Metricas GSC inline (clicks, imp, CTR, pos) si hay datos
+- Estado SEO (completa/incompleta) + schema type + robots
+- Estado indexacion (badge con color)
+- Boton editar que abre el `PageDetailPanel`
+
+**Panel lateral**: Al hacer click en una pagina, se abre `PageDetailPanel` en un sheet/drawer lateral o como seccion expandida debajo.
+
+**Acciones globales en el header**:
+- `SyncRoutesButton` (mantener)
+- Boton "Exportar CSV" (todos los datos combinados)
+- Boton "Descargar Sitemap" con selector de idioma
+- Documentacion como dialogo/modal accesible desde un icono
+
+## Paso 4: Actualizar rutas en `App.tsx`
+
+- Cambiar `/admin/seo` para cargar `SEOTracker` en lugar de `SEODashboard`
+- Anadir redirects de las rutas antiguas:
+  - `/admin/seo/gsc` -> `/admin/seo`
+  - `/admin/seo/pages` -> `/admin/seo`
+  - `/admin/seo/sitemap` -> `/admin/seo`
+- Eliminar las rutas duplicadas `/en/admin/seo/pages` y `/en/admin/seo/sitemap`
+- Mantener `/admin/seo/indexnow` como ruta independiente
+
+## Paso 5: Actualizar `AdminDashboard.tsx`
+
+En la seccion "SEO & Visibilidad", reemplazar las 4 cards (SEO Dashboard, GSC, Paginas SEO, Sitemap Manager) por 1 sola card "SEO Tracker":
+- Titulo: "SEO Tracker"
+- Descripcion: "Vista unificada de todas las paginas: metadatos, GSC, indexacion y sitemap"
+- Path: `/admin/seo`
+- Mantener las cards de Robots.txt, Redirects Manager e IndexNow
+
+## Paso 6: Actualizar `SEONavigation`
+
+Simplificar la navegacion del panel SEO:
+- "SEO Tracker" (activo, `/admin/seo`)
+- "IndexNow" (activo, `/admin/seo/indexnow`)
+- Eliminar los enlaces a GSC, Paginas y Sitemap (ya integrados)
+
+## Paso 7: Hook `useSEOTrackerData`
+
+Nuevo hook `src/hooks/useSEOTrackerData.ts` que combina:
+- `useAllSEOPages()` para datos de metadatos
+- Llamada a `gsc-data` edge function para metricas GSC
+- Query a `indexation_checks` para estado de indexacion
+- Devuelve un array unificado de "activos digitales" con todos los datos fusionados por path
+
+## Componentes que se reutilizan sin cambios
+- `SEOEditor` (dentro de pestana Metadatos)
+- `SyncRoutesButton` (en header del tracker)
+- `SitemapTree` (en pestana Sitemap del detalle)
 - Edge Function `gsc-data` (sin cambios)
-- Toda la logica de `useSEOData.ts`
-- Descarga de XML del sitemap
+- `useSEOData.ts` (sin cambios)
 
-## Detalle tecnico de implementacion
+## Componentes que se pueden eliminar despues
+- `SEODashboard.tsx` (reemplazado por SEOTracker)
+- `GSCFullReport.tsx` (integrado en PageDetailPanel)
+- `SEOPagesManager.tsx` (integrado en SEOTracker)
+- `SitemapManager.tsx` (integrado en PageDetailPanel)
 
-### 1. Nueva pagina `SEOTracker.tsx` (reemplaza SEODashboard)
+Nota: no se eliminaran los archivos antiguos en esta fase, solo se desconectan de las rutas con redirects. Se pueden limpiar en una fase posterior.
 
-Componente principal con:
-- Header con metricas globales (4 cards: total paginas, score SEO, clicks GSC 7d, paginas indexadas)
-- Barra de filtros unificada
-- Lista de paginas (reutiliza datos de `useAllSEOPages` + datos GSC de `gsc-data`)
-- Panel lateral o expandible con las 4 pestanas de detalle
+## Estado de DataForSEO
 
-### 2. Nuevo componente `PageDetailPanel.tsx`
+La Edge Function se crea preparada pero sin funcionar hasta que se configuren las claves `DATAFORSEO_API_LOGIN` y `DATAFORSEO_API_PASSWORD`. La pestana de Indexacion mostrara "API no configurada - contacta al administrador" hasta entonces. El resto del SEO Tracker (metadatos + GSC + sitemap) funcionara al 100%.
 
-Panel que aparece al seleccionar una pagina, con 4 pestanas:
-- **Metadatos**: Reutiliza `SEOEditor` adaptado
-- **Search Console**: Muestra clicks, impresiones, CTR, posicion y keywords de esa pagina especifica (filtrando los datos GSC)
-- **Indexacion**: Llama a `dataforseo-check` para esa URL y muestra estado real
-- **Sitemap**: Muestra si la pagina esta en el sitemap, su prioridad, hreflang, y changefreq
-
-### 3. Nueva Edge Function `dataforseo-check`
-
-- Recibe una URL o array de URLs
-- Consulta DataForSEO API (SERP live)
-- Devuelve estado de indexacion por URL
-- Cache de resultados en una nueva tabla `indexation_checks` para no repetir consultas innecesarias
-
-### 4. Nueva tabla `indexation_checks`
-
-```sql
-CREATE TABLE indexation_checks (
-  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  page_path TEXT NOT NULL,
-  is_indexed BOOLEAN,
-  google_title TEXT,
-  google_snippet TEXT,
-  google_position INTEGER,
-  google_cache_date TIMESTAMP WITH TIME ZONE,
-  checked_at TIMESTAMP WITH TIME ZONE DEFAULT now(),
-  raw_response JSONB
-);
-```
-
-Con RLS para admins y un indice unico en `page_path` para evitar duplicados.
-
-### 5. Actualizacion de rutas
-
-- `/admin/seo` -> SEOTracker (nuevo)
-- Eliminar `/admin/seo/gsc`, `/admin/seo/pages`, `/admin/seo/sitemap`
-- Actualizar AdminDashboard para mostrar solo 1 card "SEO Tracker" en lugar de 4
-- Actualizar `SEONavigation` para reflejar la nueva estructura
-
-### 6. Fusionar datos GSC con datos SEO
-
-En la vista principal, cada pagina mostrara datos combinados:
-- De `seo_pages` (DB): metadatos, categoria, warnings
-- De `gsc-data` (API): clicks, impresiones, CTR, posicion
-- De `indexation_checks` (DB/API): estado de indexacion real
-
-Se hara un join en el frontend entre los datos de `useAllSEOPages()` y los datos de GSC (ya disponibles via la Edge Function), enriqueciendo cada fila con metricas reales.
-
-### 7. Exportar CSV global
-
-Se mantiene la funcionalidad de exportar, pero ahora incluye todos los datos combinados (metadatos + GSC + indexacion) en un solo CSV.
-
-## Orden de implementacion
-
-1. Crear tabla `indexation_checks` + RLS
-2. Crear Edge Function `dataforseo-check`
-3. Crear componente `PageDetailPanel` con las 4 pestanas
-4. Crear pagina `SEOTracker.tsx` fusionando las 4 vistas
-5. Actualizar rutas en `App.tsx` (eliminar las 3 antiguas)
-6. Actualizar `AdminDashboard.tsx` (1 card en lugar de 4)
-7. Actualizar `SEONavigation` 
-8. Mover documentacion a seccion colapsable o modal
