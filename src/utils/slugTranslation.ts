@@ -14,7 +14,7 @@ const slugMapping: Record<string, string> = {
   'servicios': 'services',
   'soluciones': 'solutions',
   'casos-exito': 'case-studies',
-  'kit-digital': 'digital-kit',
+  
   
   // Services
   'creacion-marca': 'branding',

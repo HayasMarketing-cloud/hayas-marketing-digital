@@ -163,13 +163,6 @@ export const registeredRoutes: RouteDefinition[] = [
   { path: '/en/services/funnel-implementation', category: 'service', isIndexable: true, priority: 0.7, changefreq: 'monthly', isDynamic: false, isLegacy: false },
   { path: '/en/services/crm-customer-management', category: 'service', isIndexable: true, priority: 0.7, changefreq: 'monthly', isDynamic: false, isLegacy: false },
   
-  // KIT DIGITAL (EN)
-  { path: '/en/kit-digital', category: 'kit-digital', isIndexable: true, priority: 0.7, changefreq: 'monthly', isDynamic: false, isLegacy: false },
-  { path: '/en/kit-digital/basic-internet-presence', category: 'kit-digital', isIndexable: true, priority: 0.6, changefreq: 'monthly', isDynamic: false, isLegacy: false },
-  { path: '/en/kit-digital/crm-client-management', category: 'kit-digital', isIndexable: true, priority: 0.6, changefreq: 'monthly', isDynamic: false, isLegacy: false },
-  { path: '/en/kit-digital/social-media-management', category: 'kit-digital', isIndexable: true, priority: 0.6, changefreq: 'monthly', isDynamic: false, isLegacy: false },
-  { path: '/en/kit-digital/advanced-presence-seo', category: 'kit-digital', isIndexable: true, priority: 0.6, changefreq: 'monthly', isDynamic: false, isLegacy: false },
-  { path: '/en/kit-consulting', category: 'kit-digital', isIndexable: true, priority: 0.7, changefreq: 'monthly', isDynamic: false, isLegacy: false },
   
   // CASE STUDIES (EN)
   { path: '/en/case-studies', category: 'case-study', isIndexable: true, priority: 0.8, changefreq: 'weekly', isDynamic: false, isLegacy: false },
