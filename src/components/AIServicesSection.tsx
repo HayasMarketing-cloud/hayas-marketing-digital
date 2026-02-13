@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
 import { Bot, Settings, GraduationCap, Grid3X3, List, ChevronDown, ChevronUp } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface AIService {
   icon: React.ReactNode;
@@ -14,43 +15,40 @@ interface AIService {
   badge?: string;
 }
 
-const aiServices: AIService[] = [
+const getAiServices = (isEnglish: boolean): AIService[] => [
   {
     icon: <Bot className="h-8 w-8 text-primary" />,
-    title: "Asistente IA",
-    description: "Chatbots inteligentes que atienden a tus clientes 24/7, califican leads y mejoran la experiencia de usuario con conversaciones naturales y personalizadas.",
-    features: [
-      "Atención al cliente automatizada",
-      "Calificación inteligente de leads",
-      "Integración con WhatsApp y web",
-      "Soporte multiidioma"
-    ],
-    link: "/es/servicios/asistente-ia",
-    badge: "Más Popular"
+    title: isEnglish ? "AI Assistant" : "Asistente IA",
+    description: isEnglish 
+      ? "Intelligent chatbots that serve your customers 24/7, qualify leads, and improve user experience with natural, personalized conversations."
+      : "Chatbots inteligentes que atienden a tus clientes 24/7, califican leads y mejoran la experiencia de usuario con conversaciones naturales y personalizadas.",
+    features: isEnglish 
+      ? ["Automated customer support", "Intelligent lead qualification", "WhatsApp and web integration", "Multi-language support"]
+      : ["Atención al cliente automatizada", "Calificación inteligente de leads", "Integración con WhatsApp y web", "Soporte multiidioma"],
+    link: isEnglish ? "/en/services/ai-assistant" : "/es/servicios/asistente-ia",
+    badge: isEnglish ? "Most Popular" : "Más Popular"
   },
   {
     icon: <Settings className="h-8 w-8 text-primary" />,
-    title: "Automatizaciones e integraciones con IA",
-    description: "Optimización de procesos empresariales mediante inteligencia artificial, conectando sistemas y automatizando flujos de trabajo complejos.",
-    features: [
-      "Automatización de procesos",
-      "Integración de sistemas",
-      "Optimización con ML",
-      "Análisis predictivo"
-    ],
-    link: "/es/servicios/integraciones-ia-procesos"
+    title: isEnglish ? "AI Automations & Integrations" : "Automatizaciones e integraciones con IA",
+    description: isEnglish
+      ? "Business process optimization through artificial intelligence, connecting systems and automating complex workflows."
+      : "Optimización de procesos empresariales mediante inteligencia artificial, conectando sistemas y automatizando flujos de trabajo complejos.",
+    features: isEnglish
+      ? ["Process automation", "System integration", "ML optimization", "Predictive analytics"]
+      : ["Automatización de procesos", "Integración de sistemas", "Optimización con ML", "Análisis predictivo"],
+    link: isEnglish ? "/en/services/ai-integrations" : "/es/servicios/integraciones-ia-procesos"
   },
   {
     icon: <GraduationCap className="h-8 w-8 text-primary" />,
-    title: "Formación IA aplicada a Marketing Digital",
-    description: "Capacitación especializada para equipos de marketing en el uso estratégico de herramientas de inteligencia artificial para maximizar resultados.",
-    features: [
-      "Formación práctica en IA",
-      "Casos de uso reales",
-      "Certificación incluida",
-      "Soporte post-formación"
-    ],
-    link: "/es/servicios/formacion-ia"
+    title: isEnglish ? "AI Training for Digital Marketing" : "Formación IA aplicada a Marketing Digital",
+    description: isEnglish
+      ? "Specialized training for marketing teams on the strategic use of artificial intelligence tools to maximize results."
+      : "Capacitación especializada para equipos de marketing en el uso estratégico de herramientas de inteligencia artificial para maximizar resultados.",
+    features: isEnglish
+      ? ["Hands-on AI training", "Real use cases", "Certification included", "Post-training support"]
+      : ["Formación práctica en IA", "Casos de uso reales", "Certificación incluida", "Soporte post-formación"],
+    link: isEnglish ? "/en/services/ai-training" : "/es/servicios/formacion-ia"
   }
 ];
 
@@ -61,13 +59,18 @@ interface AIServicesSectionProps {
 }
 
 const AIServicesSection: React.FC<AIServicesSectionProps> = ({
-  title = "Nuestros servicios de IA aplicada a Marketing Digital",
-  description = "Implementamos soluciones de inteligencia artificial que se integran perfectamente con tu estrategia de marketing existente.",
+  title,
+  description,
   className = ""
 }) => {
   const [expanded, setExpanded] = useState(false);
   const [view, setView] = useState<'grid' | 'list'>('grid');
+  const { isEnglish } = useLanguage();
 
+  const aiServices = getAiServices(isEnglish);
+  const resolvedDescription = description ?? (isEnglish
+    ? "We implement artificial intelligence solutions that integrate seamlessly with your existing marketing strategy."
+    : "Implementamos soluciones de inteligencia artificial que se integran perfectamente con tu estrategia de marketing existente.");
   const servicesToShow = expanded ? aiServices : aiServices.slice(0, 6);
 
   return (
@@ -75,12 +78,15 @@ const AIServicesSection: React.FC<AIServicesSectionProps> = ({
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-6">
-            {description.replace(/soluciones de inteligencia artificial/gi, '|||GRADIENT|||soluciones de inteligencia artificial|||GRADIENT|||').split('|||GRADIENT|||').map((part, index) => {
-              if (part === 'soluciones de inteligencia artificial') {
-                return <span key={index} className="text-gradient-primary">{part}</span>;
-              }
-              return part;
-            })}
+            {(() => {
+              const gradientPhrase = isEnglish ? 'artificial intelligence solutions' : 'soluciones de inteligencia artificial';
+              return resolvedDescription.replace(new RegExp(gradientPhrase, 'gi'), `|||GRADIENT|||${gradientPhrase}|||GRADIENT|||`).split('|||GRADIENT|||').map((part, index) => {
+                if (part.toLowerCase() === gradientPhrase.toLowerCase()) {
+                  return <span key={index} className="text-gradient-primary">{part}</span>;
+                }
+                return part;
+              });
+            })()}
           </h2>
         </div>
 
@@ -146,7 +152,7 @@ const AIServicesSection: React.FC<AIServicesSectionProps> = ({
                 </div>
                 <Link to={service.link} className="block">
                   <Button variant="outline" className="w-full hover:bg-primary hover:text-primary-foreground">
-                    Ver detalles del servicio
+                    {isEnglish ? 'View service details' : 'Ver detalles del servicio'}
                   </Button>
                 </Link>
               </CardContent>
@@ -165,12 +171,12 @@ const AIServicesSection: React.FC<AIServicesSectionProps> = ({
               {expanded ? (
                 <>
                   <ChevronUp className="h-4 w-4" />
-                  Ver menos servicios
+                  {isEnglish ? 'Show fewer services' : 'Ver menos servicios'}
                 </>
               ) : (
                 <>
                   <ChevronDown className="h-4 w-4" />
-                  Ver todos los servicios de IA ({aiServices.length})
+                  {isEnglish ? `View all AI services (${aiServices.length})` : `Ver todos los servicios de IA (${aiServices.length})`}
                 </>
               )}
             </Button>

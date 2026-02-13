@@ -4,6 +4,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { formatTagName } from '@/data/successCasesTags';
 import { ALL_SUCCESS_CASES, SuccessCase } from '@/data/successCases';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface SuccessCasesSectionProps {
   title?: string;
@@ -17,8 +18,8 @@ interface SuccessCasesSectionProps {
 }
 
 const SuccessCasesSection: React.FC<SuccessCasesSectionProps> = ({
-  title = "Casos de éxito",
-  subtitle = "Últimos proyectos que han transformado negocios.",
+  title,
+  subtitle,
   filterTags = [],
   specificCases = [],
   showAllLink = true,
@@ -26,6 +27,10 @@ const SuccessCasesSection: React.FC<SuccessCasesSectionProps> = ({
   className = "",
   id
 }) => {
+  const { isEnglish } = useLanguage();
+  
+  const resolvedTitle = title ?? (isEnglish ? "Success Stories" : "Casos de éxito");
+  const resolvedSubtitle = subtitle ?? (isEnglish ? "Recent projects that have transformed businesses." : "Últimos proyectos que han transformado negocios.");
   // Helper function to normalize image URLs
   const normalizeImageUrl = (url: string): string => {
     if (url.startsWith('http://') || url.startsWith('https://')) {
@@ -63,16 +68,16 @@ const SuccessCasesSection: React.FC<SuccessCasesSectionProps> = ({
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold font-dm-sans mb-6">
-            {title.split(' ').map((word, index) => 
-              word.toLowerCase() === 'éxito' ? (
-                <span key={index} className="text-gradient-primary">{word}</span>
+            {resolvedTitle.split(' ').map((word, index) => 
+              (word.toLowerCase() === 'éxito' || word.toLowerCase() === 'stories') ? (
+                <span key={index} className="text-gradient-primary">{word} </span>
               ) : (
                 word + ' '
               )
             )}
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            {subtitle}
+            {resolvedSubtitle}
           </p>
         </div>
 
@@ -128,10 +133,12 @@ const SuccessCasesSection: React.FC<SuccessCasesSectionProps> = ({
         {showAllLink && (filterTags.length > 0 || specificCases.length > 0) && (
           <div className="text-center">
             <Link 
-              to={`/es/casos-exito${filterTags.length === 1 ? `?filter=${filterTags[0]}` : ''}`}
+              to={`/${isEnglish ? 'en/success-stories' : 'es/casos-exito'}${filterTags.length === 1 ? `?filter=${filterTags[0]}` : ''}`}
               className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors font-medium"
             >
-              Ver todos los casos de éxito {filterTags.length === 1 ? `de ${formatTagName(filterTags[0])}` : ''} →
+              {isEnglish 
+                ? `View all success stories ${filterTags.length === 1 ? `for ${formatTagName(filterTags[0])}` : ''}` 
+                : `Ver todos los casos de éxito ${filterTags.length === 1 ? `de ${formatTagName(filterTags[0])}` : ''}`} →
             </Link>
           </div>
         )}
