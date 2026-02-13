@@ -626,7 +626,7 @@ const SeoPositioning = () => {
       <section className="py-10 md:py-14">
         <InlineBlogPostCard
           title={isEnglish ? "The New SEO Paradigm in the AI Era (AEO and GEO)" : "El Nuevo Paradigma SEO en la Era de la IA (AEO y GEO)"}
-          slug="nuevo-paradigma-seo-aeo-geo"
+          slug={isEnglish ? "new-seo-paradigm-aeo-geo" : "nuevo-paradigma-seo-aeo-geo"}
           image="/seo-aeo-geo-paradigma-hero.jpg"
           category="SEO"
         />
