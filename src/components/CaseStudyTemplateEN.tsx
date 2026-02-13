@@ -386,22 +386,6 @@ const CaseStudyTemplateEN: React.FC<CaseStudyProps> = ({
                   <Link to={getRoute('caseStudies')}>View More Case Studies</Link>
                 </Button>
               </div>
-              
-              {/* Strategic Internal Links */}
-              <div className="border-t border-border/20 pt-8 mt-8">
-                <p className="text-sm text-muted-foreground mb-4">
-                  Discover our related solutions:
-                </p>
-                <div className="flex flex-wrap justify-center gap-2">
-                  {activeSolutions.map((solution, index) => (
-                    <Button key={index} asChild variant="ghost" size="sm">
-                      <Link to={getRoute(solution.route)}>
-                        {solution.label}
-                      </Link>
-                    </Button>
-                  ))}
-                </div>
-              </div>
             </section>
           </div>
         </div>
