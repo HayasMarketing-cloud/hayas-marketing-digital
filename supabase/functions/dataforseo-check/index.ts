@@ -74,7 +74,7 @@ Deno.serve(async (req) => {
       if (cachedResult && cachedResult.checked_at) {
         const checkedAt = new Date(cachedResult.checked_at);
         const hoursSinceCheck = (now.getTime() - checkedAt.getTime()) / (1000 * 60 * 60);
-        if (hoursSinceCheck < 24) {
+        if (hoursSinceCheck < 24 && cachedResult.onpage_score != null) {
           results[url] = {
             status: 'cached',
             is_indexed: cachedResult.is_indexed,
