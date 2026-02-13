@@ -1,63 +1,56 @@
 
-# Eliminar Kit Digital EN de sitemaps y SEO completo
+# Reemplazar formularios GHL por NativeServiceForm en paginas Kit Digital
 
 ## Problema
 
-Los sitemaps estaticos (`sitemap-en.xml` y `sitemap-es.xml`) contienen rutas EN de Kit Digital que no deben existir. Ademas, las paginas ES de Kit Digital tienen etiquetas `hreflang` cruzadas apuntando a versiones EN inexistentes, lo cual es un error SEO critico (Google penaliza hreflang rotos).
+Los 5 formularios de Go High Level (GHL) embebidos en las paginas de Kit Digital no funcionan (el iframe se queda en blanco, como se ve en la captura). Esto bloquea la captacion de leads de un programa con fecha limite.
 
-## Cambios necesarios
+## Paginas afectadas
 
-### 1. `public/sitemap-en.xml` - Eliminar bloque KIT DIGITAL completo (lineas 298-346)
+| Pagina | Formulario actual | Lineas |
+|--------|-------------------|--------|
+| KitDigital.tsx | `StandardGHLForm` componente | 498-504 |
+| KitDigitalPresenciaBasica.tsx | iframe GHL directo | 468-489 |
+| KitDigitalPresenciaAvanzada.tsx | iframe GHL directo | 472-492 |
+| KitDigitalGestionClientes.tsx | iframe GHL directo | 468-488 |
+| KitDigitalRedesSociales.tsx | iframe GHL directo | 490-509 |
+| KitConsulting.tsx | Sin formulario | - |
 
-Eliminar las 6 URLs EN:
-- `/en/kit-digital`
-- `/en/kit-digital/basic-internet-presence`
-- `/en/kit-digital/crm-client-management`
-- `/en/kit-digital/social-media-management`
-- `/en/kit-digital/advanced-presence-seo`
-- `/en/kit-consulting`
+## Solucion
 
-### 2. `public/sitemap-es.xml` - Eliminar hreflang EN de las paginas Kit Digital (lineas 293-341)
+Reemplazar cada iframe/componente GHL por `NativeServiceForm` (el mismo formulario nativo que ya funciona en las paginas de servicios). Este formulario guarda los datos en la tabla `sofia_leads` y envia notificacion por correo via Resend.
 
-Las 6 URLs ES se mantienen, pero se eliminan las etiquetas `hreflang` que apuntan a versiones EN inexistentes. Las paginas ES quedan sin alternativa EN (solo `hreflang="es"` y `hreflang="x-default"`).
+### Cambios por pagina
 
-### 3. Base de datos `seo_pages` - Eliminar 5 registros EN de Kit Digital
+**1. KitDigital.tsx**
+- Eliminar import de `StandardGHLForm`
+- Importar `NativeServiceForm`
+- Reemplazar el bloque `<StandardGHLForm>` (lineas 498-504) por `<NativeServiceForm sourcePage="kit-digital" />`
+- Mantener el sidebar con WhatsApp y SofIA tal cual
 
-Ya propuesto en el plan anterior, pendiente de ejecucion:
-- `/en/kit-digital`
-- `/en/kit-digital/advanced-presence-seo`
-- `/en/kit-digital/basic-internet-presence`
-- `/en/kit-digital/crm-client-management`
-- `/en/kit-digital/social-media-management`
+**2. KitDigitalPresenciaBasica.tsx**
+- Importar `NativeServiceForm`
+- Reemplazar el div con iframe GHL (lineas 468-489) por `<NativeServiceForm sourcePage="kit-digital-presencia-basica" />`
 
-### 4. `App.tsx` - Eliminar 6 rutas EN de Kit Digital
+**3. KitDigitalPresenciaAvanzada.tsx**
+- Importar `NativeServiceForm`
+- Reemplazar el div con iframe GHL (lineas 472-492) por `<NativeServiceForm sourcePage="kit-digital-presencia-avanzada" />`
 
-Ya propuesto en el plan anterior, pendiente de ejecucion.
+**4. KitDigitalGestionClientes.tsx**
+- Importar `NativeServiceForm`
+- Reemplazar el div con iframe GHL (lineas 468-488) por `<NativeServiceForm sourcePage="kit-digital-gestion-clientes" />`
 
-### 5. `routeRegistryData.ts` y `routeExtractor.ts` - Eliminar 6 entradas EN
+**5. KitDigitalRedesSociales.tsx**
+- Importar `NativeServiceForm`
+- Reemplazar el div con iframe GHL (lineas 490-509) por `<NativeServiceForm sourcePage="kit-digital-redes-sociales" />`
 
-Ya propuesto en el plan anterior, pendiente de ejecucion.
+**6. KitConsulting.tsx**
+- Importar `NativeServiceForm`
+- Anadir seccion de formulario antes del CTA final con `<NativeServiceForm sourcePage="kit-consulting" />`
 
-### 6. `useLocalizedRoutes.ts` - Eliminar mapeos EN de kitDigital/kitConsulting
+### Lo que NO cambia
 
-Ya propuesto en el plan anterior, pendiente de ejecucion.
-
-### 7. `slugTranslation.ts` - Eliminar mapeo `'kit-digital': 'digital-kit'`
-
-Ya propuesto en el plan anterior, pendiente de ejecucion.
-
-## Lo que NO se toca
-
-- Las 6 paginas ES de Kit Digital y Kit Consulting (permanecen intactas)
-- El blog ES sobre Kit Digital (`/es/blog/kit-digital-marketing-guia-completa-2025`)
-- El archivo `llms.txt` (solo tiene referencias ES, correctas)
-- El `ProgramTransitionBanner` (ya es solo ES)
-- `robots.txt` (no tiene referencias directas a Kit Digital EN)
-
-## Resultado esperado
-
-- 0 URLs EN de Kit Digital en ningun sitemap
-- 0 hreflang rotos apuntando a paginas EN de Kit Digital
-- 0 registros EN de Kit Digital en la base de datos
-- 0 rutas EN de Kit Digital en el codigo
-- Paginas ES de Kit Digital funcionando con normalidad, sin alternativas EN
+- Los textos de titulo y subtitulo de cada seccion de contacto se mantienen
+- El sidebar de KitDigital.tsx (WhatsApp + SofIA) se mantiene
+- El componente `NativeServiceForm` no se modifica (ya soporta todo lo necesario)
+- El `sourcePage` permite identificar desde que pagina llega cada lead en la tabla `sofia_leads`
