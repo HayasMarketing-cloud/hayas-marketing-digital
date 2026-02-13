@@ -1,43 +1,118 @@
 
-# Eliminar iconos del proceso y traducir secciones pendientes en Diseno Web
+# Auditoria de componentes sin traducir y plan de accion
 
-## Problema 1: Iconos/emojis en el proceso
-Los pasos del proceso muestran iconos de Lucide (Target, FileText, Palette, TrendingUp) debajo de los numeros circulares, creando ruido visual. Se eliminaran.
+## Estado actual
 
-## Problema 2: Secciones sin traducir en la version inglesa
-Los siguientes componentes tienen todo el texto hardcodeado en espanol y no detectan idioma:
-- `PainPointsSection.tsx` - "Tu web actual te esta frenando?"
-- `SolutionPreviewSection.tsx` - "Nuestra solucion: webs que convierten..."
-- `BenefitsGridSection.tsx` - "Beneficios que marcan la diferencia"
+Tras analizar todo el codigo, hay **dos tipos de componentes** con texto en espanol sin soporte bilingue:
 
-El componente `IntermediateCTA.tsx` ya usa `useTranslation` y esta bien.
+### Grupo A: Componentes compartidos (afectan a muchas paginas)
 
-## Cambios
+Estos componentes se reutilizan y tienen todo el texto hardcodeado en espanol. Cuando un usuario navega en `/en/...`, estas secciones aparecen en espanol:
 
-### 1. `src/pages/DisenoWeb.tsx`
-Eliminar los `icon` de los `processSteps` (tanto ES como EN). Sin iconos, el ProcessSection no los renderizara.
+| Componente | Usado en | Texto hardcodeado |
+|---|---|---|
+| `WhyChooseUsSection.tsx` | Pagina IA (SolucionesIA) | 5 razones + titulo + CTA |
+| `SuccessCasesSection.tsx` | ServicePageTemplate + varias | Titulo "Casos de exito", subtitulo, labels |
+| `MethodologySection.tsx` | Solo Index ES (no EN) | 100% espanol, pero no se usa en EN |
+| `AIServicesSection.tsx` | SolucionesIA | 3 servicios con titulo, descripcion, features |
+| `PillarServicesSection.tsx` | Soluciones (Impulsa, Conecta, Activa) | Titulo "Nuestros Servicios", descripcion |
+| `ServiceHubSection.tsx` | Usado internamente | Ya usa `useLocalizedRoutes` (parcial) |
 
-### 2. `src/components/PainPointsSection.tsx`
-Anadir `useLanguage` hook y objeto de contenido bilingue con el patron `isEnglish ? '...' : '...'` para:
-- Titulo: "Is your current website holding you back?" / "Tu web actual te esta frenando?"
-- Subtitulo y los 4 pain points (titulos + descripciones)
-- Texto del banner inferior
+### Grupo B: Componentes especificos de servicio (afectan 1-2 paginas cada uno)
 
-### 3. `src/components/SolutionPreviewSection.tsx`
-Mismo patron bilingue para:
-- Titulo: "Our solution: websites that convert visitors into customers"
-- Descripcion, 4 features, textos de botones
-- Enlace del boton adaptado a `/en/schedule-meeting` o `/es/agendar-reunion`
+| Componente | Usado en | Lineas de texto ES |
+|---|---|---|
+| `BrandingPainPointsSection.tsx` | CreacionMarca | 4 pain points, titulo, subtitulo |
+| `BrandingSolutionPreviewSection.tsx` | CreacionMarca | Features, titulo, CTA, descripcion |
+| `BrandingBenefitsGridSection.tsx` | CreacionMarca | 6 beneficios + garantia |
+| `CRMPainPointsSection.tsx` | ImplantacionCrm | 4 pain points |
+| `CRMSolutionPreviewSection.tsx` | ImplantacionCrm | Features, titulo, CTA |
+| `CRMBenefitsGridSection.tsx` | ImplantacionCrm | 6 beneficios |
+| `CRMComparisonSection.tsx` | ConectaConTusClientes | Plataformas, titulo |
+| `CRMAdministrationPainPointsSection.tsx` | AdministracionCrm | 4 pain points |
+| `CRMConnectionPainPointsSection.tsx` | ConectaConTusClientes | 3 pain points |
+| `CRMConnectionSolutionSection.tsx` | ConectaConTusClientes | 2 soluciones completas |
+| `CRMConnectionBenefitsSection.tsx` | ConectaConTusClientes | 5 beneficios |
 
-### 4. `src/components/BenefitsGridSection.tsx`
-Mismo patron bilingue para:
-- Props por defecto del titulo y subtitulo
-- Los 6 beneficios (titulo + descripcion)
-- Texto del badge de garantia
+### Grupo C: Paginas ServicePageTemplate ya bilingues
 
-## Archivos a modificar
-- `src/pages/DisenoWeb.tsx` (eliminar iconos de processSteps)
-- `src/components/PainPointsSection.tsx` (bilingue)
-- `src/components/SolutionPreviewSection.tsx` (bilingue)
-- `src/components/BenefitsGridSection.tsx` (bilingue)
-- Total: 4 archivos
+Buena noticia: las paginas que usan `ServicePageTemplate` (Consultoria, Email Marketing, Formacion IA, Automatizacion, Integraciones IA, Estrategia Contenidos) **ya tienen** el patron `isEnglish ? content.en : content.es`, asi que su contenido principal se traduce correctamente. El problema son las secciones extra que insertan via `additionalContent`.
+
+## Resumen del impacto
+
+- **11 componentes** con texto 100% en espanol visibles en rutas `/en/`
+- **4 componentes compartidos** que afectan a multiples paginas
+- Total aproximado: **~300 cadenas de texto** que necesitan version inglesa
+
+## Plan propuesto: Traduccion manual via consola admin
+
+### Opcion recomendada: Pagina admin de "Auditoria de Traducciones de Componentes"
+
+Crear una nueva seccion en el panel admin (`/admin/component-translations`) que:
+
+1. **Lista todos los componentes pendientes** con su estado (sin traducir / parcial / completo)
+2. **Para cada componente**, muestra las cadenas de texto en espanol actuales
+3. **Permite introducir la traduccion inglesa** de cada cadena manualmente
+4. **Genera el codigo actualizado** listo para copiar (el componente con el patron `isEnglish ? '...' : '...'` ya aplicado)
+
+### Flujo de trabajo
+
+```text
+Admin abre /admin/component-translations
+       |
+       v
+Ve lista de 11 componentes pendientes
+       |
+       v
+Selecciona uno (ej: CRMPainPointsSection)
+       |
+       v
+Ve 4 titulos + 4 descripciones en espanol
+       |
+       v
+Escribe las traducciones en campos de texto
+       |
+       v
+Pulsa "Generar codigo"
+       |
+       v
+Ve el componente actualizado con isEnglish
+       |
+       v
+Copia y pega en el editor de codigo
+```
+
+### Alternativa mas rapida (recomendada si no quieres UI admin)
+
+Traducir los 11 componentes directamente uno a uno via chat. El orden de prioridad seria:
+
+**Prioridad ALTA** (afectan a paginas principales):
+1. `SuccessCasesSection.tsx` - visible en muchas paginas
+2. `PillarServicesSection.tsx` - visible en las 3 soluciones principales
+3. `WhyChooseUsSection.tsx` - visible en SolucionesIA
+4. `AIServicesSection.tsx` - visible en SolucionesIA
+
+**Prioridad MEDIA** (afectan a paginas de servicio especificas):
+5. `CRMConnectionPainPointsSection.tsx`
+6. `CRMConnectionSolutionSection.tsx`
+7. `CRMConnectionBenefitsSection.tsx`
+8. `CRMComparisonSection.tsx`
+9. `CRMPainPointsSection.tsx` + `CRMSolutionPreviewSection.tsx` + `CRMBenefitsGridSection.tsx`
+
+**Prioridad BAJA** (servicio especifico):
+10. `BrandingPainPointsSection.tsx` + `BrandingSolutionPreviewSection.tsx` + `BrandingBenefitsGridSection.tsx`
+11. `CRMAdministrationPainPointsSection.tsx`
+
+### Cambio tecnico en cada componente
+
+El patron es siempre el mismo (ya lo usamos en PainPointsSection, BenefitsGridSection, SolutionPreviewSection):
+
+1. Anadir `import { useLanguage } from '@/contexts/LanguageContext';`
+2. Extraer `const { isEnglish } = useLanguage();`
+3. Cambiar cada cadena de texto por `isEnglish ? "English text" : "Texto espanol"`
+
+No se necesita base de datos, ni edge functions, ni infraestructura nueva. Es un cambio de codigo puro en cada componente.
+
+## Recomendacion
+
+Ir componente a componente via chat, empezando por los de prioridad ALTA. Son cambios mecanicos y rapidos (~5 minutos por componente). En 3-4 mensajes se pueden cubrir los 11 componentes y el usuario ingles dejaria de ver mezcla de idiomas.
