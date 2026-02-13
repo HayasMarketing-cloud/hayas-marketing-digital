@@ -1,31 +1,60 @@
 
 
-# Actualizar Pain Point "Not ranking on Google" a GEO/AEO
+# Nuevo componente InlineBlogPostCard + primer uso en SEO Positioning
 
-## Cambio
+## Objetivo
 
-Modificar el tercer pain point en `src/components/PainPointsSection.tsx` para evolucionar el mensaje de "no apareces en Google" a un enfoque de visibilidad en buscadores Y en IAs generativas (GEO/AEO), alineado con el reposicionamiento estrategico del servicio SEO.
+Crear un componente reutilizable, compacto y visualmente reconocible para enlazar un post del blog desde cualquier pagina estatica de servicio. Debe ser ligero (no una seccion grande como `ServiceRelatedPosts`), sino un "callout" inline que invite a profundizar.
 
-## Archivo a modificar
+## Diseno propuesto del componente
 
-`src/components/PainPointsSection.tsx`
+Un card horizontal compacto con:
+- Imagen miniatura del post a la izquierda (aspect ratio cuadrado o 4:3, aprox 80-100px)
+- A la derecha: badge de categoria, titulo del post (link), y un texto breve tipo "Profundiza en este tema"
+- Flecha/icono de navegacion
+- Hover sutil con elevacion
+- Fondo ligeramente diferenciado (muted/10 o borde primary/20) para que destaque sin ser invasivo
+- Bilingue usando `useLanguage`
 
-## Contenido actual (tercer pain point)
+```text
++-------+  CATEGORIA                          
+| imagen|  Titulo del post blog               ->
+|  mini |  "Profundiza en este tema"           
++-------+                                      
+```
 
-- **Titulo ES**: "No aparece en Google"
-- **Titulo EN**: "Not ranking on Google"
-- **Descripcion ES**: "Sin SEO tecnico tu web es invisible en los motores de busqueda, perdiendo oportunidades."
-- **Descripcion EN**: "Without technical SEO your website is invisible on search engines, missing opportunities."
+## Archivos
 
-## Nuevo contenido propuesto
+### 1. Crear: `src/components/InlineBlogPostCard.tsx`
 
-- **Titulo ES**: "Invisible en buscadores e IAs"
-- **Titulo EN**: "Invisible on search and AI"
-- **Descripcion ES**: "Sin una estrategia SEO, AEO y GEO, tu web no aparece ni en Google ni en las respuestas de ChatGPT, Copilot o Perplexity."
-- **Descripcion EN**: "Without an SEO, AEO and GEO strategy, your website doesn't appear on Google or in AI answers from ChatGPT, Copilot or Perplexity."
+Props:
+- `title`: string (titulo del post)
+- `slug`: string (para construir la URL `/es/blog/{slug}` o `/en/blog/{slug}`)
+- `image`: string (ruta de la imagen)
+- `category`: string (badge)
+- `className?`: string
 
-Se podria cambiar tambien el icono de `Search` a algo mas representativo como `Bot` o `BrainCircuit` de lucide-react, aunque `Search` sigue siendo valido. Lo dejo como esta salvo que prefieras cambiarlo.
+Logica:
+- Usa `useLanguage` para determinar el prefijo de ruta y el texto de acompanamiento ("Profundiza en este tema" / "Dive deeper into this topic")
+- Link completo al post
+- Responsive: en mobile la imagen se oculta o se reduce
 
-## Impacto
+### 2. Modificar: `src/pages/SeoPositioning.tsx`
 
-Solo se modifica un archivo. El componente ya es bilingue, asi que el cambio afecta correctamente a ambas versiones (ES y EN).
+Insertar el componente entre la seccion de FAQs (linea 622) y la seccion CTA (linea 624), con los datos del post:
+- title (ES): "El Nuevo Paradigma SEO en la Era de la IA (AEO y GEO)"
+- title (EN): "The New SEO Paradigm in the AI Era (AEO and GEO)"
+- slug (ES): "nuevo-paradigma-seo-aeo-geo"
+- slug (EN): "new-seo-paradigm-aeo-geo"
+- image: se necesitara verificar la imagen disponible (probablemente `/seo-inteligencia-artificial-hero.jpg` o similar)
+- category (ES): "SEO" / (EN): "SEO"
+
+## Estilo visual
+
+- Bordes redondeados, borde sutil con acento primary
+- Fondo `bg-primary/5` con `hover:bg-primary/10`
+- Tipografia: titulo en `font-bold text-base`, subtexto en `text-sm text-muted-foreground`
+- Badge pequeno con la categoria
+- Max-width contenido (max-w-3xl centrado) para que no ocupe todo el ancho
+- Icono `ArrowRight` al final
+
