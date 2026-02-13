@@ -43,11 +43,11 @@ const ROUTE_MAPPINGS: Record<string, RouteMap> = {
   serviceSEO: { es: '/es/servicios/posicionamiento-seo', en: '/en/services/seo-positioning' },
   serviceSEOPositioning: { es: '/es/servicios/seo-posicionamiento', en: '/en/services/seo-positioning' },
   serviceEmailMarketing: { es: '/es/servicios/email-marketing-automatizaciones', en: '/en/services/email-marketing-automation' },
-  serviceStrategicConsulting: { es: '/es/servicios/consultoria-estrategica-analitica', en: '/en/services/strategic-consulting' },
-  serviceAIIntegrations: { es: '/es/servicios/integraciones-ia-procesos', en: '/en/services/ai-integrations' },
+  serviceStrategicConsulting: { es: '/es/servicios/consultoria-estrategica-analitica', en: '/en/services/strategic-consulting-analytics' },
+  serviceAIIntegrations: { es: '/es/servicios/integraciones-ia-procesos', en: '/en/services/ai-process-integration' },
   serviceFunnel: { es: '/es/servicios/implementacion-funnel', en: '/en/services/funnel-implementation' },
   serviceDirectMarketing: { es: '/es/servicios/marketing-directo', en: '/en/services/direct-marketing' },
-  serviceOnlineStore: { es: '/es/servicios/diseno-web/tienda-online', en: '/en/services/web-design/online-store' },
+  serviceOnlineStore: { es: '/es/servicios/tienda-online', en: '/en/services/online-store' },
   serviceSalesAutomation: { es: '/es/servicios/automatizacion-procesos-ventas', en: '/en/services/sales-process-automation' },
   
   // Kit Digital

@@ -76,12 +76,6 @@ export const EN_ROUTES_IN_APP: ExtractedRoute[] = [
   { path: '/en/case-studies/asp-asepsia', source: 'App.tsx' },
   { path: '/en/case-studies/nexo-vital', source: 'App.tsx' },
   { path: '/en/case-studies/quanticbi', source: 'App.tsx' },
-  { path: '/en/case-studies/i-virgen-extra', source: 'App.tsx' },
-  { path: '/en/case-studies/calisthenics-online', source: 'App.tsx' },
-  { path: '/en/case-studies/centro-roraima', source: 'App.tsx' },
-  { path: '/en/case-studies/joints-up', source: 'App.tsx' },
-  { path: '/en/case-studies/dr-parron', source: 'App.tsx' },
-  { path: '/en/case-studies/translate-with-style', source: 'App.tsx' },
   
   // Kit Digital
   { path: '/en/kit-digital', source: 'App.tsx' },
