@@ -183,11 +183,21 @@ export const registeredRoutes: RouteDefinition[] = [
   { path: '/en/case-studies/dr-parron', category: 'case-study', isIndexable: false, priority: 0.5, changefreq: 'monthly', isDynamic: false, isLegacy: false },
   { path: '/en/case-studies/translate-with-style', category: 'case-study', isIndexable: false, priority: 0.5, changefreq: 'monthly', isDynamic: false, isLegacy: false },
   { path: '/en/case-studies/formato-educativo', category: 'case-study', isIndexable: false, priority: 0.5, changefreq: 'monthly', isDynamic: false, isLegacy: false },
+  { path: '/en/case-studies/beka-finance', category: 'case-study', isIndexable: false, priority: 0.5, changefreq: 'monthly', isDynamic: false, isLegacy: false },
+  { path: '/en/case-studies/aecoc', category: 'case-study', isIndexable: false, priority: 0.5, changefreq: 'monthly', isDynamic: false, isLegacy: false },
+  { path: '/en/case-studies/peris-electricidad', category: 'case-study', isIndexable: false, priority: 0.5, changefreq: 'monthly', isDynamic: false, isLegacy: false },
+  { path: '/en/case-studies/hubspot-for-startups', category: 'case-study', isIndexable: false, priority: 0.5, changefreq: 'monthly', isDynamic: false, isLegacy: false },
+  { path: '/en/case-studies/asp-asepsia', category: 'case-study', isIndexable: false, priority: 0.5, changefreq: 'monthly', isDynamic: false, isLegacy: false },
+  { path: '/en/case-studies/quanticbi', category: 'case-study', isIndexable: false, priority: 0.5, changefreq: 'monthly', isDynamic: false, isLegacy: false },
   
   // BLOG (EN)
   { path: '/en/blog', category: 'blog', isIndexable: true, priority: 0.8, changefreq: 'weekly', isDynamic: false, isLegacy: false },
   { path: '/en/blog/chatbots-for-websites', category: 'blog', isIndexable: true, priority: 0.7, changefreq: 'monthly', isDynamic: false, isLegacy: false },
   { path: '/en/blog/new-seo-paradigm-aeo-geo', category: 'blog', isIndexable: true, priority: 0.7, changefreq: 'monthly', isDynamic: false, isLegacy: false },
+  { path: '/en/blog/decision-marketing', category: 'blog', isIndexable: true, priority: 0.7, changefreq: 'monthly', isDynamic: false, isLegacy: false },
+  { path: '/en/blog/ai-governance-business', category: 'blog', isIndexable: true, priority: 0.7, changefreq: 'monthly', isDynamic: false, isLegacy: false },
+  { path: '/en/blog/ai-seo-tools', category: 'blog', isIndexable: true, priority: 0.7, changefreq: 'monthly', isDynamic: false, isLegacy: false },
+  { path: '/en/blog/crm-what-is-benefits', category: 'blog', isIndexable: true, priority: 0.7, changefreq: 'monthly', isDynamic: false, isLegacy: false },
   
   // COMPARISONS (EN)
   { path: '/en/comparison/hubspot-vs-go-high-level', category: 'comparison', isIndexable: true, priority: 0.7, changefreq: 'monthly', isDynamic: false, isLegacy: false },
