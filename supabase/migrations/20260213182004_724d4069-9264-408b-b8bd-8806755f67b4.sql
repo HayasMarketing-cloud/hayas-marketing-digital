@@ -1,0 +1,1 @@
+ALTER TABLE public.indexation_checks ADD CONSTRAINT indexation_checks_page_path_unique UNIQUE (page_path);
