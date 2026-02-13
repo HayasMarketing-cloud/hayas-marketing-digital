@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import StandardGHLForm from '@/components/StandardGHLForm';
+import NativeServiceForm from '@/components/NativeServiceForm';
 import FAQSection from '@/components/FAQSection';
 import EnhancedSEO from '@/components/EnhancedSEO';
 import ProgramTransitionBanner from '@/components/ProgramTransitionBanner';
@@ -495,13 +495,7 @@ const KitDigital = () => {
             <div className="grid lg:grid-cols-3 gap-12 items-start max-w-6xl mx-auto">
               {/* Formulario (col-span-2) */}
               <div className="lg:col-span-2">
-                <StandardGHLForm
-                  formId="6XcKN5LKbIWM0JYth1SZ"
-                  title="Solicita tu Kit Digital"
-                  subtitle="Cuéntanos sobre tu negocio y te ayudaremos a conseguir tu bono digital de hasta 2.000€."
-                  minHeight={822}
-                  showHeader={true}
-                />
+                <NativeServiceForm sourcePage="kit-digital" />
               </div>
 
               {/* Sidebar de contacto directo y SofÍA */}
