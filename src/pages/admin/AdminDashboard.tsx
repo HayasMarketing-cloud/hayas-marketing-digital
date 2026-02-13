@@ -4,17 +4,13 @@ import Footer from '@/components/Footer';
 import { AdminToolCard } from '@/components/admin/AdminToolCard';
 import { 
   BarChart3, 
-  FileSearch, 
   Globe, 
-  FileText, 
-  Map, 
   Bot, 
   ArrowRightLeft, 
   Bell,
   Languages,
   Users,
   Settings,
-  TrendingUp,
   Palette
 } from 'lucide-react';
 
@@ -23,34 +19,10 @@ const AdminDashboard = () => {
 
   const seoTools = [
     {
-      title: 'SEO Dashboard',
-      description: 'Centro de control SEO con métricas generales y estado de salud',
+      title: 'SEO Tracker',
+      description: 'Vista unificada: metadatos, GSC, indexación y sitemap por página',
       icon: BarChart3,
       path: '/admin/seo',
-      status: 'active' as const,
-      category: 'SEO & Visibilidad'
-    },
-    {
-      title: 'Google Search Console',
-      description: 'Análisis completo de datos de GSC con páginas y keywords',
-      icon: TrendingUp,
-      path: '/admin/seo/gsc',
-      status: 'active' as const,
-      category: 'SEO & Visibilidad'
-    },
-    {
-      title: 'Gestión de Páginas SEO',
-      description: 'Administra metadatos, schemas y configuración SEO de páginas',
-      icon: FileSearch,
-      path: '/admin/seo/pages',
-      status: 'active' as const,
-      category: 'SEO & Visibilidad'
-    },
-    {
-      title: 'Sitemap Manager',
-      description: 'Gestiona y descarga sitemaps XML bilingües',
-      icon: Map,
-      path: '/admin/seo/sitemap',
       status: 'active' as const,
       category: 'SEO & Visibilidad'
     },

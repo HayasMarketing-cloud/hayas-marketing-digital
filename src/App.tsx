@@ -490,11 +490,11 @@ const App = () => (
              <Route path="/admin/dashboard" element={<Navigate to="/admin" replace />} />
              
              {/* ADMIN - SEO Control Center (protected) */}
-             <Route path="/admin/seo" element={<AdminProtectedRoute><PageSuspense><Pages.SEODashboard /></PageSuspense></AdminProtectedRoute>} />
-             <Route path="/admin/seo/gsc" element={<AdminProtectedRoute><PageSuspense><Pages.GSCFullReport /></PageSuspense></AdminProtectedRoute>} />
-             <Route path="/admin/seo/pages" element={<AdminProtectedRoute><PageSuspense><Pages.SEOPagesManager /></PageSuspense></AdminProtectedRoute>} />
-             <Route path="/admin/seo/sitemap" element={<AdminProtectedRoute><PageSuspense><Pages.SitemapManager /></PageSuspense></AdminProtectedRoute>} />
-             <Route path="/admin/seo/indexnow" element={<AdminProtectedRoute><PageSuspense><Pages.IndexNowManager /></PageSuspense></AdminProtectedRoute>} />
+              <Route path="/admin/seo" element={<AdminProtectedRoute><PageSuspense><Pages.SEOTracker /></PageSuspense></AdminProtectedRoute>} />
+              <Route path="/admin/seo/gsc" element={<Navigate to="/admin/seo" replace />} />
+              <Route path="/admin/seo/pages" element={<Navigate to="/admin/seo" replace />} />
+              <Route path="/admin/seo/sitemap" element={<Navigate to="/admin/seo" replace />} />
+              <Route path="/admin/seo/indexnow" element={<AdminProtectedRoute><PageSuspense><Pages.IndexNowManager /></PageSuspense></AdminProtectedRoute>} />
               {/* ADMIN - Content & Branding (protected) */}
               <Route path="/admin/faq-validator" element={<AdminProtectedRoute><PageSuspense><Pages.FAQValidator /></PageSuspense></AdminProtectedRoute>} />
               <Route path="/admin/translations" element={<AdminProtectedRoute><PageSuspense><Pages.TranslationManager /></PageSuspense></AdminProtectedRoute>} />
@@ -505,7 +505,7 @@ const App = () => (
            
            {/* Página 404 dedicada */}
            <Route path="/es/404" element={<PageSuspense><Pages.Error404 /></PageSuspense>} />
-           <Route path="/admin/seo/indexnow" element={<PageSuspense><Pages.IndexNowManager /></PageSuspense>} />
+           
           <Route path="/es/servicios/implementacion-funnel" element={<PageSuspense><Pages.ImplementacionFunnel /></PageSuspense>} />
           <Route path="/es/servicios/administracion-crm" element={<PageSuspense><Pages.AdministracionCrm /></PageSuspense>} />
           <Route path="/es/servicios/automatizacion-procesos-ventas" element={<PageSuspense><Pages.AutomatizacionProcesosVentas /></PageSuspense>} />
