@@ -272,6 +272,42 @@ export type Database = {
         }
         Relationships: []
       }
+      indexation_checks: {
+        Row: {
+          checked_at: string | null
+          google_cache_date: string | null
+          google_position: number | null
+          google_snippet: string | null
+          google_title: string | null
+          id: string
+          is_indexed: boolean | null
+          page_path: string
+          raw_response: Json | null
+        }
+        Insert: {
+          checked_at?: string | null
+          google_cache_date?: string | null
+          google_position?: number | null
+          google_snippet?: string | null
+          google_title?: string | null
+          id?: string
+          is_indexed?: boolean | null
+          page_path: string
+          raw_response?: Json | null
+        }
+        Update: {
+          checked_at?: string | null
+          google_cache_date?: string | null
+          google_position?: number | null
+          google_snippet?: string | null
+          google_title?: string | null
+          id?: string
+          is_indexed?: boolean | null
+          page_path?: string
+          raw_response?: Json | null
+        }
+        Relationships: []
+      }
       keyword_groups: {
         Row: {
           color: string | null
