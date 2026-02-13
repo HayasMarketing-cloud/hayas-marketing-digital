@@ -1,60 +1,67 @@
 
 
-# Nuevo componente InlineBlogPostCard + primer uso en SEO Positioning
+# Tres correcciones: InlineBlogPostCard, titulo casos de exito, iconos en ProcessSection
 
-## Objetivo
+## 1. InlineBlogPostCard: redisenar mas alargado y con imagen visible
 
-Crear un componente reutilizable, compacto y visualmente reconocible para enlazar un post del blog desde cualquier pagina estatica de servicio. Debe ser ligero (no una seccion grande como `ServiceRelatedPosts`), sino un "callout" inline que invite a profundizar.
+El componente actual oculta la imagen en mobile (`hidden sm:block`) y es bastante compacto (80px thumbnail). Se rediseñara para:
 
-## Diseno propuesto del componente
+- Hacer la imagen visible siempre (tambien en mobile, mas pequena)
+- Ampliar el componente a `max-w-4xl` o `max-w-5xl` para que ocupe mas ancho
+- Aumentar la altura de la imagen y hacer el card mas prominente
+- Padding mas generoso y tipografia ligeramente mas grande
 
-Un card horizontal compacto con:
-- Imagen miniatura del post a la izquierda (aspect ratio cuadrado o 4:3, aprox 80-100px)
-- A la derecha: badge de categoria, titulo del post (link), y un texto breve tipo "Profundiza en este tema"
-- Flecha/icono de navegacion
-- Hover sutil con elevacion
-- Fondo ligeramente diferenciado (muted/10 o borde primary/20) para que destaque sin ser invasivo
-- Bilingue usando `useLanguage`
+**Archivo**: `src/components/InlineBlogPostCard.tsx`
 
-```text
-+-------+  CATEGORIA                          
-| imagen|  Titulo del post blog               ->
-|  mini |  "Profundiza en este tema"           
-+-------+                                      
+Cambios clave:
+- Cambiar `max-w-3xl` a `max-w-4xl`
+- Quitar `hidden sm:block` de la imagen; en mobile mostrar imagen mas pequena (w-16 h-16), en desktop mas grande (sm:w-24 sm:h-24)
+- Aumentar padding a `p-5`
+- Titulo a `text-lg` en desktop
+
+---
+
+## 2. Titulo "Casos de exito" mostrando codigo HTML
+
+En `src/pages/SeoPositioning.tsx` linea 620, se pasa al componente `SuccessCasesSection` un titulo con HTML inline (`<span className='text-gradient-primary'>`) pero el componente NO usa `dangerouslySetInnerHTML` — usa un `.split(' ')` por palabras para aplicar el gradiente automaticamente a "exito" y "stories".
+
+El bug es que se pasa HTML crudo como string cuando el componente ya maneja el estilo internamente. La solucion es pasar texto plano.
+
+**Archivo**: `src/pages/SeoPositioning.tsx`, linea 620
+
+Cambiar:
+```
+title={isEnglish ? "Success <span class='text-gradient-primary'>stories</span>" : "Casos de <span className='text-gradient-primary'>éxito</span>"}
+```
+A:
+```
+title={isEnglish ? "Success stories" : "Casos de éxito"}
 ```
 
-## Archivos
+El componente `SuccessCasesSection` ya aplica automaticamente la clase `text-gradient-primary` a las palabras "exito" y "stories" en su logica interna (lineas 71-77).
 
-### 1. Crear: `src/components/InlineBlogPostCard.tsx`
+---
 
-Props:
-- `title`: string (titulo del post)
-- `slug`: string (para construir la URL `/es/blog/{slug}` o `/en/blog/{slug}`)
-- `image`: string (ruta de la imagen)
-- `category`: string (badge)
-- `className?`: string
+## 3. Eliminar iconos pequenos del ProcessSection
 
-Logica:
-- Usa `useLanguage` para determinar el prefijo de ruta y el texto de acompanamiento ("Profundiza en este tema" / "Dive deeper into this topic")
-- Link completo al post
-- Responsive: en mobile la imagen se oculta o se reduce
+En la captura se ven iconos pequenos (lupa, chat, etc.) debajo de los numeros circulares. Estos son los `step.icon` renderizados en linea 39 del componente.
 
-### 2. Modificar: `src/pages/SeoPositioning.tsx`
+La solucion mas simple y global: cambiar el valor por defecto de `showIcons` a `false` en el componente `ProcessSection.tsx`, o eliminarlo directamente.
 
-Insertar el componente entre la seccion de FAQs (linea 622) y la seccion CTA (linea 624), con los datos del post:
-- title (ES): "El Nuevo Paradigma SEO en la Era de la IA (AEO y GEO)"
-- title (EN): "The New SEO Paradigm in the AI Era (AEO and GEO)"
-- slug (ES): "nuevo-paradigma-seo-aeo-geo"
-- slug (EN): "new-seo-paradigm-aeo-geo"
-- image: se necesitara verificar la imagen disponible (probablemente `/seo-inteligencia-artificial-hero.jpg` o similar)
-- category (ES): "SEO" / (EN): "SEO"
+**Archivo**: `src/components/ProcessSection.tsx`
 
-## Estilo visual
+Cambiar linea 39: eliminar el renderizado del icono completamente, o cambiar el default de `showIcons` a `false`.
 
-- Bordes redondeados, borde sutil con acento primary
-- Fondo `bg-primary/5` con `hover:bg-primary/10`
-- Tipografia: titulo en `font-bold text-base`, subtexto en `text-sm text-muted-foreground`
-- Badge pequeno con la categoria
-- Max-width contenido (max-w-3xl centrado) para que no ocupe todo el ancho
-- Icono `ArrowRight` al final
+Dado que en la captura se ve la pagina SEO con `showIcons={true}` (linea 617 de SeoPositioning.tsx), habra que:
+- En `ProcessSection.tsx`: cambiar default `showIcons = false`
+- En `SeoPositioning.tsx` linea 617: quitar `showIcons={true}` o cambiarlo a `showIcons={false}`
 
+Para las demas paginas que ya pasan `showIcons={false}` no hay impacto.
+
+---
+
+## Resumen de archivos a modificar
+
+1. `src/components/InlineBlogPostCard.tsx` — rediseno mas ancho y con imagen siempre visible
+2. `src/pages/SeoPositioning.tsx` — corregir titulo casos de exito (texto plano) + quitar showIcons
+3. `src/components/ProcessSection.tsx` — cambiar default showIcons a false
