@@ -11,6 +11,7 @@ import ServiceContactSection from '@/components/ServiceContactSection';
 import SuccessCasesSection from '@/components/SuccessCasesSection';
 import { getServiceSuccessCasesConfig } from '@/data/serviceSuccessCasesMapping';
 import EnhancedSEO from '@/components/EnhancedSEO';
+import InlineBlogPostCard from '@/components/InlineBlogPostCard';
 import { useServiceSEO } from '@/hooks/useServiceSEO';
 import { useFAQSEO } from '@/hooks/useFAQSEO';
 import { useTranslation } from '@/hooks/useTranslation';
@@ -620,6 +621,16 @@ const SeoPositioning = () => {
 
       {/* FAQ Section - AEO Optimized */}
       <FAQSection title={isEnglish ? "Frequently asked questions" : "Preguntas frecuentes"} subtitle={isEnglish ? "Answers designed to help you understand SEO, AEO and GEO" : "Respuestas diseñadas para ayudarte a entender SEO, AEO y GEO"} faqs={faqItems} />
+
+      {/* Inline Blog Post - Nuevo Paradigma SEO */}
+      <section className="py-10 md:py-14">
+        <InlineBlogPostCard
+          title={isEnglish ? "The New SEO Paradigm in the AI Era (AEO and GEO)" : "El Nuevo Paradigma SEO en la Era de la IA (AEO y GEO)"}
+          slug="nuevo-paradigma-seo-aeo-geo"
+          image="/seo-aeo-geo-paradigma-hero.jpg"
+          category="SEO"
+        />
+      </section>
 
       {/* CTA Section - NEW */}
       <section className="py-16 md:py-20 bg-gradient-to-r from-primary to-accent text-white">
