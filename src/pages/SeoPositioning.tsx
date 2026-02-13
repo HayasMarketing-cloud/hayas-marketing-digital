@@ -614,10 +614,10 @@ const SeoPositioning = () => {
       {/* Process Section */}
       <ProcessSection title={<span dangerouslySetInnerHTML={{
       __html: content.processTitle
-    }} />} subtitle={content.processSubtitle} steps={processSteps} backgroundColor="bg-gradient-to-br from-gray-50 to-white" showIcons={true} />
+    }} />} subtitle={content.processSubtitle} steps={processSteps} backgroundColor="bg-gradient-to-br from-gray-50 to-white" showIcons={false} />
 
       {/* Success Cases Section */}
-      {successCasesConfig && <SuccessCasesSection id="casos-exito" title={isEnglish ? "Success <span class='text-gradient-primary'>stories</span>" : "Casos de <span className='text-gradient-primary'>éxito</span>"} subtitle={successCasesConfig.subtitle} filterTags={successCasesConfig.filterTags} specificCases={successCasesConfig.specificCases} maxCases={4} showAllLink={true} />}
+      {successCasesConfig && <SuccessCasesSection id="casos-exito" title={isEnglish ? "Success stories" : "Casos de éxito"} subtitle={successCasesConfig.subtitle} filterTags={successCasesConfig.filterTags} specificCases={successCasesConfig.specificCases} maxCases={4} showAllLink={true} />}
 
       {/* FAQ Section - AEO Optimized */}
       <FAQSection title={isEnglish ? "Frequently asked questions" : "Preguntas frecuentes"} subtitle={isEnglish ? "Answers designed to help you understand SEO, AEO and GEO" : "Respuestas diseñadas para ayudarte a entender SEO, AEO y GEO"} faqs={faqItems} />

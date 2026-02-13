@@ -17,7 +17,7 @@ const ProcessSection: React.FC<ProcessSectionProps> = ({
   subtitle,
   steps,
   backgroundColor = "bg-gradient-to-br from-gray-50 to-white",
-  showIcons = true
+  showIcons = false
 }) => {
   return <section className={`py-16 md:py-20 ${backgroundColor}`}>
       <div className="container mx-auto px-4">
