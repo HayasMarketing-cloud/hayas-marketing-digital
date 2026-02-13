@@ -1,76 +1,63 @@
 
-# Simplificar /admin/seo/pages: Separar edicion SEO de debugging tecnico
+# Eliminar Kit Digital EN de sitemaps y SEO completo
 
-## Problema actual
+## Problema
 
-La pagina `/admin/seo/pages` mezcla dos funciones muy diferentes:
+Los sitemaps estaticos (`sitemap-en.xml` y `sitemap-es.xml`) contienen rutas EN de Kit Digital que no deben existir. Ademas, las paginas ES de Kit Digital tienen etiquetas `hreflang` cruzadas apuntando a versiones EN inexistentes, lo cual es un error SEO critico (Google penaliza hreflang rotos).
 
-1. **Editor SEO** (uso diario): Seleccionar pagina, editar titulo, descripcion, keywords
-2. **Debugging de rutas** (uso puntual): Comparar archivos de codigo vs base de datos, detectar huerfanos, renombrar paths
+## Cambios necesarios
 
-La lista "Todas las Rutas" itera sobre `routeRegistryData.ts` (un concepto de codigo), no sobre las paginas reales de la web. El boton "Sincronizar Rutas" y su modal son herramientas de desarrollo, no de gestion de contenidos.
+### 1. `public/sitemap-en.xml` - Eliminar bloque KIT DIGITAL completo (lineas 298-346)
 
-Ademas, el algoritmo de similitud del sync report esta roto: sugiere `/en/blog/chatbots-for-websites` para casi todos los blogs porque es la primera entrada con mayor score.
+Eliminar las 6 URLs EN:
+- `/en/kit-digital`
+- `/en/kit-digital/basic-internet-presence`
+- `/en/kit-digital/crm-client-management`
+- `/en/kit-digital/social-media-management`
+- `/en/kit-digital/advanced-presence-seo`
+- `/en/kit-consulting`
 
-## Solucion propuesta
+### 2. `public/sitemap-es.xml` - Eliminar hreflang EN de las paginas Kit Digital (lineas 293-341)
 
-### Cambio 1: La lista principal debe mostrar paginas de la BD, no del registro de codigo
+Las 6 URLs ES se mantienen, pero se eliminan las etiquetas `hreflang` que apuntan a versiones EN inexistentes. Las paginas ES quedan sin alternativa EN (solo `hreflang="es"` y `hreflang="x-default"`).
 
-Cambiar `EnhancedSEOPageList` para que liste directamente las paginas de `seo_pages` (la fuente real de datos SEO), en lugar de iterar sobre `routeRegistryData.ts`. Esto es lo que el editor realmente necesita: ver y editar lo que esta en la base de datos.
+### 3. Base de datos `seo_pages` - Eliminar 5 registros EN de Kit Digital
 
-- Fuente de datos: `useAllSEOPages()` (ya existe, consulta la BD)
-- Filtros: por idioma (ES/EN), categoria, busqueda por texto
-- Sin badges de "Optimizado/Auto-generado" (todo lo que esta en BD esta optimizado)
+Ya propuesto en el plan anterior, pendiente de ejecucion:
+- `/en/kit-digital`
+- `/en/kit-digital/advanced-presence-seo`
+- `/en/kit-digital/basic-internet-presence`
+- `/en/kit-digital/crm-client-management`
+- `/en/kit-digital/social-media-management`
 
-### Cambio 2: Mover el Sync Report al Dashboard SEO (/admin/seo)
+### 4. `App.tsx` - Eliminar 6 rutas EN de Kit Digital
 
-El boton "Sincronizar Rutas" y su modal son herramientas de auditoria, no de edicion diaria. Moverlos a la pestana "Vista General" del dashboard SEO donde ya existen metricas y herramientas de diagnostico.
+Ya propuesto en el plan anterior, pendiente de ejecucion.
 
-### Cambio 3: Corregir el algoritmo de similitud
+### 5. `routeRegistryData.ts` y `routeExtractor.ts` - Eliminar 6 entradas EN
 
-El `findSimilarPath` actual falla con blogs porque solo compara segmentos de ruta. Mejorar para que:
-- Compare el ultimo segmento (el slug) con mas peso
-- No sugiera el mismo path para multiples huerfanos
-- Requiera mayor score minimo para blogs (tienen muchos segmentos iguales: `/en/blog/X`)
+Ya propuesto en el plan anterior, pendiente de ejecucion.
 
-### Cambio 4: Simplificar las metricas
+### 6. `useLocalizedRoutes.ts` - Eliminar mapeos EN de kitDigital/kitConsulting
 
-Las metricas actuales (`EnhancedSEOMetrics`) dependen de `routeRegistryData.ts`. Cambiarlas a metricas basadas en BD:
-- Total paginas ES / Total paginas EN
-- Paginas con todos los campos criticos completos
-- Paginas con warnings (titulo corto, descripcion corta, etc.)
+Ya propuesto en el plan anterior, pendiente de ejecucion.
+
+### 7. `slugTranslation.ts` - Eliminar mapeo `'kit-digital': 'digital-kit'`
+
+Ya propuesto en el plan anterior, pendiente de ejecucion.
+
+## Lo que NO se toca
+
+- Las 6 paginas ES de Kit Digital y Kit Consulting (permanecen intactas)
+- El blog ES sobre Kit Digital (`/es/blog/kit-digital-marketing-guia-completa-2025`)
+- El archivo `llms.txt` (solo tiene referencias ES, correctas)
+- El `ProgramTransitionBanner` (ya es solo ES)
+- `robots.txt` (no tiene referencias directas a Kit Digital EN)
 
 ## Resultado esperado
 
-- `/admin/seo/pages`: Lista limpia de paginas SEO de la BD + editor. Sin conceptos de codigo.
-- `/admin/seo` (dashboard): Herramienta de sincronizacion y auditoria tecnica.
-- Algoritmo de similitud funcional para sugerencias de renombrado.
-
-## Detalles tecnicos
-
-### Archivos a modificar
-
-1. `src/components/admin/seo/EnhancedSEOPageList.tsx` - Cambiar fuente de datos de `getRegisteredRoutes()` a solo `useAllSEOPages()`. Eliminar import de `routeRegistryData`.
-2. `src/components/admin/seo/EnhancedSEOMetrics.tsx` - Metricas basadas en BD en lugar de registro de rutas.
-3. `src/pages/admin/SEOPagesManager.tsx` - Eliminar `SyncRoutesButton` de esta pagina.
-4. `src/components/admin/seo/SyncRoutesButton.tsx` - Mejorar `findSimilarPath` para blogs.
-5. Dashboard SEO (pestana Vista General) - Anadir `SyncRoutesButton` aqui.
-
-### Logica de la lista simplificada
-
-```text
-// EnhancedSEOPageList simplificado
-const pages = useAllSEOPages(); // Solo BD
-// Filtrar por idioma, categoria, busqueda
-// Mostrar: path, titulo, categoria, warnings
-// Click -> abrir editor
-```
-
-### Mejora del algoritmo de similitud
-
-```text
-// findSimilarPath mejorado
-// 1. Dar mas peso al ultimo segmento (slug)
-// 2. Penalizar cuando ambos paths comparten solo /en/blog/ (demasiado generico)
-// 3. Score minimo mas alto: 2.0 en vez de 1.5
-```
+- 0 URLs EN de Kit Digital en ningun sitemap
+- 0 hreflang rotos apuntando a paginas EN de Kit Digital
+- 0 registros EN de Kit Digital en la base de datos
+- 0 rutas EN de Kit Digital en el codigo
+- Paginas ES de Kit Digital funcionando con normalidad, sin alternativas EN
