@@ -1,118 +1,65 @@
 
-# Auditoria de componentes sin traducir y plan de accion
+# Hacer bilingue el formulario NativeServiceForm
 
-## Estado actual
+## Problema
 
-Tras analizar todo el codigo, hay **dos tipos de componentes** con texto en espanol sin soporte bilingue:
+El componente `NativeServiceForm.tsx` tiene todo el texto hardcodeado en espanol: labels, placeholders, mensajes de exito/error, opciones del selector, disclaimer legal y validacion Zod. Cuando se usa en paginas `/en/...`, el formulario y sus mensajes aparecen en espanol.
 
-### Grupo A: Componentes compartidos (afectan a muchas paginas)
+## Solucion
 
-Estos componentes se reutilizan y tienen todo el texto hardcodeado en espanol. Cuando un usuario navega en `/en/...`, estas secciones aparecen en espanol:
+Aplicar el patron estandar `useLanguage` + `isEnglish` en un unico archivo: `src/components/NativeServiceForm.tsx`.
 
-| Componente | Usado en | Texto hardcodeado |
-|---|---|---|
-| `WhyChooseUsSection.tsx` | Pagina IA (SolucionesIA) | 5 razones + titulo + CTA |
-| `SuccessCasesSection.tsx` | ServicePageTemplate + varias | Titulo "Casos de exito", subtitulo, labels |
-| `MethodologySection.tsx` | Solo Index ES (no EN) | 100% espanol, pero no se usa en EN |
-| `AIServicesSection.tsx` | SolucionesIA | 3 servicios con titulo, descripcion, features |
-| `PillarServicesSection.tsx` | Soluciones (Impulsa, Conecta, Activa) | Titulo "Nuestros Servicios", descripcion |
-| `ServiceHubSection.tsx` | Usado internamente | Ya usa `useLocalizedRoutes` (parcial) |
+## Cambios en detalle
 
-### Grupo B: Componentes especificos de servicio (afectan 1-2 paginas cada uno)
+### 1. Importar `useLanguage`
 
-| Componente | Usado en | Lineas de texto ES |
-|---|---|---|
-| `BrandingPainPointsSection.tsx` | CreacionMarca | 4 pain points, titulo, subtitulo |
-| `BrandingSolutionPreviewSection.tsx` | CreacionMarca | Features, titulo, CTA, descripcion |
-| `BrandingBenefitsGridSection.tsx` | CreacionMarca | 6 beneficios + garantia |
-| `CRMPainPointsSection.tsx` | ImplantacionCrm | 4 pain points |
-| `CRMSolutionPreviewSection.tsx` | ImplantacionCrm | Features, titulo, CTA |
-| `CRMBenefitsGridSection.tsx` | ImplantacionCrm | 6 beneficios |
-| `CRMComparisonSection.tsx` | ConectaConTusClientes | Plataformas, titulo |
-| `CRMAdministrationPainPointsSection.tsx` | AdministracionCrm | 4 pain points |
-| `CRMConnectionPainPointsSection.tsx` | ConectaConTusClientes | 3 pain points |
-| `CRMConnectionSolutionSection.tsx` | ConectaConTusClientes | 2 soluciones completas |
-| `CRMConnectionBenefitsSection.tsx` | ConectaConTusClientes | 5 beneficios |
+Anadir import de `useLanguage` desde `@/contexts/LanguageContext`.
 
-### Grupo C: Paginas ServicePageTemplate ya bilingues
+### 2. Validacion Zod dinamica
 
-Buena noticia: las paginas que usan `ServicePageTemplate` (Consultoria, Email Marketing, Formacion IA, Automatizacion, Integraciones IA, Estrategia Contenidos) **ya tienen** el patron `isEnglish ? content.en : content.es`, asi que su contenido principal se traduce correctamente. El problema son las secciones extra que insertan via `additionalContent`.
+Mover `ContactFormSchema` a una funcion `getSchema(isEnglish)` para que los mensajes de error de validacion se muestren en el idioma correcto:
+- "El nombre es obligatorio" -> "Name is required"
+- "Introduce un email valido" -> "Enter a valid email"
+- "Debes aceptar las comunicaciones" -> "You must accept communications"
 
-## Resumen del impacto
+### 3. Opciones del selector
 
-- **11 componentes** con texto 100% en espanol visibles en rutas `/en/`
-- **4 componentes compartidos** que afectan a multiples paginas
-- Total aproximado: **~300 cadenas de texto** que necesitan version inglesa
+Crear `SERVICE_OPTIONS` dinamico con labels en ingles:
+- "Consultoria Estrategica" -> "Strategic Consulting"
+- "Diseno Web" -> "Web Design"
+- etc.
 
-## Plan propuesto: Traduccion manual via consola admin
+### 4. Labels y placeholders
 
-### Opcion recomendada: Pagina admin de "Auditoria de Traducciones de Componentes"
+Traducir todos los labels de campos:
+- "Nombre" -> "Name"
+- "En que te podemos ayudar?" -> "How can we help you?"
+- "Telefono" -> "Phone"
+- "Empresa o dominio" -> "Company or domain"
+- "Mensaje" -> "Message"
+- "Cuentanos sobre tu proyecto..." -> "Tell us about your project..."
 
-Crear una nueva seccion en el panel admin (`/admin/component-translations`) que:
+### 5. Mensaje de exito (el bug visible en la imagen)
 
-1. **Lista todos los componentes pendientes** con su estado (sin traducir / parcial / completo)
-2. **Para cada componente**, muestra las cadenas de texto en espanol actuales
-3. **Permite introducir la traduccion inglesa** de cada cadena manualmente
-4. **Genera el codigo actualizado** listo para copiar (el componente con el patron `isEnglish ? '...' : '...'` ya aplicado)
+Lineas 114-117:
+- "Mensaje enviado!" -> "Message sent!"
+- "Gracias por contactarnos..." -> "Thank you for contacting us. We will get back to you as soon as possible."
 
-### Flujo de trabajo
+### 6. Boton de envio
 
-```text
-Admin abre /admin/component-translations
-       |
-       v
-Ve lista de 11 componentes pendientes
-       |
-       v
-Selecciona uno (ej: CRMPainPointsSection)
-       |
-       v
-Ve 4 titulos + 4 descripciones en espanol
-       |
-       v
-Escribe las traducciones en campos de texto
-       |
-       v
-Pulsa "Generar codigo"
-       |
-       v
-Ve el componente actualizado con isEnglish
-       |
-       v
-Copia y pega en el editor de codigo
-```
+- "Enviando..." -> "Sending..."
+- "Enviar mensaje" -> "Send message"
 
-### Alternativa mas rapida (recomendada si no quieres UI admin)
+### 7. Checkbox y disclaimer legal
 
-Traducir los 11 componentes directamente uno a uno via chat. El orden de prioridad seria:
+- Texto del checkbox adaptado al ingles
+- Links apuntando a `/en/privacy-policy` y `/en/legal-notice` en vez de `/politica-privacidad` y `/aviso-legal`
+- Disclaimer del Pacto Digital traducido
 
-**Prioridad ALTA** (afectan a paginas principales):
-1. `SuccessCasesSection.tsx` - visible en muchas paginas
-2. `PillarServicesSection.tsx` - visible en las 3 soluciones principales
-3. `WhyChooseUsSection.tsx` - visible en SolucionesIA
-4. `AIServicesSection.tsx` - visible en SolucionesIA
+### 8. Mensaje de error generico
 
-**Prioridad MEDIA** (afectan a paginas de servicio especificas):
-5. `CRMConnectionPainPointsSection.tsx`
-6. `CRMConnectionSolutionSection.tsx`
-7. `CRMConnectionBenefitsSection.tsx`
-8. `CRMComparisonSection.tsx`
-9. `CRMPainPointsSection.tsx` + `CRMSolutionPreviewSection.tsx` + `CRMBenefitsGridSection.tsx`
+- "Error al enviar el formulario..." -> "Error sending the form. Please try again."
 
-**Prioridad BAJA** (servicio especifico):
-10. `BrandingPainPointsSection.tsx` + `BrandingSolutionPreviewSection.tsx` + `BrandingBenefitsGridSection.tsx`
-11. `CRMAdministrationPainPointsSection.tsx`
+## Archivos
 
-### Cambio tecnico en cada componente
-
-El patron es siempre el mismo (ya lo usamos en PainPointsSection, BenefitsGridSection, SolutionPreviewSection):
-
-1. Anadir `import { useLanguage } from '@/contexts/LanguageContext';`
-2. Extraer `const { isEnglish } = useLanguage();`
-3. Cambiar cada cadena de texto por `isEnglish ? "English text" : "Texto espanol"`
-
-No se necesita base de datos, ni edge functions, ni infraestructura nueva. Es un cambio de codigo puro en cada componente.
-
-## Recomendacion
-
-Ir componente a componente via chat, empezando por los de prioridad ALTA. Son cambios mecanicos y rapidos (~5 minutos por componente). En 3-4 mensajes se pueden cubrir los 11 componentes y el usuario ingles dejaria de ver mezcla de idiomas.
+- **Modificar**: `src/components/NativeServiceForm.tsx` (unico archivo)
