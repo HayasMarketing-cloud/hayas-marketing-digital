@@ -7,35 +7,37 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Button } from '@/components/ui/button';
 import { supabase } from '@/integrations/supabase/client';
 import { Send, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
-const ContactFormSchema = z.object({
-  nombre: z.string().trim().min(1, 'El nombre es obligatorio').max(100),
-  email: z.string().trim().email('Introduce un email válido').max(255).toLowerCase(),
-  ayuda: z.string().optional(),
-  telefono: z.string().trim().max(20).optional(),
-  empresa: z.string().trim().max(100).optional(),
-  mensaje: z.string().trim().max(2000).optional(),
-  acceptCommunications: z.literal(true, {
-    errorMap: () => ({ message: 'Debes aceptar las comunicaciones' }),
-  }),
-  website: z.string().max(0).optional(),
-});
+const getSchema = (isEnglish: boolean) =>
+  z.object({
+    nombre: z.string().trim().min(1, isEnglish ? 'Name is required' : 'El nombre es obligatorio').max(100),
+    email: z.string().trim().email(isEnglish ? 'Enter a valid email' : 'Introduce un email válido').max(255).toLowerCase(),
+    ayuda: z.string().optional(),
+    telefono: z.string().trim().max(20).optional(),
+    empresa: z.string().trim().max(100).optional(),
+    mensaje: z.string().trim().max(2000).optional(),
+    acceptCommunications: z.literal(true, {
+      errorMap: () => ({ message: isEnglish ? 'You must accept communications' : 'Debes aceptar las comunicaciones' }),
+    }),
+    website: z.string().max(0).optional(),
+  });
 
-type FormData = z.infer<typeof ContactFormSchema>;
+type FormData = z.infer<ReturnType<typeof getSchema>>;
 
-const SERVICE_OPTIONS = [
-  { value: '', label: '¿En qué podemos ayudarte?' },
-  { value: 'consultoria', label: 'Consultoría Estratégica' },
-  { value: 'diseno-web', label: 'Diseño Web' },
-  { value: 'seo', label: 'Posicionamiento SEO' },
-  { value: 'crm', label: 'CRM y Automatización' },
-  { value: 'ia', label: 'Inteligencia Artificial' },
-  { value: 'contenidos', label: 'Estrategia de Contenidos' },
-  { value: 'publicidad', label: 'Publicidad Digital' },
-  { value: 'redes-sociales', label: 'Redes Sociales' },
+const getServiceOptions = (isEnglish: boolean) => [
+  { value: '', label: isEnglish ? 'How can we help you?' : '¿En qué podemos ayudarte?' },
+  { value: 'consultoria', label: isEnglish ? 'Strategic Consulting' : 'Consultoría Estratégica' },
+  { value: 'diseno-web', label: isEnglish ? 'Web Design' : 'Diseño Web' },
+  { value: 'seo', label: isEnglish ? 'SEO Positioning' : 'Posicionamiento SEO' },
+  { value: 'crm', label: isEnglish ? 'CRM & Automation' : 'CRM y Automatización' },
+  { value: 'ia', label: isEnglish ? 'Artificial Intelligence' : 'Inteligencia Artificial' },
+  { value: 'contenidos', label: isEnglish ? 'Content Strategy' : 'Estrategia de Contenidos' },
+  { value: 'publicidad', label: isEnglish ? 'Digital Advertising' : 'Publicidad Digital' },
+  { value: 'redes-sociales', label: isEnglish ? 'Social Media' : 'Redes Sociales' },
   { value: 'email-marketing', label: 'Email Marketing' },
-  { value: 'branding', label: 'Creación de Marca' },
-  { value: 'otro', label: 'Otro' },
+  { value: 'branding', label: isEnglish ? 'Brand Creation' : 'Creación de Marca' },
+  { value: 'otro', label: isEnglish ? 'Other' : 'Otro' },
 ];
 
 interface NativeServiceFormProps {
@@ -43,6 +45,7 @@ interface NativeServiceFormProps {
 }
 
 const NativeServiceForm: React.FC<NativeServiceFormProps> = ({ sourcePage = '' }) => {
+  const { isEnglish } = useLanguage();
   const [formData, setFormData] = useState<Partial<FormData>>({
     nombre: '',
     email: '',
@@ -73,7 +76,8 @@ const NativeServiceForm: React.FC<NativeServiceFormProps> = ({ sourcePage = '' }
     setErrors({});
     setErrorMessage('');
 
-    const result = ContactFormSchema.safeParse(formData);
+    const schema = getSchema(isEnglish);
+    const result = schema.safeParse(formData);
     if (!result.success) {
       const fieldErrors: Record<string, string> = {};
       result.error.issues.forEach(issue => {
@@ -100,7 +104,7 @@ const NativeServiceForm: React.FC<NativeServiceFormProps> = ({ sourcePage = '' }
 
       setStatus('success');
     } catch (err: any) {
-      setErrorMessage(err?.message || 'Error al enviar el formulario. Inténtalo de nuevo.');
+      setErrorMessage(err?.message || (isEnglish ? 'Error sending the form. Please try again.' : 'Error al enviar el formulario. Inténtalo de nuevo.'));
       setStatus('error');
     }
   };
@@ -111,13 +115,21 @@ const NativeServiceForm: React.FC<NativeServiceFormProps> = ({ sourcePage = '' }
         <div className="w-16 h-16 rounded-full gradient-primary flex items-center justify-center mx-auto mb-6">
           <CheckCircle className="w-8 h-8 text-white" />
         </div>
-        <h3 className="title-subsection text-foreground">¡Mensaje enviado!</h3>
+        <h3 className="title-subsection text-foreground">
+          {isEnglish ? 'Message sent!' : '¡Mensaje enviado!'}
+        </h3>
         <p className="text-muted-foreground max-w-md mx-auto">
-          Gracias por contactarnos. Nos pondremos en contacto contigo lo antes posible.
+          {isEnglish
+            ? 'Thank you for contacting us. We will get back to you as soon as possible.'
+            : 'Gracias por contactarnos. Nos pondremos en contacto contigo lo antes posible.'}
         </p>
       </div>
     );
   }
+
+  const privacyPath = isEnglish ? '/en/privacy-policy' : '/politica-privacidad';
+  const legalPath = isEnglish ? '/en/legal-notice' : '/aviso-legal';
+  const serviceOptions = getServiceOptions(isEnglish);
 
   return (
     <form onSubmit={handleSubmit} className="rounded-2xl bg-white shadow-elegant p-6 md:p-10 space-y-5 animate-fade-in">
@@ -130,12 +142,12 @@ const NativeServiceForm: React.FC<NativeServiceFormProps> = ({ sourcePage = '' }
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
           <label htmlFor="nombre" className="block text-sm font-medium text-foreground mb-1.5">
-            Nombre <span className="text-destructive">*</span>
+            {isEnglish ? 'Name' : 'Nombre'} <span className="text-destructive">*</span>
           </label>
           <Input
             id="nombre"
             name="nombre"
-            placeholder="Tu nombre"
+            placeholder={isEnglish ? 'Your name' : 'Tu nombre'}
             value={formData.nombre || ''}
             onChange={handleChange}
             className={`focus-visible:ring-primary ${errors.nombre ? 'border-destructive' : ''}`}
@@ -150,7 +162,7 @@ const NativeServiceForm: React.FC<NativeServiceFormProps> = ({ sourcePage = '' }
             id="email"
             name="email"
             type="email"
-            placeholder="tu@email.com"
+            placeholder={isEnglish ? 'you@email.com' : 'tu@email.com'}
             value={formData.email || ''}
             onChange={handleChange}
             className={`focus-visible:ring-primary ${errors.email ? 'border-destructive' : ''}`}
@@ -162,7 +174,7 @@ const NativeServiceForm: React.FC<NativeServiceFormProps> = ({ sourcePage = '' }
       {/* Service selector */}
       <div>
         <label htmlFor="ayuda" className="block text-sm font-medium text-foreground mb-1.5">
-          ¿En qué te podemos ayudar?
+          {isEnglish ? 'How can we help you?' : '¿En qué te podemos ayudar?'}
         </label>
         <select
           id="ayuda"
@@ -171,7 +183,7 @@ const NativeServiceForm: React.FC<NativeServiceFormProps> = ({ sourcePage = '' }
           onChange={handleChange}
           className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
         >
-          {SERVICE_OPTIONS.map(opt => (
+          {serviceOptions.map(opt => (
             <option key={opt.value} value={opt.value}>{opt.label}</option>
           ))}
         </select>
@@ -181,7 +193,7 @@ const NativeServiceForm: React.FC<NativeServiceFormProps> = ({ sourcePage = '' }
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
           <label htmlFor="telefono" className="block text-sm font-medium text-foreground mb-1.5">
-            Teléfono
+            {isEnglish ? 'Phone' : 'Teléfono'}
           </label>
           <Input
             id="telefono"
@@ -194,12 +206,12 @@ const NativeServiceForm: React.FC<NativeServiceFormProps> = ({ sourcePage = '' }
         </div>
         <div>
           <label htmlFor="empresa" className="block text-sm font-medium text-foreground mb-1.5">
-            Empresa o dominio
+            {isEnglish ? 'Company or domain' : 'Empresa o dominio'}
           </label>
           <Input
             id="empresa"
             name="empresa"
-            placeholder="Tu empresa"
+            placeholder={isEnglish ? 'Your company' : 'Tu empresa'}
             value={formData.empresa || ''}
             onChange={handleChange}
           />
@@ -209,12 +221,12 @@ const NativeServiceForm: React.FC<NativeServiceFormProps> = ({ sourcePage = '' }
       {/* Message */}
       <div>
         <label htmlFor="mensaje" className="block text-sm font-medium text-foreground mb-1.5">
-          Mensaje
+          {isEnglish ? 'Message' : 'Mensaje'}
         </label>
         <Textarea
           id="mensaje"
           name="mensaje"
-          placeholder="Cuéntanos sobre tu proyecto o necesidad..."
+          placeholder={isEnglish ? 'Tell us about your project or needs...' : 'Cuéntanos sobre tu proyecto o necesidad...'}
           rows={4}
           value={formData.mensaje || ''}
           onChange={handleChange}
@@ -231,14 +243,23 @@ const NativeServiceForm: React.FC<NativeServiceFormProps> = ({ sourcePage = '' }
           className={errors.acceptCommunications ? 'border-destructive' : ''}
         />
         <label htmlFor="acceptCommunications" className="text-xs text-muted-foreground leading-relaxed cursor-pointer">
-          Acepto recibir comunicaciones comerciales y confirmo haber leído la{' '}
-          <Link to="/politica-privacidad" className="underline text-primary hover:text-primary/80">
-            Política de Privacidad
-          </Link>{' '}
-          y el{' '}
-          <Link to="/aviso-legal" className="underline text-primary hover:text-primary/80">
-            Aviso Legal
-          </Link>. <span className="text-destructive">*</span>
+          {isEnglish ? (
+            <>
+              I agree to receive commercial communications and confirm that I have read the{' '}
+              <Link to={privacyPath} className="underline text-primary hover:text-primary/80">Privacy Policy</Link>{' '}
+              and the{' '}
+              <Link to={legalPath} className="underline text-primary hover:text-primary/80">Legal Notice</Link>.{' '}
+              <span className="text-destructive">*</span>
+            </>
+          ) : (
+            <>
+              Acepto recibir comunicaciones comerciales y confirmo haber leído la{' '}
+              <Link to={privacyPath} className="underline text-primary hover:text-primary/80">Política de Privacidad</Link>{' '}
+              y el{' '}
+              <Link to={legalPath} className="underline text-primary hover:text-primary/80">Aviso Legal</Link>.{' '}
+              <span className="text-destructive">*</span>
+            </>
+          )}
         </label>
       </div>
       {errors.acceptCommunications && <p className="text-destructive text-xs -mt-3">{errors.acceptCommunications}</p>}
@@ -261,12 +282,12 @@ const NativeServiceForm: React.FC<NativeServiceFormProps> = ({ sourcePage = '' }
         {status === 'loading' ? (
           <>
             <Loader2 className="w-5 h-5 mr-2 animate-spin" />
-            Enviando...
+            {isEnglish ? 'Sending...' : 'Enviando...'}
           </>
         ) : (
           <>
             <Send className="w-5 h-5 mr-2" />
-            Enviar mensaje
+            {isEnglish ? 'Send message' : 'Enviar mensaje'}
           </>
         )}
       </Button>
@@ -274,23 +295,31 @@ const NativeServiceForm: React.FC<NativeServiceFormProps> = ({ sourcePage = '' }
       {/* Privacy disclaimer footer */}
       <div className="pt-4 border-t border-border">
         <p className="text-[11px] text-muted-foreground leading-relaxed">
-          Hayas Marketing se compromete con el{' '}
-          <a href="https://www.aepd.es/pactodigital" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">
-            Pacto Digital
-          </a>{' '}
-          de la{' '}
-          <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">
-            AEPD
-          </a>
-          . Tus datos serán tratados conforme a nuestra{' '}
-          <Link to="/politica-privacidad" className="underline hover:text-primary">
-            Política de Privacidad
-          </Link>{' '}
-          y{' '}
-          <Link to="/aviso-legal" className="underline hover:text-primary">
-            Aviso Legal
-          </Link>
-          . No compartimos tu información con terceros sin tu consentimiento.
+          {isEnglish ? (
+            <>
+              Hayas Marketing is committed to the{' '}
+              <a href="https://www.aepd.es/pactodigital" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">Digital Pact</a>{' '}
+              of the{' '}
+              <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">AEPD</a>
+              . Your data will be processed in accordance with our{' '}
+              <Link to={privacyPath} className="underline hover:text-primary">Privacy Policy</Link>{' '}
+              and{' '}
+              <Link to={legalPath} className="underline hover:text-primary">Legal Notice</Link>
+              . We do not share your information with third parties without your consent.
+            </>
+          ) : (
+            <>
+              Hayas Marketing se compromete con el{' '}
+              <a href="https://www.aepd.es/pactodigital" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">Pacto Digital</a>{' '}
+              de la{' '}
+              <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">AEPD</a>
+              . Tus datos serán tratados conforme a nuestra{' '}
+              <Link to={privacyPath} className="underline hover:text-primary">Política de Privacidad</Link>{' '}
+              y{' '}
+              <Link to={legalPath} className="underline hover:text-primary">Aviso Legal</Link>
+              . No compartimos tu información con terceros sin tu consentimiento.
+            </>
+          )}
         </p>
       </div>
     </form>
