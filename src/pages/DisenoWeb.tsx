@@ -18,9 +18,6 @@ import BenefitsGridSection from '@/components/BenefitsGridSection';
 import { useServiceSEO } from '@/hooks/useServiceSEO';
 import { useFAQSEO } from '@/hooks/useFAQSEO';
 import { useTranslation } from '@/hooks/useTranslation';
-import { 
-  Palette, Target, TrendingUp, FileText
-} from 'lucide-react';
 
 const DisenoWeb = () => {
   const { language } = useTranslation();
@@ -87,55 +84,15 @@ const DisenoWeb = () => {
 
   // Bilingual process steps
   const processSteps = isEnglish ? [
-    {
-      number: "01",
-      title: "Strategy & Analysis",
-      description: "We analyze your business, competition and objectives to create the perfect web strategy.",
-      icon: <Target className="h-6 w-6" />
-    },
-    {
-      number: "02", 
-      title: "Briefing Creation",
-      description: "We define the style and tone of the brand as well as the base content.",
-      icon: <FileText className="h-6 w-6" />
-    },
-    {
-      number: "03",
-      title: "Design & Development",
-      description: "We create the UX/UI design and develop your website with the best technologies.",
-      icon: <Palette className="h-6 w-6" />
-    },
-    {
-      number: "04",
-      title: "Launch & Support",
-      description: "We publish your website and accompany you with technical support and continuous optimization.",
-      icon: <TrendingUp className="h-6 w-6" />
-    }
+    { number: "01", title: "Strategy & Analysis", description: "We analyze your business, competition and objectives to create the perfect web strategy." },
+    { number: "02", title: "Briefing Creation", description: "We define the style and tone of the brand as well as the base content." },
+    { number: "03", title: "Design & Development", description: "We create the UX/UI design and develop your website with the best technologies." },
+    { number: "04", title: "Launch & Support", description: "We publish your website and accompany you with technical support and continuous optimization." }
   ] : [
-    {
-      number: "01",
-      title: "Estrategia y Análisis",
-      description: "Analizamos tu negocio, competencia y objetivos para crear la estrategia web perfecta.",
-      icon: <Target className="h-6 w-6" />
-    },
-    {
-      number: "02", 
-      title: "Creación de briefing",
-      description: "Definimos el estilo y tono de la marca así como los contenidos de base.",
-      icon: <FileText className="h-6 w-6" />
-    },
-    {
-      number: "03",
-      title: "Diseño y Desarrollo",
-      description: "Creamos el diseño UX/UI y desarrollamos tu web con las mejores tecnologías.",
-      icon: <Palette className="h-6 w-6" />
-    },
-    {
-      number: "04",
-      title: "Lanzamiento y Soporte",
-      description: "Publicamos tu web y te acompañamos con soporte técnico y optimización continua.",
-      icon: <TrendingUp className="h-6 w-6" />
-    }
+    { number: "01", title: "Estrategia y Análisis", description: "Analizamos tu negocio, competencia y objetivos para crear la estrategia web perfecta." },
+    { number: "02", title: "Creación de briefing", description: "Definimos el estilo y tono de la marca así como los contenidos de base." },
+    { number: "03", title: "Diseño y Desarrollo", description: "Creamos el diseño UX/UI y desarrollamos tu web con las mejores tecnologías." },
+    { number: "04", title: "Lanzamiento y Soporte", description: "Publicamos tu web y te acompañamos con soporte técnico y optimización continua." }
   ];
 
   // Bilingual FAQ items
