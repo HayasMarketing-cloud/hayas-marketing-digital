@@ -1,24 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight, Palette, Target, Users, Zap, CheckCircle } from 'lucide-react';
 import OptimizedImage from '@/components/OptimizedImage';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const BrandingSolutionPreviewSection = () => {
-  const features = [
-    "Estrategia de marca basada en research",
-    "Identidad visual completa y coherente", 
-    "Manual de marca profesional",
-    "Implementación en todos los materiales"
-  ];
+  const { isEnglish } = useLanguage();
 
-  const stats = [
-    { number: "+300%", label: "Reconocimiento de marca" },
-    { number: "+250%", label: "Percepción de valor" },
-    { number: "98%", label: "Clientes satisfechos" }
-  ];
+  const features = isEnglish
+    ? ["Research-based brand strategy", "Complete and coherent visual identity", "Professional brand manual", "Implementation across all materials"]
+    : ["Estrategia de marca basada en research", "Identidad visual completa y coherente", "Manual de marca profesional", "Implementación en todos los materiales"];
+
+  const stats = isEnglish
+    ? [{ number: "+300%", label: "Brand recognition" }, { number: "+250%", label: "Value perception" }, { number: "98%", label: "Satisfied clients" }]
+    : [{ number: "+300%", label: "Reconocimiento de marca" }, { number: "+250%", label: "Percepción de valor" }, { number: "98%", label: "Clientes satisfechos" }];
 
   return (
     <section className="py-20 bg-gradient-to-br from-primary/5 to-white">
@@ -27,16 +25,19 @@ const BrandingSolutionPreviewSection = () => {
           <div>
             <Badge variant="default" className="mb-4 bg-primary/10 text-primary hover:bg-primary/20">
               <Palette className="h-4 w-4 mr-2" />
-              Branding Estratégico
+              {isEnglish ? 'Strategic Branding' : 'Branding Estratégico'}
             </Badge>
             
             <h2 className="text-3xl lg:text-4xl font-bold font-dm-sans mb-6">
-              Creamos marcas que <span className="text-gradient-primary">conectan y convierten</span>
+              {isEnglish
+                ? <>We create brands that <span className="text-gradient-primary">connect and convert</span></>
+                : <>Creamos marcas que <span className="text-gradient-primary">conectan y convierten</span></>}
             </h2>
             
             <p className="text-xl text-muted-foreground mb-8">
-              Transformamos tu negocio en una marca memorable y diferenciada que genera 
-              conexión emocional, aumenta la percepción de valor y impulsa el crecimiento sostenible.
+              {isEnglish
+                ? "We transform your business into a memorable and differentiated brand that generates emotional connection, increases value perception and drives sustainable growth."
+                : "Transformamos tu negocio en una marca memorable y diferenciada que genera conexión emocional, aumenta la percepción de valor y impulsa el crecimiento sostenible."}
             </p>
 
             <div className="space-y-4 mb-8">
@@ -60,58 +61,55 @@ const BrandingSolutionPreviewSection = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="group" asChild>
                 <Link to="#contacto">
-                  Crear mi Marca
+                  {isEnglish ? 'Create my Brand' : 'Crear mi Marca'}
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <Link to="#proceso">Ver Metodología</Link>
+                <Link to="#proceso">{isEnglish ? 'View Methodology' : 'Ver Metodología'}</Link>
               </Button>
             </div>
           </div>
 
           <div className="relative">
             <div className="grid grid-cols-2 gap-4">
-              {/* Imagen principal */}
               <div className="col-span-2">
                 <Card className="overflow-hidden">
                   <OptimizedImage
                     src="/creacion-marca-hero.jpg"
-                    alt="Proceso de creación de marca - estrategia, diseño e implementación"
+                    alt={isEnglish ? "Brand creation process - strategy, design and implementation" : "Proceso de creación de marca - estrategia, diseño e implementación"}
                     className="w-full h-48 object-cover"
                     sizes="(max-width: 1024px) 100vw, 600px"
                   />
                 </Card>
               </div>
               
-              {/* Cards de beneficios */}
               <Card className="p-4 hover:shadow-lg transition-shadow">
                 <div className="flex items-center gap-3 mb-2">
                   <Target className="h-6 w-6 text-primary" />
-                  <CardTitle className="text-sm">Estrategia</CardTitle>
+                  <CardTitle className="text-sm">{isEnglish ? 'Strategy' : 'Estrategia'}</CardTitle>
                 </div>
                 <p className="text-xs text-muted-foreground">
-                  Posicionamiento único basado en análisis profundo
+                  {isEnglish ? "Unique positioning based on deep analysis" : "Posicionamiento único basado en análisis profundo"}
                 </p>
               </Card>
 
               <Card className="p-4 hover:shadow-lg transition-shadow">
                 <div className="flex items-center gap-3 mb-2">
                   <Users className="h-6 w-6 text-primary" />
-                  <CardTitle className="text-sm">Conexión</CardTitle>
+                  <CardTitle className="text-sm">{isEnglish ? 'Connection' : 'Conexión'}</CardTitle>
                 </div>
                 <p className="text-xs text-muted-foreground">
-                  Identidad que resuena con tu audiencia objetivo
+                  {isEnglish ? "Identity that resonates with your target audience" : "Identidad que resuena con tu audiencia objetivo"}
                 </p>
               </Card>
             </div>
 
-            {/* Badge flotante */}
             <div className="absolute -top-4 -right-4">
               <Card className="p-3 bg-primary text-primary-foreground shadow-lg">
                 <div className="flex items-center gap-2">
                   <Zap className="h-4 w-4" />
-                  <span className="text-xs font-semibold">Marca Memorable</span>
+                  <span className="text-xs font-semibold">{isEnglish ? 'Memorable Brand' : 'Marca Memorable'}</span>
                 </div>
               </Card>
             </div>
