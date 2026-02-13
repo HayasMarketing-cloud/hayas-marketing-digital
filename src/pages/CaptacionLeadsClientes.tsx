@@ -261,7 +261,7 @@ const CaptacionLeadsClientes: React.FC = () => {
           <ServiceContactSection
             title="¿Impulsamos tu captación?"
             subtitle="Cuéntanos tu público, canales actuales y objetivos. Diseñamos un plan de captación realista y medible."
-            minHeight={900}
+            sourcePage="Captación de Leads"
           />
         </div>
       </main>

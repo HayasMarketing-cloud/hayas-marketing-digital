@@ -518,7 +518,7 @@ const TiendaOnline = () => {
       <ServiceContactSection
         title="¿Hablamos sobre tu tienda online?"
         subtitle="Cuéntanos tu proyecto y objetivos. Te responderemos con una propuesta personalizada para tu tienda online."
-        minHeight={900}
+        sourcePage="Tienda Online"
       />
       
       <Footer />

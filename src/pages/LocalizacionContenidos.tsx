@@ -457,8 +457,8 @@ const LocalizacionContenidos = () => {
       <ServiceContactSection
         title="¿Listo para expandir tu negocio internacionalmente?"
         subtitle="Cuéntanos qué mercados quieres abordar y qué contenidos necesitas localizar. Te enviaremos una propuesta personalizada."
-        formId="7hfylnczt0dXbyUFFSEt"
         className="bg-gradient-to-br from-primary/10 via-white to-accent/10"
+        sourcePage="Localización de Contenidos"
       />
       
       <Footer />
