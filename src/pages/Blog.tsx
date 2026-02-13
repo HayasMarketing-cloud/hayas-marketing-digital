@@ -86,7 +86,7 @@ const Blog = () => {
       readTime: '14 min',
       date: '2026-02-07',
       image: '/seo-aeo-geo-paradigma-hero.jpg',
-      slug: isEnglish ? '/en/blog/nuevo-paradigma-seo-aeo-geo' : '/es/blog/nuevo-paradigma-seo-aeo-geo',
+      slug: isEnglish ? '/en/blog/new-seo-paradigm-aeo-geo' : '/es/blog/nuevo-paradigma-seo-aeo-geo',
       tags: ['SEO', 'AEO', 'GEO', 'IA', 'ChatGPT', 'Google SGE', 'Bing Copilot', 'Marketing Digital'],
       featured: true
     },
