@@ -4,6 +4,7 @@ import { servicesByPillar, PillarKey } from '@/data/services';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Grid, List } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface PillarServicesSectionProps {
   pillar: PillarKey;
@@ -15,13 +16,19 @@ interface PillarServicesSectionProps {
 
 const PillarServicesSection: React.FC<PillarServicesSectionProps> = ({
   pillar,
-  title = 'Nuestros Servicios',
-  description = 'Descubre todos los servicios profesionales de esta solución para hacer crecer tu negocio de forma estratégica y sostenible.',
+  title,
+  description,
   accentColor = 'impulsa',
   useOptimizedH2 = false
 }) => {
   const [expanded, setExpanded] = useState(false);
   const [view, setView] = useState<'grid' | 'list'>('grid');
+  const { isEnglish } = useLanguage();
+
+  const resolvedTitle = title ?? (isEnglish ? 'Our Services' : 'Nuestros Servicios');
+  const resolvedDescription = description ?? (isEnglish 
+    ? 'Discover all professional services in this solution to grow your business strategically and sustainably.'
+    : 'Descubre todos los servicios profesionales de esta solución para hacer crecer tu negocio de forma estratégica y sostenible.');
   
   const services = servicesByPillar[pillar] ?? [];
   
@@ -40,38 +47,38 @@ const PillarServicesSection: React.FC<PillarServicesSectionProps> = ({
         <div className="text-center mb-16">
           <h2 className="title-section">
             {useOptimizedH2 ? (
-              pillar === 'impulsa' ? 'Servicios de branding y posicionamiento web' :
-              pillar === 'conecta' ? 'Automatización CRM y gestión de clientes' :
-              pillar === 'activa' ? 'Estrategias de captación y conversión de leads' :
-              title
-            ) : title}
+              pillar === 'impulsa' ? (isEnglish ? 'Branding and web positioning services' : 'Servicios de branding y posicionamiento web') :
+              pillar === 'conecta' ? (isEnglish ? 'CRM automation and client management' : 'Automatización CRM y gestión de clientes') :
+              pillar === 'activa' ? (isEnglish ? 'Lead capture and conversion strategies' : 'Estrategias de captación y conversión de leads') :
+              resolvedTitle
+            ) : resolvedTitle}
           </h2>
           <p className="text-description max-w-3xl mx-auto">
-            {description}
+            {resolvedDescription}
           </p>
         </div>
 
         {/* Selector de vista */}
-        <div className="mb-8 flex items-center justify-center gap-2" role="group" aria-label="Selector de vista">
+        <div className="mb-8 flex items-center justify-center gap-2" role="group" aria-label={isEnglish ? "View selector" : "Selector de vista"}>
           <Button 
             size="sm" 
             variant={view === 'grid' ? 'default' : 'outline'} 
             aria-pressed={view === 'grid'} 
             onClick={() => setView('grid')} 
-            aria-label="Vista de cuadrícula"
+            aria-label={isEnglish ? "Grid view" : "Vista de cuadrícula"}
           >
             <Grid className="h-4 w-4" />
-            <span className="sr-only">Cuadrícula</span>
+            <span className="sr-only">{isEnglish ? "Grid" : "Cuadrícula"}</span>
           </Button>
           <Button 
             size="sm" 
             variant={view === 'list' ? 'default' : 'outline'} 
             aria-pressed={view === 'list'} 
             onClick={() => setView('list')} 
-            aria-label="Vista de lista"
+            aria-label={isEnglish ? "List view" : "Vista de lista"}
           >
             <List className="h-4 w-4" />
-            <span className="sr-only">Lista</span>
+            <span className="sr-only">{isEnglish ? "List" : "Lista"}</span>
           </Button>
         </div>
 
@@ -96,8 +103,8 @@ const PillarServicesSection: React.FC<PillarServicesSectionProps> = ({
                   </CardDescription>
                 </CardContent>
                 <CardFooter>
-                  <Link to={service.href} aria-label={`Ver ${service.title}`}>
-                    <Button size="sm" className={getAccentColorClass('bg-primary hover:bg-primary/90')}>Ver {service.title}</Button>
+                  <Link to={service.href} aria-label={`${isEnglish ? 'View' : 'Ver'} ${service.title}`}>
+                    <Button size="sm" className={getAccentColorClass('bg-primary hover:bg-primary/90')}>{isEnglish ? 'View' : 'Ver'} {service.title}</Button>
                   </Link>
                 </CardFooter>
               </Card>
@@ -114,7 +121,7 @@ const PillarServicesSection: React.FC<PillarServicesSectionProps> = ({
               aria-expanded={expanded} 
               onClick={() => setExpanded(v => !v)}
             >
-              {expanded ? 'Ver menos' : 'Ver todos los servicios'}
+              {expanded ? (isEnglish ? 'Show less' : 'Ver menos') : (isEnglish ? 'View all services' : 'Ver todos los servicios')}
             </Button>
           </div>
         )}
