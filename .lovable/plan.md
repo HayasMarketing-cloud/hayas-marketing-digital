@@ -1,28 +1,80 @@
 
 
-# Eliminar botones duplicados dentro de la seccion de servicios relacionados
+# Formulario nativo para todas las paginas de servicios
 
-## Problema
+## Resumen
 
-Dentro de la seccion "Servicios relacionados con este caso de exito" hay un sub-bloque con texto "Descubre como estas soluciones pueden transformar tu negocio" y dos botones ("Ver solucion completa" y "Mas casos de exito") que duplican la funcionalidad del CTA final. Esto crea redundancia visual.
+Reemplazar los formularios GHL (que no cargan) por un formulario nativo con diseno elegante alineado a la imagen corporativa de Hayas. Cada envio guardara el lead en base de datos y notificara por email a ruben@hayas.es.
 
-## Cambios
+## Sobre Gmail vs Resend
 
-### 1. `src/components/CaseStudyTemplate.tsx`
+No es posible usar Gmail/Google Workspace directamente desde funciones serverless de forma fiable. Google requiere OAuth2 con tokens que caducan periodicamente, lo que provocaria fallos intermitentes. **Resend** es la alternativa recomendada:
+- Gratis hasta 100 emails/dia (mas que suficiente)
+- Setup en 2 minutos: solo necesitas crear cuenta en resend.com y generar una API key
+- Los emails pueden configurarse para que aparezcan como enviados desde tu dominio hayas.es (verificando el dominio en Resend)
 
-Eliminar las lineas 354-369 (el `div` con `text-center mt-6` que contiene el texto descriptivo y los dos botones). La seccion quedara solo con el titulo y las cards de servicios.
+## Diseno del formulario
 
-### 2. `src/components/CaseStudyTemplateEN.tsx`
+Formulario minimalista y elegante con la estetica corporativa Hayas:
+- Fondo con gradiente suave usando los colores corporativos (verde lima a azul)
+- Card con bordes redondeados y sombra elegante
+- Campos con bordes finos que resaltan en morado al hacer focus
+- Boton principal con gradiente corporativo
+- Tipografia DM Sans para titulos, Inter para campos
+- Footer con el disclaimer de privacidad, enlace AEPD, Politica de Privacidad y Aviso Legal (tal como aparece actualmente)
 
-Mismo cambio: eliminar el bloque equivalente con "Discover how these solutions can transform your business" y sus botones.
+Campos del formulario:
+- Nombre (obligatorio)
+- Email (obligatorio)
+- Tipo de ayuda (selector: Consultoria, Diseno Web, SEO, CRM, IA, etc.)
+- Telefono (opcional)
+- Empresa o dominio (opcional)
+- Mensaje (opcional)
+- Checkbox de aceptacion de comunicaciones (obligatorio)
+- Campo honeypot oculto (anti-bot)
 
-## Resultado
+## Cambios necesarios
 
-La seccion de servicios relacionados mostrara unicamente las cards contextualizadas (Creacion de Marca, Diseno Web, etc.) sin botones redundantes. El CTA final mantendra los botones de accion principales.
+### 1. Crear `src/components/NativeServiceForm.tsx`
 
-## Archivos a modificar
+Nuevo componente con:
+- Diseno corporativo (gradiente suave, sombras elegantes, colores Hayas)
+- Validacion con Zod (reutilizando `ContactFormSchema`)
+- Envio via edge function `submit-contact-form`
+- Estados de carga, exito y error
+- Footer de privacidad identico al actual (disclaimer Pacto Digital + AEPD + enlaces Politica de Privacidad y Aviso Legal)
+- Prop `sourcePage` para identificar desde que pagina de servicio se envia
 
-- `src/components/CaseStudyTemplate.tsx`
-- `src/components/CaseStudyTemplateEN.tsx`
-- Total: 2 archivos
+### 2. Actualizar `supabase/functions/submit-contact-form/index.ts`
 
+Completar la funcion (que ya tiene validacion y rate limiting) para:
+- Guardar lead en tabla `sofia_leads` (campos: name, email, phone, company, interest, source_page)
+- Enviar email de notificacion a ruben@hayas.es via Resend con todos los datos del formulario
+- Anadir campo `source_page` al schema de validacion
+
+### 3. Modificar `src/components/ServiceContactSection.tsx`
+
+Reemplazar `StandardGHLForm` por `NativeServiceForm`. Anadir prop `sourcePage`.
+
+### 4. Modificar `src/components/ServicePageTemplate.tsx`
+
+Pasar `sourcePage` (usando el titulo del servicio o la URL canonica) a `ServiceContactSection`.
+
+### 5. Secret necesario: `RESEND_API_KEY`
+
+Se pedira al usuario que introduzca la API key de Resend antes de implementar el envio de emails.
+
+## Paginas afectadas
+
+Todas las paginas de servicios que usan `ServicePageTemplate` o `ServiceContactSection` se actualizaran automaticamente al cambiar estos 2 componentes.
+
+**No se toca**: La pagina de Solicitar Consulta que usa un widget GHL de reservas independiente.
+
+## Archivos
+
+- **Crear**: `src/components/NativeServiceForm.tsx`
+- **Modificar**: `src/components/ServiceContactSection.tsx`
+- **Modificar**: `src/components/ServicePageTemplate.tsx`
+- **Modificar**: `supabase/functions/submit-contact-form/index.ts`
+- **Secret**: `RESEND_API_KEY`
+- Total: 4 archivos + 1 secret
