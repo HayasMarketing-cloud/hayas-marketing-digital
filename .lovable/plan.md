@@ -1,77 +1,42 @@
 
 
-# Personalizar "Soluciones Relacionadas" en todos los casos de exito
+# Corregir soluciones relacionadas faltantes y limpiar CTA duplicado
 
-## Problema actual
+## Resumen
 
-La seccion "Descubre nuestras soluciones relacionadas" al final de cada caso de exito muestra siempre los mismos 4 enlaces (Implantacion CRM, Automatizacion de Ventas, Consultoria Estrategica, Conecta con tus Clientes), sin importar de que trata el caso. Esto no aporta valor contextual al usuario.
+La seccion de cards con soluciones relacionadas (la que tiene buen diseno) **ya usa datos contextualizados** en todos los casos de exito excepto uno: **Calisthenia Online**, que fue omitido durante la actualizacion masiva. Ademas, la seccion inferior del CTA repite los mismos enlaces con un estilo pobre.
 
-## Solucion propuesta
+## Cambios necesarios
 
-Convertir esa seccion en una prop configurable (`relatedSolutions`) para que cada caso de exito muestre las soluciones que realmente se usaron o son relevantes.
+### 1. Anadir `relatedSolutions` a `CalistheniaOnlinePage.tsx`
 
-## Cambios tecnicos
-
-### 1. Modificar `CaseStudyTemplate.tsx` y `CaseStudyTemplateEN.tsx`
-
-Agregar una nueva prop opcional al interface:
+Basado en sus badges (Educacion Online, Deporte, Transformacion Digital) y soluciones (Creacion de Marca, Diseno Web):
 
 ```typescript
-interface RelatedSolution {
-  label: string;
-  route: string; // route key from useLocalizedRoutes
-}
-
-// En CaseStudyProps:
-relatedSolutions?: RelatedSolution[];
+relatedSolutions={[
+  { label: 'Creacion de Marca', route: 'serviceBrandCreation' },
+  { label: 'Diseno Web', route: 'serviceWebDesign' },
+]}
 ```
 
-Si se pasa `relatedSolutions`, se renderiza esa lista. Si no se pasa, se mantienen los 4 enlaces por defecto como fallback para no romper nada.
+### 2. Eliminar seccion duplicada del CTA en `CaseStudyTemplate.tsx`
 
-### 2. Actualizar los 48 casos de exito en espanol
+Eliminar las lineas 389-403 (bloque "Descubre nuestras soluciones relacionadas:" dentro del CTA final) que duplica la informacion ya mostrada en la seccion de cards superior.
 
-Cada pagina recibira un prop `relatedSolutions` contextualizado. Ejemplos:
+### 3. Eliminar seccion duplicada del CTA en `CaseStudyTemplateEN.tsx`
 
-| Caso de exito | Soluciones relacionadas |
-|---|---|
-| Estudio Fotografia La Banera | Diseno Web, SEO Posicionamiento |
-| Nova Praxis | Implantacion CRM, SEO Posicionamiento, Automatizacion de Ventas |
-| Alma Cruceros | Publicidad Google Ads |
-| Peixos Emilio | Tienda Online |
-| FINECT | Implantacion CRM, Consultoria Estrategica |
-| Wooptix | Implantacion CRM, Asistente IA |
-| Buhobike | Estrategia de Contenidos, Tienda Online |
-| Peris Electricidad | Diseno Web, Implantacion CRM, SEO Posicionamiento |
-| Inbound Students | Creacion de Marca, Diseno Web, Estrategia de Contenidos |
-| La Oriental Sin Gluten | Tienda Online, Implantacion CRM, Gestion Redes Sociales |
-| HubSpot for Startups | Estrategia de Contenidos, SEO Posicionamiento |
-| Asendia | Implantacion CRM, Automatizacion de Ventas |
-| (y asi para los 48...) | Basado en los servicios/badges de cada caso |
+Mismo cambio: eliminar el bloque "Discover our related solutions:" dentro del CTA final.
 
-### 3. Actualizar los 10 casos de exito en ingles
+## Resultado
 
-Misma logica con las rutas y labels en ingles.
+- Todos los casos de exito mostraran soluciones contextualizadas
+- Se elimina la duplicidad visual
+- El CTA queda limpio con solo titulo, descripcion y botones de accion
 
-### Rutas disponibles para usar
+## Archivos a modificar
 
-Se usaran las claves de `useLocalizedRoutes`:
-- `serviceBrandCreation` - Creacion de Marca
-- `serviceWebDesign` - Diseno Web
-- `serviceSEOPositioning` - SEO Posicionamiento
-- `serviceCRMImplantation` - Implantacion CRM
-- `serviceSalesAutomation` - Automatizacion de Ventas
-- `serviceContentStrategy` - Estrategia de Contenidos
-- `serviceSocialMedia` - Gestion Redes Sociales
-- `serviceGoogleAds` - Publicidad Google Ads
-- `serviceOnlineStore` - Tienda Online
-- `serviceAIIntegrations` - Integraciones IA
-- `serviceEmailMarketing` - Email Marketing
-- `serviceStrategicConsulting` - Consultoria Estrategica
-- `serviceDirectMarketing` - Marketing Directo
+- `src/pages/CalistheniaOnlinePage.tsx` (1 archivo)
+- `src/components/CaseStudyTemplate.tsx` (1 archivo)
+- `src/components/CaseStudyTemplateEN.tsx` (1 archivo)
+- Total: 3 archivos
 
-## Volumen de cambios
-
-- 2 templates (ES + EN)
-- 48 paginas de casos de exito en espanol
-- 10 paginas de casos de exito en ingles
-- Total: 60 archivos a modificar
