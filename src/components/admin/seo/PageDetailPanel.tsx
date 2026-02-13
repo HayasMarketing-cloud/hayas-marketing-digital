@@ -3,12 +3,13 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from '@/components/ui/sheet';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { SEOEditor } from './SEOEditor';
+import { Progress } from '@/components/ui/progress';
 import { 
   FileText, BarChart3, Globe, Map, 
   CheckCircle, XCircle, HelpCircle, AlertTriangle,
-  Loader2, ExternalLink
+  Loader2, ExternalLink, Download, Clock, Link2, Image, AlertOctagon
 } from 'lucide-react';
 import { useQuery } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
@@ -100,10 +101,150 @@ const GSCTab: React.FC<{ path: string }> = ({ path }) => {
   );
 };
 
-// Tab 3: Indexation status
+// On-Page Score visual
+const OnPageScoreCard: React.FC<{ score: number | null }> = ({ score }) => {
+  if (score === null || score === undefined) return null;
+  const color = score >= 80 ? 'text-green-600' : score >= 50 ? 'text-yellow-600' : 'text-red-600';
+  const bgColor = score >= 80 ? 'bg-green-600' : score >= 50 ? 'bg-yellow-600' : 'bg-red-600';
+  return (
+    <Card>
+      <CardContent className="pt-4">
+        <p className="text-xs text-muted-foreground mb-2">On-Page Score</p>
+        <div className="flex items-center gap-3">
+          <span className={`text-3xl font-bold ${color}`}>{Math.round(score)}</span>
+          <span className="text-sm text-muted-foreground">/ 100</span>
+        </div>
+        <Progress value={score} className={`mt-2 h-2 [&>div]:${bgColor}`} />
+      </CardContent>
+    </Card>
+  );
+};
+
+// Audit section
+const AuditSection: React.FC<{ auditData: any }> = ({ auditData }) => {
+  if (!auditData) return null;
+
+  const { total_checks, meta_info, page_timing, links_info } = auditData;
+
+  const handleDownload = () => {
+    const blob = new Blob([JSON.stringify(auditData, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `audit-report.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
+  return (
+    <div className="space-y-4 mt-4 border-t pt-4">
+      <div className="flex items-center justify-between">
+        <h4 className="text-sm font-semibold">Auditoría On-Page</h4>
+        <Button onClick={handleDownload} size="sm" variant="outline" className="gap-1">
+          <Download className="h-3 w-3" /> JSON
+        </Button>
+      </div>
+
+      <OnPageScoreCard score={auditData.onpage_score} />
+
+      {/* Checks summary */}
+      {total_checks && (
+        <div className="grid grid-cols-3 gap-2">
+          <Card>
+            <CardContent className="pt-3 text-center">
+              <AlertOctagon className="h-4 w-4 mx-auto text-red-500 mb-1" />
+              <p className="text-lg font-bold text-red-600">{total_checks.errors ?? 0}</p>
+              <p className="text-xs text-muted-foreground">Errores</p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent className="pt-3 text-center">
+              <AlertTriangle className="h-4 w-4 mx-auto text-yellow-500 mb-1" />
+              <p className="text-lg font-bold text-yellow-600">{total_checks.warnings ?? 0}</p>
+              <p className="text-xs text-muted-foreground">Warnings</p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent className="pt-3 text-center">
+              <CheckCircle className="h-4 w-4 mx-auto text-green-500 mb-1" />
+              <p className="text-lg font-bold text-green-600">{total_checks.passed ?? 0}</p>
+              <p className="text-xs text-muted-foreground">OK</p>
+            </CardContent>
+          </Card>
+        </div>
+      )}
+
+      {/* Error list */}
+      {total_checks?.error_list?.length > 0 && (
+        <div>
+          <h5 className="text-xs font-semibold text-red-600 mb-1">Errores detectados</h5>
+          <div className="space-y-1 max-h-[200px] overflow-y-auto">
+            {total_checks.error_list.map((err: string, i: number) => (
+              <div key={i} className="text-xs p-2 rounded bg-red-50 dark:bg-red-950/20 text-red-700 dark:text-red-400 flex items-start gap-2">
+                <XCircle className="h-3 w-3 mt-0.5 shrink-0" />
+                <span>{err.replace(/_/g, ' ')}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Meta info */}
+      {meta_info && (
+        <div>
+          <h5 className="text-xs font-semibold mb-2">Meta Tags</h5>
+          <div className="space-y-2 text-xs">
+            {meta_info.title && <div><span className="text-muted-foreground">Title:</span> <span className="font-medium">{meta_info.title}</span></div>}
+            {meta_info.description && <div><span className="text-muted-foreground">Description:</span> <span className="font-medium truncate block">{meta_info.description}</span></div>}
+            {meta_info.canonical && <div><span className="text-muted-foreground">Canonical:</span> <span className="font-mono">{meta_info.canonical}</span></div>}
+          </div>
+        </div>
+      )}
+
+      {/* Performance */}
+      {page_timing && (
+        <div>
+          <h5 className="text-xs font-semibold mb-2 flex items-center gap-1"><Clock className="h-3 w-3" /> Rendimiento</h5>
+          <div className="grid grid-cols-2 gap-2 text-xs">
+            {page_timing.time_to_interactive != null && (
+              <div><span className="text-muted-foreground">Time to Interactive:</span> <span className="font-bold">{(page_timing.time_to_interactive * 1000).toFixed(0)}ms</span></div>
+            )}
+            {page_timing.dom_complete != null && (
+              <div><span className="text-muted-foreground">DOM Complete:</span> <span className="font-bold">{(page_timing.dom_complete * 1000).toFixed(0)}ms</span></div>
+            )}
+            {page_timing.largest_contentful_paint != null && (
+              <div><span className="text-muted-foreground">LCP:</span> <span className="font-bold">{(page_timing.largest_contentful_paint * 1000).toFixed(0)}ms</span></div>
+            )}
+            {page_timing.duration_time != null && (
+              <div><span className="text-muted-foreground">Duration:</span> <span className="font-bold">{(page_timing.duration_time * 1000).toFixed(0)}ms</span></div>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* Links info */}
+      {links_info && (
+        <div className="flex gap-4 text-xs">
+          <div className="flex items-center gap-1"><Link2 className="h-3 w-3 text-muted-foreground" /> <span>{links_info.internal_links_count} internos</span></div>
+          <div className="flex items-center gap-1"><ExternalLink className="h-3 w-3 text-muted-foreground" /> <span>{links_info.external_links_count} externos</span></div>
+        </div>
+      )}
+
+      {/* Images info */}
+      {meta_info?.images_count != null && (
+        <div className="flex items-center gap-1 text-xs">
+          <Image className="h-3 w-3 text-muted-foreground" /> <span>{meta_info.images_count} imágenes ({meta_info.images_size ? `${(meta_info.images_size / 1024).toFixed(0)} KB` : '—'})</span>
+        </div>
+      )}
+    </div>
+  );
+};
+
+// Tab 3: Indexation + Audit
 const IndexationTab: React.FC<{ page: SEOTrackerPage }> = ({ page }) => {
   const [isChecking, setIsChecking] = useState(false);
   const [checkResult, setCheckResult] = useState(page.indexation);
+  const [auditData, setAuditData] = useState<any>(null);
 
   const handleCheck = async () => {
     setIsChecking(true);
@@ -122,9 +263,19 @@ const IndexationTab: React.FC<{ page: SEOTrackerPage }> = ({ page }) => {
           google_position: result.google_position || null,
           checked_at: result.checked_at || new Date().toISOString(),
         });
+        if (result.onpage_score != null || result.total_checks) {
+          setAuditData({
+            onpage_score: result.onpage_score,
+            total_checks: result.total_checks,
+            checks_detail: result.checks_detail,
+            meta_info: result.meta_info,
+            page_timing: result.page_timing,
+            links_info: result.links_info,
+          });
+        }
       }
     } catch (err) {
-      console.error('Indexation check error:', err);
+      console.error('Check error:', err);
     } finally {
       setIsChecking(false);
     }
@@ -142,7 +293,7 @@ const IndexationTab: React.FC<{ page: SEOTrackerPage }> = ({ page }) => {
       <div className="flex items-center justify-between">
         <div>{getStatusBadge()}</div>
         <Button onClick={handleCheck} disabled={isChecking} size="sm" variant="outline">
-          {isChecking ? <><Loader2 className="h-4 w-4 mr-2 animate-spin" /> Verificando...</> : 'Verificar indexación'}
+          {isChecking ? <><Loader2 className="h-4 w-4 mr-2 animate-spin" /> Verificando...</> : 'Verificar y auditar'}
         </Button>
       </div>
 
@@ -174,13 +325,14 @@ const IndexationTab: React.FC<{ page: SEOTrackerPage }> = ({ page }) => {
         </div>
       )}
 
-      {!checkResult && (
+      {!checkResult && !auditData && (
         <div className="text-center py-6 text-muted-foreground">
           <AlertTriangle className="h-8 w-8 mx-auto mb-2 opacity-40" />
-          <p className="text-sm">Haz clic en "Verificar indexación" para comprobar si esta página está indexada en Google.</p>
-          <p className="text-xs mt-2">Requiere las claves API de DataForSEO configuradas.</p>
+          <p className="text-sm">Pulsa "Verificar y auditar" para comprobar indexación y obtener auditoría SEO on-page.</p>
         </div>
       )}
+
+      <AuditSection auditData={auditData} />
     </div>
   );
 };

@@ -274,37 +274,58 @@ export type Database = {
       }
       indexation_checks: {
         Row: {
+          audit_raw_response: Json | null
           checked_at: string | null
+          checks_detail: Json | null
           google_cache_date: string | null
           google_position: number | null
           google_snippet: string | null
           google_title: string | null
           id: string
           is_indexed: boolean | null
+          links_info: Json | null
+          meta_info: Json | null
+          onpage_score: number | null
           page_path: string
+          page_timing: Json | null
           raw_response: Json | null
+          total_checks: Json | null
         }
         Insert: {
+          audit_raw_response?: Json | null
           checked_at?: string | null
+          checks_detail?: Json | null
           google_cache_date?: string | null
           google_position?: number | null
           google_snippet?: string | null
           google_title?: string | null
           id?: string
           is_indexed?: boolean | null
+          links_info?: Json | null
+          meta_info?: Json | null
+          onpage_score?: number | null
           page_path: string
+          page_timing?: Json | null
           raw_response?: Json | null
+          total_checks?: Json | null
         }
         Update: {
+          audit_raw_response?: Json | null
           checked_at?: string | null
+          checks_detail?: Json | null
           google_cache_date?: string | null
           google_position?: number | null
           google_snippet?: string | null
           google_title?: string | null
           id?: string
           is_indexed?: boolean | null
+          links_info?: Json | null
+          meta_info?: Json | null
+          onpage_score?: number | null
           page_path?: string
+          page_timing?: Json | null
           raw_response?: Json | null
+          total_checks?: Json | null
         }
         Relationships: []
       }
