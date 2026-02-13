@@ -47,6 +47,10 @@ const CalistheniaOnlinePage = () => {
       ctaDescription="Te ayudamos a crear tu plataforma educativa online y desarrollar una estrategia digital que conecte con tu audiencia deportiva."
       ctaButtonText="Solicitar Consultoría Gratuita"
       ctaButtonLink="/solicitar-consulta"
+      relatedSolutions={[
+        { label: 'Creación de Marca', route: 'serviceBrandCreation' },
+        { label: 'Diseño Web', route: 'serviceWebDesign' },
+      ]}
     />
   );
 };
