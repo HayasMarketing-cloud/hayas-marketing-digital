@@ -8,10 +8,7 @@ const SEONavigation: React.FC = () => {
 
   // Solo herramientas activas y útiles
   const navItems = [
-    { path: '/admin/seo', label: 'Dashboard', icon: LayoutDashboard },
-    { path: '/admin/seo/gsc', label: 'Search Console', icon: BarChart3 },
-    { path: '/admin/seo/pages', label: 'Páginas', icon: FileText },
-    { path: '/admin/seo/sitemap', label: 'Sitemap', icon: Map },
+    { path: '/admin/seo', label: 'SEO Tracker', icon: LayoutDashboard },
     { path: '/admin/seo/indexnow', label: 'IndexNow', icon: Zap },
   ];
 

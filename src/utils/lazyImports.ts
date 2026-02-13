@@ -177,6 +177,7 @@ export const SEODashboard = lazyWithRetry(() => import("@/pages/admin/SEODashboa
 export const SEOPagesManager = lazyWithRetry(() => import("@/pages/admin/SEOPagesManager"));
 export const SitemapManager = lazyWithRetry(() => import("@/pages/admin/SitemapManager"));
 export const GSCFullReport = lazyWithRetry(() => import("@/pages/admin/GSCFullReport"));
+export const SEOTracker = lazyWithRetry(() => import("@/pages/admin/SEOTracker"));
 export const IndexNowManager = lazyWithRetry(() => import("@/pages/admin/IndexNowManager"));
 export const FAQValidator = lazyWithRetry(() => import("@/pages/admin/FAQValidator"));
 export const TranslationManager = lazyWithRetry(() => import("@/pages/admin/TranslationManager"));
