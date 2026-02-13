@@ -1,65 +1,31 @@
 
-# Hacer bilingue el formulario NativeServiceForm
 
-## Problema
+# Actualizar Pain Point "Not ranking on Google" a GEO/AEO
 
-El componente `NativeServiceForm.tsx` tiene todo el texto hardcodeado en espanol: labels, placeholders, mensajes de exito/error, opciones del selector, disclaimer legal y validacion Zod. Cuando se usa en paginas `/en/...`, el formulario y sus mensajes aparecen en espanol.
+## Cambio
 
-## Solucion
+Modificar el tercer pain point en `src/components/PainPointsSection.tsx` para evolucionar el mensaje de "no apareces en Google" a un enfoque de visibilidad en buscadores Y en IAs generativas (GEO/AEO), alineado con el reposicionamiento estrategico del servicio SEO.
 
-Aplicar el patron estandar `useLanguage` + `isEnglish` en un unico archivo: `src/components/NativeServiceForm.tsx`.
+## Archivo a modificar
 
-## Cambios en detalle
+`src/components/PainPointsSection.tsx`
 
-### 1. Importar `useLanguage`
+## Contenido actual (tercer pain point)
 
-Anadir import de `useLanguage` desde `@/contexts/LanguageContext`.
+- **Titulo ES**: "No aparece en Google"
+- **Titulo EN**: "Not ranking on Google"
+- **Descripcion ES**: "Sin SEO tecnico tu web es invisible en los motores de busqueda, perdiendo oportunidades."
+- **Descripcion EN**: "Without technical SEO your website is invisible on search engines, missing opportunities."
 
-### 2. Validacion Zod dinamica
+## Nuevo contenido propuesto
 
-Mover `ContactFormSchema` a una funcion `getSchema(isEnglish)` para que los mensajes de error de validacion se muestren en el idioma correcto:
-- "El nombre es obligatorio" -> "Name is required"
-- "Introduce un email valido" -> "Enter a valid email"
-- "Debes aceptar las comunicaciones" -> "You must accept communications"
+- **Titulo ES**: "Invisible en buscadores e IAs"
+- **Titulo EN**: "Invisible on search and AI"
+- **Descripcion ES**: "Sin una estrategia SEO, AEO y GEO, tu web no aparece ni en Google ni en las respuestas de ChatGPT, Copilot o Perplexity."
+- **Descripcion EN**: "Without an SEO, AEO and GEO strategy, your website doesn't appear on Google or in AI answers from ChatGPT, Copilot or Perplexity."
 
-### 3. Opciones del selector
+Se podria cambiar tambien el icono de `Search` a algo mas representativo como `Bot` o `BrainCircuit` de lucide-react, aunque `Search` sigue siendo valido. Lo dejo como esta salvo que prefieras cambiarlo.
 
-Crear `SERVICE_OPTIONS` dinamico con labels en ingles:
-- "Consultoria Estrategica" -> "Strategic Consulting"
-- "Diseno Web" -> "Web Design"
-- etc.
+## Impacto
 
-### 4. Labels y placeholders
-
-Traducir todos los labels de campos:
-- "Nombre" -> "Name"
-- "En que te podemos ayudar?" -> "How can we help you?"
-- "Telefono" -> "Phone"
-- "Empresa o dominio" -> "Company or domain"
-- "Mensaje" -> "Message"
-- "Cuentanos sobre tu proyecto..." -> "Tell us about your project..."
-
-### 5. Mensaje de exito (el bug visible en la imagen)
-
-Lineas 114-117:
-- "Mensaje enviado!" -> "Message sent!"
-- "Gracias por contactarnos..." -> "Thank you for contacting us. We will get back to you as soon as possible."
-
-### 6. Boton de envio
-
-- "Enviando..." -> "Sending..."
-- "Enviar mensaje" -> "Send message"
-
-### 7. Checkbox y disclaimer legal
-
-- Texto del checkbox adaptado al ingles
-- Links apuntando a `/en/privacy-policy` y `/en/legal-notice` en vez de `/politica-privacidad` y `/aviso-legal`
-- Disclaimer del Pacto Digital traducido
-
-### 8. Mensaje de error generico
-
-- "Error al enviar el formulario..." -> "Error sending the form. Please try again."
-
-## Archivos
-
-- **Modificar**: `src/components/NativeServiceForm.tsx` (unico archivo)
+Solo se modifica un archivo. El componente ya es bilingue, asi que el cambio afecta correctamente a ambas versiones (ES y EN).
