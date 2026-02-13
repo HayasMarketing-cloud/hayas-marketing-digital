@@ -9,6 +9,7 @@ import { Badge } from '@/components/ui/badge';
 import EnhancedSEO from '@/components/EnhancedSEO';
 import FAQSection from '@/components/FAQSection';
 import ProgramTransitionBanner from '@/components/ProgramTransitionBanner';
+import NativeServiceForm from '@/components/NativeServiceForm';
 import { 
   Search, TrendingUp, FileText, Target, 
   BarChart3, Zap, Globe, Settings,
@@ -469,28 +470,8 @@ const KitDigitalPresenciaAvanzada = () => {
               Te ayudamos con todo el proceso: desde la solicitud del bono hasta la optimización completa de tu posicionamiento SEO.
             </p>
           </div>
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden" style={{minHeight: '820px'}}>
-              <iframe
-                src="https://links.hayasmarketing.com/widget/form/CIBs3XkPVEQVfMfwBIe2"
-                style={{width:'100%',height:'100%',border:'none',borderRadius:'4px'}}
-                id="inline-CIBs3XkPVEQVfMfwBIe2" 
-                data-layout="{'id':'INLINE'}"
-                data-trigger-type="alwaysShow"
-                data-trigger-value=""
-                data-activation-type="alwaysActivated"
-                data-activation-value=""
-                data-deactivation-type="neverDeactivate"
-                data-deactivation-value=""
-                data-form-name="WEB KD Form  - Solution request"
-                data-height="805"
-                data-layout-iframe-id="inline-CIBs3XkPVEQVfMfwBIe2"
-                data-form-id="CIBs3XkPVEQVfMfwBIe2"
-                title="WEB KD Form  - Solution request"
-              >
-              </iframe>
-              <script src="https://links.hayasmarketing.com/js/form_embed.js"></script>
-            </div>
+          <div className="max-w-2xl mx-auto">
+            <NativeServiceForm sourcePage="kit-digital-presencia-avanzada" />
           </div>
         </div>
       </section>

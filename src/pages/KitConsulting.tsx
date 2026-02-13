@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import ProgramTransitionBanner from '@/components/ProgramTransitionBanner';
+import NativeServiceForm from '@/components/NativeServiceForm';
 
 import {
   Breadcrumb,
@@ -463,6 +464,23 @@ const KitConsulting = () => {
                   <p className="text-gray-600">{step.description}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Form Section */}
+        <section id="contacto" className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                Solicita tu asesoría gratuita de Kit Consulting
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Te ayudamos con todo el proceso para acceder a ayudas de hasta 24.000 € y transformar tu empresa.
+              </p>
+            </div>
+            <div className="max-w-2xl mx-auto">
+              <NativeServiceForm sourcePage="kit-consulting" />
             </div>
           </div>
         </section>
