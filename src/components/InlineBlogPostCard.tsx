@@ -25,13 +25,13 @@ const InlineBlogPostCard: React.FC<InlineBlogPostCardProps> = ({
   const subtitle = isEnglish ? 'Dive deeper into this topic' : 'Profundiza en este tema';
 
   return (
-    <div className={cn('max-w-3xl mx-auto px-4', className)}>
+    <div className={cn('max-w-4xl mx-auto px-4', className)}>
       <Link
         to={href}
-        className="group flex items-center gap-4 sm:gap-5 rounded-xl border border-primary/20 bg-primary/5 p-4 transition-all hover:bg-primary/10 hover:shadow-md hover:border-primary/30"
+        className="group flex items-center gap-5 rounded-xl border border-primary/20 bg-primary/5 p-5 transition-all hover:bg-primary/10 hover:shadow-lg hover:border-primary/30"
       >
         {/* Thumbnail */}
-        <div className="hidden sm:block w-20 h-20 flex-shrink-0 rounded-lg overflow-hidden">
+        <div className="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0 rounded-lg overflow-hidden">
           <img
             src={image}
             alt={title}
@@ -45,10 +45,10 @@ const InlineBlogPostCard: React.FC<InlineBlogPostCardProps> = ({
           <Badge variant="outline" className="mb-1.5 text-[10px] uppercase tracking-wider border-primary/30 text-primary">
             {category}
           </Badge>
-          <h4 className="font-bold text-base text-foreground leading-snug line-clamp-2 group-hover:text-primary transition-colors">
+          <h4 className="font-bold text-base sm:text-lg text-foreground leading-snug line-clamp-2 group-hover:text-primary transition-colors">
             {title}
           </h4>
-          <p className="text-sm text-muted-foreground mt-0.5">{subtitle}</p>
+          <p className="text-sm text-muted-foreground mt-1">{subtitle}</p>
         </div>
 
         {/* Arrow */}
