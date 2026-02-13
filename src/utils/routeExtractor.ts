@@ -77,13 +77,6 @@ export const EN_ROUTES_IN_APP: ExtractedRoute[] = [
   { path: '/en/case-studies/nexo-vital', source: 'App.tsx' },
   { path: '/en/case-studies/quanticbi', source: 'App.tsx' },
   
-  // Kit Digital
-  { path: '/en/kit-digital', source: 'App.tsx' },
-  { path: '/en/kit-digital/basic-internet-presence', source: 'App.tsx' },
-  { path: '/en/kit-digital/crm-client-management', source: 'App.tsx' },
-  { path: '/en/kit-digital/social-media-management', source: 'App.tsx' },
-  { path: '/en/kit-digital/advanced-presence-seo', source: 'App.tsx' },
-  { path: '/en/kit-consulting', source: 'App.tsx' },
   
   // Comparison
   { path: '/en/comparison/hubspot-vs-go-high-level', source: 'App.tsx' },

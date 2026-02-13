@@ -50,9 +50,9 @@ const ROUTE_MAPPINGS: Record<string, RouteMap> = {
   serviceOnlineStore: { es: '/es/servicios/tienda-online', en: '/en/services/online-store' },
   serviceSalesAutomation: { es: '/es/servicios/automatizacion-procesos-ventas', en: '/en/services/sales-process-automation' },
   
-  // Kit Digital
-  kitDigital: { es: '/es/kit-digital', en: '/en/kit-digital' },
-  kitConsulting: { es: '/es/kit-consulting', en: '/en/kit-consulting' },
+  // Kit Digital (solo ES - programa del gobierno español)
+  kitDigital: { es: '/es/kit-digital', en: '/es/kit-digital' },
+  kitConsulting: { es: '/es/kit-consulting', en: '/es/kit-consulting' },
   
   // Comparativas y páginas especiales
   hubspotVsGHL: { es: '/es/hubspot-vs-gohighlevel', en: '/en/hubspot-vs-gohighlevel' },

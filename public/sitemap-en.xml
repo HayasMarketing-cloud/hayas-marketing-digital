@@ -295,56 +295,6 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/services/crm-customer-management"/>
   </url>
 
-  <!-- KIT DIGITAL -->
-  <url>
-    <loc>https://hayasmarketing.com/en/kit-digital</loc>
-    <lastmod>2026-02-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/kit-digital"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/kit-digital"/>
-  </url>
-  <url>
-    <loc>https://hayasmarketing.com/en/kit-digital/basic-internet-presence</loc>
-    <lastmod>2026-02-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/kit-digital/presencia-basica-internet"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/kit-digital/basic-internet-presence"/>
-  </url>
-  <url>
-    <loc>https://hayasmarketing.com/en/kit-digital/crm-client-management</loc>
-    <lastmod>2026-02-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/kit-digital/gestion-clientes-crm"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/kit-digital/crm-client-management"/>
-  </url>
-  <url>
-    <loc>https://hayasmarketing.com/en/kit-digital/social-media-management</loc>
-    <lastmod>2026-02-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/kit-digital/gestion-red-social"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/kit-digital/social-media-management"/>
-  </url>
-  <url>
-    <loc>https://hayasmarketing.com/en/kit-digital/advanced-presence-seo</loc>
-    <lastmod>2026-02-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/kit-digital/presencia-avanzada-seo"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/kit-digital/advanced-presence-seo"/>
-  </url>
-  <url>
-    <loc>https://hayasmarketing.com/en/kit-consulting</loc>
-    <lastmod>2026-02-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/kit-consulting"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/kit-consulting"/>
-  </url>
-
   <!-- CASE STUDIES HUB -->
   <url>
     <loc>https://hayasmarketing.com/en/case-studies</loc>

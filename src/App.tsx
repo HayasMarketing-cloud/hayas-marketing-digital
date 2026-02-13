@@ -572,13 +572,6 @@ const App = () => (
           <Route path="/en/services/funnel-implementation" element={<PageSuspense><Pages.ImplementacionFunnel /></PageSuspense>} />
           <Route path="/en/services/crm-customer-management" element={<PageSuspense><Pages.GestionClientesCRM /></PageSuspense>} />
           
-          {/* KIT DIGITAL (English version - keep Spanish name as it's a Spanish government program) */}
-          <Route path="/en/kit-digital" element={<PageSuspense><Pages.KitDigital /></PageSuspense>} />
-          <Route path="/en/kit-digital/basic-internet-presence" element={<PageSuspense><Pages.KitDigitalPresenciaBasica /></PageSuspense>} />
-          <Route path="/en/kit-digital/crm-client-management" element={<PageSuspense><Pages.KitDigitalGestionClientes /></PageSuspense>} />
-          <Route path="/en/kit-digital/social-media-management" element={<PageSuspense><Pages.KitDigitalRedesSociales /></PageSuspense>} />
-          <Route path="/en/kit-digital/advanced-presence-seo" element={<PageSuspense><Pages.KitDigitalPresenciaAvanzada /></PageSuspense>} />
-          <Route path="/en/kit-consulting" element={<PageSuspense><Pages.KitConsulting /></PageSuspense>} />
           
 {/* CASE STUDIES - Main page */}
           <Route path="/en/case-studies" element={<PageSuspense><Pages.CaseStudiesEN /></PageSuspense>} />

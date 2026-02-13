@@ -290,14 +290,14 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/services/strategic-consulting-analytics"/>
   </url>
 
-  <!-- KIT DIGITAL -->
+  <!-- KIT DIGITAL (solo ES - programa del gobierno español) -->
   <url>
     <loc>https://hayasmarketing.com/es/kit-digital</loc>
     <lastmod>2026-02-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/kit-digital"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/kit-digital"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hayasmarketing.com/es/kit-digital"/>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/kit-digital/presencia-basica-internet</loc>
@@ -305,7 +305,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/kit-digital/presencia-basica-internet"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/kit-digital/basic-internet-presence"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hayasmarketing.com/es/kit-digital/presencia-basica-internet"/>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/kit-digital/gestion-clientes-crm</loc>
@@ -313,7 +313,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/kit-digital/gestion-clientes-crm"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/kit-digital/crm-client-management"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hayasmarketing.com/es/kit-digital/gestion-clientes-crm"/>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/kit-digital/gestion-red-social</loc>
@@ -321,7 +321,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/kit-digital/gestion-red-social"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/kit-digital/social-media-management"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hayasmarketing.com/es/kit-digital/gestion-red-social"/>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/kit-digital/presencia-avanzada-seo</loc>
@@ -329,7 +329,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/kit-digital/presencia-avanzada-seo"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/kit-digital/advanced-presence-seo"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hayasmarketing.com/es/kit-digital/presencia-avanzada-seo"/>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/kit-consulting</loc>
@@ -337,7 +337,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/kit-consulting"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/kit-consulting"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hayasmarketing.com/es/kit-consulting"/>
   </url>
 
   <!-- BLOG -->
