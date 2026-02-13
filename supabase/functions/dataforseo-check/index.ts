@@ -129,8 +129,8 @@ Deno.serve(async (req) => {
     for (const url of urlsToCheck) {
       try {
         // === 1. SERP Check (fixed query) ===
-        const fullUrl = `https://hayas.marketing${url}`;
-        const searchQuery = `site:hayas.marketing ${url === '/' ? '' : url}`.trim();
+        const fullUrl = `https://hayasmarketing.com${url}`;
+        const searchQuery = `site:hayasmarketing.com ${url === '/' ? '' : url}`.trim();
         console.log(`[SERP] Query: "${searchQuery}" for path: ${url}`);
 
         const serpResponse = await fetch(
@@ -161,10 +161,10 @@ Deno.serve(async (req) => {
         const ourResult = items.find((item: any) => {
           if (item.type !== 'organic') return false;
           const itemUrl = item.url || '';
-          return itemUrl.includes('hayas.marketing') && (
+          return (itemUrl.includes('hayasmarketing.com') || itemUrl.includes('hayas.marketing')) && (
             itemUrl.includes(url) ||
             itemUrl.includes(url.replace(/\/$/, '')) ||
-            (url === '/' && (itemUrl.endsWith('hayas.marketing/') || itemUrl.endsWith('hayas.marketing')))
+            (url === '/' && (itemUrl.endsWith('hayasmarketing.com/') || itemUrl.endsWith('hayasmarketing.com') || itemUrl.endsWith('hayas.marketing/') || itemUrl.endsWith('hayas.marketing')))
           );
         });
 
