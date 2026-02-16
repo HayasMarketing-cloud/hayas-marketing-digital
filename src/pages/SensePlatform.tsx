@@ -109,7 +109,7 @@ const SensePlatform = () => {
 
   const integrations = [
     { name: 'Google Search Console', description: isEnglish ? 'Organic search data' : 'Datos de búsqueda orgánica' },
-    { name: 'DataForSEO', description: isEnglish ? 'Keyword tracking & SERP analysis' : 'Tracking de keywords y análisis SERP' },
+    { name: isEnglish ? 'SEO API' : 'API de SEO', description: isEnglish ? 'Keyword tracking & SERP analysis' : 'Tracking de keywords y análisis SERP' },
     { name: 'HubSpot', description: isEnglish ? 'CRM & marketing automation' : 'CRM y automatización de marketing' },
     { name: 'GoHighLevel', description: isEnglish ? 'CRM for SMBs & agencies' : 'CRM para pymes y agencias' },
     { name: 'Google Analytics', description: isEnglish ? 'Traffic & behavior analytics' : 'Analítica de tráfico y comportamiento' },
