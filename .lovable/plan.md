@@ -1,89 +1,94 @@
 
 
-# Fix de verificacion de indexacion + Auditoria On-Page con DataForSEO
+# SENSE - Plataforma de Inteligencia de Marketing
 
-## Problema 1: La verificacion devuelve "No indexada" incorrectamente
+## Resumen
 
-La busqueda SERP usa `site:hayas.marketing/es` pero devuelve 0 resultados (`se_results_count: 0`). Posibles causas:
-- Google puede indexar la pagina bajo `www.hayas.marketing` u otra variante
-- El depth de 10 resultados es insuficiente
-- El formato de query necesita ajuste
+Integrar SENSE como servicio estrella dentro del pilar **Impulsa tu Marca**, con la keyword principal **"plataforma inteligencia de marketing"** optimizada para buscadores e IAs.
 
-### Solucion
+SENSE sera el primer servicio del pilar, con tratamiento visual destacado (campo `featured`) y una pagina dedicada.
 
-Modificar `supabase/functions/dataforseo-check/index.ts`:
+## Keyword SEO principal
 
-1. **Cambiar la busqueda** para usar la URL completa: `site:hayas.marketing/es` pasa a buscar con la URL absoluta para mayor precision
-2. **Aumentar depth** de 10 a 100 resultados
-3. **Ampliar la deteccion**: buscar tambien variantes con/sin www
-4. **Guardar la raw_response completa** para poder depurar si vuelve a fallar
-5. **Anadir logs de debug** con `console.log` del query enviado y la respuesta recibida para diagnosticar en los logs de la funcion
+- **ES**: "plataforma inteligencia de marketing"
+- **EN**: "marketing intelligence platform"
+- Slug URL: `/es/servicios/plataforma-inteligencia-marketing`
 
-## Problema 2: Anadir auditoria SEO on-page
+## Cambios a implementar
 
-El usuario quiere que al verificar una pagina se descarguen datos de auditoria tecnica para optimizarla (errores, keywords, etc.).
+### 1. Datos del servicio
 
-### Solucion
+**Archivo**: `src/data/services.tsx`
+- Anadir campo `featured?: boolean` al tipo `ServiceItem`
+- Anadir SENSE como id 23, pillar `impulsa`, con `featured: true`
+- Icono: `BrainCircuit` de lucide-react
+- Titulo: "SENSE - Plataforma de Inteligencia de Marketing"
+- Descripcion: "Tu plataforma propia de marketing: SEO tracker, content hub, dashboards y datos conectados en un solo sistema."
+- href: `/es/servicios/plataforma-inteligencia-marketing`
 
-Usar el endpoint **Instant Pages** de DataForSEO (`/v3/on_page/instant_pages`) que audita una URL individual en tiempo real y devuelve:
-- On-page score (0-100)
-- Checks de meta tags (titulo, descripcion, h1, h2, canonical, hreflang)
-- Errores y warnings (imagenes sin alt, enlaces rotos, contenido duplicado, etc.)
-- Metricas de rendimiento (page load time, size)
-- Links internos y externos
-- Keyword density
+**Archivo**: `src/hooks/useServices.ts`
+- Anadir campo `featured?: boolean` al tipo `ServiceItem` y `ServiceDefinition`
+- Anadir la definicion de SENSE como primer elemento (id 23, pillar impulsa, featured true)
+- hrefEn: `/en/services/marketing-intelligence-platform`
 
-### Cambios en la Edge Function `dataforseo-check`
+### 2. Traducciones
 
-Modificar para que haga **dos llamadas** por URL:
+**Archivo**: `src/i18n/translations.ts`
+- Anadir key `serviceItems.sense.title` y `serviceItems.sense.description` en ES y EN
 
-1. **SERP check** (existente, corregido): verifica si esta indexada en Google
-2. **Instant Pages audit** (nuevo): obtiene auditoria on-page completa
+### 3. Componente AllServicesSection
 
-Ambos resultados se guardan en la tabla `indexation_checks` ampliando los campos.
+**Archivo**: `src/components/AllServicesSection.tsx`
+- Detectar servicios con `featured` y renderizarlos con card mas grande (col-span-2 en grid, borde de color, badge "Nuevo")
+- Asegurar que SENSE aparece primero en el filtro "Impulsa"
 
-### Migracion de base de datos
+### 4. Componente MarketingChangedSection
 
-Anadir columnas a `indexation_checks`:
-- `onpage_score` (float) - puntuacion 0-100
-- `total_checks` (jsonb) - resumen de checks (errors, warnings, info counts)
-- `checks_detail` (jsonb) - detalle de cada check individual
-- `meta_info` (jsonb) - info de meta tags detectados
-- `page_timing` (jsonb) - metricas de velocidad
-- `links_info` (jsonb) - conteo de links internos/externos
-- `audit_raw_response` (jsonb) - respuesta completa para referencia
+**Archivo**: `src/components/MarketingChangedSection.tsx`
+- Anadir un subtexto o badge pequeno en la card de "Impulsa tu Marca" que mencione "Incluye SENSE" para generar interes sin romper el layout de 3 columnas
 
-### Cambios en el UI (`PageDetailPanel.tsx`)
+### 5. Contenido SEO (.md)
 
-Ampliar la pestana **Index** para mostrar dos secciones:
+**Archivo**: `public/content/es/servicios/plataforma-inteligencia-marketing.md`
+- Formato E-E-A-T estandar (IA_SUMMARY, metadatos, autor, FAQs)
+- Keyword principal: "plataforma inteligencia de marketing"
+- Contenido: que es SENSE, que incluye, para quien, diferenciadores, FAQs
 
-**Seccion 1 - Estado de Indexacion** (existente, corregida):
-- Badge indexada/no indexada
-- Titulo y snippet en Google
-- Posicion
+**Archivo**: `public/content/en/services/marketing-intelligence-platform.md`
+- Equivalente en ingles
 
-**Seccion 2 - Auditoria On-Page** (nueva):
-- Card con On-Page Score (0-100) con indicador visual de color
-- Lista de errores criticos (rojo)
-- Lista de warnings (amarillo)
-- Info de meta tags detectados vs configurados
-- Metricas de rendimiento (tiempo de carga, tamano)
-- Resumen de links internos/externos
-- Boton "Descargar informe completo" que exporta los datos en JSON
+### 6. Pagina dedicada
 
-El boton "Verificar indexacion" pasa a llamarse "Verificar indexacion y auditar" y ejecuta ambas comprobaciones.
+- Crear componente de pagina para SENSE siguiendo el patron de las paginas de servicio existentes (ej. DisenoWeb)
+- Hero con claim, funcionalidades, casos de uso, FAQs, CTA
+- EnhancedSEO con keyword "plataforma inteligencia de marketing"
 
-## Archivos afectados
+### 7. Ruta
 
-- `supabase/functions/dataforseo-check/index.ts` - Fix de busqueda + nueva llamada a Instant Pages
-- `src/components/admin/seo/PageDetailPanel.tsx` - UI ampliada con seccion de auditoria
-- `src/hooks/useSEOTrackerData.ts` - Incluir nuevos campos de auditoria en el tipo
-- 1 migracion SQL para anadir columnas a `indexation_checks`
+**Archivo**: `src/App.tsx`
+- Anadir ruta `/es/servicios/plataforma-inteligencia-marketing`
+- Anadir ruta EN `/en/services/marketing-intelligence-platform`
+- Lazy import del componente
 
-## Coste estimado
+## Seccion tecnica
 
-Cada verificacion consume 2 llamadas API de DataForSEO:
-- SERP Live Advanced: ~$0.002 por busqueda
-- Instant Pages: ~$0.000125 por pagina
-- Total por pagina: ~$0.002125
+### Orden de implementacion
+
+1. Datos: `services.tsx` + `useServices.ts` (anadir tipo featured + servicio SENSE)
+2. Traducciones: `translations.ts` (keys ES/EN)
+3. Contenidos `.md` (ES y EN con E-E-A-T)
+4. UI: `AllServicesSection` (card destacada) + `MarketingChangedSection` (badge)
+5. Pagina dedicada (componente + ruta en App.tsx)
+
+### Archivos afectados
+
+- `src/data/services.tsx`
+- `src/hooks/useServices.ts`
+- `src/i18n/translations.ts`
+- `src/components/AllServicesSection.tsx`
+- `src/components/MarketingChangedSection.tsx`
+- `public/content/es/servicios/plataforma-inteligencia-marketing.md` (nuevo)
+- `public/content/en/services/marketing-intelligence-platform.md` (nuevo)
+- `src/pages/SensePlatform.tsx` (nuevo)
+- `src/App.tsx` (nueva ruta)
 
