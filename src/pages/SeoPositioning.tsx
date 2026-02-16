@@ -240,7 +240,7 @@ const SeoPositioning = () => {
     ctaSubtitle: isEnglish ? 'We analyze your current positioning and show you what opportunities you have in SEO, AEO and GEO. No commitment.' : 'Analizamos tu posicionamiento actual y te mostramos qué oportunidades tienes en SEO, AEO y GEO. Sin compromiso.',
     ctaPrimary: isEnglish ? 'Evaluate my visibility' : 'Evaluar mi visibilidad',
     ctaSecondary: isEnglish ? 'Talk to SofÍA' : 'Hablar con SofÍA',
-    scheduleMeeting: isEnglish ? '/en/schedule-meeting' : '/agendar-reunion',
+    scheduleMeeting: isEnglish ? '/en/schedule-meeting' : '/es/agendar-reunion',
     contactLink: isEnglish ? '/en/contact' : '/es/contacto',
     // Contact
     contactTitle: isEnglish ? 'Ready to be visible in Google, Bing and AI?' : '¿Preparado para ser visible en Google, Bing e IA?',
