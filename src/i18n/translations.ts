@@ -695,8 +695,8 @@ export const translations = {
         description: 'Gestión completa de tu sistema CRM y estrategias de marketing para máximo rendimiento.'
       },
       sense: {
-        title: 'SENSE - Plataforma de Inteligencia de Marketing',
-        description: 'Tu plataforma propia de marketing: SEO tracker, content hub, dashboards y datos conectados en un solo sistema.'
+        title: 'Tu Web y SEO en una Plataforma a Medida',
+        description: 'Web profesional, contenidos y SEO integrados en tu propia plataforma de marketing. Construida con tecnología moderna e integraciones reales.'
       }
     },
     chatbot: {
@@ -756,7 +756,11 @@ export const translations = {
           description: 'Crecer exige cada vez más coordinación y decisiones, sin que siempre haya un sistema claro detrás.'
         }
       },
-      closing: 'Cada uno de estos momentos requiere un enfoque distinto, pero todos comparten una misma necesidad: ordenar, priorizar y convertir el esfuerzo en resultados reales.'
+      closing: 'Cada uno de estos momentos requiere un enfoque distinto, pero todos comparten una misma necesidad: ordenar, priorizar y convertir el esfuerzo en resultados reales.',
+      senseTitle: 'Todo conectado por SENSE',
+      senseDescription: 'Nuestro sistema de inteligencia de marketing conecta estrategia, datos y ejecución en cada solución. Un solo enfoque que da coherencia a todo lo que hacemos.',
+      senseCta: 'Descubre SENSE',
+      impulsaPlatform: 'Incluye tu plataforma web y SEO a medida'
     }
   },
   en: {
@@ -1455,8 +1459,8 @@ export const translations = {
         description: 'Complete management of your CRM system and marketing strategies for maximum performance.'
       },
       sense: {
-        title: 'SENSE - Marketing Intelligence Platform',
-        description: 'Your own marketing platform: SEO tracker, content hub, dashboards and connected data in one system.'
+        title: 'Your Website & SEO in a Custom Platform',
+        description: 'Professional website, content and SEO integrated into your own marketing platform. Built with modern technology and real integrations.'
       }
     },
     chatbot: {
@@ -1516,7 +1520,11 @@ export const translations = {
           description: 'Growth demands more coordination and decisions, without always having a clear system behind it.'
         }
       },
-      closing: 'Each of these moments requires a different approach, but they all share the same need: to organize, prioritize, and turn effort into real results.'
+      closing: 'Each of these moments requires a different approach, but they all share the same need: to organize, prioritize, and turn effort into real results.',
+      senseTitle: 'All connected by SENSE',
+      senseDescription: 'Our marketing intelligence system connects strategy, data and execution across every solution. One approach that brings coherence to everything we do.',
+      senseCta: 'Discover SENSE',
+      impulsaPlatform: 'Includes your custom web & SEO platform'
     },
     // ============================================
     // SOLUTION PAGES TRANSLATIONS

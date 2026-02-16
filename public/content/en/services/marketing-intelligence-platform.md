@@ -1,11 +1,11 @@
 <!--
-IA_SUMMARY: SENSE is Hayas Marketing's marketing intelligence platform. Designed for agencies, marketing teams, and data-driven companies needing to unify SEO, content, CRM and analytics in one branded system. Includes SEO tracker, content hub, real-time dashboards and CRM integrations. Result: data-driven marketing decisions, centralized execution and full platform ownership.
+IA_SUMMARY: Custom marketing platform by Hayas Marketing. Designed for businesses wanting to professionalize their digital presence with a professional website, SEO tracker, content hub and integrated dashboards. Built with Lovable (React, TypeScript), includes integrations with GSC, DataForSEO, HubSpot and GoHighLevel. Result: your own platform with your brand, your data and your domain.
 -->
 
 ---
-title: "SENSE - Marketing Intelligence Platform"
-description: "Custom marketing intelligence platform: SEO tracker, content hub, dashboards and connected data. Built to order for agencies and marketing teams."
-keywords: ["marketing intelligence platform", "SEO tracker", "content hub", "marketing dashboards", "custom marketing platform", "white-label marketing"]
+title: "Your Website & SEO in a Custom Platform"
+description: "Professional website, content and SEO integrated into your own marketing platform. Built with modern technology, real integrations and your brand."
+keywords: ["marketing intelligence platform", "custom web and SEO", "custom marketing platform", "SEO tracker", "content hub", "marketing dashboards"]
 intent: "commercial"
 author: "Rubén Reyero"
 author_credentials: "CEO at Hayas Marketing | 15+ years in B2B digital marketing"
@@ -13,19 +13,24 @@ date: "2026-02-16"
 canonical: "/en/services/marketing-intelligence-platform"
 ---
 
-# SENSE - Marketing Intelligence Platform
+# Your Website & SEO in a Custom Marketing Platform
 
-## What is SENSE?
+## What is it?
 
-SENSE is Hayas Marketing's proprietary system that unifies marketing strategy, data tracking, content management and performance analytics into a **custom-built branded platform** for each client. It's not a generic SaaS — it's your platform, with your brand, your domain and your data.
+A comprehensive solution combining your professional website, SEO tracking, content management and performance dashboards into **one custom-built platform** for your business. Not a generic SaaS or a template: it's your platform, with your brand, your domain and your data.
+
+This solution is part of **SENSE**, our marketing intelligence system that connects strategy, data and execution.
 
 ## Who is it for?
 
-- **Marketing agencies** that need to deliver branded dashboards and tools to their clients
-- **Marketing teams** that want to centralize SEO, content, CRM and analytics
-- **Multi-brand companies** managing multiple markets from a single unified system
+- **Growing businesses** that want a professional digital presence backed by real data
+- **Marketing teams** that need SEO, content and performance centralized in one platform
+- **Agencies & consultants** that want to deliver branded platforms to their clients
 
 ## What's included?
+
+### Professional Website
+Modern, fast, responsive website built with React and TypeScript. Optimized for conversions and brand consistency.
 
 ### SEO Tracker
 Integrated keyword tracking with Google Search Console and DataForSEO. Monitor positions, indexation and organic performance in real time.
@@ -39,38 +44,41 @@ Real-time analytics connecting SEO, content, CRM and campaign data in a single e
 ### CRM Integration
 Native connections to HubSpot, GoHighLevel and custom CRMs via API. Unified customer data and marketing attribution.
 
-### Reports & Alerts
-Scheduled reporting and intelligent alerts for ranking changes, traffic anomalies and conversion drops.
+## Built with Lovable
 
-### White-Label Platform
-Fully customized with your logo, colors and domain. Your clients see your brand, not ours.
+We build your platform with **Lovable** — modern React and TypeScript technology that delivers:
 
-## Why SENSE?
-
-Unlike generic marketing tools, SENSE is built specifically for your business:
-
+- **Speed**: sub-second load times
+- **Scalability**: grows with your business without performance loss
 - **Full ownership**: you control the data, the brand and the experience
-- **Complete customization**: modules and workflows adapted to your processes
-- **Modern technology**: React, TypeScript, industry-standard APIs
-- **Scalability**: grows with your business without platform changes
+- **Rapid deployment**: from concept to launch in 4-6 weeks
 
-## Implementation process
+No WordPress. No templates. No legacy code.
 
-1. **Strategic diagnosis**: We analyze your needs, current tools and objectives
-2. **Configuration & development**: We build your platform with the necessary modules
-3. **Launch**: Deployment on your domain with team training
-4. **Continuous optimization**: We iterate and expand as your business evolves
+## Integrations
+
+Your platform connects with the tools that matter:
+
+- **Google Search Console**: organic search data
+- **DataForSEO**: keyword tracking & SERP analysis
+- **HubSpot**: CRM & marketing automation
+- **GoHighLevel**: CRM for SMBs & agencies
+- **Google Analytics**: traffic & behavior analytics
+- **Stripe**: payments & subscriptions
 
 ## Frequently asked questions
 
-### How long does implementation take?
-A basic SENSE deployment takes 4-6 weeks. Complex implementations with multiple integrations can take 8-12 weeks.
+### What technology is it built with?
+We use Lovable to build platforms with React and TypeScript — modern, fast and scalable web technology.
 
-### Is SENSE a SaaS product?
-No. Each SENSE platform is custom-built. It's not a login to a shared tool.
+### Is this a shared SaaS product?
+No. Each platform is custom-built. Your domain, your brand, your data.
+
+### How long does implementation take?
+A standard deployment takes 4-6 weeks. Complex implementations can take 8-12 weeks.
 
 ### Can I integrate my existing CRM?
-Yes. SENSE supports native integrations with HubSpot, GoHighLevel and custom API connections.
+Yes. We support native integrations with HubSpot, GoHighLevel and custom API connections.
 
-### Who manages the platform after launch?
-We offer ongoing management plans, or your team can manage it independently with our training and documentation.
+### Does it include SEO optimization?
+Yes. The platform includes built-in SEO best practices, tracking with GSC and DataForSEO, and content tools designed for search visibility.

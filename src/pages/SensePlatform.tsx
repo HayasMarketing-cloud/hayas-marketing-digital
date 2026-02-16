@@ -16,12 +16,14 @@ import {
   FileText,
   BarChart3,
   Link2,
-  Bell,
-  Building2,
-  Users,
-  Globe,
   Layers,
   ArrowRight,
+  Code2,
+  Zap,
+  Shield,
+  Rocket,
+  Globe,
+  Database,
 } from 'lucide-react';
 
 const SensePlatform = () => {
@@ -29,96 +31,115 @@ const SensePlatform = () => {
   const isEnglish = language === 'en';
 
   const content = {
-    serviceName: isEnglish ? 'SENSE - Marketing Intelligence Platform' : 'SENSE - Plataforma de Inteligencia de Marketing',
+    serviceName: isEnglish ? 'Your Website & SEO in a Custom Platform' : 'Tu Web y SEO en una Plataforma a Medida',
     serviceDescription: isEnglish
-      ? 'Your own marketing platform: SEO tracker, content hub, dashboards and connected data in one system. Built for agencies, marketing teams and data-driven companies.'
-      : 'Tu plataforma propia de marketing: SEO tracker, content hub, dashboards y datos conectados en un solo sistema. Diseñada para agencias, equipos de marketing y empresas data-driven.',
+      ? 'Professional website, content and SEO integrated into your own marketing platform. Built with modern technology and real integrations.'
+      : 'Web profesional, contenidos y SEO integrados en tu propia plataforma de marketing. Construida con tecnología moderna e integraciones reales.',
     canonical: isEnglish ? '/en/services/marketing-intelligence-platform' : '/es/servicios/plataforma-inteligencia-marketing',
     features: isEnglish ? [
-      'Custom branded marketing platform',
+      'Professional website with your brand',
       'SEO tracker with GSC & DataForSEO',
       'Content hub with editorial management',
       'Real-time performance dashboards'
     ] : [
-      'Plataforma de marketing con tu marca',
+      'Web profesional con tu marca',
       'SEO tracker con GSC y DataForSEO',
       'Content hub con gestión editorial',
       'Dashboards de rendimiento en tiempo real'
     ],
-
     breadcrumbHome: isEnglish ? 'Home' : 'Inicio',
-    breadcrumbSolutions: isEnglish ? 'Solutions' : 'Soluciones',
-    breadcrumbCurrent: isEnglish ? 'SENSE Platform' : 'Plataforma SENSE',
+    breadcrumbSolutions: isEnglish ? 'Boost Your Brand' : 'Impulsa tu Marca',
+    breadcrumbCurrent: isEnglish ? 'Custom Web & SEO Platform' : 'Plataforma Web y SEO a Medida',
     homeLink: isEnglish ? '/en' : '/es',
     solutionsLink: isEnglish ? '/en/solutions/boost-your-brand' : '/es/soluciones/impulsa-tu-marca',
-
     heroTitle: isEnglish
-      ? <>Your <span className="text-gradient-primary">Marketing Intelligence</span> Platform</>
-      : <>Tu Plataforma de <span className="text-gradient-primary">Inteligencia de Marketing</span></>,
+      ? <>Your <span className="text-gradient-primary">Marketing Platform</span>, Built to Measure</>
+      : <>Tu Plataforma de <span className="text-gradient-primary">Marketing a Medida</span></>,
     heroSubtitle: isEnglish
-      ? 'Connect strategy, data and execution in a custom-built platform for your business. Not a generic SaaS — your own system, with your brand.'
-      : 'Conecta estrategia, datos y ejecución en una plataforma construida a medida para tu negocio. No es un SaaS genérico — es TU sistema, con TU marca.',
-
-    whatIsTitle: isEnglish ? 'What is SENSE?' : '¿Qué es SENSE?',
+      ? 'A professional website, content management and SEO tracking — all integrated in one custom platform built specifically for your business.'
+      : 'Web profesional, gestión de contenidos y seguimiento SEO — todo integrado en una plataforma construida específicamente para tu negocio.',
+    whatIsTitle: isEnglish ? 'What does it include?' : '¿Qué incluye?',
     whatIsDescription: isEnglish
-      ? 'SENSE is our proprietary system that unifies marketing strategy, data tracking, content management and performance analytics into a single branded platform. Built with modern technology, each SENSE deployment is customized to the client\'s specific needs.'
-      : 'SENSE es nuestro sistema propietario que unifica estrategia de marketing, seguimiento de datos, gestión de contenidos y analítica de rendimiento en una única plataforma con tu marca. Construida con tecnología moderna, cada implementación de SENSE se personaliza según las necesidades específicas del cliente.',
-
-    featuresTitle: isEnglish ? 'What\'s included' : 'Qué incluye',
-    
-    useCasesTitle: isEnglish ? 'Who is it for?' : '¿Para quién es?',
-    
-    differentiatorTitle: isEnglish ? 'Why SENSE?' : '¿Por qué SENSE?',
-    differentiatorDescription: isEnglish
-      ? 'Unlike generic marketing tools, SENSE is YOUR platform. Custom-built, white-labeled, and tailored to your workflows. You own the data, the brand, and the experience.'
-      : 'A diferencia de las herramientas genéricas de marketing, SENSE es TU plataforma. Construida a medida, con tu marca y adaptada a tus flujos de trabajo. Tú controlas los datos, la marca y la experiencia.',
-
-    ctaTitle: isEnglish ? 'Ready to unify your marketing?' : '¿Listo para unificar tu marketing?',
+      ? 'Not just a website. A complete digital presence system: your website, SEO monitoring, content management and performance dashboards — connected, branded and built with modern technology.'
+      : 'No es solo una web. Es un sistema completo de presencia digital: tu web, monitorización SEO, gestión de contenidos y dashboards de rendimiento — conectados, con tu marca y construidos con tecnología moderna.',
+    builtWithTitle: isEnglish ? 'Built with Lovable' : 'Construido con Lovable',
+    builtWithDescription: isEnglish
+      ? 'We build your platform with Lovable — modern React and TypeScript technology that delivers speed, scalability and a professional experience. No WordPress. No templates. Your own platform, ready to grow with you.'
+      : 'Construimos tu plataforma con Lovable — tecnología moderna React y TypeScript que ofrece velocidad, escalabilidad y una experiencia profesional. Sin WordPress. Sin plantillas. Tu propia plataforma, lista para crecer contigo.',
+    integrationsTitle: isEnglish ? 'Real integrations' : 'Integraciones reales',
+    integrationsDescription: isEnglish
+      ? 'Your platform connects with the tools that matter: Google Search Console, DataForSEO, HubSpot, GoHighLevel, analytics platforms and more. Real data, real-time.'
+      : 'Tu plataforma se conecta con las herramientas que importan: Google Search Console, DataForSEO, HubSpot, GoHighLevel, plataformas de analítica y más. Datos reales, en tiempo real.',
+    forWhomTitle: isEnglish ? 'Who is it for?' : '¿Para quién es?',
+    ctaTitle: isEnglish ? 'Ready to professionalize your digital presence?' : '¿Listo para profesionalizar tu presencia digital?',
     ctaDescription: isEnglish
-      ? 'Schedule a strategic session to explore how SENSE can transform your marketing operations.'
-      : 'Agenda una sesión estratégica para explorar cómo SENSE puede transformar tus operaciones de marketing.',
+      ? 'Schedule a strategic session to explore how we can build your custom marketing platform.'
+      : 'Agenda una sesión estratégica para explorar cómo construir tu plataforma de marketing a medida.',
     ctaButton: isEnglish ? 'Schedule a demo' : 'Agendar una demo',
     ctaLink: isEnglish ? '/en/contact' : '/es/contacto',
   };
 
   const featuresList = isEnglish ? [
+    { icon: Globe, title: 'Professional Website', description: 'Modern, fast, responsive website built with React. Optimized for conversions and brand consistency.' },
     { icon: Search, title: 'SEO Tracker', description: 'Integrated keyword tracking with Google Search Console and DataForSEO. Monitor positions, indexation and organic performance.' },
     { icon: FileText, title: 'Content Hub', description: 'Editorial management with briefings, content calendars, and AI-assisted content creation workflows.' },
-    { icon: BarChart3, title: 'Performance Dashboards', description: 'Real-time analytics dashboards that connect SEO, content, CRM and campaign data in one view.' },
+    { icon: BarChart3, title: 'Performance Dashboards', description: 'Real-time analytics connecting SEO, content, CRM and campaign data in one view.' },
     { icon: Link2, title: 'CRM Integration', description: 'Native connections to HubSpot, GoHighLevel and other CRMs. Unified customer data and marketing attribution.' },
-    { icon: Bell, title: 'Automated Reports & Alerts', description: 'Scheduled reporting and intelligent alerts for ranking changes, traffic anomalies and conversion drops.' },
-    { icon: Layers, title: 'White-Label Platform', description: 'Fully branded with your logo, colors and domain. Your clients see your brand, not ours.' },
+    { icon: Layers, title: 'White-Label Platform', description: 'Fully branded with your logo, colors and domain. It\'s your platform, not a shared tool.' },
   ] : [
+    { icon: Globe, title: 'Web Profesional', description: 'Web moderna, rápida y responsive construida con React. Optimizada para conversiones y coherencia de marca.' },
     { icon: Search, title: 'SEO Tracker', description: 'Seguimiento de keywords integrado con Google Search Console y DataForSEO. Monitoriza posiciones, indexación y rendimiento orgánico.' },
     { icon: FileText, title: 'Content Hub', description: 'Gestión editorial con briefings, calendarios de contenido y flujos de creación asistidos por IA.' },
     { icon: BarChart3, title: 'Dashboards de Rendimiento', description: 'Analítica en tiempo real que conecta datos de SEO, contenidos, CRM y campañas en una sola vista.' },
     { icon: Link2, title: 'Integración CRM', description: 'Conexiones nativas con HubSpot, GoHighLevel y otros CRMs. Datos unificados de clientes y atribución de marketing.' },
-    { icon: Bell, title: 'Informes y Alertas Automáticas', description: 'Reporting programado y alertas inteligentes ante cambios de ranking, anomalías de tráfico y caídas de conversión.' },
-    { icon: Layers, title: 'Plataforma White-Label', description: 'Totalmente personalizada con tu logo, colores y dominio. Tus clientes ven tu marca, no la nuestra.' },
+    { icon: Layers, title: 'Plataforma con tu Marca', description: 'Totalmente personalizada con tu logo, colores y dominio. Es tu plataforma, no una herramienta compartida.' },
   ];
 
-  const useCases = isEnglish ? [
-    { icon: Building2, title: 'Agencies', description: 'Build branded platforms for your clients. Deliver dashboards, SEO tracking and content management under your brand.' },
-    { icon: Users, title: 'Marketing Teams', description: 'Centralize data and execution. Stop switching between 10 tools — one platform for strategy, content and analytics.' },
-    { icon: Globe, title: 'Multi-brand Companies', description: 'Manage multiple brands, markets or business units from a single unified system with role-based access.' },
+  const builtWithFeatures = isEnglish ? [
+    { icon: Code2, title: 'Modern Technology', description: 'React, TypeScript and component architecture. No legacy code, no plugin soup.' },
+    { icon: Zap, title: 'Fast & Scalable', description: 'Sub-second load times. Grows with your business without performance loss.' },
+    { icon: Shield, title: 'Secure & Owned', description: 'You own your platform. Your data, your domain, your brand — always.' },
+    { icon: Rocket, title: 'Rapid Deployment', description: 'From concept to launch in 4-6 weeks. No 6-month development cycles.' },
   ] : [
-    { icon: Building2, title: 'Agencias', description: 'Construye plataformas propias para tus clientes. Entrega dashboards, tracking SEO y gestión de contenidos bajo tu marca.' },
-    { icon: Users, title: 'Equipos de Marketing', description: 'Centraliza datos y ejecución. Deja de saltar entre 10 herramientas — una sola plataforma para estrategia, contenido y analítica.' },
-    { icon: Globe, title: 'Empresas Multi-marca', description: 'Gestiona múltiples marcas, mercados o unidades de negocio desde un sistema unificado con acceso por roles.' },
+    { icon: Code2, title: 'Tecnología Moderna', description: 'React, TypeScript y arquitectura de componentes. Sin código legacy, sin soup de plugins.' },
+    { icon: Zap, title: 'Rápida y Escalable', description: 'Tiempos de carga por debajo del segundo. Crece con tu negocio sin perder rendimiento.' },
+    { icon: Shield, title: 'Segura y Propia', description: 'Tú eres dueño de tu plataforma. Tus datos, tu dominio, tu marca — siempre.' },
+    { icon: Rocket, title: 'Despliegue Rápido', description: 'De concepto a lanzamiento en 4-6 semanas. Sin ciclos de desarrollo de 6 meses.' },
+  ];
+
+  const integrations = [
+    { name: 'Google Search Console', description: isEnglish ? 'Organic search data' : 'Datos de búsqueda orgánica' },
+    { name: 'DataForSEO', description: isEnglish ? 'Keyword tracking & SERP analysis' : 'Tracking de keywords y análisis SERP' },
+    { name: 'HubSpot', description: isEnglish ? 'CRM & marketing automation' : 'CRM y automatización de marketing' },
+    { name: 'GoHighLevel', description: isEnglish ? 'CRM for SMBs & agencies' : 'CRM para pymes y agencias' },
+    { name: 'Google Analytics', description: isEnglish ? 'Traffic & behavior analytics' : 'Analítica de tráfico y comportamiento' },
+    { name: 'Stripe', description: isEnglish ? 'Payments & subscriptions' : 'Pagos y suscripciones' },
+  ];
+
+  const forWhom = isEnglish ? [
+    { title: 'Growing businesses', description: 'Companies that want a professional digital presence backed by real data, not just a pretty website.' },
+    { title: 'Marketing teams', description: 'Teams that need SEO, content and performance data centralized in one platform instead of 10 separate tools.' },
+    { title: 'Agencies & consultants', description: 'Professionals who want to deliver branded platforms to their clients with real tracking capabilities.' },
+  ] : [
+    { title: 'Empresas en crecimiento', description: 'Empresas que quieren una presencia digital profesional respaldada por datos reales, no solo una web bonita.' },
+    { title: 'Equipos de marketing', description: 'Equipos que necesitan SEO, contenidos y datos de rendimiento centralizados en una plataforma, no en 10 herramientas separadas.' },
+    { title: 'Agencias y consultores', description: 'Profesionales que quieren entregar plataformas con su marca a sus clientes con capacidades reales de seguimiento.' },
   ];
 
   const faqs = isEnglish ? [
-    { question: 'What technology does SENSE use?', answer: 'SENSE is built with modern web technologies (React, TypeScript) and integrates with industry-standard APIs like Google Search Console and DataForSEO for data accuracy.' },
-    { question: 'Is SENSE a SaaS product?', answer: 'No. Each SENSE platform is custom-built for the client. It\'s not a login to a shared tool — it\'s your own platform, hosted under your domain with your branding.' },
-    { question: 'How long does implementation take?', answer: 'A basic SENSE deployment takes 4-6 weeks. Complex implementations with multiple integrations and custom modules can take 8-12 weeks.' },
-    { question: 'Can I integrate my existing CRM?', answer: 'Yes. SENSE supports native integrations with HubSpot, GoHighLevel, and custom CRM connections via API.' },
-    { question: 'Who manages the platform after launch?', answer: 'We offer ongoing management and optimization plans, or your team can manage it independently with our training and documentation.' },
+    { question: 'What technology is the platform built with?', answer: 'We use Lovable to build platforms with React and TypeScript — modern, fast and scalable web technology. No WordPress, no templates.' },
+    { question: 'Is this a shared SaaS product?', answer: 'No. Each platform is custom-built for you. Your domain, your brand, your data. It\'s not a login to a shared tool.' },
+    { question: 'How long does implementation take?', answer: 'A standard deployment takes 4-6 weeks. Complex implementations with multiple integrations can take 8-12 weeks.' },
+    { question: 'Can I integrate my existing CRM?', answer: 'Yes. We support native integrations with HubSpot, GoHighLevel, and custom CRM connections via API.' },
+    { question: 'What happens after launch?', answer: 'We offer ongoing management and optimization plans. Or your team can manage it independently with our training and documentation.' },
+    { question: 'Does it include SEO optimization?', answer: 'Yes. The platform includes built-in SEO best practices, integrated tracking with GSC and DataForSEO, and content tools designed for search visibility.' },
   ] : [
-    { question: '¿Qué tecnología usa SENSE?', answer: 'SENSE está construido con tecnologías web modernas (React, TypeScript) e integra APIs estándar de la industria como Google Search Console y DataForSEO para la precisión de datos.' },
-    { question: '¿Es SENSE un producto SaaS?', answer: 'No. Cada plataforma SENSE se construye a medida para el cliente. No es un login a una herramienta compartida — es tu propia plataforma, alojada en tu dominio con tu marca.' },
-    { question: '¿Cuánto tarda la implementación?', answer: 'Un despliegue básico de SENSE tarda 4-6 semanas. Implementaciones complejas con múltiples integraciones y módulos personalizados pueden llevar 8-12 semanas.' },
-    { question: '¿Puedo integrar mi CRM actual?', answer: 'Sí. SENSE soporta integraciones nativas con HubSpot, GoHighLevel y conexiones CRM personalizadas vía API.' },
-    { question: '¿Quién gestiona la plataforma tras el lanzamiento?', answer: 'Ofrecemos planes de gestión y optimización continua, o tu equipo puede gestionarla de forma independiente con nuestra formación y documentación.' },
+    { question: '¿Con qué tecnología se construye la plataforma?', answer: 'Usamos Lovable para construir plataformas con React y TypeScript — tecnología web moderna, rápida y escalable. Sin WordPress, sin plantillas.' },
+    { question: '¿Es un producto SaaS compartido?', answer: 'No. Cada plataforma se construye a medida para ti. Tu dominio, tu marca, tus datos. No es un login a una herramienta compartida.' },
+    { question: '¿Cuánto tarda la implementación?', answer: 'Un despliegue estándar tarda 4-6 semanas. Implementaciones complejas con múltiples integraciones pueden llevar 8-12 semanas.' },
+    { question: '¿Puedo integrar mi CRM actual?', answer: 'Sí. Soportamos integraciones nativas con HubSpot, GoHighLevel y conexiones CRM personalizadas vía API.' },
+    { question: '¿Qué pasa después del lanzamiento?', answer: 'Ofrecemos planes de gestión y optimización continua. O tu equipo puede gestionarla de forma independiente con nuestra formación y documentación.' },
+    { question: '¿Incluye optimización SEO?', answer: 'Sí. La plataforma incluye buenas prácticas SEO integradas, tracking con GSC y DataForSEO, y herramientas de contenido diseñadas para visibilidad en buscadores.' },
   ];
 
   return (
@@ -143,7 +164,7 @@ const SensePlatform = () => {
           <div className="container mx-auto px-4 max-w-4xl text-center">
             <div className="inline-flex items-center gap-2 rounded-full bg-impulsa/10 px-4 py-1.5 text-sm font-medium text-impulsa mb-6">
               <BrainCircuit size={16} />
-              <span>SENSE Platform</span>
+              <span>{isEnglish ? 'SENSE Platform' : 'Plataforma SENSE'}</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-dm-sans text-foreground mb-6 leading-tight">
               {content.heroTitle}
@@ -159,24 +180,17 @@ const SensePlatform = () => {
           </div>
         </section>
 
-        {/* What is SENSE */}
+        {/* What's included */}
         <section className="py-16 bg-muted/30">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <h2 className="text-3xl md:text-4xl font-bold font-dm-sans text-foreground mb-6 text-center">
+          <div className="container mx-auto px-4 max-w-4xl text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold font-dm-sans text-foreground mb-6">
               {content.whatIsTitle}
             </h2>
-            <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               {content.whatIsDescription}
             </p>
           </div>
-        </section>
-
-        {/* Features */}
-        <section className="py-16 bg-background">
           <div className="container mx-auto px-4 max-w-6xl">
-            <h2 className="text-3xl md:text-4xl font-bold font-dm-sans text-foreground mb-12 text-center">
-              {content.featuresTitle}
-            </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {featuresList.map((feature, idx) => (
                 <Card key={idx} className="border border-border/50 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
@@ -191,37 +205,72 @@ const SensePlatform = () => {
           </div>
         </section>
 
-        <IntermediateCTA />
-
-        {/* Use Cases */}
-        <section className="py-16 bg-muted/30">
+        {/* Built with Lovable */}
+        <section className="py-16 bg-background">
           <div className="container mx-auto px-4 max-w-5xl">
-            <h2 className="text-3xl md:text-4xl font-bold font-dm-sans text-foreground mb-12 text-center">
-              {content.useCasesTitle}
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {useCases.map((useCase, idx) => (
-                <div key={idx} className="text-center p-6">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-impulsa/10 mb-4">
-                    <useCase.icon className="h-8 w-8 text-impulsa" />
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold font-dm-sans text-foreground mb-6">
+                {content.builtWithTitle}
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                {content.builtWithDescription}
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {builtWithFeatures.map((feature, idx) => (
+                <div key={idx} className="text-center p-6 rounded-xl bg-muted/30">
+                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 mb-4">
+                    <feature.icon className="h-6 w-6 text-primary" />
                   </div>
-                  <h3 className="text-xl font-semibold font-dm-sans text-foreground mb-3">{useCase.title}</h3>
-                  <p className="text-muted-foreground">{useCase.description}</p>
+                  <h3 className="text-base font-semibold font-dm-sans text-foreground mb-2">{feature.title}</h3>
+                  <p className="text-sm text-muted-foreground">{feature.description}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Differentiator */}
+        {/* Integrations */}
+        <section className="py-16 bg-muted/30">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold font-dm-sans text-foreground mb-6">
+                {content.integrationsTitle}
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                {content.integrationsDescription}
+              </p>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              {integrations.map((integration, idx) => (
+                <div key={idx} className="flex items-center gap-3 p-4 rounded-lg bg-card border border-border/50">
+                  <Database className="h-5 w-5 text-impulsa flex-shrink-0" />
+                  <div>
+                    <p className="text-sm font-semibold text-foreground">{integration.name}</p>
+                    <p className="text-xs text-muted-foreground">{integration.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <IntermediateCTA />
+
+        {/* For whom */}
         <section className="py-16 bg-background">
-          <div className="container mx-auto px-4 max-w-4xl text-center">
-            <h2 className="text-3xl md:text-4xl font-bold font-dm-sans text-foreground mb-6">
-              {content.differentiatorTitle}
+          <div className="container mx-auto px-4 max-w-5xl">
+            <h2 className="text-3xl md:text-4xl font-bold font-dm-sans text-foreground mb-12 text-center">
+              {content.forWhomTitle}
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
-              {content.differentiatorDescription}
-            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {forWhom.map((item, idx) => (
+                <div key={idx} className="p-6 rounded-xl border border-border/50 bg-card">
+                  <h3 className="text-xl font-semibold font-dm-sans text-foreground mb-3">{item.title}</h3>
+                  <p className="text-muted-foreground">{item.description}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Rocket, Heart, TrendingUp } from 'lucide-react';
+import { Rocket, Heart, TrendingUp, BrainCircuit, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from '@/hooks/useTranslation';
 import { useLanguageNavigation } from '@/hooks/useLanguageNavigation';
@@ -96,14 +96,14 @@ const MarketingChangedSection = () => {
                 <h3 className="text-lg font-semibold font-dm-sans text-foreground mb-3">
                   {t(`marketingChanged.moments.${moment.key}.title`)}
                 </h3>
-                {moment.solutionKey === 'impulsa' && (
-                  <span className="inline-flex items-center rounded-full bg-impulsa/10 px-2.5 py-0.5 text-xs font-medium text-impulsa mb-2">
-                    Incluye SENSE
-                  </span>
-                )}
-                <p className="text-elegant-muted text-sm leading-relaxed mb-4">
+                <p className="text-elegant-muted text-sm leading-relaxed mb-2">
                   {t(`marketingChanged.moments.${moment.key}.description`)}
                 </p>
+                {moment.solutionKey === 'impulsa' && (
+                  <p className="text-xs font-medium text-impulsa mb-2">
+                    {t('marketingChanged.impulsaPlatform')}
+                  </p>
+                )}
                 <Button
                   variant={moment.buttonVariant}
                   size="sm"
@@ -117,6 +117,27 @@ const MarketingChangedSection = () => {
               </div>
             );
           })}
+        </div>
+
+        {/* SENSE Transversal */}
+        <div className="max-w-3xl mx-auto mb-12">
+          <div className="p-8 rounded-2xl border border-primary/20 bg-primary/5 text-center">
+            <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 mb-4">
+              <BrainCircuit className="h-7 w-7 text-primary" strokeWidth={1.5} />
+            </div>
+            <h3 className="text-xl md:text-2xl font-semibold font-dm-sans text-foreground mb-3">
+              {t('marketingChanged.senseTitle')}
+            </h3>
+            <p className="text-elegant-muted text-base md:text-lg mb-5 max-w-2xl mx-auto">
+              {t('marketingChanged.senseDescription')}
+            </p>
+            <Button variant="outline" size="sm" asChild className="group">
+              <Link to={isEnglish ? '/en/services/marketing-intelligence-platform' : '/es/servicios/plataforma-inteligencia-marketing'}>
+                {t('marketingChanged.senseCta')}
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </Button>
+          </div>
         </div>
 
         {/* Closing */}
