@@ -76,7 +76,7 @@ const SensePlatform = () => {
       ? 'Schedule a strategic session to explore how we can build your custom marketing platform.'
       : 'Agenda una sesión estratégica para explorar cómo construir tu plataforma de marketing a medida.',
     ctaButton: isEnglish ? 'Schedule a demo' : 'Agendar una demo',
-    ctaLink: isEnglish ? '/en/contact' : '/es/contacto',
+    ctaLink: isEnglish ? '/en/schedule-meeting' : '/es/agendar-reunion',
   };
 
   const featuresList = isEnglish ? [
