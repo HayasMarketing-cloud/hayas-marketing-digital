@@ -31,11 +31,11 @@ const SensePlatform = () => {
   const isEnglish = language === 'en';
 
   const content = {
-    serviceName: isEnglish ? 'Your Website & SEO in a Custom Platform' : 'Tu Web y SEO en una Plataforma a Medida',
+    serviceName: isEnglish ? 'SENSE - Marketing Intelligence Platform' : 'SENSE - Plataforma de Inteligencia de Marketing',
     serviceDescription: isEnglish
-      ? 'Professional website, content and SEO integrated into your own marketing platform. Built with modern technology and real integrations.'
-      : 'Web profesional, contenidos y SEO integrados en tu propia plataforma de marketing. Construida con tecnología moderna e integraciones reales.',
-    canonical: isEnglish ? '/en/services/marketing-intelligence-platform' : '/es/servicios/plataforma-inteligencia-marketing',
+      ? 'Marketing intelligence platform that connects strategy, data and execution. Built with modern technology and real integrations.'
+      : 'Plataforma de inteligencia de marketing que conecta estrategia, datos y ejecución. Construida con tecnología moderna e integraciones reales.',
+    canonical: isEnglish ? '/en/solutions/marketing-intelligence-platform' : '/es/soluciones/plataforma-inteligencia-marketing',
     features: isEnglish ? [
       'Professional website with your brand',
       'SEO tracker with GSC & DataForSEO',
@@ -48,16 +48,16 @@ const SensePlatform = () => {
       'Dashboards de rendimiento en tiempo real'
     ],
     breadcrumbHome: isEnglish ? 'Home' : 'Inicio',
-    breadcrumbSolutions: isEnglish ? 'Boost Your Brand' : 'Impulsa tu Marca',
-    breadcrumbCurrent: isEnglish ? 'Custom Web & SEO Platform' : 'Plataforma Web y SEO a Medida',
+    breadcrumbSolutions: isEnglish ? 'Solutions' : 'Soluciones',
+    breadcrumbCurrent: isEnglish ? 'SENSE Platform' : 'Plataforma SENSE',
     homeLink: isEnglish ? '/en' : '/es',
-    solutionsLink: isEnglish ? '/en/solutions/boost-your-brand' : '/es/soluciones/impulsa-tu-marca',
+    solutionsLink: isEnglish ? '/en#solutions' : '/es#soluciones',
     heroTitle: isEnglish
-      ? <>Your <span className="text-gradient-primary">Marketing Platform</span>, Built to Measure</>
-      : <>Tu Plataforma de <span className="text-gradient-primary">Marketing a Medida</span></>,
+      ? <>SENSE: Your <span className="text-gradient-primary">Marketing Intelligence</span> Platform</>
+      : <>SENSE: Tu Plataforma de <span className="text-gradient-primary">Inteligencia de Marketing</span></>,
     heroSubtitle: isEnglish
-      ? 'A professional website, content management and SEO tracking — all integrated in one custom platform built specifically for your business.'
-      : 'Web profesional, gestión de contenidos y seguimiento SEO — todo integrado en una plataforma construida específicamente para tu negocio.',
+      ? 'Strategy, data and execution connected in one platform. Your website, SEO monitoring, content management and performance dashboards — all integrated and built for your business.'
+      : 'Estrategia, datos y ejecución conectados en una plataforma. Tu web, monitorización SEO, gestión de contenidos y dashboards de rendimiento — todo integrado y construido para tu negocio.',
     whatIsTitle: isEnglish ? 'What does it include?' : '¿Qué incluye?',
     whatIsDescription: isEnglish
       ? 'Not just a website. A complete digital presence system: your website, SEO monitoring, content management and performance dashboards — connected, branded and built with modern technology.'

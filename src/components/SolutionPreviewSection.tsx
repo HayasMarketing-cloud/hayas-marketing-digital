@@ -22,7 +22,15 @@ const SolutionPreviewSection: React.FC = () => {
     },
     {
       icon: <BarChart3 className="h-5 w-5" />,
-      text: isEnglish ? "SEO optimized for Google" : "SEO optimizado para Google"
+      text: isEnglish ? "SEO optimized for Google and AI" : "SEO optimizado para Google e IAs"
+    },
+    {
+      icon: <Zap className="h-5 w-5" />,
+      text: isEnglish ? "Built with Lovable (React + TypeScript)" : "Construida con Lovable (React + TypeScript)"
+    },
+    {
+      icon: <BarChart3 className="h-5 w-5" />,
+      text: isEnglish ? "CRM and analytics integrations" : "Integraciones con CRM y analítica"
     }
   ];
 
@@ -41,8 +49,8 @@ const SolutionPreviewSection: React.FC = () => {
             </h2>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
               {isEnglish
-                ? "We develop professional websites that combine exceptional design, advanced technology and conversion strategy to grow your business."
-                : "Desarrollamos sitios web profesionales que combinan diseño excepcional, tecnología avanzada y estrategia de conversión para hacer crecer tu negocio."}
+                ? "We develop professional websites with Lovable that combine exceptional design, applied AI, real integrations and conversion strategy to grow your business."
+                : "Desarrollamos sitios web profesionales con Lovable que combinan diseño excepcional, IA aplicada, integraciones reales y estrategia de conversión para hacer crecer tu negocio."}
             </p>
             
             <div className="grid grid-cols-1 gap-4 mb-8">

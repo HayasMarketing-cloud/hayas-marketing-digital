@@ -3,14 +3,14 @@ IA_SUMMARY: Plataforma de marketing a medida de Hayas Marketing. Diseñada para 
 -->
 
 ---
-title: "Tu Web y SEO en una Plataforma a Medida"
-description: "Web profesional, contenidos y SEO integrados en tu propia plataforma de marketing. Construida con tecnología moderna, integraciones reales y tu marca."
-keywords: ["plataforma inteligencia de marketing", "web y SEO a medida", "plataforma marketing personalizada", "SEO tracker", "content hub", "dashboards marketing"]
+title: "SENSE - Plataforma de Inteligencia de Marketing"
+description: "Plataforma de inteligencia de marketing que conecta estrategia, datos y ejecución. Web profesional, SEO tracker, content hub y dashboards integrados."
+keywords: ["plataforma inteligencia de marketing", "SENSE", "marketing intelligence", "SEO tracker", "content hub", "dashboards marketing"]
 intent: "commercial"
 author: "Rubén Reyero"
 author_credentials: "CEO de Hayas Marketing | 15+ años en marketing digital B2B"
 date: "2026-02-16"
-canonical: "/es/servicios/plataforma-inteligencia-marketing"
+canonical: "/es/soluciones/plataforma-inteligencia-marketing"
 ---
 
 # Tu Web y SEO en una Plataforma de Marketing a Medida

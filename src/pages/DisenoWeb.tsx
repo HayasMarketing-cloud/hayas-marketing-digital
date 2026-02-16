@@ -14,6 +14,7 @@ import ServiceContactSection from '@/components/ServiceContactSection';
 import PainPointsSection from '@/components/PainPointsSection';
 import SolutionPreviewSection from '@/components/SolutionPreviewSection';
 import IntermediateCTA from '@/components/IntermediateCTA';
+import TechnologyPlatformSection from '@/components/TechnologyPlatformSection';
 import BenefitsGridSection from '@/components/BenefitsGridSection';
 import { useServiceSEO } from '@/hooks/useServiceSEO';
 import { useFAQSEO } from '@/hooks/useFAQSEO';
@@ -28,18 +29,22 @@ const DisenoWeb = () => {
     // SEO
     serviceName: isEnglish ? 'Professional Web Design' : 'Diseño Web Profesional',
     serviceDescription: isEnglish 
-      ? 'We design professional, fast and conversion-optimized websites: UX/UI, technical SEO and responsive development.'
-      : 'Diseñamos webs profesionales, rápidas y optimizadas para conversión: UX/UI, SEO técnico y desarrollo responsive.',
+      ? 'We design professional websites with Lovable: fast, modern, with applied AI, integrated SEO and CRM connections.'
+      : 'Diseñamos webs profesionales con Lovable: rápidas, modernas, con IA aplicada, SEO integrado y conexiones con CRM.',
     canonical: isEnglish ? '/en/services/web-design' : '/es/servicios/diseno-web',
     features: isEnglish ? [
       'Responsive design and optimized UX',
       'Integrated technical SEO',
-      'Development with modern technologies',
+      'Built with Lovable (React + TypeScript)',
+      'CRM and analytics integrations',
+      'Applied AI for content and SEO',
       'Continuous support and maintenance'
     ] : [
       'Diseño responsive y UX optimizado',
       'SEO técnico integrado',
-      'Desarrollo con tecnologías modernas',
+      'Construida con Lovable (React + TypeScript)',
+      'Integraciones con CRM y analítica',
+      'IA aplicada a contenidos y SEO',
       'Soporte y mantenimiento continuo'
     ],
     
@@ -103,7 +108,11 @@ const DisenoWeb = () => {
     },
     {
       question: "What technologies do you use for development?",
-      answer: "We use the best technologies for each project: WordPress for corporate sites, React for advanced web applications, and modern technologies like HTML5, CSS3, JavaScript ES6+. We always choose the most appropriate tech stack for each case."
+      answer: "We build with Lovable — modern React and TypeScript technology that delivers speed, scalability and a professional experience. We also work with WordPress for content-focused projects. All websites include CRM integrations, applied AI for content and SEO, and connections to tools like Google Search Console and analytics platforms."
+    },
+    {
+      question: "Do you use artificial intelligence in web development?",
+      answer: "Yes. We apply AI to optimize content creation, automate SEO workflows, and integrate intelligent assistants like chatbots. AI helps us deliver faster, smarter websites that adapt to your marketing strategy."
     },
     {
       question: "Will the website be mobile optimized?",
@@ -144,7 +153,11 @@ const DisenoWeb = () => {
     },
     {
       question: "¿Qué tecnologías utilizan para el desarrollo?",
-      answer: "Utilizamos las mejores tecnologías según el proyecto: WordPress para sitios corporativos, React para aplicaciones web avanzadas, y tecnologías modernas como HTML5, CSS3, JavaScript ES6+. Siempre elegimos la stack tecnológica más adecuada para cada caso."
+      answer: "Construimos con Lovable — tecnología moderna React y TypeScript que ofrece velocidad, escalabilidad y una experiencia profesional. También trabajamos con WordPress para proyectos centrados en contenido. Todas las webs incluyen integraciones con CRM, IA aplicada a contenidos y SEO, y conexiones con herramientas como Google Search Console y plataformas de analítica."
+    },
+    {
+      question: "¿Utilizan inteligencia artificial en el desarrollo web?",
+      answer: "Sí. Aplicamos IA para optimizar la creación de contenidos, automatizar workflows de SEO e integrar asistentes inteligentes como chatbots. La IA nos permite entregar webs más rápidas e inteligentes que se adaptan a tu estrategia de marketing."
     },
     {
       question: "¿La web estará optimizada para móviles?",
@@ -231,6 +244,9 @@ const DisenoWeb = () => {
 
       {/* Sección 4: Beneficios */}
       <BenefitsGridSection />
+
+      {/* Sección 4b: Tecnología y Plataforma */}
+      <TechnologyPlatformSection />
 
       {/* Sección 5: Prueba social */}
       <SuccessCasesSection

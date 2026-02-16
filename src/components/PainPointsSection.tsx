@@ -29,10 +29,10 @@ const PainPointsSection: React.FC = () => {
     },
     {
       icon: <TrendingDown className="h-12 w-12 text-purple-500" />,
-      title: isEnglish ? "Low conversion" : "Baja conversión",
+      title: isEnglish ? "No integrations" : "Sin integraciones",
       description: isEnglish
-        ? "Visitors arrive but don't convert into leads or customers due to usability issues."
-        : "Los visitantes llegan pero no se convierten en leads o clientes por problemas de usabilidad."
+        ? "Leads get lost because your website is not connected to a CRM, analytics or automation tools."
+        : "Los leads se pierden porque tu web no está conectada con un CRM, analítica ni herramientas de automatización."
     }
   ];
 
