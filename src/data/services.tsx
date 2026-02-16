@@ -15,6 +15,7 @@ import {
   Check,
   Megaphone,
   FileText,
+  BrainCircuit,
 } from 'lucide-react';
 
 import GoogleGIcon from '@/components/icons/GoogleGIcon';
@@ -28,6 +29,7 @@ export interface ServiceItem {
   href: string;
   icon: React.ReactNode;
   pillar: PillarKey;
+  featured?: boolean;
 }
 
 export const pillarMeta: Record<PillarKey, { title: string; href: string; anchorId: string }> = {
@@ -49,6 +51,15 @@ export const pillarMeta: Record<PillarKey, { title: string; href: string; anchor
 };
 
 export const allServices: ServiceItem[] = [
+  {
+    id: 23,
+    icon: <BrainCircuit className="h-10 w-10 text-hayas-primary" />,
+    title: 'SENSE - Plataforma de Inteligencia de Marketing',
+    description: 'Tu plataforma propia de marketing: SEO tracker, content hub, dashboards y datos conectados en un solo sistema.',
+    href: '/es/servicios/plataforma-inteligencia-marketing',
+    pillar: 'impulsa',
+    featured: true,
+  },
   {
     id: 1,
     icon: <Paintbrush className="h-10 w-10 text-hayas-primary" />,

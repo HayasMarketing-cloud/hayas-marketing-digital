@@ -693,6 +693,10 @@ export const translations = {
       crmAdministration: {
         title: 'Administración CRM y gestión de Marketing',
         description: 'Gestión completa de tu sistema CRM y estrategias de marketing para máximo rendimiento.'
+      },
+      sense: {
+        title: 'SENSE - Plataforma de Inteligencia de Marketing',
+        description: 'Tu plataforma propia de marketing: SEO tracker, content hub, dashboards y datos conectados en un solo sistema.'
       }
     },
     chatbot: {
@@ -1449,6 +1453,10 @@ export const translations = {
       crmAdministration: {
         title: 'CRM Administration & Marketing Management',
         description: 'Complete management of your CRM system and marketing strategies for maximum performance.'
+      },
+      sense: {
+        title: 'SENSE - Marketing Intelligence Platform',
+        description: 'Your own marketing platform: SEO tracker, content hub, dashboards and connected data in one system.'
       }
     },
     chatbot: {

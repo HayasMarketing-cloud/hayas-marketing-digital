@@ -96,6 +96,11 @@ const MarketingChangedSection = () => {
                 <h3 className="text-lg font-semibold font-dm-sans text-foreground mb-3">
                   {t(`marketingChanged.moments.${moment.key}.title`)}
                 </h3>
+                {moment.solutionKey === 'impulsa' && (
+                  <span className="inline-flex items-center rounded-full bg-impulsa/10 px-2.5 py-0.5 text-xs font-medium text-impulsa mb-2">
+                    Incluye SENSE
+                  </span>
+                )}
                 <p className="text-elegant-muted text-sm leading-relaxed mb-4">
                   {t(`marketingChanged.moments.${moment.key}.description`)}
                 </p>

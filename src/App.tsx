@@ -440,6 +440,7 @@ const App = () => (
            <Route path="/es/servicios/asistente-ia" element={<PageSuspense><Pages.AsistenteIA /></PageSuspense>} />
            <Route path="/es/servicios/alojamiento-mantenimiento-web" element={<Navigate to="/es/servicios/diseno-web/alojamiento-mantenimiento" replace />} />
            <Route path="/es/servicios/marketing-directo" element={<PageSuspense><Pages.MarketingDirecto /></PageSuspense>} />
+           <Route path="/es/servicios/plataforma-inteligencia-marketing" element={<PageSuspense><Pages.SensePlatform /></PageSuspense>} />
            
            {/* Páginas específicas con /es/ que necesitan redirección */}
            <Route path="/es/servicios-publicidad-en-redes-sociales/" element={<Navigate to="/es/servicios/publicidad-redes-sociales" replace />} />
@@ -569,8 +570,9 @@ const App = () => (
           <Route path="/en/services/crm-administration" element={<PageSuspense><Pages.AdministracionCrm /></PageSuspense>} />
           <Route path="/en/services/sales-process-automation" element={<PageSuspense><Pages.AutomatizacionProcesosVentas /></PageSuspense>} />
           <Route path="/en/services/lead-generation-clients" element={<PageSuspense><Pages.CaptacionLeadsClientes /></PageSuspense>} />
-          <Route path="/en/services/funnel-implementation" element={<PageSuspense><Pages.ImplementacionFunnel /></PageSuspense>} />
-          <Route path="/en/services/crm-customer-management" element={<PageSuspense><Pages.GestionClientesCRM /></PageSuspense>} />
+           <Route path="/en/services/funnel-implementation" element={<PageSuspense><Pages.ImplementacionFunnel /></PageSuspense>} />
+           <Route path="/en/services/crm-customer-management" element={<PageSuspense><Pages.GestionClientesCRM /></PageSuspense>} />
+           <Route path="/en/services/marketing-intelligence-platform" element={<PageSuspense><Pages.SensePlatform /></PageSuspense>} />
           
           
 {/* CASE STUDIES - Main page */}
