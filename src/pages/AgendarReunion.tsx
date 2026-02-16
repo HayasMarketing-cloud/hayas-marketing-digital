@@ -19,7 +19,7 @@ export default function AgendarReunion() {
     // Scheduler card
     schedulerTitle: isEnglish 
       ? 'Select Your Preferred Time' 
-      : 'Selecciona tu Horario Preferido',
+      : 'Elige fecha y hora para nuestro encuentro',
     schedulerSubtitle: isEnglish 
       ? 'Our team will be delighted to meet you and explore collaboration opportunities.'
       : 'Nuestro equipo estará encantado de conocerte y explorar oportunidades de colaboración.',
