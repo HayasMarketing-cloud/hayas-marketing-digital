@@ -30,7 +30,7 @@ export const registeredRoutes: RouteDefinition[] = [
   { path: '/es/soluciones/captacion-leads', category: 'solution', isIndexable: true, priority: 0.8, changefreq: 'weekly', isDynamic: false, isLegacy: false },
   { path: '/es/soluciones/automatizacion-marketing', category: 'solution', isIndexable: true, priority: 0.8, changefreq: 'weekly', isDynamic: false, isLegacy: false },
   { path: '/es/soluciones/gestion-clientes-crm', category: 'solution', isIndexable: true, priority: 0.8, changefreq: 'weekly', isDynamic: false, isLegacy: false },
-  
+  { path: '/es/soluciones/plataforma-inteligencia-marketing', category: 'solution', isIndexable: true, priority: 0.8, changefreq: 'weekly', isDynamic: false, isLegacy: false },
   // SERVICES
   { path: '/es/servicios/creacion-marca', category: 'service', isIndexable: true, priority: 0.7, changefreq: 'monthly', isDynamic: false, isLegacy: false },
   { path: '/es/servicios/diseno-web', category: 'service', isIndexable: true, priority: 0.7, changefreq: 'monthly', isDynamic: false, isLegacy: false },
@@ -137,7 +137,7 @@ export const registeredRoutes: RouteDefinition[] = [
   { path: '/en/solutions/lead-generation', category: 'solution', isIndexable: true, priority: 0.8, changefreq: 'weekly', isDynamic: false, isLegacy: false },
   { path: '/en/solutions/marketing-automation', category: 'solution', isIndexable: true, priority: 0.8, changefreq: 'weekly', isDynamic: false, isLegacy: false },
   { path: '/en/solutions/crm-client-management', category: 'solution', isIndexable: true, priority: 0.8, changefreq: 'weekly', isDynamic: false, isLegacy: false },
-  
+  { path: '/en/solutions/marketing-intelligence-platform', category: 'solution', isIndexable: true, priority: 0.8, changefreq: 'weekly', isDynamic: false, isLegacy: false },
   // SERVICES
   { path: '/en/services/online-store', category: 'service', isIndexable: true, priority: 0.7, changefreq: 'monthly', isDynamic: false, isLegacy: false },
   { path: '/en/services/web-design', category: 'service', isIndexable: true, priority: 0.7, changefreq: 'monthly', isDynamic: false, isLegacy: false },

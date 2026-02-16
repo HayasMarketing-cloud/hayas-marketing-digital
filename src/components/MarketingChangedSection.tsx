@@ -132,7 +132,7 @@ const MarketingChangedSection = () => {
               {t('marketingChanged.senseDescription')}
             </p>
             <Button variant="outline" size="sm" asChild className="group">
-              <Link to={isEnglish ? '/en/services/marketing-intelligence-platform' : '/es/servicios/plataforma-inteligencia-marketing'}>
+              <Link to={isEnglish ? '/en/solutions/marketing-intelligence-platform' : '/es/soluciones/plataforma-inteligencia-marketing'}>
                 {t('marketingChanged.senseCta')}
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>

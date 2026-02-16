@@ -44,7 +44,7 @@ interface ServiceDefinition {
 const GoogleGIconPlaceholder = () => null;
 
 const serviceDefinitions: ServiceDefinition[] = [
-  { id: 23, Icon: BrainCircuit, translationKey: 'sense', hrefEs: '/es/servicios/plataforma-inteligencia-marketing', hrefEn: '/en/services/marketing-intelligence-platform', pillar: 'impulsa', featured: true },
+  
   { id: 1, Icon: Paintbrush, translationKey: 'brandCreation', hrefEs: '/es/servicios/creacion-marca', hrefEn: '/en/services/brand-creation', pillar: 'impulsa' },
   { id: 2, Icon: Users, translationKey: 'socialMediaManagement', hrefEs: '/es/servicios/gestion-redes-sociales', hrefEn: '/en/services/social-media-management', pillar: 'impulsa' },
   { id: 3, Icon: Star, translationKey: 'socialMediaAds', hrefEs: '/es/servicios/publicidad-redes-sociales', hrefEn: '/en/services/social-media-advertising', pillar: 'activa' },

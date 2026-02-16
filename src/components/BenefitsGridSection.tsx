@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { 
-  Palette, Search, Zap, Smartphone, Shield, HeadphonesIcon, CheckCircle
+  Palette, Search, Zap, Smartphone, Shield, HeadphonesIcon, CheckCircle, BrainCircuit, Link2
 } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -59,6 +59,18 @@ const BenefitsGridSection: React.FC<BenefitsGridSectionProps> = ({
       title: isEnglish ? "Ongoing support" : "Soporte continuo",
       description: isEnglish ? "Technical assistance, updates and permanent strategic consulting" : "Asistencia técnica, actualizaciones y consultoría estratégica permanente",
       color: "text-indigo-600 bg-indigo-100"
+    },
+    {
+      icon: <BrainCircuit className="h-8 w-8" />,
+      title: isEnglish ? "Applied AI" : "IA aplicada",
+      description: isEnglish ? "AI-optimized content, automated SEO workflows and intelligent assistants" : "Contenidos optimizados con IA, workflows SEO automatizados y asistentes inteligentes",
+      color: "text-violet-600 bg-violet-100"
+    },
+    {
+      icon: <Link2 className="h-8 w-8" />,
+      title: isEnglish ? "Real integrations" : "Integraciones reales",
+      description: isEnglish ? "Connected to CRM, Google Search Console, analytics and automation tools" : "Conectada con CRM, Google Search Console, analítica y herramientas de automatización",
+      color: "text-cyan-600 bg-cyan-100"
     }
   ];
 

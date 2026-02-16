@@ -3,14 +3,14 @@ IA_SUMMARY: Custom marketing platform by Hayas Marketing. Designed for businesse
 -->
 
 ---
-title: "Your Website & SEO in a Custom Platform"
-description: "Professional website, content and SEO integrated into your own marketing platform. Built with modern technology, real integrations and your brand."
-keywords: ["marketing intelligence platform", "custom web and SEO", "custom marketing platform", "SEO tracker", "content hub", "marketing dashboards"]
+title: "SENSE - Marketing Intelligence Platform"
+description: "Marketing intelligence platform connecting strategy, data and execution. Professional website, SEO tracker, content hub and integrated dashboards."
+keywords: ["marketing intelligence platform", "SENSE", "custom marketing platform", "SEO tracker", "content hub", "marketing dashboards"]
 intent: "commercial"
 author: "Rubén Reyero"
 author_credentials: "CEO at Hayas Marketing | 15+ years in B2B digital marketing"
 date: "2026-02-16"
-canonical: "/en/services/marketing-intelligence-platform"
+canonical: "/en/solutions/marketing-intelligence-platform"
 ---
 
 # Your Website & SEO in a Custom Marketing Platform

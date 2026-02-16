@@ -440,7 +440,9 @@ const App = () => (
            <Route path="/es/servicios/asistente-ia" element={<PageSuspense><Pages.AsistenteIA /></PageSuspense>} />
            <Route path="/es/servicios/alojamiento-mantenimiento-web" element={<Navigate to="/es/servicios/diseno-web/alojamiento-mantenimiento" replace />} />
            <Route path="/es/servicios/marketing-directo" element={<PageSuspense><Pages.MarketingDirecto /></PageSuspense>} />
-           <Route path="/es/servicios/plataforma-inteligencia-marketing" element={<PageSuspense><Pages.SensePlatform /></PageSuspense>} />
+           <Route path="/es/soluciones/plataforma-inteligencia-marketing" element={<PageSuspense><Pages.SensePlatform /></PageSuspense>} />
+           {/* Redirect 301 from old SENSE service path */}
+           <Route path="/es/servicios/plataforma-inteligencia-marketing" element={<Navigate to="/es/soluciones/plataforma-inteligencia-marketing" replace />} />
            
            {/* Páginas específicas con /es/ que necesitan redirección */}
            <Route path="/es/servicios-publicidad-en-redes-sociales/" element={<Navigate to="/es/servicios/publicidad-redes-sociales" replace />} />
@@ -572,7 +574,9 @@ const App = () => (
           <Route path="/en/services/lead-generation-clients" element={<PageSuspense><Pages.CaptacionLeadsClientes /></PageSuspense>} />
            <Route path="/en/services/funnel-implementation" element={<PageSuspense><Pages.ImplementacionFunnel /></PageSuspense>} />
            <Route path="/en/services/crm-customer-management" element={<PageSuspense><Pages.GestionClientesCRM /></PageSuspense>} />
-           <Route path="/en/services/marketing-intelligence-platform" element={<PageSuspense><Pages.SensePlatform /></PageSuspense>} />
+           <Route path="/en/solutions/marketing-intelligence-platform" element={<PageSuspense><Pages.SensePlatform /></PageSuspense>} />
+           {/* Redirect 301 from old SENSE service path */}
+           <Route path="/en/services/marketing-intelligence-platform" element={<Navigate to="/en/solutions/marketing-intelligence-platform" replace />} />
           
           
 {/* CASE STUDIES - Main page */}
