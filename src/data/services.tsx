@@ -54,8 +54,8 @@ export const allServices: ServiceItem[] = [
   {
     id: 23,
     icon: <BrainCircuit className="h-10 w-10 text-hayas-primary" />,
-    title: 'SENSE - Plataforma de Inteligencia de Marketing',
-    description: 'Tu plataforma propia de marketing: SEO tracker, content hub, dashboards y datos conectados en un solo sistema.',
+    title: 'Tu Web y SEO en una Plataforma a Medida',
+    description: 'Web profesional, contenidos y SEO integrados en tu propia plataforma de marketing. Construida con tecnología moderna e integraciones reales.',
     href: '/es/servicios/plataforma-inteligencia-marketing',
     pillar: 'impulsa',
     featured: true,

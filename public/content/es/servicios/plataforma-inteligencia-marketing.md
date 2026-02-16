@@ -1,11 +1,11 @@
 <!--
-IA_SUMMARY: SENSE es la plataforma de inteligencia de marketing de Hayas Marketing. Diseñada para agencias, equipos de marketing y empresas data-driven que necesitan unificar SEO, contenidos, CRM y analítica en un solo sistema con su propia marca. Incluye SEO tracker, content hub, dashboards en tiempo real e integraciones CRM. El resultado: decisiones de marketing basadas en datos, ejecución centralizada y control total de la plataforma.
+IA_SUMMARY: Plataforma de marketing a medida de Hayas Marketing. Diseñada para empresas que quieren profesionalizar su presencia digital con web profesional, SEO tracker, content hub y dashboards integrados. Construida con Lovable (React, TypeScript), incluye integraciones con GSC, DataForSEO, HubSpot y GoHighLevel. Resultado: una plataforma propia con tu marca, tus datos y tu dominio.
 -->
 
 ---
-title: "SENSE - Plataforma de Inteligencia de Marketing"
-description: "Plataforma de inteligencia de marketing personalizada: SEO tracker, content hub, dashboards y datos conectados. Construida a medida para agencias y equipos de marketing."
-keywords: ["plataforma inteligencia de marketing", "marketing intelligence platform", "SEO tracker", "content hub", "dashboards marketing", "plataforma marketing personalizada"]
+title: "Tu Web y SEO en una Plataforma a Medida"
+description: "Web profesional, contenidos y SEO integrados en tu propia plataforma de marketing. Construida con tecnología moderna, integraciones reales y tu marca."
+keywords: ["plataforma inteligencia de marketing", "web y SEO a medida", "plataforma marketing personalizada", "SEO tracker", "content hub", "dashboards marketing"]
 intent: "commercial"
 author: "Rubén Reyero"
 author_credentials: "CEO de Hayas Marketing | 15+ años en marketing digital B2B"
@@ -13,19 +13,24 @@ date: "2026-02-16"
 canonical: "/es/servicios/plataforma-inteligencia-marketing"
 ---
 
-# SENSE - Plataforma de Inteligencia de Marketing
+# Tu Web y SEO en una Plataforma de Marketing a Medida
 
-## ¿Qué es SENSE?
+## ¿Qué es?
 
-SENSE es el sistema propietario de Hayas Marketing que unifica estrategia, datos y ejecución de marketing en una **plataforma propia construida a medida** para cada cliente. No es un SaaS genérico: es tu plataforma, con tu marca, tu dominio y tus datos.
+Una solución integral que combina tu web profesional, seguimiento SEO, gestión de contenidos y dashboards de rendimiento en **una única plataforma construida a medida** para tu negocio. No es un SaaS genérico ni una plantilla: es tu plataforma, con tu marca, tu dominio y tus datos.
+
+Esta solución forma parte de **SENSE**, nuestro sistema de inteligencia de marketing que conecta estrategia, datos y ejecución.
 
 ## ¿Para quién es?
 
-- **Agencias de marketing** que necesitan entregar dashboards y herramientas con su marca a sus clientes
-- **Equipos de marketing** que quieren centralizar SEO, contenidos, CRM y analítica
-- **Empresas multi-marca** que gestionan múltiples mercados desde un solo sistema
+- **Empresas en crecimiento** que quieren una presencia digital profesional respaldada por datos reales
+- **Equipos de marketing** que necesitan SEO, contenidos y rendimiento centralizados en una plataforma
+- **Agencias y consultores** que quieren entregar plataformas con su marca a sus clientes
 
 ## ¿Qué incluye?
+
+### Web Profesional
+Web moderna, rápida y responsive construida con React y TypeScript. Optimizada para conversiones y coherencia de marca.
 
 ### SEO Tracker
 Seguimiento de keywords integrado con Google Search Console y DataForSEO. Monitoriza posiciones, indexación y rendimiento orgánico en tiempo real.
@@ -39,38 +44,41 @@ Analítica en tiempo real que conecta datos de SEO, contenidos, CRM y campañas 
 ### Integración CRM
 Conexiones nativas con HubSpot, GoHighLevel y CRMs personalizados vía API. Datos unificados de clientes y atribución de marketing.
 
-### Informes y Alertas
-Reporting programado y alertas inteligentes ante cambios de ranking, anomalías de tráfico y caídas de conversión.
+## Construido con Lovable
 
-### Plataforma White-Label
-Totalmente personalizada con tu logo, colores y dominio. Tus clientes ven tu marca, no la nuestra.
+Construimos tu plataforma con **Lovable** — tecnología moderna React y TypeScript que ofrece:
 
-## ¿Por qué SENSE?
-
-A diferencia de herramientas genéricas, SENSE se construye específicamente para tu negocio:
-
+- **Velocidad**: tiempos de carga por debajo del segundo
+- **Escalabilidad**: crece con tu negocio sin perder rendimiento
 - **Propiedad total**: tú controlas los datos, la marca y la experiencia
-- **Personalización completa**: módulos y flujos adaptados a tus procesos
-- **Tecnología moderna**: React, TypeScript, APIs de referencia del sector
-- **Escalabilidad**: crece con tu negocio sin cambiar de plataforma
+- **Despliegue rápido**: de concepto a lanzamiento en 4-6 semanas
 
-## Proceso de implementación
+Sin WordPress. Sin plantillas. Sin código legacy.
 
-1. **Diagnóstico estratégico**: Analizamos tus necesidades, herramientas actuales y objetivos
-2. **Configuración y desarrollo**: Construimos tu plataforma con los módulos necesarios
-3. **Lanzamiento**: Despliegue en tu dominio con formación para tu equipo
-4. **Optimización continua**: Iteramos y ampliamos según tu evolución
+## Integraciones
+
+Tu plataforma se conecta con las herramientas que importan:
+
+- **Google Search Console**: datos de búsqueda orgánica
+- **DataForSEO**: tracking de keywords y análisis SERP
+- **HubSpot**: CRM y automatización de marketing
+- **GoHighLevel**: CRM para pymes y agencias
+- **Google Analytics**: analítica de tráfico y comportamiento
+- **Stripe**: pagos y suscripciones
 
 ## Preguntas frecuentes
 
-### ¿Cuánto tarda la implementación?
-Un despliegue básico de SENSE tarda 4-6 semanas. Implementaciones complejas con múltiples integraciones pueden llevar 8-12 semanas.
+### ¿Con qué tecnología se construye?
+Usamos Lovable para construir plataformas con React y TypeScript — tecnología web moderna, rápida y escalable.
 
-### ¿Es SENSE un producto SaaS?
-No. Cada plataforma SENSE se construye a medida. No es un login a una herramienta compartida.
+### ¿Es un producto SaaS compartido?
+No. Cada plataforma se construye a medida. Tu dominio, tu marca, tus datos.
+
+### ¿Cuánto tarda la implementación?
+Un despliegue estándar tarda 4-6 semanas. Implementaciones complejas pueden llevar 8-12 semanas.
 
 ### ¿Puedo integrar mi CRM actual?
-Sí. SENSE soporta integraciones nativas con HubSpot, GoHighLevel y conexiones personalizadas vía API.
+Sí. Soportamos integraciones nativas con HubSpot, GoHighLevel y conexiones personalizadas vía API.
 
-### ¿Quién gestiona la plataforma tras el lanzamiento?
-Ofrecemos planes de gestión continua, o tu equipo puede gestionarla con nuestra formación y documentación.
+### ¿Incluye optimización SEO?
+Sí. La plataforma incluye buenas prácticas SEO integradas, tracking con GSC y DataForSEO, y herramientas de contenido diseñadas para visibilidad en buscadores.
