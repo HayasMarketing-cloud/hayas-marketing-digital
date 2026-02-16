@@ -48,6 +48,7 @@ export const CampanasInboundMarketing = lazyWithRetry(() => import("@/pages/Camp
 export const CaptacionLeadsClientes = lazyWithRetry(() => import("@/pages/CaptacionLeadsClientes"));
 export const AutomatizacionProcesosVentas = lazyWithRetry(() => import("@/pages/AutomatizacionProcesosVentas"));
 export const ImplantacionCrm = lazyWithRetry(() => import("@/pages/ImplantacionCrm"));
+export const SensePlatform = lazyWithRetry(() => import("@/pages/SensePlatform"));
 export const AutomatizacionMarketing = lazyWithRetry(() => import("@/pages/AutomatizacionMarketing"));
 export const GestionClientesCRM = lazyWithRetry(() => import("@/pages/GestionClientesCRM"));
 

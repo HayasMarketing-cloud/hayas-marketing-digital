@@ -82,20 +82,28 @@ const AllServicesSection = () => {
           {filtered.map((service, idx) => {
             const initiallyVisible = idx < 6;
             const visible = expanded ? true : initiallyVisible;
+            const isFeatured = 'featured' in service && (service as any).featured;
             return (
-              <Card key={service.id} className={`${visible ? '' : 'hidden'} border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full`}>
+              <Card key={service.id} className={`${visible ? '' : 'hidden'} ${isFeatured ? 'md:col-span-2 lg:col-span-3 border-2 border-impulsa/30 bg-impulsa/5' : 'border-none'} shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full`}>
                 <CardHeader className={view === 'list' ? 'pb-2' : 'pb-2'}>
-                  <div className="mb-4"><service.Icon className="h-10 w-10 text-hayas-primary" /></div>
-                  <CardTitle className="title-card">{service.title}</CardTitle>
+                  <div className="flex items-center gap-3 mb-4">
+                    <service.Icon className="h-10 w-10 text-hayas-primary" />
+                    {isFeatured && (
+                      <span className="inline-flex items-center rounded-full bg-impulsa/10 px-3 py-1 text-xs font-semibold text-impulsa border border-impulsa/20">
+                        ✨ Nuevo
+                      </span>
+                    )}
+                  </div>
+                  <CardTitle className={isFeatured ? 'text-xl md:text-2xl font-bold' : 'title-card'}>{service.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className={view === 'grid' ? 'text-gray-600 text-base' : 'text-gray-600 text-lg'}>
+                  <CardDescription className={isFeatured ? 'text-gray-600 text-base md:text-lg' : view === 'grid' ? 'text-gray-600 text-base' : 'text-gray-600 text-lg'}>
                     {service.description}
                   </CardDescription>
                 </CardContent>
                 <CardFooter>
                   <Link to={service.href} aria-label={`${t('servicesSection.viewService')} ${service.title}`}>
-                    <Button size="sm">{t('servicesSection.viewService')} {service.title}</Button>
+                    <Button size={isFeatured ? 'default' : 'sm'} variant={isFeatured ? 'impulsa' : 'default'}>{t('servicesSection.viewService')} {service.title}</Button>
                   </Link>
                 </CardFooter>
               </Card>

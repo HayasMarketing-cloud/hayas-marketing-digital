@@ -15,6 +15,7 @@ import {
   Zap,
   Check,
   FileText,
+  BrainCircuit,
 } from 'lucide-react';
 
 export type PillarKey = 'impulsa' | 'conecta' | 'activa';
@@ -26,6 +27,7 @@ export interface ServiceItem {
   href: string;
   Icon: LucideIcon | React.ComponentType<{ className?: string }>;
   pillar: PillarKey;
+  featured?: boolean;
 }
 
 interface ServiceDefinition {
@@ -35,12 +37,14 @@ interface ServiceDefinition {
   hrefEs: string;
   hrefEn: string;
   pillar: PillarKey;
+  featured?: boolean;
 }
 
 // Dynamic import of GoogleGIcon to avoid JSX in .ts file
 const GoogleGIconPlaceholder = () => null;
 
 const serviceDefinitions: ServiceDefinition[] = [
+  { id: 23, Icon: BrainCircuit, translationKey: 'sense', hrefEs: '/es/servicios/plataforma-inteligencia-marketing', hrefEn: '/en/services/marketing-intelligence-platform', pillar: 'impulsa', featured: true },
   { id: 1, Icon: Paintbrush, translationKey: 'brandCreation', hrefEs: '/es/servicios/creacion-marca', hrefEn: '/en/services/brand-creation', pillar: 'impulsa' },
   { id: 2, Icon: Users, translationKey: 'socialMediaManagement', hrefEs: '/es/servicios/gestion-redes-sociales', hrefEn: '/en/services/social-media-management', pillar: 'impulsa' },
   { id: 3, Icon: Star, translationKey: 'socialMediaAds', hrefEs: '/es/servicios/publicidad-redes-sociales', hrefEn: '/en/services/social-media-advertising', pillar: 'activa' },
@@ -71,8 +75,9 @@ export const useServices = (GoogleGIcon?: React.ComponentType<{ className?: stri
     Icon: def.translationKey === 'googleAds' && GoogleGIcon ? GoogleGIcon : def.Icon,
     title: t(`serviceItems.${def.translationKey}.title`),
     description: t(`serviceItems.${def.translationKey}.description`),
-    href: language === 'en' ? '/en/coming-soon' : def.hrefEs,
+    href: language === 'en' ? def.hrefEn : def.hrefEs,
     pillar: def.pillar,
+    featured: def.featured,
   }));
 
   const servicesByPillar: Record<PillarKey, ServiceItem[]> = services.reduce((acc, s) => {
