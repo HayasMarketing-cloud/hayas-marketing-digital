@@ -1,114 +1,117 @@
 
 
-# Reestructurar SENSE: Inteligencia transversal en Home + Solucion concreta en Impulsa
+# Actualizar pagina Diseno Web existente + Mover SENSE a /soluciones/
 
-## Concepto
+## Resumen
 
-Actualmente SENSE esta posicionado como un servicio mas dentro de "Impulsa tu Marca". El nuevo enfoque separa dos niveles:
+En lugar de crear una pagina separada "Diseno Web Lovable", el contenido nuevo (Lovable, IA aplicada, integraciones) se integra en la pagina existente de Diseno Web (id 8, `/es/servicios/diseno-web`). Esto evita competencia entre paginas por keywords similares. Las keywords especificas de Lovable se posicionaran con posts de blog.
 
-1. **SENSE como concepto transversal (Home)**: La inteligencia de marketing es la capa que conecta las 3 soluciones (Impulsa, Conecta, Activa). Se presenta en la home como el diferenciador de Hayas, no dentro de un pilar concreto.
+SENSE se mueve a `/soluciones/` como solucion transversal independiente.
 
-2. **Solucion concreta dentro de Impulsa**: "Tu web, contenidos y SEO en una plataforma de marketing a medida" -- es una de las aplicaciones de SENSE, enfocada en la parte de presencia digital. La pagina dedicada explicara que se construye con Lovable, las integraciones (GSC, DataForSEO, CRM), etc.
+---
 
-## Cambios en la Home
+## Parte 1: Mover SENSE a /soluciones/
 
-### 1. HeroSlider: Elevar el mensaje
+### App.tsx
+- Cambiar ruta ES: `/es/servicios/plataforma-inteligencia-marketing` a `/es/soluciones/plataforma-inteligencia-marketing`
+- Cambiar ruta EN: `/en/services/marketing-intelligence-platform` a `/en/solutions/marketing-intelligence-platform`
+- Anadir redirect 301 de las rutas antiguas a las nuevas
 
-**Archivo**: `src/components/HeroSlider.tsx`
+### SensePlatform.tsx
+- Actualizar `canonical` a `/es/soluciones/...`
+- Actualizar breadcrumb: cambiar referencia de "Impulsa tu Marca" a "Soluciones"
+- Restaurar titulo original: "SENSE - Plataforma de Inteligencia de Marketing"
 
-- Cambiar `badgeEs` de "Marketing + IA" a "Marketing + Inteligencia de datos"
-- Cambiar `badgeEn` a "Marketing + Data Intelligence"
-- Actualizar `subtitleEs` para reflejar el enfoque SENSE: "Conectamos estrategia, datos y ejecucion en un sistema propio para que tu marketing funcione con criterio, no con improvisacion."
-- Actualizar `subtitleEn`: "We connect strategy, data and execution into a proprietary system so your marketing runs on insight, not improvisation."
+### services.tsx y useServices.ts
+- Eliminar servicio id 23 del catalogo (SENSE ya no es un servicio, es una solucion transversal)
 
-### 2. MarketingChangedSection: SENSE como capa transversal
+### MarketingChangedSection.tsx
+- Actualizar enlace del bloque SENSE transversal a la nueva ruta `/es/soluciones/...`
 
-**Archivo**: `src/components/MarketingChangedSection.tsx`
+### Contenidos .md
+- Actualizar canonical en los archivos markdown de SENSE de `/servicios/` a `/soluciones/`
 
-- Quitar el badge "Incluye SENSE" de la card de Impulsa (ya no es exclusivo de Impulsa)
-- Anadir una seccion debajo de las 3 cards (antes del cierre) que presente SENSE como el sistema que conecta todo:
-  - Icono BrainCircuit + titulo "Todo conectado por SENSE"
-  - Texto breve: "Nuestro sistema de inteligencia de marketing conecta estrategia, datos y ejecucion en cada solucion."
-  - CTA sutil: enlace a la pagina de SENSE
-- Esto mantiene las 3 cards intactas y anade SENSE como capa horizontal debajo
+### routeRegistryData.ts
+- Registrar nueva ruta `/es/soluciones/plataforma-inteligencia-marketing` y EN equivalente
 
-### 3. Card de Impulsa: referenciar la solucion concreta
+---
 
-En la card de "Impulsa tu Marca", anadir un subtexto que mencione la plataforma web como diferenciador:
-- "Incluye tu plataforma web y SEO a medida" (pequeno, debajo de la descripcion)
+## Parte 2: Enriquecer la pagina Diseno Web existente
 
-## Cambios en el servicio SENSE dentro de Impulsa
+### DisenoWeb.tsx (pagina principal, id 8)
 
-### 4. Redirigir el servicio en services.tsx
+La pagina actual ya tiene una buena estructura (PainPoints, SolutionPreview, Process, Benefits, Cases, FAQ). Se enriquece anadiendo el enfoque Lovable y las integraciones:
 
-**Archivo**: `src/data/services.tsx` y `src/hooks/useServices.ts`
+**Cambios en SolutionPreviewSection.tsx:**
+- Anadir mencion a Lovable como tecnologia de desarrollo (React, TypeScript)
+- Incluir features adicionales: "IA aplicada al marketing", "Integraciones con CRM y herramientas"
+- Mencionar que las webs se construyen con tecnologia moderna y escalable
 
-- Renombrar el servicio id 23 de "SENSE - Plataforma de Inteligencia de Marketing" a algo mas concreto enfocado en la solucion web:
-  - ES: "Tu Web y SEO en una Plataforma a Medida"
-  - EN: "Your Website & SEO in a Custom Platform"
-- Mantener `featured: true` y pillar `impulsa`
-- Mantener el slug SEO `/es/servicios/plataforma-inteligencia-marketing` (la keyword sigue siendo valida)
-- Actualizar la descripcion para enfocarse en: web + contenidos + SEO + integraciones + construida con Lovable
+**Cambios en PainPointsSection.tsx:**
+- Anadir un pain point sobre "Sin integraciones": leads que se pierden por falta de conexion con CRM y herramientas
 
-### 5. Pagina dedicada: reorientar contenido
+**Cambios en BenefitsGridSection.tsx:**
+- Anadir beneficios relacionados con IA aplicada e integraciones (GSC, CRM, DataForSEO)
 
-**Archivo**: `src/pages/SensePlatform.tsx`
+**Cambios en DisenoWeb.tsx:**
+- Anadir nueva seccion "Tecnologia y plataforma" entre Benefits y Success Cases que explique:
+  - Construido con Lovable (React, TypeScript)
+  - Integraciones disponibles: Google Search Console, CRM (HubSpot/GHL), analytics
+  - IA aplicada: contenidos optimizados, SEO automatizado, asistentes integrados
+- Actualizar FAQs: anadir preguntas sobre Lovable, IA aplicada e integraciones
+- Actualizar `serviceDescription` para incluir mencion a IA e integraciones
 
-Reestructurar la pagina para enfocarse en la solucion concreta dentro de Impulsa:
+**Nuevo componente: TechnologyPlatformSection.tsx**
+- Seccion visual con iconos mostrando: Lovable, React, integraciones CRM, IA aplicada
+- Texto que diferencia esta oferta de un diseno web tradicional
+- No un componente separado de pagina, sino una seccion reutilizable
 
-- **Hero**: "Tu plataforma de marketing a medida" con subtitulo sobre web, SEO y contenidos integrados
-- **Que incluye**: Web profesional + SEO Tracker (GSC, DataForSEO) + Content Hub + Dashboards
-- **Construido con Lovable**: Seccion que explique la tecnologia (React, TypeScript, Lovable) como ventaja competitiva -- rapido, moderno, escalable
-- **Integraciones**: GSC, DataForSEO, CRM (HubSpot/GHL), analytics
-- **Para quien**: Empresas que quieren profesionalizar su presencia digital con datos reales
-- **FAQs**: Actualizar para reflejar el enfoque web+SEO+plataforma
-- **CTA**: Agendar demo
+### Contenidos .md (diseno-web)
+- Actualizar `public/content/es/servicios/diseno-web.md` y EN para incluir mencion a Lovable, IA aplicada e integraciones
+- Mantener keyword principal "diseno web profesional"
+- Anadir entidades: Lovable, React, IA aplicada al marketing
 
-### 6. Contenido .md SEO
+### translations.ts
+- Anadir keys para la nueva seccion de tecnologia/plataforma
 
-**Archivos**: `public/content/es/servicios/plataforma-inteligencia-marketing.md` y EN
-
-- Actualizar para reflejar el nuevo enfoque: plataforma web + SEO + contenidos a medida
-- Mantener keyword "plataforma inteligencia de marketing"
-- Anadir mencion a Lovable como tecnologia de construccion
-
-### 7. Traducciones
-
-**Archivo**: `src/i18n/translations.ts`
-
-- Actualizar keys de `serviceItems.sense.title` y `serviceItems.sense.description`
-- Anadir keys para la seccion SENSE transversal en MarketingChangedSection:
-  - `marketingChanged.senseTitle`
-  - `marketingChanged.senseDescription`
-  - `marketingChanged.senseCta`
-- Actualizar hero badge y subtitle
+---
 
 ## Seccion tecnica
 
 ### Archivos afectados
 
-1. `src/components/HeroSlider.tsx` -- badge y subtitulo
-2. `src/components/MarketingChangedSection.tsx` -- quitar badge Impulsa, anadir seccion SENSE transversal
-3. `src/data/services.tsx` -- renombrar servicio 23
-4. `src/hooks/useServices.ts` -- actualizar translationKey si cambia
-5. `src/pages/SensePlatform.tsx` -- reorientar contenido completo
-6. `src/i18n/translations.ts` -- nuevas keys y actualizaciones
-7. `public/content/es/servicios/plataforma-inteligencia-marketing.md` -- actualizar contenido
-8. `public/content/en/services/marketing-intelligence-platform.md` -- actualizar contenido
+1. `src/App.tsx` -- mover rutas SENSE a /soluciones/, redirect 301
+2. `src/pages/SensePlatform.tsx` -- canonical, breadcrumb, titulo
+3. `src/data/services.tsx` -- eliminar id 23
+4. `src/hooks/useServices.ts` -- eliminar id 23
+5. `src/components/MarketingChangedSection.tsx` -- actualizar enlace SENSE
+6. `src/components/SolutionPreviewSection.tsx` -- anadir Lovable, IA, integraciones
+7. `src/components/PainPointsSection.tsx` -- anadir pain point de integraciones
+8. `src/components/BenefitsGridSection.tsx` -- anadir beneficios IA/integraciones
+9. `src/pages/DisenoWeb.tsx` -- anadir seccion tecnologia, actualizar FAQs y SEO
+10. `src/components/TechnologyPlatformSection.tsx` (nuevo) -- seccion Lovable + integraciones
+11. `src/i18n/translations.ts` -- keys para tecnologia/plataforma
+12. `src/utils/routeRegistryData.ts` -- nueva ruta solucion SENSE
+13. `public/content/es/servicios/diseno-web.md` -- enriquecer con Lovable/IA
+14. `public/content/en/services/web-design.md` -- enriquecer con Lovable/IA
+15. `public/content/es/servicios/plataforma-inteligencia-marketing.md` -- canonical
+16. `public/content/en/services/marketing-intelligence-platform.md` -- canonical
 
 ### Orden de implementacion
 
-1. Traducciones (nuevas keys para hero, seccion SENSE, servicio renombrado)
-2. HeroSlider (badge + subtitulo)
-3. MarketingChangedSection (quitar badge impulsa, anadir bloque SENSE transversal)
-4. services.tsx + useServices.ts (renombrar servicio)
-5. SensePlatform.tsx (reorientar pagina completa)
-6. Contenidos .md (actualizar ambos idiomas)
+1. Eliminar id 23 de services.tsx y useServices.ts
+2. Traducciones (nuevas keys tecnologia/plataforma)
+3. Mover SENSE: rutas App.tsx + SensePlatform.tsx + MarketingChangedSection.tsx
+4. Nuevo componente TechnologyPlatformSection.tsx
+5. Actualizar SolutionPreviewSection, PainPointsSection, BenefitsGridSection
+6. Actualizar DisenoWeb.tsx (anadir seccion, FAQs, SEO)
+7. Actualizar contenidos .md (diseno-web y SENSE)
+8. routeRegistryData.ts
 
 ### Lo que NO cambia
 
-- El H1 "Agencia de Marketing Digital en Madrid" se mantiene por SEO
-- La estructura de 3 cards (Impulsa, Conecta, Activa) no cambia
-- El slug URL se mantiene por indexacion
-- El servicio sigue siendo `featured: true` dentro de Impulsa
+- La URL `/es/servicios/diseno-web` se mantiene (misma pagina, contenido enriquecido)
+- La seccion SENSE transversal en la home se mantiene (solo cambia el enlace)
+- El hero de la home se mantiene
+- Las keywords principales se mantienen; Lovable se posicionara via blog posts
 
