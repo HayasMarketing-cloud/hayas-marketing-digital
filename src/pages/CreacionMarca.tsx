@@ -86,7 +86,7 @@ const CreacionMarca = () => {
       ? 'Request a free consultation and we will show you how to transform your brand identity to better connect with your audience'
       : 'Solicita una consulta gratuita y te mostraremos cómo transformar tu identidad de marca para conectar mejor con tu audiencia',
     ctaButton: isEnglish ? 'Talk to a specialist' : 'Hablar con un especialista',
-    ctaLink: isEnglish ? '/en/schedule-meeting' : '/agendar-reunion',
+    ctaLink: isEnglish ? '/en/schedule-meeting' : '/es/agendar-reunion',
     
     // FAQ
     faqTitle: isEnglish ? 'Frequently asked questions about Brand Creation' : 'Preguntas frecuentes sobre Creación de Marca',
