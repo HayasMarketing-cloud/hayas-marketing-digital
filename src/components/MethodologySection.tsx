@@ -32,7 +32,7 @@ const MethodologySection: React.FC = () => {
                 <CardTitle className="text-lg">Contratación solución Marketing SENSE</CardTitle>
               </CardHeader>
               <CardContent className="pt-2">
-                <div className="bg-impulsa/10 p-4 rounded-lg mb-4">
+                <div className="bg-primary/5 p-4 rounded-lg mb-4">
                   <p className="font-semibold text-impulsa text-sm uppercase tracking-wide mb-2">TU SOLUCIÓN PERSONALIZADA</p>
                   <p className="text-sm text-muted-foreground">Análisis, estrategia y ejecución a medida con Marketing SENSE</p>
                 </div>
