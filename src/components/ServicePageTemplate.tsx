@@ -289,6 +289,20 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ data }) => {
         {/* Additional Content */}
         {data.additionalContent}
 
+        {/* Success Cases Section */}
+        {data.showSuccessCases && (() => {
+          const config = getServiceSuccessCasesConfig(data.successCasesServiceSlug || '');
+          return (
+            <SuccessCasesSection
+              title={data.successCasesTitle || "Casos de éxito"}
+              filterTags={config?.filterTags}
+              specificCases={config?.specificCases}
+              maxCases={4}
+              showAllLink={true}
+            />
+          );
+        })()}
+
         {/* FAQ Section */}
         <FAQSection faqs={data.faqItems} />
 

@@ -65,8 +65,8 @@ const DisenoWeb = () => {
     
     // Success cases
     successCasesTitle: isEnglish 
-      ? "Success <span class='text-gradient-primary'>stories</span>"
-      : "Casos de <span class='text-gradient-primary'>éxito</span>",
+      ? "Success stories"
+      : "Casos de éxito",
     successCasesSubtitle: isEnglish 
       ? 'Websites we have developed that are generating exceptional results for our clients.'
       : 'Webs que hemos desarrollado y que están generando resultados excepcionales para nuestros clientes.',

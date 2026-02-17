@@ -72,8 +72,8 @@ const CreacionMarca = () => {
     
     // Success cases
     successCasesTitle: isEnglish 
-      ? "Success <span class='text-gradient-primary'>stories</span>"
-      : "Casos de <span class='text-gradient-primary'>éxito</span>",
+      ? "Success stories"
+      : "Casos de éxito",
     successCasesSubtitle: isEnglish 
       ? 'Brands we have created that are generating exceptional results for our clients.'
       : 'Marcas que hemos creado y que están generando resultados excepcionales para nuestros clientes.',
