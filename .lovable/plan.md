@@ -1,56 +1,45 @@
 
-## Propuesta UX/UI: Elevar la frase puente "Ese marketing existe. Y empieza aqui."
+## Fix: Letras cortadas (g, y, p, j) en titulos de toda la web
 
-### Problema actual
-La tercera frase ("Ese marketing existe. Y empieza aqui.") funciona como transicion/CTA hacia la card de SENSE, pero visualmente es un parrafo mas con estilo plano. No invita a la accion ni destaca como cierre del bloque introductorio.
+### Problema
+La clase `leading-tight` de Tailwind aplica `line-height: 1.25`, que es demasiado ajustado para titulos grandes con letras descendentes (g, y, p, q, j). Estas letras se cortan visualmente, especialmente cuando el contenedor padre tiene `overflow-hidden`. Ocurre en toda la web porque `leading-tight` se usa en mas de 30 archivos.
 
-### Propuesta: Frase destacada con linea decorativa
+### Solucion: Una correccion global y definitiva
 
-Convertir esa tercera frase en un elemento visualmente diferenciado pero sin romper la elegancia minimalista. La idea:
+En lugar de modificar cada archivo individualmente, se aplicara un override global en `src/index.css` que ajuste el interlineado de todos los titulos de forma segura.
 
-- Separar la frase del bloque de parrafos con un poco mas de espacio.
-- Aplicar un peso tipografico mayor (`font-semibold`) y color mas oscuro (`text-foreground`).
-- Anadir una linea decorativa fina (divider) encima de la frase, centrada y corta (tipo `w-12 h-0.5 bg-primary/30`), que actue como separador visual sutil entre los parrafos explicativos y esta frase de cierre.
-- Aumentar ligeramente el tamano (`text-xl`).
+**1. Override global de `leading-tight` en titulos grandes**
 
-Esto crea una jerarquia visual: parrafos explicativos (gris, ligeros) -> frase de cierre (mas oscura, mas grande, con separador) -> card de SENSE.
+Anadir en `src/index.css` una regla que aplique un `line-height` mas generoso (1.3) a todos los encabezados h1-h4 que usen clases de tamano grande. Esto corrige el problema en toda la web sin tocar archivos individuales.
 
-### Vista previa del resultado
+**2. Actualizar las clases utilitarias de titulo**
 
-```text
-  Un sistema donde la estrategia, los datos...
-  
-  Donde no necesitas mas herramientas...
-
-        ────────
-  Ese marketing existe. Y empieza aqui.
-
-  ┌──────────────────────────────┐
-  │       SENSE Card             │
-  └──────────────────────────────┘
-```
+Las clases `.title-hero`, `.title-section`, `.title-subsection` y `.title-card` ya definidas se actualizaran para usar `leading-snug` (1.375) en lugar de depender de `leading-tight`, asegurando que cualquier titulo que use estas clases quede bien.
 
 ### Seccion tecnica
 
-**Archivo: `src/components/MarketingChangedSection.tsx`**
+**Archivo: `src/index.css`**
 
-Cambiar el tercer parrafo (linea 70-72) de:
+Anadir una regla base que proteja todos los encabezados grandes:
 
-```tsx
-<p className="text-elegant text-lg text-foreground/70 text-pretty">
-  {t('marketingChanged.intro.p3')}
-</p>
+```css
+@layer base {
+  h1, h2, h3, h4 {
+    line-height: 1.3;
+  }
+}
 ```
 
-A un bloque con separador decorativo y tipografia destacada:
+Actualizar las clases utilitarias de titulo existentes para garantizar consistencia:
 
-```tsx
-<div className="pt-4 flex flex-col items-center gap-3">
-  <div className="w-12 h-0.5 bg-primary/30 rounded-full" />
-  <p className="text-xl font-semibold text-foreground text-pretty">
-    {t('marketingChanged.intro.p3')}
-  </p>
-</div>
-```
+- `.title-hero`: cambiar de incluir el generico `leading-tight` (vía la clase title-hero que no lo fuerza) a forzar `line-height: 1.3`
+- `.title-section`: anadir `leading-snug` explicito
+- `.title-subsection`: anadir `leading-snug` explicito
 
-Es un cambio minimo (solo en el tercer parrafo) que eleva la frase sin anadir complejidad ni elementos nuevos. Mantiene el estilo limpio y minimalista del proyecto.
+Esto asegura que incluso cuando un desarrollador use `leading-tight` directamente en un componente, la regla base en `h1-h4` proporcione un minimo seguro. Y las clases utilitarias propias del proyecto siempre apliquen un interlineado correcto.
+
+### Resultado esperado
+- Todas las letras descendentes (g, y, p, j, q) se muestran completas en todos los titulos
+- No se necesita modificar ningun archivo de componente individual
+- Compatible con todos los navegadores
+- La correccion se aplica automaticamente a todas las paginas existentes y futuras
