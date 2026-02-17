@@ -23,7 +23,8 @@ import {
   Brain,
   Zap,
   Edit,
-  ArrowRight
+  ArrowRight,
+  Info
 } from 'lucide-react';
 import { RouteDefinition } from '@/utils/routeRegistry';
 import { useToast } from '@/hooks/use-toast';
@@ -362,10 +363,10 @@ export const SyncReportModal: React.FC<SyncReportModalProps> = ({
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
             <Sparkles className="h-5 w-5 text-primary" />
-            Reporte de Sincronización
+            Resultado de la Auditoría SEO
           </DialogTitle>
           <DialogDescription>
-            Análisis de rutas detectadas vs. datos SEO en base de datos
+            Resumen del análisis entre las rutas de la aplicación y los datos SEO almacenados. Revisa cada sección para conocer qué acciones tomar.
           </DialogDescription>
         </DialogHeader>
 
@@ -409,24 +410,33 @@ export const SyncReportModal: React.FC<SyncReportModalProps> = ({
                 <div className="text-2xl font-bold text-blue-600">
                   {report.newRoutes.length}
                 </div>
-                <div className="text-sm text-muted-foreground">
+                <div className="text-sm font-medium text-muted-foreground">
                   Rutas nuevas
+                </div>
+                <div className="text-xs text-muted-foreground mt-1">
+                  Páginas sin configuración SEO
                 </div>
               </div>
               <div className="text-center p-4 rounded-lg bg-orange-500/10 border border-orange-500/20">
                 <div className="text-2xl font-bold text-orange-600">
                   {report.orphanedSEO.length}
                 </div>
-                <div className="text-sm text-muted-foreground">
+                <div className="text-sm font-medium text-muted-foreground">
                   SEO obsoletos
+                </div>
+                <div className="text-xs text-muted-foreground mt-1">
+                  Registros de páginas eliminadas
                 </div>
               </div>
               <div className="text-center p-4 rounded-lg bg-yellow-500/10 border border-yellow-500/20">
                 <div className="text-2xl font-bold text-yellow-600">
                   {report.inconsistencies.length}
                 </div>
-                <div className="text-sm text-muted-foreground">
+                <div className="text-sm font-medium text-muted-foreground">
                   Inconsistencias
+                </div>
+                <div className="text-xs text-muted-foreground mt-1">
+                  Configuración desalineada
                 </div>
               </div>
             </div>
@@ -450,6 +460,15 @@ export const SyncReportModal: React.FC<SyncReportModalProps> = ({
                       <Badge variant="secondary" className="ml-auto">
                         Acción recomendada
                       </Badge>
+                    </div>
+                    <div className="p-3 rounded-lg bg-blue-500/5 border border-blue-500/20 mb-3">
+                      <div className="flex gap-2">
+                        <Info className="h-4 w-4 text-blue-500 shrink-0 mt-0.5" />
+                        <div className="text-sm text-muted-foreground">
+                          <p><span className="font-semibold text-foreground">Qué significa:</span> Estas páginas existen en la aplicación pero no tienen metadatos SEO configurados (title, description, keywords). Google las indexará con información genérica o incompleta.</p>
+                          <p className="mt-1"><span className="font-semibold text-foreground">Qué hacer:</span> Pulsa "Generar con IA" para crear automáticamente los metadatos usando inteligencia artificial, o genera una versión básica sin IA. Después podrás revisar y ajustar cada página desde el editor SEO.</p>
+                        </div>
+                      </div>
                     </div>
                     <div className="space-y-2">
                       {report.newRoutes.slice(0, 10).map((route) => (
@@ -492,6 +511,15 @@ export const SyncReportModal: React.FC<SyncReportModalProps> = ({
                       <Badge variant="outline" className="ml-auto border-orange-500 text-orange-500">
                         Limpieza sugerida
                       </Badge>
+                    </div>
+                    <div className="p-3 rounded-lg bg-orange-500/5 border border-orange-500/20 mb-3">
+                      <div className="flex gap-2">
+                        <Info className="h-4 w-4 text-orange-500 shrink-0 mt-0.5" />
+                        <div className="text-sm text-muted-foreground">
+                          <p><span className="font-semibold text-foreground">Qué significa:</span> Estos registros SEO pertenecen a páginas que ya no existen en la aplicación (fueron renombradas o eliminadas). Ocupan espacio innecesario en la base de datos y pueden causar confusiones.</p>
+                          <p className="mt-1"><span className="font-semibold text-foreground">Qué hacer:</span> Si una ruta fue renombrada, usa el botón "Renombrar" junto a la sugerencia automática para actualizar el path. Si la página fue eliminada definitivamente, pulsa "Eliminar obsoletos" para limpiar todos los registros huérfanos de una vez.</p>
+                        </div>
+                      </div>
                     </div>
                     <div className="space-y-2">
                       {displayedOrphaned.map((seo) => (
@@ -580,6 +608,15 @@ export const SyncReportModal: React.FC<SyncReportModalProps> = ({
                       <div className="flex items-center gap-2 mb-3">
                         <AlertTriangle className="h-4 w-4 text-yellow-500" />
                         <h3 className="font-semibold">Inconsistencias detectadas ({report.inconsistencies.length})</h3>
+                      </div>
+                      <div className="p-3 rounded-lg bg-yellow-500/5 border border-yellow-500/20 mb-3">
+                        <div className="flex gap-2">
+                          <Info className="h-4 w-4 text-yellow-500 shrink-0 mt-0.5" />
+                          <div className="text-sm text-muted-foreground">
+                            <p><span className="font-semibold text-foreground">Qué significa:</span> Estos registros existen tanto en la aplicación como en la base de datos SEO, pero tienen valores diferentes (por ejemplo, una categoría distinta o un estado de indexabilidad contradictorio).</p>
+                            <p className="mt-1"><span className="font-semibold text-foreground">Qué hacer:</span> Revisa cada caso individualmente pulsando el icono de edición. Compara el valor esperado (Registry) con el almacenado (DB) y corrige manualmente el que sea incorrecto desde el editor SEO.</p>
+                          </div>
+                        </div>
                       </div>
                       <div className="space-y-2">
                         {displayedInconsistencies.map((issue, idx) => (
