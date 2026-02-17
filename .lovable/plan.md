@@ -1,44 +1,77 @@
 
-# Proteccion de imagenes en la web
+
+# Documento Tecnico Interno: Capacidades SEO del Stack
 
 ## Objetivo
-Evitar que usuarios casuales descarguen las imagenes propias de alto valor (portfolio, heroes, casos de exito), sin afectar SEO ni rendimiento.
 
-## Donde se aplica
+Crear un archivo `docs/SEO_CAPABILITIES_REFERENCE.md` que sirva como guia rapida para el equipo de marketing al escribir articulos. Listara todas las capacidades SEO implementadas, que hace cada una, y como se activan al crear contenido.
 
-| Zona | Componente | Motivo |
-|------|-----------|--------|
-| Casos de exito (imagen destacada) | `CaseStudyTemplate.tsx`, `CaseStudyTemplateEN.tsx` | Fotos de proyectos propios |
-| Grid de casos de exito | `SuccessCasesSection.tsx` | Miniaturas del portfolio |
-| Hero slides de la home | `SlideLayoutFullImage.tsx` | Imagenes editoriales propias |
-| Hero blog Lovable vs WP | `LovableVsWordpressHero.tsx` | Diseno grafico propio |
+## Estructura del Documento
 
-**No se aplica** en: logos de terceros, imagenes de Unsplash, avatares de Sofia, thumbnails pequenos del blog.
+El documento se organizara en secciones practicas orientadas al equipo de marketing:
 
-## Que se implementa
+### 1. Meta Tags y Control de Indexacion
+- Title, description, keywords (editables desde el panel admin /admin/seo)
+- Robots (index/noindex por pagina)
+- Canonical URLs automaticos
+- Hreflang automatico (es, en, x-default)
 
-Un componente reutilizable `ProtectedImage` que:
+### 2. Schema.org (Rich Snippets)
+Lista completa de schemas implementados:
+- **Organization** + **LocalBusiness**: Todas las paginas (automatico)
+- **ProfessionalService**: Paginas de servicios (25 servicios)
+- **BlogPosting** + **Person**: Articulos de blog con autor
+- **FAQPage**: Paginas con preguntas frecuentes
+- **HowTo**: Guias con pasos
+- **BreadcrumbList**: Automatico en todas las paginas con ruta
+- **ProfilePage**: Pagina de autor (/es/autor/ruben-reyero)
+- **SpeakableSpecification**: Blog (busqueda por voz)
 
-- Coloca un `div` transparente encima de la imagen que intercepta clics
-- Desactiva clic derecho (`onContextMenu`)
-- Desactiva arrastrar (`draggable="false"`, CSS `user-select: none`)
-- Mantiene el `alt` text y `loading` para SEO
-- No afecta al rendimiento (cero JavaScript extra, solo CSS y atributos HTML)
+### 3. GEO (Generative Engine Optimization)
+- Archivos llms.txt, llms-en.txt, llms-full.txt
+- Contenido .md en /public/content/ (40+ archivos bilingues)
+- Bloque IA_SUMMARY en cada .md
+- Wikidata entities vinculadas
+- robots.txt permite GPTBot y crawlers IA
 
-## Pasos tecnicos
+### 4. AEO (Answer Engine Optimization)
+- FAQPage schema para Featured Snippets
+- Resumenes citables en formato piramide invertida
+- SpeakableSpecification para asistentes de voz
+- Contenido estructurado pregunta-respuesta
 
-1. **Crear `src/components/ProtectedImage.tsx`**
-   - Props: mismas que una imagen normal (`src`, `alt`, `className`, `loading`, etc.)
-   - Renderiza la imagen dentro de un contenedor `relative` con un overlay `absolute inset-0` transparente
-   - Anade `onContextMenu={e => e.preventDefault()}` y `draggable={false}` a la imagen
-   - CSS: `pointer-events: none` en la imagen, `pointer-events: auto` en el overlay
+### 5. Sistema Multilingue
+- Tabla seo_pages con in_language (es-ES / en-US)
+- Traduccion automatica via Edge Function (translate-seo + Gemini AI)
+- Sitemaps independientes por idioma con hreflang cruzado
+- Campo translation_of para vincular versiones
 
-2. **Sustituir `<img>` por `<ProtectedImage>`** en los 4 componentes listados arriba
-   - Sin cambios visuales, solo se anade la capa de proteccion
+### 6. Componentes Reutilizables (para desarrolladores)
+- `<EnhancedSEO />`: SEO automatico desde BD
+- `<DynamicH1 />`, `<DynamicH2 />`, `<DynamicH3 />`: Headings desde BD
+- `<UniversalBreadcrumbs />`: Migas de pan con schema
+- `<OptimizedImage />`: Imagenes con lazy loading
+- `<ProtectedImage />`: Proteccion contra descarga
 
-## Impacto
+### 7. Herramientas de Administracion
+- SEO Tracker (/admin/seo): Editor de metadatos por URL
+- IndexNow Manager (/admin/seo/indexnow): Notificacion instantanea a Bing
+- FAQ Validator (/admin/faq-validator): Validador de schemas FAQ
+- Generacion de OG images con IA (Gemini)
 
-- **SEO**: Ninguno negativo. Se mantiene `<img>` con `alt` text
-- **Rendimiento**: Cero impacto. Solo un `div` extra por imagen
-- **Accesibilidad**: Sin cambios. Las imagenes siguen siendo accesibles para lectores de pantalla
-- **Limitacion**: Un usuario tecnico podria acceder igualmente via DevTools, pero se bloquea al 95% de usuarios casuales
+### 8. Integraciones Externas
+- Google Search Console (metricas y keywords por URL)
+- DataForSEO (auditoria tecnica, puntuacion on-page)
+- IndexNow (Bing, Yandex, Seznam, Naver)
+- Stripe (pagos, no SEO pero parte del stack)
+
+### 9. Checklist para Nuevos Articulos
+Guia practica paso a paso que el equipo de marketing debe seguir al publicar contenido nuevo.
+
+## Detalles Tecnicos
+
+- Se creara un unico archivo: `docs/SEO_CAPABILITIES_REFERENCE.md`
+- Formato Markdown limpio, sin emojis excesivos, orientado a consulta rapida
+- Incluira una tabla resumen al inicio para referencia rapida
+- No duplicara contenido extenso de otros docs, sino que referenciara a ellos
+
