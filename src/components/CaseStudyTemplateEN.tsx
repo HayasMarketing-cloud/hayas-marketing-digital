@@ -1,4 +1,5 @@
 import React from 'react';
+import ProtectedImage from '@/components/ProtectedImage';
 import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -180,13 +181,11 @@ const CaseStudyTemplateEN: React.FC<CaseStudyProps> = ({
                   </Button>
                 </div>
               </div>
-              <div className="relative">
-                <img 
-                  src={featuredImage} 
-                  alt={featuredImageAlt}
-                  className="relative z-10 w-full h-[400px] md:h-[400px] object-cover rounded-3xl shadow-2xl"
-                />
-              </div>
+              <ProtectedImage 
+                src={featuredImage} 
+                alt={featuredImageAlt}
+                className="w-full h-[400px] md:h-[400px] object-cover rounded-3xl shadow-2xl"
+              />
             </div>
           </div>
         </header>

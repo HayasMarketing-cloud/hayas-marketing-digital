@@ -1,4 +1,5 @@
 import React from 'react';
+import ProtectedImage from '@/components/ProtectedImage';
 import { Link } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -86,10 +87,11 @@ const SuccessCasesSection: React.FC<SuccessCasesSectionProps> = ({
             <Link key={index} to={project.link}>
               <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden cursor-pointer h-full">
                 <div className="aspect-square overflow-hidden">
-                  <img 
+                  <ProtectedImage 
                     src={normalizeImageUrl(project.image)} 
                     alt={project.name}
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    containerClassName="w-full h-full"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.src = `https://images.unsplash.com/photo-1560472354-b33ff0c44a43?q=80&w=400&h=400&auto=format&fit=crop&ixlib=rb-4.0.3`;
