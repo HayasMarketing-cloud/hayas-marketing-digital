@@ -155,7 +155,7 @@ const MethodologySection: React.FC = () => {
           <p className="text-lg text-muted-foreground max-w-4xl mx-auto mb-8">
             Todas estas opciones son <span className="font-semibold text-foreground">complementarias y totalmente personalizables</span>. 
             En Hayas diseñamos propuestas únicas que combinan servicios, formación y externalización según tus necesidades específicas. 
-            Así conseguimos una <span className="font-semibold text-primary">solución 360</span> que abarca estrategia, ejecución y soporte continuo 
+            Con <span className="font-semibold text-primary">Marketing SENSE</span> integramos estrategia, ejecución y soporte continuo 
             para que tu negocio crezca con eficiencia y visión a largo plazo.
           </p>
           
