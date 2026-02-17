@@ -1,40 +1,36 @@
 
 
-## Banner "Made with SENSE" — Texto actualizado
+## Actualizar "Made with SENSE" con el formato pill/chip y el icono BrainCircuit
 
-### Componente a crear: `src/components/SenseContextBanner.tsx`
+### Cambio
 
-Franja sutil debajo del Hero en las 3 paginas de solucion (Impulsa, Conecta, Activa).
+Reemplazar el texto plano "Made with SENSE" por un chip visual con el mismo formato que se usa en la pagina de SENSE: pill redondeada con fondo sutil, icono `BrainCircuit` de lucide-react, y texto "Made with SENSE".
 
-### Contenido bilingue actualizado
-
-**Espanol:**
-"¿Quieres que te ayudemos a identificar tu solucion personalizada con nuestro sistema integral de marketing? **Made with [SENSE](link)**."
-
-**Ingles:**
-"Do you want us to help you identify your personalized solution with our integral marketing system? **Made with [SENSE](link)**."
-
-La palabra **SENSE** sera un hiperenlace a la pagina de la solucion SENSE (`/es/soluciones/plataforma-inteligencia-marketing` o `/en/solutions/marketing-intelligence-platform`).
+El chip completo sera un enlace clicable a la pagina de la solucion SENSE.
 
 ### Diseno visual
 
-- Ubicacion: justo debajo del Hero, antes de la siguiente seccion
-- Fondo sutil: `bg-primary/5`, centrado, `py-4`
-- Texto en `text-sm text-foreground/60`
-- "Made with SENSE" en `font-semibold text-primary`, con SENSE como link
+```text
+  ¿Quieres que te ayudemos a identificar tu solucion personalizada
+  con nuestro sistema integral de marketing?
+
+        [ BrainCircuit  Made with SENSE ]   <-- pill clicable
+```
+
+- La pill usa el mismo estilo de la pagina SENSE: `rounded-full bg-impulsa/10 px-4 py-1.5 text-sm font-medium text-impulsa`
+- Icono `BrainCircuit` a la izquierda, tamano 16
+- Texto "Made with SENSE" (con SENSE despues del icono, como en la referencia pero con "Made with" delante)
+- Todo el chip es un `Link` a la pagina SENSE
+- El texto de la pregunta se mantiene como parrafo separado encima del chip
+- Hover sutil con `hover:bg-impulsa/20 transition-colors`
 
 ### Seccion tecnica
 
-**1. Nuevo archivo: `src/components/SenseContextBanner.tsx`**
+**Archivo: `src/components/SenseContextBanner.tsx`**
 
-- Usa `useTranslation` para detectar idioma
-- Genera la ruta SENSE segun idioma
-- Renderiza el texto con "Made with SENSE" donde SENSE es un `<Link>` con estilo `text-primary font-semibold hover:underline`
-- Estilos del contenedor: `py-4 bg-primary/5 text-center text-sm text-foreground/60`
-
-**2. Insertar `<SenseContextBanner />` en 3 paginas, debajo del hero:**
-
-- `src/pages/ImpulsaTuMarca.tsx` — entre el cierre del hero y la seccion "El problema"
-- `src/pages/ConectaConTusClientes.tsx` — entre el hero y `CRMConnectionPainPointsSection`
-- `src/pages/ActivaTusVentas.tsx` — entre el hero y la siguiente seccion
+- Importar `BrainCircuit` de `lucide-react`
+- Separar el texto contextual y el chip "Made with SENSE" en dos elementos
+- El chip sera un `<Link>` con clases `inline-flex items-center gap-2 rounded-full bg-impulsa/10 px-4 py-1.5 text-sm font-medium text-impulsa hover:bg-impulsa/20 transition-colors`
+- Dentro del Link: icono `<BrainCircuit size={16} />` + texto "Made with SENSE"
+- El contenedor mantiene `py-4 bg-primary/5 text-center`
 
