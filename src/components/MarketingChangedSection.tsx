@@ -68,14 +68,35 @@ const MarketingChangedSection = () => {
           </p>
         </div>
 
-        {/* Transition */}
-        <div className="text-center mb-10">
+        {/* SENSE as the strategic umbrella - NOW PROMINENT AND FIRST */}
+        <div className="max-w-4xl mx-auto mb-12">
+          <div className="p-8 md:p-10 rounded-2xl border border-primary/20 bg-primary/5 text-center">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-5">
+              <BrainCircuit className="h-8 w-8 text-primary" strokeWidth={1.5} />
+            </div>
+            <h3 className="text-2xl md:text-3xl font-semibold font-dm-sans text-foreground mb-4">
+              {t('marketingChanged.senseTitle')}
+            </h3>
+            <p className="text-elegant-muted text-base md:text-lg mb-6 max-w-2xl mx-auto">
+              {t('marketingChanged.senseDescription')}
+            </p>
+            <Button variant="outline" size="default" asChild className="group">
+              <Link to={isEnglish ? '/en/solutions/marketing-intelligence-platform' : '/es/soluciones/plataforma-inteligencia-marketing'}>
+                {t('marketingChanged.senseCta')}
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+
+        {/* Modules intro */}
+        <div className="text-center mb-8">
           <p className="text-lg md:text-xl font-medium font-dm-sans text-foreground">
-            {t('marketingChanged.transition')}
+            {t('marketingChanged.senseModulesIntro')}
           </p>
         </div>
 
-        {/* Moment Cards */}
+        {/* Solution Cards as SENSE modules */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {moments.map((moment, index) => {
             const Icon = moment.icon;
@@ -117,27 +138,6 @@ const MarketingChangedSection = () => {
               </div>
             );
           })}
-        </div>
-
-        {/* SENSE Transversal */}
-        <div className="max-w-3xl mx-auto mb-12">
-          <div className="p-8 rounded-2xl border border-primary/20 bg-primary/5 text-center">
-            <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 mb-4">
-              <BrainCircuit className="h-7 w-7 text-primary" strokeWidth={1.5} />
-            </div>
-            <h3 className="text-xl md:text-2xl font-semibold font-dm-sans text-foreground mb-3">
-              {t('marketingChanged.senseTitle')}
-            </h3>
-            <p className="text-elegant-muted text-base md:text-lg mb-5 max-w-2xl mx-auto">
-              {t('marketingChanged.senseDescription')}
-            </p>
-            <Button variant="outline" size="sm" asChild className="group">
-              <Link to={isEnglish ? '/en/solutions/marketing-intelligence-platform' : '/es/soluciones/plataforma-inteligencia-marketing'}>
-                {t('marketingChanged.senseCta')}
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </Button>
-          </div>
         </div>
 
         {/* Closing */}
