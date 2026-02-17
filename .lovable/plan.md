@@ -1,78 +1,75 @@
 
+# Fix: Titulo de Casos de Exito mostrando HTML raw en paginas de servicios
 
-# Mejora UX del Reporte de Auditoría SEO
+## Problema
 
-## Objetivo
+Varias paginas de servicios pasan cadenas HTML como titulo al componente `SuccessCasesSection`:
 
-Mejorar el modal `SyncReportModal` para que cada seccion incluya una explicacion clara de que significa el problema detectado y que debe hacer el usuario para solucionarlo.
+```
+"Casos de <span class='text-gradient-primary'>éxito</span>"
+```
 
-## Cambios en `src/components/admin/seo/SyncReportModal.tsx`
+Pero `SuccessCasesSection` renderiza el titulo como texto plano (React no interpreta HTML en strings), resultando en el codigo HTML visible en pantalla.
 
-### 1. Titulo y descripcion del modal
+Esto es innecesario porque `SuccessCasesSection` **ya tiene logica interna** que aplica automaticamente el gradiente a las palabras "exito" y "stories".
 
-Cambiar "Reporte de Sincronizacion" por **"Resultado de la Auditoría SEO"** y mejorar la descripcion para que sea mas orientativa.
+## Solucion
 
-### 2. Tarjetas resumen (grid de 3)
+### 1. Limpiar titulos HTML en todas las paginas afectadas
 
-Anadir subtitulos descriptivos debajo de cada contador:
-- **Rutas nuevas**: Anadir texto "Paginas sin configuracion SEO"
-- **SEO obsoletos**: Anadir texto "Registros de paginas eliminadas"  
-- **Inconsistencias**: Anadir texto "Configuracion desalineada"
+Reemplazar strings con HTML por texto plano en estos archivos:
 
-### 3. Seccion "Rutas sin SEO"
+| Archivo | Valor actual | Valor corregido |
+|---------|-------------|-----------------|
+| `src/pages/ImplantacionCrm.tsx` | `"Casos de <span class='text-gradient-primary'>éxito</span>"` | `"Casos de éxito"` |
+| `src/pages/DisenoWeb.tsx` | `"Casos de <span class='text-gradient-primary'>éxito</span>"` / `"Success <span class='text-gradient-primary'>stories</span>"` | `"Casos de éxito"` / `"Success stories"` |
+| `src/pages/CreacionMarca.tsx` | Idem | `"Casos de éxito"` / `"Success stories"` |
+| `src/pages/PublicidadRedesSociales.tsx` | `"Casos de <span className='text-gradient-primary'>éxito</span>"` | `"Casos de éxito"` / `"Success Cases"` |
+| `src/pages/LocalizacionContenidos.tsx` | `"Casos de <span className='text-gradient-primary'>éxito</span> en localización"` | `"Casos de éxito en localización"` |
 
-Anadir un bloque explicativo antes de la lista:
+### 2. Actualizar la logica de gradiente en `SuccessCasesSection`
 
-> **Que significa:** Estas paginas existen en la aplicacion pero no tienen metadatos SEO configurados (title, description, keywords). Google las indexara con informacion generica o incompleta.
->
-> **Que hacer:** Pulsa "Generar con IA" para crear automaticamente los metadatos usando inteligencia artificial, o genera una version basica sin IA. Despues podras revisar y ajustar cada pagina desde el editor SEO.
+El componente actualmente solo aplica gradiente a "exito" y "stories". Hay que asegurar que tambien funcione con la palabra "Cases" (para la version inglesa de PublicidadRedesSociales que usa "Success Cases").
 
-### 4. Seccion "SEO sin ruta"
+Anadir `'cases'` a la lista de palabras que reciben el gradiente en la logica del `map()`.
 
-Anadir un bloque explicativo antes de la lista:
+### 3. Renderizar SuccessCasesSection en ServicePageTemplate
 
-> **Que significa:** Estos registros SEO pertenecen a paginas que ya no existen en la aplicacion (fueron renombradas o eliminadas). Ocupan espacio innecesario en la base de datos y pueden causar confusiones.
->
-> **Que hacer:** Si una ruta fue renombrada, usa el boton "Renombrar" junto a la sugerencia automatica para actualizar el path. Si la pagina fue eliminada definitivamente, pulsa "Eliminar obsoletos" para limpiar todos los registros huerfanos de una vez.
+El template tiene las props `showSuccessCases`, `successCasesServiceSlug` y `successCasesTitle` definidas e importa tanto `SuccessCasesSection` como `getServiceSuccessCasesConfig`, pero **nunca renderiza la seccion**. Esto afecta a paginas como:
+- `AdministracionCrm`
+- `AutomatizacionProcesosVentas`
+- `EstrategiaContenidos`
+- `IntegracionesIAProcesos`
+- `ConsultoriaEstrategicaAnalitica`
 
-### 5. Seccion "Inconsistencias"
+Se anadira el bloque de renderizado entre `additionalContent` y `FAQSection`:
 
-Anadir un bloque explicativo antes de la lista:
+```text
+{data.showSuccessCases && (
+  <SuccessCasesSection
+    title={data.successCasesTitle || "Casos de éxito"}
+    filterTags={config.filterTags}
+    specificCases={config.specificCases}
+    ...
+  />
+)}
+```
 
-> **Que significa:** Estos registros existen tanto en la aplicacion como en la base de datos SEO, pero tienen valores diferentes (por ejemplo, una categoria distinta o un estado de indexabilidad contradictorio).
->
-> **Que hacer:** Revisa cada caso individualmente pulsando el icono de edicion. Compara el valor esperado (Registry) con el almacenado (DB) y corrige manualmente el que sea incorrecto desde el editor SEO.
-
-### 6. Estilo de los bloques explicativos
-
-Cada bloque usara un diseno consistente:
-- Fondo suave acorde al color de la seccion (azul, naranja, amarillo)
-- Icono informativo (`Info` de lucide)
-- Texto en `text-sm` con negrita en los encabezados "Que significa" y "Que hacer"
+Usando `getServiceSuccessCasesConfig(data.successCasesServiceSlug)` para obtener la configuracion de filtrado.
 
 ## Archivos a modificar
 
 | Archivo | Cambio |
 |---------|--------|
-| `src/components/admin/seo/SyncReportModal.tsx` | Anadir bloques explicativos en cada seccion, mejorar titulo |
+| `src/pages/ImplantacionCrm.tsx` | Quitar HTML del titulo |
+| `src/pages/DisenoWeb.tsx` | Quitar HTML del titulo |
+| `src/pages/CreacionMarca.tsx` | Quitar HTML del titulo |
+| `src/pages/PublicidadRedesSociales.tsx` | Quitar HTML del titulo |
+| `src/pages/LocalizacionContenidos.tsx` | Quitar HTML del titulo |
+| `src/components/SuccessCasesSection.tsx` | Anadir "cases" a palabras con gradiente |
+| `src/components/ServicePageTemplate.tsx` | Renderizar SuccessCasesSection cuando `showSuccessCases=true` |
 
-## Resultado visual esperado
+## Resultado
 
-Cada seccion del reporte seguira esta estructura:
-
-```text
-+ Rutas sin SEO (2)                    [Accion recomendada]
-
-  [i] Que significa: Estas paginas existen en la aplicacion
-      pero no tienen metadatos SEO configurados...
-      Que hacer: Pulsa "Generar con IA" para crear
-      automaticamente los metadatos...
-
-  /es/soluciones/plataforma-inteligencia-marketing
-    solution  Prioridad: 0.8
-
-  /en/solutions/marketing-intelligence-platform
-    solution  Prioridad: 0.8
-```
-
-No se modifica ninguna logica de procesamiento, solo la capa de presentacion.
+- Todas las paginas de servicios mostraran "Casos de **exito**" con el gradiente aplicado correctamente via JSX (no HTML crudo).
+- Las paginas que usan `ServicePageTemplate` con `showSuccessCases=true` mostraran la seccion de casos de exito que actualmente falta.
