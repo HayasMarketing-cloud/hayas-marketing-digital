@@ -1,45 +1,40 @@
 
-## Fix: Letras cortadas (g, y, p, j) en titulos de toda la web
 
-### Problema
-La clase `leading-tight` de Tailwind aplica `line-height: 1.25`, que es demasiado ajustado para titulos grandes con letras descendentes (g, y, p, q, j). Estas letras se cortan visualmente, especialmente cuando el contenedor padre tiene `overflow-hidden`. Ocurre en toda la web porque `leading-tight` se usa en mas de 30 archivos.
+## Banner "Made with SENSE" — Texto actualizado
 
-### Solucion: Una correccion global y definitiva
+### Componente a crear: `src/components/SenseContextBanner.tsx`
 
-En lugar de modificar cada archivo individualmente, se aplicara un override global en `src/index.css` que ajuste el interlineado de todos los titulos de forma segura.
+Franja sutil debajo del Hero en las 3 paginas de solucion (Impulsa, Conecta, Activa).
 
-**1. Override global de `leading-tight` en titulos grandes**
+### Contenido bilingue actualizado
 
-Anadir en `src/index.css` una regla que aplique un `line-height` mas generoso (1.3) a todos los encabezados h1-h4 que usen clases de tamano grande. Esto corrige el problema en toda la web sin tocar archivos individuales.
+**Espanol:**
+"¿Quieres que te ayudemos a identificar tu solucion personalizada con nuestro sistema integral de marketing? **Made with [SENSE](link)**."
 
-**2. Actualizar las clases utilitarias de titulo**
+**Ingles:**
+"Do you want us to help you identify your personalized solution with our integral marketing system? **Made with [SENSE](link)**."
 
-Las clases `.title-hero`, `.title-section`, `.title-subsection` y `.title-card` ya definidas se actualizaran para usar `leading-snug` (1.375) en lugar de depender de `leading-tight`, asegurando que cualquier titulo que use estas clases quede bien.
+La palabra **SENSE** sera un hiperenlace a la pagina de la solucion SENSE (`/es/soluciones/plataforma-inteligencia-marketing` o `/en/solutions/marketing-intelligence-platform`).
+
+### Diseno visual
+
+- Ubicacion: justo debajo del Hero, antes de la siguiente seccion
+- Fondo sutil: `bg-primary/5`, centrado, `py-4`
+- Texto en `text-sm text-foreground/60`
+- "Made with SENSE" en `font-semibold text-primary`, con SENSE como link
 
 ### Seccion tecnica
 
-**Archivo: `src/index.css`**
+**1. Nuevo archivo: `src/components/SenseContextBanner.tsx`**
 
-Anadir una regla base que proteja todos los encabezados grandes:
+- Usa `useTranslation` para detectar idioma
+- Genera la ruta SENSE segun idioma
+- Renderiza el texto con "Made with SENSE" donde SENSE es un `<Link>` con estilo `text-primary font-semibold hover:underline`
+- Estilos del contenedor: `py-4 bg-primary/5 text-center text-sm text-foreground/60`
 
-```css
-@layer base {
-  h1, h2, h3, h4 {
-    line-height: 1.3;
-  }
-}
-```
+**2. Insertar `<SenseContextBanner />` en 3 paginas, debajo del hero:**
 
-Actualizar las clases utilitarias de titulo existentes para garantizar consistencia:
+- `src/pages/ImpulsaTuMarca.tsx` — entre el cierre del hero y la seccion "El problema"
+- `src/pages/ConectaConTusClientes.tsx` — entre el hero y `CRMConnectionPainPointsSection`
+- `src/pages/ActivaTusVentas.tsx` — entre el hero y la siguiente seccion
 
-- `.title-hero`: cambiar de incluir el generico `leading-tight` (vía la clase title-hero que no lo fuerza) a forzar `line-height: 1.3`
-- `.title-section`: anadir `leading-snug` explicito
-- `.title-subsection`: anadir `leading-snug` explicito
-
-Esto asegura que incluso cuando un desarrollador use `leading-tight` directamente en un componente, la regla base en `h1-h4` proporcione un minimo seguro. Y las clases utilitarias propias del proyecto siempre apliquen un interlineado correcto.
-
-### Resultado esperado
-- Todas las letras descendentes (g, y, p, j, q) se muestran completas en todos los titulos
-- No se necesita modificar ningun archivo de componente individual
-- Compatible con todos los navegadores
-- La correccion se aplica automaticamente a todas las paginas existentes y futuras
