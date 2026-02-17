@@ -33,8 +33,8 @@ const SensePlatform = () => {
   const content = {
     serviceName: isEnglish ? 'SENSE - Marketing Intelligence Platform' : 'SENSE - Plataforma de Inteligencia de Marketing',
     serviceDescription: isEnglish
-      ? 'Marketing intelligence platform that connects strategy, data and execution. Built with modern technology and real integrations.'
-      : 'Plataforma de inteligencia de marketing que conecta estrategia, datos y ejecución. Construida con tecnología moderna e integraciones reales.',
+      ? 'Marketing intelligence platform that connects strategy, data and execution. Designed to grow with your business.'
+      : 'Plataforma de inteligencia de marketing que conecta estrategia, datos y ejecución. Diseñada para crecer con tu negocio.',
     canonical: isEnglish ? '/en/solutions/marketing-intelligence-platform' : '/es/soluciones/plataforma-inteligencia-marketing',
     features: isEnglish ? [
       'Professional website with your brand',
@@ -60,16 +60,16 @@ const SensePlatform = () => {
       : 'Estrategia, datos y ejecución conectados en una plataforma. Tu web, monitorización SEO, gestión de contenidos y dashboards de rendimiento — todo integrado y construido para tu negocio.',
     whatIsTitle: isEnglish ? 'What does it include?' : '¿Qué incluye?',
     whatIsDescription: isEnglish
-      ? 'Not just a website. A complete digital presence system: your website, SEO monitoring, content management and performance dashboards — connected, branded and built with modern technology.'
-      : 'No es solo una web. Es un sistema completo de presencia digital: tu web, monitorización SEO, gestión de contenidos y dashboards de rendimiento — conectados, con tu marca y construidos con tecnología moderna.',
-    builtWithTitle: isEnglish ? 'Built with Lovable' : 'Construido con Lovable',
+      ? 'Not just a website. A complete digital presence system: your website, SEO monitoring, content management and performance dashboards — connected, branded and designed for your business.'
+      : 'No es solo una web. Es un sistema completo de presencia digital: tu web, monitorización SEO, gestión de contenidos y dashboards de rendimiento — conectados, con tu marca y diseñados para tu negocio.',
+    builtWithTitle: isEnglish ? 'Our technology' : 'Nuestra tecnología',
     builtWithDescription: isEnglish
-      ? 'We build your platform with Lovable — modern React and TypeScript technology that delivers speed, scalability and a professional experience. No WordPress. No templates. Your own platform, ready to grow with you.'
-      : 'Construimos tu plataforma con Lovable — tecnología moderna React y TypeScript que ofrece velocidad, escalabilidad y una experiencia profesional. Sin WordPress. Sin plantillas. Tu propia plataforma, lista para crecer contigo.',
+      ? 'We build your platform with cutting-edge web technology: fast, scalable and with a professional experience. No WordPress. No templates. Your own platform, ready to grow with you.'
+      : 'Construimos tu plataforma con tecnología web de última generación: rápida, escalable y con una experiencia profesional. Sin WordPress. Sin plantillas. Tu propia plataforma, lista para crecer contigo.',
     integrationsTitle: isEnglish ? 'Real integrations' : 'Integraciones reales',
     integrationsDescription: isEnglish
-      ? 'Your platform connects with the tools that matter: Google Search Console, DataForSEO, HubSpot, GoHighLevel, analytics platforms and more. Real data, real-time.'
-      : 'Tu plataforma se conecta con las herramientas que importan: Google Search Console, DataForSEO, HubSpot, GoHighLevel, plataformas de analítica y más. Datos reales, en tiempo real.',
+      ? 'Your platform connects with the tools that matter: CRM, SEO tracking, analytics and more. Real data, real-time.'
+      : 'Tu plataforma se conecta con las herramientas que importan: CRM, seguimiento SEO, analítica y más. Datos reales, en tiempo real.',
     forWhomTitle: isEnglish ? 'Who is it for?' : '¿Para quién es?',
     ctaTitle: isEnglish ? 'Ready to professionalize your digital presence?' : '¿Listo para profesionalizar tu presencia digital?',
     ctaDescription: isEnglish
@@ -80,29 +80,29 @@ const SensePlatform = () => {
   };
 
   const featuresList = isEnglish ? [
-    { icon: Globe, title: 'Professional Website', description: 'Modern, fast, responsive website built with React. Optimized for conversions and brand consistency.' },
-    { icon: Search, title: 'SEO Tracker', description: 'Integrated keyword tracking with Google Search Console and DataForSEO. Monitor positions, indexation and organic performance.' },
+    { icon: Globe, title: 'Professional Website', description: 'Modern, fast and responsive website. Optimized for conversions and brand consistency.' },
+    { icon: Search, title: 'SEO Tracker', description: 'Integrated keyword tracking and monitoring. Follow your positions, indexation and organic performance in real time.' },
     { icon: FileText, title: 'Content Hub', description: 'Editorial management with briefings, content calendars, and AI-assisted content creation workflows.' },
     { icon: BarChart3, title: 'Performance Dashboards', description: 'Real-time analytics connecting SEO, content, CRM and campaign data in one view.' },
-    { icon: Link2, title: 'CRM Integration', description: 'Native connections to HubSpot, GoHighLevel and other CRMs. Unified customer data and marketing attribution.' },
+    { icon: Link2, title: 'CRM Integration', description: 'Native connections to your CRM. Unified customer data and marketing attribution.' },
     { icon: Layers, title: 'White-Label Platform', description: 'Fully branded with your logo, colors and domain. It\'s your platform, not a shared tool.' },
   ] : [
-    { icon: Globe, title: 'Web Profesional', description: 'Web moderna, rápida y responsive construida con React. Optimizada para conversiones y coherencia de marca.' },
-    { icon: Search, title: 'SEO Tracker', description: 'Seguimiento de keywords integrado con Google Search Console y DataForSEO. Monitoriza posiciones, indexación y rendimiento orgánico.' },
+    { icon: Globe, title: 'Web Profesional', description: 'Web moderna, rápida y responsive. Optimizada para conversiones y coherencia de marca.' },
+    { icon: Search, title: 'SEO Tracker', description: 'Seguimiento de keywords y monitorización integrados. Sigue tus posiciones, indexación y rendimiento orgánico en tiempo real.' },
     { icon: FileText, title: 'Content Hub', description: 'Gestión editorial con briefings, calendarios de contenido y flujos de creación asistidos por IA.' },
     { icon: BarChart3, title: 'Dashboards de Rendimiento', description: 'Analítica en tiempo real que conecta datos de SEO, contenidos, CRM y campañas en una sola vista.' },
-    { icon: Link2, title: 'Integración CRM', description: 'Conexiones nativas con HubSpot, GoHighLevel y otros CRMs. Datos unificados de clientes y atribución de marketing.' },
+    { icon: Link2, title: 'Integración CRM', description: 'Conexiones nativas con tu CRM. Datos unificados de clientes y atribución de marketing.' },
     { icon: Layers, title: 'Plataforma con tu Marca', description: 'Totalmente personalizada con tu logo, colores y dominio. Es tu plataforma, no una herramienta compartida.' },
   ];
 
   const builtWithFeatures = isEnglish ? [
-    { icon: Code2, title: 'Modern Technology', description: 'React, TypeScript and component architecture. No legacy code, no plugin soup.' },
-    { icon: Zap, title: 'Fast & Scalable', description: 'Sub-second load times. Grows with your business without performance loss.' },
+    { icon: Code2, title: 'Cutting-edge technology', description: 'Modular and flexible design. No unnecessary dependencies or technological debt.' },
+    { icon: Zap, title: 'Fast & Scalable', description: 'Your website loads instantly. Grows with your business without losing performance.' },
     { icon: Shield, title: 'Secure & Owned', description: 'You own your platform. Your data, your domain, your brand — always.' },
     { icon: Rocket, title: 'Rapid Deployment', description: 'From concept to launch in 4-6 weeks. No 6-month development cycles.' },
   ] : [
-    { icon: Code2, title: 'Tecnología Moderna', description: 'React, TypeScript y arquitectura de componentes. Sin código legacy, sin soup de plugins.' },
-    { icon: Zap, title: 'Rápida y Escalable', description: 'Tiempos de carga por debajo del segundo. Crece con tu negocio sin perder rendimiento.' },
+    { icon: Code2, title: 'Tecnología de última generación', description: 'Diseño modular y flexible. Sin dependencias innecesarias ni deuda tecnológica.' },
+    { icon: Zap, title: 'Rápida y Escalable', description: 'Tu web carga al instante. Crece con tu negocio sin perder rendimiento.' },
     { icon: Shield, title: 'Segura y Propia', description: 'Tú eres dueño de tu plataforma. Tus datos, tu dominio, tu marca — siempre.' },
     { icon: Rocket, title: 'Despliegue Rápido', description: 'De concepto a lanzamiento en 4-6 semanas. Sin ciclos de desarrollo de 6 meses.' },
   ];
@@ -127,19 +127,19 @@ const SensePlatform = () => {
   ];
 
   const faqs = isEnglish ? [
-    { question: 'What technology is the platform built with?', answer: 'We use Lovable to build platforms with React and TypeScript — modern, fast and scalable web technology. No WordPress, no templates.' },
+    { question: 'What technology is the platform built with?', answer: 'We use cutting-edge web technology: fast, scalable and designed for professional experiences. No WordPress, no templates.' },
     { question: 'Is this a shared SaaS product?', answer: 'No. Each platform is custom-built for you. Your domain, your brand, your data. It\'s not a login to a shared tool.' },
     { question: 'How long does implementation take?', answer: 'A standard deployment takes 4-6 weeks. Complex implementations with multiple integrations can take 8-12 weeks.' },
     { question: 'Can I integrate my existing CRM?', answer: 'Yes. We support native integrations with HubSpot, GoHighLevel, and custom CRM connections via API.' },
     { question: 'What happens after launch?', answer: 'We offer ongoing management and optimization plans. Or your team can manage it independently with our training and documentation.' },
-    { question: 'Does it include SEO optimization?', answer: 'Yes. The platform includes built-in SEO best practices, integrated tracking with GSC and DataForSEO, and content tools designed for search visibility.' },
+    { question: 'Does it include SEO optimization?', answer: 'Yes. The platform includes built-in SEO best practices, integrated tracking tools, and content features designed for search visibility.' },
   ] : [
-    { question: '¿Con qué tecnología se construye la plataforma?', answer: 'Usamos Lovable para construir plataformas con React y TypeScript — tecnología web moderna, rápida y escalable. Sin WordPress, sin plantillas.' },
+    { question: '¿Con qué tecnología se construye la plataforma?', answer: 'Utilizamos tecnología web de última generación: rápida, escalable y diseñada para experiencias profesionales. Sin WordPress, sin plantillas.' },
     { question: '¿Es un producto SaaS compartido?', answer: 'No. Cada plataforma se construye a medida para ti. Tu dominio, tu marca, tus datos. No es un login a una herramienta compartida.' },
     { question: '¿Cuánto tarda la implementación?', answer: 'Un despliegue estándar tarda 4-6 semanas. Implementaciones complejas con múltiples integraciones pueden llevar 8-12 semanas.' },
     { question: '¿Puedo integrar mi CRM actual?', answer: 'Sí. Soportamos integraciones nativas con HubSpot, GoHighLevel y conexiones CRM personalizadas vía API.' },
     { question: '¿Qué pasa después del lanzamiento?', answer: 'Ofrecemos planes de gestión y optimización continua. O tu equipo puede gestionarla de forma independiente con nuestra formación y documentación.' },
-    { question: '¿Incluye optimización SEO?', answer: 'Sí. La plataforma incluye buenas prácticas SEO integradas, tracking con GSC y DataForSEO, y herramientas de contenido diseñadas para visibilidad en buscadores.' },
+    { question: '¿Incluye optimización SEO?', answer: 'Sí. La plataforma incluye buenas prácticas SEO integradas, herramientas de seguimiento y funcionalidades de contenido diseñadas para visibilidad en buscadores.' },
   ];
 
   return (
@@ -205,7 +205,7 @@ const SensePlatform = () => {
           </div>
         </section>
 
-        {/* Built with Lovable */}
+        {/* Our Technology */}
         <section className="py-16 bg-background">
           <div className="container mx-auto px-4 max-w-5xl">
             <div className="text-center mb-12">

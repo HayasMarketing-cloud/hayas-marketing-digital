@@ -1,5 +1,5 @@
 <!--
-IA_SUMMARY: Custom marketing platform by Hayas Marketing. Designed for businesses wanting to professionalize their digital presence with a professional website, SEO tracker, content hub and integrated dashboards. Built with Lovable (React, TypeScript), includes integrations with GSC, DataForSEO, HubSpot and GoHighLevel. Result: your own platform with your brand, your data and your domain.
+IA_SUMMARY: Custom marketing platform by Hayas Marketing. Designed for businesses wanting to professionalize their digital presence with a professional website, SEO tracker, content hub and integrated dashboards. Built with cutting-edge web technology, includes integrations with CRM, SEO tools and analytics. Result: your own platform with your brand, your data and your domain.
 -->
 
 ---
@@ -9,7 +9,7 @@ keywords: ["marketing intelligence platform", "SENSE", "custom marketing platfor
 intent: "commercial"
 author: "Rubén Reyero"
 author_credentials: "CEO at Hayas Marketing | 15+ years in B2B digital marketing"
-date: "2026-02-16"
+date: "2026-02-17"
 canonical: "/en/solutions/marketing-intelligence-platform"
 ---
 
@@ -30,10 +30,10 @@ This solution is part of **SENSE**, our marketing intelligence system that conne
 ## What's included?
 
 ### Professional Website
-Modern, fast, responsive website built with React and TypeScript. Optimized for conversions and brand consistency.
+Modern, fast, responsive website. Optimized for conversions and brand consistency.
 
 ### SEO Tracker
-Integrated keyword tracking with Google Search Console and DataForSEO. Monitor positions, indexation and organic performance in real time.
+Integrated keyword tracking and monitoring. Follow your positions, indexation and organic performance in real time.
 
 ### Content Hub
 Complete editorial management: briefings, content calendars, AI-assisted creation workflows and multichannel publishing.
@@ -42,34 +42,32 @@ Complete editorial management: briefings, content calendars, AI-assisted creatio
 Real-time analytics connecting SEO, content, CRM and campaign data in a single executive view.
 
 ### CRM Integration
-Native connections to HubSpot, GoHighLevel and custom CRMs via API. Unified customer data and marketing attribution.
+Native connections to your CRM. Unified customer data and marketing attribution.
 
-## Built with Lovable
+## Our Technology
 
-We build your platform with **Lovable** — modern React and TypeScript technology that delivers:
+We build your platform with cutting-edge web technology that delivers:
 
-- **Speed**: sub-second load times
+- **Speed**: your website loads instantly
 - **Scalability**: grows with your business without performance loss
 - **Full ownership**: you control the data, the brand and the experience
 - **Rapid deployment**: from concept to launch in 4-6 weeks
 
-No WordPress. No templates. No legacy code.
+No WordPress. No templates. No unnecessary dependencies.
 
 ## Integrations
 
 Your platform connects with the tools that matter:
 
-- **Google Search Console**: organic search data
-- **DataForSEO**: keyword tracking & SERP analysis
-- **HubSpot**: CRM & marketing automation
-- **GoHighLevel**: CRM for SMBs & agencies
-- **Google Analytics**: traffic & behavior analytics
-- **Stripe**: payments & subscriptions
+- **CRM**: customer management & marketing automation
+- **SEO Tools**: keyword tracking & ranking analysis
+- **Analytics**: traffic, behavior & conversions
+- **Payments**: subscriptions & billing
 
 ## Frequently asked questions
 
 ### What technology is it built with?
-We use Lovable to build platforms with React and TypeScript — modern, fast and scalable web technology.
+We use cutting-edge web technology: fast, scalable and designed for professional experiences. No WordPress, no templates.
 
 ### Is this a shared SaaS product?
 No. Each platform is custom-built. Your domain, your brand, your data.
@@ -78,7 +76,7 @@ No. Each platform is custom-built. Your domain, your brand, your data.
 A standard deployment takes 4-6 weeks. Complex implementations can take 8-12 weeks.
 
 ### Can I integrate my existing CRM?
-Yes. We support native integrations with HubSpot, GoHighLevel and custom API connections.
+Yes. We support native integrations with major CRMs and custom API connections.
 
 ### Does it include SEO optimization?
-Yes. The platform includes built-in SEO best practices, tracking with GSC and DataForSEO, and content tools designed for search visibility.
+Yes. The platform includes built-in SEO best practices, tracking tools, and content features designed for search visibility.
