@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { Briefcase, GraduationCap, ShoppingCart, Users, Database, Calendar, Zap, Star } from 'lucide-react';
+import { BrainCircuit, GraduationCap, Users, Database, Calendar, Zap, Star } from 'lucide-react';
 const MethodologySection: React.FC = () => {
   return (
     <section id="metodologia" aria-label="Modelos de colaboración y metodología de trabajo" className="w-full bg-muted/50 scroll-mt-24">
@@ -26,21 +26,21 @@ const MethodologySection: React.FC = () => {
           <article className="animate-fade-in">
             <Card className="h-full">
               <CardHeader className="flex-row items-center gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-secondary/20 text-secondary-foreground">
-                  <ShoppingCart className="h-6 w-6" aria-hidden="true" />
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-impulsa/20 text-impulsa">
+                  <BrainCircuit className="h-6 w-6" aria-hidden="true" />
                 </div>
-                <CardTitle className="text-lg">Contratación de servicio/s</CardTitle>
+                <CardTitle className="text-lg">Contratación solución Marketing SENSE</CardTitle>
               </CardHeader>
               <CardContent className="pt-2">
-                <div className="bg-secondary/10 p-4 rounded-lg mb-4">
-                  <p className="font-semibold text-secondary text-sm uppercase tracking-wide mb-2">SOLO LO QUE NECESITAS</p>
-                  <p className="text-sm text-muted-foreground">Presupuesto cerrado por demanda específica</p>
+                <div className="bg-impulsa/10 p-4 rounded-lg mb-4">
+                  <p className="font-semibold text-impulsa text-sm uppercase tracking-wide mb-2">TU SOLUCIÓN PERSONALIZADA</p>
+                  <p className="text-sm text-muted-foreground">Análisis, estrategia y ejecución a medida con Marketing SENSE</p>
                 </div>
                 <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• Servicios específicos (web, campaña, automatización)</li>
-                  <li>• Presupuesto cerrado y definido</li>
-                  <li>• Entrega puntual del proyecto</li>
-                  <li>• Ideal para necesidades concretas</li>
+                  <li>• Diagnóstico inicial con metodología SENSE</li>
+                  <li>• Plan estratégico personalizado</li>
+                  <li>• Ejecución de los servicios que necesitas</li>
+                  <li>• Resultados medibles y seguimiento continuo</li>
                 </ul>
               </CardContent>
             </Card>
