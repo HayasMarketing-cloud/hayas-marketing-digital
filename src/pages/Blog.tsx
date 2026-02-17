@@ -85,7 +85,7 @@ const Blog = () => {
       category: isEnglish ? 'Technology' : 'Tecnología',
       readTime: '14 min',
       date: '2026-02-17',
-      image: '/images/blog/lovable-vs-wordpress-hero.jpg',
+      image: '/images/blog/lovable-vs-wordpress-hero-v3.jpg',
       slug: isEnglish ? '/en/blog/lovable-vs-wordpress' : '/es/blog/lovable-vs-wordpress-que-plataforma-elegir',
       tags: [isEnglish ? 'Web Development' : 'Desarrollo Web', 'SEO', isEnglish ? 'Digital Platforms' : 'Plataformas Digitales', 'IA', 'WordPress', 'Lovable'],
       featured: true
