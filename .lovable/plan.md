@@ -1,36 +1,56 @@
 
-## Fix: Sofia auto-open should only trigger once per session
+## Propuesta UX/UI: Elevar la frase puente "Ese marketing existe. Y empieza aqui."
 
-### Problem
-The auto-open `useEffect` (line 172-184) includes `isOpen` in its dependency array. When the user closes the chat (`isOpen` goes to `false`), the effect re-runs and starts a new 30-second timer, causing Sofia to reopen indefinitely every 30 seconds.
+### Problema actual
+La tercera frase ("Ese marketing existe. Y empieza aqui.") funciona como transicion/CTA hacia la card de SENSE, pero visualmente es un parrafo mas con estilo plano. No invita a la accion ni destaca como cierre del bloque introductorio.
 
-### Solution
-Use `sessionStorage` to track whether the auto-open has already fired during the current browser session. Once triggered, it won't fire again until the user opens a new tab or session.
+### Propuesta: Frase destacada con linea decorativa
 
-### Technical Details
+Convertir esa tercera frase en un elemento visualmente diferenciado pero sin romper la elegancia minimalista. La idea:
 
-**File: `src/components/SofiaChatNew.tsx`**
+- Separar la frase del bloque de parrafos con un poco mas de espacio.
+- Aplicar un peso tipografico mayor (`font-semibold`) y color mas oscuro (`text-foreground`).
+- Anadir una linea decorativa fina (divider) encima de la frase, centrada y corta (tipo `w-12 h-0.5 bg-primary/30`), que actue como separador visual sutil entre los parrafos explicativos y esta frase de cierre.
+- Aumentar ligeramente el tamano (`text-xl`).
 
-1. Add a `sessionStorage` flag (`sofia_auto_opened`) that is set to `true` after the first auto-open.
-2. Check this flag at the start of the auto-open effect -- if already set, skip the timer entirely.
-3. Remove `isOpen` from the dependency array since it's no longer needed for re-evaluation (the sessionStorage flag handles the "only once" logic).
+Esto crea una jerarquia visual: parrafos explicativos (gris, ligeros) -> frase de cierre (mas oscura, mas grande, con separador) -> card de SENSE.
 
-```typescript
-// Auto-open Sofia chat after 30 seconds on homepage (once per session)
-useEffect(() => {
-  const isHomePage = location.pathname === '/es' || location.pathname === '/en';
-  const alreadyOpened = sessionStorage.getItem('sofia_auto_opened');
-  if (!isHomePage || !shouldRender || isOpen || alreadyOpened) return;
+### Vista previa del resultado
 
-  const timer = setTimeout(() => {
-    setIsOpen(true);
-    setIsMinimized(false);
-    setShowHelpBubble(false);
-    sessionStorage.setItem('sofia_auto_opened', 'true');
-  }, 30000);
+```text
+  Un sistema donde la estrategia, los datos...
+  
+  Donde no necesitas mas herramientas...
 
-  return () => clearTimeout(timer);
-}, [location.pathname, shouldRender, isOpen]);
+        ────────
+  Ese marketing existe. Y empieza aqui.
+
+  ┌──────────────────────────────┐
+  │       SENSE Card             │
+  └──────────────────────────────┘
 ```
 
-This ensures the auto-open fires only once after 30 seconds on the first visit to the homepage, and does not repeat during the same browser session.
+### Seccion tecnica
+
+**Archivo: `src/components/MarketingChangedSection.tsx`**
+
+Cambiar el tercer parrafo (linea 70-72) de:
+
+```tsx
+<p className="text-elegant text-lg text-foreground/70 text-pretty">
+  {t('marketingChanged.intro.p3')}
+</p>
+```
+
+A un bloque con separador decorativo y tipografia destacada:
+
+```tsx
+<div className="pt-4 flex flex-col items-center gap-3">
+  <div className="w-12 h-0.5 bg-primary/30 rounded-full" />
+  <p className="text-xl font-semibold text-foreground text-pretty">
+    {t('marketingChanged.intro.p3')}
+  </p>
+</div>
+```
+
+Es un cambio minimo (solo en el tercer parrafo) que eleva la frase sin anadir complejidad ni elementos nuevos. Mantiene el estilo limpio y minimalista del proyecto.
