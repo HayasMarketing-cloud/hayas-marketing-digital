@@ -7,28 +7,28 @@ const TechnologyPlatformSection: React.FC = () => {
   const { isEnglish } = useLanguage();
 
   const title = isEnglish
-    ? "Built with modern technology and applied AI"
-    : "Construido con tecnología moderna e IA aplicada";
+    ? "Built with cutting-edge technology and applied AI"
+    : "Construido con tecnología de última generación e IA aplicada";
 
   const subtitle = isEnglish
-    ? "We don't use templates or generic CMS. We build your website with Lovable — React and TypeScript technology — integrated with real tools and powered by applied AI."
-    : "No usamos plantillas ni CMS genéricos. Construimos tu web con Lovable — tecnología React y TypeScript — integrada con herramientas reales y potenciada con IA aplicada.";
+    ? "We don't use templates or generic CMS. We build your website with cutting-edge web technology, integrated with real tools and powered by applied AI."
+    : "No usamos plantillas ni CMS genéricos. Construimos tu web con tecnología web de última generación, integrada con herramientas reales y potenciada con IA aplicada.";
 
   const features = [
     {
       icon: <Code2 className="h-7 w-7" />,
-      title: isEnglish ? 'Lovable Technology' : 'Tecnología Lovable',
+      title: isEnglish ? 'Cutting-edge technology' : 'Tecnología de última generación',
       description: isEnglish
-        ? 'React, TypeScript and component architecture. Fast, scalable and without legacy code.'
-        : 'React, TypeScript y arquitectura de componentes. Rápida, escalable y sin código legacy.',
+        ? 'Modular and flexible design. Fast, scalable and without technological debt.'
+        : 'Diseño modular y flexible. Rápida, escalable y sin deuda tecnológica.',
       color: 'text-primary bg-primary/10',
     },
     {
       icon: <Zap className="h-7 w-7" />,
-      title: isEnglish ? 'Sub-second speed' : 'Velocidad por debajo del segundo',
+      title: isEnglish ? 'Instant loading' : 'Carga instantánea',
       description: isEnglish
-        ? 'Optimized Core Web Vitals. Your site loads instantly on any device.'
-        : 'Core Web Vitals optimizados. Tu web carga al instante en cualquier dispositivo.',
+        ? 'Optimized performance. Your site loads instantly on any device.'
+        : 'Rendimiento optimizado. Tu web carga al instante en cualquier dispositivo.',
       color: 'text-yellow-600 bg-yellow-100',
     },
     {
@@ -43,8 +43,8 @@ const TechnologyPlatformSection: React.FC = () => {
       icon: <Link2 className="h-7 w-7" />,
       title: isEnglish ? 'Real integrations' : 'Integraciones reales',
       description: isEnglish
-        ? 'Connected to Google Search Console, HubSpot, GoHighLevel, DataForSEO, analytics and more.'
-        : 'Conectada con Google Search Console, HubSpot, GoHighLevel, DataForSEO, analítica y más.',
+        ? 'Connected to your CRM, SEO tracking tools, analytics and more.'
+        : 'Conectada con tu CRM, herramientas de seguimiento SEO, analítica y más.',
       color: 'text-blue-600 bg-blue-100',
     },
     {

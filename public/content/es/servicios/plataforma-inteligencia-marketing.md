@@ -1,5 +1,5 @@
 <!--
-IA_SUMMARY: Plataforma de marketing a medida de Hayas Marketing. Diseñada para empresas que quieren profesionalizar su presencia digital con web profesional, SEO tracker, content hub y dashboards integrados. Construida con Lovable (React, TypeScript), incluye integraciones con GSC, DataForSEO, HubSpot y GoHighLevel. Resultado: una plataforma propia con tu marca, tus datos y tu dominio.
+IA_SUMMARY: Plataforma de marketing a medida de Hayas Marketing. Diseñada para empresas que quieren profesionalizar su presencia digital con web profesional, SEO tracker, content hub y dashboards integrados. Construida con tecnología web de última generación, incluye integraciones con CRM, herramientas SEO y analítica. Resultado: una plataforma propia con tu marca, tus datos y tu dominio.
 -->
 
 ---
@@ -9,7 +9,7 @@ keywords: ["plataforma inteligencia de marketing", "SENSE", "marketing intellige
 intent: "commercial"
 author: "Rubén Reyero"
 author_credentials: "CEO de Hayas Marketing | 15+ años en marketing digital B2B"
-date: "2026-02-16"
+date: "2026-02-17"
 canonical: "/es/soluciones/plataforma-inteligencia-marketing"
 ---
 
@@ -30,10 +30,10 @@ Esta solución forma parte de **SENSE**, nuestro sistema de inteligencia de mark
 ## ¿Qué incluye?
 
 ### Web Profesional
-Web moderna, rápida y responsive construida con React y TypeScript. Optimizada para conversiones y coherencia de marca.
+Web moderna, rápida y responsive. Optimizada para conversiones y coherencia de marca.
 
 ### SEO Tracker
-Seguimiento de keywords integrado con Google Search Console y DataForSEO. Monitoriza posiciones, indexación y rendimiento orgánico en tiempo real.
+Seguimiento de keywords y monitorización integrados. Sigue tus posiciones, indexación y rendimiento orgánico en tiempo real.
 
 ### Content Hub
 Gestión editorial completa: briefings, calendarios de contenido, flujos de creación asistidos por IA y publicación multicanal.
@@ -42,34 +42,32 @@ Gestión editorial completa: briefings, calendarios de contenido, flujos de crea
 Analítica en tiempo real que conecta datos de SEO, contenidos, CRM y campañas en una sola vista ejecutiva.
 
 ### Integración CRM
-Conexiones nativas con HubSpot, GoHighLevel y CRMs personalizados vía API. Datos unificados de clientes y atribución de marketing.
+Conexiones nativas con tu CRM. Datos unificados de clientes y atribución de marketing.
 
-## Construido con Lovable
+## Nuestra Tecnología
 
-Construimos tu plataforma con **Lovable** — tecnología moderna React y TypeScript que ofrece:
+Construimos tu plataforma con tecnología web de última generación que ofrece:
 
-- **Velocidad**: tiempos de carga por debajo del segundo
+- **Velocidad**: tu web carga al instante
 - **Escalabilidad**: crece con tu negocio sin perder rendimiento
 - **Propiedad total**: tú controlas los datos, la marca y la experiencia
 - **Despliegue rápido**: de concepto a lanzamiento en 4-6 semanas
 
-Sin WordPress. Sin plantillas. Sin código legacy.
+Sin WordPress. Sin plantillas. Sin dependencias innecesarias.
 
 ## Integraciones
 
 Tu plataforma se conecta con las herramientas que importan:
 
-- **Google Search Console**: datos de búsqueda orgánica
-- **DataForSEO**: tracking de keywords y análisis SERP
-- **HubSpot**: CRM y automatización de marketing
-- **GoHighLevel**: CRM para pymes y agencias
-- **Google Analytics**: analítica de tráfico y comportamiento
-- **Stripe**: pagos y suscripciones
+- **CRM**: gestión de clientes y automatización de marketing
+- **Herramientas SEO**: tracking de keywords y análisis de posicionamiento
+- **Analítica**: tráfico, comportamiento y conversiones
+- **Pagos**: suscripciones y facturación
 
 ## Preguntas frecuentes
 
 ### ¿Con qué tecnología se construye?
-Usamos Lovable para construir plataformas con React y TypeScript — tecnología web moderna, rápida y escalable.
+Utilizamos tecnología web de última generación: rápida, escalable y diseñada para experiencias profesionales. Sin WordPress, sin plantillas.
 
 ### ¿Es un producto SaaS compartido?
 No. Cada plataforma se construye a medida. Tu dominio, tu marca, tus datos.
@@ -78,7 +76,7 @@ No. Cada plataforma se construye a medida. Tu dominio, tu marca, tus datos.
 Un despliegue estándar tarda 4-6 semanas. Implementaciones complejas pueden llevar 8-12 semanas.
 
 ### ¿Puedo integrar mi CRM actual?
-Sí. Soportamos integraciones nativas con HubSpot, GoHighLevel y conexiones personalizadas vía API.
+Sí. Soportamos integraciones nativas con los principales CRMs y conexiones personalizadas vía API.
 
 ### ¿Incluye optimización SEO?
-Sí. La plataforma incluye buenas prácticas SEO integradas, tracking con GSC y DataForSEO, y herramientas de contenido diseñadas para visibilidad en buscadores.
+Sí. La plataforma incluye buenas prácticas SEO integradas, herramientas de seguimiento y funcionalidades de contenido diseñadas para visibilidad en buscadores.
