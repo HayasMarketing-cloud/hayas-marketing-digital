@@ -10,6 +10,8 @@ import { useServiceSEO } from '@/hooks/useServiceSEO';
 import EnhancedSEO from '@/components/EnhancedSEO';
 import FAQSection from '@/components/FAQSection';
 import ServiceContactSection from '@/components/ServiceContactSection';
+import SuccessCasesSection from '@/components/SuccessCasesSection';
+import { getServiceSuccessCasesConfig } from '@/data/serviceSuccessCasesMapping';
 import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
 import { 
   ShoppingCart, Globe, Server, Palette, Settings, Smartphone, 
@@ -513,6 +515,22 @@ const TiendaOnline = () => {
           </div>
         </div>
       </section>
+
+      {/* Success Cases Section */}
+      {(() => {
+        const config = getServiceSuccessCasesConfig('tienda-online');
+        return config ? (
+          <SuccessCasesSection
+            id="casos-exito"
+            title="Casos de éxito en e-commerce"
+            subtitle={config.subtitle}
+            filterTags={config.filterTags}
+            specificCases={config.specificCases}
+            maxCases={4}
+            showAllLink={true}
+          />
+        ) : null;
+      })()}
 
       {/* Contact Section */}
       <ServiceContactSection

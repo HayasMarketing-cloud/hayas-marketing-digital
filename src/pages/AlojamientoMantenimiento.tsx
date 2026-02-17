@@ -10,6 +10,8 @@ import { useServiceSEO } from '@/hooks/useServiceSEO';
 import EnhancedSEO from '@/components/EnhancedSEO';
 import FAQSection from '@/components/FAQSection';
 import ServiceContactSection from '@/components/ServiceContactSection';
+import SuccessCasesSection from '@/components/SuccessCasesSection';
+import { getServiceSuccessCasesConfig } from '@/data/serviceSuccessCasesMapping';
 import { 
   Server, Shield, Zap, BarChart3, Settings, Globe, Clock,
   ArrowRight, CheckCircle, Star, Wrench, Database, Monitor,
@@ -540,6 +542,22 @@ const AlojamientoMantenimiento: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Success Cases Section */}
+      {(() => {
+        const config = getServiceSuccessCasesConfig('alojamiento-mantenimiento');
+        return config ? (
+          <SuccessCasesSection
+            id="casos-exito"
+            title="Casos de éxito en alojamiento y mantenimiento"
+            subtitle={config.subtitle}
+            filterTags={config.filterTags}
+            specificCases={config.specificCases}
+            maxCases={4}
+            showAllLink={true}
+          />
+        ) : null;
+      })()}
 
       {/* FAQ Section */}
       <FAQSection faqs={faqItems} />

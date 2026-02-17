@@ -8,6 +8,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
 import FAQSection from '@/components/FAQSection';
+import SuccessCasesSection from '@/components/SuccessCasesSection';
+import { getServiceSuccessCasesConfig } from '@/data/serviceSuccessCasesMapping';
 import { useServiceSEO } from '@/hooks/useServiceSEO';
 import EnhancedSEO from '@/components/EnhancedSEO';
 import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
@@ -236,6 +238,22 @@ const MarketingDirecto: React.FC = () => {
           </Card>
         </div>
       </section>
+
+      {/* Success Cases Section */}
+      {(() => {
+        const config = getServiceSuccessCasesConfig('marketing-directo');
+        return config ? (
+          <SuccessCasesSection
+            id="casos-exito"
+            title="Casos de éxito en marketing directo"
+            subtitle={config.subtitle}
+            filterTags={config.filterTags}
+            specificCases={config.specificCases}
+            maxCases={4}
+            showAllLink={true}
+          />
+        ) : null;
+      })()}
 
       {/* FAQ + Contacto */}
       <FAQSection faqs={faqItems} />
