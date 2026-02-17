@@ -93,6 +93,12 @@ IA_SUMMARY:
 | Peris Electricidad | `/content/es/casos-exito/peris-electricidad.md` | ✅ |
 | Inbound Students | `/content/es/casos-exito/inbound-students.md` | ✅ |
 
+## Blog - Mapping
+
+| Componente React | Fichero .md ES | Estado |
+|------------------|----------------|--------|
+| `BlogLovableVsWordpress.tsx` | `/content/es/blog/lovable-vs-wordpress.md` | ✅ |
+
 - [ ] Identificar fichero .md correspondiente (usar tabla arriba)
 - [ ] Actualizar contenido manteniendo estructura E-E-A-T
 - [ ] Actualizar `Última actualización` en metadatos

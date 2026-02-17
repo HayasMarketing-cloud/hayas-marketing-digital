@@ -72,6 +72,25 @@ const Blog = () => {
 
   const allPosts = [
     {
+      id: 'lovable-vs-wordpress',
+      title: isEnglish 
+        ? 'Lovable vs WordPress: Which Platform to Choose for Your Strategy'
+        : 'Lovable vs WordPress: qué plataforma elegir según tu estrategia',
+      description: isEnglish
+        ? 'Strategic comparison between Lovable and WordPress. Two distinct philosophies for building digital presence: modern code vs plugin ecosystem.'
+        : 'Comparativa estratégica entre Lovable y WordPress. Dos filosofías distintas para construir presencia digital: código moderno vs ecosistema de plugins.',
+      excerpt: isEnglish
+        ? 'Lovable generates real React/TypeScript code with native AI. WordPress assembles with plugins. Discover which approach fits your project.'
+        : 'Lovable genera código React/TypeScript real con IA nativa. WordPress ensambla con plugins. Descubre qué enfoque encaja con tu proyecto.',
+      category: isEnglish ? 'Technology' : 'Tecnología',
+      readTime: '14 min',
+      date: '2026-02-17',
+      image: '/lovable-vs-wordpress-hero.jpg',
+      slug: isEnglish ? '/en/blog/lovable-vs-wordpress' : '/es/blog/lovable-vs-wordpress-que-plataforma-elegir',
+      tags: [isEnglish ? 'Web Development' : 'Desarrollo Web', 'SEO', isEnglish ? 'Digital Platforms' : 'Plataformas Digitales', 'IA', 'WordPress', 'Lovable'],
+      featured: true
+    },
+    {
       id: 'nuevo-paradigma-seo-aeo-geo',
       title: isEnglish 
         ? 'The New SEO Paradigm in the AI Era (AEO and GEO)'
