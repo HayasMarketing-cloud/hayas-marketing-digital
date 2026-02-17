@@ -58,10 +58,10 @@ const SensePlatform = () => {
     heroSubtitle: isEnglish
       ? 'Strategy, data and execution connected in one system. Your website, SEO monitoring, content management and performance dashboards — all integrated and built for your business.'
       : 'Estrategia, datos y ejecución conectados en un sistema. Tu web, monitorización SEO, gestión de contenidos y dashboards de rendimiento — todo integrado y construido para tu negocio.',
-    whatIsTitle: isEnglish ? 'What does it include?' : '¿Qué incluye?',
+    whatIsTitle: isEnglish ? 'What does SENSE include?' : '¿Qué incluye SENSE?',
     whatIsDescription: isEnglish
-      ? 'Not just a website. A complete digital presence system: your website, SEO monitoring, content management and performance dashboards — connected, branded and designed for your business.'
-      : 'No es solo una web. Es un sistema completo de presencia digital: tu web, monitorización SEO, gestión de contenidos y dashboards de rendimiento — conectados, con tu marca y diseñados para tu negocio.',
+      ? 'A 360 marketing plan aligned with your business strategy. Website, SEO, content, CRM and performance dashboards — all connected in one system. Powered by AI, governed by people.'
+      : 'Un plan de marketing 360 alineado con la estrategia de tu negocio. Web, SEO, contenidos, CRM y dashboards de rendimiento — todo conectado en un solo sistema. Impulsado por IA, gobernado por personas.',
     builtWithTitle: isEnglish ? 'Our technology' : 'Nuestra tecnología',
     builtWithDescription: isEnglish
       ? 'We build your system with cutting-edge web technology: fast, scalable and with a professional experience. No WordPress. No templates. Your own system, ready to grow with you.'
