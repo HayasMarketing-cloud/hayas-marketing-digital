@@ -50,8 +50,12 @@ const MarketingChangedSection = () => {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold font-dm-sans text-foreground leading-tight">
             {t('marketingChanged.title')}
             <span className="text-gradient-primary">{t('marketingChanged.titleHighlight')}</span>
-            <br className="hidden md:block" />
-            <span className="block md:inline">{t('marketingChanged.titleEnd')}</span>
+            {t('marketingChanged.titleEnd') && (
+              <>
+                <br className="hidden md:block" />
+                <span className="block md:inline">{t('marketingChanged.titleEnd')}</span>
+              </>
+            )}
           </h2>
         </div>
 

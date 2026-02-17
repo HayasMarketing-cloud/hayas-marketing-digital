@@ -733,13 +733,13 @@ export const translations = {
       }
     },
     marketingChanged: {
-      title: 'El marketing ',
-      titleHighlight: 'ha cambiado.',
-      titleEnd: 'Cómo se gestiona también.',
+      title: 'Imagina un marketing donde ',
+      titleHighlight: 'cada acción tiene sentido.',
+      titleEnd: '',
       intro: {
-        p1: 'Hoy todos tenemos más canales, más datos y más herramientas que nunca.',
-        p2: 'Pero eso no siempre lleva a mejores decisiones ni a un crecimiento sostenible.',
-        p3: 'La diferencia no está en hacer más, sino en decidir mejor desde el principio.'
+        p1: 'Un sistema donde la estrategia, los datos y la creatividad trabajan juntos desde el primer día.',
+        p2: 'Donde no necesitas más herramientas, sino la visión correcta para conectar las que ya tienes.',
+        p3: 'Ese marketing existe. Y empieza aquí.'
       },
       senseTitle: 'Por eso creamos SENSE',
       senseDescription: 'Nuestro sistema de inteligencia de marketing que conecta estrategia, datos y ejecución. Un enfoque integral que ordena todo tu marketing y le da sentido.',
@@ -1498,13 +1498,13 @@ export const translations = {
       }
     },
     marketingChanged: {
-      title: 'Marketing ',
-      titleHighlight: 'has changed.',
-      titleEnd: 'So has the way it should be managed.',
+      title: 'Imagine a marketing where ',
+      titleHighlight: 'every action makes sense.',
+      titleEnd: '',
       intro: {
-        p1: 'Today, we all have more channels, data, and tools than ever.',
-        p2: "But that doesn't always lead to better decisions or sustainable growth.",
-        p3: "The difference isn't in doing more, but in making better decisions from the start."
+        p1: 'A system where strategy, data and creativity work together from day one.',
+        p2: "Where you don't need more tools — just the right vision to connect the ones you already have.",
+        p3: 'That marketing exists. And it starts here.'
       },
       senseTitle: "That's why we created SENSE",
       senseDescription: 'Our marketing intelligence system that connects strategy, data and execution. A comprehensive approach that organizes your entire marketing and makes it meaningful.',
