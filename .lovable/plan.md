@@ -1,75 +1,49 @@
 
-# Fix: Titulo de Casos de Exito mostrando HTML raw en paginas de servicios
 
-## Problema
+## Optimizar maquetacion de textos y responsive en la Home
 
-Varias paginas de servicios pasan cadenas HTML como titulo al componente `SuccessCasesSection`:
+### Problema detectado
+En la seccion "Imagina un marketing donde cada accion tiene sentido", los parrafos introductorios dejan palabras sueltas al final de la linea ("dia.", "tienes.") debido a la combinacion de `text-center` con `max-w-3xl`. Esto ocurre tanto en desktop (1366px) como en otras resoluciones. Tambien el subtitulo del hero puede dejar "improvisacion." aislado.
 
-```
-"Casos de <span class='text-gradient-primary'>éxito</span>"
-```
+### Solucion
 
-Pero `SuccessCasesSection` renderiza el titulo como texto plano (React no interpreta HTML en strings), resultando en el codigo HTML visible en pantalla.
+**1. Aplicar `text-wrap: balance` / `text-pretty` a textos centrados clave**
 
-Esto es innecesario porque `SuccessCasesSection` **ya tiene logica interna** que aplica automaticamente el gradiente a las palabras "exito" y "stories".
+Usar la propiedad CSS moderna `text-wrap: balance` en titulos y `text-pretty` en parrafos para evitar palabras huerfanas. Ambas tienen soporte amplio en navegadores modernos.
 
-## Solucion
+**2. Ajustar contenedores de texto en MarketingChangedSection**
 
-### 1. Limpiar titulos HTML en todas las paginas afectadas
+- Cambiar el contenedor de parrafos de `max-w-3xl` a `max-w-2xl` para que el texto fluya mejor en las resoluciones intermedias donde se producen los huerfanos.
+- Anadir la clase `text-balance` a los titulos h2 de la seccion.
+- Anadir `text-pretty` a los parrafos de introduccion (p1, p2, p3).
 
-Reemplazar strings con HTML por texto plano en estos archivos:
+**3. Ajustar subtitulo del Hero (SlideLayoutCentered)**
 
-| Archivo | Valor actual | Valor corregido |
-|---------|-------------|-----------------|
-| `src/pages/ImplantacionCrm.tsx` | `"Casos de <span class='text-gradient-primary'>éxito</span>"` | `"Casos de éxito"` |
-| `src/pages/DisenoWeb.tsx` | `"Casos de <span class='text-gradient-primary'>éxito</span>"` / `"Success <span class='text-gradient-primary'>stories</span>"` | `"Casos de éxito"` / `"Success stories"` |
-| `src/pages/CreacionMarca.tsx` | Idem | `"Casos de éxito"` / `"Success stories"` |
-| `src/pages/PublicidadRedesSociales.tsx` | `"Casos de <span className='text-gradient-primary'>éxito</span>"` | `"Casos de éxito"` / `"Success Cases"` |
-| `src/pages/LocalizacionContenidos.tsx` | `"Casos de <span className='text-gradient-primary'>éxito</span> en localización"` | `"Casos de éxito en localización"` |
+- Anadir `text-pretty` al parrafo del subtitulo para evitar palabras huerfanas.
+- Anadir `text-balance` al titulo h1.
 
-### 2. Actualizar la logica de gradiente en `SuccessCasesSection`
+**4. Crear utilidades CSS reutilizables**
 
-El componente actualmente solo aplica gradiente a "exito" y "stories". Hay que asegurar que tambien funcione con la palabra "Cases" (para la version inglesa de PublicidadRedesSociales que usa "Success Cases").
-
-Anadir `'cases'` a la lista de palabras que reciben el gradiente en la logica del `map()`.
-
-### 3. Renderizar SuccessCasesSection en ServicePageTemplate
-
-El template tiene las props `showSuccessCases`, `successCasesServiceSlug` y `successCasesTitle` definidas e importa tanto `SuccessCasesSection` como `getServiceSuccessCasesConfig`, pero **nunca renderiza la seccion**. Esto afecta a paginas como:
-- `AdministracionCrm`
-- `AutomatizacionProcesosVentas`
-- `EstrategiaContenidos`
-- `IntegracionesIAProcesos`
-- `ConsultoriaEstrategicaAnalitica`
-
-Se anadira el bloque de renderizado entre `additionalContent` y `FAQSection`:
-
-```text
-{data.showSuccessCases && (
-  <SuccessCasesSection
-    title={data.successCasesTitle || "Casos de éxito"}
-    filterTags={config.filterTags}
-    specificCases={config.specificCases}
-    ...
-  />
-)}
+Agregar en `src/index.css` las clases utilitarias:
+```css
+.text-balance {
+  text-wrap: balance;
+}
+.text-pretty {
+  text-wrap: pretty;
+}
 ```
 
-Usando `getServiceSuccessCasesConfig(data.successCasesServiceSlug)` para obtener la configuracion de filtrado.
-
-## Archivos a modificar
+### Seccion tecnica - Archivos a modificar
 
 | Archivo | Cambio |
 |---------|--------|
-| `src/pages/ImplantacionCrm.tsx` | Quitar HTML del titulo |
-| `src/pages/DisenoWeb.tsx` | Quitar HTML del titulo |
-| `src/pages/CreacionMarca.tsx` | Quitar HTML del titulo |
-| `src/pages/PublicidadRedesSociales.tsx` | Quitar HTML del titulo |
-| `src/pages/LocalizacionContenidos.tsx` | Quitar HTML del titulo |
-| `src/components/SuccessCasesSection.tsx` | Anadir "cases" a palabras con gradiente |
-| `src/components/ServicePageTemplate.tsx` | Renderizar SuccessCasesSection cuando `showSuccessCases=true` |
+| `src/index.css` | Agregar clases `.text-balance` y `.text-pretty` |
+| `src/components/MarketingChangedSection.tsx` | Aplicar `text-balance` al h2, `text-pretty` a los parrafos intro, reducir `max-w-3xl` a `max-w-2xl` en el contenedor de parrafos |
+| `src/components/hero-slides/SlideLayoutCentered.tsx` | Aplicar `text-balance` al titulo y `text-pretty` al subtitulo |
 
-## Resultado
+### Resultado esperado
+- Ninguna palabra queda sola en una linea en titulos ni parrafos centrados
+- El responsive se mantiene limpio en mobile (390px), tablet (768px) y desktop (1366px+)
+- Compatible con navegadores modernos; en navegadores sin soporte simplemente se ignora sin efecto negativo
 
-- Todas las paginas de servicios mostraran "Casos de **exito**" con el gradiente aplicado correctamente via JSX (no HTML crudo).
-- Las paginas que usan `ServicePageTemplate` con `showSuccessCases=true` mostraran la seccion de casos de exito que actualmente falta.
