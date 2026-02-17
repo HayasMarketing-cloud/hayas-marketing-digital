@@ -31,10 +31,10 @@ const SensePlatform = () => {
   const isEnglish = language === 'en';
 
   const content = {
-    serviceName: isEnglish ? 'SENSE - Marketing Intelligence Platform' : 'SENSE - Plataforma de Inteligencia de Marketing',
+    serviceName: isEnglish ? 'SENSE - Marketing Intelligence System' : 'SENSE - Sistema de Inteligencia de Marketing',
     serviceDescription: isEnglish
-      ? 'Marketing intelligence platform that connects strategy, data and execution. Designed to grow with your business.'
-      : 'Plataforma de inteligencia de marketing que conecta estrategia, datos y ejecución. Diseñada para crecer con tu negocio.',
+      ? 'Marketing intelligence system that connects strategy, data and execution. Designed to grow with your business.'
+      : 'Sistema de inteligencia de marketing que conecta estrategia, datos y ejecución. Diseñado para crecer con tu negocio.',
     canonical: isEnglish ? '/en/solutions/marketing-intelligence-platform' : '/es/soluciones/plataforma-inteligencia-marketing',
     features: isEnglish ? [
       'Professional website with your brand',
@@ -49,32 +49,32 @@ const SensePlatform = () => {
     ],
     breadcrumbHome: isEnglish ? 'Home' : 'Inicio',
     breadcrumbSolutions: isEnglish ? 'Solutions' : 'Soluciones',
-    breadcrumbCurrent: isEnglish ? 'SENSE Platform' : 'Plataforma SENSE',
+    breadcrumbCurrent: isEnglish ? 'SENSE System' : 'Sistema SENSE',
     homeLink: isEnglish ? '/en' : '/es',
     solutionsLink: isEnglish ? '/en#solutions' : '/es#soluciones',
     heroTitle: isEnglish
-      ? <>SENSE: Your <span className="text-gradient-primary">Marketing Intelligence</span> Platform</>
-      : <>SENSE: Tu Plataforma de <span className="text-gradient-primary">Inteligencia de Marketing</span></>,
+      ? <>SENSE: Your <span className="text-gradient-primary">Marketing Intelligence</span> System</>
+      : <>SENSE: Tu Sistema de <span className="text-gradient-primary">Inteligencia de Marketing</span></>,
     heroSubtitle: isEnglish
-      ? 'Strategy, data and execution connected in one platform. Your website, SEO monitoring, content management and performance dashboards — all integrated and built for your business.'
-      : 'Estrategia, datos y ejecución conectados en una plataforma. Tu web, monitorización SEO, gestión de contenidos y dashboards de rendimiento — todo integrado y construido para tu negocio.',
+      ? 'Strategy, data and execution connected in one system. Your website, SEO monitoring, content management and performance dashboards — all integrated and built for your business.'
+      : 'Estrategia, datos y ejecución conectados en un sistema. Tu web, monitorización SEO, gestión de contenidos y dashboards de rendimiento — todo integrado y construido para tu negocio.',
     whatIsTitle: isEnglish ? 'What does it include?' : '¿Qué incluye?',
     whatIsDescription: isEnglish
       ? 'Not just a website. A complete digital presence system: your website, SEO monitoring, content management and performance dashboards — connected, branded and designed for your business.'
       : 'No es solo una web. Es un sistema completo de presencia digital: tu web, monitorización SEO, gestión de contenidos y dashboards de rendimiento — conectados, con tu marca y diseñados para tu negocio.',
     builtWithTitle: isEnglish ? 'Our technology' : 'Nuestra tecnología',
     builtWithDescription: isEnglish
-      ? 'We build your platform with cutting-edge web technology: fast, scalable and with a professional experience. No WordPress. No templates. Your own platform, ready to grow with you.'
-      : 'Construimos tu plataforma con tecnología web de última generación: rápida, escalable y con una experiencia profesional. Sin WordPress. Sin plantillas. Tu propia plataforma, lista para crecer contigo.',
+      ? 'We build your system with cutting-edge web technology: fast, scalable and with a professional experience. No WordPress. No templates. Your own system, ready to grow with you.'
+      : 'Construimos tu sistema con tecnología web de última generación: rápida, escalable y con una experiencia profesional. Sin WordPress. Sin plantillas. Tu propio sistema, listo para crecer contigo.',
     integrationsTitle: isEnglish ? 'Real integrations' : 'Integraciones reales',
     integrationsDescription: isEnglish
-      ? 'Your platform connects with the tools that matter: CRM, SEO tracking, analytics and more. Real data, real-time.'
-      : 'Tu plataforma se conecta con las herramientas que importan: CRM, seguimiento SEO, analítica y más. Datos reales, en tiempo real.',
+      ? 'Your system connects with the tools that matter: CRM, SEO tracking, analytics and more. Real data, real-time.'
+      : 'Tu sistema se conecta con las herramientas que importan: CRM, seguimiento SEO, analítica y más. Datos reales, en tiempo real.',
     forWhomTitle: isEnglish ? 'Who is it for?' : '¿Para quién es?',
     ctaTitle: isEnglish ? 'Ready to professionalize your digital presence?' : '¿Listo para profesionalizar tu presencia digital?',
     ctaDescription: isEnglish
-      ? 'Schedule a strategic session to explore how we can build your custom marketing platform.'
-      : 'Agenda una sesión estratégica para explorar cómo construir tu plataforma de marketing a medida.',
+      ? 'Schedule a strategic session to explore how we can build your custom marketing system.'
+      : 'Agenda una sesión estratégica para explorar cómo construir tu sistema de marketing a medida.',
     ctaButton: isEnglish ? 'Schedule a demo' : 'Agendar una demo',
     ctaLink: isEnglish ? '/en/schedule-meeting' : '/es/agendar-reunion',
   };
@@ -85,25 +85,25 @@ const SensePlatform = () => {
     { icon: FileText, title: 'Content Hub', description: 'Editorial management with briefings, content calendars, and AI-assisted content creation workflows.' },
     { icon: BarChart3, title: 'Performance Dashboards', description: 'Real-time analytics connecting SEO, content, CRM and campaign data in one view.' },
     { icon: Link2, title: 'CRM Integration', description: 'Native connections to your CRM. Unified customer data and marketing attribution.' },
-    { icon: Layers, title: 'White-Label Platform', description: 'Fully branded with your logo, colors and domain. It\'s your platform, not a shared tool.' },
+    { icon: Layers, title: 'White-Label System', description: 'Fully branded with your logo, colors and domain. It\'s your system, not a shared tool.' },
   ] : [
     { icon: Globe, title: 'Web Profesional', description: 'Web moderna, rápida y responsive. Optimizada para conversiones y coherencia de marca.' },
     { icon: Search, title: 'SEO Tracker', description: 'Seguimiento de keywords y monitorización integrados. Sigue tus posiciones, indexación y rendimiento orgánico en tiempo real.' },
     { icon: FileText, title: 'Content Hub', description: 'Gestión editorial con briefings, calendarios de contenido y flujos de creación asistidos por IA.' },
     { icon: BarChart3, title: 'Dashboards de Rendimiento', description: 'Analítica en tiempo real que conecta datos de SEO, contenidos, CRM y campañas en una sola vista.' },
     { icon: Link2, title: 'Integración CRM', description: 'Conexiones nativas con tu CRM. Datos unificados de clientes y atribución de marketing.' },
-    { icon: Layers, title: 'Plataforma con tu Marca', description: 'Totalmente personalizada con tu logo, colores y dominio. Es tu plataforma, no una herramienta compartida.' },
+    { icon: Layers, title: 'Sistema con tu Marca', description: 'Totalmente personalizado con tu logo, colores y dominio. Es tu sistema, no una herramienta compartida.' },
   ];
 
   const builtWithFeatures = isEnglish ? [
     { icon: Code2, title: 'Cutting-edge technology', description: 'Modular and flexible design. No unnecessary dependencies or technological debt.' },
     { icon: Zap, title: 'Fast & Scalable', description: 'Your website loads instantly. Grows with your business without losing performance.' },
-    { icon: Shield, title: 'Secure & Owned', description: 'You own your platform. Your data, your domain, your brand — always.' },
+    { icon: Shield, title: 'Secure & Owned', description: 'You own your system. Your data, your domain, your brand — always.' },
     { icon: Rocket, title: 'Rapid Deployment', description: 'From concept to launch in 4-6 weeks. No 6-month development cycles.' },
   ] : [
     { icon: Code2, title: 'Tecnología de última generación', description: 'Diseño modular y flexible. Sin dependencias innecesarias ni deuda tecnológica.' },
     { icon: Zap, title: 'Rápida y Escalable', description: 'Tu web carga al instante. Crece con tu negocio sin perder rendimiento.' },
-    { icon: Shield, title: 'Segura y Propia', description: 'Tú eres dueño de tu plataforma. Tus datos, tu dominio, tu marca — siempre.' },
+    { icon: Shield, title: 'Seguro y Propio', description: 'Tú eres dueño de tu sistema. Tus datos, tu dominio, tu marca — siempre.' },
     { icon: Rocket, title: 'Despliegue Rápido', description: 'De concepto a lanzamiento en 4-6 semanas. Sin ciclos de desarrollo de 6 meses.' },
   ];
 
@@ -118,28 +118,28 @@ const SensePlatform = () => {
 
   const forWhom = isEnglish ? [
     { title: 'Growing businesses', description: 'Companies that want a professional digital presence backed by real data, not just a pretty website.' },
-    { title: 'Marketing teams', description: 'Teams that need SEO, content and performance data centralized in one platform instead of 10 separate tools.' },
-    { title: 'Agencies & consultants', description: 'Professionals who want to deliver branded platforms to their clients with real tracking capabilities.' },
+    { title: 'Marketing teams', description: 'Teams that need SEO, content and performance data centralized in one system instead of 10 separate tools.' },
+    { title: 'Agencies & consultants', description: 'Professionals who want to deliver branded systems to their clients with real tracking capabilities.' },
   ] : [
     { title: 'Empresas en crecimiento', description: 'Empresas que quieren una presencia digital profesional respaldada por datos reales, no solo una web bonita.' },
-    { title: 'Equipos de marketing', description: 'Equipos que necesitan SEO, contenidos y datos de rendimiento centralizados en una plataforma, no en 10 herramientas separadas.' },
-    { title: 'Agencias y consultores', description: 'Profesionales que quieren entregar plataformas con su marca a sus clientes con capacidades reales de seguimiento.' },
+    { title: 'Equipos de marketing', description: 'Equipos que necesitan SEO, contenidos y datos de rendimiento centralizados en un sistema, no en 10 herramientas separadas.' },
+    { title: 'Agencias y consultores', description: 'Profesionales que quieren entregar sistemas con su marca a sus clientes con capacidades reales de seguimiento.' },
   ];
 
   const faqs = isEnglish ? [
-    { question: 'What technology is the platform built with?', answer: 'We use cutting-edge web technology: fast, scalable and designed for professional experiences. No WordPress, no templates.' },
-    { question: 'Is this a shared SaaS product?', answer: 'No. Each platform is custom-built for you. Your domain, your brand, your data. It\'s not a login to a shared tool.' },
+    { question: 'What technology is the system built with?', answer: 'We use cutting-edge web technology: fast, scalable and designed for professional experiences. No WordPress, no templates.' },
+    { question: 'Is this a shared SaaS product?', answer: 'No. Each system is custom-built for you. Your domain, your brand, your data. It\'s not a login to a shared tool.' },
     { question: 'How long does implementation take?', answer: 'A standard deployment takes 4-6 weeks. Complex implementations with multiple integrations can take 8-12 weeks.' },
     { question: 'Can I integrate my existing CRM?', answer: 'Yes. We support native integrations with HubSpot, GoHighLevel, and custom CRM connections via API.' },
     { question: 'What happens after launch?', answer: 'We offer ongoing management and optimization plans. Or your team can manage it independently with our training and documentation.' },
-    { question: 'Does it include SEO optimization?', answer: 'Yes. The platform includes built-in SEO best practices, integrated tracking tools, and content features designed for search visibility.' },
+    { question: 'Does it include SEO optimization?', answer: 'Yes. The system includes built-in SEO best practices, integrated tracking tools, and content features designed for search visibility.' },
   ] : [
-    { question: '¿Con qué tecnología se construye la plataforma?', answer: 'Utilizamos tecnología web de última generación: rápida, escalable y diseñada para experiencias profesionales. Sin WordPress, sin plantillas.' },
-    { question: '¿Es un producto SaaS compartido?', answer: 'No. Cada plataforma se construye a medida para ti. Tu dominio, tu marca, tus datos. No es un login a una herramienta compartida.' },
+    { question: '¿Con qué tecnología se construye el sistema?', answer: 'Utilizamos tecnología web de última generación: rápida, escalable y diseñada para experiencias profesionales. Sin WordPress, sin plantillas.' },
+    { question: '¿Es un producto SaaS compartido?', answer: 'No. Cada sistema se construye a medida para ti. Tu dominio, tu marca, tus datos. No es un login a una herramienta compartida.' },
     { question: '¿Cuánto tarda la implementación?', answer: 'Un despliegue estándar tarda 4-6 semanas. Implementaciones complejas con múltiples integraciones pueden llevar 8-12 semanas.' },
     { question: '¿Puedo integrar mi CRM actual?', answer: 'Sí. Soportamos integraciones nativas con HubSpot, GoHighLevel y conexiones CRM personalizadas vía API.' },
-    { question: '¿Qué pasa después del lanzamiento?', answer: 'Ofrecemos planes de gestión y optimización continua. O tu equipo puede gestionarla de forma independiente con nuestra formación y documentación.' },
-    { question: '¿Incluye optimización SEO?', answer: 'Sí. La plataforma incluye buenas prácticas SEO integradas, herramientas de seguimiento y funcionalidades de contenido diseñadas para visibilidad en buscadores.' },
+    { question: '¿Qué pasa después del lanzamiento?', answer: 'Ofrecemos planes de gestión y optimización continua. O tu equipo puede gestionarlo de forma independiente con nuestra formación y documentación.' },
+    { question: '¿Incluye optimización SEO?', answer: 'Sí. El sistema incluye buenas prácticas SEO integradas, herramientas de seguimiento y funcionalidades de contenido diseñadas para visibilidad en buscadores.' },
   ];
 
   return (
@@ -164,7 +164,7 @@ const SensePlatform = () => {
           <div className="container mx-auto px-4 max-w-4xl text-center">
             <div className="inline-flex items-center gap-2 rounded-full bg-impulsa/10 px-4 py-1.5 text-sm font-medium text-impulsa mb-6">
               <BrainCircuit size={16} />
-              <span>{isEnglish ? 'SENSE Platform' : 'Plataforma SENSE'}</span>
+              <span>{isEnglish ? 'SENSE System' : 'Sistema SENSE'}</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-dm-sans text-foreground mb-6 leading-tight">
               {content.heroTitle}

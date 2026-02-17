@@ -695,8 +695,8 @@ export const translations = {
         description: 'Gestión completa de tu sistema CRM y estrategias de marketing para máximo rendimiento.'
       },
       sense: {
-        title: 'Tu Web y SEO en una Plataforma a Medida',
-        description: 'Web profesional, contenidos y SEO integrados en tu propia plataforma de marketing. Construida con tecnología moderna e integraciones reales.'
+        title: 'Tu Web y SEO en un Sistema a Medida',
+        description: 'Web profesional, contenidos y SEO integrados en tu propio sistema de marketing. Construido con tecnología moderna e integraciones reales.'
       }
     },
     chatbot: {
@@ -761,7 +761,7 @@ export const translations = {
         }
       },
       closing: 'Cada eje se activa según tu momento. Puedes empezar por uno o combinar varios. SENSE los conecta todos para que tu marketing funcione como un sistema, no como acciones aisladas.',
-      impulsaPlatform: 'Incluye tu plataforma web y SEO a medida'
+      impulsaPlatform: 'Incluye tu sistema web y SEO a medida'
     }
   },
   en: {
@@ -1460,8 +1460,8 @@ export const translations = {
         description: 'Complete management of your CRM system and marketing strategies for maximum performance.'
       },
       sense: {
-        title: 'Your Website & SEO in a Custom Platform',
-        description: 'Professional website, content and SEO integrated into your own marketing platform. Built with modern technology and real integrations.'
+        title: 'Your Website & SEO in a Custom System',
+        description: 'Professional website, content and SEO integrated into your own marketing system. Built with modern technology and real integrations.'
       }
     },
     chatbot: {
@@ -1526,7 +1526,7 @@ export const translations = {
         }
       },
       closing: 'Each pillar activates according to your moment. You can start with one or combine several. SENSE connects them all so your marketing works as a system, not as isolated actions.',
-      impulsaPlatform: 'Includes your custom web & SEO platform'
+      impulsaPlatform: 'Includes your custom web & SEO system'
     },
     // ============================================
     // SOLUTION PAGES TRANSLATIONS
