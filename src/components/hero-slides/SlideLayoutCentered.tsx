@@ -37,12 +37,12 @@ export const SlideLayoutCentered: React.FC<SlideLayoutCenteredProps> = ({
           </span>
         )}
         
-        <HeadingComponent className="text-4xl md:text-5xl lg:text-6xl font-bold font-dm-sans text-foreground mb-6 leading-tight">
+        <HeadingComponent className="text-4xl md:text-5xl lg:text-6xl font-bold font-dm-sans text-foreground mb-6 leading-tight text-balance">
           {title}
         </HeadingComponent>
         
         {subtitle && (
-          <p className="text-lg md:text-xl lg:text-2xl text-foreground/80 mb-8 max-w-2xl mx-auto leading-relaxed font-light tracking-wide animate-fade-in">
+          <p className="text-lg md:text-xl lg:text-2xl text-foreground/80 mb-8 max-w-2xl mx-auto leading-relaxed font-light tracking-wide animate-fade-in text-pretty">
             {subtitle}
           </p>
         )}

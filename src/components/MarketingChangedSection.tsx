@@ -47,7 +47,7 @@ const MarketingChangedSection = () => {
       <div className="container mx-auto px-4 max-w-5xl">
         {/* Title */}
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold font-dm-sans text-foreground leading-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold font-dm-sans text-foreground leading-tight text-balance">
             {t('marketingChanged.title')}
             <span className="text-gradient-primary">{t('marketingChanged.titleHighlight')}</span>
             {t('marketingChanged.titleEnd') && (
@@ -60,14 +60,14 @@ const MarketingChangedSection = () => {
         </div>
 
         {/* Intro paragraphs */}
-        <div className="max-w-3xl mx-auto text-center mb-12 space-y-4">
-          <p className="text-elegant text-lg text-foreground/90">
+        <div className="max-w-2xl mx-auto text-center mb-12 space-y-4">
+          <p className="text-elegant text-lg text-foreground/90 text-pretty">
             {t('marketingChanged.intro.p1')}
           </p>
-          <p className="text-elegant text-lg text-foreground/80">
+          <p className="text-elegant text-lg text-foreground/80 text-pretty">
             {t('marketingChanged.intro.p2')}
           </p>
-          <p className="text-elegant text-lg text-foreground/70">
+          <p className="text-elegant text-lg text-foreground/70 text-pretty">
             {t('marketingChanged.intro.p3')}
           </p>
         </div>
