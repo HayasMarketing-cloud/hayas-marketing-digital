@@ -12,7 +12,7 @@ export const useTranslation = () => {
       value = value?.[k];
     }
     
-    return value || key;
+    return value ?? key;
   };
   
   return { t, language };
