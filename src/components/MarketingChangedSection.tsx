@@ -67,9 +67,12 @@ const MarketingChangedSection = () => {
           <p className="text-elegant text-lg text-foreground/80 text-pretty">
             {t('marketingChanged.intro.p2')}
           </p>
-          <p className="text-elegant text-lg text-foreground/70 text-pretty">
-            {t('marketingChanged.intro.p3')}
-          </p>
+          <div className="pt-4 flex flex-col items-center gap-3">
+            <div className="w-12 h-0.5 bg-primary/30 rounded-full" />
+            <p className="text-xl font-semibold text-foreground text-pretty">
+              {t('marketingChanged.intro.p3')}
+            </p>
+          </div>
         </div>
 
         {/* SENSE as the strategic umbrella - NOW PROMINENT AND FIRST */}
