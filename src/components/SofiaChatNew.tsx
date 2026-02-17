@@ -169,6 +169,25 @@ const SofiaChatNew = () => {
     return () => window.removeEventListener('openSofiaChat', handleOpenSofiaChat);
   }, []);
 
+  // Auto-open Sofia chat after 60 seconds on homepage
+  useEffect(() => {
+    const isHomePage = location.pathname === '/es' || location.pathname === '/en';
+    if (!isHomePage || !shouldRender || isOpen) return;
+
+    // Check if already auto-opened this session
+    const alreadyAutoOpened = sessionStorage.getItem('sofia-auto-opened');
+    if (alreadyAutoOpened) return;
+
+    const timer = setTimeout(() => {
+      setIsOpen(true);
+      setIsMinimized(false);
+      setShowHelpBubble(false);
+      sessionStorage.setItem('sofia-auto-opened', 'true');
+    }, 60000);
+
+    return () => clearTimeout(timer);
+  }, [location.pathname, shouldRender, isOpen]);
+
   // Initialize chat with greeting
   useEffect(() => {
     if (isOpen && messages.length === 0) {
