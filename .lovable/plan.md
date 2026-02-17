@@ -1,36 +1,21 @@
 
+## Cambiar "Sistema SENSE" por "Marketing SENSE"
 
-## Actualizar "Made with SENSE" con el formato pill/chip y el icono BrainCircuit
+### Alcance
+Solo hay **2 ocurrencias** en un único archivo (`src/pages/SensePlatform.tsx`):
 
-### Cambio
+1. **Breadcrumb** (linea 52): `'Sistema SENSE'` / `'SENSE System'`
+2. **Badge/pill** encima del titulo (linea 167): `'Sistema SENSE'` / `'SENSE System'`
 
-Reemplazar el texto plano "Made with SENSE" por un chip visual con el mismo formato que se usa en la pagina de SENSE: pill redondeada con fondo sutil, icono `BrainCircuit` de lucide-react, y texto "Made with SENSE".
+No aparece en ningun otro archivo del proyecto.
 
-El chip completo sera un enlace clicable a la pagina de la solucion SENSE.
+### Cambios
 
-### Diseno visual
+**Archivo: `src/pages/SensePlatform.tsx`**
 
-```text
-  ¿Quieres que te ayudemos a identificar tu solucion personalizada
-  con nuestro sistema integral de marketing?
+- Linea 52: cambiar `'SENSE System'` a `'SENSE Marketing'` y `'Sistema SENSE'` a `'Marketing SENSE'`
+- Linea 167: cambiar `'SENSE System'` a `'SENSE Marketing'` y `'Sistema SENSE'` a `'Marketing SENSE'`
 
-        [ BrainCircuit  Made with SENSE ]   <-- pill clicable
-```
-
-- La pill usa el mismo estilo de la pagina SENSE: `rounded-full bg-impulsa/10 px-4 py-1.5 text-sm font-medium text-impulsa`
-- Icono `BrainCircuit` a la izquierda, tamano 16
-- Texto "Made with SENSE" (con SENSE despues del icono, como en la referencia pero con "Made with" delante)
-- Todo el chip es un `Link` a la pagina SENSE
-- El texto de la pregunta se mantiene como parrafo separado encima del chip
-- Hover sutil con `hover:bg-impulsa/20 transition-colors`
-
-### Seccion tecnica
-
-**Archivo: `src/components/SenseContextBanner.tsx`**
-
-- Importar `BrainCircuit` de `lucide-react`
-- Separar el texto contextual y el chip "Made with SENSE" en dos elementos
-- El chip sera un `<Link>` con clases `inline-flex items-center gap-2 rounded-full bg-impulsa/10 px-4 py-1.5 text-sm font-medium text-impulsa hover:bg-impulsa/20 transition-colors`
-- Dentro del Link: icono `<BrainCircuit size={16} />` + texto "Made with SENSE"
-- El contenedor mantiene `py-4 bg-primary/5 text-center`
-
+### Resultado
+El breadcrumb mostrara: `Inicio / Soluciones / Marketing SENSE`
+El badge mostrara: `[icono] Marketing SENSE`
