@@ -13,6 +13,7 @@ import CRMConnectionPainPointsSection from '@/components/CRMConnectionPainPoints
 import CRMConnectionSolutionSection from '@/components/CRMConnectionSolutionSection';
 import CRMConnectionBenefitsSection from '@/components/CRMConnectionBenefitsSection';
 import CRMComparisonSection from '@/components/CRMComparisonSection';
+import SenseContextBanner from '@/components/SenseContextBanner';
 import { servicesByPillar } from '@/data/services';
 import { ArrowRight, MessageSquare, Calendar } from 'lucide-react';
 import DynamicH1 from '@/components/DynamicH1';
@@ -227,6 +228,8 @@ const ConectaConTusClientes = () => {
           </div>
         </div>
       </section>
+
+      <SenseContextBanner />
 
       {/* Sección 1: El problema */}
       <CRMConnectionPainPointsSection />

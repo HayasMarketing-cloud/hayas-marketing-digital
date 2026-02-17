@@ -16,6 +16,7 @@ import FAQSection from '@/components/FAQSection';
 import IntermediateCTA from '@/components/IntermediateCTA';
 import { successCaseImages } from '@/data/successCaseImages';
 import { useTranslation } from '@/hooks/useTranslation';
+import SenseContextBanner from '@/components/SenseContextBanner';
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -399,6 +400,8 @@ const ActivaTusVentas = () => {
             </div>
           </div>
         </section>
+
+        <SenseContextBanner />
 
         {/* El problema Section */}
         <section className="py-16 md:py-20 bg-gray-50">

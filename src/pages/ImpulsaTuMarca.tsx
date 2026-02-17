@@ -17,6 +17,7 @@ import { servicesByPillar } from '@/data/services';
 import { successCaseImages } from '@/data/successCaseImages';
 import { generateItemListSchema } from '@/data/seoData';
 import { useTranslation } from '@/hooks/useTranslation';
+import SenseContextBanner from '@/components/SenseContextBanner';
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -289,6 +290,8 @@ const ImpulsaTuMarca = () => {
             </div>
           </div>
         </section>
+
+        <SenseContextBanner />
 
         {/* El problema Section */}
         <section className="py-16 md:py-20 bg-gray-50">
