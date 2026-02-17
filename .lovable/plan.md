@@ -1,55 +1,44 @@
 
-# Generar imagen hero "Lovable vs WordPress" con logos originales
+# Proteccion de imagenes en la web
 
-## Resumen
+## Objetivo
+Evitar que usuarios casuales descarguen las imagenes propias de alto valor (portfolio, heroes, casos de exito), sin afectar SEO ni rendimiento.
 
-Crear una imagen hero de 1200x630px para el articulo del blog usando los logos originales de Lovable y WordPress que has subido, con la tematica visual de "dos caminos tecnologicos".
+## Donde se aplica
 
-## Enfoque
+| Zona | Componente | Motivo |
+|------|-----------|--------|
+| Casos de exito (imagen destacada) | `CaseStudyTemplate.tsx`, `CaseStudyTemplateEN.tsx` | Fotos de proyectos propios |
+| Grid de casos de exito | `SuccessCasesSection.tsx` | Miniaturas del portfolio |
+| Hero slides de la home | `SlideLayoutFullImage.tsx` | Imagenes editoriales propias |
+| Hero blog Lovable vs WP | `LovableVsWordpressHero.tsx` | Diseno grafico propio |
 
-Usaremos la Edge Function `generate-og-image` existente para generar el fondo conceptual (gradiente con dos caminos), y luego crearemos un **componente hero visual en React** que componga la imagen final directamente en el blog post, superponiendo los logos reales sobre un fondo generado por CSS.
+**No se aplica** en: logos de terceros, imagenes de Unsplash, avatares de Sofia, thumbnails pequenos del blog.
 
-Este enfoque es mejor que generar una imagen estatica con IA porque:
-- Los logos se renderizan con calidad perfecta (SVG/PNG original, no recreados por IA)
-- El resultado es responsive y nitido en cualquier pantalla
-- Se puede reutilizar como OG image via screenshot o generacion posterior
+## Que se implementa
 
-## Archivos a crear/modificar
+Un componente reutilizable `ProtectedImage` que:
 
-### 1. Copiar los logos al proyecto
-- `user-uploads://logo_lovable.svg` -> `public/images/blog/logo-lovable.svg`
-- `user-uploads://WordPress_logo.svg.png` -> `public/images/blog/logo-wordpress.png`
+- Coloca un `div` transparente encima de la imagen que intercepta clics
+- Desactiva clic derecho (`onContextMenu`)
+- Desactiva arrastrar (`draggable="false"`, CSS `user-select: none`)
+- Mantiene el `alt` text y `loading` para SEO
+- No afecta al rendimiento (cero JavaScript extra, solo CSS y atributos HTML)
 
-### 2. Crear componente hero: `src/components/BlogPost/LovableVsWordpressHero.tsx`
-Componente visual 1200x630 (aspect-ratio 1.9:1) con:
-- Fondo: gradiente dividido en dos mitades (izquierda tono moderno/codigo con acento verde Hayas, derecha tono clasico/CMS con acento azul WordPress)
-- Elemento central: linea divisoria o "VS" elegante
-- Logo Lovable a la izquierda, logo WordPress a la derecha
-- Subtexto inferior: "Dos filosofias, una decision estrategica"
-- Estilo minimalista alineado con la marca Hayas (morado, blanco, negro, acento lima)
+## Pasos tecnicos
 
-### 3. Modificar `src/pages/BlogLovableVsWordpress.tsx`
-- Importar el componente hero
-- Pasarlo como prop `heroImage` al `BlogPostTemplate` o renderizarlo directamente antes del contenido
-- Actualizar la referencia `ogImage` en metadata
+1. **Crear `src/components/ProtectedImage.tsx`**
+   - Props: mismas que una imagen normal (`src`, `alt`, `className`, `loading`, etc.)
+   - Renderiza la imagen dentro de un contenedor `relative` con un overlay `absolute inset-0` transparente
+   - Anade `onContextMenu={e => e.preventDefault()}` y `draggable={false}` a la imagen
+   - CSS: `pointer-events: none` en la imagen, `pointer-events: auto` en el overlay
 
-## Resultado visual esperado
+2. **Sustituir `<img>` por `<ProtectedImage>`** en los 4 componentes listados arriba
+   - Sin cambios visuales, solo se anade la capa de proteccion
 
-```text
-+---------------------------+---------------------------+
-|                           |                           |
-|    [Logo Lovable]         |     [Logo WordPress]      |
-|                           |                           |
-|   Codigo moderno          |    Ecosistema de          |
-|   React / TypeScript      |    plugins / PHP          |
-|                           |                           |
-|        gradiente verde    |    gradiente azul          |
-+---------------------------+---------------------------+
-|        Dos filosofias. Una decision estrategica.       |
-+-------------------------------------------------------+
-```
+## Impacto
 
-## Notas tecnicas
-- El componente se renderizara como hero visual en el blog post
-- Para la imagen OG estatica (meta tags de redes sociales), se podra generar posteriormente con la Edge Function o capturar como screenshot
-- Los logos mantienen su calidad original al ser SVG/PNG
+- **SEO**: Ninguno negativo. Se mantiene `<img>` con `alt` text
+- **Rendimiento**: Cero impacto. Solo un `div` extra por imagen
+- **Accesibilidad**: Sin cambios. Las imagenes siguen siendo accesibles para lectores de pantalla
+- **Limitacion**: Un usuario tecnico podria acceder igualmente via DevTools, pero se bloquea al 95% de usuarios casuales
