@@ -269,6 +269,15 @@
     pointer-events: none;
   }
 
+  /* Text wrapping utilities */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
   /* Section separators */
   .section-divider {
     background: linear-gradient(90deg, transparent, hsl(var(--hayas-primary) / 0.2), transparent);
