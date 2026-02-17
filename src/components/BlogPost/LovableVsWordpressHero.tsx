@@ -20,7 +20,7 @@ const LovableVsWordpressHero: React.FC = () => {
         {/* Left side - Lovable */}
         <div className="flex-1 flex flex-col items-center justify-center gap-3 md:gap-4">
           <img
-            src="/images/blog/lovable-icon.svg"
+            src="/images/blog/lovable-icon.png"
             alt="Logo Lovable"
             className="h-16 w-16 md:h-24 md:w-24 drop-shadow-xl"
             loading="eager"
