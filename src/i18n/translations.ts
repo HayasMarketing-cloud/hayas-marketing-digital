@@ -741,25 +741,26 @@ export const translations = {
         p2: 'Pero eso no siempre lleva a mejores decisiones ni a un crecimiento sostenible.',
         p3: 'La diferencia no está en hacer más, sino en decidir mejor desde el principio.'
       },
-      transition: 'En ese punto, las empresas suelen estar en uno —o varios— de estos momentos:',
+      senseTitle: 'Por eso creamos SENSE',
+      senseDescription: 'Nuestro sistema de inteligencia de marketing que conecta estrategia, datos y ejecución. Un enfoque integral que ordena todo tu marketing y le da sentido.',
+      senseCta: 'Conoce SENSE en detalle',
+      senseModulesIntro: 'SENSE se articula en tres ejes según el momento y las necesidades de tu negocio:',
+      transition: '',
       moments: {
         base: {
-          title: 'Cuando la base no acompaña',
-          description: 'La marca, la web o los contenidos existen, pero no reflejan bien el valor real del negocio ni ayudan a diferenciarse.'
+          title: 'Impulsa tu marca',
+          description: 'Construye una base sólida: marca, web profesional, posicionamiento SEO y contenidos que reflejen el valor real de tu negocio.'
         },
         vision: {
-          title: 'Cuando hay actividad, pero falta visión y control',
-          description: 'Hay contactos, datos y oportunidades, pero cuesta entender qué funciona, qué priorizar o dónde se pierden oportunidades.'
+          title: 'Conecta con tus clientes',
+          description: 'Organiza tu gestión comercial con CRM, automatizaciones y datos que te permitan entender qué funciona y dónde están las oportunidades.'
         },
         growth: {
-          title: 'Cuando el negocio quiere crecer sin añadir complejidad',
-          description: 'Crecer exige cada vez más coordinación y decisiones, sin que siempre haya un sistema claro detrás.'
+          title: 'Activa tus ventas',
+          description: 'Escala tu negocio con campañas, funnels de conversión, IA aplicada y sistemas que convierten esfuerzo en resultados medibles.'
         }
       },
-      closing: 'Cada uno de estos momentos requiere un enfoque distinto, pero todos comparten una misma necesidad: ordenar, priorizar y convertir el esfuerzo en resultados reales.',
-      senseTitle: 'Todo conectado por SENSE',
-      senseDescription: 'Nuestro sistema de inteligencia de marketing conecta estrategia, datos y ejecución en cada solución. Un solo enfoque que da coherencia a todo lo que hacemos.',
-      senseCta: 'Descubre SENSE',
+      closing: 'Cada eje se activa según tu momento. Puedes empezar por uno o combinar varios. SENSE los conecta todos para que tu marketing funcione como un sistema, no como acciones aisladas.',
       impulsaPlatform: 'Incluye tu plataforma web y SEO a medida'
     }
   },
@@ -1505,25 +1506,26 @@ export const translations = {
         p2: "But that doesn't always lead to better decisions or sustainable growth.",
         p3: "The difference isn't in doing more, but in making better decisions from the start."
       },
-      transition: 'At that point, we usually find ourselves in one—or several—of these moments:',
+      senseTitle: "That's why we created SENSE",
+      senseDescription: 'Our marketing intelligence system that connects strategy, data and execution. A comprehensive approach that organizes your entire marketing and makes it meaningful.',
+      senseCta: 'Learn more about SENSE',
+      senseModulesIntro: 'SENSE is structured around three pillars based on your business moment and needs:',
+      transition: '',
       moments: {
         base: {
-          title: 'When the foundation doesn\'t support growth',
-          description: 'The brand, website, or content exists, but doesn\'t reflect the real value of the business or help differentiate it.'
+          title: 'Boost your brand',
+          description: 'Build a solid foundation: brand, professional website, SEO positioning, and content that reflects the real value of your business.'
         },
         vision: {
-          title: 'When there\'s activity, but no vision or control',
-          description: 'There are contacts, data, and opportunities, but it\'s hard to understand what works, what to prioritize, or where opportunities are being lost.'
+          title: 'Connect with your customers',
+          description: 'Organize your commercial management with CRM, automation, and data that help you understand what works and where opportunities lie.'
         },
         growth: {
-          title: 'When the business wants to grow without adding complexity',
-          description: 'Growth demands more coordination and decisions, without always having a clear system behind it.'
+          title: 'Activate your sales',
+          description: 'Scale your business with campaigns, conversion funnels, applied AI, and systems that turn effort into measurable results.'
         }
       },
-      closing: 'Each of these moments requires a different approach, but they all share the same need: to organize, prioritize, and turn effort into real results.',
-      senseTitle: 'All connected by SENSE',
-      senseDescription: 'Our marketing intelligence system connects strategy, data and execution across every solution. One approach that brings coherence to everything we do.',
-      senseCta: 'Discover SENSE',
+      closing: 'Each pillar activates according to your moment. You can start with one or combine several. SENSE connects them all so your marketing works as a system, not as isolated actions.',
       impulsaPlatform: 'Includes your custom web & SEO platform'
     },
     // ============================================
