@@ -1,49 +1,36 @@
 
+## Fix: Sofia auto-open should only trigger once per session
 
-## Optimizar maquetacion de textos y responsive en la Home
+### Problem
+The auto-open `useEffect` (line 172-184) includes `isOpen` in its dependency array. When the user closes the chat (`isOpen` goes to `false`), the effect re-runs and starts a new 30-second timer, causing Sofia to reopen indefinitely every 30 seconds.
 
-### Problema detectado
-En la seccion "Imagina un marketing donde cada accion tiene sentido", los parrafos introductorios dejan palabras sueltas al final de la linea ("dia.", "tienes.") debido a la combinacion de `text-center` con `max-w-3xl`. Esto ocurre tanto en desktop (1366px) como en otras resoluciones. Tambien el subtitulo del hero puede dejar "improvisacion." aislado.
+### Solution
+Use `sessionStorage` to track whether the auto-open has already fired during the current browser session. Once triggered, it won't fire again until the user opens a new tab or session.
 
-### Solucion
+### Technical Details
 
-**1. Aplicar `text-wrap: balance` / `text-pretty` a textos centrados clave**
+**File: `src/components/SofiaChatNew.tsx`**
 
-Usar la propiedad CSS moderna `text-wrap: balance` en titulos y `text-pretty` en parrafos para evitar palabras huerfanas. Ambas tienen soporte amplio en navegadores modernos.
+1. Add a `sessionStorage` flag (`sofia_auto_opened`) that is set to `true` after the first auto-open.
+2. Check this flag at the start of the auto-open effect -- if already set, skip the timer entirely.
+3. Remove `isOpen` from the dependency array since it's no longer needed for re-evaluation (the sessionStorage flag handles the "only once" logic).
 
-**2. Ajustar contenedores de texto en MarketingChangedSection**
+```typescript
+// Auto-open Sofia chat after 30 seconds on homepage (once per session)
+useEffect(() => {
+  const isHomePage = location.pathname === '/es' || location.pathname === '/en';
+  const alreadyOpened = sessionStorage.getItem('sofia_auto_opened');
+  if (!isHomePage || !shouldRender || isOpen || alreadyOpened) return;
 
-- Cambiar el contenedor de parrafos de `max-w-3xl` a `max-w-2xl` para que el texto fluya mejor en las resoluciones intermedias donde se producen los huerfanos.
-- Anadir la clase `text-balance` a los titulos h2 de la seccion.
-- Anadir `text-pretty` a los parrafos de introduccion (p1, p2, p3).
+  const timer = setTimeout(() => {
+    setIsOpen(true);
+    setIsMinimized(false);
+    setShowHelpBubble(false);
+    sessionStorage.setItem('sofia_auto_opened', 'true');
+  }, 30000);
 
-**3. Ajustar subtitulo del Hero (SlideLayoutCentered)**
-
-- Anadir `text-pretty` al parrafo del subtitulo para evitar palabras huerfanas.
-- Anadir `text-balance` al titulo h1.
-
-**4. Crear utilidades CSS reutilizables**
-
-Agregar en `src/index.css` las clases utilitarias:
-```css
-.text-balance {
-  text-wrap: balance;
-}
-.text-pretty {
-  text-wrap: pretty;
-}
+  return () => clearTimeout(timer);
+}, [location.pathname, shouldRender, isOpen]);
 ```
 
-### Seccion tecnica - Archivos a modificar
-
-| Archivo | Cambio |
-|---------|--------|
-| `src/index.css` | Agregar clases `.text-balance` y `.text-pretty` |
-| `src/components/MarketingChangedSection.tsx` | Aplicar `text-balance` al h2, `text-pretty` a los parrafos intro, reducir `max-w-3xl` a `max-w-2xl` en el contenedor de parrafos |
-| `src/components/hero-slides/SlideLayoutCentered.tsx` | Aplicar `text-balance` al titulo y `text-pretty` al subtitulo |
-
-### Resultado esperado
-- Ninguna palabra queda sola en una linea en titulos ni parrafos centrados
-- El responsive se mantiene limpio en mobile (390px), tablet (768px) y desktop (1366px+)
-- Compatible con navegadores modernos; en navegadores sin soporte simplemente se ignora sin efecto negativo
-
+This ensures the auto-open fires only once after 30 seconds on the first visit to the homepage, and does not repeat during the same browser session.
