@@ -172,15 +172,17 @@ const SensePlatform = () => {
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
               {content.heroSubtitle}
             </p>
-            <p className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-5 py-2 text-sm font-semibold text-primary mb-8">
-              <Zap size={16} />
-              {isEnglish ? 'Powered by AI, governed by people' : 'Impulsado por IA, gobernado por personas'}
-            </p>
-            <Button variant="impulsa" size="lg" asChild>
-              <Link to={content.ctaLink}>
-                {content.ctaButton} <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <p className="inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/5 px-3 py-1.5 text-xs font-medium text-primary">
+                <Zap size={12} />
+                {isEnglish ? 'Powered by AI, governed by people' : 'Impulsado por IA, gobernado por personas'}
+              </p>
+              <Button variant="impulsa" size="lg" asChild>
+                <Link to={content.ctaLink}>
+                  {content.ctaButton} <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
           </div>
         </section>
 
