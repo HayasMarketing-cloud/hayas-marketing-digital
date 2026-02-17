@@ -6,14 +6,17 @@ const LovableVsWordpressHero: React.FC = () => {
       className="w-full mb-12 rounded-xl overflow-hidden shadow-lg relative"
       style={{ aspectRatio: '1200/630' }}
     >
-      {/* Background image */}
+      {/* Background image - protected */}
       <img
         src="/images/blog/lovable-vs-wordpress-bg.jpg"
         alt=""
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover pointer-events-none"
         aria-hidden="true"
         loading="eager"
+        draggable={false}
+        onContextMenu={(e) => e.preventDefault()}
       />
+      <div className="absolute inset-0 z-[1]" aria-hidden="true" />
 
       {/* Content overlay */}
       <div className="relative z-10 w-full h-full flex">

@@ -26,14 +26,15 @@ export const SlideLayoutFullImage: React.FC<SlideLayoutFullImageProps> = ({
   return (
     <div className="relative min-h-[600px] md:min-h-[700px] w-full overflow-hidden">
       {/* Background Image */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 select-none" onContextMenu={(e) => e.preventDefault()}>
         <OptimizedImage
           src={image}
           alt=""
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover pointer-events-none"
           priority={priority}
           sizes="100vw"
         />
+        <div className="absolute inset-0 z-[1]" aria-hidden="true" />
       </div>
       
       {/* Overlay */}
