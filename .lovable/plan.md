@@ -1,68 +1,55 @@
 
-# Implementar articulo "Lovable vs WordPress" en el blog
+# Generar imagen hero "Lovable vs WordPress" con logos originales
 
 ## Resumen
 
-Crear el articulo completo como componente React siguiendo el patron establecido (`BlogPostTemplate`), con los 5 ajustes editoriales acordados, e integrarlo en el blog.
+Crear una imagen hero de 1200x630px para el articulo del blog usando los logos originales de Lovable y WordPress que has subido, con la tematica visual de "dos caminos tecnologicos".
 
-## Archivos a crear
+## Enfoque
 
-### 1. `src/pages/BlogLovableVsWordpress.tsx`
-Componente principal del articulo con:
-- **Metadata completa**: titulo, descripcion, fecha (2026-02-17), autor (Ruben Reyero), tags (`Desarrollo Web`, `SEO`, `Plataformas Digitales`, `IA`, `WordPress`, `Lovable`), canonical `/es/blog/lovable-vs-wordpress-que-plataforma-elegir`
-- **Schema Article** con author Person, publisher Organization, datePublished/dateModified ISO 8601
-- **Contenido editorial** con los 5 ajustes:
-  1. Sin nota sobre indexabilidad SPA (eliminada)
-  2. Curva tecnica Lovable como "Baja-media" (no "Media-alta")
-  3. Seccion "Que hacer despues de lanzar tu web" recuperada del borrador original
-  4. Seccion "Nuestra experiencia" con ejemplos tecnicos concretos: SpeakableSpecification, schema programatico Article/FAQ/Organization, taxonomias por pilares, breadcrumbs estructurados, .md para crawlers IA
-  5. CTA final con enlace a contacto/agendar reunion
-- **FAQs** (5 preguntas): Es Lovable solo para MVPs? / Puede Lovable hacer SEO avanzado? / WordPress es mas seguro? / Puedo migrar de WordPress a Lovable? / Que plataforma para ecommerce?
-- **Related services**: Diseno Web y SEO/Posicionamiento
+Usaremos la Edge Function `generate-og-image` existente para generar el fondo conceptual (gradiente con dos caminos), y luego crearemos un **componente hero visual en React** que componga la imagen final directamente en el blog post, superponiendo los logos reales sobre un fondo generado por CSS.
 
-### 2. `public/content/es/blog/lovable-vs-wordpress.md`
-Version markdown para crawlers IA con:
-- Bloque IA_SUMMARY (60-80 palabras)
-- Estructura E-E-A-T completa
-- rel=canonical hacia la pagina React
+Este enfoque es mejor que generar una imagen estatica con IA porque:
+- Los logos se renderizan con calidad perfecta (SVG/PNG original, no recreados por IA)
+- El resultado es responsive y nitido en cualquier pantalla
+- Se puede reutilizar como OG image via screenshot o generacion posterior
 
-## Archivos a modificar
+## Archivos a crear/modificar
 
-### 3. `src/utils/lazyImports.ts`
-Anadir lazy import del nuevo componente:
+### 1. Copiar los logos al proyecto
+- `user-uploads://logo_lovable.svg` -> `public/images/blog/logo-lovable.svg`
+- `user-uploads://WordPress_logo.svg.png` -> `public/images/blog/logo-wordpress.png`
+
+### 2. Crear componente hero: `src/components/BlogPost/LovableVsWordpressHero.tsx`
+Componente visual 1200x630 (aspect-ratio 1.9:1) con:
+- Fondo: gradiente dividido en dos mitades (izquierda tono moderno/codigo con acento verde Hayas, derecha tono clasico/CMS con acento azul WordPress)
+- Elemento central: linea divisoria o "VS" elegante
+- Logo Lovable a la izquierda, logo WordPress a la derecha
+- Subtexto inferior: "Dos filosofias, una decision estrategica"
+- Estilo minimalista alineado con la marca Hayas (morado, blanco, negro, acento lima)
+
+### 3. Modificar `src/pages/BlogLovableVsWordpress.tsx`
+- Importar el componente hero
+- Pasarlo como prop `heroImage` al `BlogPostTemplate` o renderizarlo directamente antes del contenido
+- Actualizar la referencia `ogImage` en metadata
+
+## Resultado visual esperado
+
+```text
++---------------------------+---------------------------+
+|                           |                           |
+|    [Logo Lovable]         |     [Logo WordPress]      |
+|                           |                           |
+|   Codigo moderno          |    Ecosistema de          |
+|   React / TypeScript      |    plugins / PHP          |
+|                           |                           |
+|        gradiente verde    |    gradiente azul          |
++---------------------------+---------------------------+
+|        Dos filosofias. Una decision estrategica.       |
++-------------------------------------------------------+
 ```
-export const BlogLovableVsWordpress = lazyWithRetry(() => import("@/pages/BlogLovableVsWordpress"));
-```
-
-### 4. `src/App.tsx`
-Anadir ruta:
-```
-<Route path="/es/blog/lovable-vs-wordpress-que-plataforma-elegir" element={<PageSuspense><Pages.BlogLovableVsWordpress /></PageSuspense>} />
-```
-
-### 5. `src/pages/Blog.tsx`
-Anadir entrada en el array `allPosts` con titulo, descripcion, excerpt, categoria "Tecnologia", fecha, slug, tags y featured: true.
-
-### 6. `docs/CONTENT_SYNC.md`
-Registrar el mapping componente-md del nuevo articulo.
-
-## Contenido editorial (estructura de secciones)
-
-1. Introduccion -- dos filosofias, no mejor/peor
-2. Que es Lovable -- codigo real React/TS, no page builder
-3. Que es WordPress -- CMS modular, fortalezas y costes de plugins
-4. Comparativa estrategica -- tabla con curva tecnica corregida a "Baja-media"
-5. SEO avanzado: dos enfoques -- con ejemplos reales del stack Hayas
-6. Escalabilidad, rendimiento y seguridad
-7. IA nativa vs IA via extensiones
-8. Nuestra experiencia en Hayas -- con datos tecnicos concretos (schema, SpeakableSpecification, taxonomias, .md crawlers)
-9. Que hacer despues de lanzar tu web -- validar, medir, definir estrategia, evaluar migracion
-10. Conclusion con CTA a contacto/agendar reunion
-
-## Imagen hero
-- Se usara placeholder (no hay imagen disponible aun), marcando como pendiente de diseno
 
 ## Notas tecnicas
-- Seguir exactamente el patron de `BlogAutomatizacionMarketing.tsx`
-- Tags del articulo deben coincidir con slugs de `blogTags.ts` donde sea posible para activar `RelatedServiceSection`
-- El .md incluye resumen AEO citable y credenciales del autor
+- El componente se renderizara como hero visual en el blog post
+- Para la imagen OG estatica (meta tags de redes sociales), se podra generar posteriormente con la Edge Function o capturar como screenshot
+- Los logos mantienen su calidad original al ser SVG/PNG
