@@ -49,7 +49,7 @@ const SensePlatform = () => {
     ],
     breadcrumbHome: isEnglish ? 'Home' : 'Inicio',
     breadcrumbSolutions: isEnglish ? 'Solutions' : 'Soluciones',
-    breadcrumbCurrent: isEnglish ? 'SENSE System' : 'Sistema SENSE',
+    breadcrumbCurrent: isEnglish ? 'SENSE Marketing' : 'Marketing SENSE',
     homeLink: isEnglish ? '/en' : '/es',
     solutionsLink: isEnglish ? '/en#solutions' : '/es#soluciones',
     heroTitle: isEnglish
@@ -164,7 +164,7 @@ const SensePlatform = () => {
           <div className="container mx-auto px-4 max-w-4xl text-center">
             <div className="inline-flex items-center gap-2 rounded-full bg-impulsa/10 px-4 py-1.5 text-sm font-medium text-impulsa mb-6">
               <BrainCircuit size={16} />
-              <span>{isEnglish ? 'SENSE System' : 'Sistema SENSE'}</span>
+              <span>{isEnglish ? 'SENSE Marketing' : 'Marketing SENSE'}</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-dm-sans text-foreground mb-6 leading-tight">
               {content.heroTitle}
