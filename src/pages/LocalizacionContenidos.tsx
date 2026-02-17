@@ -426,7 +426,7 @@ const LocalizacionContenidos = () => {
       {/* Success Cases Section */}
       <SuccessCasesSection
         id="casos-exito"
-        title="Casos de <span className='text-gradient-primary'>éxito</span> en localización"
+        title="Casos de éxito en localización"
         subtitle="Proyectos internacionales que han conseguido resultados excepcionales gracias a la localización profesional."
         filterTags={["traduccion"]}
         maxCases={4}

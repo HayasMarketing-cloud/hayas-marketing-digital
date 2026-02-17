@@ -249,7 +249,7 @@ const ImplantacionCrm = () => {
     processSubtitle: isEnglish 
       ? 'A structured approach that guarantees the success of your CRM project'
       : 'Un enfoque estructurado que garantiza el éxito de tu proyecto CRM',
-    successCasesTitle: isEnglish ? "Success <span class='text-gradient-primary'>cases</span>" : "Casos de <span class='text-gradient-primary'>éxito</span>",
+    successCasesTitle: isEnglish ? "Success cases" : "Casos de éxito",
     successCasesSubtitle: isEnglish 
       ? 'Companies that have transformed their commercial management with our CRM implementations.'
       : 'Empresas que han transformado su gestión comercial con nuestras implementaciones CRM.',

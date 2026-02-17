@@ -57,7 +57,7 @@ const PublicidadRedesSociales: React.FC = () => {
       ctaSubtitle: "Deja que gestionemos tu publicidad digital mientras tú te centras en tu negocio. Campañas rentables, resultados medibles y crecimiento garantizado.",
       ctaPrimary: "Lanzar campañas",
       ctaSecondary: "Ver más resultados",
-      successCasesTitle: "Casos de <span className='text-gradient-primary'>éxito</span>",
+      successCasesTitle: "Casos de éxito",
       contactTitle: "¿Hablamos sobre tu publicidad en redes sociales?",
       contactSubtitle: "Cuéntanos tu negocio y objetivos en redes. Te responderemos con una propuesta personalizada.",
       advertisingServices: [
@@ -134,7 +134,7 @@ const PublicidadRedesSociales: React.FC = () => {
       ctaSubtitle: "Let us manage your digital advertising while you focus on your business. Profitable campaigns, measurable results, and guaranteed growth.",
       ctaPrimary: "Launch campaigns",
       ctaSecondary: "See more results",
-      successCasesTitle: "Success <span className='text-gradient-primary'>Cases</span>",
+      successCasesTitle: "Success cases",
       contactTitle: "Shall we talk about your social media advertising?",
       contactSubtitle: "Tell us about your business and social media goals. We'll respond with a personalized proposal.",
       advertisingServices: [
