@@ -83,6 +83,14 @@ export const SERVICE_SUCCESS_CASES_MAPPING: Record<string, ServiceCasesConfig> =
   'integraciones-ia-procesos': {
     filterTags: ["automatizacion-procesos-ventas", "asistente-ia"],
     subtitle: "Integraciones de IA en procesos de negocio que han optimizado la eficiencia y automatizado tareas repetitivas."
+  },
+  'alojamiento-mantenimiento': {
+    filterTags: ["diseno-web"],
+    subtitle: "Proyectos web que gestionamos con alojamiento profesional, mantenimiento continuo y rendimiento optimizado."
+  },
+  'administracion-crm': {
+    filterTags: ["implantacion-crm"],
+    subtitle: "Empresas cuyo CRM gestionamos y optimizamos para maximizar su eficiencia comercial."
   }
 };
 

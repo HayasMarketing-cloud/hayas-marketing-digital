@@ -8,6 +8,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb';
 import { Link } from 'react-router-dom';
 import ServiceContactSection from '@/components/ServiceContactSection';
+import SuccessCasesSection from '@/components/SuccessCasesSection';
+import { getServiceSuccessCasesConfig } from '@/data/serviceSuccessCasesMapping';
 import { DynamicH1 } from '@/components/DynamicH1';
 import { Filter, Megaphone, Mail, Bot, BarChart3, Magnet, Settings, MessageSquare, Zap } from 'lucide-react';
 import { useTranslation } from '@/hooks/useTranslation';
@@ -257,6 +259,22 @@ const CaptacionLeadsClientes: React.FC = () => {
               </Button>
             </div>
           </section>
+
+          {/* Success Cases Section */}
+          {(() => {
+            const config = getServiceSuccessCasesConfig('captacion-leads-clientes');
+            return config ? (
+              <SuccessCasesSection
+                id="casos-exito"
+                title="Casos de éxito en captación de leads"
+                subtitle={config.subtitle}
+                filterTags={config.filterTags}
+                specificCases={config.specificCases}
+                maxCases={4}
+                showAllLink={true}
+              />
+            ) : null;
+          })()}
 
           <ServiceContactSection
             title="¿Impulsamos tu captación?"

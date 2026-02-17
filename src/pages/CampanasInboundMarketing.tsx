@@ -8,6 +8,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb';
 import { Link } from 'react-router-dom';
 import ServiceContactSection from '@/components/ServiceContactSection';
+import SuccessCasesSection from '@/components/SuccessCasesSection';
+import { getServiceSuccessCasesConfig } from '@/data/serviceSuccessCasesMapping';
 import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
 import { BookOpenText, Filter, FileText, Mail, BarChart3 } from 'lucide-react';
 
@@ -143,6 +145,22 @@ const CampanasInboundMarketing: React.FC = () => {
               </Button>
             </div>
           </section>
+
+          {/* Success Cases Section */}
+          {(() => {
+            const config = getServiceSuccessCasesConfig('campanas-inbound-marketing');
+            return config ? (
+              <SuccessCasesSection
+                id="casos-exito"
+                title="Casos de éxito en inbound marketing"
+                subtitle={config.subtitle}
+                filterTags={config.filterTags}
+                specificCases={config.specificCases}
+                maxCases={4}
+                showAllLink={true}
+              />
+            ) : null;
+          })()}
 
           <ServiceContactSection
             title="¿Hablamos de tu campaña Inbound?"

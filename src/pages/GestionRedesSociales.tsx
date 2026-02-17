@@ -11,6 +11,8 @@ import { useTranslation } from '@/hooks/useTranslation';
 import EnhancedSEO from '@/components/EnhancedSEO';
 import FAQSection from '@/components/FAQSection';
 import ServiceContactSection from '@/components/ServiceContactSection';
+import SuccessCasesSection from '@/components/SuccessCasesSection';
+import { getServiceSuccessCasesConfig } from '@/data/serviceSuccessCasesMapping';
 import { 
   Heart, Users, BarChart3, Calendar, Camera, MessageCircle, 
   ArrowRight, CheckCircle, Star, Zap, TrendingUp, Target,
@@ -683,6 +685,22 @@ const GestionRedesSociales: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Success Cases Section */}
+      {(() => {
+        const config = getServiceSuccessCasesConfig('gestion-redes-sociales');
+        return config ? (
+          <SuccessCasesSection
+            id="casos-exito"
+            title="Casos de éxito en redes sociales"
+            subtitle={config.subtitle}
+            filterTags={config.filterTags}
+            specificCases={config.specificCases}
+            maxCases={4}
+            showAllLink={true}
+          />
+        ) : null;
+      })()}
 
       {/* FAQ Section */}
       <FAQSection 

@@ -8,6 +8,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import FAQSection from '@/components/FAQSection';
 import ServiceContactSection from '@/components/ServiceContactSection';
+import SuccessCasesSection from '@/components/SuccessCasesSection';
+import { getServiceSuccessCasesConfig } from '@/data/serviceSuccessCasesMapping';
 import { useServiceSEO } from '@/hooks/useServiceSEO';
 import EnhancedSEO from '@/components/EnhancedSEO';
 import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
@@ -413,6 +415,22 @@ const AsistenteIA: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Success Cases Section */}
+      {(() => {
+        const config = getServiceSuccessCasesConfig('asistente-ia');
+        return config ? (
+          <SuccessCasesSection
+            id="casos-exito"
+            title="Casos de éxito con asistentes IA"
+            subtitle={config.subtitle}
+            filterTags={config.filterTags}
+            specificCases={config.specificCases}
+            maxCases={4}
+            showAllLink={true}
+          />
+        ) : null;
+      })()}
 
       {/* FAQ Section */}
       <FAQSection faqs={faqItems} />

@@ -9,6 +9,8 @@ import { Badge } from '@/components/ui/badge';
 import EnhancedSEO from '@/components/EnhancedSEO';
 import { useServiceSEO } from '@/hooks/useServiceSEO';
 import FAQSection from '@/components/FAQSection';
+import SuccessCasesSection from '@/components/SuccessCasesSection';
+import { getServiceSuccessCasesConfig } from '@/data/serviceSuccessCasesMapping';
 import { Target, FileText, Layout, Workflow, SplitSquareVertical, BarChart3, PlugZap, CalendarCheck2, CheckCircle2 } from 'lucide-react';
 const features = [
   { icon: <Target className="h-8 w-8 text-primary" />, title: 'Estrategia y objetivos', desc: 'Definimos objetivos claros, audiencias y KPIs del embudo.' },
@@ -174,6 +176,22 @@ const ImplementacionFunnel: React.FC = () => {
           </Card>
         </div>
       </section>
+
+      {/* Success Cases Section */}
+      {(() => {
+        const config = getServiceSuccessCasesConfig('implementacion-funnel');
+        return config ? (
+          <SuccessCasesSection
+            id="casos-exito"
+            title="Casos de éxito en funnels de conversión"
+            subtitle={config.subtitle}
+            filterTags={config.filterTags}
+            specificCases={config.specificCases}
+            maxCases={4}
+            showAllLink={true}
+          />
+        ) : null;
+      })()}
 
       {/* FAQ + Contacto */}
       <FAQSection faqs={faqs} />
