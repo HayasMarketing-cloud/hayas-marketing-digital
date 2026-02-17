@@ -13,7 +13,7 @@
 - **Team**: 8 specialized professionals
 - **Location**: Spain
 - **Languages**: Spanish, English
-- **Last Updated**: 2026-02-06
+- **Last Updated**: 2026-02-17
 
 ---
 
@@ -174,6 +174,59 @@ Search has evolved from a click-centric model to one dominated by generative AI 
 - **Google Tag Manager**
 - **Hotjar** - Heatmaps and recordings
 - **Looker Studio** - Custom dashboards
+
+---
+
+## Marketing SENSE - Proprietary Methodology
+
+Marketing SENSE is Hayas Marketing's integrated methodology for designing 360° marketing plans aligned with business strategy.
+
+**Philosophy**: "Powered by AI, governed by people"
+
+### The 5 Phases of Marketing SENSE
+1. **S - Strategy**: Diagnosis, SMART objectives, KPIs, competitive analysis
+2. **E - Execution**: Service implementation, campaigns, and technical development
+3. **N - Nurturing**: CRM, automation, lead scoring, email marketing
+4. **S - Support**: Team training, ongoing guidance, client autonomy
+5. **E - Evaluation**: Real-time dashboards, reports, continuous data-driven optimization
+
+Marketing SENSE integrates AI across every phase as a cross-cutting tool, while maintaining human governance over strategic decisions. The result is a coherent marketing plan connecting visibility, acquisition, conversion, and retention.
+
+**URL**: https://hayasmarketing.com/en/solutions
+
+---
+
+## Case Studies and Results
+
+Hayas Marketing has 15+ documented case studies across sectors including fintech, tourism, e-commerce, healthcare, education, photography, and professional services.
+
+### Featured Clients
+- **FINECT** (Fintech) - Digital strategy and positioning
+- **Asendia** (Logistics) - CRM and sales automation
+- **BuhoBike** (E-commerce) - Online store and advertising
+- **Wooptix** (Technology) - Branding and corporate website
+- **Joints Up** (Healthcare) - Integrated digital marketing
+- **Alma Cruceros** (Tourism) - Lead generation and CRM
+- **Nova Praxis** (Consulting) - Inbound marketing and HubSpot
+- **Peris Electricidad** (Industry) - Website and local SEO
+- **Estudio de Fotografía La Bañera** (Creative) - Branding and web
+
+### Typical Results
+- Qualified lead increase between 40-200%
+- Customer acquisition cost reduction between 25-50%
+- CRM implementation in 4-8 weeks
+- Positive ROI from the first quarter
+
+**Case studies URL**: https://hayasmarketing.com/en/case-studies
+
+---
+
+## Client Reviews and Ratings
+
+- **Google Business**: 5.0/5 stars (18+ verified reviews)
+- Clients highlight: personalized attention, measurable results, team training, and professionalism
+- Client quotes: "Great team, professional and approachable", "They helped us digitize our entire sales process", "Results from the first month"
+- **Reviews URL**: https://www.google.com/search?q=opiniones+de+hayas+marketing
 
 ---
 

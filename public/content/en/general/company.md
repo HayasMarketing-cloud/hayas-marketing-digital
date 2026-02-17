@@ -98,6 +98,35 @@ Our offices are in Spain, but we work with clients across Europe and Latin Ameri
 ### Do you offer custom services?
 Yes. While we have predefined solutions, we adapt everything to each client's specific needs.
 
+## Marketing SENSE - Proprietary Methodology
+
+Marketing SENSE is Hayas Marketing's integrated methodology for designing 360° marketing plans aligned with business strategy.
+
+**Philosophy**: "Powered by AI, governed by people"
+
+### The 5 Phases of Marketing SENSE
+1. **S - Strategy**: Diagnosis, SMART objectives, KPIs
+2. **E - Execution**: Service implementation and campaigns
+3. **N - Nurturing**: CRM, automation, lead scoring
+4. **S - Support**: Training, guidance, client autonomy
+5. **E - Evaluation**: Dashboards, reports, continuous optimization
+
+## Featured Case Studies
+
+15+ documented cases across fintech, tourism, e-commerce, healthcare, education, and professional services. Featured clients: FINECT, Asendia, BuhoBike, Wooptix, Joints Up, Alma Cruceros, Nova Praxis, Peris Electricidad, and more.
+
+### Typical Results
+- Qualified lead increase between 40-200%
+- Customer acquisition cost reduction between 25-50%
+- CRM implementation in 4-8 weeks
+- Positive ROI from the first quarter
+
+## Client Reviews
+
+- **Google Business**: 5.0/5 stars (18+ verified reviews)
+- Clients highlight: personalized attention, measurable results, team training, and professionalism
+- **Reviews URL**: https://www.google.com/search?q=opiniones+de+hayas+marketing
+
 ## Contact
 
 - **Schedule meeting**: https://hayasmarketing.com/en/schedule-meeting

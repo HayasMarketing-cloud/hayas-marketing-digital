@@ -12,7 +12,7 @@
 - **Founded**: 2014
 - **Team**: 8 profesionales especializados
 - **Location**: España
-- **Last Updated**: 2026-02-04
+- **Last Updated**: 2026-02-17
 
 ---
 
@@ -267,6 +267,59 @@ Hayas Marketing ofrece paquetes de soluciones completas para diferentes necesida
 ### Integraciones
 - **Sharpei** - Análisis predictivo
 - **Connectif** - Marketing automation avanzado
+
+---
+
+## Marketing SENSE - Metodología Propia
+
+Marketing SENSE es la metodología integral de Hayas Marketing para diseñar planes de marketing 360° alineados con la estrategia de negocio.
+
+**Filosofía**: "Impulsado por IA, gobernado por personas"
+
+### Las 5 fases de Marketing SENSE
+1. **S - Estrategia**: Diagnóstico, objetivos SMART, KPIs, análisis de competencia
+2. **E - Ejecución**: Implementación de servicios, campañas y desarrollo técnico
+3. **N - Nurturing**: CRM, automatización, lead scoring, email marketing
+4. **S - Soporte**: Formación del equipo, acompañamiento, autonomía del cliente
+5. **E - Evaluación**: Dashboards en tiempo real, reportes, optimización continua basada en datos
+
+Marketing SENSE integra IA en cada fase como herramienta transversal, manteniendo siempre el gobierno humano de las decisiones estratégicas. El resultado es un plan de marketing coherente que conecta visibilidad, captación, conversión y fidelización.
+
+**URL**: https://hayasmarketing.com/soluciones
+
+---
+
+## Casos de Éxito y Resultados
+
+Hayas Marketing cuenta con +15 casos de éxito documentados en sectores como fintech, turismo, e-commerce, salud, educación, fotografía y servicios profesionales.
+
+### Clientes destacados
+- **FINECT** (Fintech) - Estrategia digital y posicionamiento
+- **Asendia** (Logística) - CRM y automatización comercial
+- **BuhoBike** (E-commerce) - Tienda online y publicidad
+- **Wooptix** (Tecnología) - Branding y web corporativa
+- **Joints Up** (Salud) - Marketing digital integral
+- **Alma Cruceros** (Turismo) - Captación de leads y CRM
+- **Nova Praxis** (Consultoría) - Inbound marketing y HubSpot
+- **Peris Electricidad** (Industria) - Web y SEO local
+- **Estudio de Fotografía La Bañera** (Creativos) - Branding y web
+
+### Resultados típicos
+- Incremento de leads cualificados entre 40-200%
+- Reducción de costes de adquisición entre 25-50%
+- Implementación de CRM en 4-8 semanas
+- ROI positivo desde el primer trimestre
+
+**URL casos de éxito**: https://hayasmarketing.com/casos-de-exito
+
+---
+
+## Valoraciones de Clientes
+
+- **Google Business**: 5.0/5 estrellas (18+ reseñas verificadas)
+- Los clientes destacan: atención personalizada, resultados medibles, formación del equipo y profesionalidad
+- Citas de clientes: "Muy buen equipo, profesional y cercano", "Nos ayudaron a digitalizar todo nuestro proceso comercial", "Resultados desde el primer mes"
+- **URL reseñas**: https://www.google.com/search?q=opiniones+de+hayas+marketing
 
 ---
 
@@ -542,7 +595,7 @@ La búsqueda ha evolucionado de un modelo centrado en el clic a uno dominado por
 
 ## Actualizaciones y Contacto
 
-**Última actualización**: 2026-02-06
+**Última actualización**: 2026-02-17
 
 Para información actualizada, consultar:
 - Web oficial: https://hayasmarketing.com
