@@ -1,51 +1,78 @@
 
 
-# Mejora UX del boton de Sincronizacion SEO
+# Mejora UX del Reporte de Auditoría SEO
 
-## Cambios
+## Objetivo
 
-### 1. Renombrar el boton
-- Texto actual: "Sincronizar Rutas"
-- Texto nuevo: **"Auditoría SEO"**
-- Texto durante carga: "Analizando..." (se mantiene)
+Mejorar el modal `SyncReportModal` para que cada seccion incluya una explicacion clara de que significa el problema detectado y que debe hacer el usuario para solucionarlo.
 
-Razon: "Auditoría SEO" describe mejor la funcion real (analizar el estado de sincronizacion entre rutas y datos SEO), mientras que "Sincronizar Rutas" suena mas tecnico y menos descriptivo.
+## Cambios en `src/components/admin/seo/SyncReportModal.tsx`
 
-### 2. Anadir paso intermedio con explicacion
+### 1. Titulo y descripcion del modal
 
-Al hacer clic en el boton, en lugar de ejecutar el analisis directamente, se mostrara primero un **Dialog de confirmacion** con:
+Cambiar "Reporte de Sincronizacion" por **"Resultado de la Auditoría SEO"** y mejorar la descripcion para que sea mas orientativa.
 
-- **Titulo**: "Auditoría de Sincronizacion SEO"
-- **Descripcion explicativa**: Un texto breve que explique que hace esta herramienta:
-  > "Esta herramienta compara las rutas registradas en la aplicacion con los datos SEO almacenados en la base de datos para detectar:
-  > - Paginas nuevas que aun no tienen configuracion SEO
-  > - Registros SEO obsoletos de paginas que ya no existen
-  > - Inconsistencias entre la configuracion esperada y la real"
-- **Boton de accion**: "Iniciar Auditoría" para lanzar el analisis
-- **Boton cancelar**: Para cerrar sin ejecutar
+### 2. Tarjetas resumen (grid de 3)
 
-### 3. Archivos a modificar
+Anadir subtitulos descriptivos debajo de cada contador:
+- **Rutas nuevas**: Anadir texto "Paginas sin configuracion SEO"
+- **SEO obsoletos**: Anadir texto "Registros de paginas eliminadas"  
+- **Inconsistencias**: Anadir texto "Configuracion desalineada"
+
+### 3. Seccion "Rutas sin SEO"
+
+Anadir un bloque explicativo antes de la lista:
+
+> **Que significa:** Estas paginas existen en la aplicacion pero no tienen metadatos SEO configurados (title, description, keywords). Google las indexara con informacion generica o incompleta.
+>
+> **Que hacer:** Pulsa "Generar con IA" para crear automaticamente los metadatos usando inteligencia artificial, o genera una version basica sin IA. Despues podras revisar y ajustar cada pagina desde el editor SEO.
+
+### 4. Seccion "SEO sin ruta"
+
+Anadir un bloque explicativo antes de la lista:
+
+> **Que significa:** Estos registros SEO pertenecen a paginas que ya no existen en la aplicacion (fueron renombradas o eliminadas). Ocupan espacio innecesario en la base de datos y pueden causar confusiones.
+>
+> **Que hacer:** Si una ruta fue renombrada, usa el boton "Renombrar" junto a la sugerencia automatica para actualizar el path. Si la pagina fue eliminada definitivamente, pulsa "Eliminar obsoletos" para limpiar todos los registros huerfanos de una vez.
+
+### 5. Seccion "Inconsistencias"
+
+Anadir un bloque explicativo antes de la lista:
+
+> **Que significa:** Estos registros existen tanto en la aplicacion como en la base de datos SEO, pero tienen valores diferentes (por ejemplo, una categoria distinta o un estado de indexabilidad contradictorio).
+>
+> **Que hacer:** Revisa cada caso individualmente pulsando el icono de edicion. Compara el valor esperado (Registry) con el almacenado (DB) y corrige manualmente el que sea incorrecto desde el editor SEO.
+
+### 6. Estilo de los bloques explicativos
+
+Cada bloque usara un diseno consistente:
+- Fondo suave acorde al color de la seccion (azul, naranja, amarillo)
+- Icono informativo (`Info` de lucide)
+- Texto en `text-sm` con negrita en los encabezados "Que significa" y "Que hacer"
+
+## Archivos a modificar
 
 | Archivo | Cambio |
 |---------|--------|
-| `src/components/admin/seo/SyncRoutesButton.tsx` | Renombrar boton, anadir Dialog de confirmacion antes del analisis |
+| `src/components/admin/seo/SyncReportModal.tsx` | Anadir bloques explicativos en cada seccion, mejorar titulo |
 
-### 4. Flujo resultante
+## Resultado visual esperado
+
+Cada seccion del reporte seguira esta estructura:
 
 ```text
-[Clic en "Auditoría SEO"]
-        |
-        v
-  Dialog explicativo
-  "Esta herramienta compara..."
-  [ Cancelar ] [ Iniciar Auditoría ]
-        |
-        v (si confirma)
-  Ejecuta el analisis (igual que ahora)
-        |
-        v
-  SyncReportModal con resultados
++ Rutas sin SEO (2)                    [Accion recomendada]
+
+  [i] Que significa: Estas paginas existen en la aplicacion
+      pero no tienen metadatos SEO configurados...
+      Que hacer: Pulsa "Generar con IA" para crear
+      automaticamente los metadatos...
+
+  /es/soluciones/plataforma-inteligencia-marketing
+    solution  Prioridad: 0.8
+
+  /en/solutions/marketing-intelligence-platform
+    solution  Prioridad: 0.8
 ```
 
-No se modifica ninguna logica de analisis ni el reporte de resultados, solo la entrada al flujo.
-
+No se modifica ninguna logica de procesamiento, solo la capa de presentacion.
