@@ -77,7 +77,7 @@ const ReviewsSection = () => {
             <div className="flex justify-center pt-4">
               <Button asChild variant="ghost" className="gap-2 text-sm">
                 <a 
-                  href="https://www.google.com/search?q=Hayas+Marketing+Rese%C3%B1as&rflfq=1&num=20&rldimm=16726254471854884245&tbm=lcl#lkt=LocalPoiReviews" 
+                  href="https://www.google.com/search?q=opiniones+de+hayas+marketing" 
                   target="_blank" 
                   rel="noopener noreferrer"
                 >
