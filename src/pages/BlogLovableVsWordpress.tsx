@@ -15,7 +15,7 @@ const BlogLovableVsWordpress = () => {
     author: "Rubén Reyero",
     tags: ["Desarrollo Web", "SEO", "Plataformas Digitales", "IA", "WordPress", "Lovable"],
     canonical: "/es/blog/lovable-vs-wordpress-que-plataforma-elegir",
-    ogImage: "/lovable-vs-wordpress-hero.jpg",
+    ogImage: "/images/blog/lovable-vs-wordpress-hero.jpg",
     metaTitle: "Lovable vs WordPress: Qué Plataforma Elegir para tu Web | Hayas Marketing",
     metaDescription: "Comparativa estratégica Lovable vs WordPress. Código moderno React vs ecosistema de plugins PHP. Descubre cuál se adapta mejor a tu estrategia digital.",
     mainKeyword: "Lovable vs WordPress",
