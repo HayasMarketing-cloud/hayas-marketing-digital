@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import BlogPostTemplate from '@/components/BlogPost/BlogPostTemplate';
+import LovableVsWordpressHero from '@/components/BlogPost/LovableVsWordpressHero';
 import { Separator } from '@/components/ui/separator';
 import { CheckCircle, Code, Shield, Zap, TrendingUp, Search, Bot, ArrowRight, Globe, Server, Puzzle, BarChart3 } from 'lucide-react';
 
@@ -91,6 +92,9 @@ const BlogLovableVsWordpress = () => {
 
   return (
     <BlogPostTemplate metadata={metadata} faqs={faqs} relatedServices={relatedServices}>
+      {/* Hero visual con logos */}
+      <LovableVsWordpressHero />
+
       {/* Introducción */}
       <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-xl p-8 mb-12 border border-primary/10">
         <p className="text-lg leading-relaxed mb-6">
