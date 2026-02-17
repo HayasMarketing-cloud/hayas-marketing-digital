@@ -7,6 +7,14 @@ import { getRegisteredRoutes } from '@/utils/routeRegistryData';
 import { RouteDefinition } from '@/utils/routeRegistry';
 import { useAllSEOPages } from '@/hooks/useSEOData';
 import { SyncReportModal, SyncReport } from './SyncReportModal';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
 
 // Helper para encontrar path similar en el registro
 const findSimilarPath = (orphanPath: string, registryPaths: RouteDefinition[]): string | null => {
@@ -68,7 +76,7 @@ interface SyncRoutesButtonProps {
 
 export const SyncRoutesButton: React.FC<SyncRoutesButtonProps> = ({ onEditPage }) => {
   const [isSyncing, setIsSyncing] = useState(false);
-  const [showReport, setShowReport] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
   const [syncReport, setSyncReport] = useState<SyncReport | null>(null);
   const { toast } = useToast();
   const queryClient = useQueryClient();
@@ -158,7 +166,9 @@ export const SyncRoutesButton: React.FC<SyncRoutesButtonProps> = ({ onEditPage }
     };
   };
 
-  const handleSync = async () => {
+  const handleConfirmAndSync = async () => {
+    setShowConfirm(false);
+
     if (isLoading) {
       toast({
         title: 'Cargando datos',
@@ -170,14 +180,11 @@ export const SyncRoutesButton: React.FC<SyncRoutesButtonProps> = ({ onEditPage }
     setIsSyncing(true);
     
     try {
-      // Invalidar cache para obtener datos frescos
       await queryClient.invalidateQueries({ queryKey: ['seo-pages'] });
-      
-      // Analizar estado de sincronización
       const report = await analyzeSyncStatus();
       
       setSyncReport(report);
-      setShowReport(true);
+      setShowSyncReport(true);
       
       const totalIssues = 
         report.newRoutes.length + 
@@ -203,10 +210,12 @@ export const SyncRoutesButton: React.FC<SyncRoutesButtonProps> = ({ onEditPage }
     }
   };
 
+  const [showSyncReport, setShowSyncReport] = useState(false);
+
   return (
     <>
       <Button
-        onClick={handleSync}
+        onClick={() => setShowConfirm(true)}
         disabled={isSyncing || isLoading}
         variant="outline"
         size="sm"
@@ -219,15 +228,39 @@ export const SyncRoutesButton: React.FC<SyncRoutesButtonProps> = ({ onEditPage }
         ) : (
           <>
             <RefreshCw className="h-4 w-4 mr-2" />
-            Sincronizar Rutas
+            Auditoría SEO
           </>
         )}
       </Button>
 
+      <Dialog open={showConfirm} onOpenChange={setShowConfirm}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle>Auditoría de Sincronización SEO</DialogTitle>
+            <DialogDescription className="text-left space-y-2 pt-2">
+              <p>Esta herramienta compara las rutas registradas en la aplicación con los datos SEO almacenados en la base de datos para detectar:</p>
+              <ul className="list-disc pl-5 space-y-1">
+                <li>Páginas nuevas que aún no tienen configuración SEO</li>
+                <li>Registros SEO obsoletos de páginas que ya no existen</li>
+                <li>Inconsistencias entre la configuración esperada y la real</li>
+              </ul>
+            </DialogDescription>
+          </DialogHeader>
+          <DialogFooter className="gap-2 sm:gap-0">
+            <Button variant="outline" onClick={() => setShowConfirm(false)}>
+              Cancelar
+            </Button>
+            <Button onClick={handleConfirmAndSync}>
+              Iniciar Auditoría
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
       {syncReport && (
         <SyncReportModal
-          isOpen={showReport}
-          onClose={() => setShowReport(false)}
+          isOpen={showSyncReport}
+          onClose={() => setShowSyncReport(false)}
           report={syncReport}
           onEditPage={onEditPage}
         />
