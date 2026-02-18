@@ -24,6 +24,8 @@ import {
   Rocket,
   Globe,
   Database,
+  Cpu,
+  BotMessageSquare,
 } from 'lucide-react';
 
 const SensePlatform = () => {
@@ -197,16 +199,89 @@ const SensePlatform = () => {
             </p>
           </div>
           <div className="container mx-auto px-4 max-w-6xl">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {featuresList.map((feature, idx) => (
-                <Card key={idx} className="border border-border/50 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                  <CardContent className="pt-6">
-                    <feature.icon className="h-10 w-10 text-impulsa mb-4" strokeWidth={1.5} />
-                    <h3 className="text-lg font-semibold font-dm-sans text-foreground mb-2">{feature.title}</h3>
-                    <p className="text-sm text-muted-foreground">{feature.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
+            {/* Connected grid container with dot pattern */}
+            <div
+              className="relative rounded-2xl p-6 md:p-8"
+              style={{
+                backgroundImage: 'radial-gradient(circle, hsl(var(--impulsa)/0.10) 1px, transparent 1px)',
+                backgroundSize: '24px 24px',
+              }}
+            >
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                {/* First row: cards 0–2 */}
+                {featuresList.slice(0, 3).map((feature, idx) => (
+                  <Card
+                    key={idx}
+                    className="relative border-l-2 border-l-impulsa/40 border-t border-r border-b border-border/50 hover:border-l-impulsa hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-card group"
+                  >
+                    <CardContent className="pt-6">
+                      <span className="absolute top-3 right-3 text-xs font-mono text-impulsa/25 group-hover:text-impulsa/60 transition-colors duration-300">
+                        0{idx + 1}
+                      </span>
+                      <feature.icon className="h-9 w-9 text-impulsa mb-4" strokeWidth={1.5} />
+                      <h3 className="text-base font-semibold font-dm-sans text-foreground mb-2">{feature.title}</h3>
+                      <p className="text-sm text-muted-foreground">{feature.description}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+
+                {/* Decorative row separator (desktop only) */}
+                <div className="hidden lg:flex col-span-3 items-center gap-4 py-1">
+                  <div className="flex-1 border-t border-dashed border-impulsa/20" />
+                  <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-impulsa/5 border border-impulsa/20">
+                    <Cpu className="h-3.5 w-3.5 text-impulsa/50" />
+                    <span className="text-xs font-mono text-impulsa/50">{isEnglish ? 'connected' : 'conectado'}</span>
+                  </div>
+                  <div className="flex-1 border-t border-dashed border-impulsa/20" />
+                </div>
+
+                {/* Second row: cards 3–5 */}
+                {featuresList.slice(3).map((feature, idx) => (
+                  <Card
+                    key={idx + 3}
+                    className="relative border-l-2 border-l-impulsa/40 border-t border-r border-b border-border/50 hover:border-l-impulsa hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-card group"
+                  >
+                    <CardContent className="pt-6">
+                      <span className="absolute top-3 right-3 text-xs font-mono text-impulsa/25 group-hover:text-impulsa/60 transition-colors duration-300">
+                        0{idx + 4}
+                      </span>
+                      <feature.icon className="h-9 w-9 text-impulsa mb-4" strokeWidth={1.5} />
+                      <h3 className="text-base font-semibold font-dm-sans text-foreground mb-2">{feature.title}</h3>
+                      <p className="text-sm text-muted-foreground">{feature.description}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+
+                {/* AI Marketing Assistant card — full width */}
+                <div
+                  className="col-span-1 md:col-span-2 lg:col-span-3 mt-2 flex flex-col sm:flex-row items-start sm:items-center gap-4 p-5 rounded-xl border border-impulsa/30 bg-impulsa/5 cursor-pointer hover:bg-impulsa/10 transition-all duration-300 group"
+                  onClick={() => window.dispatchEvent(new CustomEvent('openSofiaChat'))}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => e.key === 'Enter' && window.dispatchEvent(new CustomEvent('openSofiaChat'))}
+                >
+                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-impulsa/10 border border-impulsa/20 flex-shrink-0">
+                    <BotMessageSquare className="h-6 w-6 text-impulsa" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="font-semibold font-dm-sans text-foreground">
+                      {isEnglish ? 'Marketing Assistant' : 'Asistente de Marketing'}
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      {isEnglish
+                        ? 'It will help you get the most out of the entire System — from strategy to execution.'
+                        : 'Te ayudará a sacarle el máximo rendimiento a todo el Sistema — de la estrategia a la ejecución.'}
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-3 flex-shrink-0">
+                    <span className="inline-flex items-center gap-1 rounded-full border border-impulsa/30 bg-impulsa/10 px-2.5 py-0.5 text-xs font-semibold text-impulsa">
+                      <BrainCircuit className="h-3 w-3" />
+                      IA
+                    </span>
+                    <ArrowRight className="h-4 w-4 text-impulsa group-hover:translate-x-1 transition-transform duration-200" />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
