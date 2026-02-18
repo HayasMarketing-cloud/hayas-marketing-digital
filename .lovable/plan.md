@@ -1,105 +1,81 @@
 
-## Optimizar contenido para AI Overviews (Gemini/SGE)
+## Rediseño de la sección "¿Qué incluye SENSE?" con conexión visual y card de Asistente de Marketing
 
-### Diagnostico
+### Objetivo
+Transformar la grid plana de 6 cards en un layout visualmente conectado que transmita la idea de "sistema integrado", y añadir una card horizontal full-width al final representando el Asistente de Marketing IA como capa que unifica todo.
 
-El AI Overview de Google (Gemini) genera un resumen incompleto de Hayas Marketing porque:
+### Diseño propuesto
 
-1. **Marketing SENSE no existe en ningun fichero publico** (llms.txt, content/*.md). Solo esta en componentes React que los crawlers de IA no procesan.
-2. **Los casos de exito no estan referenciados en llms.txt** ni tienen un resumen agregado accesible.
-3. **Las resenas de Google My Business no son "visibles" como contenido web** para el crawler.
-4. **Falta la narrativa diferenciadora actualizada** ("Impulsado por IA, gobernado por personas").
+**Capa de conexión entre cards:**
+- Envolver el grid en un contenedor relativo con un efecto visual de "red de nodos" usando líneas SVG o bordes decorativos con gradiente en el fondo
+- Añadir líneas de conexión punteadas entre las cards usando un pseudo-elemento SVG superpuesto, o alternativamente usar un fondo con patrón de puntos/grid que evoque conectividad
+- Cada card tendrá un número de índice (01–06) en la esquina superior derecha en color impulsa/morado tenue, reforzando la idea de módulos de un sistema
+- Un hilo de color impulsa recorre visualmente el borde izquierdo de cada card, como un "cable" que las une
+- Pequeños conectores/flechas entre cards en desktop (fila 1 → fila 2) usando un elemento decorativo centrado entre las dos filas
 
-### Cambios propuestos
+**Layout de las 6 cards:**
+- Mantener grid 3 columnas en desktop, 2 en tablet, 1 en móvil
+- Añadir un separador decorativo entre la fila superior (3 cards) e inferior (3 cards): una línea con un icono central `Cpu` o `GitBranch` que evoque "el sistema conecta todo"
+- Las cards tendrán un sutil borde izquierdo de color impulsa (2px) + número de módulo
+- Al hover: el borde izquierdo se expande ligeramente y el número se vuelve más prominente
 
-#### 1. Actualizar `public/llms.txt` (fichero principal para LLMs en espanol)
+**Card horizontal "Asistente de Marketing" (full-width, debajo de las 6 cards):**
+- Una card de una sola línea horizontal que ocupa todo el ancho del grid
+- Layout interno: `[icono BrainCircuit] [título + descripción corta] [badge "IA"] [botón CTA]` todo en una fila
+- Fondo con gradiente sutil de impulsa (morado muy tenue, como `bg-impulsa/5` con borde `border-impulsa/30`)
+- Texto: `Asistente de Marketing` + descripción: "Te ayudará a sacarle el máximo rendimiento a todo el Sistema"
+- CTA: abre SofÍA (chatbot) mediante el evento `openSofiaChat` ya implementado en el proyecto
 
-Anadir/actualizar las siguientes secciones:
+### Archivos a modificar
 
-- **Seccion "Marketing SENSE"** como metodologia propia: explicar que es, sus 5 fases (Estrategia, Contenido, Tecnologia, Ejecucion, Optimizacion), y la propuesta de valor "Impulsado por IA, gobernado por personas"
-- **Seccion "Casos de Exito y Resultados"** con un resumen de los 15 casos (nombre, sector, servicio, resultado clave) para que Gemini pueda citar resultados concretos
-- **Seccion "Resenas y Valoraciones"** con la nota media de Google (5.0/5, 18+ resenas) y citas textuales de clientes reales
-- **Actualizar la fecha de "Last Updated"** a 2026-02-17
+**`src/pages/SensePlatform.tsx`** — solo la sección "What's included" (líneas 189–212):
+1. Añadir import de iconos adicionales: `BotMessageSquare`, `Cpu`
+2. Rediseñar el contenedor del grid con fondo de patrón de puntos y posición relativa
+3. Añadir numeración a cada card (módulo 01–06) + borde izquierdo morado
+4. Añadir un divisor decorativo entre las dos filas de cards
+5. Añadir la card horizontal del Asistente después del grid, con `onClick` que dispara `openSofiaChat`
 
-#### 2. Actualizar `public/llms-en.txt` (version inglesa)
+### Detalle técnico
 
-Mismos cambios adaptados al ingles:
-- Seccion "Marketing SENSE" methodology
-- "Case Studies and Results" summary
-- "Reviews and Ratings" section
-- Updated date
+**Patrón de fondo "red conectada":**
+```css
+background-image: radial-gradient(circle, hsl(var(--impulsa)/0.12) 1px, transparent 1px);
+background-size: 24px 24px;
+```
+Aplicado como `style` inline en el contenedor para dar efecto de red sin dependencias adicionales.
 
-#### 3. Actualizar `public/content/es/general/empresa.md`
+**Divisor entre filas:**
+```jsx
+<div className="col-span-3 flex items-center gap-4 py-2">
+  <div className="flex-1 border-t border-dashed border-impulsa/20" />
+  <Cpu className="h-4 w-4 text-impulsa/40" />
+  <div className="flex-1 border-t border-dashed border-impulsa/20" />
+</div>
+```
+Se añade como elemento extra dentro del grid entre la card 3 y la card 4.
 
-- Anadir seccion "Marketing SENSE" como metodologia propia
-- Anadir seccion "Casos de Exito Destacados" con resumen de resultados
-- Anadir seccion "Valoraciones de Clientes" con datos reales de Google
-
-#### 4. Actualizar `public/content/en/general/company.md`
-
-Mismos cambios en ingles.
-
-### Detalle tecnico
-
-**Archivos a modificar:**
-- `public/llms.txt` - Anadir secciones Marketing SENSE, Casos de Exito, Resenas (~50 lineas nuevas)
-- `public/llms-en.txt` - Mismas secciones en ingles
-- `public/content/es/general/empresa.md` - Secciones Marketing SENSE, resultados, valoraciones
-- `public/content/en/general/company.md` - Mismas secciones en ingles
-
-**Estructura de la seccion Marketing SENSE en llms.txt:**
-
-```text
-## Marketing SENSE - Metodologia Propia
-
-Marketing SENSE es la metodologia integral de Hayas Marketing para disenar
-planes de marketing alineados con la estrategia de negocio.
-
-**Filosofia**: "Impulsado por IA, gobernado por personas"
-
-### Las 5 fases de Marketing SENSE
-1. **S - Estrategia**: Diagnostico, objetivos SMART, KPIs
-2. **E - Ejecucion**: Implementacion de servicios y campanas
-3. **N - Nurturing**: CRM, automatizacion, lead scoring
-4. **S - Soporte**: Formacion, acompanamiento, autonomia
-5. **E - Evaluacion**: Dashboards, reportes, optimizacion continua
+**Card Asistente (full-width, onClick SofÍA):**
+```jsx
+<div className="col-span-full mt-4 flex items-center gap-4 p-5 rounded-xl 
+  border border-impulsa/30 bg-impulsa/5 cursor-pointer hover:bg-impulsa/10 
+  transition-all duration-300"
+  onClick={() => window.dispatchEvent(new CustomEvent('openSofiaChat'))}>
+  <BrainCircuit className="h-8 w-8 text-impulsa flex-shrink-0" />
+  <div className="flex-1">
+    <p className="font-semibold text-foreground">Asistente de Marketing</p>
+    <p className="text-sm text-muted-foreground">...</p>
+  </div>
+  <badge>IA</badge>
+  <ArrowRight />
+</div>
 ```
 
-**Estructura de la seccion Casos de Exito:**
+**Numeración de módulos:**
+Cada card tendrá en la esquina superior derecha el número `0${idx+1}` en `text-xs text-impulsa/30 font-mono`.
 
-```text
-## Casos de Exito y Resultados
-
-Hayas Marketing cuenta con +15 casos de exito documentados en sectores como
-fintech, turismo, e-commerce, salud, educacion y servicios profesionales.
-
-Clientes destacados: FINECT, Asendia, BuhoBike, Wooptix, Joints Up,
-Alma Cruceros, Nova Praxis, Peris Electricidad, entre otros.
-
-Resultados tipicos:
-- Incremento de leads cualificados entre 40-200%
-- Reduccion de costes de adquisicion entre 25-50%
-- Implementacion de CRM en 4-8 semanas
-- ROI positivo desde el primer trimestre
-```
-
-**Estructura de la seccion Resenas:**
-
-```text
-## Valoraciones de Clientes
-
-- **Google Business**: 5.0/5 estrellas (18+ resenas verificadas)
-- Los clientes destacan: atencion personalizada, resultados medibles,
-  formacion del equipo y profesionalidad del equipo
-- URL resenas: https://www.google.com/search?q=opiniones+de+hayas+marketing
-```
-
-### Impacto esperado
-
-Estos cambios permiten que los crawlers de IA (Google Gemini, Bing Copilot, ChatGPT) accedan directamente a:
-- La metodologia Marketing SENSE como diferenciador
-- Resultados y casos reales (resuelve "no se encontraron opiniones")
-- La propuesta de valor actualizada
-- Datos verificables de valoraciones
-
-Esto mejorara significativamente el AI Overview de Google para busquedas relacionadas con Hayas Marketing.
+### Impacto visual esperado
+- Las 6 cards dejan de verse como items sueltos y pasan a verse como módulos numerados de un sistema
+- El fondo de puntos crea la ilusión de red/conexión sin ser intrusivo
+- La línea de puntos entre filas refuerza la verticalidad del sistema
+- La card del Asistente corona visualmente el conjunto como "la inteligencia que lo integra todo"
+- En móvil: el separador de fila se muestra solo en desktop (`hidden lg:flex`)
