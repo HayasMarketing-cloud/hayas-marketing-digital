@@ -1,81 +1,77 @@
 
-## Rediseño de la sección "¿Qué incluye SENSE?" con conexión visual y card de Asistente de Marketing
+## Rediseño del Panel de Detalle SEO: Vista Unificada de Activo Digital
 
-### Objetivo
-Transformar la grid plana de 6 cards en un layout visualmente conectado que transmita la idea de "sistema integrado", y añadir una card horizontal full-width al final representando el Asistente de Marketing IA como capa que unifica todo.
+### Problema actual
+El panel de detalle de cada URL se abre como un panel lateral estrecho con 4 pestanas (SEO, GSC, Index, Sitemap). Esto obliga a navegar tab por tab para ver toda la informacion, fragmentando la vision del activo.
 
-### Diseño propuesto
+### Solucion propuesta
+Reemplazar el `Sheet` lateral con tabs por un **Dialog a pantalla completa** que muestre toda la informacion del activo digital en una sola vista scrollable, organizada por secciones visuales con sentido estrategico.
 
-**Capa de conexión entre cards:**
-- Envolver el grid en un contenedor relativo con un efecto visual de "red de nodos" usando líneas SVG o bordes decorativos con gradiente en el fondo
-- Añadir líneas de conexión punteadas entre las cards usando un pseudo-elemento SVG superpuesto, o alternativamente usar un fondo con patrón de puntos/grid que evoque conectividad
-- Cada card tendrá un número de índice (01–06) en la esquina superior derecha en color impulsa/morado tenue, reforzando la idea de módulos de un sistema
-- Un hilo de color impulsa recorre visualmente el borde izquierdo de cada card, como un "cable" que las une
-- Pequeños conectores/flechas entre cards en desktop (fila 1 → fila 2) usando un elemento decorativo centrado entre las dos filas
+### Layout de la nueva vista unificada
 
-**Layout de las 6 cards:**
-- Mantener grid 3 columnas en desktop, 2 en tablet, 1 en móvil
-- Añadir un separador decorativo entre la fila superior (3 cards) e inferior (3 cards): una línea con un icono central `Cpu` o `GitBranch` que evoque "el sistema conecta todo"
-- Las cards tendrán un sutil borde izquierdo de color impulsa (2px) + número de módulo
-- Al hover: el borde izquierdo se expande ligeramente y el número se vuelve más prominente
+La pagina de detalle tendra este flujo vertical:
 
-**Card horizontal "Asistente de Marketing" (full-width, debajo de las 6 cards):**
-- Una card de una sola línea horizontal que ocupa todo el ancho del grid
-- Layout interno: `[icono BrainCircuit] [título + descripción corta] [badge "IA"] [botón CTA]` todo en una fila
-- Fondo con gradiente sutil de impulsa (morado muy tenue, como `bg-impulsa/5` con borde `border-impulsa/30`)
-- Texto: `Asistente de Marketing` + descripción: "Te ayudará a sacarle el máximo rendimiento a todo el Sistema"
-- CTA: abre SofÍA (chatbot) mediante el evento `openSofiaChat` ya implementado en el proyecto
+**1. Cabecera del activo**
+- Path (monospace), titulo, badges de estado (completa/incompleta, indexada/no, idioma, categoria)
+- Botones de accion: Editar SEO, Verificar indexacion, Ver en produccion, Cerrar
 
-### Archivos a modificar
+**2. Resumen rapido (4 metricas KPI en fila)**
+- Clicks GSC (30d) | Impresiones | CTR | Posicion media
+- Cada una con indicador visual de calidad (verde/amarillo/rojo)
 
-**`src/pages/SensePlatform.tsx`** — solo la sección "What's included" (líneas 189–212):
-1. Añadir import de iconos adicionales: `BotMessageSquare`, `Cpu`
-2. Rediseñar el contenedor del grid con fondo de patrón de puntos y posición relativa
-3. Añadir numeración a cada card (módulo 01–06) + borde izquierdo morado
-4. Añadir un divisor decorativo entre las dos filas de cards
-5. Añadir la card horizontal del Asistente después del grid, con `onClick` que dispara `openSofiaChat`
+**3. Seccion: Estado de Indexacion y Sitemap** (horizontal, 2 columnas)
+- Columna izquierda: Estado indexacion, titulo/snippet en Google, posicion, ultima verificacion
+- Columna derecha: Robots, canonical, schema type, idioma, estado en sitemap
+- Boton "Verificar y auditar" integrado
 
-### Detalle técnico
+**4. Seccion: Metadatos SEO** (vista de lectura + boton editar)
+- Vista compacta de titulo, description, H1, H2, keywords con indicadores de longitud
+- Los campos muestran warnings inline (titulo corto, description larga, etc.)
+- Boton "Editar metadatos" abre el SEOEditor existente en modo inline/expandido
 
-**Patrón de fondo "red conectada":**
-```css
-background-image: radial-gradient(circle, hsl(var(--impulsa)/0.12) 1px, transparent 1px);
-background-size: 24px 24px;
-```
-Aplicado como `style` inline en el contenedor para dar efecto de red sin dependencias adicionales.
+**5. Seccion: Keywords de Search Console**
+- Tabla con top 20 keywords que posicionan esta URL
+- Columnas: keyword, clicks, impresiones, CTR, posicion
 
-**Divisor entre filas:**
-```jsx
-<div className="col-span-3 flex items-center gap-4 py-2">
-  <div className="flex-1 border-t border-dashed border-impulsa/20" />
-  <Cpu className="h-4 w-4 text-impulsa/40" />
-  <div className="flex-1 border-t border-dashed border-impulsa/20" />
-</div>
-```
-Se añade como elemento extra dentro del grid entre la card 3 y la card 4.
+**6. Seccion: Auditoria On-Page** (si hay datos)
+- Score con barra de progreso
+- Errores / Warnings / OK en grid
+- Meta tags detectados, rendimiento (LCP, TTI), enlaces internos/externos
+- Boton para descargar JSON
 
-**Card Asistente (full-width, onClick SofÍA):**
-```jsx
-<div className="col-span-full mt-4 flex items-center gap-4 p-5 rounded-xl 
-  border border-impulsa/30 bg-impulsa/5 cursor-pointer hover:bg-impulsa/10 
-  transition-all duration-300"
-  onClick={() => window.dispatchEvent(new CustomEvent('openSofiaChat'))}>
-  <BrainCircuit className="h-8 w-8 text-impulsa flex-shrink-0" />
-  <div className="flex-1">
-    <p className="font-semibold text-foreground">Asistente de Marketing</p>
-    <p className="text-sm text-muted-foreground">...</p>
-  </div>
-  <badge>IA</badge>
-  <ArrowRight />
-</div>
-```
+**7. Seccion: Acciones recomendadas**
+- Lista automatica de sugerencias basada en el estado:
+  - "El titulo tiene X caracteres (deberia tener 30-60)"
+  - "La pagina no esta indexada. Considera enviarla via IndexNow"
+  - "No hay datos de GSC. La pagina podria necesitar mas enlaces internos"
+  - "Faltan keywords. Anade palabras clave relevantes"
 
-**Numeración de módulos:**
-Cada card tendrá en la esquina superior derecha el número `0${idx+1}` en `text-xs text-impulsa/30 font-mono`.
+### Detalle tecnico
 
-### Impacto visual esperado
-- Las 6 cards dejan de verse como items sueltos y pasan a verse como módulos numerados de un sistema
-- El fondo de puntos crea la ilusión de red/conexión sin ser intrusivo
-- La línea de puntos entre filas refuerza la verticalidad del sistema
-- La card del Asistente corona visualmente el conjunto como "la inteligencia que lo integra todo"
-- En móvil: el separador de fila se muestra solo en desktop (`hidden lg:flex`)
+**Archivos a modificar:**
+
+1. **`src/components/admin/seo/PageDetailPanel.tsx`** — Reescritura completa:
+   - Cambiar de `Sheet` a `Dialog` con `DialogContent` de clase `max-w-5xl max-h-[90vh] overflow-y-auto`
+   - Eliminar `Tabs` — todo en un flujo vertical con secciones separadas por bordes/titulos
+   - Reutilizar la logica existente de `GSCTab`, `IndexationTab`, `SitemapTab` pero inline
+   - Integrar el `SEOEditor` en modo lectura con toggle a edicion
+   - Anadir seccion de "Acciones recomendadas" calculadas dinamicamente
+
+2. **`src/pages/admin/SEOTracker.tsx`** — Ajuste menor:
+   - El `PageDetailPanel` ya se invoca con `selectedPage` y `onClose`, no cambia la API
+
+**No se modifican:**
+- `useSEOTrackerData.ts` (los datos ya estan disponibles)
+- `SEOEditor.tsx` (se reutiliza tal cual dentro del nuevo panel)
+
+### Seccion de acciones recomendadas (logica)
+
+Se calculan automaticamente segun:
+- `!page.isComplete` → "Completa los campos SEO obligatorios"
+- `page.title.length < 30 || > 60` → Warning de titulo
+- `page.description.length < 120 || > 160` → Warning de description
+- `page.indexation?.is_indexed === false` → "Envia via IndexNow"
+- `!page.indexation` → "Verifica la indexacion"
+- `page.gscClicks === null` → "Sin datos GSC"
+- `page.keywords.length === 0` → "Anade keywords"
+- `page.robots.includes('noindex')` → "Esta pagina esta bloqueada para indexacion"
