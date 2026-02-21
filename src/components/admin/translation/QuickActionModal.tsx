@@ -293,14 +293,9 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({ route, isOpe
         category: route.category,
       });
 
-      // If route doesn't exist in registry, show code modal
-      if (!result.routeExists && result.codeData) {
-        setCodeData(result.codeData);
-        setShowCodeModal(true);
-      } else {
-        onSuccess();
-        onClose();
-      }
+      // Dynamic routes handle all translated pages automatically
+      onSuccess();
+      onClose();
     } catch (error) {
       // Error is already handled by the hook
       console.error('Translation error:', error);
