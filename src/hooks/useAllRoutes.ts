@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
-import { getAllSpanishRoutes, getAllEnglishRoutes, categorizeRoute, getEnglishEquivalent, getSpanishEquivalent } from '@/utils/routeScanner';
+import { getAllSpanishRoutes, getAllEnglishRoutes, categorizeRoute, getEnglishEquivalent, getSpanishEquivalent, isDynamicRouteMatch, isEnRouteInApp } from '@/utils/routeScanner';
+import { findRouteInApp } from '@/utils/routeExtractor';
 
 export interface RouteInventoryItem {
   path: string;
@@ -24,6 +25,18 @@ export interface RouteInventoryItem {
   keywords?: any;
   h1?: string;
   is_indexable?: boolean;
+  // EN page details
+  enPageData?: {
+    title?: string;
+    description?: string;
+    h1?: string;
+    keywords?: any;
+    is_indexable?: boolean;
+    og_image?: string;
+    translation_of?: string;
+    dbId?: string;
+  };
+  enRouteInApp?: boolean;
   // Priority fields
   priorityScore?: number;
   strategicImportance?: string;
@@ -31,15 +44,96 @@ export interface RouteInventoryItem {
   lastOptimizedAt?: string;
 }
 
+// ─── Helper: evaluate SEO completeness ───
+function evaluateSEO(dbPage: any) {
+  const missingCriticalFields: string[] = [];
+  const missingRecommendedFields: string[] = [];
+
+  if (!dbPage.title || dbPage.title.length < 30) missingCriticalFields.push('title');
+  if (!dbPage.description || dbPage.description.length < 120) missingCriticalFields.push('description');
+  if (!dbPage.keywords || (Array.isArray(dbPage.keywords) && dbPage.keywords.length === 0)) missingCriticalFields.push('keywords');
+  if (!dbPage.h1) missingCriticalFields.push('h1');
+  if (!dbPage.og_image) missingRecommendedFields.push('og_image');
+
+  const seoOptimized = missingCriticalFields.length === 0;
+  const seoFullyOptimized = seoOptimized && missingRecommendedFields.length === 0;
+
+  return { missingCriticalFields, missingRecommendedFields, seoOptimized, seoFullyOptimized };
+}
+
+// ─── Helper: build inventory item ───
+function buildInventoryItem(
+  esPath: string,
+  dbPage: any | null,
+  enDbPage: any | null,
+  enPath: string | null,
+  inApp: boolean,
+): RouteInventoryItem {
+  const { missingCriticalFields, missingRecommendedFields, seoOptimized, seoFullyOptimized } = dbPage
+    ? evaluateSEO(dbPage)
+    : { missingCriticalFields: [], missingRecommendedFields: [], seoOptimized: false, seoFullyOptimized: false };
+
+  let status: RouteInventoryItem['status'] = 'code-only';
+  if (dbPage) {
+    if (enDbPage?.is_indexable) {
+      status = seoOptimized ? 'complete' : 'translated';
+    } else if (enDbPage) {
+      status = 'translated';
+    } else {
+      status = 'pending';
+    }
+  }
+
+  const enRouteInApp = enPath ? isEnRouteInApp(enPath) : false;
+
+  return {
+    path: esPath,
+    language: 'es',
+    category: dbPage?.category || categorizeRoute(esPath),
+    status,
+    inApp,
+    inDatabase: !!dbPage,
+    dbId: dbPage?.id,
+    translationPath: enPath || undefined,
+    translationId: enDbPage?.id,
+    hasTranslation: !!enDbPage,
+    seoOptimized,
+    seoFullyOptimized,
+    missingFields: [...missingCriticalFields, ...missingRecommendedFields],
+    missingCriticalFields,
+    missingRecommendedFields,
+    title: dbPage?.title,
+    description: dbPage?.description,
+    keywords: dbPage?.keywords,
+    h1: dbPage?.h1,
+    is_indexable: dbPage?.is_indexable,
+    enPageData: enDbPage ? {
+      title: enDbPage.title,
+      description: enDbPage.description,
+      h1: enDbPage.h1,
+      keywords: enDbPage.keywords,
+      is_indexable: enDbPage.is_indexable,
+      og_image: enDbPage.og_image,
+      translation_of: enDbPage.translation_of,
+      dbId: enDbPage.id,
+    } : undefined,
+    enRouteInApp,
+    priorityScore: dbPage?.priority_score || 0,
+    strategicImportance: dbPage?.strategic_importance || 'medium',
+    estimatedTraffic: dbPage?.estimated_traffic || 0,
+    lastOptimizedAt: dbPage?.last_optimized_at || undefined,
+  };
+}
+
 export const useAllRoutes = () => {
   const { data, isLoading, error } = useQuery({
     queryKey: ['all-routes-inventory'],
     queryFn: async (): Promise<RouteInventoryItem[]> => {
-      // 1. Obtener todas las rutas del código
+      // 1. Hardcoded routes from code
       const allEsRoutes = getAllSpanishRoutes();
       const allEnRoutes = getAllEnglishRoutes();
 
-      // 2. Obtener todas las páginas de la base de datos
+      // 2. All pages from DB
       const { data: dbPages, error: dbError } = await supabase
         .from('seo_pages')
         .select('*')
@@ -47,87 +141,51 @@ export const useAllRoutes = () => {
 
       if (dbError) throw dbError;
 
-      // 3. Mapear páginas DB por path
-      const dbPagesMap = new Map(
-        (dbPages || []).map(page => [page.path, page])
-      );
+      // 3. Map DB pages by path
+      const dbPagesMap = new Map((dbPages || []).map(page => [page.path, page]));
 
-      // 4. Crear inventario completo
       const inventory: RouteInventoryItem[] = [];
+      const processedEsPaths = new Set<string>();
 
-      // Procesar rutas ES
+      // 4. Process hardcoded ES routes
       for (const esPath of allEsRoutes) {
+        processedEsPaths.add(esPath);
         const dbPage = dbPagesMap.get(esPath);
         const enPath = getEnglishEquivalent(esPath);
         const enDbPage = enPath ? dbPagesMap.get(enPath) : null;
-
-        // Verificar optimización SEO - Separar críticos de recomendados
-        const missingCriticalFields: string[] = [];
-        const missingRecommendedFields: string[] = [];
-        
-        if (dbPage) {
-          // Campos críticos (bloqueantes)
-          if (!dbPage.title || dbPage.title.length < 30) missingCriticalFields.push('title');
-          if (!dbPage.description || dbPage.description.length < 120) missingCriticalFields.push('description');
-          if (!dbPage.keywords || (Array.isArray(dbPage.keywords) && dbPage.keywords.length === 0)) missingCriticalFields.push('keywords');
-          if (!dbPage.h1) missingCriticalFields.push('h1');
-          
-          // Campos recomendados (no bloqueantes)
-          if (!dbPage.og_image) missingRecommendedFields.push('og_image');
-        }
-
-        // seoOptimized = críticos OK (puede faltar og_image)
-        const seoOptimized = missingCriticalFields.length === 0 && !!dbPage;
-        const seoFullyOptimized = seoOptimized && missingRecommendedFields.length === 0;
-
-        let status: RouteInventoryItem['status'] = 'code-only';
-        if (dbPage) {
-          if (enDbPage?.is_indexable) {
-            // Tiene traducción EN indexable: complete si SEO básico OK, translated si no
-            status = seoOptimized ? 'complete' : 'translated';
-          } else if (enDbPage) {
-            // Existe EN pero no está indexable
-            status = 'translated';
-          } else {
-            // No existe EN
-            status = 'pending';
-          }
-        }
-
-        inventory.push({
-          path: esPath,
-          language: 'es',
-          category: categorizeRoute(esPath),
-          status,
-          inApp: true,
-          inDatabase: !!dbPage,
-          dbId: dbPage?.id,
-          translationPath: enPath || undefined,
-          translationId: enDbPage?.id,
-          hasTranslation: !!enDbPage,
-          seoOptimized,
-          seoFullyOptimized,
-          missingFields: [...missingCriticalFields, ...missingRecommendedFields],
-          missingCriticalFields,
-          missingRecommendedFields,
-          title: dbPage?.title,
-          description: dbPage?.description,
-          keywords: dbPage?.keywords,
-          h1: dbPage?.h1,
-          is_indexable: dbPage?.is_indexable,
-          priorityScore: dbPage?.priority_score || 0,
-          strategicImportance: dbPage?.strategic_importance || 'medium',
-          estimatedTraffic: dbPage?.estimated_traffic || 0,
-          lastOptimizedAt: dbPage?.last_optimized_at || undefined,
-        });
+        inventory.push(buildInventoryItem(esPath, dbPage, enDbPage, enPath, true));
       }
 
-      // Procesar rutas EN que no tienen equivalente ES (huérfanas)
+      // 5. ✨ NEW: Include ES pages from DB not in hardcoded list (blog posts, etc.)
+      const esDbPages = (dbPages || []).filter(p => p.in_language === 'es-ES');
+      for (const dbPage of esDbPages) {
+        if (processedEsPaths.has(dbPage.path)) continue;
+        processedEsPaths.add(dbPage.path);
+
+        const inApp = isDynamicRouteMatch(dbPage.path);
+        const enPath = getEnglishEquivalent(dbPage.path);
+        
+        // Try to find EN page by translation_of link or by path
+        let enDbPage = enPath ? dbPagesMap.get(enPath) : null;
+        if (!enDbPage) {
+          // Also check if any EN page has translation_of pointing to this ES page
+          enDbPage = (dbPages || []).find(
+            p => p.in_language === 'en-US' && p.translation_of === dbPage.id
+          ) || null;
+        }
+
+        inventory.push(buildInventoryItem(
+          dbPage.path, dbPage, enDbPage, 
+          enDbPage?.path || enPath, 
+          inApp
+        ));
+      }
+
+      // 6. Process orphan EN routes (no ES equivalent)
       for (const enPath of allEnRoutes) {
         const esPath = getSpanishEquivalent(enPath);
-        if (!esPath || !allEsRoutes.includes(esPath)) {
+        if (!esPath || !processedEsPaths.has(esPath)) {
           const dbPage = dbPagesMap.get(enPath);
-          
           inventory.push({
             path: enPath,
             language: 'en',
@@ -149,12 +207,11 @@ export const useAllRoutes = () => {
         }
       }
 
-      // Procesar páginas DB que no están en el código (huérfanas)
+      // 7. Process orphan DB pages (not in code at all)
       for (const dbPage of (dbPages || [])) {
         const existsInInventory = inventory.some(item => item.path === dbPage.path);
         if (!existsInInventory) {
           const isEs = dbPage.in_language === 'es-ES';
-          
           inventory.push({
             path: dbPage.path,
             language: isEs ? 'es' : 'en',
@@ -176,20 +233,17 @@ export const useAllRoutes = () => {
         }
       }
 
-      // Ordenar por prioridad
+      // Sort by priority
       return inventory.sort((a, b) => {
-        // Primero por status (pending > translated > complete > code-only > orphan)
         const statusOrder = { pending: 0, translated: 1, complete: 2, 'code-only': 3, orphan: 4 };
         const statusDiff = statusOrder[a.status] - statusOrder[b.status];
         if (statusDiff !== 0) return statusDiff;
 
-        // Luego por categoría
         const categoryOrder = { main: 0, service: 1, solution: 2, tool: 3, blog: 4, 'case-study': 5, other: 6 };
         const catDiff = (categoryOrder[a.category as keyof typeof categoryOrder] || 6) - 
                         (categoryOrder[b.category as keyof typeof categoryOrder] || 6);
         if (catDiff !== 0) return catDiff;
 
-        // Finalmente por path
         return a.path.localeCompare(b.path);
       });
     },

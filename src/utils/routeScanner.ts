@@ -1,4 +1,5 @@
 import { EN_ROUTES_IN_APP } from './routeExtractor';
+import { generateEnglishSlug } from './slugTranslation';
 
 export interface ScannedRoute {
   path: string;
@@ -10,11 +11,27 @@ export interface ScannedRoute {
 }
 
 /**
- * Escanea todas las rutas ES del código
- * Basado en los patrones de rutas en App.tsx
+ * Patrones de rutas dinámicas definidos en App.tsx
+ * Usado para detectar si un path de la DB coincide con una ruta dinámica
+ */
+const DYNAMIC_ROUTE_PATTERNS = [
+  { pattern: /^\/es\/blog\/[^/]+$/, lang: 'es' as const },
+  { pattern: /^\/en\/blog\/[^/]+$/, lang: 'en' as const },
+  { pattern: /^\/es\/casos-exito\/[^/]+$/, lang: 'es' as const },
+  { pattern: /^\/en\/case-studies\/[^/]+$/, lang: 'en' as const },
+];
+
+/**
+ * Verifica si un path coincide con una ruta dinámica de React Router
+ */
+export const isDynamicRouteMatch = (path: string): boolean => {
+  return DYNAMIC_ROUTE_PATTERNS.some(r => r.pattern.test(path));
+};
+
+/**
+ * Escanea todas las rutas ES del código (estáticas hardcodeadas)
  */
 export const getAllSpanishRoutes = (): string[] => {
-  // Rutas principales (sin /es raíz que ya no existe)
   const mainRoutes = [
     '/es/nosotros',
     '/es/contacto',
@@ -22,7 +39,6 @@ export const getAllSpanishRoutes = (): string[] => {
     '/es/casos-exito',
   ];
 
-  // Servicios
   const serviceRoutes = [
     '/es/servicios/diseno-web',
     '/es/servicios/seo-posicionamiento',
@@ -32,7 +48,6 @@ export const getAllSpanishRoutes = (): string[] => {
     '/es/servicios/redes-sociales',
   ];
 
-  // Soluciones
   const solutionRoutes = [
     '/es/soluciones/crm-gestion-clientes',
     '/es/soluciones/automatizacion-marketing',
@@ -57,7 +72,9 @@ export const categorizeRoute = (path: string): string => {
   if (path === '/es/' || path === '/en/' || path === '/es' || path === '/en') return 'main';
   if (path.includes('/nosotros') || path.includes('/about')) return 'main';
   if (path.includes('/contacto') || path.includes('/contact')) return 'main';
+  if (path.includes('/blog/')) return 'blog';
   if (path.includes('/blog')) return 'blog';
+  if (path.includes('/casos-exito/') || path.includes('/case-studies/')) return 'case-study';
   if (path.includes('/casos-exito') || path.includes('/case-studies')) return 'case-study';
   if (path.includes('/servicios/') || path.includes('/services/')) return 'service';
   if (path.includes('/soluciones/') || path.includes('/solutions/')) return 'solution';
@@ -66,10 +83,11 @@ export const categorizeRoute = (path: string): string => {
 };
 
 /**
- * Determina si una ruta ES tiene su equivalente EN
+ * Determina la ruta EN equivalente de una ruta ES.
+ * Para rutas estáticas usa el mapa hardcodeado.
+ * Para rutas dinámicas (blog, casos de éxito) genera el slug automáticamente.
  */
 export const getEnglishEquivalent = (esPath: string): string | null => {
-  // Mapeo de rutas ES -> EN
   const pathMap: Record<string, string> = {
     '/es/': '/en/',
     '/es': '/en',
@@ -89,7 +107,22 @@ export const getEnglishEquivalent = (esPath: string): string | null => {
     '/es/soluciones/consultoria-estrategica': '/en/solutions/strategic-consulting',
   };
 
-  return pathMap[esPath] || null;
+  // Exact static match
+  if (pathMap[esPath]) return pathMap[esPath];
+
+  // Dynamic: blog posts
+  const blogMatch = esPath.match(/^\/es\/blog\/(.+)$/);
+  if (blogMatch) {
+    return generateEnglishSlug(esPath);
+  }
+
+  // Dynamic: case studies
+  const caseMatch = esPath.match(/^\/es\/casos-exito\/(.+)$/);
+  if (caseMatch) {
+    return `/en/case-studies/${caseMatch[1]}`;
+  }
+
+  return null;
 };
 
 /**
@@ -116,4 +149,13 @@ export const getSpanishEquivalent = (enPath: string): string | null => {
   };
 
   return reverseMap[enPath] || null;
+};
+
+/**
+ * Verifica si una ruta EN existe registrada en App.tsx
+ */
+export const isEnRouteInApp = (enPath: string): boolean => {
+  const allEnRoutes = getAllEnglishRoutes();
+  // Check exact match or dynamic pattern
+  return allEnRoutes.includes(enPath) || isDynamicRouteMatch(enPath);
 };
