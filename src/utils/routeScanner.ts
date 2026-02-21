@@ -122,6 +122,18 @@ export const getEnglishEquivalent = (esPath: string): string | null => {
     return `/en/case-studies/${caseMatch[1]}`;
   }
 
+  // Dynamic: services (generic fallback using slug translation)
+  const serviceMatch = esPath.match(/^\/es\/servicios\/(.+)$/);
+  if (serviceMatch) {
+    return generateEnglishSlug(esPath);
+  }
+
+  // Dynamic: solutions (generic fallback)
+  const solutionMatch = esPath.match(/^\/es\/soluciones\/(.+)$/);
+  if (solutionMatch) {
+    return generateEnglishSlug(esPath);
+  }
+
   return null;
 };
 
