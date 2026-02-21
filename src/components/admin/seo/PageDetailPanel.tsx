@@ -340,7 +340,7 @@ export const PageDetailPanel: React.FC<PageDetailPanelProps> = ({ page, open, on
               <Button size="sm" variant="outline" onClick={() => setShowEditor(!showEditor)}>
                 <Edit className="h-4 w-4 mr-1" /> {showEditor ? 'Cerrar editor' : 'Editar SEO'}
               </Button>
-              <a href={`https://hayas.marketing${page.path}`} target="_blank" rel="noopener noreferrer">
+              <a href={`https://hayasmarketing.com${page.path}`} target="_blank" rel="noopener noreferrer">
                 <Button size="sm" variant="outline"><ExternalLink className="h-4 w-4 mr-1" /> Ver en producción</Button>
               </a>
             </div>
