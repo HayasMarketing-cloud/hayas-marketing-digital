@@ -100,10 +100,7 @@ function getRecommendations(route: RouteInventoryItem): Array<{ type: 'error' | 
       recs.push({ type: 'warning', message: 'El campo translation_of no está enlazado. La sincronización bilingüe no funcionará correctamente.' });
     }
 
-    // EN not in app
-    if (!route.enRouteInApp && route.translationPath) {
-      recs.push({ type: 'info', message: 'La ruta EN no está registrada en la aplicación. Redirigirá a Coming Soon.' });
-    }
+    // EN not in app — no longer relevant since dynamic routes handle this automatically
 
     // Title length
     const enTitle = route.enPageData.title;
@@ -141,9 +138,7 @@ function getEnStatus(route: RouteInventoryItem): { label: string; color: string;
   if (route.enPageData && !route.enPageData.is_indexable) {
     return { label: 'Borrador', color: 'text-yellow-600', description: 'La versión EN existe pero no es visible para Google (noindex).' };
   }
-  if (route.enPageData?.is_indexable && !route.enRouteInApp) {
-    return { label: 'Sin ruta en app', color: 'text-orange-600', description: 'Existe en DB pero falta ruta en la aplicación. Redirigirá a Coming Soon.' };
-  }
+  // Dynamic routes now handle all translated pages automatically
   if (route.enPageData?.is_indexable) {
     return { label: 'Publicada', color: 'text-green-600', description: 'Versión EN publicada y activa.' };
   }
@@ -406,19 +401,36 @@ export const TranslationDetailPanel: React.FC<TranslationDetailPanelProps> = ({ 
                 </Button>
               )}
 
-              {/* View in production */}
+              {/* Preview in staging */}
               <Button variant="outline" asChild>
-                <a href={`https://hayasmarketing.com${route.path}`} target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="h-4 w-4 mr-2" />
-                  Ver en producción (ES)
+                <a href={`https://id-preview--dbf82530-8c48-4f35-bb56-33019ec20b9a.lovable.app${route.path}`} target="_blank" rel="noopener noreferrer">
+                  <Eye className="h-4 w-4 mr-2" />
+                  Vista previa (ES)
                 </a>
               </Button>
 
-              {route.translationPath && (
+              {(route.translationPath || route.enPageData) && (
                 <Button variant="outline" asChild>
+                  <a href={`https://id-preview--dbf82530-8c48-4f35-bb56-33019ec20b9a.lovable.app${route.translationPath || ''}`} target="_blank" rel="noopener noreferrer">
+                    <Eye className="h-4 w-4 mr-2" />
+                    Vista previa (EN)
+                  </a>
+                </Button>
+              )}
+
+              {/* View in production */}
+              <Button variant="outline" size="sm" asChild>
+                <a href={`https://hayasmarketing.com${route.path}`} target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="h-4 w-4 mr-2" />
+                  Producción (ES)
+                </a>
+              </Button>
+
+              {route.translationPath && route.enPageData?.is_indexable && (
+                <Button variant="outline" size="sm" asChild>
                   <a href={`https://hayasmarketing.com${route.translationPath}`} target="_blank" rel="noopener noreferrer">
                     <ExternalLink className="h-4 w-4 mr-2" />
-                    Ver en producción (EN)
+                    Producción (EN)
                   </a>
                 </Button>
               )}

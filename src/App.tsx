@@ -14,6 +14,7 @@ import RoutePreloader from './components/RoutePreloader';
 import { RedirectManager } from './components/RedirectManager';
 import { AdminProtectedRoute } from './components/admin/AdminProtectedRoute';
 import RouteValidator from './components/dev/RouteValidator';
+import DynamicPageEN from './pages/en/DynamicPageEN';
 
 // Lazy imports organizados por categoría
 import * as Pages from './utils/lazyImports';
@@ -627,7 +628,13 @@ const App = () => (
           <Route path="/en/tools/whatsapp-link-generator" element={<PageSuspense><Pages.HerramientaGeneradorWhatsApp /></PageSuspense>} />
           <Route path="/en/tools/roi-calculator" element={<PageSuspense><Pages.HerramientaCalculadoraROI /></PageSuspense>} />
           
-          {/* ============================================
+           {/* DYNAMIC EN CATCH-ALL ROUTES (fallback for DB-translated pages without explicit routes) */}
+          <Route path="/en/services/:slug" element={<PageSuspense><DynamicPageEN section="services" /></PageSuspense>} />
+          <Route path="/en/solutions/:slug" element={<PageSuspense><DynamicPageEN section="solutions" /></PageSuspense>} />
+          <Route path="/en/blog/:slug" element={<PageSuspense><DynamicPageEN section="blog" /></PageSuspense>} />
+          <Route path="/en/case-studies/:slug" element={<PageSuspense><DynamicPageEN section="case-studies" /></PageSuspense>} />
+
+           {/* ============================================
               END OF ENGLISH ROUTES
               ============================================ */}
           
