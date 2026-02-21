@@ -60,7 +60,7 @@ export const translations = {
       error: 'Error al enviar el formulario'
     },
     footer: {
-      tagline: 'En Hayas, ayudamos a empresas y emprendedores a prosperar con estrategias de marketing esenciales que integran inteligencia artificial y automatización, totalmente alineadas a propósito y visión estratégica.',
+      tagline: 'En Hayas ayudamos a empresas, startups y emprendedores a transformar su visión en resultados medibles, integrando inteligencia artificial, datos y sistemas inteligentes alineados con su propósito.',
       discoverSolution: 'Descubre tu solución',
       featuredServices: 'Servicios destacados',
       resources: 'Recursos',
