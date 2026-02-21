@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { TranslationDetailPanel } from './TranslationDetailPanel';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -42,6 +43,7 @@ export const TranslationTable: React.FC<TranslationTableProps> = ({ selectedCate
   const [showBatchTranslation, setShowBatchTranslation] = useState(false);
   const [showComparison, setShowComparison] = useState(false);
   const [priorityEditorRoute, setPriorityEditorRoute] = useState<RouteInventoryItem | null>(null);
+  const [detailRoute, setDetailRoute] = useState<RouteInventoryItem | null>(null);
   const { routes, isLoading } = useAllRoutes();
   const queryClient = useQueryClient();
 
@@ -343,11 +345,12 @@ export const TranslationTable: React.FC<TranslationTableProps> = ({ selectedCate
               {filteredRoutes.map((route) => (
                 <div 
                   key={route.path} 
-                  className="border rounded-lg p-4 hover:bg-accent/50 transition-colors"
+                  className="border rounded-lg p-4 hover:bg-accent/50 transition-colors cursor-pointer"
+                  onClick={() => setDetailRoute(route)}
                 >
                   <div className="flex items-start justify-between gap-4">
                     {/* Checkbox para selección */}
-                    <div className="pt-1">
+                    <div className="pt-1" onClick={(e) => e.stopPropagation()}>
                       <Checkbox
                         checked={selectedRoutes.includes(route.path)}
                         onCheckedChange={() => handleSelectRoute(route.path)}
@@ -448,7 +451,7 @@ export const TranslationTable: React.FC<TranslationTableProps> = ({ selectedCate
                     </div>
 
                     {/* Acciones contextuales */}
-                    <div className="flex items-center gap-2 flex-shrink-0">
+                    <div className="flex items-center gap-2 flex-shrink-0" onClick={(e) => e.stopPropagation()}>
                       {route.status === 'code-only' && (
                         <Button
                           size="lg"
@@ -579,6 +582,12 @@ export const TranslationTable: React.FC<TranslationTableProps> = ({ selectedCate
           onSuccess={handleRefresh}
         />
       )}
+
+      <TranslationDetailPanel
+        route={detailRoute}
+        open={!!detailRoute}
+        onClose={() => setDetailRoute(null)}
+      />
     </div>
   );
 };
