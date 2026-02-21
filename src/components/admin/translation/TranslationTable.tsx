@@ -47,6 +47,14 @@ export const TranslationTable: React.FC<TranslationTableProps> = ({ selectedCate
   const { routes, isLoading } = useAllRoutes();
   const queryClient = useQueryClient();
 
+  // Sync detailRoute with latest data after refetch
+  React.useEffect(() => {
+    if (detailRoute) {
+      const updated = routes.find(r => r.path === detailRoute.path);
+      if (updated) setDetailRoute(updated);
+    }
+  }, [routes]);
+
   React.useEffect(() => {
     if (selectedCategory && selectedCategory !== categoryFilter) {
       setCategoryFilter(selectedCategory);
