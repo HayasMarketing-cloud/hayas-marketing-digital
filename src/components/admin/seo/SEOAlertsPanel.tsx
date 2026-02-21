@@ -1,15 +1,20 @@
+import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { useSEOAlerts, SEOAlert } from '@/hooks/useSEOAlerts';
-import { Bell, BellOff, CheckCheck, Trash2, AlertTriangle, Info, XCircle, RefreshCw, ExternalLink, Wrench } from 'lucide-react';
+import { useGenerateSEO } from '@/hooks/useGenerateSEO';
+import { supabase } from '@/integrations/supabase/client';
+import { Bell, BellOff, CheckCheck, Trash2, AlertTriangle, Info, XCircle, RefreshCw, ExternalLink, Wrench, Loader2 } from 'lucide-react';
 import { formatDistanceToNow } from 'date-fns';
 import { es } from 'date-fns/locale';
 import { useNavigate } from 'react-router-dom';
+import { toast } from '@/hooks/use-toast';
 
 export const SEOAlertsPanel = () => {
   const navigate = useNavigate();
+  const [generatingAlertId, setGeneratingAlertId] = useState<string | null>(null);
   const { 
     alerts, 
     isLoading, 
@@ -19,10 +24,56 @@ export const SEOAlertsPanel = () => {
     deleteAlert,
     runMonitoring 
   } = useSEOAlerts();
+  const { generateSEO } = useGenerateSEO();
 
-  const handleResolveAlert = async (alert: SEOAlert) => {
-    await markAsRead(alert.id);
-    navigate(`/admin/seo/pages?edit=${encodeURIComponent(alert.page_path)}`);
+  const handleGenerateAndResolve = async (alert: SEOAlert) => {
+    setGeneratingAlertId(alert.id);
+    try {
+      toast({
+        title: '🤖 Generando SEO...',
+        description: `Analizando ${alert.page_path}`,
+      });
+
+      const suggestions = await generateSEO({ path: alert.page_path });
+
+      if (suggestions) {
+        // Upsert into seo_pages
+        const { error: upsertError } = await supabase
+          .from('seo_pages')
+          .upsert({
+            path: alert.page_path,
+            canonical: `https://hayasmarketing.com${alert.page_path}`,
+            title: suggestions.title,
+            description: suggestions.description,
+            h1: suggestions.h1,
+            keywords: suggestions.keywords || [],
+            h2_primary: suggestions.h2_primary || null,
+            last_optimized_at: new Date().toISOString(),
+            in_language: alert.page_path.startsWith('/en') ? 'en' : 'es-ES',
+          }, { onConflict: 'path' });
+
+        if (upsertError) {
+          console.error('❌ Upsert error:', upsertError);
+          throw new Error('Error al guardar los metadatos SEO');
+        }
+
+        // Mark as read and delete
+        await markAsRead(alert.id);
+        await deleteAlert(alert.id);
+
+        toast({
+          title: '✅ SEO generado y guardado',
+          description: `Metadatos optimizados para ${alert.page_path}`,
+        });
+
+        // Navigate to detail view
+        navigate(`/admin/translations?detail=${encodeURIComponent(alert.page_path)}`);
+      }
+    } catch (err) {
+      console.error('Error generating SEO from alert:', err);
+    } finally {
+      setGeneratingAlertId(null);
+    }
   };
 
   const getAlertIcon = (type: string, severity: string) => {
@@ -197,13 +248,23 @@ export const SEOAlertsPanel = () => {
                     <div className="flex flex-col gap-2">
                       {/* Resolve Button - Primary Action */}
                       <Button
-                        onClick={() => handleResolveAlert(alert)}
+                        onClick={() => handleGenerateAndResolve(alert)}
                         variant="default"
                         size="sm"
                         className="w-full"
+                        disabled={generatingAlertId === alert.id}
                       >
-                        <Wrench className="w-4 h-4 mr-1" />
-                        {getResolveButtonText(alert.alert_type)}
+                        {generatingAlertId === alert.id ? (
+                          <>
+                            <Loader2 className="w-4 h-4 mr-1 animate-spin" />
+                            Generando...
+                          </>
+                        ) : (
+                          <>
+                            <Wrench className="w-4 h-4 mr-1" />
+                            {getResolveButtonText(alert.alert_type)}
+                          </>
+                        )}
                       </Button>
                       
                       <div className="flex gap-1">

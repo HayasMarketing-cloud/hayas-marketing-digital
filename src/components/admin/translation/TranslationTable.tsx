@@ -1,4 +1,5 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { TranslationDetailPanel } from './TranslationDetailPanel';
 import { Badge } from '@/components/ui/badge';
@@ -29,6 +30,7 @@ interface TranslationTableProps {
 }
 
 export const TranslationTable: React.FC<TranslationTableProps> = ({ selectedCategory }) => {
+  const [searchParams, setSearchParams] = useSearchParams();
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState<string>('all');
   const [sortBy, setSortBy] = useState<'default' | 'priority'>('default');
@@ -60,6 +62,20 @@ export const TranslationTable: React.FC<TranslationTableProps> = ({ selectedCate
       setCategoryFilter(selectedCategory);
     }
   }, [selectedCategory]);
+
+  // Auto-open detail panel from URL param (e.g. ?detail=/es/casos-exito/...)
+  useEffect(() => {
+    const detailPath = searchParams.get('detail');
+    if (detailPath && routes.length > 0 && !detailRoute) {
+      const match = routes.find(r => r.path === detailPath);
+      if (match) {
+        setDetailRoute(match);
+        // Clean up the URL param
+        searchParams.delete('detail');
+        setSearchParams(searchParams, { replace: true });
+      }
+    }
+  }, [routes, searchParams]);
 
   const getStatusBadge = (status: RouteInventoryItem['status']) => {
     const statusConfig = {
