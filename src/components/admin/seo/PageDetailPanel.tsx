@@ -134,7 +134,7 @@ const GSCKeywordsSection: React.FC<{ path: string }> = ({ path }) => {
 };
 
 // ─── Indexation + Audit Section ───
-const IndexationSection: React.FC<{ page: SEOTrackerPage }> = ({ page }) => {
+const IndexationSection: React.FC<{ page: SEOTrackerPage; onIndexationUpdate?: (data: { is_indexed: boolean | null; google_title: string | null; google_snippet: string | null; google_position: number | null; checked_at: string | null }) => void }> = ({ page, onIndexationUpdate }) => {
   const [isChecking, setIsChecking] = useState(false);
   const [checkResult, setCheckResult] = useState(page.indexation);
   const [auditData, setAuditData] = useState<any>(null);
@@ -146,13 +146,15 @@ const IndexationSection: React.FC<{ page: SEOTrackerPage }> = ({ page }) => {
       if (error) throw error;
       const result = data?.results?.[page.path];
       if (result) {
-        setCheckResult({
+        const newIndexation = {
           is_indexed: result.is_indexed ?? null,
           google_title: result.google_title || null,
           google_snippet: result.google_snippet || null,
           google_position: result.google_position || null,
           checked_at: result.checked_at || new Date().toISOString(),
-        });
+        };
+        setCheckResult(newIndexation);
+        onIndexationUpdate?.(newIndexation);
         if (result.onpage_score != null || result.total_checks) {
           setAuditData({
             onpage_score: result.onpage_score,
@@ -307,6 +309,13 @@ const AuditSection: React.FC<{ page: SEOTrackerPage }> = ({ page }) => {
 export const PageDetailPanel: React.FC<PageDetailPanelProps> = ({ page, open, onClose }) => {
   const [showEditor, setShowEditor] = useState(false);
 
+  const [indexationState, setIndexationState] = useState(page?.indexation ?? null);
+
+  // Sync indexation state when page changes
+  React.useEffect(() => {
+    setIndexationState(page?.indexation ?? null);
+  }, [page?.path, page?.indexation]);
+
   const recommendations = useMemo(() => page ? getRecommendations(page) : [], [page]);
 
   if (!page) return null;
@@ -329,9 +338,9 @@ export const PageDetailPanel: React.FC<PageDetailPanelProps> = ({ page, open, on
                 ) : (
                   <Badge variant="destructive" className="text-xs"><AlertTriangle className="h-3 w-3 mr-1" /> Incompleta</Badge>
                 )}
-                {page.indexation?.is_indexed === true && <Badge className="bg-green-600 text-xs"><Globe className="h-3 w-3 mr-1" /> Indexada</Badge>}
-                {page.indexation?.is_indexed === false && <Badge variant="destructive" className="text-xs"><XCircle className="h-3 w-3 mr-1" /> No indexada</Badge>}
-                {!page.indexation && <Badge variant="outline" className="text-xs"><HelpCircle className="h-3 w-3 mr-1" /> Sin verificar</Badge>}
+                {indexationState?.is_indexed === true && <Badge className="bg-green-600 text-xs"><Globe className="h-3 w-3 mr-1" /> Indexada</Badge>}
+                {indexationState?.is_indexed === false && <Badge variant="destructive" className="text-xs"><XCircle className="h-3 w-3 mr-1" /> No indexada</Badge>}
+                {!indexationState && <Badge variant="outline" className="text-xs"><HelpCircle className="h-3 w-3 mr-1" /> Sin verificar</Badge>}
                 <Badge variant="outline" className="text-xs">{page.category}</Badge>
                 <Badge variant="outline" className="text-xs">{page.inLanguage}</Badge>
               </div>
@@ -361,7 +370,7 @@ export const PageDetailPanel: React.FC<PageDetailPanelProps> = ({ page, open, on
           {/* ─── 2. Indexación y Sitemap ─── */}
           <section>
             <SectionHeader icon={<Globe className="h-4 w-4" />} title="Estado de Indexación y Sitemap" />
-            <IndexationSection page={page} />
+            <IndexationSection page={page} onIndexationUpdate={setIndexationState} />
           </section>
 
           <Separator />
