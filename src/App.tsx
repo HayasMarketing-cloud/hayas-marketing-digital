@@ -14,7 +14,8 @@ import RoutePreloader from './components/RoutePreloader';
 import { RedirectManager } from './components/RedirectManager';
 import { AdminProtectedRoute } from './components/admin/AdminProtectedRoute';
 import RouteValidator from './components/dev/RouteValidator';
-import DynamicPageEN from './pages/en/DynamicPageEN';
+import { lazy, Suspense } from 'react';
+const DynamicPageEN = lazy(() => import('./pages/en/DynamicPageEN'));
 
 // Lazy imports organizados por categoría
 import * as Pages from './utils/lazyImports';
