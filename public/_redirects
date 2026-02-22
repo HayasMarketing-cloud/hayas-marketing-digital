@@ -11,6 +11,14 @@
 /  /es  301
 
 # ========================================
+# REDIRECCIONES EN - URLs LEGACY INGLESAS
+# ========================================
+/en/services/administracion-crm  /en/services/crm-administration  301
+/en/services/administracion-crm/  /en/services/crm-administration  301
+/en/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing  /en/blog/artificial-intelligence-marketing-applications  301
+/en/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing/  /en/blog/artificial-intelligence-marketing-applications  301
+
+# ========================================
 # RUTAS INGLESAS - ASEGURAR QUE SE SIRVAN CORRECTAMENTE
 # ========================================
 /en/*  /en/:splat  200
