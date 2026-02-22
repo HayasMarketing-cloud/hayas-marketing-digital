@@ -570,6 +570,14 @@ export const redirectsConfig: RedirectRule[] = [
   // --- Casos de Éxito Inexistentes (2 URLs) ---
   { id: 'gsc-casos-servicios-profesionales', source: '/es/casos-exito/servicios-profesionales', destination: '/es/casos-exito', type: '301', category: 'Soft 404 GSC Feb 2025', dateAdded: '2025-02-08' },
   { id: 'gsc-casos-comercio-electronico', source: '/es/casos-exito/comercio-electronico', destination: '/es/casos-exito', type: '301', category: 'Soft 404 GSC Feb 2025', dateAdded: '2025-02-08' },
+
+  // ============================================================
+  // SLUGS EN ANÓMALOS CORREGIDOS (4 redirects)
+  // ============================================================
+  { id: 'en-slug-fix-1', source: '/en/services/administracion-crm', destination: '/en/services/crm-administration', type: '301', category: 'EN Slug Fixes', dateAdded: '2026-02-22', notes: 'Slug ES en ruta EN corregido' },
+  { id: 'en-slug-fix-2', source: '/en/services/administracion-crm/', destination: '/en/services/crm-administration', type: '301', category: 'EN Slug Fixes', dateAdded: '2026-02-22', notes: 'Slug ES en ruta EN corregido (trailing slash)' },
+  { id: 'en-slug-fix-3', source: '/en/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing', destination: '/en/blog/artificial-intelligence-marketing-applications', type: '301', category: 'EN Slug Fixes', dateAdded: '2026-02-22', notes: 'Slug ES en ruta EN corregido' },
+  { id: 'en-slug-fix-4', source: '/en/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing/', destination: '/en/blog/artificial-intelligence-marketing-applications', type: '301', category: 'EN Slug Fixes', dateAdded: '2026-02-22', notes: 'Slug ES en ruta EN corregido (trailing slash)' },
 ];
 
 // ============================================================
