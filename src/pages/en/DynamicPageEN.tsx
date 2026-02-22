@@ -9,7 +9,7 @@ import PageSuspense from '@/components/PageSuspense';
  * Uses the same components as App.tsx — they already support bilingual via useLanguage.
  */
 const ES_PATH_TO_LAZY: Record<string, React.LazyExoticComponent<React.ComponentType>> = {
-  // Services
+  // ─── Services ───
   '/es/servicios/creacion-marca': lazy(() => import('@/pages/CreacionMarca')),
   '/es/servicios/diseno-web': lazy(() => import('@/pages/DisenoWeb')),
   '/es/servicios/diseno-web/alojamiento-mantenimiento': lazy(() => import('@/pages/AlojamientoMantenimiento')),
@@ -32,7 +32,8 @@ const ES_PATH_TO_LAZY: Record<string, React.LazyExoticComponent<React.ComponentT
   '/es/servicios/formacion-ia': lazy(() => import('@/pages/FormacionIA')),
   '/es/servicios/integraciones-ia-procesos': lazy(() => import('@/pages/IntegracionesIAProcesos')),
   '/es/servicios/consultoria-estrategica-analitica': lazy(() => import('@/pages/ConsultoriaEstrategicaAnalitica')),
-  // Solutions
+
+  // ─── Solutions ───
   '/es/soluciones/impulsa-tu-marca': lazy(() => import('@/pages/ImpulsaTuMarca')),
   '/es/soluciones/conecta-con-tus-clientes': lazy(() => import('@/pages/ConectaConTusClientes')),
   '/es/soluciones/activa-tus-ventas': lazy(() => import('@/pages/ActivaTusVentas')),
@@ -42,11 +43,106 @@ const ES_PATH_TO_LAZY: Record<string, React.LazyExoticComponent<React.ComponentT
   '/es/soluciones/captacion-leads': lazy(() => import('@/pages/CaptacionLeadsClientes')),
   '/es/soluciones/automatizacion-marketing': lazy(() => import('@/pages/AutomatizacionMarketing')),
   '/es/soluciones/gestion-clientes-crm': lazy(() => import('@/pages/GestionClientesCRM')),
-  // Blog
+  '/es/soluciones/plataforma-inteligencia-marketing': lazy(() => import('@/pages/SensePlatform')),
+
+  // ─── Blog listing ───
   '/es/blog': lazy(() => import('@/pages/Blog')),
-  // Case studies
+
+  // ─── Blog posts (dedicated components) ───
+  '/es/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing': lazy(() => import('@/pages/BlogIAMarketing')),
+  '/es/blog/guia-tecnica-email-marketing-hubspot-configuracion': lazy(() => import('@/pages/BlogEmailMarketingHubSpot')),
+  '/es/blog/configuracion-email-marketing-cumplimiento-normativo': lazy(() => import('@/pages/BlogConfiguracionEmailMarketingCumplimiento')),
+  '/es/blog/perfil-cliente-ideal': lazy(() => import('@/pages/BlogPerfilClienteIdealICP')),
+  '/es/blog/como-crear-buyer-persona-b2b-b2c-guia-completa': lazy(() => import('@/pages/BlogPerfilClienteIdeal')),
+  '/es/blog/calculo-inversion-plan-marketing-digital': lazy(() => import('@/pages/BlogCalculoInversionMarketing')),
+  '/es/blog/branding-proceso-tecnicas-naming': lazy(() => import('@/pages/BlogBrandingProcesoTecnicasNaming')),
+  '/es/blog/business-model-canvas-para-crear-tu-estrategia-de-marketing': lazy(() => import('@/pages/BusinessModelCanvasEstrategiaMarketing')),
+  '/es/blog/google-consent-mode-cookieyes': lazy(() => import('@/pages/GoogleConsentModeCookieyes')),
+  '/es/blog/marketing-natural-posicionamiento-organico': lazy(() => import('@/pages/MarketingNaturalPosicionamientoOrganico')),
+  '/es/blog/crm-que-es-beneficios': lazy(() => import('@/pages/BlogCrmQueEsBeneficios')),
+  '/es/blog/como-elegir-mejor-crm-empresa-organizacion': lazy(() => import('@/pages/BlogComoElegirMejorCRM')),
+  '/es/blog/abm-account-based-marketing': lazy(() => import('@/pages/BlogABMAccountBasedMarketing')),
+  '/es/blog/re-commerce-economia-circular-ecommerce-partnership-sharpei': lazy(() => import('@/pages/BlogReCommerceEconomiaCircular')),
+  '/es/blog/seo-off-page-estrategias-practicas-posicionamiento': lazy(() => import('@/pages/BlogSeoOffPage')),
+  '/es/blog/automatizacion-marketing-digital-guia-completa': lazy(() => import('@/pages/BlogAutomatizacionMarketing')),
+  '/es/blog/web-3-0-futuro-internet-descentralizado': lazy(() => import('@/pages/BlogWeb30')),
+  '/es/blog/seo-on-page-guia-completa': lazy(() => import('@/pages/BlogSeoOnPage')),
+  '/es/blog/lead-scoring-calificacion-leads': lazy(() => import('@/pages/BlogLeadScoringCalificacionLeads')),
+  '/es/blog/seo-inteligencia-artificial': lazy(() => import('@/pages/BlogSeoInteligenciaArtificial')),
+  '/es/blog/ia-redes-sociales-herramientas-riesgos': lazy(() => import('@/pages/BlogIARedesSociales')),
+  '/es/blog/funnel-conversion-b2B': lazy(() => import('@/pages/BlogFunnelConversionB2B')),
+  '/es/blog/marketing-global-internacionalizacion': lazy(() => import('@/pages/BlogMarketingGlobalInternacionalizacion')),
+  '/es/blog/kit-digital-marketing-guia-completa-2025': lazy(() => import('@/pages/BlogKitDigitalMarketing')),
+  '/es/blog/chatbots-para-paginas-web': lazy(() => import('@/pages/BlogChatbotsParaPaginasWeb')),
+  '/es/blog/huella-digital-derecho-olvido': lazy(() => import('@/pages/BlogHuellaDigitalDerechoOlvido')),
+  '/es/blog/guia-privacidad-huella-digital': lazy(() => import('@/pages/BlogGuiaPrivacidadHuellaDigital')),
+  '/es/blog/gobernanza-ia-empresas': lazy(() => import('@/pages/BlogGobernanzaIAEmpresas')),
+  '/es/blog/decision-marketing-confianza': lazy(() => import('@/pages/BlogDecisionMarketing')),
+  '/es/blog/nuevo-paradigma-seo-aeo-geo': lazy(() => import('@/pages/BlogNuevoParadigmaSeoAeoGeo')),
+  '/es/blog/lovable-vs-wordpress-que-plataforma-elegir': lazy(() => import('@/pages/BlogLovableVsWordpress')),
+
+  // ─── Case studies listing ───
   '/es/casos-exito': lazy(() => import('@/pages/CasosExito')),
+
+  // ─── Case studies (dedicated components) ───
+  '/es/casos-exito/asendia': lazy(() => import('@/pages/CasoExitoAsendia')),
+  '/es/casos-exito/nexo-vital': lazy(() => import('@/pages/CasoExitoNexoVital')),
+  '/es/casos-exito/i-virgen-extra': lazy(() => import('@/pages/CasoExitoIVirgenExtra')),
+  '/es/casos-exito/inbound-students': lazy(() => import('@/pages/CasoExitoInboundStudents')),
+  '/es/casos-exito/calisthenia-online': lazy(() => import('@/pages/CalistheniaOnlinePage')),
+  '/es/casos-exito/centro-roraima': lazy(() => import('@/pages/CasoExitoCentroRoraima')),
+  '/es/casos-exito/joints-up': lazy(() => import('@/pages/CasoExitoJointsUp')),
+  '/es/casos-exito/dr-parron': lazy(() => import('@/pages/CasoExitoDrParron')),
+  '/es/casos-exito/translate-with-style': lazy(() => import('@/pages/CasoExitoTranslateWithStyle')),
+  '/es/casos-exito/formato-educativo': lazy(() => import('@/pages/CasoExitoFormatoEducativo')),
+  '/es/casos-exito/omr': lazy(() => import('@/pages/CasoExitoOMR')),
+  '/es/casos-exito/asp-asepsia': lazy(() => import('@/pages/CasoExitoAspAsepsia')),
+  '/es/casos-exito/bufete-maseras': lazy(() => import('@/pages/CasoExitoBufeteMaseras')),
+  '/es/casos-exito/moda-intima-vania': lazy(() => import('@/pages/CasoExitoModaIntimaVania')),
+  '/es/casos-exito/alfix-consultores': lazy(() => import('@/pages/CasoExitoAlfixConsultores')),
+  '/es/casos-exito/alma-cruceros': lazy(() => import('@/pages/CasoExitoAlmaCruceros')),
+  '/es/casos-exito/la-banera-kd': lazy(() => import('@/pages/CasoExitoLaBaneraKD')),
+  '/es/casos-exito/suministros-xs-kd': lazy(() => import('@/pages/CasoExitoSuministrosXSKD')),
+  '/es/casos-exito/conversa-consultores': lazy(() => import('@/pages/CasoExitoConversaConsultores')),
+  '/es/casos-exito/buhobike': lazy(() => import('@/pages/CasoExitoBuhobike')),
+  '/es/casos-exito/cabrera-cervantes': lazy(() => import('@/pages/CasoExitoCabreraCervantes')),
+  '/es/casos-exito/eva-champion': lazy(() => import('@/pages/CasoExitoEvaChampion')),
+  '/es/casos-exito/beluga-linguistics': lazy(() => import('@/pages/CasoExitoBelugaLinguistics')),
+  '/es/casos-exito/wooptix': lazy(() => import('@/pages/CasoExitoWooptix')),
+  '/es/casos-exito/pamdamedia': lazy(() => import('@/pages/CasoExitoPamdamedia')),
+  '/es/casos-exito/give-and-go': lazy(() => import('@/pages/CasoExitoGiveAndGo')),
+  '/es/casos-exito/hikvision': lazy(() => import('@/pages/CasoExitoHikvision')),
+  '/es/casos-exito/owo-game': lazy(() => import('@/pages/CasoExitoOWOGame')),
+  '/es/casos-exito/nova-praxis': lazy(() => import('@/pages/CasoExitoNovaPraxis')),
+  '/es/casos-exito/aistercel': lazy(() => import('@/pages/CasoExitoAistercel')),
+  '/es/casos-exito/quanticbi': lazy(() => import('@/pages/CasoExitoQuanticBI')),
+  '/es/casos-exito/peixos-emilio': lazy(() => import('@/pages/CasoExitoPeixosEmilio')),
+  '/es/casos-exito/corte-a-films': lazy(() => import('@/pages/CasoExitoCorteAFilms')),
+  '/es/casos-exito/lualca': lazy(() => import('@/pages/CasoExitoLualca')),
+  '/es/casos-exito/plaza-de-la-estacion': lazy(() => import('@/pages/CasoExitoPlazaEstacion')),
+  '/es/casos-exito/rivas-centro': lazy(() => import('@/pages/CasoExitoRivasCentro')),
+  '/es/casos-exito/hubspot-for-startups': lazy(() => import('@/pages/CasoExitoHubSpotForStartups')),
+  '/es/casos-exito/beka-finance': lazy(() => import('@/pages/CasoExitoBekaFinance')),
+  '/es/casos-exito/peris-electricidad': lazy(() => import('@/pages/CasoExitoPerisElectricidad')),
+  '/es/casos-exito/carniceria-picos-de-europa': lazy(() => import('@/pages/CasoExitoCarniceriaPicosDeEuropa')),
+  '/es/casos-exito/pasteleria-la-oriental-sin-gluten': lazy(() => import('@/pages/CasoExitoLaOrientalSinGluten')),
+  '/es/casos-exito/flap-articulos-peluqueria': lazy(() => import('@/pages/CasoExitoFLAP')),
+  '/es/casos-exito/wideum': lazy(() => import('@/pages/CasoExitoWideum')),
+  '/es/casos-exito/aecoc': lazy(() => import('@/pages/CasoExitoAECOC')),
+  '/es/casos-exito/finect': lazy(() => import('@/pages/CasoExitoFINECT')),
+  '/es/casos-exito/covebo': lazy(() => import('@/pages/CasoExitoCOVEBO')),
+  '/es/casos-exito/fundacion-casa-mexico': lazy(() => import('@/pages/CasoExitoFundacionCasaMexico')),
+  '/es/casos-exito/motiva-tu-mente': lazy(() => import('@/pages/CasoExitoMotivaTuMente')),
+  '/es/casos-exito/eurobits-technologies': lazy(() => import('@/pages/CasoExitoEurobitsTechnologies')),
+  '/es/casos-exito/bodegas-vilano': lazy(() => import('@/pages/CasoExitoBodegasVilano')),
+  '/es/casos-exito/unitrips': lazy(() => import('@/pages/CasoExitoUnitrips')),
+  '/es/casos-exito/lola-robles-abogada': lazy(() => import('@/pages/CasoExitoLolaRoblesAbogada')),
+  '/es/casos-exito/aip-clinic': lazy(() => import('@/pages/CasoExitoAIPClinic')),
+  '/es/casos-exito/hotteo-travel': lazy(() => import('@/pages/CasoExitoHotteoTravel')),
 };
+
+// Fallback: generic BlogPost component for blog posts without a dedicated component
+const BlogPostFallback = lazy(() => import('@/pages/BlogPost'));
 
 // Fallback Coming Soon
 const ComingSoonEN = lazy(() => import('@/pages/ComingSoonEN'));
@@ -92,7 +188,11 @@ const DynamicPageEN: React.FC<DynamicPageENProps> = ({ section }) => {
 
   const Component = useMemo(() => {
     if (!data) return null;
-    return ES_PATH_TO_LAZY[data] || null;
+    // Direct match in the map
+    if (ES_PATH_TO_LAZY[data]) return ES_PATH_TO_LAZY[data];
+    // Fallback: if it's a blog post path without a dedicated component, use BlogPost
+    if (data.startsWith('/es/blog/')) return BlogPostFallback;
+    return null;
   }, [data]);
 
   if (isLoading) {
