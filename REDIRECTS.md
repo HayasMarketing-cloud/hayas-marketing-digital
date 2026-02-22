@@ -1,9 +1,9 @@
 # 🔀 Sistema de Redirecciones - Hayas Marketing
 
 ## 📊 Estado Actual
-- **Total de redirects activos:** ~357
+- **Total de redirects activos:** ~361
 - **Método implementado:** `public/_redirects` (Cloudflare Pages)
-- **Última actualización:** Mayo 2025
+- **Última actualización:** Febrero 2026
 - **Cobertura GSC:** 100%
 
 ## 🏗️ Arquitectura de Redirecciones
@@ -155,22 +155,29 @@ Ejemplos:
 - `/sector-fintech` → `/es`
 - `/sector-educacion` → `/es`
 
-### 6. Soluciones (6 redirects)
+### 6. Redirecciones EN - URLs Legacy Inglesas (4 redirects)
+Redirecciones cross-idioma para URLs EN con slugs en español que fueron indexadas antes de la traducción:
+- `/en/services/administracion-crm` → `/en/services/crm-administration`
+- `/en/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing` → `/en/blog/artificial-intelligence-marketing-applications`
+
+> **Nota:** Estas reglas están duplicadas en `src/config/redirectsConfig.ts` (cliente) y `public/_redirects` (servidor) para cobertura completa.
+
+### 7. Soluciones (6 redirects)
 - `/soluciones/activa-tu-estrategia-digital` → `/es/soluciones/activa-tus-ventas`
 - `/servicios/integraciones-ia-procesos` → `/es/soluciones/conecta-con-tus-clientes`
 
-### 7. Casos de Éxito (10 redirects)
+### 8. Casos de Éxito (10 redirects)
 - `/casos-exito/jointsup` → `/es/casos-exito/jointsup`
 
-### 8. URLs Malformadas (25+ redirects)
+### 9. URLs Malformadas (25+ redirects)
 - URLs con `https://` interno
 - URLs truncadas por Google
 - URLs con parámetros `?hsLang`, `?hs_amp`
 
-### 9. Contenido Eliminado (10 redirects)
+### 10. Contenido Eliminado (10 redirects)
 - Servicios descontinuados → `/es/contenido-eliminado`
 
-### 10. Splat Rules - Catch-all (Final del archivo)
+### 11. Splat Rules - Catch-all (Final del archivo)
 ```
 # Blog tags
 /es/blog/tag/*  /es/blog  301
@@ -432,11 +439,11 @@ Cloudflare Dashboard → Caching → Purge Everything
 
 | Métrica | Valor Actual | Último Mes | Tendencia |
 |---------|--------------|------------|-----------|
-| Total Redirects | 357 | 272 | ⬆️ +31% |
+| Total Redirects | 361 | 357 | ⬆️ +1% |
 | Errores 404 (GSC) | TBD | TBD | ⬇️ -80% |
-| Cobertura URLs | 100% | 85% | ⬆️ +15% |
+| Cobertura URLs | 100% | 100% | ➡️ Estable |
 | Tiempo promedio redirect | ~15ms | N/A | ➡️ Estable |
-| Cadenas de redirects | 0 | 5 | ⬇️ -100% |
+| Cadenas de redirects | 0 | 0 | ➡️ Estable |
 
-**Última actualización:** Mayo 2025  
-**Próxima revisión:** Junio 2025
+**Última actualización:** Febrero 2026  
+**Próxima revisión:** Marzo 2026
