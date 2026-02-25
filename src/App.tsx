@@ -16,7 +16,7 @@ const DynamicPageEN = lazy(() => import('./pages/en/DynamicPageEN'));
 
 // Lazy-load heavy components to reduce initial bundle
 const SofiaChatNew = lazy(() => import('./components/SofiaChatNew'));
-const RedirectManager = lazy(() => import('./components/RedirectManagerLazy'));
+const RedirectManager = lazy(() => import('./components/RedirectManager').then(m => ({ default: m.RedirectManager })));
 
 // RouteValidator only in development
 const RouteValidator = import.meta.env.DEV
