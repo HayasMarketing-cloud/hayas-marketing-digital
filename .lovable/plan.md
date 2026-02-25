@@ -1,45 +1,96 @@
 
 
-## Plan: 3 optimizaciones en index.html
+## Análisis: Lazy Loading de componentes below-the-fold con IntersectionObserver
 
-### Cambio 1: Eliminar preload de imagen Unsplash obsoleto
-- **Lineas 85-86**: Eliminar el comentario y el `<link rel="preload">` de la imagen Unsplash que el hero actual no usa.
-- Tambien eliminar el `dns-prefetch` de `images.unsplash.com` (linea 73) ya que no se necesita si no hay imagenes Unsplash en el above-the-fold.
+### Estructura actual de la Home (orden de renderizado)
 
-### Cambio 2: Reducir Google Fonts a Inter + DM Sans
-- **Lineas 82-83**: Actualizar ambas lineas (la principal y la de noscript) para cargar solo `Inter:wght@300;400;500;600;700` y `DM+Sans:wght@400;500;600;700`, eliminando Arimo y Fraunces.
-
-### Cambio 3: Mover script GHL tracking al final del body
-- **Lineas 41-46**: Eliminar el bloque del script GHL del `<head>`.
-- Insertar el mismo bloque justo antes de `</body>`, despues del script de la app (despues de linea 142). El tracking seguira funcionando igual pero sin competir por ancho de banda durante el primer renderizado.
-
-### Resultado final del `<head>` (zona afectada)
 ```text
-Antes:
-  L41-46: Script GHL tracking (en head)
-  L73:    dns-prefetch images.unsplash.com
-  L82-83: Google Fonts con 4 familias
-  L85-86: Preload imagen Unsplash
-
-Despues:
-  L41-46: (eliminado, movido al body)
-  L73:    (eliminado)
-  L82-83: Google Fonts con 2 familias (Inter + DM Sans)
-  L85-86: (eliminado)
+┌─────────────────────────────────┐
+│ Navigation                      │  ← Above the fold (crítico)
+│ HeroSlider                      │  ← Above the fold (crítico)
+├─────────────────────────────────┤
+│ MarketingChangedSection (143 ln)│  ← Parcialmente visible
+├─────────────────────────────────┤
+│ MethodologySection (170 ln)     │  ← Below the fold ✅
+│ AllServicesSection (125 ln)     │  ← Below the fold ✅
+│ ChatbotPromoSection (74 ln)     │  ← Below the fold ✅
+│ FAQSection (inline)             │  ← Below the fold ✅
+│ ReviewsSection (96 ln)          │  ← Below the fold ✅
+│ Footer (113 ln)                 │  ← Below the fold (no lazy)
+└─────────────────────────────────┘
 ```
 
-### Resultado final del `<body>` (zona afectada)
+### Candidatos a lazy loading
+
+| Componente | Líneas | Imports pesados | Candidato | Razón |
+|------------|--------|----------------|-----------|-------|
+| MarketingChangedSection | 143 | lucide icons, Button | **No** | Parcialmente visible en scroll inicial, riesgo de CLS |
+| MethodologySection | 170 | Card, Button, 7 lucide icons | **Sí** | Totalmente below-the-fold, componente más grande |
+| AllServicesSection | 125 | Card, useServices hook, lucide | **Sí** | Below-the-fold, usa hook con datos |
+| ChatbotPromoSection | 74 | Button, imagen PNG importada | **Sí** | Below-the-fold, importa una imagen estática |
+| FAQSection | inline | Accordion | **Sí** | Muy abajo en la página |
+| ReviewsSection | 96 | Card, lucide | **Sí** | Último contenido antes del footer |
+| Footer | 113 | Button, Badge, lucide | **No** | El footer no se lazy-loadea (SEO, links internos) |
+
+### Plan de implementación
+
+**Paso 1: Crear un componente `LazySection` reutilizable**
+
+Un wrapper que usa `IntersectionObserver` para renderizar el children solo cuando el contenedor entra en el viewport (con un margen de 200px para pre-cargar antes de que sea visible).
+
+- Muestra un placeholder con altura mínima mientras no es visible (evita CLS)
+- Usa `React.lazy` + `Suspense` internamente para code-splitting real
+- Una vez visible, renderiza y no vuelve a ocultar
+
+**Paso 2: Convertir 5 componentes a lazy en `Index.tsx` e `IndexEN.tsx`**
+
+Componentes a lazy-loadear:
+1. `MethodologySection` (solo en Index.tsx, no existe en IndexEN)
+2. `AllServicesSection`
+3. `ChatbotPromoSection`
+4. `FAQSection`
+5. `ReviewsSection`
+
+Cada uno se envuelve en `<LazySection>` con un fallback de altura apropiada.
+
+**Paso 3: Mantener imports síncronos para above-the-fold**
+
+Estos componentes NO se tocan:
+- `Navigation`
+- `HeroSlider`
+- `MarketingChangedSection`
+- `Footer`
+
+### Detalles técnicos
+
 ```text
-  <script src="cdn.gpteng.co/gptengineer.js" ...></script>
-  <script type="module" src="/src/main.tsx" ...></script>
-  <!-- Go High Level Tracking (movido aqui) -->
-  <script src="https://links.hayasmarketing.com/js/external-tracking.js" ...></script>
-</body>
+// LazySection.tsx - Componente wrapper
+
+Props:
+  - component: () => Promise<{default: React.ComponentType}>
+  - fallbackHeight: string (e.g. "400px")
+  - rootMargin: string (default "200px")
+
+Comportamiento:
+  1. Renderiza un div con min-height = fallbackHeight
+  2. IntersectionObserver con rootMargin detecta proximidad
+  3. Al intersectar: React.lazy() carga el módulo
+  4. Suspense muestra un skeleton mínimo durante la carga
+  5. isVisible queda en true permanentemente (no se descarga)
 ```
 
-### Impacto esperado
-| Metrica | Actual | Estimado |
-|---------|--------|----------|
-| FCP | 5.1s | ~3.0-3.5s |
-| LCP | 8.1s | ~4.5-5.5s |
+**Impacto estimado en el bundle inicial:**
+- MethodologySection: ~170 líneas + 7 iconos lucide → diferido
+- AllServicesSection: ~125 líneas + hook useServices → diferido
+- ChatbotPromoSection: ~74 líneas + imagen PNG → diferido
+- ReviewsSection: ~96 líneas → diferido
+- FAQSection: Accordion component → diferido
+
+**Reducción estimada del JS inicial:** 15-25% del bundle de la home page, lo que debería mejorar el TTI y reducir el TBT si crece en el futuro.
+
+### Notas importantes
+
+- `ServicesSection` se importa en `Index.tsx` pero no se renderiza (import muerto). Se eliminará.
+- El `FAQSection` en IndexEN e Index usa datos inline (no fetch), así que el lazy loading solo ahorra el JS del componente Accordion.
+- No afecta al SEO porque los bots modernos ejecutan JS y el contenido se renderiza al scrollear. Para bots legacy, el contenido crítico (hero, MarketingChanged) sigue siendo síncrono.
 
