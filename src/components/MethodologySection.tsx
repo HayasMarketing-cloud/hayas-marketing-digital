@@ -6,16 +6,16 @@ import { BrainCircuit, GraduationCap, Users, Database, Calendar, Zap, Star } fro
 const MethodologySection: React.FC = () => {
   return (
     <section id="metodologia" aria-label="Modelos de colaboración y metodología de trabajo" className="w-full bg-muted/50 scroll-mt-24">
-      <div className="container mx-auto max-w-7xl px-6 section-normal">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 section-normal">
         {/* Header */}
         <header className="mb-12 text-center">
           <p className="mb-2 text-xs font-medium tracking-widest text-muted-foreground uppercase">
             Modelos de colaboración y metodología de trabajo
           </p>
-          <h2 className="text-3xl md:text-4xl font-semibold font-dm-sans text-foreground">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold font-dm-sans text-foreground">
             Diseñamos contigo la mejor forma de avanzar
           </h2>
-          <p className="mt-3 text-base md:text-lg text-muted-foreground">
+          <p className="mt-3 text-lg md:text-xl text-muted-foreground">
             Elige la modalidad que mejor se adapta a tu momento: ejecución continua o acompañamiento estratégico.
           </p>
         </header>
@@ -36,7 +36,7 @@ const MethodologySection: React.FC = () => {
                   <p className="font-semibold text-impulsa text-sm uppercase tracking-wide mb-2">TU SOLUCIÓN PERSONALIZADA</p>
                   <p className="text-sm text-muted-foreground">Análisis, estrategia y ejecución a medida con Marketing SENSE</p>
                 </div>
-                <ul className="text-sm text-muted-foreground space-y-1">
+                <ul className="text-base text-muted-foreground space-y-1">
                   <li>• Diagnóstico inicial con metodología SENSE</li>
                   <li>• Plan estratégico personalizado</li>
                   <li>• Ejecución de los servicios que necesitas</li>
@@ -60,7 +60,7 @@ const MethodologySection: React.FC = () => {
                   <p className="font-semibold text-accent text-sm uppercase tracking-wide mb-2">TE ENSEÑAMOS A HACERLO MEJOR</p>
                   <p className="text-sm text-muted-foreground">Transferencia de conocimiento a tu equipo</p>
                 </div>
-                <ul className="text-sm text-muted-foreground space-y-1">
+                <ul className="text-base text-muted-foreground space-y-1">
                   <li>• Talleres y playbooks personalizados</li>
                   <li>• Sesiones 1:1 con especialistas</li>
                   <li>• Implementación con tu equipo</li>
@@ -84,12 +84,12 @@ const MethodologySection: React.FC = () => {
               <CardContent className="pt-2">
                 <div className="bg-primary/5 p-4 rounded-lg mb-6">
                   <p className="font-semibold text-primary text-sm uppercase tracking-wide mb-2">NOSOTROS NOS ENCARGAMOS DE TODO</p>
-                  <p className="text-sm text-muted-foreground">Delegas la ejecución continua en nuestro equipo</p>
+                  <p className="text-base text-muted-foreground">Delegas la ejecución continua en nuestro equipo</p>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <p className="font-semibold text-base text-foreground mb-3">Marketing Digital:</p>
-                    <ul className="text-sm text-muted-foreground space-y-2 pl-3">
+                    <ul className="text-base text-muted-foreground space-y-2 pl-3">
                       <li>• Equipo especialista por área (SEO, campañas, contenidos, redes sociales)</li>
                       <li>• Key Account Manager como punto de referencia</li>
                       <li>• Contacto directo con especialistas o via KAM</li>
@@ -100,7 +100,7 @@ const MethodologySection: React.FC = () => {
                       <Database className="h-5 w-5" />
                       Gestión CRM:
                     </p>
-                    <ul className="text-sm text-muted-foreground space-y-2 pl-3">
+                    <ul className="text-base text-muted-foreground space-y-2 pl-3">
                       <li>• Administración integral HubSpot o CRM Hayas</li>
                       <li>• Soporte y consultas de tu equipo</li>
                       <li>• Fee mensual o facturación bajo demanda</li>
@@ -129,7 +129,7 @@ const MethodologySection: React.FC = () => {
               </div>
               <div>
                 <h4 className="font-semibold text-foreground mb-2">Planes mensuales</h4>
-                <p className="text-sm text-muted-foreground">Establecemos objetivos y prioridades claras cada mes, adaptándonos a la evolución de tu negocio.</p>
+                <p className="text-base text-muted-foreground">Establecemos objetivos y prioridades claras cada mes, adaptándonos a la evolución de tu negocio.</p>
               </div>
             </div>
             
@@ -139,7 +139,7 @@ const MethodologySection: React.FC = () => {
               </div>
               <div>
                 <h4 className="font-semibold text-foreground mb-2">Sprints semanales</h4>
-                <p className="text-sm text-muted-foreground">Organizamos el trabajo en bloques de ejecución ágil, medibles y adaptables a resultados.</p>
+                <p className="text-base text-muted-foreground">Organizamos el trabajo en bloques de ejecución ágil, medibles y adaptables a resultados.</p>
               </div>
             </div>
           </div>

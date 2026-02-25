@@ -15,9 +15,9 @@ const FAQSection: React.FC<FAQSectionProps> = ({
   faqs
 }) => {
   return <section className="section-normal bg-gradient-to-br from-gray-50 to-white">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-4xl font-bold font-dm-sans mb-4">{title}</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-dm-sans mb-4">{title}</h2>
           {subtitle && (
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               {subtitle}
@@ -29,7 +29,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({
           <Accordion type="single" collapsible className="w-full space-y-4">
             {faqs.map((faq, index) => <AccordionItem key={index} value={`item-${index}`} className="bg-white rounded-lg shadow-sm border border-gray-200 px-6">
                 <AccordionTrigger className="text-left hover:no-underline py-6">
-                  <span className="font-semibold text-gray-900 pr-4">
+                  <span className="font-semibold text-base md:text-lg text-gray-900 pr-4">
                     {faq.question}
                   </span>
                 </AccordionTrigger>

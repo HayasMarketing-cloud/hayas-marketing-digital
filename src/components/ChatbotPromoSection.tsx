@@ -29,11 +29,11 @@ const ChatbotPromoSection = () => {
         <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-16">
           {/* Content */}
           <div className="space-y-6">
-            <h2 className="text-3xl font-bold font-dm-sans tracking-tight text-white sm:text-4xl lg:text-5xl">
+            <h2 className="text-4xl font-bold font-dm-sans tracking-tight text-white sm:text-5xl lg:text-6xl">
               {t('chatbot.title')}
             </h2>
             
-            <p className="text-lg text-white/90 sm:text-xl">
+            <p className="text-xl text-white/90 sm:text-2xl">
               {t('chatbot.paragraph1')}
             </p>
             
