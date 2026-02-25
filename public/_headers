@@ -131,9 +131,8 @@
 # PRECONNECT PARA RECURSOS EXTERNOS
 # ========================================
 /*
-  Link: <https://fonts.googleapis.com>; rel=preconnect; crossorigin
-  Link: <https://fonts.gstatic.com>; rel=preconnect; crossorigin
-  Link: <https://www.google-analytics.com>; rel=preconnect
+  Link: <https://pmldrjkmkjwbvaudjjye.supabase.co>; rel=preconnect; crossorigin
+  Link: <https://backend.leadconnectorhq.com>; rel=preconnect; crossorigin
   Link: <https://www.googletagmanager.com>; rel=preconnect
 
 # ========================================
