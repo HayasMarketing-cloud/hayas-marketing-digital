@@ -1,96 +1,89 @@
 
 
-## Análisis: Lazy Loading de componentes below-the-fold con IntersectionObserver
+## Analisis completo: Estado de optimizaciones Web Vitals
 
-### Estructura actual de la Home (orden de renderizado)
+### Optimizaciones ya aplicadas
 
-```text
-┌─────────────────────────────────┐
-│ Navigation                      │  ← Above the fold (crítico)
-│ HeroSlider                      │  ← Above the fold (crítico)
-├─────────────────────────────────┤
-│ MarketingChangedSection (143 ln)│  ← Parcialmente visible
-├─────────────────────────────────┤
-│ MethodologySection (170 ln)     │  ← Below the fold ✅
-│ AllServicesSection (125 ln)     │  ← Below the fold ✅
-│ ChatbotPromoSection (74 ln)     │  ← Below the fold ✅
-│ FAQSection (inline)             │  ← Below the fold ✅
-│ ReviewsSection (96 ln)          │  ← Below the fold ✅
-│ Footer (113 ln)                 │  ← Below the fold (no lazy)
-└─────────────────────────────────┘
-```
+| Optimizacion | Estado | Impacto |
+|---|---|---|
+| Eliminar preload imagen Unsplash obsoleto | Hecho | FCP/LCP: -200-500KB bandwidth |
+| Reducir Google Fonts a Inter + DM Sans | Hecho | FCP: menos CSS/woff2 descargados |
+| Mover script GHL al final del body | Hecho | FCP: menos competencia TCP |
+| Lazy-load SofIA con idle loading | Hecho | TTI: -15-20KB bundle inicial |
+| RouteValidator solo en DEV | Hecho | Bundle produccion: eliminado |
+| Lazy-load 5 secciones below-the-fold (IntersectionObserver) | Hecho | Bundle inicial: -15-25% |
+| Code-splitting por paginas (lazyWithRetry) | Hecho | Cada pagina carga su JS propio |
+| Manual chunks en Vite (vendor, ui, casos-exito, blog, servicios) | Hecho | Mejor cache por grupo |
+| Cache headers optimizados (_headers) | Hecho | Assets inmutables 1 ano |
+| Fonts display=swap con media=print trick | Hecho | No bloquea render |
+| ErrorBoundary + filtro errores cross-origin | Hecho | Estabilidad |
 
-### Candidatos a lazy loading
+### Oportunidades restantes identificadas
 
-| Componente | Líneas | Imports pesados | Candidato | Razón |
-|------------|--------|----------------|-----------|-------|
-| MarketingChangedSection | 143 | lucide icons, Button | **No** | Parcialmente visible en scroll inicial, riesgo de CLS |
-| MethodologySection | 170 | Card, Button, 7 lucide icons | **Sí** | Totalmente below-the-fold, componente más grande |
-| AllServicesSection | 125 | Card, useServices hook, lucide | **Sí** | Below-the-fold, usa hook con datos |
-| ChatbotPromoSection | 74 | Button, imagen PNG importada | **Sí** | Below-the-fold, importa una imagen estática |
-| FAQSection | inline | Accordion | **Sí** | Muy abajo en la página |
-| ReviewsSection | 96 | Card, lucide | **Sí** | Último contenido antes del footer |
-| Footer | 113 | Button, Badge, lucide | **No** | El footer no se lazy-loadea (SEO, links internos) |
+**1. Font preload innecesario o incorrecto (linea 78 de index.html) — IMPACTO MEDIO**
 
-### Plan de implementación
+Se precarga un archivo woff2 especifico de Inter (`UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2`). Este hash corresponde a un subset especifico (latin). Si el navegador necesita otro subset primero (ej. latin-ext para acentos espanoles como "a", "o", "n"), el preload puede ser inutil o incluso contraproducente porque descarga un archivo que no es el primero en usarse. En una web en espanol, esto merece revision.
 
-**Paso 1: Crear un componente `LazySection` reutilizable**
+Recomendacion: **Eliminar el preload de fuente** y dejar que el CSS de Google Fonts descargue automaticamente el subset correcto segun los caracteres del contenido. El `display=swap` ya evita FOIT.
 
-Un wrapper que usa `IntersectionObserver` para renderizar el children solo cuando el contenedor entra en el viewport (con un margen de 200px para pre-cargar antes de que sea visible).
+**2. Tailwind config define `arimo` y `fraunces` en fontFamily — IMPACTO BAJO**
 
-- Muestra un placeholder con altura mínima mientras no es visible (evita CLS)
-- Usa `React.lazy` + `Suspense` internamente para code-splitting real
-- Una vez visible, renderiza y no vuelve a ocultar
+Aunque ya no se cargan las fuentes, las definiciones siguen en `tailwind.config.ts` (lineas 144-146). No afecta al rendimiento porque Tailwind solo genera CSS para clases usadas, pero es deuda tecnica.
 
-**Paso 2: Convertir 5 componentes a lazy en `Index.tsx` e `IndexEN.tsx`**
+Recomendacion: Limpiar las definiciones de `arimo` y `fraunces` de tailwind.config.ts.
 
-Componentes a lazy-loadear:
-1. `MethodologySection` (solo en Index.tsx, no existe en IndexEN)
-2. `AllServicesSection`
-3. `ChatbotPromoSection`
-4. `FAQSection`
-5. `ReviewsSection`
+**3. Embla Carousel en el bundle pero no se usa en la Home — IMPACTO BAJO**
 
-Cada uno se envuelve en `<LazySection>` con un fallback de altura apropiada.
+`embla-carousel-react` y `embla-carousel-autoplay` estan en las dependencias. El componente `carousel.tsx` existe en `src/components/ui/`. El `HeroSlider` ya NO usa carousel (es un simple map de slides). Si `Carousel` solo se usa en paginas internas, ya esta code-split. Pero si algun componente above-the-fold lo importa, seria un desperdicio.
 
-**Paso 3: Mantener imports síncronos para above-the-fold**
+Recomendacion: Verificar si algun componente sincrono de la home importa Carousel. Si no, no hay accion necesaria (ya esta tree-shaken o code-split).
 
-Estos componentes NO se tocan:
-- `Navigation`
-- `HeroSlider`
-- `MarketingChangedSection`
-- `Footer`
+**4. Navigation importa servicios data sincrono — IMPACTO BAJO**
 
-### Detalles técnicos
+`Navigation.tsx` importa `servicesByPillar` y `pillarMeta` de `@/data/services` (linea 10-11). Estos datos se usan para el mega menu. El archivo de datos podria ser grande si contiene todas las descripciones de servicios. Sin embargo, Navigation es above-the-fold y critico, asi que el import sincrono es correcto. Solo seria un problema si `services.ts` es muy grande.
 
-```text
-// LazySection.tsx - Componente wrapper
+Recomendacion: No cambiar. El mega menu necesita los datos inmediatamente.
 
-Props:
-  - component: () => Promise<{default: React.ComponentType}>
-  - fallbackHeight: string (e.g. "400px")
-  - rootMargin: string (default "200px")
+**5. `hayasOrganizationSchema` importado pero no usado en Index.tsx — IMPACTO MINIMO**
 
-Comportamiento:
-  1. Renderiza un div con min-height = fallbackHeight
-  2. IntersectionObserver con rootMargin detecta proximidad
-  3. Al intersectar: React.lazy() carga el módulo
-  4. Suspense muestra un skeleton mínimo durante la carga
-  5. isVisible queda en true permanentemente (no se descarga)
-```
+Linea 10 de `Index.tsx` importa `hayasOrganizationSchema` de `@/data/seoData` pero no se usa en el JSX. Es un import muerto que anade bytes al chunk.
 
-**Impacto estimado en el bundle inicial:**
-- MethodologySection: ~170 líneas + 7 iconos lucide → diferido
-- AllServicesSection: ~125 líneas + hook useServices → diferido
-- ChatbotPromoSection: ~74 líneas + imagen PNG → diferido
-- ReviewsSection: ~96 líneas → diferido
-- FAQSection: Accordion component → diferido
+Recomendacion: Eliminar el import muerto.
 
-**Reducción estimada del JS inicial:** 15-25% del bundle de la home page, lo que debería mejorar el TTI y reducir el TBT si crece en el futuro.
+**6. Variable `website` no usada en Index.tsx — IMPACTO MINIMO**
 
-### Notas importantes
+Lineas 48-53 de `Index.tsx` crean un objeto `website` con schema.org WebSite que no se pasa a ningun componente. Codigo muerto.
 
-- `ServicesSection` se importa en `Index.tsx` pero no se renderiza (import muerto). Se eliminará.
-- El `FAQSection` en IndexEN e Index usa datos inline (no fetch), así que el lazy loading solo ahorra el JS del componente Accordion.
-- No afecta al SEO porque los bots modernos ejecutan JS y el contenido se renderiza al scrollear. Para bots legacy, el contenido crítico (hero, MarketingChanged) sigue siendo síncrono.
+Recomendacion: Eliminar la variable y el estado `origin` si no se usa en otro lugar.
+
+### Plan de accion propuesto
+
+Solo cambios de alto y medio impacto. Los de impacto bajo/minimo se pueden hacer como limpieza posterior.
+
+**Cambio 1: Eliminar preload de fuente Inter woff2 (index.html linea 78)**
+
+El CSS de Google Fonts ya maneja la descarga del subset correcto. El preload de un archivo especifico puede ser contraproducente en una web en espanol porque el primer subset necesario puede ser distinto.
+
+**Cambio 2: Eliminar import muerto `hayasOrganizationSchema` (Index.tsx linea 10)**
+
+Import no usado que anade el modulo `seoData` al chunk de la home innecesariamente.
+
+**Cambio 3: Eliminar variable muerta `website` y estado `origin` (Index.tsx lineas 25-27 y 48-53)**
+
+Codigo muerto que ejecuta un `useEffect` y crea un objeto que nunca se renderiza.
+
+**Cambio 4: Limpiar fontFamily en tailwind.config.ts (lineas 144-146)**
+
+Eliminar `arimo` y `fraunces` de las definiciones de fuentes. No se cargan, no se usan.
+
+### Impacto estimado adicional
+
+Estos cambios son menores comparados con los ya aplicados. El impacto principal sera:
+- Eliminar 1 request de preload innecesario (font woff2) → mejora marginal en FCP
+- Reducir unos KB de JS muerto del chunk de la home
+- La mejora real y medible ya se consiguio con las 3 optimizaciones de index.html y el lazy loading
+
+### Conclusion
+
+Las optimizaciones criticas ya estan aplicadas. Lo que queda son limpiezas menores. El siguiente paso mas impactante seria **medir en PageSpeed Insights** para validar que FCP y LCP han mejorado como se esperaba, y luego decidir si vale la pena optimizar mas o si el resultado ya es aceptable.
 
