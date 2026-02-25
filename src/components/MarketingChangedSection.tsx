@@ -60,7 +60,7 @@ const MarketingChangedSection = () => {
         </div>
 
         {/* Intro paragraphs */}
-        <div className="max-w-3xl mx-auto text-center mb-12 space-y-4">
+        <div className="max-w-4xl mx-auto text-center mb-12 space-y-4">
           <p className="text-elegant text-lg md:text-xl text-foreground/90 text-pretty">
             {t('marketingChanged.intro.p1')}
           </p>
