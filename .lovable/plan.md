@@ -1,83 +1,113 @@
 
 
-## Analisis: Render Blocking Requests — CSS bloqueante (25.1 KiB, 630ms)
+## Plan: Alineacion de margenes y aumento de tipografia
 
-### Problema detectado
+### Problema 1: Desalineacion de contenido
 
-PageSpeed reporta que `/assets/index-DlM9A3e0.css` (25.1 KiB) bloquea el render inicial durante **630ms**, afectando **LCP** y **FCP**. Ahorro estimado: **160ms**.
+Actualmente cada seccion usa contenedores de ancho diferente:
 
-Este es el CSS principal de la app, generado por Vite a partir de `src/index.css` (importado en `main.tsx`). Contiene:
-- Tailwind base/components/utilities
-- @font-face declarations (Inter, DM Sans)
-- Variables CSS corporativas
-- Utilidades custom (gradientes, sombras, animaciones)
-- Estilos decorativos (patterns, separadores)
-
-### Causa raiz
-
-Vite genera un unico archivo CSS que se inyecta como `<link rel="stylesheet">` en el `<head>`. El navegador debe descargar y parsear **todo** el CSS antes de pintar el primer pixel. De los 25.1 KiB, solo una fraccion es critica para el above-the-fold (variables, font-face, body styles, header).
-
-### Solucion propuesta: Inline Critical CSS
-
-Extraer el CSS critico (above-the-fold) e inlinearlo directamente en el `<head>` de `index.html` dentro de un `<style>`. Esto permite que el navegador pinte inmediatamente sin esperar la descarga del CSS externo.
-
-#### Que es CSS critico para esta pagina:
-
-1. **CSS variables** (`:root` con colores corporativos) — ~40 lineas
-2. **@font-face declarations** con `font-display: swap` — ~30 lineas  
-3. **Body/html base styles** — ~10 lineas
-4. **Header/Navigation styles** (sticky, z-index, background) — necesarios para el primer paint
-
-#### Plan de implementacion
-
-**Cambio 1: `index.html`** — Añadir bloque `<style>` con CSS critico inlined
-
-Inlinear dentro de `<head>`:
-- Las 4 declaraciones `@font-face` (Inter y DM Sans con `font-display: swap`)
-- Las variables CSS de `:root` (colores corporativos, spacing)
-- Estilos base de `body` y `html` (background, font-family, text-rendering)
-- Estilos del border reset (`* { border-color }`)
-
-Esto son aproximadamente **2-3 KiB** de CSS critico que permite al navegador hacer el primer paint sin esperar el archivo CSS externo.
-
-**Cambio 2: No se modifica `main.tsx`** — El CSS completo sigue cargando normalmente via el import de `index.css`. El CSS inlined en el HTML solo acelera el primer paint; cuando el CSS completo llega, sobreescribe/complementa sin conflicto.
-
-#### CSS critico a inlinear (~2.5 KiB)
-
-```css
-/* Font faces con swap */
-@font-face { font-family: 'Inter'; font-style: normal; font-weight: 300 700; font-display: swap; src: url('/fonts/inter-latin.woff2') format('woff2'); }
-@font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 400 700; font-display: swap; src: url('/fonts/dm-sans-latin.woff2') format('woff2'); }
-
-/* Variables criticas */
-:root {
-  --background: 0 0% 100%;
-  --foreground: 222.2 84% 4.9%;
-  --primary: 207 100% 25%;
-  --primary-foreground: 0 0% 100%;
-  --hayas-primary: 89 100% 30%;
-  --hayas-secondary: 170 95% 23%;
-  --hayas-tertiary: 207 100% 25%;
-  --border: 214.3 31.8% 91.4%;
-  --radius: 0.5rem;
-}
-
-/* Base */
-*, *::before, *::after { box-sizing: border-box; border-width: 0; border-style: solid; border-color: hsl(214.3 31.8% 91.4%); }
-body { margin: 0; background-color: hsl(0 0% 100%); color: hsl(222.2 84% 4.9%); font-family: 'Inter', Helvetica, Arial, sans-serif; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
-html { scroll-behavior: smooth; }
+```text
+Header (Navigation):     container mx-auto px-4     → max-width: 1400px
+MarketingChangedSection: container mx-auto px-4 max-w-5xl  → max-width: 1024px
+MethodologySection:      container mx-auto max-w-7xl px-6  → max-width: 1280px
+AllServicesSection:      container mx-auto px-4     → max-width: 1400px
+ChatbotPromoSection:     container mx-auto px-4     → max-width: 1400px
+FAQSection:              container mx-auto px-4     → max-width: 1400px
+ReviewsSection:          container mx-auto px-4     → max-width: 1400px
+HeroSlider:              max-w-4xl mx-auto          → max-width: 896px
+Footer:                  container mx-auto px-4     → max-width: 1400px
 ```
 
-### Impacto estimado
+El logo y hamburguesa estan en los bordes de `container` (1400px con px-4). Pero el contenido central de las secciones se queda mas estrecho, sobre todo el Hero (max-w-4xl = 896px) y MarketingChanged (max-w-5xl = 1024px).
 
-| Metrica | Efecto |
-|---------|--------|
-| FCP | Mejora ~100-160ms (primer paint no espera CSS externo) |
-| LCP | Mejora indirecta (FCP mas rapido = LCP mas rapido) |
-| CLS | Sin impacto (variables ya disponibles al primer paint) |
-| Tamaño HTML | +~2.5 KiB (aceptable, HTML se carga primero) |
+### Solucion: Unificar contenedores
 
-### Limitacion
+Todas las secciones usaran `container mx-auto px-4 sm:px-6 lg:px-8` como contenedor exterior. Dentro, los textos centrados pueden mantener `max-w-3xl` o `max-w-4xl` para legibilidad, pero las **cards, grids y elementos de layout** se expanderan al ancho completo del container.
 
-El CSS completo de Tailwind (25 KiB) seguira cargando como render-blocking porque Vite lo inyecta automaticamente. Para eliminarlo completamente del critical path se necesitaria un plugin de Vite como `vite-plugin-critical` o cargar el CSS con `media="print" onload="this.media='all'"`, pero esto puede causar FOUC (Flash of Unstyled Content). El inline de CSS critico es la solucion mas segura y efectiva.
+#### Cambios por archivo:
+
+**1. `SlideLayoutCentered.tsx` (Hero)**
+- Cambiar `max-w-4xl` a `max-w-5xl` para que el titulo ocupe mas ancho
+- Aumentar padding lateral: `px-4 sm:px-6 lg:px-8`
+
+**2. `MarketingChangedSection.tsx`**
+- Eliminar `max-w-5xl` del container principal — usar ancho completo del container
+- Los parrafos centrados mantienen `max-w-2xl` / `max-w-3xl` para legibilidad
+- La card de SENSE y las 3 cards de soluciones ocupan todo el ancho
+
+**3. `MethodologySection.tsx`**
+- Cambiar `max-w-7xl px-6` a `px-4 sm:px-6 lg:px-8` sin max-w (usar container default)
+
+**4. Padding lateral unificado**
+- Todos los `px-4` se cambian a `px-4 sm:px-6 lg:px-8` para dar mas respiro en tablet/desktop y alinear con el header
+
+### Problema 2: Tipografia demasiado pequena
+
+Aumento proporcional de todos los niveles tipograficos.
+
+#### Cambios en `src/index.css` (clases utilitarias):
+
+| Clase | Actual | Nuevo |
+|-------|--------|-------|
+| `.title-hero` | `text-3xl md:text-4xl lg:text-5xl` | `text-4xl md:text-5xl lg:text-6xl` |
+| `.title-section` | `text-3xl md:text-4xl` | `text-3xl md:text-4xl lg:text-5xl` |
+| `.title-subsection` | `text-2xl` | `text-2xl md:text-3xl` |
+| `.title-card` | `text-xl` | `text-xl md:text-2xl` |
+| `.text-hero` | `text-xl` | `text-xl md:text-2xl` |
+| `.text-description` | `text-lg` | `text-lg md:text-xl` |
+
+#### Cambios en componentes (titulos inline que no usan clases utilitarias):
+
+**`SlideLayoutCentered.tsx`**
+- H1: `text-4xl md:text-5xl lg:text-6xl` → `text-5xl md:text-6xl lg:text-7xl`
+- Subtitulo: `text-lg md:text-xl lg:text-2xl` → `text-xl md:text-2xl lg:text-3xl`
+
+**`MarketingChangedSection.tsx`**
+- H2: `text-3xl md:text-4xl lg:text-5xl` → `text-4xl md:text-5xl lg:text-6xl`
+- Parrafos: `text-lg` → `text-lg md:text-xl`
+- Cards h3: `text-lg` → `text-xl`
+- Cards p: `text-sm` → `text-base`
+
+**`MethodologySection.tsx`**
+- H2: `text-3xl md:text-4xl` → `text-3xl md:text-4xl lg:text-5xl`
+- Cards body: `text-sm` → `text-base`
+- Subtitulo: `text-base md:text-lg` → `text-lg md:text-xl`
+
+**`ChatbotPromoSection.tsx`**
+- H2: `text-3xl sm:text-4xl lg:text-5xl` → `text-4xl sm:text-5xl lg:text-6xl`
+- P: `text-lg sm:text-xl` → `text-xl sm:text-2xl`
+
+**`ReviewsSection.tsx`**
+- H2: `text-3xl md:text-4xl` → `text-3xl md:text-4xl lg:text-5xl`
+- P: `text-lg` → `text-lg md:text-xl`
+
+**`FAQSection.tsx`**
+- H2: `text-3xl lg:text-4xl` → `text-3xl md:text-4xl lg:text-5xl`
+- Questions: `font-semibold` → `font-semibold text-base md:text-lg`
+- Answers: sin cambio (ya legible)
+
+**`AllServicesSection.tsx`**
+- Descriptions: `text-base` → `text-base md:text-lg`
+
+**Botones (global via `src/components/ui/button.tsx`)**
+- Verificar si el variant `default` size `default` ya tiene un tamano adecuado. Si es `text-sm`, subir a `text-base`.
+
+### Responsividad movil
+
+Todos los cambios usan breakpoints responsive (`md:`, `lg:`). En movil:
+- Los tamanos base no cambian drasticamente (text-3xl, text-lg se mantienen)
+- El padding lateral `px-4` se mantiene en movil, solo crece en `sm:px-6 lg:px-8`
+- Las cards siguen siendo `grid-cols-1` en movil
+
+### Archivos a modificar
+
+1. `src/index.css` — Clases utilitarias de tipografia
+2. `src/components/hero-slides/SlideLayoutCentered.tsx` — Hero titulo + padding
+3. `src/components/MarketingChangedSection.tsx` — Container + tipografia
+4. `src/components/MethodologySection.tsx` — Container + tipografia
+5. `src/components/AllServicesSection.tsx` — Tipografia
+6. `src/components/ChatbotPromoSection.tsx` — Tipografia
+7. `src/components/ReviewsSection.tsx` — Tipografia
+8. `src/components/FAQSection.tsx` — Tipografia
+9. `src/components/ui/button.tsx` — Verificar/ajustar tamano de texto
 
