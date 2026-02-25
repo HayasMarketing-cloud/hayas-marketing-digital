@@ -1,37 +1,28 @@
 
 
-## Plan: Expandir contenido de MarketingChangedSection a ancho completo
+## Plan: Expandir zona de intro para que las frases no se corten
 
 ### Problema
 
-En la captura se ve que:
-1. Los **parrafos introductorios** (max-w-2xl) quedan muy estrechos comparados con las cards de Impulsa/Conecta/Activa
-2. La **card de SENSE** (max-w-4xl) no llega a los margenes del container
-3. El **bloque de cierre** (max-w-3xl) tambien queda estrecho
+En la captura se ve que las dos frases del intro ("Un sistema donde..." y "Donde no necesitas...") se parten en dos lineas porque el contenedor tiene `max-w-3xl` (768px). Las frases necesitan mas ancho para caber en una sola linea cada una.
 
-Las 3 cards de soluciones SI ocupan todo el ancho porque no tienen restriccion max-w. El resto del contenido necesita expandirse.
+### Solucion
 
-### Cambios en `src/components/MarketingChangedSection.tsx`
+**Cambio 1: `src/components/MarketingChangedSection.tsx` — Linea 63**
+- Cambiar `max-w-3xl` a `max-w-4xl` en el div de los parrafos intro
+- Esto da 896px de ancho, suficiente para que ambas frases quepan en una linea en desktop
 
-| Elemento | Actual | Nuevo |
-|----------|--------|-------|
-| Parrafos intro (linea 63) | `max-w-2xl mx-auto` | `max-w-3xl mx-auto` |
-| Card SENSE (linea 79) | `max-w-4xl mx-auto` | Sin max-w (ancho completo del container) |
-| Bloque cierre (linea 151) | `max-w-3xl mx-auto` | Sin max-w (ancho completo del container) |
+**Cambio 2: `src/components/MarketingChangedSection.tsx` — Linea 50 (titulo)**
+- Cambiar el titulo h2 de `text-4xl md:text-5xl lg:text-6xl` a `text-4xl md:text-5xl lg:text-[4rem]`
+- Ajustar ligeramente el titulo para que se proporcione bien con el nuevo ancho del bloque de texto debajo
 
-### Detalle de cada cambio
+En realidad, mirando la captura, el titulo ya se ve proporcionado. El cambio principal es solo expandir el `max-w-3xl` a `max-w-4xl` para los parrafos intro.
 
-**1. Parrafos intro** — Linea 63
-- De `max-w-2xl` a `max-w-3xl` para que el texto respire mas sin perder legibilidad en lineas muy largas
+### Archivos a modificar
 
-**2. Card SENSE** — Linea 79
-- Eliminar `max-w-4xl mx-auto` del wrapper div
-- La card interna ya tiene padding (p-8 md:p-10) y texto centrado, asi que se vera bien a ancho completo
-- El texto descriptivo interno mantiene su `max-w-2xl mx-auto` para legibilidad
+1. `src/components/MarketingChangedSection.tsx` — Cambiar `max-w-3xl` a `max-w-4xl` en linea 63
 
-**3. Bloque de cierre** — Linea 151
-- Eliminar `max-w-3xl mx-auto`
-- El div interior con `p-6 rounded-xl bg-muted/30` se expandira al ancho completo del container
+### Responsividad
 
-Estos 3 cambios son minimos y solo afectan a las restricciones de ancho que impiden que el contenido se alinee con los margenes del header.
+En movil el `max-w-4xl` no afecta porque el viewport es menor que 896px, asi que las frases se seguiran partiendo naturalmente. Solo cambia en desktop/tablet grande.
 
