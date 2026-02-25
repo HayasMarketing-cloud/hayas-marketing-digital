@@ -6,21 +6,46 @@ import { BrowserRouter, Routes, Route, Navigate, useParams } from "react-router-
 import { HelmetProvider } from 'react-helmet-async';
 import { AuthProvider } from '@/contexts/AuthContext';
 import { LanguageProvider } from '@/contexts/LanguageContext';
-import SofiaChatNew from "./components/SofiaChatNew";
 import ScrollToTop from './components/ScrollToTop';
 import DraftProtection from './components/DraftProtection';
 import PageSuspense from './components/PageSuspense';
 import RoutePreloader from './components/RoutePreloader';
-import { RedirectManager } from './components/RedirectManager';
 import { AdminProtectedRoute } from './components/admin/AdminProtectedRoute';
-import RouteValidator from './components/dev/RouteValidator';
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
 const DynamicPageEN = lazy(() => import('./pages/en/DynamicPageEN'));
+
+// Lazy-load heavy components to reduce initial bundle
+const SofiaChatNew = lazy(() => import('./components/SofiaChatNew'));
+const RedirectManager = lazy(() => import('./components/RedirectManagerLazy'));
+
+// RouteValidator only in development
+const RouteValidator = import.meta.env.DEV
+  ? lazy(() => import('./components/dev/RouteValidator'))
+  : () => null;
 
 // Lazy imports organizados por categoría
 import * as Pages from './utils/lazyImports';
 
 const queryClient = new QueryClient();
+
+// Idle-load SofÍA after main content renders
+const IdleSofia = () => {
+  const [ready, setReady] = useState(false);
+  useEffect(() => {
+    if ('requestIdleCallback' in window) {
+      const id = requestIdleCallback(() => setReady(true));
+      return () => cancelIdleCallback(id);
+    }
+    const t = setTimeout(() => setReady(true), 1500);
+    return () => clearTimeout(t);
+  }, []);
+  if (!ready) return null;
+  return (
+    <Suspense fallback={null}>
+      <SofiaChatNew />
+    </Suspense>
+  );
+};
 
 // Componente reutilizable para redirecciones legacy
 function LegacyRedirect({ section }: { section: string }) {
@@ -40,11 +65,11 @@ const App = () => (
             <LanguageProvider>
               <ScrollToTop />
               <RoutePreloader />
-              <RouteValidator />
-              <SofiaChatNew />
+              <Suspense fallback={null}><RouteValidator /></Suspense>
+              <IdleSofia />
               <DraftProtection>
                 {/* Gestor de redirecciones React Router nativo */}
-                <RedirectManager />
+                <Suspense fallback={null}><RedirectManager /></Suspense>
               
               <Routes>
            {/* REDIRECCIÓN ROOT A ESPAÑOL */}
