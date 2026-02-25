@@ -61,19 +61,12 @@
     <!-- Performance Optimizations -->
     <!-- DNS Prefetch for external resources -->
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    
     <link rel="dns-prefetch" href="https://cdn.gpteng.co">
     
     <!-- Preconnect to critical origins -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
     
-    <!-- Fonts with display=swap for better performance -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"></noscript>
+    <!-- Fonts are self-hosted in /fonts/ for performance (no external CDN dependency) -->
     
     
     <!-- Nota: el CSS de la app se importa dentro de main.tsx; evitamos preloads que pueden fallar en producción -->
