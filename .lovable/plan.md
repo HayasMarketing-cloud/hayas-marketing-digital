@@ -1,41 +1,22 @@
 
 
-## Plan: Rediseñar banner ChatbotPromoSection sin imagen y más compacto
+## Plan: Banner SofÍA a ancho completo y más compacto
 
 ### Problema
 
-La sección actual usa un grid de 2 columnas (texto + imagen). La imagen de SofÍA no carga, dejando un espacio vacío. El banner ocupa demasiada altura vertical.
-
-### Solución
-
-Eliminar la imagen y el grid de 2 columnas. Convertir en un banner horizontal de ancho completo con el texto alineado a la izquierda, ocupando todo el espacio del container. Reducir el padding vertical para hacer la sección más compacta.
+El banner tiene `max-w-4xl` en el contenido interior y `py-10 sm:py-12 lg:py-14` de padding vertical. Las cards de servicios de arriba ocupan todo el ancho del container, pero este banner no.
 
 ### Cambios en `src/components/ChatbotPromoSection.tsx`
 
-**1. Eliminar imports de imagen**
-- Quitar `import sofiaEnImage` y la variable `sofiaImage`
+**1. Eliminar restriccion max-w-4xl** — Linea 22
+- Cambiar `max-w-4xl space-y-4` a solo `space-y-4`
+- El texto se expandira al ancho completo del container
 
-**2. Eliminar grid y columna de imagen**
-- Reemplazar `grid items-center gap-8 lg:grid-cols-2 lg:gap-16` por layout simple sin grid
-- Eliminar todo el bloque `{/* Image */}` (líneas 56-70)
+**2. Reducir altura** — Linea 14
+- Cambiar `py-10 sm:py-12 lg:py-14` a `py-8 sm:py-10 lg:py-12`
 
-**3. Reducir altura**
-- Cambiar padding vertical de `py-16 sm:py-20 lg:py-24` a `py-10 sm:py-12 lg:py-14`
+**3. Reducir spacing** — Linea 22
+- Cambiar `space-y-4` a `space-y-3`
 
-**4. Expandir texto al ancho completo**
-- El contenido textual usa `max-w-4xl` sin centrar (alineado izquierda) para aprovechar el espacio
-- Los párrafos usan `max-w-3xl` para legibilidad
-- Reducir spacing entre elementos de `space-y-6` a `space-y-4`
-
-**5. Ajustar tipografía proporcionalmente**
-- H2: de `text-4xl sm:text-5xl lg:text-6xl` a `text-3xl sm:text-4xl lg:text-5xl` (más compacto)
-- P1: de `text-xl sm:text-2xl` a `text-lg sm:text-xl lg:text-2xl`
-
-### Archivo a modificar
-
-1. `src/components/ChatbotPromoSection.tsx`
-
-### Resultado esperado
-
-Banner compacto, sin imagen, texto alineado a la izquierda, ocupando el ancho completo del container (alineado con logo y hamburguesa), con menos altura vertical.
+Resultado: banner alineado a los mismos margenes que las cards de servicios, con menos altura vertical.
 
