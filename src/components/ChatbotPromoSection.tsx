@@ -24,23 +24,25 @@ const ChatbotPromoSection = () => {
             {t('chatbot.title')}
           </h2>
           
-          <p className="text-lg text-white/90 sm:text-xl lg:text-2xl max-w-3xl">
+          <p className="text-lg text-white/90 sm:text-xl lg:text-2xl">
             {t('chatbot.paragraph1')}
           </p>
           
-          <p className="text-base text-white/80 max-w-3xl">
+          <p className="text-base text-white/80">
             {t('chatbot.paragraph2')}
           </p>
           
-          <Button
-            asChild
-            size="lg"
-            className="inline-flex bg-white text-primary hover:bg-white/90 hover:text-primary/90"
-          >
-            <Link to={assistantUrl}>
-              {t('chatbot.button')}
-            </Link>
-          </Button>
+          <div className="flex justify-center pt-2">
+            <Button
+              asChild
+              size="lg"
+              className="inline-flex bg-white text-primary hover:bg-white/90 hover:text-primary/90"
+            >
+              <Link to={assistantUrl}>
+                {t('chatbot.button')}
+              </Link>
+            </Button>
+          </div>
         </div>
       </div>
     </section>
