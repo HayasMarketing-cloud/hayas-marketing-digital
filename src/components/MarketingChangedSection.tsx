@@ -60,7 +60,7 @@ const MarketingChangedSection = () => {
         </div>
 
         {/* Intro paragraphs */}
-        <div className="max-w-2xl mx-auto text-center mb-12 space-y-4">
+        <div className="max-w-3xl mx-auto text-center mb-12 space-y-4">
           <p className="text-elegant text-lg md:text-xl text-foreground/90 text-pretty">
             {t('marketingChanged.intro.p1')}
           </p>
@@ -76,7 +76,7 @@ const MarketingChangedSection = () => {
         </div>
 
         {/* SENSE as the strategic umbrella - NOW PROMINENT AND FIRST */}
-        <div className="max-w-4xl mx-auto mb-12">
+        <div className="mb-12">
           <div className="p-8 md:p-10 rounded-2xl border border-primary/20 bg-primary/5 text-center">
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-5">
               <BrainCircuit className="h-8 w-8 text-primary" strokeWidth={1.5} />
@@ -148,7 +148,7 @@ const MarketingChangedSection = () => {
         </div>
 
         {/* Closing */}
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="text-center">
           <div className="p-6 rounded-xl bg-muted/30">
             <p className="text-elegant text-base md:text-lg text-foreground/90">
               {t('marketingChanged.closing')}
