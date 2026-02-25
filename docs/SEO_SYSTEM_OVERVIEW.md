@@ -1,8 +1,8 @@
 # 📊 SEO System Overview - Hayas Marketing
 
 > **Documento Maestro de Arquitectura SEO**  
-> Versión: 1.0  
-> Última actualización: 2026-02-08
+> Versión: 1.1  
+> Última actualización: 2026-02-25
 
 ---
 
@@ -21,7 +21,9 @@
 11. [Flujo de Datos SEO](#11-flujo-de-datos-seo)
 12. [Sistema de Alertas](#12-sistema-de-alertas)
 13. [IndexNow Protocol](#13-indexnow-protocol)
-14. [Documentación Relacionada](#14-documentación-relacionada)
+14. [Rendimiento Web (Core Web Vitals)](#14-rendimiento-web-core-web-vitals)
+15. [Limitaciones de Lovable Cloud para SEO](#15-limitaciones-de-lovable-cloud-para-seo)
+16. [Documentación Relacionada](#16-documentación-relacionada)
 
 ---
 
@@ -1321,6 +1323,84 @@ await supabase.functions.invoke('indexnow-proxy', {
 
 ---
 
+---
+
+## 14. Rendimiento Web (Core Web Vitals)
+
+> Añadido: 2026-02-25
+
+El rendimiento web es un factor de ranking directo en Google. Esta sección documenta las optimizaciones implementadas y las limitaciones de la plataforma.
+
+### 14.1 Optimizaciones Implementadas
+
+#### Service Worker (Cache Lifetimes)
+
+La plataforma de hosting no procesa archivos `_headers`. Para solventar la ausencia de headers `Cache-Control`, se implementó un **Service Worker** (`public/sw.js`):
+
+```
+Estrategia de caché:
+├── Cache First: /assets/*.js|css (hash inmutable), /lovable-uploads/*, /fonts/*
+├── Network First: HTML/navegación (contenido fresco + fallback offline)
+└── Network Only: APIs externas (Supabase, GTM, GHL tracking)
+```
+
+- **Versionado**: `CACHE_NAME = 'hayas-cache-v1'`. Incrementar para invalidar.
+- **Impacto**: ~742 KiB servidos desde caché local en visitas repetidas.
+
+#### Critical CSS Inline
+
+CSS crítico (~2.5 KiB) inlineado en `<style>` dentro del `<head>` de `index.html`:
+- `@font-face` (Inter, DM Sans) con `font-display: swap`
+- Variables CSS `:root` (tokens corporativos)
+- Reset base + body styles
+- **Impacto**: FCP -100-160ms
+
+#### Fuentes Auto-hospedadas
+
+Inter y DM Sans servidas desde `/fonts/` (self-hosted). Elimina dependencia de Google Fonts CDN y cumple RGPD.
+
+### 14.2 Técnicas Disponibles vs No Disponibles
+
+| Técnica | Disponible | Notas |
+|---------|-----------|-------|
+| Service Worker caching | ✅ | Caché client-side |
+| Critical CSS inline | ✅ | En `index.html` |
+| Preconnect/DNS-prefetch | ✅ | En `<head>` |
+| `font-display: swap` | ✅ | En `@font-face` |
+| Lazy loading | ✅ | `loading="lazy"` |
+| Code splitting (Vite) | ✅ | `React.lazy()` |
+| HTTP Cache-Control headers | ❌ | Requiere control del servidor |
+| SSR / SSG | ❌ | SPA con Vite |
+| Brotli/gzip config | ❌ | Gestionado por CDN |
+
+---
+
+## 15. Limitaciones de Lovable Cloud para SEO
+
+1. **Sin SSR**: Meta tags via `react-helmet-async` (client-side). Crawlers modernos ejecutan JS, pero algunos crawlers IA no.
+2. **Sin control de headers HTTP**: No se pueden configurar `Cache-Control`, CSP, etc.
+3. **Sin acceso al servidor**: Optimizaciones deben ser client-side o via Service Worker.
+4. **`_headers` ignorado**: Formato Netlify/Cloudflare no funciona.
+5. **URLs de assets cambian por build**: Hashes de Vite invalidan preloads hardcoded.
+
+**Mitigaciones**: Service Worker, contenido `.md` público + `llms.txt`, `<meta>` tags para seguridad, Critical CSS inline.
+
+---
+
+## 16. Documentación Relacionada
+
+| Documento | Contenido |
+|-----------|-----------|
+| `PERFORMANCE_OPTIMIZATION_LOG.md` | Registro de optimizaciones de rendimiento |
+| `SEO_CRITICAL_BUGS_AND_FIXES.md` | Bugs críticos y soluciones |
+| `SEO_EXECUTIVE_SUMMARY.md` | Resumen ejecutivo para stakeholders |
+| `SEO_RICH_SNIPPETS_GUIDE.md` | Guía de Schema.org |
+| `SEO_ALERTS_SYSTEM.md` | Sistema de alertas automáticas |
+| `SEO_AEO_GEO_DOCUMENTATION.md` | Documentación GEO/AEO |
+
+---
+
 **Documento creado**: 2026-02-08  
+**Última actualización**: 2026-02-25  
 **Responsable**: Equipo Hayas Marketing - SEO  
 **Próxima revisión**: Trimestral
