@@ -7,6 +7,8 @@ import type { EnhancedPageSEOData } from '@/data/seoData';
 export const useSEOPage = (path: string, language: string = 'es-ES') => {
   return useQuery({
     queryKey: ['seo-page', path, language],
+    staleTime: 5 * 60 * 1000, // 5 minutes - avoid re-fetching on every render
+    gcTime: 30 * 60 * 1000, // 30 minutes cache
     queryFn: async () => {
       // 1. Intentar obtener de DB
       const { data, error } = await supabase
