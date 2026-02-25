@@ -1,69 +1,100 @@
 
 
-## Análisis: Improve Image Delivery — 79 KiB de ahorro estimado
+## Análisis: Cache Lifetimes — 743 KiB sin caché (el mayor problema)
 
-### Problema detectado en PageSpeed
+### Problema detectado
 
-PageSpeed detecta 3 imágenes sobredimensionadas que afectan **LCP** y **FCP**:
+PageSpeed muestra que **todos los recursos first-party (742 KiB)** tienen Cache TTL = "None":
 
-| Imagen | Tamaño real | Se muestra a | Ahorro |
-|--------|------------|--------------|--------|
-| SofÍA avatar (`2a2adcf5...png`) | 512×512 | 77×77 px (w-12 h-12) | 36 KiB |
-| Logo Hayas (`7ec653d8...png`) | 1200×1200 | 70×70 px (h-10/h-12) | 30 KiB |
-| Mockup SofÍA (`5c73c4e8...png`) | 800×800 | 672×672 px | 13 KiB |
-
-**Total: 79 KiB desperdiciados** en cada carga de página.
+| Recurso | Tamaño | Cache TTL |
+|---------|--------|-----------|
+| `/assets/casos-exi....js` | 258 KiB | None |
+| `/assets/vendor-DtCuszS-.js` | 52 KiB | None |
+| `/assets/blog-post....js` | 51 KiB | None |
+| `/assets/index-Cw-2O-Z9.js` | 50 KiB | None |
+| `/lovable-uploads/*.png` (×4) | ~145 KiB | None |
+| Resto de chunks JS + CSS | ~186 KiB | None |
+| **Total** | **742 KiB** | **Sin caché** |
 
 ### Causa raíz
 
-Las 3 imágenes son PNG almacenadas en `/lovable-uploads/` sin redimensionar. El navegador descarga el archivo completo y luego lo escala visualmente con CSS.
+El archivo `public/_headers` ya tiene reglas de caché correctas (`max-age=31536000, immutable` para assets). **El problema es que Lovable Cloud no procesa el archivo `_headers`**. Ese formato es específico de Netlify/Cloudflare Pages. La infraestructura de hosting de Lovable Cloud ignora este archivo, por lo que todos los recursos se sirven sin headers de caché.
 
-### Solución propuesta
+Esto es una **limitación de la plataforma de hosting**, no del código. No podemos controlar los headers HTTP del servidor desde el código del cliente.
 
-**No podemos redimensionar los archivos originales en `/lovable-uploads/`** (son estáticos). La solución es añadir atributos `width` y `height` explícitos en los `<img>` para que el navegador conozca las dimensiones de layout, y más importante, **convertir las imágenes a versiones optimizadas más pequeñas**.
+### Solución viable: Service Worker para caché en cliente
 
-#### Cambio 1: Avatar SofÍA — crear versión 96×96 y 192×192
+Aunque no podemos cambiar los headers del servidor, sí podemos implementar un **Service Worker** que cachee los assets en el navegador del usuario. Esto consigue el mismo efecto práctico: en visitas repetidas, los assets se sirven desde la caché local sin hacer requests al servidor.
 
-El avatar de SofÍA se usa en **6 archivos** a tamaños de w-8 (32px) a w-48 (192px). La imagen original es 512×512 pero nunca se muestra a más de 192×192.
+### Plan de implementación
 
-**Acción**: Crear dos versiones redimensionadas del avatar y usarlas según contexto:
-- Para usos pequeños (w-8 a w-16, 32-64px): usar una versión de 96×96 (~3-5 KiB)  
-- Para usos grandes (w-48, 192px): usar una versión de 192×192 (~8-12 KiB)
+**Archivo 1: `public/sw.js` — Service Worker**
 
-**Limitación**: No tenemos herramientas de redimensionado de imágenes en el proyecto. Las imágenes están en `/lovable-uploads/` y no podemos generar versiones más pequeñas automáticamente.
+Implementar una estrategia de caché "Cache First" para assets estáticos:
+- `/assets/*.js` y `/assets/*.css` — cache first (tienen hash en el nombre, son inmutables)
+- `/lovable-uploads/*` — cache first (son estáticos, no cambian)
+- `/fonts/*` — cache first
+- Páginas HTML — network first con fallback a cache (para SPA navigation)
+- Requests a APIs externas — network only (no cachear)
 
-**Alternativa viable**: Añadir `width` y `height` explícitos a todos los `<img>` del avatar de SofÍA para mejorar CLS, y añadir `loading="lazy"` donde no esté en el viewport inicial. Esto no reduce el tamaño de descarga pero sí mejora la percepción de rendimiento.
+El Service Worker usará la Cache API del navegador con nombre versionado para poder invalidar cuando haya actualizaciones.
 
-#### Cambio 2: Logo Hayas — atributos width/height + loading eager
+**Archivo 2: Registro del SW en `index.html`**
 
-El logo está en Navigation.tsx y se muestra a h-10 (40px) / h-12 (48px). La imagen original es 1200×1200.
+Añadir al final del `<body>` en `index.html`:
+```html
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js');
+  });
+}
+</script>
+```
 
-**Acción**: Añadir `width={48} height={48}` explícitos al `<img>` del logo. Como está en el header, ya carga eager por defecto (correcto).
+El registro se hace en `load` para no bloquear la carga inicial.
 
-#### Cambio 3: Mockup SofÍA en ChatbotPromoSection
+### Estrategia de caché del Service Worker
 
-Se muestra a 672×672 pero la imagen es 800×800. El ahorro aquí es menor (13 KiB).
+```text
+Request entrante
+      │
+      ├── /assets/*.js, /assets/*.css (con hash)
+      │     └── Cache First → si está en caché, devolver inmediatamente
+      │                      → si no, fetch + guardar en caché
+      │
+      ├── /lovable-uploads/*
+      │     └── Cache First → mismo comportamiento
+      │
+      ├── /fonts/*
+      │     └── Cache First → mismo comportamiento
+      │
+      ├── HTML / navegación
+      │     └── Network First → intentar red primero
+      │                       → si falla, servir desde caché
+      │
+      └── APIs externas (supabase, GTM, GHL)
+            └── Network Only → no cachear
+```
 
-**Acción**: Añadir `width={672} height={672}` y `loading="lazy"` ya que esta sección no está en el viewport inicial.
+### Detalles técnicos
 
-### Acciones concretas en código
-
-1. **`Navigation.tsx` (logo)**: Añadir `width={48} height={48}` al `<img>` del logo
-2. **`ChatbotPromoSection.tsx` (mockup SofÍA)**: Añadir `width={672} height={672}` y `loading="lazy"`
-3. **`SofiaSection.tsx`** (avatar SofÍA): Añadir `width` y `height` explícitos en cada instancia + `loading="lazy"`
-4. **`SofiaChatNew.tsx`** (avatar SofÍA): Igual que arriba
-5. **`Contacto.tsx`** (avatar SofÍA): Añadir `width={64} height={64}` + `loading="lazy"`
-6. **`KitDigital.tsx`** (avatar SofÍA): Añadir `width={64} height={64}` + `loading="lazy"`
-7. **`AgendarReunion.tsx`** (avatar SofÍA): Ya tiene `width={48} height={48}` — correcto
-8. **`SolucionesIA.tsx`** (avatar SofÍA grande): Añadir `width={192} height={192}` + `loading="lazy"`
+- **Versionado**: El nombre de la caché incluirá un número de versión (`hayas-cache-v1`). Al cambiar la versión, el SW eliminará cachés antiguas automáticamente.
+- **Tamaño de caché**: Sin límite para assets con hash (se auto-limpian al cambiar versión). Los assets hasheados de Vite cambian de nombre en cada build, así que las entradas viejas se eliminan al activar una nueva versión del SW.
+- **Primera visita**: No hay mejora (el SW se instala pero los assets ya se descargaron). La mejora empieza en la **segunda visita**.
+- **Compatibilidad**: Service Workers tienen soporte en >97% de navegadores modernos.
 
 ### Impacto estimado
 
-| Mejora | Efecto |
-|--------|--------|
-| width/height explícitos | Elimina CLS por imágenes sin dimensiones |
-| loading="lazy" en below-the-fold | Reduce carga inicial, mejora FCP |
-| Dimensiones reales en atributos | Ayuda al navegador a reservar espacio sin reflow |
+| Métrica | Efecto |
+|---------|--------|
+| Visitas repetidas | ~742 KiB servidos desde caché local (0ms latencia) |
+| LCP en revisitas | Mejora significativa (assets JS/CSS instantáneos) |
+| FCP en revisitas | Mejora (CSS cacheado) |
+| PageSpeed "Cache lifetimes" | Resuelto — los assets tendrán TTL en la caché del SW |
+| Primera visita | Sin cambio (el SW se instala en background) |
 
-**Nota importante**: El ahorro de **79 KiB en tamaño de descarga** solo se conseguiría resubiendo las imágenes en tamaños más pequeños (por ejemplo, subir el avatar de SofÍA a 96px y el logo a 96px). Los cambios de código que haremos mejoran CLS y FCP pero no reducen los bytes transferidos. Si quieres el ahorro completo de bytes, necesitarías subir versiones redimensionadas de las 3 imágenes.
+### Limitación
+
+PageSpeed podría seguir reportando "None" en Cache TTL porque analiza los **HTTP headers del servidor**, no la caché del Service Worker. Sin embargo, el rendimiento real en visitas repetidas mejorará sustancialmente. Para que PageSpeed deje de reportar este warning, se necesitaría que la plataforma de hosting envíe los headers `Cache-Control` correctos — algo que está fuera de nuestro control en Lovable Cloud.
 
