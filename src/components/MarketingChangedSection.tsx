@@ -44,10 +44,10 @@ const MarketingChangedSection = () => {
 
   return (
     <section className="section-normal py-16 md:py-20 bg-background">
-      <div className="container mx-auto px-4 max-w-5xl">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Title */}
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold font-dm-sans text-foreground leading-tight text-balance">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold font-dm-sans text-foreground leading-tight text-balance">
             {t('marketingChanged.title')}
             <span className="text-gradient-primary">{t('marketingChanged.titleHighlight')}</span>
             {t('marketingChanged.titleEnd') && (
@@ -61,10 +61,10 @@ const MarketingChangedSection = () => {
 
         {/* Intro paragraphs */}
         <div className="max-w-2xl mx-auto text-center mb-12 space-y-4">
-          <p className="text-elegant text-lg text-foreground/90 text-pretty">
+          <p className="text-elegant text-lg md:text-xl text-foreground/90 text-pretty">
             {t('marketingChanged.intro.p1')}
           </p>
-          <p className="text-elegant text-lg text-foreground/80 text-pretty">
+          <p className="text-elegant text-lg md:text-xl text-foreground/80 text-pretty">
             {t('marketingChanged.intro.p2')}
           </p>
           <div className="pt-4 flex flex-col items-center gap-3">
@@ -121,10 +121,10 @@ const MarketingChangedSection = () => {
                 <div className={`mb-4 ${moment.iconColor}`}>
                   <Icon size={32} strokeWidth={1.5} />
                 </div>
-                <h3 className="text-lg font-semibold font-dm-sans text-foreground mb-3">
+                <h3 className="text-xl font-semibold font-dm-sans text-foreground mb-3">
                   {t(`marketingChanged.moments.${moment.key}.title`)}
                 </h3>
-                <p className="text-elegant-muted text-sm leading-relaxed mb-2">
+                <p className="text-elegant-muted text-base leading-relaxed mb-2">
                   {t(`marketingChanged.moments.${moment.key}.description`)}
                 </p>
                 {moment.solutionKey === 'impulsa' && (

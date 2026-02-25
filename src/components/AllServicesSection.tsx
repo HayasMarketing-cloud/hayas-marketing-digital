@@ -41,7 +41,7 @@ const AllServicesSection = () => {
 
   return (
     <section id="todos-servicios" className="py-8 md:py-12 bg-white">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="title-section">{t('servicesSection.title')}</h2>
           <p className="text-description max-w-3xl mx-auto">
@@ -97,7 +97,7 @@ const AllServicesSection = () => {
                   <CardTitle className={isFeatured ? 'text-xl md:text-2xl font-bold' : 'title-card'}>{service.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className={isFeatured ? 'text-gray-600 text-base md:text-lg' : view === 'grid' ? 'text-gray-600 text-base' : 'text-gray-600 text-lg'}>
+                  <CardDescription className={isFeatured ? 'text-gray-600 text-base md:text-lg' : view === 'grid' ? 'text-gray-600 text-base md:text-lg' : 'text-gray-600 text-lg md:text-xl'}>
                     {service.description}
                   </CardDescription>
                 </CardContent>
