@@ -1,117 +1,139 @@
 
 
-## Analisis: Rendimiento movil — PageSpeed Insights (FCP 5.0s, LCP 7.9s)
+## Plan: Documento unificado de documentacion SEO/AEO/GEO
 
-### Resultados actuales (movil, Slow 4G)
+### Contexto
 
-| Metrica | Valor | Estado |
-|---------|-------|--------|
-| FCP | 5.0s | Rojo |
-| LCP | 7.9s | Rojo |
-| TBT | 50ms | Verde |
-| CLS | 0 | Verde |
-| SI | 5.0s | Naranja |
+Actualmente existen **10 documentos separados** en `/docs/` que cubren distintos aspectos del sistema SEO, pero no existe un documento unico, bien estructurado por capitulos, que consolide todo lo que se ha implementado. El usuario pide un documento completo sin inventar ni inferir nada.
 
-TBT y CLS estan perfectos. El problema es exclusivamente **tiempo de red y renderizado inicial** (FCP/LCP). Esto apunta a recursos que bloquean el primer pintado.
+### Documentos existentes que se consolidaran
 
----
+1. `SEO_SYSTEM_OVERVIEW.md` (1326 lineas) — Arquitectura tecnica
+2. `SEO_EXECUTIVE_SUMMARY.md` — Resumen ejecutivo
+3. `SEO_CRITICAL_BUGS_AND_FIXES.md` — Bugs criticos y reglas de oro
+4. `SEO_RICH_SNIPPETS_GUIDE.md` (519 lineas) — Fases 1-4 Schema.org
+5. `SEO_PHASE_5_6_IMPLEMENTATION.md` — HowTo + Article Schema
+6. `SEO_PHASE_7_FAQ_SCHEMA.md` — FAQ Schema
+7. `SEO_SERVICE_MIGRATION_COMPLETE.md` — Migracion 25 servicios
+8. `SEO_ALERTS_SYSTEM.md` — Sistema de alertas
+9. `SEO_CAPABILITIES_REFERENCE.md` — Referencia para marketing
+10. `CONTENT_SYNC.md` — Mapping React a .md
+11. `TRANSLATION_ROADMAP.md` — Estado traduccion bilingue
 
-### Causas raiz identificadas
+### Accion
 
-**1. Supabase query en el critical path — IMPACTO ALTO**
+Crear un unico documento `docs/SEO_AEO_GEO_DOCUMENTATION.md` estructurado por capitulos, que consolide toda la informacion factual de los documentos existentes y del codigo fuente revisado. No se inventara ni inferira nada — solo datos verificados en el codigo y documentacion existente.
 
-Cada carga de pagina ejecuta una query a Supabase para obtener datos SEO (`useSEOPage` en `useAdvancedSEO.ts` linea 39). Este hook se llama desde `EnhancedSEO` → `Seo.tsx`, que es el primer componente que renderiza en `Index.tsx`.
+### Estructura del documento
 
-En Slow 4G, esta query puede tardar 1-3 segundos. Y mientras tanto, `Seo.tsx` no inyecta los meta tags ni structured data, pero lo que es peor: el componente `EnhancedSEO` renderiza en el critical path y fuerza una re-renderizacion del arbol completo cuando los datos llegan.
+```text
+CAPITULO 1: Vision General y Estrategia
+  - Triple optimizacion: SEO + AEO + GEO
+  - Dominio principal: hayasmarketing.com
+  - Stack tecnologico (React+TS, Supabase, Edge Functions)
 
-**Solucion**: Hacer que `useSEOPage` use `staleTime: Infinity` y `gcTime` largo para que en la home la query no bloquee. Opcionalmente, skipear la query de Supabase para la home (path `/es`) y usar directamente el fallback de `seoData.ts`, ya que la home rara vez cambia sus meta tags.
+CAPITULO 2: Arquitectura Tecnica
+  - Componente Seo.tsx (meta tags, JSON-LD, hreflang)
+  - EnhancedSEO.tsx (wrapper con useAdvancedSEO)
+  - Flujo de datos: DB > Fallback > Auto
+  - Tabla seo_pages (schema, campos, constraint)
+  - Tabla seo_history y seo_alerts
+  - React Query cache (staleTime 5min, gcTime 30min)
 
-**2. `gtmDebugger.ts` importado sincrono en main.tsx — IMPACTO MEDIO**
+CAPITULO 3: Schema.org (Rich Snippets)
+  - Schemas automaticos: Organization, LocalBusiness, BreadcrumbList
+  - Schemas por tipo: ProfessionalService, BlogPosting, FAQPage, HowTo, ItemList
+  - Funciones generadoras en seoData.ts
+  - Hooks: useServiceSEO, useArticleSEO, useHowToSEO, useFAQSEO
+  - Fases de implementacion (1-7 completadas)
+  - 25/25 servicios migrados a useServiceSEO
 
-`main.tsx` linea 6 importa `@/utils/gtmDebugger` sincronamente. Este modulo expone una herramienta de debugging en `window` y ejecuta un `console.log` en cada carga. No es necesario en produccion.
+CAPITULO 4: Sistema Multilingue
+  - Arquitectura bilingue (es-ES, en-US)
+  - LanguageContext y redireccion / a /es
+  - Hreflang tags automaticos
+  - Edge Function translate-seo (Gemini AI)
+  - Sitemaps bilingues con hreflang cruzados
+  - Estado de traduccion (servicios, blog, soluciones, casos)
 
-**Solucion**: Importar `gtmDebugger` solo en modo desarrollo, o con un import dinamico idle:
+CAPITULO 5: GEO — Generative Engine Optimization
+  - Archivos llms.txt, llms-en.txt, llms-full.txt
+  - Ficheros .md en /public/content/ (40+ bilingues)
+  - Estructura IA_SUMMARY (60-80 palabras)
+  - Entidades Wikidata en schemas
+  - SpeakableSpecification en blog
+  - robots.txt permite GPTBot, PerplexityBot, etc.
+
+CAPITULO 6: AEO — Answer Engine Optimization
+  - FAQ Schema para Featured Snippets
+  - HowTo Schema para guias
+  - Resumenes AEO citables en .md
+  - SpeakableSpecification para busqueda por voz
+  - Paginas optimizadas AEO (Diseno Web, SEO, Google Ads)
+
+CAPITULO 7: E-E-A-T
+  - Perfiles de autor con Person schema
+  - Vinculacion articulos a autor
+  - Casos de exito como prueba de experiencia
+  - Organization schema completo
+
+CAPITULO 8: SEO Tecnico y Rendimiento
+  - Redirecciones 301 (80+ reglas en _redirects)
+  - robots.txt (bloqueos, sitemaps, llms.txt)
+  - Cache headers (_headers: assets 1 ano, HTML revalidacion)
+  - Self-hosting de fuentes (Inter, DM Sans) — eliminada dependencia Google Fonts CDN
+  - Lazy loading below-the-fold con IntersectionObserver (LazySection.tsx)
+  - Code-splitting por paginas (lazyWithRetry, manual chunks en Vite)
+  - gtmDebugger solo en desarrollo
+  - useSEOPage con staleTime/gcTime para evitar queries bloqueantes
+
+CAPITULO 9: Herramientas de Administracion
+  - SEO Tracker (/admin/seo)
+  - IndexNow Manager (/admin/seo/indexnow)
+  - Sistema de alertas automaticas
+  - Integracion Google Search Console (Edge Function gsc-data)
+  - Integracion DataForSEO (auditorias tecnicas)
+  - Generacion SEO con IA (Edge Function generate-seo-suggestions)
+
+CAPITULO 10: Bugs Criticos Resueltos y Reglas de Oro
+  - Bug #1: Homepage no indexable por navigator.language
+  - Bug #2: Paginas EN con noindex automatico
+  - Bug #3: FAQPage Schema duplicado
+  - Bug #4: Reviews en Organization (self-serving)
+  - 7 reglas de oro
+
+CAPITULO 11: Checklist y Validacion
+  - Checklist pre-deploy
+  - Herramientas de validacion
+  - Checklist para nuevos articulos (15 pasos)
+
+Apendice A: Mapping React a .md (CONTENT_SYNC)
+Apendice B: Estado de traduccion bilingue
+Apendice C: Edge Functions inventario SEO
 ```
-if (import.meta.env.DEV) import('@/utils/gtmDebugger');
-```
 
-**3. Google Fonts sigue siendo render-blocking parcial — IMPACTO MEDIO**
+### Datos factuales verificados que se incluiran
 
-El truco de `media="print" onload="this.media='all'"` funciona, pero Google Fonts devuelve un CSS que a su vez carga multiples archivos `.woff2`. En Slow 4G, esto genera una cadena de requests:
-1. HTML → 2. CSS de Google Fonts → 3. woff2 files
+Todo lo siguiente ha sido verificado en el codigo fuente y documentacion existente:
 
-Esto no bloquea el render (gracias a `display=swap`), pero si contribuye al FCP porque el browser necesita parsear el CSS externo.
+- Componente `Seo.tsx`: 12 props, genera Organization + BreadcrumbList + FAQPage automaticamente
+- Tabla `seo_pages`: constraint UNIQUE(path, in_language), CHECK en in_language
+- 25/25 servicios migrados a useServiceSEO (verificado en SEO_SERVICE_MIGRATION_COMPLETE.md)
+- 40+ archivos .md bilingues en /public/content/
+- 3 archivos llms: llms.txt, llms-en.txt, llms-full.txt
+- 80+ redirecciones 301 en public/_redirects
+- Self-hosting de 4 archivos woff2 en /public/fonts/
+- LazySection con IntersectionObserver (rootMargin 200px)
+- useSEOPage con staleTime 5min, gcTime 30min
+- gtmDebugger condicionado a import.meta.env.DEV
+- Cache headers: assets 1 ano immutable, HTML must-revalidate
+- Edge Functions SEO: gsc-data, indexnow-proxy, generate-seo-suggestions, translate-seo, monitor-seo-changes
+- Integracion DataForSEO para auditorias tecnicas
+- 7 hooks SEO: useAdvancedSEO, useSEOPage, useServiceSEO, useFAQSEO, useHowToSEO, useArticleSEO, useGenerateSEO
 
-**Solucion**: Self-host las fuentes Inter y DM Sans como archivos locales. Esto elimina 2-3 requests de red y la dependencia de fonts.googleapis.com. Los archivos woff2 se serviran desde el mismo dominio con cache inmutable.
+### Archivo a crear
 
-**4. Cadena de imports pesada en el bundle inicial — IMPACTO MEDIO**
+- `docs/SEO_AEO_GEO_DOCUMENTATION.md` — Documento unico consolidado (~800-1000 lineas)
 
-El entry point carga:
-- `App.tsx` (685 lineas) con ~150 rutas importadas via `lazyImports.ts`
-- `lazyImports.ts` (208 lineas) importa `lazyWithRetry` que crea 150+ React.lazy wrappers
-- Cada `lazyWithRetry` registra una funcion factory aunque no se ejecute
-
-Aunque React.lazy no ejecuta los imports hasta que se necesitan, la creacion de 150+ wrappers en el modulo inicial suma tiempo de parsing en dispositivos Moto G Power (CPU lenta).
-
-**Solucion**: Dividir `lazyImports.ts` en grupos mas pequenos por categoria, y solo importar el grupo necesario en cada bloque de rutas. Alternativamente, usar imports inline directos en App.tsx por bloque de rutas.
-
-**5. `Seo.tsx` usa `useEffect` con muchas manipulaciones DOM — IMPACTO BAJO-MEDIO**
-
-`Seo.tsx` hace ~30 manipulaciones DOM manuales en cada navegacion (querySelector, createElement, appendChild para meta tags, hreflang, canonical, structured data, etc.). Esto no es render-blocking pero anade trabajo al main thread.
-
-**Solucion a largo plazo**: Migrar a `react-helmet-async` que ya esta instalado (pero no se usa en `Seo.tsx`). A corto plazo: no cambiar, el impacto es marginal.
-
----
-
-### Plan de accion priorizado (solo cambios de alto y medio impacto)
-
-**Cambio 1: Optimizar `useSEOPage` para no bloquear la home**
-
-En `src/hooks/useSEOData.ts`, anadir `staleTime: 5 * 60 * 1000` (5 minutos) y `gcTime: 30 * 60 * 1000` (30 minutos) al `useQuery`. Ademas, para la ruta `/es` (home), setear `enabled: false` o `placeholderData` con los datos estaticos para evitar la query de red en el primer render.
-
-**Cambio 2: Condicionar `gtmDebugger` a modo desarrollo**
-
-En `src/main.tsx` linea 6, cambiar:
-```typescript
-// Antes
-import '@/utils/gtmDebugger';
-
-// Despues  
-if (import.meta.env.DEV) {
-  import('@/utils/gtmDebugger');
-}
-```
-
-Esto elimina ~2KB del bundle de produccion y un `console.log` en cada carga.
-
-**Cambio 3: Self-host fuentes Inter y DM Sans**
-
-- Descargar los archivos woff2 de Inter (latin + latin-ext) y DM Sans (latin + latin-ext) — 4 archivos
-- Colocarlos en `public/fonts/`
-- Crear un `@font-face` en `src/index.css` con `font-display: swap`
-- Eliminar los `<link>` a Google Fonts de `index.html`
-- Eliminar los `<link rel="preconnect">` y `<link rel="dns-prefetch">` a fonts.googleapis.com y fonts.gstatic.com
-
-Esto ahorra 2-3 requests de red y elimina la dependencia de CDN externo.
-
-**Cambio 4: Eliminar `console.log` residuales en produccion**
-
-Vite ya tiene `drop: ['console', 'debugger']` en produccion (vite.config.ts linea 67), asi que los console.log del gtmDebugger se eliminan en build. Pero el import del modulo y la asignacion a `window.gtmDebugger` sigue existiendo. El cambio 2 resuelve esto completamente.
-
----
-
-### Impacto estimado
-
-| Metrica | Actual | Estimado tras cambios |
-|---------|--------|----------------------|
-| FCP | 5.0s | ~3.5-4.0s |
-| LCP | 7.9s | ~5.5-6.5s |
-| TBT | 50ms | 50ms (sin cambio) |
-| CLS | 0 | 0 (sin cambio) |
-
-La mejora mas significativa vendra del self-hosting de fuentes (Cambio 3) y de evitar la query Supabase en el critical path (Cambio 1). Juntos deberian reducir FCP en ~1-1.5s.
-
-### Nota importante
-
-El test de PageSpeed usa **Slow 4G** con un **Moto G Power** (CPU lenta). Con estos parametros, cualquier SPA React tendra FCP alto porque el navegador debe descargar, parsear y ejecutar todo el JS antes de pintar. Las mejoras mas impactantes a partir de aqui requeririan SSR/SSG (Next.js, Astro), lo cual es un cambio de arquitectura mayor que no se recomienda ahora.
+No se modificara ni eliminara ningun documento existente. Este nuevo documento servira como referencia maestra unificada.
 
