@@ -132,5 +132,12 @@
       data-tracking-id="tk_7ab566fe92da4aac9351fea505c84753"
       async>
     </script>
+    <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js');
+      });
+    }
+    </script>
   </body>
 </html>
