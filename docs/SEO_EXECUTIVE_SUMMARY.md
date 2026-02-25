@@ -1,8 +1,8 @@
 # 📈 Resumen Ejecutivo SEO - Hayas Marketing
 
 > **Para:** Stakeholders y Dirección  
-> **Fecha:** 8 de febrero de 2026  
-> **Versión:** 1.0
+> **Fecha:** 25 de febrero de 2026  
+> **Versión:** 1.1
 
 ---
 
@@ -132,12 +132,13 @@ Con la implementación actual, las páginas son elegibles para:
 - [ ] Completar traducción de servicios secundarios al inglés
 - [ ] Solicitar re-indexación de `/en` en Google Search Console
 - [ ] Monitorizar aparición de Rich Snippets en SERPs
+- [x] ~~Optimizar Core Web Vitals para móvil~~ ✅ Sprint 25-feb-2026
 
 ### Medio Plazo (3-6 meses)
 
 - [ ] Expandir contenido de blog (objetivo: 20 artículos)
 - [ ] Implementar reviews verificadas (Google Business Profile)
-- [ ] Optimizar Core Web Vitals para móvil
+- [ ] Medir impacto del Service Worker en datos de campo (CrUX)
 
 ### Largo Plazo (6-12 meses)
 
@@ -156,6 +157,7 @@ Con la implementación actual, las páginas son elegibles para:
 | `SEO_RICH_SNIPPETS_GUIDE.md` | Guía de implementación Schema.org |
 | `SEO_SERVICE_MIGRATION_COMPLETE.md` | Estado de migración de servicios |
 | `SEO_ALERTS_SYSTEM.md` | Sistema de alertas automáticas |
+| `PERFORMANCE_OPTIMIZATION_LOG.md` | **Nuevo** — Optimizaciones de rendimiento web |
 
 ---
 
@@ -168,8 +170,9 @@ El sistema SEO de Hayas Marketing está **100% operativo** y posicionado para ca
 - ✅ **Bilingüe nativo**: ES-ES y EN-US
 - ✅ **Schema.org avanzado**: 6 tipos de structured data
 - ✅ **Preparado para IA**: llms.txt y contenido citable
+- ✅ **Rendimiento optimizado**: Service Worker + Critical CSS (sprint 25-feb-2026)
 
 ---
 
-*Documento generado el 8 de febrero de 2026*  
+*Documento actualizado el 25 de febrero de 2026*  
 *Para consultas técnicas: revisar `docs/SEO_SYSTEM_OVERVIEW.md`*
