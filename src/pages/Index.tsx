@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState, lazy } from 'react';
+import React, { useEffect, lazy } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import HeroSlider from '@/components/HeroSlider';
@@ -7,7 +7,6 @@ import MarketingChangedSection from '@/components/MarketingChangedSection';
 import Footer from '@/components/Footer';
 import EnhancedSEO from '@/components/EnhancedSEO';
 import LazySection from '@/components/LazySection';
-import { hayasOrganizationSchema } from '@/data/seoData';
 import { useTranslation } from '@/hooks/useTranslation';
 
 // Lazy-loaded below-the-fold components
@@ -19,12 +18,7 @@ const ReviewsSection = lazy(() => import('@/components/ReviewsSection'));
 
 const Index = () => {
   const [searchParams] = useSearchParams();
-  const [origin, setOrigin] = useState('');
   const { t } = useTranslation();
-  
-  useEffect(() => {
-    setOrigin(window.location.origin);
-  }, []);
   
   useEffect(() => {
     const scrollTo = searchParams.get('scrollTo');
@@ -44,13 +38,6 @@ const Index = () => {
     { question: t('faq.home.q5'), answer: t('faq.home.a5') },
     { question: t('faq.home.q6'), answer: t('faq.home.a6') },
   ];
-
-  const website = origin ? {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: "Hayas Marketing",
-    url: origin,
-  } as const : null;
 
   return (
     <div id="top" className="min-h-screen flex flex-col">
