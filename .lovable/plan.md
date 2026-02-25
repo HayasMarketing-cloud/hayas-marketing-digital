@@ -1,100 +1,83 @@
 
 
-## Análisis: Cache Lifetimes — 743 KiB sin caché (el mayor problema)
+## Analisis: Render Blocking Requests — CSS bloqueante (25.1 KiB, 630ms)
 
 ### Problema detectado
 
-PageSpeed muestra que **todos los recursos first-party (742 KiB)** tienen Cache TTL = "None":
+PageSpeed reporta que `/assets/index-DlM9A3e0.css` (25.1 KiB) bloquea el render inicial durante **630ms**, afectando **LCP** y **FCP**. Ahorro estimado: **160ms**.
 
-| Recurso | Tamaño | Cache TTL |
-|---------|--------|-----------|
-| `/assets/casos-exi....js` | 258 KiB | None |
-| `/assets/vendor-DtCuszS-.js` | 52 KiB | None |
-| `/assets/blog-post....js` | 51 KiB | None |
-| `/assets/index-Cw-2O-Z9.js` | 50 KiB | None |
-| `/lovable-uploads/*.png` (×4) | ~145 KiB | None |
-| Resto de chunks JS + CSS | ~186 KiB | None |
-| **Total** | **742 KiB** | **Sin caché** |
+Este es el CSS principal de la app, generado por Vite a partir de `src/index.css` (importado en `main.tsx`). Contiene:
+- Tailwind base/components/utilities
+- @font-face declarations (Inter, DM Sans)
+- Variables CSS corporativas
+- Utilidades custom (gradientes, sombras, animaciones)
+- Estilos decorativos (patterns, separadores)
 
-### Causa raíz
+### Causa raiz
 
-El archivo `public/_headers` ya tiene reglas de caché correctas (`max-age=31536000, immutable` para assets). **El problema es que Lovable Cloud no procesa el archivo `_headers`**. Ese formato es específico de Netlify/Cloudflare Pages. La infraestructura de hosting de Lovable Cloud ignora este archivo, por lo que todos los recursos se sirven sin headers de caché.
+Vite genera un unico archivo CSS que se inyecta como `<link rel="stylesheet">` en el `<head>`. El navegador debe descargar y parsear **todo** el CSS antes de pintar el primer pixel. De los 25.1 KiB, solo una fraccion es critica para el above-the-fold (variables, font-face, body styles, header).
 
-Esto es una **limitación de la plataforma de hosting**, no del código. No podemos controlar los headers HTTP del servidor desde el código del cliente.
+### Solucion propuesta: Inline Critical CSS
 
-### Solución viable: Service Worker para caché en cliente
+Extraer el CSS critico (above-the-fold) e inlinearlo directamente en el `<head>` de `index.html` dentro de un `<style>`. Esto permite que el navegador pinte inmediatamente sin esperar la descarga del CSS externo.
 
-Aunque no podemos cambiar los headers del servidor, sí podemos implementar un **Service Worker** que cachee los assets en el navegador del usuario. Esto consigue el mismo efecto práctico: en visitas repetidas, los assets se sirven desde la caché local sin hacer requests al servidor.
+#### Que es CSS critico para esta pagina:
 
-### Plan de implementación
+1. **CSS variables** (`:root` con colores corporativos) — ~40 lineas
+2. **@font-face declarations** con `font-display: swap` — ~30 lineas  
+3. **Body/html base styles** — ~10 lineas
+4. **Header/Navigation styles** (sticky, z-index, background) — necesarios para el primer paint
 
-**Archivo 1: `public/sw.js` — Service Worker**
+#### Plan de implementacion
 
-Implementar una estrategia de caché "Cache First" para assets estáticos:
-- `/assets/*.js` y `/assets/*.css` — cache first (tienen hash en el nombre, son inmutables)
-- `/lovable-uploads/*` — cache first (son estáticos, no cambian)
-- `/fonts/*` — cache first
-- Páginas HTML — network first con fallback a cache (para SPA navigation)
-- Requests a APIs externas — network only (no cachear)
+**Cambio 1: `index.html`** — Añadir bloque `<style>` con CSS critico inlined
 
-El Service Worker usará la Cache API del navegador con nombre versionado para poder invalidar cuando haya actualizaciones.
+Inlinear dentro de `<head>`:
+- Las 4 declaraciones `@font-face` (Inter y DM Sans con `font-display: swap`)
+- Las variables CSS de `:root` (colores corporativos, spacing)
+- Estilos base de `body` y `html` (background, font-family, text-rendering)
+- Estilos del border reset (`* { border-color }`)
 
-**Archivo 2: Registro del SW en `index.html`**
+Esto son aproximadamente **2-3 KiB** de CSS critico que permite al navegador hacer el primer paint sin esperar el archivo CSS externo.
 
-Añadir al final del `<body>` en `index.html`:
-```html
-<script>
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js');
-  });
+**Cambio 2: No se modifica `main.tsx`** — El CSS completo sigue cargando normalmente via el import de `index.css`. El CSS inlined en el HTML solo acelera el primer paint; cuando el CSS completo llega, sobreescribe/complementa sin conflicto.
+
+#### CSS critico a inlinear (~2.5 KiB)
+
+```css
+/* Font faces con swap */
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 300 700; font-display: swap; src: url('/fonts/inter-latin.woff2') format('woff2'); }
+@font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 400 700; font-display: swap; src: url('/fonts/dm-sans-latin.woff2') format('woff2'); }
+
+/* Variables criticas */
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --primary: 207 100% 25%;
+  --primary-foreground: 0 0% 100%;
+  --hayas-primary: 89 100% 30%;
+  --hayas-secondary: 170 95% 23%;
+  --hayas-tertiary: 207 100% 25%;
+  --border: 214.3 31.8% 91.4%;
+  --radius: 0.5rem;
 }
-</script>
+
+/* Base */
+*, *::before, *::after { box-sizing: border-box; border-width: 0; border-style: solid; border-color: hsl(214.3 31.8% 91.4%); }
+body { margin: 0; background-color: hsl(0 0% 100%); color: hsl(222.2 84% 4.9%); font-family: 'Inter', Helvetica, Arial, sans-serif; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+html { scroll-behavior: smooth; }
 ```
-
-El registro se hace en `load` para no bloquear la carga inicial.
-
-### Estrategia de caché del Service Worker
-
-```text
-Request entrante
-      │
-      ├── /assets/*.js, /assets/*.css (con hash)
-      │     └── Cache First → si está en caché, devolver inmediatamente
-      │                      → si no, fetch + guardar en caché
-      │
-      ├── /lovable-uploads/*
-      │     └── Cache First → mismo comportamiento
-      │
-      ├── /fonts/*
-      │     └── Cache First → mismo comportamiento
-      │
-      ├── HTML / navegación
-      │     └── Network First → intentar red primero
-      │                       → si falla, servir desde caché
-      │
-      └── APIs externas (supabase, GTM, GHL)
-            └── Network Only → no cachear
-```
-
-### Detalles técnicos
-
-- **Versionado**: El nombre de la caché incluirá un número de versión (`hayas-cache-v1`). Al cambiar la versión, el SW eliminará cachés antiguas automáticamente.
-- **Tamaño de caché**: Sin límite para assets con hash (se auto-limpian al cambiar versión). Los assets hasheados de Vite cambian de nombre en cada build, así que las entradas viejas se eliminan al activar una nueva versión del SW.
-- **Primera visita**: No hay mejora (el SW se instala pero los assets ya se descargaron). La mejora empieza en la **segunda visita**.
-- **Compatibilidad**: Service Workers tienen soporte en >97% de navegadores modernos.
 
 ### Impacto estimado
 
-| Métrica | Efecto |
+| Metrica | Efecto |
 |---------|--------|
-| Visitas repetidas | ~742 KiB servidos desde caché local (0ms latencia) |
-| LCP en revisitas | Mejora significativa (assets JS/CSS instantáneos) |
-| FCP en revisitas | Mejora (CSS cacheado) |
-| PageSpeed "Cache lifetimes" | Resuelto — los assets tendrán TTL en la caché del SW |
-| Primera visita | Sin cambio (el SW se instala en background) |
+| FCP | Mejora ~100-160ms (primer paint no espera CSS externo) |
+| LCP | Mejora indirecta (FCP mas rapido = LCP mas rapido) |
+| CLS | Sin impacto (variables ya disponibles al primer paint) |
+| Tamaño HTML | +~2.5 KiB (aceptable, HTML se carga primero) |
 
-### Limitación
+### Limitacion
 
-PageSpeed podría seguir reportando "None" en Cache TTL porque analiza los **HTTP headers del servidor**, no la caché del Service Worker. Sin embargo, el rendimiento real en visitas repetidas mejorará sustancialmente. Para que PageSpeed deje de reportar este warning, se necesitaría que la plataforma de hosting envíe los headers `Cache-Control` correctos — algo que está fuera de nuestro control en Lovable Cloud.
+El CSS completo de Tailwind (25 KiB) seguira cargando como render-blocking porque Vite lo inyecta automaticamente. Para eliminarlo completamente del critical path se necesitaria un plugin de Vite como `vite-plugin-critical` o cargar el CSS con `media="print" onload="this.media='all'"`, pero esto puede causar FOUC (Flash of Unstyled Content). El inline de CSS critico es la solucion mas segura y efectiva.
 
