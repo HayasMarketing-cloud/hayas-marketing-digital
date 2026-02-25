@@ -1,89 +1,117 @@
 
 
-## Analisis completo: Estado de optimizaciones Web Vitals
+## Analisis: Rendimiento movil — PageSpeed Insights (FCP 5.0s, LCP 7.9s)
 
-### Optimizaciones ya aplicadas
+### Resultados actuales (movil, Slow 4G)
 
-| Optimizacion | Estado | Impacto |
-|---|---|---|
-| Eliminar preload imagen Unsplash obsoleto | Hecho | FCP/LCP: -200-500KB bandwidth |
-| Reducir Google Fonts a Inter + DM Sans | Hecho | FCP: menos CSS/woff2 descargados |
-| Mover script GHL al final del body | Hecho | FCP: menos competencia TCP |
-| Lazy-load SofIA con idle loading | Hecho | TTI: -15-20KB bundle inicial |
-| RouteValidator solo en DEV | Hecho | Bundle produccion: eliminado |
-| Lazy-load 5 secciones below-the-fold (IntersectionObserver) | Hecho | Bundle inicial: -15-25% |
-| Code-splitting por paginas (lazyWithRetry) | Hecho | Cada pagina carga su JS propio |
-| Manual chunks en Vite (vendor, ui, casos-exito, blog, servicios) | Hecho | Mejor cache por grupo |
-| Cache headers optimizados (_headers) | Hecho | Assets inmutables 1 ano |
-| Fonts display=swap con media=print trick | Hecho | No bloquea render |
-| ErrorBoundary + filtro errores cross-origin | Hecho | Estabilidad |
+| Metrica | Valor | Estado |
+|---------|-------|--------|
+| FCP | 5.0s | Rojo |
+| LCP | 7.9s | Rojo |
+| TBT | 50ms | Verde |
+| CLS | 0 | Verde |
+| SI | 5.0s | Naranja |
 
-### Oportunidades restantes identificadas
+TBT y CLS estan perfectos. El problema es exclusivamente **tiempo de red y renderizado inicial** (FCP/LCP). Esto apunta a recursos que bloquean el primer pintado.
 
-**1. Font preload innecesario o incorrecto (linea 78 de index.html) — IMPACTO MEDIO**
+---
 
-Se precarga un archivo woff2 especifico de Inter (`UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2`). Este hash corresponde a un subset especifico (latin). Si el navegador necesita otro subset primero (ej. latin-ext para acentos espanoles como "a", "o", "n"), el preload puede ser inutil o incluso contraproducente porque descarga un archivo que no es el primero en usarse. En una web en espanol, esto merece revision.
+### Causas raiz identificadas
 
-Recomendacion: **Eliminar el preload de fuente** y dejar que el CSS de Google Fonts descargue automaticamente el subset correcto segun los caracteres del contenido. El `display=swap` ya evita FOIT.
+**1. Supabase query en el critical path — IMPACTO ALTO**
 
-**2. Tailwind config define `arimo` y `fraunces` en fontFamily — IMPACTO BAJO**
+Cada carga de pagina ejecuta una query a Supabase para obtener datos SEO (`useSEOPage` en `useAdvancedSEO.ts` linea 39). Este hook se llama desde `EnhancedSEO` → `Seo.tsx`, que es el primer componente que renderiza en `Index.tsx`.
 
-Aunque ya no se cargan las fuentes, las definiciones siguen en `tailwind.config.ts` (lineas 144-146). No afecta al rendimiento porque Tailwind solo genera CSS para clases usadas, pero es deuda tecnica.
+En Slow 4G, esta query puede tardar 1-3 segundos. Y mientras tanto, `Seo.tsx` no inyecta los meta tags ni structured data, pero lo que es peor: el componente `EnhancedSEO` renderiza en el critical path y fuerza una re-renderizacion del arbol completo cuando los datos llegan.
 
-Recomendacion: Limpiar las definiciones de `arimo` y `fraunces` de tailwind.config.ts.
+**Solucion**: Hacer que `useSEOPage` use `staleTime: Infinity` y `gcTime` largo para que en la home la query no bloquee. Opcionalmente, skipear la query de Supabase para la home (path `/es`) y usar directamente el fallback de `seoData.ts`, ya que la home rara vez cambia sus meta tags.
 
-**3. Embla Carousel en el bundle pero no se usa en la Home — IMPACTO BAJO**
+**2. `gtmDebugger.ts` importado sincrono en main.tsx — IMPACTO MEDIO**
 
-`embla-carousel-react` y `embla-carousel-autoplay` estan en las dependencias. El componente `carousel.tsx` existe en `src/components/ui/`. El `HeroSlider` ya NO usa carousel (es un simple map de slides). Si `Carousel` solo se usa en paginas internas, ya esta code-split. Pero si algun componente above-the-fold lo importa, seria un desperdicio.
+`main.tsx` linea 6 importa `@/utils/gtmDebugger` sincronamente. Este modulo expone una herramienta de debugging en `window` y ejecuta un `console.log` en cada carga. No es necesario en produccion.
 
-Recomendacion: Verificar si algun componente sincrono de la home importa Carousel. Si no, no hay accion necesaria (ya esta tree-shaken o code-split).
+**Solucion**: Importar `gtmDebugger` solo en modo desarrollo, o con un import dinamico idle:
+```
+if (import.meta.env.DEV) import('@/utils/gtmDebugger');
+```
 
-**4. Navigation importa servicios data sincrono — IMPACTO BAJO**
+**3. Google Fonts sigue siendo render-blocking parcial — IMPACTO MEDIO**
 
-`Navigation.tsx` importa `servicesByPillar` y `pillarMeta` de `@/data/services` (linea 10-11). Estos datos se usan para el mega menu. El archivo de datos podria ser grande si contiene todas las descripciones de servicios. Sin embargo, Navigation es above-the-fold y critico, asi que el import sincrono es correcto. Solo seria un problema si `services.ts` es muy grande.
+El truco de `media="print" onload="this.media='all'"` funciona, pero Google Fonts devuelve un CSS que a su vez carga multiples archivos `.woff2`. En Slow 4G, esto genera una cadena de requests:
+1. HTML → 2. CSS de Google Fonts → 3. woff2 files
 
-Recomendacion: No cambiar. El mega menu necesita los datos inmediatamente.
+Esto no bloquea el render (gracias a `display=swap`), pero si contribuye al FCP porque el browser necesita parsear el CSS externo.
 
-**5. `hayasOrganizationSchema` importado pero no usado en Index.tsx — IMPACTO MINIMO**
+**Solucion**: Self-host las fuentes Inter y DM Sans como archivos locales. Esto elimina 2-3 requests de red y la dependencia de fonts.googleapis.com. Los archivos woff2 se serviran desde el mismo dominio con cache inmutable.
 
-Linea 10 de `Index.tsx` importa `hayasOrganizationSchema` de `@/data/seoData` pero no se usa en el JSX. Es un import muerto que anade bytes al chunk.
+**4. Cadena de imports pesada en el bundle inicial — IMPACTO MEDIO**
 
-Recomendacion: Eliminar el import muerto.
+El entry point carga:
+- `App.tsx` (685 lineas) con ~150 rutas importadas via `lazyImports.ts`
+- `lazyImports.ts` (208 lineas) importa `lazyWithRetry` que crea 150+ React.lazy wrappers
+- Cada `lazyWithRetry` registra una funcion factory aunque no se ejecute
 
-**6. Variable `website` no usada en Index.tsx — IMPACTO MINIMO**
+Aunque React.lazy no ejecuta los imports hasta que se necesitan, la creacion de 150+ wrappers en el modulo inicial suma tiempo de parsing en dispositivos Moto G Power (CPU lenta).
 
-Lineas 48-53 de `Index.tsx` crean un objeto `website` con schema.org WebSite que no se pasa a ningun componente. Codigo muerto.
+**Solucion**: Dividir `lazyImports.ts` en grupos mas pequenos por categoria, y solo importar el grupo necesario en cada bloque de rutas. Alternativamente, usar imports inline directos en App.tsx por bloque de rutas.
 
-Recomendacion: Eliminar la variable y el estado `origin` si no se usa en otro lugar.
+**5. `Seo.tsx` usa `useEffect` con muchas manipulaciones DOM — IMPACTO BAJO-MEDIO**
 
-### Plan de accion propuesto
+`Seo.tsx` hace ~30 manipulaciones DOM manuales en cada navegacion (querySelector, createElement, appendChild para meta tags, hreflang, canonical, structured data, etc.). Esto no es render-blocking pero anade trabajo al main thread.
 
-Solo cambios de alto y medio impacto. Los de impacto bajo/minimo se pueden hacer como limpieza posterior.
+**Solucion a largo plazo**: Migrar a `react-helmet-async` que ya esta instalado (pero no se usa en `Seo.tsx`). A corto plazo: no cambiar, el impacto es marginal.
 
-**Cambio 1: Eliminar preload de fuente Inter woff2 (index.html linea 78)**
+---
 
-El CSS de Google Fonts ya maneja la descarga del subset correcto. El preload de un archivo especifico puede ser contraproducente en una web en espanol porque el primer subset necesario puede ser distinto.
+### Plan de accion priorizado (solo cambios de alto y medio impacto)
 
-**Cambio 2: Eliminar import muerto `hayasOrganizationSchema` (Index.tsx linea 10)**
+**Cambio 1: Optimizar `useSEOPage` para no bloquear la home**
 
-Import no usado que anade el modulo `seoData` al chunk de la home innecesariamente.
+En `src/hooks/useSEOData.ts`, anadir `staleTime: 5 * 60 * 1000` (5 minutos) y `gcTime: 30 * 60 * 1000` (30 minutos) al `useQuery`. Ademas, para la ruta `/es` (home), setear `enabled: false` o `placeholderData` con los datos estaticos para evitar la query de red en el primer render.
 
-**Cambio 3: Eliminar variable muerta `website` y estado `origin` (Index.tsx lineas 25-27 y 48-53)**
+**Cambio 2: Condicionar `gtmDebugger` a modo desarrollo**
 
-Codigo muerto que ejecuta un `useEffect` y crea un objeto que nunca se renderiza.
+En `src/main.tsx` linea 6, cambiar:
+```typescript
+// Antes
+import '@/utils/gtmDebugger';
 
-**Cambio 4: Limpiar fontFamily en tailwind.config.ts (lineas 144-146)**
+// Despues  
+if (import.meta.env.DEV) {
+  import('@/utils/gtmDebugger');
+}
+```
 
-Eliminar `arimo` y `fraunces` de las definiciones de fuentes. No se cargan, no se usan.
+Esto elimina ~2KB del bundle de produccion y un `console.log` en cada carga.
 
-### Impacto estimado adicional
+**Cambio 3: Self-host fuentes Inter y DM Sans**
 
-Estos cambios son menores comparados con los ya aplicados. El impacto principal sera:
-- Eliminar 1 request de preload innecesario (font woff2) → mejora marginal en FCP
-- Reducir unos KB de JS muerto del chunk de la home
-- La mejora real y medible ya se consiguio con las 3 optimizaciones de index.html y el lazy loading
+- Descargar los archivos woff2 de Inter (latin + latin-ext) y DM Sans (latin + latin-ext) — 4 archivos
+- Colocarlos en `public/fonts/`
+- Crear un `@font-face` en `src/index.css` con `font-display: swap`
+- Eliminar los `<link>` a Google Fonts de `index.html`
+- Eliminar los `<link rel="preconnect">` y `<link rel="dns-prefetch">` a fonts.googleapis.com y fonts.gstatic.com
 
-### Conclusion
+Esto ahorra 2-3 requests de red y elimina la dependencia de CDN externo.
 
-Las optimizaciones criticas ya estan aplicadas. Lo que queda son limpiezas menores. El siguiente paso mas impactante seria **medir en PageSpeed Insights** para validar que FCP y LCP han mejorado como se esperaba, y luego decidir si vale la pena optimizar mas o si el resultado ya es aceptable.
+**Cambio 4: Eliminar `console.log` residuales en produccion**
+
+Vite ya tiene `drop: ['console', 'debugger']` en produccion (vite.config.ts linea 67), asi que los console.log del gtmDebugger se eliminan en build. Pero el import del modulo y la asignacion a `window.gtmDebugger` sigue existiendo. El cambio 2 resuelve esto completamente.
+
+---
+
+### Impacto estimado
+
+| Metrica | Actual | Estimado tras cambios |
+|---------|--------|----------------------|
+| FCP | 5.0s | ~3.5-4.0s |
+| LCP | 7.9s | ~5.5-6.5s |
+| TBT | 50ms | 50ms (sin cambio) |
+| CLS | 0 | 0 (sin cambio) |
+
+La mejora mas significativa vendra del self-hosting de fuentes (Cambio 3) y de evitar la query Supabase en el critical path (Cambio 1). Juntos deberian reducir FCP en ~1-1.5s.
+
+### Nota importante
+
+El test de PageSpeed usa **Slow 4G** con un **Moto G Power** (CPU lenta). Con estos parametros, cualquier SPA React tendra FCP alto porque el navegador debe descargar, parsear y ejecutar todo el JS antes de pintar. Las mejoras mas impactantes a partir de aqui requeririan SSR/SSG (Next.js, Astro), lo cual es un cambio de arquitectura mayor que no se recomienda ahora.
 
