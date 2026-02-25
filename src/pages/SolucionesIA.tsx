@@ -240,6 +240,9 @@ const SolucionesIA = () => {
                     src="/lovable-uploads/2a2adcf5-d531-4d8c-91bd-bb12aac27976.png" 
                     alt="SofÍA - Asistente de IA" 
                     className="relative z-10 w-48 h-48 object-cover rounded-full shadow-xl border-4 border-white"
+                    width={192}
+                    height={192}
+                    loading="lazy"
                   />
                 </div>
               </div>

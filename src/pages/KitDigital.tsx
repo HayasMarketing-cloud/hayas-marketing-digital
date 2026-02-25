@@ -531,6 +531,9 @@ const KitDigital = () => {
                           src="/lovable-uploads/2a2adcf5-d531-4d8c-91bd-bb12aac27976.png"
                           alt="SofÍA"
                           className="w-16 h-16 rounded-full object-cover"
+                          width={64}
+                          height={64}
+                          loading="lazy"
                         />
                         <div className="absolute -top-1 -right-1 w-5 h-5 bg-green-500 rounded-full border-2 border-white">
                           <div className="absolute inset-0 bg-green-400 rounded-full animate-ping"></div>

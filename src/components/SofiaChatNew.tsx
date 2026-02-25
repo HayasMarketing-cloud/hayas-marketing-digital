@@ -317,6 +317,9 @@ const SofiaChatNew = () => {
               src="/lovable-uploads/2a2adcf5-d531-4d8c-91bd-bb12aac27976.png" 
               alt="SofÍA" 
               className="w-10 h-10 rounded-full object-cover flex-shrink-0"
+              width={40}
+              height={40}
+              loading="lazy"
             />
             <div className="flex-1">
               <p className="text-sm font-medium text-gray-900 mb-1">SofÍA</p>
@@ -354,6 +357,9 @@ const SofiaChatNew = () => {
               src="/lovable-uploads/2a2adcf5-d531-4d8c-91bd-bb12aac27976.png" 
               alt="SofÍA" 
               className="w-12 h-12 rounded-full object-cover border-2 border-white/20"
+              width={48}
+              height={48}
+              loading="lazy"
             />
             <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-400 rounded-full border-2 border-white">
               <div className="absolute inset-0 bg-green-300 rounded-full animate-ping"></div>
@@ -381,6 +387,9 @@ const SofiaChatNew = () => {
                   src="/lovable-uploads/2a2adcf5-d531-4d8c-91bd-bb12aac27976.png" 
                   alt="SofÍA" 
                   className="w-10 h-10 rounded-full object-cover border-2 border-white/20"
+                  width={40}
+                  height={40}
+                  loading="lazy"
                 />
                 <div>
                   <h3 className="font-semibold">SofÍA</h3>

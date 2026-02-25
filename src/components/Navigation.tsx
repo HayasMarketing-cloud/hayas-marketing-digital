@@ -147,6 +147,8 @@ const Navigation = () => {
                     src="/lovable-uploads/7ec653d8-b796-48ee-9657-8f0301af6e55.png"
                     alt="Hayas Marketing Logo"
                     className="h-10 md:h-12 w-auto"
+                    width={48}
+                    height={48}
                   />
                 </div>
               </Link>
