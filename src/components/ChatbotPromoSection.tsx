@@ -11,7 +11,7 @@ const ChatbotPromoSection = () => {
     : '/es/servicios/asistente-ia';
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-primary to-hayas-tertiary py-10 sm:py-12 lg:py-14">
+    <section className="relative overflow-hidden bg-gradient-to-br from-primary to-hayas-tertiary py-8 sm:py-10 lg:py-12">
       {/* Decorative elements */}
       <div className="absolute inset-0">
         <div className="absolute -top-40 -right-32 h-80 w-80 rounded-full bg-white/5 blur-3xl" />
@@ -19,7 +19,7 @@ const ChatbotPromoSection = () => {
       </div>
       
       <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl space-y-4">
+        <div className="space-y-3">
           <h2 className="text-3xl font-bold font-dm-sans tracking-tight text-white sm:text-4xl lg:text-5xl">
             {t('chatbot.title')}
           </h2>
