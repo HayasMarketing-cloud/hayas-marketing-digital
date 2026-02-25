@@ -38,13 +38,6 @@
     })(window,document,'script','dataLayer','GTM-WKMHQ2PM');</script>
     <!-- End Google Tag Manager -->
     
-    <!-- Go High Level Tracking -->
-    <script 
-      src="https://links.hayasmarketing.com/js/external-tracking.js"
-      data-tracking-id="tk_7ab566fe92da4aac9351fea505c84753"
-      async>
-    </script>
-    
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://hayasmarketing.com/" />
@@ -70,7 +63,7 @@
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link rel="dns-prefetch" href="https://images.unsplash.com">
+    
     <link rel="dns-prefetch" href="https://cdn.gpteng.co">
     
     <!-- Preconnect to critical origins -->
@@ -79,11 +72,9 @@
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
     
     <!-- Fonts with display=swap for better performance -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Arimo:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=DM+Sans:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Arimo:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=DM+Sans:wght@400;500;600;700&display=swap"></noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"></noscript>
     
-    <!-- Critical Resource Preloads with fetchpriority -->
-    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop" fetchpriority="high" crossorigin>
     <link rel="preload" as="font" href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2" type="font/woff2" crossorigin>
     <!-- Nota: el CSS de la app se importa dentro de main.tsx; evitamos preloads que pueden fallar en producción -->
     
@@ -140,5 +131,11 @@
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module" crossorigin="anonymous"></script>
     <script type="module" src="/src/main.tsx" crossorigin="anonymous"></script>
+    <!-- Go High Level Tracking (moved to end of body for performance) -->
+    <script 
+      src="https://links.hayasmarketing.com/js/external-tracking.js"
+      data-tracking-id="tk_7ab566fe92da4aac9351fea505c84753"
+      async>
+    </script>
   </body>
 </html>
