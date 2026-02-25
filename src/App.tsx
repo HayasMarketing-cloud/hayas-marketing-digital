@@ -12,11 +12,11 @@ import PageSuspense from './components/PageSuspense';
 import RoutePreloader from './components/RoutePreloader';
 import { AdminProtectedRoute } from './components/admin/AdminProtectedRoute';
 import { lazy, Suspense, useEffect, useState } from 'react';
+import { RedirectManager } from './components/RedirectManager';
 const DynamicPageEN = lazy(() => import('./pages/en/DynamicPageEN'));
 
 // Lazy-load heavy components to reduce initial bundle
 const SofiaChatNew = lazy(() => import('./components/SofiaChatNew'));
-const RedirectManager = lazy(() => import('./components/RedirectManager').then(m => ({ default: m.RedirectManager })));
 
 // RouteValidator only in development
 const RouteValidator = import.meta.env.DEV
@@ -69,7 +69,7 @@ const App = () => (
               <IdleSofia />
               <DraftProtection>
                 {/* Gestor de redirecciones React Router nativo */}
-                <Suspense fallback={null}><RedirectManager /></Suspense>
+                <RedirectManager />
               
               <Routes>
            {/* REDIRECCIÓN ROOT A ESPAÑOL */}
