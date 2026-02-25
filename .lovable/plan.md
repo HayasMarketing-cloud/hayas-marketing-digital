@@ -1,42 +1,69 @@
 
 
-## Analisis: Forced Reflow — 52ms vendor + 46ms UI chunk
+## Análisis: Improve Image Delivery — 79 KiB de ahorro estimado
 
-### Que muestra PageSpeed
+### Problema detectado en PageSpeed
 
-| Source | Reflow time |
-|--------|------------|
-| `vendor-DtCuszS-.js` (React/ReactDOM/Router) | 52ms |
-| `ui-l_ZMOloq.js` (Radix UI) | 46ms |
-| `casos-exi....js` | 6ms |
-| `[unattributed]` | 1ms |
+PageSpeed detecta 3 imágenes sobredimensionadas que afectan **LCP** y **FCP**:
 
-### Diagnostico
+| Imagen | Tamaño real | Se muestra a | Ahorro |
+|--------|------------|--------------|--------|
+| SofÍA avatar (`2a2adcf5...png`) | 512×512 | 77×77 px (w-12 h-12) | 36 KiB |
+| Logo Hayas (`7ec653d8...png`) | 1200×1200 | 70×70 px (h-10/h-12) | 30 KiB |
+| Mockup SofÍA (`5c73c4e8...png`) | 800×800 | 672×672 px | 13 KiB |
 
-**Este warning es "Unscored"** — no afecta la puntuacion de PageSpeed. Es informativo.
+**Total: 79 KiB desperdiciados** en cada carga de página.
 
-El reflow total es **~105ms**, lo cual es bajo. Para contexto, Google considera problematico reflows que superen 200-300ms o que ocurran en bucles.
+### Causa raíz
 
-**Causas identificadas en el codigo:**
+Las 3 imágenes son PNG almacenadas en `/lovable-uploads/` sin redimensionar. El navegador descarga el archivo completo y luego lo escala visualmente con CSS.
 
-1. **`Navigation.tsx` linea 43**: `headerRef.current.offsetHeight` — se lee en un `useEffect` con dependencia en `isScrolled`. Cada vez que cambia `isScrolled`, se fuerza un reflow para medir la altura del header. Esto es el contributor principal al reflow del vendor chunk (React ejecuta el effect, que lee `offsetHeight`).
+### Solución propuesta
 
-2. **Radix UI (46ms)**: Los componentes Radix internamente miden dimensiones para posicionamiento (dropdowns, popovers). El Navigation usa un mega menu con `activeMegaMenu` state y hover handlers. Radix calcula posiciones internamente usando `getBoundingClientRect`.
+**No podemos redimensionar los archivos originales en `/lovable-uploads/`** (son estáticos). La solución es añadir atributos `width` y `height` explícitos en los `<img>` para que el navegador conozca las dimensiones de layout, y más importante, **convertir las imágenes a versiones optimizadas más pequeñas**.
 
-3. **`casos-exi` (6ms)**: Chunk de casos de exito — probablemente algun componente que mide layout (carousel, grid).
+#### Cambio 1: Avatar SofÍA — crear versión 96×96 y 192×192
 
-### Valoracion
+El avatar de SofÍA se usa en **6 archivos** a tamaños de w-8 (32px) a w-48 (192px). La imagen original es 512×512 pero nunca se muestra a más de 192×192.
 
-**No recomiendo actuar sobre este warning por tres razones:**
+**Acción**: Crear dos versiones redimensionadas del avatar y usarlas según contexto:
+- Para usos pequeños (w-8 a w-16, 32-64px): usar una versión de 96×96 (~3-5 KiB)  
+- Para usos grandes (w-48, 192px): usar una versión de 192×192 (~8-12 KiB)
 
-1. Es **Unscored** — no impacta FCP, LCP, TBT ni CLS
-2. 105ms total es un valor normal para una SPA con navegacion interactiva
-3. El `offsetHeight` en Navigation es necesario para el spacer que evita que el contenido se oculte bajo el header sticky — eliminarlo causaria un bug visual (CLS)
-4. Los reflows de Radix UI son internos a la libreria y no controlables sin reemplazar la libreria
+**Limitación**: No tenemos herramientas de redimensionado de imágenes en el proyecto. Las imágenes están en `/lovable-uploads/` y no podemos generar versiones más pequeñas automáticamente.
 
-### Recomendacion
+**Alternativa viable**: Añadir `width` y `height` explícitos a todos los `<img>` del avatar de SofÍA para mejorar CLS, y añadir `loading="lazy"` donde no esté en el viewport inicial. Esto no reduce el tamaño de descarga pero sí mejora la percepción de rendimiento.
 
-Pasar a la siguiente metrica que si este puntuada (FCP, LCP, SI) y tenga impacto real. Este warning de forced reflow es ruido informativo que no afecta la puntuacion.
+#### Cambio 2: Logo Hayas — atributos width/height + loading eager
 
-Si aun asi quieres reducir marginalmente el reflow del Navigation, el unico cambio viable seria cachear `headerHeight` con `ResizeObserver` en lugar de leer `offsetHeight` en cada cambio de `isScrolled`, pero el ahorro seria de ~5-10ms — imperceptible.
+El logo está en Navigation.tsx y se muestra a h-10 (40px) / h-12 (48px). La imagen original es 1200×1200.
+
+**Acción**: Añadir `width={48} height={48}` explícitos al `<img>` del logo. Como está en el header, ya carga eager por defecto (correcto).
+
+#### Cambio 3: Mockup SofÍA en ChatbotPromoSection
+
+Se muestra a 672×672 pero la imagen es 800×800. El ahorro aquí es menor (13 KiB).
+
+**Acción**: Añadir `width={672} height={672}` y `loading="lazy"` ya que esta sección no está en el viewport inicial.
+
+### Acciones concretas en código
+
+1. **`Navigation.tsx` (logo)**: Añadir `width={48} height={48}` al `<img>` del logo
+2. **`ChatbotPromoSection.tsx` (mockup SofÍA)**: Añadir `width={672} height={672}` y `loading="lazy"`
+3. **`SofiaSection.tsx`** (avatar SofÍA): Añadir `width` y `height` explícitos en cada instancia + `loading="lazy"`
+4. **`SofiaChatNew.tsx`** (avatar SofÍA): Igual que arriba
+5. **`Contacto.tsx`** (avatar SofÍA): Añadir `width={64} height={64}` + `loading="lazy"`
+6. **`KitDigital.tsx`** (avatar SofÍA): Añadir `width={64} height={64}` + `loading="lazy"`
+7. **`AgendarReunion.tsx`** (avatar SofÍA): Ya tiene `width={48} height={48}` — correcto
+8. **`SolucionesIA.tsx`** (avatar SofÍA grande): Añadir `width={192} height={192}` + `loading="lazy"`
+
+### Impacto estimado
+
+| Mejora | Efecto |
+|--------|--------|
+| width/height explícitos | Elimina CLS por imágenes sin dimensiones |
+| loading="lazy" en below-the-fold | Reduce carga inicial, mejora FCP |
+| Dimensiones reales en atributos | Ayuda al navegador a reservar espacio sin reflow |
+
+**Nota importante**: El ahorro de **79 KiB en tamaño de descarga** solo se conseguiría resubiendo las imágenes en tamaños más pequeños (por ejemplo, subir el avatar de SofÍA a 96px y el logo a 96px). Los cambios de código que haremos mejoran CLS y FCP pero no reducen los bytes transferidos. Si quieres el ahorro completo de bytes, necesitarías subir versiones redimensionadas de las 3 imágenes.
 
