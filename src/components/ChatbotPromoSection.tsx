@@ -59,6 +59,9 @@ const ChatbotPromoSection = () => {
                 src={sofiaImage}
                 alt={t('chatbot.imageAlt')}
                 className="w-full h-auto rounded-lg shadow-2xl"
+                width={672}
+                height={672}
+                loading="lazy"
               />
               {/* Image glow effects */}
               <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-primary/20 to-transparent" />
