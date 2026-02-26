@@ -8,7 +8,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 const SofiaFallbackMessage = () => (
   <div className="flex items-center justify-center h-full p-4">
     <div className="text-center">
-      <p className="text-gray-600 mb-2">¡Hola! Soy SofÍA</p>
+      <p className="text-gray-600 mb-2">¡Hola! Soy HAYAS Copilot</p>
       <p className="text-sm text-gray-500">El asistente no está disponible temporalmente</p>
       <a 
         href="/es/contacto" 
@@ -23,8 +23,8 @@ const SofiaFallbackMessage = () => (
 const getPageMessage = (pathname: string) => {
   const messages: { [key: string]: string } = {
     // Spanish pages
-    '/': '¡Hola! Soy SofÍA, tu asistente de IA de Hayas Marketing. ¿En qué puedo ayudarte hoy?',
-    '/es': '¡Hola! Soy SofÍA, tu asistente de IA de Hayas Marketing. ¿En qué puedo ayudarte hoy?',
+    '/': '¡Hola! Soy HAYAS Copilot, tu asistente de IA de Hayas Marketing. ¿En qué puedo ayudarte hoy?',
+    '/es': '¡Hola! Soy HAYAS Copilot, tu asistente de IA de Hayas Marketing. ¿En qué puedo ayudarte hoy?',
     '/creacion-marca': '¡Hola! ¿Dudas sobre creación de marca? Estoy aquí para ayudarte con identidad corporativa, branding y posicionamiento.',
     '/marketing-visibilidad': '¡Hola! ¿Necesitas mejorar tu visibilidad online? Te ayudo con SEO, contenidos y estrategias de marketing.',
     '/crm-automatizaciones': '¡Hola! ¿Preguntas sobre CRM y automatización? Te explico cómo optimizar tus procesos de ventas y marketing.',
@@ -38,7 +38,7 @@ const getPageMessage = (pathname: string) => {
     '/es/soluciones/conecta-con-tus-clientes': '¡Hola! ¿Quieres conectar mejor con tus clientes? Te explico nuestras soluciones de comunicación y engagement.',
     '/es/soluciones/activa-tus-ventas': '¡Hola! ¿Buscas activar tus ventas? Te cuento cómo podemos ayudarte a generar más conversiones.',
     // English pages
-    '/en': 'Hi! I\'m SofIA, your AI assistant from Hayas Marketing. How can I help you today?',
+    '/en': 'Hi! I\'m HAYAS Copilot, your AI assistant from Hayas Marketing. How can I help you today?',
     '/en/solutions/boost-your-brand': 'Hi! Interested in boosting your brand? I can help you with branding and positioning strategies.',
     '/en/solutions/connect-with-customers': 'Hi! Want to connect better with your customers? Let me explain our communication and engagement solutions.',
     '/en/solutions/activate-sales': 'Hi! Looking to activate your sales? I\'ll tell you how we can help you generate more conversions.',
@@ -48,8 +48,8 @@ const getPageMessage = (pathname: string) => {
   
   const isEnglish = pathname.startsWith('/en');
   const defaultMessage = isEnglish 
-    ? 'Hi! I\'m SofIA, your AI assistant from Hayas Marketing. How can I help you?'
-    : '¡Hola! Soy SofÍA, tu asistente de IA de Hayas Marketing. ¿En qué puedo ayudarte?';
+    ? 'Hi! I\'m HAYAS Copilot, your AI assistant from Hayas Marketing. How can I help you?'
+    : '¡Hola! Soy HAYAS Copilot, tu asistente de IA de Hayas Marketing. ¿En qué puedo ayudarte?';
   
   return messages[pathname] || defaultMessage;
 };
@@ -108,7 +108,7 @@ const SofiaWidget = () => {
         sofia_label: label || '',
         page_path: location.pathname
       });
-      console.log('📊 SofÍA Event:', action, label);
+      console.log('📊 Copilot Event:', action, label);
     }
   };
   
@@ -262,19 +262,19 @@ const SofiaWidget = () => {
     };
   }, [shouldRender, isOpen, isMinimized, location.pathname]);
 
-  // Listen for custom event to open Sofia chat - ALWAYS call but conditionally execute
+  // Listen for custom event to open copilot chat - ALWAYS call but conditionally execute
   useEffect(() => {
     if (!shouldRender) return;
     
-    const handleOpenSofiaChat = () => {
+    const handleOpenCopilotChat = () => {
       setIsOpen(true);
       setIsMinimized(false);
       setShowHelpMessage(false);
       trackSofiaEvent('chat_opened', 'custom_event');
     };
 
-    window.addEventListener('openSofiaChat', handleOpenSofiaChat);
-    return () => window.removeEventListener('openSofiaChat', handleOpenSofiaChat);
+    window.addEventListener('openCopilotChat', handleOpenCopilotChat);
+    return () => window.removeEventListener('openCopilotChat', handleOpenCopilotChat);
   }, [shouldRender]);
 
   // Scroll detection - ALWAYS call but conditionally execute
@@ -337,14 +337,14 @@ const SofiaWidget = () => {
           <div className="flex items-start gap-3">
             <img 
               src="/lovable-uploads/2a2adcf5-d531-4d8c-91bd-bb12aac27976.png" 
-              alt="SofÍA" 
+              alt="HAYAS Copilot" 
               className="w-10 h-10 rounded-full object-cover flex-shrink-0"
               width={40}
               height={40}
               loading="lazy"
             />
             <div className="flex-1">
-              <p className="text-sm font-medium text-gray-900 mb-1">SofÍA</p>
+              <p className="text-sm font-medium text-gray-900 mb-1">HAYAS Copilot</p>
               <p className="text-sm text-gray-700">{getPageHelpMessage(location.pathname)}</p>
               <button
                 onClick={handleToggleChat}
@@ -369,12 +369,12 @@ const SofiaWidget = () => {
         <button
           onClick={handleToggleChat}
           className="fixed bottom-6 right-6 z-50 bg-gradient-to-r from-lime-500 to-lime-600 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group overflow-hidden px-4 py-3 flex items-center gap-3 min-w-[200px]"
-          aria-label={isEnglish ? 'Open chat with SofIA' : 'Abrir chat con SofÍA'}
+          aria-label={isEnglish ? 'Open chat with HAYAS Copilot' : 'Abrir chat con HAYAS Copilot'}
         >
           <div className="relative">
             <img 
               src="/lovable-uploads/2a2adcf5-d531-4d8c-91bd-bb12aac27976.png" 
-              alt="SofÍA" 
+              alt="HAYAS Copilot" 
               className="w-12 h-12 rounded-full object-cover border-2 border-white/20"
               width={48}
               height={48}
@@ -386,7 +386,7 @@ const SofiaWidget = () => {
           </div>
           
           <div className="text-left text-white">
-            <div className="font-semibold text-sm">SofÍA</div>
+            <div className="font-semibold text-sm">HAYAS Copilot</div>
             <div className="text-xs opacity-90">{isEnglish ? 'AI Assistant • Online' : 'Asistente de IA • En línea'}</div>
           </div>
         </button>
@@ -403,15 +403,15 @@ const SofiaWidget = () => {
               <div className="flex items-center gap-3">
                 <img 
                   src="/lovable-uploads/2a2adcf5-d531-4d8c-91bd-bb12aac27976.png" 
-                  alt="SofÍA" 
+                  alt="HAYAS Copilot" 
                   className="w-8 h-8 rounded-full object-cover"
                   width={32}
                   height={32}
                   loading="lazy"
                 />
                 <div>
-                  <h3 className="font-semibold text-sm">SofÍA</h3>
-                  <p className="text-xs opacity-90">{isEnglish ? 'AI Assistant • Online' : 'Asistente de IA • En línea'}</p>
+                  <h3 className="font-semibold text-sm">HAYAS Copilot</h3>
+                  <p className="text-xs opacity-90">{isEnglish ? 'AI Assistant • Online' : 'Tu asistente IA • En línea'}</p>
                 </div>
               </div>
               

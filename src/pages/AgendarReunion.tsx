@@ -32,10 +32,10 @@ export default function AgendarReunion() {
     whatsappButton: 'WhatsApp',
     
     // Sofia
-    sofiaTitle: isEnglish ? 'Chat with SofIA' : 'Chatea con SofÍA',
+    sofiaTitle: isEnglish ? 'Chat with HAYAS Copilot' : 'Chatea con HAYAS Copilot',
     sofiaDescription: isEnglish 
       ? 'Our AI assistant is available 24/7 to answer your questions about our services'
-      : 'Nuestra asistente de IA está disponible 24/7 para resolver tus dudas sobre nuestros servicios',
+      : 'Nuestro asistente de IA está disponible 24/7 para resolver tus dudas sobre nuestros servicios',
     sofiaButton: isEnglish ? 'Start Conversation' : 'Iniciar Conversación',
     sofiaAvailability: isEnglish 
       ? 'Immediate response • Always available' 
@@ -69,9 +69,9 @@ export default function AgendarReunion() {
     };
   }, []);
 
-  const handleSofiaChat = () => {
-    // Trigger Sofia chat widget
-    window.dispatchEvent(new CustomEvent('openSofiaChat'));
+  const handleCopilotChat = () => {
+    // Trigger copilot chat widget
+    window.dispatchEvent(new CustomEvent('openCopilotChat'));
   };
 
   return (
@@ -149,7 +149,7 @@ export default function AgendarReunion() {
                 <div className="text-center">
                   <div className="relative w-16 h-16 mx-auto mb-4">
                     <div className="w-16 h-16 bg-gradient-to-r from-accent to-accent/80 rounded-full flex items-center justify-center relative overflow-hidden">
-                      <img src="/lovable-uploads/2a2adcf5-d531-4d8c-91bd-bb12aac27976.png" alt="SofÍA" width={48} height={48} className="w-12 h-12 rounded-full object-cover" style={{ aspectRatio: '1/1' }} />
+                      <img src="/lovable-uploads/2a2adcf5-d531-4d8c-91bd-bb12aac27976.png" alt="HAYAS Copilot" width={48} height={48} className="w-12 h-12 rounded-full object-cover" style={{ aspectRatio: '1/1' }} />
                       <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white">
                         <div className="absolute inset-0 bg-green-400 rounded-full animate-ping"></div>
                       </div>
@@ -159,7 +159,7 @@ export default function AgendarReunion() {
                   <p className="text-muted-foreground text-sm mb-4">
                     {content.sofiaDescription}
                   </p>
-                  <button onClick={handleSofiaChat} className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-lime-500 to-lime-600 hover:from-lime-600 hover:to-lime-700 text-white px-6 py-3 rounded-xl text-sm font-medium transition-all duration-300 hover:shadow-lg hover:scale-105 w-full shadow-md">
+                  <button onClick={handleCopilotChat} className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-lime-500 to-lime-600 hover:from-lime-600 hover:to-lime-700 text-white px-6 py-3 rounded-xl text-sm font-medium transition-all duration-300 hover:shadow-lg hover:scale-105 w-full shadow-md">
                     <MessageCircle className="w-4 h-4" />
                     {content.sofiaButton}
                   </button>

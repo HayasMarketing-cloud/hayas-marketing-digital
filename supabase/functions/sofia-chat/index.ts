@@ -7,7 +7,7 @@ const corsHeaders = {
 };
 
 // Fallback system prompt in case database is unavailable
-const FALLBACK_SYSTEM_PROMPT = `Eres "Sofía", el asistente IA de Hayas Marketing. Ayuda a los usuarios con información sobre servicios de diseño web, marketing digital, SEO y automatización. Guía a los usuarios a agendar una reunión en https://hayasmarketing.com/es/agendar-reunion o contactar en https://hayasmarketing.com/es/contacto`;
+const FALLBACK_SYSTEM_PROMPT = `Eres "HAYAS Copilot", el asistente IA de Hayas Marketing. Ayuda a los usuarios con información sobre servicios de diseño web, marketing digital, SEO y automatización. Guía a los usuarios a agendar una reunión en https://hayasmarketing.com/es/agendar-reunion o contactar en https://hayasmarketing.com/es/contacto`;
 
 // Base URL for content files
 // Production: Uses published domain. For custom domains, set CONTENT_BASE_URL secret
@@ -248,7 +248,7 @@ serve(async (req) => {
 
     const { messages, sourcePage, navigationHistory, capturedLead } = await req.json();
     
-    console.log('🤖 SofÍA chat request from:', sourcePage);
+    console.log('🤖 HAYAS Copilot chat request from:', sourcePage);
     console.log('📍 Navigation history:', navigationHistory);
 
     // Create Supabase client for data access
@@ -382,7 +382,7 @@ Adapta tu respuesta a este contexto específico del usuario. Usa la información
       throw new Error('No response from OpenAI');
     }
 
-    console.log('✅ SofÍA response generated');
+    console.log('✅ HAYAS Copilot response generated');
 
     return new Response(JSON.stringify({
       success: true,

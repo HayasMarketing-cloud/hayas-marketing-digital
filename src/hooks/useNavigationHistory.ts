@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-const STORAGE_KEY = 'sofia_navigation_history';
+const STORAGE_KEY = 'copilot_navigation_history';
 const MAX_HISTORY_ITEMS = 10;
 
 interface NavigationEntry {

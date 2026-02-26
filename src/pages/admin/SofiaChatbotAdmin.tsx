@@ -101,7 +101,7 @@ const SofiaChatbotAdmin = () => {
           <div>
             <h1 className="text-3xl font-bold flex items-center gap-2">
               <Bot className="h-8 w-8 text-primary" />
-              Chatbot SofÍA
+              HAYAS Copilot
             </h1>
             <p className="text-muted-foreground">
               Configura el comportamiento y personalidad del asistente IA
@@ -151,7 +151,7 @@ const SofiaChatbotAdmin = () => {
           <CardHeader>
             <CardTitle>System Prompt</CardTitle>
             <CardDescription>
-              Este es el prompt que define el comportamiento, tono y conocimientos de SofÍA. 
+              Este es el prompt que define el comportamiento, tono y conocimientos de HAYAS Copilot. 
               Los cambios se aplicarán inmediatamente a las nuevas conversaciones.
             </CardDescription>
           </CardHeader>

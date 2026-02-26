@@ -327,7 +327,7 @@ Hayas Marketing cuenta con +15 casos de éxito documentados en sectores como fin
 
 ### ✅ Especialización en IA aplicada al marketing
 No solo hablamos de IA, la implementamos:
-- Chatbot SofÍA propio con IA conversacional
+- Chatbot HAYAS Copilot propio con IA conversacional
 - Automatización de contenidos con IA generativa
 - Lead scoring predictivo con machine learning
 - Personalización dinámica de campañas

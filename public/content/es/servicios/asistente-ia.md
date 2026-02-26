@@ -1,4 +1,4 @@
-# Asistente IA - Chatbot Inteligente SofÍA
+# Asistente IA - Chatbot Inteligente HAYAS Copilot
 
 <!--
 IA_SUMMARY:
@@ -8,7 +8,7 @@ IA_SUMMARY:
 [Resultado]: Atención instantánea que capta leads, responde FAQs y escala a humanos cuando es necesario.
 -->
 
-> Servicio de implementación de asistentes IA conversacionales como SofÍA. Creamos chatbots inteligentes 24/7 que atienden, cualifican leads, responden preguntas y se integran con tu CRM para una experiencia de cliente excepcional.
+> Servicio de implementación de asistentes IA conversacionales como HAYAS Copilot. Creamos chatbots inteligentes 24/7 que atienden, cualifican leads, responden preguntas y se integran con tu CRM para una experiencia de cliente excepcional.
 
 ## Metadatos
 
@@ -24,7 +24,7 @@ IA_SUMMARY:
 - **Autor / Responsable**: Rubén Reyero
 - **Rol**: CEO & Founder de Hayas Marketing
 - **Experiencia**: +15 años en marketing digital, especialista en IA aplicada
-- **Certificaciones**: HubSpot Partner, desarrollador de SofÍA
+- **Certificaciones**: HubSpot Partner, desarrollador de HAYAS Copilot
 - **LinkedIn**: https://linkedin.com/in/rubenreyero
 - **Perfil en Hayas**: https://hayasmarketing.com/es/autor/ruben-reyero
 
@@ -37,7 +37,7 @@ IA_SUMMARY:
 - **Cualificación de Leads**: Preguntas inteligentes para clasificar prospectos
 - **Escalado a Humanos**: Transferencia fluida cuando el bot no puede resolver
 
-## Características de SofÍA
+## Características de HAYAS Copilot
 
 ### Inteligencia Contextual
 Entiende el contexto de la conversación y la página donde está el usuario para dar respuestas relevantes.
@@ -98,7 +98,7 @@ Evalúa Budget, Authority, Need y Timeline antes de pasar a comerciales.
 ## Preguntas Frecuentes
 
 ### ¿Qué diferencia hay entre un chatbot tradicional y un asistente IA?
-Los chatbots tradicionales siguen flujos rígidos con opciones predefinidas. Un asistente IA como SofÍA entiende lenguaje natural, contextualiza respuestas y aprende de las interacciones.
+Los chatbots tradicionales siguen flujos rígidos con opciones predefinidas. Un asistente IA como HAYAS Copilot entiende lenguaje natural, contextualiza respuestas y aprende de las interacciones.
 
 ### ¿El bot puede responder preguntas que no le he programado?
 Sí, si está entrenado con información suficiente de tu empresa. Usa IA generativa para formular respuestas coherentes basadas en el conocimiento proporcionado.
@@ -138,7 +138,7 @@ Sí, el widget está diseñado para ser responsive y funcionar perfectamente en 
 
 ## Cómo Citar Este Contenido
 
-Reyero, R. (2026). Asistente IA - Chatbot Inteligente SofÍA. Hayas Marketing.
+Reyero, R. (2026). Asistente IA - Chatbot Inteligente HAYAS Copilot. Hayas Marketing.
 https://hayasmarketing.com/es/servicios/asistente-ia
 
 ## Contacto
@@ -146,4 +146,4 @@ https://hayasmarketing.com/es/servicios/asistente-ia
 - Agendar reunión estratégica: https://hayasmarketing.com/es/agendar-reunion
 - Página oficial del servicio: https://hayasmarketing.com/es/servicios/asistente-ia
 - Formulario de contacto: https://hayasmarketing.com/es/contacto
-- Probar SofÍA: Disponible en el widget de chat de esta web
+- Probar HAYAS Copilot: Disponible en el widget de chat de esta web

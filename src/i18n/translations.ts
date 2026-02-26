@@ -701,10 +701,10 @@ export const translations = {
     },
     chatbot: {
       title: 'Asistentes IA que atienden y convierten visitas en clientes',
-      paragraph1: '¿Te imaginas tener un asistente como SofÍA que atienda a tus clientes actuales y potenciales, de forma personalizada y en cualquier idioma? Lo integramos en tu sitio web y/o en tu WhatsApp Business?',
+      paragraph1: '¿Te imaginas tener un asistente como HAYAS Copilot que atienda a tus clientes actuales y potenciales, de forma personalizada y en cualquier idioma? Lo integramos en tu sitio web y/o en tu WhatsApp Business.',
       paragraph2: 'En Hayas te ayudamos a crear asistentes personalizados con inteligencia artificial para automatizar tu atención al cliente, captar leads y mejorar la experiencia digital de tu marca.',
       button: 'Descubre cómo tener tu propio asistente inteligente',
-      imageAlt: 'Mockup del chatbot SofÍA de Hayas Marketing mostrando conversación de bienvenida y servicios disponibles'
+      imageAlt: 'Mockup de HAYAS Copilot mostrando conversación de bienvenida y servicios disponibles'
     },
     reviews: {
       title: '📍 Conectamos desde Madrid con marcas de todo el mundo',
@@ -1466,10 +1466,10 @@ export const translations = {
     },
     chatbot: {
       title: 'AI Assistants that serve visitors and convert them into customers',
-      paragraph1: 'Imagine having an assistant like SofÍA that serves your current and potential customers, in a personalized way and in any language? We integrate it into your website and/or WhatsApp Business.',
+      paragraph1: 'Imagine having an assistant like HAYAS Copilot that serves your current and potential customers, in a personalized way and in any language? We integrate it into your website and/or WhatsApp Business.',
       paragraph2: 'At Hayas we help you create personalized AI assistants to automate your customer service, capture leads and improve your brand\'s digital experience.',
       button: 'Discover how to get your own intelligent assistant',
-      imageAlt: 'Mockup of SofÍA chatbot from Hayas Marketing showing welcome conversation and available services'
+      imageAlt: 'Mockup of HAYAS Copilot showing welcome conversation and available services'
     },
     reviews: {
       title: '📍 Connecting from Madrid with brands worldwide',

@@ -33,10 +33,10 @@ const Contacto = () => {
     whatsappText: isEnglish ? 'Send us a message on WhatsApp' : 'Envíanos un mensaje por WhatsApp',
 
     // Sofia
-    sofiaTitle: isEnglish ? 'Chat with SofIA' : 'Chatea con SofÍA',
+    sofiaTitle: isEnglish ? 'Chat with HAYAS Copilot' : 'Chatea con HAYAS Copilot',
     sofiaDescription: isEnglish
       ? 'Our AI assistant is available 24/7 to answer your questions about our services'
-      : 'Nuestra asistente de IA está disponible 24/7 para resolver tus dudas sobre nuestros servicios',
+      : 'Nuestro asistente de IA está disponible 24/7 para resolver tus dudas sobre nuestros servicios',
     sofiaButton: isEnglish ? 'Start Conversation' : 'Iniciar Conversación',
     sofiaAvailability: isEnglish ? 'Immediate response • Always available' : 'Respuesta inmediata • Disponible siempre',
   };
@@ -111,7 +111,7 @@ const Contacto = () => {
                       <div className="w-20 h-20 bg-gradient-to-r from-accent to-accent/80 rounded-full flex items-center justify-center relative overflow-hidden">
                         <img
                           src="/lovable-uploads/2a2adcf5-d531-4d8c-91bd-bb12aac27976.png"
-                          alt="SofÍA"
+                          alt="HAYAS Copilot"
                           className="w-16 h-16 rounded-full object-cover"
                           width={64}
                           height={64}
@@ -127,7 +127,7 @@ const Contacto = () => {
                       {content.sofiaDescription}
                     </p>
                     <button
-                      onClick={() => window.dispatchEvent(new CustomEvent('openSofiaChat'))}
+                      onClick={() => window.dispatchEvent(new CustomEvent('openCopilotChat'))}
                       className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-lime-500 to-lime-600 hover:from-lime-600 hover:to-lime-700 text-white px-8 py-4 rounded-xl font-medium transition-all duration-300 hover:shadow-lg hover:scale-105 w-full shadow-md"
                     >
                       <MessageCircle className="w-5 h-5" />

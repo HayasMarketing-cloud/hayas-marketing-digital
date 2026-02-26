@@ -31,7 +31,7 @@ const PoliticaPrivacidad = () => {
     purpose2Text: isEnglish ? 'Sending information about digital marketing, CRM and AI services' : 'Envío de información sobre servicios de marketing digital, CRM e IA',
     purpose3Label: isEnglish ? 'Professional services:' : 'Servicios profesionales:',
     purpose3Text: isEnglish ? 'Management and provision of digital marketing, automation and CRM services' : 'Gestión y prestación de servicios de marketing digital, automatización y CRM',
-    purpose4Label: isEnglish ? 'SofIA Chatbot:' : 'Chatbot SofÍA:',
+    purpose4Label: isEnglish ? 'HAYAS Copilot:' : 'HAYAS Copilot:',
     purpose4Text: isEnglish ? 'Automated customer service through artificial intelligence' : 'Atención al cliente automatizada mediante inteligencia artificial',
     purpose5Label: isEnglish ? 'Web analytics:' : 'Análisis web:',
     purpose5Text: isEnglish ? 'Improving user experience and navigation analysis' : 'Mejora de la experiencia de usuario y análisis de navegación',
@@ -41,7 +41,7 @@ const PoliticaPrivacidad = () => {
     // Section 3
     section3Title: isEnglish ? '3. Legal basis for processing' : '3. Base legal del tratamiento',
     basis1Label: isEnglish ? 'Consent:' : 'Consentimiento:',
-    basis1Text: isEnglish ? 'For newsletter, commercial communications and use of the SofIA chatbot' : 'Para newsletter, comunicaciones comerciales y uso del chatbot SofÍA',
+    basis1Text: isEnglish ? 'For newsletter, commercial communications and use of the HAYAS Copilot chatbot' : 'Para newsletter, comunicaciones comerciales y uso del chatbot HAYAS Copilot',
     basis2Label: isEnglish ? 'Contract performance:' : 'Ejecución contractual:',
     basis2Text: isEnglish ? 'For the provision of digital marketing and CRM services' : 'Para la prestación de servicios de marketing digital y CRM',
     basis3Label: isEnglish ? 'Legitimate interest:' : 'Interés legítimo:',
@@ -68,7 +68,7 @@ const PoliticaPrivacidad = () => {
     retention3Text: isEnglish ? 'During service provision + 6 years (tax obligations)' : 'Durante la prestación del servicio + 6 años (obligaciones fiscales)',
     retention4Label: isEnglish ? 'Cookies and analytics:' : 'Cookies y análisis:',
     retention4Text: isEnglish ? 'According to user configuration (maximum 24 months)' : 'Según configuración del usuario (máximo 24 meses)',
-    retention5Label: isEnglish ? 'SofIA Chatbot:' : 'Chatbot SofÍA:',
+    retention5Label: isEnglish ? 'HAYAS Copilot:' : 'HAYAS Copilot:',
     retention5Text: isEnglish ? '12 months for service improvement' : '12 meses para mejora del servicio',
     
     // Section 6

@@ -128,20 +128,20 @@ const SofiaChatNew = () => {
   // Initial greeting based on page
   const getInitialMessage = (): string => {
     const greetings: Record<string, string> = {
-      '/es': '¡Hola! 👋 Soy SofÍA, tu asistente de IA. ¿En qué puedo ayudarte hoy?',
+      '/es': '¡Hola! 👋 Soy HAYAS Copilot, tu asistente de IA. ¿En qué puedo ayudarte hoy?',
       '/es/soluciones/impulsa-tu-marca': '¡Hola! 👋 Veo que estás explorando cómo impulsar tu marca. ¿Te cuento cómo podemos ayudarte con branding, diseño web o identidad corporativa?',
       '/es/soluciones/conecta-con-tus-clientes': '¡Hola! 👋 ¿Buscas mejorar tu visibilidad online y captar más clientes? Te explico nuestras soluciones de SEO, contenidos y marketing digital.',
       '/es/soluciones/activa-tus-ventas': '¡Hola! 👋 ¿Quieres automatizar tu gestión comercial? Te cuento cómo nuestro CRM y automatizaciones pueden multiplicar tus ventas.',
       '/es/agendar-reunion': '¡Hola! 👋 Perfecto que quieras agendar una reunión. ¿Tienes alguna duda antes de reservar?',
       '/es/contacto': '¡Hola! 👋 ¿Necesitas contactar con nosotros? Te ayudo con cualquier consulta.',
-      '/en': 'Hi! 👋 I\'m SofIA, your AI assistant. How can I help you today?',
+      '/en': 'Hi! 👋 I\'m HAYAS Copilot, your AI assistant. How can I help you today?',
       '/en/solutions/boost-your-brand': 'Hi! 👋 I see you\'re exploring how to boost your brand. Want me to explain our branding, web design, or corporate identity services?',
       '/en/solutions/connect-with-customers': 'Hi! 👋 Looking to improve your online visibility and attract more clients? Let me explain our SEO, content, and digital marketing solutions.',
       '/en/solutions/activate-sales': 'Hi! 👋 Want to automate your sales management? Let me tell you how our CRM and automations can multiply your sales.',
       '/en/schedule-meeting': 'Hi! 👋 Great that you want to schedule a meeting. Any questions before booking?',
       '/en/contact': 'Hi! 👋 Need to contact us? I can help with any questions.',
     };
-    return greetings[location.pathname] || (isEnglish ? 'Hi! 👋 I\'m SofIA. How can I help?' : '¡Hola! 👋 Soy SofÍA. ¿En qué puedo ayudarte?');
+    return greetings[location.pathname] || (isEnglish ? 'Hi! 👋 I\'m HAYAS Copilot. How can I help?' : '¡Hola! 👋 Soy HAYAS Copilot. ¿En qué puedo ayudarte?');
   };
 
   // Show help bubble after delay
@@ -157,29 +157,29 @@ const SofiaChatNew = () => {
     return () => clearTimeout(timer);
   }, [shouldRender, isOpen, location.pathname]);
 
-  // Listen for openSofiaChat event from external buttons (e.g., "Chatea con SofÍA" sections)
+  // Listen for openCopilotChat event from external buttons
   useEffect(() => {
-    const handleOpenSofiaChat = () => {
+    const handleOpenCopilotChat = () => {
       setIsOpen(true);
       setIsMinimized(false);
       setShowHelpBubble(false);
     };
 
-    window.addEventListener('openSofiaChat', handleOpenSofiaChat);
-    return () => window.removeEventListener('openSofiaChat', handleOpenSofiaChat);
+    window.addEventListener('openCopilotChat', handleOpenCopilotChat);
+    return () => window.removeEventListener('openCopilotChat', handleOpenCopilotChat);
   }, []);
 
-  // Auto-open Sofia chat after 30 seconds on homepage (once per session)
+  // Auto-open copilot chat after 30 seconds on homepage (once per session)
   useEffect(() => {
     const isHomePage = location.pathname === '/es' || location.pathname === '/en';
-    const alreadyOpened = sessionStorage.getItem('sofia_auto_opened');
+    const alreadyOpened = sessionStorage.getItem('copilot_auto_opened');
     if (!isHomePage || !shouldRender || isOpen || alreadyOpened) return;
 
     const timer = setTimeout(() => {
       setIsOpen(true);
       setIsMinimized(false);
       setShowHelpBubble(false);
-      sessionStorage.setItem('sofia_auto_opened', 'true');
+      sessionStorage.setItem('copilot_auto_opened', 'true');
     }, 30000);
 
     return () => clearTimeout(timer);
@@ -315,14 +315,14 @@ const SofiaChatNew = () => {
           <div className="flex items-start gap-3">
             <img 
               src="/lovable-uploads/2a2adcf5-d531-4d8c-91bd-bb12aac27976.png" 
-              alt="SofÍA" 
-              className="w-10 h-10 rounded-full object-cover flex-shrink-0"
+               alt="HAYAS Copilot" 
+               className="w-10 h-10 rounded-full object-cover flex-shrink-0"
               width={40}
               height={40}
               loading="lazy"
             />
             <div className="flex-1">
-              <p className="text-sm font-medium text-gray-900 mb-1">SofÍA</p>
+              <p className="text-sm font-medium text-gray-900 mb-1">HAYAS Copilot</p>
               <p className="text-sm text-gray-700">
                 {isEnglish 
                   ? 'Can I help you find the right solution?' 
@@ -350,12 +350,12 @@ const SofiaChatNew = () => {
         <button
           onClick={handleOpen}
           className="fixed bottom-6 right-6 z-50 bg-gradient-to-r from-lime-500 to-lime-600 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 px-4 py-3 flex items-center gap-3 min-w-[200px]"
-          aria-label={isEnglish ? 'Open chat with SofIA' : 'Abrir chat con SofÍA'}
+          aria-label={isEnglish ? 'Open chat with HAYAS Copilot' : 'Abrir chat con HAYAS Copilot'}
         >
           <div className="relative">
             <img 
               src="/lovable-uploads/2a2adcf5-d531-4d8c-91bd-bb12aac27976.png" 
-              alt="SofÍA" 
+               alt="HAYAS Copilot" 
               className="w-12 h-12 rounded-full object-cover border-2 border-white/20"
               width={48}
               height={48}
@@ -366,7 +366,7 @@ const SofiaChatNew = () => {
             </div>
           </div>
           <div className="text-left text-white">
-            <div className="font-semibold text-sm">SofÍA</div>
+            <div className="font-semibold text-sm">HAYAS Copilot</div>
             <div className="text-xs opacity-90">
               {isEnglish ? 'AI Assistant • Online' : 'Asistente IA • En línea'}
             </div>
@@ -385,14 +385,14 @@ const SofiaChatNew = () => {
               <div className="flex items-center gap-3">
                 <img 
                   src="/lovable-uploads/2a2adcf5-d531-4d8c-91bd-bb12aac27976.png" 
-                  alt="SofÍA" 
+                  alt="HAYAS Copilot" 
                   className="w-10 h-10 rounded-full object-cover border-2 border-white/20"
                   width={40}
                   height={40}
                   loading="lazy"
                 />
                 <div>
-                  <h3 className="font-semibold">SofÍA</h3>
+                  <h3 className="font-semibold">HAYAS Copilot</h3>
                   <p className="text-xs opacity-90">
                     {isEnglish ? 'AI Assistant • Online' : 'Asistente IA • En línea'}
                   </p>

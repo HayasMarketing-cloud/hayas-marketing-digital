@@ -344,24 +344,22 @@ const MarketingNaturalPosicionamientoOrganico: React.FC = () => {
             <h3 className="text-xl font-bold text-foreground">Crea tu estrategia ahora mismo</h3>
           </div>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            Sofía puede generar un plan de Marketing Natural adaptado a tu negocio.
+            HAYAS Copilot puede generar un plan de Marketing Natural adaptado a tu negocio.
             <br />
             Dile: <span className="text-primary font-medium">"Quiero mi estrategia de Marketing Natural"</span> en el chat y recíbelo al instante.
           </p>
           <Button className="gradient-primary" onClick={() => {
-          window.dispatchEvent(new CustomEvent('openSofiaChat'));
-          // Simular mensaje inicial (esto dependerá de la implementación específica de Voiceflow)
+          window.dispatchEvent(new CustomEvent('openCopilotChat'));
           setTimeout(() => {
             const widget = document.getElementById('sofia-voiceflow-widget');
             if (widget) {
-              // Intentar enviar el mensaje predefinido
               const message = "Quiero mi estrategia de Marketing Natural personalizada para empezar hoy";
-              console.log("Mensaje para Sofía:", message);
+              console.log("Mensaje para HAYAS Copilot:", message);
             }
           }, 1000);
         }}>
             <Zap className="h-4 w-4 mr-2" />
-            Hablar con Sofía
+            Hablar con HAYAS Copilot
           </Button>
         </div>
       </section>
@@ -393,21 +391,21 @@ En Hayas llevamos más de 10 años combinando estrategia, creatividad y tecnolog
 
         <div className="bg-primary/5 border border-primary/20 rounded-lg p-6 mt-8 text-center">
           <p className="text-muted-foreground mb-4">
-            Y si quieres ver cómo se aplicaría esto a tu caso, háblalo con Sofía ahora mismo. 
+            Y si quieres ver cómo se aplicaría esto a tu caso, háblalo con HAYAS Copilot ahora mismo. 
             <strong className="text-primary"> En menos de 5 minutos tendrás tu estrategia personalizada para empezar hoy.</strong>
           </p>
           <Button className="gradient-primary" size="sm" onClick={() => {
-          window.dispatchEvent(new CustomEvent('openSofiaChat'));
+          window.dispatchEvent(new CustomEvent('openCopilotChat'));
           setTimeout(() => {
             const widget = document.getElementById('sofia-voiceflow-widget');
             if (widget) {
               const message = "Quiero mi estrategia de Marketing Natural personalizada para empezar hoy";
-              console.log("Mensaje para Sofía:", message);
+              console.log("Mensaje para HAYAS Copilot:", message);
             }
           }, 1000);
         }}>
             <Zap className="h-4 w-4 mr-2" />
-            Hablar con Sofía
+            Hablar con HAYAS Copilot
           </Button>
         </div>
       </section>

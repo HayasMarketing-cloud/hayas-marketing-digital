@@ -54,7 +54,7 @@ const AdminDashboard = () => {
 
   const contentTools = [
     {
-      title: 'Chatbot SofÍA',
+      title: 'HAYAS Copilot',
       description: 'Configura el prompt y comportamiento del asistente IA',
       icon: Bot,
       path: '/admin/sofia',

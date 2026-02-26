@@ -91,7 +91,7 @@ const SolucionesIA = () => {
                     Implementar IA en mi negocio
                   </Button>
                   <Button variant="outline" className="px-8 py-6 text-lg">
-                    Consulta con SofÍA
+                    Consulta con HAYAS Copilot
                   </Button>
                 </div>
               </div>
@@ -99,7 +99,7 @@ const SolucionesIA = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-hayas-200 to-turquesa-200 rounded-3xl transform rotate-6 scale-105 opacity-20"></div>
                 <img 
                   src={asistenteiAHeroImage}
-                  alt="Soluciones de inteligencia artificial aplicada al marketing digital - SofÍA asistente IA" 
+                  alt="Soluciones de inteligencia artificial aplicada al marketing digital - HAYAS Copilot asistente IA" 
                   className="relative z-10 w-full h-auto rounded-3xl shadow-2xl"
                 />
               </div>
@@ -188,10 +188,10 @@ const SolucionesIA = () => {
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Conoce a <span className="text-gradient-primary">SofÍA</span>
+              Conoce <span className="text-gradient-primary">HAYAS Copilot</span>
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Nuestra asistente de IA especializada en marketing que ejemplifica el poder 
+                Nuestro asistente de IA especializado en marketing que ejemplifica el poder 
                 de la inteligencia artificial aplicada a los negocios.
               </p>
             </div>
@@ -238,7 +238,7 @@ const SolucionesIA = () => {
                   <div className="absolute inset-0 bg-gradient-to-r from-hayas-200 to-turquesa-200 rounded-full blur-2xl opacity-30"></div>
                   <img 
                     src="/lovable-uploads/2a2adcf5-d531-4d8c-91bd-bb12aac27976.png" 
-                    alt="SofÍA - Asistente de IA" 
+                    alt="HAYAS Copilot - Asistente de IA" 
                     className="relative z-10 w-48 h-48 object-cover rounded-full shadow-xl border-4 border-white"
                     width={192}
                     height={192}
@@ -260,7 +260,7 @@ const SolucionesIA = () => {
               Descubre cómo la inteligencia artificial puede transformar tu negocio y llevarte al siguiente nivel.
             </p>
             <Button className="bg-white text-hayas-600 hover:bg-gray-100 px-8 py-6 text-lg font-semibold">
-              Consultar con SofÍA ahora
+              Consultar con HAYAS Copilot ahora
             </Button>
           </div>
         </section>
