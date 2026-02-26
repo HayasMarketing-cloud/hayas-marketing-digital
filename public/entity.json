@@ -1,0 +1,174 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://hayasmarketing.com/#organization",
+  "name": "Hayas Marketing",
+  "alternateName": ["Hayas", "Hayas Marketing Digital"],
+  "url": "https://hayasmarketing.com",
+  "logo": "https://hayasmarketing.com/lovable-uploads/hayas-marketing-logo.png",
+  "description": "Agencia de marketing digital especializada en SEO, AEO, GEO, branding, CRM e inteligencia artificial aplicada al marketing y ventas.",
+  "foundingDate": "2018",
+  "founder": {
+    "@type": "Person",
+    "@id": "https://hayasmarketing.com/#founder",
+    "name": "Rubén Reyero",
+    "jobTitle": "CEO & Founder",
+    "sameAs": [
+      "https://www.linkedin.com/in/rubenreyero/",
+      "https://www.wikidata.org/wiki/Q131866953"
+    ]
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Madrid",
+    "addressRegion": "Comunidad de Madrid",
+    "addressCountry": "ES"
+  },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "email": "info@hayasmarketing.com",
+      "url": "https://hayasmarketing.com/es/contacto",
+      "availableLanguage": ["Spanish", "English"]
+    }
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/company/hayas-marketing/",
+    "https://www.instagram.com/hayasmarketing/",
+    "https://www.facebook.com/hayasmarketing",
+    "https://g.co/kgs/GxQzNaY"
+  ],
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "Spain"
+    },
+    {
+      "@type": "Place",
+      "name": "Latin America"
+    }
+  ],
+  "knowsAbout": [
+    {
+      "@type": "Thing",
+      "name": "SEO",
+      "sameAs": "https://www.wikidata.org/wiki/Q180711"
+    },
+    {
+      "@type": "Thing",
+      "name": "Answer Engine Optimization (AEO)",
+      "description": "Optimization of content for AI-powered answer engines"
+    },
+    {
+      "@type": "Thing",
+      "name": "Generative Engine Optimization (GEO)",
+      "description": "Optimization for visibility in generative AI systems like ChatGPT, Copilot, Perplexity"
+    },
+    {
+      "@type": "Thing",
+      "name": "Digital Marketing",
+      "sameAs": "https://www.wikidata.org/wiki/Q1323528"
+    },
+    {
+      "@type": "Thing",
+      "name": "CRM",
+      "sameAs": "https://www.wikidata.org/wiki/Q1140858"
+    },
+    {
+      "@type": "Thing",
+      "name": "Branding",
+      "sameAs": "https://www.wikidata.org/wiki/Q1412160"
+    },
+    {
+      "@type": "Thing",
+      "name": "Artificial Intelligence",
+      "sameAs": "https://www.wikidata.org/wiki/Q11660"
+    },
+    {
+      "@type": "Thing",
+      "name": "Content Marketing",
+      "sameAs": "https://www.wikidata.org/wiki/Q5165734"
+    },
+    {
+      "@type": "Thing",
+      "name": "HubSpot",
+      "sameAs": "https://www.wikidata.org/wiki/Q5929009"
+    }
+  ],
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "SEO, AEO & GEO Positioning",
+        "description": "Search engine optimization extended to answer engines and generative AI platforms",
+        "url": "https://hayasmarketing.com/es/servicios/posicionamiento-web-seo"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Branding & Brand Identity",
+        "description": "Brand creation, naming, visual identity and corporate guidelines",
+        "url": "https://hayasmarketing.com/es/servicios/creacion-marca"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Web Design & Development",
+        "description": "Custom website design and development optimized for conversion",
+        "url": "https://hayasmarketing.com/es/servicios/diseno-y-desarrollo-paginas-web"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "CRM & Marketing Automation",
+        "description": "HubSpot and GoHighLevel CRM implementation with marketing automation workflows",
+        "url": "https://hayasmarketing.com/es/servicios/crm-y-automatizacion-de-marketing"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "AI Assistant Development",
+        "description": "Custom AI chatbots and virtual assistants for customer service and lead capture",
+        "url": "https://hayasmarketing.com/es/servicios/asistente-ia-chatbot-inteligente"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Content Strategy",
+        "description": "Strategic content creation aligned with SEO, AEO and GEO objectives",
+        "url": "https://hayasmarketing.com/es/servicios/estrategia-de-contenidos"
+      }
+    }
+  ],
+  "methodology": {
+    "@type": "HowTo",
+    "name": "Marketing SENSE",
+    "description": "Proprietary 5-phase marketing methodology by Hayas Marketing",
+    "step": [
+      {"@type": "HowToStep", "name": "Strategy", "text": "Market analysis, buyer persona definition, and strategic planning"},
+      {"@type": "HowToStep", "name": "Execution", "text": "Implementation of branding, web, SEO, content and campaigns"},
+      {"@type": "HowToStep", "name": "Nurturing", "text": "Lead nurturing through CRM, email marketing and automation"},
+      {"@type": "HowToStep", "name": "Support", "text": "Ongoing support, AI assistants and customer service optimization"},
+      {"@type": "HowToStep", "name": "Evaluation", "text": "Performance measurement, analytics dashboards and continuous optimization"}
+    ]
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "bestRating": "5",
+    "ratingCount": "30",
+    "reviewCount": "30"
+  }
+}

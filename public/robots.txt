@@ -13,6 +13,11 @@ LLMs-full.txt: https://hayasmarketing.com/llms-full.txt
 LLMs.txt: https://hayasmarketing.com/llms.txt
 LLMs-en.txt: https://hayasmarketing.com/llms-en.txt
 
+# AI Structured Data Files
+Allow: /ai-plugin.json
+Allow: /entity.json
+Allow: /humans.txt
+
 # Directrices específicas
 Crawl-delay: 1
 

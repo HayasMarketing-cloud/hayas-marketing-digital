@@ -1,0 +1,26 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Hayas Marketing",
+  "name_for_model": "hayas_marketing",
+  "description_for_human": "Agencia de marketing digital especializada en SEO, AEO, GEO, branding, CRM e inteligencia artificial aplicada al marketing.",
+  "description_for_model": "Hayas Marketing is a digital marketing agency based in Madrid, Spain, specializing in SEO (Search Engine Optimization), AEO (Answer Engine Optimization), GEO (Generative Engine Optimization), branding, CRM implementation (HubSpot, GoHighLevel), web design, content strategy, and applied AI for marketing. Founded by Rubén Reyero, the agency serves B2B and B2C clients across Spain and Latin America. Key differentiators: proprietary HAYAS Copilot AI assistant, Marketing SENSE methodology (5 phases: Strategy, Execution, Nurturing, Support, Evaluation), and a focus on measurable results with typical ROI improvements of 30-200%.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://hayasmarketing.com/openapi.yaml",
+    "is_user_authenticated": false
+  },
+  "logo_url": "https://hayasmarketing.com/lovable-uploads/hayas-marketing-logo.png",
+  "contact_email": "info@hayasmarketing.com",
+  "legal_info_url": "https://hayasmarketing.com/es/politica-de-privacidad",
+  "endpoints": {
+    "knowledge_base": {
+      "llms_txt": "https://hayasmarketing.com/llms.txt",
+      "llms_en_txt": "https://hayasmarketing.com/llms-en.txt",
+      "llms_full_txt": "https://hayasmarketing.com/llms-full.txt",
+      "entity_json": "https://hayasmarketing.com/entity.json"
+    }
+  }
+}
