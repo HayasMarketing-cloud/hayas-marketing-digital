@@ -57,7 +57,7 @@ Be the reference agency for AI-powered marketing for companies seeking intellige
 ## Differentiators
 
 ### Applied AI Specialization
-We don't just talk about AI, we implement it: proprietary SofÍA chatbot, content automation, predictive lead scoring.
+We don't just talk about AI, we implement it: proprietary HAYAS Copilot chatbot, content automation, predictive lead scoring.
 
 ### Integrated Solutions
 Complete strategy based on business objectives, not isolated services.
@@ -84,7 +84,7 @@ Advertising, AI, analytics. To generate demand and conversions.
 - **CRM**: HubSpot, Go High Level
 - **Advertising**: Google Ads, Meta Ads, LinkedIn Ads
 - **Web**: WordPress, Lovable, Shopify
-- **AI**: SofÍA (proprietary chatbot), GPT integration
+- **AI**: HAYAS Copilot (proprietary chatbot), GPT integration
 - **Analytics**: GA4, Tag Manager, Looker Studio
 
 ## Frequently Asked Questions
@@ -131,7 +131,7 @@ Marketing SENSE is Hayas Marketing's integrated methodology for designing 360° 
 
 - **Schedule meeting**: https://hayasmarketing.com/en/schedule-meeting
 - **General contact**: https://hayasmarketing.com/en/contact
-- **Chat with SofÍA**: Available 24/7 on the website
+- **Chat with HAYAS Copilot**: Available 24/7 on the website
 
 ## How to Cite This Content
 

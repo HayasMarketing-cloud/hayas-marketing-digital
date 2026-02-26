@@ -73,7 +73,7 @@ const SEODashboard: React.FC = () => {
         { name: 'FAQ Schema markup', status: 'active', path: '/admin/faq-validator' },
         { name: 'Resúmenes citables', status: 'active', detail: 'Blockquotes AEO en .md' },
         { name: 'Preguntas frecuentes', status: 'active', detail: 'FAQs estructuradas por servicio' },
-        { name: 'SofÍA context injection', status: 'active', detail: 'Edge function con conocimiento dinámico' },
+        { name: 'HAYAS Copilot context injection', status: 'active', detail: 'Edge function con conocimiento dinámico' },
       ]
     }
   };

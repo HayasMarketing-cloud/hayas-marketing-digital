@@ -168,7 +168,7 @@ const KitDigital = () => {
                     Quiero mi bono de 2.000€
                   </Button>
                   <Button variant="outline" className="px-8 py-6 text-lg">
-                    Consulta con SofÍA
+                    Consulta con HAYAS Copilot
                   </Button>
                 </div>
                 <div className="mt-6 flex items-center gap-4">

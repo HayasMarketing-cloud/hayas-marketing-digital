@@ -34,7 +34,7 @@ const FormacionIA: React.FC = () => {
     heroImageAlt: "Formación en inteligencia artificial aplicada al marketing digital",
     primaryCTA: "Solicitar información del programa",
     primaryCTALink: "/contacto",
-    secondaryCTA: "Consultar con SofÍA",
+    secondaryCTA: "Consultar con HAYAS Copilot",
     secondaryCTALink: "/contacto",
     
     // Breadcrumbs

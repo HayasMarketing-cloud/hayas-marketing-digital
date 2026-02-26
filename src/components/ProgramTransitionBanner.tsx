@@ -24,7 +24,7 @@ const ProgramTransitionBanner = ({ programName }: ProgramTransitionBannerProps) 
   };
 
   const handleOpenSofia = () => {
-    window.dispatchEvent(new CustomEvent('openSofiaChat'));
+    window.dispatchEvent(new CustomEvent('openCopilotChat'));
   };
 
   if (isDismissed) {
@@ -101,7 +101,7 @@ const ProgramTransitionBanner = ({ programName }: ProgramTransitionBannerProps) 
               onClick={handleOpenSofia}
             >
               <MessageCircle className="h-4 w-4 mr-2" />
-              Hablar con SofÍA
+              Hablar con HAYAS Copilot
             </Button>
           </div>
         </div>

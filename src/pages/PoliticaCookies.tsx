@@ -27,7 +27,7 @@ const PoliticaCookies = () => {
     use1: isEnglish ? 'Remember your preferences and settings' : 'Recordar sus preferencias y configuraciones',
     use2: isEnglish ? 'Analyze how you use our website' : 'Analizar cómo utiliza nuestro sitio web',
     use3: isEnglish ? 'Personalize content and services' : 'Personalizar el contenido y los servicios',
-    use4: isEnglish ? 'Improve SofIA chatbot functionality' : 'Mejorar la funcionalidad del chatbot SofÍA',
+    use4: isEnglish ? 'Improve HAYAS Copilot chatbot functionality' : 'Mejorar la funcionalidad del chatbot HAYAS Copilot',
     use5: isEnglish ? 'Measure the effectiveness of our marketing campaigns' : 'Medir la efectividad de nuestras campañas de marketing',
     use6: isEnglish ? 'Provide social media features' : 'Proporcionar funcionalidades de redes sociales',
     
@@ -103,10 +103,10 @@ const PoliticaCookies = () => {
     section5_3Title: isEnglish ? '5.3 Third-party cookie opt-out' : '5.3 Exclusión de cookies de terceros',
     
     // Section 6
-    section6Title: isEnglish ? '6. SofIA (AI Chatbot) cookies' : '6. Cookies de SofÍA (Chatbot IA)',
+    section6Title: isEnglish ? '6. HAYAS Copilot (AI Chatbot) cookies' : '6. Cookies de HAYAS Copilot (Chatbot IA)',
     section6Intro: isEnglish 
-      ? 'Our SofIA chatbot uses specific cookies to:'
-      : 'Nuestro chatbot SofÍA utiliza cookies específicas para:',
+      ? 'Our HAYAS Copilot chatbot uses specific cookies to:'
+      : 'Nuestro chatbot HAYAS Copilot utiliza cookies específicas para:',
     sofia1: isEnglish ? 'Remember conversation history during your session' : 'Recordar el historial de conversaciones durante su sesión',
     sofia2: isEnglish ? 'Personalize responses based on your previous interactions' : 'Personalizar las respuestas según sus interacciones previas',
     sofia3: isEnglish ? 'Improve AI response accuracy' : 'Mejorar la precisión de las respuestas de IA',
@@ -216,7 +216,7 @@ const PoliticaCookies = () => {
                       <h3 className="text-lg font-semibold text-foreground mb-3">{content.section3_4Title}</h3>
                       <p className="text-muted-foreground mb-2">{content.section3_4Desc}</p>
                       <ul className="list-disc list-inside space-y-1 ml-4 text-muted-foreground text-sm">
-                        <li><strong>{isEnglish ? 'SofIA Chatbot:' : 'Chatbot SofÍA:'}</strong> {content.functionality1}</li>
+                        <li><strong>{isEnglish ? 'HAYAS Copilot:' : 'HAYAS Copilot:'}</strong> {content.functionality1}</li>
                         <li><strong>{isEnglish ? 'Preferences:' : 'Preferencias:'}</strong> {content.functionality2}</li>
                         <li><strong>{isEnglish ? 'Forms:' : 'Formularios:'}</strong> {content.functionality3}</li>
                       </ul>

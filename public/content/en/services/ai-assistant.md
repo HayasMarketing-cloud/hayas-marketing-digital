@@ -8,7 +8,7 @@ IA_SUMMARY:
 [Result]: 24/7 intelligent customer service, automated lead capture, and improved customer satisfaction.
 -->
 
-> Hayas Marketing develops custom AI assistants like SofÍA that provide 24/7 intelligent customer service, capture leads, and integrate seamlessly with your CRM.
+> Hayas Marketing develops custom AI assistants like HAYAS Copilot that provide 24/7 intelligent customer service, capture leads, and integrate seamlessly with your CRM.
 
 ## Metadata
 
@@ -51,7 +51,7 @@ An AI assistant is a custom chatbot trained on your business knowledge that can 
 
 ## Success Stories
 
-### Hayas Marketing (SofÍA)
+### Hayas Marketing (HAYAS Copilot)
 - **Sector**: Digital Marketing Agency
 - **Challenge**: Scale customer support without adding staff
 - **Solution**: Custom AI assistant integrated with website
@@ -85,7 +85,7 @@ AI assistants understand context and natural language, not just keyword matching
 
 ## Why Choose Hayas Marketing
 
-- **Proven technology**: SofÍA is our own AI assistant in production
+- **Proven technology**: HAYAS Copilot is our own AI assistant in production
 - **CRM integration**: Leads flow directly to your sales team
 - **Bilingual expertise**: Native English and Spanish support
 - **Continuous optimization**: We improve your AI over time
