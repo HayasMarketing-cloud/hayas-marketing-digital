@@ -1,0 +1,48 @@
+/* TEAM */
+
+Founder & CEO: Rubén Reyero
+Role: Strategy, SEO/AEO/GEO, AI Implementation
+LinkedIn: linkedin.com/in/rubenreyero
+Location: Madrid, Spain
+
+/* AGENCY */
+
+Name: Hayas Marketing
+Site: hayasmarketing.com
+Founded: 2018
+Specialization: Digital Marketing, SEO, AEO, GEO, CRM, AI
+Methodology: Marketing SENSE (Strategy, Execution, Nurturing, Support, Evaluation)
+
+/* AI ASSISTANT */
+
+Name: HAYAS Copilot
+Type: AI-powered conversational assistant
+Purpose: Customer service, lead qualification, marketing guidance
+Available: 24/7 on hayasmarketing.com
+
+/* TECHNOLOGY */
+
+Frontend: React, TypeScript, Tailwind CSS, Vite
+Backend: Lovable Cloud (Supabase)
+AI: OpenAI GPT, custom edge functions
+CRM: HubSpot, GoHighLevel
+Analytics: Google Analytics 4, Google Tag Manager
+Structured Data: Schema.org, JSON-LD, Wikidata entity linking
+
+/* STANDARDS */
+
+SEO: E-E-A-T compliant, AEO & GEO optimized
+Accessibility: WCAG 2.1 AA target
+Languages: Spanish (primary), English
+Privacy: GDPR / RGPD compliant
+
+/* CONTENT */
+
+Knowledge base: /public/content/ (.md files)
+LLM context: /llms.txt, /llms-en.txt, /llms-full.txt
+Entity data: /entity.json
+AI plugin: /ai-plugin.json
+
+/* LAST UPDATED */
+
+2026-02-26
