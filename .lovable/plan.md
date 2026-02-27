@@ -1,70 +1,83 @@
 
 
-## Fase 2 GEO/Agentic: Cabeceras X-Robots-Tag, entity.json mejorado y llms.txt optimizado
+## Actualización de Documentación SEO/AEO/GEO — 27 de febrero de 2026
 
-### 1. Cabeceras X-Robots-Tag para contenido .md
+### Datos desactualizados detectados
 
-Añadir en `public/_headers` la directiva `X-Robots-Tag` a los archivos `.md` para que Google no los indexe como páginas duplicadas, pero los crawlers de IA sí puedan leerlos:
-
-```
-/content/*.md
-  X-Robots-Tag: noindex, follow
-
-/content/es/*/*.md
-  X-Robots-Tag: noindex, follow
-
-/content/en/*/*.md
-  X-Robots-Tag: noindex, follow
-```
-
-Esto previene duplicado con las páginas React sin bloquear el acceso a crawlers de IA (que ignoran X-Robots-Tag).
-
-### 2. Mejorar entity.json
-
-Cambios en `public/entity.json`:
-
-- Corregir `foundingDate` de "2018" a "2014" (coherente con llms.txt)
-- Añadir `numberOfEmployees` (8 profesionales)
-- Añadir `hasCredential` con las certificaciones (HubSpot, Google, Meta, Shopify, Lovable, Aircall)
-- Añadir servicios faltantes a `makesOffer` (Email Marketing, Google Ads, Social Media, E-commerce, Redes Sociales)
-- Añadir `subjectOf` con enlaces a llms.txt y llms-en.txt para conectar el grafo
-- Añadir `award` o `review` externo (Google Business 5.0/5 ya está como `aggregateRating`)
-- Añadir `slogan` con "Impulsado por IA, gobernado por personas"
-- Añadir `parentOrganization` si aplica, o `brand` para reforzar identidad
-- Añadir `availableChannel` con el chatbot SofÍA como `ServiceChannel`
-
-### 3. Optimizar llms.txt
-
-Cambios en `public/llms.txt`:
-
-- Actualizar `Last Updated` de 2026-02-17 a 2026-02-27
-- Añadir sección de contenido `.md` en inglés (actualmente solo lista archivos en español)
-- Añadir referencia a los 15 casos de éxito .md individuales en `/content/es/casos-exito/`
-- Añadir servicios .md faltantes que no están listados (email-marketing, gestion-redes-sociales, tienda-online, estrategia-contenidos, plataforma-inteligencia-marketing)
-
-Cambios en `public/llms-en.txt`:
-
-- Actualizar `Last Updated` de 2026-02-17 a 2026-02-27
-- Añadir sección de contenido `.md` en inglés con los 11 archivos de `/content/en/services/` y los de `/content/en/solutions/`
-
-### 4. Permitir .md en robots.txt
-
-Añadir regla explícita en `public/robots.txt`:
-```
-Allow: /content/
-```
-
-Esto asegura que la regla `Disallow: /*.json$` no interfiera y que los crawlers encuentren los `.md` sin ambigüedad.
+Tras revisar los 3 documentos principales, estas son las correcciones necesarias para reflejar el estado real del proyecto:
 
 ---
 
-### Archivos a modificar
+### 1. `docs/SEO_AEO_GEO_DOCUMENTATION.md` (documento maestro)
 
-| Archivo | Cambios |
-|---------|---------|
-| `public/_headers` | Añadir `X-Robots-Tag: noindex, follow` a las 3 reglas de `/content/*.md` |
-| `public/entity.json` | Corregir foundingDate, añadir numberOfEmployees, hasCredential, slogan, availableChannel, servicios faltantes |
-| `public/llms.txt` | Actualizar fecha, añadir .md faltantes (EN + casos-exito + servicios) |
-| `public/llms-en.txt` | Actualizar fecha, añadir sección de .md en inglés |
-| `public/robots.txt` | Añadir `Allow: /content/` |
+**Línea 4-6**: Actualizar versión y fecha a `1.1` / `2026-02-27`
+
+**Capítulo 5.1 (línea 386-389)**: Añadir que `llms.txt` y `llms-en.txt` ahora incluyen referencias a 11 services EN, 3 solutions EN, 15 casos de éxito ES y 5 servicios ES adicionales (actualización Fase 2 GEO del 27-feb)
+
+**Capítulo 5.2 (línea 396-408)**: Actualizar estructura de `/public/content/`:
+- `es/servicios/` → 11 archivos (no 10)
+- `es/casos-exito/` → 15 archivos
+- `en/services/` → 11 archivos
+- `en/solutions/` → 3 archivos
+- `en/blog/` → 1 archivo
+- Total: 50+ archivos (no 40+)
+
+**Capítulo 5.6 (línea 459-477)**: Añadir que `robots.txt` ahora incluye `Allow: /content/` y documentar los `X-Robots-Tag: noindex, follow` en `_headers` para archivos `.md` (Fase 2 GEO)
+
+**Nuevo en Capítulo 5**: Añadir sección 5.7 sobre `entity.json` mejorado:
+- `foundingDate: "2014"`, `numberOfEmployees: 8`, `slogan`, 6 `hasCredential`, 11 servicios en `makesOffer`, `availableChannel` (SofÍA), `subjectOf` (llms.txt), `brand`
+
+**Capítulo 8.3 (línea 613-619)**: Actualizar tabla de cache headers para incluir `X-Robots-Tag: noindex, follow` en `/content/*.md`
+
+**Apéndice B — Blog traducido (línea 926)**: Actualizar de "5 artículos" a **8 artículos** en inglés:
+- Añadir: AI in Marketing, New SEO Paradigm AEO/GEO, On-Page SEO Guide
+
+**Apéndice B — Blog ES**: Actualizar: hay **29 artículos** en español en `seo_pages`, no 5-6
+
+**Línea 963-964**: Actualizar fecha a 27 de febrero de 2026
+
+---
+
+### 2. `docs/SEO_EXECUTIVE_SUMMARY.md`
+
+**Línea 3-5**: Actualizar fecha a `27 de febrero de 2026`, versión a `1.2`
+
+**Línea 30**: Blog Estratégico: de "6 artículos clave" a **"29 artículos ES + 8 EN"**
+
+**Línea 42**: Inglés: de "80%" a **"85%"**, actualizar a "8 Artículos blog EN"
+
+**Línea 64-69 (Visibilidad GEO)**: Añadir fila:
+- `entity.json mejorado` → ✅ 6 credenciales, 11 servicios, SofÍA
+- `X-Robots-Tag en .md` → ✅ noindex,follow (previene duplicación)
+- Contenido `.md` → actualizar de "40+ archivos" a "50+ archivos"
+
+**Línea 128-147 (Próximos Pasos)**:
+- Marcar como completado: "Optimizar meta titles/descriptions EN" (sprint 27-feb)
+- Marcar como completado: "Fase 2 GEO/Agentic" (entity.json, llms.txt, X-Robots-Tag)
+- Añadir nuevo item corto plazo: "Auditar descriptions >160 chars (ES+EN)"
+
+**Línea 153-160 (Documentación)**: Añadir fila: `SEO_AEO_GEO_DOCUMENTATION.md` → Documento maestro consolidado
+
+**Línea 177**: Actualizar fecha final a 27 de febrero de 2026
+
+---
+
+### 3. `docs/PERFORMANCE_OPTIMIZATION_LOG.md`
+
+**Línea 2**: Actualizar fecha a `27 de febrero de 2026`
+
+**Añadir nueva entrada después de línea 92**: Sprint SEO On-Page del 27-feb-2026:
+- Optimización editorial de meta titles EN (5 corregidos: branding consistente, longitud ≤60 chars)
+- Optimización de meta descriptions EN (4 corregidas: keywords focalizadas, ≤160 chars)
+- Fase 2 GEO/Agentic: `X-Robots-Tag` en `.md`, `entity.json` enriquecido, `llms.txt`/`llms-en.txt` con 30+ nuevas referencias, `Allow: /content/` en `robots.txt`
+
+---
+
+### Archivos a modificar: 3
+
+| Archivo | Cambios clave |
+|---------|--------------|
+| `docs/SEO_AEO_GEO_DOCUMENTATION.md` | Fechas, contadores blog (29 ES / 8 EN), entity.json, Fase 2 GEO, 50+ .md |
+| `docs/SEO_EXECUTIVE_SUMMARY.md` | Versión 1.2, contadores, GEO completado, próximos pasos |
+| `docs/PERFORMANCE_OPTIMIZATION_LOG.md` | Sprint 27-feb SEO on-page + GEO |
 
