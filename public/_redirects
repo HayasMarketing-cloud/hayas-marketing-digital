@@ -11,6 +11,11 @@
 /  /es  301
 
 # ========================================
+# WELL-KNOWN AI PLUGIN (estándar OpenAI)
+# ========================================
+/.well-known/ai-plugin.json  /ai-plugin.json  200
+
+# ========================================
 # REDIRECCIONES EN - URLs LEGACY INGLESAS
 # ========================================
 /en/services/administracion-crm  /en/services/crm-administration  301

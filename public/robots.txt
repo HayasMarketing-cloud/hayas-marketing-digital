@@ -15,6 +15,7 @@ LLMs-en.txt: https://hayasmarketing.com/llms-en.txt
 
 # AI Structured Data Files
 Allow: /ai-plugin.json
+Allow: /.well-known/ai-plugin.json
 Allow: /entity.json
 Allow: /humans.txt
 
