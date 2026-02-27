@@ -9,6 +9,7 @@ import ArticleUtilitySection from './ArticleUtilitySection';
 import ArticleFAQSection from './ArticleFAQSection';
 import NewsletterSubscription from './NewsletterSubscription';
 import RelatedServiceSection from './RelatedServiceSection';
+import RelatedContentBlock from '@/components/RelatedContentBlock';
 import { Badge } from '@/components/ui/badge';
 import { Calendar, Clock, User } from 'lucide-react';
 
@@ -219,6 +220,9 @@ const BlogPostTemplate: React.FC<BlogPostTemplateProps> = ({
 
             {/* Related Service Section */}
             <RelatedServiceSection serviceTags={metadata.tags} className="mt-16" />
+
+            {/* Related Content Block (topic clusters from DB) */}
+            <RelatedContentBlock currentPath={metadata.canonical} className="mt-12" />
 
             {/* FAQ Section */}
             {faqs && faqs.length > 0 && (
