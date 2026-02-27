@@ -1,109 +1,128 @@
 
 
-## Plan: Renombrar SofÍA → HAYAS Copilot
+## Plan actualizado: Bloque "También te puede interesar" con related_pages
 
-El cambio afecta **30+ archivos** en 5 capas: componentes UI, páginas, traducciones, edge functions, contenido .md y base de datos (tablas). A continuación el inventario completo y las acciones necesarias.
+Incorpora los 3 ajustes finos del equipo SEO y las correcciones de clusters.
 
 ---
+
+### Archivos a crear
+
+| Archivo | Propósito |
+|---|---|
+| `src/utils/normalizePath.ts` | Normalizar URLs absolutas/relativas, eliminar trailing slash, extraer locale genérico (no hardcode es/en) |
+| `src/components/RelatedContentBlock.tsx` | Componente que consulta `seo_pages.related_pages`, reordena en cliente por índice original, renderiza 2-4 cards |
 
 ### Archivos a modificar
 
-**Componentes principales del chatbot**
-
-| Archivo | Cambios |
+| Archivo | Cambio |
 |---|---|
-| `src/components/SofiaChatNew.tsx` | Todos los textos "SofÍA/SofIA" → "HAYAS Copilot". Evento `openSofiaChat` → `openCopilotChat`. Keys sessionStorage `sofia_auto_opened` → `copilot_auto_opened`. Aria-labels. Mensajes de bienvenida ES/EN. |
-| `src/components/SofiaSection.tsx` | Textos, mensajes fallback, evento `openSofiaChat` → `openCopilotChat` |
-| `src/components/sofia/MessageWithActions.tsx` | Sin cambios de texto (no tiene referencias al nombre) |
-| `src/components/ChatbotPromoSection.tsx` | Sin cambios directos (usa traducciones), pero verificar |
+| `src/components/BlogPost/BlogPostTemplate.tsx` | Insertar `RelatedContentBlock` después de `RelatedServiceSection`, pasando `metadata.canonical` |
 
-**Traducciones**
+### Datos a poblar (UPDATE via insert tool)
 
-| Archivo | Cambios |
-|---|---|
-| `src/i18n/translations.ts` | Reemplazar "SofÍA" por "HAYAS Copilot" en claves `chatbot.title`, `chatbot.paragraph1`, `chatbot.imageAlt` (ES y EN) |
-
-**Hooks**
-
-| Archivo | Cambios |
-|---|---|
-| `src/hooks/useNavigationHistory.ts` | `STORAGE_KEY`: `sofia_navigation_history` → `copilot_navigation_history` |
-
-**Páginas con referencias directas**
-
-| Archivo | Tipo de cambio |
-|---|---|
-| `src/pages/SolucionesIA.tsx` | Textos "SofÍA", alt de imágenes, sección "Conoce a SofÍA" → "Conoce HAYAS Copilot" |
-| `src/pages/SeoPositioning.tsx` | CTA "Hablar con SofÍA" → "Hablar con HAYAS Copilot" |
-| `src/pages/FormacionIA.tsx` | CTA "Consultar con SofÍA" → "Consultar con HAYAS Copilot" |
-| `src/pages/Contacto.tsx` | Evento `openSofiaChat` → `openCopilotChat` |
-| `src/pages/KitDigital.tsx` | Evento `openSofiaChat` → `openCopilotChat` |
-| `src/pages/AgendarReunion.tsx` | Función `handleSofiaChat` → `handleCopilotChat` |
-| `src/pages/MarketingNaturalPosicionamientoOrganico.tsx` | Eventos `openSofiaChat` → `openCopilotChat` |
-| `src/pages/PoliticaCookies.tsx` | Textos "SofÍA/SofIA" → "HAYAS Copilot" en sección 6 y referencias |
-| `src/pages/PoliticaPrivacidad.tsx` | Textos "Chatbot SofÍA" → "HAYAS Copilot" |
-| `src/components/ProgramTransitionBanner.tsx` | Evento `openSofiaChat` → `openCopilotChat` |
-
-**Admin**
-
-| Archivo | Cambios |
-|---|---|
-| `src/pages/admin/SofiaChatbotAdmin.tsx` | Título "Chatbot SofÍA" → "HAYAS Copilot", descripción |
-| `src/pages/admin/AdminDashboard.tsx` | Título tool "Chatbot SofÍA" → "HAYAS Copilot" |
-| `src/pages/admin/SEODashboard.tsx` | Referencias "SofÍA" → "HAYAS Copilot" |
-
-**Lazy imports y routing**
-
-| Archivo | Cambios |
-|---|---|
-| `src/utils/lazyImports.ts` | Nombre export `SofiaChatbotAdmin` (se mantiene internamente para no romper rutas, o se renombra junto con la ruta) |
-| `src/App.tsx` | Import `SofiaChatNew` y ruta `/admin/sofia` — se mantienen los nombres de archivo internos para minimizar riesgo |
-
-**Edge Functions (backend)**
-
-| Archivo | Cambios |
-|---|---|
-| `supabase/functions/sofia-chat/index.ts` | Fallback prompt: "Sofía" → "HAYAS Copilot". Logs. Las tablas `sofia_config` y `sofia_leads` se siguen usando (renombrarlas en DB es riesgo innecesario). |
-| `supabase/functions/submit-contact-form/index.ts` | Comentario "Save lead to sofia_leads" — cosmético |
-
-**Contenido .md (knowledge base del chatbot)**
-
-| Archivo | Cambios |
-|---|---|
-| `public/content/es/servicios/asistente-ia.md` | "SofÍA" → "HAYAS Copilot" en títulos, descripciones, casos de uso |
-| `public/content/en/services/ai-assistant.md` | "SofÍA" → "HAYAS Copilot" |
-| `public/content/es/general/company.md` (si existe) | Referencias a SofÍA |
-| `public/content/en/general/company.md` | "SofÍA" → "HAYAS Copilot" |
-| `public/llms.txt` | "SofÍA" → "HAYAS Copilot" |
-| `public/llms-full.txt` | "SofÍA" → "HAYAS Copilot" |
-
-**Base de datos**
-
-| Tabla | Acción |
-|---|---|
-| `sofia_config` | **No renombrar** (riesgo alto, requiere migración con datos). Actualizar el valor del `system_prompt` via migración SQL: reemplazar "Sofía" → "HAYAS Copilot" en el prompt almacenado. |
-| `sofia_leads` | **No renombrar** (tabla con datos existentes). Mantener nombre interno. |
-
-Se ejecuta una migración SQL para actualizar el system prompt almacenado en `sofia_config`.
+Poblar `related_pages` para ~12 páginas clave (todas verificadas como existentes e `is_indexable = true`).
 
 ---
 
-### Lo que NO se cambia (decisión deliberada)
+### Ajustes incorporados del equipo
 
-- **Nombres de archivo** (`SofiaChatNew.tsx`, `SofiaChatbotAdmin.tsx`, `sofia-chat/index.ts`): renombrar archivos en Lovable es destructivo. Los nombres internos no son visibles al usuario final.
-- **Nombres de tablas** (`sofia_config`, `sofia_leads`): contienen datos en producción. El coste de migrar supera el beneficio.
-- **Ruta admin** `/admin/sofia`: solo visible para administradores, bajo riesgo.
+**1. Reordenar en cliente (no confiar en DB)**
+El query `.in('path', paths)` no garantiza orden. El componente reordenará los resultados según el índice del array `related_pages` original antes de renderizar.
+
+**2. Locale genérico**
+El helper extraerá el locale como primer segmento del path (`/es/...` → `es`, `/en/...` → `en`, `/it/...` → `it`). Sin hardcode de idiomas específicos. Filtrará related pages que compartan el mismo prefijo de locale.
+
+**3. Badge por categoría con fallback**
+Usará el campo `category` de `seo_pages` (ya existe y está poblado: `blog`, `service`, `solution`, `case-study`, `kit-digital`, `main`). Mapa de labels:
+- `blog` → "Blog"
+- `service` → "Servicio"
+- `solution` → "Solución"
+- `case-study` → "Caso de éxito"
+- Cualquier otro → "Página" (fallback seguro)
 
 ---
 
-### Orden de ejecución (optimizado)
+### Clusters validados (paths verificados en DB)
 
-1. Migración SQL: actualizar system prompt en `sofia_config`
-2. Edge function `sofia-chat`: actualizar fallback prompt y logs
-3. Traducciones (`translations.ts`)
-4. Componentes UI del chatbot (`SofiaChatNew.tsx`, `SofiaSection.tsx`)
-5. Hook `useNavigationHistory.ts`
-6. Todas las páginas con referencias (en paralelo)
-7. Admin pages (en paralelo)
-8. Contenido .md y llms.txt (en paralelo)
+**Cluster SEO/AEO/GEO** (bidireccional, satélite principal = paradigma AEO/GEO):
+
+```text
+/es/servicios/seo-posicionamiento →
+  [paradigma-aeo-geo, seo-ia, seo-on-page, seo-off-page]
+
+/es/blog/nuevo-paradigma-seo-aeo-geo →
+  [servicio-seo, seo-ia, seo-on-page]
+
+/es/blog/seo-inteligencia-artificial →
+  [servicio-seo, paradigma-aeo-geo, seo-on-page]
+
+/es/blog/seo-on-page-guia-completa →
+  [seo-off-page, servicio-seo, paradigma-aeo-geo]
+
+/es/blog/seo-off-page-estrategias-practicas-posicionamiento →
+  [seo-on-page, servicio-seo, paradigma-aeo-geo]
+```
+
+**Cluster CRM** (añadido lead-scoring como puente a automatización):
+
+```text
+/es/servicios/implantacion-crm →
+  [crm-que-es, elegir-crm, lead-scoring, automatizacion-marketing-digital]
+
+/es/blog/crm-que-es-beneficios →
+  [servicio-crm, elegir-crm, lead-scoring]
+
+/es/blog/como-elegir-mejor-crm-empresa-organizacion →
+  [servicio-crm, crm-que-es, lead-scoring]
+
+/es/blog/lead-scoring-calificacion-leads →
+  [servicio-crm, crm-que-es, automatizacion-marketing-digital]
+```
+
+**Cluster Email Marketing** (cruce controlado hacia CRM solo desde 1 pieza):
+
+```text
+/es/servicios/email-marketing →
+  [email-hubspot, config-email, automatizacion-marketing-digital]
+
+/es/blog/email-marketing-hubspot →
+  [servicio-email, guia-tecnica-config, servicio-crm]
+
+/es/blog/guia-tecnica-email-marketing-hubspot-configuracion →
+  [email-hubspot, servicio-email, config-email-cumplimiento]
+
+/es/blog/configuracion-email-marketing-cumplimiento →
+  [guia-tecnica-config, servicio-email, email-hubspot]
+```
+
+---
+
+### Lógica del componente (detalle técnico)
+
+1. Recibir `currentPath`, normalizar con helper
+2. Query 1: `seo_pages` WHERE `path = normalizedPath` → obtener `related_pages[]`
+3. Si vacío → `return null` (cero DOM)
+4. Extraer locale del path actual (primer segmento)
+5. Filtrar `related_pages` que empiecen con mismo locale prefix
+6. Query 2: `.in('path', filteredPaths)` con `is_indexable = true` → obtener `title`, `description`, `category`, `path`
+7. Reordenar resultados según índice en array original
+8. Limitar a 4, excluir página actual (por seguridad)
+9. Renderizar grid responsive con badges por categoría
+
+### Criterios de aceptación
+
+1. `related_pages` vacío → no aparece nada (sin DOM residual)
+2. 2-4 paths válidos → cards en orden del array, sin duplicados, sin la propia página
+3. Path no existente o `is_indexable = false` → se ignora sin error
+4. URL absoluta y path relativo → ambos funcionan (normalizador)
+5. Páginas en `/en/` solo muestran related pages en `/en/`
+6. Badge muestra categoría correcta con fallback "Página" para categorías no mapeadas
+
+### Orden de ejecución
+
+1. Crear `src/utils/normalizePath.ts`
+2. Crear `src/components/RelatedContentBlock.tsx`
+3. Integrar en `BlogPostTemplate.tsx`
+4. Poblar `related_pages` via UPDATE para ~12 páginas
 
