@@ -236,14 +236,9 @@ const SolucionesIA = () => {
               <div className="flex items-center justify-center">
                 <div className="relative">
                   <div className="absolute inset-0 bg-gradient-to-r from-hayas-200 to-turquesa-200 rounded-full blur-2xl opacity-30"></div>
-                  <img 
-                    src="/lovable-uploads/2a2adcf5-d531-4d8c-91bd-bb12aac27976.png" 
-                    alt="HAYAS Copilot - Asistente de IA" 
-                    className="relative z-10 w-48 h-48 object-cover rounded-full shadow-xl border-4 border-white"
-                    width={192}
-                    height={192}
-                    loading="lazy"
-                  />
+                  <div className="relative z-10 w-48 h-48 rounded-full bg-gradient-to-r from-lime-500 to-lime-600 flex items-center justify-center shadow-xl border-4 border-white">
+                    <Bot className="w-24 h-24 text-white" />
+                  </div>
                 </div>
               </div>
             </div>
