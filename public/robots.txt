@@ -18,6 +18,7 @@ Allow: /ai-plugin.json
 Allow: /.well-known/ai-plugin.json
 Allow: /entity.json
 Allow: /humans.txt
+Allow: /content/
 
 # Directrices específicas
 Crawl-delay: 1

@@ -7,7 +7,8 @@
   "url": "https://hayasmarketing.com",
   "logo": "https://hayasmarketing.com/lovable-uploads/hayas-marketing-logo.png",
   "description": "Agencia de marketing digital especializada en SEO, AEO, GEO, branding, CRM e inteligencia artificial aplicada al marketing y ventas.",
-  "foundingDate": "2018",
+  "slogan": "Impulsado por IA, gobernado por personas",
+  "foundingDate": "2014",
   "founder": {
     "@type": "Person",
     "@id": "https://hayasmarketing.com/#founder",
@@ -17,6 +18,10 @@
       "https://www.linkedin.com/in/rubenreyero/",
       "https://www.wikidata.org/wiki/Q131866953"
     ]
+  },
+  "numberOfEmployees": {
+    "@type": "QuantitativeValue",
+    "value": 8
   },
   "address": {
     "@type": "PostalAddress",
@@ -31,6 +36,73 @@
       "email": "info@hayasmarketing.com",
       "url": "https://hayasmarketing.com/es/contacto",
       "availableLanguage": ["Spanish", "English"]
+    }
+  ],
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "name": "SofÍA - AI Assistant",
+    "description": "Chatbot inteligente con IA disponible 24/7 para atención al cliente y captación de leads",
+    "serviceUrl": "https://hayasmarketing.com/es/contacto",
+    "availableLanguage": ["Spanish", "English"]
+  },
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Partner",
+      "name": "HubSpot Partner",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "HubSpot",
+        "sameAs": "https://www.wikidata.org/wiki/Q5929009"
+      }
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Partner",
+      "name": "Google Partner",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "Google",
+        "sameAs": "https://www.wikidata.org/wiki/Q95"
+      }
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Partner",
+      "name": "Meta Business Partner",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "Meta Platforms",
+        "sameAs": "https://www.wikidata.org/wiki/Q380"
+      }
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Partner",
+      "name": "Shopify Partner",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "Shopify",
+        "sameAs": "https://www.wikidata.org/wiki/Q1289744"
+      }
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Partner",
+      "name": "Lovable Partner",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "Lovable"
+      }
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Partner",
+      "name": "Aircall Partner",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "Aircall"
+      }
     }
   ],
   "sameAs": [
@@ -150,6 +222,51 @@
         "description": "Strategic content creation aligned with SEO, AEO and GEO objectives",
         "url": "https://hayasmarketing.com/es/servicios/estrategia-de-contenidos"
       }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Email Marketing & Automation",
+        "description": "Email campaigns, automated workflows, segmentation and A/B testing",
+        "url": "https://hayasmarketing.com/es/servicios/email-marketing-automatizaciones"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Google Ads Advertising",
+        "description": "Search, display, shopping and Performance Max campaigns with continuous ROI optimization",
+        "url": "https://hayasmarketing.com/es/servicios/publicidad-google-ads"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Social Media Advertising",
+        "description": "Facebook, Instagram, LinkedIn and TikTok advertising campaigns with advanced targeting",
+        "url": "https://hayasmarketing.com/es/servicios/publicidad-redes-sociales"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Online Store / E-commerce",
+        "description": "Shopify e-commerce development with payment integration and conversion optimization",
+        "url": "https://hayasmarketing.com/es/servicios/tienda-online-ecommerce"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Social Media Management",
+        "description": "Social media strategy, community management, content creation and analytics",
+        "url": "https://hayasmarketing.com/es/servicios/gestion-redes-sociales"
+      }
     }
   ],
   "methodology": {
@@ -164,11 +281,33 @@
       {"@type": "HowToStep", "name": "Evaluation", "text": "Performance measurement, analytics dashboards and continuous optimization"}
     ]
   },
+  "subjectOf": [
+    {
+      "@type": "CreativeWork",
+      "name": "LLM Context File (Spanish)",
+      "url": "https://hayasmarketing.com/llms.txt",
+      "inLanguage": "es",
+      "encodingFormat": "text/plain"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "LLM Context File (English)",
+      "url": "https://hayasmarketing.com/llms-en.txt",
+      "inLanguage": "en",
+      "encodingFormat": "text/plain"
+    }
+  ],
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "5.0",
     "bestRating": "5",
     "ratingCount": "30",
     "reviewCount": "30"
+  },
+  "brand": {
+    "@type": "Brand",
+    "name": "Hayas Marketing",
+    "logo": "https://hayasmarketing.com/lovable-uploads/hayas-marketing-logo.png",
+    "slogan": "Impulsado por IA, gobernado por personas"
   }
 }

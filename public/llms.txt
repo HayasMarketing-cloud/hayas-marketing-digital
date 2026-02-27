@@ -12,7 +12,7 @@
 - **Founded**: 2014
 - **Team**: 8 profesionales especializados
 - **Location**: España
-- **Last Updated**: 2026-02-17
+- **Last Updated**: 2026-02-27
 
 ---
 
@@ -595,7 +595,7 @@ La búsqueda ha evolucionado de un modelo centrado en el clic a uno dominado por
 
 ## Actualizaciones y Contacto
 
-**Última actualización**: 2026-02-17
+**Última actualización**: 2026-02-27
 
 Para información actualizada, consultar:
 - Web oficial: https://hayasmarketing.com
@@ -615,11 +615,51 @@ Para información específica y citación académica, consulta estos ficheros es
 - Implantación CRM: /content/es/servicios/implantacion-crm.md
 - Publicidad Google Ads: /content/es/servicios/publicidad-google-ads.md
 - Asistente IA (SofÍA): /content/es/servicios/asistente-ia.md
+- Email Marketing: /content/es/servicios/email-marketing.md
+- Gestión de Redes Sociales: /content/es/servicios/gestion-redes-sociales.md
+- Tienda Online / E-commerce: /content/es/servicios/tienda-online.md
+- Estrategia de Contenidos: /content/es/servicios/estrategia-contenidos.md
+- Plataforma de Inteligencia de Marketing: /content/es/servicios/plataforma-inteligencia-marketing.md
 
 ### Soluciones (Español)
 - Impulsa tu Marca: /content/es/soluciones/impulsa-tu-marca.md
 - Conecta con tus Clientes: /content/es/soluciones/conecta-con-tus-clientes.md
 - Activa tus Ventas: /content/es/soluciones/activa-tus-ventas.md
+
+### Casos de Éxito (Español)
+- Alma Cruceros: /content/es/casos-exito/alma-cruceros.md
+- Asendia: /content/es/casos-exito/asendia.md
+- Beluga Linguistics: /content/es/casos-exito/beluga-linguistics.md
+- BuhoBike: /content/es/casos-exito/buhobike.md
+- FINECT: /content/es/casos-exito/finect.md
+- HubSpot for Startups: /content/es/casos-exito/hubspot-for-startups.md
+- Inbound Students: /content/es/casos-exito/inbound-students.md
+- Joints Up: /content/es/casos-exito/joints-up.md
+- Nexo Vital: /content/es/casos-exito/nexo-vital.md
+- Nova Praxis: /content/es/casos-exito/nova-praxis.md
+- OWO Game: /content/es/casos-exito/owo-game.md
+- Pastelería La Oriental: /content/es/casos-exito/pasteleria-la-oriental.md
+- Peixos Emilio: /content/es/casos-exito/peixos-emilio.md
+- Peris Electricidad: /content/es/casos-exito/peris-electricidad.md
+- Wooptix: /content/es/casos-exito/wooptix.md
+
+### Services (English)
+- AI Assistant: /content/en/services/ai-assistant.md
+- Branding: /content/en/services/branding.md
+- Content Strategy: /content/en/services/content-strategy.md
+- CRM Implementation: /content/en/services/crm-implementation.md
+- E-commerce: /content/en/services/ecommerce.md
+- Email Marketing: /content/en/services/email-marketing.md
+- Google Ads: /content/en/services/google-ads.md
+- Marketing Intelligence Platform: /content/en/services/marketing-intelligence-platform.md
+- SEO Positioning: /content/en/services/seo-positioning.md
+- Social Media: /content/en/services/social-media.md
+- Web Design: /content/en/services/web-design.md
+
+### Solutions (English)
+- Activate Sales: /content/en/solutions/activate-sales.md
+- Boost Your Brand: /content/en/solutions/boost-your-brand.md
+- Connect with Customers: /content/en/solutions/connect-with-customers.md
 
 ### General
 - Sobre la Empresa: /content/es/general/empresa.md
