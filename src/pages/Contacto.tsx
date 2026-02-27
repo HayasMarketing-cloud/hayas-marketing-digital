@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import { Phone, MessageCircle } from 'lucide-react';
+import { Phone, MessageCircle, Bot } from 'lucide-react';
 import StandardGHLForm from '@/components/StandardGHLForm';
 import EnhancedSEO from '@/components/EnhancedSEO';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -108,15 +108,8 @@ const Contacto = () => {
                 <div className="bg-card rounded-2xl p-8 shadow-xl border border-border/50">
                   <div className="text-center">
                     <div className="relative w-20 h-20 mx-auto mb-6">
-                      <div className="w-20 h-20 bg-gradient-to-r from-accent to-accent/80 rounded-full flex items-center justify-center relative overflow-hidden">
-                        <img
-                          src="/lovable-uploads/2a2adcf5-d531-4d8c-91bd-bb12aac27976.png"
-                          alt="HAYAS Copilot"
-                          className="w-16 h-16 rounded-full object-cover"
-                          width={64}
-                          height={64}
-                          loading="lazy"
-                        />
+                      <div className="w-20 h-20 bg-gradient-to-r from-lime-500 to-lime-600 rounded-full flex items-center justify-center relative">
+                        <Bot className="w-10 h-10 text-white" />
                         <div className="absolute -top-1 -right-1 w-5 h-5 bg-green-500 rounded-full border-2 border-white">
                           <div className="absolute inset-0 bg-green-400 rounded-full animate-ping"></div>
                         </div>

@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import { Phone, MessageCircle } from 'lucide-react';
+import { Phone, MessageCircle, Bot } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function AgendarReunion() {
@@ -147,9 +147,9 @@ export default function AgendarReunion() {
               {/* Sofia Chat */}
               <div className="bg-card rounded-2xl p-6 shadow-xl border border-border/50">
                 <div className="text-center">
-                  <div className="relative w-16 h-16 mx-auto mb-4">
-                    <div className="w-16 h-16 bg-gradient-to-r from-accent to-accent/80 rounded-full flex items-center justify-center relative overflow-hidden">
-                      <img src="/lovable-uploads/2a2adcf5-d531-4d8c-91bd-bb12aac27976.png" alt="HAYAS Copilot" width={48} height={48} className="w-12 h-12 rounded-full object-cover" style={{ aspectRatio: '1/1' }} />
+                   <div className="relative w-16 h-16 mx-auto mb-4">
+                    <div className="w-16 h-16 bg-gradient-to-r from-lime-500 to-lime-600 rounded-full flex items-center justify-center relative">
+                      <Bot className="w-8 h-8 text-white" />
                       <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white">
                         <div className="absolute inset-0 bg-green-400 rounded-full animate-ping"></div>
                       </div>

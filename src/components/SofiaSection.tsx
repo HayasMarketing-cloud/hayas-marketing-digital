@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { useLocation } from 'react-router-dom';
-import { X, Minimize2 } from 'lucide-react';
+import { X, Minimize2, Bot } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 // Fallback component for when Voiceflow fails to load
@@ -335,14 +335,9 @@ const SofiaWidget = () => {
       {showHelpMessage && !isOpen && (
         <div className="fixed bottom-24 right-6 z-40 bg-white rounded-2xl shadow-xl border border-gray-200 p-4 max-w-xs animate-fade-in">
           <div className="flex items-start gap-3">
-            <img 
-              src="/lovable-uploads/2a2adcf5-d531-4d8c-91bd-bb12aac27976.png" 
-              alt="HAYAS Copilot" 
-              className="w-10 h-10 rounded-full object-cover flex-shrink-0"
-              width={40}
-              height={40}
-              loading="lazy"
-            />
+            <div className="w-10 h-10 rounded-full bg-gradient-to-r from-lime-500 to-lime-600 flex items-center justify-center flex-shrink-0">
+              <Bot className="w-5 h-5 text-white" />
+            </div>
             <div className="flex-1">
               <p className="text-sm font-medium text-gray-900 mb-1">HAYAS Copilot</p>
               <p className="text-sm text-gray-700">{getPageHelpMessage(location.pathname)}</p>
@@ -372,14 +367,9 @@ const SofiaWidget = () => {
           aria-label={isEnglish ? 'Open chat with HAYAS Copilot' : 'Abrir chat con HAYAS Copilot'}
         >
           <div className="relative">
-            <img 
-              src="/lovable-uploads/2a2adcf5-d531-4d8c-91bd-bb12aac27976.png" 
-              alt="HAYAS Copilot" 
-              className="w-12 h-12 rounded-full object-cover border-2 border-white/20"
-              width={48}
-              height={48}
-              loading="lazy"
-            />
+            <div className="w-12 h-12 rounded-full bg-gradient-to-r from-lime-500 to-lime-600 flex items-center justify-center border-2 border-white/20">
+              <Bot className="w-6 h-6 text-white" />
+            </div>
             <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-400 rounded-full border-2 border-white">
               <div className="absolute inset-0 bg-green-300 rounded-full animate-ping"></div>
             </div>
@@ -401,14 +391,9 @@ const SofiaWidget = () => {
           <div className="bg-gradient-to-r from-lime-500 to-lime-600 text-white p-4 rounded-t-2xl">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <img 
-                  src="/lovable-uploads/2a2adcf5-d531-4d8c-91bd-bb12aac27976.png" 
-                  alt="HAYAS Copilot" 
-                  className="w-8 h-8 rounded-full object-cover"
-                  width={32}
-                  height={32}
-                  loading="lazy"
-                />
+                <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
+                  <Bot className="w-4 h-4 text-white" />
+                </div>
                 <div>
                   <h3 className="font-semibold text-sm">HAYAS Copilot</h3>
                   <p className="text-xs opacity-90">{isEnglish ? 'AI Assistant • Online' : 'Tu asistente IA • En línea'}</p>
