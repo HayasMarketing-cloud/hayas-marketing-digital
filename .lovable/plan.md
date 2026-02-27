@@ -1,41 +1,51 @@
 
 
-## Rediseño del avatar de HAYAS Copilot — Reemplazar imagen por icono
+## Mejorar el tono conversacional de HAYAS Copilot
 
-El avatar `/lovable-uploads/2a2adcf5-d531-4d8c-91bd-bb12aac27976.png` se usa en **6 archivos**. El plan es reemplazar todas las `<img>` del avatar por un `<div>` con gradiente y el icono `Bot` de lucide-react, manteniendo el indicador verde de "online" donde existe.
+### Problema
 
-### Diseño del nuevo avatar
+Cuando alguien pregunta "¿cómo puedes ayudarme?", el bot responde con una lista genérica y mecánica de capacidades. Suena a manual de instrucciones, no a un asistente cercano.
 
-- Círculo con `bg-gradient-to-r from-lime-500 to-lime-600` (coherente con el tema del chatbot)
-- Icono `Bot` de lucide-react centrado, en blanco
-- Tamaños adaptados a cada contexto (w-8 a w-20)
-- Indicador verde "online" con `animate-ping` conservado sin cambios
+### Solución
 
-### Archivos a modificar (6)
+Actualizar el system prompt en la base de datos (`sofia_config`) con dos cambios:
 
-| Archivo | Ubicaciones | Tamaños |
-|---------|-------------|---------|
-| `src/components/SofiaChatNew.tsx` | Help bubble, floating button, chat header | w-10, w-12, w-10 |
-| `src/components/SofiaSection.tsx` | Help tooltip, floating button, chat header | w-10, w-12, w-8 |
-| `src/pages/Contacto.tsx` | Sidebar SofÍA | w-20 (container) / w-16 (img) |
-| `src/pages/AgendarReunion.tsx` | Sidebar SofÍA | w-16 (container) / w-12 (img) |
-| `src/pages/SolucionesIA.tsx` | Hero section IA | w-48 |
-| `src/pages/KitDigital.tsx` | Sidebar SofÍA | w-20 (container) / w-16 (img) |
+**1. Ampliar la sección TONO** con reglas anti-robot:
 
-### Cambio tipo (ejemplo floating button)
-
-Antes:
-```tsx
-<img src="/lovable-uploads/2a2adcf5-d531-4d8c-91bd-bb12aac27976.png" 
-     alt="HAYAS Copilot" className="w-12 h-12 rounded-full object-cover" />
+```
+## TONO
+- Profesional, cercano, claro y orientado a ayudar.
+- No agresivo ni comercial forzado.
+- Usa listas y pasos cuando faciliten la comprensión.
+- Emojis solo de forma puntual y discreta.
+- NUNCA respondas como un manual de instrucciones. Habla como un compañero experto que quiere entender tu situación.
+- Evita listar tus propias capacidades de forma genérica ("puedo ayudarte con X, Y, Z"). En su lugar, pregunta al usuario qué necesita o en qué momento está.
+- Prioriza hacer UNA buena pregunta antes que dar CUATRO opciones abstractas.
 ```
 
-Después:
-```tsx
-<div className="w-12 h-12 rounded-full bg-gradient-to-r from-lime-500 to-lime-600 flex items-center justify-center">
-  <Bot className="w-6 h-6 text-white" />
-</div>
+**2. Añadir sección de ESTILO DE RESPUESTA** después de TONO:
+
+```
+## ESTILO DE RESPUESTA
+- Cuando alguien pregunte qué puedes hacer o cómo ayudarle, NO listes capacidades. 
+  En su lugar, responde con curiosidad: pregunta sobre su negocio, su momento actual o su objetivo.
+  Ejemplo MALO: "Puedo ayudarte con: 1) Información sobre servicios 2) Soporte inicial 3) Cualificación..."
+  Ejemplo BUENO: "¡Claro! Para orientarte bien, ¿me cuentas a qué se dedica tu empresa y qué objetivo tienes ahora mismo? Así te doy una recomendación concreta."
+- Responde en 2-4 frases cortas, no en párrafos largos.
+- Si usas listas, que sean de contenido útil (pasos concretos, ejemplos reales), nunca de tus propias funciones.
+- Siempre cierra con una pregunta que haga avanzar la conversación, no con "¿te gustaría saber más?".
 ```
 
-El indicador verde online se mantiene exactamente igual en todos los casos.
+### Archivo a modificar
+
+| Recurso | Cambio |
+|---------|--------|
+| Base de datos: `sofia_config.system_prompt` | Ampliar TONO + añadir sección ESTILO DE RESPUESTA |
+
+### Resultado esperado
+
+Ante "¿cómo puedes ayudarme?" el bot respondería algo como:
+> "¡Con mucho gusto! Para darte la mejor orientación, cuéntame: ¿ya tienes web y presencia digital, o estás empezando desde cero?"
+
+En lugar de la lista robótica actual.
 
