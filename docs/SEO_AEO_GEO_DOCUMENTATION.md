@@ -1,8 +1,8 @@
 # Documentación Unificada SEO / AEO / GEO — Hayas Marketing
 
 > **Documento maestro consolidado**  
-> Versión: 1.0  
-> Fecha de creación: 2026-02-25  
+> Versión: 1.1  
+> Fecha de creación: 2026-02-25 | Última actualización: 2026-02-27  
 > Fuente: Consolidación de 11 documentos existentes + código fuente verificado
 
 ---
@@ -390,24 +390,31 @@ Traduce automáticamente metadatos SEO usando Gemini AI:
 
 Cada archivo incluye: metadatos de empresa, descripción de servicios, tecnologías, FAQs, URLs de contacto y casos de uso.
 
+**Actualización Fase 2 GEO (27-feb-2026)**: `llms.txt` y `llms-en.txt` ampliados con 30+ nuevas referencias:
+- 11 servicios EN (`/content/en/services/*.md`)
+- 3 soluciones EN (`/content/en/solutions/*.md`)
+- 15 casos de éxito ES (`/content/es/casos-exito/*.md`)
+- 5 servicios ES adicionales (`email-marketing`, `gestion-redes-sociales`, `tienda-online`, `estrategia-contenidos`, `plataforma-inteligencia-marketing`)
+
 ### 5.2 Ficheros .md en /public/content/
 
 **Estructura**:
 ```
 public/content/
 ├── es/
-│   ├── servicios/        (10 archivos)
+│   ├── servicios/        (11 archivos)
 │   ├── soluciones/       (3 archivos)
-│   ├── casos-exito/      (15+ archivos)
+│   ├── casos-exito/      (15 archivos)
 │   ├── blog/             (artículos)
 │   └── general/          (empresa.md, metodologia.md)
 └── en/
-    ├── services/
-    ├── solutions/
+    ├── services/         (11 archivos)
+    ├── solutions/        (3 archivos)
+    ├── blog/             (1 archivo)
     └── general/
 ```
 
-**Total**: 40+ archivos bilingües.
+**Total**: 50+ archivos bilingües.
 
 ### 5.3 Estructura IA_SUMMARY
 
@@ -474,7 +481,30 @@ User-agent: ClaudeBot
 Allow: /
 ```
 
-Los ficheros `.md` se sirven sin `noindex` para permitir descubrimiento. Usan `rel=canonical` hacia la página React correspondiente.
+**Actualización Fase 2 GEO (27-feb-2026)**:
+- `robots.txt` ahora incluye `Allow: /content/` para garantizar acceso de crawlers a los `.md`
+- `public/_headers` añade `X-Robots-Tag: noindex, follow` a `/content/*.md`, `/content/es/*/*.md` y `/content/en/*/*.md`
+- Esto previene que Google indexe los `.md` como páginas duplicadas, mientras los crawlers de IA (que ignoran `X-Robots-Tag`) siguen accediendo al contenido
+
+### 5.7 entity.json — Grafo de Conocimiento de la Empresa
+
+**Ubicación**: `public/entity.json`
+
+Archivo JSON-LD con el schema `Organization` enriquecido, diseñado para que las IAs generativas identifiquen y citen a Hayas Marketing con datos precisos.
+
+**Datos incluidos (Fase 2 GEO, 27-feb-2026)**:
+
+| Campo | Valor |
+|-------|-------|
+| `foundingDate` | `"2014"` |
+| `numberOfEmployees` | `8` |
+| `slogan` | `"Impulsado por IA, gobernado por personas"` |
+| `hasCredential` | 6 certificaciones: HubSpot, Google Partner, Meta Business, Shopify, Lovable, Aircall |
+| `makesOffer` | 11 servicios con URL, descripción y `PriceSpecification` |
+| `availableChannel` | SofÍA (chatbot IA) como `ServiceChannel` |
+| `subjectOf` | Referencias a `llms.txt` y `llms-en.txt` |
+| `brand` | Hayas Marketing con logo |
+| `aggregateRating` | 5.0/5 (Google Business Profile) |
 
 ---
 
@@ -613,10 +643,11 @@ Todos los artículos de blog incluyen `author` tipo `Person` con URL al perfil:
 
 **Ubicación**: `public/_headers`
 
-| Tipo de recurso | Cache |
-|----------------|-------|
+| Tipo de recurso | Cache / Headers |
+|----------------|----------------|
 | Assets (JS, CSS, fonts, images) | `max-age=31536000, immutable` (1 año) |
 | HTML | `must-revalidate` |
+| `/content/*.md` | `X-Robots-Tag: noindex, follow` (Fase 2 GEO) |
 
 ### 8.4 Self-Hosting de Fuentes
 
@@ -923,7 +954,7 @@ Referencia completa del mapping entre componentes React y ficheros `.md` para ma
 | Publicidad Redes Sociales | Social Media Advertising | ✅ |
 | Gestión Clientes CRM | CRM Customer Management | ✅ |
 
-### Blog traducido (5 artículos)
+### Blog traducido (8 artículos EN)
 
 | Artículo ES | Artículo EN | Estado |
 |------------|------------|--------|
@@ -932,6 +963,13 @@ Referencia completa del mapping entre componentes React y ficheros `.md` para ma
 | IA + SEO Herramientas | AI SEO Tools | ✅ |
 | Chatbots para webs | Chatbots for Websites | ✅ |
 | CRM Qué es | CRM What Is Benefits | ✅ |
+| IA en Marketing | AI in Marketing | ✅ |
+| Nuevo Paradigma SEO AEO/GEO | New SEO Paradigm AEO/GEO | ✅ |
+| Guía SEO On-Page | On-Page SEO Guide | ✅ |
+
+### Blog en español (29 artículos en `seo_pages`)
+
+El blog en español cuenta con **29 artículos** registrados en `seo_pages` con metadatos SEO completos.
 
 ### Soluciones traducidas (3/3)
 
@@ -960,5 +998,5 @@ Referencia completa del mapping entre componentes React y ficheros `.md` para ma
 
 ---
 
-*Documento generado el 25 de febrero de 2026*  
+*Documento generado el 25 de febrero de 2026 — Última actualización: 27 de febrero de 2026*  
 *Fuente: Consolidación de SEO_SYSTEM_OVERVIEW.md, SEO_EXECUTIVE_SUMMARY.md, SEO_CRITICAL_BUGS_AND_FIXES.md, SEO_RICH_SNIPPETS_GUIDE.md, SEO_PHASE_5_6_IMPLEMENTATION.md, SEO_PHASE_7_FAQ_SCHEMA.md, SEO_SERVICE_MIGRATION_COMPLETE.md, SEO_ALERTS_SYSTEM.md, SEO_CAPABILITIES_REFERENCE.md, CONTENT_SYNC.md, TRANSLATION_ROADMAP.md + código fuente verificado.*

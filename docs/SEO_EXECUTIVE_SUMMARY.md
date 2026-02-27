@@ -1,8 +1,8 @@
 # 📈 Resumen Ejecutivo SEO - Hayas Marketing
 
 > **Para:** Stakeholders y Dirección  
-> **Fecha:** 25 de febrero de 2026  
-> **Versión:** 1.1
+> **Fecha:** 27 de febrero de 2026  
+> **Versión:** 1.2
 
 ---
 
@@ -27,7 +27,7 @@ Hayas Marketing ha implementado un **sistema SEO de última generación** que va
 | **Servicios con Schema.org** | ✅ 100% | 25/25 servicios |
 | **Sistema Multilingüe** | ✅ Operativo | ES + EN |
 | **Casos de Éxito** | ✅ 100% | 10/10 casos |
-| **Blog Estratégico** | ✅ 100% | 6 artículos clave |
+| **Blog Estratégico** | ✅ 100% | 29 artículos ES + 8 EN |
 | **Rich Snippets** | ✅ Activo | Service, FAQ, HowTo, Article |
 | **IndexNow (Bing)** | ✅ Integrado | Notificación instantánea |
 
@@ -36,10 +36,10 @@ Hayas Marketing ha implementado un **sistema SEO de última generación** que va
 ```
 ┌─────────────────────────────────────────────────────────┐
 │                    ESPAÑOL (100%)                        │
-│  ✅ Home  ✅ 25 Servicios  ✅ 10 Casos  ✅ Blog          │
+│  ✅ Home  ✅ 25 Servicios  ✅ 10 Casos  ✅ 29 Blog        │
 ├─────────────────────────────────────────────────────────┤
-│                    INGLÉS (80%)                          │
-│  ✅ Home  ✅ 10 Servicios  ✅ 10 Casos  ✅ 6 Artículos   │
+│                    INGLÉS (85%)                          │
+│  ✅ Home  ✅ 10 Servicios  ✅ 10 Casos  ✅ 8 Blog EN      │
 │  🔄 Servicios secundarios y páginas legales en progreso │
 └─────────────────────────────────────────────────────────┘
 ```
@@ -57,16 +57,18 @@ Con la implementación actual, las páginas son elegibles para:
 | ⭐ **Service Snippets** | 25 servicios | +15-25% |
 | ❓ **FAQ Snippets** | Servicios principales | +20-30% |
 | 📋 **HowTo Snippets** | Guías y tutoriales | +10-20% |
-| 📰 **Article Snippets** | Blog (6+ artículos) | +15-25% |
+| 📰 **Article Snippets** | Blog (29+ artículos) | +15-25% |
 
 ### Visibilidad en IAs Generativas (GEO)
 
 | Optimización | Implementación |
 |--------------|----------------|
-| **Archivos llms.txt** | ✅ Español + Inglés |
-| **Contenido .md estructurado** | ✅ 40+ archivos |
+| **Archivos llms.txt** | ✅ Español + Inglés (30+ refs añadidas 27-feb) |
+| **Contenido .md estructurado** | ✅ 50+ archivos bilingües |
 | **Wikidata Entities** | ✅ Conceptos vinculados |
 | **SpeakableSpecification** | ✅ Blog optimizado para voz |
+| **entity.json mejorado** | ✅ 6 credenciales, 11 servicios, SofÍA |
+| **X-Robots-Tag en .md** | ✅ noindex, follow (previene duplicación SEO) |
 
 ---
 
@@ -87,9 +89,9 @@ Con la implementación actual, las páginas son elegibles para:
 │      └── Schema.org automático según contexto          │
 ├─────────────────────────────────────────────────────────┤
 │  3️⃣  GEO/AEO LAYER                                      │
-│      └── /public/content/es/*.md                       │
-│      └── /public/content/en/*.md                       │
+│      └── /public/content/es/*.md + /en/*.md            │
 │      └── llms.txt + llms-en.txt (índice para IAs)      │
+│      └── entity.json (grafo de conocimiento)           │
 └─────────────────────────────────────────────────────────┘
 ```
 
@@ -133,6 +135,9 @@ Con la implementación actual, las páginas son elegibles para:
 - [ ] Solicitar re-indexación de `/en` en Google Search Console
 - [ ] Monitorizar aparición de Rich Snippets en SERPs
 - [x] ~~Optimizar Core Web Vitals para móvil~~ ✅ Sprint 25-feb-2026
+- [x] ~~Optimizar meta titles/descriptions EN~~ ✅ Sprint 27-feb-2026
+- [x] ~~Fase 2 GEO/Agentic (entity.json, llms.txt, X-Robots-Tag)~~ ✅ Sprint 27-feb-2026
+- [ ] Auditar descriptions >160 chars (ES+EN)
 
 ### Medio Plazo (3-6 meses)
 
@@ -152,12 +157,13 @@ Con la implementación actual, las páginas son elegibles para:
 
 | Documento | Contenido |
 |-----------|-----------|
+| `SEO_AEO_GEO_DOCUMENTATION.md` | **Documento maestro consolidado** — Arquitectura, schemas, GEO, AEO, bugs |
 | `SEO_SYSTEM_OVERVIEW.md` | Arquitectura completa con diagramas |
 | `SEO_CRITICAL_BUGS_AND_FIXES.md` | Registro de errores y soluciones |
 | `SEO_RICH_SNIPPETS_GUIDE.md` | Guía de implementación Schema.org |
 | `SEO_SERVICE_MIGRATION_COMPLETE.md` | Estado de migración de servicios |
 | `SEO_ALERTS_SYSTEM.md` | Sistema de alertas automáticas |
-| `PERFORMANCE_OPTIMIZATION_LOG.md` | **Nuevo** — Optimizaciones de rendimiento web |
+| `PERFORMANCE_OPTIMIZATION_LOG.md` | Optimizaciones de rendimiento web |
 
 ---
 
@@ -169,10 +175,11 @@ El sistema SEO de Hayas Marketing está **100% operativo** y posicionado para ca
 - ✅ **Triple optimización**: SEO + AEO + GEO
 - ✅ **Bilingüe nativo**: ES-ES y EN-US
 - ✅ **Schema.org avanzado**: 6 tipos de structured data
-- ✅ **Preparado para IA**: llms.txt y contenido citable
+- ✅ **Preparado para IA**: llms.txt, entity.json y contenido citable (50+ .md)
 - ✅ **Rendimiento optimizado**: Service Worker + Critical CSS (sprint 25-feb-2026)
+- ✅ **Fase 2 GEO/Agentic**: entity.json enriquecido, X-Robots-Tag, llms.txt ampliado (sprint 27-feb-2026)
 
 ---
 
-*Documento actualizado el 25 de febrero de 2026*  
-*Para consultas técnicas: revisar `docs/SEO_SYSTEM_OVERVIEW.md`*
+*Documento actualizado el 27 de febrero de 2026*  
+*Para consultas técnicas: revisar `docs/SEO_AEO_GEO_DOCUMENTATION.md`*

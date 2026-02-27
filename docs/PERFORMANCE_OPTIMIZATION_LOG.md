@@ -1,6 +1,6 @@
 # ⚡ Registro de Optimizaciones de Rendimiento - Hayas Marketing
 
-> **Última actualización:** 25 de febrero de 2026  
+> **Última actualización:** 27 de febrero de 2026  
 > **Objetivo:** Documentar todas las optimizaciones de rendimiento web aplicadas al proyecto
 
 ---
@@ -79,6 +79,61 @@ if ('serviceWorker' in navigator) {
 - Tamaño HTML: +~2.5 KiB (aceptable)
 
 **Limitación:** El CSS completo de Tailwind seguirá como render-blocking (Vite lo inyecta automáticamente). Para eliminarlo se necesitaría `vite-plugin-critical` o carga asíncrona con riesgo de FOUC.
+
+---
+
+---
+
+## 📅 27 de febrero de 2026 — Sprint SEO On-Page + Fase 2 GEO/Agentic
+
+### Contexto
+
+Optimización editorial de metadatos SEO en inglés y despliegue de la Fase 2 GEO/Agentic para mejorar la visibilidad en IAs generativas.
+
+---
+
+### 1. ✅ Optimización de Meta Titles EN (5 corregidos)
+
+**Problema:** Varios meta titles en inglés excedían 60 caracteres o carecían de branding consistente.
+
+**Solución:** Revisión editorial de 5 títulos:
+- Acortados a ≤60 caracteres
+- Sufijo ` | Hayas Marketing` añadido consistentemente
+- Keywords primarias posicionadas al inicio
+
+**Impacto:** CTR estimado +10-15% en SERPs para páginas EN.
+
+---
+
+### 2. ✅ Optimización de Meta Descriptions EN (4 corregidas)
+
+**Problema:** Descriptions genéricas o excesivamente largas (>160 chars).
+
+**Solución:** 4 descriptions reescritas con:
+- Longitud ≤160 caracteres
+- Keywords focalizadas al inicio
+- Call-to-action implícito
+
+**Impacto:** Mejor snippet preview en Google para búsquedas en inglés.
+
+---
+
+### 3. ✅ Fase 2 GEO/Agentic — Infraestructura para IAs Generativas
+
+**Cambios implementados:**
+
+| Archivo | Cambio | Propósito |
+|---------|--------|-----------|
+| `public/_headers` | `X-Robots-Tag: noindex, follow` en `/content/*.md` | Prevenir duplicación SEO sin bloquear IAs |
+| `public/entity.json` | +`foundingDate:2014`, +`numberOfEmployees:8`, +6 `hasCredential`, +`slogan`, +`availableChannel` (SofÍA), +`subjectOf` (llms.txt) | Grafo de conocimiento enriquecido |
+| `public/llms.txt` | +15 casos de éxito ES, +5 servicios ES, +11 services EN, +3 solutions EN | 30+ nuevas referencias para crawlers IA |
+| `public/llms-en.txt` | +11 services EN, +3 solutions EN, +1 blog EN | Cobertura bilingüe completa |
+| `public/robots.txt` | `Allow: /content/` | Acceso explícito a contenido .md |
+
+**Impacto:**
+- IAs generativas: mayor probabilidad de citación con datos precisos
+- SEO: sin duplicación gracias a `X-Robots-Tag`
+- Cobertura de contenido indexable por IAs: de 40+ a 50+ archivos .md
 
 ---
 
