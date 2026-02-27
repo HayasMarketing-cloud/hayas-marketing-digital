@@ -53,7 +53,7 @@ const RelatedContentBlock: React.FC<RelatedContentBlockProps> = ({ currentPath, 
       // Step 3: Fetch related page data in a single query
       const { data: pages, error: err2 } = await supabase
         .from('seo_pages')
-        .select('path, title, description, category')
+        .select('path, h1, description, category')
         .in('path', paths)
         .eq('is_indexable', true);
 
@@ -86,7 +86,7 @@ const RelatedContentBlock: React.FC<RelatedContentBlockProps> = ({ currentPath, 
               {getCategoryLabel(page.category)}
             </Badge>
             <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors mb-2 line-clamp-2">
-              {page.title}
+              {page.h1}
             </h4>
             <p className="text-sm text-muted-foreground line-clamp-2 mb-3">
               {page.description}
