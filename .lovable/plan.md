@@ -125,4 +125,3 @@ Usará el campo `category` de `seo_pages` (ya existe y está poblado: `blog`, `s
 2. Crear `src/components/RelatedContentBlock.tsx`
 3. Integrar en `BlogPostTemplate.tsx`
 4. Poblar `related_pages` via UPDATE para ~12 páginas
-
