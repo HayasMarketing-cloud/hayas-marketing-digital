@@ -108,6 +108,12 @@
   Content-Type: application/json; charset=utf-8
   X-Content-Type-Options: nosniff
 
+/.well-known/ai-plugin.json
+  Cache-Control: public, max-age=86400, must-revalidate
+  Content-Type: application/json; charset=utf-8
+  X-Content-Type-Options: nosniff
+  Access-Control-Allow-Origin: *
+
 /humans.txt
   Cache-Control: public, max-age=86400, must-revalidate
   Content-Type: text/plain; charset=utf-8
