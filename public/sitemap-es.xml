@@ -3,7 +3,7 @@
   <!-- MAIN PAGES -->
   <url>
     <loc>https://hayasmarketing.com/es</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es"/>
@@ -12,7 +12,7 @@
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/nosotros</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/nosotros"/>
@@ -21,7 +21,7 @@
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/contacto</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/contacto"/>
@@ -30,7 +30,7 @@
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/servicios</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/servicios"/>
@@ -41,7 +41,7 @@
   <!-- SOLUTIONS -->
   <url>
     <loc>https://hayasmarketing.com/es/soluciones/impulsa-tu-marca</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/soluciones/impulsa-tu-marca"/>
@@ -49,7 +49,7 @@
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/soluciones/conecta-con-tus-clientes</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/soluciones/conecta-con-tus-clientes"/>
@@ -57,7 +57,7 @@
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/soluciones/activa-tus-ventas</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/soluciones/activa-tus-ventas"/>
@@ -65,7 +65,7 @@
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/soluciones/activa-tu-estrategia-digital</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/soluciones/activa-tu-estrategia-digital"/>
@@ -73,7 +73,7 @@
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/soluciones/ia-marketing</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/soluciones/ia-marketing"/>
@@ -81,7 +81,7 @@
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/soluciones/marketing-visibilidad</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/soluciones/marketing-visibilidad"/>
@@ -89,7 +89,7 @@
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/soluciones/captacion-leads</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2025-11-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/soluciones/captacion-leads"/>
@@ -97,7 +97,7 @@
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/soluciones/automatizacion-marketing</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/soluciones/automatizacion-marketing"/>
@@ -105,7 +105,7 @@
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/soluciones/gestion-clientes-crm</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2025-11-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/soluciones/gestion-clientes-crm"/>
@@ -115,7 +115,7 @@
   <!-- SERVICES -->
   <url>
     <loc>https://hayasmarketing.com/es/servicios/creacion-marca</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/servicios/creacion-marca"/>
@@ -123,7 +123,7 @@
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/servicios/diseno-web</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/servicios/diseno-web"/>
@@ -131,7 +131,7 @@
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/servicios/diseno-web/alojamiento-mantenimiento</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/servicios/diseno-web/alojamiento-mantenimiento"/>
@@ -139,7 +139,7 @@
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/servicios/tienda-online</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/servicios/tienda-online"/>
@@ -147,7 +147,7 @@
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/servicios/seo-posicionamiento</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/servicios/seo-posicionamiento"/>
@@ -155,7 +155,7 @@
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/servicios/estrategia-contenidos</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/servicios/estrategia-contenidos"/>
@@ -163,7 +163,7 @@
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/servicios/localizacion-contenidos</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/servicios/localizacion-contenidos"/>
@@ -171,7 +171,7 @@
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/servicios/campanas-inbound-marketing</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/servicios/campanas-inbound-marketing"/>
@@ -179,7 +179,7 @@
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/servicios/captacion-leads-clientes</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/servicios/captacion-leads-clientes"/>
@@ -187,7 +187,7 @@
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/servicios/publicidad-google-ads</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/servicios/publicidad-google-ads"/>
@@ -195,7 +195,7 @@
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/servicios/publicidad-redes-sociales</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/servicios/publicidad-redes-sociales"/>
@@ -203,7 +203,7 @@
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/servicios/gestion-redes-sociales</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/servicios/gestion-redes-sociales"/>
@@ -211,7 +211,7 @@
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/servicios/email-marketing-automatizaciones</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/servicios/email-marketing-automatizaciones"/>
@@ -219,7 +219,7 @@
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/servicios/implantacion-crm</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/servicios/implantacion-crm"/>
@@ -227,7 +227,7 @@
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/servicios/administracion-crm</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/servicios/administracion-crm"/>
@@ -235,7 +235,7 @@
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/servicios/automatizacion-procesos-ventas</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/servicios/automatizacion-procesos-ventas"/>
@@ -243,7 +243,7 @@
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/servicios/implementacion-funnel</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/servicios/implementacion-funnel"/>
@@ -251,7 +251,7 @@
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/servicios/marketing-directo</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/servicios/marketing-directo"/>
@@ -259,7 +259,7 @@
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/servicios/asistente-ia</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/servicios/asistente-ia"/>
@@ -267,7 +267,7 @@
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/servicios/formacion-ia</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/servicios/formacion-ia"/>
@@ -275,7 +275,7 @@
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/servicios/integraciones-ia-procesos</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/servicios/integraciones-ia-procesos"/>
@@ -283,7 +283,7 @@
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/servicios/consultoria-estrategica-analitica</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/servicios/consultoria-estrategica-analitica"/>
@@ -293,7 +293,7 @@
   <!-- KIT DIGITAL (solo ES - programa del gobierno español) -->
   <url>
     <loc>https://hayasmarketing.com/es/kit-digital</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/kit-digital"/>
@@ -301,7 +301,7 @@
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/kit-digital/presencia-basica-internet</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/kit-digital/presencia-basica-internet"/>
@@ -309,7 +309,7 @@
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/kit-digital/gestion-clientes-crm</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/kit-digital/gestion-clientes-crm"/>
@@ -317,7 +317,7 @@
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/kit-digital/gestion-red-social</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/kit-digital/gestion-red-social"/>
@@ -325,7 +325,7 @@
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/kit-digital/presencia-avanzada-seo</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/kit-digital/presencia-avanzada-seo"/>
@@ -333,7 +333,7 @@
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/kit-consulting</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/kit-consulting"/>
@@ -343,7 +343,7 @@
   <!-- BLOG -->
   <url>
     <loc>https://hayasmarketing.com/es/blog</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/blog"/>
@@ -351,61 +351,61 @@
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/crm-que-es-beneficios</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/perfil-cliente-ideal</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/como-crear-buyer-persona-b2b-b2c-guia-completa</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/ia-redes-sociales-herramientas-riesgos</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/decision-marketing-confianza</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/gobernanza-ia-empresas</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/guia-privacidad-huella-digital</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/huella-digital-derecho-olvido</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/chatbots-para-paginas-web</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/blog/chatbots-para-paginas-web"/>
@@ -413,127 +413,213 @@
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/kit-digital-marketing-guia-completa-2025</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/marketing-global-internacionalizacion</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/funnel-conversion-b2b</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/seo-inteligencia-artificial</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/lead-scoring-calificacion-leads</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/seo-on-page-guia-completa</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/web-3-0-futuro-internet-descentralizado</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/automatizacion-marketing-digital-guia-completa</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/seo-off-page-estrategias-practicas-posicionamiento</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/re-commerce-economia-circular-ecommerce-partnership-sharpei</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/abm-account-based-marketing</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/como-elegir-mejor-crm-empresa-organizacion</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/guia-tecnica-email-marketing-hubspot-configuracion</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/branding-proceso-tecnicas-naming</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/calculo-inversion-marketing</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/perfil-cliente-ideal-icp</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/configuracion-email-marketing-cumplimiento</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/email-marketing-hubspot</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/blog/nuevo-paradigma-seo-aeo-geo</loc>
+    <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- CASES HUB -->
+  <!-- CASES -->
   <url>
     <loc>https://hayasmarketing.com/es/casos-exito</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/casos-exito"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/case-studies"/>
   </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/aecoc</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/casos-exito/aecoc"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/case-studies/aecoc"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/asendia</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/casos-exito/asendia"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/case-studies/asendia"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/asp-asepsia</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/casos-exito/asp-asepsia"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/case-studies/asp-asepsia"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/beka-finance</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/casos-exito/beka-finance"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/case-studies/beka-finance"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/formato-educativo</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/casos-exito/formato-educativo"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/case-studies/formato-educativo"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/hubspot-for-startups</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/casos-exito/hubspot-for-startups"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/case-studies/hubspot-for-startups"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/inbound-students</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/casos-exito/inbound-students"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/case-studies/inbound-students"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/nexo-vital</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/casos-exito/nexo-vital"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/case-studies/nexo-vital"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/peris-electricidad</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/casos-exito/peris-electricidad"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/case-studies/peris-electricidad"/>
+  </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/casos-exito/quanticbi</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/casos-exito/quanticbi"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/case-studies/quanticbi"/>
+  </url>
 
   <!-- COMPARISONS -->
   <url>
     <loc>https://hayasmarketing.com/es/comparativa/hubspot-vs-go-high-level</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/comparativa/hubspot-vs-go-high-level"/>
@@ -543,7 +629,7 @@
   <!-- TOOLS -->
   <url>
     <loc>https://hayasmarketing.com/es/herramientas/generador-whatsapp-link</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/herramientas/generador-whatsapp-link"/>
@@ -553,7 +639,7 @@
   <!-- AUTHOR -->
   <url>
     <loc>https://hayasmarketing.com/es/autor/ruben-reyero</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -561,13 +647,13 @@
   <!-- LEGAL -->
   <url>
     <loc>https://hayasmarketing.com/es/legal/aviso-legal</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/legal/politica-privacidad</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/legal/politica-privacidad"/>
@@ -575,13 +661,13 @@
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/legal/terminos-servicio</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/legal/politica-cookies</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/legal/politica-cookies"/>
