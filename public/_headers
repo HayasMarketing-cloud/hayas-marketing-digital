@@ -123,16 +123,19 @@
   Cache-Control: public, max-age=3600, must-revalidate
   Content-Type: text/markdown; charset=utf-8
   X-Content-Type-Options: nosniff
+  X-Robots-Tag: noindex, follow
 
 /content/es/*/*.md
   Cache-Control: public, max-age=3600, must-revalidate
   Content-Type: text/markdown; charset=utf-8
   X-Content-Type-Options: nosniff
+  X-Robots-Tag: noindex, follow
 
 /content/en/*/*.md
   Cache-Control: public, max-age=3600, must-revalidate
   Content-Type: text/markdown; charset=utf-8
   X-Content-Type-Options: nosniff
+  X-Robots-Tag: noindex, follow
   
 /manifest.json
   Cache-Control: public, max-age=86400, must-revalidate

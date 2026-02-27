@@ -13,7 +13,7 @@
 - **Team**: 8 specialized professionals
 - **Location**: Spain
 - **Languages**: Spanish, English
-- **Last Updated**: 2026-02-17
+- **Last Updated**: 2026-02-27
 
 ---
 
@@ -305,3 +305,30 @@ This file provides context for AI systems and LLMs about Hayas Marketing's servi
 
 For the Spanish version, see: /llms.txt
 For full blog content, see: /llms-full.txt
+
+---
+
+## Detailed Content for Citation (GEO/AEO)
+
+For specific information and citation, see these structured files:
+
+### Services (English)
+- AI Assistant: /content/en/services/ai-assistant.md
+- Branding: /content/en/services/branding.md
+- Content Strategy: /content/en/services/content-strategy.md
+- CRM Implementation: /content/en/services/crm-implementation.md
+- E-commerce: /content/en/services/ecommerce.md
+- Email Marketing: /content/en/services/email-marketing.md
+- Google Ads: /content/en/services/google-ads.md
+- Marketing Intelligence Platform: /content/en/services/marketing-intelligence-platform.md
+- SEO Positioning: /content/en/services/seo-positioning.md
+- Social Media: /content/en/services/social-media.md
+- Web Design: /content/en/services/web-design.md
+
+### Solutions (English)
+- Activate Sales: /content/en/solutions/activate-sales.md
+- Boost Your Brand: /content/en/solutions/boost-your-brand.md
+- Connect with Customers: /content/en/solutions/connect-with-customers.md
+
+### General
+- About the Company: /content/es/general/empresa.md
