@@ -1,49 +1,70 @@
 
 
-## Revisión editorial de meta titles y descriptions — Blog EN
+## Fase 2 GEO/Agentic: Cabeceras X-Robots-Tag, entity.json mejorado y llms.txt optimizado
 
-### Estado actual (8 posts en `/en/blog/*`)
+### 1. Cabeceras X-Robots-Tag para contenido .md
 
-| Path | Title actual | Problema |
-|------|-------------|----------|
-| `/en/blog/ai-governance-business` | AI Governance: Strategic Responsibility \| Hayas Marketing | Correcto, buen formato |
-| `/en/blog/ai-seo-tools` | AI SEO Tools: The Guide to Optimize Your Web \| Hayas | Branding inconsistente ("Hayas" vs "Hayas Marketing") |
-| `/en/blog/artificial-intelligence-marketing-applications` | AI in Marketing: A Practical Guide \| Hayas Marketing | Correcto |
-| `/en/blog/chatbots-for-websites` | Chatbots for Websites: How They Improve Customer Experience \| Hayas Marketing | Demasiado largo (72 chars, límite 60) |
-| `/en/blog/crm-what-is-benefits` | What is a CRM and What Are Its Benefits for Your Business \| Hayas Marketing | Demasiado largo (73 chars) |
-| `/en/blog/decision-marketing` | Decision Marketing: When Marketing Stops Provoking and Starts Building Trust \| Hayas Marketing | Muy largo (93 chars) |
-| `/en/blog/new-seo-paradigm-aeo-geo` | The New SEO Paradigm: AEO & GEO in the AI Era \| Hayas Marketing | Correcto (62 chars, aceptable) |
-| `/en/blog/seo-on-page-guide-complete` | Complete Guide to On-Page SEO - Hayas Marketing Blog | Formato inconsistente ("-" en vez de "\|", dice "Blog") |
+Añadir en `public/_headers` la directiva `X-Robots-Tag` a los archivos `.md` para que Google no los indexe como páginas duplicadas, pero los crawlers de IA sí puedan leerlos:
+
+```
+/content/*.md
+  X-Robots-Tag: noindex, follow
+
+/content/es/*/*.md
+  X-Robots-Tag: noindex, follow
+
+/content/en/*/*.md
+  X-Robots-Tag: noindex, follow
+```
+
+Esto previene duplicado con las páginas React sin bloquear el acceso a crawlers de IA (que ignoran X-Robots-Tag).
+
+### 2. Mejorar entity.json
+
+Cambios en `public/entity.json`:
+
+- Corregir `foundingDate` de "2018" a "2014" (coherente con llms.txt)
+- Añadir `numberOfEmployees` (8 profesionales)
+- Añadir `hasCredential` con las certificaciones (HubSpot, Google, Meta, Shopify, Lovable, Aircall)
+- Añadir servicios faltantes a `makesOffer` (Email Marketing, Google Ads, Social Media, E-commerce, Redes Sociales)
+- Añadir `subjectOf` con enlaces a llms.txt y llms-en.txt para conectar el grafo
+- Añadir `award` o `review` externo (Google Business 5.0/5 ya está como `aggregateRating`)
+- Añadir `slogan` con "Impulsado por IA, gobernado por personas"
+- Añadir `parentOrganization` si aplica, o `brand` para reforzar identidad
+- Añadir `availableChannel` con el chatbot SofÍA como `ServiceChannel`
+
+### 3. Optimizar llms.txt
+
+Cambios en `public/llms.txt`:
+
+- Actualizar `Last Updated` de 2026-02-17 a 2026-02-27
+- Añadir sección de contenido `.md` en inglés (actualmente solo lista archivos en español)
+- Añadir referencia a los 15 casos de éxito .md individuales en `/content/es/casos-exito/`
+- Añadir servicios .md faltantes que no están listados (email-marketing, gestion-redes-sociales, tienda-online, estrategia-contenidos, plataforma-inteligencia-marketing)
+
+Cambios en `public/llms-en.txt`:
+
+- Actualizar `Last Updated` de 2026-02-17 a 2026-02-27
+- Añadir sección de contenido `.md` en inglés con los 11 archivos de `/content/en/services/` y los de `/content/en/solutions/`
+
+### 4. Permitir .md en robots.txt
+
+Añadir regla explícita en `public/robots.txt`:
+```
+Allow: /content/
+```
+
+Esto asegura que la regla `Disallow: /*.json$` no interfiera y que los crawlers encuentren los `.md` sin ambigüedad.
 
 ---
 
-### Propuestas de corrección
+### Archivos a modificar
 
-#### Titles (corregir 4):
-
-| Path | Title propuesto |
-|------|----------------|
-| `ai-seo-tools` | AI SEO Tools: The Complete Guide \| Hayas Marketing |
-| `chatbots-for-websites` | Chatbots for Websites: Benefits & Guide \| Hayas |
-| `crm-what-is-benefits` | What Is a CRM? Benefits for Your Business \| Hayas |
-| `decision-marketing` | Decision Marketing: Building Trust, Not Noise \| Hayas |
-| `seo-on-page-guide-complete` | On-Page SEO: The Complete Guide \| Hayas Marketing |
-
-#### Descriptions (corregir 3):
-
-| Path | Description actual | Problema | Propuesta |
-|------|-------------------|----------|-----------|
-| `ai-seo-tools` | "Discover the best AI SEO tools to optimize your website. Practical guide with recommendations for content, keywords, and technical analysis." | Genérica | "Compare the best AI-powered SEO tools for keyword research, content optimization, and technical audits. Actionable guide with real recommendations." |
-| `seo-on-page-guide-complete` | "Explore our complete guide to on-page SEO, digital marketing tips, CRM, and AI. Boost your strategy with Hayas Marketing." | Mezcla temas inconexos (CRM, AI) | "Master on-page SEO with this step-by-step guide: title tags, meta descriptions, headings, internal linking, and Core Web Vitals optimization." |
-| `decision-marketing` | "Decision Marketing is a new marketing approach based on clarity, respect for time, and honest information. Discover how to build trust without manipulation." | Aceptable pero débil en CTA | "Decision Marketing replaces persuasion with clarity and respect. Learn how transparent, ethical marketing builds lasting customer trust." |
-
----
-
-### Implementación
-
-Ejecutar 5 UPDATEs en la tabla `seo_pages` para corregir los titles y 3 UPDATEs para descriptions, aplicando los mismos criterios editoriales que se usaron en español:
-- Branding consistente con `| Hayas` o `| Hayas Marketing`
-- Titles ≤60 chars
-- Descriptions ≤160 chars, con keyword y CTA implícito
-- Sin formato slug, capitalización correcta de acrónimos
+| Archivo | Cambios |
+|---------|---------|
+| `public/_headers` | Añadir `X-Robots-Tag: noindex, follow` a las 3 reglas de `/content/*.md` |
+| `public/entity.json` | Corregir foundingDate, añadir numberOfEmployees, hasCredential, slogan, availableChannel, servicios faltantes |
+| `public/llms.txt` | Actualizar fecha, añadir .md faltantes (EN + casos-exito + servicios) |
+| `public/llms-en.txt` | Actualizar fecha, añadir sección de .md en inglés |
+| `public/robots.txt` | Añadir `Allow: /content/` |
 
