@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Badge } from '@/components/ui/badge';
-import { X, Save, RotateCcw, AlertCircle, ChevronDown, ChevronUp, Sparkles, Globe } from 'lucide-react';
+import { X, Save, RotateCcw, AlertCircle, ChevronDown, ChevronUp, Sparkles, Globe, Image, ExternalLink, Copy } from 'lucide-react';
 import { useSEOPage, useUpdateSEOPage, useDeleteSEOPage } from '@/hooks/useSEOData';
 import { useToast } from '@/hooks/use-toast';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
@@ -340,6 +340,75 @@ export const SEOEditor: React.FC<SEOEditorProps> = ({ path, onClose }) => {
             onChange={(e) => setFormData({ ...formData, canonical: e.target.value })}
             placeholder="/es/servicios/seo"
           />
+        </div>
+
+        {/* OG Image */}
+        <div>
+          <Label htmlFor="og_image" className="flex items-center gap-2">
+            <Image className="h-4 w-4" />
+            Imagen OG (Open Graph)
+          </Label>
+          <div className="mt-1 space-y-2">
+            <div className="flex gap-2">
+              <Input
+                id="og_image"
+                value={formData.og_image}
+                onChange={(e) => setFormData({ ...formData, og_image: e.target.value })}
+                placeholder="https://... o /images/og/mi-imagen.jpg"
+                className="flex-1"
+              />
+              {formData.og_image && (
+                <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={() => {
+                    navigator.clipboard.writeText(
+                      formData.og_image.startsWith('http') 
+                        ? formData.og_image 
+                        : `https://hayasmarketing.com${formData.og_image}`
+                    );
+                    toast({ title: 'URL copiada' });
+                  }}
+                  title="Copiar URL completa"
+                >
+                  <Copy className="h-4 w-4" />
+                </Button>
+              )}
+            </div>
+            {formData.og_image && (
+              <div className="relative rounded-lg overflow-hidden border bg-muted/30">
+                <img
+                  src={formData.og_image.startsWith('http') ? formData.og_image : `https://hayasmarketing.com${formData.og_image}`}
+                  alt="OG Image Preview"
+                  className="w-full h-auto max-h-48 object-cover"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).style.display = 'none';
+                  }}
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-xs px-2 py-1">
+                  Recomendado: 1200×630px
+                </div>
+              </div>
+            )}
+            <p className="text-xs text-muted-foreground">
+              URL absoluta o relativa. Se usa para previsualizaciones en redes sociales (Facebook, X, LinkedIn, WhatsApp).
+            </p>
+          </div>
+        </div>
+
+        {/* OG Type */}
+        <div>
+          <Label htmlFor="og_type">Tipo OG</Label>
+          <Select value={formData.og_type} onValueChange={(value) => setFormData({ ...formData, og_type: value })}>
+            <SelectTrigger>
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="website">website</SelectItem>
+              <SelectItem value="article">article</SelectItem>
+              <SelectItem value="service">service</SelectItem>
+            </SelectContent>
+          </Select>
         </div>
 
         {/* Robots */}
