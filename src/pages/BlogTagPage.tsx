@@ -25,7 +25,7 @@ const allPosts = [
     category: "Ecommerce e IA",
     readTime: "12 min",
     date: "2026-03-02",
-    tags: ["tienda-online", "integraciones-ia-procesos", "impulsa-tu-marca", "activa-tus-ventas"]
+    tags: ["tienda-online", "integraciones-ia-procesos", "consultoria-estrategica-analitica", "impulsa-tu-marca", "activa-tus-ventas"]
   },
   {
     id: "guia-tecnica-email-marketing-hubspot-configuracion",
