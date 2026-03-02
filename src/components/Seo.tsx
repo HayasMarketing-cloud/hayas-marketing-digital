@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import { hayasOrganizationSchema } from '@/data/seoData';
 
+const OG_DEFAULT_BLOG = '/images/og-default-blog.jpg';
+
 interface SeoProps {
   title: string;
   description?: string;
@@ -144,9 +146,13 @@ const Seo = ({
     setMeta('property', 'og:title', title);
     setMeta('property', 'og:locale', inLanguage);
     if (description) setMeta('property', 'og:description', description);
-    if (ogImage) {
-      const fullImageUrl = ogImage.startsWith('http') ? ogImage : `${window.location.origin}${ogImage}`;
+    // Use provided ogImage, or fallback to default blog OG for blog pages, or general default
+    const effectiveOgImage = ogImage || (currentPath.includes('/blog') ? OG_DEFAULT_BLOG : null);
+    if (effectiveOgImage) {
+      const fullImageUrl = effectiveOgImage.startsWith('http') ? effectiveOgImage : `${window.location.origin}${effectiveOgImage}`;
       setMeta('property', 'og:image', fullImageUrl);
+      setMeta('property', 'og:image:width', '1200');
+      setMeta('property', 'og:image:height', '630');
       setMeta('property', 'og:image:alt', title);
     }
 
@@ -154,8 +160,8 @@ const Seo = ({
     setMeta('name', 'twitter:url', pageUrl);
     setMeta('name', 'twitter:title', title);
     if (description) setMeta('name', 'twitter:description', description);
-    if (ogImage) {
-      const fullImageUrl = ogImage.startsWith('http') ? ogImage : `${window.location.origin}${ogImage}`;
+    if (effectiveOgImage) {
+      const fullImageUrl = effectiveOgImage.startsWith('http') ? effectiveOgImage : `${window.location.origin}${effectiveOgImage}`;
       setMeta('name', 'twitter:image', fullImageUrl);
     }
 
