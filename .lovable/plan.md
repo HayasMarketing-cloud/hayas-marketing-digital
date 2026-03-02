@@ -1,51 +1,29 @@
 
 
-## Mejorar el tono conversacional de HAYAS Copilot
+## Plan: Ajustes en imagen del artículo destacado y exclusión de la lista general
 
-### Problema
+### Cambios necesarios en `src/pages/Blog.tsx`:
 
-Cuando alguien pregunta "¿cómo puedes ayudarme?", el bot responde con una lista genérica y mecánica de capacidades. Suena a manual de instrucciones, no a un asistente cercano.
+1. **Imagen no cortada en "Artículo destacado"**: Cambiar la clase CSS de la imagen de `object-cover` a `object-contain` con fondo oscuro, para que se vea completa sin recorte. Ajustar el contenedor para dar un aspect ratio adecuado.
 
-### Solución
+2. **Excluir el post destacado de la lista general**: Filtrar el post con `featured: true` de `sortedPosts` antes de generar `recentPosts` y `allArticles`, para que no aparezca duplicado.
 
-Actualizar el system prompt en la base de datos (`sofia_config`) con dos cambios:
+3. **Corregir "AI-Poweried" → "AI-Powered" en las imágenes**: Esto requiere **reemplazar los archivos de imagen** (`checkout-ia-ecommerce-hero.jpg` tanto la versión cuadrada como rectangular). Como las imágenes son archivos estáticos con el texto renderizado dentro, **no se puede corregir por código**. Hay dos opciones:
+   - **Opción A**: Generar nuevas imágenes con IA corrigiendo el texto.
+   - **Opción B**: Que el usuario suba las imágenes corregidas manualmente desde la fuente original.
 
-**1. Ampliar la sección TONO** con reglas anti-robot:
+### Detalle técnico
 
-```
-## TONO
-- Profesional, cercano, claro y orientado a ayudar.
-- No agresivo ni comercial forzado.
-- Usa listas y pasos cuando faciliten la comprensión.
-- Emojis solo de forma puntual y discreta.
-- NUNCA respondas como un manual de instrucciones. Habla como un compañero experto que quiere entender tu situación.
-- Evita listar tus propias capacidades de forma genérica ("puedo ayudarte con X, Y, Z"). En su lugar, pregunta al usuario qué necesita o en qué momento está.
-- Prioriza hacer UNA buena pregunta antes que dar CUATRO opciones abstractas.
-```
+**Archivo:** `src/pages/Blog.tsx`
 
-**2. Añadir sección de ESTILO DE RESPUESTA** después de TONO:
+- **Línea 597**: Cambiar `className="w-full h-64 md:h-full object-cover"` → `className="w-full h-64 md:h-full object-contain bg-gray-900"` para mostrar la imagen completa con fondo oscuro.
 
-```
-## ESTILO DE RESPUESTA
-- Cuando alguien pregunte qué puedes hacer o cómo ayudarle, NO listes capacidades. 
-  En su lugar, responde con curiosidad: pregunta sobre su negocio, su momento actual o su objetivo.
-  Ejemplo MALO: "Puedo ayudarte con: 1) Información sobre servicios 2) Soporte inicial 3) Cualificación..."
-  Ejemplo BUENO: "¡Claro! Para orientarte bien, ¿me cuentas a qué se dedica tu empresa y qué objetivo tienes ahora mismo? Así te doy una recomendación concreta."
-- Responde en 2-4 frases cortas, no en párrafos largos.
-- Si usas listas, que sean de contenido útil (pasos concretos, ejemplos reales), nunca de tus propias funciones.
-- Siempre cierra con una pregunta que haga avanzar la conversación, no con "¿te gustaría saber más?".
-```
+- **Líneas 537-542**: Filtrar el featured post de las listas:
+  ```typescript
+  const nonFeaturedPosts = sortedPosts.filter(p => p.id !== featuredPost.id);
+  const recentPosts = nonFeaturedPosts.slice(0, 6);
+  const allArticles = nonFeaturedPosts.slice(6);
+  ```
 
-### Archivo a modificar
-
-| Recurso | Cambio |
-|---------|--------|
-| Base de datos: `sofia_config.system_prompt` | Ampliar TONO + añadir sección ESTILO DE RESPUESTA |
-
-### Resultado esperado
-
-Ante "¿cómo puedes ayudarme?" el bot respondería algo como:
-> "¡Con mucho gusto! Para darte la mejor orientación, cuéntame: ¿ya tienes web y presencia digital, o estás empezando desde cero?"
-
-En lugar de la lista robótica actual.
+- **Imágenes con typo**: Las imágenes son archivos `.jpg` con texto incrustado. No es editable por código. Puedo intentar regenerarlas con IA o necesitas subir versiones corregidas.
 
