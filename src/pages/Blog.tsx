@@ -54,21 +54,21 @@ const Blog = () => {
   };
 
   const featuredPost = {
-    id: 'la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing',
+    id: 'checkout-ia-ecommerce-copilot-chatgpt-gemini',
     title: isEnglish 
-      ? 'Artificial Intelligence (AI) and its Application in Marketing'
-      : 'La Inteligencia Artificial (IA) y su aplicación en Marketing',
+      ? 'When Checkout Leaves Your Website: What Copilot, ChatGPT and Gemini Change for Ecommerce'
+      : 'Cuando el checkout deja de estar en tu web: lo que Copilot, ChatGPT y Gemini cambian para el ecommerce',
     description: isEnglish
-      ? 'In a world where technology advances by leaps and bounds, Artificial Intelligence has emerged as a transformative tool in digital marketing.'
-      : 'En un mundo donde la tecnología avanza a pasos agigantados, la Inteligencia Artificial ha emergido como una herramienta transformadora en el marketing digital.',
-    date: '2024-12-15',
-    readTime: '15 min',
-    author: isEnglish ? 'Hayas Marketing Team' : 'Equipo Hayas Marketing',
-    image: teamMarketingCollaboration,
-    category: isEnglish ? 'Artificial Intelligence' : 'Inteligencia Artificial',
+      ? 'Microsoft, OpenAI and Google are converging to turn AI conversations into full transactional channels. Strategic analysis for ecommerce managers.'
+      : 'Microsoft, OpenAI y Google convergen en convertir la conversación con IA en un canal transaccional completo. Análisis estratégico para ecommerce managers.',
+    date: '2026-03-02',
+    readTime: '12 min',
+    author: 'Rubén Reyero',
+    image: checkoutIAEcommerceHero,
+    category: isEnglish ? 'Ecommerce & AI' : 'Ecommerce e IA',
     tags: isEnglish 
-      ? ['AI', 'Digital Marketing', 'Automation', 'Strategy']
-      : ['IA', 'Marketing Digital', 'Automatización', 'Estrategia']
+      ? ['Ecommerce', 'AI', 'Strategy', 'ChatGPT', 'Google', 'Microsoft']
+      : ['Ecommerce', 'IA', 'Estrategia', 'Inteligencia Artificial', 'ChatGPT', 'Google']
   };
 
   const allPosts = [
@@ -88,7 +88,7 @@ const Blog = () => {
       date: '2026-03-02',
       image: checkoutIAEcommerceHero,
       slug: isEnglish ? '/en/blog/checkout-ia-ecommerce-copilot-chatgpt-gemini' : '/es/blog/checkout-ia-ecommerce-copilot-chatgpt-gemini',
-      tags: ['Ecommerce', 'IA', isEnglish ? 'Online Store' : 'Tienda Online', isEnglish ? 'Digital Strategy' : 'Estrategia Digital', 'ChatGPT', 'Google', 'Microsoft'],
+      tags: ['Ecommerce', 'IA', isEnglish ? 'Online Store' : 'Tienda Online', isEnglish ? 'Digital Strategy' : 'Estrategia Digital', isEnglish ? 'Strategy' : 'Estrategia', isEnglish ? 'Artificial Intelligence' : 'Inteligencia Artificial', 'ChatGPT', 'Google', 'Microsoft'],
       featured: true
     },
     {
@@ -516,6 +516,21 @@ const Blog = () => {
       category: 'Legal',
       image: avisosLegalesHero,
       tags: ['Legal', 'Diseño Web', 'RGPD', 'Plantillas']
+    },
+    {
+      id: 'la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing',
+      title: isEnglish
+        ? 'Artificial Intelligence (AI) and its Application in Marketing'
+        : 'La Inteligencia Artificial (IA) y su aplicación en Marketing',
+      description: isEnglish
+        ? 'In a world where technology advances by leaps and bounds, Artificial Intelligence has emerged as a transformative tool in digital marketing.'
+        : 'En un mundo donde la tecnología avanza a pasos agigantados, la Inteligencia Artificial ha emergido como una herramienta transformadora en el marketing digital.',
+      date: '2024-12-15',
+      readTime: '15 min',
+      category: isEnglish ? 'Artificial Intelligence' : 'Inteligencia Artificial',
+      image: teamMarketingCollaboration,
+      slug: isEnglish ? '/en/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing' : '/es/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing',
+      tags: ['IA', 'Marketing Digital', isEnglish ? 'Automation' : 'Automatización', isEnglish ? 'Strategy' : 'Estrategia', isEnglish ? 'Artificial Intelligence' : 'Inteligencia Artificial']
     }
   ];
 
@@ -529,6 +544,7 @@ const Blog = () => {
   const categories = [
     'Digitalización',
     'Inteligencia Artificial',
+    'Ecommerce e IA',
     'Marketing de Contenidos',
     'Redes Sociales',
     'WordPress',
