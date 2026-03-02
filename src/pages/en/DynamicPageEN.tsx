@@ -80,6 +80,7 @@ const ES_PATH_TO_LAZY: Record<string, React.LazyExoticComponent<React.ComponentT
   '/es/blog/decision-marketing-confianza': lazy(() => import('@/pages/BlogDecisionMarketing')),
   '/es/blog/nuevo-paradigma-seo-aeo-geo': lazy(() => import('@/pages/BlogNuevoParadigmaSeoAeoGeo')),
   '/es/blog/lovable-vs-wordpress-que-plataforma-elegir': lazy(() => import('@/pages/BlogLovableVsWordpress')),
+  '/es/blog/checkout-ia-ecommerce-copilot-chatgpt-gemini': lazy(() => import('@/pages/BlogCheckoutIAEcommerce')),
 
   // ─── Case studies listing ───
   '/es/casos-exito': lazy(() => import('@/pages/CasosExito')),

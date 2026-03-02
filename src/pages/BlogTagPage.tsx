@@ -17,6 +17,17 @@ import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
 // Posts data actualizados con la nueva taxonomía
 const allPosts = [
   {
+    id: "checkout-ia-ecommerce-copilot-chatgpt-gemini",
+    title: "Cuando el checkout deja de estar en tu web: lo que Copilot, ChatGPT y Gemini cambian para el ecommerce",
+    description: "Microsoft, OpenAI y Google convergen en convertir la conversación con IA en un canal transaccional completo.",
+    slug: "/es/blog/checkout-ia-ecommerce-copilot-chatgpt-gemini",
+    image: "/images/blog/checkout-ia-ecommerce-hero.jpg",
+    category: "Ecommerce e IA",
+    readTime: "12 min",
+    date: "2026-03-02",
+    tags: ["tienda-online", "integraciones-ia-procesos", "impulsa-tu-marca", "activa-tus-ventas"]
+  },
+  {
     id: "guia-tecnica-email-marketing-hubspot-configuracion",
     title: "Guía técnica de Email Marketing: Configuración y cumplimiento con HubSpot",
     description: "Aprende a configurar SPF, DKIM y DMARC en HubSpot para cumplir con las nuevas políticas de Google y Yahoo.",

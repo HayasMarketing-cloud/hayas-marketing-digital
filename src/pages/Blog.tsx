@@ -26,6 +26,7 @@ import chatbotsWebHero from '@/assets/chatbots-web-hero.jpg';
 import guiaPrivacidadHeroImage from '@/assets/guia-privacidad-huella-digital-hero.jpg';
 import gobernanzaIAHero from '@/assets/gobernanza-ia-empresas-hero.jpg';
 import decisionMarketingHero from '@/assets/decision-marketing-hero.jpg';
+import checkoutIAEcommerceHero from '@/assets/checkout-ia-ecommerce-hero.jpg';
 
 const Blog = () => {
   const { isEnglish, languageCode } = useLanguage();
@@ -71,6 +72,25 @@ const Blog = () => {
   };
 
   const allPosts = [
+    {
+      id: 'checkout-ia-ecommerce-copilot-chatgpt-gemini',
+      title: isEnglish 
+        ? 'When Checkout Leaves Your Website: What Copilot, ChatGPT and Gemini Change for Ecommerce'
+        : 'Cuando el checkout deja de estar en tu web: lo que Copilot, ChatGPT y Gemini cambian para el ecommerce',
+      description: isEnglish
+        ? 'Microsoft, OpenAI and Google are converging to turn AI conversations into full transactional channels. Strategic analysis for ecommerce managers.'
+        : 'Microsoft, OpenAI y Google convergen en convertir la conversación con IA en un canal transaccional completo. Análisis estratégico para ecommerce managers.',
+      excerpt: isEnglish
+        ? 'Copilot Checkout, ChatGPT Instant Checkout and Google UCP are redefining the ecommerce funnel. Your store needs to be ready.'
+        : 'Copilot Checkout, ChatGPT Instant Checkout y Google UCP están redefiniendo el funnel del ecommerce. Tu tienda necesita estar preparada.',
+      category: isEnglish ? 'Ecommerce & AI' : 'Ecommerce e IA',
+      readTime: '12 min',
+      date: '2026-03-02',
+      image: checkoutIAEcommerceHero,
+      slug: isEnglish ? '/en/blog/checkout-ia-ecommerce-copilot-chatgpt-gemini' : '/es/blog/checkout-ia-ecommerce-copilot-chatgpt-gemini',
+      tags: ['Ecommerce', 'IA', isEnglish ? 'Online Store' : 'Tienda Online', isEnglish ? 'Digital Strategy' : 'Estrategia Digital', 'ChatGPT', 'Google', 'Microsoft'],
+      featured: true
+    },
     {
       id: 'lovable-vs-wordpress',
       title: isEnglish 
