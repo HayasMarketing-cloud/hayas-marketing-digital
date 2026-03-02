@@ -536,10 +536,11 @@ const Blog = () => {
 
   // Sort all posts by date (most recent first) and get the 6 most recent for recent posts
   const sortedPosts = allPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-  const recentPosts = sortedPosts.slice(0, 6);
+  const nonFeaturedPosts = sortedPosts.filter(p => p.id !== featuredPost.id);
+  const recentPosts = nonFeaturedPosts.slice(0, 6);
 
   // Remove recent posts from all articles to avoid duplicates
-  const allArticles = sortedPosts.slice(6);
+  const allArticles = nonFeaturedPosts.slice(6);
 
   const categories = [
     'Digitalización',
@@ -594,7 +595,7 @@ const Blog = () => {
                   <img 
                     src={featuredPost.image} 
                     alt={featuredPost.title}
-                    className="w-full h-64 md:h-full object-cover"
+                    className="w-full h-64 md:h-full object-contain bg-gray-900"
                   />
                 </div>
                 <div className="md:w-1/2 p-6">
