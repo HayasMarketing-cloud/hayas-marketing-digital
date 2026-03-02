@@ -63,23 +63,52 @@ window.addEventListener('error', (event) => {
 
 window.addEventListener('unhandledrejection', (event) => {
   const reason = event.reason;
-  
-  // Ignorar rechazos de promesas de scripts externos
+
+  // Normalizar mensaje de error
   const reasonStr = reason?.message || String(reason);
+
+  // Ignorar rechazos de promesas de scripts externos
   const isExternalScriptRejection = (
     reasonStr.includes('cdn-cookieyes.com') ||
     reasonStr.includes('googletagmanager.com') ||
     reasonStr.includes('Script error') ||
     reasonStr.includes('cross-origin')
   );
-  
+
+  // Detectar errores de carga de módulos/chunks (suele ocurrir tras deploy + caché vieja)
+  const isModuleImportFailure = (
+    /Importing a module script failed/i.test(reasonStr) ||
+    /Failed to fetch dynamically imported module/i.test(reasonStr) ||
+    /ChunkLoadError/i.test(reasonStr) ||
+    /Loading chunk \d+ failed/i.test(reasonStr)
+  );
+
   if (isExternalScriptRejection) {
     // eslint-disable-next-line no-console
     console.info('[External Script] Promise rejection de script externo - ignorado');
     event.preventDefault();
     return;
   }
-  
+
+  if (isModuleImportFailure) {
+    // eslint-disable-next-line no-console
+    console.warn('[Module Import] Detectado error de carga de módulo/chunk. Intentando recuperación.');
+
+    try {
+      const key = `module-import-reload:${window.location.pathname}`;
+      if (!sessionStorage.getItem(key)) {
+        sessionStorage.setItem(key, '1');
+        window.location.reload();
+      }
+    } catch {
+      // Si falla sessionStorage, evitamos romper el flujo
+    }
+
+    event.preventDefault();
+    return;
+  }
+
+  // Errores reales sí se loguean
   // eslint-disable-next-line no-console
   console.error('UnhandledPromiseRejection', { reason });
   // Prevenir que cause crash de la app

@@ -1,10 +1,9 @@
 // Hayas Marketing - Service Worker v1
 // Estrategia: Cache First para assets estáticos, Network First para HTML
-const CACHE_VERSION = 'hayas-cache-v1';
+const CACHE_VERSION = 'hayas-cache-v2';
 
-// Patterns para Cache First (assets inmutables)
+// Patterns para Cache First (assets inmutables y seguros de cachear)
 const CACHE_FIRST_PATTERNS = [
-  /^\/assets\//,
   /^\/lovable-uploads\//,
   /^\/fonts\//,
 ];
@@ -20,6 +19,7 @@ const NETWORK_ONLY_PATTERNS = [
   /facebook\.net/,
   /doubleclick\.net/,
   /cdn\.gpteng\.co/,
+  /\/assets\/.*\.(js|mjs|css|map)(\?.*)?$/,
 ];
 
 // Install: no precaching, solo activar
