@@ -23,32 +23,10 @@ export default defineConfig(({ mode }) => ({
     rollupOptions: {
       output: {
         manualChunks: {
-          // Chunk para vendor (bibliotecas principales)
+          // Solo vendor: React core se cachea entre navegaciones.
+          // Páginas y componentes UI se separan automáticamente por Vite
+          // en chunks individuales gracias al lazy loading.
           vendor: ['react', 'react-dom', 'react-router-dom'],
-          
-          // Chunk para UI (componentes de UI)
-          ui: ['@radix-ui/react-accordion', '@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu'],
-          
-          // Chunk para casos de éxito (lazy load group)
-          'casos-exito': [
-            './src/pages/CasoExitoAsendia.tsx',
-            './src/pages/CasoExitoNexoVital.tsx',
-            './src/pages/CasoExitoIVirgenExtra.tsx',
-          ],
-          
-          // Chunk para blog posts (lazy load group)
-          'blog-posts': [
-            './src/pages/BlogIAMarketing.tsx',
-            './src/pages/BlogPerfilClienteIdeal.tsx',
-            './src/pages/BlogCalculoInversionMarketing.tsx',
-          ],
-          
-          // Chunk para servicios (lazy load group)
-          'servicios': [
-            './src/pages/TiendaOnline.tsx',
-            './src/pages/DisenoWeb.tsx',
-            './src/pages/SeoPositioning.tsx',
-          ]
         }
       }
     },
