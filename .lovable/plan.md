@@ -1,29 +1,40 @@
 
 
-## Plan: Ajustes en imagen del artículo destacado y exclusión de la lista general
+## Plan: Herramienta de adaptación de imagen OG a 1200×630px
 
-### Cambios necesarios en `src/pages/Blog.tsx`:
+### Problema
+Las imágenes OG deben ser exactamente 1200×630px para mostrarse correctamente en redes sociales. Actualmente no hay forma de redimensionar/recortar una imagen existente desde el editor SEO.
 
-1. **Imagen no cortada en "Artículo destacado"**: Cambiar la clase CSS de la imagen de `object-cover` a `object-contain` con fondo oscuro, para que se vea completa sin recorte. Ajustar el contenedor para dar un aspect ratio adecuado.
+### Solución
+Crear una herramienta de recorte y redimensionado client-side usando Canvas API (sin dependencias externas), integrada en el editor SEO.
 
-2. **Excluir el post destacado de la lista general**: Filtrar el post con `featured: true` de `sortedPosts` antes de generar `recentPosts` y `allArticles`, para que no aparezca duplicado.
+### Flujo de usuario
+1. En el campo "Imagen OG", el usuario sube o pega una URL de imagen
+2. Hace clic en **"Adaptar a 1200×630"**
+3. Se abre un modal con la imagen cargada en un canvas con el ratio 1200×630 (≈1.9:1)
+4. El usuario puede arrastrar/reposicionar la imagen dentro del marco y usar un slider de zoom
+5. Al confirmar, se genera un archivo 1200×630px, se sube al bucket `og-images` y la URL se actualiza automáticamente en el campo
 
-3. **Corregir "AI-Poweried" → "AI-Powered" en las imágenes**: Esto requiere **reemplazar los archivos de imagen** (`checkout-ia-ecommerce-hero.jpg` tanto la versión cuadrada como rectangular). Como las imágenes son archivos estáticos con el texto renderizado dentro, **no se puede corregir por código**. Hay dos opciones:
-   - **Opción A**: Generar nuevas imágenes con IA corrigiendo el texto.
-   - **Opción B**: Que el usuario suba las imágenes corregidas manualmente desde la fuente original.
+### Cambios técnicos
 
-### Detalle técnico
+**1. Nuevo componente `src/components/admin/seo/OGImageCropper.tsx`**
+- Dialog/modal con un canvas de ratio fijo 1200×630
+- Carga la imagen desde URL o archivo local (input file)
+- Controles: slider de zoom + drag para posicionar
+- Botón "Generar y subir" que:
+  - Renderiza el canvas final a 1200×630px
+  - Convierte a blob JPEG (calidad 0.9)
+  - Sube al bucket `og-images` vía `supabase.storage.from('og-images').upload(...)`
+  - Devuelve la URL pública al componente padre
 
-**Archivo:** `src/pages/Blog.tsx`
+**2. Actualización de `SEOEditor.tsx`**
+- Añadir botón "Adaptar a 1200×630" junto al input de imagen OG
+- Añadir input type="file" para subir imagen local
+- Integrar el componente `OGImageCropper` con callback que actualiza `formData.og_image`
 
-- **Línea 597**: Cambiar `className="w-full h-64 md:h-full object-cover"` → `className="w-full h-64 md:h-full object-contain bg-gray-900"` para mostrar la imagen completa con fondo oscuro.
-
-- **Líneas 537-542**: Filtrar el featured post de las listas:
-  ```typescript
-  const nonFeaturedPosts = sortedPosts.filter(p => p.id !== featuredPost.id);
-  const recentPosts = nonFeaturedPosts.slice(0, 6);
-  const allArticles = nonFeaturedPosts.slice(6);
-  ```
-
-- **Imágenes con typo**: Las imágenes son archivos `.jpg` con texto incrustado. No es editable por código. Puedo intentar regenerarlas con IA o necesitas subir versiones corregidas.
+### Notas
+- Todo el procesamiento es client-side (Canvas API nativa del navegador)
+- No requiere dependencias npm adicionales
+- El bucket `og-images` ya existe y es público
+- Se necesita una policy RLS para que admins puedan subir al bucket (verificaré si ya existe)
 
