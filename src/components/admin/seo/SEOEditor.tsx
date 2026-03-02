@@ -6,8 +6,9 @@ import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Badge } from '@/components/ui/badge';
-import { X, Save, RotateCcw, AlertCircle, ChevronDown, ChevronUp, Sparkles, Globe, Image, ExternalLink, Copy } from 'lucide-react';
+import { X, Save, RotateCcw, AlertCircle, ChevronDown, ChevronUp, Sparkles, Globe, Image, ExternalLink, Copy, Crop, Upload } from 'lucide-react';
 import { useSEOPage, useUpdateSEOPage, useDeleteSEOPage } from '@/hooks/useSEOData';
+import { OGImageCropper } from './OGImageCropper';
 import { useToast } from '@/hooks/use-toast';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { generateAutoSEO } from '@/utils/autoSEO';
@@ -34,6 +35,9 @@ export const SEOEditor: React.FC<SEOEditorProps> = ({ path, onClose }) => {
   const { toast } = useToast();
   const [showGuide, setShowGuide] = useState(false);
   const [isTranslating, setIsTranslating] = useState(false);
+  const [showCropper, setShowCropper] = useState(false);
+  const [cropperSource, setCropperSource] = useState<string | File | null>(null);
+  const fileInputRef = React.useRef<HTMLInputElement>(null);
 
   // Form state
   const [formData, setFormData] = useState({
@@ -375,6 +379,51 @@ export const SEOEditor: React.FC<SEOEditorProps> = ({ path, onClose }) => {
                 </Button>
               )}
             </div>
+
+            {/* Botones de adaptar y subir */}
+            <div className="flex gap-2">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => {
+                  if (formData.og_image) {
+                    setCropperSource(formData.og_image.startsWith('http') ? formData.og_image : `https://hayasmarketing.com${formData.og_image}`);
+                    setShowCropper(true);
+                  } else {
+                    toast({ title: 'Primero introduce una URL de imagen', variant: 'destructive' });
+                  }
+                }}
+                disabled={!formData.og_image}
+                className="gap-1"
+              >
+                <Crop className="h-3.5 w-3.5" />
+                Adaptar a 1200×630
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => fileInputRef.current?.click()}
+                className="gap-1"
+              >
+                <Upload className="h-3.5 w-3.5" />
+                Subir imagen local
+              </Button>
+              <input
+                ref={fileInputRef}
+                type="file"
+                accept="image/*"
+                className="hidden"
+                onChange={(e) => {
+                  const file = e.target.files?.[0];
+                  if (file) {
+                    setCropperSource(file);
+                    setShowCropper(true);
+                  }
+                  e.target.value = '';
+                }}
+              />
+            </div>
+
             {formData.og_image && (
               <div className="relative rounded-lg overflow-hidden border bg-muted/30">
                 <img
@@ -395,6 +444,15 @@ export const SEOEditor: React.FC<SEOEditorProps> = ({ path, onClose }) => {
             </p>
           </div>
         </div>
+
+        {/* OG Image Cropper Modal */}
+        <OGImageCropper
+          open={showCropper}
+          onOpenChange={setShowCropper}
+          imageSource={cropperSource}
+          onComplete={(url) => setFormData({ ...formData, og_image: url })}
+          uploadPath={path.replace(/^\//, '').replace(/\//g, '-')}
+        />
 
         {/* OG Type */}
         <div>
