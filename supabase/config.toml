@@ -41,3 +41,6 @@ verify_jwt = false
 
 [functions.dataforseo-check]
 verify_jwt = true
+
+[functions.og-metadata]
+verify_jwt = false
