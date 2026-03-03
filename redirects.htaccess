@@ -159,6 +159,7 @@ Redirect 301 /es/marketing-digital/ /es/servicios/estrategia-de-marketing-digita
 Redirect 301 /es/diseno-web/ /es/servicios/diseno-y-desarrollo-paginas-web
 Redirect 301 /es/desarrollo-web/ /es/servicios/diseno-y-desarrollo-paginas-web
 Redirect 301 /es/seo/ /es/servicios/posicionamiento-web-seo
+Redirect 301 /es/servicios/seo /es/servicios/seo-posicionamiento
 Redirect 301 /es/sem/ /es/servicios/publicidad-en-google-ads
 Redirect 301 /es/social-media/ /es/servicios/estrategia-de-marketing-digital-360
 Redirect 301 /es/branding/ /es/servicios/branding-e-identidad-de-marca
