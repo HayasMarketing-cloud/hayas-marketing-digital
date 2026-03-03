@@ -2,6 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App.tsx';
 import './index.css';
+import { initWebVitals } from '@/utils/reportWebVitals';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
 // Only load GTM debugger in development
 if (import.meta.env.DEV) {
@@ -122,4 +123,7 @@ createRoot(document.getElementById('root')!).render(
     </ErrorBoundary>
   </React.StrictMode>
 );
+
+// Initialize Web Vitals monitoring (only in production)
+initWebVitals();
 
