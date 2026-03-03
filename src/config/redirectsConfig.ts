@@ -165,6 +165,8 @@ export const redirectsConfig: RedirectRule[] = [
   { id: 'srv-es-10', source: '/es/diseno-y-desarrollo-paginas-web', destination: '/es/servicios/diseno-y-desarrollo-paginas-web', type: '301', category: 'Servicios con /es/' },
   { id: 'srv-es-11', source: '/es/gestion-de-clientes-con-la-plataforma-crm-de-hubspot', destination: '/es/servicios/kit-digital-gestion-de-clientes-crm', type: '301', category: 'Servicios con /es/' },
   { id: 'srv-es-12', source: '/es/inbound-marketing-y-ventas-para-empresas-de-logistica-y-transporte', destination: '/es', type: '301', category: 'Servicios con /es/' },
+  { id: 'srv-es-13', source: '/es/servicios/seo', destination: '/es/servicios/seo-posicionamiento', type: '301', category: 'Servicios con /es/' },
+  { id: 'srv-es-14', source: '/es/servicios/seo/', destination: '/es/servicios/seo-posicionamiento', type: '301', category: 'Servicios con /es/' },
 
   // ============================================================
   // PÁGINAS INSTITUCIONALES (10 redirects)
