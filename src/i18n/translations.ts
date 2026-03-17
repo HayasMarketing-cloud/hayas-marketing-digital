@@ -608,9 +608,10 @@ export const translations = {
       gridView: 'Vista de cuadrícula',
       listView: 'Vista de lista',
       pillars: {
-        impulsa: 'Impulsa tu marca',
-        conecta: 'Conecta con tus clientes',
-        activa: 'Activa tus Ventas'
+        revenue: 'Revenue',
+        intelligence: 'Intelligence',
+        visibility: 'Visibility',
+        content: 'Content'
       }
     },
     serviceItems: {
