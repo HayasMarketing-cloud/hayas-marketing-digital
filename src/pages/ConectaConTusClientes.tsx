@@ -93,7 +93,7 @@ const faqItemsEN = [
 const ConectaConTusClientes = () => {
   const { t, language } = useTranslation();
   const isEnglish = language === 'en';
-  const conectaServices = servicesByPillar.conecta || [];
+  const conectaServices = servicesByPillar.revenue || [];
   
   const seoData = useAdvancedSEO({
     pageContent: isEnglish 
