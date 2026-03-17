@@ -86,31 +86,34 @@ const Navigation = () => {
     setHoverTimeout(timeout);
   };
 
-  const pillarIcons = {
-    impulsa: Zap,
-    conecta: Users,
-    activa: Wrench,
+  const pillarIcons: Record<PillarKey, React.ElementType> = {
+    revenue: DollarSign,
+    intelligence: Brain,
+    visibility: Eye,
+    content: PenTool,
   };
 
-  const pillarColors = {
-    impulsa: 'bg-purple-100 text-purple-800 border-purple-200',
-    conecta: 'bg-blue-100 text-blue-800 border-blue-200', 
-    activa: 'bg-green-100 text-green-800 border-green-200',
+  const pillarColors: Record<PillarKey, string> = {
+    revenue: 'bg-emerald-100 text-emerald-800 border-emerald-200',
+    intelligence: 'bg-amber-100 text-amber-800 border-amber-200',
+    visibility: 'bg-purple-100 text-purple-800 border-purple-200',
+    content: 'bg-blue-100 text-blue-800 border-blue-200',
   };
 
   const pillars = [
-    { title: t('nav.impulsa'), href: getRoute('solutionsBoostBrand') },
-    { title: t('nav.conecta'), href: getRoute('solutionsConnectCustomers') },
-    { title: t('nav.activa'), href: getRoute('solutionsActivateSales') },
+    { key: 'revenue' as PillarKey, title: 'Revenue', href: getRoute('solutionsActivateSales') },
+    { key: 'visibility' as PillarKey, title: 'Visibility', href: getRoute('solutionsBoostBrand') },
+    { key: 'content' as PillarKey, title: 'Content', href: getRoute('solutionsConnectCustomers') },
+    { key: 'intelligence' as PillarKey, title: 'Intelligence', href: `/${language}/soluciones/ia-marketing` },
   ];
 
-  const pillarKeys: PillarKey[] = ['impulsa', 'conecta', 'activa'];
+  const pillarKeys: PillarKey[] = ['revenue', 'visibility', 'content', 'intelligence'];
 
-  // Icons and colors for each pillar - dynamic based on translation
-  const pillarConfig = {
-    [t('nav.impulsa')]: { icon: Zap, color: 'text-purple-600', bgColor: 'bg-purple-50 hover:bg-purple-100' },
-    [t('nav.conecta')]: { icon: Users, color: 'text-blue-600', bgColor: 'bg-blue-50 hover:bg-blue-100' },
-    [t('nav.activa')]: { icon: Wrench, color: 'text-green-600', bgColor: 'bg-green-50 hover:bg-green-100' },
+  const pillarConfig: Record<string, { icon: React.ElementType; color: string; bgColor: string }> = {
+    'Revenue': { icon: DollarSign, color: 'text-emerald-600', bgColor: 'bg-emerald-50 hover:bg-emerald-100' },
+    'Visibility': { icon: Eye, color: 'text-purple-600', bgColor: 'bg-purple-50 hover:bg-purple-100' },
+    'Content': { icon: PenTool, color: 'text-blue-600', bgColor: 'bg-blue-50 hover:bg-blue-100' },
+    'Intelligence': { icon: Brain, color: 'text-amber-600', bgColor: 'bg-amber-50 hover:bg-amber-100' },
   };
 
   const closeMobileMenu = () => {
