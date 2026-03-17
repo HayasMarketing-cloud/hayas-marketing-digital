@@ -54,7 +54,7 @@ const SenseAudienceCtaSection = () => {
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" asChild className="border-white text-white hover:bg-white/10">
+            <Button size="lg" asChild className="bg-white text-primary hover:bg-white/90 hover:text-primary/90">
               <Link to={meetingLink}>
                 {t('senseAudienceCta.ctaSecondary')}
               </Link>
