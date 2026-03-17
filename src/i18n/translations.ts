@@ -778,6 +778,41 @@ export const translations = {
           description: 'Activa campañas, contenidos, CRM y automatizaciones alineadas con la estrategia definida.'
         }
       }
+    },
+    senseResult: {
+      title: 'Lo que SENSE hace posible',
+      subtitle: 'Un sistema que transforma capacidad en ventaja competitiva.',
+      points: [
+        'Detectar oportunidades antes que otros',
+        'Tomar decisiones con criterio, no con intuición',
+        'Alinear marketing, ventas y negocio',
+        'Ejecutar con coherencia y foco'
+      ]
+    },
+    senseActivations: {
+      title: 'SENSE se activa a través de capas de ejecución',
+      subtitle: 'Cada capa resuelve un problema concreto dentro del sistema.',
+      items: [
+        { title: 'CRM y sistemas de revenue', description: 'Gestión comercial, automatización de ventas e inteligencia de cliente con HubSpot o CRM Hayas.' },
+        { title: 'Investigación de mercado', description: 'Análisis de competencia, tendencias y oportunidades con datos reales, no suposiciones.' },
+        { title: 'Visibilidad: SEO, GEO y AEO', description: 'Posicionamiento en buscadores, IA generativa y motores de respuesta.' },
+        { title: 'Contenido y localización', description: 'Estrategia editorial, contenidos citables y adaptación multilingüe para mercados globales.' }
+      ],
+      closing: 'No son servicios aislados. Son capas de ejecución del sistema.'
+    },
+    senseAudienceCta: {
+      title: 'Para empresas que necesitan claridad, no más marketing',
+      traits: [
+        'Claridad estratégica',
+        'Foco en decisiones',
+        'Coherencia marketing-negocio',
+        'Entornos B2B complejos'
+      ],
+      context: 'Especialmente diseñado para empresas que operan en entornos donde cada decisión de marketing cuenta.',
+      closingLine1: 'No necesitas más marketing.',
+      closingLine2: 'Necesitas mejores decisiones.',
+      ctaPrimary: 'Explorar SENSE',
+      ctaSecondary: 'Solicitar sesión estratégica'
     }
   },
   en: {
