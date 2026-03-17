@@ -1595,7 +1595,42 @@ export const translations = {
         }
       }
     },
-    // ============================================
+    senseResult: {
+      title: 'What SENSE makes possible',
+      subtitle: 'A system that transforms capability into competitive advantage.',
+      points: [
+        'Detect opportunities before anyone else',
+        'Make decisions based on criteria, not intuition',
+        'Align marketing, sales and business',
+        'Execute with coherence and focus'
+      ]
+    },
+    senseActivations: {
+      title: 'SENSE activates through execution layers',
+      subtitle: 'Each layer solves a specific problem within the system.',
+      items: [
+        { title: 'CRM & revenue systems', description: 'Sales management, automation and customer intelligence with HubSpot or Hayas CRM.' },
+        { title: 'Market research', description: 'Competitor analysis, trends and opportunities driven by real data, not assumptions.' },
+        { title: 'Visibility: SEO, GEO & AEO', description: 'Positioning across search engines, generative AI and answer engines.' },
+        { title: 'Content & localization', description: 'Editorial strategy, citable content and multilingual adaptation for global markets.' }
+      ],
+      closing: "They're not isolated services. They're execution layers of the system."
+    },
+    senseAudienceCta: {
+      title: "For companies that need clarity, not more marketing",
+      traits: [
+        'Strategic clarity',
+        'Decision-focused',
+        'Marketing-business coherence',
+        'Complex B2B environments'
+      ],
+      context: 'Especially designed for companies where every marketing decision counts.',
+      closingLine1: "You don't need more marketing.",
+      closingLine2: 'You need better decisions.',
+      ctaPrimary: 'Explore SENSE',
+      ctaSecondary: 'Request a strategic session'
+    },
+    //
     // SOLUTION PAGES TRANSLATIONS
     // ============================================
     solutionPages: {
