@@ -1,160 +1,138 @@
 import React from 'react';
-import { Rocket, Heart, TrendingUp, BrainCircuit, ArrowRight } from 'lucide-react';
+import { BrainCircuit, Radar, Search, Target, Zap, ArrowRight, AlertTriangle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from '@/hooks/useTranslation';
 import { useLanguageNavigation } from '@/hooks/useLanguageNavigation';
 import { Button } from '@/components/ui/button';
 
+const moduleIcons = {
+  brain: BrainCircuit,
+  radar: Radar,
+  search: Search,
+  strategy: Target,
+  plans: Zap,
+};
+
+const moduleColors = {
+  brain: { border: 'border-primary/30', icon: 'text-primary', bg: 'bg-primary/5' },
+  radar: { border: 'border-impulsa/30', icon: 'text-impulsa', bg: 'bg-impulsa/5' },
+  search: { border: 'border-conecta/30', icon: 'text-conecta', bg: 'bg-conecta/5' },
+  strategy: { border: 'border-activa/30', icon: 'text-activa', bg: 'bg-activa/5' },
+  plans: { border: 'border-accent/30', icon: 'text-accent', bg: 'bg-accent/5' },
+};
+
 const MarketingChangedSection = () => {
   const { t } = useTranslation();
   const { isEnglish } = useLanguageNavigation();
 
-  const moments = [
-    {
-      key: 'base',
-      icon: Rocket,
-      borderColor: 'border-impulsa/30',
-      iconColor: 'text-impulsa',
-      bgHover: 'hover:bg-impulsa/5',
-      buttonVariant: 'impulsa' as const,
-      solutionKey: 'impulsa',
-      link: isEnglish ? '/en/solutions/boost-your-brand' : '/es/soluciones/impulsa-tu-marca',
-    },
-    {
-      key: 'vision',
-      icon: Heart,
-      borderColor: 'border-conecta/30',
-      iconColor: 'text-conecta',
-      bgHover: 'hover:bg-conecta/5',
-      buttonVariant: 'conecta' as const,
-      solutionKey: 'conecta',
-      link: isEnglish ? '/en/solutions/connect-with-customers' : '/es/soluciones/conecta-con-tus-clientes',
-    },
-    {
-      key: 'growth',
-      icon: TrendingUp,
-      borderColor: 'border-activa/30',
-      iconColor: 'text-activa',
-      bgHover: 'hover:bg-activa/5',
-      buttonVariant: 'activa' as const,
-      solutionKey: 'activa',
-      link: isEnglish ? '/en/solutions/activate-your-sales' : '/es/soluciones/activa-tus-ventas',
-    },
-  ];
+  const senseLink = isEnglish
+    ? '/en/solutions/marketing-intelligence-platform'
+    : '/es/soluciones/plataforma-inteligencia-marketing';
+
+  const moduleKeys = ['brain', 'radar', 'search', 'strategy', 'plans'] as const;
 
   return (
     <section className="section-normal py-16 md:py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Title */}
-        <div className="text-center mb-10">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold font-dm-sans text-foreground leading-tight text-balance">
-            {t('marketingChanged.title')}
-            <span className="text-gradient-primary">{t('marketingChanged.titleHighlight')}</span>
-            {t('marketingChanged.titleEnd') && (
-              <>
-                <br className="hidden md:block" />
-                <span className="block md:inline">{t('marketingChanged.titleEnd')}</span>
-              </>
-            )}
+
+        {/* ── BLOQUE 1: Cambio de paradigma ── */}
+        <div className="text-center mb-16 md:mb-20">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold font-dm-sans text-foreground leading-tight text-balance mb-6">
+            {t('marketingChanged.paradigmTitle')}
           </h2>
-        </div>
+          <p className="text-xl md:text-2xl text-foreground/80 mb-8 max-w-3xl mx-auto text-pretty">
+            {t('marketingChanged.paradigmIntro')}
+          </p>
 
-        {/* Intro paragraphs */}
-        <div className="max-w-4xl mx-auto text-center mb-12 space-y-4">
-          <p className="text-elegant text-lg md:text-xl text-foreground/90 text-pretty">
-            {t('marketingChanged.intro.p1')}
-          </p>
-          <p className="text-elegant text-lg md:text-xl text-foreground/80 text-pretty">
-            {t('marketingChanged.intro.p2')}
-          </p>
-          <div className="pt-4 flex flex-col items-center gap-3">
-            <div className="w-12 h-0.5 bg-primary/30 rounded-full" />
-            <p className="text-xl font-semibold text-foreground text-pretty">
-              {t('marketingChanged.intro.p3')}
-            </p>
+          <div className="flex flex-wrap justify-center gap-4 mb-8">
+            {(t('marketingChanged.paradigmPoints') as unknown as string[]).map((point, i) => (
+              <div
+                key={i}
+                className="flex items-center gap-2 px-5 py-3 rounded-xl border border-destructive/20 bg-destructive/5"
+              >
+                <AlertTriangle className="h-4 w-4 text-destructive flex-shrink-0" />
+                <span className="text-sm font-medium text-foreground">{point}</span>
+              </div>
+            ))}
           </div>
+
+          <p className="text-lg font-semibold text-foreground/70">
+            {t('marketingChanged.paradigmConclusion')}
+          </p>
         </div>
 
-        {/* SENSE as the strategic umbrella - NOW PROMINENT AND FIRST */}
-        <div className="mb-12">
-          <div className="p-8 md:p-10 rounded-2xl border border-primary/20 bg-primary/5 text-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-5">
+        {/* ── BLOQUE 2: Reposicionamiento ── */}
+        <div className="mb-16 md:mb-20">
+          <div className="p-8 md:p-12 rounded-2xl border border-primary/20 bg-primary/5 text-center">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-6">
               <BrainCircuit className="h-8 w-8 text-primary" strokeWidth={1.5} />
             </div>
-            <h3 className="text-2xl md:text-3xl font-semibold font-dm-sans text-foreground mb-4">
-              {t('marketingChanged.senseTitle')}
-            </h3>
-            <p className="text-elegant-muted text-base md:text-lg mb-6 max-w-2xl mx-auto">
-              {t('marketingChanged.senseDescription')}
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold font-dm-sans text-foreground mb-4 text-balance">
+              {t('marketingChanged.repoTitle')}
+              <span className="text-gradient-primary">{t('marketingChanged.repoHighlight')}</span>
+            </h2>
+            <p className="text-elegant-muted text-lg md:text-xl mb-8 max-w-3xl mx-auto text-pretty">
+              {t('marketingChanged.repoDescription')}
             </p>
-            <Button variant="outline" size="default" asChild className="group">
-              <Link to={isEnglish ? '/en/solutions/marketing-intelligence-platform' : '/es/soluciones/plataforma-inteligencia-marketing'}>
-                {t('marketingChanged.senseCta')}
+            <Button variant="default" size="lg" asChild className="group">
+              <Link to={senseLink}>
+                {t('marketingChanged.repoCta')}
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
           </div>
         </div>
 
-        {/* Modules intro */}
-        <div className="text-center mb-8">
-          <p className="text-lg md:text-xl font-medium font-dm-sans text-foreground">
-            {t('marketingChanged.senseModulesIntro')}
-          </p>
-        </div>
-
-        {/* Solution Cards as SENSE modules */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          {moments.map((moment, index) => {
-            const Icon = moment.icon;
-            return (
-              <div
-                key={moment.key}
-                className={`
-                  relative p-6 rounded-xl bg-card border-2 ${moment.borderColor}
-                  transition-all duration-300 ease-out
-                  hover:shadow-lg ${moment.bgHover}
-                  animate-fade-in
-                `}
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <div className={`mb-4 ${moment.iconColor}`}>
-                  <Icon size={32} strokeWidth={1.5} />
-                </div>
-                <h3 className="text-xl font-semibold font-dm-sans text-foreground mb-3">
-                  {t(`marketingChanged.moments.${moment.key}.title`)}
-                </h3>
-                <p className="text-elegant-muted text-base leading-relaxed mb-2">
-                  {t(`marketingChanged.moments.${moment.key}.description`)}
-                </p>
-                {moment.solutionKey === 'impulsa' && (
-                  <p className="text-xs font-medium text-impulsa mb-2">
-                    {t('marketingChanged.impulsaPlatform')}
-                  </p>
-                )}
-                <Button
-                  variant={moment.buttonVariant}
-                  size="sm"
-                  asChild
-                  className="w-full mt-auto"
-                >
-                  <Link to={moment.link}>
-                    {t(`solutions.${moment.solutionKey}.title`)}
-                  </Link>
-                </Button>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Closing */}
-        <div className="text-center">
-          <div className="p-6 rounded-xl bg-muted/30">
-            <p className="text-elegant text-base md:text-lg text-foreground/90">
-              {t('marketingChanged.closing')}
+        {/* ── BLOQUE 3: Los 5 módulos SENSE ── */}
+        <div>
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold font-dm-sans text-foreground mb-4">
+              {t('marketingChanged.modulesTitle')}
+            </h2>
+            <p className="text-lg md:text-xl text-foreground/70 max-w-3xl mx-auto">
+              {t('marketingChanged.modulesSubtitle')}
             </p>
           </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+            {moduleKeys.map((key, index) => {
+              const Icon = moduleIcons[key];
+              const colors = moduleColors[key];
+              const mod = t(`marketingChanged.modules.${key}`) as unknown as {
+                name: string;
+                title: string;
+                description: string;
+              };
+
+              return (
+                <div
+                  key={key}
+                  className={`
+                    relative p-6 rounded-xl bg-card border-2 ${colors.border}
+                    transition-all duration-300 ease-out
+                    hover:shadow-lg hover:${colors.bg}
+                    animate-fade-in
+                  `}
+                  style={{ animationDelay: `${index * 80}ms` }}
+                >
+                  <div className={`mb-3 ${colors.icon}`}>
+                    <Icon size={28} strokeWidth={1.5} />
+                  </div>
+                  <p className={`text-xs font-bold tracking-widest uppercase mb-1 ${colors.icon}`}>
+                    {mod.name}
+                  </p>
+                  <h3 className="text-base font-semibold font-dm-sans text-foreground mb-2">
+                    {mod.title}
+                  </h3>
+                  <p className="text-elegant-muted text-sm leading-relaxed">
+                    {mod.description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
         </div>
+
       </div>
     </section>
   );
