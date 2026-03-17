@@ -719,18 +719,18 @@ export const translations = {
     faq: {
       title: 'Preguntas Frecuentes',
       home: {
-        q1: '¿Qué diferencia a Hayas Marketing de otras agencias?',
-        a1: 'No trabajamos desde un catálogo de servicios ni desde herramientas concretas. Nuestro enfoque parte de entender el momento del negocio, ordenar el marketing y definir qué decisiones tienen más impacto antes de ejecutar.\n\nMientras muchas agencias se centran en campañas o acciones aisladas, en Hayas trabajamos el marketing como un sistema: conectando estrategia, ejecución y tecnología con criterio para que el crecimiento sea sostenible y gobernable.\n\nEso nos permite adaptarnos a cada empresa, reducir la complejidad y ayudar a tomar mejores decisiones a largo plazo.',
-        q2: '¿Trabajan con empresas B2B y B2C?',
-        a2: 'Sí. Trabajamos tanto con empresas B2B como B2C, adaptando siempre el enfoque al tipo de negocio, al proceso de decisión y al momento en el que se encuentra la empresa.\n\nEn B2B solemos trabajar con ciclos de venta más largos y procesos complejos, donde la estrategia, el contenido y la gestión de clientes son clave.\nEn B2C, el foco suele estar en la captación, la conversión y la eficiencia operativa.\n\nEn ambos casos, no aplicamos soluciones estándar: analizamos primero la situación y definimos el sistema más adecuado antes de elegir herramientas o plataformas.',
-        q3: '¿Cuánto tiempo toma ver resultados?',
-        a3: 'Los primeros resultados en campañas publicitarias pueden verse en 2-4 semanas. Para SEO y estrategias de contenido, los resultados sólidos aparecen entre 3-6 meses. La implementación de CRM y automatizaciones genera eficiencias inmediatas desde el primer mes.',
-        q4: '¿Ofrecen servicios de forma individual o solo paquetes completos?',
-        a4: 'Trabajamos desde soluciones, no desde un catálogo cerrado de servicios. Eso nos permite adaptarnos al momento y a las necesidades reales de cada empresa.\n\nEn algunos casos comenzamos con un alcance concreto y bien definido; en otros, trabajamos de forma más integral. Lo importante no es el formato, sino que lo que se haga tenga sentido dentro de un sistema y un objetivo claro.\n\nPor eso, antes de proponer cualquier servicio o solución, analizamos el contexto y definimos el enfoque más adecuado.',
-        q5: '¿Qué incluye el soporte y mantenimiento?',
-        a5: 'Todos nuestros servicios incluyen soporte técnico, formación del equipo, actualizaciones regulares y reuniones de seguimiento. Para CRM y automatizaciones ofrecemos soporte prioritario y optimizaciones continuas basadas en el rendimiento.',
-        q6: '¿Pueden trabajar con nuestro equipo interno?',
-        a6: 'Absolutamente. Nos adaptamos a tu estructura organizacional. Podemos trabajar como departamento de marketing externo, colaborar con tu equipo interno existente, o proporcionar consultoría y formación para que gestionen las herramientas internamente.'
+        q1: '¿Qué es SENSE y cómo funciona?',
+        a1: 'SENSE es nuestro Marketing Operating System: un sistema que conecta identidad, mercado, demanda, estrategia y ejecución en un flujo continuo de inteligencia.\n\nA diferencia de una agencia tradicional que ejecuta acciones aisladas, SENSE organiza todo el marketing de tu empresa en 4 pilares de ejecución — Revenue, Intelligence, Visibility y Content — para que cada decisión tenga contexto, cada acción tenga propósito y cada resultado sea medible.',
+        q2: '¿Qué son los 4 pilares de SENSE?',
+        a2: 'Los 4 pilares son los dominios de ejecución dentro de SENSE:\n\n• Revenue: CRM, automatización de ventas, captación de leads y gestión comercial.\n• Intelligence: Analítica, consultoría estratégica, inteligencia de mercado e IA aplicada.\n• Visibility: SEO, posicionamiento en buscadores y motores de IA, publicidad digital y presencia en redes.\n• Content: Estrategia de contenidos, branding, diseño web y localización multilingüe.\n\nCada pilar resuelve un problema concreto y todos están conectados dentro del sistema.',
+        q3: '¿SENSE es para empresas B2B, B2C o ambas?',
+        a3: 'Ambas. SENSE se adapta al tipo de negocio, al proceso de decisión y al momento de la empresa.\n\nEn B2B trabajamos con ciclos de venta largos donde la estrategia, el contenido y la gestión de clientes son clave. En B2C, el foco suele estar en captación, conversión y eficiencia operativa.\n\nEn ambos casos, analizamos primero la situación y activamos los pilares más relevantes.',
+        q4: '¿Puedo activar solo un pilar o necesito el sistema completo?',
+        a4: 'Puedes empezar por el pilar que más necesites. SENSE es modular: puedes activar Revenue para ordenar tu gestión comercial, Visibility para mejorar tu posicionamiento, o cualquier combinación.\n\nLo importante es que cada pilar funciona dentro de un sistema coherente, así que a medida que crezcas, puedes ir incorporando más capacidades sin perder la visión de conjunto.',
+        q5: '¿Cuánto tiempo toma ver resultados con SENSE?',
+        a5: 'Depende del pilar y el alcance:\n\n• Revenue (CRM y automatizaciones): eficiencias inmediatas desde el primer mes.\n• Visibility (campañas publicitarias): primeros resultados en 2-4 semanas.\n• Visibility (SEO y posicionamiento orgánico): resultados sólidos entre 3-6 meses.\n• Content e Intelligence: impacto progresivo y acumulativo desde el inicio.\n\nEl sistema está diseñado para generar valor incremental: cada mes suma sobre lo anterior.',
+        q6: '¿Cómo se integra SENSE con nuestro equipo interno?',
+        a6: 'SENSE se adapta a tu estructura. Podemos operar como tu departamento de marketing externo, colaborar con tu equipo existente, o proporcionarte consultoría y formación para que gestionen el sistema internamente.\n\nEl objetivo es que tu empresa tenga un sistema de marketing gobernable, no dependencia de una agencia.'
       }
     },
     marketingChanged: {
