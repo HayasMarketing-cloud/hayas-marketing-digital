@@ -5,16 +5,23 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { servicesByPillar, pillarMeta, PillarKey } from '@/data/services';
 
-const pillarOrder: PillarKey[] = ['impulsa','conecta','activa'];
+const pillarOrder: PillarKey[] = ['revenue', 'visibility', 'content', 'intelligence'];
+
+const pillarH3: Record<PillarKey, { es: string; en: string }> = {
+  revenue: { es: 'CRM, automatización y gestión comercial', en: 'CRM, automation and sales management' },
+  visibility: { es: 'Posicionamiento, publicidad y presencia digital', en: 'Positioning, advertising and digital presence' },
+  content: { es: 'Contenidos, branding y diseño web', en: 'Content, branding and web design' },
+  intelligence: { es: 'Analítica, IA y consultoría estratégica', en: 'Analytics, AI and strategic consulting' },
+};
 
 const ServicesSection = () => {
   return (
-    <section id="servicios" className="py-16 md:py-20 bg-gray-50">
+    <section id="servicios" className="py-16 md:py-20 bg-section-soft">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="title-section">Servicios de marketing digital y CRM integral</h2>
+          <h2 className="title-section">Capacidades de SENSE</h2>
           <p className="text-description max-w-3xl mx-auto mt-6">
-            Soluciones integrales de marketing digital diseñadas para hacer crecer tu negocio
+            Los 4 pilares de ejecución del Marketing Operating System
           </p>
         </div>
         
@@ -33,9 +40,7 @@ const ServicesSection = () => {
         {pillarOrder.map((key) => (
           <section key={key} id={`home-${pillarMeta[key].anchorId}`} className="mb-12">
             <h3 className="text-2xl font-bold font-dm-sans mb-6">
-              {key === 'impulsa' && 'Servicios de branding y posicionamiento web'}
-              {key === 'conecta' && 'Automatización CRM y gestión de clientes'}
-              {key === 'activa' && 'Estrategias de captación y conversión de leads'}
+              {pillarH3[key].es}
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {servicesByPillar[key]?.map((service) => (
@@ -45,7 +50,7 @@ const ServicesSection = () => {
                     <CardTitle className="text-xl font-bold">{service.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <CardDescription className="text-gray-600 text-base">
+                    <CardDescription className="text-muted-foreground text-base">
                       {service.description}
                     </CardDescription>
                   </CardContent>
@@ -61,7 +66,7 @@ const ServicesSection = () => {
         ))}
         
         <div className="text-center mt-12">
-          <a href="#todos-servicios" className="text-hayas-600 hover:text-hayas-800 font-medium text-lg inline-flex items-center">
+          <a href="#todos-servicios" className="text-primary hover:text-primary/80 font-medium text-lg inline-flex items-center">
             Ver todos los servicios
             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />

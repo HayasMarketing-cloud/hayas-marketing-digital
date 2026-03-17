@@ -16,28 +16,14 @@ const AllServicesSection = () => {
   
   const filtered = active === 'all' ? services : servicesByPillar[active] ?? [];
 
-  // Normaliza strings para búsquedas por slug/título (quita tildes y minúsculas)
-  const normalize = (s: string) => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-  // Palabras clave para los 6 servicios iniciales (ES y EN)
-  const preferredMatchers = [
-    'diseno-web', 'web-design',
-    'implantacion-crm', 'crm-implementation',
-    'creacion-marca', 'brand-creation',
-    'asistente-ia', 'ai-assistant',
-    'seo', 'seo-positioning',
-    'localizacion', 'localization'
-  ];
-  const isPreferred = (title: string, href: string) => {
-    const t = normalize(title);
-    const h = normalize(href);
-    return preferredMatchers.some(m => h.includes(m) || t.includes(m));
+  const pillarTitles: Record<PillarKey, string> = {
+    revenue: t('servicesSection.pillars.revenue'),
+    intelligence: t('servicesSection.pillars.intelligence'),
+    visibility: t('servicesSection.pillars.visibility'),
+    content: t('servicesSection.pillars.content'),
   };
 
-  const pillarTitles = {
-    impulsa: t('servicesSection.pillars.impulsa'),
-    conecta: t('servicesSection.pillars.conecta'),
-    activa: t('servicesSection.pillars.activa')
-  };
+  const pillarKeys: PillarKey[] = ['revenue', 'visibility', 'content', 'intelligence'];
 
   return (
     <section id="todos-servicios" className="py-8 md:py-12 bg-white">
@@ -54,15 +40,17 @@ const AllServicesSection = () => {
           <Button size="sm" variant={active === 'all' ? 'default' : 'outline'} aria-pressed={active === 'all'} onClick={() => setActive('all')}>
             {t('servicesSection.all')}
           </Button>
-          <Button size="sm" variant={active === 'impulsa' ? 'default' : 'outline'} aria-pressed={active === 'impulsa'} onClick={() => setActive('impulsa')}>
-            {pillarTitles.impulsa}
-          </Button>
-          <Button size="sm" variant={active === 'conecta' ? 'default' : 'outline'} aria-pressed={active === 'conecta'} onClick={() => setActive('conecta')}>
-            {pillarTitles.conecta}
-          </Button>
-          <Button size="sm" variant={active === 'activa' ? 'default' : 'outline'} aria-pressed={active === 'activa'} onClick={() => setActive('activa')}>
-            {pillarTitles.activa}
-          </Button>
+          {pillarKeys.map((key) => (
+            <Button 
+              key={key}
+              size="sm" 
+              variant={active === key ? 'default' : 'outline'} 
+              aria-pressed={active === key} 
+              onClick={() => setActive(key)}
+            >
+              {pillarTitles[key]}
+            </Button>
+          ))}
         </div>
 
         {/* Selector de vista */}
@@ -82,28 +70,22 @@ const AllServicesSection = () => {
           {filtered.map((service, idx) => {
             const initiallyVisible = idx < 6;
             const visible = expanded ? true : initiallyVisible;
-            const isFeatured = 'featured' in service && (service as any).featured;
             return (
-              <Card key={service.id} className={`${visible ? '' : 'hidden'} ${isFeatured ? 'md:col-span-2 lg:col-span-3 border-2 border-impulsa/30 bg-impulsa/5' : 'border-none'} shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full`}>
-                <CardHeader className={view === 'list' ? 'pb-2' : 'pb-2'}>
+              <Card key={service.id} className={`${visible ? '' : 'hidden'} border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full`}>
+                <CardHeader className="pb-2">
                   <div className="flex items-center gap-3 mb-4">
-                    <service.Icon className="h-10 w-10 text-hayas-primary" />
-                    {isFeatured && (
-                      <span className="inline-flex items-center rounded-full bg-impulsa/10 px-3 py-1 text-xs font-semibold text-impulsa border border-impulsa/20">
-                        ✨ Nuevo
-                      </span>
-                    )}
+                    <service.Icon className="h-10 w-10 text-primary" />
                   </div>
-                  <CardTitle className={isFeatured ? 'text-xl md:text-2xl font-bold' : 'title-card'}>{service.title}</CardTitle>
+                  <CardTitle className="title-card">{service.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className={isFeatured ? 'text-gray-600 text-base md:text-lg' : view === 'grid' ? 'text-gray-600 text-base md:text-lg' : 'text-gray-600 text-lg md:text-xl'}>
+                  <CardDescription className={view === 'grid' ? 'text-muted-foreground text-base md:text-lg' : 'text-muted-foreground text-lg md:text-xl'}>
                     {service.description}
                   </CardDescription>
                 </CardContent>
                 <CardFooter>
                   <Link to={service.href} aria-label={`${t('servicesSection.viewService')} ${service.title}`}>
-                    <Button size={isFeatured ? 'default' : 'sm'} variant={isFeatured ? 'impulsa' : 'default'}>{t('servicesSection.viewService')} {service.title}</Button>
+                    <Button size="sm">{t('servicesSection.viewService')} {service.title}</Button>
                   </Link>
                 </CardFooter>
               </Card>
