@@ -1,21 +1,25 @@
 /**
- * SENSE System Mapping
+ * SENSE Pillar Mapping
  * 
- * Maps every service and solution page to one of the 4 SENSE execution systems.
+ * Maps every service and solution page to one of the 4 SENSE execution pillars.
  * This is the single source of truth for the semantic relationship between
  * individual capabilities and the SENSE product architecture.
  * 
- * Systems:
- *   - revenue:       Revenue System (CRM, automation, sales, lead generation)
- *   - intelligence:  Intelligence System (market research, analytics, consulting, AI)
- *   - visibility:    Visibility System (SEO, GEO, AEO, ads, social media)
- *   - content:       Content System (content strategy, creation, localization, web/store)
+ * SENSE = Marketing Operating System (the system)
+ * Pillars = The 4 execution domains within SENSE:
+ *   - revenue:       Revenue Pillar (CRM, automation, sales, lead generation)
+ *   - intelligence:  Intelligence Pillar (market research, analytics, consulting, AI)
+ *   - visibility:    Visibility Pillar (SEO, GEO, AEO, ads, social media)
+ *   - content:       Content Pillar (content strategy, creation, localization, web/store)
  */
 
-export type SenseSystem = 'revenue' | 'intelligence' | 'visibility' | 'content';
+export type SensePillar = 'revenue' | 'intelligence' | 'visibility' | 'content';
 
-export interface SenseSystemInfo {
-  id: SenseSystem;
+/** @deprecated Use SensePillar instead */
+export type SenseSystem = SensePillar;
+
+export interface SensePillarInfo {
+  id: SensePillar;
   nameES: string;
   nameEN: string;
   descriptionES: string;
@@ -23,51 +27,54 @@ export interface SenseSystemInfo {
   color: string; // Tailwind token
 }
 
-export const SENSE_SYSTEMS: Record<SenseSystem, SenseSystemInfo> = {
+export const SENSE_PILLARS: Record<SensePillar, SensePillarInfo> = {
   revenue: {
     id: 'revenue',
-    nameES: 'Revenue System',
-    nameEN: 'Revenue System',
-    descriptionES: 'Sistemas de captación, conversión y gestión de clientes',
-    descriptionEN: 'Lead capture, conversion and client management systems',
+    nameES: 'Revenue',
+    nameEN: 'Revenue',
+    descriptionES: 'Captación, conversión y gestión de clientes',
+    descriptionEN: 'Lead capture, conversion and client management',
     color: 'primary',
   },
   intelligence: {
     id: 'intelligence',
-    nameES: 'Intelligence System',
-    nameEN: 'Intelligence System',
+    nameES: 'Intelligence',
+    nameEN: 'Intelligence',
     descriptionES: 'Inteligencia de mercado, analítica y decisiones estratégicas',
     descriptionEN: 'Market intelligence, analytics and strategic decisions',
     color: 'accent',
   },
   visibility: {
     id: 'visibility',
-    nameES: 'Visibility System',
-    nameEN: 'Visibility System',
+    nameES: 'Visibility',
+    nameEN: 'Visibility',
     descriptionES: 'Posicionamiento orgánico, paid media y presencia digital',
     descriptionEN: 'Organic positioning, paid media and digital presence',
     color: 'secondary',
   },
   content: {
     id: 'content',
-    nameES: 'Content System',
-    nameEN: 'Content System',
+    nameES: 'Content',
+    nameEN: 'Content',
     descriptionES: 'Creación, estrategia y localización de contenidos',
     descriptionEN: 'Content creation, strategy and localization',
     color: 'muted',
   },
 };
 
+/** @deprecated Use SENSE_PILLARS instead */
+export const SENSE_SYSTEMS = SENSE_PILLARS;
+
 /**
- * Mapping: service/solution slug → SENSE System
+ * Mapping: service/solution slug → SENSE Pillar
  * 
  * Uses the slug (last segment of the path) as key for language-agnostic mapping.
  * Both /es/servicios/implantacion-crm and /en/services/crm-implementation
  * map through their respective slugs.
  */
-const SLUG_TO_SYSTEM: Record<string, SenseSystem> = {
+const SLUG_TO_PILLAR: Record<string, SensePillar> = {
   // ═══════════════════════════════════════════
-  // REVENUE SYSTEM — CRM, automation, sales
+  // REVENUE PILLAR — CRM, automation, sales
   // ═══════════════════════════════════════════
   
   // ES services
@@ -107,7 +114,7 @@ const SLUG_TO_SYSTEM: Record<string, SenseSystem> = {
   'crm-client-management': 'revenue',
   
   // ═══════════════════════════════════════════
-  // INTELLIGENCE SYSTEM — analytics, AI, consulting
+  // INTELLIGENCE PILLAR — analytics, AI, consulting
   // ═══════════════════════════════════════════
   
   // ES services
@@ -132,7 +139,7 @@ const SLUG_TO_SYSTEM: Record<string, SenseSystem> = {
   'marketing-intelligence-platform': 'intelligence',
   
   // ═══════════════════════════════════════════
-  // VISIBILITY SYSTEM — SEO, GEO, ads, social
+  // VISIBILITY PILLAR — SEO, GEO, ads, social
   // ═══════════════════════════════════════════
   
   // ES services
@@ -160,7 +167,7 @@ const SLUG_TO_SYSTEM: Record<string, SenseSystem> = {
   'activate-digital-strategy': 'visibility',
   
   // ═══════════════════════════════════════════
-  // CONTENT SYSTEM — content, web, store, localization
+  // CONTENT PILLAR — content, web, store, localization
   // ═══════════════════════════════════════════
   
   // ES services
@@ -182,35 +189,47 @@ const SLUG_TO_SYSTEM: Record<string, SenseSystem> = {
 };
 
 /**
- * Get the SENSE System for a given page path.
+ * Get the SENSE Pillar for a given page path.
  * Extracts the slug (last path segment) and looks it up.
  */
-export function getSystemForPath(path: string): SenseSystem | null {
+export function getPillarForPath(path: string): SensePillar | null {
   const slug = path.split('/').filter(Boolean).pop() || '';
-  return SLUG_TO_SYSTEM[slug] || null;
+  return SLUG_TO_PILLAR[slug] || null;
 }
 
-/**
- * Get the SENSE System info for a given page path.
- */
-export function getSystemInfoForPath(path: string): SenseSystemInfo | null {
-  const system = getSystemForPath(path);
-  return system ? SENSE_SYSTEMS[system] : null;
-}
+/** @deprecated Use getPillarForPath instead */
+export const getSystemForPath = getPillarForPath;
 
 /**
- * Get all slugs belonging to a specific system.
+ * Get the SENSE Pillar info for a given page path.
  */
-export function getSlugsBySystem(system: SenseSystem): string[] {
-  return Object.entries(SLUG_TO_SYSTEM)
-    .filter(([, s]) => s === system)
+export function getPillarInfoForPath(path: string): SensePillarInfo | null {
+  const pillar = getPillarForPath(path);
+  return pillar ? SENSE_PILLARS[pillar] : null;
+}
+
+/** @deprecated Use getPillarInfoForPath instead */
+export const getSystemInfoForPath = getPillarInfoForPath;
+
+/**
+ * Get all slugs belonging to a specific pillar.
+ */
+export function getSlugsByPillar(pillar: SensePillar): string[] {
+  return Object.entries(SLUG_TO_PILLAR)
+    .filter(([, p]) => p === pillar)
     .map(([slug]) => slug);
 }
 
+/** @deprecated Use getSlugsByPillar instead */
+export const getSlugsBySystem = getSlugsByPillar;
+
 /**
- * Get system label for display, respecting language.
+ * Get pillar label for display, respecting language.
  */
-export function getSystemLabel(system: SenseSystem, language: string = 'es'): string {
-  const info = SENSE_SYSTEMS[system];
+export function getPillarLabel(pillar: SensePillar, language: string = 'es'): string {
+  const info = SENSE_PILLARS[pillar];
   return language.startsWith('en') ? info.nameEN : info.nameES;
 }
+
+/** @deprecated Use getPillarLabel instead */
+export const getSystemLabel = getPillarLabel;
