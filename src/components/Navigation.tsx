@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
-import { ChevronDown, ArrowRight, ArrowLeft, Zap, Users, Wrench } from 'lucide-react';
+import { ChevronDown, ArrowRight, ArrowLeft, DollarSign, Brain, Eye, PenTool } from 'lucide-react';
 import { useLanguageNavigation } from '@/hooks/useLanguageNavigation';
 import { useTranslation } from '@/hooks/useTranslation';
 import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
