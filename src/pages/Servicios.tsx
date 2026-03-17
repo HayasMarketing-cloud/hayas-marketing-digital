@@ -6,29 +6,33 @@ import EnhancedSEO from '@/components/EnhancedSEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ArrowRight, Search, LayoutGrid, Rocket, Users, TrendingUp } from 'lucide-react';
+import { ArrowRight, Search, LayoutGrid, DollarSign, Brain, Eye, PenTool } from 'lucide-react';
 import { allServices, pillarMeta, PillarKey } from '@/data/services';
 import { generateItemListSchema } from '@/data/seoData';
 import DynamicH1 from '@/components/DynamicH1';
 import { useLanguage } from '@/contexts/LanguageContext';
+
+const pillarOrder: PillarKey[] = ['revenue', 'visibility', 'content', 'intelligence'];
+const pillarIcons: Record<PillarKey, React.ElementType> = {
+  revenue: DollarSign,
+  intelligence: Brain,
+  visibility: Eye,
+  content: PenTool,
+};
 
 const Servicios: React.FC = () => {
   const { isEnglish } = useLanguage();
   const [selectedPillar, setSelectedPillar] = useState<PillarKey | 'all'>('all');
   const [searchQuery, setSearchQuery] = useState('');
 
-  // Bilingual content
   const content = {
     heroTitle: isEnglish ? 'Digital Marketing' : 'Marketing Digital',
     heroTitleHighlight: isEnglish ? 'Services' : 'Servicios de',
     heroSubtitle: isEnglish 
-      ? 'Comprehensive solutions to boost your brand, connect with your customers, and activate your sales. From branding and web design to AI automation.'
-      : 'Soluciones integrales para impulsar tu marca, conectar con tus clientes y activar tus ventas. Desde branding y diseño web hasta automatización con IA.',
+      ? 'Capabilities activated through SENSE across 4 strategic pillars: Revenue, Visibility, Content and Intelligence.'
+      : 'Capacidades activadas a través de SENSE en 4 pilares estratégicos: Revenue, Visibility, Content e Intelligence.',
     searchPlaceholder: isEnglish ? 'Search services...' : 'Buscar servicios...',
     filterAll: isEnglish ? 'All' : 'Todos',
-    filterImpulsa: isEnglish ? 'Boost your brand' : 'Impulsa tu marca',
-    filterConecta: isEnglish ? 'Connect with customers' : 'Conecta con tus clientes',
-    filterActiva: isEnglish ? 'Activate your sales' : 'Activa tus ventas',
     noResults: isEnglish 
       ? 'No services found matching your search.'
       : 'No se encontraron servicios que coincidan con tu búsqueda.',
@@ -41,13 +45,6 @@ const Servicios: React.FC = () => {
     ctaSecondary: isEnglish ? 'View success stories' : 'Ver casos de éxito',
     consultaLink: isEnglish ? '/en/request-consultation' : '/es/solicitar-consulta',
     casosLink: isEnglish ? '/en/success-stories' : '/es/casos-exito',
-  };
-
-  // Pillar titles for badges
-  const pillarTitles = {
-    impulsa: isEnglish ? 'Boost your brand' : pillarMeta.impulsa.title,
-    conecta: isEnglish ? 'Connect with customers' : pillarMeta.conecta.title,
-    activa: isEnglish ? 'Activate your sales' : pillarMeta.activa.title,
   };
 
   // Generate ItemList schema for all services
@@ -72,15 +69,6 @@ const Servicios: React.FC = () => {
                           service.description.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesPillar && matchesSearch;
   });
-
-  const getPillarColor = (pillar: PillarKey) => {
-    const colors = {
-      impulsa: 'impulsa',
-      conecta: 'conecta',
-      activa: 'activa'
-    };
-    return colors[pillar];
-  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -109,7 +97,7 @@ const Servicios: React.FC = () => {
         <section className="py-10 bg-muted/30 border-b">
           <div className="container mx-auto px-4">
             <div className="flex flex-col items-center gap-6">
-              {/* Search - Centered */}
+              {/* Search */}
               <div className="relative w-full max-w-md">
                 <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
                 <input
@@ -121,7 +109,7 @@ const Servicios: React.FC = () => {
                 />
               </div>
 
-              {/* Pillar filters - Centered */}
+              {/* Pillar filters */}
               <div className="flex gap-3 flex-wrap justify-center">
                 <Button
                   variant={selectedPillar === 'all' ? 'default' : 'outline'}
@@ -131,30 +119,20 @@ const Servicios: React.FC = () => {
                   <LayoutGrid className="h-4 w-4" />
                   {content.filterAll}
                 </Button>
-                <Button
-                  variant={selectedPillar === 'impulsa' ? 'impulsa' : 'impulsa-outline'}
-                  onClick={() => setSelectedPillar('impulsa')}
-                  className="rounded-full px-6"
-                >
-                  <Rocket className="h-4 w-4" />
-                  {content.filterImpulsa}
-                </Button>
-                <Button
-                  variant={selectedPillar === 'conecta' ? 'conecta' : 'conecta-outline'}
-                  onClick={() => setSelectedPillar('conecta')}
-                  className="rounded-full px-6"
-                >
-                  <Users className="h-4 w-4" />
-                  {content.filterConecta}
-                </Button>
-                <Button
-                  variant={selectedPillar === 'activa' ? 'activa' : 'activa-outline'}
-                  onClick={() => setSelectedPillar('activa')}
-                  className="rounded-full px-6"
-                >
-                  <TrendingUp className="h-4 w-4" />
-                  {content.filterActiva}
-                </Button>
+                {pillarOrder.map((key) => {
+                  const Icon = pillarIcons[key];
+                  return (
+                    <Button
+                      key={key}
+                      variant={selectedPillar === key ? 'default' : 'outline'}
+                      onClick={() => setSelectedPillar(key)}
+                      className="rounded-full px-6"
+                    >
+                      <Icon className="h-4 w-4" />
+                      {pillarMeta[key].title}
+                    </Button>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -177,16 +155,12 @@ const Servicios: React.FC = () => {
                     className="border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 h-full group"
                   >
                     <CardHeader className="text-center pb-4">
-                      <div className={`mb-4 mx-auto p-4 rounded-full w-fit transition-colors duration-300 ${
-                        service.pillar === 'impulsa' ? 'bg-impulsa-100 group-hover:bg-impulsa-200' :
-                        service.pillar === 'conecta' ? 'bg-conecta-100 group-hover:bg-conecta-200' :
-                        'bg-activa-100 group-hover:bg-activa-200'
-                      }`}>
+                      <div className="mb-4 mx-auto p-4 rounded-full w-fit bg-primary/10 group-hover:bg-primary/20 transition-colors duration-300">
                         {service.icon}
                       </div>
                       <div className="flex justify-center mb-2">
-                        <Badge variant={service.pillar} className="text-xs px-3 py-1">
-                          {pillarTitles[service.pillar]}
+                        <Badge variant="outline" className="text-xs px-3 py-1">
+                          {pillarMeta[service.pillar].title}
                         </Badge>
                       </div>
                       <CardTitle className="text-xl font-bold">
@@ -194,11 +168,11 @@ const Servicios: React.FC = () => {
                       </CardTitle>
                     </CardHeader>
                     <CardContent className="pt-0">
-                      <p className="text-gray-600 leading-relaxed text-center mb-4">
+                      <p className="text-muted-foreground leading-relaxed text-center mb-4">
                         {service.description}
                       </p>
                       <div className="text-center">
-                        <Button variant="outline" size="sm" asChild className="group-hover:bg-primary group-hover:text-white transition-colors">
+                        <Button variant="outline" size="sm" asChild className="group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                           <Link to={service.href}>
                             {content.viewService}
                             <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
