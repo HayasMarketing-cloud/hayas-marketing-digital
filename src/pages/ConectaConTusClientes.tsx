@@ -93,7 +93,7 @@ const faqItemsEN = [
 const ConectaConTusClientes = () => {
   const { t, language } = useTranslation();
   const isEnglish = language === 'en';
-  const conectaServices = servicesByPillar.conecta || [];
+  const conectaServices = servicesByPillar.revenue || [];
   
   const seoData = useAdvancedSEO({
     pageContent: isEnglish 
@@ -246,8 +246,7 @@ const ConectaConTusClientes = () => {
       {/* Sección 5: Servicios relacionados */}
       <PillarServicesSection 
         title="Servicios que potencian tu CRM"
-        pillar="conecta"
-        accentColor="conecta"
+        pillar="revenue"
       />
 
       {/* Servicio Integral: Administración CRM y Gestión Marketing */}

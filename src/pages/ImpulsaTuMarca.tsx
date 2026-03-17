@@ -127,7 +127,7 @@ const ImpulsaTuMarca = () => {
   const pageT = (key: string) => t(`solutionPages.boostYourBrand.${key}`);
   
   // Get impulsa services
-  const impulsaServices = servicesByPillar.impulsa || [];
+  const impulsaServices = servicesByPillar.visibility || [];
   
   const seoData = useAdvancedSEO({
     pageContent: isEnglish 

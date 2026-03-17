@@ -10,15 +10,20 @@ interface PillarServicesSectionProps {
   pillar: PillarKey;
   title?: string;
   description?: string;
-  accentColor?: 'impulsa' | 'conecta' | 'activa';
   useOptimizedH2?: boolean;
 }
+
+const pillarH2: Record<PillarKey, { es: string; en: string }> = {
+  revenue: { es: 'CRM, automatización y gestión comercial', en: 'CRM, automation and sales management' },
+  visibility: { es: 'Posicionamiento, publicidad y presencia digital', en: 'Positioning, advertising and digital presence' },
+  content: { es: 'Contenidos, branding y diseño web', en: 'Content, branding and web design' },
+  intelligence: { es: 'Analítica, IA y consultoría estratégica', en: 'Analytics, AI and strategic consulting' },
+};
 
 const PillarServicesSection: React.FC<PillarServicesSectionProps> = ({
   pillar,
   title,
   description,
-  accentColor = 'impulsa',
   useOptimizedH2 = false
 }) => {
   const [expanded, setExpanded] = useState(false);
@@ -27,31 +32,19 @@ const PillarServicesSection: React.FC<PillarServicesSectionProps> = ({
 
   const resolvedTitle = title ?? (isEnglish ? 'Our Services' : 'Nuestros Servicios');
   const resolvedDescription = description ?? (isEnglish 
-    ? 'Discover all professional services in this solution to grow your business strategically and sustainably.'
-    : 'Descubre todos los servicios profesionales de esta solución para hacer crecer tu negocio de forma estratégica y sostenible.');
+    ? 'Discover all professional services in this pillar to grow your business strategically and sustainably.'
+    : 'Descubre todos los servicios profesionales de este pilar para hacer crecer tu negocio de forma estratégica y sostenible.');
   
   const services = servicesByPillar[pillar] ?? [];
-  
-  const getAccentColorClass = (baseClass: string) => {
-    const colorMap = {
-      impulsa: baseClass.replace('primary', 'impulsa-500'),
-      conecta: baseClass.replace('primary', 'conecta-500'),
-      activa: baseClass.replace('primary', 'activa-500')
-    };
-    return colorMap[accentColor] || baseClass;
-  };
   
   return (
     <section id="nuestros-servicios" className="py-8 md:py-12 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="title-section">
-            {useOptimizedH2 ? (
-              pillar === 'impulsa' ? (isEnglish ? 'Branding and web positioning services' : 'Servicios de branding y posicionamiento web') :
-              pillar === 'conecta' ? (isEnglish ? 'CRM automation and client management' : 'Automatización CRM y gestión de clientes') :
-              pillar === 'activa' ? (isEnglish ? 'Lead capture and conversion strategies' : 'Estrategias de captación y conversión de leads') :
-              resolvedTitle
-            ) : resolvedTitle}
+            {useOptimizedH2 
+              ? (isEnglish ? pillarH2[pillar].en : pillarH2[pillar].es) 
+              : resolvedTitle}
           </h2>
           <p className="text-description max-w-3xl mx-auto">
             {resolvedDescription}
@@ -93,18 +86,18 @@ const PillarServicesSection: React.FC<PillarServicesSectionProps> = ({
                 key={service.id} 
                 className={`${visible ? '' : 'hidden'} border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full`}
               >
-                <CardHeader className={view === 'list' ? 'pb-2' : 'pb-2'}>
+                <CardHeader className="pb-2">
                   <div className="mb-4">{service.icon}</div>
                   <CardTitle className="title-card">{service.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className={view === 'grid' ? 'text-gray-600 text-base' : 'text-gray-600 text-lg'}>
+                  <CardDescription className={view === 'grid' ? 'text-muted-foreground text-base' : 'text-muted-foreground text-lg'}>
                     {service.description}
                   </CardDescription>
                 </CardContent>
                 <CardFooter>
                   <Link to={service.href} aria-label={`${isEnglish ? 'View' : 'Ver'} ${service.title}`}>
-                    <Button size="sm" className={getAccentColorClass('bg-primary hover:bg-primary/90')}>{isEnglish ? 'View' : 'Ver'} {service.title}</Button>
+                    <Button size="sm">{isEnglish ? 'View' : 'Ver'} {service.title}</Button>
                   </Link>
                 </CardFooter>
               </Card>

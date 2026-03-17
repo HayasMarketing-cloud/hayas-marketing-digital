@@ -608,9 +608,10 @@ export const translations = {
       gridView: 'Vista de cuadrícula',
       listView: 'Vista de lista',
       pillars: {
-        impulsa: 'Impulsa tu marca',
-        conecta: 'Conecta con tus clientes',
-        activa: 'Activa tus Ventas'
+        revenue: 'Revenue',
+        intelligence: 'Intelligence',
+        visibility: 'Visibility',
+        content: 'Content'
       }
     },
     serviceItems: {
@@ -790,15 +791,15 @@ export const translations = {
       ]
     },
     senseActivations: {
-      title: 'Sistemas que SENSE activa',
-      subtitle: 'Cada sistema resuelve un problema concreto dentro del ecosistema.',
+      title: 'Los 4 pilares de SENSE',
+      subtitle: 'Cada pilar resuelve un problema concreto dentro del ecosistema.',
       items: [
-        { title: 'Revenue System', description: 'Gestión comercial, automatización de ventas e inteligencia de cliente integradas en un sistema de revenue.' },
-        { title: 'Intelligence System', description: 'Análisis de competencia, tendencias y oportunidades basado en datos reales, no en suposiciones.' },
-        { title: 'Visibility System', description: 'Posicionamiento en buscadores, IA generativa y motores de respuesta para estar donde se toman las decisiones.' },
-        { title: 'Content System', description: 'Creación estratégica, contenidos citables y adaptación multilingüe para mercados globales.' }
+        { title: 'Revenue', description: 'Gestión comercial, automatización de ventas e inteligencia de cliente integradas.' },
+        { title: 'Intelligence', description: 'Análisis de competencia, tendencias y oportunidades basado en datos reales, no en suposiciones.' },
+        { title: 'Visibility', description: 'Posicionamiento en buscadores, IA generativa y motores de respuesta para estar donde se toman las decisiones.' },
+        { title: 'Content', description: 'Creación estratégica, contenidos citables y adaptación multilingüe para mercados globales.' }
       ],
-      closing: 'No son servicios. Son sistemas de ejecución conectados.'
+      closing: 'No son servicios. Son pilares de ejecución conectados.'
     },
     senseAudienceCta: {
       title: 'Para empresas que necesitan claridad, no más marketing',
@@ -1424,9 +1425,10 @@ export const translations = {
       gridView: 'Grid view',
       listView: 'List view',
       pillars: {
-        impulsa: 'Boost your brand',
-        conecta: 'Connect with your customers',
-        activa: 'Activate your Sales'
+        revenue: 'Revenue',
+        intelligence: 'Intelligence',
+        visibility: 'Visibility',
+        content: 'Content'
       }
     },
     serviceItems: {
@@ -1606,15 +1608,15 @@ export const translations = {
       ]
     },
     senseActivations: {
-      title: 'Systems that SENSE activates',
-      subtitle: 'Each system solves a specific problem within the ecosystem.',
+      title: 'The 4 pillars of SENSE',
+      subtitle: 'Each pillar solves a specific problem within the ecosystem.',
       items: [
-        { title: 'Revenue System', description: 'Sales management, automation and customer intelligence integrated into a unified revenue system.' },
-        { title: 'Intelligence System', description: 'Competitor analysis, trends and opportunities driven by real data, not assumptions.' },
-        { title: 'Visibility System', description: 'Positioning across search engines, generative AI and answer engines — where decisions are made.' },
-        { title: 'Content System', description: 'Strategic creation, citable content and multilingual adaptation for global markets.' }
+        { title: 'Revenue', description: 'Sales management, automation and customer intelligence integrated.' },
+        { title: 'Intelligence', description: 'Competitor analysis, trends and opportunities driven by real data, not assumptions.' },
+        { title: 'Visibility', description: 'Positioning across search engines, generative AI and answer engines — where decisions are made.' },
+        { title: 'Content', description: 'Strategic creation, citable content and multilingual adaptation for global markets.' }
       ],
-      closing: "They're not services. They're connected execution systems."
+      closing: "They're not services. They're connected execution pillars."
     },
     senseAudienceCta: {
       title: "For companies that need clarity, not more marketing",
