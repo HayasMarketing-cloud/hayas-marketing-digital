@@ -1608,15 +1608,15 @@ export const translations = {
       ]
     },
     senseActivations: {
-      title: 'Systems that SENSE activates',
-      subtitle: 'Each system solves a specific problem within the ecosystem.',
+      title: 'The 4 pillars of SENSE',
+      subtitle: 'Each pillar solves a specific problem within the ecosystem.',
       items: [
-        { title: 'Revenue System', description: 'Sales management, automation and customer intelligence integrated into a unified revenue system.' },
-        { title: 'Intelligence System', description: 'Competitor analysis, trends and opportunities driven by real data, not assumptions.' },
-        { title: 'Visibility System', description: 'Positioning across search engines, generative AI and answer engines — where decisions are made.' },
-        { title: 'Content System', description: 'Strategic creation, citable content and multilingual adaptation for global markets.' }
+        { title: 'Revenue', description: 'Sales management, automation and customer intelligence integrated.' },
+        { title: 'Intelligence', description: 'Competitor analysis, trends and opportunities driven by real data, not assumptions.' },
+        { title: 'Visibility', description: 'Positioning across search engines, generative AI and answer engines — where decisions are made.' },
+        { title: 'Content', description: 'Strategic creation, citable content and multilingual adaptation for global markets.' }
       ],
-      closing: "They're not services. They're connected execution systems."
+      closing: "They're not services. They're connected execution pillars."
     },
     senseAudienceCta: {
       title: "For companies that need clarity, not more marketing",
