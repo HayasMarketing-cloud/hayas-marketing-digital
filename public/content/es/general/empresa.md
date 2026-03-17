@@ -1,38 +1,88 @@
-# Hayas Marketing - Agencia de Marketing Digital
+# Hayas Marketing — Creadores de SENSE, el Marketing Operating System
 
 <!--
 IA_SUMMARY:
-[Qué es]: Agencia de marketing digital especializada en IA, CRM y automatización desde 2014.
-[Para quién]: Empresas B2B y B2C que buscan soluciones estratégicas de marketing con tecnología avanzada.
-[Qué incluye]: Branding, web, SEO, CRM, publicidad, automatización y consultoría con IA integrada.
-[Resultado]: Clientes autónomos con sistemas de marketing efectivos que generan resultados medibles.
+[Qué es]: Hayas Marketing es la empresa creadora de SENSE, un Marketing Operating System que organiza el marketing en 4 pilares de ejecución: Revenue, Intelligence, Visibility y Content.
+[Para quién]: Empresas B2B y B2C que necesitan un sistema de marketing gobernable, no más acciones aisladas.
+[Qué incluye]: CRM y automatización (Revenue), analítica e IA (Intelligence), SEO y publicidad (Visibility), contenidos y web (Content).
+[Resultado]: Un sistema de marketing conectado que genera decisiones mejores, crecimiento sostenible y autonomía real del cliente.
 -->
 
-> Hayas Marketing es una agencia de marketing digital fundada en 2014, especializada en soluciones integrales que combinan estrategia, tecnología e IA para empresas B2B y B2C. Nuestro enfoque: resultados medibles y autonomía del cliente.
+> Hayas Marketing es la empresa detrás de SENSE, un Marketing Operating System que conecta identidad, mercado, demanda, estrategia y ejecución en un flujo continuo de inteligencia. No vendemos servicios sueltos: construimos sistemas de decisión.
 
 ## Metadatos
 
 - **Tipo de contenido**: Empresa
 - **Nivel de intención**: Informacional
 - **URL canónica**: https://hayasmarketing.com/es/nosotros
-- **Última actualización**: 2026-02-06
-- **Versión**: 1.0
+- **Última actualización**: 2026-03-17
+- **Versión**: 2.0
 - **Idioma**: Español
 
 ## Sobre Hayas Marketing
 
+### Qué hacemos
+Hayas Marketing diseña, implementa y opera SENSE — un Marketing Operating System que organiza todo el marketing de una empresa en un sistema coherente de 4 pilares de ejecución.
+
 ### Misión
-Transformar el marketing digital de empresas mediante soluciones estratégicas potenciadas por IA, automatización CRM y metodologías probadas que generan resultados medibles y sostenibles.
+Transformar el marketing de empresas mediante SENSE: un sistema que conecta estrategia, tecnología e inteligencia para que cada decisión tenga contexto, cada acción tenga propósito y cada resultado sea medible.
 
 ### Visión
-Ser la agencia de referencia en marketing impulsado por IA para empresas que buscan crecer de forma inteligente y autónoma.
+Que cada empresa tenga un sistema de marketing gobernable, no dependencia de una agencia.
 
 ### Valores
-- **Estrategia primero**: Soluciones basadas en objetivos reales, no servicios genéricos
-- **Tecnología como enabler**: IA y automatización como herramientas transversales
+- **Sistema antes que servicio**: El marketing funciona cuando está conectado, no cuando se ejecuta por partes
+- **Decisiones antes que acciones**: Primero entender qué hacer y por qué, luego ejecutar
 - **Autonomía del cliente**: Formación y empoderamiento, no dependencia
 - **Resultados medibles**: Enfoque data-driven con KPIs claros
-- **Acompañamiento continuo**: Soporte y consultoría estratégica permanente
+- **IA como herramienta, no como promesa**: Implementación real, no buzzwords
+
+## SENSE — Marketing Operating System
+
+SENSE es el sistema propietario de Hayas Marketing. No es una metodología ni un catálogo de servicios: es un sistema operativo de marketing que organiza la ejecución en 4 pilares conectados.
+
+**Filosofía**: "No necesitas más marketing. Necesitas mejores decisiones."
+
+### Los 4 pilares de SENSE
+
+#### Revenue Pillar
+Gestión comercial, automatización de ventas e inteligencia de cliente integradas.
+- CRM (HubSpot, Go High Level)
+- Automatización de procesos de ventas
+- Captación de leads y clientes
+- Email marketing y workflows
+- Implementación de funnels
+
+#### Intelligence Pillar
+Análisis de competencia, tendencias y oportunidades basado en datos reales.
+- Consultoría estratégica y analítica
+- HAYAS Copilot (asistente IA propio)
+- Integraciones y optimización con IA
+- Formación en IA aplicada
+
+#### Visibility Pillar
+Posicionamiento en buscadores, IA generativa y motores de respuesta.
+- SEO y posicionamiento orgánico
+- Publicidad en Google Ads
+- Publicidad en redes sociales
+- Gestión de redes sociales
+- Campañas inbound marketing
+
+#### Content Pillar
+Creación estratégica, contenidos citables y adaptación multilingüe.
+- Estrategia de contenidos
+- Creación de marca y branding
+- Diseño web profesional
+- Tienda online / e-commerce
+- Localización de contenidos
+
+### Módulos de inteligencia de SENSE
+SENSE opera a través de capas de inteligencia que alimentan los 4 pilares:
+- **BRAIN**: Identidad y posicionamiento
+- **RADAR**: Inteligencia de mercado
+- **SEARCH**: Visibilidad y demanda
+- **STRATEGY**: Planificación estratégica
+- **WORKSPACE**: Ejecución y operaciones
 
 ## Equipo
 
@@ -41,8 +91,8 @@ Ser la agencia de referencia en marketing impulsado por IA para empresas que bus
 - **Certificaciones oficiales** en múltiples plataformas
 
 ### Fundador
-**Rubén Reyero** - CEO & Founder
-+15 años de experiencia en marketing digital, especialista en Decision Marketing y aplicación de IA en estrategias comerciales.
+**Rubén Reyero** — CEO & Founder
++15 años de experiencia en marketing digital, creador de SENSE y especialista en Decision Marketing.
 
 ## Certificaciones y Partners
 
@@ -55,60 +105,34 @@ Ser la agencia de referencia en marketing impulsado por IA para empresas que bus
 
 ## Diferenciadores
 
-### Especialización en IA aplicada
-No solo hablamos de IA, la implementamos: chatbot SofÍA propio, automatización de contenidos, lead scoring predictivo.
+### Sistema, no servicios
+SENSE organiza el marketing como un sistema conectado. No ejecutamos acciones aisladas: cada pilar alimenta a los demás.
 
-### Soluciones integrales
-Estrategia completa basada en objetivos de negocio, no servicios aislados.
+### IA implementada, no prometida
+HAYAS Copilot (asistente IA propio), automatización de contenidos, lead scoring predictivo, integraciones reales con procesos de negocio.
 
-### Formación y empoderamiento
-No creamos dependencia. Formamos para que gestiones tus propias herramientas.
+### Autonomía real
+No creamos dependencia. Formamos para que gestiones tu sistema de marketing.
 
 ### Resultados medibles
 KPIs claros desde el inicio, dashboards en tiempo real, optimización basada en datos.
 
-## Pilares de Servicio
-
-### Impulsa tu Marca
-Branding, web, SEO, contenidos. Para crear visibilidad y presencia digital.
-
-### Conecta con tus Clientes
-CRM, email marketing, automatizaciones. Para gestionar y nurturir relaciones.
-
-### Activa tus Ventas
-Publicidad, IA, analítica. Para generar demanda y conversiones.
-
-## Tecnologías
-
-- **CRM**: HubSpot, Go High Level
-- **Publicidad**: Google Ads, Meta Ads, LinkedIn Ads
-- **Web**: WordPress, Lovable, Shopify
-- **IA**: SofÍA (chatbot propio), integración GPT
-- **Analítica**: GA4, Tag Manager, Looker Studio
-
 ## Preguntas Frecuentes
+
+### ¿Qué es SENSE?
+SENSE es un Marketing Operating System creado por Hayas Marketing. Organiza todo el marketing en 4 pilares de ejecución conectados (Revenue, Intelligence, Visibility, Content) para que cada decisión tenga contexto y cada acción tenga propósito.
+
+### ¿Qué son los 4 pilares de SENSE?
+Son los dominios de ejecución: Revenue (CRM y ventas), Intelligence (analítica e IA), Visibility (SEO y publicidad) y Content (contenidos y web). No son servicios aislados: son pilares conectados dentro de un sistema.
+
+### ¿Puedo activar solo un pilar?
+Sí. SENSE es modular. Puedes empezar por el pilar que más necesites e ir incorporando más capacidades a medida que crezcas.
 
 ### ¿Con qué tipo de empresas trabajan?
 Empresas B2B y B2C de todos los tamaños: desde emprendedores hasta empresas medianas con equipos de marketing.
 
 ### ¿Dónde están ubicados?
 Nuestras oficinas están en España, pero trabajamos con clientes de toda Europa y Latinoamérica de forma remota.
-
-### ¿Ofrecen servicios a medida?
-Sí. Aunque tenemos soluciones predefinidas, adaptamos todo a las necesidades específicas de cada cliente.
-
-## Marketing SENSE - Metodología Propia
-
-Marketing SENSE es la metodología integral de Hayas Marketing para diseñar planes de marketing 360° alineados con la estrategia de negocio.
-
-**Filosofía**: "Impulsado por IA, gobernado por personas"
-
-### Las 5 fases de Marketing SENSE
-1. **S - Estrategia**: Diagnóstico, objetivos SMART, KPIs
-2. **E - Ejecución**: Implementación de servicios y campañas
-3. **N - Nurturing**: CRM, automatización, lead scoring
-4. **S - Soporte**: Formación, acompañamiento, autonomía
-5. **E - Evaluación**: Dashboards, reportes, optimización continua
 
 ## Casos de Éxito Destacados
 
@@ -130,9 +154,9 @@ Marketing SENSE es la metodología integral de Hayas Marketing para diseñar pla
 
 - **Agendar reunión**: https://hayasmarketing.com/es/agendar-reunion
 - **Contacto general**: https://hayasmarketing.com/es/contacto
-- **Chat con SofÍA**: Disponible 24/7 en la web
+- **Chat con HAYAS Copilot**: Disponible 24/7 en la web
 
 ## Cómo Citar Este Contenido
 
-Reyero, R. (2026). Hayas Marketing - Agencia de Marketing Digital. Hayas Marketing.
+Reyero, R. (2026). Hayas Marketing — Creadores de SENSE, el Marketing Operating System. Hayas Marketing.
 https://hayasmarketing.com/es/nosotros
