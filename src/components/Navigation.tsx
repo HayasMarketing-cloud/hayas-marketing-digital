@@ -357,18 +357,6 @@ const Navigation = () => {
                     })}
                   </div>
                   
-                  {/* IA Marketing Link */}
-                  <Link
-                    to={`/${language}/soluciones/ia-marketing`}
-                    className="flex items-center gap-3 p-4 rounded-xl border border-border/50 hover:border-primary/30 transition-all hover:bg-muted/50"
-                    onClick={closeMobileMenu}
-                  >
-                    <div className="p-2 rounded-lg bg-background shadow-sm text-primary">
-                      <Zap className="h-5 w-5" />
-                    </div>
-                    <span className="font-medium text-foreground">{t('footer.ia-marketing')}</span>
-                    <ArrowRight className="h-4 w-4 text-muted-foreground ml-auto" />
-                  </Link>
                 </div>
               )}
             </nav>
