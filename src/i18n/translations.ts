@@ -1425,9 +1425,10 @@ export const translations = {
       gridView: 'Grid view',
       listView: 'List view',
       pillars: {
-        impulsa: 'Boost your brand',
-        conecta: 'Connect with your customers',
-        activa: 'Activate your Sales'
+        revenue: 'Revenue',
+        intelligence: 'Intelligence',
+        visibility: 'Visibility',
+        content: 'Content'
       }
     },
     serviceItems: {
