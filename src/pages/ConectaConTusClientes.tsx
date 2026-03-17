@@ -246,8 +246,7 @@ const ConectaConTusClientes = () => {
       {/* Sección 5: Servicios relacionados */}
       <PillarServicesSection 
         title="Servicios que potencian tu CRM"
-        pillar="conecta"
-        accentColor="conecta"
+        pillar="revenue"
       />
 
       {/* Servicio Integral: Administración CRM y Gestión Marketing */}

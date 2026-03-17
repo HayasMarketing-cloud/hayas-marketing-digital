@@ -199,7 +199,7 @@ const faqItemsEN = [
 const ActivaTusVentas = () => {
   const { t, language } = useTranslation();
   const isEnglish = language === 'en';
-  const activaServices = servicesByPillar.activa || [];
+  const activaServices = servicesByPillar.revenue || [];
   
   const seoData = useAdvancedSEO({
     pageContent: isEnglish 
