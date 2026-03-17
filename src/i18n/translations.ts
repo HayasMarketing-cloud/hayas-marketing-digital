@@ -790,15 +790,15 @@ export const translations = {
       ]
     },
     senseActivations: {
-      title: 'SENSE se activa a través de capas de ejecución',
-      subtitle: 'Cada capa resuelve un problema concreto dentro del sistema.',
+      title: 'Sistemas que SENSE activa',
+      subtitle: 'Cada sistema resuelve un problema concreto dentro del ecosistema.',
       items: [
-        { title: 'CRM y sistemas de revenue', description: 'Gestión comercial, automatización de ventas e inteligencia de cliente con HubSpot o CRM Hayas.' },
-        { title: 'Investigación de mercado', description: 'Análisis de competencia, tendencias y oportunidades con datos reales, no suposiciones.' },
-        { title: 'Visibilidad: SEO, GEO y AEO', description: 'Posicionamiento en buscadores, IA generativa y motores de respuesta.' },
-        { title: 'Contenido y localización', description: 'Estrategia editorial, contenidos citables y adaptación multilingüe para mercados globales.' }
+        { title: 'Revenue System', description: 'Gestión comercial, automatización de ventas e inteligencia de cliente integradas en un sistema de revenue.' },
+        { title: 'Intelligence System', description: 'Análisis de competencia, tendencias y oportunidades basado en datos reales, no en suposiciones.' },
+        { title: 'Visibility System', description: 'Posicionamiento en buscadores, IA generativa y motores de respuesta para estar donde se toman las decisiones.' },
+        { title: 'Content System', description: 'Creación estratégica, contenidos citables y adaptación multilingüe para mercados globales.' }
       ],
-      closing: 'No son servicios aislados. Son capas de ejecución del sistema.'
+      closing: 'No son servicios. Son sistemas de ejecución conectados.'
     },
     senseAudienceCta: {
       title: 'Para empresas que necesitan claridad, no más marketing',
