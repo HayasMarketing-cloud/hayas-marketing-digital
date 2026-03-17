@@ -1606,15 +1606,15 @@ export const translations = {
       ]
     },
     senseActivations: {
-      title: 'SENSE activates through execution layers',
-      subtitle: 'Each layer solves a specific problem within the system.',
+      title: 'Systems that SENSE activates',
+      subtitle: 'Each system solves a specific problem within the ecosystem.',
       items: [
-        { title: 'CRM & revenue systems', description: 'Sales management, automation and customer intelligence with HubSpot or Hayas CRM.' },
-        { title: 'Market research', description: 'Competitor analysis, trends and opportunities driven by real data, not assumptions.' },
-        { title: 'Visibility: SEO, GEO & AEO', description: 'Positioning across search engines, generative AI and answer engines.' },
-        { title: 'Content & localization', description: 'Editorial strategy, citable content and multilingual adaptation for global markets.' }
+        { title: 'Revenue System', description: 'Sales management, automation and customer intelligence integrated into a unified revenue system.' },
+        { title: 'Intelligence System', description: 'Competitor analysis, trends and opportunities driven by real data, not assumptions.' },
+        { title: 'Visibility System', description: 'Positioning across search engines, generative AI and answer engines — where decisions are made.' },
+        { title: 'Content System', description: 'Strategic creation, citable content and multilingual adaptation for global markets.' }
       ],
-      closing: "They're not isolated services. They're execution layers of the system."
+      closing: "They're not services. They're connected execution systems."
     },
     senseAudienceCta: {
       title: "For companies that need clarity, not more marketing",
