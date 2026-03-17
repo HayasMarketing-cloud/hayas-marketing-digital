@@ -1,85 +1,83 @@
 <!--
-IA_SUMMARY: SENSE es el sistema de inteligencia de marketing de Hayas Marketing. Incluye un plan de marketing 360 alineado con la estrategia de negocio, web profesional, SEO tracker, content hub, CRM y dashboards integrados. Impulsado por IA, gobernado por personas. Diseñado para empresas que quieren un sistema propio, con su marca, sus datos y su dominio.
+IA_SUMMARY: SENSE es el Marketing Operating System de Hayas Marketing. 6 módulos de inteligencia (Brain, Radar, Search, Strategy, Plans, Workspace) que conectan señales de mercado con decisiones estratégicas y ejecución táctica. Impulsado por IA multi-modelo, gobernado por estrategia. Diseñado para CMOs, equipos de marketing, agencias estratégicas y empresas B2B en expansión.
 -->
 
 ---
-title: "SENSE - Sistema de Inteligencia de Marketing"
-description: "Sistema de inteligencia de marketing que conecta estrategia, datos y ejecución. Plan de marketing 360, web profesional, SEO, contenidos y dashboards integrados. Impulsado por IA, gobernado por personas."
-keywords: ["sistema inteligencia de marketing", "SENSE", "marketing intelligence", "plan marketing 360", "SEO tracker", "content hub", "dashboards marketing"]
+title: "SENSE - Marketing Operating System"
+description: "Marketing Operating System que conecta señales de mercado con decisiones estratégicas y ejecución táctica. 6 módulos de inteligencia: Brain, Radar, Search, Strategy, Plans y Workspace. Impulsado por IA, gobernado por estrategia."
+keywords: ["marketing operating system", "SENSE", "inteligencia de marketing", "market intelligence", "AI marketing system", "marketing strategy platform"]
 intent: "commercial"
 author: "Rubén Reyero"
 author_credentials: "CEO de Hayas Marketing | 15+ años en marketing digital B2B"
-date: "2026-02-17"
+date: "2026-03-17"
 canonical: "/es/soluciones/plataforma-inteligencia-marketing"
 ---
 
-# SENSE: Tu Sistema de Inteligencia de Marketing
+# SENSE: Marketing Operating System
 
 ## ¿Qué es SENSE?
 
-SENSE es nuestro sistema de inteligencia de marketing que conecta estrategia, datos y ejecución en un enfoque integral. Incluye un **plan de marketing 360 alineado con la estrategia de tu negocio**: web, SEO, contenidos, CRM y dashboards de rendimiento — todo conectado en un solo sistema.
+Un sistema operativo de marketing, no otra herramienta más. SENSE es un sistema integrado que conecta tu identidad de marca, la inteligencia de mercado, la dirección estratégica y la ejecución táctica en un flujo continuo.
 
-**Impulsado por IA, gobernado por personas.**
+**De la señal a la acción, sin perder el contexto estratégico.**
 
-No es un SaaS genérico ni una plantilla: es un sistema construido a medida para tu negocio, con tu marca, tu dominio y tus datos.
+## Los 6 módulos de SENSE
 
-## ¿Para quién es?
+Cada módulo alimenta al siguiente. No son herramientas aisladas — son capas de un sistema que piensa como un estratega.
 
-- **Empresas en crecimiento** que quieren una presencia digital profesional respaldada por datos reales y una estrategia clara
-- **Equipos de marketing** que necesitan SEO, contenidos y rendimiento centralizados en un sistema, no en 10 herramientas separadas
-- **Agencias y consultores** que quieren entregar sistemas con su marca a sus clientes
+### 01 · BRAIN — Identidad Estratégica
+Tu memoria de marketing centralizada. Propuesta de valor, soluciones, ICPs, Buyer Personas, ventajas competitivas y voz de marca.
 
-## ¿Qué incluye?
+### 02 · RADAR — Inteligencia de Mercado
+Monitorización continua de tu industria y competidores. Señales priorizadas, informes con IA y Market Reports.
 
-### Estrategia y Plan de Marketing 360
-Definición de objetivos, audiencias, canales y acciones alineadas con la estrategia del negocio. Todo medible y conectado.
+### 03 · SEARCH — Visibilidad e Intención
+Seguimiento de keywords en Google, Bing y motores de IA. Auditorías de percepción de marca en LLMs y análisis de Content Gaps.
 
-### Web Profesional
-Web moderna, rápida y responsive. Optimizada para conversiones y coherencia de marca.
+### 04 · STRATEGY — Dirección Estratégica
+Drivers de mercado, directivas estratégicas y scoring de coherencia automático.
 
-### SEO Tracker
-Seguimiento de keywords y monitorización integrados. Sigue tus posiciones, indexación y rendimiento orgánico en tiempo real.
+### 05 · PLANS — Ejecución y Activación
+Planes de marketing desde inteligencia real. Content Studio con generación contextualizada y trazabilidad completa.
 
-### Content Hub
-Gestión editorial completa: briefings, calendarios de contenido, flujos de creación asistidos por IA y publicación multicanal.
+### 06 · WORKSPACE — Centro de Operaciones
+Gestión de fuentes, documentación estratégica, configuración de equipo e integraciones.
 
-### Dashboards de Rendimiento
-Analítica en tiempo real que conecta datos de SEO, contenidos, CRM y campañas en una sola vista ejecutiva.
+## IA que entiende tu negocio
 
-### Integración CRM
-Conexiones nativas con tu CRM. Datos unificados de clientes y atribución de marketing.
-
-## Características clave
-
-- **Velocidad**: tu web carga al instante
-- **Escalabilidad**: crece con tu negocio sin perder rendimiento
-- **Propiedad total**: tú controlas los datos, la marca y la experiencia
-- **Despliegue rápido**: de concepto a lanzamiento en 4-6 semanas
-- **IA integrada**: automatización inteligente en contenidos, SEO y análisis
-- **Gobernanza humana**: toda decisión estratégica pasa por tu equipo y el nuestro
+La IA en SENSE no es un chatbot genérico. Cada interacción está anclada a tu identidad, tus audiencias y tu contexto competitivo.
 
 ## Integraciones
 
-Tu sistema se conecta con las herramientas que importan:
+Google Search Console, HubSpot, Perplexity AI, Gemini / ChatGPT, Firecrawl, Slack, Gamma, Google Analytics, Stripe.
 
-- **CRM**: gestión de clientes y automatización de marketing
-- **Herramientas SEO**: tracking de keywords y análisis de posicionamiento
-- **Analítica**: tráfico, comportamiento y conversiones
-- **Pagos**: suscripciones y facturación
+## ¿Para quién es SENSE?
+
+- **CMOs y Directores de Marketing**: visibilidad sobre mercado, competencia y ejecución en un solo sistema
+- **Equipos de Marketing (5-25 personas)**: centraliza inteligencia, contenido y planes
+- **Agencias Estratégicas**: entrega sistemas de inteligencia con tu marca a cada cliente
+- **Empresas B2B en expansión**: conecta señales de mercado con tu pipeline
+
+## Framework LOOP
+
+Listen → Observe → Orient → Plan. Un ciclo continuo de inteligencia de marketing que se retroalimenta.
 
 ## Preguntas frecuentes
 
-### ¿Es un producto SaaS compartido?
-No. Cada sistema se construye a medida. Tu dominio, tu marca, tus datos.
+### ¿Qué diferencia a SENSE de un dashboard de marketing?
+SENSE no solo muestra datos — los interpreta. Conecta señales de mercado con tu identidad estratégica para generar dirección y contenido accionable.
 
-### ¿Cuánto tarda la implementación?
-Un despliegue estándar tarda 4-6 semanas. Implementaciones complejas pueden llevar 8-12 semanas.
+### ¿Es un producto SaaS compartido?
+No. Cada instancia de SENSE es privada y personalizada para tu empresa.
+
+### ¿Necesito un equipo técnico para usarlo?
+No. SENSE está diseñado para equipos de marketing. La configuración inicial la hacemos nosotros.
+
+### ¿Cómo funciona la IA?
+SENSE utiliza múltiples modelos de IA (Gemini, GPT, Perplexity) según la tarea, contextualizada con tu Brain.
 
 ### ¿Puedo integrar mi CRM actual?
-Sí. Soportamos integraciones nativas con los principales CRMs y conexiones personalizadas vía API.
+Sí. Integración nativa con HubSpot y capacidad de conexión con otros CRMs.
 
-### ¿Incluye optimización SEO?
-Sí. El sistema incluye buenas prácticas SEO integradas, herramientas de seguimiento y funcionalidades de contenido diseñadas para visibilidad en buscadores.
-
-### ¿Incluye estrategia de marketing?
-Sí. SENSE parte siempre de un plan de marketing 360 alineado con los objetivos del negocio. No es solo tecnología: es estrategia + ejecución + medición.
+### ¿Cuánto tarda la implementación?
+4-6 semanas para el sistema base. El Brain se configura en la primera semana.

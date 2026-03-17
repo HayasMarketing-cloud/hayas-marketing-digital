@@ -1,85 +1,83 @@
 <!--
-IA_SUMMARY: SENSE is Hayas Marketing's marketing intelligence system. It includes a 360 marketing plan aligned with business strategy, professional website, SEO tracker, content hub, CRM and integrated dashboards. Powered by AI, governed by people. Designed for businesses wanting their own system with their brand, data and domain.
+IA_SUMMARY: SENSE is Hayas Marketing's Marketing Operating System. 6 intelligence modules (Brain, Radar, Search, Strategy, Plans, Workspace) that connect market signals with strategic decisions and tactical execution. Powered by multi-model AI, governed by strategy. Designed for CMOs, marketing teams, strategic agencies and expanding B2B companies.
 -->
 
 ---
-title: "SENSE - Marketing Intelligence System"
-description: "Marketing intelligence system connecting strategy, data and execution. 360 marketing plan, professional website, SEO, content and integrated dashboards. Powered by AI, governed by people."
-keywords: ["marketing intelligence system", "SENSE", "360 marketing plan", "SEO tracker", "content hub", "marketing dashboards"]
+title: "SENSE - Marketing Operating System"
+description: "Marketing Operating System connecting market signals with strategic decisions and tactical execution. 6 intelligence modules: Brain, Radar, Search, Strategy, Plans and Workspace. Powered by AI, governed by strategy."
+keywords: ["marketing operating system", "SENSE", "market intelligence", "AI marketing system", "marketing strategy platform"]
 intent: "commercial"
 author: "Rubén Reyero"
 author_credentials: "CEO at Hayas Marketing | 15+ years in B2B digital marketing"
-date: "2026-02-17"
+date: "2026-03-17"
 canonical: "/en/solutions/marketing-intelligence-platform"
 ---
 
-# SENSE: Your Marketing Intelligence System
+# SENSE: Marketing Operating System
 
 ## What is SENSE?
 
-SENSE is our marketing intelligence system that connects strategy, data and execution in a comprehensive approach. It includes a **360 marketing plan aligned with your business strategy**: website, SEO, content, CRM and performance dashboards — all connected in one system.
+A marketing operating system, not another tool. SENSE is an integrated system that connects your brand identity, market intelligence, strategic direction and tactical execution in a continuous flow.
 
-**Powered by AI, governed by people.**
+**From signal to action, without losing strategic context.**
 
-Not a generic SaaS or a template: it's a system custom-built for your business, with your brand, your domain and your data.
+## The 6 modules of SENSE
 
-## Who is it for?
+Each module feeds the next. They're not isolated tools — they're layers of a system that thinks like a strategist.
 
-- **Growing businesses** that want a professional digital presence backed by real data and a clear strategy
-- **Marketing teams** that need SEO, content and performance centralized in one system instead of 10 separate tools
-- **Agencies & consultants** that want to deliver branded systems to their clients
+### 01 · BRAIN — Strategic Identity
+Your centralized marketing memory. Value proposition, solutions, ICPs, Buyer Personas, competitive advantages and brand voice.
 
-## What's included?
+### 02 · RADAR — Market Intelligence
+Continuous monitoring of your industry and competitors. Prioritized signals, AI-powered reports and Market Reports.
 
-### Strategy & 360 Marketing Plan
-Goal definition, audiences, channels and actions aligned with business strategy. Everything measurable and connected.
+### 03 · SEARCH — Visibility & Intent
+Keyword tracking on Google, Bing and AI engines. Brand perception audits on LLMs and Content Gap analysis.
 
-### Professional Website
-Modern, fast, responsive website. Optimized for conversions and brand consistency.
+### 04 · STRATEGY — Strategic Direction
+Market drivers, strategic directives and automatic coherence scoring.
 
-### SEO Tracker
-Integrated keyword tracking and monitoring. Follow your positions, indexation and organic performance in real time.
+### 05 · PLANS — Execution & Activation
+Marketing plans from real intelligence. Content Studio with contextualized generation and full traceability.
 
-### Content Hub
-Complete editorial management: briefings, content calendars, AI-assisted creation workflows and multichannel publishing.
+### 06 · WORKSPACE — Operations Center
+Source management, strategic documentation, team configuration and integrations.
 
-### Performance Dashboards
-Real-time analytics connecting SEO, content, CRM and campaign data in a single executive view.
+## AI that understands your business
 
-### CRM Integration
-Native connections to your CRM. Unified customer data and marketing attribution.
-
-## Key features
-
-- **Speed**: your website loads instantly
-- **Scalability**: grows with your business without performance loss
-- **Full ownership**: you control the data, the brand and the experience
-- **Rapid deployment**: from concept to launch in 4-6 weeks
-- **Integrated AI**: intelligent automation in content, SEO and analysis
-- **Human governance**: every strategic decision goes through your team and ours
+AI in SENSE is not a generic chatbot. Every interaction is anchored to your identity, your audiences and your competitive context.
 
 ## Integrations
 
-Your system connects with the tools that matter:
+Google Search Console, HubSpot, Perplexity AI, Gemini / ChatGPT, Firecrawl, Slack, Gamma, Google Analytics, Stripe.
 
-- **CRM**: customer management & marketing automation
-- **SEO Tools**: keyword tracking & ranking analysis
-- **Analytics**: traffic, behavior & conversions
-- **Payments**: subscriptions & billing
+## Who is SENSE for?
 
-## Frequently asked questions
+- **CMOs & Marketing Directors**: visibility on market, competition and execution in one system
+- **Marketing Teams (5-25 people)**: centralize intelligence, content and plans
+- **Strategic Agencies**: deliver branded intelligence systems to each client
+- **B2B companies in expansion**: connect market signals with your pipeline
 
-### Is this a shared SaaS product?
-No. Each system is custom-built. Your domain, your brand, your data.
+## LOOP Framework
 
-### How long does implementation take?
-A standard deployment takes 4-6 weeks. Complex implementations can take 8-12 weeks.
+Listen → Observe → Orient → Plan. A continuous marketing intelligence cycle that feeds itself.
+
+## FAQs
+
+### What makes SENSE different from a marketing dashboard?
+SENSE doesn't just show data — it interprets it. It connects market signals with your strategic identity to generate direction and actionable content.
+
+### Is it a shared SaaS product?
+No. Each SENSE instance is private and customized for your company.
+
+### Do I need a technical team to use it?
+No. SENSE is designed for marketing teams. We handle the initial setup.
+
+### How does the AI work?
+SENSE uses multiple AI models (Gemini, GPT, Perplexity) depending on the task, contextualized with your Brain.
 
 ### Can I integrate my existing CRM?
-Yes. We support native integrations with major CRMs and custom API connections.
+Yes. Native integration with HubSpot and the ability to connect with other CRMs.
 
-### Does it include SEO optimization?
-Yes. The system includes built-in SEO best practices, tracking tools, and content features designed for search visibility.
-
-### Does it include marketing strategy?
-Yes. SENSE always starts from a 360 marketing plan aligned with business goals. It's not just technology: it's strategy + execution + measurement.
+### How long does implementation take?
+4-6 weeks for the base system. The Brain is configured in the first week.

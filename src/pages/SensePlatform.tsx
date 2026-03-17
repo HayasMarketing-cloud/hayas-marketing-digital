@@ -7,24 +7,31 @@ import { Card, CardContent } from '@/components/ui/card';
 import EnhancedSEO from '@/components/EnhancedSEO';
 import FAQSection from '@/components/FAQSection';
 import ServiceContactSection from '@/components/ServiceContactSection';
-import IntermediateCTA from '@/components/IntermediateCTA';
 import { useTranslation } from '@/hooks/useTranslation';
 import { Button } from '@/components/ui/button';
 import {
   BrainCircuit,
   Search,
-  FileText,
   BarChart3,
-  Link2,
-  Layers,
   ArrowRight,
   Code2,
   Zap,
   Shield,
   Rocket,
-  Globe,
   Database,
   Cpu,
+  Radar,
+  Target,
+  FileText,
+  Settings,
+  Sparkles,
+  Eye,
+  LayoutDashboard,
+  RefreshCw,
+  Users,
+  Building2,
+  Briefcase,
+  Globe,
   BotMessageSquare,
 } from 'lucide-react';
 
@@ -32,116 +39,176 @@ const SensePlatform = () => {
   const { language } = useTranslation();
   const isEnglish = language === 'en';
 
-  const content = {
-    serviceName: isEnglish ? 'SENSE - Marketing Intelligence System' : 'SENSE - Sistema de Inteligencia de Marketing',
-    serviceDescription: isEnglish
-      ? 'Marketing intelligence system that connects strategy, data and execution. Designed to grow with your business.'
-      : 'Sistema de inteligencia de marketing que conecta estrategia, datos y ejecución. Diseñado para crecer con tu negocio.',
-    canonical: isEnglish ? '/en/solutions/marketing-intelligence-platform' : '/es/soluciones/plataforma-inteligencia-marketing',
-    features: isEnglish ? [
-      'Professional website with your brand',
-      'SEO tracker with GSC & DataForSEO',
-      'Content hub with editorial management',
-      'Real-time performance dashboards'
-    ] : [
-      'Web profesional con tu marca',
-      'SEO tracker con GSC y DataForSEO',
-      'Content hub con gestión editorial',
-      'Dashboards de rendimiento en tiempo real'
-    ],
-    breadcrumbHome: isEnglish ? 'Home' : 'Inicio',
-    breadcrumbSolutions: isEnglish ? 'Solutions' : 'Soluciones',
-    breadcrumbCurrent: isEnglish ? 'SENSE Marketing' : 'Marketing SENSE',
-    homeLink: isEnglish ? '/en' : '/es',
-    solutionsLink: isEnglish ? '/en#solutions' : '/es#soluciones',
-    heroTitle: isEnglish
-      ? <>SENSE: Your <span className="text-gradient-primary">Marketing Intelligence</span> System</>
-      : <>SENSE: Tu Sistema de <span className="text-gradient-primary">Inteligencia de Marketing</span></>,
-    heroSubtitle: isEnglish
-      ? 'Strategy, data and execution connected in one system. Your website, SEO monitoring, content management and performance dashboards — all integrated and built for your business.'
-      : 'Estrategia, datos y ejecución conectados en un sistema. Tu web, monitorización SEO, gestión de contenidos y dashboards de rendimiento — todo integrado y construido para tu negocio.',
-    whatIsTitle: isEnglish ? 'What does SENSE include?' : '¿Qué incluye SENSE?',
-    whatIsDescription: isEnglish
-      ? 'A 360 marketing plan aligned with your business strategy. Website, SEO, content, CRM and performance dashboards — all connected in one system. Powered by AI, governed by people.'
-      : 'Un plan de marketing 360 alineado con la estrategia de tu negocio. Web, SEO, contenidos, CRM y dashboards de rendimiento — todo conectado en un solo sistema. Impulsado por IA, gobernado por personas.',
-    builtWithTitle: isEnglish ? 'Our technology' : 'Nuestra tecnología',
-    builtWithDescription: isEnglish
-      ? 'We build your system with cutting-edge web technology: fast, scalable and with a professional experience. No WordPress. No templates. Your own system, ready to grow with you.'
-      : 'Construimos tu sistema con tecnología web de última generación: rápida, escalable y con una experiencia profesional. Sin WordPress. Sin plantillas. Tu propio sistema, listo para crecer contigo.',
-    integrationsTitle: isEnglish ? 'Real integrations' : 'Integraciones reales',
-    integrationsDescription: isEnglish
-      ? 'Your system connects with the tools that matter: CRM, SEO tracking, analytics and more. Real data, real-time.'
-      : 'Tu sistema se conecta con las herramientas que importan: CRM, seguimiento SEO, analítica y más. Datos reales, en tiempo real.',
-    forWhomTitle: isEnglish ? 'Who is it for?' : '¿Para quién es?',
-    ctaTitle: isEnglish ? 'Ready to professionalize your digital presence?' : '¿Listo para profesionalizar tu presencia digital?',
-    ctaDescription: isEnglish
-      ? 'Schedule a strategic session to explore how we can build your custom marketing system.'
-      : 'Agenda una sesión estratégica para explorar cómo construir tu sistema de marketing a medida.',
-    ctaButton: isEnglish ? 'Schedule a demo' : 'Agendar una demo',
-    ctaLink: isEnglish ? '/en/schedule-meeting' : '/es/agendar-reunion',
-  };
+  const ctaLink = isEnglish ? '/en/schedule-meeting' : '/es/agendar-reunion';
+  const ctaButton = isEnglish ? 'Schedule a demo' : 'Agendar una demo';
 
-  const featuresList = isEnglish ? [
-    { icon: Globe, title: 'Professional Website', description: 'Modern, fast and responsive website. Optimized for conversions and brand consistency.' },
-    { icon: Search, title: 'SEO Tracker', description: 'Integrated keyword tracking and monitoring. Follow your positions, indexation and organic performance in real time.' },
-    { icon: FileText, title: 'Content Hub', description: 'Editorial management with briefings, content calendars, and AI-assisted content creation workflows.' },
-    { icon: BarChart3, title: 'Performance Dashboards', description: 'Real-time analytics connecting SEO, content, CRM and campaign data in one view.' },
-    { icon: Link2, title: 'CRM Integration', description: 'Native connections to your CRM. Unified customer data and marketing attribution.' },
-    { icon: Layers, title: 'White-Label System', description: 'Fully branded with your logo, colors and domain. It\'s your system, not a shared tool.' },
-  ] : [
-    { icon: Globe, title: 'Web Profesional', description: 'Web moderna, rápida y responsive. Optimizada para conversiones y coherencia de marca.' },
-    { icon: Search, title: 'SEO Tracker', description: 'Seguimiento de keywords y monitorización integrados. Sigue tus posiciones, indexación y rendimiento orgánico en tiempo real.' },
-    { icon: FileText, title: 'Content Hub', description: 'Gestión editorial con briefings, calendarios de contenido y flujos de creación asistidos por IA.' },
-    { icon: BarChart3, title: 'Dashboards de Rendimiento', description: 'Analítica en tiempo real que conecta datos de SEO, contenidos, CRM y campañas en una sola vista.' },
-    { icon: Link2, title: 'Integración CRM', description: 'Conexiones nativas con tu CRM. Datos unificados de clientes y atribución de marketing.' },
-    { icon: Layers, title: 'Sistema con tu Marca', description: 'Totalmente personalizado con tu logo, colores y dominio. Es tu sistema, no una herramienta compartida.' },
+  // ── 6 Modules ──
+  const modules = [
+    {
+      number: '01',
+      name: 'BRAIN',
+      subtitle: isEnglish ? 'Strategic Identity' : 'Identidad Estratégica',
+      icon: BrainCircuit,
+      description: isEnglish
+        ? 'Your centralized marketing memory. Value proposition, solutions, ICPs, Buyer Personas, competitive advantages and brand voice — all in one place. The Brain is the context that makes every AI output relevant to your business, not generic.'
+        : 'Tu memoria de marketing centralizada. Propuesta de valor, soluciones, ICPs, Buyer Personas, ventajas competitivas y voz de marca — todo en un solo lugar. El Brain es el contexto que hace que cada output de la IA sea relevante para tu negocio, no genérico.',
+    },
+    {
+      number: '02',
+      name: 'RADAR',
+      subtitle: isEnglish ? 'Market Intelligence' : 'Inteligencia de Mercado',
+      icon: Radar,
+      description: isEnglish
+        ? 'Continuous monitoring of your industry and competitors. Signals prioritized by strategic relevance, AI-powered competitor reports, and Market Reports that synthesize opportunities and threats. Your team sees what matters, not noise.'
+        : 'Monitorización continua de tu industria y competidores. Señales priorizadas por relevancia estratégica, informes de competidor con IA, y Market Reports que sintetizan oportunidades y amenazas. Tu equipo ve lo que importa, no ruido.',
+    },
+    {
+      number: '03',
+      name: 'SEARCH',
+      subtitle: isEnglish ? 'Visibility & Intent' : 'Visibilidad e Intención',
+      icon: Search,
+      description: isEnglish
+        ? 'Keyword tracking on Google, Bing and AI engines (ChatGPT, Gemini, Perplexity). Brand perception audits on LLMs, Content Gap analysis and topical authority mapping. Understand how the market sees you — including AI.'
+        : 'Seguimiento de keywords en Google, Bing y motores de IA (ChatGPT, Gemini, Perplexity). Auditorías de percepción de marca en LLMs, análisis de Content Gaps y mapeo de autoridad temática. Entiende cómo te ve el mercado — incluyendo la IA.',
+    },
+    {
+      number: '04',
+      name: 'STRATEGY',
+      subtitle: isEnglish ? 'Strategic Direction' : 'Dirección Estratégica',
+      icon: Target,
+      description: isEnglish
+        ? 'Market drivers, strategic directives and coherence scoring. The system automatically evaluates if your execution is aligned with market forces and your identity. No spreadsheets. No disconnects.'
+        : 'Drivers de mercado, directivas estratégicas y scoring de coherencia. El sistema evalúa automáticamente si tu ejecución está alineada con las fuerzas del mercado y tu identidad. Sin hojas de cálculo. Sin desconexiones.',
+    },
+    {
+      number: '05',
+      name: 'PLANS',
+      subtitle: isEnglish ? 'Execution & Activation' : 'Ejecución y Activación',
+      icon: FileText,
+      description: isEnglish
+        ? 'Marketing plans generated from real intelligence. Typed activations (campaigns, content, events, ABM, funnels), Content Studio with contextualized generation, and strategic proposals with full traceability: from signal to deliverable.'
+        : 'Planes de marketing generados desde inteligencia real. Activaciones tipadas (campañas, contenido, eventos, ABM, funnels), Content Studio con generación contextualizada, y propuestas estratégicas con trazabilidad completa: de la señal al entregable.',
+    },
+    {
+      number: '06',
+      name: 'WORKSPACE',
+      subtitle: isEnglish ? 'Operations Center' : 'Tu Centro de Operaciones',
+      icon: Settings,
+      description: isEnglish
+        ? 'Source management, strategic documentation, team configuration and integrations. The backoffice that keeps everything running.'
+        : 'Gestión de fuentes, documentación estratégica, configuración de equipo e integraciones. El backoffice que mantiene todo funcionando.',
+    },
   ];
 
-  const builtWithFeatures = isEnglish ? [
-    { icon: Code2, title: 'Cutting-edge technology', description: 'Modular and flexible design. No unnecessary dependencies or technological debt.' },
-    { icon: Zap, title: 'Fast & Scalable', description: 'Your website loads instantly. Grows with your business without losing performance.' },
-    { icon: Shield, title: 'Secure & Owned', description: 'You own your system. Your data, your domain, your brand — always.' },
-    { icon: Rocket, title: 'Rapid Deployment', description: 'From concept to launch in 4-6 weeks. No 6-month development cycles.' },
-  ] : [
-    { icon: Code2, title: 'Tecnología de última generación', description: 'Diseño modular y flexible. Sin dependencias innecesarias ni deuda tecnológica.' },
-    { icon: Zap, title: 'Rápida y Escalable', description: 'Tu web carga al instante. Crece con tu negocio sin perder rendimiento.' },
-    { icon: Shield, title: 'Seguro y Propio', description: 'Tú eres dueño de tu sistema. Tus datos, tu dominio, tu marca — siempre.' },
-    { icon: Rocket, title: 'Despliegue Rápido', description: 'De concepto a lanzamiento en 4-6 semanas. Sin ciclos de desarrollo de 6 meses.' },
+  // ── AI Features ──
+  const aiFeatures = [
+    {
+      icon: BarChart3,
+      title: isEnglish ? 'Market Reports with real signals' : 'Market Reports con señales reales',
+      description: isEnglish
+        ? 'Executive reports generated from prioritized signals in your industry. Opportunities, threats and recommendations based on data, not assumptions.'
+        : 'Informes ejecutivos generados a partir de señales priorizadas de tu industria. Oportunidades, amenazas y recomendaciones basadas en datos, no en suposiciones.',
+    },
+    {
+      icon: Sparkles,
+      title: isEnglish ? 'Contextualized strategic content' : 'Contenido estratégico contextualizado',
+      description: isEnglish
+        ? 'The Content Studio automatically injects your value proposition, ICPs and differentiators into every piece. The result: content that sounds like your brand, not a generic AI.'
+        : 'El Content Studio inyecta automáticamente tu propuesta de valor, ICPs y diferenciadores en cada pieza. El resultado: contenido que suena a tu marca, no a una IA genérica.',
+    },
+    {
+      icon: Eye,
+      title: isEnglish ? 'Brand perception in AI engines' : 'Percepción de marca en motores de IA',
+      description: isEnglish
+        ? 'Audit how ChatGPT, Gemini and Perplexity describe your brand versus competitors. Identify narrative gaps before they impact your pipeline.'
+        : 'Audita cómo ChatGPT, Gemini y Perplexity describen tu marca frente a competidores. Identifica gaps de narrativa antes de que impacten en tu pipeline.',
+    },
+    {
+      icon: LayoutDashboard,
+      title: isEnglish ? 'Plans generated from intelligence' : 'Planes generados desde inteligencia',
+      description: isEnglish
+        ? "You don't start from zero. SENSE generates marketing plans from the Market Report, with objectives, KPIs and activations linked to your strategic drivers."
+        : 'No partes de cero. SENSE genera planes de marketing a partir del Market Report, con objetivos, KPIs y activaciones vinculadas a tus drivers estratégicos.',
+    },
   ];
 
+  // ── Integrations ──
   const integrations = [
-    { name: 'Google Search Console', description: isEnglish ? 'Organic search data' : 'Datos de búsqueda orgánica' },
-    { name: isEnglish ? 'SEO API' : 'API de SEO', description: isEnglish ? 'Keyword tracking & SERP analysis' : 'Tracking de keywords y análisis SERP' },
-    { name: 'HubSpot', description: isEnglish ? 'CRM & marketing automation' : 'CRM y automatización de marketing' },
-    { name: 'GoHighLevel', description: isEnglish ? 'CRM for SMBs & agencies' : 'CRM para pymes y agencias' },
+    { name: 'Google Search Console', description: isEnglish ? 'Organic search data & performance' : 'Datos de búsqueda orgánica y rendimiento' },
+    { name: 'HubSpot', description: isEnglish ? 'CRM, ABM & marketing automation' : 'CRM, ABM y automatización de marketing' },
+    { name: 'Perplexity AI', description: isEnglish ? 'Grounded market research' : 'Investigación de mercado con búsqueda grounded' },
+    { name: 'Gemini / ChatGPT', description: isEnglish ? 'Content generation & strategic analysis' : 'Generación de contenido y análisis estratégico' },
+    { name: 'Firecrawl', description: isEnglish ? 'Competitive web analysis & data extraction' : 'Análisis web y extracción de datos competitivos' },
+    { name: 'Slack', description: isEnglish ? 'Signal notifications & alerts' : 'Notificaciones y alertas de señales' },
+    { name: 'Gamma', description: isEnglish ? 'Automated strategic presentations' : 'Presentaciones estratégicas automatizadas' },
     { name: 'Google Analytics', description: isEnglish ? 'Traffic & behavior analytics' : 'Analítica de tráfico y comportamiento' },
     { name: 'Stripe', description: isEnglish ? 'Payments & subscriptions' : 'Pagos y suscripciones' },
   ];
 
-  const forWhom = isEnglish ? [
-    { title: 'Growing businesses', description: 'Companies that want a professional digital presence backed by real data, not just a pretty website.' },
-    { title: 'Marketing teams', description: 'Teams that need SEO, content and performance data centralized in one system instead of 10 separate tools.' },
-    { title: 'Agencies & consultants', description: 'Professionals who want to deliver branded systems to their clients with real tracking capabilities.' },
-  ] : [
-    { title: 'Empresas en crecimiento', description: 'Empresas que quieren una presencia digital profesional respaldada por datos reales, no solo una web bonita.' },
-    { title: 'Equipos de marketing', description: 'Equipos que necesitan SEO, contenidos y datos de rendimiento centralizados en un sistema, no en 10 herramientas separadas.' },
-    { title: 'Agencias y consultores', description: 'Profesionales que quieren entregar sistemas con su marca a sus clientes con capacidades reales de seguimiento.' },
+  // ── For Whom ──
+  const forWhom = [
+    {
+      icon: Users,
+      title: isEnglish ? 'CMOs & Marketing Directors' : 'CMOs y Directores de Marketing',
+      description: isEnglish
+        ? 'You need visibility on market, competition and execution in one system. SENSE gives you the context to decide with confidence and the traceability to prove impact.'
+        : 'Necesitas visibilidad sobre mercado, competencia y ejecución en un solo sistema. SENSE te da el contexto para decidir con confianza y la trazabilidad para demostrar el impacto.',
+    },
+    {
+      icon: Building2,
+      title: isEnglish ? 'Marketing Teams (5-25 people)' : 'Equipos de Marketing (5-25 personas)',
+      description: isEnglish
+        ? 'Too many tools, scattered data and disconnect between strategy and execution. SENSE centralizes intelligence, content and plans in a coherent flow.'
+        : 'Demasiadas herramientas, datos dispersos y desconexión entre estrategia y ejecución. SENSE centraliza inteligencia, contenido y planes en un flujo coherente.',
+    },
+    {
+      icon: Briefcase,
+      title: isEnglish ? 'Strategic Agencies' : 'Agencias Estratégicas',
+      description: isEnglish
+        ? 'Deliver a branded intelligence system to each client. Brain, Radar and Plans as service infrastructure — not shared spreadsheets.'
+        : 'Entrega un sistema de inteligencia con tu marca a cada cliente. Brain, Radar y Plans como infraestructura de servicio — no como hojas de cálculo compartidas.',
+    },
+    {
+      icon: Globe,
+      title: isEnglish ? 'B2B companies in expansion' : 'Empresas B2B en expansión',
+      description: isEnglish
+        ? 'If you sell complex solutions in international markets, SENSE connects market signals with your pipeline. Ideal for companies with long sales cycles and multiple decision-makers.'
+        : 'Si vendes soluciones complejas en mercados internacionales, SENSE conecta señales de mercado con tu pipeline. Ideal para empresas con ciclos de venta largos y múltiples decisores.',
+    },
   ];
 
+  // ── LOOP methodology ──
+  const loopSteps = [
+    { letter: 'L', word: 'Listen', description: isEnglish ? 'Monitor market and competitive signals' : 'Monitoriza señales de mercado y competencia' },
+    { letter: 'O', word: 'Observe', description: isEnglish ? 'Detect patterns, opportunities and threats' : 'Detecta patrones, oportunidades y amenazas' },
+    { letter: 'O', word: 'Orient', description: isEnglish ? 'Define drivers and strategic directives' : 'Define drivers y directivas estratégicas' },
+    { letter: 'P', word: 'Plan', description: isEnglish ? 'Generate activations aligned with direction' : 'Genera activaciones alineadas con la dirección' },
+  ];
+
+  // ── Tech features ──
+  const techFeatures = [
+    { icon: Code2, label: isEnglish ? 'Modern Stack' : 'Stack moderno', detail: 'React, TypeScript, Supabase' },
+    { icon: Zap, label: 'Edge Functions', detail: isEnglish ? 'Auto-scaling serverless logic' : 'Lógica serverless que escala automáticamente' },
+    { icon: Cpu, label: isEnglish ? 'Multi-model AI' : 'IA multi-modelo', detail: 'Gemini, GPT, Perplexity' },
+    { icon: Shield, label: isEnglish ? 'Your system' : 'Tu sistema', detail: isEnglish ? 'Your domain, brand & data' : 'Tu dominio, tu marca, tus datos' },
+    { icon: Rocket, label: isEnglish ? 'Rapid deployment' : 'Despliegue rápido', detail: isEnglish ? 'Concept to production in 4-6 weeks' : 'De concepto a producción en 4-6 semanas' },
+  ];
+
+  // ── FAQs ──
   const faqs = isEnglish ? [
-    { question: 'What technology is the system built with?', answer: 'We use cutting-edge web technology: fast, scalable and designed for professional experiences. No WordPress, no templates.' },
-    { question: 'Is this a shared SaaS product?', answer: 'No. Each system is custom-built for you. Your domain, your brand, your data. It\'s not a login to a shared tool.' },
-    { question: 'How long does implementation take?', answer: 'A standard deployment takes 4-6 weeks. Complex implementations with multiple integrations can take 8-12 weeks.' },
-    { question: 'Can I integrate my existing CRM?', answer: 'Yes. We support native integrations with HubSpot, GoHighLevel, and custom CRM connections via API.' },
-    { question: 'What happens after launch?', answer: 'We offer ongoing management and optimization plans. Or your team can manage it independently with our training and documentation.' },
-    { question: 'Does it include SEO optimization?', answer: 'Yes. The system includes built-in SEO best practices, integrated tracking tools, and content features designed for search visibility.' },
+    { question: 'What makes SENSE different from a marketing dashboard?', answer: "SENSE doesn't just show data — it interprets it. It connects market signals with your strategic identity to generate direction and actionable content." },
+    { question: 'Is it a shared SaaS product?', answer: "No. Each SENSE instance is private and customized for your company. Your data, your brand, your domain." },
+    { question: 'Do I need a technical team to use it?', answer: "No. SENSE is designed for marketing teams. We handle the initial setup, and the system is built for daily use without technical knowledge." },
+    { question: 'How does the AI work?', answer: "SENSE uses multiple AI models (Gemini, GPT, Perplexity) depending on the task. All generation is contextualized with your Brain (identity, audiences, differentiators), so outputs are specific to your business." },
+    { question: 'Can I integrate my existing CRM?', answer: "Yes. SENSE has native integration with HubSpot and the ability to connect with other CRMs. Your pipeline data is cross-referenced with market intelligence for ABM and scoring." },
+    { question: 'How long does implementation take?', answer: "4-6 weeks for the base system. The Brain is configured in the first week, and the intelligence modules start generating value from day one." },
   ] : [
-    { question: '¿Con qué tecnología se construye el sistema?', answer: 'Utilizamos tecnología web de última generación: rápida, escalable y diseñada para experiencias profesionales. Sin WordPress, sin plantillas.' },
-    { question: '¿Es un producto SaaS compartido?', answer: 'No. Cada sistema se construye a medida para ti. Tu dominio, tu marca, tus datos. No es un login a una herramienta compartida.' },
-    { question: '¿Cuánto tarda la implementación?', answer: 'Un despliegue estándar tarda 4-6 semanas. Implementaciones complejas con múltiples integraciones pueden llevar 8-12 semanas.' },
-    { question: '¿Puedo integrar mi CRM actual?', answer: 'Sí. Soportamos integraciones nativas con HubSpot, GoHighLevel y conexiones CRM personalizadas vía API.' },
-    { question: '¿Qué pasa después del lanzamiento?', answer: 'Ofrecemos planes de gestión y optimización continua. O tu equipo puede gestionarlo de forma independiente con nuestra formación y documentación.' },
-    { question: '¿Incluye optimización SEO?', answer: 'Sí. El sistema incluye buenas prácticas SEO integradas, herramientas de seguimiento y funcionalidades de contenido diseñadas para visibilidad en buscadores.' },
+    { question: '¿Qué diferencia a SENSE de un dashboard de marketing?', answer: 'SENSE no solo muestra datos — los interpreta. Conecta señales de mercado con tu identidad estratégica para generar dirección y contenido accionable.' },
+    { question: '¿Es un producto SaaS compartido?', answer: 'No. Cada instancia de SENSE es privada y personalizada para tu empresa. Tus datos, tu marca, tu dominio.' },
+    { question: '¿Necesito un equipo técnico para usarlo?', answer: 'No. SENSE está diseñado para equipos de marketing. La configuración inicial la hacemos nosotros, y el sistema está pensado para uso diario sin conocimiento técnico.' },
+    { question: '¿Cómo funciona la IA?', answer: 'SENSE utiliza múltiples modelos de IA (Gemini, GPT, Perplexity) según la tarea. Toda la generación está contextualizada con tu Brain (identidad, audiencias, diferenciadores), por lo que los outputs son específicos para tu negocio.' },
+    { question: '¿Puedo integrar mi CRM actual?', answer: 'Sí. SENSE tiene integración nativa con HubSpot y capacidad de conexión con otros CRMs. Los datos de tu pipeline se cruzan con inteligencia de mercado para ABM y scoring.' },
+    { question: '¿Cuánto tarda la implementación?', answer: '4-6 semanas para el sistema base. El Brain se configura en la primera semana, y los módulos de inteligencia empiezan a generar valor desde el día uno.' },
   ];
 
   return (
@@ -153,178 +220,199 @@ const SensePlatform = () => {
         {/* Breadcrumb */}
         <div className="container mx-auto px-4 pt-24 pb-4">
           <nav className="flex text-sm text-muted-foreground" aria-label="Breadcrumb">
-            <Link to={content.homeLink} className="hover:text-foreground transition-colors">{content.breadcrumbHome}</Link>
+            <Link to={isEnglish ? '/en' : '/es'} className="hover:text-foreground transition-colors">
+              {isEnglish ? 'Home' : 'Inicio'}
+            </Link>
             <span className="mx-2">/</span>
-            <Link to={content.solutionsLink} className="hover:text-foreground transition-colors">{content.breadcrumbSolutions}</Link>
+            <Link to={isEnglish ? '/en#solutions' : '/es#soluciones'} className="hover:text-foreground transition-colors">
+              {isEnglish ? 'Solutions' : 'Soluciones'}
+            </Link>
             <span className="mx-2">/</span>
-            <span className="text-foreground font-medium">{content.breadcrumbCurrent}</span>
+            <span className="text-foreground font-medium">SENSE</span>
           </nav>
         </div>
 
-        {/* Hero */}
-        <section className="py-12 md:py-20 bg-background">
+        {/* ═══ HERO ═══ */}
+        <section className="py-16 md:py-24 bg-background">
           <div className="container mx-auto px-4 max-w-4xl text-center">
+            {/* Pre-title badge */}
             <div className="inline-flex items-center gap-2 rounded-full bg-impulsa/10 px-4 py-1.5 text-sm font-medium text-impulsa mb-6">
               <BrainCircuit size={16} />
-              <span>{isEnglish ? 'SENSE Marketing' : 'Marketing SENSE'}</span>
+              <span>Made with SENSE</span>
             </div>
+
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-dm-sans text-foreground mb-6 leading-tight">
-              {content.heroTitle}
+              SENSE: Marketing{' '}
+              <span className="text-gradient-primary">Operating System</span>
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              {content.heroSubtitle}
+
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8 text-pretty">
+              {isEnglish
+                ? 'Connect market signals with strategic decisions and tactical execution. 6 intelligence modules that transform scattered data into clear direction and coordinated action.'
+                : 'Conecta señales de mercado con decisiones estratégicas y ejecución táctica. 6 módulos de inteligencia que transforman datos dispersos en dirección clara y acción coordinada.'}
             </p>
+
+            {/* Badge */}
+            <p className="inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-medium text-primary mb-8">
+              <Zap size={12} />
+              {isEnglish ? 'Powered by AI · Governed by strategy' : 'Impulsado por IA · Gobernado por estrategia'}
+            </p>
+
+            {/* CTAs */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <p className="inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/5 px-3 py-1.5 text-xs font-medium text-primary">
-                <Zap size={12} />
-                {isEnglish ? 'Powered by AI, governed by people' : 'Impulsado por IA, gobernado por personas'}
-              </p>
               <Button variant="impulsa" size="lg" asChild>
-                <Link to={content.ctaLink}>
-                  {content.ctaButton} <ArrowRight className="ml-2 h-4 w-4" />
+                <Link to={ctaLink}>
+                  {ctaButton} <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
+              </Button>
+              <Button variant="outline" size="lg" asChild>
+                <a href="#modules">
+                  {isEnglish ? 'See how it works' : 'Ver cómo funciona'}
+                </a>
               </Button>
             </div>
           </div>
         </section>
 
-        {/* What's included */}
+        {/* ═══ SECTION 1: What is SENSE? ═══ */}
         <section className="py-16 bg-muted/30">
-          <div className="container mx-auto px-4 max-w-4xl text-center mb-12">
+          <div className="container mx-auto px-4 max-w-4xl text-center">
             <h2 className="text-3xl md:text-4xl font-bold font-dm-sans text-foreground mb-6">
-              {content.whatIsTitle}
+              {isEnglish
+                ? 'A marketing operating system, not another tool'
+                : 'Un sistema operativo de marketing, no otra herramienta más'}
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              {content.whatIsDescription}
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-6 text-pretty">
+              {isEnglish
+                ? "SENSE is not a dashboard or a disguised CRM. It's an integrated system that connects your brand identity, market intelligence, strategic direction and tactical execution in a continuous flow. Everything your marketing team needs to make informed decisions and act with coherence."
+                : 'SENSE no es un dashboard ni un CRM disfrazado. Es un sistema integrado que conecta tu identidad de marca, la inteligencia de mercado, la dirección estratégica y la ejecución táctica en un flujo continuo. Todo lo que tu equipo de marketing necesita para tomar decisiones informadas y actuar con coherencia.'}
             </p>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-impulsa/10 border border-impulsa/20">
+              <ArrowRight size={14} className="text-impulsa" />
+              <span className="text-sm font-medium text-impulsa">
+                {isEnglish
+                  ? 'From signal to action, without losing strategic context.'
+                  : 'De la señal a la acción, sin perder el contexto estratégico.'}
+              </span>
+            </div>
           </div>
+        </section>
+
+        {/* ═══ SECTION 2: 6 Modules ═══ */}
+        <section id="modules" className="py-16 bg-background scroll-mt-20">
           <div className="container mx-auto px-4 max-w-6xl">
-            {/* Connected grid container with dot pattern */}
+            <div className="text-center mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold font-dm-sans text-foreground mb-4">
+                {isEnglish ? '6 connected intelligence layers' : '6 capas de inteligencia conectadas'}
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                {isEnglish
+                  ? "Each module feeds the next. They're not isolated tools — they're layers of a system that thinks like a strategist."
+                  : 'Cada módulo alimenta al siguiente. No son herramientas aisladas — son capas de un sistema que piensa como un estratega.'}
+              </p>
+            </div>
+
             <div
-              className="relative rounded-2xl p-6 md:p-8"
+              className="relative rounded-2xl p-6 md:p-8 mt-8"
               style={{
-                backgroundImage: 'radial-gradient(circle, hsl(var(--impulsa)/0.10) 1px, transparent 1px)',
+                backgroundImage: 'radial-gradient(circle, hsl(var(--impulsa)/0.08) 1px, transparent 1px)',
                 backgroundSize: '24px 24px',
               }}
             >
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                {/* First row: cards 0–2 */}
-                {featuresList.slice(0, 3).map((feature, idx) => (
+                {modules.map((mod) => (
                   <Card
-                    key={idx}
+                    key={mod.number}
                     className="relative border-l-2 border-l-impulsa/40 border-t border-r border-b border-border/50 hover:border-l-impulsa hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-card group"
                   >
                     <CardContent className="pt-6">
                       <span className="absolute top-3 right-3 text-xs font-mono text-impulsa/25 group-hover:text-impulsa/60 transition-colors duration-300">
-                        0{idx + 1}
+                        {mod.number}
                       </span>
-                      <feature.icon className="h-9 w-9 text-impulsa mb-4" strokeWidth={1.5} />
-                      <h3 className="text-base font-semibold font-dm-sans text-foreground mb-2">{feature.title}</h3>
-                      <p className="text-sm text-muted-foreground">{feature.description}</p>
+                      <mod.icon className="h-8 w-8 text-impulsa mb-3" strokeWidth={1.5} />
+                      <h3 className="text-base font-bold font-dm-sans text-foreground mb-1">
+                        {mod.name} <span className="font-normal text-muted-foreground">— {mod.subtitle}</span>
+                      </h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{mod.description}</p>
                     </CardContent>
                   </Card>
                 ))}
+              </div>
 
-                {/* Decorative row separator (desktop only) */}
-                <div className="hidden lg:flex col-span-3 items-center gap-4 py-1">
-                  <div className="flex-1 border-t border-dashed border-impulsa/20" />
-                  <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-impulsa/5 border border-impulsa/20">
-                    <Cpu className="h-3.5 w-3.5 text-impulsa/50" />
-                    <span className="text-xs font-mono text-impulsa/50">{isEnglish ? 'connected' : 'conectado'}</span>
-                  </div>
-                  <div className="flex-1 border-t border-dashed border-impulsa/20" />
+              {/* AI Assistant card */}
+              <div
+                className="mt-5 flex flex-col sm:flex-row items-start sm:items-center gap-4 p-5 rounded-xl border border-impulsa/30 bg-impulsa/5 cursor-pointer hover:bg-impulsa/10 transition-all duration-300 group"
+                onClick={() => window.dispatchEvent(new CustomEvent('openSofiaChat'))}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => e.key === 'Enter' && window.dispatchEvent(new CustomEvent('openSofiaChat'))}
+              >
+                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-impulsa/10 border border-impulsa/20 flex-shrink-0">
+                  <BotMessageSquare className="h-6 w-6 text-impulsa" />
                 </div>
-
-                {/* Second row: cards 3–5 */}
-                {featuresList.slice(3).map((feature, idx) => (
-                  <Card
-                    key={idx + 3}
-                    className="relative border-l-2 border-l-impulsa/40 border-t border-r border-b border-border/50 hover:border-l-impulsa hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-card group"
-                  >
-                    <CardContent className="pt-6">
-                      <span className="absolute top-3 right-3 text-xs font-mono text-impulsa/25 group-hover:text-impulsa/60 transition-colors duration-300">
-                        0{idx + 4}
-                      </span>
-                      <feature.icon className="h-9 w-9 text-impulsa mb-4" strokeWidth={1.5} />
-                      <h3 className="text-base font-semibold font-dm-sans text-foreground mb-2">{feature.title}</h3>
-                      <p className="text-sm text-muted-foreground">{feature.description}</p>
-                    </CardContent>
-                  </Card>
-                ))}
-
-                {/* AI Marketing Assistant card — full width */}
-                <div
-                  className="col-span-1 md:col-span-2 lg:col-span-3 mt-2 flex flex-col sm:flex-row items-start sm:items-center gap-4 p-5 rounded-xl border border-impulsa/30 bg-impulsa/5 cursor-pointer hover:bg-impulsa/10 transition-all duration-300 group"
-                  onClick={() => window.dispatchEvent(new CustomEvent('openSofiaChat'))}
-                  role="button"
-                  tabIndex={0}
-                  onKeyDown={(e) => e.key === 'Enter' && window.dispatchEvent(new CustomEvent('openSofiaChat'))}
-                >
-                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-impulsa/10 border border-impulsa/20 flex-shrink-0">
-                    <BotMessageSquare className="h-6 w-6 text-impulsa" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="font-semibold font-dm-sans text-foreground">
-                      {isEnglish ? 'Marketing Assistant' : 'Asistente de Marketing'}
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      {isEnglish
-                        ? 'It will help you get the most out of the entire System — from strategy to execution.'
-                        : 'Te ayudará a sacarle el máximo rendimiento a todo el Sistema — de la estrategia a la ejecución.'}
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-3 flex-shrink-0">
-                    <span className="inline-flex items-center gap-1 rounded-full border border-impulsa/30 bg-impulsa/10 px-2.5 py-0.5 text-xs font-semibold text-impulsa">
-                      <BrainCircuit className="h-3 w-3" />
-                      IA
-                    </span>
-                    <ArrowRight className="h-4 w-4 text-impulsa group-hover:translate-x-1 transition-transform duration-200" />
-                  </div>
+                <div className="flex-1 min-w-0">
+                  <p className="font-semibold font-dm-sans text-foreground">
+                    {isEnglish ? 'HAYAS Copilot' : 'HAYAS Copilot'}
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    {isEnglish
+                      ? 'It will help you get the most out of the entire System — from strategy to execution.'
+                      : 'Te ayudará a sacarle el máximo rendimiento a todo el Sistema — de la estrategia a la ejecución.'}
+                  </p>
+                </div>
+                <div className="flex items-center gap-3 flex-shrink-0">
+                  <span className="inline-flex items-center gap-1 rounded-full border border-impulsa/30 bg-impulsa/10 px-2.5 py-0.5 text-xs font-semibold text-impulsa">
+                    <BrainCircuit className="h-3 w-3" />
+                    IA
+                  </span>
+                  <ArrowRight className="h-4 w-4 text-impulsa group-hover:translate-x-1 transition-transform duration-200" />
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Our Technology */}
-        <section className="py-16 bg-background">
+        {/* ═══ SECTION 3: AI ═══ */}
+        <section className="py-16 bg-muted/30">
           <div className="container mx-auto px-4 max-w-5xl">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold font-dm-sans text-foreground mb-6">
-                {content.builtWithTitle}
+              <h2 className="text-3xl md:text-4xl font-bold font-dm-sans text-foreground mb-4">
+                {isEnglish ? 'AI that understands your business' : 'IA que entiende tu negocio'}
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                {content.builtWithDescription}
+                {isEnglish
+                  ? "AI in SENSE is not a generic chatbot. Every interaction is anchored to your identity, your audiences and your competitive context."
+                  : 'La IA en SENSE no es un chatbot genérico. Cada interacción está anclada a tu identidad, tus audiencias y tu contexto competitivo.'}
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {builtWithFeatures.map((feature, idx) => (
-                <div key={idx} className="text-center p-6 rounded-xl bg-muted/30">
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 mb-4">
-                    <feature.icon className="h-6 w-6 text-primary" />
-                  </div>
-                  <h3 className="text-base font-semibold font-dm-sans text-foreground mb-2">{feature.title}</h3>
-                  <p className="text-sm text-muted-foreground">{feature.description}</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {aiFeatures.map((feature, idx) => (
+                <div key={idx} className="p-6 rounded-xl bg-card border border-border/50 hover:shadow-md transition-shadow">
+                  <feature.icon className="h-8 w-8 text-impulsa mb-4" strokeWidth={1.5} />
+                  <h3 className="text-lg font-semibold font-dm-sans text-foreground mb-2">{feature.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Integrations */}
-        <section className="py-16 bg-muted/30">
+        {/* ═══ SECTION 4: Integrations ═══ */}
+        <section className="py-16 bg-background">
           <div className="container mx-auto px-4 max-w-5xl">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold font-dm-sans text-foreground mb-6">
-                {content.integrationsTitle}
+              <h2 className="text-3xl md:text-4xl font-bold font-dm-sans text-foreground mb-4">
+                {isEnglish ? 'Connected to the tools that matter' : 'Conectado con las herramientas que importan'}
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                {content.integrationsDescription}
+                {isEnglish
+                  ? 'SENSE integrates with your existing stack to unify data and automate workflows.'
+                  : 'SENSE se integra con tu stack existente para unificar datos y automatizar flujos.'}
               </p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
               {integrations.map((integration, idx) => (
-                <div key={idx} className="flex items-center gap-3 p-4 rounded-lg bg-card border border-border/50">
+                <div key={idx} className="flex items-center gap-3 p-4 rounded-lg bg-card border border-border/50 hover:border-impulsa/30 transition-colors">
                   <Database className="h-5 w-5 text-impulsa flex-shrink-0" />
                   <div>
                     <p className="text-sm font-semibold text-foreground">{integration.name}</p>
@@ -336,32 +424,109 @@ const SensePlatform = () => {
           </div>
         </section>
 
-        <IntermediateCTA />
-
-        {/* For whom */}
-        <section className="py-16 bg-background">
+        {/* ═══ SECTION 5: For Whom ═══ */}
+        <section className="py-16 bg-muted/30">
           <div className="container mx-auto px-4 max-w-5xl">
-            <h2 className="text-3xl md:text-4xl font-bold font-dm-sans text-foreground mb-12 text-center">
-              {content.forWhomTitle}
+            <h2 className="text-3xl md:text-4xl font-bold font-dm-sans text-foreground mb-4 text-center">
+              {isEnglish ? 'Designed for those who make marketing decisions' : 'Diseñado para quien toma decisiones de marketing'}
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
               {forWhom.map((item, idx) => (
                 <div key={idx} className="p-6 rounded-xl border border-border/50 bg-card">
-                  <h3 className="text-xl font-semibold font-dm-sans text-foreground mb-3">{item.title}</h3>
-                  <p className="text-muted-foreground">{item.description}</p>
+                  <item.icon className="h-7 w-7 text-impulsa mb-3" strokeWidth={1.5} />
+                  <h3 className="text-lg font-semibold font-dm-sans text-foreground mb-2">{item.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* FAQs */}
-        <FAQSection faqs={faqs} />
+        {/* ═══ SECTION 6: LOOP Methodology ═══ */}
+        <section className="py-16 bg-background">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <div className="text-center mb-10">
+              <h2 className="text-3xl md:text-4xl font-bold font-dm-sans text-foreground mb-4">
+                {isEnglish ? 'The LOOP framework: from listening to action' : 'El framework LOOP: de la escucha a la acción'}
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                {isEnglish
+                  ? 'SENSE implements a continuous marketing intelligence cycle:'
+                  : 'SENSE implementa un ciclo continuo de inteligencia de marketing:'}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+              {loopSteps.map((step, idx) => (
+                <div key={idx} className="text-center p-6 rounded-xl bg-muted/40 border border-border/50 relative">
+                  <span className="text-4xl font-bold font-dm-sans text-impulsa/20">{step.letter}</span>
+                  <h3 className="text-base font-bold font-dm-sans text-foreground mt-1">{step.word}</h3>
+                  <p className="text-xs text-muted-foreground mt-2">{step.description}</p>
+                  {idx < 3 && (
+                    <ArrowRight className="hidden md:block absolute top-1/2 -right-3 -translate-y-1/2 h-5 w-5 text-impulsa/30" />
+                  )}
+                </div>
+              ))}
+            </div>
+
+            <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-impulsa/5 border border-impulsa/20">
+              <RefreshCw className="h-5 w-5 text-impulsa" />
+              <p className="text-sm text-muted-foreground text-pretty">
+                {isEnglish
+                  ? "It's not a linear flow — it's a circular system that feeds itself. Every new signal can confirm, adjust or reorient your strategy."
+                  : 'No es un flujo lineal — es un sistema circular que se retroalimenta. Cada señal nueva puede confirmar, ajustar o reorientar tu estrategia.'}
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* ═══ SECTION 7: Technology ═══ */}
+        <section className="py-16 bg-muted/30">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <h2 className="text-3xl md:text-4xl font-bold font-dm-sans text-foreground mb-10 text-center">
+              {isEnglish ? 'Modern architecture, no technical debt' : 'Arquitectura moderna, sin deuda técnica'}
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+              {techFeatures.map((feature, idx) => (
+                <div key={idx} className="text-center p-5 rounded-xl bg-card border border-border/50">
+                  <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 mb-3">
+                    <feature.icon className="h-5 w-5 text-primary" />
+                  </div>
+                  <h3 className="text-sm font-semibold font-dm-sans text-foreground mb-1">{feature.label}</h3>
+                  <p className="text-xs text-muted-foreground">{feature.detail}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ═══ SECTION 8: FAQs ═══ */}
+        <FAQSection
+          title={isEnglish ? 'Frequently Asked Questions' : 'Preguntas frecuentes'}
+          subtitle={isEnglish ? 'Everything you need to know about SENSE' : 'Todo lo que necesitas saber sobre SENSE'}
+          faqs={faqs}
+        />
 
         <ReviewsSection />
 
-        {/* Final CTA */}
-        <ServiceContactSection />
+        {/* ═══ Final CTA ═══ */}
+        <section className="py-16 bg-background">
+          <div className="container mx-auto px-4 max-w-3xl text-center">
+            <h2 className="text-3xl md:text-4xl font-bold font-dm-sans text-foreground mb-4">
+              {isEnglish ? 'Ready for marketing with direction?' : '¿Preparado para un marketing con dirección?'}
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8">
+              {isEnglish
+                ? "Request a demo and we'll show you how SENSE connects your market intelligence with execution."
+                : 'Solicita una demo y te mostraremos cómo SENSE conecta tu inteligencia de mercado con la ejecución.'}
+            </p>
+            <Button variant="impulsa" size="lg" asChild>
+              <Link to={ctaLink}>
+                {ctaButton} <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+        </section>
       </main>
       
       <Footer />
