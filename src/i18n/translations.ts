@@ -791,15 +791,15 @@ export const translations = {
       ]
     },
     senseActivations: {
-      title: 'Sistemas que SENSE activa',
-      subtitle: 'Cada sistema resuelve un problema concreto dentro del ecosistema.',
+      title: 'Los 4 pilares de SENSE',
+      subtitle: 'Cada pilar resuelve un problema concreto dentro del ecosistema.',
       items: [
-        { title: 'Revenue System', description: 'Gestión comercial, automatización de ventas e inteligencia de cliente integradas en un sistema de revenue.' },
-        { title: 'Intelligence System', description: 'Análisis de competencia, tendencias y oportunidades basado en datos reales, no en suposiciones.' },
-        { title: 'Visibility System', description: 'Posicionamiento en buscadores, IA generativa y motores de respuesta para estar donde se toman las decisiones.' },
-        { title: 'Content System', description: 'Creación estratégica, contenidos citables y adaptación multilingüe para mercados globales.' }
+        { title: 'Revenue', description: 'Gestión comercial, automatización de ventas e inteligencia de cliente integradas.' },
+        { title: 'Intelligence', description: 'Análisis de competencia, tendencias y oportunidades basado en datos reales, no en suposiciones.' },
+        { title: 'Visibility', description: 'Posicionamiento en buscadores, IA generativa y motores de respuesta para estar donde se toman las decisiones.' },
+        { title: 'Content', description: 'Creación estratégica, contenidos citables y adaptación multilingüe para mercados globales.' }
       ],
-      closing: 'No son servicios. Son sistemas de ejecución conectados.'
+      closing: 'No son servicios. Son pilares de ejecución conectados.'
     },
     senseAudienceCta: {
       title: 'Para empresas que necesitan claridad, no más marketing',

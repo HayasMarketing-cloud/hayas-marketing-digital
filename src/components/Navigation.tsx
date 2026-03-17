@@ -417,7 +417,7 @@ const Navigation = () => {
           <div className="container mx-auto px-4">
             <div className="p-6">
               <h4 className="font-semibold text-foreground mb-6 text-center">{t('megaMenu.servicesTitle')}</h4>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                 {pillarKeys.map((key) => {
                   const Icon = pillarIcons[key];
                   return (
