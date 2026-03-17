@@ -109,7 +109,7 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({ data }) => {
   // Use custom structured data if provided, otherwise generate default
   const structuredData = data.structuredData || {
     "@context": "https://schema.org",
-    "@type": "Service",
+    "@type": "WebPage",
     name: data.heroTitle,
     description: data.heroSubtitle,
     provider: {
