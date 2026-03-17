@@ -339,7 +339,7 @@ const Navigation = () => {
                   <div className="space-y-3">
                     {pillars.map((p) => {
                       const config = pillarConfig[p.title as keyof typeof pillarConfig];
-                      const Icon = config?.icon || Zap;
+                      const Icon = config?.icon || DollarSign;
                       return (
                         <Link
                           key={p.href}
