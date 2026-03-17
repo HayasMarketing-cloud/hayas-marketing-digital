@@ -14,7 +14,6 @@ import { useTranslation } from '@/hooks/useTranslation';
 const SenseResultSection = lazy(() => import('@/components/SenseResultSection'));
 const SenseActivationsSection = lazy(() => import('@/components/SenseActivationsSection'));
 const SenseAudienceCtaSection = lazy(() => import('@/components/SenseAudienceCtaSection'));
-const ChatbotPromoSection = lazy(() => import('@/components/ChatbotPromoSection'));
 const FAQSection = lazy(() => import('@/components/FAQSection'));
 const ReviewsSection = lazy(() => import('@/components/ReviewsSection'));
 
