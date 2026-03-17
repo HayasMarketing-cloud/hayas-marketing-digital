@@ -1,8 +1,8 @@
 import React from 'react';
-import { Database, Globe, Search, FileText } from 'lucide-react';
+import { DollarSign, Brain, Eye, PenTool } from 'lucide-react';
 import { useTranslation } from '@/hooks/useTranslation';
 
-const activationIcons = [Database, Search, Globe, FileText];
+const activationIcons = [DollarSign, Brain, Eye, PenTool];
 
 const SenseActivationsSection = () => {
   const { t } = useTranslation();
