@@ -733,35 +733,51 @@ export const translations = {
       }
     },
     marketingChanged: {
-      title: 'Imagina un marketing donde ',
-      titleHighlight: 'cada acción tiene sentido.',
-      titleEnd: '',
-      intro: {
-        p1: 'Un sistema donde la estrategia, los datos y la creatividad trabajan juntos desde el primer día.',
-        p2: 'Donde no necesitas más herramientas, sino la visión correcta para conectar las que ya tienes.',
-        p3: 'Ese marketing existe. Y empieza aquí.'
-      },
-      senseTitle: 'Por eso creamos SENSE',
-      senseDescription: 'Nuestro sistema de inteligencia de marketing que conecta estrategia, datos y ejecución. Un enfoque integral que ordena todo tu marketing y le da sentido.',
-      senseCta: 'Conoce SENSE en detalle',
-      senseModulesIntro: 'SENSE se articula en tres ejes según el momento y las necesidades de tu negocio:',
-      transition: '',
-      moments: {
-        base: {
-          title: 'Impulsa tu marca',
-          description: 'Construye una base sólida: marca, web profesional, posicionamiento SEO y contenidos que reflejen el valor real de tu negocio.'
+      // Bloque 1 — Cambio de paradigma
+      paradigmTitle: 'El problema no es hacer marketing.',
+      paradigmHighlight: '',
+      paradigmIntro: 'Es no saber qué hacer, cuándo hacerlo y por qué.',
+      paradigmPoints: [
+        'Datos sin contexto',
+        'Herramientas desconectadas',
+        'Acciones sin criterio'
+      ],
+      paradigmConclusion: 'Mucho esfuerzo, poca claridad.',
+      // Bloque 2 — Reposicionamiento
+      repoTitle: 'No hacemos marketing como servicio.',
+      repoHighlight: ' Construimos sistemas de decisión.',
+      repoDescription: 'SENSE es el sistema que conecta identidad, mercado, demanda, estrategia y ejecución en un flujo continuo de inteligencia.',
+      repoCta: 'Explorar SENSE',
+      // Bloque 3 — Los 5 módulos
+      modulesTitle: 'Un sistema conectado, no herramientas aisladas',
+      modulesSubtitle: 'SENSE opera a través de 5 capas de inteligencia que trabajan juntas:',
+      modules: {
+        brain: {
+          name: 'BRAIN',
+          title: 'Identidad y posicionamiento',
+          description: 'Define quién eres, qué te diferencia y cómo debe percibirse tu marca en el mercado.'
         },
-        vision: {
-          title: 'Conecta con tus clientes',
-          description: 'Organiza tu gestión comercial con CRM, automatizaciones y datos que te permitan entender qué funciona y dónde están las oportunidades.'
+        radar: {
+          name: 'RADAR',
+          title: 'Señales del mercado',
+          description: 'Detecta tendencias, movimientos de competencia y oportunidades antes que otros.'
         },
-        growth: {
-          title: 'Activa tus ventas',
-          description: 'Escala tu negocio con campañas, funnels de conversión, IA aplicada y sistemas que convierten esfuerzo en resultados medibles.'
+        search: {
+          name: 'SEARCH',
+          title: 'Demanda y visibilidad',
+          description: 'Identifica qué busca tu audiencia y posiciona tu marca donde importa: buscadores, IA y conversaciones.'
+        },
+        strategy: {
+          name: 'STRATEGY',
+          title: 'Decisiones estratégicas',
+          description: 'Transforma datos y señales en decisiones claras con criterio, no con intuición.'
+        },
+        plans: {
+          name: 'PLANS',
+          title: 'Ejecución con foco',
+          description: 'Activa campañas, contenidos, CRM y automatizaciones alineadas con la estrategia definida.'
         }
-      },
-      closing: 'Cada eje se activa según tu momento. Puedes empezar por uno o combinar varios. SENSE los conecta todos para que tu marketing funcione como un sistema, no como acciones aisladas.',
-      impulsaPlatform: 'Incluye tu sistema web y SEO a medida'
+      }
     }
   },
   en: {
