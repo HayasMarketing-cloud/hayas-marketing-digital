@@ -271,16 +271,47 @@
   ],
   "methodology": {
     "@type": "HowTo",
-    "name": "Marketing SENSE",
-    "description": "Proprietary 5-phase marketing methodology by Hayas Marketing",
+    "name": "SENSE — Marketing Operating System",
+    "description": "Marketing intelligence platform with 6 connected modules and the LOOP framework (Listen, Observe, Orient, Plan) that transforms market signals into strategic action.",
     "step": [
-      {"@type": "HowToStep", "name": "Strategy", "text": "Market analysis, buyer persona definition, and strategic planning"},
-      {"@type": "HowToStep", "name": "Execution", "text": "Implementation of branding, web, SEO, content and campaigns"},
-      {"@type": "HowToStep", "name": "Nurturing", "text": "Lead nurturing through CRM, email marketing and automation"},
-      {"@type": "HowToStep", "name": "Support", "text": "Ongoing support, AI assistants and customer service optimization"},
-      {"@type": "HowToStep", "name": "Evaluation", "text": "Performance measurement, analytics dashboards and continuous optimization"}
+      {"@type": "HowToStep", "name": "Listen", "text": "Monitor market signals and competitive intelligence through RADAR module"},
+      {"@type": "HowToStep", "name": "Observe", "text": "Detect patterns, opportunities and threats using SEARCH visibility and AI perception audits"},
+      {"@type": "HowToStep", "name": "Orient", "text": "Define market drivers and strategic directives via STRATEGY coherence scoring"},
+      {"@type": "HowToStep", "name": "Plan", "text": "Generate aligned activations through PLANS with full traceability from signal to deliverable"}
     ]
   },
+  "hasPart": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "BRAIN — Strategic Identity",
+      "description": "Centralized marketing memory: value proposition, ICPs, Buyer Personas, competitive advantages and brand voice"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "RADAR — Market Intelligence",
+      "description": "Continuous industry and competitor monitoring with AI-powered signal prioritization and Market Reports"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "SEARCH — Visibility & Intent",
+      "description": "Keyword tracking on Google, Bing and AI engines (ChatGPT, Gemini, Perplexity) with brand perception audits"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "STRATEGY — Strategic Direction",
+      "description": "Market drivers, strategic directives and coherence scoring between execution and identity"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "PLANS — Execution & Activation",
+      "description": "Intelligence-driven marketing plans with typed activations, Content Studio and full strategic traceability"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "WORKSPACE — Operations Center",
+      "description": "Source management, strategic documentation, team configuration and integrations backoffice"
+    }
+  ],
   "subjectOf": [
     {
       "@type": "CreativeWork",
