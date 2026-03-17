@@ -10,8 +10,9 @@ import LazySection from '@/components/LazySection';
 import { useTranslation } from '@/hooks/useTranslation';
 
 // Lazy-loaded below-the-fold components
-const MethodologySection = lazy(() => import('@/components/MethodologySection'));
-const AllServicesSection = lazy(() => import('@/components/AllServicesSection'));
+const SenseResultSection = lazy(() => import('@/components/SenseResultSection'));
+const SenseActivationsSection = lazy(() => import('@/components/SenseActivationsSection'));
+const SenseAudienceCtaSection = lazy(() => import('@/components/SenseAudienceCtaSection'));
 const ChatbotPromoSection = lazy(() => import('@/components/ChatbotPromoSection'));
 const FAQSection = lazy(() => import('@/components/FAQSection'));
 const ReviewsSection = lazy(() => import('@/components/ReviewsSection'));
@@ -48,8 +49,9 @@ const Index = () => {
         <HeroSlider />
         <MarketingChangedSection />
         
-        <LazySection component={MethodologySection} fallbackHeight="600px" />
-        <LazySection component={AllServicesSection} fallbackHeight="500px" />
+        <LazySection component={SenseResultSection} fallbackHeight="400px" />
+        <LazySection component={SenseActivationsSection} fallbackHeight="500px" />
+        <LazySection component={SenseAudienceCtaSection} fallbackHeight="400px" />
         <LazySection component={ChatbotPromoSection} fallbackHeight="400px" />
         
         {/* FAQ Section */}
