@@ -1536,18 +1536,18 @@ export const translations = {
     faq: {
       title: 'Frequently Asked Questions',
       home: {
-        q1: 'What makes Hayas Marketing different from other agencies?',
-        a1: 'We don\'t work from a service catalog or specific tools. Our approach starts with understanding where the business is at, organizing marketing, and defining which decisions have the most impact before executing.\n\nWhile many agencies focus on isolated campaigns or actions, at Hayas we treat marketing as a system: connecting strategy, execution, and technology with purpose so that growth is sustainable and manageable.\n\nThis allows us to adapt to each company, reduce complexity, and help make better decisions in the long run.',
-        q2: 'Do you work with B2B and B2C companies?',
-        a2: 'Yes. We work with both B2B and B2C companies, always adapting our approach to the type of business, the decision-making process, and the stage the company is at.\n\nIn B2B, we typically work with longer sales cycles and complex processes, where strategy, content, and customer management are key.\nIn B2C, the focus is usually on acquisition, conversion, and operational efficiency.\n\nIn both cases, we don\'t apply standard solutions: we first analyze the situation and define the most suitable system before choosing tools or platforms.',
-        q3: 'How long does it take to see results?',
-        a3: 'First results in advertising campaigns can be seen in 2-4 weeks. For SEO and content strategies, solid results appear between 3-6 months. CRM implementation and automations generate immediate efficiencies from the first month.',
-        q4: 'Do you offer individual services or only complete packages?',
-        a4: 'We work from solutions, not from a fixed service catalog. This allows us to adapt to the moment and the real needs of each company.\n\nIn some cases we start with a specific and well-defined scope; in others, we work more comprehensively. What matters is not the format, but that what we do makes sense within a system and a clear objective.\n\nThat\'s why, before proposing any service or solution, we analyze the context and define the most appropriate approach.',
-        q5: 'What does support and maintenance include?',
-        a5: 'All our services include technical support, team training, regular updates, and follow-up meetings. For CRM and automations we offer priority support and continuous optimizations based on performance.',
-        q6: 'Can you work with our internal team?',
-        a6: 'Absolutely. We adapt to your organizational structure. We can work as an external marketing department, collaborate with your existing internal team, or provide consulting and training so they can manage the tools internally.'
+        q1: 'What is SENSE and how does it work?',
+        a1: 'SENSE is our Marketing Operating System: a system that connects identity, market, demand, strategy and execution into a continuous flow of intelligence.\n\nUnlike a traditional agency that executes isolated actions, SENSE organizes your entire marketing into 4 execution pillars — Revenue, Intelligence, Visibility and Content — so that every decision has context, every action has purpose and every result is measurable.',
+        q2: 'What are the 4 SENSE pillars?',
+        a2: 'The 4 pillars are the execution domains within SENSE:\n\n• Revenue: CRM, sales automation, lead capture and commercial management.\n• Intelligence: Analytics, strategic consulting, market intelligence and applied AI.\n• Visibility: SEO, positioning in search engines and AI engines, digital advertising and social presence.\n• Content: Content strategy, branding, web design and multilingual localization.\n\nEach pillar solves a specific problem and all are connected within the system.',
+        q3: 'Is SENSE for B2B, B2C or both?',
+        a3: 'Both. SENSE adapts to the type of business, the decision-making process and the stage of the company.\n\nIn B2B we work with longer sales cycles where strategy, content and customer management are key. In B2C, the focus is usually on acquisition, conversion and operational efficiency.\n\nIn both cases, we first analyze the situation and activate the most relevant pillars.',
+        q4: 'Can I activate just one pillar or do I need the full system?',
+        a4: 'You can start with the pillar you need most. SENSE is modular: you can activate Revenue to organize your sales management, Visibility to improve your positioning, or any combination.\n\nWhat matters is that each pillar works within a coherent system, so as you grow you can add more capabilities without losing the big picture.',
+        q5: 'How long does it take to see results with SENSE?',
+        a5: 'It depends on the pillar and scope:\n\n• Revenue (CRM and automations): immediate efficiencies from month one.\n• Visibility (ad campaigns): first results in 2-4 weeks.\n• Visibility (SEO and organic positioning): solid results in 3-6 months.\n• Content and Intelligence: progressive, cumulative impact from the start.\n\nThe system is designed for incremental value: each month builds on the previous one.',
+        q6: 'How does SENSE integrate with our internal team?',
+        a6: 'SENSE adapts to your structure. We can operate as your external marketing department, collaborate with your existing team, or provide consulting and training so they can manage the system internally.\n\nThe goal is for your company to have a governable marketing system, not agency dependency.'
       }
     },
     marketingChanged: {

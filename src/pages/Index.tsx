@@ -51,7 +51,6 @@ const Index = () => {
         <LazySection component={SenseResultSection} fallbackHeight="400px" />
         <LazySection component={SenseActivationsSection} fallbackHeight="500px" />
         <LazySection component={SenseAudienceCtaSection} fallbackHeight="400px" />
-        <LazySection component={ChatbotPromoSection} fallbackHeight="400px" />
         
         {/* FAQ Section */}
         <LazySection component={FAQSection} fallbackHeight="500px" componentProps={{
