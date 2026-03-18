@@ -409,8 +409,8 @@ const SensePlatform = () => {
         </section>
 
         {/* ═══ SECTION 4: Integrations ═══ */}
-        <section className="py-16 bg-background">
-          <div className="container mx-auto px-4 max-w-5xl">
+        <section className="relative py-14 md:py-20 overflow-hidden" style={{ background: 'linear-gradient(180deg, hsl(207 40% 97%) 0%, hsl(207 30% 95%) 100%)' }}>
+          <div className="container mx-auto px-4 max-w-5xl relative z-10">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold font-dm-sans text-foreground mb-4">
                 {isEnglish ? 'Connected to the tools that matter' : 'Conectado con las herramientas que importan'}
@@ -423,8 +423,10 @@ const SensePlatform = () => {
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
               {integrations.map((integration, idx) => (
-                <div key={idx} className="flex items-center gap-3 p-4 rounded-lg bg-card border border-border/50 hover:border-impulsa/30 transition-colors">
-                  <Database className="h-5 w-5 text-impulsa flex-shrink-0" />
+                <div key={idx} className="flex items-center gap-3 p-4 rounded-lg bg-card/80 backdrop-blur-sm border border-border/50 hover:border-primary/30 hover:shadow-md transition-all duration-300">
+                  <div className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-primary/10 flex-shrink-0">
+                    <Database className="h-4 w-4 text-primary" />
+                  </div>
                   <div>
                     <p className="text-sm font-semibold text-foreground">{integration.name}</p>
                     <p className="text-xs text-muted-foreground">{integration.description}</p>
