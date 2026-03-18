@@ -178,8 +178,8 @@
       "@type": "Offer",
       "itemOffered": {
         "@type": "Service",
-        "name": "SENSE — Marketing Operating System",
-        "description": "Marketing Operating System with 4 intelligence modules (Brain, Radar, Search, Strategy) and the LOOP framework for data-driven marketing decisions",
+        "name": "SENSE — Marketing Intelligence Platform",
+        "description": "Marketing intelligence platform implemented on a personalized basis with 4 intelligence modules (Brain, Radar, Search, Strategy) and the LOOP framework. Each company works with their own team, agency, or with Hayas as execution partner.",
         "url": "https://hayasmarketing.com/es/soluciones/plataforma-inteligencia-marketing"
       }
     },
