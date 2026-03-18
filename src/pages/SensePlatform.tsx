@@ -233,10 +233,16 @@ const SensePlatform = () => {
         </div>
 
         {/* ═══ HERO ═══ */}
-        <section className="py-16 md:py-24 bg-background">
-          <div className="container mx-auto px-4 max-w-4xl text-center">
+        <section className="relative py-20 md:py-28 overflow-hidden">
+          {/* Gradient background */}
+          <div className="absolute inset-0 bg-gradient-to-br from-impulsa-50 via-background to-primary/5" />
+          <div className="absolute inset-0" style={{
+            backgroundImage: 'radial-gradient(circle at 20% 50%, hsl(var(--impulsa) / 0.06) 0%, transparent 50%), radial-gradient(circle at 80% 20%, hsl(var(--primary) / 0.04) 0%, transparent 50%)',
+          }} />
+          
+          <div className="container mx-auto px-4 max-w-4xl text-center relative z-10">
             {/* Pre-title badge */}
-            <div className="inline-flex items-center gap-2 rounded-full bg-impulsa/10 px-4 py-1.5 text-sm font-medium text-impulsa mb-6">
+            <div className="inline-flex items-center gap-2 rounded-full bg-impulsa/10 px-4 py-1.5 text-sm font-medium text-impulsa mb-6 border border-impulsa/20 backdrop-blur-sm">
               <BrainCircuit size={16} />
               <span>Made with SENSE</span>
             </div>
@@ -272,10 +278,13 @@ const SensePlatform = () => {
               </Button>
             </div>
           </div>
+          
+          {/* Bottom fade */}
+          <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-background to-transparent" />
         </section>
 
         {/* ═══ SECTION 1: What is SENSE? ═══ */}
-        <section className="py-16 bg-muted/30">
+        <section className="py-14 md:py-20 bg-background">
           <div className="container mx-auto px-4 max-w-4xl text-center">
             <h2 className="text-3xl md:text-4xl font-bold font-dm-sans text-foreground mb-6">
               {isEnglish
@@ -299,8 +308,12 @@ const SensePlatform = () => {
         </section>
 
         {/* ═══ SECTION 2: 6 Modules ═══ */}
-        <section id="modules" className="py-16 bg-background scroll-mt-20">
-          <div className="container mx-auto px-4 max-w-6xl">
+        <section id="modules" className="relative py-14 md:py-20 scroll-mt-20 overflow-hidden" style={{ background: 'linear-gradient(180deg, hsl(270 50% 98%) 0%, hsl(260 30% 96%) 100%)' }}>
+          <div className="absolute inset-0 opacity-[0.03]" style={{
+            backgroundImage: 'radial-gradient(circle, hsl(var(--impulsa)) 1px, transparent 1px)',
+            backgroundSize: '24px 24px',
+          }} />
+          <div className="container mx-auto px-4 max-w-6xl relative z-10">
             <div className="text-center mb-4">
               <h2 className="text-3xl md:text-4xl font-bold font-dm-sans text-foreground mb-4">
                 {isEnglish ? '6 connected intelligence layers' : '6 capas de inteligencia conectadas'}
@@ -312,24 +325,20 @@ const SensePlatform = () => {
               </p>
             </div>
 
-            <div
-              className="relative rounded-2xl p-6 md:p-8 mt-8"
-              style={{
-                backgroundImage: 'radial-gradient(circle, hsl(var(--impulsa)/0.08) 1px, transparent 1px)',
-                backgroundSize: '24px 24px',
-              }}
-            >
+            <div className="mt-8">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {modules.map((mod) => (
                   <Card
                     key={mod.number}
-                    className="relative border-l-2 border-l-impulsa/40 border-t border-r border-b border-border/50 hover:border-l-impulsa hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-card group"
+                    className="relative border-l-2 border-l-impulsa/40 border-t border-r border-b border-border/50 hover:border-l-impulsa hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-card/80 backdrop-blur-sm group shadow-sm"
                   >
                     <CardContent className="pt-6">
                       <span className="absolute top-3 right-3 text-xs font-mono text-impulsa/25 group-hover:text-impulsa/60 transition-colors duration-300">
                         {mod.number}
                       </span>
-                      <mod.icon className="h-8 w-8 text-impulsa mb-3" strokeWidth={1.5} />
+                      <div className="inline-flex items-center justify-center w-11 h-11 rounded-lg bg-impulsa/10 mb-3">
+                        <mod.icon className="h-6 w-6 text-impulsa" strokeWidth={1.5} />
+                      </div>
                       <h3 className="text-base font-bold font-dm-sans text-foreground mb-1">
                         {mod.name} <span className="font-normal text-muted-foreground">— {mod.subtitle}</span>
                       </h3>
@@ -341,7 +350,7 @@ const SensePlatform = () => {
 
               {/* AI Assistant card */}
               <div
-                className="mt-5 flex flex-col sm:flex-row items-start sm:items-center gap-4 p-5 rounded-xl border border-impulsa/30 bg-impulsa/5 cursor-pointer hover:bg-impulsa/10 transition-all duration-300 group"
+                className="mt-5 flex flex-col sm:flex-row items-start sm:items-center gap-4 p-5 rounded-xl border border-impulsa/30 bg-card/80 backdrop-blur-sm cursor-pointer hover:bg-impulsa/10 transition-all duration-300 group shadow-sm"
                 onClick={() => window.dispatchEvent(new CustomEvent('openSofiaChat'))}
                 role="button"
                 tabIndex={0}
@@ -373,7 +382,7 @@ const SensePlatform = () => {
         </section>
 
         {/* ═══ SECTION 3: AI ═══ */}
-        <section className="py-16 bg-muted/30">
+        <section className="py-14 md:py-20 bg-background">
           <div className="container mx-auto px-4 max-w-5xl">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold font-dm-sans text-foreground mb-4">
@@ -387,8 +396,10 @@ const SensePlatform = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {aiFeatures.map((feature, idx) => (
-                <div key={idx} className="p-6 rounded-xl bg-card border border-border/50 hover:shadow-md transition-shadow">
-                  <feature.icon className="h-8 w-8 text-impulsa mb-4" strokeWidth={1.5} />
+                <div key={idx} className="p-6 rounded-xl bg-card border border-border/50 hover:shadow-lg hover:border-impulsa/20 transition-all duration-300 hover:-translate-y-0.5">
+                  <div className="inline-flex items-center justify-center w-11 h-11 rounded-lg bg-impulsa/10 mb-4">
+                    <feature.icon className="h-6 w-6 text-impulsa" strokeWidth={1.5} />
+                  </div>
                   <h3 className="text-lg font-semibold font-dm-sans text-foreground mb-2">{feature.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
                 </div>
@@ -398,8 +409,8 @@ const SensePlatform = () => {
         </section>
 
         {/* ═══ SECTION 4: Integrations ═══ */}
-        <section className="py-16 bg-background">
-          <div className="container mx-auto px-4 max-w-5xl">
+        <section className="relative py-14 md:py-20 overflow-hidden" style={{ background: 'linear-gradient(180deg, hsl(207 40% 97%) 0%, hsl(207 30% 95%) 100%)' }}>
+          <div className="container mx-auto px-4 max-w-5xl relative z-10">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold font-dm-sans text-foreground mb-4">
                 {isEnglish ? 'Connected to the tools that matter' : 'Conectado con las herramientas que importan'}
@@ -412,8 +423,10 @@ const SensePlatform = () => {
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
               {integrations.map((integration, idx) => (
-                <div key={idx} className="flex items-center gap-3 p-4 rounded-lg bg-card border border-border/50 hover:border-impulsa/30 transition-colors">
-                  <Database className="h-5 w-5 text-impulsa flex-shrink-0" />
+                <div key={idx} className="flex items-center gap-3 p-4 rounded-lg bg-card/80 backdrop-blur-sm border border-border/50 hover:border-primary/30 hover:shadow-md transition-all duration-300">
+                  <div className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-primary/10 flex-shrink-0">
+                    <Database className="h-4 w-4 text-primary" />
+                  </div>
                   <div>
                     <p className="text-sm font-semibold text-foreground">{integration.name}</p>
                     <p className="text-xs text-muted-foreground">{integration.description}</p>
@@ -425,15 +438,17 @@ const SensePlatform = () => {
         </section>
 
         {/* ═══ SECTION 5: For Whom ═══ */}
-        <section className="py-16 bg-muted/30">
+        <section className="py-14 md:py-20 bg-background">
           <div className="container mx-auto px-4 max-w-5xl">
             <h2 className="text-3xl md:text-4xl font-bold font-dm-sans text-foreground mb-4 text-center">
               {isEnglish ? 'Designed for those who make marketing decisions' : 'Diseñado para quien toma decisiones de marketing'}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
               {forWhom.map((item, idx) => (
-                <div key={idx} className="p-6 rounded-xl border border-border/50 bg-card">
-                  <item.icon className="h-7 w-7 text-impulsa mb-3" strokeWidth={1.5} />
+                <div key={idx} className="p-6 rounded-xl border border-border/50 bg-card hover:shadow-lg hover:border-impulsa/20 transition-all duration-300 hover:-translate-y-0.5">
+                  <div className="inline-flex items-center justify-center w-11 h-11 rounded-lg bg-impulsa/10 mb-3">
+                    <item.icon className="h-6 w-6 text-impulsa" strokeWidth={1.5} />
+                  </div>
                   <h3 className="text-lg font-semibold font-dm-sans text-foreground mb-2">{item.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
                 </div>
@@ -443,8 +458,8 @@ const SensePlatform = () => {
         </section>
 
         {/* ═══ SECTION 6: LOOP Methodology ═══ */}
-        <section className="py-16 bg-background">
-          <div className="container mx-auto px-4 max-w-4xl">
+        <section className="relative py-14 md:py-20 overflow-hidden" style={{ background: 'linear-gradient(180deg, hsl(170 30% 97%) 0%, hsl(170 20% 95%) 100%)' }}>
+          <div className="container mx-auto px-4 max-w-4xl relative z-10">
             <div className="text-center mb-10">
               <h2 className="text-3xl md:text-4xl font-bold font-dm-sans text-foreground mb-4">
                 {isEnglish ? 'The LOOP framework: from listening to action' : 'El framework LOOP: de la escucha a la acción'}
@@ -458,19 +473,19 @@ const SensePlatform = () => {
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
               {loopSteps.map((step, idx) => (
-                <div key={idx} className="text-center p-6 rounded-xl bg-muted/40 border border-border/50 relative">
-                  <span className="text-4xl font-bold font-dm-sans text-impulsa/20">{step.letter}</span>
+                <div key={idx} className="text-center p-6 rounded-xl bg-card/80 backdrop-blur-sm border border-border/50 relative shadow-sm hover:shadow-md transition-shadow">
+                  <span className="text-4xl font-bold font-dm-sans text-secondary/20">{step.letter}</span>
                   <h3 className="text-base font-bold font-dm-sans text-foreground mt-1">{step.word}</h3>
                   <p className="text-xs text-muted-foreground mt-2">{step.description}</p>
                   {idx < 3 && (
-                    <ArrowRight className="hidden md:block absolute top-1/2 -right-3 -translate-y-1/2 h-5 w-5 text-impulsa/30" />
+                    <ArrowRight className="hidden md:block absolute top-1/2 -right-3 -translate-y-1/2 h-5 w-5 text-secondary/30" />
                   )}
                 </div>
               ))}
             </div>
 
-            <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-impulsa/5 border border-impulsa/20">
-              <RefreshCw className="h-5 w-5 text-impulsa" />
+            <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-card/80 backdrop-blur-sm border border-secondary/20">
+              <RefreshCw className="h-5 w-5 text-secondary" />
               <p className="text-sm text-muted-foreground text-pretty">
                 {isEnglish
                   ? "It's not a linear flow — it's a circular system that feeds itself. Every new signal can confirm, adjust or reorient your strategy."
@@ -481,14 +496,14 @@ const SensePlatform = () => {
         </section>
 
         {/* ═══ SECTION 7: Technology ═══ */}
-        <section className="py-16 bg-muted/30">
+        <section className="py-14 md:py-20 bg-background">
           <div className="container mx-auto px-4 max-w-5xl">
             <h2 className="text-3xl md:text-4xl font-bold font-dm-sans text-foreground mb-10 text-center">
               {isEnglish ? 'Modern architecture, no technical debt' : 'Arquitectura moderna, sin deuda técnica'}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
               {techFeatures.map((feature, idx) => (
-                <div key={idx} className="text-center p-5 rounded-xl bg-card border border-border/50">
+                <div key={idx} className="text-center p-5 rounded-xl bg-muted/40 border border-border/50 hover:shadow-md transition-all duration-300">
                   <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 mb-3">
                     <feature.icon className="h-5 w-5 text-primary" />
                   </div>
@@ -510,17 +525,21 @@ const SensePlatform = () => {
         <ReviewsSection />
 
         {/* ═══ Final CTA ═══ */}
-        <section className="py-16 bg-background">
-          <div className="container mx-auto px-4 max-w-3xl text-center">
-            <h2 className="text-3xl md:text-4xl font-bold font-dm-sans text-foreground mb-4">
+        <section className="relative py-16 md:py-24 overflow-hidden">
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, hsl(270 40% 15%) 0%, hsl(207 60% 12%) 50%, hsl(170 40% 15%) 100%)' }} />
+          <div className="absolute inset-0 opacity-10" style={{
+            backgroundImage: 'radial-gradient(circle at 30% 50%, hsl(var(--impulsa) / 0.3) 0%, transparent 50%)',
+          }} />
+          <div className="container mx-auto px-4 max-w-3xl text-center relative z-10">
+            <h2 className="text-3xl md:text-4xl font-bold font-dm-sans text-white mb-4">
               {isEnglish ? 'Ready for marketing with direction?' : '¿Preparado para un marketing con dirección?'}
             </h2>
-            <p className="text-lg text-muted-foreground mb-8">
+            <p className="text-lg text-white/70 mb-8">
               {isEnglish
                 ? <>Request a demo and we'll show you how SENSE<br />connects your market intelligence with execution.</>
                 : <>Solicita una demo y te mostraremos cómo SENSE<br />conecta tu inteligencia de mercado con la ejecución.</>}
             </p>
-            <Button variant="impulsa" size="lg" asChild>
+            <Button variant="impulsa" size="lg" asChild className="shadow-lg shadow-impulsa/25">
               <Link to={ctaLink}>
                 {ctaButton} <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
