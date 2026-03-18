@@ -54,7 +54,7 @@ const ACTIVATION_COPY: Record<ActivationKey, ActivationCopy> = {
     heroSubtitle: 'SEO, publicidad digital y redes sociales para posicionar tu marca donde están tus clientes.',
     heroSubtitleEN: 'SEO, digital advertising and social media to position your brand where your customers are.',
     problem: 'Sin visibilidad no hay negocio digital. Las empresas que no aparecen en Google, no existen en redes o no invierten en ads están cediendo mercado a sus competidores.',
-    problemEN: 'Without visibility there is no digital business. Companies that don't appear on Google, don't exist on social media, or don't invest in ads are ceding market to competitors.',
+    problemEN: "Without visibility there is no digital business. Companies that don't appear on Google, don't exist on social media, or don't invest in ads are ceding market to competitors.",
     solutionIntro: 'Visibility Activation combina posicionamiento orgánico, publicidad de pago y presencia social para que tu marca sea la primera opción.',
     solutionIntroEN: 'Visibility Activation combines organic positioning, paid advertising and social presence so your brand is the first choice.',
     benefits: ['SEO técnico y de contenidos que posiciona', 'Campañas Google Ads y Social Ads rentables', 'Community management profesional', 'Presencia digital coherente y medible'],
