@@ -3,15 +3,16 @@ import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { servicesByPillar, pillarMeta, PillarKey } from '@/data/services';
+import { servicesByActivation, activationMeta } from '@/data/services';
+import { ACTIVATION_ORDER, type ActivationKey, ACTIVATIONS } from '@/data/senseSystemMapping';
 
-const pillarOrder: PillarKey[] = ['revenue', 'visibility', 'content', 'intelligence'];
-
-const pillarH3: Record<PillarKey, { es: string; en: string }> = {
-  revenue: { es: 'CRM, automatización y gestión comercial', en: 'CRM, automation and sales management' },
-  visibility: { es: 'Posicionamiento, publicidad y presencia digital', en: 'Positioning, advertising and digital presence' },
-  content: { es: 'Contenidos, branding y diseño web', en: 'Content, branding and web design' },
-  intelligence: { es: 'Analítica, IA y consultoría estratégica', en: 'Analytics, AI and strategic consulting' },
+const activationH3: Record<ActivationKey, { es: string; en: string }> = {
+  research: { es: 'Inteligencia de mercado, analítica e IA', en: 'Market intelligence, analytics and AI' },
+  growth: { es: 'Captación, inbound y estrategia de crecimiento', en: 'Lead gen, inbound and growth strategy' },
+  visibility: { es: 'SEO, publicidad y presencia digital', en: 'SEO, advertising and digital presence' },
+  'web-funnel': { es: 'Diseño web, tiendas online y funnels', en: 'Web design, online stores and funnels' },
+  'crm-automation': { es: 'CRM, automatización y gestión comercial', en: 'CRM, automation and sales management' },
+  'content-brand': { es: 'Branding, contenidos y localización', en: 'Branding, content and localization' },
 };
 
 const ServicesSection = () => {
@@ -19,31 +20,31 @@ const ServicesSection = () => {
     <section id="servicios" className="py-16 md:py-20 bg-section-soft">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="title-section">Capacidades de SENSE</h2>
+          <h2 className="title-section">Activaciones de HAYAS</h2>
           <p className="text-description max-w-3xl mx-auto mt-6">
-            Los 4 pilares de ejecución del Marketing Operating System
+            Las 6 unidades de ejecución del Marketing Activation System
           </p>
         </div>
         
         <div className="mb-8 flex flex-wrap items-center justify-center gap-3">
-          {pillarOrder.map((key) => (
+          {ACTIVATION_ORDER.map((key) => (
             <a
               key={key}
-              href={`#home-${pillarMeta[key].anchorId}`}
+              href={`#home-${activationMeta[key].anchorId}`}
               className="px-4 py-2 rounded-full border hover:bg-muted/50 transition-colors"
             >
-              {pillarMeta[key].title}
+              {activationMeta[key].title}
             </a>
           ))}
         </div>
 
-        {pillarOrder.map((key) => (
-          <section key={key} id={`home-${pillarMeta[key].anchorId}`} className="mb-12">
+        {ACTIVATION_ORDER.map((key) => (
+          <section key={key} id={`home-${activationMeta[key].anchorId}`} className="mb-12">
             <h3 className="text-2xl font-bold font-dm-sans mb-6">
-              {pillarH3[key].es}
+              {activationH3[key].es}
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {servicesByPillar[key]?.map((service) => (
+              {servicesByActivation[key]?.map((service) => (
                 <Card key={service.id} className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <CardHeader className="pb-2">
                     <div className="mb-4">{service.icon}</div>

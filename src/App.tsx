@@ -140,28 +140,30 @@ const App = () => (
           {/* RUTAS EN ESPAÑOL */}
           <Route path="/es" element={<PageSuspense><Pages.Index /></PageSuspense>} />
           
-          {/* NOSOTROS */}
+           {/* NOSOTROS */}
           <Route path="/es/nosotros" element={<PageSuspense><Pages.Nosotros /></PageSuspense>} />
           
-          {/* SOLUCIONES - 3 Nuevas Categorías Estratégicas */}
-          <Route path="/es/soluciones/impulsa-tu-marca" element={<PageSuspense><Pages.ImpulsaTuMarca /></PageSuspense>} />
-          <Route path="/es/soluciones/conecta-con-tus-clientes" element={<PageSuspense><Pages.ConectaConTusClientes /></PageSuspense>} />
-          <Route path="/es/soluciones/activa-tus-ventas" element={<PageSuspense><Pages.ActivaTusVentas /></PageSuspense>} />
-          <Route path="/es/soluciones/activa-tu-estrategia-digital" element={<PageSuspense><Pages.ActivaTuEstrategiaDigital /></PageSuspense>} />
+          {/* ACTIVACIONES - 6 Grupos de ejecución */}
+          <Route path="/es/activaciones/research" element={<PageSuspense><Pages.ResearchActivation /></PageSuspense>} />
+          <Route path="/es/activaciones/growth" element={<PageSuspense><Pages.GrowthActivation /></PageSuspense>} />
+          <Route path="/es/activaciones/visibility" element={<PageSuspense><Pages.VisibilityActivation /></PageSuspense>} />
+          <Route path="/es/activaciones/web-funnel" element={<PageSuspense><Pages.WebFunnelActivation /></PageSuspense>} />
+          <Route path="/es/activaciones/crm-automation" element={<PageSuspense><Pages.CrmAutomationActivation /></PageSuspense>} />
+          <Route path="/es/activaciones/content-brand" element={<PageSuspense><Pages.ContentBrandActivation /></PageSuspense>} />
           
-          {/* SOLUCIONES - Páginas individuales (legacy y específicas) */}
-          <Route path="/es/soluciones/ia-marketing" element={<PageSuspense><Pages.SolucionesIA /></PageSuspense>} />
+          {/* SOLUCIONES LEGACY → Redirect a Activaciones */}
+          <Route path="/es/soluciones/impulsa-tu-marca" element={<Navigate to="/es/activaciones/visibility" replace />} />
+          <Route path="/es/soluciones/conecta-con-tus-clientes" element={<Navigate to="/es/activaciones/crm-automation" replace />} />
+          <Route path="/es/soluciones/activa-tus-ventas" element={<Navigate to="/es/activaciones/growth" replace />} />
+          <Route path="/es/soluciones/activa-tu-estrategia-digital" element={<Navigate to="/es/activaciones/growth" replace />} />
+          <Route path="/es/soluciones/ia-marketing" element={<Navigate to="/es/activaciones/research" replace />} />
+          <Route path="/es/soluciones/marketing-visibilidad" element={<Navigate to="/es/activaciones/visibility" replace />} />
+          <Route path="/es/soluciones/gestion-marketing" element={<Navigate to="/es/servicios/administracion-crm" replace />} />
+          <Route path="/es/soluciones/captacion-leads" element={<Navigate to="/es/activaciones/growth" replace />} />
+          <Route path="/es/soluciones/automatizacion-marketing" element={<Navigate to="/es/activaciones/crm-automation" replace />} />
+          <Route path="/es/soluciones/gestion-clientes-crm" element={<Navigate to="/es/activaciones/crm-automation" replace />} />
           
           <Route path="/es/servicios/tienda-online" element={<PageSuspense><Pages.TiendaOnline /></PageSuspense>} />
-          <Route path="/es/servicios/diseno-web" element={<PageSuspense><Pages.DisenoWeb /></PageSuspense>} />
-          <Route path="/es/servicios/diseno-web/alojamiento-mantenimiento" element={<PageSuspense><Pages.AlojamientoMantenimiento /></PageSuspense>} />
-          <Route path="/es/servicios/seo-posicionamiento" element={<PageSuspense><Pages.SeoPositioning /></PageSuspense>} />
-           <Route path="/es/servicios/seo-positioning" element={<PageSuspense><Pages.SeoPositioning /></PageSuspense>} />
-           <Route path="/es/soluciones/marketing-visibilidad" element={<PageSuspense><Pages.MarketingVisibilidad /></PageSuspense>} />
-           <Route path="/es/soluciones/gestion-marketing" element={<Navigate to="/es/servicios/administracion-crm" replace />} />
-          <Route path="/es/soluciones/captacion-leads" element={<PageSuspense><Pages.CaptacionLeadsClientes /></PageSuspense>} />
-          <Route path="/es/soluciones/automatizacion-marketing" element={<PageSuspense><Pages.AutomatizacionMarketing /></PageSuspense>} />
-          <Route path="/es/soluciones/gestion-clientes-crm" element={<PageSuspense><Pages.GestionClientesCRM /></PageSuspense>} />
           <Route path="/es/kit-consulting" element={<PageSuspense><Pages.KitConsulting /></PageSuspense>} />
           <Route path="/es/kit-digital" element={<PageSuspense><Pages.KitDigital /></PageSuspense>} />
           <Route path="/es/kit-digital/presencia-basica-internet" element={<PageSuspense><Pages.KitDigitalPresenciaBasica /></PageSuspense>} />

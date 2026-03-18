@@ -16,13 +16,21 @@ export const GraciasPorAgendarReunion = lazyWithRetry(() => import("@/pages/Grac
 export const AgendarReunion = lazyWithRetry(() => import("@/pages/AgendarReunion"));
 export const SolicitarConsulta = lazyWithRetry(() => import("@/pages/SolicitarConsulta"));
 
-// Soluciones principales
+// Soluciones principales (legacy — mantener para backward compat)
 export const ConectaConTusClientes = lazyWithRetry(() => import("@/pages/ConectaConTusClientes"));
 export const ImpulsaTuMarca = lazyWithRetry(() => import("@/pages/ImpulsaTuMarca"));
 export const ActivaTusVentas = lazyWithRetry(() => import("@/pages/ActivaTusVentas"));
 export const MarketingVisibilidad = lazyWithRetry(() => import("@/pages/MarketingVisibilidad"));
 export const ActivaTuEstrategiaDigital = lazyWithRetry(() => import("@/pages/ActivaTuEstrategiaDigital"));
 export const SolucionesIA = lazyWithRetry(() => import("@/pages/SolucionesIA"));
+
+// Activaciones (nuevas páginas de grupo)
+export const ResearchActivation = lazyWithRetry(() => import("@/pages/activaciones/ResearchActivation"));
+export const GrowthActivation = lazyWithRetry(() => import("@/pages/activaciones/GrowthActivation"));
+export const VisibilityActivation = lazyWithRetry(() => import("@/pages/activaciones/VisibilityActivation"));
+export const WebFunnelActivation = lazyWithRetry(() => import("@/pages/activaciones/WebFunnelActivation"));
+export const CrmAutomationActivation = lazyWithRetry(() => import("@/pages/activaciones/CrmAutomationActivation"));
+export const ContentBrandActivation = lazyWithRetry(() => import("@/pages/activaciones/ContentBrandActivation"));
 
 // Servicios
 export const Servicios = lazyWithRetry(() => import("@/pages/Servicios"));
