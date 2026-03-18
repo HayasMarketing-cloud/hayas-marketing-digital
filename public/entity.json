@@ -240,8 +240,8 @@
   ],
   "methodology": {
     "@type": "HowTo",
-    "name": "SENSE — Marketing Operating System",
-    "description": "Marketing intelligence platform with 4 core modules and the LOOP framework (Listen, Observe, Orient, Plan) that transforms market signals into strategic action.",
+    "name": "SENSE — Marketing Intelligence Platform",
+    "description": "Marketing intelligence platform implemented on a personalized basis with 4 core modules and the LOOP framework (Listen, Observe, Orient, Plan). Each company works with their own team, agency, or with Hayas.",
     "step": [
       {"@type": "HowToStep", "name": "Listen", "text": "Monitor market signals and competitive intelligence through RADAR module"},
       {"@type": "HowToStep", "name": "Observe", "text": "Detect patterns, opportunities and threats using SEARCH visibility and AI perception audits"},

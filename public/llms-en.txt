@@ -85,7 +85,7 @@ Listen → Observe → Orient → Plan. A continuous marketing intelligence cycl
 
 ## The 6 Hayas Activations
 
-Marketing execution is organized into 6 units called Activations. They're not isolated services: they're connected execution domains, powered by SENSE intelligence.
+Marketing execution is organized into 6 units called Activations. They're not isolated services: they're connected execution domains, powered by SENSE intelligence. Companies can activate them with their own team, their agency, or with Hayas.
 
 ### 1. Research Activation — Intelligence, Consulting & AI
 Decide with data, not intuition. Market intelligence, advanced analytics and applied AI to make better decisions.
