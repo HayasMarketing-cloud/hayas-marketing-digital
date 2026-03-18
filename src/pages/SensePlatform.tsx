@@ -382,7 +382,7 @@ const SensePlatform = () => {
         </section>
 
         {/* ═══ SECTION 3: AI ═══ */}
-        <section className="py-16 bg-muted/30">
+        <section className="py-14 md:py-20 bg-background">
           <div className="container mx-auto px-4 max-w-5xl">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold font-dm-sans text-foreground mb-4">
@@ -396,8 +396,10 @@ const SensePlatform = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {aiFeatures.map((feature, idx) => (
-                <div key={idx} className="p-6 rounded-xl bg-card border border-border/50 hover:shadow-md transition-shadow">
-                  <feature.icon className="h-8 w-8 text-impulsa mb-4" strokeWidth={1.5} />
+                <div key={idx} className="p-6 rounded-xl bg-card border border-border/50 hover:shadow-lg hover:border-impulsa/20 transition-all duration-300 hover:-translate-y-0.5">
+                  <div className="inline-flex items-center justify-center w-11 h-11 rounded-lg bg-impulsa/10 mb-4">
+                    <feature.icon className="h-6 w-6 text-impulsa" strokeWidth={1.5} />
+                  </div>
                   <h3 className="text-lg font-semibold font-dm-sans text-foreground mb-2">{feature.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
                 </div>
