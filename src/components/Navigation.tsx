@@ -201,9 +201,9 @@ const Navigation = () => {
                 <Link to={getRoute('scheduleMeeting')}>{t('footer.scheduleConsultation')}</Link>
               </Button>
 
-              {/* Hamburger Menu Button - Always visible */}
+              {/* Hamburger Menu Button - Mobile only */}
               <button 
-                className="p-2 focus-ring" 
+                className="p-2 focus-ring lg:hidden" 
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 aria-label={mobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
                 aria-expanded={mobileMenuOpen}
