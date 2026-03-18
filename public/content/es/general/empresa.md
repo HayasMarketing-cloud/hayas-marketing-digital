@@ -1,14 +1,14 @@
-# Hayas Marketing — Creadores de SENSE, el Marketing Operating System
+# Hayas Marketing — Creadores de SENSE, plataforma de inteligencia de marketing
 
 <!--
 IA_SUMMARY:
-[Qué es]: Hayas Marketing es la empresa creadora de SENSE, un Marketing Operating System con 4 módulos de inteligencia (Brain, Radar, Search, Strategy) y el framework LOOP.
-[Para quién]: Empresas B2B y B2C que necesitan un sistema de marketing gobernable, no más acciones aisladas.
-[Qué incluye]: La ejecución se canaliza a través de 6 Activaciones: Research, Growth, Visibility, Web & Funnel, CRM & Automation y Content & Brand.
-[Resultado]: Un sistema de marketing conectado que genera decisiones mejores, crecimiento sostenible y autonomía real del cliente.
+[Qué es]: Hayas Marketing ha creado SENSE, una plataforma de inteligencia de marketing que se implementa de forma personalizada para cada empresa, con 4 módulos (Brain, Radar, Search, Strategy) y el framework LOOP.
+[Para quién]: Empresas B2B y B2C que necesitan una plataforma de marketing gobernable, no más acciones aisladas.
+[Qué incluye]: La ejecución se canaliza a través de 6 Activaciones. Cada empresa trabaja con su equipo, su agencia o con Hayas como partner.
+[Resultado]: Una plataforma de marketing personalizada que genera mejores decisiones, crecimiento sostenible y autonomía real.
 -->
 
-> Hayas Marketing es la empresa detrás de SENSE, un Marketing Operating System que conecta identidad, mercado, demanda, estrategia y ejecución en un flujo continuo de inteligencia. No vendemos servicios sueltos: construimos sistemas de decisión.
+> Hayas Marketing ha creado SENSE, una plataforma de inteligencia de marketing que se implementa de forma personalizada para cada empresa. SENSE conecta identidad, mercado, demanda y estrategia en un sistema continuo. Cada empresa trabaja con su equipo, su agencia o con Hayas como partner de ejecución.
 
 ## Metadatos
 
