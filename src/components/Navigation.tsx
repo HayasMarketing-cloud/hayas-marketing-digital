@@ -162,16 +162,10 @@ const Navigation = () => {
                 onMouseLeave={handleMouseLeave}
               >
                 <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors rounded-lg hover:bg-muted/50">
-                  {t('nav.solutions')}
+                  {t('nav.activations') || (isEnglish ? 'Activations' : 'Activaciones')}
                   <ChevronDown className="h-3.5 w-3.5" />
                 </button>
               </div>
-              <Link to={getRoute('services')} className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors rounded-lg hover:bg-muted/50">
-                {t('nav.services')}
-              </Link>
-              <Link to={getRoute('caseStudies')} className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors rounded-lg hover:bg-muted/50">
-                {t('nav.caseStudies')}
-              </Link>
               <Link to={getRoute('blog')} className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors rounded-lg hover:bg-muted/50">
                 {t('nav.blog')}
               </Link>
