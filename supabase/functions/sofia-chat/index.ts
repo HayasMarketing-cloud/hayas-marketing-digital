@@ -43,6 +43,14 @@ const ROUTE_TO_CONTENT: Record<string, string> = {
   '/es/soluciones/impulsa-tu-marca': '/es/soluciones/impulsa-tu-marca.md',
   '/es/soluciones/conecta-con-tus-clientes': '/es/soluciones/conecta-con-tus-clientes.md',
   '/es/soluciones/activa-tus-ventas': '/es/soluciones/activa-tus-ventas.md',
+  '/es/soluciones/plataforma-inteligencia-marketing': '/es/servicios/plataforma-inteligencia-marketing.md',
+  // ES - Activaciones
+  '/es/activaciones/research': '/es/activaciones/research.md',
+  '/es/activaciones/growth': '/es/activaciones/growth.md',
+  '/es/activaciones/visibility': '/es/activaciones/visibility.md',
+  '/es/activaciones/web-funnel': '/es/activaciones/web-funnel.md',
+  '/es/activaciones/crm-automation': '/es/activaciones/crm-automation.md',
+  '/es/activaciones/content-brand': '/es/activaciones/content-brand.md',
   // ES - General
   '/es/nosotros': '/es/general/empresa.md',
   '/es': '/es/general/empresa.md',
@@ -77,9 +85,18 @@ const ROUTE_TO_CONTENT: Record<string, string> = {
   '/en/solutions/boost-your-brand': '/en/solutions/boost-your-brand.md',
   '/en/solutions/connect-with-customers': '/en/solutions/connect-with-customers.md',
   '/en/solutions/activate-sales': '/en/solutions/activate-sales.md',
+  '/en/solutions/marketing-intelligence-platform': '/en/services/marketing-intelligence-platform.md',
+  // EN - Activations
+  '/en/activations/research': '/en/activations/research.md',
+  '/en/activations/growth': '/en/activations/growth.md',
+  '/en/activations/visibility': '/en/activations/visibility.md',
+  '/en/activations/web-funnel': '/en/activations/web-funnel.md',
+  '/en/activations/crm-automation': '/en/activations/crm-automation.md',
+  '/en/activations/content-brand': '/en/activations/content-brand.md',
   // EN - General
   '/en': '/en/general/company.md',
   '/en/about': '/en/general/company.md',
+  '/en/about-us': '/en/general/company.md',
 };
 
 // Extract IA_SUMMARY from markdown content (60-80 words block for quick context)
