@@ -823,6 +823,8 @@ export const translations = {
       home: 'Home',
       services: 'Services',
       solutions: 'Solutions',
+      activations: 'Activations',
+      menu: 'Menu',
       about: 'About',
       contact: 'Contact',
       blog: 'Blog',
