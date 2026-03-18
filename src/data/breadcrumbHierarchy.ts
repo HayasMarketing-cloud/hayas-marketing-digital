@@ -280,5 +280,6 @@ export function buildBreadcrumbJsonLd(
 
 // ── Helper: Get activation key from service slug ──
 function getActivationForSlug(slug: string): ActivationKey | null {
-  return SLUG_TO_ACTIVATION_MAP[slug] || null;
+  // Reuse the existing path-based lookup by constructing a fake path
+  return getActivationForPath(`/es/servicios/${slug}`);
 }
