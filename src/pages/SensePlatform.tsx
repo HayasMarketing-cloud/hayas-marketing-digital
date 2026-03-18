@@ -377,12 +377,12 @@ const SensePlatform = () => {
           <div className="container mx-auto px-4 max-w-5xl">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold font-dm-sans text-foreground mb-4">
-                {isEnglish ? 'AI that understands your business' : 'IA que entiende tu negocio'}
+                {isEnglish ? 'AI trained on your strategy, not generic prompts.' : 'IA entrenada con tu estrategia, no con prompts genéricos.'}
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
                 {isEnglish
-                  ? "AI in SENSE is not a generic chatbot. Every interaction is anchored to your identity, your audiences and your competitive context."
-                  : 'La IA en SENSE no es un chatbot genérico. Cada interacción está anclada a tu identidad, tus audiencias y tu contexto competitivo.'}
+                  ? "Every SENSE output — reports, content, plans — is anchored to your brand identity, your audiences and your competitive context. It's not an AI that answers: it's an AI that knows who you are and understands your entire competitive landscape."
+                  : 'Cada output de SENSE —reportes, contenido, planes— está anclado a tu identidad de marca, tus audiencias y tu contexto competitivo. No es una IA que responde: es una IA que sabe quién eres y conoce todo tu contexto competitivo.'}
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
