@@ -28,7 +28,7 @@ Hayas Marketing ha creado SENSE, una plataforma de inteligencia de marketing que
 Que cada empresa tenga su propia plataforma de inteligencia de marketing, configurada a medida, para tomar mejores decisiones y ejecutar con quien prefiera.
 
 ### Visión
-Que cada empresa tenga un sistema de marketing gobernable, no dependencia de una agencia.
+Que cada empresa tenga un sistema de marketing gobernable y autónomo, no dependencia de una agencia.
 
 ### Valores
 - **Sistema antes que servicio**: El marketing funciona cuando está conectado, no cuando se ejecuta por partes
