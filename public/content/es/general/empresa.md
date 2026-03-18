@@ -104,14 +104,17 @@ Creación de marca, estrategia de contenidos y localización multilingüe.
 
 ## Diferenciadores
 
-### Sistema, no servicios
-SENSE organiza el marketing como un sistema conectado. No ejecutamos acciones aisladas: cada activación alimenta a las demás.
+### Plataforma, no servicios
+SENSE es una plataforma de inteligencia de marketing que se implementa de forma personalizada. No ejecutamos acciones aisladas: configuramos un sistema completo.
+
+### Flexibilidad total de ejecución
+Cada empresa trabaja con quien prefiera: su equipo interno, su agencia de confianza o con Hayas como partner de ejecución. No creamos dependencia.
 
 ### IA implementada, no prometida
 HAYAS Copilot (asistente IA propio), automatización de contenidos, lead scoring predictivo, integraciones reales con procesos de negocio.
 
 ### Autonomía real
-No creamos dependencia. Formamos para que gestiones tu sistema de marketing.
+Formamos para que gestiones tu plataforma de marketing de forma autónoma.
 
 ### Resultados medibles
 KPIs claros desde el inicio, dashboards en tiempo real, optimización basada en datos.
