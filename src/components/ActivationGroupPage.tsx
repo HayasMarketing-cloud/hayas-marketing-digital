@@ -30,7 +30,7 @@ const ACTIVATION_COPY: Record<ActivationKey, ActivationCopy> = {
     heroSubtitle: 'Inteligencia de mercado, analítica avanzada e IA aplicada para tomar mejores decisiones de marketing.',
     heroSubtitleEN: 'Market intelligence, advanced analytics and applied AI to make better marketing decisions.',
     problem: 'La mayoría de empresas lanzan campañas sin entender realmente a su mercado. Invierten sin datos, sin análisis competitivo, sin saber qué funciona.',
-    problemEN: 'Most companies launch campaigns without truly understanding their market. They invest without data, competitive analysis, or knowing what works.',
+    problemEN: 'Most companies launch campaigns without truly understanding their market. They invest without data, without competitive analysis, without knowing what works.',
     solutionIntro: 'Research Activation conecta inteligencia de mercado con ejecución. Desde la consultoría estratégica hasta la integración de IA en tus procesos.',
     solutionIntroEN: 'Research Activation connects market intelligence with execution. From strategic consulting to AI integration in your processes.',
     benefits: ['Decisiones basadas en datos reales', 'IA integrada en tus procesos de marketing', 'Consultoría estratégica con impacto medible', 'Chatbots inteligentes que trabajan 24/7'],
