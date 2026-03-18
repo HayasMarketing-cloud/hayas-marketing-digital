@@ -341,7 +341,7 @@ const SofiaChatNew = () => {
     <>
       {/* Help Bubble */}
       {showHelpBubble && !isOpen && (
-        <div className="fixed bottom-24 right-6 z-40 bg-white rounded-2xl shadow-xl border border-gray-200 p-4 max-w-xs animate-fade-in">
+        <div className="fixed bottom-20 right-4 z-40 bg-white rounded-2xl shadow-xl border border-gray-200 p-3 max-w-[250px] animate-fade-in">
           <div className="flex items-start gap-3">
             <div className="w-10 h-10 rounded-full bg-gradient-to-r from-lime-500 to-lime-600 flex items-center justify-center flex-shrink-0">
               <Bot className="w-5 h-5 text-white" />
@@ -370,25 +370,23 @@ const SofiaChatNew = () => {
         </div>
       )}
 
-      {/* Floating Button */}
+      {/* Floating Button — compact circle on mobile, small pill on desktop */}
       {!isOpen && (
         <button
           onClick={handleOpen}
-          className="fixed bottom-6 right-6 z-50 bg-gradient-to-r from-lime-500 to-lime-600 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 px-4 py-3 flex items-center gap-3 min-w-[200px]"
+          className="fixed bottom-4 right-4 z-50 bg-gradient-to-r from-lime-500 to-lime-600 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 rounded-full w-12 h-12 flex items-center justify-center md:rounded-2xl md:w-auto md:h-auto md:px-3 md:py-2 md:gap-2"
           aria-label={isEnglish ? 'Open chat with HAYAS Copilot' : 'Abrir chat con HAYAS Copilot'}
         >
-          <div className="relative">
-            <div className="w-12 h-12 rounded-full bg-gradient-to-r from-lime-500 to-lime-600 flex items-center justify-center border-2 border-white/20">
-              <Bot className="w-6 h-6 text-white" />
-            </div>
-            <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-400 rounded-full border-2 border-white">
+          <div className="relative flex-shrink-0">
+            <Bot className="w-5 h-5 text-white" />
+            <div className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-green-400 rounded-full border border-white">
               <div className="absolute inset-0 bg-green-300 rounded-full animate-ping"></div>
             </div>
           </div>
-          <div className="text-left text-white">
-            <div className="font-semibold text-sm">HAYAS Copilot</div>
-            <div className="text-xs opacity-90">
-              {isEnglish ? 'AI Assistant • Online' : 'Asistente IA • En línea'}
+          <div className="hidden md:block text-left text-white">
+            <div className="font-semibold text-xs leading-tight">HAYAS Copilot</div>
+            <div className="text-[10px] opacity-90 leading-tight">
+              {isEnglish ? 'Online' : 'En línea'}
             </div>
           </div>
         </button>
