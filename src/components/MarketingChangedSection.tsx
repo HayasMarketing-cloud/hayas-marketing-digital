@@ -17,7 +17,6 @@ const moduleColors = {
   radar: { border: 'border-impulsa/30', icon: 'text-impulsa', bg: 'bg-impulsa/5' },
   search: { border: 'border-conecta/30', icon: 'text-conecta', bg: 'bg-conecta/5' },
   strategy: { border: 'border-activa/30', icon: 'text-activa', bg: 'bg-activa/5' },
-  plans: { border: 'border-accent/30', icon: 'text-accent', bg: 'bg-accent/5' },
 };
 
 const MarketingChangedSection = () => {
