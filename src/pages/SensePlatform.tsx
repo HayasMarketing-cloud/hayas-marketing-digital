@@ -308,8 +308,12 @@ const SensePlatform = () => {
         </section>
 
         {/* ═══ SECTION 2: 6 Modules ═══ */}
-        <section id="modules" className="py-16 bg-background scroll-mt-20">
-          <div className="container mx-auto px-4 max-w-6xl">
+        <section id="modules" className="relative py-14 md:py-20 scroll-mt-20 overflow-hidden" style={{ background: 'linear-gradient(180deg, hsl(270 50% 98%) 0%, hsl(260 30% 96%) 100%)' }}>
+          <div className="absolute inset-0 opacity-[0.03]" style={{
+            backgroundImage: 'radial-gradient(circle, hsl(var(--impulsa)) 1px, transparent 1px)',
+            backgroundSize: '24px 24px',
+          }} />
+          <div className="container mx-auto px-4 max-w-6xl relative z-10">
             <div className="text-center mb-4">
               <h2 className="text-3xl md:text-4xl font-bold font-dm-sans text-foreground mb-4">
                 {isEnglish ? '6 connected intelligence layers' : '6 capas de inteligencia conectadas'}
@@ -321,24 +325,20 @@ const SensePlatform = () => {
               </p>
             </div>
 
-            <div
-              className="relative rounded-2xl p-6 md:p-8 mt-8"
-              style={{
-                backgroundImage: 'radial-gradient(circle, hsl(var(--impulsa)/0.08) 1px, transparent 1px)',
-                backgroundSize: '24px 24px',
-              }}
-            >
+            <div className="mt-8">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {modules.map((mod) => (
                   <Card
                     key={mod.number}
-                    className="relative border-l-2 border-l-impulsa/40 border-t border-r border-b border-border/50 hover:border-l-impulsa hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-card group"
+                    className="relative border-l-2 border-l-impulsa/40 border-t border-r border-b border-border/50 hover:border-l-impulsa hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-card/80 backdrop-blur-sm group shadow-sm"
                   >
                     <CardContent className="pt-6">
                       <span className="absolute top-3 right-3 text-xs font-mono text-impulsa/25 group-hover:text-impulsa/60 transition-colors duration-300">
                         {mod.number}
                       </span>
-                      <mod.icon className="h-8 w-8 text-impulsa mb-3" strokeWidth={1.5} />
+                      <div className="inline-flex items-center justify-center w-11 h-11 rounded-lg bg-impulsa/10 mb-3">
+                        <mod.icon className="h-6 w-6 text-impulsa" strokeWidth={1.5} />
+                      </div>
                       <h3 className="text-base font-bold font-dm-sans text-foreground mb-1">
                         {mod.name} <span className="font-normal text-muted-foreground">— {mod.subtitle}</span>
                       </h3>
@@ -350,7 +350,7 @@ const SensePlatform = () => {
 
               {/* AI Assistant card */}
               <div
-                className="mt-5 flex flex-col sm:flex-row items-start sm:items-center gap-4 p-5 rounded-xl border border-impulsa/30 bg-impulsa/5 cursor-pointer hover:bg-impulsa/10 transition-all duration-300 group"
+                className="mt-5 flex flex-col sm:flex-row items-start sm:items-center gap-4 p-5 rounded-xl border border-impulsa/30 bg-card/80 backdrop-blur-sm cursor-pointer hover:bg-impulsa/10 transition-all duration-300 group shadow-sm"
                 onClick={() => window.dispatchEvent(new CustomEvent('openSofiaChat'))}
                 role="button"
                 tabIndex={0}
