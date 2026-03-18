@@ -341,7 +341,7 @@ const SofiaChatNew = () => {
     <>
       {/* Help Bubble */}
       {showHelpBubble && !isOpen && (
-        <div className="fixed bottom-24 right-6 z-40 bg-white rounded-2xl shadow-xl border border-gray-200 p-4 max-w-xs animate-fade-in">
+        <div className="fixed bottom-20 right-4 z-40 bg-white rounded-2xl shadow-xl border border-gray-200 p-3 max-w-[250px] animate-fade-in">
           <div className="flex items-start gap-3">
             <div className="w-10 h-10 rounded-full bg-gradient-to-r from-lime-500 to-lime-600 flex items-center justify-center flex-shrink-0">
               <Bot className="w-5 h-5 text-white" />
