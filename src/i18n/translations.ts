@@ -747,9 +747,9 @@ export const translations = {
       ],
       paradigmConclusion: 'Mucho esfuerzo, poca claridad.',
       // Bloque 2 — Reposicionamiento
-      repoTitle: 'No hacemos marketing como servicio.',
-      repoHighlight: ' Construimos sistemas de decisión.',
-      repoDescription: 'SENSE es el sistema que conecta identidad, mercado, demanda, estrategia y ejecución en un flujo continuo de inteligencia.',
+      repoTitle: 'Hemos creado una plataforma de inteligencia de marketing.',
+      repoHighlight: ' Y la implementamos para ti.',
+      repoDescription: 'SENSE conecta identidad, mercado, demanda y estrategia en un sistema continuo. Lo configuramos de forma personalizada para que trabajes con tu equipo de marketing, con tu agencia de confianza o con Hayas como partner de ejecución.',
       repoCta: 'Explorar SENSE',
       // Bloque 3 — Los 5 módulos
       modulesTitle: 'Un sistema conectado, no herramientas aisladas',
