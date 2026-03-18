@@ -37,14 +37,14 @@ Que cada empresa tenga un sistema de marketing gobernable y autónomo, no depend
 - **Resultados medibles**: Enfoque data-driven con KPIs claros
 - **IA como herramienta, no como promesa**: Implementación real, no buzzwords
 
-## SENSE — Marketing Operating System
+## SENSE — Plataforma de Inteligencia de Marketing
 
-SENSE es el sistema propietario de Hayas Marketing. No es una metodología ni un catálogo de servicios: es un sistema operativo de marketing que conecta inteligencia con ejecución.
+SENSE es la plataforma propietaria de Hayas Marketing. No es una metodología ni un catálogo de servicios: es una plataforma de inteligencia de marketing que se implementa de forma personalizada para cada empresa.
 
 **Filosofía**: "No necesitas más marketing. Necesitas mejores decisiones."
 
-### SENSE piensa, Hayas activa
-SENSE actúa como el núcleo de inteligencia que analiza y decide. Hayas actúa como el equipo y sistema que ejecuta y convierte la estrategia en resultados.
+### Implementación personalizada
+SENSE se configura a medida para cada empresa. Cada empresa trabaja con su propio equipo de marketing, con su agencia de confianza o con Hayas como partner de ejecución.
 
 ### Los 4 módulos de inteligencia de SENSE
 - **BRAIN**: Identidad estratégica — tu memoria de marketing centralizada
