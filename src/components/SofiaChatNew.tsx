@@ -61,6 +61,7 @@ const SofiaChatNew = () => {
     '/es/activaciones/content-brand',
     '/es/agendar-reunion',
     '/es/contacto',
+    '/es/soluciones/plataforma-inteligencia-marketing',
     '/es/kit-digital',
     // Servicios ES (para contexto GEO/AEO desde ficheros .md)
     '/es/servicios/creacion-marca',
