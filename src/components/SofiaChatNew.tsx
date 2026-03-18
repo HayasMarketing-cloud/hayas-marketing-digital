@@ -47,6 +47,7 @@ const SofiaChatNew = () => {
   const [showHelpBubble, setShowHelpBubble] = useState(false);
   const [capturedLead, setCapturedLead] = useState<LeadInfo>({});
   const scrollAreaRef = useRef<HTMLDivElement>(null);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
   // Pages where Sofia should appear
