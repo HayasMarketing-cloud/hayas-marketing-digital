@@ -334,20 +334,22 @@ const Navigation = () => {
                   </div>
                   
                   <div className="space-y-3">
-                    {pillars.map((p) => {
-                      const config = pillarConfig[p.title as keyof typeof pillarConfig];
-                      const Icon = config?.icon || DollarSign;
+                     {ACTIVATION_ORDER.map((key) => {
+                      const config = activationConfig[key];
+                      const Icon = config.icon;
+                      const meta = activationMeta[key];
+                      const href = isEnglish ? meta.hrefEN : meta.href;
                       return (
                         <Link
-                          key={p.href}
-                          to={p.href}
-                          className={`flex items-center gap-3 p-4 rounded-xl border border-border/50 hover:border-primary/30 transition-all ${config?.bgColor || 'hover:bg-muted/50'}`}
+                          key={key}
+                          to={href}
+                          className={`flex items-center gap-3 p-4 rounded-xl border border-border/50 hover:border-primary/30 transition-all ${config.bgColor}`}
                           onClick={closeMobileMenu}
                         >
-                          <div className={`p-2 rounded-lg bg-background shadow-sm ${config?.color || 'text-primary'}`}>
+                          <div className={`p-2 rounded-lg bg-background shadow-sm ${config.color}`}>
                             <Icon className="h-5 w-5" />
                           </div>
-                          <span className="font-medium text-foreground">{p.title}</span>
+                          <span className="font-medium text-foreground">{ACTIVATIONS[key].nameES}</span>
                           <ArrowRight className="h-4 w-4 text-muted-foreground ml-auto" />
                         </Link>
                       );
