@@ -312,7 +312,7 @@ const Navigation = () => {
                       <ArrowLeft className="h-4 w-4 mr-2" />
                       {t('nav.backToMain')}
                     </button>
-                    <span className="ml-4 font-medium font-dm-sans text-foreground">{t('nav.solutions')}</span>
+                    <span className="ml-4 font-medium font-dm-sans text-foreground">{t('nav.activations')}</span>
                   </div>
                   
                   <div className="space-y-3">
