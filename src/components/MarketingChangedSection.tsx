@@ -10,7 +10,6 @@ const moduleIcons = {
   radar: Radar,
   search: Search,
   strategy: Target,
-  plans: Zap,
 };
 
 const moduleColors = {
