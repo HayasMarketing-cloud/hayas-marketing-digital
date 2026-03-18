@@ -62,8 +62,8 @@ const AutomatizacionProcesosVentas: React.FC = () => {
     heroImageAlt: 'Dashboard de automatización de procesos de ventas',
     primaryCTA: 'Solicitar auditoría de ventas',
     primaryCTALink: '/es/solicitar-consulta',
-    secondaryCTA: 'Ver solución: Conecta con tus clientes',
-    secondaryCTALink: '/es/soluciones/conecta-con-tus-clientes',
+    secondaryCTA: 'Ver activación: CRM & Automation',
+    secondaryCTALink: '/es/activaciones/crm-automation',
 
     // Services/Features Section
     servicesTitle: 'Automatiza tu proceso de ventas',
