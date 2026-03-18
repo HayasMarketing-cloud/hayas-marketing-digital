@@ -63,7 +63,7 @@ const EstrategiaContenidos: React.FC = () => {
       contactFormSubtitle: "Cuéntanos tu marca, objetivos y audiencia. Te ayudaremos a diseñar una estrategia de contenidos efectiva.",
       breadcrumbItems: [
         { label: "Inicio", href: "/" },
-        { label: "Impulsa tu marca", href: "/soluciones/impulsa-tu-marca" },
+        { label: "Content & Brand", href: "/es/activaciones/content-brand" },
         { label: "Servicios", href: "/servicios" },
         { label: "Estrategia de contenidos" }
       ],
