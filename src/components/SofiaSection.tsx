@@ -121,16 +121,22 @@ const SofiaWidget = () => {
   // Determine if component should render AFTER state initialization
   const allowedPages = [
     '/es',
-    '/es/soluciones/impulsa-tu-marca',
-    '/es/soluciones/conecta-con-tus-clientes', 
-    '/es/soluciones/activa-tus-ventas',
+    '/es/activaciones/research',
+    '/es/activaciones/growth',
+    '/es/activaciones/visibility',
+    '/es/activaciones/web-funnel',
+    '/es/activaciones/crm-automation',
+    '/es/activaciones/content-brand',
     '/es/agendar-reunion',
     '/es/contacto',
     // English pages
     '/en',
-    '/en/solutions/boost-your-brand',
-    '/en/solutions/connect-with-customers',
-    '/en/solutions/activate-sales',
+    '/en/activations/research',
+    '/en/activations/growth',
+    '/en/activations/visibility',
+    '/en/activations/web-funnel',
+    '/en/activations/crm-automation',
+    '/en/activations/content-brand',
     '/en/schedule-meeting',
     '/en/contact'
   ];

@@ -75,12 +75,12 @@ const BlogConfiguracionEmailMarketingCumplimiento = () => {
     {
       title: "Email Marketing y Automatizaciones",
       description: "Configuramos y optimizamos tus campañas de email marketing con total cumplimiento normativo en cualquier plataforma.",
-      link: "/email-marketing-automatizaciones"
+      link: "/es/servicios/email-marketing-automatizaciones"
     },
     {
       title: "Implementación de CRM",
       description: "Implementamos HubSpot, Go High Level y otros CRMs con configuración completa de email marketing.",
-      link: "/servicios/implantacion-crm"
+      link: "/es/servicios/implantacion-crm"
     }
   ];
 

@@ -102,27 +102,51 @@ const SofiaChatNew = () => {
     ];
 
     const pageActions: Record<string, QuickAction[]> = {
-      '/es/soluciones/impulsa-tu-marca': [
-        { icon: Palette, label: '¿Qué incluye el branding?', message: '¿Qué incluye vuestro servicio de branding e identidad de marca?' },
+      '/es/activaciones/research': [
+        { icon: Zap, label: '¿Qué es HAYAS Copilot?', message: '¿Qué es HAYAS Copilot y cómo puede ayudar a mi negocio?' },
         ...baseActions
       ],
-      '/es/soluciones/conecta-con-tus-clientes': [
-        { icon: TrendingUp, label: '¿Cómo funciona el SEO?', message: '¿Cómo funciona vuestro servicio de SEO y posicionamiento?' },
+      '/es/activaciones/growth': [
+        { icon: TrendingUp, label: '¿Cómo captáis leads?', message: '¿Cómo funciona vuestro sistema de captación de leads cualificados?' },
         ...baseActions
       ],
-      '/es/soluciones/activa-tus-ventas': [
+      '/es/activaciones/visibility': [
+        { icon: Palette, label: '¿Cómo funciona el SEO?', message: '¿Cómo funciona vuestro servicio de SEO y posicionamiento?' },
+        ...baseActions
+      ],
+      '/es/activaciones/web-funnel': [
+        { icon: Palette, label: '¿Qué incluye el diseño web?', message: '¿Qué incluye vuestro servicio de diseño web profesional?' },
+        ...baseActions
+      ],
+      '/es/activaciones/crm-automation': [
         { icon: Zap, label: '¿Qué CRM recomendáis?', message: '¿Qué CRM me recomendáis para mi negocio?' },
         ...baseActions
       ],
-      '/en/solutions/boost-your-brand': [
-        { icon: Palette, label: 'What does branding include?', message: 'What does your branding service include?' },
+      '/es/activaciones/content-brand': [
+        { icon: Palette, label: '¿Qué incluye el branding?', message: '¿Qué incluye vuestro servicio de branding e identidad de marca?' },
         ...baseActions
       ],
-      '/en/solutions/connect-with-customers': [
-        { icon: TrendingUp, label: 'How does SEO work?', message: 'How does your SEO service work?' },
+      '/en/activations/research': [
+        { icon: Zap, label: 'What is HAYAS Copilot?', message: 'What is HAYAS Copilot and how can it help my business?' },
         ...baseActions
       ],
-      '/en/solutions/activate-sales': [
+      '/en/activations/growth': [
+        { icon: TrendingUp, label: 'How do you generate leads?', message: 'How does your qualified lead generation system work?' },
+        ...baseActions
+      ],
+      '/en/activations/visibility': [
+        { icon: Palette, label: 'How does SEO work?', message: 'How does your SEO service work?' },
+        ...baseActions
+      ],
+      '/en/activations/web-funnel': [
+        { icon: Palette, label: 'What does web design include?', message: 'What does your professional web design service include?' },
+        ...baseActions
+      ],
+      '/en/activations/crm-automation': [
+        { icon: Zap, label: 'Which CRM do you recommend?', message: 'Which CRM do you recommend for my business?' },
+        ...baseActions
+      ],
+      '/en/activations/content-brand': [
         { icon: Zap, label: 'Which CRM do you recommend?', message: 'Which CRM do you recommend for my business?' },
         ...baseActions
       ]

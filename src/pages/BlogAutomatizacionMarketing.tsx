@@ -72,11 +72,11 @@ const BlogAutomatizacionMarketing = () => {
   const relatedServices = [{
     title: "Implementación de CRM y Automatización",
     description: "Configuramos y automatizamos tu sistema CRM para optimizar el proceso de ventas y marketing.",
-    link: "/servicios/implantacion-crm"
+    link: "/es/servicios/implantacion-crm"
   }, {
     title: "Email Marketing y Automatizaciones",
     description: "Creamos campañas de email marketing automatizadas que nutren leads y aumentan conversiones.",
-    link: "/email-marketing-automatizaciones"
+    link: "/es/servicios/email-marketing-automatizaciones"
   }];
   const automationBenefits = [{
     icon: <Clock className="h-6 w-6 text-primary" />,

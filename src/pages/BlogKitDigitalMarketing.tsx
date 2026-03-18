@@ -78,12 +78,12 @@ const relatedServices = [
   {
     title: "Diseño Web Profesional",
     description: "Creamos tu sitio web optimizado y compatible con el Kit Digital",
-    link: "/servicios/diseno-web"
+    link: "/es/servicios/diseno-web"
   },
   {
     title: "Tienda Online",
     description: "Desarrollamos tu comercio electrónico con las mejores prácticas",
-    link: "/servicios/tienda-online"
+    link: "/es/servicios/tienda-online"
   }
 ];
 
