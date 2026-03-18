@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronRight, Home } from 'lucide-react';
+import { buildBreadcrumbTrail } from '@/data/breadcrumbHierarchy';
 import { getTagBySlug, getParentTag } from '@/data/blogTags';
 
 interface BreadcrumbItem {
@@ -63,7 +64,6 @@ const EnhancedBreadcrumbs: React.FC<EnhancedBreadcrumbsProps> = ({
     const tagData = getTagBySlug(currentTag);
     const parentTag = getParentTag(currentTag);
     
-    // Si es un subtag, añadir el tag padre primero
     if (parentTag && tagData && 'parent' in tagData) {
       breadcrumbItems.push({
         label: parentTag.name,
@@ -71,7 +71,6 @@ const EnhancedBreadcrumbs: React.FC<EnhancedBreadcrumbsProps> = ({
       });
     }
     
-    // Añadir el tag actual
     if (tagData) {
       breadcrumbItems.push({
         label: tagData.name,
@@ -80,7 +79,6 @@ const EnhancedBreadcrumbs: React.FC<EnhancedBreadcrumbsProps> = ({
     }
   }
 
-  // Si hay un título de post, añadirlo como último elemento
   if (postTitle) {
     breadcrumbItems.push({
       label: postTitle,
