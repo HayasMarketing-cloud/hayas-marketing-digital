@@ -251,25 +251,9 @@ const Navigation = () => {
                       onClick={() => navigateToLevel('soluciones')}
                       className="w-full flex items-center justify-between text-foreground hover:text-primary font-medium transition-colors px-3 py-3 hover:bg-muted/50 rounded-lg text-left"
                     >
-                      <span>{t('nav.solutions')}</span>
+                      <span>{t('nav.activations') || (isEnglish ? 'Activations' : 'Activaciones')}</span>
                       <ArrowRight className="h-4 w-4" />
                     </button>
-                    
-                    <Link
-                      to={getRoute('services')}
-                      className="block text-foreground hover:text-primary font-medium transition-colors px-3 py-3 hover:bg-muted/50 rounded-lg"
-                      onClick={closeMobileMenu}
-                    >
-                      {t('nav.services')}
-                    </Link>
-                    
-                    <Link
-                      to={getRoute('caseStudies')}
-                      className="block text-foreground hover:text-primary font-medium transition-colors px-3 py-3 hover:bg-muted/50 rounded-lg"
-                      onClick={closeMobileMenu}
-                    >
-                      {t('nav.caseStudies')}
-                    </Link>
                     
                     <Link
                       to={getRoute('blog')}
@@ -295,29 +279,6 @@ const Navigation = () => {
                       {t('nav.contact')}
                     </Link>
                   </div>
-
-                  {/* Featured Services Section */}
-                  <div className="border-t border-border pt-4">
-                    <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider px-3 mb-3">
-                      {t('footer.featuredServices')}
-                    </h4>
-                    <div className="grid grid-cols-2 gap-1">
-                      <Link to={`/${language}/servicios/creacion-marca`} className="text-sm text-muted-foreground hover:text-primary transition-colors px-3 py-2 hover:bg-muted/50 rounded" onClick={closeMobileMenu}>{t('footer.creacion-marca')}</Link>
-                      <Link to={`/${language}/servicios/diseno-web`} className="text-sm text-muted-foreground hover:text-primary transition-colors px-3 py-2 hover:bg-muted/50 rounded" onClick={closeMobileMenu}>{t('footer.diseno-web')}</Link>
-                      <Link to={`/${language}/servicios/implantacion-crm`} className="text-sm text-muted-foreground hover:text-primary transition-colors px-3 py-2 hover:bg-muted/50 rounded" onClick={closeMobileMenu}>{t('footer.implantacion-crm')}</Link>
-                      <Link to={`/${language}/servicios/seo-posicionamiento`} className="text-sm text-muted-foreground hover:text-primary transition-colors px-3 py-2 hover:bg-muted/50 rounded" onClick={closeMobileMenu}>{t('footer.seo-posicionamiento')}</Link>
-                      <Link to={`/${language}/servicios/automatizacion-procesos-ventas`} className="text-sm text-muted-foreground hover:text-primary transition-colors px-3 py-2 hover:bg-muted/50 rounded" onClick={closeMobileMenu}>{t('footer.automatizacion-comercial')}</Link>
-                      <Link to={`/${language}/servicios/captacion-leads-clientes`} className="text-sm text-muted-foreground hover:text-primary transition-colors px-3 py-2 hover:bg-muted/50 rounded" onClick={closeMobileMenu}>{t('footer.captacion-leads')}</Link>
-                    </div>
-                  </div>
-
-                  {/* Resources Section */}
-                  <div className="border-t border-border pt-4">
-                    <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider px-3 mb-3">
-                      {t('footer.resources')}
-                    </h4>
-                    <div className="space-y-1">
-                      <Link to={`/${language}/casos-exito`} className="block text-sm text-muted-foreground hover:text-primary transition-colors px-3 py-2 hover:bg-muted/50 rounded" onClick={closeMobileMenu}>{t('footer.caseStudies')}</Link>
                       <Link to={`/${language}/blog`} className="block text-sm text-muted-foreground hover:text-primary transition-colors px-3 py-2 hover:bg-muted/50 rounded" onClick={closeMobileMenu}>{t('footer.blogGuides')}</Link>
                       <Link to={`/${language}/nosotros`} className="block text-sm text-muted-foreground hover:text-primary transition-colors px-3 py-2 hover:bg-muted/50 rounded" onClick={closeMobileMenu}>{t('footer.aboutUs')}</Link>
                     </div>
