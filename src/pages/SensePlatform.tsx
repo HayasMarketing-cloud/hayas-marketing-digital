@@ -517,8 +517,8 @@ const SensePlatform = () => {
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
               {isEnglish
-                ? "Request a demo and we'll show you how SENSE connects your market intelligence with execution."
-                : 'Solicita una demo y te mostraremos cómo SENSE conecta tu inteligencia de mercado con la ejecución.'}
+                ? <>Request a demo and we'll show you how SENSE<br />connects your market intelligence with execution.</>
+                : <>Solicita una demo y te mostraremos cómo SENSE<br />conecta tu inteligencia de mercado con la ejecución.</>}
             </p>
             <Button variant="impulsa" size="lg" asChild>
               <Link to={ctaLink}>
