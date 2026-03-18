@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrainCircuit, Radar, Search, Target, Zap, ArrowRight, AlertTriangle } from 'lucide-react';
+import { BrainCircuit, Radar, Search, Target, ArrowRight, AlertTriangle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from '@/hooks/useTranslation';
 import { useLanguageNavigation } from '@/hooks/useLanguageNavigation';
