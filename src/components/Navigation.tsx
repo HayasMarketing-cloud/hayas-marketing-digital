@@ -156,6 +156,12 @@ const Navigation = () => {
 
             {/* Desktop Navigation Links */}
             <nav className="hidden lg:flex items-center gap-1" role="navigation" aria-label="Main navigation">
+              <Link
+                to={isEnglish ? '/en/solutions/marketing-intelligence-platform' : '/es/soluciones/plataforma-inteligencia-marketing'}
+                className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors rounded-lg hover:bg-muted/50"
+              >
+                {t('nav.platform') || (isEnglish ? 'SENSE Platform' : 'Plataforma SENSE')}
+              </Link>
               <div
                 className="relative"
                 onMouseEnter={() => handleMouseEnter('soluciones')}
