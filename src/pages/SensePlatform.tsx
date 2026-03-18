@@ -496,14 +496,14 @@ const SensePlatform = () => {
         </section>
 
         {/* ═══ SECTION 7: Technology ═══ */}
-        <section className="py-16 bg-muted/30">
+        <section className="py-14 md:py-20 bg-background">
           <div className="container mx-auto px-4 max-w-5xl">
             <h2 className="text-3xl md:text-4xl font-bold font-dm-sans text-foreground mb-10 text-center">
               {isEnglish ? 'Modern architecture, no technical debt' : 'Arquitectura moderna, sin deuda técnica'}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
               {techFeatures.map((feature, idx) => (
-                <div key={idx} className="text-center p-5 rounded-xl bg-card border border-border/50">
+                <div key={idx} className="text-center p-5 rounded-xl bg-muted/40 border border-border/50 hover:shadow-md transition-all duration-300">
                   <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 mb-3">
                     <feature.icon className="h-5 w-5 text-primary" />
                   </div>
