@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { hayasOrganizationSchema } from '@/data/seoData';
+import { buildBreadcrumbTrail, buildBreadcrumbJsonLd } from '@/data/breadcrumbHierarchy';
 
 const OG_DEFAULT_BLOG = '/images/og-default-blog.jpg';
 
@@ -182,35 +183,14 @@ const Seo = ({
     // Always include organization schema
     addJsonLdScript(hayasOrganizationSchema, 'Organization');
 
-    // Add breadcrumb schema if applicable
+    // Add breadcrumb schema using semantic hierarchy
     if (canonical && canonical !== '/') {
-      const pathSegments = canonical.split('/').filter(Boolean);
-      // Detect language from path or inLanguage prop
       const isEnglish = inLanguage.startsWith('en') || currentPath.startsWith('/en');
-      const homeLabel = isEnglish ? 'Home' : 'Inicio';
+      const lang = isEnglish ? 'en' : 'es';
+      const trail = buildBreadcrumbTrail(currentPath, lang);
       
-      if (pathSegments.length > 0) {
-        const breadcrumbSchema = {
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          itemListElement: [
-            {
-              "@type": "ListItem",
-              position: 1,
-              name: homeLabel,
-              item: `${window.location.origin}/${isEnglish ? 'en' : 'es'}`
-            },
-            ...pathSegments
-              .filter(segment => segment !== 'es' && segment !== 'en') // Exclude language prefix
-              .map((segment, index) => ({
-                "@type": "ListItem",
-                position: index + 2,
-                name: segment.charAt(0).toUpperCase() + segment.slice(1).replace(/-/g, ' '),
-                item: `${window.location.origin}/${pathSegments.slice(0, pathSegments.indexOf(segment) + 1).join('/')}`
-              }))
-          ]
-        };
-        
+      if (trail.length > 1) {
+        const breadcrumbSchema = buildBreadcrumbJsonLd(trail, window.location.origin);
         addJsonLdScript(breadcrumbSchema, 'BreadcrumbList');
       }
     }

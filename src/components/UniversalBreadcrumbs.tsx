@@ -3,11 +3,13 @@ import { Link, useLocation } from 'react-router-dom';
 import {
   Breadcrumb,
   BreadcrumbList,
-  BreadcrumbItem,
+  BreadcrumbItem as BreadcrumbItemUI,
   BreadcrumbLink,
   BreadcrumbSeparator,
   BreadcrumbPage,
 } from '@/components/ui/breadcrumb';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { buildBreadcrumbTrail, type BreadcrumbNode } from '@/data/breadcrumbHierarchy';
 
 interface BreadcrumbItem {
   label: string;
@@ -20,96 +22,34 @@ interface UniversalBreadcrumbsProps {
 }
 
 /**
- * Universal breadcrumbs component that automatically generates breadcrumbs
- * based on current route or accepts custom items
+ * Universal breadcrumbs component using the centralized semantic hierarchy.
+ * Automatically maps services to their parent Activation for knowledge graph coherence.
  */
 export const UniversalBreadcrumbs: React.FC<UniversalBreadcrumbsProps> = ({
   customItems,
   className = ''
 }) => {
   const location = useLocation();
-  
+  const { language } = useLanguage();
+
   const generateBreadcrumbs = (): BreadcrumbItem[] => {
     if (customItems) return customItems;
-    
-    const pathSegments = location.pathname.split('/').filter(Boolean);
-    const breadcrumbs: BreadcrumbItem[] = [
-      { label: 'Inicio', href: '/es' }
-    ];
 
-    // Build breadcrumbs from path segments
-    let currentPath = '';
-    pathSegments.forEach((segment, index) => {
-      currentPath += `/${segment}`;
-      
-      // Generate readable labels
-      const label = getReadableLabel(segment, currentPath);
-      
-      // Last item shouldn't have href (current page)
-      if (index === pathSegments.length - 1) {
-        breadcrumbs.push({ label });
-      } else {
-        breadcrumbs.push({ label, href: currentPath });
-      }
-    });
+    const lang = language === 'en' ? 'en' : 'es';
+    const trail = buildBreadcrumbTrail(location.pathname, lang);
 
-    return breadcrumbs;
-  };
-
-  const getReadableLabel = (segment: string, fullPath: string): string => {
-    // Custom mappings for better UX
-    const labelMap: { [key: string]: string } = {
-      'casos-exito': 'Casos de Éxito',
-      'servicios': 'Servicios',
-      'soluciones': 'Soluciones',
-      'blog': 'Blog',
-      'nosotros': 'Nosotros',
-      'contacto': 'Contacto',
-      'agendar-reunion': 'Agendar Reunión',
-      'solicitar-consulta': 'Solicitar Consulta',
-      'kit-digital': 'Kit Digital',
-      'kit-consulting': 'Kit Consulting',
-      'implantacion-crm': 'Implantación CRM',
-      'administracion-crm': 'Administración CRM',
-      'automatizacion-procesos-ventas': 'Automatización de Ventas',
-      'creacion-marca': 'Creación de Marca',
-      'diseno-web': 'Diseño Web',
-      'seo-positioning': 'Posicionamiento SEO',
-      'publicidad-google-ads': 'Publicidad Google Ads',
-      'publicidad-redes-sociales': 'Publicidad en Redes',
-      'gestion-redes-sociales': 'Gestión de Redes',
-      'email-marketing-automatizaciones': 'Email Marketing',
-      'estrategia-contenidos': 'Estrategia de Contenidos',
-      'consultoria-estrategica-analitica': 'Consultoría Estratégica',
-      'captacion-leads-clientes': 'Captación de Leads',
-      'integraciones-ia-procesos': 'Integraciones IA',
-      'impulsa-tu-marca': 'Impulsa tu Marca',
-      'conecta-con-tus-clientes': 'Conecta con tus Clientes',
-      'activa-tus-ventas': 'Activa tus Ventas',
-      'marketing-visibilidad': 'Marketing y Visibilidad'
-    };
-
-    if (labelMap[segment]) {
-      return labelMap[segment];
-    }
-
-    // For case studies, try to extract company name
-    if (fullPath.includes('/casos-exito/')) {
-      return segment.split('-')
-        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-        .join(' ');
-    }
-
-    // Default: capitalize and replace dashes
-    return segment.split('-')
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(' ');
+    // Convert BreadcrumbNode[] to the display format
+    // Last item has no href (current page)
+    return trail.map((node, index) => ({
+      label: node.label,
+      href: index === trail.length - 1 ? undefined : node.href,
+    }));
   };
 
   const breadcrumbs = generateBreadcrumbs();
 
   if (breadcrumbs.length <= 1) {
-    return null; // Don't show breadcrumbs on home page
+    return null;
   }
 
   return (
@@ -117,22 +57,22 @@ export const UniversalBreadcrumbs: React.FC<UniversalBreadcrumbsProps> = ({
       <div className="container mx-auto px-4">
         <Breadcrumb>
           <BreadcrumbList>
-          {breadcrumbs.map((item, index) => (
-            <React.Fragment key={`breadcrumb-${index}`}>
-              <BreadcrumbItem key={`item-${index}`}>
-                {item.href ? (
-                  <BreadcrumbLink asChild>
-                    <Link to={item.href}>{item.label}</Link>
-                  </BreadcrumbLink>
-                ) : (
-                  <BreadcrumbPage>{item.label}</BreadcrumbPage>
+            {breadcrumbs.map((item, index) => (
+              <React.Fragment key={`breadcrumb-${index}`}>
+                <BreadcrumbItemUI>
+                  {item.href ? (
+                    <BreadcrumbLink asChild>
+                      <Link to={item.href}>{item.label}</Link>
+                    </BreadcrumbLink>
+                  ) : (
+                    <BreadcrumbPage>{item.label}</BreadcrumbPage>
+                  )}
+                </BreadcrumbItemUI>
+                {index < breadcrumbs.length - 1 && (
+                  <BreadcrumbSeparator />
                 )}
-              </BreadcrumbItem>
-              {index < breadcrumbs.length - 1 && (
-                <BreadcrumbSeparator key={`sep-${index}`} />
-              )}
-            </React.Fragment>
-          ))}
+              </React.Fragment>
+            ))}
           </BreadcrumbList>
         </Breadcrumb>
       </div>
