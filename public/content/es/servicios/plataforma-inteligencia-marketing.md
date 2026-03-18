@@ -1,10 +1,10 @@
 <!--
-IA_SUMMARY: SENSE es el Marketing Operating System de Hayas Marketing. 4 módulos de inteligencia (Brain, Radar, Search, Strategy) que conectan señales de mercado con decisiones estratégicas, gobernados por el framework LOOP (Listen, Observe, Orient, Plan). La ejecución se canaliza a través de las 6 Activaciones de Hayas. Diseñado para CMOs, equipos de marketing, agencias estratégicas y empresas B2B en expansión.
+IA_SUMMARY: SENSE es la plataforma de inteligencia de marketing de Hayas Marketing. Se implementa de forma personalizada para cada empresa. 4 módulos de inteligencia (Brain, Radar, Search, Strategy) conectan señales de mercado con decisiones estratégicas, gobernados por el framework LOOP (Listen, Observe, Orient, Plan). Cada empresa trabaja con su equipo, su agencia o con Hayas. Diseñado para CMOs, equipos de marketing, agencias estratégicas y empresas B2B en expansión.
 -->
 
 ---
-title: "SENSE - Marketing Operating System"
-description: "Marketing Operating System que conecta señales de mercado con decisiones estratégicas y ejecución táctica. 4 módulos de inteligencia: Brain, Radar, Search y Strategy. Framework LOOP. Impulsado por IA, gobernado por estrategia."
+title: "SENSE - Plataforma de Inteligencia de Marketing"
+description: "Plataforma de inteligencia de marketing que se implementa de forma personalizada para cada empresa. 4 módulos de inteligencia: Brain, Radar, Search y Strategy. Framework LOOP. Trabaja con tu equipo, tu agencia o con Hayas."
 keywords: ["marketing operating system", "SENSE", "inteligencia de marketing", "market intelligence", "AI marketing system", "marketing strategy platform"]
 intent: "commercial"
 author: "Rubén Reyero"
@@ -13,17 +13,17 @@ date: "2026-03-18"
 canonical: "/es/soluciones/plataforma-inteligencia-marketing"
 ---
 
-# SENSE: Marketing Operating System
+# SENSE: Plataforma de Inteligencia de Marketing
 
 ## ¿Qué es SENSE?
 
-Un sistema operativo de marketing, no otra herramienta más. SENSE es un sistema integrado que conecta tu identidad de marca, la inteligencia de mercado, la dirección estratégica y la ejecución táctica en un flujo continuo.
+Una plataforma de inteligencia de marketing que se implementa de forma personalizada para cada empresa. SENSE conecta tu identidad de marca, la inteligencia de mercado, la dirección estratégica y la ejecución táctica en un sistema continuo.
 
 **De la señal a la acción, sin perder el contexto estratégico.**
 
-## SENSE piensa, Hayas activa
+## Implementación personalizada
 
-SENSE actúa como el núcleo de inteligencia que analiza y decide. Hayas actúa como el equipo y sistema que ejecuta y convierte la estrategia en resultados a través de las 6 Activaciones.
+SENSE se configura a medida para cada empresa. La plataforma conecta identidad, mercado, demanda y estrategia en un sistema continuo de inteligencia. Cada empresa trabaja con su propio equipo de marketing, con su agencia de confianza o con Hayas como partner de ejecución.
 
 ## Los 4 módulos de inteligencia de SENSE
 
@@ -51,7 +51,7 @@ Listen → Observe → Orient → Plan. Un ciclo continuo de inteligencia de mar
 
 ## Las 6 Activaciones
 
-La ejecución se canaliza a través de 6 unidades conectadas por la inteligencia de SENSE:
+La ejecución se canaliza a través de 6 unidades conectadas por la inteligencia de SENSE. Las empresas pueden activarlas con su propio equipo, con su agencia o con Hayas:
 - **Research**: Inteligencia, consultoría e IA
 - **Growth**: Inbound, captación y estrategia digital
 - **Visibility**: SEO, Ads y Social Media

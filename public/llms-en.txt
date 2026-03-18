@@ -1,6 +1,6 @@
-# Hayas Marketing — Creators of SENSE, the Marketing Operating System
+# Hayas Marketing — Creators of SENSE, Marketing Intelligence Platform
 
-> Hayas Marketing is the company behind SENSE, a Marketing Operating System that connects identity, market, demand, strategy and execution into a continuous flow of intelligence. We don't sell isolated services: we build decision systems.
+> Hayas Marketing created SENSE, a marketing intelligence platform implemented on a personalized basis for each company. SENSE connects identity, market, demand and strategy into a continuous system. Each company works with their own marketing team, their trusted agency, or with Hayas as their execution partner.
 
 ---
 
@@ -8,7 +8,7 @@
 
 - **Company**: Hayas Marketing
 - **Website**: https://hayasmarketing.com
-- **Type**: Creators of SENSE, Marketing Operating System
+- **Type**: Creators of SENSE, Marketing Intelligence Platform
 - **Founded**: 2014
 - **Team**: 8 specialized professionals
 - **Location**: Madrid, Spain
@@ -19,13 +19,13 @@
 
 ## About Hayas Marketing
 
-Hayas Marketing designs, implements and operates SENSE — a Marketing Operating System that organizes an entire company's marketing into a coherent system. It's not a service agency: it's an intelligence and activation system.
+Hayas Marketing created SENSE, a marketing intelligence platform implemented on a personalized basis for each company. It's not a service agency: it's a marketing technology company that designs, implements and configures intelligence systems.
 
 ### Mission
-Transform company marketing through SENSE: a system that connects strategy, technology and intelligence so that every decision has context, every action has purpose and every result is measurable.
+For every company to have its own marketing intelligence platform, custom-configured, to make better decisions and execute with their team, their agency, or with Hayas.
 
 ### Vision
-For every company to have a governable marketing system, not agency dependency.
+For every company to have a governable and autonomous marketing system, not agency dependency.
 
 ### Values
 - **System before service**: Marketing works when it's connected, not when executed in parts
@@ -48,15 +48,15 @@ For every company to have a governable marketing system, not agency dependency.
 
 ---
 
-## SENSE — Marketing Operating System
+## SENSE — Marketing Intelligence Platform
 
-SENSE is Hayas Marketing's proprietary system. It's not a methodology or a service catalog: it's a marketing operating system that connects intelligence with execution.
+SENSE is Hayas Marketing's proprietary platform. It's not a methodology or a service catalog: it's a marketing intelligence platform implemented on a personalized basis for each company.
 
 **Philosophy**: "You don't need more marketing. You need better decisions."
 
-### How it works: SENSE thinks, Hayas activates
+### How it works: Personalized implementation
 
-SENSE acts as the intelligence core that analyzes and decides. Hayas acts as the team and system that executes and turns strategy into results.
+SENSE is custom-configured for each company. The platform connects identity, market, demand and strategy into a continuous intelligence system. Each company works with their own marketing team, their trusted agency, or with Hayas as their execution partner.
 
 ### The 4 SENSE Intelligence Modules
 
@@ -85,7 +85,7 @@ Listen → Observe → Orient → Plan. A continuous marketing intelligence cycl
 
 ## The 6 Hayas Activations
 
-Marketing execution is organized into 6 units called Activations. They're not isolated services: they're connected execution domains, powered by SENSE intelligence.
+Marketing execution is organized into 6 units called Activations. They're not isolated services: they're connected execution domains, powered by SENSE intelligence. Companies can activate them with their own team, their agency, or with Hayas.
 
 ### 1. Research Activation — Intelligence, Consulting & AI
 Decide with data, not intuition. Market intelligence, advanced analytics and applied AI to make better decisions.

@@ -6,7 +6,7 @@
   "alternateName": ["Hayas", "Hayas Marketing Digital"],
   "url": "https://hayasmarketing.com",
   "logo": "https://hayasmarketing.com/lovable-uploads/hayas-marketing-logo.png",
-  "description": "Creadores de SENSE, un Marketing Operating System que conecta identidad, mercado, demanda, estrategia y ejecución en un flujo continuo de inteligencia. 4 módulos de inteligencia (Brain, Radar, Search, Strategy), framework LOOP y 6 Activaciones de ejecución.",
+  "description": "Creadores de SENSE, una plataforma de inteligencia de marketing que se implementa de forma personalizada para cada empresa. 4 módulos de inteligencia (Brain, Radar, Search, Strategy), framework LOOP y 6 Activaciones de ejecución. Cada empresa trabaja con su equipo, su agencia o con Hayas.",
   "slogan": "No necesitas más marketing. Necesitas mejores decisiones.",
   "foundingDate": "2014",
   "founder": {
@@ -169,8 +169,8 @@
     },
     {
       "@type": "Thing",
-      "name": "Marketing Operating System",
-      "description": "Integrated system connecting market intelligence, strategy and execution"
+      "name": "Marketing Intelligence Platform",
+      "description": "Customizable marketing intelligence platform implemented for each company to work with their own team, agency, or execution partner"
     }
   ],
   "makesOffer": [
@@ -178,8 +178,8 @@
       "@type": "Offer",
       "itemOffered": {
         "@type": "Service",
-        "name": "SENSE — Marketing Operating System",
-        "description": "Marketing Operating System with 4 intelligence modules (Brain, Radar, Search, Strategy) and the LOOP framework for data-driven marketing decisions",
+        "name": "SENSE — Marketing Intelligence Platform",
+        "description": "Marketing intelligence platform implemented on a personalized basis with 4 intelligence modules (Brain, Radar, Search, Strategy) and the LOOP framework. Each company works with their own team, agency, or with Hayas as execution partner.",
         "url": "https://hayasmarketing.com/es/soluciones/plataforma-inteligencia-marketing"
       }
     },
@@ -240,8 +240,8 @@
   ],
   "methodology": {
     "@type": "HowTo",
-    "name": "SENSE — Marketing Operating System",
-    "description": "Marketing intelligence platform with 4 core modules and the LOOP framework (Listen, Observe, Orient, Plan) that transforms market signals into strategic action.",
+    "name": "SENSE — Marketing Intelligence Platform",
+    "description": "Marketing intelligence platform implemented on a personalized basis with 4 core modules and the LOOP framework (Listen, Observe, Orient, Plan). Each company works with their own team, agency, or with Hayas.",
     "step": [
       {"@type": "HowToStep", "name": "Listen", "text": "Monitor market signals and competitive intelligence through RADAR module"},
       {"@type": "HowToStep", "name": "Observe", "text": "Detect patterns, opportunities and threats using SEARCH visibility and AI perception audits"},

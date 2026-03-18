@@ -1,14 +1,14 @@
-# Hayas Marketing — Creators of SENSE, the Marketing Operating System
+# Hayas Marketing — Creators of SENSE, Marketing Intelligence Platform
 
 <!--
 IA_SUMMARY:
-[What it is]: Hayas Marketing is the company behind SENSE, a Marketing Operating System with 4 intelligence modules (Brain, Radar, Search, Strategy) and the LOOP framework.
-[For whom]: B2B and B2C companies that need a governable marketing system, not more isolated actions.
-[What it includes]: Execution is channeled through 6 Activations: Research, Growth, Visibility, Web & Funnel, CRM & Automation and Content & Brand.
-[Result]: A connected marketing system that drives better decisions, sustainable growth and real client autonomy.
+[What it is]: Hayas Marketing created SENSE, a marketing intelligence platform implemented on a personalized basis with 4 intelligence modules (Brain, Radar, Search, Strategy) and the LOOP framework.
+[For whom]: B2B and B2C companies that need a governable marketing platform, not more isolated actions.
+[What it includes]: Execution is channeled through 6 Activations. Each company works with their team, their agency, or with Hayas as partner.
+[Result]: A personalized marketing platform that drives better decisions, sustainable growth and real autonomy.
 -->
 
-> Hayas Marketing is the company behind SENSE, a Marketing Operating System that connects identity, market, demand, strategy and execution into a continuous flow of intelligence. We don't sell isolated services: we build decision systems.
+> Hayas Marketing created SENSE, a marketing intelligence platform implemented on a personalized basis for each company. SENSE connects identity, market, demand and strategy into a continuous system. Each company works with their own team, their agency, or with Hayas as execution partner.
 
 ## Metadata
 
@@ -23,13 +23,13 @@ IA_SUMMARY:
 ## About Hayas Marketing
 
 ### What we do
-Hayas Marketing designs, implements and operates SENSE — a Marketing Operating System that organizes an entire company's marketing into a coherent system of intelligence and execution.
+Hayas Marketing created SENSE, a marketing intelligence platform implemented on a personalized basis for each company. We configure it so each company can work with their marketing team, their trusted agency, or with Hayas as execution partner.
 
 ### Mission
-Transform company marketing through SENSE: a system that connects strategy, technology and intelligence so that every decision has context, every action has purpose and every result is measurable.
+For every company to have its own marketing intelligence platform, custom-configured, to make better decisions and execute with whoever they prefer.
 
 ### Vision
-For every company to have a governable marketing system, not agency dependency.
+For every company to have a governable and autonomous marketing system, not agency dependency.
 
 ### Values
 - **System before service**: Marketing works when it's connected, not when executed in parts
@@ -38,14 +38,14 @@ For every company to have a governable marketing system, not agency dependency.
 - **Measurable results**: Data-driven approach with clear KPIs
 - **AI as a tool, not a promise**: Real implementation, not buzzwords
 
-## SENSE — Marketing Operating System
+## SENSE — Marketing Intelligence Platform
 
-SENSE is Hayas Marketing's proprietary system. It's not a methodology or a service catalog: it's a marketing operating system that connects intelligence with execution.
+SENSE is Hayas Marketing's proprietary platform. It's not a methodology or a service catalog: it's a marketing intelligence platform implemented on a personalized basis for each company.
 
 **Philosophy**: "You don't need more marketing. You need better decisions."
 
-### SENSE thinks, Hayas activates
-SENSE acts as the intelligence core that analyzes and decides. Hayas acts as the team and system that executes and turns strategy into results.
+### Personalized implementation
+SENSE is custom-configured for each company. Each company works with their own marketing team, their trusted agency, or with Hayas as execution partner.
 
 ### The 4 SENSE Intelligence Modules
 - **BRAIN**: Strategic identity — your centralized marketing memory
@@ -56,9 +56,9 @@ SENSE acts as the intelligence core that analyzes and decides. Hayas acts as the
 ### LOOP Framework
 Listen → Observe → Orient → Plan. A continuous marketing intelligence cycle that feeds itself.
 
-## The 6 Hayas Activations
+## The 6 Activations
 
-Execution is channeled through 6 units called Activations, connected by SENSE intelligence:
+Execution is channeled through 6 units called Activations, connected by SENSE intelligence. Companies can activate them with their own team, their agency, or with Hayas:
 
 ### Research Activation
 Market intelligence, strategic consulting, HAYAS Copilot and applied AI training.
@@ -105,14 +105,17 @@ Brand creation, content strategy and multilingual localization.
 
 ## Differentiators
 
-### System, not services
-SENSE organizes marketing as a connected system. We don't execute isolated actions: each activation feeds the others.
+### Platform, not services
+SENSE is a marketing intelligence platform implemented on a personalized basis. We don't execute isolated actions: we configure a complete system.
+
+### Full execution flexibility
+Each company works with whoever they prefer: their internal team, their trusted agency, or with Hayas as execution partner. We don't create dependency.
 
 ### AI implemented, not promised
 HAYAS Copilot (proprietary AI assistant), content automation, predictive lead scoring, real integrations with business processes.
 
 ### Real autonomy
-We don't create dependency. We train you to manage your marketing system.
+We train you to manage your marketing platform autonomously.
 
 ### Measurable results
 Clear KPIs from the start, real-time dashboards, data-based optimization.
@@ -120,10 +123,10 @@ Clear KPIs from the start, real-time dashboards, data-based optimization.
 ## Frequently Asked Questions
 
 ### What is SENSE?
-SENSE is a Marketing Operating System created by Hayas Marketing. It connects market intelligence with execution through 4 modules (Brain, Radar, Search, Strategy) and the LOOP framework.
+SENSE is a marketing intelligence platform created by Hayas Marketing. It's implemented on a personalized basis for each company, connecting identity, market, demand and strategy with 4 modules (Brain, Radar, Search, Strategy) and the LOOP framework. Each company works with their team, their agency, or with Hayas.
 
 ### What are the 6 Activations?
-They are the execution units: Research, Growth, Visibility, Web & Funnel, CRM & Automation and Content & Brand. They're not isolated services: they're connected by SENSE intelligence.
+They are the execution units connected by SENSE intelligence: Research, Growth, Visibility, Web & Funnel, CRM & Automation and Content & Brand. Companies can activate them with their own team, their agency, or with Hayas as partner.
 
 ### Can I activate just one Activation?
 Yes. SENSE is modular. You can start with the activation you need most and add more capabilities as you grow.
