@@ -105,14 +105,17 @@ Brand creation, content strategy and multilingual localization.
 
 ## Differentiators
 
-### System, not services
-SENSE organizes marketing as a connected system. We don't execute isolated actions: each activation feeds the others.
+### Platform, not services
+SENSE is a marketing intelligence platform implemented on a personalized basis. We don't execute isolated actions: we configure a complete system.
+
+### Full execution flexibility
+Each company works with whoever they prefer: their internal team, their trusted agency, or with Hayas as execution partner. We don't create dependency.
 
 ### AI implemented, not promised
 HAYAS Copilot (proprietary AI assistant), content automation, predictive lead scoring, real integrations with business processes.
 
 ### Real autonomy
-We don't create dependency. We train you to manage your marketing system.
+We train you to manage your marketing platform autonomously.
 
 ### Measurable results
 Clear KPIs from the start, real-time dashboards, data-based optimization.
