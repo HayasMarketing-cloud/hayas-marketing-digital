@@ -5,6 +5,7 @@ export const translations = {
       services: 'Servicios',
       solutions: 'Soluciones',
       activations: 'Activaciones',
+      platform: 'Plataforma SENSE',
       menu: 'Menú',
       about: 'Nosotros',
       contact: 'Contacto',
