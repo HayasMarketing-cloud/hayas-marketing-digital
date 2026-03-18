@@ -21,7 +21,7 @@ const MarketingChangedSection = () => {
     : '/es/soluciones/plataforma-inteligencia-marketing';
 
   return (
-    <section className="py-24 md:py-32 bg-background">
+    <section className="py-14 md:py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Two-column: SENSE intro */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start mb-24 md:mb-32">
