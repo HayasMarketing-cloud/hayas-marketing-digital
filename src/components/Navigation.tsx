@@ -376,26 +376,28 @@ const Navigation = () => {
         >
           <div className="container mx-auto px-4">
             <div className="p-8 space-y-6">
-              {/* Soluciones principales con iconos y colores */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {pillars.map((p) => {
-                  const config = pillarConfig[p.title as keyof typeof pillarConfig];
+              {/* Activations grid */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {ACTIVATION_ORDER.map((key) => {
+                  const config = activationConfig[key];
                   const Icon = config.icon;
+                  const meta = activationMeta[key];
+                  const href = isEnglish ? meta.hrefEN : meta.href;
                   return (
                     <Link
-                      key={p.href}
-                      to={p.href}
-                      className={`flex items-center gap-4 px-6 py-5 rounded-xl border-2 ${config.bgColor} border-gray-100 hover:border-gray-200 transition-all duration-200 group hover:shadow-lg`}
+                      key={key}
+                      to={href}
+                      className={`flex items-center gap-4 px-5 py-4 rounded-xl border border-border/50 ${config.bgColor} transition-all duration-200 group hover:shadow-lg hover:border-primary/30`}
                       onClick={() => setActiveMegaMenu(null)}
                     >
-                      <div className={`p-3 rounded-lg bg-white shadow-sm ${config.color}`}>
-                        <Icon className="h-6 w-6" />
+                      <div className={`p-2.5 rounded-lg bg-background shadow-sm ${config.color}`}>
+                        <Icon className="h-5 w-5" />
                       </div>
                       <div className="flex-1">
-                        <span className="font-semibold text-gray-900 group-hover:text-gray-700 transition-colors">
-                          {p.title}
+                        <span className="font-semibold text-foreground group-hover:text-primary transition-colors text-sm">
+                          {ACTIVATIONS[key].nameES}
                         </span>
-                        <ArrowRight className="h-4 w-4 text-gray-400 group-hover:text-gray-600 transition-all group-hover:translate-x-1 float-right mt-1" />
+                        <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-all group-hover:translate-x-1 float-right mt-0.5" />
                       </div>
                     </Link>
                   );
@@ -416,30 +418,26 @@ const Navigation = () => {
           <div className="container mx-auto px-4">
             <div className="p-6">
               <h4 className="font-semibold text-foreground mb-6 text-center">{t('megaMenu.servicesTitle')}</h4>
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-                {pillarKeys.map((key) => {
-                  const Icon = pillarIcons[key];
+              <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                {ACTIVATION_ORDER.map((key) => {
+                  const Icon = activationIcons[key];
                   return (
-                    <div key={key} className="space-y-4">
-                      <div className="flex items-center gap-2 pb-3 border-b border-border">
-                        <Icon className="h-5 w-5 text-primary" />
-                        <h5 className="font-semibold text-foreground">
-                          {pillarMeta[key].title}
+                    <div key={key} className="space-y-3">
+                      <div className="flex items-center gap-2 pb-2 border-b border-border">
+                        <Icon className="h-4 w-4 text-primary" />
+                        <h5 className="font-semibold text-foreground text-xs">
+                          {activationMeta[key].title}
                         </h5>
                       </div>
-                      <div className="flex flex-wrap gap-2">
-                        {servicesByPillar[key].map((service) => (
+                      <div className="flex flex-col gap-1">
+                        {servicesByActivation[key]?.map((service) => (
                           <Link
                             key={service.href}
                             to={service.href}
+                            className="text-xs text-muted-foreground hover:text-primary transition-colors py-1"
                             onClick={() => setActiveMegaMenu(null)}
                           >
-                            <Badge 
-                              variant="outline"
-                              className={`${pillarColors[key]} hover:opacity-80 transition-opacity cursor-pointer text-xs py-1 px-2`}
-                            >
-                              {service.title}
-                            </Badge>
+                            {service.title}
                           </Link>
                         ))}
                       </div>
