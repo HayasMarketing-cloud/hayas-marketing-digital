@@ -160,15 +160,17 @@ const SofiaChatNew = () => {
   const getInitialMessage = (): string => {
     const greetings: Record<string, string> = {
       '/es': '¡Hola! 👋 Soy HAYAS Copilot, tu asistente de IA. ¿En qué puedo ayudarte hoy?',
-      '/es/soluciones/impulsa-tu-marca': '¡Hola! 👋 Veo que estás explorando cómo impulsar tu marca. ¿Te cuento cómo podemos ayudarte con branding, diseño web o identidad corporativa?',
-      '/es/soluciones/conecta-con-tus-clientes': '¡Hola! 👋 ¿Buscas mejorar tu visibilidad online y captar más clientes? Te explico nuestras soluciones de SEO, contenidos y marketing digital.',
-      '/es/soluciones/activa-tus-ventas': '¡Hola! 👋 ¿Quieres automatizar tu gestión comercial? Te cuento cómo nuestro CRM y automatizaciones pueden multiplicar tus ventas.',
+      '/es/soluciones/plataforma-inteligencia-marketing': '¡Hola! 👋 Veo que estás explorando SENSE, nuestra plataforma de inteligencia de marketing. ¿Te cuento cómo puede ayudar a tu equipo?',
+      '/es/activaciones/research': '¡Hola! 👋 ¿Buscas investigación de mercado y análisis competitivo? Te cuento cómo trabajamos.',
+      '/es/activaciones/growth': '¡Hola! 👋 ¿Te interesa mejorar tu captación de leads y conversión? Cuéntame sobre tu negocio.',
+      '/es/activaciones/visibility': '¡Hola! 👋 ¿Quieres mejorar tu posicionamiento en buscadores y motores de IA? Te ayudo.',
+      '/es/activaciones/web-funnel': '¡Hola! 👋 ¿Estás pensando en crear o rediseñar tu web? Cuéntame qué necesitas.',
+      '/es/activaciones/crm-automation': '¡Hola! 👋 ¿Buscas automatizar tu gestión comercial con un CRM? Te oriento.',
+      '/es/activaciones/content-brand': '¡Hola! 👋 ¿Necesitas trabajar tu marca o estrategia de contenidos? Cuéntame.',
       '/es/agendar-reunion': '¡Hola! 👋 Perfecto que quieras agendar una reunión. ¿Tienes alguna duda antes de reservar?',
       '/es/contacto': '¡Hola! 👋 ¿Necesitas contactar con nosotros? Te ayudo con cualquier consulta.',
       '/en': 'Hi! 👋 I\'m HAYAS Copilot, your AI assistant. How can I help you today?',
-      '/en/solutions/boost-your-brand': 'Hi! 👋 I see you\'re exploring how to boost your brand. Want me to explain our branding, web design, or corporate identity services?',
-      '/en/solutions/connect-with-customers': 'Hi! 👋 Looking to improve your online visibility and attract more clients? Let me explain our SEO, content, and digital marketing solutions.',
-      '/en/solutions/activate-sales': 'Hi! 👋 Want to automate your sales management? Let me tell you how our CRM and automations can multiply your sales.',
+      '/en/solutions/marketing-intelligence-platform': 'Hi! 👋 I see you\'re exploring SENSE, our marketing intelligence platform. Want me to tell you how it can help your team?',
       '/en/schedule-meeting': 'Hi! 👋 Great that you want to schedule a meeting. Any questions before booking?',
       '/en/contact': 'Hi! 👋 Need to contact us? I can help with any questions.',
     };
