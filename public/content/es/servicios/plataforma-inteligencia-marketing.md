@@ -1,5 +1,5 @@
 <!--
-IA_SUMMARY: SENSE es el Marketing Operating System de Hayas Marketing. 4 módulos de inteligencia (Brain, Radar, Search, Strategy) que conectan señales de mercado con decisiones estratégicas, gobernados por el framework LOOP (Listen, Observe, Orient, Plan). La ejecución se canaliza a través de las 6 Activaciones de Hayas. Diseñado para CMOs, equipos de marketing, agencias estratégicas y empresas B2B en expansión.
+IA_SUMMARY: SENSE es la plataforma de inteligencia de marketing de Hayas Marketing. Se implementa de forma personalizada para cada empresa. 4 módulos de inteligencia (Brain, Radar, Search, Strategy) conectan señales de mercado con decisiones estratégicas, gobernados por el framework LOOP (Listen, Observe, Orient, Plan). Cada empresa trabaja con su equipo, su agencia o con Hayas. Diseñado para CMOs, equipos de marketing, agencias estratégicas y empresas B2B en expansión.
 -->
 
 ---
