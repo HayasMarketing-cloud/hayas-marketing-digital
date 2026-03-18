@@ -3,8 +3,8 @@ IA_SUMMARY: SENSE es la plataforma de inteligencia de marketing de Hayas Marketi
 -->
 
 ---
-title: "SENSE - Marketing Operating System"
-description: "Marketing Operating System que conecta señales de mercado con decisiones estratégicas y ejecución táctica. 4 módulos de inteligencia: Brain, Radar, Search y Strategy. Framework LOOP. Impulsado por IA, gobernado por estrategia."
+title: "SENSE - Plataforma de Inteligencia de Marketing"
+description: "Plataforma de inteligencia de marketing que se implementa de forma personalizada para cada empresa. 4 módulos de inteligencia: Brain, Radar, Search y Strategy. Framework LOOP. Trabaja con tu equipo, tu agencia o con Hayas."
 keywords: ["marketing operating system", "SENSE", "inteligencia de marketing", "market intelligence", "AI marketing system", "marketing strategy platform"]
 intent: "commercial"
 author: "Rubén Reyero"
