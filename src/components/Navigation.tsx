@@ -253,6 +253,13 @@ const Navigation = () => {
                 <>
                   {/* Primary Navigation */}
                   <div className="space-y-1">
+                    <Link
+                      to={isEnglish ? '/en/solutions/marketing-intelligence-platform' : '/es/soluciones/plataforma-inteligencia-marketing'}
+                      className="block text-foreground hover:text-primary font-medium transition-colors px-3 py-3 hover:bg-muted/50 rounded-lg"
+                      onClick={closeMobileMenu}
+                    >
+                      {t('nav.platform') || (isEnglish ? 'SENSE Platform' : 'Plataforma SENSE')}
+                    </Link>
                     <button
                       onClick={() => navigateToLevel('soluciones')}
                       className="w-full flex items-center justify-between text-foreground hover:text-primary font-medium transition-colors px-3 py-3 hover:bg-muted/50 rounded-lg text-left"

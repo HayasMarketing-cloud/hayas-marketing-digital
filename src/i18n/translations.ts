@@ -825,6 +825,7 @@ export const translations = {
       services: 'Services',
       solutions: 'Solutions',
       activations: 'Activations',
+      platform: 'SENSE Platform',
       menu: 'Menu',
       about: 'About',
       contact: 'Contact',
