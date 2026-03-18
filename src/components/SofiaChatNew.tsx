@@ -230,10 +230,12 @@ const SofiaChatNew = () => {
 
   // Scroll to bottom on new messages
   useEffect(() => {
-    if (scrollAreaRef.current) {
-      scrollAreaRef.current.scrollTop = scrollAreaRef.current.scrollHeight;
-    }
-  }, [messages]);
+    // Small delay to ensure DOM has updated
+    const timer = setTimeout(() => {
+      messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+    return () => clearTimeout(timer);
+  }, [messages, isLoading]);
 
   // Focus input when chat opens
   useEffect(() => {
