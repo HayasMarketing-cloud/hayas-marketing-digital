@@ -66,7 +66,7 @@ const ACTIVATION_COPY: Record<ActivationKey, ActivationCopy> = {
     heroSubtitle: 'Diseño web, tiendas online y funnels de conversión que transforman visitantes en clientes.',
     heroSubtitleEN: 'Web design, online stores and conversion funnels that transform visitors into customers.',
     problem: 'Una web bonita no vende. Muchas empresas tienen presencia online pero no una máquina de conversión. Sin funnel, sin estructura, sin optimización.',
-    problemEN: 'A pretty website doesn't sell. Many companies have online presence but not a conversion machine. No funnel, no structure, no optimization.',
+    problemEN: "A pretty website doesn't sell. Many companies have online presence but not a conversion machine. No funnel, no structure, no optimization.",
     solutionIntro: 'Web & Funnel Activation crea la infraestructura digital que necesitas: desde la web hasta el embudo de conversión completo.',
     solutionIntroEN: 'Web & Funnel Activation creates the digital infrastructure you need: from the website to the complete conversion funnel.',
     benefits: ['Webs diseñadas para convertir', 'E-commerce que vende 24/7', 'Funnels optimizados paso a paso', 'Hosting y mantenimiento incluidos'],
