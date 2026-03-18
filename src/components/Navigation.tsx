@@ -154,6 +154,35 @@ const Navigation = () => {
               </Link>
             </div>
 
+            {/* Desktop Navigation Links */}
+            <nav className="hidden lg:flex items-center gap-1" role="navigation" aria-label="Main navigation">
+              <div
+                className="relative"
+                onMouseEnter={() => handleMouseEnter('soluciones')}
+                onMouseLeave={handleMouseLeave}
+              >
+                <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors rounded-lg hover:bg-muted/50">
+                  {t('nav.solutions')}
+                  <ChevronDown className="h-3.5 w-3.5" />
+                </button>
+              </div>
+              <Link to={getRoute('services')} className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors rounded-lg hover:bg-muted/50">
+                {t('nav.services')}
+              </Link>
+              <Link to={getRoute('caseStudies')} className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors rounded-lg hover:bg-muted/50">
+                {t('nav.caseStudies')}
+              </Link>
+              <Link to={getRoute('blog')} className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors rounded-lg hover:bg-muted/50">
+                {t('nav.blog')}
+              </Link>
+              <Link to={getRoute('aboutUs')} className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors rounded-lg hover:bg-muted/50">
+                {t('nav.theAgency')}
+              </Link>
+              <Link to={getRoute('contact')} className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors rounded-lg hover:bg-muted/50">
+                {t('nav.contact')}
+              </Link>
+            </nav>
+
             {/* Desktop CTA + Language + Hamburger */}
             <div className="flex items-center gap-3">
               {/* Language Selector */}
@@ -172,9 +201,9 @@ const Navigation = () => {
                 <Link to={getRoute('scheduleMeeting')}>{t('footer.scheduleConsultation')}</Link>
               </Button>
 
-              {/* Hamburger Menu Button - Always visible */}
+              {/* Hamburger Menu Button - Mobile only */}
               <button 
-                className="p-2 focus-ring" 
+                className="p-2 focus-ring lg:hidden" 
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 aria-label={mobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
                 aria-expanded={mobileMenuOpen}
