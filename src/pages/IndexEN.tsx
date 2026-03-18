@@ -88,7 +88,7 @@ const IndexEN = () => {
         <LazySection component={ReviewsSection} fallbackHeight="500px" />
       </main>
       
-      <Footer showKitSection={true} />
+      <Footer />
     </div>
   );
 };
