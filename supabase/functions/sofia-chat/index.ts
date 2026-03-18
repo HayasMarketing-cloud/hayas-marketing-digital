@@ -225,10 +225,15 @@ const getEnrichedContext = async (sourcePage: string, conversationLength: number
 const getBasicPageContext = (sourcePage: string): string => {
   const isEnglish = sourcePage?.startsWith('/en');
   
+  if (sourcePage?.includes('/activaciones/') || sourcePage?.includes('/activations/')) {
+    return isEnglish 
+      ? 'User is viewing an Activation page. Help them understand this execution domain and how it connects with SENSE.'
+      : 'El usuario está viendo una página de Activación. Ayúdale a entender este dominio de ejecución y cómo se conecta con SENSE.';
+  }
   if (sourcePage?.includes('/servicios/') || sourcePage?.includes('/services/')) {
     return isEnglish 
-      ? 'User is viewing a service page. Help them understand what we offer.'
-      : 'El usuario está viendo una página de servicio. Ayúdale a entender qué ofrecemos.';
+      ? 'User is viewing a service page. Help them understand what we offer and which Activation it belongs to.'
+      : 'El usuario está viendo una página de servicio. Ayúdale a entender qué ofrecemos y a qué Activación pertenece.';
   }
   if (sourcePage?.includes('/soluciones/') || sourcePage?.includes('/solutions/')) {
     return isEnglish
