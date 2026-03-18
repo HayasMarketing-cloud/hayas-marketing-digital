@@ -18,9 +18,9 @@ const SenseActivationsSection = () => {
   const { isEnglish } = useLanguage();
 
   return (
-    <section className="py-24 md:py-32 bg-muted/20">
+    <section className="py-14 md:py-20 bg-muted/20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mb-16">
+        <div className="max-w-3xl mb-10">
           <span className="text-xs font-semibold uppercase tracking-widest text-foreground/40 mb-4 block">
             {isEnglish ? 'Activations' : 'Activaciones'}
           </span>
