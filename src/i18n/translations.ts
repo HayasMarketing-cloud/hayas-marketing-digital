@@ -712,7 +712,7 @@ export const translations = {
     },
     reviews: {
       title: '📍 Conectamos desde Madrid con marcas de todo el mundo',
-      subtitle: 'Nuestra oficina está en el corazón de Madrid, a pocos pasos de Madrid Río y La Latina. Desde aquí ayudamos a empresas de toda España a crecer con estrategias digitales auténticas.',
+      subtitle: 'Nuestra oficina está en el corazón de Madrid, a pocos pasos de Madrid Río y La Latina. Desde aquí ayudamos a empresas de todo el mundo a crecer con estrategias digitales auténticas.',
       googleRating: '5.0 en Google',
       verifiedReviews: 'Reseñas verificadas de Google Maps',
       directions: 'Cómo llegar a la oficina',
