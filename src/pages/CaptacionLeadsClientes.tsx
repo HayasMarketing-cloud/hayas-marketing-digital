@@ -57,7 +57,7 @@ const CaptacionLeadsClientes: React.FC = () => {
               <BreadcrumbSeparator />
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
-                  <Link to="/es/soluciones/conecta-con-tus-clientes">Conecta con tus clientes</Link>
+                  <Link to="/es/activaciones/growth">Growth</Link>
                 </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator />
@@ -88,7 +88,7 @@ const CaptacionLeadsClientes: React.FC = () => {
                 <Link to="/es/solicitar-consulta">Generar más leads</Link>
               </Button>
               <Button variant="outline" asChild className="px-8 py-6 text-lg">
-                <Link to="/es/soluciones/conecta-con-tus-clientes">Ver solución: Conecta con tus clientes</Link>
+                <Link to="/es/activaciones/growth">Ver activación: Growth</Link>
               </Button>
             </div>
           </section>

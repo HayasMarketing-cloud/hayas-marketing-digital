@@ -62,8 +62,7 @@ const IntegracionesIAProcesos: React.FC = () => {
       ],
       breadcrumbItems: [
         { label: 'Inicio', href: '/' },
-        { label: 'Activa tu estrategia digital', href: '/soluciones/activa-tu-estrategia-digital' },
-        { label: 'Impulsa tu marca', href: '/soluciones/impulsa-tu-marca' },
+        { label: 'Research', href: '/es/activaciones/research' },
         { label: 'Servicios', href: '/servicios' },
         { label: 'Integraciones y optimización con IA' }
       ]

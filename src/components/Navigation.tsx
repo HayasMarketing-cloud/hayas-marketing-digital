@@ -2,13 +2,13 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
-import { ChevronDown, ArrowRight, ArrowLeft, DollarSign, Brain, Eye, PenTool } from 'lucide-react';
+import { ChevronDown, ArrowRight, ArrowLeft, Search, TrendingUp, Eye, Globe, Zap, PenTool, DollarSign, Brain } from 'lucide-react';
 import { useLanguageNavigation } from '@/hooks/useLanguageNavigation';
 import { useTranslation } from '@/hooks/useTranslation';
 import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
 
-import { servicesByPillar, pillarMeta } from '@/data/services';
-import type { PillarKey } from '@/data/services';
+import { servicesByActivation, activationMeta } from '@/data/services';
+import { ACTIVATION_ORDER, ACTIVATIONS, type ActivationKey } from '@/data/senseSystemMapping';
 
 const Navigation = () => {
   const { language, isEnglish, toggleLanguage } = useLanguageNavigation();
@@ -86,34 +86,31 @@ const Navigation = () => {
     setHoverTimeout(timeout);
   };
 
-  const pillarIcons: Record<PillarKey, React.ElementType> = {
-    revenue: DollarSign,
-    intelligence: Brain,
+  const activationIcons: Record<ActivationKey, React.ElementType> = {
+    research: Search,
+    growth: TrendingUp,
     visibility: Eye,
-    content: PenTool,
+    'web-funnel': Globe,
+    'crm-automation': Zap,
+    'content-brand': PenTool,
   };
 
-  const pillarColors: Record<PillarKey, string> = {
-    revenue: 'bg-emerald-100 text-emerald-800 border-emerald-200',
-    intelligence: 'bg-amber-100 text-amber-800 border-amber-200',
+  const activationColors: Record<ActivationKey, string> = {
+    research: 'bg-amber-100 text-amber-800 border-amber-200',
+    growth: 'bg-emerald-100 text-emerald-800 border-emerald-200',
     visibility: 'bg-purple-100 text-purple-800 border-purple-200',
-    content: 'bg-blue-100 text-blue-800 border-blue-200',
+    'web-funnel': 'bg-blue-100 text-blue-800 border-blue-200',
+    'crm-automation': 'bg-rose-100 text-rose-800 border-rose-200',
+    'content-brand': 'bg-teal-100 text-teal-800 border-teal-200',
   };
 
-  const pillars = [
-    { key: 'revenue' as PillarKey, title: 'Revenue', href: getRoute('solutionsActivateSales') },
-    { key: 'visibility' as PillarKey, title: 'Visibility', href: getRoute('solutionsBoostBrand') },
-    { key: 'content' as PillarKey, title: 'Content', href: getRoute('solutionsConnectCustomers') },
-    { key: 'intelligence' as PillarKey, title: 'Intelligence', href: `/${language}/soluciones/ia-marketing` },
-  ];
-
-  const pillarKeys: PillarKey[] = ['revenue', 'visibility', 'content', 'intelligence'];
-
-  const pillarConfig: Record<string, { icon: React.ElementType; color: string; bgColor: string }> = {
-    'Revenue': { icon: DollarSign, color: 'text-emerald-600', bgColor: 'bg-emerald-50 hover:bg-emerald-100' },
-    'Visibility': { icon: Eye, color: 'text-purple-600', bgColor: 'bg-purple-50 hover:bg-purple-100' },
-    'Content': { icon: PenTool, color: 'text-blue-600', bgColor: 'bg-blue-50 hover:bg-blue-100' },
-    'Intelligence': { icon: Brain, color: 'text-amber-600', bgColor: 'bg-amber-50 hover:bg-amber-100' },
+  const activationConfig: Record<ActivationKey, { icon: React.ElementType; color: string; bgColor: string }> = {
+    research: { icon: Search, color: 'text-amber-600', bgColor: 'bg-amber-50 hover:bg-amber-100' },
+    growth: { icon: TrendingUp, color: 'text-emerald-600', bgColor: 'bg-emerald-50 hover:bg-emerald-100' },
+    visibility: { icon: Eye, color: 'text-purple-600', bgColor: 'bg-purple-50 hover:bg-purple-100' },
+    'web-funnel': { icon: Globe, color: 'text-blue-600', bgColor: 'bg-blue-50 hover:bg-blue-100' },
+    'crm-automation': { icon: Zap, color: 'text-rose-600', bgColor: 'bg-rose-50 hover:bg-rose-100' },
+    'content-brand': { icon: PenTool, color: 'text-teal-600', bgColor: 'bg-teal-50 hover:bg-teal-100' },
   };
 
   const closeMobileMenu = () => {
@@ -337,20 +334,22 @@ const Navigation = () => {
                   </div>
                   
                   <div className="space-y-3">
-                    {pillars.map((p) => {
-                      const config = pillarConfig[p.title as keyof typeof pillarConfig];
-                      const Icon = config?.icon || DollarSign;
+                     {ACTIVATION_ORDER.map((key) => {
+                      const config = activationConfig[key];
+                      const Icon = config.icon;
+                      const meta = activationMeta[key];
+                      const href = isEnglish ? meta.hrefEN : meta.href;
                       return (
                         <Link
-                          key={p.href}
-                          to={p.href}
-                          className={`flex items-center gap-3 p-4 rounded-xl border border-border/50 hover:border-primary/30 transition-all ${config?.bgColor || 'hover:bg-muted/50'}`}
+                          key={key}
+                          to={href}
+                          className={`flex items-center gap-3 p-4 rounded-xl border border-border/50 hover:border-primary/30 transition-all ${config.bgColor}`}
                           onClick={closeMobileMenu}
                         >
-                          <div className={`p-2 rounded-lg bg-background shadow-sm ${config?.color || 'text-primary'}`}>
+                          <div className={`p-2 rounded-lg bg-background shadow-sm ${config.color}`}>
                             <Icon className="h-5 w-5" />
                           </div>
-                          <span className="font-medium text-foreground">{p.title}</span>
+                          <span className="font-medium text-foreground">{ACTIVATIONS[key].nameES}</span>
                           <ArrowRight className="h-4 w-4 text-muted-foreground ml-auto" />
                         </Link>
                       );
@@ -377,26 +376,28 @@ const Navigation = () => {
         >
           <div className="container mx-auto px-4">
             <div className="p-8 space-y-6">
-              {/* Soluciones principales con iconos y colores */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {pillars.map((p) => {
-                  const config = pillarConfig[p.title as keyof typeof pillarConfig];
+              {/* Activations grid */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {ACTIVATION_ORDER.map((key) => {
+                  const config = activationConfig[key];
                   const Icon = config.icon;
+                  const meta = activationMeta[key];
+                  const href = isEnglish ? meta.hrefEN : meta.href;
                   return (
                     <Link
-                      key={p.href}
-                      to={p.href}
-                      className={`flex items-center gap-4 px-6 py-5 rounded-xl border-2 ${config.bgColor} border-gray-100 hover:border-gray-200 transition-all duration-200 group hover:shadow-lg`}
+                      key={key}
+                      to={href}
+                      className={`flex items-center gap-4 px-5 py-4 rounded-xl border border-border/50 ${config.bgColor} transition-all duration-200 group hover:shadow-lg hover:border-primary/30`}
                       onClick={() => setActiveMegaMenu(null)}
                     >
-                      <div className={`p-3 rounded-lg bg-white shadow-sm ${config.color}`}>
-                        <Icon className="h-6 w-6" />
+                      <div className={`p-2.5 rounded-lg bg-background shadow-sm ${config.color}`}>
+                        <Icon className="h-5 w-5" />
                       </div>
                       <div className="flex-1">
-                        <span className="font-semibold text-gray-900 group-hover:text-gray-700 transition-colors">
-                          {p.title}
+                        <span className="font-semibold text-foreground group-hover:text-primary transition-colors text-sm">
+                          {ACTIVATIONS[key].nameES}
                         </span>
-                        <ArrowRight className="h-4 w-4 text-gray-400 group-hover:text-gray-600 transition-all group-hover:translate-x-1 float-right mt-1" />
+                        <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-all group-hover:translate-x-1 float-right mt-0.5" />
                       </div>
                     </Link>
                   );
@@ -417,30 +418,26 @@ const Navigation = () => {
           <div className="container mx-auto px-4">
             <div className="p-6">
               <h4 className="font-semibold text-foreground mb-6 text-center">{t('megaMenu.servicesTitle')}</h4>
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-                {pillarKeys.map((key) => {
-                  const Icon = pillarIcons[key];
+              <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                {ACTIVATION_ORDER.map((key) => {
+                  const Icon = activationIcons[key];
                   return (
-                    <div key={key} className="space-y-4">
-                      <div className="flex items-center gap-2 pb-3 border-b border-border">
-                        <Icon className="h-5 w-5 text-primary" />
-                        <h5 className="font-semibold text-foreground">
-                          {pillarMeta[key].title}
+                    <div key={key} className="space-y-3">
+                      <div className="flex items-center gap-2 pb-2 border-b border-border">
+                        <Icon className="h-4 w-4 text-primary" />
+                        <h5 className="font-semibold text-foreground text-xs">
+                          {activationMeta[key].title}
                         </h5>
                       </div>
-                      <div className="flex flex-wrap gap-2">
-                        {servicesByPillar[key].map((service) => (
+                      <div className="flex flex-col gap-1">
+                        {servicesByActivation[key]?.map((service) => (
                           <Link
                             key={service.href}
                             to={service.href}
+                            className="text-xs text-muted-foreground hover:text-primary transition-colors py-1"
                             onClick={() => setActiveMegaMenu(null)}
                           >
-                            <Badge 
-                              variant="outline"
-                              className={`${pillarColors[key]} hover:opacity-80 transition-opacity cursor-pointer text-xs py-1 px-2`}
-                            >
-                              {service.title}
-                            </Badge>
+                            {service.title}
                           </Link>
                         ))}
                       </div>

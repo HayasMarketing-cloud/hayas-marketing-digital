@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrainCircuit, Radar, Search, Target, Zap, ArrowRight, AlertTriangle } from 'lucide-react';
+import { BrainCircuit, Radar, Search, Target, ArrowRight, AlertTriangle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from '@/hooks/useTranslation';
 import { useLanguageNavigation } from '@/hooks/useLanguageNavigation';
@@ -10,7 +10,6 @@ const moduleIcons = {
   radar: Radar,
   search: Search,
   strategy: Target,
-  plans: Zap,
 };
 
 const moduleColors = {
@@ -18,7 +17,6 @@ const moduleColors = {
   radar: { border: 'border-impulsa/30', icon: 'text-impulsa', bg: 'bg-impulsa/5' },
   search: { border: 'border-conecta/30', icon: 'text-conecta', bg: 'bg-conecta/5' },
   strategy: { border: 'border-activa/30', icon: 'text-activa', bg: 'bg-activa/5' },
-  plans: { border: 'border-accent/30', icon: 'text-accent', bg: 'bg-accent/5' },
 };
 
 const MarketingChangedSection = () => {
@@ -29,7 +27,7 @@ const MarketingChangedSection = () => {
     ? '/en/solutions/marketing-intelligence-platform'
     : '/es/soluciones/plataforma-inteligencia-marketing';
 
-  const moduleKeys = ['brain', 'radar', 'search', 'strategy', 'plans'] as const;
+  const moduleKeys = ['brain', 'radar', 'search', 'strategy'] as const;
 
   return (
     <section className="section-normal py-16 md:py-20 bg-background">
@@ -94,7 +92,7 @@ const MarketingChangedSection = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {moduleKeys.map((key, index) => {
               const Icon = moduleIcons[key];
               const colors = moduleColors[key];
