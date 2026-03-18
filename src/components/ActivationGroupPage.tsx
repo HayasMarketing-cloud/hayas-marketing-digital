@@ -90,7 +90,7 @@ const ACTIVATION_COPY: Record<ActivationKey, ActivationCopy> = {
     heroSubtitle: 'Branding, estrategia de contenidos y localización para construir una marca que trasciende.',
     heroSubtitleEN: 'Branding, content strategy and localization to build a brand that transcends.',
     problem: 'Sin marca clara, eres uno más. Sin contenido estratégico, no generas confianza. Sin localización, pierdes mercados internacionales.',
-    problemEN: 'Without a clear brand, you're just another company. Without strategic content, you don't build trust. Without localization, you lose international markets.',
+    problemEN: 'Without a clear brand, you are just another company. Without strategic content, you do not build trust. Without localization, you lose international markets.',
     solutionIntro: 'Content & Brand Activation construye la identidad y el relato de tu marca: desde el branding hasta la distribución multicanal de contenidos.',
     solutionIntroEN: 'Content & Brand Activation builds your brand identity and narrative: from branding to multichannel content distribution.',
     benefits: ['Identidad visual profesional y diferenciadora', 'Estrategia editorial con impacto SEO', 'Contenidos adaptados a cada mercado', 'Marca coherente en todos los canales'],
