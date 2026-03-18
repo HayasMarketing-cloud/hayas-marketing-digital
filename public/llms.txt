@@ -8,7 +8,7 @@
 
 - **Company**: Hayas Marketing
 - **Website**: https://hayasmarketing.com
-- **Type**: Creadores de SENSE, Marketing Operating System
+- **Type**: Creadores de SENSE, plataforma de inteligencia de marketing
 - **Founded**: 2014
 - **Team**: 8 profesionales especializados
 - **Location**: Madrid, España
