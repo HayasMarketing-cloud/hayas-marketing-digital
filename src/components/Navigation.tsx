@@ -279,10 +279,8 @@ const Navigation = () => {
                       {t('nav.contact')}
                     </Link>
                   </div>
-                      <Link to={`/${language}/blog`} className="block text-sm text-muted-foreground hover:text-primary transition-colors px-3 py-2 hover:bg-muted/50 rounded" onClick={closeMobileMenu}>{t('footer.blogGuides')}</Link>
-                      <Link to={`/${language}/nosotros`} className="block text-sm text-muted-foreground hover:text-primary transition-colors px-3 py-2 hover:bg-muted/50 rounded" onClick={closeMobileMenu}>{t('footer.aboutUs')}</Link>
-                    </div>
-                  </div>
+
+
                   
                   {/* Actions */}
                   <div className="border-t border-border pt-4 space-y-3">
