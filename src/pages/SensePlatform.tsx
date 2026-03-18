@@ -233,10 +233,16 @@ const SensePlatform = () => {
         </div>
 
         {/* ═══ HERO ═══ */}
-        <section className="py-16 md:py-24 bg-background">
-          <div className="container mx-auto px-4 max-w-4xl text-center">
+        <section className="relative py-20 md:py-28 overflow-hidden">
+          {/* Gradient background */}
+          <div className="absolute inset-0 bg-gradient-to-br from-impulsa-50 via-background to-primary/5" />
+          <div className="absolute inset-0" style={{
+            backgroundImage: 'radial-gradient(circle at 20% 50%, hsl(var(--impulsa) / 0.06) 0%, transparent 50%), radial-gradient(circle at 80% 20%, hsl(var(--primary) / 0.04) 0%, transparent 50%)',
+          }} />
+          
+          <div className="container mx-auto px-4 max-w-4xl text-center relative z-10">
             {/* Pre-title badge */}
-            <div className="inline-flex items-center gap-2 rounded-full bg-impulsa/10 px-4 py-1.5 text-sm font-medium text-impulsa mb-6">
+            <div className="inline-flex items-center gap-2 rounded-full bg-impulsa/10 px-4 py-1.5 text-sm font-medium text-impulsa mb-6 border border-impulsa/20 backdrop-blur-sm">
               <BrainCircuit size={16} />
               <span>Made with SENSE</span>
             </div>
@@ -272,6 +278,9 @@ const SensePlatform = () => {
               </Button>
             </div>
           </div>
+          
+          {/* Bottom fade */}
+          <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-background to-transparent" />
         </section>
 
         {/* ═══ SECTION 1: What is SENSE? ═══ */}
