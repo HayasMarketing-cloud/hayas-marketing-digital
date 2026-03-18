@@ -89,7 +89,7 @@ Listen → Observe → Orient → Plan. Un ciclo continuo de inteligencia de mar
 
 ## Las 6 Activaciones de Hayas
 
-La ejecución de marketing se organiza en 6 unidades llamadas Activations. No son servicios aislados: son dominios de ejecución conectados, alimentados por la inteligencia de SENSE.
+La ejecución de marketing se organiza en 6 unidades llamadas Activations. No son servicios aislados: son dominios de ejecución conectados, alimentados por la inteligencia de SENSE. Las empresas pueden activarlas con su propio equipo, con su agencia o con Hayas.
 
 ### 1. Research Activation — Inteligencia, Consultoría e IA
 Decide con datos, no con intuición. Inteligencia de mercado, analítica avanzada e IA aplicada para tomar mejores decisiones.
