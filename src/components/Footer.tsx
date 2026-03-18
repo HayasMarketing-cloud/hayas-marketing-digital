@@ -12,6 +12,7 @@ const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   const navLinks = [
+    { label: language === 'es' ? 'Plataforma SENSE' : 'SENSE Platform', to: language === 'es' ? '/es/soluciones/plataforma-inteligencia-marketing' : '/en/solutions/marketing-intelligence-platform' },
     { label: language === 'es' ? 'Activaciones' : 'Activations', to: getRoute('activationsResearch') },
     { label: 'Blog', to: getRoute('blog') },
     { label: language === 'es' ? 'La Agencia' : 'The Agency', to: getRoute('aboutUs') },
