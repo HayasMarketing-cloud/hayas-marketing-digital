@@ -104,31 +104,31 @@ const SensePlatform = () => {
   const aiFeatures = [
     {
       icon: BarChart3,
-      title: isEnglish ? 'Market Reports with real signals' : 'Market Reports con señales reales',
+      title: isEnglish ? 'Reports with real signals' : 'Reportes con señales reales',
       description: isEnglish
-        ? 'Executive reports generated from prioritized signals in your industry. Opportunities, threats and recommendations based on data, not assumptions.'
-        : 'Informes ejecutivos generados a partir de señales priorizadas de tu industria. Oportunidades, amenazas y recomendaciones basadas en datos, no en suposiciones.',
+        ? 'Executive reports generated from prioritized signals in your industry. Opportunities, threats and recommendations based on data — not assumptions.'
+        : 'Informes ejecutivos generados a partir de señales priorizadas de tu industria. Oportunidades, amenazas y recomendaciones basadas en datos — no en suposiciones.',
     },
     {
       icon: Sparkles,
-      title: isEnglish ? 'Contextualized strategic content' : 'Contenido estratégico contextualizado',
+      title: isEnglish ? 'Content with your voice, not an AI\'s' : 'Contenido con tu voz, no la de una IA',
       description: isEnglish
-        ? 'The Content Studio automatically injects your value proposition, ICPs and differentiators into every piece. The result: content that sounds like your brand, not a generic AI.'
-        : 'El Content Studio inyecta automáticamente tu propuesta de valor, ICPs y diferenciadores en cada pieza. El resultado: contenido que suena a tu marca, no a una IA genérica.',
+        ? 'Every piece automatically injects your value proposition, your differentiators and your brand tone. The result sounds like you, not a template.'
+        : 'Cada pieza inyecta automáticamente tu propuesta de valor, tus diferenciadores y tu tono de marca. El resultado suena a ti, no a un template.',
     },
     {
       icon: Eye,
-      title: isEnglish ? 'Brand perception in AI engines' : 'Percepción de marca en motores de IA',
+      title: isEnglish ? 'Your brand as seen by ChatGPT and Gemini' : 'Tu marca vista por ChatGPT y Gemini',
       description: isEnglish
-        ? 'Audit how ChatGPT, Gemini and Perplexity describe your brand versus competitors. Identify narrative gaps before they impact your pipeline.'
-        : 'Audita cómo ChatGPT, Gemini y Perplexity describen tu marca frente a competidores. Identifica gaps de narrativa antes de que impacten en tu pipeline.',
+        ? 'Audit how AI engines describe your company versus competitors. Detect narrative gaps before they impact your pipeline.'
+        : 'Audita cómo los motores de IA describen tu empresa frente a competidores. Detecta gaps de narrativa antes de que impacten en tu pipeline.',
     },
     {
       icon: LayoutDashboard,
-      title: isEnglish ? 'Plans generated from intelligence' : 'Planes generados desde inteligencia',
+      title: isEnglish ? 'Plans born from intelligence' : 'Planes que nacen de la inteligencia',
       description: isEnglish
-        ? "You don't start from zero. SENSE generates marketing plans from the Market Report, with objectives, KPIs and activations linked to your strategic drivers."
-        : 'No partes de cero. SENSE genera planes de marketing a partir del Market Report, con objetivos, KPIs y activaciones vinculadas a tus drivers estratégicos.',
+        ? 'SENSE generates marketing plans connected to what the market is saying. With objectives, priorities and actions ready for your team or your agency.'
+        : 'SENSE genera planes de marketing conectados con lo que el mercado está diciendo. Con objetivos, prioridades y acciones listas para tu equipo o tu agencia.',
     },
   ];
 
@@ -377,12 +377,12 @@ const SensePlatform = () => {
           <div className="container mx-auto px-4 max-w-5xl">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold font-dm-sans text-foreground mb-4">
-                {isEnglish ? 'AI that understands your business' : 'IA que entiende tu negocio'}
+                {isEnglish ? 'AI trained on your strategy, not generic prompts.' : 'IA entrenada con tu estrategia, no con prompts genéricos.'}
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
                 {isEnglish
-                  ? "AI in SENSE is not a generic chatbot. Every interaction is anchored to your identity, your audiences and your competitive context."
-                  : 'La IA en SENSE no es un chatbot genérico. Cada interacción está anclada a tu identidad, tus audiencias y tu contexto competitivo.'}
+                  ? "Every SENSE output — reports, content, plans — is anchored to your brand identity, your audiences and your competitive context. It's not an AI that answers: it's an AI that knows who you are and understands your entire competitive landscape."
+                  : 'Cada output de SENSE —reportes, contenido, planes— está anclado a tu identidad de marca, tus audiencias y tu contexto competitivo. No es una IA que responde: es una IA que sabe quién eres y conoce todo tu contexto competitivo.'}
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
