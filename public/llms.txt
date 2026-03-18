@@ -240,10 +240,10 @@ Guía sobre sistemas CRM y cómo elegir entre HubSpot y Go High Level.
 ## FAQs
 
 ### ¿Qué es SENSE?
-SENSE es un Marketing Operating System creado por Hayas Marketing. Conecta identidad, mercado, demanda, estrategia y ejecución en un flujo continuo de inteligencia con 4 módulos (Brain, Radar, Search, Strategy) y el framework LOOP.
+SENSE es una plataforma de inteligencia de marketing creada por Hayas Marketing. Se implementa de forma personalizada para cada empresa, conectando identidad, mercado, demanda y estrategia en un sistema continuo con 4 módulos (Brain, Radar, Search, Strategy) y el framework LOOP. Cada empresa trabaja con su equipo, su agencia o con Hayas.
 
 ### ¿Qué son las 6 Activaciones?
-Son las unidades de ejecución de Hayas: Research, Growth, Visibility, Web & Funnel, CRM & Automation y Content & Brand. No son servicios aislados: están conectadas por la inteligencia de SENSE.
+Son las unidades de ejecución conectadas por la inteligencia de SENSE: Research, Growth, Visibility, Web & Funnel, CRM & Automation y Content & Brand. Las empresas pueden activarlas con su propio equipo, con su agencia o con Hayas como partner.
 
 ### ¿Puedo activar solo una Activación?
 Sí. SENSE es modular. Puedes empezar por la activación que más necesites e ir incorporando más a medida que crezcas.
