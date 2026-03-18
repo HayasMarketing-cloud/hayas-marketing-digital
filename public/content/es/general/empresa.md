@@ -22,10 +22,10 @@ IA_SUMMARY:
 ## Sobre Hayas Marketing
 
 ### Qué hacemos
-Hayas Marketing diseña, implementa y opera SENSE — un Marketing Operating System que organiza todo el marketing de una empresa en un sistema coherente de inteligencia y ejecución.
+Hayas Marketing ha creado SENSE, una plataforma de inteligencia de marketing que se implementa de forma personalizada para cada empresa. Lo configuramos a medida para que cada empresa trabaje con su equipo de marketing, con su agencia de confianza o con Hayas como partner de ejecución.
 
 ### Misión
-Transformar el marketing de empresas mediante SENSE: un sistema que conecta estrategia, tecnología e inteligencia para que cada decisión tenga contexto, cada acción tenga propósito y cada resultado sea medible.
+Que cada empresa tenga su propia plataforma de inteligencia de marketing, configurada a medida, para tomar mejores decisiones y ejecutar con quien prefiera.
 
 ### Visión
 Que cada empresa tenga un sistema de marketing gobernable, no dependencia de una agencia.
