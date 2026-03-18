@@ -248,8 +248,8 @@ const SensePlatform = () => {
 
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8 text-pretty">
               {isEnglish
-                ? 'Connect market signals with strategic decisions and tactical execution. 6 intelligence modules that transform scattered data into clear direction and coordinated action.'
-                : 'Conecta señales de mercado con decisiones estratégicas y ejecución táctica. 6 módulos de inteligencia que transforman datos dispersos en dirección clara y acción coordinada.'}
+                ? 'Connects your identity with market signals, delivering strategic decisions and tactical execution. 6 intelligence modules that transform scattered data into clear direction and coordinated action.'
+                : 'Conecta tu identidad con las señales de mercado aportando decisiones estratégicas y ejecución táctica. 6 módulos de inteligencia que transforman datos dispersos en dirección clara y acción coordinada.'}
             </p>
 
             {/* Badge */}
