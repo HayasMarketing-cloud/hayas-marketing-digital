@@ -10,7 +10,6 @@ import LazySection from '@/components/LazySection';
 import { useTranslation } from '@/hooks/useTranslation';
 
 // Lazy-loaded below-the-fold components
-const SenseResultSection = lazy(() => import('@/components/SenseResultSection'));
 const SenseActivationsSection = lazy(() => import('@/components/SenseActivationsSection'));
 const SenseAudienceCtaSection = lazy(() => import('@/components/SenseAudienceCtaSection'));
 const FAQSection = lazy(() => import('@/components/FAQSection'));
@@ -44,11 +43,9 @@ const Index = () => {
       <EnhancedSEO />
       <Navigation />
       
-      <main className="flex-grow mt-4 md:mt-6" role="main">
+      <main className="flex-grow" role="main">
         <HeroSlider />
         <MarketingChangedSection />
-        
-        <LazySection component={SenseResultSection} fallbackHeight="400px" />
         <LazySection component={SenseActivationsSection} fallbackHeight="500px" />
         <LazySection component={SenseAudienceCtaSection} fallbackHeight="400px" />
         
@@ -58,8 +55,8 @@ const Index = () => {
           subtitle: "",
           faqs: homeFaqs,
         }}>
-          <section className="py-16 md:py-20 bg-white">
-            <div className="container mx-auto px-4">
+          <section className="py-20 md:py-28 bg-background">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold font-dm-sans mb-6">
                   {t('faq.title')}
