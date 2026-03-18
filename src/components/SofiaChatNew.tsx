@@ -468,7 +468,8 @@ const SofiaChatNew = () => {
                         </div>
                       </div>
                     </div>
-                  )}
+                   )}
+                  <div ref={messagesEndRef} />
                 </div>
               </ScrollArea>
 
