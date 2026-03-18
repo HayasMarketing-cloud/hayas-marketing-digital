@@ -27,7 +27,7 @@ const MarketingChangedSection = () => {
     ? '/en/solutions/marketing-intelligence-platform'
     : '/es/soluciones/plataforma-inteligencia-marketing';
 
-  const moduleKeys = ['brain', 'radar', 'search', 'strategy', 'plans'] as const;
+  const moduleKeys = ['brain', 'radar', 'search', 'strategy'] as const;
 
   return (
     <section className="section-normal py-16 md:py-20 bg-background">
