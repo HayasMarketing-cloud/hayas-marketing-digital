@@ -1,23 +1,14 @@
 
 
-## Plan: Actualizar copy Hero + MarketingChanged — SENSE como plataforma implementable
+## Plan: Reemplazar imagen del post checkout IA ecommerce
 
-### Cambios
+### Qué se hará
+Copiar la imagen subida (`Gemini_Generated_Image_e59asfe59asfe59a.png`) a `src/assets/checkout-ia-ecommerce-hero.jpg` (reemplazando la actual con la errata) y a `public/images/blog/checkout-ia-ecommerce-hero.jpg` (usada en meta tags y structured data).
 
-**1. `src/components/HeroSlider.tsx` (líneas 83-84)**
-- `subtitleEs`: `SENSE es una plataforma de inteligencia de marketing que implementamos de forma personalizada para tu empresa. Trabaja con tu equipo, tu agencia o con nosotros.`
-- `subtitleEn`: `SENSE is a marketing intelligence platform we implement on a personalized basis for your company. Work with your team, your agency, or with us.`
+### Archivos afectados
+- `src/assets/checkout-ia-ecommerce-hero.jpg` — reemplazado con la nueva imagen (usado en Blog.tsx y BlogCheckoutIAEcommerce.tsx via import)
+- `public/images/blog/checkout-ia-ecommerce-hero.jpg` — reemplazado (usado en og:image y structured data)
 
-**2. `src/i18n/translations.ts` — ES (líneas 750-752)**
-- `repoTitle`: `Hemos creado una plataforma de inteligencia de marketing.`
-- `repoHighlight`: ` Y la implementamos para ti.`
-- `repoDescription`: `SENSE conecta identidad, mercado, demanda y estrategia en un sistema continuo. Lo configuramos de forma personalizada para que trabajes con tu equipo de marketing, con tu agencia de confianza o con Hayas como partner de ejecución.`
-
-**3. `src/i18n/translations.ts` — EN (líneas 1569-1571)**
-- `repoTitle`: `We built a marketing intelligence platform.`
-- `repoHighlight`: ` And we implement it for you.`
-- `repoDescription`: `SENSE connects identity, market, demand and strategy into a continuous system. We configure it on a personalized basis so you can work with your marketing team, your trusted agency, or with Hayas as your execution partner.`
-
-### Resumen
-3 ediciones puntuales en 2 ficheros. Sin cambios de estructura ni componentes.
+### Nota técnica
+La imagen subida es PNG pero se guardará como `.jpg` para mantener compatibilidad con todas las referencias existentes en el código. No se requieren cambios en ningún componente ni ruta.
 
