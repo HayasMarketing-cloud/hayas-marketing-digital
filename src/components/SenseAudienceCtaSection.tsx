@@ -18,7 +18,7 @@ const SenseAudienceCtaSection = () => {
               ? 'SENSE thinks.\nHayas activates.'
               : 'SENSE piensa.\nHayas activa.'}
           </h2>
-          <p className="text-lg text-background/50 mb-10 leading-relaxed max-w-xl mx-auto">
+          <p className="text-lg text-background/50 mb-8 leading-relaxed max-w-xl mx-auto">
             {isEnglish
               ? 'Schedule a strategic meeting with no commitment. We analyze your current situation and propose a concrete action plan.'
               : 'Agenda una reunión estratégica sin compromiso. Analizamos tu situación actual y te proponemos un plan de acción concreto.'}
