@@ -10,7 +10,7 @@ const SenseAudienceCtaSection = () => {
   const meetingLink = isEnglish ? '/en/schedule-meeting' : '/es/agendar-reunion';
 
   return (
-    <section className="py-24 md:py-32 bg-foreground text-background">
+    <section className="py-14 md:py-20 bg-foreground text-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-dm-sans leading-tight mb-6">
