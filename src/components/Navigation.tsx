@@ -86,34 +86,31 @@ const Navigation = () => {
     setHoverTimeout(timeout);
   };
 
-  const pillarIcons: Record<PillarKey, React.ElementType> = {
-    revenue: DollarSign,
-    intelligence: Brain,
+  const activationIcons: Record<ActivationKey, React.ElementType> = {
+    research: Search,
+    growth: TrendingUp,
     visibility: Eye,
-    content: PenTool,
+    'web-funnel': Globe,
+    'crm-automation': Zap,
+    'content-brand': PenTool,
   };
 
-  const pillarColors: Record<PillarKey, string> = {
-    revenue: 'bg-emerald-100 text-emerald-800 border-emerald-200',
-    intelligence: 'bg-amber-100 text-amber-800 border-amber-200',
+  const activationColors: Record<ActivationKey, string> = {
+    research: 'bg-amber-100 text-amber-800 border-amber-200',
+    growth: 'bg-emerald-100 text-emerald-800 border-emerald-200',
     visibility: 'bg-purple-100 text-purple-800 border-purple-200',
-    content: 'bg-blue-100 text-blue-800 border-blue-200',
+    'web-funnel': 'bg-blue-100 text-blue-800 border-blue-200',
+    'crm-automation': 'bg-rose-100 text-rose-800 border-rose-200',
+    'content-brand': 'bg-teal-100 text-teal-800 border-teal-200',
   };
 
-  const pillars = [
-    { key: 'revenue' as PillarKey, title: 'Revenue', href: getRoute('solutionsActivateSales') },
-    { key: 'visibility' as PillarKey, title: 'Visibility', href: getRoute('solutionsBoostBrand') },
-    { key: 'content' as PillarKey, title: 'Content', href: getRoute('solutionsConnectCustomers') },
-    { key: 'intelligence' as PillarKey, title: 'Intelligence', href: `/${language}/soluciones/ia-marketing` },
-  ];
-
-  const pillarKeys: PillarKey[] = ['revenue', 'visibility', 'content', 'intelligence'];
-
-  const pillarConfig: Record<string, { icon: React.ElementType; color: string; bgColor: string }> = {
-    'Revenue': { icon: DollarSign, color: 'text-emerald-600', bgColor: 'bg-emerald-50 hover:bg-emerald-100' },
-    'Visibility': { icon: Eye, color: 'text-purple-600', bgColor: 'bg-purple-50 hover:bg-purple-100' },
-    'Content': { icon: PenTool, color: 'text-blue-600', bgColor: 'bg-blue-50 hover:bg-blue-100' },
-    'Intelligence': { icon: Brain, color: 'text-amber-600', bgColor: 'bg-amber-50 hover:bg-amber-100' },
+  const activationConfig: Record<ActivationKey, { icon: React.ElementType; color: string; bgColor: string }> = {
+    research: { icon: Search, color: 'text-amber-600', bgColor: 'bg-amber-50 hover:bg-amber-100' },
+    growth: { icon: TrendingUp, color: 'text-emerald-600', bgColor: 'bg-emerald-50 hover:bg-emerald-100' },
+    visibility: { icon: Eye, color: 'text-purple-600', bgColor: 'bg-purple-50 hover:bg-purple-100' },
+    'web-funnel': { icon: Globe, color: 'text-blue-600', bgColor: 'bg-blue-50 hover:bg-blue-100' },
+    'crm-automation': { icon: Zap, color: 'text-rose-600', bgColor: 'bg-rose-50 hover:bg-rose-100' },
+    'content-brand': { icon: PenTool, color: 'text-teal-600', bgColor: 'bg-teal-50 hover:bg-teal-100' },
   };
 
   const closeMobileMenu = () => {
