@@ -457,6 +457,8 @@ const App = () => (
            <Route path="/es/hayas-crm" element={<PageSuspense><Pages.HayasCRM /></PageSuspense>} />
           
           
+          <Route path="/es/servicios/diseno-web" element={<PageSuspense><Pages.DisenoWeb /></PageSuspense>} />
+          <Route path="/es/servicios/diseno-web/alojamiento-mantenimiento" element={<PageSuspense><Pages.AlojamientoMantenimiento /></PageSuspense>} />
           <Route path="/es/servicios/creacion-marca" element={<PageSuspense><Pages.CreacionMarca /></PageSuspense>} />
           <Route path="/es/servicios/gestion-redes-sociales" element={<PageSuspense><Pages.GestionRedesSociales /></PageSuspense>} />
           <Route path="/es/servicios/publicidad-redes-sociales" element={<PageSuspense><Pages.PublicidadRedesSociales /></PageSuspense>} />
