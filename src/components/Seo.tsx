@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { hayasOrganizationSchema } from '@/data/seoData';
+import { buildBreadcrumbTrail, buildBreadcrumbJsonLd } from '@/data/breadcrumbHierarchy';
 
 const OG_DEFAULT_BLOG = '/images/og-default-blog.jpg';
 
