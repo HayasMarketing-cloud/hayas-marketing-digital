@@ -55,9 +55,9 @@ SENSE se configura a medida para cada empresa. Cada empresa trabaja con su propi
 ### Framework LOOP
 Listen → Observe → Orient → Plan. Un ciclo continuo de inteligencia de marketing que se retroalimenta.
 
-## Las 6 Activaciones de Hayas
+## Las 6 Activaciones
 
-La ejecución se canaliza a través de 6 unidades llamadas Activations, conectadas por la inteligencia de SENSE:
+La ejecución se canaliza a través de 6 unidades llamadas Activations, conectadas por la inteligencia de SENSE. Las empresas pueden activarlas con su propio equipo, con su agencia o con Hayas:
 
 ### Research Activation
 Inteligencia de mercado, consultoría estratégica, HAYAS Copilot y formación en IA aplicada.
