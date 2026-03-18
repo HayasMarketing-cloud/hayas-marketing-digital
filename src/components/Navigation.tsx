@@ -2,13 +2,13 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
-import { ChevronDown, ArrowRight, ArrowLeft, DollarSign, Brain, Eye, PenTool } from 'lucide-react';
+import { ChevronDown, ArrowRight, ArrowLeft, Search, TrendingUp, Eye, Globe, Zap, PenTool, DollarSign, Brain } from 'lucide-react';
 import { useLanguageNavigation } from '@/hooks/useLanguageNavigation';
 import { useTranslation } from '@/hooks/useTranslation';
 import { useLocalizedRoutes } from '@/hooks/useLocalizedRoutes';
 
-import { servicesByPillar, pillarMeta } from '@/data/services';
-import type { PillarKey } from '@/data/services';
+import { servicesByActivation, activationMeta } from '@/data/services';
+import { ACTIVATION_ORDER, ACTIVATIONS, type ActivationKey } from '@/data/senseSystemMapping';
 
 const Navigation = () => {
   const { language, isEnglish, toggleLanguage } = useLanguageNavigation();
