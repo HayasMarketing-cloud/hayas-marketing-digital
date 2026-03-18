@@ -1,23 +1,16 @@
 import React from 'react';
-import { BrainCircuit, Radar, Search, Target, ArrowRight, AlertTriangle } from 'lucide-react';
+import { BrainCircuit, Radar, Search, Target, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from '@/hooks/useTranslation';
 import { useLanguageNavigation } from '@/hooks/useLanguageNavigation';
 import { Button } from '@/components/ui/button';
 
-const moduleIcons = {
-  brain: BrainCircuit,
-  radar: Radar,
-  search: Search,
-  strategy: Target,
-};
-
-const moduleColors = {
-  brain: { border: 'border-primary/30', icon: 'text-primary', bg: 'bg-primary/5' },
-  radar: { border: 'border-impulsa/30', icon: 'text-impulsa', bg: 'bg-impulsa/5' },
-  search: { border: 'border-conecta/30', icon: 'text-conecta', bg: 'bg-conecta/5' },
-  strategy: { border: 'border-activa/30', icon: 'text-activa', bg: 'bg-activa/5' },
-};
+const modules = [
+  { key: 'brain', icon: BrainCircuit, accent: 'text-primary', bg: 'bg-primary/5' },
+  { key: 'radar', icon: Radar, accent: 'text-impulsa', bg: 'bg-impulsa/5' },
+  { key: 'search', icon: Search, accent: 'text-conecta', bg: 'bg-conecta/5' },
+  { key: 'strategy', icon: Target, accent: 'text-activa', bg: 'bg-activa/5' },
+] as const;
 
 const MarketingChangedSection = () => {
   const { t } = useTranslation();
@@ -27,102 +20,51 @@ const MarketingChangedSection = () => {
     ? '/en/solutions/marketing-intelligence-platform'
     : '/es/soluciones/plataforma-inteligencia-marketing';
 
-  const moduleKeys = ['brain', 'radar', 'search', 'strategy'] as const;
-
   return (
-    <section className="section-normal py-16 md:py-20 bg-background">
+    <section className="py-24 md:py-32 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-
-        {/* ── BLOQUE 1: Cambio de paradigma ── */}
-        <div className="text-center mb-16 md:mb-20">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold font-dm-sans text-foreground leading-tight text-balance mb-6">
-            {t('marketingChanged.paradigmTitle')}
-          </h2>
-          <p className="text-xl md:text-2xl text-foreground/80 mb-8 max-w-3xl mx-auto text-pretty">
-            {t('marketingChanged.paradigmIntro')}
-          </p>
-
-          <div className="flex flex-wrap justify-center gap-4 mb-8">
-            {(t('marketingChanged.paradigmPoints') as unknown as string[]).map((point, i) => (
-              <div
-                key={i}
-                className="flex items-center gap-2 px-5 py-3 rounded-xl border border-destructive/20 bg-destructive/5"
-              >
-                <AlertTriangle className="h-4 w-4 text-destructive flex-shrink-0" />
-                <span className="text-sm font-medium text-foreground">{point}</span>
-              </div>
-            ))}
-          </div>
-
-          <p className="text-lg font-semibold text-foreground/70">
-            {t('marketingChanged.paradigmConclusion')}
-          </p>
-        </div>
-
-        {/* ── BLOQUE 2: Reposicionamiento ── */}
-        <div className="mb-16 md:mb-20">
-          <div className="p-8 md:p-12 rounded-2xl border border-primary/20 bg-primary/5 text-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-6">
-              <BrainCircuit className="h-8 w-8 text-primary" strokeWidth={1.5} />
-            </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold font-dm-sans text-foreground mb-4 text-balance">
+        {/* Two-column: SENSE intro */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start mb-24 md:mb-32">
+          <div>
+            <span className="text-xs font-semibold uppercase tracking-widest text-foreground/40 mb-4 block">
+              {isEnglish ? 'The system' : 'El sistema'}
+            </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-dm-sans text-foreground leading-tight mb-6">
               {t('marketingChanged.repoTitle')}
               <span className="text-gradient-primary">{t('marketingChanged.repoHighlight')}</span>
             </h2>
-            <p className="text-elegant-muted text-lg md:text-xl mb-8 max-w-3xl mx-auto text-pretty">
+            <p className="text-lg text-foreground/60 leading-relaxed mb-8">
               {t('marketingChanged.repoDescription')}
             </p>
-            <Button variant="default" size="lg" asChild className="group">
+            <Button variant="outline" size="lg" asChild className="group">
               <Link to={senseLink}>
                 {t('marketingChanged.repoCta')}
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
           </div>
-        </div>
 
-        {/* ── BLOQUE 3: Los 5 módulos SENSE ── */}
-        <div>
-          <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold font-dm-sans text-foreground mb-4">
-              {t('marketingChanged.modulesTitle')}
-            </h2>
-            <p className="text-lg md:text-xl text-foreground/70 max-w-3xl mx-auto">
-              {t('marketingChanged.modulesSubtitle')}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {moduleKeys.map((key, index) => {
-              const Icon = moduleIcons[key];
-              const colors = moduleColors[key];
+          {/* SENSE modules grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {modules.map(({ key, icon: Icon, accent, bg }) => {
               const mod = t(`marketingChanged.modules.${key}`) as unknown as {
                 name: string;
                 title: string;
                 description: string;
               };
-
               return (
                 <div
                   key={key}
-                  className={`
-                    relative p-6 rounded-xl bg-card border-2 ${colors.border}
-                    transition-all duration-300 ease-out
-                    hover:shadow-lg hover:${colors.bg}
-                    animate-fade-in
-                  `}
-                  style={{ animationDelay: `${index * 80}ms` }}
+                  className={`p-6 rounded-2xl ${bg} border border-border/30 hover:border-border transition-all duration-300`}
                 >
-                  <div className={`mb-3 ${colors.icon}`}>
-                    <Icon size={28} strokeWidth={1.5} />
-                  </div>
-                  <p className={`text-xs font-bold tracking-widest uppercase mb-1 ${colors.icon}`}>
+                  <Icon className={`h-6 w-6 ${accent} mb-4`} strokeWidth={1.5} />
+                  <p className={`text-[10px] font-bold tracking-widest uppercase mb-1.5 ${accent}`}>
                     {mod.name}
                   </p>
-                  <h3 className="text-base font-semibold font-dm-sans text-foreground mb-2">
+                  <h3 className="text-sm font-semibold font-dm-sans text-foreground mb-2">
                     {mod.title}
                   </h3>
-                  <p className="text-elegant-muted text-sm leading-relaxed">
+                  <p className="text-xs text-foreground/50 leading-relaxed">
                     {mod.description}
                   </p>
                 </div>
@@ -130,7 +72,6 @@ const MarketingChangedSection = () => {
             })}
           </div>
         </div>
-
       </div>
     </section>
   );
