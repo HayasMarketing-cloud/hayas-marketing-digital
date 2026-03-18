@@ -39,8 +39,8 @@ const Footer: React.FC = () => {
             </h3>
             <p className="text-sm leading-relaxed max-w-sm text-background/50">
               {language === 'es' 
-                ? 'Sistema de marketing que conecta inteligencia de mercado con ejecución estratégica.' 
-                : 'Marketing system connecting market intelligence with strategic execution.'}
+                ? 'Sistema de marketing diseñado para entender el mercado, tomar mejores decisiones y activar el crecimiento con criterio.' 
+                : 'Marketing system designed to understand the market, make better decisions, and drive growth with purpose.'}
             </p>
             
             {/* Contact info */}
