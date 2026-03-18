@@ -71,12 +71,12 @@ const BlogEmailMarketingHubSpot = () => {
     {
       title: "Email Marketing y Automatizaciones",
       description: "Configuramos y optimizamos tus campañas de email marketing con total cumplimiento normativo.",
-      link: "/email-marketing-automatizaciones"
+      link: "/es/servicios/email-marketing-automatizaciones"
     },
     {
       title: "Implementación de CRM",
       description: "Implementamos HubSpot y otros CRMs con configuración completa de email marketing.",
-      link: "/servicios/implantacion-crm"
+      link: "/es/servicios/implantacion-crm"
     }
   ];
 

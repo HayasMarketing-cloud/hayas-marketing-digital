@@ -89,7 +89,7 @@ const BlogCheckoutIAEcommerce = () => {
     {
       title: "Consultoría Estratégica Digital",
       description: "Analizamos tu infraestructura digital y te preparamos para los nuevos canales de venta con IA.",
-      link: "/es/soluciones/activa-tus-ventas"
+      link: "/es/activaciones/research"
     }
   ];
 

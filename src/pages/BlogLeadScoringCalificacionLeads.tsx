@@ -82,12 +82,12 @@ const BlogLeadScoringCalificacionLeads = () => {
     {
       title: "Implantación de CRM",
       description: "Configuramos tu sistema CRM con lead scoring automatizado para optimizar tu proceso comercial",
-      link: "/servicios/implantacion-crm"
+      link: "/es/servicios/implantacion-crm"
     },
     {
       title: "Automatización de Procesos de Ventas",
       description: "Automatizamos tu embudo de ventas con workflows personalizados y nurturing de leads",
-      link: "/automatizacion-procesos-ventas"
+      link: "/es/servicios/automatizacion-procesos-ventas"
     }
   ];
 

@@ -71,12 +71,12 @@ const BlogPerfilClienteIdeal = () => {
     {
       title: "Estrategia de Marketing Digital",
       description: "Desarrollamos estrategias personalizadas basadas en tus buyer personas para maximizar el ROI de tus campañas.",
-      link: "/estrategia-contenidos"
+      link: "/es/servicios/estrategia-contenidos"
     },
     {
       title: "Implementación de CRM",
       description: "Configuramos tu CRM para segmentar automáticamente según tus buyer personas y optimizar el proceso comercial.",
-      link: "/servicios/implantacion-crm"
+      link: "/es/servicios/implantacion-crm"
     }
   ];
 

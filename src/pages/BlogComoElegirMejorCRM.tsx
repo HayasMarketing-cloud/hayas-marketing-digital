@@ -70,12 +70,12 @@ const BlogComoElegirMejorCRM = () => {
     {
       title: "Implantación de CRM",
       description: "Implementamos y configuramos el CRM ideal para tu empresa con automatizaciones personalizadas.",
-      link: "/servicios/implantacion-crm"
+      link: "/es/servicios/implantacion-crm"
     },
     {
       title: "Consultoría Estratégica",
       description: "Te ayudamos a definir tu estrategia de gestión de clientes y procesos de marketing y ventas.",
-      link: "/consultoria-estrategica-analitica"
+      link: "/es/servicios/consultoria-estrategica-analitica"
     }
   ];
 

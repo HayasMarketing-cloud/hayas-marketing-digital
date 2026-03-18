@@ -83,12 +83,12 @@ const BlogFunnelConversionB2B = () => {
     {
       title: "Implementación de CRM",
       description: "Configuramos HubSpot o GoHighLevel para automatizar tu funnel de conversión y gestionar leads eficientemente.",
-      link: "/servicios/implantacion-crm"
+      link: "/es/servicios/implantacion-crm"
     },
     {
       title: "Automatización de Procesos",
       description: "Diseñamos workflows personalizados para nutrir leads y aumentar las conversiones de tu embudo B2B.",
-      link: "/automatizacion-procesos-ventas"
+      link: "/es/servicios/automatizacion-procesos-ventas"
     }
   ];
 

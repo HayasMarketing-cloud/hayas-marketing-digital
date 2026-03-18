@@ -57,12 +57,12 @@ const BlogABMAccountBasedMarketing = () => {
     {
       title: "Implantación de CRM",
       description: "Configuramos tu CRM con funcionalidades ABM avanzadas para identificar y gestionar cuentas objetivo de alto valor.",
-      link: "/servicios/implantacion-crm"
+      link: "/es/servicios/implantacion-crm"
     },
     {
       title: "Automatización de Procesos",
       description: "Diseñamos workflows personalizados para automatizar la captación y seguimiento de grandes cuentas B2B.",
-      link: "/servicios/automatizacion-procesos-ventas"
+      link: "/es/servicios/automatizacion-procesos-ventas"
     }
   ];
 
