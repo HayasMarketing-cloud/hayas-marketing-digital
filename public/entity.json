@@ -6,8 +6,8 @@
   "alternateName": ["Hayas", "Hayas Marketing Digital"],
   "url": "https://hayasmarketing.com",
   "logo": "https://hayasmarketing.com/lovable-uploads/hayas-marketing-logo.png",
-  "description": "Agencia de marketing digital especializada en SEO, AEO, GEO, branding, CRM e inteligencia artificial aplicada al marketing y ventas.",
-  "slogan": "Impulsado por IA, gobernado por personas",
+  "description": "Creadores de SENSE, un Marketing Operating System que conecta identidad, mercado, demanda, estrategia y ejecución en un flujo continuo de inteligencia. 4 módulos de inteligencia (Brain, Radar, Search, Strategy), framework LOOP y 6 Activaciones de ejecución.",
+  "slogan": "No necesitas más marketing. Necesitas mejores decisiones.",
   "foundingDate": "2014",
   "founder": {
     "@type": "Person",
@@ -40,8 +40,8 @@
   ],
   "availableChannel": {
     "@type": "ServiceChannel",
-    "name": "SofÍA - AI Assistant",
-    "description": "Chatbot inteligente con IA disponible 24/7 para atención al cliente y captación de leads",
+    "name": "HAYAS Copilot - AI Assistant",
+    "description": "Asistente IA inteligente disponible 24/7 para atención al cliente, cualificación de leads y orientación sobre servicios",
     "serviceUrl": "https://hayasmarketing.com/es/contacto",
     "availableLanguage": ["Spanish", "English"]
   },
@@ -166,6 +166,11 @@
       "@type": "Thing",
       "name": "HubSpot",
       "sameAs": "https://www.wikidata.org/wiki/Q5929009"
+    },
+    {
+      "@type": "Thing",
+      "name": "Marketing Operating System",
+      "description": "Integrated system connecting market intelligence, strategy and execution"
     }
   ],
   "makesOffer": [
@@ -173,111 +178,75 @@
       "@type": "Offer",
       "itemOffered": {
         "@type": "Service",
-        "name": "SEO, AEO & GEO Positioning",
-        "description": "Search engine optimization extended to answer engines and generative AI platforms",
-        "url": "https://hayasmarketing.com/es/servicios/posicionamiento-web-seo"
+        "name": "SENSE — Marketing Operating System",
+        "description": "Marketing Operating System with 4 intelligence modules (Brain, Radar, Search, Strategy) and the LOOP framework for data-driven marketing decisions",
+        "url": "https://hayasmarketing.com/es/soluciones/plataforma-inteligencia-marketing"
       }
     },
     {
       "@type": "Offer",
       "itemOffered": {
         "@type": "Service",
-        "name": "Branding & Brand Identity",
-        "description": "Brand creation, naming, visual identity and corporate guidelines",
-        "url": "https://hayasmarketing.com/es/servicios/creacion-marca"
+        "name": "Research Activation",
+        "description": "Market intelligence, strategic consulting, applied AI and HAYAS Copilot AI assistant",
+        "url": "https://hayasmarketing.com/es/activaciones/research"
       }
     },
     {
       "@type": "Offer",
       "itemOffered": {
         "@type": "Service",
-        "name": "Web Design & Development",
-        "description": "Custom website design and development optimized for conversion",
-        "url": "https://hayasmarketing.com/es/servicios/diseno-y-desarrollo-paginas-web"
+        "name": "Growth Activation",
+        "description": "Inbound marketing, lead generation, direct marketing and funnel implementation",
+        "url": "https://hayasmarketing.com/es/activaciones/growth"
       }
     },
     {
       "@type": "Offer",
       "itemOffered": {
         "@type": "Service",
-        "name": "CRM & Marketing Automation",
-        "description": "HubSpot and GoHighLevel CRM implementation with marketing automation workflows",
-        "url": "https://hayasmarketing.com/es/servicios/crm-y-automatizacion-de-marketing"
+        "name": "Visibility Activation",
+        "description": "SEO positioning, Google Ads, social media advertising and community management",
+        "url": "https://hayasmarketing.com/es/activaciones/visibility"
       }
     },
     {
       "@type": "Offer",
       "itemOffered": {
         "@type": "Service",
-        "name": "AI Assistant Development",
-        "description": "Custom AI chatbots and virtual assistants for customer service and lead capture",
-        "url": "https://hayasmarketing.com/es/servicios/asistente-ia-chatbot-inteligente"
+        "name": "Web & Funnel Activation",
+        "description": "Professional web design, Shopify e-commerce, conversion funnels and web hosting",
+        "url": "https://hayasmarketing.com/es/activaciones/web-funnel"
       }
     },
     {
       "@type": "Offer",
       "itemOffered": {
         "@type": "Service",
-        "name": "Content Strategy",
-        "description": "Strategic content creation aligned with SEO, AEO and GEO objectives",
-        "url": "https://hayasmarketing.com/es/servicios/estrategia-de-contenidos"
+        "name": "CRM & Automation Activation",
+        "description": "HubSpot and Go High Level CRM implementation, sales automation, email marketing workflows",
+        "url": "https://hayasmarketing.com/es/activaciones/crm-automation"
       }
     },
     {
       "@type": "Offer",
       "itemOffered": {
         "@type": "Service",
-        "name": "Email Marketing & Automation",
-        "description": "Email campaigns, automated workflows, segmentation and A/B testing",
-        "url": "https://hayasmarketing.com/es/servicios/email-marketing-automatizaciones"
-      }
-    },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Google Ads Advertising",
-        "description": "Search, display, shopping and Performance Max campaigns with continuous ROI optimization",
-        "url": "https://hayasmarketing.com/es/servicios/publicidad-google-ads"
-      }
-    },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Social Media Advertising",
-        "description": "Facebook, Instagram, LinkedIn and TikTok advertising campaigns with advanced targeting",
-        "url": "https://hayasmarketing.com/es/servicios/publicidad-redes-sociales"
-      }
-    },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Online Store / E-commerce",
-        "description": "Shopify e-commerce development with payment integration and conversion optimization",
-        "url": "https://hayasmarketing.com/es/servicios/tienda-online-ecommerce"
-      }
-    },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Social Media Management",
-        "description": "Social media strategy, community management, content creation and analytics",
-        "url": "https://hayasmarketing.com/es/servicios/gestion-redes-sociales"
+        "name": "Content & Brand Activation",
+        "description": "Brand creation, content strategy and multilingual content localization",
+        "url": "https://hayasmarketing.com/es/activaciones/content-brand"
       }
     }
   ],
   "methodology": {
     "@type": "HowTo",
     "name": "SENSE — Marketing Operating System",
-    "description": "Marketing intelligence platform with 6 connected modules and the LOOP framework (Listen, Observe, Orient, Plan) that transforms market signals into strategic action.",
+    "description": "Marketing intelligence platform with 4 core modules and the LOOP framework (Listen, Observe, Orient, Plan) that transforms market signals into strategic action.",
     "step": [
       {"@type": "HowToStep", "name": "Listen", "text": "Monitor market signals and competitive intelligence through RADAR module"},
       {"@type": "HowToStep", "name": "Observe", "text": "Detect patterns, opportunities and threats using SEARCH visibility and AI perception audits"},
       {"@type": "HowToStep", "name": "Orient", "text": "Define market drivers and strategic directives via STRATEGY coherence scoring"},
-      {"@type": "HowToStep", "name": "Plan", "text": "Generate aligned activations through PLANS with full traceability from signal to deliverable"}
+      {"@type": "HowToStep", "name": "Plan", "text": "Generate aligned activations with full traceability from signal to deliverable"}
     ]
   },
   "hasPart": [
@@ -300,16 +269,6 @@
       "@type": "SoftwareApplication",
       "name": "STRATEGY — Strategic Direction",
       "description": "Market drivers, strategic directives and coherence scoring between execution and identity"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "name": "PLANS — Execution & Activation",
-      "description": "Intelligence-driven marketing plans with typed activations, Content Studio and full strategic traceability"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "name": "WORKSPACE — Operations Center",
-      "description": "Source management, strategic documentation, team configuration and integrations backoffice"
     }
   ],
   "subjectOf": [
@@ -339,6 +298,6 @@
     "@type": "Brand",
     "name": "Hayas Marketing",
     "logo": "https://hayasmarketing.com/lovable-uploads/hayas-marketing-logo.png",
-    "slogan": "Impulsado por IA, gobernado por personas"
+    "slogan": "No necesitas más marketing. Necesitas mejores decisiones."
   }
 }

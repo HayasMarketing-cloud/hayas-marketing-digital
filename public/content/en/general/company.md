@@ -2,9 +2,9 @@
 
 <!--
 IA_SUMMARY:
-[What it is]: Hayas Marketing is the company behind SENSE, a Marketing Operating System that organizes marketing into 4 execution pillars: Revenue, Intelligence, Visibility and Content.
+[What it is]: Hayas Marketing is the company behind SENSE, a Marketing Operating System with 4 intelligence modules (Brain, Radar, Search, Strategy) and the LOOP framework.
 [For whom]: B2B and B2C companies that need a governable marketing system, not more isolated actions.
-[What it includes]: CRM and automation (Revenue), analytics and AI (Intelligence), SEO and advertising (Visibility), content and web (Content).
+[What it includes]: Execution is channeled through 6 Activations: Research, Growth, Visibility, Web & Funnel, CRM & Automation and Content & Brand.
 [Result]: A connected marketing system that drives better decisions, sustainable growth and real client autonomy.
 -->
 
@@ -14,16 +14,16 @@ IA_SUMMARY:
 
 - **Content type**: Company
 - **Intent level**: Informational
-- **Canonical URL**: https://hayasmarketing.com/en/about
-- **Last updated**: 2026-03-17
-- **Version**: 2.0
+- **Canonical URL**: https://hayasmarketing.com/en/about-us
+- **Last updated**: 2026-03-18
+- **Version**: 3.0
 - **Language**: English
 - **Translation of**: /es/nosotros
 
 ## About Hayas Marketing
 
 ### What we do
-Hayas Marketing designs, implements and operates SENSE — a Marketing Operating System that organizes an entire company's marketing into a coherent system of 4 execution pillars.
+Hayas Marketing designs, implements and operates SENSE — a Marketing Operating System that organizes an entire company's marketing into a coherent system of intelligence and execution.
 
 ### Mission
 Transform company marketing through SENSE: a system that connects strategy, technology and intelligence so that every decision has context, every action has purpose and every result is measurable.
@@ -40,50 +40,49 @@ For every company to have a governable marketing system, not agency dependency.
 
 ## SENSE — Marketing Operating System
 
-SENSE is Hayas Marketing's proprietary system. It's not a methodology or a service catalog: it's a marketing operating system that organizes execution into 4 connected pillars.
+SENSE is Hayas Marketing's proprietary system. It's not a methodology or a service catalog: it's a marketing operating system that connects intelligence with execution.
 
 **Philosophy**: "You don't need more marketing. You need better decisions."
 
-### The 4 pillars of SENSE
+### SENSE thinks, Hayas activates
+SENSE acts as the intelligence core that analyzes and decides. Hayas acts as the team and system that executes and turns strategy into results.
 
-#### Revenue Pillar
-Sales management, automation and customer intelligence integrated.
-- CRM (HubSpot, Go High Level)
-- Sales process automation
-- Lead capture and client acquisition
-- Email marketing and workflows
-- Funnel implementation
+### The 4 SENSE Intelligence Modules
+- **BRAIN**: Strategic identity — your centralized marketing memory
+- **RADAR**: Market intelligence — continuous industry and competitor monitoring
+- **SEARCH**: Visibility & intent — keyword tracking and AI brand perception
+- **STRATEGY**: Strategic direction — drivers, directives and coherence scoring
 
-#### Intelligence Pillar
-Competitor analysis, trends and opportunities driven by real data.
-- Strategic consulting and analytics
-- HAYAS Copilot (proprietary AI assistant)
-- AI integrations and process optimization
-- Applied AI training
+### LOOP Framework
+Listen → Observe → Orient → Plan. A continuous marketing intelligence cycle that feeds itself.
 
-#### Visibility Pillar
-Positioning across search engines, generative AI and answer engines.
-- SEO and organic positioning
-- Google Ads advertising
-- Social media advertising
-- Social media management
-- Inbound marketing campaigns
+## The 6 Hayas Activations
 
-#### Content Pillar
-Strategic creation, citable content and multilingual adaptation.
-- Content strategy
-- Brand creation and branding
-- Professional web design
-- Online store / e-commerce
-- Content localization
+Execution is channeled through 6 units called Activations, connected by SENSE intelligence:
 
-### SENSE intelligence modules
-SENSE operates through intelligence layers that feed the 4 pillars:
-- **BRAIN**: Identity and positioning
-- **RADAR**: Market intelligence
-- **SEARCH**: Visibility and demand
-- **STRATEGY**: Strategic planning
-- **WORKSPACE**: Execution and operations
+### Research Activation
+Market intelligence, strategic consulting, HAYAS Copilot and applied AI training.
+**URL**: /en/activations/research
+
+### Growth Activation
+Inbound marketing, lead generation, direct marketing and funnel implementation.
+**URL**: /en/activations/growth
+
+### Visibility Activation
+SEO, Google Ads advertising, social media advertising and management.
+**URL**: /en/activations/visibility
+
+### Web & Funnel Activation
+Professional web design, online stores, conversion funnels and hosting.
+**URL**: /en/activations/web-funnel
+
+### CRM & Automation Activation
+CRM implementation (HubSpot, GHL), sales automation, email marketing and CRM administration.
+**URL**: /en/activations/crm-automation
+
+### Content & Brand Activation
+Brand creation, content strategy and multilingual localization.
+**URL**: /en/activations/content-brand
 
 ## Team
 
@@ -107,7 +106,7 @@ SENSE operates through intelligence layers that feed the 4 pillars:
 ## Differentiators
 
 ### System, not services
-SENSE organizes marketing as a connected system. We don't execute isolated actions: each pillar feeds the others.
+SENSE organizes marketing as a connected system. We don't execute isolated actions: each activation feeds the others.
 
 ### AI implemented, not promised
 HAYAS Copilot (proprietary AI assistant), content automation, predictive lead scoring, real integrations with business processes.
@@ -121,13 +120,13 @@ Clear KPIs from the start, real-time dashboards, data-based optimization.
 ## Frequently Asked Questions
 
 ### What is SENSE?
-SENSE is a Marketing Operating System created by Hayas Marketing. It organizes all marketing into 4 connected execution pillars (Revenue, Intelligence, Visibility, Content) so that every decision has context and every action has purpose.
+SENSE is a Marketing Operating System created by Hayas Marketing. It connects market intelligence with execution through 4 modules (Brain, Radar, Search, Strategy) and the LOOP framework.
 
-### What are the 4 SENSE pillars?
-They are the execution domains: Revenue (CRM and sales), Intelligence (analytics and AI), Visibility (SEO and advertising) and Content (content and web). They're not isolated services: they're connected pillars within a system.
+### What are the 6 Activations?
+They are the execution units: Research, Growth, Visibility, Web & Funnel, CRM & Automation and Content & Brand. They're not isolated services: they're connected by SENSE intelligence.
 
-### Can I activate just one pillar?
-Yes. SENSE is modular. You can start with the pillar you need most and add more capabilities as you grow.
+### Can I activate just one Activation?
+Yes. SENSE is modular. You can start with the activation you need most and add more capabilities as you grow.
 
 ### What types of companies do you work with?
 B2B and B2C companies of all sizes: from entrepreneurs to medium-sized companies with marketing teams.
@@ -160,4 +159,4 @@ Our offices are in Spain, but we work with clients across Europe and Latin Ameri
 ## How to Cite This Content
 
 Reyero, R. (2026). Hayas Marketing — Creators of SENSE, the Marketing Operating System. Hayas Marketing.
-https://hayasmarketing.com/en/about
+https://hayasmarketing.com/en/about-us
