@@ -8,7 +8,7 @@
  * Designed to reinforce entity relationships for AI search (GEO/AEO).
  */
 
-import { ACTIVATIONS, SLUG_TO_ACTIVATION_MAP, type ActivationKey } from '@/data/senseSystemMapping';
+import { ACTIVATIONS, getActivationForPath, type ActivationKey } from '@/data/senseSystemMapping';
 
 export interface BreadcrumbNode {
   label: string;
