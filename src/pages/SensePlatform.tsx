@@ -438,15 +438,17 @@ const SensePlatform = () => {
         </section>
 
         {/* ═══ SECTION 5: For Whom ═══ */}
-        <section className="py-16 bg-muted/30">
+        <section className="py-14 md:py-20 bg-background">
           <div className="container mx-auto px-4 max-w-5xl">
             <h2 className="text-3xl md:text-4xl font-bold font-dm-sans text-foreground mb-4 text-center">
               {isEnglish ? 'Designed for those who make marketing decisions' : 'Diseñado para quien toma decisiones de marketing'}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
               {forWhom.map((item, idx) => (
-                <div key={idx} className="p-6 rounded-xl border border-border/50 bg-card">
-                  <item.icon className="h-7 w-7 text-impulsa mb-3" strokeWidth={1.5} />
+                <div key={idx} className="p-6 rounded-xl border border-border/50 bg-card hover:shadow-lg hover:border-impulsa/20 transition-all duration-300 hover:-translate-y-0.5">
+                  <div className="inline-flex items-center justify-center w-11 h-11 rounded-lg bg-impulsa/10 mb-3">
+                    <item.icon className="h-6 w-6 text-impulsa" strokeWidth={1.5} />
+                  </div>
                   <h3 className="text-lg font-semibold font-dm-sans text-foreground mb-2">{item.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
                 </div>
