@@ -163,7 +163,7 @@ const SensePlatform = () => {
     },
     {
       icon: Briefcase,
-      title: isEnglish ? 'Strategic Agencies' : 'Agencias Estratégicas',
+      title: isEnglish ? 'Marketing Agencies' : 'Agencias de Marketing',
       description: isEnglish
         ? 'Deliver a branded intelligence system to each client. Brain, Radar and Plans as service infrastructure — not shared spreadsheets.'
         : 'Entrega un sistema de inteligencia con tu marca a cada cliente. Brain, Radar y Plans como infraestructura de servicio — no como hojas de cálculo compartidas.',
