@@ -123,10 +123,10 @@ Clear KPIs from the start, real-time dashboards, data-based optimization.
 ## Frequently Asked Questions
 
 ### What is SENSE?
-SENSE is a Marketing Operating System created by Hayas Marketing. It connects market intelligence with execution through 4 modules (Brain, Radar, Search, Strategy) and the LOOP framework.
+SENSE is a marketing intelligence platform created by Hayas Marketing. It's implemented on a personalized basis for each company, connecting identity, market, demand and strategy with 4 modules (Brain, Radar, Search, Strategy) and the LOOP framework. Each company works with their team, their agency, or with Hayas.
 
 ### What are the 6 Activations?
-They are the execution units: Research, Growth, Visibility, Web & Funnel, CRM & Automation and Content & Brand. They're not isolated services: they're connected by SENSE intelligence.
+They are the execution units connected by SENSE intelligence: Research, Growth, Visibility, Web & Funnel, CRM & Automation and Content & Brand. Companies can activate them with their own team, their agency, or with Hayas as partner.
 
 ### Can I activate just one Activation?
 Yes. SENSE is modular. You can start with the activation you need most and add more capabilities as you grow.

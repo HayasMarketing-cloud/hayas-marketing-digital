@@ -51,7 +51,7 @@ Listen → Observe → Orient → Plan. Un ciclo continuo de inteligencia de mar
 
 ## Las 6 Activaciones
 
-La ejecución se canaliza a través de 6 unidades conectadas por la inteligencia de SENSE:
+La ejecución se canaliza a través de 6 unidades conectadas por la inteligencia de SENSE. Las empresas pueden activarlas con su propio equipo, con su agencia o con Hayas:
 - **Research**: Inteligencia, consultoría e IA
 - **Growth**: Inbound, captación y estrategia digital
 - **Visibility**: SEO, Ads y Social Media
