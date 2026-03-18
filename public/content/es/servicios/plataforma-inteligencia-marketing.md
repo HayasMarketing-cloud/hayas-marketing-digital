@@ -1,15 +1,15 @@
 <!--
-IA_SUMMARY: SENSE es el Marketing Operating System de Hayas Marketing. 6 módulos de inteligencia (Brain, Radar, Search, Strategy, Plans, Workspace) que conectan señales de mercado con decisiones estratégicas y ejecución táctica. Impulsado por IA multi-modelo, gobernado por estrategia. Diseñado para CMOs, equipos de marketing, agencias estratégicas y empresas B2B en expansión.
+IA_SUMMARY: SENSE es el Marketing Operating System de Hayas Marketing. 4 módulos de inteligencia (Brain, Radar, Search, Strategy) que conectan señales de mercado con decisiones estratégicas, gobernados por el framework LOOP (Listen, Observe, Orient, Plan). La ejecución se canaliza a través de las 6 Activaciones de Hayas. Diseñado para CMOs, equipos de marketing, agencias estratégicas y empresas B2B en expansión.
 -->
 
 ---
 title: "SENSE - Marketing Operating System"
-description: "Marketing Operating System que conecta señales de mercado con decisiones estratégicas y ejecución táctica. 6 módulos de inteligencia: Brain, Radar, Search, Strategy, Plans y Workspace. Impulsado por IA, gobernado por estrategia."
+description: "Marketing Operating System que conecta señales de mercado con decisiones estratégicas y ejecución táctica. 4 módulos de inteligencia: Brain, Radar, Search y Strategy. Framework LOOP. Impulsado por IA, gobernado por estrategia."
 keywords: ["marketing operating system", "SENSE", "inteligencia de marketing", "market intelligence", "AI marketing system", "marketing strategy platform"]
 intent: "commercial"
 author: "Rubén Reyero"
 author_credentials: "CEO de Hayas Marketing | 15+ años en marketing digital B2B"
-date: "2026-03-17"
+date: "2026-03-18"
 canonical: "/es/soluciones/plataforma-inteligencia-marketing"
 ---
 
@@ -21,7 +21,11 @@ Un sistema operativo de marketing, no otra herramienta más. SENSE es un sistema
 
 **De la señal a la acción, sin perder el contexto estratégico.**
 
-## Los 6 módulos de SENSE
+## SENSE piensa, Hayas activa
+
+SENSE actúa como el núcleo de inteligencia que analiza y decide. Hayas actúa como el equipo y sistema que ejecuta y convierte la estrategia en resultados a través de las 6 Activaciones.
+
+## Los 4 módulos de inteligencia de SENSE
 
 Cada módulo alimenta al siguiente. No son herramientas aisladas — son capas de un sistema que piensa como un estratega.
 
@@ -35,13 +39,25 @@ Monitorización continua de tu industria y competidores. Señales priorizadas, i
 Seguimiento de keywords en Google, Bing y motores de IA. Auditorías de percepción de marca en LLMs y análisis de Content Gaps.
 
 ### 04 · STRATEGY — Dirección Estratégica
-Drivers de mercado, directivas estratégicas y scoring de coherencia automático.
+Drivers de mercado, directivas estratégicas y scoring de coherencia automático entre ejecución e identidad.
 
-### 05 · PLANS — Ejecución y Activación
-Planes de marketing desde inteligencia real. Content Studio con generación contextualizada y trazabilidad completa.
+## Framework LOOP
 
-### 06 · WORKSPACE — Centro de Operaciones
-Gestión de fuentes, documentación estratégica, configuración de equipo e integraciones.
+Listen → Observe → Orient → Plan. Un ciclo continuo de inteligencia de marketing que se retroalimenta:
+1. **Listen**: Monitorizar señales de mercado e inteligencia competitiva (RADAR)
+2. **Observe**: Detectar patrones, oportunidades y amenazas (SEARCH)
+3. **Orient**: Definir drivers y directivas estratégicas (STRATEGY)
+4. **Plan**: Generar activaciones alineadas con trazabilidad completa
+
+## Las 6 Activaciones
+
+La ejecución se canaliza a través de 6 unidades conectadas por la inteligencia de SENSE:
+- **Research**: Inteligencia, consultoría e IA
+- **Growth**: Inbound, captación y estrategia digital
+- **Visibility**: SEO, Ads y Social Media
+- **Web & Funnel**: Diseño web, tiendas y funnels
+- **CRM & Automation**: CRM y automatización de ventas
+- **Content & Brand**: Branding, contenido y localización
 
 ## IA que entiende tu negocio
 
@@ -57,10 +73,6 @@ Google Search Console, HubSpot, Perplexity AI, Gemini / ChatGPT, Firecrawl, Slac
 - **Equipos de Marketing (5-25 personas)**: centraliza inteligencia, contenido y planes
 - **Agencias Estratégicas**: entrega sistemas de inteligencia con tu marca a cada cliente
 - **Empresas B2B en expansión**: conecta señales de mercado con tu pipeline
-
-## Framework LOOP
-
-Listen → Observe → Orient → Plan. Un ciclo continuo de inteligencia de marketing que se retroalimenta.
 
 ## Preguntas frecuentes
 

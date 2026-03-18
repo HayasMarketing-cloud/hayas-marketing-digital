@@ -1,6 +1,6 @@
-# Hayas Marketing - LLM Context File (English)
+# Hayas Marketing — Creators of SENSE, the Marketing Operating System
 
-> Digital Marketing Agency specializing in AI, CRM and Marketing Automation since 2014
+> Hayas Marketing is the company behind SENSE, a Marketing Operating System that connects identity, market, demand, strategy and execution into a continuous flow of intelligence. We don't sell isolated services: we build decision systems.
 
 ---
 
@@ -8,28 +8,35 @@
 
 - **Company**: Hayas Marketing
 - **Website**: https://hayasmarketing.com
-- **Type**: Digital Marketing and CRM Agency
+- **Type**: Creators of SENSE, Marketing Operating System
 - **Founded**: 2014
 - **Team**: 8 specialized professionals
-- **Location**: Spain
+- **Location**: Madrid, Spain
 - **Languages**: Spanish, English
-- **Last Updated**: 2026-02-27
+- **Last Updated**: 2026-03-18
 
 ---
 
 ## About Hayas Marketing
 
-Hayas Marketing is a digital marketing agency founded in 2014, specializing in comprehensive solutions that combine strategy, technology and autonomy for B2B and B2C companies.
+Hayas Marketing designs, implements and operates SENSE — a Marketing Operating System that organizes an entire company's marketing into a coherent system. It's not a service agency: it's an intelligence and activation system.
 
 ### Mission
-Transform companies' digital marketing through strategic solutions powered by AI, CRM automation and proven methodologies that generate measurable and sustainable results.
+Transform company marketing through SENSE: a system that connects strategy, technology and intelligence so that every decision has context, every action has purpose and every result is measurable.
+
+### Vision
+For every company to have a governable marketing system, not agency dependency.
 
 ### Values
-- **Strategy first**: Solutions based on real objectives, not generic services
-- **Technology as enabler**: AI and automation as cross-cutting tools
-- **Client autonomy**: Training and empowerment to manage their own tools
+- **System before service**: Marketing works when it's connected, not when executed in parts
+- **Decisions before actions**: First understand what to do and why, then execute
+- **Client autonomy**: Training and empowerment, not dependency
 - **Measurable results**: Data-driven approach with clear KPIs
-- **Continuous support**: Ongoing strategic consulting and support
+- **AI as a tool, not a promise**: Real implementation, not buzzwords
+
+### Founder
+**Rubén Reyero** — CEO & Founder
+15+ years of experience in digital marketing, creator of SENSE and specialist in Decision Marketing.
 
 ### Certifications and Partners
 - **HubSpot Partner** - CRM implementation and optimization
@@ -41,164 +48,105 @@ Transform companies' digital marketing through strategic solutions powered by AI
 
 ---
 
-## Core Services
+## SENSE — Marketing Operating System
 
-Hayas Marketing organizes its services into 3 strategic pillars covering the entire customer journey:
+SENSE is Hayas Marketing's proprietary system. It's not a methodology or a service catalog: it's a marketing operating system that connects intelligence with execution.
 
-### 🟣 BOOST YOUR BRAND
-**Objective**: Create visibility, positioning and solid digital presence
+**Philosophy**: "You don't need more marketing. You need better decisions."
 
-- **Brand Creation and Identity** - /en/services/brand-creation
-- **Professional Web Design** - /en/services/web-design
-- **SEO Positioning** - /en/services/seo-positioning
-- **Online Store / E-commerce** - /en/services/online-store
-- **Social Media Management** - /en/services/social-media-management
-- **Content Strategy** - /en/services/content-strategy
-- **Content Localization** - /en/services/content-localization
+### How it works: SENSE thinks, Hayas activates
 
-### 🔵 CONNECT WITH YOUR CUSTOMERS
-**Objective**: Manage, automate and optimize customer relationships through CRM
+SENSE acts as the intelligence core that analyzes and decides. Hayas acts as the team and system that executes and turns strategy into results.
 
-- **CRM Implementation** - /en/services/crm-implementation
-- **Email Marketing and Automation** - /en/services/email-marketing-automation
-- **Funnel Implementation** - /en/services/funnel-implementation
-- **Direct Marketing** - /en/services/direct-marketing
-- **Inbound Marketing Campaigns** - /en/services/inbound-marketing-campaigns
-- **Lead Generation** - /en/services/lead-generation-clients
-- **Sales Process Automation** - /en/services/sales-process-automation
-- **CRM Administration** - /en/services/crm-administration
+### The 4 SENSE Intelligence Modules
 
-### 🔬 ACTIVATE YOUR SALES
-**Objective**: Generate qualified traffic, conversions and measurable results
+#### BRAIN — Strategic Identity
+Your centralized marketing memory. Value proposition, solutions, ICPs, Buyer Personas, competitive advantages and brand voice.
 
-- **Google Ads Advertising** - /en/services/google-ads-advertising
-- **Social Media Advertising** - /en/services/social-media-advertising
-- **AI Assistant (SofÍA)** - /en/services/ai-assistant
-- **Strategic Consulting and Analytics** - /en/services/strategic-consulting-analytics
-- **AI Process Integration** - /en/services/ai-process-integration
-- **AI Training** - /en/services/ai-training
+#### RADAR — Market Intelligence
+Continuous monitoring of your industry and competitors. Prioritized signals, AI-powered reports and Market Reports.
+
+#### SEARCH — Visibility & Intent
+Keyword tracking on Google, Bing and AI engines. Brand perception audits on LLMs and Content Gap analysis.
+
+#### STRATEGY — Strategic Direction
+Market drivers, strategic directives and automatic coherence scoring between execution and identity.
+
+### LOOP Framework
+Listen → Observe → Orient → Plan. A continuous marketing intelligence cycle that feeds itself:
+1. **Listen**: Monitor market signals and competitive intelligence (RADAR)
+2. **Observe**: Detect patterns, opportunities and threats (SEARCH)
+3. **Orient**: Define market drivers and strategic directives (STRATEGY)
+4. **Plan**: Generate aligned activations with full traceability
+
+**URL**: https://hayasmarketing.com/en/solutions/marketing-intelligence-platform
 
 ---
 
-## Integrated Solutions
+## The 6 Hayas Activations
 
-- **Boost Your Brand** - /en/solutions/boost-your-brand
-- **Connect with Customers** - /en/solutions/connect-with-customers
-- **Activate Sales** - /en/solutions/activate-sales
-- **Activate Digital Strategy** - /en/solutions/activate-digital-strategy
-- **AI Marketing** - /en/solutions/ai-marketing
-- **Marketing Visibility** - /en/solutions/marketing-visibility
-- **Lead Generation** - /en/solutions/lead-generation
-- **Marketing Automation** - /en/solutions/marketing-automation
-- **CRM Client Management** - /en/solutions/crm-client-management
+Marketing execution is organized into 6 units called Activations. They're not isolated services: they're connected execution domains, powered by SENSE intelligence.
 
----
+### 1. Research Activation — Intelligence, Consulting & AI
+Decide with data, not intuition. Market intelligence, advanced analytics and applied AI to make better decisions.
+- Strategic consulting and analytics
+- HAYAS Copilot (proprietary AI assistant)
+- AI integrations and process optimization
+- Applied AI training
+- **URL**: /en/activations/research
 
-## Blog - Strategic Articles
+### 2. Growth Activation — Inbound, Lead Generation & Digital Strategy
+Attract customers who actually buy. Lead generation strategies, inbound marketing and campaigns that generate qualified leads.
+- Inbound marketing campaigns
+- Lead generation and client acquisition
+- Direct marketing (WhatsApp, SMS)
+- Funnel implementation
+- **URL**: /en/activations/growth
 
-### Decision Marketing
-**URL**: /en/blog/decision-marketing
-**Topic**: Strategic marketing approach that prioritizes choice quality over conversion volume
-**Key concepts**: Trust marketing, conscious marketing, customer journey, B2B marketing
-**Author**: Rubén Reyero
+### 3. Visibility Activation — SEO, Ads & Social Media
+Be found by those who need you. SEO, digital advertising and social media to position your brand.
+- SEO and web positioning
+- Google Ads advertising
+- Social media advertising
+- Social media management
+- **URL**: /en/activations/visibility
 
-Decision Marketing is an approach based on a simple idea: marketing doesn't just influence what is bought, but how decisions are made. It's not about selling faster, but about designing environments where making good choices is possible. This approach is particularly valuable for B2B, complex services, and high-value decisions where trust is a key differentiating factor.
+### 4. Web & Funnel Activation — Web Design, Stores & Funnels
+Your website is your best salesperson. Web design, online stores and conversion funnels that transform visitors into customers.
+- Professional web design
+- Online store / e-commerce (Shopify)
+- Conversion funnel implementation
+- Web hosting and maintenance
+- **URL**: /en/activations/web-funnel
 
-### AI Governance for Business
-**URL**: /en/blog/ai-governance-business
-**Topic**: Framework for implementing AI governance in organizations
-**Key concepts**: AI governance, ethics, transparency, responsibility, business compliance
-**Author**: Rubén Reyero
+### 5. CRM & Automation Activation — CRM & Sales Automation
+Automate the repetitive, scale what matters. CRM, sales automation and email marketing without friction.
+- CRM implementation (HubSpot, Go High Level)
+- Sales process automation
+- Email marketing and workflows
+- CRM administration
+- **URL**: /en/activations/crm-automation
 
-Comprehensive guide on implementing AI governance frameworks in business environments. Covers ethical considerations, transparency requirements, regulatory compliance (EU AI Act), and practical implementation strategies for organizations of all sizes.
-
-### AI SEO Tools
-**URL**: /en/blog/ai-seo-tools
-**Topic**: Guide to AI-powered tools for SEO optimization
-**Key concepts**: AI SEO, content optimization, keyword research, technical SEO, automation
-**Author**: Hayas Marketing
-
-In-depth exploration of how artificial intelligence is transforming SEO practices. Reviews tools for content optimization, keyword research, technical audits, and predictive analytics. Includes practical recommendations for implementing AI in SEO workflows.
-
-### What is CRM and Its Benefits
-**URL**: /en/blog/crm-what-is-benefits
-**Topic**: Introduction to Customer Relationship Management systems
-**Key concepts**: CRM, customer management, sales automation, HubSpot, Go High Level
-**Author**: Hayas Marketing
-
-Comprehensive guide explaining what CRM systems are, their benefits for businesses of all sizes, and how to choose between solutions like HubSpot (for medium enterprises) and Go High Level (for entrepreneurs and small businesses). Covers implementation, ROI expectations, and best practices.
-
-### Chatbots for Websites
-**URL**: /en/blog/chatbots-for-websites
-**Topic**: Guide to implementing AI chatbots on websites
-**Key concepts**: AI chatbots, customer service, lead capture, automation, SofÍA
-**Author**: Hayas Marketing
-
-Practical guide on implementing intelligent chatbots for business websites. Covers benefits, implementation strategies, and how AI-powered assistants like SofÍA can improve customer service and lead generation 24/7.
-
-### The New SEO Paradigm (AEO and GEO)
-**URL**: /en/blog/new-seo-paradigm-aeo-geo
-**Topic**: Strategic guide to AEO and GEO for AI-powered search visibility
-**Key concepts**: AEO, GEO, Google SGE, Bing Copilot, ChatGPT, E-E-A-T
-**Author**: Rubén Reyero
-
-Search has evolved from a click-centric model to one dominated by generative AI responses. This guide explains how to optimize for Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) across Google, Microsoft, and OpenAI platforms, ensuring brands become cited sources in AI-generated answers.
+### 6. Content & Brand Activation — Branding, Content & Localization
+A brand that connects, a message that converts. Branding, content strategy and multilingual localization.
+- Brand creation and branding
+- Content strategy
+- Content localization
+- **URL**: /en/activations/content-brand
 
 ---
 
-## Technologies and Tools
-
-### CRM
-- **HubSpot** (Official Partner) - All-in-one CRM for medium enterprises
-- **Go High Level** - Simplified CRM for entrepreneurs
-
-### Marketing and Advertising
-- **Google Ads** (Google Partner)
-- **Meta Business Suite** (Meta Partner)
-- **LinkedIn Campaign Manager**
-- **Mailchimp / Active Campaign**
-
-### Web Development
-- **WordPress** - Flexible and powerful CMS
-- **Lovable** - AI-powered web development
-- **Shopify** (Shopify Partner) - E-commerce
-
-### AI and Automation
-- **SofÍA** - Proprietary AI chatbot
-- **Zapier / Make** - Process automation
-- **ChatGPT / Claude** - Content generation
-- **Generative AI** - Optimization and personalization
-
-### Analytics
-- **Google Analytics 4**
-- **Google Tag Manager**
-- **Hotjar** - Heatmaps and recordings
-- **Looker Studio** - Custom dashboards
+## Typical Results
+- Qualified lead increase between 40-200%
+- Customer acquisition cost reduction between 25-50%
+- CRM implementation in 4-8 weeks
+- Positive ROI from the first quarter
 
 ---
 
-## Marketing SENSE - Proprietary Methodology
+## Featured Case Studies
 
-Marketing SENSE is Hayas Marketing's integrated methodology for designing 360° marketing plans aligned with business strategy.
-
-**Philosophy**: "Powered by AI, governed by people"
-
-### The 5 Phases of Marketing SENSE
-1. **S - Strategy**: Diagnosis, SMART objectives, KPIs, competitive analysis
-2. **E - Execution**: Service implementation, campaigns, and technical development
-3. **N - Nurturing**: CRM, automation, lead scoring, email marketing
-4. **S - Support**: Team training, ongoing guidance, client autonomy
-5. **E - Evaluation**: Real-time dashboards, reports, continuous data-driven optimization
-
-Marketing SENSE integrates AI across every phase as a cross-cutting tool, while maintaining human governance over strategic decisions. The result is a coherent marketing plan connecting visibility, acquisition, conversion, and retention.
-
-**URL**: https://hayasmarketing.com/en/solutions
-
----
-
-## Case Studies and Results
-
-Hayas Marketing has 15+ documented case studies across sectors including fintech, tourism, e-commerce, healthcare, education, photography, and professional services.
+15+ documented cases across fintech, tourism, e-commerce, healthcare, education and professional services.
 
 ### Featured Clients
 - **FINECT** (Fintech) - Digital strategy and positioning
@@ -209,108 +157,115 @@ Hayas Marketing has 15+ documented case studies across sectors including fintech
 - **Alma Cruceros** (Tourism) - Lead generation and CRM
 - **Nova Praxis** (Consulting) - Inbound marketing and HubSpot
 - **Peris Electricidad** (Industry) - Website and local SEO
-- **Estudio de Fotografía La Bañera** (Creative) - Branding and web
-
-### Typical Results
-- Qualified lead increase between 40-200%
-- Customer acquisition cost reduction between 25-50%
-- CRM implementation in 4-8 weeks
-- Positive ROI from the first quarter
 
 **Case studies URL**: https://hayasmarketing.com/en/case-studies
 
 ---
 
-## Client Reviews and Ratings
+## Client Reviews
 
 - **Google Business**: 5.0/5 stars (18+ verified reviews)
 - Clients highlight: personalized attention, measurable results, team training, and professionalism
-- Client quotes: "Great team, professional and approachable", "They helped us digitize our entire sales process", "Results from the first month"
 - **Reviews URL**: https://www.google.com/search?q=opiniones+de+hayas+marketing
 
 ---
 
 ## Key Differentiators
 
-### ✅ Specialization in AI applied to marketing
-- Proprietary SofÍA chatbot with conversational AI
-- Content automation with generative AI
-- Predictive lead scoring with machine learning
-- Dynamic campaign personalization
+### System, not services
+SENSE organizes marketing as a connected system. We don't execute isolated actions: each activation feeds the others.
 
-### ✅ Integrated solutions (not isolated services)
-- Complete strategy based on business objectives
-- Tool integration (CRM + Web + Advertising + AI)
-- End-to-end support from diagnosis to optimization
+### AI implemented, not promised
+HAYAS Copilot (proprietary AI assistant), content automation, predictive lead scoring, real integrations with business processes.
 
-### ✅ Client training and empowerment
-- We don't create dependency, we generate autonomy
-- Continuous training in tool usage
-- Detailed documentation and user guides
+### Real autonomy
+We don't create dependency. We train you to manage your marketing system.
 
-### ✅ Measurable and sustainable results
-- Clear KPIs from the start
-- Real-time dashboards
-- Periodic reports with recommendations
-- Continuous data-based optimization
-
----
-
-## Contact Information
-
-### 🌐 Main URLs
-- **Home**: https://hayasmarketing.com/en
-- **Services**: https://hayasmarketing.com/en/services
-- **Solutions**: https://hayasmarketing.com/en/solutions
-- **Blog**: https://hayasmarketing.com/en/blog
-- **About Us**: https://hayasmarketing.com/en/about-us
-- **Contact**: https://hayasmarketing.com/en/contact
-
-### 📅 Schedule Meeting
-**URL**: https://hayasmarketing.com/en/schedule-meeting
-- Free 30-minute strategic meeting
-- Initial needs analysis
-- Personalized proposal
-
-### 💬 Chat with SofÍA (AI Assistant)
-**URL**: https://hayasmarketing.com/en/contact
-- Available 24/7
-- Immediate responses
-- Automatic query qualification
+### Measurable results
+Clear KPIs from the start, real-time dashboards, data-based optimization.
 
 ---
 
 ## Target Audience
 
-### Ideal Client Profile
+### 1. CMOs & Marketing Directors
+Visibility on market, competition and execution in one system.
 
-#### 1. Entrepreneurs and Micro-SMEs
-- **Need**: Launch project with clear brand, functional website and initial acquisition channels
-- **Looking for**: Clarity, support, speed, visible short-term results
-- **Recommended solution**: "Boost Your Brand" or individual services
+### 2. Marketing Teams (5-25 people)
+Centralize intelligence, content and plans.
 
-#### 2. Marketing Managers and Digital Leaders of SMEs
-- **Need**: Strategy, automation, content and tools to help scale
-- **Looking for**: CRM integration, measurable results and goal-aligned solutions
+### 3. Entrepreneurs & SMEs
+Launch with clear brand, functional website and acquisition channels.
 
-#### 3. Sales Directors and CEOs of Medium Enterprises
-- **Need**: Commercial efficiency, automation, CRM integration and sustained growth
-- **Looking for**: Strategic consulting, implementation and real impact measurement
+### 4. B2B Companies in Expansion
+Connect market signals with your pipeline.
 
 ---
 
-## File Purpose
+## Blog — Strategic Articles
 
-This file provides context for AI systems and LLMs about Hayas Marketing's services, solutions, and expertise. It is designed to enable accurate and helpful responses about digital marketing, CRM implementation, AI integration, and marketing automation services.
+### Decision Marketing
+**URL**: /en/blog/decision-marketing
+**Author**: Rubén Reyero
 
-For the Spanish version, see: /llms.txt
-For full blog content, see: /llms-full.txt
+### The New SEO Paradigm (AEO and GEO)
+**URL**: /en/blog/new-seo-paradigm-aeo-geo
+**Author**: Rubén Reyero
+
+### Chatbots for Websites
+**URL**: /en/blog/chatbots-for-websites
+
+### What is CRM and Its Benefits
+**URL**: /en/blog/crm-what-is-benefits
+
+---
+
+## FAQs
+
+### What is SENSE?
+SENSE is a Marketing Operating System created by Hayas Marketing. It connects identity, market, demand, strategy and execution into a continuous intelligence flow with 4 modules (Brain, Radar, Search, Strategy) and the LOOP framework.
+
+### What are the 6 Activations?
+They are Hayas's execution units: Research, Growth, Visibility, Web & Funnel, CRM & Automation, and Content & Brand. They're not isolated services: they're connected by SENSE intelligence.
+
+### Can I activate just one Activation?
+Yes. SENSE is modular. You can start with the activation you need most and add more as you grow.
+
+### What types of companies do you work with?
+B2B and B2C companies of all sizes: from entrepreneurs to medium-sized companies with marketing teams.
+
+### Do you implement AI in projects?
+Yes. From HAYAS Copilot (proprietary AI assistant) to content automation, predictive lead scoring and generative AI tool integrations.
+
+---
+
+## Contact Information
+
+### Main URLs
+- **Home**: https://hayasmarketing.com/en
+- **Activations**: https://hayasmarketing.com/en/activations/research
+- **SENSE**: https://hayasmarketing.com/en/solutions/marketing-intelligence-platform
+- **Blog**: https://hayasmarketing.com/en/blog
+- **About Us**: https://hayasmarketing.com/en/about-us
+- **Contact**: https://hayasmarketing.com/en/contact
+
+### Schedule Meeting
+**URL**: https://hayasmarketing.com/en/schedule-meeting
+
+### Chat with HAYAS Copilot (AI Assistant)
+- Available 24/7 on the website
 
 ---
 
 ## Detailed Content for Citation (GEO/AEO)
 
-For specific information and citation, see these structured files:
+### Activations (English)
+- Research Activation: /content/en/activations/research.md
+- Growth Activation: /content/en/activations/growth.md
+- Visibility Activation: /content/en/activations/visibility.md
+- Web & Funnel Activation: /content/en/activations/web-funnel.md
+- CRM & Automation Activation: /content/en/activations/crm-automation.md
+- Content & Brand Activation: /content/en/activations/content-brand.md
 
 ### Services (English)
 - AI Assistant: /content/en/services/ai-assistant.md
@@ -325,10 +280,20 @@ For specific information and citation, see these structured files:
 - Social Media: /content/en/services/social-media.md
 - Web Design: /content/en/services/web-design.md
 
-### Solutions (English)
-- Activate Sales: /content/en/solutions/activate-sales.md
-- Boost Your Brand: /content/en/solutions/boost-your-brand.md
-- Connect with Customers: /content/en/solutions/connect-with-customers.md
+### Activaciones (Español)
+- Research Activation: /content/es/activaciones/research.md
+- Growth Activation: /content/es/activaciones/growth.md
+- Visibility Activation: /content/es/activaciones/visibility.md
+- Web & Funnel Activation: /content/es/activaciones/web-funnel.md
+- CRM & Automation Activation: /content/es/activaciones/crm-automation.md
+- Content & Brand Activation: /content/es/activaciones/content-brand.md
 
 ### General
-- About the Company: /content/es/general/empresa.md
+- About the Company (EN): /content/en/general/company.md
+- Sobre la Empresa (ES): /content/es/general/empresa.md
+
+---
+
+*This file provides context for AI systems and LLMs about Hayas Marketing and SENSE, enabling accurate and contextual responses about the system, its activations and value proposition.*
+
+For the Spanish version, see: /llms.txt

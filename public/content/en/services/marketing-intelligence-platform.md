@@ -1,15 +1,15 @@
 <!--
-IA_SUMMARY: SENSE is Hayas Marketing's Marketing Operating System. 6 intelligence modules (Brain, Radar, Search, Strategy, Plans, Workspace) that connect market signals with strategic decisions and tactical execution. Powered by multi-model AI, governed by strategy. Designed for CMOs, marketing teams, strategic agencies and expanding B2B companies.
+IA_SUMMARY: SENSE is Hayas Marketing's Marketing Operating System. 4 intelligence modules (Brain, Radar, Search, Strategy) connect market signals with strategic decisions and tactical execution, governed by the LOOP framework (Listen, Observe, Orient, Plan). Execution is channeled through Hayas's 6 Activations. Designed for CMOs, marketing teams, strategic agencies and expanding B2B companies.
 -->
 
 ---
 title: "SENSE - Marketing Operating System"
-description: "Marketing Operating System connecting market signals with strategic decisions and tactical execution. 6 intelligence modules: Brain, Radar, Search, Strategy, Plans and Workspace. Powered by AI, governed by strategy."
+description: "Marketing Operating System connecting market signals with strategic decisions and tactical execution. 4 intelligence modules: Brain, Radar, Search and Strategy. LOOP framework. Powered by AI, governed by strategy."
 keywords: ["marketing operating system", "SENSE", "market intelligence", "AI marketing system", "marketing strategy platform"]
 intent: "commercial"
 author: "Rubén Reyero"
 author_credentials: "CEO at Hayas Marketing | 15+ years in B2B digital marketing"
-date: "2026-03-17"
+date: "2026-03-18"
 canonical: "/en/solutions/marketing-intelligence-platform"
 ---
 
@@ -21,7 +21,11 @@ A marketing operating system, not another tool. SENSE is an integrated system th
 
 **From signal to action, without losing strategic context.**
 
-## The 6 modules of SENSE
+## SENSE thinks, Hayas activates
+
+SENSE acts as the intelligence core that analyzes and decides. Hayas acts as the team and system that executes and turns strategy into results through the 6 Activations.
+
+## The 4 SENSE Intelligence Modules
 
 Each module feeds the next. They're not isolated tools — they're layers of a system that thinks like a strategist.
 
@@ -35,13 +39,25 @@ Continuous monitoring of your industry and competitors. Prioritized signals, AI-
 Keyword tracking on Google, Bing and AI engines. Brand perception audits on LLMs and Content Gap analysis.
 
 ### 04 · STRATEGY — Strategic Direction
-Market drivers, strategic directives and automatic coherence scoring.
+Market drivers, strategic directives and automatic coherence scoring between execution and identity.
 
-### 05 · PLANS — Execution & Activation
-Marketing plans from real intelligence. Content Studio with contextualized generation and full traceability.
+## LOOP Framework
 
-### 06 · WORKSPACE — Operations Center
-Source management, strategic documentation, team configuration and integrations.
+Listen → Observe → Orient → Plan. A continuous marketing intelligence cycle that feeds itself:
+1. **Listen**: Monitor market signals and competitive intelligence (RADAR)
+2. **Observe**: Detect patterns, opportunities and threats (SEARCH)
+3. **Orient**: Define market drivers and strategic directives (STRATEGY)
+4. **Plan**: Generate aligned activations with full traceability
+
+## The 6 Activations
+
+Execution is channeled through 6 connected units powered by SENSE intelligence:
+- **Research**: Intelligence, consulting & AI
+- **Growth**: Inbound, lead generation & digital strategy
+- **Visibility**: SEO, Ads & Social Media
+- **Web & Funnel**: Web design, stores & funnels
+- **CRM & Automation**: CRM & sales automation
+- **Content & Brand**: Branding, content & localization
 
 ## AI that understands your business
 
@@ -57,10 +73,6 @@ Google Search Console, HubSpot, Perplexity AI, Gemini / ChatGPT, Firecrawl, Slac
 - **Marketing Teams (5-25 people)**: centralize intelligence, content and plans
 - **Strategic Agencies**: deliver branded intelligence systems to each client
 - **B2B companies in expansion**: connect market signals with your pipeline
-
-## LOOP Framework
-
-Listen → Observe → Orient → Plan. A continuous marketing intelligence cycle that feeds itself.
 
 ## FAQs
 

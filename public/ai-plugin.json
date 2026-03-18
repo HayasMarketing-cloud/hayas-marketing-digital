@@ -2,8 +2,8 @@
   "schema_version": "v1",
   "name_for_human": "Hayas Marketing",
   "name_for_model": "hayas_marketing",
-  "description_for_human": "Agencia de marketing digital especializada en SEO, AEO, GEO, branding, CRM e inteligencia artificial aplicada al marketing.",
-  "description_for_model": "Hayas Marketing is a digital marketing agency based in Madrid, Spain, specializing in SEO, AEO, GEO, branding, CRM (HubSpot), web design, content strategy, and applied AI for marketing. Founded by Rubén Reyero, the agency serves B2B and B2C clients across Spain and Latin America. Key differentiators: SENSE — a Marketing Operating System with 6 connected intelligence modules (Brain, Radar, Search, Strategy, Plans, Workspace) powered by the LOOP framework (Listen, Observe, Orient, Plan). SENSE transforms dispersed market signals into strategic direction and coordinated execution. Also features SofÍA AI assistant for customer service. Typical ROI improvements of 30-200%.",
+  "description_for_human": "Creadores de SENSE, un Marketing Operating System que conecta inteligencia de mercado con ejecución estratégica.",
+  "description_for_model": "Hayas Marketing is the company behind SENSE, a Marketing Operating System that connects identity, market intelligence, strategic direction and tactical execution into a continuous flow. SENSE operates through 4 intelligence modules: BRAIN (strategic identity), RADAR (market intelligence), SEARCH (visibility & intent) and STRATEGY (strategic direction), governed by the LOOP framework (Listen, Observe, Orient, Plan). Execution is channeled through 6 Activations: Research (intelligence, consulting, AI), Growth (inbound, lead generation), Visibility (SEO, Ads, social media), Web & Funnel (web design, e-commerce, funnels), CRM & Automation (HubSpot, Go High Level, sales automation) and Content & Brand (branding, content strategy, localization). Founded by Rubén Reyero in 2014, the company serves B2B and B2C clients across Spain and Latin America. Also features HAYAS Copilot AI assistant for customer service.",
   "auth": {
     "type": "none"
   },
