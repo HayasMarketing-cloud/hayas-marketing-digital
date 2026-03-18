@@ -525,17 +525,21 @@ const SensePlatform = () => {
         <ReviewsSection />
 
         {/* ═══ Final CTA ═══ */}
-        <section className="py-16 bg-background">
-          <div className="container mx-auto px-4 max-w-3xl text-center">
-            <h2 className="text-3xl md:text-4xl font-bold font-dm-sans text-foreground mb-4">
+        <section className="relative py-16 md:py-24 overflow-hidden">
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, hsl(270 40% 15%) 0%, hsl(207 60% 12%) 50%, hsl(170 40% 15%) 100%)' }} />
+          <div className="absolute inset-0 opacity-10" style={{
+            backgroundImage: 'radial-gradient(circle at 30% 50%, hsl(var(--impulsa) / 0.3) 0%, transparent 50%)',
+          }} />
+          <div className="container mx-auto px-4 max-w-3xl text-center relative z-10">
+            <h2 className="text-3xl md:text-4xl font-bold font-dm-sans text-white mb-4">
               {isEnglish ? 'Ready for marketing with direction?' : '¿Preparado para un marketing con dirección?'}
             </h2>
-            <p className="text-lg text-muted-foreground mb-8">
+            <p className="text-lg text-white/70 mb-8">
               {isEnglish
                 ? <>Request a demo and we'll show you how SENSE<br />connects your market intelligence with execution.</>
                 : <>Solicita una demo y te mostraremos cómo SENSE<br />conecta tu inteligencia de mercado con la ejecución.</>}
             </p>
-            <Button variant="impulsa" size="lg" asChild>
+            <Button variant="impulsa" size="lg" asChild className="shadow-lg shadow-impulsa/25">
               <Link to={ctaLink}>
                 {ctaButton} <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
