@@ -56,9 +56,9 @@ SENSE is custom-configured for each company. Each company works with their own m
 ### LOOP Framework
 Listen → Observe → Orient → Plan. A continuous marketing intelligence cycle that feeds itself.
 
-## The 6 Hayas Activations
+## The 6 Activations
 
-Execution is channeled through 6 units called Activations, connected by SENSE intelligence:
+Execution is channeled through 6 units called Activations, connected by SENSE intelligence. Companies can activate them with their own team, their agency, or with Hayas:
 
 ### Research Activation
 Market intelligence, strategic consulting, HAYAS Copilot and applied AI training.
