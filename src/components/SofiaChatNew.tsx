@@ -80,6 +80,7 @@ const SofiaChatNew = () => {
     '/en/schedule-meeting',
     '/en/contact',
     '/en/kit-digital',
+    '/en/solutions/marketing-intelligence-platform',
     // Services EN
     '/en/services/branding',
     '/en/services/web-design'
