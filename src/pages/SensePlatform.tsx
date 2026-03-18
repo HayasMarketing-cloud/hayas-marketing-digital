@@ -458,8 +458,8 @@ const SensePlatform = () => {
         </section>
 
         {/* ═══ SECTION 6: LOOP Methodology ═══ */}
-        <section className="py-16 bg-background">
-          <div className="container mx-auto px-4 max-w-4xl">
+        <section className="relative py-14 md:py-20 overflow-hidden" style={{ background: 'linear-gradient(180deg, hsl(170 30% 97%) 0%, hsl(170 20% 95%) 100%)' }}>
+          <div className="container mx-auto px-4 max-w-4xl relative z-10">
             <div className="text-center mb-10">
               <h2 className="text-3xl md:text-4xl font-bold font-dm-sans text-foreground mb-4">
                 {isEnglish ? 'The LOOP framework: from listening to action' : 'El framework LOOP: de la escucha a la acción'}
@@ -473,19 +473,19 @@ const SensePlatform = () => {
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
               {loopSteps.map((step, idx) => (
-                <div key={idx} className="text-center p-6 rounded-xl bg-muted/40 border border-border/50 relative">
-                  <span className="text-4xl font-bold font-dm-sans text-impulsa/20">{step.letter}</span>
+                <div key={idx} className="text-center p-6 rounded-xl bg-card/80 backdrop-blur-sm border border-border/50 relative shadow-sm hover:shadow-md transition-shadow">
+                  <span className="text-4xl font-bold font-dm-sans text-secondary/20">{step.letter}</span>
                   <h3 className="text-base font-bold font-dm-sans text-foreground mt-1">{step.word}</h3>
                   <p className="text-xs text-muted-foreground mt-2">{step.description}</p>
                   {idx < 3 && (
-                    <ArrowRight className="hidden md:block absolute top-1/2 -right-3 -translate-y-1/2 h-5 w-5 text-impulsa/30" />
+                    <ArrowRight className="hidden md:block absolute top-1/2 -right-3 -translate-y-1/2 h-5 w-5 text-secondary/30" />
                   )}
                 </div>
               ))}
             </div>
 
-            <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-impulsa/5 border border-impulsa/20">
-              <RefreshCw className="h-5 w-5 text-impulsa" />
+            <div className="flex items-center justify-center gap-3 p-4 rounded-xl bg-card/80 backdrop-blur-sm border border-secondary/20">
+              <RefreshCw className="h-5 w-5 text-secondary" />
               <p className="text-sm text-muted-foreground text-pretty">
                 {isEnglish
                   ? "It's not a linear flow — it's a circular system that feeds itself. Every new signal can confirm, adjust or reorient your strategy."
