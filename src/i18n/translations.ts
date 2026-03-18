@@ -4,6 +4,8 @@ export const translations = {
       home: 'Inicio',
       services: 'Servicios',
       solutions: 'Soluciones',
+      activations: 'Activaciones',
+      menu: 'Menú',
       about: 'Nosotros',
       contact: 'Contacto',
       blog: 'Blog',
