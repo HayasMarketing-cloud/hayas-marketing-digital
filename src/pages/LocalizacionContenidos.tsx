@@ -395,9 +395,9 @@ const LocalizacionContenidos = () => {
           <nav className="text-sm text-gray-600">
             <Link to="/es" className="hover:text-primary">Inicio</Link>
             <span className="mx-2">/</span>
-            <Link to="/es#soluciones" className="hover:text-primary">Soluciones</Link>
+            <Link to="/es#servicios" className="hover:text-primary">Activaciones</Link>
             <span className="mx-2">/</span>
-            <Link to="/es/soluciones/impulsa-tu-marca" className="hover:text-primary">Impulsa tu marca</Link>
+            <Link to="/es/activaciones/content-brand" className="hover:text-primary">Content & Brand</Link>
             <span className="mx-2">/</span>
             <span className="text-gray-900">Localización de contenidos</span>
           </nav>

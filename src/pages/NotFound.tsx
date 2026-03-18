@@ -69,8 +69,8 @@ const NotFound = () => {
               <Link to="/es/servicios" className="text-primary hover:underline">
                 Servicios
               </Link>
-              <Link to="/es/soluciones/impulsa-tu-marca" className="text-primary hover:underline">
-                Soluciones
+              <Link to="/es/activaciones/visibility" className="text-primary hover:underline">
+                Activaciones
               </Link>
               <Link to="/es/casos-exito" className="text-primary hover:underline">
                 Casos de Éxito

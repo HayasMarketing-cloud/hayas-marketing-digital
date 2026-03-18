@@ -228,7 +228,7 @@ const EmailMarketingAutomatizaciones: React.FC = () => {
       { label: 'Email marketing and automations' }
     ] : [
       { label: 'Inicio', href: '/' },
-      { label: 'Conecta con tus clientes', href: '/soluciones/conecta-con-tus-clientes' },
+      { label: 'CRM & Automation', href: '/es/activaciones/crm-automation' },
       { label: 'Servicios', href: '/servicios' },
       { label: 'Email marketing y automatizaciones' }
     ]

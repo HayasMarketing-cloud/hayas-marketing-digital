@@ -113,7 +113,7 @@ const AutomatizacionProcesosVentas: React.FC = () => {
     // Breadcrumb
     breadcrumbItems: [
       { label: 'Inicio', href: '/' },
-      { label: 'Conecta con tus clientes', href: '/soluciones/conecta-con-tus-clientes' },
+      { label: 'CRM & Automation', href: '/es/activaciones/crm-automation' },
       { label: 'Servicios', href: '/servicios' },
       { label: 'Automatización de procesos de ventas' },
     ],

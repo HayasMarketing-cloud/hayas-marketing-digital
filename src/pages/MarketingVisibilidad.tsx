@@ -40,7 +40,7 @@ const MarketingVisibilidad = () => {
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
                   <BreadcrumbLink asChild>
-                    <Link to="/es/soluciones/impulsa-tu-marca">Soluciones</Link>
+                    <Link to="/es/activaciones/visibility">Activaciones</Link>
                   </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />

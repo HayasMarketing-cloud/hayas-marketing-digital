@@ -56,7 +56,7 @@ const ConsultoriaEstrategicaAnalitica: React.FC = () => {
       ],
       breadcrumbItems: [
         { label: 'Inicio', href: '/' },
-        { label: 'Soluciones', href: '/soluciones/activa-tu-estrategia-digital' },
+        { label: 'Research', href: '/es/activaciones/research' },
         { label: 'Servicios', href: '/servicios' },
         { label: 'Consultoría estratégica y analítica' }
       ]

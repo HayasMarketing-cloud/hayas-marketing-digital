@@ -35,8 +35,8 @@ const servicePageData: ServicePageData = {
   // Breadcrumb
   breadcrumbItems: [
     { label: 'Inicio', href: '/' },
-    { label: 'Soluciones', href: '/#soluciones' },
-    { label: 'Conecta con tus clientes', href: '/soluciones/conecta-con-tus-clientes' },
+    { label: 'Activaciones', href: '/es/activaciones/crm-automation' },
+    { label: 'CRM & Automation', href: '/es/activaciones/crm-automation' },
     { label: 'Administración CRM' }
   ],
   
