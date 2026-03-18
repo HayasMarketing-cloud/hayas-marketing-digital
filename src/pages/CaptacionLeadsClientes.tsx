@@ -57,7 +57,7 @@ const CaptacionLeadsClientes: React.FC = () => {
               <BreadcrumbSeparator />
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
-                  <Link to="/es/soluciones/conecta-con-tus-clientes">Conecta con tus clientes</Link>
+                  <Link to="/es/activaciones/growth">Growth</Link>
                 </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator />
