@@ -63,6 +63,7 @@ const IndexEN = () => {
         <MarketingChangedSection />
         
         <LazySection component={SenseResultSection} fallbackHeight="400px" />
+        <LazySection component={SenseConnectionSection} fallbackHeight="400px" />
         <LazySection component={SenseActivationsSection} fallbackHeight="500px" />
         <LazySection component={SenseAudienceCtaSection} fallbackHeight="400px" />
         
