@@ -10,6 +10,7 @@ import LazySection from '@/components/LazySection';
 import { useTranslation } from '@/hooks/useTranslation';
 
 // Lazy-loaded below-the-fold components
+const SenseConnectionSection = lazy(() => import('@/components/SenseConnectionSection'));
 const SenseActivationsSection = lazy(() => import('@/components/SenseActivationsSection'));
 const SenseAudienceCtaSection = lazy(() => import('@/components/SenseAudienceCtaSection'));
 const FAQSection = lazy(() => import('@/components/FAQSection'));
