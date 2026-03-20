@@ -10,6 +10,7 @@ import LazySection from '@/components/LazySection';
 import { useTranslation } from '@/hooks/useTranslation';
 
 // Lazy-loaded below-the-fold components
+const SenseConnectionSection = lazy(() => import('@/components/SenseConnectionSection'));
 const SenseActivationsSection = lazy(() => import('@/components/SenseActivationsSection'));
 const SenseAudienceCtaSection = lazy(() => import('@/components/SenseAudienceCtaSection'));
 const FAQSection = lazy(() => import('@/components/FAQSection'));
@@ -46,6 +47,7 @@ const Index = () => {
       <main className="flex-grow" role="main">
         <HeroSlider />
         <MarketingChangedSection />
+        <LazySection component={SenseConnectionSection} fallbackHeight="400px" />
         <LazySection component={SenseActivationsSection} fallbackHeight="500px" />
         <LazySection component={SenseAudienceCtaSection} fallbackHeight="400px" />
         
