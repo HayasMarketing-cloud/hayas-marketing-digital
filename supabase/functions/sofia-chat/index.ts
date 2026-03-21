@@ -297,11 +297,8 @@ serve(async (req) => {
     console.log('🤖 HAYAS Copilot chat request from:', sourcePage);
     console.log('📍 Navigation history:', navigationHistory);
 
-    // Create Supabase client for data access
-    const supabase = createClient(
-      Deno.env.get('SUPABASE_URL') ?? '',
-      Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
-    );
+    // Use the same admin client for data access
+    const supabase = supabaseAdmin;
 
     // Fetch system prompt from database
     let systemPrompt = FALLBACK_SYSTEM_PROMPT;
