@@ -437,7 +437,7 @@ Adapta tu respuesta a este contexto específico del usuario. Usa la información
   } catch (error) {
     console.error('❌ Error in sofia-chat:', error);
     return new Response(JSON.stringify({ 
-      error: error instanceof Error ? error.message : 'Error desconocido',
+      error: 'Ha ocurrido un error interno. Por favor, inténtalo de nuevo.',
       success: false,
     }), {
       status: 500,

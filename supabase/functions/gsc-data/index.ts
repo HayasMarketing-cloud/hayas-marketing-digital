@@ -182,15 +182,14 @@ serve(async (req) => {
     });
      } catch (keyError) {
        console.error('Error importing private key:', keyError);
-       throw new Error(`Private key format error: ${keyError.message}. Please ensure the key is in PEM format with proper line breaks.`);
+       throw new Error('Private key configuration error. Check function logs for details.');
      }
 
   } catch (error) {
     console.error('Error in gsc-data function:', error);
     return new Response(
       JSON.stringify({ 
-        error: error.message,
-        details: 'Check function logs for more information'
+        error: 'An internal error occurred. Please try again later.'
       }),
       {
         status: 500,
