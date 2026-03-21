@@ -1,5 +1,6 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { checkRateLimit } from "../_shared/rate-limiter.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -268,16 +269,36 @@ serve(async (req) => {
       throw new Error('OPENAI_API_KEY not configured');
     }
 
+    // Rate limiting: 20 requests per minute per IP
+    const supabaseAdmin = createClient(
+      Deno.env.get('SUPABASE_URL') ?? '',
+      Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
+    );
+
+    const clientIp = req.headers.get('x-forwarded-for') || req.headers.get('x-real-ip') || 'unknown';
+    const rateLimitResult = await checkRateLimit(supabaseAdmin, clientIp, {
+      maxRequests: 20,
+      windowMs: 60 * 1000,
+      endpoint: 'sofia-chat',
+    });
+
+    if (!rateLimitResult.allowed) {
+      return new Response(JSON.stringify({ 
+        error: 'Demasiadas solicitudes. Por favor, espera un momento.',
+        success: false,
+      }), {
+        status: 429,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
+
     const { messages, sourcePage, navigationHistory, capturedLead } = await req.json();
     
     console.log('🤖 HAYAS Copilot chat request from:', sourcePage);
     console.log('📍 Navigation history:', navigationHistory);
 
-    // Create Supabase client for data access
-    const supabase = createClient(
-      Deno.env.get('SUPABASE_URL') ?? '',
-      Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
-    );
+    // Use the same admin client for data access
+    const supabase = supabaseAdmin;
 
     // Fetch system prompt from database
     let systemPrompt = FALLBACK_SYSTEM_PROMPT;
@@ -416,7 +437,7 @@ Adapta tu respuesta a este contexto específico del usuario. Usa la información
   } catch (error) {
     console.error('❌ Error in sofia-chat:', error);
     return new Response(JSON.stringify({ 
-      error: error instanceof Error ? error.message : 'Error desconocido',
+      error: 'Ha ocurrido un error interno. Por favor, inténtalo de nuevo.',
       success: false,
     }), {
       status: 500,
