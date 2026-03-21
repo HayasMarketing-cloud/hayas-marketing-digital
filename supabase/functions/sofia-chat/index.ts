@@ -269,6 +269,29 @@ serve(async (req) => {
       throw new Error('OPENAI_API_KEY not configured');
     }
 
+    // Rate limiting: 20 requests per minute per IP
+    const supabaseAdmin = createClient(
+      Deno.env.get('SUPABASE_URL') ?? '',
+      Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
+    );
+
+    const clientIp = req.headers.get('x-forwarded-for') || req.headers.get('x-real-ip') || 'unknown';
+    const rateLimitResult = await checkRateLimit(supabaseAdmin, clientIp, {
+      maxRequests: 20,
+      windowMs: 60 * 1000,
+      endpoint: 'sofia-chat',
+    });
+
+    if (!rateLimitResult.allowed) {
+      return new Response(JSON.stringify({ 
+        error: 'Demasiadas solicitudes. Por favor, espera un momento.',
+        success: false,
+      }), {
+        status: 429,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
+
     const { messages, sourcePage, navigationHistory, capturedLead } = await req.json();
     
     console.log('🤖 HAYAS Copilot chat request from:', sourcePage);
