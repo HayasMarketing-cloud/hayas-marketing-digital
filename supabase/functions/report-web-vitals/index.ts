@@ -94,7 +94,7 @@ Deno.serve(async (req: Request) => {
 
     if (error) {
       console.error("Insert error:", error);
-      return new Response(JSON.stringify({ error: error.message }), {
+      return new Response(JSON.stringify({ error: "Failed to store metrics" }), {
         status: 500,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
