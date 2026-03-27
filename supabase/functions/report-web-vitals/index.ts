@@ -72,12 +72,6 @@ Deno.serve(async (req: Request) => {
       });
     }
 
-    // Use service role to bypass RLS
-    const supabase = createClient(
-      Deno.env.get("SUPABASE_URL")!,
-      Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
-    );
-
     const { error } = await supabase.from("web_vitals").insert(
       validMetrics.map((m) => ({
         metric_name: m.metric_name,
