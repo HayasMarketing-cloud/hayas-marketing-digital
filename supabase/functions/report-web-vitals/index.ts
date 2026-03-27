@@ -82,12 +82,12 @@ Deno.serve(async (req: Request) => {
       validMetrics.map((m) => ({
         metric_name: m.metric_name,
         metric_value: m.metric_value,
-        metric_rating: m.metric_rating || null,
-        metric_id: m.metric_id || null,
-        page_path: m.page_path,
-        navigation_type: m.navigation_type || null,
-        user_agent: m.user_agent || null,
-        connection_type: m.connection_type || null,
+        metric_rating: typeof m.metric_rating === "string" ? m.metric_rating.substring(0, 50) : null,
+        metric_id: typeof m.metric_id === "string" ? m.metric_id.substring(0, 100) : null,
+        page_path: String(m.page_path).substring(0, 500),
+        navigation_type: typeof m.navigation_type === "string" ? m.navigation_type.substring(0, 50) : null,
+        user_agent: typeof m.user_agent === "string" ? m.user_agent.substring(0, 500) : null,
+        connection_type: typeof m.connection_type === "string" ? m.connection_type.substring(0, 50) : null,
         device_memory: m.device_memory || null,
       }))
     );
