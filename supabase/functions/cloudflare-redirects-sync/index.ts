@@ -268,8 +268,11 @@ Deno.serve(async (req) => {
       return new Response(JSON.stringify({
         accountId,
         zoneId,
-        tokenLength: token.length,
+        rawTokenLength: rawToken.length,
+        cleanTokenLength: token.length,
+        hadWhitespace: rawToken.length !== token.length,
         tokenPrefix: token.slice(0, 6),
+        tokenSuffix: token.slice(-4),
         verify: verifyJson,
         listsStatus: listsRes.status,
         lists: listsJson,
