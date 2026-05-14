@@ -289,21 +289,13 @@ Deno.serve(async (req) => {
     if (action === "ai-bots") {
       const since = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();
       const until = new Date().toISOString();
-      // Dataset específico de bots verificados de Cloudflare
+      // Plan free no expone botScore. Usamos userAgent dimension a secas.
       const query = `
         query Bots($zoneTag: String!, $since: Time!, $until: Time!) {
           viewer {
             zones(filter: { zoneTag: $zoneTag }) {
-              httpRequestsAdaptiveGroups(
-                limit: 500,
-                filter: { datetime_geq: $since, datetime_leq: $until, botScoreSrcName: "verified_bot" },
-                orderBy: [count_DESC]
-              ) {
-                count
-                dimensions { userAgent botScore botScoreSrcName edgeResponseStatus }
-              }
               raw: httpRequestsAdaptiveGroups(
-                limit: 50,
+                limit: 500,
                 filter: { datetime_geq: $since, datetime_leq: $until },
                 orderBy: [count_DESC]
               ) {
