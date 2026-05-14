@@ -351,8 +351,8 @@ Deno.serve(async (req) => {
       return new Response(JSON.stringify({
         period: { since, until, days: 7 },
         zone: zoneId,
-        verified_bot_count: verified.length,
-        ai_bots_detected: summarize(verified),
+        total_groups: raw.length,
+        ai_bots_detected: summarize(raw),
         top_user_agents_sample: raw.slice(0, 30).map((g: any) => ({ ua: (g.dimensions?.userAgent || "").slice(0, 120), status: g.dimensions?.edgeResponseStatus, hits: g.count })),
         gql_errors: gql?.errors || null,
       }, null, 2), { headers: { ...corsHeaders, "Content-Type": "application/json" } });
