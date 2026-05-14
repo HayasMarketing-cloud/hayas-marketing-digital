@@ -241,9 +241,10 @@ Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: corsHeaders });
 
   try {
-    const token = Deno.env.get("CLOUDFLARE_API_TOKEN");
-    const accountId = Deno.env.get("CLOUDFLARE_ACCOUNT_ID");
-    const zoneId = Deno.env.get("CLOUDFLARE_ZONE_ID");
+    const rawToken = Deno.env.get("CLOUDFLARE_API_TOKEN") || "";
+    const token = rawToken.trim().replace(/[\r\n\t ]/g, "");
+    const accountId = (Deno.env.get("CLOUDFLARE_ACCOUNT_ID") || "").trim();
+    const zoneId = (Deno.env.get("CLOUDFLARE_ZONE_ID") || "").trim();
     if (!token || !accountId || !zoneId) {
       return new Response(
         JSON.stringify({ error: "Faltan secrets de Cloudflare" }),
@@ -267,8 +268,11 @@ Deno.serve(async (req) => {
       return new Response(JSON.stringify({
         accountId,
         zoneId,
-        tokenLength: token.length,
+        rawTokenLength: rawToken.length,
+        cleanTokenLength: token.length,
+        hadWhitespace: rawToken.length !== token.length,
         tokenPrefix: token.slice(0, 6),
+        tokenSuffix: token.slice(-4),
         verify: verifyJson,
         listsStatus: listsRes.status,
         lists: listsJson,
