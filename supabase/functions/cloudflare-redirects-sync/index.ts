@@ -290,6 +290,7 @@ Deno.serve(async (req) => {
     const listId = await findOrCreateList(accountId, token);
     const itemsResp = await replaceListItems(accountId, listId, exact, token);
     const ruleResp = await ensureRedirectRule(zoneId, accountId, listId, token);
+    const wwwRuleResp = await ensureWwwToApexRule(zoneId, token);
 
     return new Response(
       JSON.stringify({
@@ -299,6 +300,7 @@ Deno.serve(async (req) => {
         skipped: skipped.length,
         operation_id: itemsResp.result?.operation_id,
         rule: ruleResp,
+        www_rule: wwwRuleResp,
         skipped_sample: skipped.slice(0, 10),
       }, null, 2),
       { headers: { ...corsHeaders, "Content-Type": "application/json" } },
