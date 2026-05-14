@@ -667,6 +667,27 @@ export type Database = {
         }
         Relationships: []
       }
+      redeploy_log: {
+        Row: {
+          commit_sha: string | null
+          id: string
+          source: string | null
+          triggered_at: string
+        }
+        Insert: {
+          commit_sha?: string | null
+          id?: string
+          source?: string | null
+          triggered_at?: string
+        }
+        Update: {
+          commit_sha?: string | null
+          id?: string
+          source?: string | null
+          triggered_at?: string
+        }
+        Relationships: []
+      }
       seo_alerts: {
         Row: {
           alert_type: string
