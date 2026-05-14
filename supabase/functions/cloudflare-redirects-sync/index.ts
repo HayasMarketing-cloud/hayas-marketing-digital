@@ -176,6 +176,67 @@ async function ensureRedirectRule(zoneId: string, accountId: string, listId: str
   return { ruleId: addedId, action: "created" };
 }
 
+const WWW_RULE_DESCRIPTION = "hayas_www_to_apex";
+
+async function ensureWwwToApexRule(zoneId: string, token: string) {
+  const phase = "http_request_dynamic_redirect";
+  const rulesets = await cf(`/zones/${zoneId}/rulesets`, { method: "GET" }, token);
+  let ruleset = (rulesets.result || []).find((r: any) => r.phase === phase && r.kind === "zone");
+
+  if (!ruleset) {
+    const created = await cf(
+      `/zones/${zoneId}/rulesets`,
+      {
+        method: "POST",
+        body: JSON.stringify({
+          name: "Dynamic redirect rules",
+          kind: "zone",
+          phase,
+          rules: [],
+        }),
+      },
+      token,
+    );
+    ruleset = created.result;
+  }
+
+  const newRule = {
+    action: "redirect",
+    action_parameters: {
+      from_value: {
+        status_code: 301,
+        target_url: {
+          expression: `concat("https://hayasmarketing.com", http.request.uri.path)`,
+        },
+        preserve_query_string: true,
+      },
+    },
+    expression: `(http.host eq "www.hayasmarketing.com")`,
+    description: WWW_RULE_DESCRIPTION,
+    enabled: true,
+  };
+
+  const detail = await cf(`/zones/${zoneId}/rulesets/${ruleset.id}`, { method: "GET" }, token);
+  const existing = (detail.result.rules || []).find((r: any) => r.description === WWW_RULE_DESCRIPTION);
+
+  if (existing) {
+    await cf(
+      `/zones/${zoneId}/rulesets/${ruleset.id}/rules/${existing.id}`,
+      { method: "PATCH", body: JSON.stringify(newRule) },
+      token,
+    );
+    return { ruleId: existing.id, action: "updated" };
+  }
+
+  const added = await cf(
+    `/zones/${zoneId}/rulesets/${ruleset.id}/rules`,
+    { method: "POST", body: JSON.stringify(newRule) },
+    token,
+  );
+  const addedId = added.result?.rules?.slice(-1)?.[0]?.id;
+  return { ruleId: addedId, action: "created" };
+}
+
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: corsHeaders });
 
