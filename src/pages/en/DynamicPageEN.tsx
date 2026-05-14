@@ -145,8 +145,8 @@ const ES_PATH_TO_LAZY: Record<string, React.LazyExoticComponent<React.ComponentT
 // Fallback: generic BlogPost component for blog posts without a dedicated component
 const BlogPostFallback = lazy(() => import('@/pages/BlogPost'));
 
-// Fallback Coming Soon
-const ComingSoonEN = lazy(() => import('@/pages/ComingSoonEN'));
+// Fallback: redirect to /en/coming-soon (single canonical placeholder)
+const ComingSoonRedirect = lazy(() => import('@/pages/en/ComingSoonRedirect'));
 
 interface DynamicPageENProps {
   /** The section prefix used to build the full EN path, e.g. "services", "solutions" */
