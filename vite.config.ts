@@ -1,7 +1,22 @@
-import { defineConfig } from "vite";
+import { defineConfig, type Plugin } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
+// @ts-expect-error - JS module sin types
+import { prerenderOg } from "./scripts/prerender-og.mjs";
+
+// Plugin: pre-render index.html por ruta con OG meta personalizadas (post-build)
+const prerenderOgPlugin = (): Plugin => ({
+  name: 'prerender-og',
+  apply: 'build',
+  async closeBundle() {
+    try {
+      await prerenderOg('dist');
+    } catch (e: any) {
+      console.warn('[prerender-og] error no fatal:', e?.message || e);
+    }
+  },
+});
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -11,8 +26,8 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react(),
-    mode === 'development' &&
-    componentTagger(),
+    mode === 'development' && componentTagger(),
+    mode === 'production' && prerenderOgPlugin(),
   ].filter(Boolean),
   resolve: {
     alias: {
