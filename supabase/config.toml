@@ -47,3 +47,6 @@ verify_jwt = false
 
 [functions.cloudflare-redirects-sync]
 verify_jwt = false
+
+[functions.trigger-redeploy]
+verify_jwt = false
