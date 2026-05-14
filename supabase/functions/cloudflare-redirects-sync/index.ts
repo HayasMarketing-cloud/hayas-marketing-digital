@@ -130,19 +130,19 @@ async function replaceListItems(accountId: string, listId: string, items: Parsed
 }
 
 async function ensureRedirectRule(zoneId: string, accountId: string, listId: string, token: string) {
-  // http_request_redirect phase ruleset at zone level
+  // Bulk redirects via lists must be at ACCOUNT level on http_request_redirect phase
   const phase = "http_request_redirect";
-  const rulesets = await cf(`/zones/${zoneId}/rulesets`, { method: "GET" }, token);
-  let ruleset = (rulesets.result || []).find((r: any) => r.phase === phase && r.kind === "zone");
+  const rulesets = await cf(`/accounts/${accountId}/rulesets`, { method: "GET" }, token);
+  let ruleset = (rulesets.result || []).find((r: any) => r.phase === phase && r.kind === "root");
 
   if (!ruleset) {
     const created = await cf(
-      `/zones/${zoneId}/rulesets`,
+      `/accounts/${accountId}/rulesets`,
       {
         method: "POST",
         body: JSON.stringify({
-          name: "Redirect rules",
-          kind: "zone",
+          name: "Hayas bulk redirects",
+          kind: "root",
           phase,
           rules: [],
         }),
@@ -161,12 +161,12 @@ async function ensureRedirectRule(zoneId: string, accountId: string, listId: str
     enabled: true,
   };
 
-  const detail = await cf(`/zones/${zoneId}/rulesets/${ruleset.id}`, { method: "GET" }, token);
+  const detail = await cf(`/accounts/${accountId}/rulesets/${ruleset.id}`, { method: "GET" }, token);
   const existingRule = (detail.result.rules || []).find((r: any) => r.description === RULE_DESCRIPTION);
 
   if (existingRule) {
     await cf(
-      `/zones/${zoneId}/rulesets/${ruleset.id}/rules/${existingRule.id}`,
+      `/accounts/${accountId}/rulesets/${ruleset.id}/rules/${existingRule.id}`,
       { method: "PATCH", body: JSON.stringify(newRule) },
       token,
     );
@@ -174,11 +174,10 @@ async function ensureRedirectRule(zoneId: string, accountId: string, listId: str
   }
 
   const added = await cf(
-    `/zones/${zoneId}/rulesets/${ruleset.id}/rules`,
+    `/accounts/${accountId}/rulesets/${ruleset.id}/rules`,
     { method: "POST", body: JSON.stringify(newRule) },
     token,
   );
-  // The added rule ID is in result.rules[last]
   const addedId = added.result?.rules?.slice(-1)?.[0]?.id;
   return { ruleId: addedId, action: "created" };
 }
