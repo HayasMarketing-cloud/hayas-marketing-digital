@@ -357,7 +357,7 @@ Deno.serve(async (req) => {
         return Object.entries(sum).sort((a, b) => b[1].hits - a[1].hits).map(([bot, v]) => ({ bot, ...v }));
       };
       return new Response(JSON.stringify({
-        period: { since, until, days: 30 },
+        period: { since, until, days: 7 },
         zone: zoneId,
         verified_bot_count: verified.length,
         ai_bots_detected: summarize(verified),
