@@ -285,6 +285,79 @@ Deno.serve(async (req) => {
       }, null, 2), { headers: { ...corsHeaders, "Content-Type": "application/json" } });
     }
 
+    // Análisis de bots IA — últimos 7 días
+    if (action === "ai-bots") {
+      const since = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();
+      const until = new Date().toISOString();
+      // Plan free no expone botScore. Usamos userAgent dimension a secas.
+      const query = `
+        query Bots($zoneTag: String!, $since: Time!, $until: Time!) {
+          viewer {
+            zones(filter: { zoneTag: $zoneTag }) {
+              raw: httpRequestsAdaptiveGroups(
+                limit: 500,
+                filter: { datetime_geq: $since, datetime_leq: $until },
+                orderBy: [count_DESC]
+              ) {
+                count
+                dimensions { userAgent edgeResponseStatus }
+              }
+            }
+          }
+        }`;
+      const gqlRes = await fetch("https://api.cloudflare.com/client/v4/graphql", {
+        method: "POST",
+        headers: { "Authorization": `Bearer ${token}`, "Content-Type": "application/json" },
+        body: JSON.stringify({ query, variables: { zoneTag: zoneId, since, until } }),
+      });
+      const gql = await gqlRes.json();
+      const verified = gql?.data?.viewer?.zones?.[0]?.httpRequestsAdaptiveGroups || [];
+      const raw = gql?.data?.viewer?.zones?.[0]?.raw || [];
+      const aiPatterns = [
+        { name: "GPTBot (OpenAI)", re: /GPTBot/i },
+        { name: "ChatGPT-User", re: /ChatGPT-User/i },
+        { name: "OAI-SearchBot", re: /OAI-SearchBot/i },
+        { name: "ClaudeBot (Anthropic)", re: /ClaudeBot|Claude-Web|anthropic/i },
+        { name: "PerplexityBot", re: /PerplexityBot|Perplexity-User/i },
+        { name: "Google-Extended", re: /Google-Extended/i },
+        { name: "Googlebot", re: /Googlebot/i },
+        { name: "Bingbot", re: /bingbot/i },
+        { name: "CCBot (Common Crawl)", re: /CCBot/i },
+        { name: "Bytespider (TikTok)", re: /Bytespider/i },
+        { name: "Amazonbot", re: /Amazonbot/i },
+        { name: "Applebot", re: /Applebot/i },
+        { name: "Meta-ExternalAgent", re: /Meta-ExternalAgent|FacebookBot|facebookexternalhit/i },
+        { name: "DuckDuckBot", re: /DuckDuckBot/i },
+        { name: "YandexBot", re: /YandexBot/i },
+        { name: "MistralAI", re: /MistralAI/i },
+        { name: "Cohere", re: /cohere-ai/i },
+      ];
+      const summarize = (groups: any[]) => {
+        const sum: Record<string, { hits: number; status_codes: Record<string, number> }> = {};
+        for (const g of groups) {
+          const ua = g.dimensions?.userAgent || "";
+          const status = String(g.dimensions?.edgeResponseStatus || "?");
+          for (const p of aiPatterns) {
+            if (p.re.test(ua)) {
+              if (!sum[p.name]) sum[p.name] = { hits: 0, status_codes: {} };
+              sum[p.name].hits += g.count;
+              sum[p.name].status_codes[status] = (sum[p.name].status_codes[status] || 0) + g.count;
+              break;
+            }
+          }
+        }
+        return Object.entries(sum).sort((a, b) => b[1].hits - a[1].hits).map(([bot, v]) => ({ bot, ...v }));
+      };
+      return new Response(JSON.stringify({
+        period: { since, until, days: 7 },
+        zone: zoneId,
+        total_groups: raw.length,
+        ai_bots_detected: summarize(raw),
+        top_user_agents_sample: raw.slice(0, 30).map((g: any) => ({ ua: (g.dimensions?.userAgent || "").slice(0, 120), status: g.dimensions?.edgeResponseStatus, hits: g.count })),
+        gql_errors: gql?.errors || null,
+      }, null, 2), { headers: { ...corsHeaders, "Content-Type": "application/json" } });
+    }
+
     // Descargar _redirects desde el sitio publicado
     const redirectsRes = await fetch("https://hayasmarketing.com/_redirects");
     if (!redirectsRes.ok) {
