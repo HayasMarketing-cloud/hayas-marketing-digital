@@ -6,6 +6,7 @@ export const IndexEN = lazyWithRetry(() => import("@/pages/IndexEN"));
 export const NotFound = lazyWithRetry(() => import("@/pages/NotFound"));
 export const Error404 = lazyWithRetry(() => import("@/pages/Error404"));
 export const ComingSoonEN = lazyWithRetry(() => import("@/pages/ComingSoonEN"));
+export const ComingSoonRedirect = lazyWithRetry(() => import("@/pages/en/ComingSoonRedirect"));
 export const TypographyPlayground = lazyWithRetry(() => import("@/pages/TypographyPlayground"));
 
 // Nosotros y contacto
