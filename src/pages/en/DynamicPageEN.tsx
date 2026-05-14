@@ -203,7 +203,7 @@ const DynamicPageEN: React.FC<DynamicPageENProps> = ({ section }) => {
   if (!Component) {
     return (
       <Suspense fallback={<PageSuspense><div /></PageSuspense>}>
-        <ComingSoonEN />
+        <ComingSoonRedirect />
       </Suspense>
     );
   }
