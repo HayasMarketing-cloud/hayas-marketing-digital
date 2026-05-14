@@ -254,7 +254,7 @@ El marketing basado en decisiones prioriza la calidad de la elección sobre el v
 Guía sobre optimización para motores de respuesta e IA generativa.
 
 ### Chatbots para Web
-**URL**: /es/blog/chatbots-para-web
+**URL**: /es/blog/chatbots-para-paginas-web
 Guía práctica sobre implementación de chatbots inteligentes.
 
 ### Qué es un CRM y sus Beneficios
