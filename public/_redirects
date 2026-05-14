@@ -624,14 +624,14 @@
 /casos-exito/finect/  /es/casos-exito/finect  301
 
 # Casos de éxito sin /es/ - inexistentes (redirigir al índice)
-/casos-exito/eurobits-technologies  /es/casos-exito  301
-/casos-exito/eurobits-technologies/  /es/casos-exito  301
-/casos-exito/fundacion-casa-mexico  /es/casos-exito  301
-/casos-exito/fundacion-casa-mexico/  /es/casos-exito  301
-/casos-exito/quanticbi  /es/casos-exito  301
-/casos-exito/quanticbi/  /es/casos-exito  301
-/casos-exito/unitrips  /es/casos-exito  301
-/casos-exito/unitrips/  /es/casos-exito  301
+/casos-exito/eurobits-technologies  /es/casos-exito/eurobits-technologies  301
+/casos-exito/eurobits-technologies/  /es/casos-exito/eurobits-technologies  301
+/casos-exito/fundacion-casa-mexico  /es/casos-exito/fundacion-casa-mexico  301
+/casos-exito/fundacion-casa-mexico/  /es/casos-exito/fundacion-casa-mexico  301
+/casos-exito/quanticbi  /es/casos-exito/quanticbi  301
+/casos-exito/quanticbi/  /es/casos-exito/quanticbi  301
+/casos-exito/unitrips  /es/casos-exito/unitrips  301
+/casos-exito/unitrips/  /es/casos-exito/unitrips  301
 
 # Servicios sin /es/
 /servicios  /es/servicios  301
