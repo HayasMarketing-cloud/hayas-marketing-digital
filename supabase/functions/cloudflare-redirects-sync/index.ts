@@ -66,13 +66,17 @@ function parseRedirects(text: string): { exact: ParsedRedirect[]; skipped: { lin
 }
 
 async function cf(path: string, init: RequestInit, token: string) {
+  const method = (init.method || "GET").toUpperCase();
+  const baseHeaders: Record<string, string> = {
+    "Authorization": `Bearer ${token}`,
+  };
+  // Cloudflare rechaza GET con Content-Type: application/json (code 10000)
+  if (method !== "GET" && method !== "HEAD") {
+    baseHeaders["Content-Type"] = "application/json";
+  }
   const res = await fetch(`${CF_API}${path}`, {
     ...init,
-    headers: {
-      "Authorization": `Bearer ${token}`,
-      "Content-Type": "application/json",
-      ...(init.headers || {}),
-    },
+    headers: { ...baseHeaders, ...(init.headers || {}) },
   });
   const json = await res.json();
   if (!json.success) {
