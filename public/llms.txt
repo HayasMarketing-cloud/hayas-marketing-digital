@@ -8,7 +8,6 @@
 
 - [Inicio](/es): Plataforma SENSE y las 6 Activaciones de Hayas Marketing.
 - [SENSE — Plataforma de Inteligencia de Marketing](/es/soluciones/plataforma-inteligencia-marketing): Plataforma propietaria con 4 módulos (BRAIN, RADAR, SEARCH, STRATEGY) y framework LOOP.
-- [Activaciones](/es/activaciones/research): Las 6 unidades de ejecución conectadas a SENSE.
 - [Research Activation](/es/activaciones/research): Inteligencia, consultoría e IA para decisiones basadas en datos.
 - [Growth Activation](/es/activaciones/growth): Inbound, captación y estrategia digital para leads cualificados.
 - [Visibility Activation](/es/activaciones/visibility): SEO, Google Ads y redes sociales para posicionamiento.
