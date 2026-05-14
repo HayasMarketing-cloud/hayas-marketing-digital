@@ -287,7 +287,7 @@ Deno.serve(async (req) => {
 
     // Análisis de bots IA — últimos 7 días
     if (action === "ai-bots") {
-      const since = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString();
+      const since = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();
       const until = new Date().toISOString();
       // Dataset específico de bots verificados de Cloudflare
       const query = `
