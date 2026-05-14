@@ -23,9 +23,9 @@
 
 ## Optional
 
-- [Decision Marketing](/es/blog/decision-marketing): Cómo priorizar la calidad de la decisión sobre el volumen de conversión.
+- [Decision Marketing](/es/blog/decision-marketing-confianza): Cómo priorizar la calidad de la decisión sobre el volumen de conversión.
 - [Nuevo Paradigma SEO (AEO y GEO)](/es/blog/nuevo-paradigma-seo-aeo-geo): Optimización para motores de respuesta e IA generativa.
-- [Chatbots para Web](/es/blog/chatbots-para-web): Implementación de chatbots inteligentes.
+- [Chatbots para Web](/es/blog/chatbots-para-paginas-web): Implementación de chatbots inteligentes.
 - [Qué es un CRM](/es/blog/crm-que-es-beneficios): HubSpot vs Go High Level.
 
 ---
