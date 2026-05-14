@@ -254,6 +254,27 @@ Deno.serve(async (req) => {
     const body = req.method === "POST" ? await req.json().catch(() => ({})) : {};
     const action = body.action || "preview";
 
+    // Debug: verificar token
+    if (action === "verify") {
+      const verifyRes = await fetch("https://api.cloudflare.com/client/v4/user/tokens/verify", {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      const verifyJson = await verifyRes.json();
+      const listsRes = await fetch(`https://api.cloudflare.com/client/v4/accounts/${accountId}/rules/lists`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      const listsJson = await listsRes.json();
+      return new Response(JSON.stringify({
+        accountId,
+        zoneId,
+        tokenLength: token.length,
+        tokenPrefix: token.slice(0, 6),
+        verify: verifyJson,
+        listsStatus: listsRes.status,
+        lists: listsJson,
+      }, null, 2), { headers: { ...corsHeaders, "Content-Type": "application/json" } });
+    }
+
     // Descargar _redirects desde el sitio publicado
     const redirectsRes = await fetch("https://hayasmarketing.com/_redirects");
     if (!redirectsRes.ok) {
