@@ -8,7 +8,6 @@
 
 - [Inicio](/es): Plataforma SENSE y las 6 Activaciones de Hayas Marketing.
 - [SENSE — Plataforma de Inteligencia de Marketing](/es/soluciones/plataforma-inteligencia-marketing): Plataforma propietaria con 4 módulos (BRAIN, RADAR, SEARCH, STRATEGY) y framework LOOP.
-- [Activaciones](/es/activaciones/research): Las 6 unidades de ejecución conectadas a SENSE.
 - [Research Activation](/es/activaciones/research): Inteligencia, consultoría e IA para decisiones basadas en datos.
 - [Growth Activation](/es/activaciones/growth): Inbound, captación y estrategia digital para leads cualificados.
 - [Visibility Activation](/es/activaciones/visibility): SEO, Google Ads y redes sociales para posicionamiento.
@@ -16,7 +15,7 @@
 - [CRM & Automation Activation](/es/activaciones/crm-automation): CRM (HubSpot, GHL), automatización y email marketing.
 - [Content & Brand Activation](/es/activaciones/content-brand): Branding, estrategia de contenidos y localización.
 - [Blog](/es/blog): Artículos estratégicos sobre marketing, IA, SEO y CRM.
-- [Casos de Éxito](/es/casos-de-exito): +15 casos documentados (FINECT, Asendia, BuhoBike, Wooptix...).
+- [Casos de Éxito](/es/casos-exito): +15 casos documentados (FINECT, Asendia, BuhoBike, Wooptix...).
 - [Nosotros](/es/nosotros): Equipo, fundador Rubén Reyero y partners certificados.
 - [Contacto](/es/contacto): Formulario y datos de contacto.
 - [Agendar Reunión](/es/agendar-reunion): Reunión estratégica gratuita de 30 minutos.
@@ -24,9 +23,9 @@
 
 ## Optional
 
-- [Decision Marketing](/es/blog/decision-marketing): Cómo priorizar la calidad de la decisión sobre el volumen de conversión.
+- [Decision Marketing](/es/blog/decision-marketing-confianza): Cómo priorizar la calidad de la decisión sobre el volumen de conversión.
 - [Nuevo Paradigma SEO (AEO y GEO)](/es/blog/nuevo-paradigma-seo-aeo-geo): Optimización para motores de respuesta e IA generativa.
-- [Chatbots para Web](/es/blog/chatbots-para-web): Implementación de chatbots inteligentes.
+- [Chatbots para Web](/es/blog/chatbots-para-paginas-web): Implementación de chatbots inteligentes.
 - [Qué es un CRM](/es/blog/crm-que-es-beneficios): HubSpot vs Go High Level.
 
 ---
@@ -189,7 +188,7 @@ Una marca que conecta, un mensaje que convierte. Branding, estrategia de conteni
 - **Nova Praxis** (Consultoría) - Inbound marketing y HubSpot
 - **Peris Electricidad** (Industria) - Web y SEO local
 
-**URL casos de éxito**: https://hayasmarketing.com/es/casos-de-exito
+**URL casos de éxito**: https://hayasmarketing.com/es/casos-exito
 
 ---
 
@@ -255,7 +254,7 @@ El marketing basado en decisiones prioriza la calidad de la elección sobre el v
 Guía sobre optimización para motores de respuesta e IA generativa.
 
 ### Chatbots para Web
-**URL**: /es/blog/chatbots-para-web
+**URL**: /es/blog/chatbots-para-paginas-web
 Guía práctica sobre implementación de chatbots inteligentes.
 
 ### Qué es un CRM y sus Beneficios
