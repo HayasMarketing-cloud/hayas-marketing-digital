@@ -44,3 +44,6 @@ verify_jwt = true
 
 [functions.serve-og-meta]
 verify_jwt = false
+
+[functions.cloudflare-redirects-sync]
+verify_jwt = false
