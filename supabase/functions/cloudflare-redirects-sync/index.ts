@@ -287,20 +287,28 @@ Deno.serve(async (req) => {
 
     // Análisis de bots IA — últimos 7 días
     if (action === "ai-bots") {
-      const since = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();
+      const since = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString();
       const until = new Date().toISOString();
+      // Dataset específico de bots verificados de Cloudflare
       const query = `
-        query AIBots($zoneTag: String!, $since: Time!, $until: Time!) {
+        query Bots($zoneTag: String!, $since: Time!, $until: Time!) {
           viewer {
             zones(filter: { zoneTag: $zoneTag }) {
               httpRequestsAdaptiveGroups(
-                limit: 200,
+                limit: 500,
+                filter: { datetime_geq: $since, datetime_leq: $until, botScoreSrcName: "verified_bot" },
+                orderBy: [count_DESC]
+              ) {
+                count
+                dimensions { userAgent botScore botScoreSrcName edgeResponseStatus }
+              }
+              raw: httpRequestsAdaptiveGroups(
+                limit: 50,
                 filter: { datetime_geq: $since, datetime_leq: $until },
                 orderBy: [count_DESC]
               ) {
                 count
-                sum { edgeResponseBytes visits }
-                dimensions { userAgent clientRequestHTTPHost edgeResponseStatus }
+                dimensions { userAgent edgeResponseStatus }
               }
             }
           }
@@ -311,7 +319,8 @@ Deno.serve(async (req) => {
         body: JSON.stringify({ query, variables: { zoneTag: zoneId, since, until } }),
       });
       const gql = await gqlRes.json();
-      const groups = gql?.data?.viewer?.zones?.[0]?.httpRequestsAdaptiveGroups || [];
+      const verified = gql?.data?.viewer?.zones?.[0]?.httpRequestsAdaptiveGroups || [];
+      const raw = gql?.data?.viewer?.zones?.[0]?.raw || [];
       const aiPatterns = [
         { name: "GPTBot (OpenAI)", re: /GPTBot/i },
         { name: "ChatGPT-User", re: /ChatGPT-User/i },
@@ -325,33 +334,34 @@ Deno.serve(async (req) => {
         { name: "Bytespider (TikTok)", re: /Bytespider/i },
         { name: "Amazonbot", re: /Amazonbot/i },
         { name: "Applebot", re: /Applebot/i },
-        { name: "Meta-ExternalAgent", re: /Meta-ExternalAgent|FacebookBot/i },
+        { name: "Meta-ExternalAgent", re: /Meta-ExternalAgent|FacebookBot|facebookexternalhit/i },
         { name: "DuckDuckBot", re: /DuckDuckBot/i },
         { name: "YandexBot", re: /YandexBot/i },
-        { name: "Mistral", re: /MistralAI/i },
+        { name: "MistralAI", re: /MistralAI/i },
         { name: "Cohere", re: /cohere-ai/i },
       ];
-      const summary: Record<string, { hits: number; status_codes: Record<string, number> }> = {};
-      for (const g of groups) {
-        const ua = g.dimensions?.userAgent || "";
-        const status = String(g.dimensions?.edgeResponseStatus || "?");
-        for (const p of aiPatterns) {
-          if (p.re.test(ua)) {
-            if (!summary[p.name]) summary[p.name] = { hits: 0, status_codes: {} };
-            summary[p.name].hits += g.count;
-            summary[p.name].status_codes[status] = (summary[p.name].status_codes[status] || 0) + g.count;
-            break;
+      const summarize = (groups: any[]) => {
+        const sum: Record<string, { hits: number; status_codes: Record<string, number> }> = {};
+        for (const g of groups) {
+          const ua = g.dimensions?.userAgent || "";
+          const status = String(g.dimensions?.edgeResponseStatus || "?");
+          for (const p of aiPatterns) {
+            if (p.re.test(ua)) {
+              if (!sum[p.name]) sum[p.name] = { hits: 0, status_codes: {} };
+              sum[p.name].hits += g.count;
+              sum[p.name].status_codes[status] = (sum[p.name].status_codes[status] || 0) + g.count;
+              break;
+            }
           }
         }
-      }
-      const ranking = Object.entries(summary)
-        .sort((a, b) => b[1].hits - a[1].hits)
-        .map(([name, v]) => ({ bot: name, hits: v.hits, status_codes: v.status_codes }));
+        return Object.entries(sum).sort((a, b) => b[1].hits - a[1].hits).map(([bot, v]) => ({ bot, ...v }));
+      };
       return new Response(JSON.stringify({
-        period: { since, until, days: 7 },
+        period: { since, until, days: 30 },
         zone: zoneId,
-        total_groups_returned: groups.length,
-        ai_bots_detected: ranking,
+        verified_bot_count: verified.length,
+        ai_bots_detected: summarize(verified),
+        top_user_agents_sample: raw.slice(0, 30).map((g: any) => ({ ua: (g.dimensions?.userAgent || "").slice(0, 120), status: g.dimensions?.edgeResponseStatus, hits: g.count })),
         gql_errors: gql?.errors || null,
       }, null, 2), { headers: { ...corsHeaders, "Content-Type": "application/json" } });
     }
