@@ -669,9 +669,13 @@ const App = () => (
               END OF ENGLISH ROUTES
               ============================================ */}
           
-          {/* ENGLISH COMING SOON - Catches all undefined /en/* routes */}
-          <Route path="/en/*" element={<PageSuspense><Pages.ComingSoonEN /></PageSuspense>} />
-          
+          {/* Single canonical Coming Soon URL (only EN page with noindex) */}
+          <Route path="/en/coming-soon" element={<PageSuspense><Pages.ComingSoonEN /></PageSuspense>} />
+
+          {/* ENGLISH CATCH-ALL — redirects any undefined /en/* to /en/coming-soon?from=...
+             so Google sees a clean SPA redirect instead of dozens of noindex placeholders. */}
+          <Route path="/en/*" element={<PageSuspense><Pages.ComingSoonRedirect /></PageSuspense>} />
+
           {/* TYPOGRAPHY PLAYGROUND - Página de prueba tipográfica */}
           <Route path="/typography-playground" element={<PageSuspense><Pages.TypographyPlayground /></PageSuspense>} />
           

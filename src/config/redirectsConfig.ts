@@ -580,6 +580,22 @@ export const redirectsConfig: RedirectRule[] = [
   { id: 'en-slug-fix-2', source: '/en/services/administracion-crm/', destination: '/en/services/crm-administration', type: '301', category: 'EN Slug Fixes', dateAdded: '2026-02-22', notes: 'Slug ES en ruta EN corregido (trailing slash)' },
   { id: 'en-slug-fix-3', source: '/en/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing', destination: '/en/blog/artificial-intelligence-marketing-applications', type: '301', category: 'EN Slug Fixes', dateAdded: '2026-02-22', notes: 'Slug ES en ruta EN corregido' },
   { id: 'en-slug-fix-4', source: '/en/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing/', destination: '/en/blog/artificial-intelligence-marketing-applications', type: '301', category: 'EN Slug Fixes', dateAdded: '2026-02-22', notes: 'Slug ES en ruta EN corregido (trailing slash)' },
+
+  // ============================================================
+  // EN → ES forced redirects: Spanish-only sections (Kit Digital, Legal)
+  // Cleanup 2026-05: GSC reported these as "Excluded by noindex".
+  // Per project memory: Kit Digital and Legal are SPANISH ONLY.
+  // ============================================================
+  { id: 'en-kit-digital-root', source: '/en/kit-digital', destination: '/es/kit-digital', type: '301', category: 'EN→ES Spanish-only', dateAdded: '2026-05-14' },
+  { id: 'en-kit-digital-basic', source: '/en/kit-digital/basic-internet-presence', destination: '/es/kit-digital/presencia-basica-internet', type: '301', category: 'EN→ES Spanish-only', dateAdded: '2026-05-14' },
+  { id: 'en-kit-digital-crm', source: '/en/kit-digital/crm-client-management', destination: '/es/kit-digital/gestion-clientes-crm', type: '301', category: 'EN→ES Spanish-only', dateAdded: '2026-05-14' },
+  { id: 'en-kit-digital-seo', source: '/en/kit-digital/advanced-presence-seo', destination: '/es/kit-digital/presencia-avanzada-internet', type: '301', category: 'EN→ES Spanish-only', dateAdded: '2026-05-14' },
+  { id: 'en-kit-digital-social', source: '/en/kit-digital/social-media-management', destination: '/es/kit-digital/gestion-redes-sociales', type: '301', category: 'EN→ES Spanish-only', dateAdded: '2026-05-14' },
+
+  { id: 'en-legal-root', source: '/en/legal', destination: '/es/legal', type: '301', category: 'EN→ES Spanish-only', dateAdded: '2026-05-14' },
+  { id: 'en-legal-notice', source: '/en/legal/legal-notice', destination: '/es/legal/aviso-legal', type: '301', category: 'EN→ES Spanish-only', dateAdded: '2026-05-14' },
+  { id: 'en-legal-cookie-es', source: '/en/legal/politica-cookies', destination: '/en/legal/cookie-policy', type: '301', category: 'EN→ES Spanish-only', dateAdded: '2026-05-14', notes: 'Slug ES erróneo en EN, redirige al EN canónico' },
+  { id: 'en-legal-terms-es', source: '/en/legal/terminos-servicio', destination: '/es/legal/terminos-servicio', type: '301', category: 'EN→ES Spanish-only', dateAdded: '2026-05-14' },
 ];
 
 // ============================================================
