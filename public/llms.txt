@@ -15,7 +15,7 @@
 - [CRM & Automation Activation](/es/activaciones/crm-automation): CRM (HubSpot, GHL), automatización y email marketing.
 - [Content & Brand Activation](/es/activaciones/content-brand): Branding, estrategia de contenidos y localización.
 - [Blog](/es/blog): Artículos estratégicos sobre marketing, IA, SEO y CRM.
-- [Casos de Éxito](/es/casos-de-exito): +15 casos documentados (FINECT, Asendia, BuhoBike, Wooptix...).
+- [Casos de Éxito](/es/casos-exito): +15 casos documentados (FINECT, Asendia, BuhoBike, Wooptix...).
 - [Nosotros](/es/nosotros): Equipo, fundador Rubén Reyero y partners certificados.
 - [Contacto](/es/contacto): Formulario y datos de contacto.
 - [Agendar Reunión](/es/agendar-reunion): Reunión estratégica gratuita de 30 minutos.
