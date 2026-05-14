@@ -66,16 +66,23 @@ function parseRedirects(text: string): { exact: ParsedRedirect[]; skipped: { lin
 }
 
 async function cf(path: string, init: RequestInit, token: string) {
+  const method = (init.method || "GET").toUpperCase();
+  const baseHeaders: Record<string, string> = {
+    "Authorization": `Bearer ${token}`,
+  };
+  if (method !== "GET" && method !== "HEAD") {
+    baseHeaders["Content-Type"] = "application/json";
+  }
+  const finalHeaders = { ...baseHeaders, ...(init.headers || {}) };
+  console.log("[cf]", method, path, "headers:", Object.keys(finalHeaders).join(","), "tokenLen:", token.length, "tokenPrefix:", token.slice(0, 6));
   const res = await fetch(`${CF_API}${path}`, {
     ...init,
-    headers: {
-      "Authorization": `Bearer ${token}`,
-      "Content-Type": "application/json",
-      ...(init.headers || {}),
-    },
+    method,
+    headers: finalHeaders,
   });
   const json = await res.json();
   if (!json.success) {
+    console.error("[cf] FAIL", method, path, "status:", res.status, "body:", JSON.stringify(json).slice(0, 300));
     throw new Error(`Cloudflare API ${path} failed: ${JSON.stringify(json.errors || json)}`);
   }
   return json;
