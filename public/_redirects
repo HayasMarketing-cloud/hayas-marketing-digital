@@ -610,6 +610,39 @@
 /es/casos-exito/comercio-electronico/  /es/casos-exito  301
 
 # ========================================
+# URLs DETECTADAS EN GSC (Mayo 2026) - HUÉRFANAS
+# ========================================
+# Detectadas con tráfico real en Search Console pero sin redirect previo
+# Blog posts sin /es/
+/blog/estrategia-marketing-contenidos-eficaz-2025  /es/blog/estrategia-marketing-contenidos-eficaz-2025  301
+/blog/estrategia-marketing-contenidos-eficaz-2025/  /es/blog/estrategia-marketing-contenidos-eficaz-2025  301
+/blog/como-elegir-mejor-crm-empresa-organizacion  /es/blog/como-elegir-mejor-crm-empresa-organizacion  301
+/blog/como-elegir-mejor-crm-empresa-organizacion/  /es/blog/como-elegir-mejor-crm-empresa-organizacion  301
+
+# Casos de éxito sin /es/ - existentes
+/casos-exito/finect  /es/casos-exito/finect  301
+/casos-exito/finect/  /es/casos-exito/finect  301
+
+# Casos de éxito sin /es/ - inexistentes (redirigir al índice)
+/casos-exito/eurobits-technologies  /es/casos-exito  301
+/casos-exito/eurobits-technologies/  /es/casos-exito  301
+/casos-exito/fundacion-casa-mexico  /es/casos-exito  301
+/casos-exito/fundacion-casa-mexico/  /es/casos-exito  301
+/casos-exito/quanticbi  /es/casos-exito  301
+/casos-exito/quanticbi/  /es/casos-exito  301
+/casos-exito/unitrips  /es/casos-exito  301
+/casos-exito/unitrips/  /es/casos-exito  301
+
+# Servicios sin /es/
+/servicios  /es/servicios  301
+/servicios/  /es/servicios  301
+/servicios/creacion-marca  /es/servicios/creacion-marca  301
+/servicios/creacion-marca/  /es/servicios/creacion-marca  301
+/servicios/seo-positioning  /es/servicios/seo-posicionamiento  301
+/servicios/seo-positioning/  /es/servicios/seo-posicionamiento  301
+
+
+# ========================================
 # SPA FALLBACK - DEBE IR AL FINAL
 # ========================================
 # Para React Router: todas las rutas no capturadas anteriormente
