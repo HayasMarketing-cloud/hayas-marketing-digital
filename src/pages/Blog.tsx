@@ -111,7 +111,9 @@ const Blog = () => {
       tags: ['Ecommerce', 'IA', isEnglish ? 'Online Store' : 'Tienda Online', isEnglish ? 'Digital Strategy' : 'Estrategia Digital', isEnglish ? 'Strategy' : 'Estrategia', isEnglish ? 'Artificial Intelligence' : 'Inteligencia Artificial', 'ChatGPT', 'Google', 'Microsoft'],
       featured: true
     },
-      title: isEnglish 
+    {
+      id: 'lovable-vs-wordpress',
+      title: isEnglish
         ? 'Lovable vs WordPress: Which Platform to Choose for Your Strategy'
         : 'Lovable vs WordPress: qué plataforma elegir según tu estrategia',
       description: isEnglish
