@@ -53,7 +53,7 @@ const BlogAnalysisParalysisMarketingEN = () => {
 
   const relatedServices = [
     { title: 'Strategic consulting', description: 'We design the decision system and KPIs that actually move your business.', link: '/en/services/strategic-analytics-consulting' },
-    { title: 'Marketing intelligence platform', description: 'We unify scattered data into an actionable layer connected to the business.', link: '/en/services/marketing-intelligence-platform' }
+    { title: 'Marketing intelligence platform', description: 'We unify scattered data into an actionable layer connected to the business.', link: '/en/solutions/marketing-intelligence-platform' }
   ];
 
   return (
