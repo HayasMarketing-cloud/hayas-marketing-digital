@@ -362,7 +362,8 @@ const SofiaWidget = () => {
             </div>
             <button
               onClick={() => setShowHelpMessage(false)}
-              className="text-gray-400 hover:text-gray-600 p-1"
+              aria-label={isEnglish ? 'Close help message' : 'Cerrar mensaje de ayuda'}
+              className="text-muted-foreground hover:text-foreground p-1"
             >
               <X className="w-4 h-4" />
             </button>
