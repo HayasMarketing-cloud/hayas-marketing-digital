@@ -164,6 +164,14 @@ const mentionEntities = [
 // Artículos de Rubén
 const authorArticles = [
   {
+    slug: 'paralisis-por-analisis-marketing',
+    title: 'Parálisis por análisis: menos datos, más criterio',
+    excerpt: 'Tener datos no es lo mismo que tener claridad. Por qué el marketing moderno necesita menos acumulación y más sistemas estratégicos.',
+    date: '2026-06-09',
+    readTime: '12 min',
+    category: 'Marketing basado en datos'
+  },
+  {
     slug: 'la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing',
     title: 'La Inteligencia Artificial (IA) y su aplicación en Marketing',
     excerpt: 'En un mundo donde la tecnología avanza a pasos agigantados, la IA ha emergido como una herramienta transformadora en el marketing digital.',
