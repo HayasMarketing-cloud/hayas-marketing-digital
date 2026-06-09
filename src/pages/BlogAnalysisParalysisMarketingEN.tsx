@@ -172,7 +172,6 @@ const BlogAnalysisParalysisMarketingEN = () => {
           <strong> turning digital complexity into a clear growth system.</strong>
         </p>
       </section>
-      </section>
 
       <section className="my-16 not-prose">
         <div className="relative overflow-hidden rounded-3xl border border-primary/20 bg-gradient-to-br from-primary/5 via-background to-accent/10 p-8 md:p-12 shadow-xl">
