@@ -71,6 +71,7 @@ export const registeredRoutes: RouteDefinition[] = [
   { path: '/es/blog/la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing', category: 'blog', isIndexable: true, priority: 0.7, changefreq: 'monthly', isDynamic: false, isLegacy: false },
   { path: '/es/blog/ia-redes-sociales-herramientas-riesgos', category: 'blog', isIndexable: true, priority: 0.7, changefreq: 'monthly', isDynamic: false, isLegacy: false },
   { path: '/es/blog/decision-marketing-confianza', category: 'blog', isIndexable: true, priority: 0.7, changefreq: 'monthly', isDynamic: false, isLegacy: false },
+  { path: '/es/blog/paralisis-por-analisis-marketing', category: 'blog', isIndexable: true, priority: 0.7, changefreq: 'monthly', isDynamic: false, isLegacy: false },
   { path: '/es/blog/gobernanza-ia-empresas', category: 'blog', isIndexable: true, priority: 0.7, changefreq: 'monthly', isDynamic: false, isLegacy: false },
   { path: '/es/blog/guia-privacidad-huella-digital', category: 'blog', isIndexable: true, priority: 0.7, changefreq: 'monthly', isDynamic: false, isLegacy: false },
   { path: '/es/blog/huella-digital-derecho-olvido', category: 'blog', isIndexable: true, priority: 0.7, changefreq: 'monthly', isDynamic: false, isLegacy: false },
