@@ -75,11 +75,12 @@ const ArticleUtilitySection: React.FC<ArticleUtilitySectionProps> = ({ title, ur
             <div className="text-center mb-6">
               <Share2 className="w-8 h-8 mx-auto mb-3 text-primary" />
               <h4 className="text-xl font-semibold mb-2 text-foreground">
-                Comparte este artículo
+                {t.heading}
               </h4>
               <p className="text-muted-foreground">
-                Ayuda a otros con este contenido
+                {t.subheading}
               </p>
+
             </div>
             
             <div className="flex justify-center gap-3 flex-wrap">
