@@ -47,8 +47,8 @@ const ArticleUtilitySection: React.FC<ArticleUtilitySectionProps> = ({ title, ur
       case 'copy':
         navigator.clipboard.writeText(url);
         toast({
-          title: "¡Enlace copiado!",
-          description: "El enlace se ha copiado al portapapeles.",
+          title: t.copied,
+          description: t.copiedDesc,
         });
         return;
     }
@@ -58,10 +58,11 @@ const ArticleUtilitySection: React.FC<ArticleUtilitySectionProps> = ({ title, ur
 
       if (!newWindow) {
         toast({
-          title: "Ventana bloqueada",
-          description: "Tu navegador bloqueó la apertura. Permite pop-ups para compartir.",
+          title: t.blocked,
+          description: t.blockedDesc,
         });
       }
+
     }
   };
 
