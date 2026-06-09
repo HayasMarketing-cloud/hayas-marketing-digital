@@ -12,6 +12,18 @@ interface ArticleUtilitySectionProps {
 
 const ArticleUtilitySection: React.FC<ArticleUtilitySectionProps> = ({ title, url }) => {
   const { toast } = useToast();
+  const { language } = useLanguage();
+  const isEN = language === 'en';
+  const t = {
+    heading: isEN ? 'Share this article' : 'Comparte este artículo',
+    subheading: isEN ? 'Help others with this content' : 'Ayuda a otros con este contenido',
+    copy: isEN ? 'Copy link' : 'Copiar enlace',
+    copied: isEN ? 'Link copied!' : '¡Enlace copiado!',
+    copiedDesc: isEN ? 'The link has been copied to your clipboard.' : 'El enlace se ha copiado al portapapeles.',
+    blocked: isEN ? 'Window blocked' : 'Ventana bloqueada',
+    blockedDesc: isEN ? 'Your browser blocked the popup. Allow pop-ups to share.' : 'Tu navegador bloqueó la apertura. Permite pop-ups para compartir.',
+  };
+
 
   const handleShare = (platform: string) => {
     const encodedTitle = encodeURIComponent(title);
