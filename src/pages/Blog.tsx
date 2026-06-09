@@ -55,21 +55,21 @@ const Blog = () => {
   };
 
   const featuredPost = {
-    id: 'checkout-ia-ecommerce-copilot-chatgpt-gemini',
+    id: 'paralisis-por-analisis-marketing',
     title: isEnglish 
-      ? 'When Checkout Leaves Your Website: What Copilot, ChatGPT and Gemini Change for Ecommerce'
-      : 'Cuando el checkout deja de estar en tu web: lo que Copilot, ChatGPT y Gemini cambian para el ecommerce',
+      ? 'Analysis Paralysis: Less Data, More Judgment'
+      : 'Parálisis por análisis: menos datos, más criterio',
     description: isEnglish
-      ? 'Microsoft, OpenAI and Google are converging to turn AI conversations into full transactional channels. Strategic analysis for ecommerce managers.'
-      : 'Microsoft, OpenAI y Google convergen en convertir la conversación con IA en un canal transaccional completo. Análisis estratégico para ecommerce managers.',
-    date: '2026-03-02',
+      ? 'Having data is not the same as having clarity. Why modern marketing needs less accumulation and more strategic systems.'
+      : 'Tener datos no es lo mismo que tener claridad. Por qué el marketing moderno necesita menos acumulación y más sistemas estratégicos.',
+    date: '2026-06-09',
     readTime: '12 min',
     author: 'Rubén Reyero',
-    image: checkoutIAEcommerceHero,
-    category: isEnglish ? 'Ecommerce & AI' : 'Ecommerce e IA',
+    image: paralisisAnalisisHero,
+    category: isEnglish ? 'Data-Driven Marketing' : 'Marketing basado en datos',
     tags: isEnglish 
-      ? ['Ecommerce', 'AI', 'Strategy', 'ChatGPT', 'Google', 'Microsoft']
-      : ['Ecommerce', 'IA', 'Estrategia', 'Inteligencia Artificial', 'ChatGPT', 'Google']
+      ? ['Data-Driven Marketing', 'Strategy', 'Decision Making', 'Analysis Paralysis', 'B2B']
+      : ['Marketing basado en datos', 'Estrategia', 'Toma de decisiones', 'Parálisis por análisis', 'B2B']
   };
 
   const allPosts = [
