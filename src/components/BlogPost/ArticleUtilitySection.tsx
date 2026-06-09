@@ -2,6 +2,8 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Share2, Hash, Users, Briefcase, Link2, MessageCircle } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { useLanguage } from '@/contexts/LanguageContext';
+
 
 interface ArticleUtilitySectionProps {
   title: string;
@@ -10,6 +12,18 @@ interface ArticleUtilitySectionProps {
 
 const ArticleUtilitySection: React.FC<ArticleUtilitySectionProps> = ({ title, url }) => {
   const { toast } = useToast();
+  const { language } = useLanguage();
+  const isEN = language === 'en';
+  const t = {
+    heading: isEN ? 'Share this article' : 'Comparte este artículo',
+    subheading: isEN ? 'Help others with this content' : 'Ayuda a otros con este contenido',
+    copy: isEN ? 'Copy link' : 'Copiar enlace',
+    copied: isEN ? 'Link copied!' : '¡Enlace copiado!',
+    copiedDesc: isEN ? 'The link has been copied to your clipboard.' : 'El enlace se ha copiado al portapapeles.',
+    blocked: isEN ? 'Window blocked' : 'Ventana bloqueada',
+    blockedDesc: isEN ? 'Your browser blocked the popup. Allow pop-ups to share.' : 'Tu navegador bloqueó la apertura. Permite pop-ups para compartir.',
+  };
+
 
   const handleShare = (platform: string) => {
     const encodedTitle = encodeURIComponent(title);
@@ -33,8 +47,8 @@ const ArticleUtilitySection: React.FC<ArticleUtilitySectionProps> = ({ title, ur
       case 'copy':
         navigator.clipboard.writeText(url);
         toast({
-          title: "¡Enlace copiado!",
-          description: "El enlace se ha copiado al portapapeles.",
+          title: t.copied,
+          description: t.copiedDesc,
         });
         return;
     }
@@ -44,10 +58,11 @@ const ArticleUtilitySection: React.FC<ArticleUtilitySectionProps> = ({ title, ur
 
       if (!newWindow) {
         toast({
-          title: "Ventana bloqueada",
-          description: "Tu navegador bloqueó la apertura. Permite pop-ups para compartir.",
+          title: t.blocked,
+          description: t.blockedDesc,
         });
       }
+
     }
   };
 
@@ -60,11 +75,12 @@ const ArticleUtilitySection: React.FC<ArticleUtilitySectionProps> = ({ title, ur
             <div className="text-center mb-6">
               <Share2 className="w-8 h-8 mx-auto mb-3 text-primary" />
               <h4 className="text-xl font-semibold mb-2 text-foreground">
-                Comparte este artículo
+                {t.heading}
               </h4>
               <p className="text-muted-foreground">
-                Ayuda a otros con este contenido
+                {t.subheading}
               </p>
+
             </div>
             
             <div className="flex justify-center gap-3 flex-wrap">
@@ -115,7 +131,7 @@ const ArticleUtilitySection: React.FC<ArticleUtilitySectionProps> = ({ title, ur
                 className="group hover:bg-gray-50 hover:border-gray-400 hover:text-gray-700"
               >
                 <Link2 className="w-4 h-4 mr-2 text-gray-600 group-hover:scale-110 transition-transform" />
-                Copiar enlace
+                {t.copy}
               </Button>
             </div>
           </div>
