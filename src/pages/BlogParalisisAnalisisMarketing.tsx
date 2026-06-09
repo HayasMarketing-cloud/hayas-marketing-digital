@@ -1,9 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import BlogPostTemplate from '@/components/BlogPost/BlogPostTemplate';
 import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
+import { Button } from '@/components/ui/button';
 import paralisisHero from '@/assets/paralisis-analisis-marketing-hero.jpg';
-import { BarChart3, Compass, Filter, Layers, Target, AlertTriangle, CheckCircle2 } from 'lucide-react';
+import { BarChart3, Compass, Filter, Layers, Target, AlertTriangle, CheckCircle2, BrainCircuit, Radar, Search, Rocket, ArrowRight } from 'lucide-react';
 
 const BlogParalisisAnalisisMarketing = () => {
   const metadata = {
