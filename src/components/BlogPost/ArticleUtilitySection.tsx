@@ -2,6 +2,8 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Share2, Hash, Users, Briefcase, Link2, MessageCircle } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { useLanguage } from '@/contexts/LanguageContext';
+
 
 interface ArticleUtilitySectionProps {
   title: string;
