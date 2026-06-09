@@ -27,6 +27,7 @@ import guiaPrivacidadHeroImage from '@/assets/guia-privacidad-huella-digital-her
 import gobernanzaIAHero from '@/assets/gobernanza-ia-empresas-hero.jpg';
 import decisionMarketingHero from '@/assets/decision-marketing-hero.jpg';
 import checkoutIAEcommerceHero from '@/assets/checkout-ia-ecommerce-hero.jpg';
+import paralisisAnalisisHero from '@/assets/paralisis-analisis-marketing-hero.jpg';
 
 const Blog = () => {
   const { isEnglish, languageCode } = useLanguage();
