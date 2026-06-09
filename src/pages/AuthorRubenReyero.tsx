@@ -164,6 +164,14 @@ const mentionEntities = [
 // Artículos de Rubén
 const authorArticles = [
   {
+    slug: 'paralisis-por-analisis-marketing',
+    title: 'Parálisis por análisis: menos datos, más criterio',
+    excerpt: 'Manifiesto sobre cómo el exceso de datos paraliza decisiones de marketing y cómo construir un sistema de decisión claro.',
+    date: '2026-06-09',
+    readTime: '8 min',
+    category: 'Estrategias Marketing'
+  },
+  {
     slug: 'la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing',
     title: 'La Inteligencia Artificial (IA) y su aplicación en Marketing',
     excerpt: 'En un mundo donde la tecnología avanza a pasos agigantados, la IA ha emergido como una herramienta transformadora en el marketing digital.',

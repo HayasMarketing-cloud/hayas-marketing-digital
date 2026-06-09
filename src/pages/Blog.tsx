@@ -27,6 +27,7 @@ import guiaPrivacidadHeroImage from '@/assets/guia-privacidad-huella-digital-her
 import gobernanzaIAHero from '@/assets/gobernanza-ia-empresas-hero.jpg';
 import decisionMarketingHero from '@/assets/decision-marketing-hero.jpg';
 import checkoutIAEcommerceHero from '@/assets/checkout-ia-ecommerce-hero.jpg';
+import paralisisAnalisisHero from '@/assets/paralisis-analisis-marketing-hero.jpg';
 
 const Blog = () => {
   const { isEnglish, languageCode } = useLanguage();
@@ -109,6 +110,25 @@ const Blog = () => {
       slug: isEnglish ? '/en/blog/lovable-vs-wordpress' : '/es/blog/lovable-vs-wordpress-que-plataforma-elegir',
       tags: [isEnglish ? 'Web Development' : 'Desarrollo Web', 'SEO', isEnglish ? 'Digital Platforms' : 'Plataformas Digitales', 'IA', 'WordPress', 'Lovable'],
       featured: true
+    },
+    {
+      id: 'paralisis-por-analisis-marketing',
+      title: isEnglish
+        ? 'Analysis paralysis in marketing: less data, more judgment'
+        : 'Parálisis por análisis: menos datos, más criterio',
+      description: isEnglish
+        ? 'Analysis paralysis stalls marketing decisions. How to move from a data overload to a clear decision system, the Hayas Marketing way.'
+        : 'La parálisis por análisis frena decisiones de marketing. Cómo pasar del exceso de datos a un sistema con criterio, según Hayas Marketing.',
+      excerpt: isEnglish
+        ? 'Endless dashboards do not equal better decisions. A manifesto on data driven marketing without paralysis.'
+        : 'Dashboards infinitos no equivalen a mejores decisiones. Manifiesto sobre marketing basado en datos sin parálisis.',
+      category: isEnglish ? 'Marketing Strategies' : 'Estrategias Marketing',
+      readTime: '8 min',
+      date: '2026-06-09',
+      image: paralisisAnalisisHero,
+      slug: isEnglish ? '/en/blog/paralisis-por-analisis-marketing' : '/es/blog/paralisis-por-analisis-marketing',
+      tags: [isEnglish ? 'Analysis Paralysis' : 'Parálisis por análisis', isEnglish ? 'Data Driven Marketing' : 'Marketing basado en datos', isEnglish ? 'Decision Making' : 'Toma de decisiones', isEnglish ? 'B2B Strategy' : 'Estrategia B2B'],
+      featured: false
     },
     {
       id: 'nuevo-paradigma-seo-aeo-geo',
