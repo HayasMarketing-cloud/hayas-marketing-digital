@@ -74,6 +74,25 @@ const Blog = () => {
 
   const allPosts = [
     {
+      id: 'paralisis-por-analisis-marketing',
+      title: isEnglish 
+        ? 'Analysis Paralysis: Less Data, More Judgment'
+        : 'Parálisis por análisis: menos datos, más criterio',
+      description: isEnglish
+        ? 'Having data is not the same as having clarity. Why modern marketing needs less accumulation and more strategic systems.'
+        : 'Tener datos no es lo mismo que tener claridad. Por qué el marketing moderno necesita menos acumulación y más sistemas estratégicos.',
+      excerpt: isEnglish
+        ? 'Analysis paralysis paralyzes more decisions than lack of information. How to transform data into a real growth system.'
+        : 'La parálisis por análisis inmoviliza más decisiones que la falta de información. Cómo transformar los datos en un sistema real de crecimiento.',
+      category: isEnglish ? 'Data-Driven Marketing' : 'Marketing basado en datos',
+      readTime: '12 min',
+      date: '2026-06-09',
+      image: paralisisAnalisisHero,
+      slug: isEnglish ? '/en/blog/paralisis-por-analisis-marketing' : '/es/blog/paralisis-por-analisis-marketing',
+      tags: [isEnglish ? 'Data-Driven Marketing' : 'Marketing basado en datos', isEnglish ? 'Strategy' : 'Estrategia', isEnglish ? 'Decision Making' : 'Toma de decisiones', isEnglish ? 'Analysis Paralysis' : 'Parálisis por análisis', 'B2B', isEnglish ? 'Business Growth' : 'Crecimiento empresarial'],
+      featured: true
+    },
+    {
       id: 'checkout-ia-ecommerce-copilot-chatgpt-gemini',
       title: isEnglish 
         ? 'When Checkout Leaves Your Website: What Copilot, ChatGPT and Gemini Change for Ecommerce'
@@ -92,8 +111,6 @@ const Blog = () => {
       tags: ['Ecommerce', 'IA', isEnglish ? 'Online Store' : 'Tienda Online', isEnglish ? 'Digital Strategy' : 'Estrategia Digital', isEnglish ? 'Strategy' : 'Estrategia', isEnglish ? 'Artificial Intelligence' : 'Inteligencia Artificial', 'ChatGPT', 'Google', 'Microsoft'],
       featured: true
     },
-    {
-      id: 'lovable-vs-wordpress',
       title: isEnglish 
         ? 'Lovable vs WordPress: Which Platform to Choose for Your Strategy'
         : 'Lovable vs WordPress: qué plataforma elegir según tu estrategia',
