@@ -131,7 +131,7 @@ const ArticleUtilitySection: React.FC<ArticleUtilitySectionProps> = ({ title, ur
                 className="group hover:bg-gray-50 hover:border-gray-400 hover:text-gray-700"
               >
                 <Link2 className="w-4 h-4 mr-2 text-gray-600 group-hover:scale-110 transition-transform" />
-                Copiar enlace
+                {t.copy}
               </Button>
             </div>
           </div>
