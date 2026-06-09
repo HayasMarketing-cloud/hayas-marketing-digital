@@ -30,6 +30,7 @@ const ROUTE_MAPPINGS: Record<string, RouteMap> = {
   solutionsConnectCustomers: { es: '/es/soluciones/conecta-con-tus-clientes', en: '/en/solutions/connect-with-customers' },
   solutionsActivateSales: { es: '/es/soluciones/activa-tus-ventas', en: '/en/solutions/activate-sales' },
   solutionsAIMarketing: { es: '/es/soluciones/ia-marketing', en: '/en/solutions/ai-marketing' },
+  senseMarketingIntelligence: { es: '/es/soluciones/plataforma-inteligencia-marketing', en: '/en/solutions/marketing-intelligence-platform' },
   
   // Servicios específicos
   serviceContentStrategy: { es: '/es/servicios/estrategia-contenidos', en: '/en/services/content-strategy' },

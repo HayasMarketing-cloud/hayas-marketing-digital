@@ -248,8 +248,17 @@ const SensePlatform = () => {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-dm-sans text-foreground mb-6 leading-tight">
-              SENSE: Tu sistema de{' '}
-              <span className="text-gradient-primary">Inteligencia de Marketing</span>
+              {isEnglish ? (
+                <>
+                  SENSE: Your{' '}
+                  <span className="text-gradient-primary">Marketing Intelligence System</span>
+                </>
+              ) : (
+                <>
+                  SENSE: Tu sistema de{' '}
+                  <span className="text-gradient-primary">Inteligencia de Marketing</span>
+                </>
+              )}
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8 text-pretty">
