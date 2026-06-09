@@ -673,4 +673,12 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/legal/politica-cookies"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/legal/cookie-policy"/>
   </url>
+  <url>
+    <loc>https://hayasmarketing.com/es/blog/paralisis-por-analisis-marketing</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/blog/paralisis-por-analisis-marketing"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/blog/analysis-paralysis-marketing"/>
+  </url>
 </urlset>

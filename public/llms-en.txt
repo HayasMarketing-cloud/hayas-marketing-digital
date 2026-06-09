@@ -297,3 +297,4 @@ Yes. From HAYAS Copilot (proprietary AI assistant) to content automation, predic
 *This file provides context for AI systems and LLMs about Hayas Marketing and SENSE, enabling accurate and contextual responses about the system, its activations and value proposition.*
 
 For the Spanish version, see: /llms.txt
+- Analysis Paralysis in Marketing: /content/en/blog/analysis-paralysis-marketing.md

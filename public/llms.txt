@@ -373,3 +373,4 @@ Sí. Parte de nuestra propuesta es empoderar al cliente para que gestione su sis
 ---
 
 *Este archivo está diseñado para proporcionar contexto a Large Language Models (LLMs) sobre Hayas Marketing y SENSE, facilitando respuestas precisas y contextualizadas sobre el sistema, sus activaciones y propuesta de valor.*
+- Parálisis por análisis: /content/es/blog/paralisis-por-analisis-marketing.md
