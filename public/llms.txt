@@ -23,7 +23,6 @@
 
 ## Optional
 
-- [Parálisis por análisis](/es/blog/paralisis-por-analisis-marketing): Marketing basado en datos sin parálisis: del exceso de datos a un sistema de decisión.
 - [Decision Marketing](/es/blog/decision-marketing-confianza): Cómo priorizar la calidad de la decisión sobre el volumen de conversión.
 - [Nuevo Paradigma SEO (AEO y GEO)](/es/blog/nuevo-paradigma-seo-aeo-geo): Optimización para motores de respuesta e IA generativa.
 - [Chatbots para Web](/es/blog/chatbots-para-paginas-web): Implementación de chatbots inteligentes.

@@ -166,10 +166,10 @@ const authorArticles = [
   {
     slug: 'paralisis-por-analisis-marketing',
     title: 'Parálisis por análisis: menos datos, más criterio',
-    excerpt: 'Manifiesto sobre cómo el exceso de datos paraliza decisiones de marketing y cómo construir un sistema de decisión claro.',
+    excerpt: 'Tener datos no es lo mismo que tener claridad. Por qué el marketing moderno necesita menos acumulación y más sistemas estratégicos.',
     date: '2026-06-09',
-    readTime: '8 min',
-    category: 'Estrategias Marketing'
+    readTime: '12 min',
+    category: 'Marketing basado en datos'
   },
   {
     slug: 'la-inteligencia-artificial-ia-y-su-aplicacion-en-marketing',

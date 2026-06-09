@@ -55,24 +55,43 @@ const Blog = () => {
   };
 
   const featuredPost = {
-    id: 'checkout-ia-ecommerce-copilot-chatgpt-gemini',
+    id: 'paralisis-por-analisis-marketing',
     title: isEnglish 
-      ? 'When Checkout Leaves Your Website: What Copilot, ChatGPT and Gemini Change for Ecommerce'
-      : 'Cuando el checkout deja de estar en tu web: lo que Copilot, ChatGPT y Gemini cambian para el ecommerce',
+      ? 'Analysis Paralysis: Less Data, More Judgment'
+      : 'Parálisis por análisis: menos datos, más criterio',
     description: isEnglish
-      ? 'Microsoft, OpenAI and Google are converging to turn AI conversations into full transactional channels. Strategic analysis for ecommerce managers.'
-      : 'Microsoft, OpenAI y Google convergen en convertir la conversación con IA en un canal transaccional completo. Análisis estratégico para ecommerce managers.',
-    date: '2026-03-02',
+      ? 'Having data is not the same as having clarity. Why modern marketing needs less accumulation and more strategic systems.'
+      : 'Tener datos no es lo mismo que tener claridad. Por qué el marketing moderno necesita menos acumulación y más sistemas estratégicos.',
+    date: '2026-06-09',
     readTime: '12 min',
     author: 'Rubén Reyero',
-    image: checkoutIAEcommerceHero,
-    category: isEnglish ? 'Ecommerce & AI' : 'Ecommerce e IA',
+    image: paralisisAnalisisHero,
+    category: isEnglish ? 'Data-Driven Marketing' : 'Marketing basado en datos',
     tags: isEnglish 
-      ? ['Ecommerce', 'AI', 'Strategy', 'ChatGPT', 'Google', 'Microsoft']
-      : ['Ecommerce', 'IA', 'Estrategia', 'Inteligencia Artificial', 'ChatGPT', 'Google']
+      ? ['Data-Driven Marketing', 'Strategy', 'Decision Making', 'Analysis Paralysis', 'B2B']
+      : ['Marketing basado en datos', 'Estrategia', 'Toma de decisiones', 'Parálisis por análisis', 'B2B']
   };
 
   const allPosts = [
+    {
+      id: 'paralisis-por-analisis-marketing',
+      title: isEnglish 
+        ? 'Analysis Paralysis: Less Data, More Judgment'
+        : 'Parálisis por análisis: menos datos, más criterio',
+      description: isEnglish
+        ? 'Having data is not the same as having clarity. Why modern marketing needs less accumulation and more strategic systems.'
+        : 'Tener datos no es lo mismo que tener claridad. Por qué el marketing moderno necesita menos acumulación y más sistemas estratégicos.',
+      excerpt: isEnglish
+        ? 'Analysis paralysis paralyzes more decisions than lack of information. How to transform data into a real growth system.'
+        : 'La parálisis por análisis inmoviliza más decisiones que la falta de información. Cómo transformar los datos en un sistema real de crecimiento.',
+      category: isEnglish ? 'Data-Driven Marketing' : 'Marketing basado en datos',
+      readTime: '12 min',
+      date: '2026-06-09',
+      image: paralisisAnalisisHero,
+      slug: isEnglish ? '/en/blog/paralisis-por-analisis-marketing' : '/es/blog/paralisis-por-analisis-marketing',
+      tags: [isEnglish ? 'Data-Driven Marketing' : 'Marketing basado en datos', isEnglish ? 'Strategy' : 'Estrategia', isEnglish ? 'Decision Making' : 'Toma de decisiones', isEnglish ? 'Analysis Paralysis' : 'Parálisis por análisis', 'B2B', isEnglish ? 'Business Growth' : 'Crecimiento empresarial'],
+      featured: true
+    },
     {
       id: 'checkout-ia-ecommerce-copilot-chatgpt-gemini',
       title: isEnglish 
@@ -94,7 +113,7 @@ const Blog = () => {
     },
     {
       id: 'lovable-vs-wordpress',
-      title: isEnglish 
+      title: isEnglish
         ? 'Lovable vs WordPress: Which Platform to Choose for Your Strategy'
         : 'Lovable vs WordPress: qué plataforma elegir según tu estrategia',
       description: isEnglish
@@ -110,25 +129,6 @@ const Blog = () => {
       slug: isEnglish ? '/en/blog/lovable-vs-wordpress' : '/es/blog/lovable-vs-wordpress-que-plataforma-elegir',
       tags: [isEnglish ? 'Web Development' : 'Desarrollo Web', 'SEO', isEnglish ? 'Digital Platforms' : 'Plataformas Digitales', 'IA', 'WordPress', 'Lovable'],
       featured: true
-    },
-    {
-      id: 'paralisis-por-analisis-marketing',
-      title: isEnglish
-        ? 'Analysis paralysis in marketing: less data, more judgment'
-        : 'Parálisis por análisis: menos datos, más criterio',
-      description: isEnglish
-        ? 'Analysis paralysis stalls marketing decisions. How to move from a data overload to a clear decision system, the Hayas Marketing way.'
-        : 'La parálisis por análisis frena decisiones de marketing. Cómo pasar del exceso de datos a un sistema con criterio, según Hayas Marketing.',
-      excerpt: isEnglish
-        ? 'Endless dashboards do not equal better decisions. A manifesto on data driven marketing without paralysis.'
-        : 'Dashboards infinitos no equivalen a mejores decisiones. Manifiesto sobre marketing basado en datos sin parálisis.',
-      category: isEnglish ? 'Marketing Strategies' : 'Estrategias Marketing',
-      readTime: '8 min',
-      date: '2026-06-09',
-      image: paralisisAnalisisHero,
-      slug: isEnglish ? '/en/blog/paralisis-por-analisis-marketing' : '/es/blog/paralisis-por-analisis-marketing',
-      tags: [isEnglish ? 'Analysis Paralysis' : 'Parálisis por análisis', isEnglish ? 'Data Driven Marketing' : 'Marketing basado en datos', isEnglish ? 'Decision Making' : 'Toma de decisiones', isEnglish ? 'B2B Strategy' : 'Estrategia B2B'],
-      featured: false
     },
     {
       id: 'nuevo-paradigma-seo-aeo-geo',
