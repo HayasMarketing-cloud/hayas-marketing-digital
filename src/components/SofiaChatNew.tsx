@@ -369,7 +369,8 @@ const SofiaChatNew = () => {
             </div>
             <button
               onClick={() => setShowHelpBubble(false)}
-              className="text-gray-400 hover:text-gray-600 p-1"
+              aria-label="Close help bubble"
+              className="text-muted-foreground hover:text-foreground p-1"
             >
               <X className="w-4 h-4" />
             </button>

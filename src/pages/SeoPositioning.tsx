@@ -419,8 +419,8 @@ const SeoPositioning = () => {
               <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 pb-4 border-b border-gray-100">
-                    <Search className="h-5 w-5 text-gray-400" />
-                    <span className="text-gray-500">{isEnglish ? 'your service + your city' : 'tu servicio + tu ciudad'}</span>
+                    <Search className="h-5 w-5 text-gray-600" aria-hidden="true" />
+                    <span className="text-gray-700">{isEnglish ? 'your service + your city' : 'tu servicio + tu ciudad'}</span>
                   </div>
                   
                   <div className="space-y-4">
