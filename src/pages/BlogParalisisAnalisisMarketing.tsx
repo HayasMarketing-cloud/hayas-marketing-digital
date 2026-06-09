@@ -172,6 +172,84 @@ const BlogParalisisAnalisisMarketing = () => {
           <strong> transformar la complejidad digital en un sistema de crecimiento claro.</strong>
         </p>
       </section>
+
+      <section className="my-16 not-prose">
+        <div className="relative overflow-hidden rounded-3xl border border-primary/20 bg-gradient-to-br from-primary/5 via-background to-accent/10 p-8 md:p-12 shadow-xl">
+          <div className="absolute -top-24 -right-24 w-72 h-72 bg-primary/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
+          <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-accent/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
+
+          <div className="relative">
+            <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary mb-6">
+              <BrainCircuit className="h-4 w-4" />
+              SENSE · Plataforma de Marketing Intelligence
+            </div>
+
+            <h2 className="text-3xl md:text-5xl font-bold leading-tight text-foreground mb-6">
+              De la información a la decisión
+            </h2>
+
+            <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-3xl leading-relaxed">
+              SENSE ayuda a equipos de marketing y dirección a conectar tres dimensiones fundamentales:
+            </p>
+
+            <div className="grid md:grid-cols-3 gap-5 mb-12">
+              <Card className="bg-background/60 backdrop-blur border-border/40 hover:border-primary/40 transition-colors">
+                <CardContent className="p-6">
+                  <div className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-primary/10 text-primary mb-4">
+                    <Radar className="h-5 w-5" />
+                  </div>
+                  <h3 className="font-semibold text-lg text-foreground mb-2">Market Intelligence</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Monitoriza tendencias, señales de mercado y movimientos de competidores.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-background/60 backdrop-blur border-border/40 hover:border-primary/40 transition-colors">
+                <CardContent className="p-6">
+                  <div className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-primary/10 text-primary mb-4">
+                    <Search className="h-5 w-5" />
+                  </div>
+                  <h3 className="font-semibold text-lg text-foreground mb-2">Search Intelligence</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Analiza cómo encuentran y perciben tu marca en buscadores e IA, identificando oportunidades de visibilidad y crecimiento.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-background/60 backdrop-blur border-border/40 hover:border-primary/40 transition-colors">
+                <CardContent className="p-6">
+                  <div className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-primary/10 text-primary mb-4">
+                    <Rocket className="h-5 w-5" />
+                  </div>
+                  <h3 className="font-semibold text-lg text-foreground mb-2">Marketing Activation</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Transforma los insights en planes de acción coordinados y alineados con tus objetivos.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="text-center max-w-2xl mx-auto mb-10">
+              <p className="text-2xl md:text-3xl font-semibold leading-tight text-foreground">
+                Porque el problema ya no es la falta de datos.
+              </p>
+              <p className="text-2xl md:text-3xl font-semibold leading-tight text-primary mt-2">
+                Es convertirlos en decisiones.
+              </p>
+            </div>
+
+            <div className="flex justify-center">
+              <Button asChild size="lg" className="group">
+                <Link to="/es/soluciones/plataforma-inteligencia-marketing">
+                  Explora SENSE
+                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
     </BlogPostTemplate>
   );
 };
