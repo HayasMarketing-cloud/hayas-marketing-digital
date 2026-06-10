@@ -20,6 +20,26 @@ function resolveOgImage(ogImage, p) {
   return `${SITE_URL}${ogImage.startsWith('/') ? '' : '/'}${ogImage}`;
 }
 
+function normalizeCanonical(raw, path) {
+  const fallback = `${SITE_URL}${path}`;
+  if (!raw) return fallback;
+  try {
+    const u = new URL(raw, SITE_URL); // resuelve relativos contra apex
+    if (u.host === 'hayasmarketing.com' || u.host === 'www.hayasmarketing.com') {
+      u.protocol = 'https:';
+      u.host = 'hayasmarketing.com';
+      u.hash = '';
+    }
+    // Si es otro host (cross-canonical legítimo) → respetar tal cual
+    let out = u.toString();
+    // strip trailing slash salvo en root
+    if (u.pathname !== '/' && out.endsWith('/')) out = out.slice(0, -1);
+    return out;
+  } catch {
+    return fallback;
+  }
+}
+
 function patchHtml(baseHtml, page) {
   const title = page.title || 'Hayas Marketing';
   const description = page.description || '';
@@ -27,7 +47,8 @@ function patchHtml(baseHtml, page) {
   const locale = (page.in_language || 'es-ES').replace('-', '_');
   const ogImage = resolveOgImage(page.og_image, page.path);
   const pageUrl = `${SITE_URL}${page.path}`;
-  const canonical = page.canonical || pageUrl;
+  const canonical = normalizeCanonical(page.canonical, page.path);
+
 
   let html = baseHtml;
 
@@ -88,20 +109,22 @@ export async function prerenderOg(distDir = 'dist') {
   const indexPath = path.join(distDir, 'index.html');
   const baseHtml = await fs.readFile(indexPath, 'utf8');
 
-  let pages = [];
-  try {
-    pages = await fetchPages();
-  } catch (e) {
-    console.warn('[prerender-og] No se pudieron leer seo_pages:', e.message);
-    return;
+  // Strict: si falla la lectura, propaga el error (NO swallow)
+  const pages = await fetchPages();
+  if (!Array.isArray(pages) || pages.length === 0) {
+    throw new Error('[prerender-og] seo_pages devolvió 0 filas — abortando');
   }
+
+  // Cobertura esperada: todas las rutas indexables excepto root '/'
+  const expected = pages.filter(
+    (p) => p && typeof p.path === 'string' && p.path.startsWith('/') && p.path !== '/'
+  ).length;
 
   let written = 0, skipped = 0;
   for (const page of pages) {
     const p = page.path;
     if (!p || typeof p !== 'string' || !p.startsWith('/')) { skipped++; continue; }
     if (p === '/') continue; // root ya es index.html
-    // normaliza barra final
     const clean = p.replace(/\/+$/, '');
     const outDir = path.join(distDir, clean);
     const outFile = path.join(outDir, 'index.html');
@@ -114,13 +137,16 @@ export async function prerenderOg(distDir = 'dist') {
       skipped++;
     }
   }
-  console.log(`[prerender-og] ✅ ${written} rutas pre-renderizadas (${skipped} omitidas)`);
+  console.log(`[prerender-og] ✅ ${written} rutas pre-renderizadas (${skipped} omitidas; esperadas ${expected})`);
+  if (written < expected) {
+    throw new Error(`[prerender-og] cobertura insuficiente: ${written}/${expected}`);
+  }
 }
 
 // Ejecución directa: `node scripts/prerender-og.mjs [distDir]`
 if (import.meta.url === `file://${process.argv[1]}`) {
   prerenderOg(process.argv[2] || 'dist').catch((e) => {
     console.error('[prerender-og] Falló:', e);
-    process.exit(0); // no romper el build por esto
+    process.exit(1); // strict: fallar visiblemente
   });
 }
