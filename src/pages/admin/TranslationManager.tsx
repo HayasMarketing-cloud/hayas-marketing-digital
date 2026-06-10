@@ -24,20 +24,24 @@ const TranslationManager = () => {
           <p className="text-muted-foreground">
             Gestiona las traducciones de contenido y monitorea el progreso. Detección automática de rutas.
           </p>
-          <div className="mt-4 rounded-lg border border-amber-300/50 bg-amber-50/60 dark:bg-amber-950/20 p-4 text-sm text-amber-900 dark:text-amber-200 space-y-2">
+          <div className="mt-4 rounded-lg border border-emerald-300/50 bg-emerald-50/60 dark:bg-emerald-950/20 p-4 text-sm text-emerald-900 dark:text-emerald-200 space-y-2">
             <p>
-              <strong>⚠️ Cómo funciona la traducción:</strong> esta herramienta traduce los <strong>metadatos SEO</strong> (title, description, H1, keywords) y crea/actualiza la fila EN en la base de datos (<code>seo_pages</code> con <code>in_language='en-US'</code> y <code>translation_of</code> apuntando al ES).
+              <strong>🚀 Pipeline de traducción automatizado:</strong> al pulsar <em>Traducir</em> se ejecutan en cadena 4 fases sin tocar el repo:
+            </p>
+            <ol className="list-decimal list-inside space-y-1 pl-2">
+              <li><strong>Metadatos SEO</strong> — title, description, H1, keywords (Lovable AI).</li>
+              <li><strong>Cuerpo</strong> — si la página ES tiene <code>body_content_html</code> en DB, se traduce a HTML EN preservando la estructura.</li>
+              <li><strong>Persistencia</strong> — se guarda la fila EN en <code>seo_pages</code> con <code>translation_of</code>, <code>body_content_html</code> y hash del original.</li>
+              <li><strong>Render</strong> — <code>DynamicPageEN</code> sirve el cuerpo desde DB en <code>/en/...</code> sin necesidad de componentes <code>*EN.tsx</code>.</li>
+            </ol>
+            <p>
+              <strong>📡 Discoverability dinámica:</strong> el sitemap bilingüe y <code>/llms.txt</code> se sirven desde edge functions que leen <code>seo_pages</code> en cada petición — no hace falta editar XML manualmente.
             </p>
             <p>
-              <strong>✅ Traducción automática del cuerpo:</strong> las páginas de <strong>servicios, soluciones y activaciones</strong> usan el hook <code>useLanguage</code> y se renderizan en inglés de forma automática al traducir los metadatos.
-            </p>
-            <p>
-              <strong>🛠️ Traducción manual del cuerpo:</strong> los <strong>posts de blog</strong> y <strong>casos de éxito</strong> requieren además un componente <code>*EN.tsx</code> dedicado, registrado en <code>src/utils/lazyImports.ts</code>, una ruta explícita en <code>src/App.tsx</code> y el mapeo recíproco en <code>src/hooks/useLanguageNavigation.ts</code>. Sin estos pasos, <code>/en/...</code> caerá en <code>DynamicPageEN</code> y mostrará el cuerpo en español (o "Coming soon" si no hay fallback).
-            </p>
-            <p>
-              <strong>🔔 Avisos:</strong> al traducir un blog o caso de éxito verás un toast de advertencia recordando que solo se han traducido los metadatos. Recuerda también añadir las URLs a <code>public/sitemap-en.xml</code> y <code>public/sitemap-es.xml</code> con sus <code>hreflang</code> recíprocos.
+              <strong>⚠️ Páginas con cuerpo hardcodeado:</strong> servicios, soluciones y los blogs/casos legacy (componentes React con texto en el JSX) sólo traducen metadatos. Para traducir el cuerpo automáticamente, migra el contenido a <code>body_content_html</code> en DB.
             </p>
           </div>
+
         </div>
 
         <div className="space-y-6">

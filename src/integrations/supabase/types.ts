@@ -758,6 +758,9 @@ export type Database = {
         Row: {
           about: Json | null
           additional_schema: Json | null
+          body_content_html: string | null
+          body_content_source_hash: string | null
+          body_translated_at: string | null
           canonical: string
           category: string | null
           created_at: string | null
@@ -786,11 +789,15 @@ export type Database = {
           strategic_importance: string | null
           title: string
           translation_of: string | null
+          translation_status: string | null
           updated_at: string | null
         }
         Insert: {
           about?: Json | null
           additional_schema?: Json | null
+          body_content_html?: string | null
+          body_content_source_hash?: string | null
+          body_translated_at?: string | null
           canonical: string
           category?: string | null
           created_at?: string | null
@@ -819,11 +826,15 @@ export type Database = {
           strategic_importance?: string | null
           title: string
           translation_of?: string | null
+          translation_status?: string | null
           updated_at?: string | null
         }
         Update: {
           about?: Json | null
           additional_schema?: Json | null
+          body_content_html?: string | null
+          body_content_source_hash?: string | null
+          body_translated_at?: string | null
           canonical?: string
           category?: string | null
           created_at?: string | null
@@ -852,6 +863,7 @@ export type Database = {
           strategic_importance?: string | null
           title?: string
           translation_of?: string | null
+          translation_status?: string | null
           updated_at?: string | null
         }
         Relationships: [
