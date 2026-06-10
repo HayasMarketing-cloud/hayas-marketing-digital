@@ -10,11 +10,9 @@ const prerenderOgPlugin = (): Plugin => ({
   name: 'prerender-og',
   apply: 'build',
   async closeBundle() {
-    try {
-      await prerenderOg('dist');
-    } catch (e: any) {
-      console.warn('[prerender-og] error no fatal:', e?.message || e);
-    }
+    // Strict: si falla, rompe el build de forma visible (no swallow).
+    // El script ya valida cobertura (written >= expected) y lanza si falta algo.
+    await prerenderOg('dist');
   },
 });
 
