@@ -473,9 +473,11 @@
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/abm-account-based-marketing</loc>
-    <lastmod>2026-02-27</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/blog/abm-account-based-marketing"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/blog/abm-account-based-marketing"/>
   </url>
   <url>
     <loc>https://hayasmarketing.com/es/blog/como-elegir-mejor-crm-empresa-organizacion</loc>
