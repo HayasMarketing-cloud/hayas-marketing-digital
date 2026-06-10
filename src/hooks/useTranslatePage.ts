@@ -6,16 +6,26 @@ interface TranslatePageParams {
   esPath: string;
   enPath: string;
   category: string;
+  forceBody?: boolean;
 }
 
 interface BatchTranslateParams {
   pages: TranslatePageParams[];
 }
 
-interface TranslationResult {
-  esPage: any;
+export interface PipelinePhase {
+  name: string;
+  status: 'ok' | 'skipped' | 'failed';
+  detail?: string;
+  durationMs: number;
+}
+
+export interface PipelineResult {
+  phases: PipelinePhase[];
+  status: 'translated' | 'metadata_only' | 'failed';
+  hasBody: boolean;
   newEnPage: any;
-  translatedData: any;
+  translatedMeta: any;
 }
 
 export const useTranslatePage = () => {
@@ -23,98 +33,59 @@ export const useTranslatePage = () => {
   const { toast } = useToast();
 
   const mutation = useMutation({
-    mutationFn: async ({ esPath, enPath, category }: TranslatePageParams): Promise<TranslationResult> => {
-      // 1. Get the original ES page data
-      const { data: esPage, error: esError } = await supabase
-        .from('seo_pages')
-        .select('*')
-        .eq('path', esPath)
-        .eq('in_language', 'es-ES')
-        .single();
-
-      if (esError || !esPage) {
-        throw new Error('No se encontró la página ES original');
-      }
-
-      // 2. Call edge function to translate content AND create EN page
+    mutationFn: async ({ esPath, enPath, category, forceBody }: TranslatePageParams): Promise<PipelineResult> => {
       const { data: sessionData } = await supabase.auth.getSession();
-      const accessToken = sessionData.session?.access_token;
-      if (!accessToken) {
+      if (!sessionData.session?.access_token) {
         throw new Error('Sesión no válida (401). Vuelve a iniciar sesión en /admin/login y reintenta.');
       }
 
-      const { data: result, error: translateError } = await supabase.functions.invoke('translate-seo', {
-        body: {
-          seoData: {
-            title: esPage.title,
-            description: esPage.description,
-            h1: esPage.h1,
-            keywords: esPage.keywords,
-            schema_type: esPage.schema_type,
-            og_type: esPage.og_type,
-          },
-          targetLanguage: 'en-US',
-          esPageId: esPage.id,
-          enPath: enPath,
-          category: category,
-        },
+      const { data: result, error } = await supabase.functions.invoke('translate-page-pipeline', {
+        body: { esPath, enPath, category, forceBody },
       });
 
-      if (translateError) {
-        const ctx = (translateError as any)?.context;
+      if (error) {
+        const ctx = (error as any)?.context;
         const status = ctx?.status as number | undefined;
-        const rawBody = ctx?.body;
-        const bodyText = rawBody
-          ? (typeof rawBody === 'string' ? rawBody : JSON.stringify(rawBody))
-          : undefined;
-
-        console.error('Translation invoke error:', { message: translateError.message, status, body: rawBody });
-
         if (status === 401) throw new Error('No autorizado (401). Tu sesión puede haber caducado.');
-        if (status === 403) throw new Error('Acceso denegado (403). Tu usuario no tiene permisos de administrador.');
-        if (status === 429) throw new Error('Límite de uso alcanzado (429). Espera unos minutos y reintenta.');
-
-        const compactBody = bodyText && bodyText.length > 300 ? `${bodyText.slice(0, 300)}…` : bodyText;
-        const details = [`HTTP ${status ?? '???'}`, translateError.message, compactBody].filter(Boolean).join(' — ');
-        throw new Error(details || 'Error al traducir el contenido');
+        if (status === 403) throw new Error('Acceso denegado (403). Sin permisos de administrador.');
+        if (status === 429) throw new Error('Límite alcanzado (429). Espera unos minutos.');
+        throw new Error(`HTTP ${status ?? '???'} — ${error.message}`);
       }
 
-      return {
-        esPage,
-        newEnPage: (result as any)?.newEnPage,
-        translatedData: (result as any)?.translatedData,
-      };
+      return result as PipelineResult;
     },
     onSuccess: (data) => {
       queryClient.invalidateQueries({ queryKey: ['translation-status'] });
       queryClient.invalidateQueries({ queryKey: ['translation-pairs'] });
       queryClient.invalidateQueries({ queryKey: ['seo-pages'] });
       queryClient.invalidateQueries({ queryKey: ['all-routes-inventory'] });
+      queryClient.invalidateQueries({ queryKey: ['dynamic-en-page'] });
 
-      const enPath: string = data.newEnPage?.path || '';
-      // Blog posts and case studies need a dedicated *EN.tsx React component
-      // because their body is hardcoded JSX (not driven by the useLanguage hook).
-      // Without it, /en/<slug> renders the Spanish component verbatim.
-      const needsEnComponent = /^\/en\/(blog|case-studies)\//.test(enPath);
+      const enPath = data.newEnPage?.path || '';
 
-      if (needsEnComponent) {
+      if (data.status === 'translated') {
         toast({
-          variant: 'destructive',
-          title: '⚠️ Solo metadatos traducidos',
-          description: `${enPath} — Los posts y casos de éxito necesitan un componente *EN.tsx para mostrar el cuerpo en inglés. Sin él, la página se verá en español.`,
+          title: '✅ Pipeline completado',
+          description: `${enPath} — Metadatos + cuerpo traducidos y guardados en DB.`,
+        });
+      } else if (data.status === 'metadata_only') {
+        toast({
+          title: 'ℹ️ Solo metadatos traducidos',
+          description: `${enPath} — La página ES no tiene cuerpo guardado en DB (es un componente React hardcodeado). Migra el contenido a body_content_html para traducirlo automáticamente.`,
         });
       } else {
         toast({
-          title: '✅ Página traducida con éxito',
-          description: enPath || 'Traducción completada',
+          variant: 'destructive',
+          title: '⚠️ Pipeline parcial',
+          description: `${enPath} — Revisa las fases en el detalle.`,
         });
       }
     },
     onError: (error: Error) => {
-      console.error('Translation mutation error:', error);
+      console.error('Pipeline error:', error);
       toast({
         variant: 'destructive',
-        title: '❌ Error al traducir',
+        title: '❌ Error en el pipeline',
         description: error.message || 'No se pudo completar la traducción',
       });
     },
@@ -122,40 +93,20 @@ export const useTranslatePage = () => {
 
   const batchMutation = useMutation({
     mutationFn: async ({ pages }: BatchTranslateParams) => {
-      const results = [];
+      const results: Array<{ path: string; success: boolean; error?: string; data?: PipelineResult }> = [];
       for (const page of pages) {
         try {
-          const { data: esPage, error: esError } = await supabase
-            .from('seo_pages')
-            .select('*')
-            .eq('path', page.esPath)
-            .eq('in_language', 'es-ES')
-            .single();
-
-          if (esError || !esPage) {
-            results.push({ path: page.esPath, success: false, error: 'No se encontró la página ES original' });
-            continue;
-          }
-
-          const { data: result, error: translateError } = await supabase.functions.invoke('translate-seo', {
-            body: {
-              seoData: {
-                title: esPage.title, description: esPage.description, h1: esPage.h1,
-                keywords: esPage.keywords, schema_type: esPage.schema_type, og_type: esPage.og_type,
-              },
-              targetLanguage: 'en-US', esPageId: esPage.id, enPath: page.enPath, category: page.category,
-            },
+          const { data, error } = await supabase.functions.invoke('translate-page-pipeline', {
+            body: { esPath: page.esPath, enPath: page.enPath, category: page.category, forceBody: page.forceBody },
           });
-
-          if (translateError) {
-            results.push({ path: page.esPath, success: false, error: 'Error al traducir el contenido' });
-            continue;
+          if (error) {
+            results.push({ path: page.esPath, success: false, error: error.message });
+          } else {
+            results.push({ path: page.esPath, success: true, data: data as PipelineResult });
           }
-
-          results.push({ path: page.esPath, success: true, data: result });
-          await new Promise(resolve => setTimeout(resolve, 1000));
-        } catch (error: any) {
-          results.push({ path: page.esPath, success: false, error: error.message });
+          await new Promise(r => setTimeout(r, 800));
+        } catch (e: any) {
+          results.push({ path: page.esPath, success: false, error: e.message });
         }
       }
       return results;
@@ -165,13 +116,14 @@ export const useTranslatePage = () => {
       queryClient.invalidateQueries({ queryKey: ['translation-pairs'] });
       queryClient.invalidateQueries({ queryKey: ['seo-pages'] });
       queryClient.invalidateQueries({ queryKey: ['all-routes-inventory'] });
+      queryClient.invalidateQueries({ queryKey: ['dynamic-en-page'] });
 
-      const successCount = results.filter(r => r.success).length;
-      const errorCount = results.filter(r => !r.success).length;
-      toast({ title: `✅ Procesamiento completado`, description: `${successCount} páginas traducidas, ${errorCount} errores` });
+      const ok = results.filter(r => r.success).length;
+      const ko = results.length - ok;
+      toast({ title: '✅ Lote completado', description: `${ok} OK · ${ko} con errores` });
     },
     onError: (error: Error) => {
-      toast({ variant: 'destructive', title: '❌ Error en el procesamiento por lotes', description: error.message });
+      toast({ variant: 'destructive', title: '❌ Error en el lote', description: error.message });
     },
   });
 
