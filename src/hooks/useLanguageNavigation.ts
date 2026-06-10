@@ -39,6 +39,7 @@ const ES_TO_EN_MAP: Record<string, string> = {
 
   // Blog (slugs con traducción explícita)
   '/es/blog/paralisis-por-analisis-marketing': '/en/blog/analysis-paralysis-marketing',
+  '/es/blog/abm-account-based-marketing': '/en/blog/abm-account-based-marketing',
 };
 
 // Crear mapa inverso EN → ES

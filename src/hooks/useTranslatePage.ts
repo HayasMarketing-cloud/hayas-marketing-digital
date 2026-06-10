@@ -91,10 +91,24 @@ export const useTranslatePage = () => {
       queryClient.invalidateQueries({ queryKey: ['seo-pages'] });
       queryClient.invalidateQueries({ queryKey: ['all-routes-inventory'] });
 
-      toast({
-        title: '✅ Página traducida con éxito',
-        description: data.newEnPage?.path || 'Traducción completada',
-      });
+      const enPath: string = data.newEnPage?.path || '';
+      // Blog posts and case studies need a dedicated *EN.tsx React component
+      // because their body is hardcoded JSX (not driven by the useLanguage hook).
+      // Without it, /en/<slug> renders the Spanish component verbatim.
+      const needsEnComponent = /^\/en\/(blog|case-studies)\//.test(enPath);
+
+      if (needsEnComponent) {
+        toast({
+          variant: 'destructive',
+          title: '⚠️ Solo metadatos traducidos',
+          description: `${enPath} — Los posts y casos de éxito necesitan un componente *EN.tsx para mostrar el cuerpo en inglés. Sin él, la página se verá en español.`,
+        });
+      } else {
+        toast({
+          title: '✅ Página traducida con éxito',
+          description: enPath || 'Traducción completada',
+        });
+      }
     },
     onError: (error: Error) => {
       console.error('Translation mutation error:', error);

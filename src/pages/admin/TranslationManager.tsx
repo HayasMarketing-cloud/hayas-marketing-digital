@@ -24,6 +24,11 @@ const TranslationManager = () => {
           <p className="text-muted-foreground">
             Gestiona las traducciones de contenido y monitorea el progreso. Detección automática de rutas.
           </p>
+          <div className="mt-4 rounded-lg border border-amber-300/50 bg-amber-50/60 dark:bg-amber-950/20 p-4 text-sm text-amber-900 dark:text-amber-200">
+            <strong>⚠️ Importante:</strong> esta herramienta traduce los <strong>metadatos SEO</strong> (title, description, H1, keywords) y crea la fila EN en BD.
+            Las páginas de <strong>servicios y soluciones</strong> se renderizan en inglés automáticamente vía el hook <code>useLanguage</code>.
+            Los <strong>posts de blog</strong> y <strong>casos de éxito</strong> requieren además un componente <code>*EN.tsx</code> dedicado; sin él, la URL <code>/en/...</code> mostrará el cuerpo en español.
+          </div>
         </div>
 
         <div className="space-y-6">
