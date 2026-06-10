@@ -109,20 +109,22 @@ export async function prerenderOg(distDir = 'dist') {
   const indexPath = path.join(distDir, 'index.html');
   const baseHtml = await fs.readFile(indexPath, 'utf8');
 
-  let pages = [];
-  try {
-    pages = await fetchPages();
-  } catch (e) {
-    console.warn('[prerender-og] No se pudieron leer seo_pages:', e.message);
-    return;
+  // Strict: si falla la lectura, propaga el error (NO swallow)
+  const pages = await fetchPages();
+  if (!Array.isArray(pages) || pages.length === 0) {
+    throw new Error('[prerender-og] seo_pages devolvió 0 filas — abortando');
   }
+
+  // Cobertura esperada: todas las rutas indexables excepto root '/'
+  const expected = pages.filter(
+    (p) => p && typeof p.path === 'string' && p.path.startsWith('/') && p.path !== '/'
+  ).length;
 
   let written = 0, skipped = 0;
   for (const page of pages) {
     const p = page.path;
     if (!p || typeof p !== 'string' || !p.startsWith('/')) { skipped++; continue; }
     if (p === '/') continue; // root ya es index.html
-    // normaliza barra final
     const clean = p.replace(/\/+$/, '');
     const outDir = path.join(distDir, clean);
     const outFile = path.join(outDir, 'index.html');
@@ -135,13 +137,16 @@ export async function prerenderOg(distDir = 'dist') {
       skipped++;
     }
   }
-  console.log(`[prerender-og] ✅ ${written} rutas pre-renderizadas (${skipped} omitidas)`);
+  console.log(`[prerender-og] ✅ ${written} rutas pre-renderizadas (${skipped} omitidas; esperadas ${expected})`);
+  if (written < expected) {
+    throw new Error(`[prerender-og] cobertura insuficiente: ${written}/${expected}`);
+  }
 }
 
 // Ejecución directa: `node scripts/prerender-og.mjs [distDir]`
 if (import.meta.url === `file://${process.argv[1]}`) {
   prerenderOg(process.argv[2] || 'dist').catch((e) => {
     console.error('[prerender-og] Falló:', e);
-    process.exit(0); // no romper el build por esto
+    process.exit(1); // strict: fallar visiblemente
   });
 }
