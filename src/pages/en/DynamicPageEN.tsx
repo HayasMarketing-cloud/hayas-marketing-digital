@@ -169,41 +169,65 @@ const DynamicPageEN: React.FC<DynamicPageENProps> = ({ section }) => {
   const { data, isLoading } = useQuery({
     queryKey: ['dynamic-en-page', enPath],
     queryFn: async () => {
-      // 1. Find the EN page in seo_pages
+      // 1. Find the EN page in seo_pages (includes body_content_html if translated)
       const { data: enPage } = await supabase
         .from('seo_pages')
-        .select('id, path, translation_of')
+        .select('id, path, translation_of, body_content_html, title, description, h1, og_image')
         .eq('path', enPath)
         .eq('in_language', 'en-US')
         .maybeSingle();
 
-      if (!enPage || !enPage.translation_of) return null;
+      if (!enPage || !enPage.translation_of) return { enPage: null, esPath: null };
 
-      // 2. Find the ES page to get its path
+      // 2. Find the ES page to get its path (fallback for legacy hardcoded components)
       const { data: esPage } = await supabase
         .from('seo_pages')
         .select('path')
         .eq('id', enPage.translation_of)
         .maybeSingle();
 
-      return esPage?.path || null;
+      return { enPage, esPath: esPage?.path || null };
     },
     staleTime: 5 * 60 * 1000,
   });
 
+  const esPathForMap = data?.esPath ?? null;
   const Component = useMemo(() => {
-    if (!data) return null;
-    // Direct match in the map
-    if (ES_PATH_TO_LAZY[data]) return ES_PATH_TO_LAZY[data];
-    // Fallback: if it's a blog post path without a dedicated component, use BlogPost
-    if (data.startsWith('/es/blog/')) return BlogPostFallback;
+    if (!esPathForMap) return null;
+    if (ES_PATH_TO_LAZY[esPathForMap]) return ES_PATH_TO_LAZY[esPathForMap];
+    if (esPathForMap.startsWith('/es/blog/')) return BlogPostFallback;
     return null;
-  }, [data]);
+  }, [esPathForMap]);
 
   if (isLoading) {
     return <PageSuspense><div /></PageSuspense>;
   }
 
+  // ─── Priority 1: render translated body stored in DB ───
+  const en = data?.enPage as any;
+  if (en?.body_content_html) {
+    return (
+      <>
+        <Helmet>
+          <title>{en.title || 'HAYAS Marketing'}</title>
+          {en.description && <meta name="description" content={en.description} />}
+          <link rel="canonical" href={`https://hayasmarketing.com${enPath}`} />
+          {en.og_image && <meta property="og:image" content={en.og_image} />}
+        </Helmet>
+        <Navigation />
+        <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          {en.h1 && <h1 className="text-4xl md:text-5xl font-bold mb-8">{en.h1}</h1>}
+          <article
+            className="prose prose-lg dark:prose-invert max-w-none"
+            dangerouslySetInnerHTML={{ __html: en.body_content_html }}
+          />
+        </main>
+        <Footer />
+      </>
+    );
+  }
+
+  // ─── Priority 2: legacy hardcoded *EN.tsx via mapped ES component ───
   if (!Component) {
     return (
       <Suspense fallback={<PageSuspense><div /></PageSuspense>}>
