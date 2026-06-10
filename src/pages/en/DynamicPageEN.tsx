@@ -1,8 +1,12 @@
 import React, { lazy, Suspense, useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
+import { Helmet } from 'react-helmet-async';
 import { supabase } from '@/integrations/supabase/client';
 import PageSuspense from '@/components/PageSuspense';
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
+
 
 /**
  * Map from ES paths to lazy-loaded components.
