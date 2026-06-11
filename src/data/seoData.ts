@@ -2046,18 +2046,46 @@ export const getCanonicalUrl = (currentPath: string): string => {
   return currentPath;
 };
 
+// Whitelist Fase 1 — casos de éxito reales y completos que SÍ deben indexarse
+// (Grupo A1: 14 casos con .md propio y narrativa completa)
+// Resto de /casos-exito/* permanece noindex hasta tener contenido real
+export const INDEXABLE_CASE_STUDIES_PHASE_1: string[] = [
+  'nexo-vital',
+  'joints-up',
+  'inbound-students',
+  'asendia',
+  'beluga-linguistics',
+  'buhobike',
+  'finect',
+  'hubspot-for-startups',
+  'nova-praxis',
+  'owo-game',
+  'pasteleria-la-oriental-sin-gluten',
+  'peixos-emilio',
+  'peris-electricidad',
+  'wooptix',
+];
+
 // Helper function to determine robots directive
 export const getRobotsDirective = (currentPath: string): string => {
   // No-index pages
   if (canonicalStrategy.noIndexPages.includes(currentPath)) {
     return 'noindex, follow';
   }
-  
-  // Individual case study pages (CasoExito pattern)
-  if (currentPath.match(/^\/casos-exito\/.+/) || currentPath.includes('CasoExito')) {
+
+  // Individual case study pages — whitelist Fase 1
+  const caseMatch = currentPath.match(/^\/(?:es\/)?casos-exito\/([^/]+)\/?$/);
+  if (caseMatch) {
+    const slug = caseMatch[1];
+    return INDEXABLE_CASE_STUDIES_PHASE_1.includes(slug)
+      ? 'index, follow'
+      : 'noindex, follow';
+  }
+  // Legacy CasoExito* routes siempre noindex
+  if (currentPath.includes('CasoExito')) {
     return 'noindex, follow';
   }
-  
+
   // Satellite pages that canonical to pillar pages
   for (const pillarUrl in canonicalStrategy.pillars) {
     const pillar = canonicalStrategy.pillars[pillarUrl as keyof typeof canonicalStrategy.pillars];
@@ -2065,10 +2093,11 @@ export const getRobotsDirective = (currentPath: string): string => {
       return 'noindex, follow';
     }
   }
-  
+
   // Default indexable pages
   return 'index, follow';
 };
+
 
 // Helper to extract about and mentions from content
 export const extractConceptsFromContent = (content: string): { about: string[]; mentions: string[] } => {
