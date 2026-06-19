@@ -128,6 +128,7 @@ export const BlogCRMWhatIsBenefits = lazyWithRetry(() => import("@/pages/BlogCRM
 export const BlogNewSeoParadigmAeoGeo = lazyWithRetry(() => import("@/pages/BlogNewSeoParadigmAeoGeo"));
 export const BlogAnalysisParalysisMarketingEN = lazyWithRetry(() => import("@/pages/BlogAnalysisParalysisMarketingEN"));
 export const BlogABMAccountBasedMarketingEN = lazyWithRetry(() => import("@/pages/BlogABMAccountBasedMarketingEN"));
+export const BlogStrategicMarketingDriversEN = lazyWithRetry(() => import("@/pages/BlogStrategicMarketingDriversEN"));
 
 // Casos de éxito (lazy loading)
 export const CasosExito = lazyWithRetry(() => import("@/pages/CasosExito"));

@@ -639,6 +639,7 @@ const App = () => (
           <Route path="/en/blog/new-seo-paradigm-aeo-geo" element={<PageSuspense><Pages.BlogNewSeoParadigmAeoGeo /></PageSuspense>} />
           <Route path="/en/blog/analysis-paralysis-marketing" element={<PageSuspense><Pages.BlogAnalysisParalysisMarketingEN /></PageSuspense>} />
           <Route path="/en/blog/abm-account-based-marketing" element={<PageSuspense><Pages.BlogABMAccountBasedMarketingEN /></PageSuspense>} />
+          <Route path="/en/blog/strategic-marketing-drivers" element={<PageSuspense><Pages.BlogStrategicMarketingDriversEN /></PageSuspense>} />
           {/* Removed: /en/blog/:id catch-all was here but intercepted DynamicPageEN blog routes. Now DynamicPageEN (line 635) handles all non-explicit EN blog slugs */}
           
           {/* COMPARISONS */}
