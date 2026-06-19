@@ -28,6 +28,7 @@ import gobernanzaIAHero from '@/assets/gobernanza-ia-empresas-hero.jpg';
 import decisionMarketingHero from '@/assets/decision-marketing-hero.jpg';
 import checkoutIAEcommerceHero from '@/assets/checkout-ia-ecommerce-hero.jpg';
 import paralisisAnalisisHero from '@/assets/paralisis-analisis-marketing-hero.jpg';
+import driversEstrategicosHero from '@/assets/drivers-estrategicos-marketing-hero.jpg';
 
 const Blog = () => {
   const { isEnglish, languageCode } = useLanguage();
@@ -55,24 +56,43 @@ const Blog = () => {
   };
 
   const featuredPost = {
-    id: 'paralisis-por-analisis-marketing',
-    title: isEnglish 
-      ? 'Analysis Paralysis: Less Data, More Judgment'
-      : 'Parálisis por análisis: menos datos, más criterio',
+    id: 'drivers-estrategicos-marketing',
+    title: isEnglish
+      ? 'Strategic Marketing Drivers: turning vision into action'
+      : 'Drivers Estratégicos de Marketing: convirtiendo la visión en acción',
     description: isEnglish
-      ? 'Having data is not the same as having clarity. Why modern marketing needs less accumulation and more strategic systems.'
-      : 'Tener datos no es lo mismo que tener claridad. Por qué el marketing moderno necesita menos acumulación y más sistemas estratégicos.',
-    date: '2026-06-09',
-    readTime: '12 min',
+      ? 'What strategic drivers are, how they differ from objectives and KPIs, and how they guide marketing decisions to turn strategy into a sustainable system.'
+      : 'Qué son los drivers estratégicos, en qué se diferencian de objetivos y KPIs y cómo guían la toma de decisiones de marketing para convertir la estrategia en un sistema sostenible.',
+    date: '2026-06-19',
+    readTime: '11 min',
     author: 'Rubén Reyero',
-    image: paralisisAnalisisHero,
-    category: isEnglish ? 'Data-Driven Marketing' : 'Marketing basado en datos',
-    tags: isEnglish 
-      ? ['Data-Driven Marketing', 'Strategy', 'Decision Making', 'Analysis Paralysis', 'B2B']
-      : ['Marketing basado en datos', 'Estrategia', 'Toma de decisiones', 'Parálisis por análisis', 'B2B']
+    image: driversEstrategicosHero,
+    category: isEnglish ? 'Marketing Strategy' : 'Estrategia de Marketing',
+    tags: isEnglish
+      ? ['Strategy', 'Marketing Strategy', 'Drivers', 'Decision Making', 'Marketing Intelligence', 'B2B']
+      : ['Estrategia', 'Marketing Estratégico', 'Drivers', 'Toma de decisiones', 'Inteligencia de marketing', 'B2B']
   };
 
   const allPosts = [
+    {
+      id: 'drivers-estrategicos-marketing',
+      title: isEnglish
+        ? 'Strategic Marketing Drivers: turning vision into action'
+        : 'Drivers Estratégicos de Marketing: convirtiendo la visión en acción',
+      description: isEnglish
+        ? 'What strategic drivers are, how they differ from objectives and KPIs, and how they guide marketing decisions to turn strategy into a sustainable system.'
+        : 'Qué son los drivers estratégicos, en qué se diferencian de objetivos y KPIs y cómo guían la toma de decisiones de marketing para convertir la estrategia en un sistema sostenible.',
+      excerpt: isEnglish
+        ? 'The forces that prioritize your marketing decisions. Difference between objectives, drivers and KPIs, with a practical case and a method to identify them.'
+        : 'Las fuerzas que priorizan tus decisiones de marketing. Diferencia entre objetivos, drivers y KPIs, con caso práctico y método para identificarlos.',
+      category: isEnglish ? 'Marketing Strategy' : 'Estrategia de Marketing',
+      readTime: '11 min',
+      date: '2026-06-19',
+      image: driversEstrategicosHero,
+      slug: isEnglish ? '/en/blog/drivers-estrategicos-marketing' : '/es/blog/drivers-estrategicos-marketing',
+      tags: [isEnglish ? 'Strategy' : 'Estrategia', isEnglish ? 'Marketing Strategy' : 'Marketing Estratégico', 'Drivers', isEnglish ? 'Decision Making' : 'Toma de decisiones', isEnglish ? 'Marketing Intelligence' : 'Inteligencia de marketing', 'B2B'],
+      featured: true
+    },
     {
       id: 'paralisis-por-analisis-marketing',
       title: isEnglish 
@@ -90,7 +110,7 @@ const Blog = () => {
       image: paralisisAnalisisHero,
       slug: isEnglish ? '/en/blog/paralisis-por-analisis-marketing' : '/es/blog/paralisis-por-analisis-marketing',
       tags: [isEnglish ? 'Data-Driven Marketing' : 'Marketing basado en datos', isEnglish ? 'Strategy' : 'Estrategia', isEnglish ? 'Decision Making' : 'Toma de decisiones', isEnglish ? 'Analysis Paralysis' : 'Parálisis por análisis', 'B2B', isEnglish ? 'Business Growth' : 'Crecimiento empresarial'],
-      featured: true
+      featured: false
     },
     {
       id: 'checkout-ia-ecommerce-copilot-chatgpt-gemini',
