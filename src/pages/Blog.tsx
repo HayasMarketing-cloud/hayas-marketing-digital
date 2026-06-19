@@ -631,11 +631,11 @@ const Blog = () => {
           <div className="max-w-4xl mx-auto">
             <Card className="overflow-hidden hover:shadow-xl transition-shadow">
               <div className="md:flex">
-                <div className="md:w-1/2">
+                <div className="md:w-1/2 aspect-square">
                   <img 
                     src={featuredPost.image} 
                     alt={featuredPost.title}
-                    className="w-full h-64 md:h-full object-contain bg-gray-900"
+                    className="w-full h-full object-cover object-center"
                   />
                 </div>
                 <div className="md:w-1/2 p-6">
