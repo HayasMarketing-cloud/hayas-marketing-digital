@@ -118,6 +118,7 @@ export const BlogNuevoParadigmaSeoAeoGeo = lazyWithRetry(() => import("@/pages/B
 export const BlogLovableVsWordpress = lazyWithRetry(() => import("@/pages/BlogLovableVsWordpress"));
 export const BlogCheckoutIAEcommerce = lazyWithRetry(() => import("@/pages/BlogCheckoutIAEcommerce"));
 export const BlogParalisisAnalisisMarketing = lazyWithRetry(() => import("@/pages/BlogParalisisAnalisisMarketing"));
+export const BlogDriversEstrategicosMarketing = lazyWithRetry(() => import("@/pages/BlogDriversEstrategicosMarketing"));
 
 // Blog posts EN
 export const BlogDecisionMarketingEN = lazyWithRetry(() => import("@/pages/BlogDecisionMarketingEN"));
