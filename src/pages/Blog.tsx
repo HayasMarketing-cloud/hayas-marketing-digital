@@ -89,7 +89,7 @@ const Blog = () => {
       readTime: '11 min',
       date: '2026-06-19',
       image: driversEstrategicosHero,
-      slug: isEnglish ? '/en/blog/drivers-estrategicos-marketing' : '/es/blog/drivers-estrategicos-marketing',
+      slug: isEnglish ? '/en/blog/strategic-marketing-drivers' : '/es/blog/drivers-estrategicos-marketing',
       tags: [isEnglish ? 'Strategy' : 'Estrategia', isEnglish ? 'Marketing Strategy' : 'Marketing Estratégico', 'Drivers', isEnglish ? 'Decision Making' : 'Toma de decisiones', isEnglish ? 'Marketing Intelligence' : 'Inteligencia de marketing', 'B2B'],
       featured: true
     },
