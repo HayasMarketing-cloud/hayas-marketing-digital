@@ -438,7 +438,8 @@ const App = () => (
            <Route path="/es/blog/nuevo-paradigma-seo-aeo-geo" element={<PageSuspense><Pages.BlogNuevoParadigmaSeoAeoGeo /></PageSuspense>} />
            <Route path="/es/blog/lovable-vs-wordpress-que-plataforma-elegir" element={<PageSuspense><Pages.BlogLovableVsWordpress /></PageSuspense>} />
            <Route path="/es/blog/checkout-ia-ecommerce-copilot-chatgpt-gemini" element={<PageSuspense><Pages.BlogCheckoutIAEcommerce /></PageSuspense>} />
-           <Route path="/es/blog/paralisis-por-analisis-marketing" element={<PageSuspense><Pages.BlogParalisisAnalisisMarketing /></PageSuspense>} />
+          <Route path="/es/blog/paralisis-por-analisis-marketing" element={<PageSuspense><Pages.BlogParalisisAnalisisMarketing /></PageSuspense>} />
+          <Route path="/es/blog/drivers-estrategicos-marketing" element={<PageSuspense><Pages.BlogDriversEstrategicosMarketing /></PageSuspense>} />
            <Route path="/es/blog/:id" element={<PageSuspense><Pages.BlogPost /></PageSuspense>} />
           
           {/* AUTORES */}
