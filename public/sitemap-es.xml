@@ -676,6 +676,13 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://hayasmarketing.com/en/legal/cookie-policy"/>
   </url>
   <url>
+    <loc>https://hayasmarketing.com/es/blog/drivers-estrategicos-marketing</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hayasmarketing.com/es/blog/drivers-estrategicos-marketing"/>
+  </url>
+  <url>
     <loc>https://hayasmarketing.com/es/blog/paralisis-por-analisis-marketing</loc>
     <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
