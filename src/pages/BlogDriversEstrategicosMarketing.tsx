@@ -13,7 +13,7 @@ const BlogDriversEstrategicosMarketing = () => {
     readTime: "11 min",
     category: "Estrategia de Marketing",
     author: "Rubén Reyero",
-    tags: ["Estrategia", "Marketing Estratégico", "Drivers", "Toma de decisiones", "Inteligencia de marketing", "B2B"],
+    tags: ["Estrategia", "Marketing Estratégico", "Drivers", "Toma de decisiones", "Inteligencia de marketing"],
     canonical: "/es/blog/drivers-estrategicos-marketing",
     ogImage: "/images/blog/drivers-estrategicos-marketing-hero.jpg",
     metaTitle: "Drivers Estratégicos de Marketing: de la visión a la acción | Hayas",
