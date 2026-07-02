@@ -13,6 +13,7 @@ import RoutePreloader from './components/RoutePreloader';
 import { AdminProtectedRoute } from './components/admin/AdminProtectedRoute';
 import { lazy, Suspense, useEffect, useState } from 'react';
 import { RedirectManager } from './components/RedirectManager';
+import GlobalSEO from './components/GlobalSEO';
 const DynamicPageEN = lazy(() => import('./pages/en/DynamicPageEN'));
 
 // Lazy-load heavy components to reduce initial bundle
@@ -64,6 +65,7 @@ const App = () => (
           <BrowserRouter>
             <LanguageProvider>
               <ScrollToTop />
+              <GlobalSEO />
               <RoutePreloader />
               <Suspense fallback={null}><RouteValidator /></Suspense>
               <IdleSofia />
