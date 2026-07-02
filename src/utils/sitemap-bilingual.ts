@@ -17,7 +17,7 @@ interface SitemapUrl {
   };
 }
 
-const baseUrl = 'https://hayasmarketing.com';
+const baseUrl = 'https://hayas-marketing-digital.lovable.app';
 
 /**
  * Genera sitemap para un idioma específico

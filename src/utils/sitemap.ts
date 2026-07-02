@@ -14,7 +14,7 @@ interface SitemapUrl {
 }
 
 export const generateSitemapXML = (): string => {
-  const baseUrl = 'https://hayasmarketing.com';
+  const baseUrl = 'https://hayas-marketing-digital.lovable.app';
   const currentDate = new Date().toISOString().split('T')[0];
   
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
