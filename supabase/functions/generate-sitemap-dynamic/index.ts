@@ -8,7 +8,7 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "content-type",
 };
 
-const BASE_URL = "https://hayasmarketing.com";
+const BASE_URL = "https://hayas-marketing-digital.lovable.app";
 
 function esc(s: string) {
   return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
